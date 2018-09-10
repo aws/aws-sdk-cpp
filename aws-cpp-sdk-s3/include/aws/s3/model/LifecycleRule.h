@@ -67,37 +67,44 @@ namespace Model
 
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline const Aws::String& GetID() const{ return m_iD; }
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline LifecycleRule& WithID(const Aws::String& value) { SetID(value); return *this;}
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline LifecycleRule& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
 
     /**
-     * Unique identifier for the rule. The value cannot be longer than 255 characters.
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
      */
     inline LifecycleRule& WithID(const char* value) { SetID(value); return *this;}
 
@@ -119,32 +126,32 @@ namespace Model
 
 
     /**
-     * If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
-     * not currently being applied.
+     * <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
+     * not currently being applied.</p>
      */
     inline const ExpirationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
-     * not currently being applied.
+     * <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
+     * not currently being applied.</p>
      */
     inline void SetStatus(const ExpirationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
-     * not currently being applied.
+     * <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
+     * not currently being applied.</p>
      */
     inline void SetStatus(ExpirationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
-     * not currently being applied.
+     * <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
+     * not currently being applied.</p>
      */
     inline LifecycleRule& WithStatus(const ExpirationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
-     * not currently being applied.
+     * <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
+     * not currently being applied.</p>
      */
     inline LifecycleRule& WithStatus(ExpirationStatus&& value) { SetStatus(std::move(value)); return *this;}
 

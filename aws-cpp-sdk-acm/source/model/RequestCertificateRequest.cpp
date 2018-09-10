@@ -28,7 +28,9 @@ RequestCertificateRequest::RequestCertificateRequest() :
     m_validationMethodHasBeenSet(false),
     m_subjectAlternativeNamesHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false),
-    m_domainValidationOptionsHasBeenSet(false)
+    m_domainValidationOptionsHasBeenSet(false),
+    m_optionsHasBeenSet(false),
+    m_certificateAuthorityArnHasBeenSet(false)
 {
 }
 
@@ -75,7 +77,19 @@ Aws::String RequestCertificateRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_optionsHasBeenSet)
+  {
+   payload.WithObject("Options", m_options.Jsonize());
+
+  }
+
+  if(m_certificateAuthorityArnHasBeenSet)
+  {
+   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RequestCertificateRequest::GetRequestSpecificHeaders() const

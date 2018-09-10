@@ -32,12 +32,12 @@ DomainDetails::DomainDetails()
 {
 }
 
-DomainDetails::DomainDetails(const JsonValue& jsonValue)
+DomainDetails::DomainDetails(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-DomainDetails& DomainDetails::operator =(const JsonValue& jsonValue)
+DomainDetails& DomainDetails::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

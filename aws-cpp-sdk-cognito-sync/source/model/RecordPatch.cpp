@@ -39,7 +39,7 @@ RecordPatch::RecordPatch() :
 {
 }
 
-RecordPatch::RecordPatch(const JsonValue& jsonValue) : 
+RecordPatch::RecordPatch(JsonView jsonValue) : 
     m_op(Operation::NOT_SET),
     m_opHasBeenSet(false),
     m_keyHasBeenSet(false),
@@ -51,7 +51,7 @@ RecordPatch::RecordPatch(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RecordPatch& RecordPatch::operator =(const JsonValue& jsonValue)
+RecordPatch& RecordPatch::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Op"))
   {

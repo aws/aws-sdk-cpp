@@ -37,7 +37,7 @@ PutLogEventsResult::PutLogEventsResult(const Aws::AmazonWebServiceResult<JsonVal
 
 PutLogEventsResult& PutLogEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("nextSequenceToken"))
   {
     m_nextSequenceToken = jsonValue.GetString("nextSequenceToken");

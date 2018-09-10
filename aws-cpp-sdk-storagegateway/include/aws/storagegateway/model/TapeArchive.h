@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace StorageGateway
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     TapeArchive();
-    TapeArchive(const Aws::Utils::Json::JsonValue& jsonValue);
-    TapeArchive& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TapeArchive(Aws::Utils::Json::JsonView jsonValue);
+    TapeArchive& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -120,19 +121,29 @@ namespace Model
     inline TapeArchive& WithTapeBarcode(const char* value) { SetTapeBarcode(value); return *this;}
 
 
-    
+    /**
+     * <p>The date the virtual tape was created.</p>
+     */
     inline const Aws::Utils::DateTime& GetTapeCreatedDate() const{ return m_tapeCreatedDate; }
 
-    
+    /**
+     * <p>The date the virtual tape was created.</p>
+     */
     inline void SetTapeCreatedDate(const Aws::Utils::DateTime& value) { m_tapeCreatedDateHasBeenSet = true; m_tapeCreatedDate = value; }
 
-    
+    /**
+     * <p>The date the virtual tape was created.</p>
+     */
     inline void SetTapeCreatedDate(Aws::Utils::DateTime&& value) { m_tapeCreatedDateHasBeenSet = true; m_tapeCreatedDate = std::move(value); }
 
-    
+    /**
+     * <p>The date the virtual tape was created.</p>
+     */
     inline TapeArchive& WithTapeCreatedDate(const Aws::Utils::DateTime& value) { SetTapeCreatedDate(value); return *this;}
 
-    
+    /**
+     * <p>The date the virtual tape was created.</p>
+     */
     inline TapeArchive& WithTapeCreatedDate(Aws::Utils::DateTime&& value) { SetTapeCreatedDate(std::move(value)); return *this;}
 
 
@@ -154,36 +165,36 @@ namespace Model
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
-     * string format of the completion time is in the ISO8601 extended
-     * YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     * default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * format.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
-     * string format of the completion time is in the ISO8601 extended
-     * YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     * default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * format.</p>
      */
     inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
-     * string format of the completion time is in the ISO8601 extended
-     * YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     * default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * format.</p>
      */
     inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
-     * string format of the completion time is in the ISO8601 extended
-     * YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     * default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * format.</p>
      */
     inline TapeArchive& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
 
     /**
      * <p>The time that the archiving of the virtual tape was completed.</p> <p>The
-     * string format of the completion time is in the ISO8601 extended
-     * YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     * default time stamp format is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * format.</p>
      */
     inline TapeArchive& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
 
@@ -292,6 +303,28 @@ namespace Model
      */
     inline TapeArchive& WithTapeUsedInBytes(long long value) { SetTapeUsedInBytes(value); return *this;}
 
+
+    
+    inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
+
+    
+    inline void SetKMSKey(const Aws::String& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
+
+    
+    inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::move(value); }
+
+    
+    inline void SetKMSKey(const char* value) { m_kMSKeyHasBeenSet = true; m_kMSKey.assign(value); }
+
+    
+    inline TapeArchive& WithKMSKey(const Aws::String& value) { SetKMSKey(value); return *this;}
+
+    
+    inline TapeArchive& WithKMSKey(Aws::String&& value) { SetKMSKey(std::move(value)); return *this;}
+
+    
+    inline TapeArchive& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
+
   private:
 
     Aws::String m_tapeARN;
@@ -317,6 +350,9 @@ namespace Model
 
     long long m_tapeUsedInBytes;
     bool m_tapeUsedInBytesHasBeenSet;
+
+    Aws::String m_kMSKey;
+    bool m_kMSKeyHasBeenSet;
   };
 
 } // namespace Model

@@ -37,7 +37,7 @@ Predicate::Predicate() :
 {
 }
 
-Predicate::Predicate(const JsonValue& jsonValue) : 
+Predicate::Predicate(JsonView jsonValue) : 
     m_negated(false),
     m_negatedHasBeenSet(false),
     m_type(PredicateType::NOT_SET),
@@ -47,7 +47,7 @@ Predicate::Predicate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Predicate& Predicate::operator =(const JsonValue& jsonValue)
+Predicate& Predicate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Negated"))
   {

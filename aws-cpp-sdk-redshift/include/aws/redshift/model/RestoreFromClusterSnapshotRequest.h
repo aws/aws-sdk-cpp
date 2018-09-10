@@ -909,13 +909,15 @@ namespace Model
      * <p>Default: The node type of the cluster from which the snapshot was taken. You
      * can modify this if you are using any DS node type. In that case, you can choose
      * to restore into another DS node type of the same size. For example, you can
-     * restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you have
+     * restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
-     * dc1.large instance type. For more information about node types, see <a
+     * dc1.large instance type or dc2.large instance type. You can't restore
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * to a dc2.8large cluster. For more information about node types, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i> </p>
+     * Guide</i>. </p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
 
@@ -924,13 +926,15 @@ namespace Model
      * <p>Default: The node type of the cluster from which the snapshot was taken. You
      * can modify this if you are using any DS node type. In that case, you can choose
      * to restore into another DS node type of the same size. For example, you can
-     * restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you have
+     * restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
-     * dc1.large instance type. For more information about node types, see <a
+     * dc1.large instance type or dc2.large instance type. You can't restore
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * to a dc2.8large cluster. For more information about node types, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i> </p>
+     * Guide</i>. </p>
      */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
@@ -939,13 +943,15 @@ namespace Model
      * <p>Default: The node type of the cluster from which the snapshot was taken. You
      * can modify this if you are using any DS node type. In that case, you can choose
      * to restore into another DS node type of the same size. For example, you can
-     * restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you have
+     * restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
-     * dc1.large instance type. For more information about node types, see <a
+     * dc1.large instance type or dc2.large instance type. You can't restore
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * to a dc2.8large cluster. For more information about node types, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i> </p>
+     * Guide</i>. </p>
      */
     inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
@@ -954,13 +960,15 @@ namespace Model
      * <p>Default: The node type of the cluster from which the snapshot was taken. You
      * can modify this if you are using any DS node type. In that case, you can choose
      * to restore into another DS node type of the same size. For example, you can
-     * restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you have
+     * restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
-     * dc1.large instance type. For more information about node types, see <a
+     * dc1.large instance type or dc2.large instance type. You can't restore
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * to a dc2.8large cluster. For more information about node types, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i> </p>
+     * Guide</i>. </p>
      */
     inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
 
@@ -969,13 +977,15 @@ namespace Model
      * <p>Default: The node type of the cluster from which the snapshot was taken. You
      * can modify this if you are using any DS node type. In that case, you can choose
      * to restore into another DS node type of the same size. For example, you can
-     * restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you have
+     * restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
-     * dc1.large instance type. For more information about node types, see <a
+     * dc1.large instance type or dc2.large instance type. You can't restore
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * to a dc2.8large cluster. For more information about node types, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i> </p>
+     * Guide</i>. </p>
      */
     inline RestoreFromClusterSnapshotRequest& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
 
@@ -984,13 +994,15 @@ namespace Model
      * <p>Default: The node type of the cluster from which the snapshot was taken. You
      * can modify this if you are using any DS node type. In that case, you can choose
      * to restore into another DS node type of the same size. For example, you can
-     * restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you have
+     * restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
-     * dc1.large instance type. For more information about node types, see <a
+     * dc1.large instance type or dc2.large instance type. You can't restore
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * to a dc2.8large cluster. For more information about node types, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i> </p>
+     * Guide</i>. </p>
      */
     inline RestoreFromClusterSnapshotRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
@@ -999,13 +1011,15 @@ namespace Model
      * <p>Default: The node type of the cluster from which the snapshot was taken. You
      * can modify this if you are using any DS node type. In that case, you can choose
      * to restore into another DS node type of the same size. For example, you can
-     * restore ds1.8xlarge into ds2.8xlarge, or ds2.xlarge into ds1.xlarge. If you have
+     * restore ds1.8xlarge into ds2.8xlarge, or ds1.xlarge into ds2.xlarge. If you have
      * a DC instance type, you must restore into that same instance type and size. In
      * other words, you can only restore a dc1.large instance type into another
-     * dc1.large instance type. For more information about node types, see <a
+     * dc1.large instance type or dc2.large instance type. You can't restore
+     * dc1.8xlarge to dc2.8xlarge. First restore to a dc1.8xlareg cluster, then resize
+     * to a dc2.8large cluster. For more information about node types, see <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
      * About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i> </p>
+     * Guide</i>. </p>
      */
     inline RestoreFromClusterSnapshotRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
@@ -1152,6 +1166,84 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& AddIamRoles(const char* value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline const Aws::String& GetMaintenanceTrackName() const{ return m_maintenanceTrackName; }
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline void SetMaintenanceTrackName(Aws::String&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::move(value); }
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline void SetMaintenanceTrackName(const char* value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName.assign(value); }
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithMaintenanceTrackName(const Aws::String& value) { SetMaintenanceTrackName(value); return *this;}
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithMaintenanceTrackName(Aws::String&& value) { SetMaintenanceTrackName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the maintenance track for the restored cluster. When you take a
+     * snapshot, the snapshot inherits the <code>MaintenanceTrack</code> value from the
+     * cluster. The snapshot might be on a different track than the cluster that was
+     * the source for the snapshot. For example, suppose that you take a snapshot of a
+     * cluster that is on the current track and then change the cluster to be on the
+     * trailing track. In this case, the snapshot and the source cluster are on
+     * different tracks.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1219,6 +1311,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_iamRoles;
     bool m_iamRolesHasBeenSet;
+
+    Aws::String m_maintenanceTrackName;
+    bool m_maintenanceTrackNameHasBeenSet;
   };
 
 } // namespace Model

@@ -39,7 +39,7 @@ DescribeThingResult::DescribeThingResult(const Aws::AmazonWebServiceResult<JsonV
 
 DescribeThingResult& DescribeThingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("defaultClientId"))
   {
     m_defaultClientId = jsonValue.GetString("defaultClientId");
@@ -72,7 +72,7 @@ DescribeThingResult& DescribeThingResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();

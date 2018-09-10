@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the rule.</p>
+     * <p>Information about the modified rule.</p>
      */
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
 
     /**
-     * <p>Information about the rule.</p>
+     * <p>Information about the modified rule.</p>
      */
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rules = value; }
 
     /**
-     * <p>Information about the rule.</p>
+     * <p>Information about the modified rule.</p>
      */
     inline void SetRules(Aws::Vector<Rule>&& value) { m_rules = std::move(value); }
 
     /**
-     * <p>Information about the rule.</p>
+     * <p>Information about the modified rule.</p>
      */
     inline ModifyRuleResult& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
 
     /**
-     * <p>Information about the rule.</p>
+     * <p>Information about the modified rule.</p>
      */
     inline ModifyRuleResult& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the rule.</p>
+     * <p>Information about the modified rule.</p>
      */
     inline ModifyRuleResult& AddRules(const Rule& value) { m_rules.push_back(value); return *this; }
 
     /**
-     * <p>Information about the rule.</p>
+     * <p>Information about the modified rule.</p>
      */
     inline ModifyRuleResult& AddRules(Rule&& value) { m_rules.push_back(std::move(value)); return *this; }
 

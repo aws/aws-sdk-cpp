@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAFRegional
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     XssMatchTuple();
-    XssMatchTuple(const Aws::Utils::Json::JsonValue& jsonValue);
-    XssMatchTuple& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    XssMatchTuple(Aws::Utils::Json::JsonView jsonValue);
+    XssMatchTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -84,11 +85,12 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
-     * before inspecting a request for a match.</p> <p> <b>CMD_LINE</b> </p> <p>When
-     * you're concerned that attackers are injecting an operating system commandline
-     * command and using unusual formatting to disguise some or all of the command, use
-     * this option to perform the following transformations:</p> <ul> <li> <p>Delete
-     * the following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
+     * before inspecting a request for a match.</p> <p>You can only specify a single
+     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
+     * concerned that attackers are injecting an operating system command line command
+     * and using unusual formatting to disguise some or all of the command, use this
+     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
+     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
      * following characters: / (</p> </li> <li> <p>Replace the following characters
      * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
      * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
@@ -120,11 +122,12 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
-     * before inspecting a request for a match.</p> <p> <b>CMD_LINE</b> </p> <p>When
-     * you're concerned that attackers are injecting an operating system commandline
-     * command and using unusual formatting to disguise some or all of the command, use
-     * this option to perform the following transformations:</p> <ul> <li> <p>Delete
-     * the following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
+     * before inspecting a request for a match.</p> <p>You can only specify a single
+     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
+     * concerned that attackers are injecting an operating system command line command
+     * and using unusual formatting to disguise some or all of the command, use this
+     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
+     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
      * following characters: / (</p> </li> <li> <p>Replace the following characters
      * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
      * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
@@ -156,11 +159,12 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
-     * before inspecting a request for a match.</p> <p> <b>CMD_LINE</b> </p> <p>When
-     * you're concerned that attackers are injecting an operating system commandline
-     * command and using unusual formatting to disguise some or all of the command, use
-     * this option to perform the following transformations:</p> <ul> <li> <p>Delete
-     * the following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
+     * before inspecting a request for a match.</p> <p>You can only specify a single
+     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
+     * concerned that attackers are injecting an operating system command line command
+     * and using unusual formatting to disguise some or all of the command, use this
+     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
+     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
      * following characters: / (</p> </li> <li> <p>Replace the following characters
      * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
      * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
@@ -192,11 +196,12 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
-     * before inspecting a request for a match.</p> <p> <b>CMD_LINE</b> </p> <p>When
-     * you're concerned that attackers are injecting an operating system commandline
-     * command and using unusual formatting to disguise some or all of the command, use
-     * this option to perform the following transformations:</p> <ul> <li> <p>Delete
-     * the following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
+     * before inspecting a request for a match.</p> <p>You can only specify a single
+     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
+     * concerned that attackers are injecting an operating system command line command
+     * and using unusual formatting to disguise some or all of the command, use this
+     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
+     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
      * following characters: / (</p> </li> <li> <p>Replace the following characters
      * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
      * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
@@ -228,11 +233,12 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
-     * before inspecting a request for a match.</p> <p> <b>CMD_LINE</b> </p> <p>When
-     * you're concerned that attackers are injecting an operating system commandline
-     * command and using unusual formatting to disguise some or all of the command, use
-     * this option to perform the following transformations:</p> <ul> <li> <p>Delete
-     * the following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
+     * before inspecting a request for a match.</p> <p>You can only specify a single
+     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
+     * concerned that attackers are injecting an operating system command line command
+     * and using unusual formatting to disguise some or all of the command, use this
+     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
+     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
      * following characters: / (</p> </li> <li> <p>Replace the following characters
      * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
      * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>

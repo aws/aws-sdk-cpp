@@ -34,14 +34,14 @@ SmsConfigurationType::SmsConfigurationType() :
 {
 }
 
-SmsConfigurationType::SmsConfigurationType(const JsonValue& jsonValue) : 
+SmsConfigurationType::SmsConfigurationType(JsonView jsonValue) : 
     m_snsCallerArnHasBeenSet(false),
     m_externalIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SmsConfigurationType& SmsConfigurationType::operator =(const JsonValue& jsonValue)
+SmsConfigurationType& SmsConfigurationType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SnsCallerArn"))
   {

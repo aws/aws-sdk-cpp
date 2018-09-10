@@ -29,7 +29,9 @@ CreateTriggerRequest::CreateTriggerRequest() :
     m_scheduleHasBeenSet(false),
     m_predicateHasBeenSet(false),
     m_actionsHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_startOnCreation(false),
+    m_startOnCreationHasBeenSet(false)
 {
 }
 
@@ -77,7 +79,13 @@ Aws::String CreateTriggerRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_startOnCreationHasBeenSet)
+  {
+   payload.WithBool("StartOnCreation", m_startOnCreation);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateTriggerRequest::GetRequestSpecificHeaders() const

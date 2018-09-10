@@ -38,7 +38,7 @@ ActivityTypeInfo::ActivityTypeInfo() :
 {
 }
 
-ActivityTypeInfo::ActivityTypeInfo(const JsonValue& jsonValue) : 
+ActivityTypeInfo::ActivityTypeInfo(JsonView jsonValue) : 
     m_activityTypeHasBeenSet(false),
     m_status(RegistrationStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -49,7 +49,7 @@ ActivityTypeInfo::ActivityTypeInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ActivityTypeInfo& ActivityTypeInfo::operator =(const JsonValue& jsonValue)
+ActivityTypeInfo& ActivityTypeInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("activityType"))
   {

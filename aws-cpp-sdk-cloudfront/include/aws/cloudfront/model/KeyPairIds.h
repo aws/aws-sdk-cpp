@@ -37,7 +37,7 @@ namespace Model
    * <p>A complex type that lists the active CloudFront key pairs, if any, that are
    * associated with <code>AwsAccountNumber</code>. </p> <p>For more information, see
    * <a>ActiveTrustedSigners</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/KeyPairIds">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/KeyPairIds">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API KeyPairIds

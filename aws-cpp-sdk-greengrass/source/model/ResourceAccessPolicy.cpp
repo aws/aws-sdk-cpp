@@ -35,7 +35,7 @@ ResourceAccessPolicy::ResourceAccessPolicy() :
 {
 }
 
-ResourceAccessPolicy::ResourceAccessPolicy(const JsonValue& jsonValue) : 
+ResourceAccessPolicy::ResourceAccessPolicy(JsonView jsonValue) : 
     m_permission(Permission::NOT_SET),
     m_permissionHasBeenSet(false),
     m_resourceIdHasBeenSet(false)
@@ -43,7 +43,7 @@ ResourceAccessPolicy::ResourceAccessPolicy(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceAccessPolicy& ResourceAccessPolicy::operator =(const JsonValue& jsonValue)
+ResourceAccessPolicy& ResourceAccessPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Permission"))
   {

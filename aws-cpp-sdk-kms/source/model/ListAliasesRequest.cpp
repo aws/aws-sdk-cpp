@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListAliasesRequest::ListAliasesRequest() : 
+    m_keyIdHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),
     m_markerHasBeenSet(false)
@@ -32,6 +33,12 @@ ListAliasesRequest::ListAliasesRequest() :
 Aws::String ListAliasesRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_keyIdHasBeenSet)
+  {
+   payload.WithString("KeyId", m_keyId);
+
+  }
 
   if(m_limitHasBeenSet)
   {
@@ -45,7 +52,7 @@ Aws::String ListAliasesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListAliasesRequest::GetRequestSpecificHeaders() const

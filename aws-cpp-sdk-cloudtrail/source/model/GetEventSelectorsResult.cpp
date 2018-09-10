@@ -37,7 +37,7 @@ GetEventSelectorsResult::GetEventSelectorsResult(const Aws::AmazonWebServiceResu
 
 GetEventSelectorsResult& GetEventSelectorsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TrailARN"))
   {
     m_trailARN = jsonValue.GetString("TrailARN");
@@ -46,7 +46,7 @@ GetEventSelectorsResult& GetEventSelectorsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("EventSelectors"))
   {
-    Array<JsonValue> eventSelectorsJsonList = jsonValue.GetArray("EventSelectors");
+    Array<JsonView> eventSelectorsJsonList = jsonValue.GetArray("EventSelectors");
     for(unsigned eventSelectorsIndex = 0; eventSelectorsIndex < eventSelectorsJsonList.GetLength(); ++eventSelectorsIndex)
     {
       m_eventSelectors.push_back(eventSelectorsJsonList[eventSelectorsIndex].AsObject());

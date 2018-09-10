@@ -39,7 +39,7 @@ Fragment::Fragment() :
 {
 }
 
-Fragment::Fragment(const JsonValue& jsonValue) : 
+Fragment::Fragment(JsonView jsonValue) : 
     m_fragmentNumberHasBeenSet(false),
     m_fragmentSizeInBytes(0),
     m_fragmentSizeInBytesHasBeenSet(false),
@@ -51,7 +51,7 @@ Fragment::Fragment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Fragment& Fragment::operator =(const JsonValue& jsonValue)
+Fragment& Fragment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FragmentNumber"))
   {

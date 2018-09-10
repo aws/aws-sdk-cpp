@@ -51,7 +51,7 @@ Aws::String CreateBranchRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateBranchRequest::GetRequestSpecificHeaders() const

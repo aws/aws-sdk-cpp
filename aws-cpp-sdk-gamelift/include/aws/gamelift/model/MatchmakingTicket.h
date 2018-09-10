@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -50,8 +51,8 @@ namespace Model
   {
   public:
     MatchmakingTicket();
-    MatchmakingTicket(const Aws::Utils::Json::JsonValue& jsonValue);
-    MatchmakingTicket& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MatchmakingTicket(Aws::Utils::Json::JsonView jsonValue);
+    MatchmakingTicket& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -155,12 +156,13 @@ namespace Model
      * host the players. A ticket in this state contains the necessary connection
      * information for players.</p> </li> <li> <p> <b>FAILED</b> -- The matchmaking
      * request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status; new matchmaking requests can be
-     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> -- The
-     * matchmaking request was canceled with a call to <a>StopMatchmaking</a>.</p>
-     * </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not completed
-     * within the duration specified in the matchmaking configuration. Matchmaking
-     * requests that time out can be resubmitted.</p> </li> </ul>
+     * match are placed in <code>FAILED</code> status.</p> </li> <li> <p>
+     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to
+     * <a>StopMatchmaking</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking
+     * request was not successful within the duration specified in the matchmaking
+     * configuration. </p> </li> </ul> <note> <p>Matchmaking requests that fail to
+     * successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted
+     * as new requests with new ticket IDs.</p> </note>
      */
     inline const MatchmakingConfigurationStatus& GetStatus() const{ return m_status; }
 
@@ -178,12 +180,13 @@ namespace Model
      * host the players. A ticket in this state contains the necessary connection
      * information for players.</p> </li> <li> <p> <b>FAILED</b> -- The matchmaking
      * request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status; new matchmaking requests can be
-     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> -- The
-     * matchmaking request was canceled with a call to <a>StopMatchmaking</a>.</p>
-     * </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not completed
-     * within the duration specified in the matchmaking configuration. Matchmaking
-     * requests that time out can be resubmitted.</p> </li> </ul>
+     * match are placed in <code>FAILED</code> status.</p> </li> <li> <p>
+     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to
+     * <a>StopMatchmaking</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking
+     * request was not successful within the duration specified in the matchmaking
+     * configuration. </p> </li> </ul> <note> <p>Matchmaking requests that fail to
+     * successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted
+     * as new requests with new ticket IDs.</p> </note>
      */
     inline void SetStatus(const MatchmakingConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -201,12 +204,13 @@ namespace Model
      * host the players. A ticket in this state contains the necessary connection
      * information for players.</p> </li> <li> <p> <b>FAILED</b> -- The matchmaking
      * request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status; new matchmaking requests can be
-     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> -- The
-     * matchmaking request was canceled with a call to <a>StopMatchmaking</a>.</p>
-     * </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not completed
-     * within the duration specified in the matchmaking configuration. Matchmaking
-     * requests that time out can be resubmitted.</p> </li> </ul>
+     * match are placed in <code>FAILED</code> status.</p> </li> <li> <p>
+     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to
+     * <a>StopMatchmaking</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking
+     * request was not successful within the duration specified in the matchmaking
+     * configuration. </p> </li> </ul> <note> <p>Matchmaking requests that fail to
+     * successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted
+     * as new requests with new ticket IDs.</p> </note>
      */
     inline void SetStatus(MatchmakingConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -224,12 +228,13 @@ namespace Model
      * host the players. A ticket in this state contains the necessary connection
      * information for players.</p> </li> <li> <p> <b>FAILED</b> -- The matchmaking
      * request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status; new matchmaking requests can be
-     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> -- The
-     * matchmaking request was canceled with a call to <a>StopMatchmaking</a>.</p>
-     * </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not completed
-     * within the duration specified in the matchmaking configuration. Matchmaking
-     * requests that time out can be resubmitted.</p> </li> </ul>
+     * match are placed in <code>FAILED</code> status.</p> </li> <li> <p>
+     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to
+     * <a>StopMatchmaking</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking
+     * request was not successful within the duration specified in the matchmaking
+     * configuration. </p> </li> </ul> <note> <p>Matchmaking requests that fail to
+     * successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted
+     * as new requests with new ticket IDs.</p> </note>
      */
     inline MatchmakingTicket& WithStatus(const MatchmakingConfigurationStatus& value) { SetStatus(value); return *this;}
 
@@ -247,12 +252,13 @@ namespace Model
      * host the players. A ticket in this state contains the necessary connection
      * information for players.</p> </li> <li> <p> <b>FAILED</b> -- The matchmaking
      * request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status; new matchmaking requests can be
-     * submitted for these players.</p> </li> <li> <p> <b>CANCELLED</b> -- The
-     * matchmaking request was canceled with a call to <a>StopMatchmaking</a>.</p>
-     * </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking request was not completed
-     * within the duration specified in the matchmaking configuration. Matchmaking
-     * requests that time out can be resubmitted.</p> </li> </ul>
+     * match are placed in <code>FAILED</code> status.</p> </li> <li> <p>
+     * <b>CANCELLED</b> -- The matchmaking request was canceled with a call to
+     * <a>StopMatchmaking</a>.</p> </li> <li> <p> <b>TIMED_OUT</b> -- The matchmaking
+     * request was not successful within the duration specified in the matchmaking
+     * configuration. </p> </li> </ul> <note> <p>Matchmaking requests that fail to
+     * successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be resubmitted
+     * as new requests with new ticket IDs.</p> </note>
      */
     inline MatchmakingTicket& WithStatus(MatchmakingConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -380,37 +386,37 @@ namespace Model
 
 
     /**
-     * <p>Time stamp indicating when the matchmaking request stopped being processed
-     * due to successful completion, timeout, or cancellation. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>Time stamp indicating when this matchmaking request stopped being processed
+     * due to success, failure, or cancellation. Format is a number expressed in Unix
+     * time as milliseconds (for example "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>Time stamp indicating when the matchmaking request stopped being processed
-     * due to successful completion, timeout, or cancellation. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>Time stamp indicating when this matchmaking request stopped being processed
+     * due to success, failure, or cancellation. Format is a number expressed in Unix
+     * time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>Time stamp indicating when the matchmaking request stopped being processed
-     * due to successful completion, timeout, or cancellation. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>Time stamp indicating when this matchmaking request stopped being processed
+     * due to success, failure, or cancellation. Format is a number expressed in Unix
+     * time as milliseconds (for example "1469498468.057").</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>Time stamp indicating when the matchmaking request stopped being processed
-     * due to successful completion, timeout, or cancellation. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>Time stamp indicating when this matchmaking request stopped being processed
+     * due to success, failure, or cancellation. Format is a number expressed in Unix
+     * time as milliseconds (for example "1469498468.057").</p>
      */
     inline MatchmakingTicket& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when the matchmaking request stopped being processed
-     * due to successful completion, timeout, or cancellation. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>Time stamp indicating when this matchmaking request stopped being processed
+     * due to success, failure, or cancellation. Format is a number expressed in Unix
+     * time as milliseconds (for example "1469498468.057").</p>
      */
     inline MatchmakingTicket& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

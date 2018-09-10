@@ -35,7 +35,7 @@ DataRetrievalRule::DataRetrievalRule() :
 {
 }
 
-DataRetrievalRule::DataRetrievalRule(const JsonValue& jsonValue) : 
+DataRetrievalRule::DataRetrievalRule(JsonView jsonValue) : 
     m_strategyHasBeenSet(false),
     m_bytesPerHour(0),
     m_bytesPerHourHasBeenSet(false)
@@ -43,7 +43,7 @@ DataRetrievalRule::DataRetrievalRule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DataRetrievalRule& DataRetrievalRule::operator =(const JsonValue& jsonValue)
+DataRetrievalRule& DataRetrievalRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Strategy"))
   {

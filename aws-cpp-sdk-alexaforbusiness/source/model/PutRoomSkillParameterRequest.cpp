@@ -51,7 +51,7 @@ Aws::String PutRoomSkillParameterRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutRoomSkillParameterRequest::GetRequestSpecificHeaders() const

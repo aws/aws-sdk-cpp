@@ -33,17 +33,17 @@ CoreDefinitionVersion::CoreDefinitionVersion() :
 {
 }
 
-CoreDefinitionVersion::CoreDefinitionVersion(const JsonValue& jsonValue) : 
+CoreDefinitionVersion::CoreDefinitionVersion(JsonView jsonValue) : 
     m_coresHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CoreDefinitionVersion& CoreDefinitionVersion::operator =(const JsonValue& jsonValue)
+CoreDefinitionVersion& CoreDefinitionVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Cores"))
   {
-    Array<JsonValue> coresJsonList = jsonValue.GetArray("Cores");
+    Array<JsonView> coresJsonList = jsonValue.GetArray("Cores");
     for(unsigned coresIndex = 0; coresIndex < coresJsonList.GetLength(); ++coresIndex)
     {
       m_cores.push_back(coresJsonList[coresIndex].AsObject());

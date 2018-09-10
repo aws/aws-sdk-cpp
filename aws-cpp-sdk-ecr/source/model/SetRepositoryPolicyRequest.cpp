@@ -59,7 +59,7 @@ Aws::String SetRepositoryPolicyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SetRepositoryPolicyRequest::GetRequestSpecificHeaders() const

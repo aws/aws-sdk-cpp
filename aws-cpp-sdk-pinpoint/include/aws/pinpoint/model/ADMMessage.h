@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ADMMessage();
-    ADMMessage(const Aws::Utils::Json::JsonValue& jsonValue);
-    ADMMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ADMMessage(Aws::Utils::Json::JsonView jsonValue);
+    ADMMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -106,37 +107,37 @@ namespace Model
 
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline ADMMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline ADMMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline ADMMessage& WithBody(const char* value) { SetBody(value); return *this;}
 

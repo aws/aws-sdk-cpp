@@ -37,7 +37,7 @@ ListNotebookInstancesResult::ListNotebookInstancesResult(const Aws::AmazonWebSer
 
 ListNotebookInstancesResult& ListNotebookInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ ListNotebookInstancesResult& ListNotebookInstancesResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("NotebookInstances"))
   {
-    Array<JsonValue> notebookInstancesJsonList = jsonValue.GetArray("NotebookInstances");
+    Array<JsonView> notebookInstancesJsonList = jsonValue.GetArray("NotebookInstances");
     for(unsigned notebookInstancesIndex = 0; notebookInstancesIndex < notebookInstancesJsonList.GetLength(); ++notebookInstancesIndex)
     {
       m_notebookInstances.push_back(notebookInstancesJsonList[notebookInstancesIndex].AsObject());

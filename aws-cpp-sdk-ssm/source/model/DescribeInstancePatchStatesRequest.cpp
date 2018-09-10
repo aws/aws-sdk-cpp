@@ -57,7 +57,7 @@ Aws::String DescribeInstancePatchStatesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeInstancePatchStatesRequest::GetRequestSpecificHeaders() const

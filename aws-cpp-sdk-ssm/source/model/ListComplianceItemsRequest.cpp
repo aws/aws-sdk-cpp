@@ -81,7 +81,7 @@ Aws::String ListComplianceItemsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListComplianceItemsRequest::GetRequestSpecificHeaders() const

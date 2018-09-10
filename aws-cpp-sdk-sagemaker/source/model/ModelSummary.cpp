@@ -35,7 +35,7 @@ ModelSummary::ModelSummary() :
 {
 }
 
-ModelSummary::ModelSummary(const JsonValue& jsonValue) : 
+ModelSummary::ModelSummary(JsonView jsonValue) : 
     m_modelNameHasBeenSet(false),
     m_modelArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
@@ -43,7 +43,7 @@ ModelSummary::ModelSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ModelSummary& ModelSummary::operator =(const JsonValue& jsonValue)
+ModelSummary& ModelSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ModelName"))
   {

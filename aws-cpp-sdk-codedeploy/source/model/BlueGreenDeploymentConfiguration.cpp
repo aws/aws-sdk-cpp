@@ -35,7 +35,7 @@ BlueGreenDeploymentConfiguration::BlueGreenDeploymentConfiguration() :
 {
 }
 
-BlueGreenDeploymentConfiguration::BlueGreenDeploymentConfiguration(const JsonValue& jsonValue) : 
+BlueGreenDeploymentConfiguration::BlueGreenDeploymentConfiguration(JsonView jsonValue) : 
     m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet(false),
     m_deploymentReadyOptionHasBeenSet(false),
     m_greenFleetProvisioningOptionHasBeenSet(false)
@@ -43,7 +43,7 @@ BlueGreenDeploymentConfiguration::BlueGreenDeploymentConfiguration(const JsonVal
   *this = jsonValue;
 }
 
-BlueGreenDeploymentConfiguration& BlueGreenDeploymentConfiguration::operator =(const JsonValue& jsonValue)
+BlueGreenDeploymentConfiguration& BlueGreenDeploymentConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("terminateBlueInstancesOnDeploymentSuccess"))
   {

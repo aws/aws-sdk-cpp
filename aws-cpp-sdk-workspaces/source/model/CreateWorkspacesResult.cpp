@@ -37,10 +37,10 @@ CreateWorkspacesResult::CreateWorkspacesResult(const Aws::AmazonWebServiceResult
 
 CreateWorkspacesResult& CreateWorkspacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FailedRequests"))
   {
-    Array<JsonValue> failedRequestsJsonList = jsonValue.GetArray("FailedRequests");
+    Array<JsonView> failedRequestsJsonList = jsonValue.GetArray("FailedRequests");
     for(unsigned failedRequestsIndex = 0; failedRequestsIndex < failedRequestsJsonList.GetLength(); ++failedRequestsIndex)
     {
       m_failedRequests.push_back(failedRequestsJsonList[failedRequestsIndex].AsObject());
@@ -49,7 +49,7 @@ CreateWorkspacesResult& CreateWorkspacesResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("PendingRequests"))
   {
-    Array<JsonValue> pendingRequestsJsonList = jsonValue.GetArray("PendingRequests");
+    Array<JsonView> pendingRequestsJsonList = jsonValue.GetArray("PendingRequests");
     for(unsigned pendingRequestsIndex = 0; pendingRequestsIndex < pendingRequestsJsonList.GetLength(); ++pendingRequestsIndex)
     {
       m_pendingRequests.push_back(pendingRequestsJsonList[pendingRequestsIndex].AsObject());

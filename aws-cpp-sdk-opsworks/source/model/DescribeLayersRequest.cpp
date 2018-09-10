@@ -49,7 +49,7 @@ Aws::String DescribeLayersRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeLayersRequest::GetRequestSpecificHeaders() const

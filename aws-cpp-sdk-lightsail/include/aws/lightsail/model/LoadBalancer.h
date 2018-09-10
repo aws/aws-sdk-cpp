@@ -35,6 +35,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lightsail
@@ -51,8 +52,8 @@ namespace Model
   {
   public:
     LoadBalancer();
-    LoadBalancer(const Aws::Utils::Json::JsonValue& jsonValue);
-    LoadBalancer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LoadBalancer(Aws::Utils::Json::JsonView jsonValue);
+    LoadBalancer& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -205,32 +206,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region and Availability Zone where your load balancer was created
-     * (e.g., <code>us-east-2a</code>).</p>
+     * <p>The AWS Region where your load balancer was created (e.g.,
+     * <code>us-east-2a</code>). Lightsail automatically creates your load balancer
+     * across Availability Zones.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The AWS Region and Availability Zone where your load balancer was created
-     * (e.g., <code>us-east-2a</code>).</p>
+     * <p>The AWS Region where your load balancer was created (e.g.,
+     * <code>us-east-2a</code>). Lightsail automatically creates your load balancer
+     * across Availability Zones.</p>
      */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The AWS Region and Availability Zone where your load balancer was created
-     * (e.g., <code>us-east-2a</code>).</p>
+     * <p>The AWS Region where your load balancer was created (e.g.,
+     * <code>us-east-2a</code>). Lightsail automatically creates your load balancer
+     * across Availability Zones.</p>
      */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The AWS Region and Availability Zone where your load balancer was created
-     * (e.g., <code>us-east-2a</code>).</p>
+     * <p>The AWS Region where your load balancer was created (e.g.,
+     * <code>us-east-2a</code>). Lightsail automatically creates your load balancer
+     * across Availability Zones.</p>
      */
     inline LoadBalancer& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The AWS Region and Availability Zone where your load balancer was created
-     * (e.g., <code>us-east-2a</code>).</p>
+     * <p>The AWS Region where your load balancer was created (e.g.,
+     * <code>us-east-2a</code>). Lightsail automatically creates your load balancer
+     * across Availability Zones.</p>
      */
     inline LoadBalancer& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
@@ -325,62 +331,73 @@ namespace Model
 
     /**
      * <p>The protocol you have enabled for your load balancer. Valid values are
-     * below.</p>
+     * below.</p> <p>You can't just have <code>HTTP_HTTPS</code>, but you can have just
+     * <code>HTTP</code>.</p>
      */
     inline const LoadBalancerProtocol& GetProtocol() const{ return m_protocol; }
 
     /**
      * <p>The protocol you have enabled for your load balancer. Valid values are
-     * below.</p>
+     * below.</p> <p>You can't just have <code>HTTP_HTTPS</code>, but you can have just
+     * <code>HTTP</code>.</p>
      */
     inline void SetProtocol(const LoadBalancerProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
      * <p>The protocol you have enabled for your load balancer. Valid values are
-     * below.</p>
+     * below.</p> <p>You can't just have <code>HTTP_HTTPS</code>, but you can have just
+     * <code>HTTP</code>.</p>
      */
     inline void SetProtocol(LoadBalancerProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol you have enabled for your load balancer. Valid values are
-     * below.</p>
+     * below.</p> <p>You can't just have <code>HTTP_HTTPS</code>, but you can have just
+     * <code>HTTP</code>.</p>
      */
     inline LoadBalancer& WithProtocol(const LoadBalancerProtocol& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol you have enabled for your load balancer. Valid values are
-     * below.</p>
+     * below.</p> <p>You can't just have <code>HTTP_HTTPS</code>, but you can have just
+     * <code>HTTP</code>.</p>
      */
     inline LoadBalancer& WithProtocol(LoadBalancerProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 
 
     /**
-     * <p>An array of public port settings for your load balancer.</p>
+     * <p>An array of public port settings for your load balancer. For HTTP, use port
+     * 80. For HTTPS, use port 443.</p>
      */
     inline const Aws::Vector<int>& GetPublicPorts() const{ return m_publicPorts; }
 
     /**
-     * <p>An array of public port settings for your load balancer.</p>
+     * <p>An array of public port settings for your load balancer. For HTTP, use port
+     * 80. For HTTPS, use port 443.</p>
      */
     inline void SetPublicPorts(const Aws::Vector<int>& value) { m_publicPortsHasBeenSet = true; m_publicPorts = value; }
 
     /**
-     * <p>An array of public port settings for your load balancer.</p>
+     * <p>An array of public port settings for your load balancer. For HTTP, use port
+     * 80. For HTTPS, use port 443.</p>
      */
     inline void SetPublicPorts(Aws::Vector<int>&& value) { m_publicPortsHasBeenSet = true; m_publicPorts = std::move(value); }
 
     /**
-     * <p>An array of public port settings for your load balancer.</p>
+     * <p>An array of public port settings for your load balancer. For HTTP, use port
+     * 80. For HTTPS, use port 443.</p>
      */
     inline LoadBalancer& WithPublicPorts(const Aws::Vector<int>& value) { SetPublicPorts(value); return *this;}
 
     /**
-     * <p>An array of public port settings for your load balancer.</p>
+     * <p>An array of public port settings for your load balancer. For HTTP, use port
+     * 80. For HTTPS, use port 443.</p>
      */
     inline LoadBalancer& WithPublicPorts(Aws::Vector<int>&& value) { SetPublicPorts(std::move(value)); return *this;}
 
     /**
-     * <p>An array of public port settings for your load balancer.</p>
+     * <p>An array of public port settings for your load balancer. For HTTP, use port
+     * 80. For HTTPS, use port 443.</p>
      */
     inline LoadBalancer& AddPublicPorts(int value) { m_publicPortsHasBeenSet = true; m_publicPorts.push_back(value); return *this; }
 
@@ -436,17 +453,20 @@ namespace Model
 
 
     /**
-     * <p>The instance port where the load balancer is listening.</p>
+     * <p>The port where the load balancer will direct traffic to your Lightsail
+     * instances. For HTTP traffic, it's port 80. For HTTPS traffic, it's port 443.</p>
      */
     inline int GetInstancePort() const{ return m_instancePort; }
 
     /**
-     * <p>The instance port where the load balancer is listening.</p>
+     * <p>The port where the load balancer will direct traffic to your Lightsail
+     * instances. For HTTP traffic, it's port 80. For HTTPS traffic, it's port 443.</p>
      */
     inline void SetInstancePort(int value) { m_instancePortHasBeenSet = true; m_instancePort = value; }
 
     /**
-     * <p>The instance port where the load balancer is listening.</p>
+     * <p>The port where the load balancer will direct traffic to your Lightsail
+     * instances. For HTTP traffic, it's port 80. For HTTPS traffic, it's port 443.</p>
      */
     inline LoadBalancer& WithInstancePort(int value) { SetInstancePort(value); return *this;}
 
@@ -496,43 +516,50 @@ namespace Model
 
     /**
      * <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional
-     * information about the TLS/SSL certificates.</p>
+     * information about the SSL/TLS certificates. For example, if <code>true</code>,
+     * the certificate is attached to the load balancer.</p>
      */
     inline const Aws::Vector<LoadBalancerTlsCertificateSummary>& GetTlsCertificateSummaries() const{ return m_tlsCertificateSummaries; }
 
     /**
      * <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional
-     * information about the TLS/SSL certificates.</p>
+     * information about the SSL/TLS certificates. For example, if <code>true</code>,
+     * the certificate is attached to the load balancer.</p>
      */
     inline void SetTlsCertificateSummaries(const Aws::Vector<LoadBalancerTlsCertificateSummary>& value) { m_tlsCertificateSummariesHasBeenSet = true; m_tlsCertificateSummaries = value; }
 
     /**
      * <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional
-     * information about the TLS/SSL certificates.</p>
+     * information about the SSL/TLS certificates. For example, if <code>true</code>,
+     * the certificate is attached to the load balancer.</p>
      */
     inline void SetTlsCertificateSummaries(Aws::Vector<LoadBalancerTlsCertificateSummary>&& value) { m_tlsCertificateSummariesHasBeenSet = true; m_tlsCertificateSummaries = std::move(value); }
 
     /**
      * <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional
-     * information about the TLS/SSL certificates.</p>
+     * information about the SSL/TLS certificates. For example, if <code>true</code>,
+     * the certificate is attached to the load balancer.</p>
      */
     inline LoadBalancer& WithTlsCertificateSummaries(const Aws::Vector<LoadBalancerTlsCertificateSummary>& value) { SetTlsCertificateSummaries(value); return *this;}
 
     /**
      * <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional
-     * information about the TLS/SSL certificates.</p>
+     * information about the SSL/TLS certificates. For example, if <code>true</code>,
+     * the certificate is attached to the load balancer.</p>
      */
     inline LoadBalancer& WithTlsCertificateSummaries(Aws::Vector<LoadBalancerTlsCertificateSummary>&& value) { SetTlsCertificateSummaries(std::move(value)); return *this;}
 
     /**
      * <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional
-     * information about the TLS/SSL certificates.</p>
+     * information about the SSL/TLS certificates. For example, if <code>true</code>,
+     * the certificate is attached to the load balancer.</p>
      */
     inline LoadBalancer& AddTlsCertificateSummaries(const LoadBalancerTlsCertificateSummary& value) { m_tlsCertificateSummariesHasBeenSet = true; m_tlsCertificateSummaries.push_back(value); return *this; }
 
     /**
      * <p>An array of LoadBalancerTlsCertificateSummary objects that provide additional
-     * information about the TLS/SSL certificates.</p>
+     * information about the SSL/TLS certificates. For example, if <code>true</code>,
+     * the certificate is attached to the load balancer.</p>
      */
     inline LoadBalancer& AddTlsCertificateSummaries(LoadBalancerTlsCertificateSummary&& value) { m_tlsCertificateSummariesHasBeenSet = true; m_tlsCertificateSummaries.push_back(std::move(value)); return *this; }
 

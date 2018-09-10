@@ -37,6 +37,8 @@ H264Settings::H264Settings() :
     m_codecLevelHasBeenSet(false),
     m_codecProfile(H264CodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
+    m_dynamicSubGop(H264DynamicSubGop::NOT_SET),
+    m_dynamicSubGopHasBeenSet(false),
     m_entropyEncoding(H264EntropyEncoding::NOT_SET),
     m_entropyEncodingHasBeenSet(false),
     m_fieldEncoding(H264FieldEncoding::NOT_SET),
@@ -81,6 +83,7 @@ H264Settings::H264Settings() :
     m_parNumeratorHasBeenSet(false),
     m_qualityTuningLevel(H264QualityTuningLevel::NOT_SET),
     m_qualityTuningLevelHasBeenSet(false),
+    m_qvbrSettingsHasBeenSet(false),
     m_rateControlMode(H264RateControlMode::NOT_SET),
     m_rateControlModeHasBeenSet(false),
     m_repeatPps(H264RepeatPps::NOT_SET),
@@ -106,7 +109,7 @@ H264Settings::H264Settings() :
 {
 }
 
-H264Settings::H264Settings(const JsonValue& jsonValue) : 
+H264Settings::H264Settings(JsonView jsonValue) : 
     m_adaptiveQuantization(H264AdaptiveQuantization::NOT_SET),
     m_adaptiveQuantizationHasBeenSet(false),
     m_bitrate(0),
@@ -115,6 +118,8 @@ H264Settings::H264Settings(const JsonValue& jsonValue) :
     m_codecLevelHasBeenSet(false),
     m_codecProfile(H264CodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
+    m_dynamicSubGop(H264DynamicSubGop::NOT_SET),
+    m_dynamicSubGopHasBeenSet(false),
     m_entropyEncoding(H264EntropyEncoding::NOT_SET),
     m_entropyEncodingHasBeenSet(false),
     m_fieldEncoding(H264FieldEncoding::NOT_SET),
@@ -159,6 +164,7 @@ H264Settings::H264Settings(const JsonValue& jsonValue) :
     m_parNumeratorHasBeenSet(false),
     m_qualityTuningLevel(H264QualityTuningLevel::NOT_SET),
     m_qualityTuningLevelHasBeenSet(false),
+    m_qvbrSettingsHasBeenSet(false),
     m_rateControlMode(H264RateControlMode::NOT_SET),
     m_rateControlModeHasBeenSet(false),
     m_repeatPps(H264RepeatPps::NOT_SET),
@@ -185,7 +191,7 @@ H264Settings::H264Settings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-H264Settings& H264Settings::operator =(const JsonValue& jsonValue)
+H264Settings& H264Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adaptiveQuantization"))
   {
@@ -213,6 +219,13 @@ H264Settings& H264Settings::operator =(const JsonValue& jsonValue)
     m_codecProfile = H264CodecProfileMapper::GetH264CodecProfileForName(jsonValue.GetString("codecProfile"));
 
     m_codecProfileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dynamicSubGop"))
+  {
+    m_dynamicSubGop = H264DynamicSubGopMapper::GetH264DynamicSubGopForName(jsonValue.GetString("dynamicSubGop"));
+
+    m_dynamicSubGopHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("entropyEncoding"))
@@ -369,6 +382,13 @@ H264Settings& H264Settings::operator =(const JsonValue& jsonValue)
     m_qualityTuningLevelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("qvbrSettings"))
+  {
+    m_qvbrSettings = jsonValue.GetObject("qvbrSettings");
+
+    m_qvbrSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("rateControlMode"))
   {
     m_rateControlMode = H264RateControlModeMapper::GetH264RateControlModeForName(jsonValue.GetString("rateControlMode"));
@@ -472,6 +492,11 @@ JsonValue H264Settings::Jsonize() const
   if(m_codecProfileHasBeenSet)
   {
    payload.WithString("codecProfile", H264CodecProfileMapper::GetNameForH264CodecProfile(m_codecProfile));
+  }
+
+  if(m_dynamicSubGopHasBeenSet)
+  {
+   payload.WithString("dynamicSubGop", H264DynamicSubGopMapper::GetNameForH264DynamicSubGop(m_dynamicSubGop));
   }
 
   if(m_entropyEncodingHasBeenSet)
@@ -594,6 +619,12 @@ JsonValue H264Settings::Jsonize() const
   if(m_qualityTuningLevelHasBeenSet)
   {
    payload.WithString("qualityTuningLevel", H264QualityTuningLevelMapper::GetNameForH264QualityTuningLevel(m_qualityTuningLevel));
+  }
+
+  if(m_qvbrSettingsHasBeenSet)
+  {
+   payload.WithObject("qvbrSettings", m_qvbrSettings.Jsonize());
+
   }
 
   if(m_rateControlModeHasBeenSet)

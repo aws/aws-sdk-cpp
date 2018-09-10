@@ -36,7 +36,7 @@ StorageRuleType::StorageRuleType() :
 {
 }
 
-StorageRuleType::StorageRuleType(const JsonValue& jsonValue) : 
+StorageRuleType::StorageRuleType(JsonView jsonValue) : 
     m_storageAllocatedInBytes(0),
     m_storageAllocatedInBytesHasBeenSet(false),
     m_storageType(StorageType::NOT_SET),
@@ -45,7 +45,7 @@ StorageRuleType::StorageRuleType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StorageRuleType& StorageRuleType::operator =(const JsonValue& jsonValue)
+StorageRuleType& StorageRuleType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StorageAllocatedInBytes"))
   {

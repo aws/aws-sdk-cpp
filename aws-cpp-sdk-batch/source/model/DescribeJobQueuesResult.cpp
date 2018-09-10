@@ -37,10 +37,10 @@ DescribeJobQueuesResult::DescribeJobQueuesResult(const Aws::AmazonWebServiceResu
 
 DescribeJobQueuesResult& DescribeJobQueuesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("jobQueues"))
   {
-    Array<JsonValue> jobQueuesJsonList = jsonValue.GetArray("jobQueues");
+    Array<JsonView> jobQueuesJsonList = jsonValue.GetArray("jobQueues");
     for(unsigned jobQueuesIndex = 0; jobQueuesIndex < jobQueuesJsonList.GetLength(); ++jobQueuesIndex)
     {
       m_jobQueues.push_back(jobQueuesJsonList[jobQueuesIndex].AsObject());

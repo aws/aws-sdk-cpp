@@ -34,14 +34,14 @@ KeyUsage::KeyUsage() :
 {
 }
 
-KeyUsage::KeyUsage(const JsonValue& jsonValue) : 
+KeyUsage::KeyUsage(JsonView jsonValue) : 
     m_name(KeyUsageName::NOT_SET),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-KeyUsage& KeyUsage::operator =(const JsonValue& jsonValue)
+KeyUsage& KeyUsage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

@@ -37,7 +37,7 @@ DeleteDomainResult::DeleteDomainResult(const Aws::AmazonWebServiceResult<JsonVal
 
 DeleteDomainResult& DeleteDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetObject("operation");

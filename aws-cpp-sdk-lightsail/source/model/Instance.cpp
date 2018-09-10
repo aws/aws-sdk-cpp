@@ -52,7 +52,7 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(const JsonValue& jsonValue) : 
+Instance::Instance(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_supportCodeHasBeenSet(false),
@@ -77,7 +77,7 @@ Instance::Instance(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Instance& Instance::operator =(const JsonValue& jsonValue)
+Instance& Instance::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

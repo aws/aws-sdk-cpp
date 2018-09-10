@@ -34,14 +34,14 @@ Id3Insertion::Id3Insertion() :
 {
 }
 
-Id3Insertion::Id3Insertion(const JsonValue& jsonValue) : 
+Id3Insertion::Id3Insertion(JsonView jsonValue) : 
     m_id3HasBeenSet(false),
     m_timecodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Id3Insertion& Id3Insertion::operator =(const JsonValue& jsonValue)
+Id3Insertion& Id3Insertion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id3"))
   {

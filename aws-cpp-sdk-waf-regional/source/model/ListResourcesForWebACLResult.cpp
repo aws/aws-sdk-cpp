@@ -37,10 +37,10 @@ ListResourcesForWebACLResult::ListResourcesForWebACLResult(const Aws::AmazonWebS
 
 ListResourcesForWebACLResult& ListResourcesForWebACLResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceArns"))
   {
-    Array<JsonValue> resourceArnsJsonList = jsonValue.GetArray("ResourceArns");
+    Array<JsonView> resourceArnsJsonList = jsonValue.GetArray("ResourceArns");
     for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
     {
       m_resourceArns.push_back(resourceArnsJsonList[resourceArnsIndex].AsString());

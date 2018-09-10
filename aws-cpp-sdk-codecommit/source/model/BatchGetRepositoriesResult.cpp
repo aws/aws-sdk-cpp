@@ -37,10 +37,10 @@ BatchGetRepositoriesResult::BatchGetRepositoriesResult(const Aws::AmazonWebServi
 
 BatchGetRepositoriesResult& BatchGetRepositoriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("repositories"))
   {
-    Array<JsonValue> repositoriesJsonList = jsonValue.GetArray("repositories");
+    Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
     for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
     {
       m_repositories.push_back(repositoriesJsonList[repositoriesIndex].AsObject());
@@ -49,7 +49,7 @@ BatchGetRepositoriesResult& BatchGetRepositoriesResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("repositoriesNotFound"))
   {
-    Array<JsonValue> repositoriesNotFoundJsonList = jsonValue.GetArray("repositoriesNotFound");
+    Array<JsonView> repositoriesNotFoundJsonList = jsonValue.GetArray("repositoriesNotFound");
     for(unsigned repositoriesNotFoundIndex = 0; repositoriesNotFoundIndex < repositoriesNotFoundJsonList.GetLength(); ++repositoriesNotFoundIndex)
     {
       m_repositoriesNotFound.push_back(repositoriesNotFoundJsonList[repositoriesNotFoundIndex].AsString());

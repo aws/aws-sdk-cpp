@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * The accelerate configuration of the bucket.
+     * <p>The accelerate configuration of the bucket.</p>
      */
     inline const BucketAccelerateStatus& GetStatus() const{ return m_status; }
 
     /**
-     * The accelerate configuration of the bucket.
+     * <p>The accelerate configuration of the bucket.</p>
      */
     inline void SetStatus(const BucketAccelerateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * The accelerate configuration of the bucket.
+     * <p>The accelerate configuration of the bucket.</p>
      */
     inline void SetStatus(BucketAccelerateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * The accelerate configuration of the bucket.
+     * <p>The accelerate configuration of the bucket.</p>
      */
     inline AccelerateConfiguration& WithStatus(const BucketAccelerateStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * The accelerate configuration of the bucket.
+     * <p>The accelerate configuration of the bucket.</p>
      */
     inline AccelerateConfiguration& WithStatus(BucketAccelerateStatus&& value) { SetStatus(std::move(value)); return *this;}
 

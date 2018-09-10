@@ -44,63 +44,63 @@ namespace Model
 
 
     /**
-     * The name of the bucket.
+     * <p>The name of the bucket.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * The name of the bucket.
+     * <p>The name of the bucket.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * The name of the bucket.
+     * <p>The name of the bucket.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * The name of the bucket.
+     * <p>The name of the bucket.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * The name of the bucket.
+     * <p>The name of the bucket.</p>
      */
     inline Bucket& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * The name of the bucket.
+     * <p>The name of the bucket.</p>
      */
     inline Bucket& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * The name of the bucket.
+     * <p>The name of the bucket.</p>
      */
     inline Bucket& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * Date the bucket was created.
+     * <p>Date the bucket was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * Date the bucket was created.
+     * <p>Date the bucket was created.</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * Date the bucket was created.
+     * <p>Date the bucket was created.</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * Date the bucket was created.
+     * <p>Date the bucket was created.</p>
      */
     inline Bucket& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
-     * Date the bucket was created.
+     * <p>Date the bucket was created.</p>
      */
     inline Bucket& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 

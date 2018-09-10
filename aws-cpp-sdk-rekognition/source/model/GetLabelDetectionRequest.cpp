@@ -59,7 +59,7 @@ Aws::String GetLabelDetectionRequest::SerializePayload() const
    payload.WithString("SortBy", LabelDetectionSortByMapper::GetNameForLabelDetectionSortBy(m_sortBy));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetLabelDetectionRequest::GetRequestSpecificHeaders() const

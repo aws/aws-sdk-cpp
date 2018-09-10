@@ -37,10 +37,10 @@ ListAuthorizersResult::ListAuthorizersResult(const Aws::AmazonWebServiceResult<J
 
 ListAuthorizersResult& ListAuthorizersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("authorizers"))
   {
-    Array<JsonValue> authorizersJsonList = jsonValue.GetArray("authorizers");
+    Array<JsonView> authorizersJsonList = jsonValue.GetArray("authorizers");
     for(unsigned authorizersIndex = 0; authorizersIndex < authorizersJsonList.GetLength(); ++authorizersIndex)
     {
       m_authorizers.push_back(authorizersJsonList[authorizersIndex].AsObject());

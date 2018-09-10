@@ -51,11 +51,12 @@ namespace Model
      * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts
      * with <code>/division_abc/subdivision_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all groups.
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline const Aws::String& GetPathPrefix() const{ return m_pathPrefix; }
 
@@ -64,11 +65,12 @@ namespace Model
      * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts
      * with <code>/division_abc/subdivision_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all groups.
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline void SetPathPrefix(const Aws::String& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
@@ -77,11 +79,12 @@ namespace Model
      * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts
      * with <code>/division_abc/subdivision_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all groups.
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = std::move(value); }
 
@@ -90,11 +93,12 @@ namespace Model
      * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts
      * with <code>/division_abc/subdivision_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all groups.
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline void SetPathPrefix(const char* value) { m_pathPrefixHasBeenSet = true; m_pathPrefix.assign(value); }
 
@@ -103,11 +107,12 @@ namespace Model
      * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts
      * with <code>/division_abc/subdivision_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all groups.
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline ListGroupsRequest& WithPathPrefix(const Aws::String& value) { SetPathPrefix(value); return *this;}
 
@@ -116,11 +121,12 @@ namespace Model
      * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts
      * with <code>/division_abc/subdivision_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all groups.
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline ListGroupsRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(std::move(value)); return *this;}
 
@@ -129,11 +135,12 @@ namespace Model
      * <code>/division_abc/subdivision_xyz/</code> gets all groups whose path starts
      * with <code>/division_abc/subdivision_xyz/</code>.</p> <p>This parameter is
      * optional. If it is not included, it defaults to a slash (/), listing all groups.
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline ListGroupsRequest& WithPathPrefix(const char* value) { SetPathPrefix(value); return *this;}
 

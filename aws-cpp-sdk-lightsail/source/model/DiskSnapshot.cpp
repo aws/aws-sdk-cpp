@@ -46,7 +46,7 @@ DiskSnapshot::DiskSnapshot() :
 {
 }
 
-DiskSnapshot::DiskSnapshot(const JsonValue& jsonValue) : 
+DiskSnapshot::DiskSnapshot(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_supportCodeHasBeenSet(false),
@@ -65,7 +65,7 @@ DiskSnapshot::DiskSnapshot(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DiskSnapshot& DiskSnapshot::operator =(const JsonValue& jsonValue)
+DiskSnapshot& DiskSnapshot::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

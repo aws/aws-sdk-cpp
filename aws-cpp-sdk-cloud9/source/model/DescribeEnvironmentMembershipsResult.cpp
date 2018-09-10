@@ -37,10 +37,10 @@ DescribeEnvironmentMembershipsResult::DescribeEnvironmentMembershipsResult(const
 
 DescribeEnvironmentMembershipsResult& DescribeEnvironmentMembershipsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("memberships"))
   {
-    Array<JsonValue> membershipsJsonList = jsonValue.GetArray("memberships");
+    Array<JsonView> membershipsJsonList = jsonValue.GetArray("memberships");
     for(unsigned membershipsIndex = 0; membershipsIndex < membershipsJsonList.GetLength(); ++membershipsIndex)
     {
       m_memberships.push_back(membershipsJsonList[membershipsIndex].AsObject());

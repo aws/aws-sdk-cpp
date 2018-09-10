@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECR
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     LifecyclePolicyRuleAction();
-    LifecyclePolicyRuleAction(const Aws::Utils::Json::JsonValue& jsonValue);
-    LifecyclePolicyRuleAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LifecyclePolicyRuleAction(Aws::Utils::Json::JsonView jsonValue);
+    LifecyclePolicyRuleAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

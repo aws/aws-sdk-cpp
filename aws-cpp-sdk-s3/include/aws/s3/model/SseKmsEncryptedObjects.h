@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * Container for filter information of selection of KMS Encrypted S3
-   * objects.<p><h3>See Also:</h3>   <a
+   * <p>Container for filter information of selection of KMS Encrypted S3
+   * objects.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SseKmsEncryptedObjects">AWS
    * API Reference</a></p>
    */
@@ -49,32 +49,32 @@ namespace Model
 
 
     /**
-     * The replication for KMS encrypted S3 objects is disabled if status is not
-     * Enabled.
+     * <p>The replication for KMS encrypted S3 objects is disabled if status is not
+     * Enabled.</p>
      */
     inline const SseKmsEncryptedObjectsStatus& GetStatus() const{ return m_status; }
 
     /**
-     * The replication for KMS encrypted S3 objects is disabled if status is not
-     * Enabled.
+     * <p>The replication for KMS encrypted S3 objects is disabled if status is not
+     * Enabled.</p>
      */
     inline void SetStatus(const SseKmsEncryptedObjectsStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * The replication for KMS encrypted S3 objects is disabled if status is not
-     * Enabled.
+     * <p>The replication for KMS encrypted S3 objects is disabled if status is not
+     * Enabled.</p>
      */
     inline void SetStatus(SseKmsEncryptedObjectsStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * The replication for KMS encrypted S3 objects is disabled if status is not
-     * Enabled.
+     * <p>The replication for KMS encrypted S3 objects is disabled if status is not
+     * Enabled.</p>
      */
     inline SseKmsEncryptedObjects& WithStatus(const SseKmsEncryptedObjectsStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * The replication for KMS encrypted S3 objects is disabled if status is not
-     * Enabled.
+     * <p>The replication for KMS encrypted S3 objects is disabled if status is not
+     * Enabled.</p>
      */
     inline SseKmsEncryptedObjects& WithStatus(SseKmsEncryptedObjectsStatus&& value) { SetStatus(std::move(value)); return *this;}
 

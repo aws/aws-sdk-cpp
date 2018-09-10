@@ -37,10 +37,10 @@ GetObjectInformationResult::GetObjectInformationResult(const Aws::AmazonWebServi
 
 GetObjectInformationResult& GetObjectInformationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SchemaFacets"))
   {
-    Array<JsonValue> schemaFacetsJsonList = jsonValue.GetArray("SchemaFacets");
+    Array<JsonView> schemaFacetsJsonList = jsonValue.GetArray("SchemaFacets");
     for(unsigned schemaFacetsIndex = 0; schemaFacetsIndex < schemaFacetsJsonList.GetLength(); ++schemaFacetsIndex)
     {
       m_schemaFacets.push_back(schemaFacetsJsonList[schemaFacetsIndex].AsObject());

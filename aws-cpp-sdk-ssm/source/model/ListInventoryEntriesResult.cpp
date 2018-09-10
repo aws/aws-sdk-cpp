@@ -37,7 +37,7 @@ ListInventoryEntriesResult::ListInventoryEntriesResult(const Aws::AmazonWebServi
 
 ListInventoryEntriesResult& ListInventoryEntriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
@@ -64,10 +64,10 @@ ListInventoryEntriesResult& ListInventoryEntriesResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("Entries"))
   {
-    Array<JsonValue> entriesJsonList = jsonValue.GetArray("Entries");
+    Array<JsonView> entriesJsonList = jsonValue.GetArray("Entries");
     for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
     {
-      Aws::Map<Aws::String, JsonValue> inventoryItemEntryJsonMap = entriesJsonList[entriesIndex].GetAllObjects();
+      Aws::Map<Aws::String, JsonView> inventoryItemEntryJsonMap = entriesJsonList[entriesIndex].GetAllObjects();
       Aws::Map<Aws::String, Aws::String> inventoryItemEntryMap;
       for(auto& inventoryItemEntryItem : inventoryItemEntryJsonMap)
       {

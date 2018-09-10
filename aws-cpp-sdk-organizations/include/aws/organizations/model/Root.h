@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Organizations
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     Root();
-    Root(const Aws::Utils::Json::JsonValue& jsonValue);
-    Root& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Root(Aws::Utils::Json::JsonView jsonValue);
+    Root& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -225,43 +226,71 @@ namespace Model
 
     /**
      * <p>The types of policies that are currently enabled for the root and therefore
-     * can be attached to the root or to its OUs or accounts.</p>
+     * can be attached to the root or to its OUs or accounts.</p> <note> <p>Even if a
+     * policy type is shown as available in the organization, you can separately enable
+     * and disable them at the root level by using <a>EnablePolicyType</a> and
+     * <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to see the
+     * availability of the policy types in that organization.</p> </note>
      */
     inline const Aws::Vector<PolicyTypeSummary>& GetPolicyTypes() const{ return m_policyTypes; }
 
     /**
      * <p>The types of policies that are currently enabled for the root and therefore
-     * can be attached to the root or to its OUs or accounts.</p>
+     * can be attached to the root or to its OUs or accounts.</p> <note> <p>Even if a
+     * policy type is shown as available in the organization, you can separately enable
+     * and disable them at the root level by using <a>EnablePolicyType</a> and
+     * <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to see the
+     * availability of the policy types in that organization.</p> </note>
      */
     inline void SetPolicyTypes(const Aws::Vector<PolicyTypeSummary>& value) { m_policyTypesHasBeenSet = true; m_policyTypes = value; }
 
     /**
      * <p>The types of policies that are currently enabled for the root and therefore
-     * can be attached to the root or to its OUs or accounts.</p>
+     * can be attached to the root or to its OUs or accounts.</p> <note> <p>Even if a
+     * policy type is shown as available in the organization, you can separately enable
+     * and disable them at the root level by using <a>EnablePolicyType</a> and
+     * <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to see the
+     * availability of the policy types in that organization.</p> </note>
      */
     inline void SetPolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { m_policyTypesHasBeenSet = true; m_policyTypes = std::move(value); }
 
     /**
      * <p>The types of policies that are currently enabled for the root and therefore
-     * can be attached to the root or to its OUs or accounts.</p>
+     * can be attached to the root or to its OUs or accounts.</p> <note> <p>Even if a
+     * policy type is shown as available in the organization, you can separately enable
+     * and disable them at the root level by using <a>EnablePolicyType</a> and
+     * <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to see the
+     * availability of the policy types in that organization.</p> </note>
      */
     inline Root& WithPolicyTypes(const Aws::Vector<PolicyTypeSummary>& value) { SetPolicyTypes(value); return *this;}
 
     /**
      * <p>The types of policies that are currently enabled for the root and therefore
-     * can be attached to the root or to its OUs or accounts.</p>
+     * can be attached to the root or to its OUs or accounts.</p> <note> <p>Even if a
+     * policy type is shown as available in the organization, you can separately enable
+     * and disable them at the root level by using <a>EnablePolicyType</a> and
+     * <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to see the
+     * availability of the policy types in that organization.</p> </note>
      */
     inline Root& WithPolicyTypes(Aws::Vector<PolicyTypeSummary>&& value) { SetPolicyTypes(std::move(value)); return *this;}
 
     /**
      * <p>The types of policies that are currently enabled for the root and therefore
-     * can be attached to the root or to its OUs or accounts.</p>
+     * can be attached to the root or to its OUs or accounts.</p> <note> <p>Even if a
+     * policy type is shown as available in the organization, you can separately enable
+     * and disable them at the root level by using <a>EnablePolicyType</a> and
+     * <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to see the
+     * availability of the policy types in that organization.</p> </note>
      */
     inline Root& AddPolicyTypes(const PolicyTypeSummary& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
 
     /**
      * <p>The types of policies that are currently enabled for the root and therefore
-     * can be attached to the root or to its OUs or accounts.</p>
+     * can be attached to the root or to its OUs or accounts.</p> <note> <p>Even if a
+     * policy type is shown as available in the organization, you can separately enable
+     * and disable them at the root level by using <a>EnablePolicyType</a> and
+     * <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to see the
+     * availability of the policy types in that organization.</p> </note>
      */
     inline Root& AddPolicyTypes(PolicyTypeSummary&& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(std::move(value)); return *this; }
 

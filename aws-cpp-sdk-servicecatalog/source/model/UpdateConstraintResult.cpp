@@ -39,7 +39,7 @@ UpdateConstraintResult::UpdateConstraintResult(const Aws::AmazonWebServiceResult
 
 UpdateConstraintResult& UpdateConstraintResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConstraintDetail"))
   {
     m_constraintDetail = jsonValue.GetObject("ConstraintDetail");

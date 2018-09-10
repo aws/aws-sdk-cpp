@@ -48,106 +48,197 @@ namespace Model
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
+     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
+     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
+     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
+     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
+     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
+     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
+     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
+     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
+     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
+     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
+     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
+     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
+     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
+     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
+     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
+     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
+     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
+     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
+     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
+     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline PutParameterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
+     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
+     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
+     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
+     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline PutParameterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <note>
-     * <p>The maximum length constraint listed below includes capacity for additional
-     * system attributes that are not part of the name. The maximum length for the
-     * fully qualified parameter name is 1011 characters. </p> </note>
+     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
+     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
+     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
+     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
+     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
+     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
+     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
+     * capacity for additional system attributes that are not part of the name. The
+     * maximum length for the fully qualified parameter name is 1011 characters. </p>
+     * </note>
      */
     inline PutParameterRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Information about the parameter that you want to add to the system.</p>
+     * <p>Information about the parameter that you want to add to the system. Optional
+     * but recommended.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Information about the parameter that you want to add to the system.</p>
+     * <p>Information about the parameter that you want to add to the system. Optional
+     * but recommended.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Information about the parameter that you want to add to the system.</p>
+     * <p>Information about the parameter that you want to add to the system. Optional
+     * but recommended.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Information about the parameter that you want to add to the system.</p>
+     * <p>Information about the parameter that you want to add to the system. Optional
+     * but recommended.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Information about the parameter that you want to add to the system.</p>
+     * <p>Information about the parameter that you want to add to the system. Optional
+     * but recommended.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline PutParameterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Information about the parameter that you want to add to the system.</p>
+     * <p>Information about the parameter that you want to add to the system. Optional
+     * but recommended.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline PutParameterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the parameter that you want to add to the system.</p>
+     * <p>Information about the parameter that you want to add to the system. Optional
+     * but recommended.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline PutParameterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -189,77 +280,158 @@ namespace Model
 
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p>
+     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
+     * <code>StringList</code> must be separated by a comma (,). You can't use other
+     * punctuation or special character to escape items in the list. If you have a
+     * parameter value that requires a comma, then use the <code>String</code> data
+     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
+     * AWS CloudFormation templates or in the China Regions.</p> </note>
      */
     inline const ParameterType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p>
+     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
+     * <code>StringList</code> must be separated by a comma (,). You can't use other
+     * punctuation or special character to escape items in the list. If you have a
+     * parameter value that requires a comma, then use the <code>String</code> data
+     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
+     * AWS CloudFormation templates or in the China Regions.</p> </note>
      */
     inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p>
+     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
+     * <code>StringList</code> must be separated by a comma (,). You can't use other
+     * punctuation or special character to escape items in the list. If you have a
+     * parameter value that requires a comma, then use the <code>String</code> data
+     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
+     * AWS CloudFormation templates or in the China Regions.</p> </note>
      */
     inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p>
+     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
+     * <code>StringList</code> must be separated by a comma (,). You can't use other
+     * punctuation or special character to escape items in the list. If you have a
+     * parameter value that requires a comma, then use the <code>String</code> data
+     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
+     * AWS CloudFormation templates or in the China Regions.</p> </note>
      */
     inline PutParameterRequest& WithType(const ParameterType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of parameter that you want to add to the system.</p>
+     * <p>The type of parameter that you want to add to the system.</p> <p>Items in a
+     * <code>StringList</code> must be separated by a comma (,). You can't use other
+     * punctuation or special character to escape items in the list. If you have a
+     * parameter value that requires a comma, then use the <code>String</code> data
+     * type.</p> <note> <p> <code>SecureString</code> is not currently supported for
+     * AWS CloudFormation templates or in the China Regions.</p> </note>
      */
     inline PutParameterRequest& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
-     * the SecureString data type. If you don't specify a key ID, the system uses the
-     * default key associated with your AWS account.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter. Either the
+     * default AWS Key Management Service (AWS KMS) key automatically assigned to your
+     * AWS account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your AWS account.</p> <ul> <li>
+     * <p>To use your default AWS KMS key, choose the <code>SecureString</code> data
+     * type, and do <i>not</i> specify the <code>Key ID</code> when you create the
+     * parameter. The system automatically populates <code>Key ID</code> with your
+     * default KMS key.</p> </li> <li> <p>To use a custom KMS key, choose the
+     * <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
-     * the SecureString data type. If you don't specify a key ID, the system uses the
-     * default key associated with your AWS account.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter. Either the
+     * default AWS Key Management Service (AWS KMS) key automatically assigned to your
+     * AWS account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your AWS account.</p> <ul> <li>
+     * <p>To use your default AWS KMS key, choose the <code>SecureString</code> data
+     * type, and do <i>not</i> specify the <code>Key ID</code> when you create the
+     * parameter. The system automatically populates <code>Key ID</code> with your
+     * default KMS key.</p> </li> <li> <p>To use a custom KMS key, choose the
+     * <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p>
+     * </li> </ul>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
-     * the SecureString data type. If you don't specify a key ID, the system uses the
-     * default key associated with your AWS account.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter. Either the
+     * default AWS Key Management Service (AWS KMS) key automatically assigned to your
+     * AWS account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your AWS account.</p> <ul> <li>
+     * <p>To use your default AWS KMS key, choose the <code>SecureString</code> data
+     * type, and do <i>not</i> specify the <code>Key ID</code> when you create the
+     * parameter. The system automatically populates <code>Key ID</code> with your
+     * default KMS key.</p> </li> <li> <p>To use a custom KMS key, choose the
+     * <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p>
+     * </li> </ul>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
-     * the SecureString data type. If you don't specify a key ID, the system uses the
-     * default key associated with your AWS account.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter. Either the
+     * default AWS Key Management Service (AWS KMS) key automatically assigned to your
+     * AWS account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your AWS account.</p> <ul> <li>
+     * <p>To use your default AWS KMS key, choose the <code>SecureString</code> data
+     * type, and do <i>not</i> specify the <code>Key ID</code> when you create the
+     * parameter. The system automatically populates <code>Key ID</code> with your
+     * default KMS key.</p> </li> <li> <p>To use a custom KMS key, choose the
+     * <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p>
+     * </li> </ul>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
-     * the SecureString data type. If you don't specify a key ID, the system uses the
-     * default key associated with your AWS account.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter. Either the
+     * default AWS Key Management Service (AWS KMS) key automatically assigned to your
+     * AWS account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your AWS account.</p> <ul> <li>
+     * <p>To use your default AWS KMS key, choose the <code>SecureString</code> data
+     * type, and do <i>not</i> specify the <code>Key ID</code> when you create the
+     * parameter. The system automatically populates <code>Key ID</code> with your
+     * default KMS key.</p> </li> <li> <p>To use a custom KMS key, choose the
+     * <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p>
+     * </li> </ul>
      */
     inline PutParameterRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
-     * the SecureString data type. If you don't specify a key ID, the system uses the
-     * default key associated with your AWS account.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter. Either the
+     * default AWS Key Management Service (AWS KMS) key automatically assigned to your
+     * AWS account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your AWS account.</p> <ul> <li>
+     * <p>To use your default AWS KMS key, choose the <code>SecureString</code> data
+     * type, and do <i>not</i> specify the <code>Key ID</code> when you create the
+     * parameter. The system automatically populates <code>Key ID</code> with your
+     * default KMS key.</p> </li> <li> <p>To use a custom KMS key, choose the
+     * <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p>
+     * </li> </ul>
      */
     inline PutParameterRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS Key ID that you want to use to encrypt a parameter when you choose
-     * the SecureString data type. If you don't specify a key ID, the system uses the
-     * default key associated with your AWS account.</p>
+     * <p>The KMS Key ID that you want to use to encrypt a parameter. Either the
+     * default AWS Key Management Service (AWS KMS) key automatically assigned to your
+     * AWS account or a custom key. Required for parameters that use the
+     * <code>SecureString</code> data type.</p> <p>If you don't specify a key ID, the
+     * system uses the default key associated with your AWS account.</p> <ul> <li>
+     * <p>To use your default AWS KMS key, choose the <code>SecureString</code> data
+     * type, and do <i>not</i> specify the <code>Key ID</code> when you create the
+     * parameter. The system automatically populates <code>Key ID</code> with your
+     * default KMS key.</p> </li> <li> <p>To use a custom KMS key, choose the
+     * <code>SecureString</code> data type with the <code>Key ID</code> parameter.</p>
+     * </li> </ul>
      */
     inline PutParameterRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

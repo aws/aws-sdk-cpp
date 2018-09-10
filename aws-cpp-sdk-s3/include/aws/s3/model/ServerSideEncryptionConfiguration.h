@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * Container for server-side encryption configuration rules. Currently S3 supports
-   * one rule only.<p><h3>See Also:</h3>   <a
+   * <p>Container for server-side encryption configuration rules. Currently S3
+   * supports one rule only.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ServerSideEncryptionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -50,44 +50,44 @@ namespace Model
 
 
     /**
-     * Container for information about a particular server-side encryption
-     * configuration rule.
+     * <p>Container for information about a particular server-side encryption
+     * configuration rule.</p>
      */
     inline const Aws::Vector<ServerSideEncryptionRule>& GetRules() const{ return m_rules; }
 
     /**
-     * Container for information about a particular server-side encryption
-     * configuration rule.
+     * <p>Container for information about a particular server-side encryption
+     * configuration rule.</p>
      */
     inline void SetRules(const Aws::Vector<ServerSideEncryptionRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
-     * Container for information about a particular server-side encryption
-     * configuration rule.
+     * <p>Container for information about a particular server-side encryption
+     * configuration rule.</p>
      */
     inline void SetRules(Aws::Vector<ServerSideEncryptionRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
-     * Container for information about a particular server-side encryption
-     * configuration rule.
+     * <p>Container for information about a particular server-side encryption
+     * configuration rule.</p>
      */
     inline ServerSideEncryptionConfiguration& WithRules(const Aws::Vector<ServerSideEncryptionRule>& value) { SetRules(value); return *this;}
 
     /**
-     * Container for information about a particular server-side encryption
-     * configuration rule.
+     * <p>Container for information about a particular server-side encryption
+     * configuration rule.</p>
      */
     inline ServerSideEncryptionConfiguration& WithRules(Aws::Vector<ServerSideEncryptionRule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
-     * Container for information about a particular server-side encryption
-     * configuration rule.
+     * <p>Container for information about a particular server-side encryption
+     * configuration rule.</p>
      */
     inline ServerSideEncryptionConfiguration& AddRules(const ServerSideEncryptionRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
-     * Container for information about a particular server-side encryption
-     * configuration rule.
+     * <p>Container for information about a particular server-side encryption
+     * configuration rule.</p>
      */
     inline ServerSideEncryptionConfiguration& AddRules(ServerSideEncryptionRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 

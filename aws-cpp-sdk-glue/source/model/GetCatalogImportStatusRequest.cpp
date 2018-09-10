@@ -37,7 +37,7 @@ Aws::String GetCatalogImportStatusRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetCatalogImportStatusRequest::GetRequestSpecificHeaders() const

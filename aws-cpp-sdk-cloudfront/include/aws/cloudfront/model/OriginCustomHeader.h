@@ -36,7 +36,7 @@ namespace Model
    * <p>A complex type that contains <code>HeaderName</code> and
    * <code>HeaderValue</code> elements, if any, for this distribution. </p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/OriginCustomHeader">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/OriginCustomHeader">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API OriginCustomHeader

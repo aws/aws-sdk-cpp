@@ -34,14 +34,14 @@ Denied::Denied() :
 {
 }
 
-Denied::Denied(const JsonValue& jsonValue) : 
+Denied::Denied(JsonView jsonValue) : 
     m_implicitDenyHasBeenSet(false),
     m_explicitDenyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Denied& Denied::operator =(const JsonValue& jsonValue)
+Denied& Denied::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("implicitDeny"))
   {

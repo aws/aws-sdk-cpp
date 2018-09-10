@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     CancelStepsInfo();
-    CancelStepsInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    CancelStepsInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CancelStepsInfo(Aws::Utils::Json::JsonView jsonValue);
+    CancelStepsInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

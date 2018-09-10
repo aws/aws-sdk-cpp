@@ -44,7 +44,7 @@ Aws::String CheckDomainAvailabilityRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CheckDomainAvailabilityRequest::GetRequestSpecificHeaders() const

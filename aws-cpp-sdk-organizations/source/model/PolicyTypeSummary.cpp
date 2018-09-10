@@ -36,7 +36,7 @@ PolicyTypeSummary::PolicyTypeSummary() :
 {
 }
 
-PolicyTypeSummary::PolicyTypeSummary(const JsonValue& jsonValue) : 
+PolicyTypeSummary::PolicyTypeSummary(JsonView jsonValue) : 
     m_type(PolicyType::NOT_SET),
     m_typeHasBeenSet(false),
     m_status(PolicyTypeStatus::NOT_SET),
@@ -45,7 +45,7 @@ PolicyTypeSummary::PolicyTypeSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PolicyTypeSummary& PolicyTypeSummary::operator =(const JsonValue& jsonValue)
+PolicyTypeSummary& PolicyTypeSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

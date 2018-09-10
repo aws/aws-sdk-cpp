@@ -37,7 +37,7 @@ CreateDirectConnectGatewayResult::CreateDirectConnectGatewayResult(const Aws::Am
 
 CreateDirectConnectGatewayResult& CreateDirectConnectGatewayResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("directConnectGateway"))
   {
     m_directConnectGateway = jsonValue.GetObject("directConnectGateway");

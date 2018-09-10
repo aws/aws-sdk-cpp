@@ -35,7 +35,7 @@ XssMatchTuple::XssMatchTuple() :
 {
 }
 
-XssMatchTuple::XssMatchTuple(const JsonValue& jsonValue) : 
+XssMatchTuple::XssMatchTuple(JsonView jsonValue) : 
     m_fieldToMatchHasBeenSet(false),
     m_textTransformation(TextTransformation::NOT_SET),
     m_textTransformationHasBeenSet(false)
@@ -43,7 +43,7 @@ XssMatchTuple::XssMatchTuple(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-XssMatchTuple& XssMatchTuple::operator =(const JsonValue& jsonValue)
+XssMatchTuple& XssMatchTuple::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FieldToMatch"))
   {

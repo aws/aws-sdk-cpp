@@ -37,7 +37,7 @@ ListMigrationTasksResult::ListMigrationTasksResult(const Aws::AmazonWebServiceRe
 
 ListMigrationTasksResult& ListMigrationTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ ListMigrationTasksResult& ListMigrationTasksResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("MigrationTaskSummaryList"))
   {
-    Array<JsonValue> migrationTaskSummaryListJsonList = jsonValue.GetArray("MigrationTaskSummaryList");
+    Array<JsonView> migrationTaskSummaryListJsonList = jsonValue.GetArray("MigrationTaskSummaryList");
     for(unsigned migrationTaskSummaryListIndex = 0; migrationTaskSummaryListIndex < migrationTaskSummaryListJsonList.GetLength(); ++migrationTaskSummaryListIndex)
     {
       m_migrationTaskSummaryList.push_back(migrationTaskSummaryListJsonList[migrationTaskSummaryListIndex].AsObject());

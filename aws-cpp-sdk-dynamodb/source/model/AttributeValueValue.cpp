@@ -63,7 +63,7 @@ JsonValue AttributeValueNumeric::Jsonize() const
 // ByteBuffers
 //
 
-AttributeValueByteBuffer::AttributeValueByteBuffer(const JsonValue& jsonValue)
+AttributeValueByteBuffer::AttributeValueByteBuffer(JsonView jsonValue)
 {
     m_b = HashingUtils::Base64Decode(jsonValue.GetString("B"));
 }
@@ -84,9 +84,9 @@ JsonValue AttributeValueByteBuffer::Jsonize() const
 // String Sets
 //
 
-AttributeValueStringSet::AttributeValueStringSet(const JsonValue& jsonValue)
+AttributeValueStringSet::AttributeValueStringSet(JsonView jsonValue)
 {
-    Array<JsonValue> ss = jsonValue.GetArray("SS");
+    Array<JsonView> ss = jsonValue.GetArray("SS");
 
     for (unsigned i = 0; i < ss.GetLength(); ++i)
     {
@@ -129,9 +129,9 @@ JsonValue AttributeValueStringSet::Jsonize() const
 // Number Sets
 //
 
-AttributeValueNumberSet::AttributeValueNumberSet(const JsonValue& jsonValue)
+AttributeValueNumberSet::AttributeValueNumberSet(JsonView jsonValue)
 {
-    const Array<JsonValue>&& ns = jsonValue.GetArray("NS");
+    const Array<JsonView> ns = jsonValue.GetArray("NS");
 
     for (unsigned i = 0; i < ns.GetLength(); ++i)
     {
@@ -174,9 +174,9 @@ JsonValue AttributeValueNumberSet::Jsonize() const
 // ByteBuffer Sets
 //
 
-AttributeValueByteBufferSet::AttributeValueByteBufferSet(const JsonValue& jsonValue)
+AttributeValueByteBufferSet::AttributeValueByteBufferSet(JsonView jsonValue)
 {
-    const Array<JsonValue>&& bs = jsonValue.GetArray("BS");
+    const Array<JsonView> bs = jsonValue.GetArray("BS");
 
     for (unsigned i = 0; i < bs.GetLength(); ++i)
     {
@@ -219,17 +219,17 @@ JsonValue AttributeValueByteBufferSet::Jsonize() const
 // AttributeValue Map
 //
 
-AttributeValueMap::AttributeValueMap(const JsonValue& jsonValue)
+AttributeValueMap::AttributeValueMap(JsonView jsonValue)
 {
-    const Aws::Map<Aws::String, JsonValue> map = jsonValue.GetObject("M").GetAllObjects();
+    const Aws::Map<Aws::String, JsonView> map = jsonValue.GetObject("M").GetAllObjects();
 
     for (auto& item : map)
     {
         std::shared_ptr<AttributeValue> attributeValue = Aws::MakeShared<AttributeValue>("AttributeValue");
-        JsonValue itemValue = item.second;
+        JsonView itemValue = item.second;
         *attributeValue = itemValue;
 
-        m_m.insert(m_m.begin(), std::pair<Aws::String, const std::shared_ptr<AttributeValue>>(item.first, attributeValue));
+        m_m.emplace(item.first, std::move(attributeValue));
     }
 }
 
@@ -265,16 +265,13 @@ JsonValue AttributeValueMap::Jsonize() const
 {
     JsonValue value;
 
-    if (m_m.size() > 0)
+    JsonValue mapValue;
+    for (auto& mapItem : m_m)
     {
-        JsonValue mapValue;
-        for (auto& mapItem : m_m)
-        {
-            JsonValue mapEntry = mapItem.second->Jsonize();
-            mapValue.WithObject(mapItem.first, std::move(mapEntry));
-        }
-        value.WithObject("M", std::move(mapValue));
+        JsonValue mapEntry = mapItem.second->Jsonize();
+        mapValue.WithObject(mapItem.first, std::move(mapEntry));
     }
+    value.WithObject("M", std::move(mapValue));
 
     return value;
 }
@@ -283,14 +280,14 @@ JsonValue AttributeValueMap::Jsonize() const
 // AttributeValue List
 //
 
-AttributeValueList::AttributeValueList(const JsonValue& jsonValue)
+AttributeValueList::AttributeValueList(JsonView jsonValue)
 {
-    const Array<JsonValue> array = jsonValue.GetArray("L");
+    const Array<JsonView> array = jsonValue.GetArray("L");
 
     for (unsigned i = 0; i < array.GetLength(); ++i)
     {
         std::shared_ptr<AttributeValue> attributeValue = Aws::MakeShared<AttributeValue>("AttributeValue");
-        JsonValue itemValue = array[i];
+        JsonView itemValue = array[i];
         *attributeValue = itemValue;
         m_l.push_back(attributeValue);
     }
@@ -320,17 +317,14 @@ JsonValue AttributeValueList::Jsonize() const
 {
     JsonValue value;
 
-    if (m_l.size() > 0)
+    Array<JsonValue> list(m_l.size());
+
+    for (unsigned i = 0; i < m_l.size(); ++i)
     {
-        Array<JsonValue> list(m_l.size());
-
-        for (unsigned i = 0; i < m_l.size(); ++i)
-        {
-            list[i] = m_l[i]->Jsonize();
-        }
-
-        value.WithArray("L", std::move(list));
+        list[i] = m_l[i]->Jsonize();
     }
+
+    value.WithArray("L", std::move(list));
 
     return value;
 }

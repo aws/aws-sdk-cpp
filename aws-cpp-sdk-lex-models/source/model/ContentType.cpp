@@ -32,6 +32,7 @@ namespace Aws
 
         static const int PlainText_HASH = HashingUtils::HashString("PlainText");
         static const int SSML_HASH = HashingUtils::HashString("SSML");
+        static const int CustomPayload_HASH = HashingUtils::HashString("CustomPayload");
 
 
         ContentType GetContentTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == SSML_HASH)
           {
             return ContentType::SSML;
+          }
+          else if (hashCode == CustomPayload_HASH)
+          {
+            return ContentType::CustomPayload;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "PlainText";
           case ContentType::SSML:
             return "SSML";
+          case ContentType::CustomPayload:
+            return "CustomPayload";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

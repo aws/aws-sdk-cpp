@@ -22,6 +22,7 @@
 #include <aws/dynamodb/model/ProvisionedThroughputDescription.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/RestoreSummary.h>
+#include <aws/dynamodb/model/SSEDescription.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndexDescription.h>
@@ -35,6 +36,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -51,8 +53,8 @@ namespace Model
   {
   public:
     TableDescription();
-    TableDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    TableDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TableDescription(Aws::Utils::Json::JsonView jsonValue);
+    TableDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -1241,6 +1243,37 @@ namespace Model
      */
     inline TableDescription& WithRestoreSummary(RestoreSummary&& value) { SetRestoreSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The description of the server-side encryption status on the specified
+     * table.</p>
+     */
+    inline const SSEDescription& GetSSEDescription() const{ return m_sSEDescription; }
+
+    /**
+     * <p>The description of the server-side encryption status on the specified
+     * table.</p>
+     */
+    inline void SetSSEDescription(const SSEDescription& value) { m_sSEDescriptionHasBeenSet = true; m_sSEDescription = value; }
+
+    /**
+     * <p>The description of the server-side encryption status on the specified
+     * table.</p>
+     */
+    inline void SetSSEDescription(SSEDescription&& value) { m_sSEDescriptionHasBeenSet = true; m_sSEDescription = std::move(value); }
+
+    /**
+     * <p>The description of the server-side encryption status on the specified
+     * table.</p>
+     */
+    inline TableDescription& WithSSEDescription(const SSEDescription& value) { SetSSEDescription(value); return *this;}
+
+    /**
+     * <p>The description of the server-side encryption status on the specified
+     * table.</p>
+     */
+    inline TableDescription& WithSSEDescription(SSEDescription&& value) { SetSSEDescription(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -1290,6 +1323,9 @@ namespace Model
 
     RestoreSummary m_restoreSummary;
     bool m_restoreSummaryHasBeenSet;
+
+    SSEDescription m_sSEDescription;
+    bool m_sSEDescriptionHasBeenSet;
   };
 
 } // namespace Model

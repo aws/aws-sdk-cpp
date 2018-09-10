@@ -152,7 +152,7 @@ namespace Model
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
      * <ul> <li> <p>ANDROID_APP: An Android upload.</p> </li> <li> <p>IOS_APP: An iOS
-     * upload.</p> </li> <li> <p>WEB_APP: A web appliction upload.</p> </li> <li>
+     * upload.</p> </li> <li> <p>WEB_APP: A web application upload.</p> </li> <li>
      * <p>EXTERNAL_DATA: An external data upload.</p> </li> <li>
      * <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p>
      * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
@@ -176,7 +176,7 @@ namespace Model
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
      * <ul> <li> <p>ANDROID_APP: An Android upload.</p> </li> <li> <p>IOS_APP: An iOS
-     * upload.</p> </li> <li> <p>WEB_APP: A web appliction upload.</p> </li> <li>
+     * upload.</p> </li> <li> <p>WEB_APP: A web application upload.</p> </li> <li>
      * <p>EXTERNAL_DATA: An external data upload.</p> </li> <li>
      * <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p>
      * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
@@ -200,7 +200,7 @@ namespace Model
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
      * <ul> <li> <p>ANDROID_APP: An Android upload.</p> </li> <li> <p>IOS_APP: An iOS
-     * upload.</p> </li> <li> <p>WEB_APP: A web appliction upload.</p> </li> <li>
+     * upload.</p> </li> <li> <p>WEB_APP: A web application upload.</p> </li> <li>
      * <p>EXTERNAL_DATA: An external data upload.</p> </li> <li>
      * <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p>
      * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
@@ -224,7 +224,7 @@ namespace Model
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
      * <ul> <li> <p>ANDROID_APP: An Android upload.</p> </li> <li> <p>IOS_APP: An iOS
-     * upload.</p> </li> <li> <p>WEB_APP: A web appliction upload.</p> </li> <li>
+     * upload.</p> </li> <li> <p>WEB_APP: A web application upload.</p> </li> <li>
      * <p>EXTERNAL_DATA: An external data upload.</p> </li> <li>
      * <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p>
      * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test
@@ -248,7 +248,7 @@ namespace Model
     /**
      * <p>The upload's upload type.</p> <p>Must be one of the following values:</p>
      * <ul> <li> <p>ANDROID_APP: An Android upload.</p> </li> <li> <p>IOS_APP: An iOS
-     * upload.</p> </li> <li> <p>WEB_APP: A web appliction upload.</p> </li> <li>
+     * upload.</p> </li> <li> <p>WEB_APP: A web application upload.</p> </li> <li>
      * <p>EXTERNAL_DATA: An external data upload.</p> </li> <li>
      * <p>APPIUM_JAVA_JUNIT_TEST_PACKAGE: An Appium Java JUnit test package upload.</p>
      * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test

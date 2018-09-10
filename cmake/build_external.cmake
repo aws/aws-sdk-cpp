@@ -25,7 +25,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         #likely, some of the things here are unnecessary
         ExternalProject_Add(ZLIB
             SOURCE_DIR ${ZLIB_SOURCE_DIR}
-            URL http://zlib.net/zlib-1.2.11.tar.gz
+            URL https://sdk.amazonaws.com/cpp/builds/zlib-1.2.11.tar.gz
             URL_HASH "SHA256=c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1"
             PATCH_COMMAND ""
             CMAKE_ARGS

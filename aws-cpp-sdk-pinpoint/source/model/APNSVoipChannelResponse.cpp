@@ -49,7 +49,7 @@ APNSVoipChannelResponse::APNSVoipChannelResponse() :
 {
 }
 
-APNSVoipChannelResponse::APNSVoipChannelResponse(const JsonValue& jsonValue) : 
+APNSVoipChannelResponse::APNSVoipChannelResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_defaultAuthenticationMethodHasBeenSet(false),
@@ -71,7 +71,7 @@ APNSVoipChannelResponse::APNSVoipChannelResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-APNSVoipChannelResponse& APNSVoipChannelResponse::operator =(const JsonValue& jsonValue)
+APNSVoipChannelResponse& APNSVoipChannelResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
-#include <aws/mediaconvert/model/AudioDefaultSelection.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/AudioDefaultSelection.h>
 #include <aws/mediaconvert/model/LanguageCode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/RemixSettings.h>
@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -46,9 +47,52 @@ namespace Model
   {
   public:
     AudioSelector();
-    AudioSelector(const Aws::Utils::Json::JsonValue& jsonValue);
-    AudioSelector& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AudioSelector(Aws::Utils::Json::JsonView jsonValue);
+    AudioSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline AudioSelector& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline AudioSelector& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO
+     * 639-2 or ISO 639-3 three-letter language code
+     */
+    inline AudioSelector& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
 
 
     
@@ -68,44 +112,37 @@ namespace Model
 
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline const Aws::String& GetExternalAudioFileInput() const{ return m_externalAudioFileInput; }
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline void SetExternalAudioFileInput(const Aws::String& value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput = value; }
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline void SetExternalAudioFileInput(Aws::String&& value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput = std::move(value); }
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline void SetExternalAudioFileInput(const char* value) { m_externalAudioFileInputHasBeenSet = true; m_externalAudioFileInput.assign(value); }
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline AudioSelector& WithExternalAudioFileInput(const Aws::String& value) { SetExternalAudioFileInput(value); return *this;}
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline AudioSelector& WithExternalAudioFileInput(Aws::String&& value) { SetExternalAudioFileInput(std::move(value)); return *this;}
 
     /**
-     * Specifies audio data from an external file source. Auto populated when Infer
-     * External Filename is checked
+     * Specifies audio data from an external file source.
      */
     inline AudioSelector& WithExternalAudioFileInput(const char* value) { SetExternalAudioFileInput(value); return *this;}
 
@@ -184,58 +221,77 @@ namespace Model
 
 
     /**
-     * Applies only when input streams contain Dolby E. Enter the program ID (according
-     * to the metadata in the audio) of the Dolby E program to extract from the
-     * specified track. One program extracted per audio selector. To select multiple
-     * programs, create multiple selectors with the same Track and different Program
-     * numbers. "All channels" means to ignore the program IDs and include all the
-     * channels in this selector; useful if metadata is known to be incorrect.
+     * Use this setting for input streams that contain Dolby E, to have the service
+     * extract specific program data from the track. To select multiple programs,
+     * create multiple selectors with the same Track and different Program numbers. In
+     * the console, this setting is visible when you set Selector type to Track. Choose
+     * the program number from the dropdown list. If you are sending a JSON file,
+     * provide the program ID, which is part of the audio metadata. If your input file
+     * has incorrect metadata, you can choose All channels instead of a program number
+     * to have the service ignore the program IDs and include all the programs in the
+     * track.
      */
     inline int GetProgramSelection() const{ return m_programSelection; }
 
     /**
-     * Applies only when input streams contain Dolby E. Enter the program ID (according
-     * to the metadata in the audio) of the Dolby E program to extract from the
-     * specified track. One program extracted per audio selector. To select multiple
-     * programs, create multiple selectors with the same Track and different Program
-     * numbers. "All channels" means to ignore the program IDs and include all the
-     * channels in this selector; useful if metadata is known to be incorrect.
+     * Use this setting for input streams that contain Dolby E, to have the service
+     * extract specific program data from the track. To select multiple programs,
+     * create multiple selectors with the same Track and different Program numbers. In
+     * the console, this setting is visible when you set Selector type to Track. Choose
+     * the program number from the dropdown list. If you are sending a JSON file,
+     * provide the program ID, which is part of the audio metadata. If your input file
+     * has incorrect metadata, you can choose All channels instead of a program number
+     * to have the service ignore the program IDs and include all the programs in the
+     * track.
      */
     inline void SetProgramSelection(int value) { m_programSelectionHasBeenSet = true; m_programSelection = value; }
 
     /**
-     * Applies only when input streams contain Dolby E. Enter the program ID (according
-     * to the metadata in the audio) of the Dolby E program to extract from the
-     * specified track. One program extracted per audio selector. To select multiple
-     * programs, create multiple selectors with the same Track and different Program
-     * numbers. "All channels" means to ignore the program IDs and include all the
-     * channels in this selector; useful if metadata is known to be incorrect.
+     * Use this setting for input streams that contain Dolby E, to have the service
+     * extract specific program data from the track. To select multiple programs,
+     * create multiple selectors with the same Track and different Program numbers. In
+     * the console, this setting is visible when you set Selector type to Track. Choose
+     * the program number from the dropdown list. If you are sending a JSON file,
+     * provide the program ID, which is part of the audio metadata. If your input file
+     * has incorrect metadata, you can choose All channels instead of a program number
+     * to have the service ignore the program IDs and include all the programs in the
+     * track.
      */
     inline AudioSelector& WithProgramSelection(int value) { SetProgramSelection(value); return *this;}
 
 
     /**
-     * Advanced audio remixing settings.
+     * Use these settings to reorder the audio channels of one input to match those of
+     * another input. This allows you to combine the two files into a single output,
+     * one after the other.
      */
     inline const RemixSettings& GetRemixSettings() const{ return m_remixSettings; }
 
     /**
-     * Advanced audio remixing settings.
+     * Use these settings to reorder the audio channels of one input to match those of
+     * another input. This allows you to combine the two files into a single output,
+     * one after the other.
      */
     inline void SetRemixSettings(const RemixSettings& value) { m_remixSettingsHasBeenSet = true; m_remixSettings = value; }
 
     /**
-     * Advanced audio remixing settings.
+     * Use these settings to reorder the audio channels of one input to match those of
+     * another input. This allows you to combine the two files into a single output,
+     * one after the other.
      */
     inline void SetRemixSettings(RemixSettings&& value) { m_remixSettingsHasBeenSet = true; m_remixSettings = std::move(value); }
 
     /**
-     * Advanced audio remixing settings.
+     * Use these settings to reorder the audio channels of one input to match those of
+     * another input. This allows you to combine the two files into a single output,
+     * one after the other.
      */
     inline AudioSelector& WithRemixSettings(const RemixSettings& value) { SetRemixSettings(value); return *this;}
 
     /**
-     * Advanced audio remixing settings.
+     * Use these settings to reorder the audio channels of one input to match those of
+     * another input. This allows you to combine the two files into a single output,
+     * one after the other.
      */
     inline AudioSelector& WithRemixSettings(RemixSettings&& value) { SetRemixSettings(std::move(value)); return *this;}
 
@@ -257,48 +313,69 @@ namespace Model
 
 
     /**
-     * Identify the channel to include in this selector by entering the 1-based track
-     * index.  To combine several tracks, enter a comma-separated list, e.g. "1,2,3"
-     * for tracks 1-3.
+     * Identify a track from the input audio to include in this selector by entering
+     * the track index number. To include several tracks in a single audio selector,
+     * specify multiple tracks as follows. Using the console, enter a comma-separated
+     * list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying
+     * directly in your JSON job file, provide the track numbers in an array. For
+     * example, "tracks": [1,2,3].
      */
     inline const Aws::Vector<int>& GetTracks() const{ return m_tracks; }
 
     /**
-     * Identify the channel to include in this selector by entering the 1-based track
-     * index.  To combine several tracks, enter a comma-separated list, e.g. "1,2,3"
-     * for tracks 1-3.
+     * Identify a track from the input audio to include in this selector by entering
+     * the track index number. To include several tracks in a single audio selector,
+     * specify multiple tracks as follows. Using the console, enter a comma-separated
+     * list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying
+     * directly in your JSON job file, provide the track numbers in an array. For
+     * example, "tracks": [1,2,3].
      */
     inline void SetTracks(const Aws::Vector<int>& value) { m_tracksHasBeenSet = true; m_tracks = value; }
 
     /**
-     * Identify the channel to include in this selector by entering the 1-based track
-     * index.  To combine several tracks, enter a comma-separated list, e.g. "1,2,3"
-     * for tracks 1-3.
+     * Identify a track from the input audio to include in this selector by entering
+     * the track index number. To include several tracks in a single audio selector,
+     * specify multiple tracks as follows. Using the console, enter a comma-separated
+     * list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying
+     * directly in your JSON job file, provide the track numbers in an array. For
+     * example, "tracks": [1,2,3].
      */
     inline void SetTracks(Aws::Vector<int>&& value) { m_tracksHasBeenSet = true; m_tracks = std::move(value); }
 
     /**
-     * Identify the channel to include in this selector by entering the 1-based track
-     * index.  To combine several tracks, enter a comma-separated list, e.g. "1,2,3"
-     * for tracks 1-3.
+     * Identify a track from the input audio to include in this selector by entering
+     * the track index number. To include several tracks in a single audio selector,
+     * specify multiple tracks as follows. Using the console, enter a comma-separated
+     * list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying
+     * directly in your JSON job file, provide the track numbers in an array. For
+     * example, "tracks": [1,2,3].
      */
     inline AudioSelector& WithTracks(const Aws::Vector<int>& value) { SetTracks(value); return *this;}
 
     /**
-     * Identify the channel to include in this selector by entering the 1-based track
-     * index.  To combine several tracks, enter a comma-separated list, e.g. "1,2,3"
-     * for tracks 1-3.
+     * Identify a track from the input audio to include in this selector by entering
+     * the track index number. To include several tracks in a single audio selector,
+     * specify multiple tracks as follows. Using the console, enter a comma-separated
+     * list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying
+     * directly in your JSON job file, provide the track numbers in an array. For
+     * example, "tracks": [1,2,3].
      */
     inline AudioSelector& WithTracks(Aws::Vector<int>&& value) { SetTracks(std::move(value)); return *this;}
 
     /**
-     * Identify the channel to include in this selector by entering the 1-based track
-     * index.  To combine several tracks, enter a comma-separated list, e.g. "1,2,3"
-     * for tracks 1-3.
+     * Identify a track from the input audio to include in this selector by entering
+     * the track index number. To include several tracks in a single audio selector,
+     * specify multiple tracks as follows. Using the console, enter a comma-separated
+     * list. For examle, type "1,2,3" to include tracks 1 through 3. Specifying
+     * directly in your JSON job file, provide the track numbers in an array. For
+     * example, "tracks": [1,2,3].
      */
     inline AudioSelector& AddTracks(int value) { m_tracksHasBeenSet = true; m_tracks.push_back(value); return *this; }
 
   private:
+
+    Aws::String m_customLanguageCode;
+    bool m_customLanguageCodeHasBeenSet;
 
     AudioDefaultSelection m_defaultSelection;
     bool m_defaultSelectionHasBeenSet;

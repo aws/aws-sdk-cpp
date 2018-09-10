@@ -35,7 +35,7 @@ ComplianceExecutionSummary::ComplianceExecutionSummary() :
 {
 }
 
-ComplianceExecutionSummary::ComplianceExecutionSummary(const JsonValue& jsonValue) : 
+ComplianceExecutionSummary::ComplianceExecutionSummary(JsonView jsonValue) : 
     m_executionTimeHasBeenSet(false),
     m_executionIdHasBeenSet(false),
     m_executionTypeHasBeenSet(false)
@@ -43,7 +43,7 @@ ComplianceExecutionSummary::ComplianceExecutionSummary(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-ComplianceExecutionSummary& ComplianceExecutionSummary::operator =(const JsonValue& jsonValue)
+ComplianceExecutionSummary& ComplianceExecutionSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ExecutionTime"))
   {

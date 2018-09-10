@@ -36,7 +36,7 @@ Source::Source() :
 {
 }
 
-Source::Source(const JsonValue& jsonValue) : 
+Source::Source(JsonView jsonValue) : 
     m_owner(Owner::NOT_SET),
     m_ownerHasBeenSet(false),
     m_sourceIdentifierHasBeenSet(false),
@@ -45,7 +45,7 @@ Source::Source(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Source& Source::operator =(const JsonValue& jsonValue)
+Source& Source::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Owner"))
   {
@@ -63,7 +63,7 @@ Source& Source::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SourceDetails"))
   {
-    Array<JsonValue> sourceDetailsJsonList = jsonValue.GetArray("SourceDetails");
+    Array<JsonView> sourceDetailsJsonList = jsonValue.GetArray("SourceDetails");
     for(unsigned sourceDetailsIndex = 0; sourceDetailsIndex < sourceDetailsJsonList.GetLength(); ++sourceDetailsIndex)
     {
       m_sourceDetails.push_back(sourceDetailsJsonList[sourceDetailsIndex].AsObject());

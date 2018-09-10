@@ -36,7 +36,7 @@ SuggestionMatch::SuggestionMatch() :
 {
 }
 
-SuggestionMatch::SuggestionMatch(const JsonValue& jsonValue) : 
+SuggestionMatch::SuggestionMatch(JsonView jsonValue) : 
     m_suggestionHasBeenSet(false),
     m_score(0),
     m_scoreHasBeenSet(false),
@@ -45,7 +45,7 @@ SuggestionMatch::SuggestionMatch(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SuggestionMatch& SuggestionMatch::operator =(const JsonValue& jsonValue)
+SuggestionMatch& SuggestionMatch::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("suggestion"))
   {

@@ -37,7 +37,7 @@ GenerateClientCertificateResult::GenerateClientCertificateResult(const Aws::Amaz
 
 GenerateClientCertificateResult& GenerateClientCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("clientCertificateId"))
   {
     m_clientCertificateId = jsonValue.GetString("clientCertificateId");

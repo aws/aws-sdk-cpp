@@ -37,7 +37,7 @@ UpdateMatchmakingConfigurationResult::UpdateMatchmakingConfigurationResult(const
 
 UpdateMatchmakingConfigurationResult& UpdateMatchmakingConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Configuration"))
   {
     m_configuration = jsonValue.GetObject("Configuration");

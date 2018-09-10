@@ -34,14 +34,14 @@ ResourceServerScopeType::ResourceServerScopeType() :
 {
 }
 
-ResourceServerScopeType::ResourceServerScopeType(const JsonValue& jsonValue) : 
+ResourceServerScopeType::ResourceServerScopeType(JsonView jsonValue) : 
     m_scopeNameHasBeenSet(false),
     m_scopeDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResourceServerScopeType& ResourceServerScopeType::operator =(const JsonValue& jsonValue)
+ResourceServerScopeType& ResourceServerScopeType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ScopeName"))
   {

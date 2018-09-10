@@ -42,6 +42,7 @@
 #include <aws/elasticbeanstalk/model/DeleteConfigurationTemplateRequest.h>
 #include <aws/elasticbeanstalk/model/DeleteEnvironmentConfigurationRequest.h>
 #include <aws/elasticbeanstalk/model/DeletePlatformVersionRequest.h>
+#include <aws/elasticbeanstalk/model/DescribeAccountAttributesRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeApplicationVersionsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeApplicationsRequest.h>
 #include <aws/elasticbeanstalk/model/DescribeConfigurationOptionsRequest.h>
@@ -669,6 +670,41 @@ void ElasticBeanstalkClient::DeletePlatformVersionAsync(const DeletePlatformVers
 void ElasticBeanstalkClient::DeletePlatformVersionAsyncHelper(const DeletePlatformVersionRequest& request, const DeletePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePlatformVersion(request), context);
+}
+
+DescribeAccountAttributesOutcome ElasticBeanstalkClient::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAccountAttributesOutcome(DescribeAccountAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAccountAttributesOutcome(outcome.GetError());
+  }
+}
+
+DescribeAccountAttributesOutcomeCallable ElasticBeanstalkClient::DescribeAccountAttributesCallable(const DescribeAccountAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAccountAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccountAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticBeanstalkClient::DescribeAccountAttributesAsync(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticBeanstalkClient::DescribeAccountAttributesAsyncHelper(const DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAccountAttributes(request), context);
 }
 
 DescribeApplicationVersionsOutcome ElasticBeanstalkClient::DescribeApplicationVersions(const DescribeApplicationVersionsRequest& request) const

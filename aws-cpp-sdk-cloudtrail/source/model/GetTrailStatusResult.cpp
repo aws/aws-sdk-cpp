@@ -39,7 +39,7 @@ GetTrailStatusResult::GetTrailStatusResult(const Aws::AmazonWebServiceResult<Jso
 
 GetTrailStatusResult& GetTrailStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IsLogging"))
   {
     m_isLogging = jsonValue.GetBool("IsLogging");

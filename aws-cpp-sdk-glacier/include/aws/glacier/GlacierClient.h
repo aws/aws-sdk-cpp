@@ -65,11 +65,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -236,15 +231,15 @@ namespace Model
    * operating and scaling storage to AWS, so they don't have to worry about capacity
    * planning, hardware provisioning, data replication, hardware failure and
    * recovery, or time-consuming hardware migrations.</p> <p>Amazon Glacier is a
-   * great storage choice when low storage cost is paramount, your data is rarely
-   * retrieved, and retrieval latency of several hours is acceptable. If your
-   * application requires fast or frequent access to your data, consider using Amazon
-   * S3. For more information, see <a href="http://aws.amazon.com/s3/">Amazon Simple
-   * Storage Service (Amazon S3)</a>.</p> <p>You can store any kind of data in any
-   * format. There is no maximum limit on the total amount of data you can store in
-   * Amazon Glacier.</p> <p>If you are a first-time user of Amazon Glacier, we
-   * recommend that you begin by reading the following sections in the <i>Amazon
-   * Glacier Developer Guide</i>:</p> <ul> <li> <p> <a
+   * great storage choice when low storage cost is paramount and your data is rarely
+   * retrieved. If your application requires fast or frequent access to your data,
+   * consider using Amazon S3. For more information, see <a
+   * href="http://aws.amazon.com/s3/">Amazon Simple Storage Service (Amazon
+   * S3)</a>.</p> <p>You can store any kind of data in any format. There is no
+   * maximum limit on the total amount of data you can store in Amazon Glacier.</p>
+   * <p>If you are a first-time user of Amazon Glacier, we recommend that you begin
+   * by reading the following sections in the <i>Amazon Glacier Developer
+   * Guide</i>:</p> <ul> <li> <p> <a
    * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html">What
    * is Amazon Glacier</a> - This section of the Developer Guide describes the
    * underlying data model, the operations it supports, and the AWS SDKs that you can
@@ -280,7 +275,7 @@ namespace Model
 
         virtual ~GlacierClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "glacier"; }
+        inline virtual const char* GetServiceClientName() const override { return "Glacier"; }
 
 
         /**
@@ -1012,7 +1007,7 @@ namespace Model
          * Identity and Access Management (IAM) users don't have any permissions by
          * default. You must grant them explicit permission to perform specific actions.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access
+         * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
          * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For
          * conceptual information and underlying REST API, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
@@ -1034,7 +1029,7 @@ namespace Model
          * Identity and Access Management (IAM) users don't have any permissions by
          * default. You must grant them explicit permission to perform specific actions.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access
+         * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
          * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For
          * conceptual information and underlying REST API, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
@@ -1058,7 +1053,7 @@ namespace Model
          * Identity and Access Management (IAM) users don't have any permissions by
          * default. You must grant them explicit permission to perform specific actions.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access
+         * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access
          * Control Using AWS Identity and Access Management (IAM)</a>.</p> <p> For
          * conceptual information and underlying REST API, see <a
          * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
@@ -1893,9 +1888,9 @@ namespace Model
          * value for that job that you obtained from a previous List Jobs request.</p>
          * <p>You can set a maximum limit for the number of jobs returned in the response
          * by specifying the <code>limit</code> parameter in the request. The default limit
-         * is 1000. The number of jobs returned might be fewer than the limit, but the
-         * number of returned jobs never exceeds the limit.</p> <p>Additionally, you can
-         * filter the jobs list returned by specifying the optional <code>statuscode</code>
+         * is 50. The number of jobs returned might be fewer than the limit, but the number
+         * of returned jobs never exceeds the limit.</p> <p>Additionally, you can filter
+         * the jobs list returned by specifying the optional <code>statuscode</code>
          * parameter or <code>completed</code> parameter, or both. Using the
          * <code>statuscode</code> parameter, you can specify to return only jobs that
          * match either the <code>InProgress</code>, <code>Succeeded</code>, or
@@ -1931,9 +1926,9 @@ namespace Model
          * value for that job that you obtained from a previous List Jobs request.</p>
          * <p>You can set a maximum limit for the number of jobs returned in the response
          * by specifying the <code>limit</code> parameter in the request. The default limit
-         * is 1000. The number of jobs returned might be fewer than the limit, but the
-         * number of returned jobs never exceeds the limit.</p> <p>Additionally, you can
-         * filter the jobs list returned by specifying the optional <code>statuscode</code>
+         * is 50. The number of jobs returned might be fewer than the limit, but the number
+         * of returned jobs never exceeds the limit.</p> <p>Additionally, you can filter
+         * the jobs list returned by specifying the optional <code>statuscode</code>
          * parameter or <code>completed</code> parameter, or both. Using the
          * <code>statuscode</code> parameter, you can specify to return only jobs that
          * match either the <code>InProgress</code>, <code>Succeeded</code>, or
@@ -1971,9 +1966,9 @@ namespace Model
          * value for that job that you obtained from a previous List Jobs request.</p>
          * <p>You can set a maximum limit for the number of jobs returned in the response
          * by specifying the <code>limit</code> parameter in the request. The default limit
-         * is 1000. The number of jobs returned might be fewer than the limit, but the
-         * number of returned jobs never exceeds the limit.</p> <p>Additionally, you can
-         * filter the jobs list returned by specifying the optional <code>statuscode</code>
+         * is 50. The number of jobs returned might be fewer than the limit, but the number
+         * of returned jobs never exceeds the limit.</p> <p>Additionally, you can filter
+         * the jobs list returned by specifying the optional <code>statuscode</code>
          * parameter or <code>completed</code> parameter, or both. Using the
          * <code>statuscode</code> parameter, you can specify to return only jobs that
          * match either the <code>InProgress</code>, <code>Succeeded</code>, or
@@ -1996,8 +1991,8 @@ namespace Model
          * an <a>InitiateMultipartUpload</a> request, but has not yet been completed or
          * aborted. The list returned in the List Multipart Upload response has no
          * guaranteed order. </p> <p>The List Multipart Uploads operation supports
-         * pagination. By default, this operation returns up to 1,000 multipart uploads in
-         * the response. You should always check the response for a <code>marker</code> at
+         * pagination. By default, this operation returns up to 50 multipart uploads in the
+         * response. You should always check the response for a <code>marker</code> at
          * which to continue the list; if there are no more items the <code>marker</code>
          * is <code>null</code>. To return a list of multipart uploads that begins at a
          * specific upload, set the <code>marker</code> request parameter to the value you
@@ -2030,8 +2025,8 @@ namespace Model
          * an <a>InitiateMultipartUpload</a> request, but has not yet been completed or
          * aborted. The list returned in the List Multipart Upload response has no
          * guaranteed order. </p> <p>The List Multipart Uploads operation supports
-         * pagination. By default, this operation returns up to 1,000 multipart uploads in
-         * the response. You should always check the response for a <code>marker</code> at
+         * pagination. By default, this operation returns up to 50 multipart uploads in the
+         * response. You should always check the response for a <code>marker</code> at
          * which to continue the list; if there are no more items the <code>marker</code>
          * is <code>null</code>. To return a list of multipart uploads that begins at a
          * specific upload, set the <code>marker</code> request parameter to the value you
@@ -2066,8 +2061,8 @@ namespace Model
          * an <a>InitiateMultipartUpload</a> request, but has not yet been completed or
          * aborted. The list returned in the List Multipart Upload response has no
          * guaranteed order. </p> <p>The List Multipart Uploads operation supports
-         * pagination. By default, this operation returns up to 1,000 multipart uploads in
-         * the response. You should always check the response for a <code>marker</code> at
+         * pagination. By default, this operation returns up to 50 multipart uploads in the
+         * response. You should always check the response for a <code>marker</code> at
          * which to continue the list; if there are no more items the <code>marker</code>
          * is <code>null</code>. To return a list of multipart uploads that begins at a
          * specific upload, set the <code>marker</code> request parameter to the value you
@@ -2103,7 +2098,7 @@ namespace Model
          * <a>CompleteMultipartUpload</a>. List Parts returns an error for completed
          * uploads. The list returned in the List Parts response is sorted by part range.
          * </p> <p>The List Parts operation supports pagination. By default, this operation
-         * returns up to 1,000 uploaded parts in the response. You should always check the
+         * returns up to 50 uploaded parts in the response. You should always check the
          * response for a <code>marker</code> at which to continue the list; if there are
          * no more items the <code>marker</code> is <code>null</code>. To return a list of
          * parts that begins at a specific part, set the <code>marker</code> request
@@ -2134,7 +2129,7 @@ namespace Model
          * <a>CompleteMultipartUpload</a>. List Parts returns an error for completed
          * uploads. The list returned in the List Parts response is sorted by part range.
          * </p> <p>The List Parts operation supports pagination. By default, this operation
-         * returns up to 1,000 uploaded parts in the response. You should always check the
+         * returns up to 50 uploaded parts in the response. You should always check the
          * response for a <code>marker</code> at which to continue the list; if there are
          * no more items the <code>marker</code> is <code>null</code>. To return a list of
          * parts that begins at a specific part, set the <code>marker</code> request
@@ -2167,7 +2162,7 @@ namespace Model
          * <a>CompleteMultipartUpload</a>. List Parts returns an error for completed
          * uploads. The list returned in the List Parts response is sorted by part range.
          * </p> <p>The List Parts operation supports pagination. By default, this operation
-         * returns up to 1,000 uploaded parts in the response. You should always check the
+         * returns up to 50 uploaded parts in the response. You should always check the
          * response for a <code>marker</code> at which to continue the list; if there are
          * no more items the <code>marker</code> is <code>null</code>. To return a list of
          * parts that begins at a specific part, set the <code>marker</code> request
@@ -2258,9 +2253,9 @@ namespace Model
         /**
          * <p>This operation lists all vaults owned by the calling user's account. The list
          * returned in the response is ASCII-sorted by vault name.</p> <p>By default, this
-         * operation returns up to 1,000 items. If there are more vaults to list, the
-         * response <code>marker</code> field contains the vault Amazon Resource Name (ARN)
-         * at which to continue the list with a new List Vaults request; otherwise, the
+         * operation returns up to 10 items. If there are more vaults to list, the response
+         * <code>marker</code> field contains the vault Amazon Resource Name (ARN) at which
+         * to continue the list with a new List Vaults request; otherwise, the
          * <code>marker</code> field is <code>null</code>. To return a list of vaults that
          * begins at a specific vault, set the <code>marker</code> request parameter to the
          * vault ARN you obtained from a previous List Vaults request. You can also limit
@@ -2286,9 +2281,9 @@ namespace Model
         /**
          * <p>This operation lists all vaults owned by the calling user's account. The list
          * returned in the response is ASCII-sorted by vault name.</p> <p>By default, this
-         * operation returns up to 1,000 items. If there are more vaults to list, the
-         * response <code>marker</code> field contains the vault Amazon Resource Name (ARN)
-         * at which to continue the list with a new List Vaults request; otherwise, the
+         * operation returns up to 10 items. If there are more vaults to list, the response
+         * <code>marker</code> field contains the vault Amazon Resource Name (ARN) at which
+         * to continue the list with a new List Vaults request; otherwise, the
          * <code>marker</code> field is <code>null</code>. To return a list of vaults that
          * begins at a specific vault, set the <code>marker</code> request parameter to the
          * vault ARN you obtained from a previous List Vaults request. You can also limit
@@ -2316,9 +2311,9 @@ namespace Model
         /**
          * <p>This operation lists all vaults owned by the calling user's account. The list
          * returned in the response is ASCII-sorted by vault name.</p> <p>By default, this
-         * operation returns up to 1,000 items. If there are more vaults to list, the
-         * response <code>marker</code> field contains the vault Amazon Resource Name (ARN)
-         * at which to continue the list with a new List Vaults request; otherwise, the
+         * operation returns up to 10 items. If there are more vaults to list, the response
+         * <code>marker</code> field contains the vault Amazon Resource Name (ARN) at which
+         * to continue the list with a new List Vaults request; otherwise, the
          * <code>marker</code> field is <code>null</code>. To return a list of vaults that
          * begins at a specific vault, set the <code>marker</code> request parameter to the
          * vault ARN you obtained from a previous List Vaults request. You can also limit

@@ -37,7 +37,7 @@ GetDevEndpointResult::GetDevEndpointResult(const Aws::AmazonWebServiceResult<Jso
 
 GetDevEndpointResult& GetDevEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DevEndpoint"))
   {
     m_devEndpoint = jsonValue.GetObject("DevEndpoint");

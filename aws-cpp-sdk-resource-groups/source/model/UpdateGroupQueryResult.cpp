@@ -37,7 +37,7 @@ UpdateGroupQueryResult::UpdateGroupQueryResult(const Aws::AmazonWebServiceResult
 
 UpdateGroupQueryResult& UpdateGroupQueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GroupQuery"))
   {
     m_groupQuery = jsonValue.GetObject("GroupQuery");

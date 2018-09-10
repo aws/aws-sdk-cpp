@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/pinpoint/model/SetDimension.h>
+#include <aws/pinpoint/model/GPSPointDimension.h>
 #include <utility>
 
 namespace Aws
@@ -25,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -41,8 +43,8 @@ namespace Model
   {
   public:
     SegmentLocation();
-    SegmentLocation(const Aws::Utils::Json::JsonValue& jsonValue);
-    SegmentLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SegmentLocation(Aws::Utils::Json::JsonView jsonValue);
+    SegmentLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -71,10 +73,39 @@ namespace Model
      */
     inline SegmentLocation& WithCountry(SetDimension&& value) { SetCountry(std::move(value)); return *this;}
 
+
+    /**
+     * The GPS Point dimension.
+     */
+    inline const GPSPointDimension& GetGPSPoint() const{ return m_gPSPoint; }
+
+    /**
+     * The GPS Point dimension.
+     */
+    inline void SetGPSPoint(const GPSPointDimension& value) { m_gPSPointHasBeenSet = true; m_gPSPoint = value; }
+
+    /**
+     * The GPS Point dimension.
+     */
+    inline void SetGPSPoint(GPSPointDimension&& value) { m_gPSPointHasBeenSet = true; m_gPSPoint = std::move(value); }
+
+    /**
+     * The GPS Point dimension.
+     */
+    inline SegmentLocation& WithGPSPoint(const GPSPointDimension& value) { SetGPSPoint(value); return *this;}
+
+    /**
+     * The GPS Point dimension.
+     */
+    inline SegmentLocation& WithGPSPoint(GPSPointDimension&& value) { SetGPSPoint(std::move(value)); return *this;}
+
   private:
 
     SetDimension m_country;
     bool m_countryHasBeenSet;
+
+    GPSPointDimension m_gPSPoint;
+    bool m_gPSPointHasBeenSet;
   };
 
 } // namespace Model

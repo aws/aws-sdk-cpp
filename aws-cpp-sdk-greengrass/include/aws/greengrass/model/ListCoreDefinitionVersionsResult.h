@@ -88,37 +88,37 @@ namespace Model
 
 
     /**
-     * Versions
+     * Information about a version.
      */
     inline const Aws::Vector<VersionInformation>& GetVersions() const{ return m_versions; }
 
     /**
-     * Versions
+     * Information about a version.
      */
     inline void SetVersions(const Aws::Vector<VersionInformation>& value) { m_versions = value; }
 
     /**
-     * Versions
+     * Information about a version.
      */
     inline void SetVersions(Aws::Vector<VersionInformation>&& value) { m_versions = std::move(value); }
 
     /**
-     * Versions
+     * Information about a version.
      */
     inline ListCoreDefinitionVersionsResult& WithVersions(const Aws::Vector<VersionInformation>& value) { SetVersions(value); return *this;}
 
     /**
-     * Versions
+     * Information about a version.
      */
     inline ListCoreDefinitionVersionsResult& WithVersions(Aws::Vector<VersionInformation>&& value) { SetVersions(std::move(value)); return *this;}
 
     /**
-     * Versions
+     * Information about a version.
      */
     inline ListCoreDefinitionVersionsResult& AddVersions(const VersionInformation& value) { m_versions.push_back(value); return *this; }
 
     /**
-     * Versions
+     * Information about a version.
      */
     inline ListCoreDefinitionVersionsResult& AddVersions(VersionInformation&& value) { m_versions.push_back(std::move(value)); return *this; }
 

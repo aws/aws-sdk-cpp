@@ -95,7 +95,10 @@ DBInstance::DBInstance() :
     m_performanceInsightsEnabled(false),
     m_performanceInsightsEnabledHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_enabledCloudwatchLogsExportsHasBeenSet(false)
+    m_performanceInsightsRetentionPeriod(0),
+    m_performanceInsightsRetentionPeriodHasBeenSet(false),
+    m_enabledCloudwatchLogsExportsHasBeenSet(false),
+    m_processorFeaturesHasBeenSet(false)
 {
 }
 
@@ -164,7 +167,10 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_performanceInsightsEnabled(false),
     m_performanceInsightsEnabledHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_enabledCloudwatchLogsExportsHasBeenSet(false)
+    m_performanceInsightsRetentionPeriod(0),
+    m_performanceInsightsRetentionPeriodHasBeenSet(false),
+    m_enabledCloudwatchLogsExportsHasBeenSet(false),
+    m_processorFeaturesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -529,6 +535,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_performanceInsightsKMSKeyId = StringUtils::Trim(performanceInsightsKMSKeyIdNode.GetText().c_str());
       m_performanceInsightsKMSKeyIdHasBeenSet = true;
     }
+    XmlNode performanceInsightsRetentionPeriodNode = resultNode.FirstChild("PerformanceInsightsRetentionPeriod");
+    if(!performanceInsightsRetentionPeriodNode.IsNull())
+    {
+      m_performanceInsightsRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(performanceInsightsRetentionPeriodNode.GetText().c_str()).c_str());
+      m_performanceInsightsRetentionPeriodHasBeenSet = true;
+    }
     XmlNode enabledCloudwatchLogsExportsNode = resultNode.FirstChild("EnabledCloudwatchLogsExports");
     if(!enabledCloudwatchLogsExportsNode.IsNull())
     {
@@ -540,6 +552,18 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       }
 
       m_enabledCloudwatchLogsExportsHasBeenSet = true;
+    }
+    XmlNode processorFeaturesNode = resultNode.FirstChild("ProcessorFeatures");
+    if(!processorFeaturesNode.IsNull())
+    {
+      XmlNode processorFeaturesMember = processorFeaturesNode.FirstChild("ProcessorFeature");
+      while(!processorFeaturesMember.IsNull())
+      {
+        m_processorFeatures.push_back(processorFeaturesMember);
+        processorFeaturesMember = processorFeaturesMember.NextNode("ProcessorFeature");
+      }
+
+      m_processorFeaturesHasBeenSet = true;
     }
   }
 
@@ -853,12 +877,28 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
   }
 
+  if(m_performanceInsightsRetentionPeriodHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
+  }
+
   if(m_enabledCloudwatchLogsExportsHasBeenSet)
   {
       unsigned enabledCloudwatchLogsExportsIdx = 1;
       for(auto& item : m_enabledCloudwatchLogsExports)
       {
         oStream << location << index << locationValue << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
+  if(m_processorFeaturesHasBeenSet)
+  {
+      unsigned processorFeaturesIdx = 1;
+      for(auto& item : m_processorFeatures)
+      {
+        Aws::StringStream processorFeaturesSs;
+        processorFeaturesSs << location << index << locationValue << ".ProcessorFeature." << processorFeaturesIdx++;
+        item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
       }
   }
 
@@ -1120,12 +1160,26 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   {
       oStream << location << ".PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
   }
+  if(m_performanceInsightsRetentionPeriodHasBeenSet)
+  {
+      oStream << location << ".PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
+  }
   if(m_enabledCloudwatchLogsExportsHasBeenSet)
   {
       unsigned enabledCloudwatchLogsExportsIdx = 1;
       for(auto& item : m_enabledCloudwatchLogsExports)
       {
         oStream << location << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_processorFeaturesHasBeenSet)
+  {
+      unsigned processorFeaturesIdx = 1;
+      for(auto& item : m_processorFeatures)
+      {
+        Aws::StringStream processorFeaturesSs;
+        processorFeaturesSs << location <<  ".ProcessorFeature." << processorFeaturesIdx++;
+        item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
       }
   }
 }

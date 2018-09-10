@@ -35,7 +35,7 @@ SetDimension::SetDimension() :
 {
 }
 
-SetDimension::SetDimension(const JsonValue& jsonValue) : 
+SetDimension::SetDimension(JsonView jsonValue) : 
     m_dimensionType(DimensionType::NOT_SET),
     m_dimensionTypeHasBeenSet(false),
     m_valuesHasBeenSet(false)
@@ -43,7 +43,7 @@ SetDimension::SetDimension(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SetDimension& SetDimension::operator =(const JsonValue& jsonValue)
+SetDimension& SetDimension::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DimensionType"))
   {
@@ -54,7 +54,7 @@ SetDimension& SetDimension::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

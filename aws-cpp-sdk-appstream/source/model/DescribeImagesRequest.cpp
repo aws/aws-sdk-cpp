@@ -23,7 +23,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeImagesRequest::DescribeImagesRequest() : 
-    m_namesHasBeenSet(false)
+    m_namesHasBeenSet(false),
+    m_arnsHasBeenSet(false),
+    m_type(VisibilityType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -42,7 +48,35 @@ Aws::String DescribeImagesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_arnsHasBeenSet)
+  {
+   Array<JsonValue> arnsJsonList(m_arns.size());
+   for(unsigned arnsIndex = 0; arnsIndex < arnsJsonList.GetLength(); ++arnsIndex)
+   {
+     arnsJsonList[arnsIndex].AsString(m_arns[arnsIndex]);
+   }
+   payload.WithArray("Arns", std::move(arnsJsonList));
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("Type", VisibilityTypeMapper::GetNameForVisibilityType(m_type));
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeImagesRequest::GetRequestSpecificHeaders() const

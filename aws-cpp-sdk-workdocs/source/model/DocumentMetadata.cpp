@@ -41,7 +41,7 @@ DocumentMetadata::DocumentMetadata() :
 {
 }
 
-DocumentMetadata::DocumentMetadata(const JsonValue& jsonValue) : 
+DocumentMetadata::DocumentMetadata(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
     m_parentFolderIdHasBeenSet(false),
@@ -55,7 +55,7 @@ DocumentMetadata::DocumentMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DocumentMetadata& DocumentMetadata::operator =(const JsonValue& jsonValue)
+DocumentMetadata& DocumentMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -108,7 +108,7 @@ DocumentMetadata& DocumentMetadata::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Labels"))
   {
-    Array<JsonValue> labelsJsonList = jsonValue.GetArray("Labels");
+    Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsString());

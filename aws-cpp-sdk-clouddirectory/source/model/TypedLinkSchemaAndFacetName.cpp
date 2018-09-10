@@ -34,14 +34,14 @@ TypedLinkSchemaAndFacetName::TypedLinkSchemaAndFacetName() :
 {
 }
 
-TypedLinkSchemaAndFacetName::TypedLinkSchemaAndFacetName(const JsonValue& jsonValue) : 
+TypedLinkSchemaAndFacetName::TypedLinkSchemaAndFacetName(JsonView jsonValue) : 
     m_schemaArnHasBeenSet(false),
     m_typedLinkNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TypedLinkSchemaAndFacetName& TypedLinkSchemaAndFacetName::operator =(const JsonValue& jsonValue)
+TypedLinkSchemaAndFacetName& TypedLinkSchemaAndFacetName::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SchemaArn"))
   {

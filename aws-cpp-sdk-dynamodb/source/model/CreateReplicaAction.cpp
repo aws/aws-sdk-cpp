@@ -33,13 +33,13 @@ CreateReplicaAction::CreateReplicaAction() :
 {
 }
 
-CreateReplicaAction::CreateReplicaAction(const JsonValue& jsonValue) : 
+CreateReplicaAction::CreateReplicaAction(JsonView jsonValue) : 
     m_regionNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CreateReplicaAction& CreateReplicaAction::operator =(const JsonValue& jsonValue)
+CreateReplicaAction& CreateReplicaAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RegionName"))
   {

@@ -36,7 +36,7 @@ NotifyWorkersFailureStatus::NotifyWorkersFailureStatus() :
 {
 }
 
-NotifyWorkersFailureStatus::NotifyWorkersFailureStatus(const JsonValue& jsonValue) : 
+NotifyWorkersFailureStatus::NotifyWorkersFailureStatus(JsonView jsonValue) : 
     m_notifyWorkersFailureCode(NotifyWorkersFailureCode::NOT_SET),
     m_notifyWorkersFailureCodeHasBeenSet(false),
     m_notifyWorkersFailureMessageHasBeenSet(false),
@@ -45,7 +45,7 @@ NotifyWorkersFailureStatus::NotifyWorkersFailureStatus(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-NotifyWorkersFailureStatus& NotifyWorkersFailureStatus::operator =(const JsonValue& jsonValue)
+NotifyWorkersFailureStatus& NotifyWorkersFailureStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NotifyWorkersFailureCode"))
   {

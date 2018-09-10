@@ -38,7 +38,7 @@ CSVOutput::CSVOutput() :
 {
 }
 
-CSVOutput::CSVOutput(const JsonValue& jsonValue) : 
+CSVOutput::CSVOutput(JsonView jsonValue) : 
     m_quoteFields(QuoteFields::NOT_SET),
     m_quoteFieldsHasBeenSet(false),
     m_quoteEscapeCharacterHasBeenSet(false),
@@ -49,7 +49,7 @@ CSVOutput::CSVOutput(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CSVOutput& CSVOutput::operator =(const JsonValue& jsonValue)
+CSVOutput& CSVOutput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("QuoteFields"))
   {

@@ -51,7 +51,7 @@ Aws::String ChangePasswordRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ChangePasswordRequest::GetRequestSpecificHeaders() const

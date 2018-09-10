@@ -35,7 +35,7 @@ PlacementStrategy::PlacementStrategy() :
 {
 }
 
-PlacementStrategy::PlacementStrategy(const JsonValue& jsonValue) : 
+PlacementStrategy::PlacementStrategy(JsonView jsonValue) : 
     m_type(PlacementStrategyType::NOT_SET),
     m_typeHasBeenSet(false),
     m_fieldHasBeenSet(false)
@@ -43,7 +43,7 @@ PlacementStrategy::PlacementStrategy(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PlacementStrategy& PlacementStrategy::operator =(const JsonValue& jsonValue)
+PlacementStrategy& PlacementStrategy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

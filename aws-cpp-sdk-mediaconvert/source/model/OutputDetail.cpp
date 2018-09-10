@@ -35,7 +35,7 @@ OutputDetail::OutputDetail() :
 {
 }
 
-OutputDetail::OutputDetail(const JsonValue& jsonValue) : 
+OutputDetail::OutputDetail(JsonView jsonValue) : 
     m_durationInMs(0),
     m_durationInMsHasBeenSet(false),
     m_videoDetailsHasBeenSet(false)
@@ -43,7 +43,7 @@ OutputDetail::OutputDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OutputDetail& OutputDetail::operator =(const JsonValue& jsonValue)
+OutputDetail& OutputDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("durationInMs"))
   {

@@ -40,7 +40,7 @@ Thumbnails::Thumbnails() :
 {
 }
 
-Thumbnails::Thumbnails(const JsonValue& jsonValue) : 
+Thumbnails::Thumbnails(JsonView jsonValue) : 
     m_formatHasBeenSet(false),
     m_intervalHasBeenSet(false),
     m_resolutionHasBeenSet(false),
@@ -53,7 +53,7 @@ Thumbnails::Thumbnails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Thumbnails& Thumbnails::operator =(const JsonValue& jsonValue)
+Thumbnails& Thumbnails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Format"))
   {

@@ -44,43 +44,43 @@ namespace Model
 
 
     /**
-     * <p>An array of LoadBalancerTlsCertificate objects describing your TLS/SSL
+     * <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS
      * certificates.</p>
      */
     inline const Aws::Vector<LoadBalancerTlsCertificate>& GetTlsCertificates() const{ return m_tlsCertificates; }
 
     /**
-     * <p>An array of LoadBalancerTlsCertificate objects describing your TLS/SSL
+     * <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS
      * certificates.</p>
      */
     inline void SetTlsCertificates(const Aws::Vector<LoadBalancerTlsCertificate>& value) { m_tlsCertificates = value; }
 
     /**
-     * <p>An array of LoadBalancerTlsCertificate objects describing your TLS/SSL
+     * <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS
      * certificates.</p>
      */
     inline void SetTlsCertificates(Aws::Vector<LoadBalancerTlsCertificate>&& value) { m_tlsCertificates = std::move(value); }
 
     /**
-     * <p>An array of LoadBalancerTlsCertificate objects describing your TLS/SSL
+     * <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS
      * certificates.</p>
      */
     inline GetLoadBalancerTlsCertificatesResult& WithTlsCertificates(const Aws::Vector<LoadBalancerTlsCertificate>& value) { SetTlsCertificates(value); return *this;}
 
     /**
-     * <p>An array of LoadBalancerTlsCertificate objects describing your TLS/SSL
+     * <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS
      * certificates.</p>
      */
     inline GetLoadBalancerTlsCertificatesResult& WithTlsCertificates(Aws::Vector<LoadBalancerTlsCertificate>&& value) { SetTlsCertificates(std::move(value)); return *this;}
 
     /**
-     * <p>An array of LoadBalancerTlsCertificate objects describing your TLS/SSL
+     * <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS
      * certificates.</p>
      */
     inline GetLoadBalancerTlsCertificatesResult& AddTlsCertificates(const LoadBalancerTlsCertificate& value) { m_tlsCertificates.push_back(value); return *this; }
 
     /**
-     * <p>An array of LoadBalancerTlsCertificate objects describing your TLS/SSL
+     * <p>An array of LoadBalancerTlsCertificate objects describing your SSL/TLS
      * certificates.</p>
      */
     inline GetLoadBalancerTlsCertificatesResult& AddTlsCertificates(LoadBalancerTlsCertificate&& value) { m_tlsCertificates.push_back(std::move(value)); return *this; }

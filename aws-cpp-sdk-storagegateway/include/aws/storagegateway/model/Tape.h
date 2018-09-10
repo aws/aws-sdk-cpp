@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace StorageGateway
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Tape();
-    Tape(const Aws::Utils::Json::JsonValue& jsonValue);
-    Tape& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Tape(Aws::Utils::Json::JsonView jsonValue);
+    Tape& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -280,6 +281,28 @@ namespace Model
      */
     inline Tape& WithTapeUsedInBytes(long long value) { SetTapeUsedInBytes(value); return *this;}
 
+
+    
+    inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
+
+    
+    inline void SetKMSKey(const Aws::String& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
+
+    
+    inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::move(value); }
+
+    
+    inline void SetKMSKey(const char* value) { m_kMSKeyHasBeenSet = true; m_kMSKey.assign(value); }
+
+    
+    inline Tape& WithKMSKey(const Aws::String& value) { SetKMSKey(value); return *this;}
+
+    
+    inline Tape& WithKMSKey(Aws::String&& value) { SetKMSKey(std::move(value)); return *this;}
+
+    
+    inline Tape& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
+
   private:
 
     Aws::String m_tapeARN;
@@ -305,6 +328,9 @@ namespace Model
 
     long long m_tapeUsedInBytes;
     bool m_tapeUsedInBytesHasBeenSet;
+
+    Aws::String m_kMSKey;
+    bool m_kMSKeyHasBeenSet;
   };
 
 } // namespace Model

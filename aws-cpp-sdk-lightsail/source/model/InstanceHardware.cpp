@@ -37,7 +37,7 @@ InstanceHardware::InstanceHardware() :
 {
 }
 
-InstanceHardware::InstanceHardware(const JsonValue& jsonValue) : 
+InstanceHardware::InstanceHardware(JsonView jsonValue) : 
     m_cpuCount(0),
     m_cpuCountHasBeenSet(false),
     m_disksHasBeenSet(false),
@@ -47,7 +47,7 @@ InstanceHardware::InstanceHardware(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceHardware& InstanceHardware::operator =(const JsonValue& jsonValue)
+InstanceHardware& InstanceHardware::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("cpuCount"))
   {
@@ -58,7 +58,7 @@ InstanceHardware& InstanceHardware::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("disks"))
   {
-    Array<JsonValue> disksJsonList = jsonValue.GetArray("disks");
+    Array<JsonView> disksJsonList = jsonValue.GetArray("disks");
     for(unsigned disksIndex = 0; disksIndex < disksJsonList.GetLength(); ++disksIndex)
     {
       m_disks.push_back(disksJsonList[disksIndex].AsObject());

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DAX
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     SubnetGroup();
-    SubnetGroup(const Aws::Utils::Json::JsonValue& jsonValue);
-    SubnetGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SubnetGroup(Aws::Utils::Json::JsonView jsonValue);
+    SubnetGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

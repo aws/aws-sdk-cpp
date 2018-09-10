@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appstream/model/SessionState.h>
 #include <aws/appstream/model/AuthenticationType.h>
+#include <aws/appstream/model/NetworkAccessConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -27,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppStream
@@ -43,8 +45,8 @@ namespace Model
   {
   public:
     Session();
-    Session(const Aws::Utils::Json::JsonValue& jsonValue);
-    Session& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Session(Aws::Utils::Json::JsonView jsonValue);
+    Session& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -248,6 +250,32 @@ namespace Model
      */
     inline Session& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The network details for the streaming session.</p>
+     */
+    inline const NetworkAccessConfiguration& GetNetworkAccessConfiguration() const{ return m_networkAccessConfiguration; }
+
+    /**
+     * <p>The network details for the streaming session.</p>
+     */
+    inline void SetNetworkAccessConfiguration(const NetworkAccessConfiguration& value) { m_networkAccessConfigurationHasBeenSet = true; m_networkAccessConfiguration = value; }
+
+    /**
+     * <p>The network details for the streaming session.</p>
+     */
+    inline void SetNetworkAccessConfiguration(NetworkAccessConfiguration&& value) { m_networkAccessConfigurationHasBeenSet = true; m_networkAccessConfiguration = std::move(value); }
+
+    /**
+     * <p>The network details for the streaming session.</p>
+     */
+    inline Session& WithNetworkAccessConfiguration(const NetworkAccessConfiguration& value) { SetNetworkAccessConfiguration(value); return *this;}
+
+    /**
+     * <p>The network details for the streaming session.</p>
+     */
+    inline Session& WithNetworkAccessConfiguration(NetworkAccessConfiguration&& value) { SetNetworkAccessConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -267,6 +295,9 @@ namespace Model
 
     AuthenticationType m_authenticationType;
     bool m_authenticationTypeHasBeenSet;
+
+    NetworkAccessConfiguration m_networkAccessConfiguration;
+    bool m_networkAccessConfigurationHasBeenSet;
   };
 
 } // namespace Model

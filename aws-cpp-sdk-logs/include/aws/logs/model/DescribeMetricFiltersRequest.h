@@ -178,60 +178,102 @@ namespace Model
     inline DescribeMetricFiltersRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
 
-    
+    /**
+     * <p>Filters results to include only those with the specified metric name. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricNamespace</code> parameter.</p>
+     */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
-    
+    /**
+     * <p>Filters results to include only those with the specified metric name. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricNamespace</code> parameter.</p>
+     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
-    
+    /**
+     * <p>Filters results to include only those with the specified metric name. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricNamespace</code> parameter.</p>
+     */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
-    
+    /**
+     * <p>Filters results to include only those with the specified metric name. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricNamespace</code> parameter.</p>
+     */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
-    
+    /**
+     * <p>Filters results to include only those with the specified metric name. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricNamespace</code> parameter.</p>
+     */
     inline DescribeMetricFiltersRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
-    
+    /**
+     * <p>Filters results to include only those with the specified metric name. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricNamespace</code> parameter.</p>
+     */
     inline DescribeMetricFiltersRequest& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Filters results to include only those with the specified metric name. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricNamespace</code> parameter.</p>
+     */
     inline DescribeMetricFiltersRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>Filters results to include only those in the specified namespace. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricName</code> parameter.</p>
      */
     inline const Aws::String& GetMetricNamespace() const{ return m_metricNamespace; }
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>Filters results to include only those in the specified namespace. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricName</code> parameter.</p>
      */
     inline void SetMetricNamespace(const Aws::String& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = value; }
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>Filters results to include only those in the specified namespace. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricName</code> parameter.</p>
      */
     inline void SetMetricNamespace(Aws::String&& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = std::move(value); }
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>Filters results to include only those in the specified namespace. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricName</code> parameter.</p>
      */
     inline void SetMetricNamespace(const char* value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace.assign(value); }
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>Filters results to include only those in the specified namespace. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricName</code> parameter.</p>
      */
     inline DescribeMetricFiltersRequest& WithMetricNamespace(const Aws::String& value) { SetMetricNamespace(value); return *this;}
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>Filters results to include only those in the specified namespace. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricName</code> parameter.</p>
      */
     inline DescribeMetricFiltersRequest& WithMetricNamespace(Aws::String&& value) { SetMetricNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The namespace of the CloudWatch metric.</p>
+     * <p>Filters results to include only those in the specified namespace. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricName</code> parameter.</p>
      */
     inline DescribeMetricFiltersRequest& WithMetricNamespace(const char* value) { SetMetricNamespace(value); return *this;}
 

@@ -37,10 +37,10 @@ DescribeFleetCapacityResult::DescribeFleetCapacityResult(const Aws::AmazonWebSer
 
 DescribeFleetCapacityResult& DescribeFleetCapacityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FleetCapacity"))
   {
-    Array<JsonValue> fleetCapacityJsonList = jsonValue.GetArray("FleetCapacity");
+    Array<JsonView> fleetCapacityJsonList = jsonValue.GetArray("FleetCapacity");
     for(unsigned fleetCapacityIndex = 0; fleetCapacityIndex < fleetCapacityJsonList.GetLength(); ++fleetCapacityIndex)
     {
       m_fleetCapacity.push_back(fleetCapacityJsonList[fleetCapacityIndex].AsObject());

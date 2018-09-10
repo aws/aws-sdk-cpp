@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/model/CampaignState.h>
+#include <aws/pinpoint/model/CampaignHook.h>
 #include <aws/pinpoint/model/CampaignLimits.h>
 #include <aws/pinpoint/model/MessageConfiguration.h>
 #include <aws/pinpoint/model/Schedule.h>
@@ -31,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -47,8 +49,8 @@ namespace Model
   {
   public:
     CampaignResponse();
-    CampaignResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    CampaignResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CampaignResponse(Aws::Utils::Json::JsonView jsonValue);
+    CampaignResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -244,6 +246,32 @@ namespace Model
      * campaign.
      */
     inline CampaignResponse& WithHoldoutPercent(int value) { SetHoldoutPercent(value); return *this;}
+
+
+    /**
+     * Campaign hook information.
+     */
+    inline const CampaignHook& GetHook() const{ return m_hook; }
+
+    /**
+     * Campaign hook information.
+     */
+    inline void SetHook(const CampaignHook& value) { m_hookHasBeenSet = true; m_hook = value; }
+
+    /**
+     * Campaign hook information.
+     */
+    inline void SetHook(CampaignHook&& value) { m_hookHasBeenSet = true; m_hook = std::move(value); }
+
+    /**
+     * Campaign hook information.
+     */
+    inline CampaignResponse& WithHook(const CampaignHook& value) { SetHook(value); return *this;}
+
+    /**
+     * Campaign hook information.
+     */
+    inline CampaignResponse& WithHook(CampaignHook&& value) { SetHook(std::move(value)); return *this;}
 
 
     /**
@@ -650,6 +678,9 @@ An A/B test campaign will have a status of COMPLETED only
 
     int m_holdoutPercent;
     bool m_holdoutPercentHasBeenSet;
+
+    CampaignHook m_hook;
+    bool m_hookHasBeenSet;
 
     Aws::String m_id;
     bool m_idHasBeenSet;

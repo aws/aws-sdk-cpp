@@ -37,7 +37,7 @@ BatchDetectSentimentItemResult::BatchDetectSentimentItemResult() :
 {
 }
 
-BatchDetectSentimentItemResult::BatchDetectSentimentItemResult(const JsonValue& jsonValue) : 
+BatchDetectSentimentItemResult::BatchDetectSentimentItemResult(JsonView jsonValue) : 
     m_index(0),
     m_indexHasBeenSet(false),
     m_sentiment(SentimentType::NOT_SET),
@@ -47,7 +47,7 @@ BatchDetectSentimentItemResult::BatchDetectSentimentItemResult(const JsonValue& 
   *this = jsonValue;
 }
 
-BatchDetectSentimentItemResult& BatchDetectSentimentItemResult::operator =(const JsonValue& jsonValue)
+BatchDetectSentimentItemResult& BatchDetectSentimentItemResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Index"))
   {

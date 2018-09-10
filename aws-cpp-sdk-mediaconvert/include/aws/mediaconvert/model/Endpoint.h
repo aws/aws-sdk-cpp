@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Describes account specific API endpoint<p><h3>See Also:</h3>   <a
+   * Describes an account-specific API endpoint.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Endpoint">AWS
    * API Reference</a></p>
    */
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     Endpoint();
-    Endpoint(const Aws::Utils::Json::JsonValue& jsonValue);
-    Endpoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Endpoint(Aws::Utils::Json::JsonView jsonValue);
+    Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -36,7 +36,7 @@ AgentConfigurationStatus::AgentConfigurationStatus() :
 {
 }
 
-AgentConfigurationStatus::AgentConfigurationStatus(const JsonValue& jsonValue) : 
+AgentConfigurationStatus::AgentConfigurationStatus(JsonView jsonValue) : 
     m_agentIdHasBeenSet(false),
     m_operationSucceeded(false),
     m_operationSucceededHasBeenSet(false),
@@ -45,7 +45,7 @@ AgentConfigurationStatus::AgentConfigurationStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AgentConfigurationStatus& AgentConfigurationStatus::operator =(const JsonValue& jsonValue)
+AgentConfigurationStatus& AgentConfigurationStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("agentId"))
   {

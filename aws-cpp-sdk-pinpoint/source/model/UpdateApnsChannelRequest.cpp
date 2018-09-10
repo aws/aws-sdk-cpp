@@ -37,7 +37,7 @@ Aws::String UpdateApnsChannelRequest::SerializePayload() const
    payload = m_aPNSChannelRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

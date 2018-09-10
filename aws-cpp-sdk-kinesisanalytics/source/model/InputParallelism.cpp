@@ -34,14 +34,14 @@ InputParallelism::InputParallelism() :
 {
 }
 
-InputParallelism::InputParallelism(const JsonValue& jsonValue) : 
+InputParallelism::InputParallelism(JsonView jsonValue) : 
     m_count(0),
     m_countHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputParallelism& InputParallelism::operator =(const JsonValue& jsonValue)
+InputParallelism& InputParallelism::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Count"))
   {

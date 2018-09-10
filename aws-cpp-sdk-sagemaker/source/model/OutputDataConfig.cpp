@@ -34,14 +34,14 @@ OutputDataConfig::OutputDataConfig() :
 {
 }
 
-OutputDataConfig::OutputDataConfig(const JsonValue& jsonValue) : 
+OutputDataConfig::OutputDataConfig(JsonView jsonValue) : 
     m_kmsKeyIdHasBeenSet(false),
     m_s3OutputPathHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OutputDataConfig& OutputDataConfig::operator =(const JsonValue& jsonValue)
+OutputDataConfig& OutputDataConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("KmsKeyId"))
   {

@@ -27,12 +27,12 @@ ${typeInfo.className}::${typeInfo.className}()$initializers
 {
 }
 
-${typeInfo.className}::${typeInfo.className}(const JsonValue& jsonValue)$initializers
+${typeInfo.className}::${typeInfo.className}(JsonView jsonValue)$initializers
 {
   *this = jsonValue;
 }
 
-${typeInfo.className}& ${typeInfo.className}::operator =(const JsonValue& jsonValue)
+${typeInfo.className}& ${typeInfo.className}::operator =(JsonView jsonValue)
 {
 #if($shape.members.size() == 0)
   AWS_UNREFERENCED_PARAM(jsonValue);

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DeviceFarm
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Rule();
-    Rule(const Aws::Utils::Json::JsonValue& jsonValue);
-    Rule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Rule(Aws::Utils::Json::JsonView jsonValue);
+    Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -55,7 +56,9 @@ namespace Model
      * tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li> <li>
      * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
      * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
-     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> <li>
+     * <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>
+     * </li> <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li> </ul>
      */
     inline const DeviceAttribute& GetAttribute() const{ return m_attribute; }
 
@@ -66,7 +69,9 @@ namespace Model
      * tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li> <li>
      * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
      * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
-     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> <li>
+     * <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>
+     * </li> <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li> </ul>
      */
     inline void SetAttribute(const DeviceAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
@@ -77,7 +82,9 @@ namespace Model
      * tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li> <li>
      * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
      * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
-     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> <li>
+     * <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>
+     * </li> <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li> </ul>
      */
     inline void SetAttribute(DeviceAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
@@ -88,7 +95,9 @@ namespace Model
      * tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li> <li>
      * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
      * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
-     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> <li>
+     * <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>
+     * </li> <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li> </ul>
      */
     inline Rule& WithAttribute(const DeviceAttribute& value) { SetAttribute(value); return *this;}
 
@@ -99,7 +108,9 @@ namespace Model
      * tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li> <li>
      * <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
      * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
-     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> <li>
+     * <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>
+     * </li> <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li> </ul>
      */
     inline Rule& WithAttribute(DeviceAttribute&& value) { SetAttribute(std::move(value)); return *this;}
 

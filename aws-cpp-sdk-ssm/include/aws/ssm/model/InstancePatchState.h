@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     InstancePatchState();
-    InstancePatchState(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstancePatchState& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstancePatchState(Aws::Utils::Json::JsonView jsonValue);
+    InstancePatchState& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -210,43 +211,43 @@ namespace Model
 
 
     /**
-     * <p>Placeholder information, this field will always be empty in the current
+     * <p>Placeholder information. This field will always be empty in the current
      * release of the service.</p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
 
     /**
-     * <p>Placeholder information, this field will always be empty in the current
+     * <p>Placeholder information. This field will always be empty in the current
      * release of the service.</p>
      */
     inline void SetOwnerInformation(const Aws::String& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = value; }
 
     /**
-     * <p>Placeholder information, this field will always be empty in the current
+     * <p>Placeholder information. This field will always be empty in the current
      * release of the service.</p>
      */
     inline void SetOwnerInformation(Aws::String&& value) { m_ownerInformationHasBeenSet = true; m_ownerInformation = std::move(value); }
 
     /**
-     * <p>Placeholder information, this field will always be empty in the current
+     * <p>Placeholder information. This field will always be empty in the current
      * release of the service.</p>
      */
     inline void SetOwnerInformation(const char* value) { m_ownerInformationHasBeenSet = true; m_ownerInformation.assign(value); }
 
     /**
-     * <p>Placeholder information, this field will always be empty in the current
+     * <p>Placeholder information. This field will always be empty in the current
      * release of the service.</p>
      */
     inline InstancePatchState& WithOwnerInformation(const Aws::String& value) { SetOwnerInformation(value); return *this;}
 
     /**
-     * <p>Placeholder information, this field will always be empty in the current
+     * <p>Placeholder information. This field will always be empty in the current
      * release of the service.</p>
      */
     inline InstancePatchState& WithOwnerInformation(Aws::String&& value) { SetOwnerInformation(std::move(value)); return *this;}
 
     /**
-     * <p>Placeholder information, this field will always be empty in the current
+     * <p>Placeholder information. This field will always be empty in the current
      * release of the service.</p>
      */
     inline InstancePatchState& WithOwnerInformation(const char* value) { SetOwnerInformation(value); return *this;}

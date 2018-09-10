@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/ProcessorFeature.h>
 #include <utility>
 
 namespace Aws
@@ -189,8 +190,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -200,8 +201,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -211,8 +212,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -222,8 +223,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -233,8 +234,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -244,8 +245,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -255,8 +256,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Importing from Amazon
-     * S3 is not supported on the db.t2.micro DB instance class. </p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -505,11 +506,12 @@ namespace Model
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region. </p> <p> Example:
-     * <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone parameter can't
-     * be specified if the MultiAZ parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * Region as the current endpoint. </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
@@ -517,11 +519,12 @@ namespace Model
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region. </p> <p> Example:
-     * <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone parameter can't
-     * be specified if the MultiAZ parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * Region as the current endpoint. </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
@@ -529,11 +532,12 @@ namespace Model
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region. </p> <p> Example:
-     * <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone parameter can't
-     * be specified if the MultiAZ parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * Region as the current endpoint. </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
@@ -541,11 +545,12 @@ namespace Model
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region. </p> <p> Example:
-     * <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone parameter can't
-     * be specified if the MultiAZ parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * Region as the current endpoint. </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
@@ -553,11 +558,12 @@ namespace Model
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region. </p> <p> Example:
-     * <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone parameter can't
-     * be specified if the MultiAZ parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * Region as the current endpoint. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
@@ -565,11 +571,12 @@ namespace Model
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region. </p> <p> Example:
-     * <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone parameter can't
-     * be specified if the MultiAZ parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * Region as the current endpoint. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
@@ -577,11 +584,12 @@ namespace Model
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
-     * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region. </p> <p> Example:
-     * <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone parameter can't
-     * be specified if the MultiAZ parameter is set to <code>true</code>. The specified
-     * Availability Zone must be in the same AWS Region as the current endpoint. </p>
+     * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * Region as the current endpoint. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -626,11 +634,12 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated Time
+     * (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup window.</p>
+     * </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -638,11 +647,12 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated Time
+     * (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup window.</p>
+     * </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -650,11 +660,12 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated Time
+     * (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup window.</p>
+     * </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -662,11 +673,12 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated Time
+     * (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup window.</p>
+     * </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -674,11 +686,12 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated Time
+     * (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup window.</p>
+     * </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromS3Request& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -686,11 +699,12 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated Time
+     * (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup window.</p>
+     * </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromS3Request& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -698,11 +712,12 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
-     * RDS Maintenance Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon,
-     * Tue, Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated Time
+     * (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup window.</p>
+     * </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromS3Request& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -783,10 +798,11 @@ namespace Model
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
+     * least 30 minutes.</p> </li> </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
@@ -794,10 +810,11 @@ namespace Model
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
+     * least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
@@ -805,10 +822,11 @@ namespace Model
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
+     * least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
@@ -816,10 +834,11 @@ namespace Model
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
+     * least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
@@ -827,10 +846,11 @@ namespace Model
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
+     * least 30 minutes.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromS3Request& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -838,10 +858,11 @@ namespace Model
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
+     * least 30 minutes.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromS3Request& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
@@ -849,10 +870,11 @@ namespace Model
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
+     * least 30 minutes.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromS3Request& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -900,43 +922,50 @@ namespace Model
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
-     * version of your database engine as specified in <a>CreateDBInstance</a>. </p>
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -1011,7 +1040,8 @@ namespace Model
      * allocate initially for the DB instance. For information about valid Iops values,
      * see see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a>. </p>
+     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -1020,7 +1050,8 @@ namespace Model
      * allocate initially for the DB instance. For information about valid Iops values,
      * see see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a>. </p>
+     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -1029,7 +1060,8 @@ namespace Model
      * allocate initially for the DB instance. For information about valid Iops values,
      * see see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS Storage to Improve Performance</a>. </p>
+     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithIops(int value) { SetIops(value); return *this;}
 
@@ -1085,20 +1117,29 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the DB instance is publicly accessible or not. For more
-     * information, see <a>CreateDBInstance</a>. </p>
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>Specifies whether the DB instance is publicly accessible or not. For more
-     * information, see <a>CreateDBInstance</a>. </p>
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>Specifies whether the DB instance is publicly accessible or not. For more
-     * information, see <a>CreateDBInstance</a>. </p>
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -1107,7 +1148,7 @@ namespace Model
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
-     * Amazon RDS Resources</a>. </p>
+     * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -1115,7 +1156,7 @@ namespace Model
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
-     * Amazon RDS Resources</a>. </p>
+     * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -1123,7 +1164,7 @@ namespace Model
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
-     * Amazon RDS Resources</a>. </p>
+     * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -1131,7 +1172,7 @@ namespace Model
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
-     * Amazon RDS Resources</a>. </p>
+     * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -1139,7 +1180,7 @@ namespace Model
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
-     * Amazon RDS Resources</a>. </p>
+     * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -1147,7 +1188,7 @@ namespace Model
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
-     * Amazon RDS Resources</a>. </p>
+     * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline RestoreDBInstanceFromS3Request& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -1155,7 +1196,7 @@ namespace Model
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
-     * Amazon RDS Resources</a>. </p>
+     * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline RestoreDBInstanceFromS3Request& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -1392,9 +1433,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>. </p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value. </p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
+     * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
+     * you must supply a <code>MonitoringRoleArn</code> value. </p>
      */
     inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
 
@@ -1404,9 +1445,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>. </p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value. </p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
+     * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
+     * you must supply a <code>MonitoringRoleArn</code> value. </p>
      */
     inline void SetMonitoringRoleArn(const Aws::String& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = value; }
 
@@ -1416,9 +1457,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>. </p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value. </p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
+     * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
+     * you must supply a <code>MonitoringRoleArn</code> value. </p>
      */
     inline void SetMonitoringRoleArn(Aws::String&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::move(value); }
 
@@ -1428,9 +1469,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>. </p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value. </p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
+     * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
+     * you must supply a <code>MonitoringRoleArn</code> value. </p>
      */
     inline void SetMonitoringRoleArn(const char* value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn.assign(value); }
 
@@ -1440,9 +1481,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>. </p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value. </p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
+     * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
+     * you must supply a <code>MonitoringRoleArn</code> value. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithMonitoringRoleArn(const Aws::String& value) { SetMonitoringRoleArn(value); return *this;}
 
@@ -1452,9 +1493,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>. </p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value. </p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
+     * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
+     * you must supply a <code>MonitoringRoleArn</code> value. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithMonitoringRoleArn(Aws::String&& value) { SetMonitoringRoleArn(std::move(value)); return *this;}
 
@@ -1464,9 +1505,9 @@ namespace Model
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
-     * Up and Enabling Enhanced Monitoring</a>. </p> <p>If
-     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
-     * supply a <code>MonitoringRoleArn</code> value. </p>
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
+     * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
+     * you must supply a <code>MonitoringRoleArn</code> value. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
 
@@ -1703,19 +1744,28 @@ namespace Model
 
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise false.
-     * </p>
+     * </p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
+     * User Guide</i>. </p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise false.
-     * </p>
+     * </p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
+     * User Guide</i>. </p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise false.
-     * </p>
+     * </p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
+     * User Guide</i>. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
@@ -1771,52 +1821,165 @@ namespace Model
 
 
     /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years). </p>
+     */
+    inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years). </p>
+     */
+    inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years). </p>
+     */
+    inline RestoreDBInstanceFromS3Request& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
+
+
+    /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline RestoreDBInstanceFromS3Request& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline RestoreDBInstanceFromS3Request& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline RestoreDBInstanceFromS3Request& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline const Aws::Vector<ProcessorFeature>& GetProcessorFeatures() const{ return m_processorFeatures; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline void SetProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = value; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline void SetProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = std::move(value); }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline RestoreDBInstanceFromS3Request& WithProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { SetProcessorFeatures(value); return *this;}
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline RestoreDBInstanceFromS3Request& WithProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { SetProcessorFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline RestoreDBInstanceFromS3Request& AddProcessorFeatures(const ProcessorFeature& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(value); return *this; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline RestoreDBInstanceFromS3Request& AddProcessorFeatures(ProcessorFeature&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
+     */
+    inline bool GetUseDefaultProcessorFeatures() const{ return m_useDefaultProcessorFeatures; }
+
+    /**
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
+     */
+    inline void SetUseDefaultProcessorFeatures(bool value) { m_useDefaultProcessorFeaturesHasBeenSet = true; m_useDefaultProcessorFeatures = value; }
+
+    /**
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
+     */
+    inline RestoreDBInstanceFromS3Request& WithUseDefaultProcessorFeatures(bool value) { SetUseDefaultProcessorFeatures(value); return *this;}
 
   private:
 
@@ -1934,8 +2097,17 @@ namespace Model
     Aws::String m_performanceInsightsKMSKeyId;
     bool m_performanceInsightsKMSKeyIdHasBeenSet;
 
+    int m_performanceInsightsRetentionPeriod;
+    bool m_performanceInsightsRetentionPeriodHasBeenSet;
+
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
     bool m_enableCloudwatchLogsExportsHasBeenSet;
+
+    Aws::Vector<ProcessorFeature> m_processorFeatures;
+    bool m_processorFeaturesHasBeenSet;
+
+    bool m_useDefaultProcessorFeatures;
+    bool m_useDefaultProcessorFeaturesHasBeenSet;
   };
 
 } // namespace Model

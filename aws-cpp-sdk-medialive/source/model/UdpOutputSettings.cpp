@@ -37,7 +37,7 @@ UdpOutputSettings::UdpOutputSettings() :
 {
 }
 
-UdpOutputSettings::UdpOutputSettings(const JsonValue& jsonValue) : 
+UdpOutputSettings::UdpOutputSettings(JsonView jsonValue) : 
     m_bufferMsec(0),
     m_bufferMsecHasBeenSet(false),
     m_containerSettingsHasBeenSet(false),
@@ -47,7 +47,7 @@ UdpOutputSettings::UdpOutputSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UdpOutputSettings& UdpOutputSettings::operator =(const JsonValue& jsonValue)
+UdpOutputSettings& UdpOutputSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bufferMsec"))
   {

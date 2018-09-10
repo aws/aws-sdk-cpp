@@ -32,12 +32,12 @@ PassThroughSettings::PassThroughSettings()
 {
 }
 
-PassThroughSettings::PassThroughSettings(const JsonValue& jsonValue)
+PassThroughSettings::PassThroughSettings(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-PassThroughSettings& PassThroughSettings::operator =(const JsonValue& jsonValue)
+PassThroughSettings& PassThroughSettings::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

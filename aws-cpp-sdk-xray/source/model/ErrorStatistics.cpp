@@ -38,7 +38,7 @@ ErrorStatistics::ErrorStatistics() :
 {
 }
 
-ErrorStatistics::ErrorStatistics(const JsonValue& jsonValue) : 
+ErrorStatistics::ErrorStatistics(JsonView jsonValue) : 
     m_throttleCount(0),
     m_throttleCountHasBeenSet(false),
     m_otherCount(0),
@@ -49,7 +49,7 @@ ErrorStatistics::ErrorStatistics(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ErrorStatistics& ErrorStatistics::operator =(const JsonValue& jsonValue)
+ErrorStatistics& ErrorStatistics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ThrottleCount"))
   {

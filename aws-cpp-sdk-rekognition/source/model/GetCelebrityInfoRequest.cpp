@@ -37,7 +37,7 @@ Aws::String GetCelebrityInfoRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetCelebrityInfoRequest::GetRequestSpecificHeaders() const

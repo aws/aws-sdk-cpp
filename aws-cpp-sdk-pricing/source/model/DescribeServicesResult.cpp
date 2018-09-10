@@ -37,10 +37,10 @@ DescribeServicesResult::DescribeServicesResult(const Aws::AmazonWebServiceResult
 
 DescribeServicesResult& DescribeServicesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Services"))
   {
-    Array<JsonValue> servicesJsonList = jsonValue.GetArray("Services");
+    Array<JsonView> servicesJsonList = jsonValue.GetArray("Services");
     for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
     {
       m_services.push_back(servicesJsonList[servicesIndex].AsObject());

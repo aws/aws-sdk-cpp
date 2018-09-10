@@ -34,6 +34,13 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p>Container for logging information. Presence of this element indicates that
+   * logging is enabled. Parameters TargetBucket and TargetPrefix are required in
+   * this case.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LoggingEnabled">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API LoggingEnabled
   {
   public:
@@ -45,72 +52,72 @@ namespace Model
 
 
     /**
-     * Specifies the bucket where you want Amazon S3 to store server access logs. You
-     * can have your logs delivered to any bucket that you own, including the same
+     * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
+     * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
      * their logs to the same target bucket. In this case you should choose a different
      * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.
+     * distinguished by key.</p>
      */
     inline const Aws::String& GetTargetBucket() const{ return m_targetBucket; }
 
     /**
-     * Specifies the bucket where you want Amazon S3 to store server access logs. You
-     * can have your logs delivered to any bucket that you own, including the same
+     * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
+     * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
      * their logs to the same target bucket. In this case you should choose a different
      * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.
+     * distinguished by key.</p>
      */
     inline void SetTargetBucket(const Aws::String& value) { m_targetBucketHasBeenSet = true; m_targetBucket = value; }
 
     /**
-     * Specifies the bucket where you want Amazon S3 to store server access logs. You
-     * can have your logs delivered to any bucket that you own, including the same
+     * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
+     * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
      * their logs to the same target bucket. In this case you should choose a different
      * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.
+     * distinguished by key.</p>
      */
     inline void SetTargetBucket(Aws::String&& value) { m_targetBucketHasBeenSet = true; m_targetBucket = std::move(value); }
 
     /**
-     * Specifies the bucket where you want Amazon S3 to store server access logs. You
-     * can have your logs delivered to any bucket that you own, including the same
+     * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
+     * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
      * their logs to the same target bucket. In this case you should choose a different
      * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.
+     * distinguished by key.</p>
      */
     inline void SetTargetBucket(const char* value) { m_targetBucketHasBeenSet = true; m_targetBucket.assign(value); }
 
     /**
-     * Specifies the bucket where you want Amazon S3 to store server access logs. You
-     * can have your logs delivered to any bucket that you own, including the same
+     * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
+     * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
      * their logs to the same target bucket. In this case you should choose a different
      * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.
+     * distinguished by key.</p>
      */
     inline LoggingEnabled& WithTargetBucket(const Aws::String& value) { SetTargetBucket(value); return *this;}
 
     /**
-     * Specifies the bucket where you want Amazon S3 to store server access logs. You
-     * can have your logs delivered to any bucket that you own, including the same
+     * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
+     * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
      * their logs to the same target bucket. In this case you should choose a different
      * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.
+     * distinguished by key.</p>
      */
     inline LoggingEnabled& WithTargetBucket(Aws::String&& value) { SetTargetBucket(std::move(value)); return *this;}
 
     /**
-     * Specifies the bucket where you want Amazon S3 to store server access logs. You
-     * can have your logs delivered to any bucket that you own, including the same
+     * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
+     * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
      * their logs to the same target bucket. In this case you should choose a different
      * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.
+     * distinguished by key.</p>
      */
     inline LoggingEnabled& WithTargetBucket(const char* value) { SetTargetBucket(value); return *this;}
 
@@ -138,44 +145,44 @@ namespace Model
 
 
     /**
-     * This element lets you specify a prefix for the keys that the log files will be
-     * stored under.
+     * <p>This element lets you specify a prefix for the keys that the log files will
+     * be stored under.</p>
      */
     inline const Aws::String& GetTargetPrefix() const{ return m_targetPrefix; }
 
     /**
-     * This element lets you specify a prefix for the keys that the log files will be
-     * stored under.
+     * <p>This element lets you specify a prefix for the keys that the log files will
+     * be stored under.</p>
      */
     inline void SetTargetPrefix(const Aws::String& value) { m_targetPrefixHasBeenSet = true; m_targetPrefix = value; }
 
     /**
-     * This element lets you specify a prefix for the keys that the log files will be
-     * stored under.
+     * <p>This element lets you specify a prefix for the keys that the log files will
+     * be stored under.</p>
      */
     inline void SetTargetPrefix(Aws::String&& value) { m_targetPrefixHasBeenSet = true; m_targetPrefix = std::move(value); }
 
     /**
-     * This element lets you specify a prefix for the keys that the log files will be
-     * stored under.
+     * <p>This element lets you specify a prefix for the keys that the log files will
+     * be stored under.</p>
      */
     inline void SetTargetPrefix(const char* value) { m_targetPrefixHasBeenSet = true; m_targetPrefix.assign(value); }
 
     /**
-     * This element lets you specify a prefix for the keys that the log files will be
-     * stored under.
+     * <p>This element lets you specify a prefix for the keys that the log files will
+     * be stored under.</p>
      */
     inline LoggingEnabled& WithTargetPrefix(const Aws::String& value) { SetTargetPrefix(value); return *this;}
 
     /**
-     * This element lets you specify a prefix for the keys that the log files will be
-     * stored under.
+     * <p>This element lets you specify a prefix for the keys that the log files will
+     * be stored under.</p>
      */
     inline LoggingEnabled& WithTargetPrefix(Aws::String&& value) { SetTargetPrefix(std::move(value)); return *this;}
 
     /**
-     * This element lets you specify a prefix for the keys that the log files will be
-     * stored under.
+     * <p>This element lets you specify a prefix for the keys that the log files will
+     * be stored under.</p>
      */
     inline LoggingEnabled& WithTargetPrefix(const char* value) { SetTargetPrefix(value); return *this;}
 

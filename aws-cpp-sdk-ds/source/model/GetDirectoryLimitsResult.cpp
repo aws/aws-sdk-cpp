@@ -37,7 +37,7 @@ GetDirectoryLimitsResult::GetDirectoryLimitsResult(const Aws::AmazonWebServiceRe
 
 GetDirectoryLimitsResult& GetDirectoryLimitsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DirectoryLimits"))
   {
     m_directoryLimits = jsonValue.GetObject("DirectoryLimits");

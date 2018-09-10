@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Batch
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     AttemptDetail();
-    AttemptDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    AttemptDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AttemptDetail(Aws::Utils::Json::JsonView jsonValue);
+    AttemptDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -74,45 +75,45 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp for when the attempt was started (when the attempt
-     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
-     * state).</p>
+     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * started (when the attempt transitioned from the <code>STARTING</code> state to
+     * the <code>RUNNING</code> state).</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The Unix time stamp for when the attempt was started (when the attempt
-     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
-     * state).</p>
+     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * started (when the attempt transitioned from the <code>STARTING</code> state to
+     * the <code>RUNNING</code> state).</p>
      */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the attempt was started (when the attempt
-     * transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
-     * state).</p>
+     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * started (when the attempt transitioned from the <code>STARTING</code> state to
+     * the <code>RUNNING</code> state).</p>
      */
     inline AttemptDetail& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
 
 
     /**
-     * <p>The Unix time stamp for when the attempt was stopped (when the attempt
-     * transitioned from the <code>RUNNING</code> state to a terminal state, such as
-     * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
+     * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline long long GetStoppedAt() const{ return m_stoppedAt; }
 
     /**
-     * <p>The Unix time stamp for when the attempt was stopped (when the attempt
-     * transitioned from the <code>RUNNING</code> state to a terminal state, such as
-     * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
+     * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline void SetStoppedAt(long long value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the attempt was stopped (when the attempt
-     * transitioned from the <code>RUNNING</code> state to a terminal state, such as
-     * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
+     * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline AttemptDetail& WithStoppedAt(long long value) { SetStoppedAt(value); return *this;}
 

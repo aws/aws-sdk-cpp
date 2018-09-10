@@ -37,10 +37,10 @@ ListBranchesResult::ListBranchesResult(const Aws::AmazonWebServiceResult<JsonVal
 
 ListBranchesResult& ListBranchesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("branches"))
   {
-    Array<JsonValue> branchesJsonList = jsonValue.GetArray("branches");
+    Array<JsonView> branchesJsonList = jsonValue.GetArray("branches");
     for(unsigned branchesIndex = 0; branchesIndex < branchesJsonList.GetLength(); ++branchesIndex)
     {
       m_branches.push_back(branchesJsonList[branchesIndex].AsString());

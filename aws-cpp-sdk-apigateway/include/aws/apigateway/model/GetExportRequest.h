@@ -56,109 +56,109 @@ namespace Model
 
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetExportRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetExportRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline GetExportRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline GetExportRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline GetExportRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the <a>Stage</a> that will be exported.</p>
+     * <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
      */
     inline GetExportRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline const Aws::String& GetExportType() const{ return m_exportType; }
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline void SetExportType(const Aws::String& value) { m_exportTypeHasBeenSet = true; m_exportType = value; }
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline void SetExportType(Aws::String&& value) { m_exportTypeHasBeenSet = true; m_exportType = std::move(value); }
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline void SetExportType(const char* value) { m_exportTypeHasBeenSet = true; m_exportType.assign(value); }
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline GetExportRequest& WithExportType(const Aws::String& value) { SetExportType(value); return *this;}
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline GetExportRequest& WithExportType(Aws::String&& value) { SetExportType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of export. Currently only 'swagger' is supported.</p>
+     * <p>[Required] The type of export. Currently only 'swagger' is supported.</p>
      */
     inline GetExportRequest& WithExportType(const char* value) { SetExportType(value); return *this;}
 
@@ -167,11 +167,12 @@ namespace Model
      * <p>A key-value map of query string parameters that specify properties of the
      * export, depending on the requested <code>exportType</code>. For
      * <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with
-     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
-     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
-     * will export the API with Postman extensions, allowing for import to the Postman
-     * tool</p>
+     * parameters are supported: <code>extensions='integrations'</code> or
+     * <code>extensions='apigateway'</code> will export the API with
+     * x-amazon-apigateway-integration extensions.
+     * <code>extensions='authorizers'</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
+     * API with Postman extensions, allowing for import to the Postman tool</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
@@ -179,11 +180,12 @@ namespace Model
      * <p>A key-value map of query string parameters that specify properties of the
      * export, depending on the requested <code>exportType</code>. For
      * <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with
-     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
-     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
-     * will export the API with Postman extensions, allowing for import to the Postman
-     * tool</p>
+     * parameters are supported: <code>extensions='integrations'</code> or
+     * <code>extensions='apigateway'</code> will export the API with
+     * x-amazon-apigateway-integration extensions.
+     * <code>extensions='authorizers'</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
+     * API with Postman extensions, allowing for import to the Postman tool</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
@@ -191,11 +193,12 @@ namespace Model
      * <p>A key-value map of query string parameters that specify properties of the
      * export, depending on the requested <code>exportType</code>. For
      * <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with
-     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
-     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
-     * will export the API with Postman extensions, allowing for import to the Postman
-     * tool</p>
+     * parameters are supported: <code>extensions='integrations'</code> or
+     * <code>extensions='apigateway'</code> will export the API with
+     * x-amazon-apigateway-integration extensions.
+     * <code>extensions='authorizers'</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
+     * API with Postman extensions, allowing for import to the Postman tool</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
@@ -203,11 +206,12 @@ namespace Model
      * <p>A key-value map of query string parameters that specify properties of the
      * export, depending on the requested <code>exportType</code>. For
      * <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with
-     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
-     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
-     * will export the API with Postman extensions, allowing for import to the Postman
-     * tool</p>
+     * parameters are supported: <code>extensions='integrations'</code> or
+     * <code>extensions='apigateway'</code> will export the API with
+     * x-amazon-apigateway-integration extensions.
+     * <code>extensions='authorizers'</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
+     * API with Postman extensions, allowing for import to the Postman tool</p>
      */
     inline GetExportRequest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
@@ -215,11 +219,12 @@ namespace Model
      * <p>A key-value map of query string parameters that specify properties of the
      * export, depending on the requested <code>exportType</code>. For
      * <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with
-     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
-     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
-     * will export the API with Postman extensions, allowing for import to the Postman
-     * tool</p>
+     * parameters are supported: <code>extensions='integrations'</code> or
+     * <code>extensions='apigateway'</code> will export the API with
+     * x-amazon-apigateway-integration extensions.
+     * <code>extensions='authorizers'</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
+     * API with Postman extensions, allowing for import to the Postman tool</p>
      */
     inline GetExportRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -227,11 +232,12 @@ namespace Model
      * <p>A key-value map of query string parameters that specify properties of the
      * export, depending on the requested <code>exportType</code>. For
      * <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with
-     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
-     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
-     * will export the API with Postman extensions, allowing for import to the Postman
-     * tool</p>
+     * parameters are supported: <code>extensions='integrations'</code> or
+     * <code>extensions='apigateway'</code> will export the API with
+     * x-amazon-apigateway-integration extensions.
+     * <code>extensions='authorizers'</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
+     * API with Postman extensions, allowing for import to the Postman tool</p>
      */
     inline GetExportRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -239,11 +245,12 @@ namespace Model
      * <p>A key-value map of query string parameters that specify properties of the
      * export, depending on the requested <code>exportType</code>. For
      * <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with
-     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
-     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
-     * will export the API with Postman extensions, allowing for import to the Postman
-     * tool</p>
+     * parameters are supported: <code>extensions='integrations'</code> or
+     * <code>extensions='apigateway'</code> will export the API with
+     * x-amazon-apigateway-integration extensions.
+     * <code>extensions='authorizers'</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
+     * API with Postman extensions, allowing for import to the Postman tool</p>
      */
     inline GetExportRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -251,11 +258,12 @@ namespace Model
      * <p>A key-value map of query string parameters that specify properties of the
      * export, depending on the requested <code>exportType</code>. For
      * <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with
-     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
-     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
-     * will export the API with Postman extensions, allowing for import to the Postman
-     * tool</p>
+     * parameters are supported: <code>extensions='integrations'</code> or
+     * <code>extensions='apigateway'</code> will export the API with
+     * x-amazon-apigateway-integration extensions.
+     * <code>extensions='authorizers'</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
+     * API with Postman extensions, allowing for import to the Postman tool</p>
      */
     inline GetExportRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -263,11 +271,12 @@ namespace Model
      * <p>A key-value map of query string parameters that specify properties of the
      * export, depending on the requested <code>exportType</code>. For
      * <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with
-     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
-     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
-     * will export the API with Postman extensions, allowing for import to the Postman
-     * tool</p>
+     * parameters are supported: <code>extensions='integrations'</code> or
+     * <code>extensions='apigateway'</code> will export the API with
+     * x-amazon-apigateway-integration extensions.
+     * <code>extensions='authorizers'</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
+     * API with Postman extensions, allowing for import to the Postman tool</p>
      */
     inline GetExportRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -275,11 +284,12 @@ namespace Model
      * <p>A key-value map of query string parameters that specify properties of the
      * export, depending on the requested <code>exportType</code>. For
      * <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with
-     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
-     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
-     * will export the API with Postman extensions, allowing for import to the Postman
-     * tool</p>
+     * parameters are supported: <code>extensions='integrations'</code> or
+     * <code>extensions='apigateway'</code> will export the API with
+     * x-amazon-apigateway-integration extensions.
+     * <code>extensions='authorizers'</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
+     * API with Postman extensions, allowing for import to the Postman tool</p>
      */
     inline GetExportRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -287,11 +297,12 @@ namespace Model
      * <p>A key-value map of query string parameters that specify properties of the
      * export, depending on the requested <code>exportType</code>. For
      * <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with
-     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
-     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
-     * will export the API with Postman extensions, allowing for import to the Postman
-     * tool</p>
+     * parameters are supported: <code>extensions='integrations'</code> or
+     * <code>extensions='apigateway'</code> will export the API with
+     * x-amazon-apigateway-integration extensions.
+     * <code>extensions='authorizers'</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
+     * API with Postman extensions, allowing for import to the Postman tool</p>
      */
     inline GetExportRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -299,11 +310,12 @@ namespace Model
      * <p>A key-value map of query string parameters that specify properties of the
      * export, depending on the requested <code>exportType</code>. For
      * <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with
-     * x-amazon-apigateway-integration extensions. <code>authorizers</code> will export
-     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code>
-     * will export the API with Postman extensions, allowing for import to the Postman
-     * tool</p>
+     * parameters are supported: <code>extensions='integrations'</code> or
+     * <code>extensions='apigateway'</code> will export the API with
+     * x-amazon-apigateway-integration extensions.
+     * <code>extensions='authorizers'</code> will export the API with
+     * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
+     * API with Postman extensions, allowing for import to the Postman tool</p>
      */
     inline GetExportRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

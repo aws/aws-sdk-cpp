@@ -34,18 +34,18 @@ AdvancedOptionsStatus::AdvancedOptionsStatus() :
 {
 }
 
-AdvancedOptionsStatus::AdvancedOptionsStatus(const JsonValue& jsonValue) : 
+AdvancedOptionsStatus::AdvancedOptionsStatus(JsonView jsonValue) : 
     m_optionsHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AdvancedOptionsStatus& AdvancedOptionsStatus::operator =(const JsonValue& jsonValue)
+AdvancedOptionsStatus& AdvancedOptionsStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Options"))
   {
-    Aws::Map<Aws::String, JsonValue> optionsJsonMap = jsonValue.GetObject("Options").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> optionsJsonMap = jsonValue.GetObject("Options").GetAllObjects();
     for(auto& optionsItem : optionsJsonMap)
     {
       m_options[optionsItem.first] = optionsItem.second.AsString();

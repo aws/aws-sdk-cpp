@@ -36,7 +36,7 @@ ReferenceDataSourceDescription::ReferenceDataSourceDescription() :
 {
 }
 
-ReferenceDataSourceDescription::ReferenceDataSourceDescription(const JsonValue& jsonValue) : 
+ReferenceDataSourceDescription::ReferenceDataSourceDescription(JsonView jsonValue) : 
     m_referenceIdHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_s3ReferenceDataSourceDescriptionHasBeenSet(false),
@@ -45,7 +45,7 @@ ReferenceDataSourceDescription::ReferenceDataSourceDescription(const JsonValue& 
   *this = jsonValue;
 }
 
-ReferenceDataSourceDescription& ReferenceDataSourceDescription::operator =(const JsonValue& jsonValue)
+ReferenceDataSourceDescription& ReferenceDataSourceDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReferenceId"))
   {

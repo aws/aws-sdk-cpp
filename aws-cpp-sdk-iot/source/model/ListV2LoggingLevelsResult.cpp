@@ -37,10 +37,10 @@ ListV2LoggingLevelsResult::ListV2LoggingLevelsResult(const Aws::AmazonWebService
 
 ListV2LoggingLevelsResult& ListV2LoggingLevelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("logTargetConfigurations"))
   {
-    Array<JsonValue> logTargetConfigurationsJsonList = jsonValue.GetArray("logTargetConfigurations");
+    Array<JsonView> logTargetConfigurationsJsonList = jsonValue.GetArray("logTargetConfigurations");
     for(unsigned logTargetConfigurationsIndex = 0; logTargetConfigurationsIndex < logTargetConfigurationsJsonList.GetLength(); ++logTargetConfigurationsIndex)
     {
       m_logTargetConfigurations.push_back(logTargetConfigurationsJsonList[logTargetConfigurationsIndex].AsObject());

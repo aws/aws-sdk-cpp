@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -39,8 +40,8 @@ namespace Model
   {
   public:
     VideoSelectorPid();
-    VideoSelectorPid(const Aws::Utils::Json::JsonValue& jsonValue);
-    VideoSelectorPid& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    VideoSelectorPid(Aws::Utils::Json::JsonView jsonValue);
+    VideoSelectorPid& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

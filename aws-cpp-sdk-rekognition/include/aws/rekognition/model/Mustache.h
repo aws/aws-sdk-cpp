@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     Mustache();
-    Mustache(const Aws::Utils::Json::JsonValue& jsonValue);
-    Mustache& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Mustache(Aws::Utils::Json::JsonView jsonValue);
+    Mustache& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

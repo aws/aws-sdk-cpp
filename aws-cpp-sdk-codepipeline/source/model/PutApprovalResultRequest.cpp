@@ -65,7 +65,7 @@ Aws::String PutApprovalResultRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutApprovalResultRequest::GetRequestSpecificHeaders() const

@@ -38,8 +38,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the result of the simulation of a single API action call on a single
-   * resource.</p> <p>This data type is used by a member of the
+   * <p>Contains the result of the simulation of a single API operation call on a
+   * single resource.</p> <p>This data type is used by a member of the
    * <a>EvaluationResult</a> data type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResourceSpecificResult">AWS
    * API Reference</a></p>
@@ -92,31 +92,31 @@ namespace Model
 
 
     /**
-     * <p>The result of the simulation of the simulated API action on the resource
+     * <p>The result of the simulation of the simulated API operation on the resource
      * specified in <code>EvalResourceName</code>.</p>
      */
     inline const PolicyEvaluationDecisionType& GetEvalResourceDecision() const{ return m_evalResourceDecision; }
 
     /**
-     * <p>The result of the simulation of the simulated API action on the resource
+     * <p>The result of the simulation of the simulated API operation on the resource
      * specified in <code>EvalResourceName</code>.</p>
      */
     inline void SetEvalResourceDecision(const PolicyEvaluationDecisionType& value) { m_evalResourceDecisionHasBeenSet = true; m_evalResourceDecision = value; }
 
     /**
-     * <p>The result of the simulation of the simulated API action on the resource
+     * <p>The result of the simulation of the simulated API operation on the resource
      * specified in <code>EvalResourceName</code>.</p>
      */
     inline void SetEvalResourceDecision(PolicyEvaluationDecisionType&& value) { m_evalResourceDecisionHasBeenSet = true; m_evalResourceDecision = std::move(value); }
 
     /**
-     * <p>The result of the simulation of the simulated API action on the resource
+     * <p>The result of the simulation of the simulated API operation on the resource
      * specified in <code>EvalResourceName</code>.</p>
      */
     inline ResourceSpecificResult& WithEvalResourceDecision(const PolicyEvaluationDecisionType& value) { SetEvalResourceDecision(value); return *this;}
 
     /**
-     * <p>The result of the simulation of the simulated API action on the resource
+     * <p>The result of the simulation of the simulated API operation on the resource
      * specified in <code>EvalResourceName</code>.</p>
      */
     inline ResourceSpecificResult& WithEvalResourceDecision(PolicyEvaluationDecisionType&& value) { SetEvalResourceDecision(std::move(value)); return *this;}
@@ -125,8 +125,8 @@ namespace Model
     /**
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
-     * action on the resource, if <i>any</i> statement denies that action, then the
-     * explicit deny overrides any allow, and the deny statement is the only entry
+     * operation on the resource, if <i>any</i> statement denies that operation, then
+     * the explicit deny overrides any allow, and the deny statement is the only entry
      * included in the result.</p>
      */
     inline const Aws::Vector<Statement>& GetMatchedStatements() const{ return m_matchedStatements; }
@@ -134,8 +134,8 @@ namespace Model
     /**
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
-     * action on the resource, if <i>any</i> statement denies that action, then the
-     * explicit deny overrides any allow, and the deny statement is the only entry
+     * operation on the resource, if <i>any</i> statement denies that operation, then
+     * the explicit deny overrides any allow, and the deny statement is the only entry
      * included in the result.</p>
      */
     inline void SetMatchedStatements(const Aws::Vector<Statement>& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = value; }
@@ -143,8 +143,8 @@ namespace Model
     /**
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
-     * action on the resource, if <i>any</i> statement denies that action, then the
-     * explicit deny overrides any allow, and the deny statement is the only entry
+     * operation on the resource, if <i>any</i> statement denies that operation, then
+     * the explicit deny overrides any allow, and the deny statement is the only entry
      * included in the result.</p>
      */
     inline void SetMatchedStatements(Aws::Vector<Statement>&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = std::move(value); }
@@ -152,8 +152,8 @@ namespace Model
     /**
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
-     * action on the resource, if <i>any</i> statement denies that action, then the
-     * explicit deny overrides any allow, and the deny statement is the only entry
+     * operation on the resource, if <i>any</i> statement denies that operation, then
+     * the explicit deny overrides any allow, and the deny statement is the only entry
      * included in the result.</p>
      */
     inline ResourceSpecificResult& WithMatchedStatements(const Aws::Vector<Statement>& value) { SetMatchedStatements(value); return *this;}
@@ -161,8 +161,8 @@ namespace Model
     /**
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
-     * action on the resource, if <i>any</i> statement denies that action, then the
-     * explicit deny overrides any allow, and the deny statement is the only entry
+     * operation on the resource, if <i>any</i> statement denies that operation, then
+     * the explicit deny overrides any allow, and the deny statement is the only entry
      * included in the result.</p>
      */
     inline ResourceSpecificResult& WithMatchedStatements(Aws::Vector<Statement>&& value) { SetMatchedStatements(std::move(value)); return *this;}
@@ -170,8 +170,8 @@ namespace Model
     /**
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
-     * action on the resource, if <i>any</i> statement denies that action, then the
-     * explicit deny overrides any allow, and the deny statement is the only entry
+     * operation on the resource, if <i>any</i> statement denies that operation, then
+     * the explicit deny overrides any allow, and the deny statement is the only entry
      * included in the result.</p>
      */
     inline ResourceSpecificResult& AddMatchedStatements(const Statement& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(value); return *this; }
@@ -179,8 +179,8 @@ namespace Model
     /**
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
-     * action on the resource, if <i>any</i> statement denies that action, then the
-     * explicit deny overrides any allow, and the deny statement is the only entry
+     * operation on the resource, if <i>any</i> statement denies that operation, then
+     * the explicit deny overrides any allow, and the deny statement is the only entry
      * included in the result.</p>
      */
     inline ResourceSpecificResult& AddMatchedStatements(Statement&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(std::move(value)); return *this; }

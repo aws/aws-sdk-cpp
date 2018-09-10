@@ -37,10 +37,10 @@ GetBotsResult::GetBotsResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 
 GetBotsResult& GetBotsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("bots"))
   {
-    Array<JsonValue> botsJsonList = jsonValue.GetArray("bots");
+    Array<JsonView> botsJsonList = jsonValue.GetArray("bots");
     for(unsigned botsIndex = 0; botsIndex < botsJsonList.GetLength(); ++botsIndex)
     {
       m_bots.push_back(botsJsonList[botsIndex].AsObject());

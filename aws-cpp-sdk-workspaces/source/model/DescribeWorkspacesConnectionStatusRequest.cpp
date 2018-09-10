@@ -49,7 +49,7 @@ Aws::String DescribeWorkspacesConnectionStatusRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeWorkspacesConnectionStatusRequest::GetRequestSpecificHeaders() const

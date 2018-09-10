@@ -36,7 +36,7 @@ TeamMember::TeamMember() :
 {
 }
 
-TeamMember::TeamMember(const JsonValue& jsonValue) : 
+TeamMember::TeamMember(JsonView jsonValue) : 
     m_userArnHasBeenSet(false),
     m_projectRoleHasBeenSet(false),
     m_remoteAccessAllowed(false),
@@ -45,7 +45,7 @@ TeamMember::TeamMember(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TeamMember& TeamMember::operator =(const JsonValue& jsonValue)
+TeamMember& TeamMember::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("userArn"))
   {

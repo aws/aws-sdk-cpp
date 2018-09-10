@@ -37,7 +37,7 @@ Aws::String DescribeUserPoolRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeUserPoolRequest::GetRequestSpecificHeaders() const

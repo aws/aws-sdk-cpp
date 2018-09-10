@@ -43,7 +43,7 @@ Aws::String ArchiveFindingsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

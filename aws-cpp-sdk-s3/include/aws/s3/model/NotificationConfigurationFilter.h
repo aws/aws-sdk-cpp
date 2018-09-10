@@ -33,11 +33,11 @@ namespace Model
 {
 
   /**
-   * Container for object key name filtering rules. For information about key name
+   * <p>Container for object key name filtering rules. For information about key name
    * filtering, go to <a
    * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
    * Event Notifications</a> in the Amazon Simple Storage Service Developer
-   * Guide.<p><h3>See Also:</h3>   <a
+   * Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/NotificationConfigurationFilter">AWS
    * API Reference</a></p>
    */

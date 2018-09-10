@@ -34,14 +34,14 @@ ProblemDetail::ProblemDetail() :
 {
 }
 
-ProblemDetail::ProblemDetail(const JsonValue& jsonValue) : 
+ProblemDetail::ProblemDetail(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ProblemDetail& ProblemDetail::operator =(const JsonValue& jsonValue)
+ProblemDetail& ProblemDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

@@ -28,7 +28,8 @@ using namespace Aws::Http;
 RemovePermissionRequest::RemovePermissionRequest() : 
     m_functionNameHasBeenSet(false),
     m_statementIdHasBeenSet(false),
-    m_qualifierHasBeenSet(false)
+    m_qualifierHasBeenSet(false),
+    m_revisionIdHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,13 @@ void RemovePermissionRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_qualifier;
       uri.AddQueryStringParameter("Qualifier", ss.str());
+      ss.str("");
+    }
+
+    if(m_revisionIdHasBeenSet)
+    {
+      ss << m_revisionId;
+      uri.AddQueryStringParameter("RevisionId", ss.str());
       ss.str("");
     }
 

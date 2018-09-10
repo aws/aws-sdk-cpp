@@ -37,7 +37,7 @@ PutMethodResponseResult::PutMethodResponseResult(const Aws::AmazonWebServiceResu
 
 PutMethodResponseResult& PutMethodResponseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
@@ -46,7 +46,7 @@ PutMethodResponseResult& PutMethodResponseResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("responseParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
     for(auto& responseParametersItem : responseParametersJsonMap)
     {
       m_responseParameters[responseParametersItem.first] = responseParametersItem.second.AsBool();
@@ -55,7 +55,7 @@ PutMethodResponseResult& PutMethodResponseResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("responseModels"))
   {
-    Aws::Map<Aws::String, JsonValue> responseModelsJsonMap = jsonValue.GetObject("responseModels").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> responseModelsJsonMap = jsonValue.GetObject("responseModels").GetAllObjects();
     for(auto& responseModelsItem : responseModelsJsonMap)
     {
       m_responseModels[responseModelsItem.first] = responseModelsItem.second.AsString();

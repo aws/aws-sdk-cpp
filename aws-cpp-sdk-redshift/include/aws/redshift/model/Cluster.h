@@ -1318,6 +1318,126 @@ namespace Model
      */
     inline Cluster& AddIamRoles(ClusterIamRole&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetPendingActions() const{ return m_pendingActions; }
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline void SetPendingActions(const Aws::Vector<Aws::String>& value) { m_pendingActionsHasBeenSet = true; m_pendingActions = value; }
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline void SetPendingActions(Aws::Vector<Aws::String>&& value) { m_pendingActionsHasBeenSet = true; m_pendingActions = std::move(value); }
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline Cluster& WithPendingActions(const Aws::Vector<Aws::String>& value) { SetPendingActions(value); return *this;}
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline Cluster& WithPendingActions(Aws::Vector<Aws::String>&& value) { SetPendingActions(std::move(value)); return *this;}
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline Cluster& AddPendingActions(const Aws::String& value) { m_pendingActionsHasBeenSet = true; m_pendingActions.push_back(value); return *this; }
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline Cluster& AddPendingActions(Aws::String&& value) { m_pendingActionsHasBeenSet = true; m_pendingActions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Cluster operations that are waiting to be started.</p>
+     */
+    inline Cluster& AddPendingActions(const char* value) { m_pendingActionsHasBeenSet = true; m_pendingActions.push_back(value); return *this; }
+
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline const Aws::String& GetMaintenanceTrackName() const{ return m_maintenanceTrackName; }
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline void SetMaintenanceTrackName(Aws::String&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::move(value); }
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline void SetMaintenanceTrackName(const char* value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName.assign(value); }
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline Cluster& WithMaintenanceTrackName(const Aws::String& value) { SetMaintenanceTrackName(value); return *this;}
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline Cluster& WithMaintenanceTrackName(Aws::String&& value) { SetMaintenanceTrackName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the maintenance track for the cluster.</p>
+     */
+    inline Cluster& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
+
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline const Aws::String& GetElasticResizeNumberOfNodeOptions() const{ return m_elasticResizeNumberOfNodeOptions; }
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline void SetElasticResizeNumberOfNodeOptions(const Aws::String& value) { m_elasticResizeNumberOfNodeOptionsHasBeenSet = true; m_elasticResizeNumberOfNodeOptions = value; }
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline void SetElasticResizeNumberOfNodeOptions(Aws::String&& value) { m_elasticResizeNumberOfNodeOptionsHasBeenSet = true; m_elasticResizeNumberOfNodeOptions = std::move(value); }
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline void SetElasticResizeNumberOfNodeOptions(const char* value) { m_elasticResizeNumberOfNodeOptionsHasBeenSet = true; m_elasticResizeNumberOfNodeOptions.assign(value); }
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline Cluster& WithElasticResizeNumberOfNodeOptions(const Aws::String& value) { SetElasticResizeNumberOfNodeOptions(value); return *this;}
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline Cluster& WithElasticResizeNumberOfNodeOptions(Aws::String&& value) { SetElasticResizeNumberOfNodeOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * resize method. </p>
+     */
+    inline Cluster& WithElasticResizeNumberOfNodeOptions(const char* value) { SetElasticResizeNumberOfNodeOptions(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1418,6 +1538,15 @@ namespace Model
 
     Aws::Vector<ClusterIamRole> m_iamRoles;
     bool m_iamRolesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_pendingActions;
+    bool m_pendingActionsHasBeenSet;
+
+    Aws::String m_maintenanceTrackName;
+    bool m_maintenanceTrackNameHasBeenSet;
+
+    Aws::String m_elasticResizeNumberOfNodeOptions;
+    bool m_elasticResizeNumberOfNodeOptionsHasBeenSet;
   };
 
 } // namespace Model

@@ -34,18 +34,18 @@ AgentFilter::AgentFilter() :
 {
 }
 
-AgentFilter::AgentFilter(const JsonValue& jsonValue) : 
+AgentFilter::AgentFilter(JsonView jsonValue) : 
     m_agentHealthsHasBeenSet(false),
     m_agentHealthCodesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AgentFilter& AgentFilter::operator =(const JsonValue& jsonValue)
+AgentFilter& AgentFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("agentHealths"))
   {
-    Array<JsonValue> agentHealthsJsonList = jsonValue.GetArray("agentHealths");
+    Array<JsonView> agentHealthsJsonList = jsonValue.GetArray("agentHealths");
     for(unsigned agentHealthsIndex = 0; agentHealthsIndex < agentHealthsJsonList.GetLength(); ++agentHealthsIndex)
     {
       m_agentHealths.push_back(AgentHealthMapper::GetAgentHealthForName(agentHealthsJsonList[agentHealthsIndex].AsString()));
@@ -55,7 +55,7 @@ AgentFilter& AgentFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("agentHealthCodes"))
   {
-    Array<JsonValue> agentHealthCodesJsonList = jsonValue.GetArray("agentHealthCodes");
+    Array<JsonView> agentHealthCodesJsonList = jsonValue.GetArray("agentHealthCodes");
     for(unsigned agentHealthCodesIndex = 0; agentHealthCodesIndex < agentHealthCodesJsonList.GetLength(); ++agentHealthCodesIndex)
     {
       m_agentHealthCodes.push_back(AgentHealthCodeMapper::GetAgentHealthCodeForName(agentHealthCodesJsonList[agentHealthCodesIndex].AsString()));

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Inspector
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     AssessmentTemplate();
-    AssessmentTemplate(const Aws::Utils::Json::JsonValue& jsonValue);
-    AssessmentTemplate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AssessmentTemplate(Aws::Utils::Json::JsonView jsonValue);
+    AssessmentTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -167,21 +168,21 @@ namespace Model
 
 
     /**
-     * <p>The duration in seconds specified for this assessment tempate. The default
+     * <p>The duration in seconds specified for this assessment template. The default
      * value is 3600 seconds (one hour). The maximum value is 86400 seconds (one
      * day).</p>
      */
     inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
 
     /**
-     * <p>The duration in seconds specified for this assessment tempate. The default
+     * <p>The duration in seconds specified for this assessment template. The default
      * value is 3600 seconds (one hour). The maximum value is 86400 seconds (one
      * day).</p>
      */
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
 
     /**
-     * <p>The duration in seconds specified for this assessment tempate. The default
+     * <p>The duration in seconds specified for this assessment template. The default
      * value is 3600 seconds (one hour). The maximum value is 86400 seconds (one
      * day).</p>
      */
@@ -275,49 +276,49 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
      * with this assessment template. This value exists only when the value of
-     * assessmentRunCount is greater than zero.</p>
+     * assessmentRunCount is greaterpa than zero.</p>
      */
     inline const Aws::String& GetLastAssessmentRunArn() const{ return m_lastAssessmentRunArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
      * with this assessment template. This value exists only when the value of
-     * assessmentRunCount is greater than zero.</p>
+     * assessmentRunCount is greaterpa than zero.</p>
      */
     inline void SetLastAssessmentRunArn(const Aws::String& value) { m_lastAssessmentRunArnHasBeenSet = true; m_lastAssessmentRunArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
      * with this assessment template. This value exists only when the value of
-     * assessmentRunCount is greater than zero.</p>
+     * assessmentRunCount is greaterpa than zero.</p>
      */
     inline void SetLastAssessmentRunArn(Aws::String&& value) { m_lastAssessmentRunArnHasBeenSet = true; m_lastAssessmentRunArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
      * with this assessment template. This value exists only when the value of
-     * assessmentRunCount is greater than zero.</p>
+     * assessmentRunCount is greaterpa than zero.</p>
      */
     inline void SetLastAssessmentRunArn(const char* value) { m_lastAssessmentRunArnHasBeenSet = true; m_lastAssessmentRunArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
      * with this assessment template. This value exists only when the value of
-     * assessmentRunCount is greater than zero.</p>
+     * assessmentRunCount is greaterpa than zero.</p>
      */
     inline AssessmentTemplate& WithLastAssessmentRunArn(const Aws::String& value) { SetLastAssessmentRunArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
      * with this assessment template. This value exists only when the value of
-     * assessmentRunCount is greater than zero.</p>
+     * assessmentRunCount is greaterpa than zero.</p>
      */
     inline AssessmentTemplate& WithLastAssessmentRunArn(Aws::String&& value) { SetLastAssessmentRunArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the most recent assessment run associated
      * with this assessment template. This value exists only when the value of
-     * assessmentRunCount is greater than zero.</p>
+     * assessmentRunCount is greaterpa than zero.</p>
      */
     inline AssessmentTemplate& WithLastAssessmentRunArn(const char* value) { SetLastAssessmentRunArn(value); return *this;}
 

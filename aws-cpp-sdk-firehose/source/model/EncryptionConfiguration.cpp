@@ -35,7 +35,7 @@ EncryptionConfiguration::EncryptionConfiguration() :
 {
 }
 
-EncryptionConfiguration::EncryptionConfiguration(const JsonValue& jsonValue) : 
+EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue) : 
     m_noEncryptionConfig(NoEncryptionConfig::NOT_SET),
     m_noEncryptionConfigHasBeenSet(false),
     m_kMSEncryptionConfigHasBeenSet(false)
@@ -43,7 +43,7 @@ EncryptionConfiguration::EncryptionConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EncryptionConfiguration& EncryptionConfiguration::operator =(const JsonValue& jsonValue)
+EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NoEncryptionConfig"))
   {

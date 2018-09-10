@@ -36,7 +36,7 @@ MouthOpen::MouthOpen() :
 {
 }
 
-MouthOpen::MouthOpen(const JsonValue& jsonValue) : 
+MouthOpen::MouthOpen(JsonView jsonValue) : 
     m_value(false),
     m_valueHasBeenSet(false),
     m_confidence(0.0),
@@ -45,7 +45,7 @@ MouthOpen::MouthOpen(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MouthOpen& MouthOpen::operator =(const JsonValue& jsonValue)
+MouthOpen& MouthOpen::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {

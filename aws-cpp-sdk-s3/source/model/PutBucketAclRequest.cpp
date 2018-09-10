@@ -16,6 +16,7 @@
 #include <aws/s3/model/PutBucketAclRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -23,6 +24,7 @@
 using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
 PutBucketAclRequest::PutBucketAclRequest() : 
     m_aCL(BucketCannedACL::NOT_SET),
@@ -34,7 +36,8 @@ PutBucketAclRequest::PutBucketAclRequest() :
     m_grantReadHasBeenSet(false),
     m_grantReadACPHasBeenSet(false),
     m_grantWriteHasBeenSet(false),
-    m_grantWriteACPHasBeenSet(false)
+    m_grantWriteACPHasBeenSet(false),
+    m_customizedAccessLogTagHasBeenSet(false)
 {
 }
 
@@ -54,6 +57,27 @@ Aws::String PutBucketAclRequest::SerializePayload() const
   return "";
 }
 
+void PutBucketAclRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(!m_customizedAccessLogTag.empty())
+    {
+        // only accept customized LogTag which starts with "x-"
+        Aws::Map<Aws::String, Aws::String> collectedLogTags;
+        for(const auto& entry: m_customizedAccessLogTag)
+        {
+            if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-")
+            {
+                collectedLogTags.emplace(entry.first, entry.second);
+            }
+        }
+
+        if (!collectedLogTags.empty())
+        {
+            uri.AddQueryStringParameter(collectedLogTags);
+        }
+    }
+}
 
 Aws::Http::HeaderValueCollection PutBucketAclRequest::GetRequestSpecificHeaders() const
 {
@@ -61,48 +85,48 @@ Aws::Http::HeaderValueCollection PutBucketAclRequest::GetRequestSpecificHeaders(
   Aws::StringStream ss;
   if(m_aCLHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-acl", BucketCannedACLMapper::GetNameForBucketCannedACL(m_aCL)));
+    headers.emplace("x-amz-acl", BucketCannedACLMapper::GetNameForBucketCannedACL(m_aCL));
   }
 
   if(m_contentMD5HasBeenSet)
   {
     ss << m_contentMD5;
-    headers.insert(Aws::Http::HeaderValuePair("content-md5", ss.str()));
+    headers.emplace("content-md5",  ss.str());
     ss.str("");
   }
 
   if(m_grantFullControlHasBeenSet)
   {
     ss << m_grantFullControl;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-full-control", ss.str()));
+    headers.emplace("x-amz-grant-full-control",  ss.str());
     ss.str("");
   }
 
   if(m_grantReadHasBeenSet)
   {
     ss << m_grantRead;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-read", ss.str()));
+    headers.emplace("x-amz-grant-read",  ss.str());
     ss.str("");
   }
 
   if(m_grantReadACPHasBeenSet)
   {
     ss << m_grantReadACP;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-read-acp", ss.str()));
+    headers.emplace("x-amz-grant-read-acp",  ss.str());
     ss.str("");
   }
 
   if(m_grantWriteHasBeenSet)
   {
     ss << m_grantWrite;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-write", ss.str()));
+    headers.emplace("x-amz-grant-write",  ss.str());
     ss.str("");
   }
 
   if(m_grantWriteACPHasBeenSet)
   {
     ss << m_grantWriteACP;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-write-acp", ss.str()));
+    headers.emplace("x-amz-grant-write-acp",  ss.str());
     ss.str("");
   }
 

@@ -28,20 +28,22 @@ using namespace Aws;
 
 UpdatePatchBaselineResult::UpdatePatchBaselineResult() : 
     m_operatingSystem(OperatingSystem::NOT_SET),
-    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET)
+    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
+    m_approvedPatchesEnableNonSecurity(false)
 {
 }
 
 UpdatePatchBaselineResult::UpdatePatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_operatingSystem(OperatingSystem::NOT_SET),
-    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET)
+    m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
+    m_approvedPatchesEnableNonSecurity(false)
 {
   *this = result;
 }
 
 UpdatePatchBaselineResult& UpdatePatchBaselineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BaselineId"))
   {
     m_baselineId = jsonValue.GetString("BaselineId");
@@ -74,7 +76,7 @@ UpdatePatchBaselineResult& UpdatePatchBaselineResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ApprovedPatches"))
   {
-    Array<JsonValue> approvedPatchesJsonList = jsonValue.GetArray("ApprovedPatches");
+    Array<JsonView> approvedPatchesJsonList = jsonValue.GetArray("ApprovedPatches");
     for(unsigned approvedPatchesIndex = 0; approvedPatchesIndex < approvedPatchesJsonList.GetLength(); ++approvedPatchesIndex)
     {
       m_approvedPatches.push_back(approvedPatchesJsonList[approvedPatchesIndex].AsString());
@@ -87,9 +89,15 @@ UpdatePatchBaselineResult& UpdatePatchBaselineResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("ApprovedPatchesEnableNonSecurity"))
+  {
+    m_approvedPatchesEnableNonSecurity = jsonValue.GetBool("ApprovedPatchesEnableNonSecurity");
+
+  }
+
   if(jsonValue.ValueExists("RejectedPatches"))
   {
-    Array<JsonValue> rejectedPatchesJsonList = jsonValue.GetArray("RejectedPatches");
+    Array<JsonView> rejectedPatchesJsonList = jsonValue.GetArray("RejectedPatches");
     for(unsigned rejectedPatchesIndex = 0; rejectedPatchesIndex < rejectedPatchesJsonList.GetLength(); ++rejectedPatchesIndex)
     {
       m_rejectedPatches.push_back(rejectedPatchesJsonList[rejectedPatchesIndex].AsString());
@@ -112,6 +120,15 @@ UpdatePatchBaselineResult& UpdatePatchBaselineResult::operator =(const Aws::Amaz
   {
     m_description = jsonValue.GetString("Description");
 
+  }
+
+  if(jsonValue.ValueExists("Sources"))
+  {
+    Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
+    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+    {
+      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
+    }
   }
 
 

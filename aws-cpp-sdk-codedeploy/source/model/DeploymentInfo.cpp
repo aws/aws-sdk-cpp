@@ -66,7 +66,7 @@ DeploymentInfo::DeploymentInfo() :
 {
 }
 
-DeploymentInfo::DeploymentInfo(const JsonValue& jsonValue) : 
+DeploymentInfo::DeploymentInfo(JsonView jsonValue) : 
     m_applicationNameHasBeenSet(false),
     m_deploymentGroupNameHasBeenSet(false),
     m_deploymentConfigNameHasBeenSet(false),
@@ -105,7 +105,7 @@ DeploymentInfo::DeploymentInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeploymentInfo& DeploymentInfo::operator =(const JsonValue& jsonValue)
+DeploymentInfo& DeploymentInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("applicationName"))
   {
@@ -284,7 +284,7 @@ DeploymentInfo& DeploymentInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("deploymentStatusMessages"))
   {
-    Array<JsonValue> deploymentStatusMessagesJsonList = jsonValue.GetArray("deploymentStatusMessages");
+    Array<JsonView> deploymentStatusMessagesJsonList = jsonValue.GetArray("deploymentStatusMessages");
     for(unsigned deploymentStatusMessagesIndex = 0; deploymentStatusMessagesIndex < deploymentStatusMessagesJsonList.GetLength(); ++deploymentStatusMessagesIndex)
     {
       m_deploymentStatusMessages.push_back(deploymentStatusMessagesJsonList[deploymentStatusMessagesIndex].AsString());

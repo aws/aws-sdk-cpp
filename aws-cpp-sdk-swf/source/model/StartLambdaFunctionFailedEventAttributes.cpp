@@ -37,7 +37,7 @@ StartLambdaFunctionFailedEventAttributes::StartLambdaFunctionFailedEventAttribut
 {
 }
 
-StartLambdaFunctionFailedEventAttributes::StartLambdaFunctionFailedEventAttributes(const JsonValue& jsonValue) : 
+StartLambdaFunctionFailedEventAttributes::StartLambdaFunctionFailedEventAttributes(JsonView jsonValue) : 
     m_scheduledEventId(0),
     m_scheduledEventIdHasBeenSet(false),
     m_cause(StartLambdaFunctionFailedCause::NOT_SET),
@@ -47,7 +47,7 @@ StartLambdaFunctionFailedEventAttributes::StartLambdaFunctionFailedEventAttribut
   *this = jsonValue;
 }
 
-StartLambdaFunctionFailedEventAttributes& StartLambdaFunctionFailedEventAttributes::operator =(const JsonValue& jsonValue)
+StartLambdaFunctionFailedEventAttributes& StartLambdaFunctionFailedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("scheduledEventId"))
   {

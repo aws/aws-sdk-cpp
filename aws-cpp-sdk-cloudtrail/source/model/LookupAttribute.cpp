@@ -35,7 +35,7 @@ LookupAttribute::LookupAttribute() :
 {
 }
 
-LookupAttribute::LookupAttribute(const JsonValue& jsonValue) : 
+LookupAttribute::LookupAttribute(JsonView jsonValue) : 
     m_attributeKey(LookupAttributeKey::NOT_SET),
     m_attributeKeyHasBeenSet(false),
     m_attributeValueHasBeenSet(false)
@@ -43,7 +43,7 @@ LookupAttribute::LookupAttribute(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LookupAttribute& LookupAttribute::operator =(const JsonValue& jsonValue)
+LookupAttribute& LookupAttribute::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttributeKey"))
   {

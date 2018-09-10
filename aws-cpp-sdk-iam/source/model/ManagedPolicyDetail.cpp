@@ -38,6 +38,8 @@ ManagedPolicyDetail::ManagedPolicyDetail() :
     m_defaultVersionIdHasBeenSet(false),
     m_attachmentCount(0),
     m_attachmentCountHasBeenSet(false),
+    m_permissionsBoundaryUsageCount(0),
+    m_permissionsBoundaryUsageCountHasBeenSet(false),
     m_isAttachable(false),
     m_isAttachableHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -55,6 +57,8 @@ ManagedPolicyDetail::ManagedPolicyDetail(const XmlNode& xmlNode) :
     m_defaultVersionIdHasBeenSet(false),
     m_attachmentCount(0),
     m_attachmentCountHasBeenSet(false),
+    m_permissionsBoundaryUsageCount(0),
+    m_permissionsBoundaryUsageCountHasBeenSet(false),
     m_isAttachable(false),
     m_isAttachableHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -106,6 +110,12 @@ ManagedPolicyDetail& ManagedPolicyDetail::operator =(const XmlNode& xmlNode)
     {
       m_attachmentCount = StringUtils::ConvertToInt32(StringUtils::Trim(attachmentCountNode.GetText().c_str()).c_str());
       m_attachmentCountHasBeenSet = true;
+    }
+    XmlNode permissionsBoundaryUsageCountNode = resultNode.FirstChild("PermissionsBoundaryUsageCount");
+    if(!permissionsBoundaryUsageCountNode.IsNull())
+    {
+      m_permissionsBoundaryUsageCount = StringUtils::ConvertToInt32(StringUtils::Trim(permissionsBoundaryUsageCountNode.GetText().c_str()).c_str());
+      m_permissionsBoundaryUsageCountHasBeenSet = true;
     }
     XmlNode isAttachableNode = resultNode.FirstChild("IsAttachable");
     if(!isAttachableNode.IsNull())
@@ -180,6 +190,11 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".AttachmentCount=" << m_attachmentCount << "&";
   }
 
+  if(m_permissionsBoundaryUsageCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PermissionsBoundaryUsageCount=" << m_permissionsBoundaryUsageCount << "&";
+  }
+
   if(m_isAttachableHasBeenSet)
   {
       oStream << location << index << locationValue << ".IsAttachable=" << std::boolalpha << m_isAttachable << "&";
@@ -238,6 +253,10 @@ void ManagedPolicyDetail::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_attachmentCountHasBeenSet)
   {
       oStream << location << ".AttachmentCount=" << m_attachmentCount << "&";
+  }
+  if(m_permissionsBoundaryUsageCountHasBeenSet)
+  {
+      oStream << location << ".PermissionsBoundaryUsageCount=" << m_permissionsBoundaryUsageCount << "&";
   }
   if(m_isAttachableHasBeenSet)
   {

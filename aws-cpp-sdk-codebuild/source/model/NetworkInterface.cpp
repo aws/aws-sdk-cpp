@@ -34,14 +34,14 @@ NetworkInterface::NetworkInterface() :
 {
 }
 
-NetworkInterface::NetworkInterface(const JsonValue& jsonValue) : 
+NetworkInterface::NetworkInterface(JsonView jsonValue) : 
     m_subnetIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NetworkInterface& NetworkInterface::operator =(const JsonValue& jsonValue)
+NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("subnetId"))
   {

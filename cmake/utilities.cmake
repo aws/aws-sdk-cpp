@@ -87,7 +87,9 @@ endmacro()
 
 macro(do_packaging)
     if(PLATFORM_WINDOWS AND MSVC)
-        install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+        if (NOT (${PROJECT_NAME} STREQUAL "testing-resources"))
+            install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+        endif()
     endif()
 
     if(SIMPLE_INSTALL)

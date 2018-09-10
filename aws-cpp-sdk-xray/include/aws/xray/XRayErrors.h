@@ -56,6 +56,7 @@ enum class XRayErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INVALID_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  RULE_LIMIT_EXCEEDED,
   THROTTLED
 };
 namespace XRayErrorMapper

@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateOriginEndpointRequest::UpdateOriginEndpointRequest() : 
+    m_cmafPackageHasBeenSet(false),
     m_dashPackageHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_hlsPackageHasBeenSet(false),
@@ -40,6 +41,12 @@ UpdateOriginEndpointRequest::UpdateOriginEndpointRequest() :
 Aws::String UpdateOriginEndpointRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_cmafPackageHasBeenSet)
+  {
+   payload.WithObject("cmafPackage", m_cmafPackage.Jsonize());
+
+  }
 
   if(m_dashPackageHasBeenSet)
   {
@@ -94,7 +101,7 @@ Aws::String UpdateOriginEndpointRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

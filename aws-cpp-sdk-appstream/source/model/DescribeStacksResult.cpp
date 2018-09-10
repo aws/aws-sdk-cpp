@@ -37,10 +37,10 @@ DescribeStacksResult::DescribeStacksResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeStacksResult& DescribeStacksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Stacks"))
   {
-    Array<JsonValue> stacksJsonList = jsonValue.GetArray("Stacks");
+    Array<JsonView> stacksJsonList = jsonValue.GetArray("Stacks");
     for(unsigned stacksIndex = 0; stacksIndex < stacksJsonList.GetLength(); ++stacksIndex)
     {
       m_stacks.push_back(stacksJsonList[stacksIndex].AsObject());

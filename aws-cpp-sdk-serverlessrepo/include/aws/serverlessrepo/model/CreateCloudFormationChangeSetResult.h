@@ -43,152 +43,173 @@ namespace Model
 
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline CreateCloudFormationChangeSetResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline CreateCloudFormationChangeSetResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline CreateCloudFormationChangeSetResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern:
-     * arn:[-a-zA-Z0-9:/]*
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline const Aws::String& GetChangeSetId() const{ return m_changeSetId; }
 
     /**
-     * The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern:
-     * arn:[-a-zA-Z0-9:/]*
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline void SetChangeSetId(const Aws::String& value) { m_changeSetId = value; }
 
     /**
-     * The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern:
-     * arn:[-a-zA-Z0-9:/]*
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline void SetChangeSetId(Aws::String&& value) { m_changeSetId = std::move(value); }
 
     /**
-     * The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern:
-     * arn:[-a-zA-Z0-9:/]*
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline void SetChangeSetId(const char* value) { m_changeSetId.assign(value); }
 
     /**
-     * The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern:
-     * arn:[-a-zA-Z0-9:/]*
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline CreateCloudFormationChangeSetResult& WithChangeSetId(const Aws::String& value) { SetChangeSetId(value); return *this;}
 
     /**
-     * The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern:
-     * arn:[-a-zA-Z0-9:/]*
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline CreateCloudFormationChangeSetResult& WithChangeSetId(Aws::String&& value) { SetChangeSetId(std::move(value)); return *this;}
 
     /**
-     * The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern:
-     * arn:[-a-zA-Z0-9:/]*
+     * <p>The Amazon Resource Name (ARN) of the change set.</p><p>Length constraints:
+     * Minimum length of 1.</p><p>Pattern: ARN:[-a-zA-Z0-9:/]*</p>
      */
     inline CreateCloudFormationChangeSetResult& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
 
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersion = value; }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersion = std::move(value); }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersion.assign(value); }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline CreateCloudFormationChangeSetResult& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline CreateCloudFormationChangeSetResult& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline CreateCloudFormationChangeSetResult& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
 
 
     /**
-     * The unique ID of the stack.
+     * <p>The unique ID of the stack.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
 
     /**
-     * The unique ID of the stack.
+     * <p>The unique ID of the stack.</p>
      */
     inline void SetStackId(const Aws::String& value) { m_stackId = value; }
 
     /**
-     * The unique ID of the stack.
+     * <p>The unique ID of the stack.</p>
      */
     inline void SetStackId(Aws::String&& value) { m_stackId = std::move(value); }
 
     /**
-     * The unique ID of the stack.
+     * <p>The unique ID of the stack.</p>
      */
     inline void SetStackId(const char* value) { m_stackId.assign(value); }
 
     /**
-     * The unique ID of the stack.
+     * <p>The unique ID of the stack.</p>
      */
     inline CreateCloudFormationChangeSetResult& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
 
     /**
-     * The unique ID of the stack.
+     * <p>The unique ID of the stack.</p>
      */
     inline CreateCloudFormationChangeSetResult& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
-     * The unique ID of the stack.
+     * <p>The unique ID of the stack.</p>
      */
     inline CreateCloudFormationChangeSetResult& WithStackId(const char* value) { SetStackId(value); return *this;}
 

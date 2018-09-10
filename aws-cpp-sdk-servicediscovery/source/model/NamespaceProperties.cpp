@@ -33,13 +33,13 @@ NamespaceProperties::NamespaceProperties() :
 {
 }
 
-NamespaceProperties::NamespaceProperties(const JsonValue& jsonValue) : 
+NamespaceProperties::NamespaceProperties(JsonView jsonValue) : 
     m_dnsPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NamespaceProperties& NamespaceProperties::operator =(const JsonValue& jsonValue)
+NamespaceProperties& NamespaceProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DnsProperties"))
   {

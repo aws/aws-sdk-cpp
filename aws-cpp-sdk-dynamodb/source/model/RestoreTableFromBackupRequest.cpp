@@ -44,7 +44,7 @@ Aws::String RestoreTableFromBackupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RestoreTableFromBackupRequest::GetRequestSpecificHeaders() const

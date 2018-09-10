@@ -33,11 +33,13 @@ namespace Aws
         static const int nodejs_HASH = HashingUtils::HashString("nodejs");
         static const int nodejs4_3_HASH = HashingUtils::HashString("nodejs4.3");
         static const int nodejs6_10_HASH = HashingUtils::HashString("nodejs6.10");
+        static const int nodejs8_10_HASH = HashingUtils::HashString("nodejs8.10");
         static const int java8_HASH = HashingUtils::HashString("java8");
         static const int python2_7_HASH = HashingUtils::HashString("python2.7");
         static const int python3_6_HASH = HashingUtils::HashString("python3.6");
         static const int dotnetcore1_0_HASH = HashingUtils::HashString("dotnetcore1.0");
         static const int dotnetcore2_0_HASH = HashingUtils::HashString("dotnetcore2.0");
+        static const int dotnetcore2_1_HASH = HashingUtils::HashString("dotnetcore2.1");
         static const int nodejs4_3_edge_HASH = HashingUtils::HashString("nodejs4.3-edge");
         static const int go1_x_HASH = HashingUtils::HashString("go1.x");
 
@@ -56,6 +58,10 @@ namespace Aws
           else if (hashCode == nodejs6_10_HASH)
           {
             return Runtime::nodejs6_10;
+          }
+          else if (hashCode == nodejs8_10_HASH)
+          {
+            return Runtime::nodejs8_10;
           }
           else if (hashCode == java8_HASH)
           {
@@ -76,6 +82,10 @@ namespace Aws
           else if (hashCode == dotnetcore2_0_HASH)
           {
             return Runtime::dotnetcore2_0;
+          }
+          else if (hashCode == dotnetcore2_1_HASH)
+          {
+            return Runtime::dotnetcore2_1;
           }
           else if (hashCode == nodejs4_3_edge_HASH)
           {
@@ -105,6 +115,8 @@ namespace Aws
             return "nodejs4.3";
           case Runtime::nodejs6_10:
             return "nodejs6.10";
+          case Runtime::nodejs8_10:
+            return "nodejs8.10";
           case Runtime::java8:
             return "java8";
           case Runtime::python2_7:
@@ -115,6 +127,8 @@ namespace Aws
             return "dotnetcore1.0";
           case Runtime::dotnetcore2_0:
             return "dotnetcore2.0";
+          case Runtime::dotnetcore2_1:
+            return "dotnetcore2.1";
           case Runtime::nodejs4_3_edge:
             return "nodejs4.3-edge";
           case Runtime::go1_x:

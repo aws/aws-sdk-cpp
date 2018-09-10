@@ -36,7 +36,7 @@ ArtifactStore::ArtifactStore() :
 {
 }
 
-ArtifactStore::ArtifactStore(const JsonValue& jsonValue) : 
+ArtifactStore::ArtifactStore(JsonView jsonValue) : 
     m_type(ArtifactStoreType::NOT_SET),
     m_typeHasBeenSet(false),
     m_locationHasBeenSet(false),
@@ -45,7 +45,7 @@ ArtifactStore::ArtifactStore(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ArtifactStore& ArtifactStore::operator =(const JsonValue& jsonValue)
+ArtifactStore& ArtifactStore::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

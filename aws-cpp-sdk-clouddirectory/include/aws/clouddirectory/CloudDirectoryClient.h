@@ -48,6 +48,8 @@
 #include <aws/clouddirectory/model/GetAppliedSchemaVersionResult.h>
 #include <aws/clouddirectory/model/GetDirectoryResult.h>
 #include <aws/clouddirectory/model/GetFacetResult.h>
+#include <aws/clouddirectory/model/GetLinkAttributesResult.h>
+#include <aws/clouddirectory/model/GetObjectAttributesResult.h>
 #include <aws/clouddirectory/model/GetObjectInformationResult.h>
 #include <aws/clouddirectory/model/GetSchemaAsJsonResult.h>
 #include <aws/clouddirectory/model/GetTypedLinkFacetInformationResult.h>
@@ -59,6 +61,7 @@
 #include <aws/clouddirectory/model/ListFacetNamesResult.h>
 #include <aws/clouddirectory/model/ListIncomingTypedLinksResult.h>
 #include <aws/clouddirectory/model/ListIndexResult.h>
+#include <aws/clouddirectory/model/ListManagedSchemaArnsResult.h>
 #include <aws/clouddirectory/model/ListObjectAttributesResult.h>
 #include <aws/clouddirectory/model/ListObjectChildrenResult.h>
 #include <aws/clouddirectory/model/ListObjectParentPathsResult.h>
@@ -77,6 +80,7 @@
 #include <aws/clouddirectory/model/TagResourceResult.h>
 #include <aws/clouddirectory/model/UntagResourceResult.h>
 #include <aws/clouddirectory/model/UpdateFacetResult.h>
+#include <aws/clouddirectory/model/UpdateLinkAttributesResult.h>
 #include <aws/clouddirectory/model/UpdateObjectAttributesResult.h>
 #include <aws/clouddirectory/model/UpdateSchemaResult.h>
 #include <aws/clouddirectory/model/UpdateTypedLinkFacetResult.h>
@@ -105,11 +109,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -156,6 +155,8 @@ namespace Model
         class GetAppliedSchemaVersionRequest;
         class GetDirectoryRequest;
         class GetFacetRequest;
+        class GetLinkAttributesRequest;
+        class GetObjectAttributesRequest;
         class GetObjectInformationRequest;
         class GetSchemaAsJsonRequest;
         class GetTypedLinkFacetInformationRequest;
@@ -167,6 +168,7 @@ namespace Model
         class ListFacetNamesRequest;
         class ListIncomingTypedLinksRequest;
         class ListIndexRequest;
+        class ListManagedSchemaArnsRequest;
         class ListObjectAttributesRequest;
         class ListObjectChildrenRequest;
         class ListObjectParentPathsRequest;
@@ -185,6 +187,7 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateFacetRequest;
+        class UpdateLinkAttributesRequest;
         class UpdateObjectAttributesRequest;
         class UpdateSchemaRequest;
         class UpdateTypedLinkFacetRequest;
@@ -219,6 +222,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetAppliedSchemaVersionResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetAppliedSchemaVersionOutcome;
         typedef Aws::Utils::Outcome<GetDirectoryResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetDirectoryOutcome;
         typedef Aws::Utils::Outcome<GetFacetResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetFacetOutcome;
+        typedef Aws::Utils::Outcome<GetLinkAttributesResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetLinkAttributesOutcome;
+        typedef Aws::Utils::Outcome<GetObjectAttributesResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetObjectAttributesOutcome;
         typedef Aws::Utils::Outcome<GetObjectInformationResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetObjectInformationOutcome;
         typedef Aws::Utils::Outcome<GetSchemaAsJsonResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetSchemaAsJsonOutcome;
         typedef Aws::Utils::Outcome<GetTypedLinkFacetInformationResult, Aws::Client::AWSError<CloudDirectoryErrors>> GetTypedLinkFacetInformationOutcome;
@@ -230,6 +235,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListFacetNamesResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListFacetNamesOutcome;
         typedef Aws::Utils::Outcome<ListIncomingTypedLinksResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListIncomingTypedLinksOutcome;
         typedef Aws::Utils::Outcome<ListIndexResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListIndexOutcome;
+        typedef Aws::Utils::Outcome<ListManagedSchemaArnsResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListManagedSchemaArnsOutcome;
         typedef Aws::Utils::Outcome<ListObjectAttributesResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListObjectAttributesOutcome;
         typedef Aws::Utils::Outcome<ListObjectChildrenResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListObjectChildrenOutcome;
         typedef Aws::Utils::Outcome<ListObjectParentPathsResult, Aws::Client::AWSError<CloudDirectoryErrors>> ListObjectParentPathsOutcome;
@@ -248,6 +254,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CloudDirectoryErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CloudDirectoryErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateFacetResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpdateFacetOutcome;
+        typedef Aws::Utils::Outcome<UpdateLinkAttributesResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpdateLinkAttributesOutcome;
         typedef Aws::Utils::Outcome<UpdateObjectAttributesResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpdateObjectAttributesOutcome;
         typedef Aws::Utils::Outcome<UpdateSchemaResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpdateSchemaOutcome;
         typedef Aws::Utils::Outcome<UpdateTypedLinkFacetResult, Aws::Client::AWSError<CloudDirectoryErrors>> UpdateTypedLinkFacetOutcome;
@@ -282,6 +289,8 @@ namespace Model
         typedef std::future<GetAppliedSchemaVersionOutcome> GetAppliedSchemaVersionOutcomeCallable;
         typedef std::future<GetDirectoryOutcome> GetDirectoryOutcomeCallable;
         typedef std::future<GetFacetOutcome> GetFacetOutcomeCallable;
+        typedef std::future<GetLinkAttributesOutcome> GetLinkAttributesOutcomeCallable;
+        typedef std::future<GetObjectAttributesOutcome> GetObjectAttributesOutcomeCallable;
         typedef std::future<GetObjectInformationOutcome> GetObjectInformationOutcomeCallable;
         typedef std::future<GetSchemaAsJsonOutcome> GetSchemaAsJsonOutcomeCallable;
         typedef std::future<GetTypedLinkFacetInformationOutcome> GetTypedLinkFacetInformationOutcomeCallable;
@@ -293,6 +302,7 @@ namespace Model
         typedef std::future<ListFacetNamesOutcome> ListFacetNamesOutcomeCallable;
         typedef std::future<ListIncomingTypedLinksOutcome> ListIncomingTypedLinksOutcomeCallable;
         typedef std::future<ListIndexOutcome> ListIndexOutcomeCallable;
+        typedef std::future<ListManagedSchemaArnsOutcome> ListManagedSchemaArnsOutcomeCallable;
         typedef std::future<ListObjectAttributesOutcome> ListObjectAttributesOutcomeCallable;
         typedef std::future<ListObjectChildrenOutcome> ListObjectChildrenOutcomeCallable;
         typedef std::future<ListObjectParentPathsOutcome> ListObjectParentPathsOutcomeCallable;
@@ -311,6 +321,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateFacetOutcome> UpdateFacetOutcomeCallable;
+        typedef std::future<UpdateLinkAttributesOutcome> UpdateLinkAttributesOutcomeCallable;
         typedef std::future<UpdateObjectAttributesOutcome> UpdateObjectAttributesOutcomeCallable;
         typedef std::future<UpdateSchemaOutcome> UpdateSchemaOutcomeCallable;
         typedef std::future<UpdateTypedLinkFacetOutcome> UpdateTypedLinkFacetOutcomeCallable;
@@ -348,6 +359,8 @@ namespace Model
     typedef std::function<void(const CloudDirectoryClient*, const Model::GetAppliedSchemaVersionRequest&, const Model::GetAppliedSchemaVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppliedSchemaVersionResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::GetDirectoryRequest&, const Model::GetDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDirectoryResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::GetFacetRequest&, const Model::GetFacetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFacetResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::GetLinkAttributesRequest&, const Model::GetLinkAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLinkAttributesResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::GetObjectAttributesRequest&, const Model::GetObjectAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectAttributesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::GetObjectInformationRequest&, const Model::GetObjectInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectInformationResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::GetSchemaAsJsonRequest&, const Model::GetSchemaAsJsonOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSchemaAsJsonResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::GetTypedLinkFacetInformationRequest&, const Model::GetTypedLinkFacetInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTypedLinkFacetInformationResponseReceivedHandler;
@@ -359,6 +372,7 @@ namespace Model
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListFacetNamesRequest&, const Model::ListFacetNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFacetNamesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListIncomingTypedLinksRequest&, const Model::ListIncomingTypedLinksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIncomingTypedLinksResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListIndexRequest&, const Model::ListIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIndexResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::ListManagedSchemaArnsRequest&, const Model::ListManagedSchemaArnsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedSchemaArnsResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListObjectAttributesRequest&, const Model::ListObjectAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectAttributesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListObjectChildrenRequest&, const Model::ListObjectChildrenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectChildrenResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::ListObjectParentPathsRequest&, const Model::ListObjectParentPathsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListObjectParentPathsResponseReceivedHandler;
@@ -377,6 +391,7 @@ namespace Model
     typedef std::function<void(const CloudDirectoryClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::UpdateFacetRequest&, const Model::UpdateFacetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFacetResponseReceivedHandler;
+    typedef std::function<void(const CloudDirectoryClient*, const Model::UpdateLinkAttributesRequest&, const Model::UpdateLinkAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLinkAttributesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::UpdateObjectAttributesRequest&, const Model::UpdateObjectAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateObjectAttributesResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::UpdateSchemaRequest&, const Model::UpdateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSchemaResponseReceivedHandler;
     typedef std::function<void(const CloudDirectoryClient*, const Model::UpdateTypedLinkFacetRequest&, const Model::UpdateTypedLinkFacetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTypedLinkFacetResponseReceivedHandler;
@@ -425,15 +440,17 @@ namespace Model
 
 
         /**
-         * <p>Adds a new <a>Facet</a> to an object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">AWS
+         * <p>Adds a new <a>Facet</a> to an object. An object can have more than one facet
+         * applied on it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AddFacetToObject">AWS
          * API Reference</a></p>
          */
         virtual Model::AddFacetToObjectOutcome AddFacetToObject(const Model::AddFacetToObjectRequest& request) const;
 
         /**
-         * <p>Adds a new <a>Facet</a> to an object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">AWS
+         * <p>Adds a new <a>Facet</a> to an object. An object can have more than one facet
+         * applied on it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AddFacetToObject">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -441,8 +458,9 @@ namespace Model
         virtual Model::AddFacetToObjectOutcomeCallable AddFacetToObjectCallable(const Model::AddFacetToObjectRequest& request) const;
 
         /**
-         * <p>Adds a new <a>Facet</a> to an object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject">AWS
+         * <p>Adds a new <a>Facet</a> to an object. An object can have more than one facet
+         * applied on it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AddFacetToObject">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -453,7 +471,7 @@ namespace Model
          * <p>Copies the input published schema, at the specified version, into the
          * <a>Directory</a> with the same name and version as that of the published
          * schema.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ApplySchema">AWS
          * API Reference</a></p>
          */
         virtual Model::ApplySchemaOutcome ApplySchema(const Model::ApplySchemaRequest& request) const;
@@ -462,7 +480,7 @@ namespace Model
          * <p>Copies the input published schema, at the specified version, into the
          * <a>Directory</a> with the same name and version as that of the published
          * schema.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ApplySchema">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -473,7 +491,7 @@ namespace Model
          * <p>Copies the input published schema, at the specified version, into the
          * <a>Directory</a> with the same name and version as that of the published
          * schema.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ApplySchema">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -484,7 +502,7 @@ namespace Model
          * <p>Attaches an existing object to another object. An object can be accessed in
          * two ways:</p> <ol> <li> <p>Using the path</p> </li> <li> <p>Using
          * <code>ObjectIdentifier</code> </p> </li> </ol><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachObject">AWS
          * API Reference</a></p>
          */
         virtual Model::AttachObjectOutcome AttachObject(const Model::AttachObjectRequest& request) const;
@@ -493,7 +511,7 @@ namespace Model
          * <p>Attaches an existing object to another object. An object can be accessed in
          * two ways:</p> <ol> <li> <p>Using the path</p> </li> <li> <p>Using
          * <code>ObjectIdentifier</code> </p> </li> </ol><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachObject">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -504,7 +522,7 @@ namespace Model
          * <p>Attaches an existing object to another object. An object can be accessed in
          * two ways:</p> <ol> <li> <p>Using the path</p> </li> <li> <p>Using
          * <code>ObjectIdentifier</code> </p> </li> </ol><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachObject">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -514,7 +532,7 @@ namespace Model
         /**
          * <p>Attaches a policy object to a regular object. An object can have a limited
          * number of attached policies.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::AttachPolicyOutcome AttachPolicy(const Model::AttachPolicyRequest& request) const;
@@ -522,7 +540,7 @@ namespace Model
         /**
          * <p>Attaches a policy object to a regular object. An object can have a limited
          * number of attached policies.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachPolicy">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -532,7 +550,7 @@ namespace Model
         /**
          * <p>Attaches a policy object to a regular object. An object can have a limited
          * number of attached policies.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachPolicy">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -542,7 +560,7 @@ namespace Model
         /**
          * <p>Attaches the specified object to the specified index.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachToIndex">AWS
          * API Reference</a></p>
          */
         virtual Model::AttachToIndexOutcome AttachToIndex(const Model::AttachToIndexRequest& request) const;
@@ -550,7 +568,7 @@ namespace Model
         /**
          * <p>Attaches the specified object to the specified index.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachToIndex">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -560,7 +578,7 @@ namespace Model
         /**
          * <p>Attaches the specified object to the specified index.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachToIndex">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -572,7 +590,7 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachTypedLink">AWS
          * API Reference</a></p>
          */
         virtual Model::AttachTypedLinkOutcome AttachTypedLink(const Model::AttachTypedLinkRequest& request) const;
@@ -582,7 +600,7 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachTypedLink">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -594,7 +612,7 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachTypedLink">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -603,14 +621,14 @@ namespace Model
 
         /**
          * <p>Performs all the read operations in a batch. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchRead">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchReadOutcome BatchRead(const Model::BatchReadRequest& request) const;
 
         /**
          * <p>Performs all the read operations in a batch. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchRead">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -619,7 +637,7 @@ namespace Model
 
         /**
          * <p>Performs all the read operations in a batch. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchRead">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -629,7 +647,7 @@ namespace Model
         /**
          * <p>Performs all the write operations in a batch. Either all the operations
          * succeed or none.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchWrite">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchWriteOutcome BatchWrite(const Model::BatchWriteRequest& request) const;
@@ -637,7 +655,7 @@ namespace Model
         /**
          * <p>Performs all the write operations in a batch. Either all the operations
          * succeed or none.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchWrite">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -647,7 +665,7 @@ namespace Model
         /**
          * <p>Performs all the write operations in a batch. Either all the operations
          * succeed or none.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchWrite">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -658,7 +676,7 @@ namespace Model
          * <p>Creates a <a>Directory</a> by copying the published schema into the
          * directory. A directory cannot be created without a schema.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateDirectory">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDirectoryOutcome CreateDirectory(const Model::CreateDirectoryRequest& request) const;
@@ -667,7 +685,7 @@ namespace Model
          * <p>Creates a <a>Directory</a> by copying the published schema into the
          * directory. A directory cannot be created without a schema.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateDirectory">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -678,7 +696,7 @@ namespace Model
          * <p>Creates a <a>Directory</a> by copying the published schema into the
          * directory. A directory cannot be created without a schema.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateDirectory">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -688,7 +706,7 @@ namespace Model
         /**
          * <p>Creates a new <a>Facet</a> in a schema. Facet creation is allowed only in
          * development or applied schemas.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateFacet">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateFacetOutcome CreateFacet(const Model::CreateFacetRequest& request) const;
@@ -696,7 +714,7 @@ namespace Model
         /**
          * <p>Creates a new <a>Facet</a> in a schema. Facet creation is allowed only in
          * development or applied schemas.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateFacet">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -706,7 +724,7 @@ namespace Model
         /**
          * <p>Creates a new <a>Facet</a> in a schema. Facet creation is allowed only in
          * development or applied schemas.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateFacet">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -717,7 +735,7 @@ namespace Model
          * <p>Creates an index object. See <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
          * for more information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateIndex">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateIndexOutcome CreateIndex(const Model::CreateIndexRequest& request) const;
@@ -726,7 +744,7 @@ namespace Model
          * <p>Creates an index object. See <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
          * for more information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateIndex">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -737,7 +755,7 @@ namespace Model
          * <p>Creates an index object. See <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_indexing.html">Indexing</a>
          * for more information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateIndex">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -750,7 +768,7 @@ namespace Model
          * object is simply a collection of <a>Facet</a> attributes. You can also use this
          * API call to create a policy object, if the facet from which you create the
          * object is a policy facet. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateObject">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateObjectOutcome CreateObject(const Model::CreateObjectRequest& request) const;
@@ -761,7 +779,7 @@ namespace Model
          * object is simply a collection of <a>Facet</a> attributes. You can also use this
          * API call to create a policy object, if the facet from which you create the
          * object is a policy facet. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateObject">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -774,7 +792,7 @@ namespace Model
          * object is simply a collection of <a>Facet</a> attributes. You can also use this
          * API call to create a policy object, if the facet from which you create the
          * object is a policy facet. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateObject">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -791,7 +809,7 @@ namespace Model
          * new schema facets. You can also add new, nonrequired attributes to existing
          * schema facets. You can apply only published schemas to directories. </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateSchema">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSchemaOutcome CreateSchema(const Model::CreateSchemaRequest& request) const;
@@ -806,7 +824,7 @@ namespace Model
          * new schema facets. You can also add new, nonrequired attributes to existing
          * schema facets. You can apply only published schemas to directories. </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateSchema">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -823,7 +841,7 @@ namespace Model
          * new schema facets. You can also add new, nonrequired attributes to existing
          * schema facets. You can apply only published schemas to directories. </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateSchema">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -834,7 +852,7 @@ namespace Model
          * <p>Creates a <a>TypedLinkFacet</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateTypedLinkFacet">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateTypedLinkFacetOutcome CreateTypedLinkFacet(const Model::CreateTypedLinkFacetRequest& request) const;
@@ -843,7 +861,7 @@ namespace Model
          * <p>Creates a <a>TypedLinkFacet</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateTypedLinkFacet">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -854,7 +872,7 @@ namespace Model
          * <p>Creates a <a>TypedLinkFacet</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateTypedLinkFacet">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -865,7 +883,7 @@ namespace Model
          * <p>Deletes a directory. Only disabled directories can be deleted. A deleted
          * directory cannot be undone. Exercise extreme caution when deleting
          * directories.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteDirectory">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDirectoryOutcome DeleteDirectory(const Model::DeleteDirectoryRequest& request) const;
@@ -874,7 +892,7 @@ namespace Model
          * <p>Deletes a directory. Only disabled directories can be deleted. A deleted
          * directory cannot be undone. Exercise extreme caution when deleting
          * directories.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteDirectory">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -885,7 +903,7 @@ namespace Model
          * <p>Deletes a directory. Only disabled directories can be deleted. A deleted
          * directory cannot be undone. Exercise extreme caution when deleting
          * directories.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteDirectory">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -896,7 +914,7 @@ namespace Model
          * <p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s that are
          * associated with the facet will be deleted. Only development schema facets are
          * allowed deletion.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteFacet">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteFacetOutcome DeleteFacet(const Model::DeleteFacetRequest& request) const;
@@ -905,7 +923,7 @@ namespace Model
          * <p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s that are
          * associated with the facet will be deleted. Only development schema facets are
          * allowed deletion.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteFacet">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -916,7 +934,7 @@ namespace Model
          * <p>Deletes a given <a>Facet</a>. All attributes and <a>Rule</a>s that are
          * associated with the facet will be deleted. Only development schema facets are
          * allowed deletion.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteFacet">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -926,7 +944,7 @@ namespace Model
         /**
          * <p>Deletes an object and its associated attributes. Only objects with no
          * children and no parents can be deleted.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteObject">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteObjectOutcome DeleteObject(const Model::DeleteObjectRequest& request) const;
@@ -934,7 +952,7 @@ namespace Model
         /**
          * <p>Deletes an object and its associated attributes. Only objects with no
          * children and no parents can be deleted.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteObject">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -944,7 +962,7 @@ namespace Model
         /**
          * <p>Deletes an object and its associated attributes. Only objects with no
          * children and no parents can be deleted.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteObject">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -954,7 +972,7 @@ namespace Model
         /**
          * <p>Deletes a given schema. Schemas in a development and published state can only
          * be deleted. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteSchema">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteSchemaOutcome DeleteSchema(const Model::DeleteSchemaRequest& request) const;
@@ -962,7 +980,7 @@ namespace Model
         /**
          * <p>Deletes a given schema. Schemas in a development and published state can only
          * be deleted. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteSchema">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -972,7 +990,7 @@ namespace Model
         /**
          * <p>Deletes a given schema. Schemas in a development and published state can only
          * be deleted. </p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteSchema">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -983,7 +1001,7 @@ namespace Model
          * <p>Deletes a <a>TypedLinkFacet</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteTypedLinkFacet">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteTypedLinkFacetOutcome DeleteTypedLinkFacet(const Model::DeleteTypedLinkFacetRequest& request) const;
@@ -992,7 +1010,7 @@ namespace Model
          * <p>Deletes a <a>TypedLinkFacet</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteTypedLinkFacet">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1003,7 +1021,7 @@ namespace Model
          * <p>Deletes a <a>TypedLinkFacet</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteTypedLinkFacet">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1013,7 +1031,7 @@ namespace Model
         /**
          * <p>Detaches the specified object from the specified index.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachFromIndex">AWS
          * API Reference</a></p>
          */
         virtual Model::DetachFromIndexOutcome DetachFromIndex(const Model::DetachFromIndexRequest& request) const;
@@ -1021,7 +1039,7 @@ namespace Model
         /**
          * <p>Detaches the specified object from the specified index.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachFromIndex">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1031,7 +1049,7 @@ namespace Model
         /**
          * <p>Detaches the specified object from the specified index.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachFromIndex">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1042,7 +1060,7 @@ namespace Model
          * <p>Detaches a given object from the parent object. The object that is to be
          * detached from the parent is specified by the link name.</p><p><h3>See Also:</h3>
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachObject">AWS
          * API Reference</a></p>
          */
         virtual Model::DetachObjectOutcome DetachObject(const Model::DetachObjectRequest& request) const;
@@ -1051,7 +1069,7 @@ namespace Model
          * <p>Detaches a given object from the parent object. The object that is to be
          * detached from the parent is specified by the link name.</p><p><h3>See Also:</h3>
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachObject">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1062,7 +1080,7 @@ namespace Model
          * <p>Detaches a given object from the parent object. The object that is to be
          * detached from the parent is specified by the link name.</p><p><h3>See Also:</h3>
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachObject">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1071,14 +1089,14 @@ namespace Model
 
         /**
          * <p>Detaches a policy from an object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DetachPolicyOutcome DetachPolicy(const Model::DetachPolicyRequest& request) const;
 
         /**
          * <p>Detaches a policy from an object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachPolicy">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1087,7 +1105,7 @@ namespace Model
 
         /**
          * <p>Detaches a policy from an object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachPolicy">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1099,7 +1117,7 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachTypedLink">AWS
          * API Reference</a></p>
          */
         virtual Model::DetachTypedLinkOutcome DetachTypedLink(const Model::DetachTypedLinkRequest& request) const;
@@ -1109,7 +1127,7 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachTypedLink">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1121,7 +1139,7 @@ namespace Model
          * information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachTypedLink">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1132,7 +1150,7 @@ namespace Model
          * <p>Disables the specified directory. Disabled directories cannot be read or
          * written to. Only enabled directories can be disabled. Disabled directories may
          * be reenabled.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DisableDirectory">AWS
          * API Reference</a></p>
          */
         virtual Model::DisableDirectoryOutcome DisableDirectory(const Model::DisableDirectoryRequest& request) const;
@@ -1141,7 +1159,7 @@ namespace Model
          * <p>Disables the specified directory. Disabled directories cannot be read or
          * written to. Only enabled directories can be disabled. Disabled directories may
          * be reenabled.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DisableDirectory">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1152,7 +1170,7 @@ namespace Model
          * <p>Disables the specified directory. Disabled directories cannot be read or
          * written to. Only enabled directories can be disabled. Disabled directories may
          * be reenabled.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DisableDirectory">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1163,7 +1181,7 @@ namespace Model
          * <p>Enables the specified directory. Only disabled directories can be enabled.
          * Once enabled, the directory can then be read and written to.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/EnableDirectory">AWS
          * API Reference</a></p>
          */
         virtual Model::EnableDirectoryOutcome EnableDirectory(const Model::EnableDirectoryRequest& request) const;
@@ -1172,7 +1190,7 @@ namespace Model
          * <p>Enables the specified directory. Only disabled directories can be enabled.
          * Once enabled, the directory can then be read and written to.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/EnableDirectory">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1183,7 +1201,7 @@ namespace Model
          * <p>Enables the specified directory. Only disabled directories can be enabled.
          * Once enabled, the directory can then be read and written to.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/EnableDirectory">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1193,7 +1211,7 @@ namespace Model
         /**
          * <p>Returns current applied schema version ARN, including the minor version in
          * use.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetAppliedSchemaVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAppliedSchemaVersionOutcome GetAppliedSchemaVersion(const Model::GetAppliedSchemaVersionRequest& request) const;
@@ -1201,7 +1219,7 @@ namespace Model
         /**
          * <p>Returns current applied schema version ARN, including the minor version in
          * use.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetAppliedSchemaVersion">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1211,7 +1229,7 @@ namespace Model
         /**
          * <p>Returns current applied schema version ARN, including the minor version in
          * use.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetAppliedSchemaVersion">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1220,14 +1238,14 @@ namespace Model
 
         /**
          * <p>Retrieves metadata about a directory.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetDirectory">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDirectoryOutcome GetDirectory(const Model::GetDirectoryRequest& request) const;
 
         /**
          * <p>Retrieves metadata about a directory.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetDirectory">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1236,7 +1254,7 @@ namespace Model
 
         /**
          * <p>Retrieves metadata about a directory.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetDirectory">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1248,7 +1266,7 @@ namespace Model
          * <a>Rule</a>s, or <code>ObjectType</code>. You can call this on all kinds of
          * schema facets -- published, development, or applied.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetFacet">AWS
          * API Reference</a></p>
          */
         virtual Model::GetFacetOutcome GetFacet(const Model::GetFacetRequest& request) const;
@@ -1258,7 +1276,7 @@ namespace Model
          * <a>Rule</a>s, or <code>ObjectType</code>. You can call this on all kinds of
          * schema facets -- published, development, or applied.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetFacet">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1270,7 +1288,7 @@ namespace Model
          * <a>Rule</a>s, or <code>ObjectType</code>. You can call this on all kinds of
          * schema facets -- published, development, or applied.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetFacet">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1278,15 +1296,71 @@ namespace Model
         virtual void GetFacetAsync(const Model::GetFacetRequest& request, const GetFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves attributes that are associated with a typed link.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetLinkAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLinkAttributesOutcome GetLinkAttributes(const Model::GetLinkAttributesRequest& request) const;
+
+        /**
+         * <p>Retrieves attributes that are associated with a typed link.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetLinkAttributes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLinkAttributesOutcomeCallable GetLinkAttributesCallable(const Model::GetLinkAttributesRequest& request) const;
+
+        /**
+         * <p>Retrieves attributes that are associated with a typed link.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetLinkAttributes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLinkAttributesAsync(const Model::GetLinkAttributesRequest& request, const GetLinkAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves attributes within a facet that are associated with an
+         * object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetObjectAttributesOutcome GetObjectAttributes(const Model::GetObjectAttributesRequest& request) const;
+
+        /**
+         * <p>Retrieves attributes within a facet that are associated with an
+         * object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectAttributes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetObjectAttributesOutcomeCallable GetObjectAttributesCallable(const Model::GetObjectAttributesRequest& request) const;
+
+        /**
+         * <p>Retrieves attributes within a facet that are associated with an
+         * object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectAttributes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetObjectAttributesAsync(const Model::GetObjectAttributesRequest& request, const GetObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves metadata about an object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectInformation">AWS
          * API Reference</a></p>
          */
         virtual Model::GetObjectInformationOutcome GetObjectInformation(const Model::GetObjectInformationRequest& request) const;
 
         /**
          * <p>Retrieves metadata about an object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectInformation">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1295,7 +1369,7 @@ namespace Model
 
         /**
          * <p>Retrieves metadata about an object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectInformation">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1306,7 +1380,7 @@ namespace Model
          * <p>Retrieves a JSON representation of the schema. See <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON
          * Schema Format</a> for more information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetSchemaAsJson">AWS
          * API Reference</a></p>
          */
         virtual Model::GetSchemaAsJsonOutcome GetSchemaAsJson(const Model::GetSchemaAsJsonRequest& request) const;
@@ -1315,7 +1389,7 @@ namespace Model
          * <p>Retrieves a JSON representation of the schema. See <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON
          * Schema Format</a> for more information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetSchemaAsJson">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1326,7 +1400,7 @@ namespace Model
          * <p>Retrieves a JSON representation of the schema. See <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON
          * Schema Format</a> for more information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetSchemaAsJson">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1338,7 +1412,7 @@ namespace Model
          * For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetTypedLinkFacetInformation">AWS
          * API Reference</a></p>
          */
         virtual Model::GetTypedLinkFacetInformationOutcome GetTypedLinkFacetInformation(const Model::GetTypedLinkFacetInformationRequest& request) const;
@@ -1348,7 +1422,7 @@ namespace Model
          * For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetTypedLinkFacetInformation">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1360,7 +1434,7 @@ namespace Model
          * For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetTypedLinkFacetInformation">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1370,7 +1444,7 @@ namespace Model
         /**
          * <p>Lists schema major versions applied to a directory. If <code>SchemaArn</code>
          * is provided, lists the minor version.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAppliedSchemaArns">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAppliedSchemaArnsOutcome ListAppliedSchemaArns(const Model::ListAppliedSchemaArnsRequest& request) const;
@@ -1378,7 +1452,7 @@ namespace Model
         /**
          * <p>Lists schema major versions applied to a directory. If <code>SchemaArn</code>
          * is provided, lists the minor version.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAppliedSchemaArns">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1388,7 +1462,7 @@ namespace Model
         /**
          * <p>Lists schema major versions applied to a directory. If <code>SchemaArn</code>
          * is provided, lists the minor version.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAppliedSchemaArns">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1397,14 +1471,14 @@ namespace Model
 
         /**
          * <p>Lists indices attached to the specified object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAttachedIndices">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAttachedIndicesOutcome ListAttachedIndices(const Model::ListAttachedIndicesRequest& request) const;
 
         /**
          * <p>Lists indices attached to the specified object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAttachedIndices">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1413,7 +1487,7 @@ namespace Model
 
         /**
          * <p>Lists indices attached to the specified object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAttachedIndices">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1423,7 +1497,7 @@ namespace Model
         /**
          * <p>Retrieves each Amazon Resource Name (ARN) of schemas in the development
          * state.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDevelopmentSchemaArns">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDevelopmentSchemaArnsOutcome ListDevelopmentSchemaArns(const Model::ListDevelopmentSchemaArnsRequest& request) const;
@@ -1431,7 +1505,7 @@ namespace Model
         /**
          * <p>Retrieves each Amazon Resource Name (ARN) of schemas in the development
          * state.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDevelopmentSchemaArns">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1441,7 +1515,7 @@ namespace Model
         /**
          * <p>Retrieves each Amazon Resource Name (ARN) of schemas in the development
          * state.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDevelopmentSchemaArns">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1450,14 +1524,14 @@ namespace Model
 
         /**
          * <p>Lists directories created within an account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDirectories">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDirectoriesOutcome ListDirectories(const Model::ListDirectoriesRequest& request) const;
 
         /**
          * <p>Lists directories created within an account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDirectories">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1466,7 +1540,7 @@ namespace Model
 
         /**
          * <p>Lists directories created within an account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDirectories">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1475,14 +1549,14 @@ namespace Model
 
         /**
          * <p>Retrieves attributes attached to the facet.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetAttributes">AWS
          * API Reference</a></p>
          */
         virtual Model::ListFacetAttributesOutcome ListFacetAttributes(const Model::ListFacetAttributesRequest& request) const;
 
         /**
          * <p>Retrieves attributes attached to the facet.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetAttributes">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1491,7 +1565,7 @@ namespace Model
 
         /**
          * <p>Retrieves attributes attached to the facet.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetAttributes">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1501,7 +1575,7 @@ namespace Model
         /**
          * <p>Retrieves the names of facets that exist in a schema.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetNames">AWS
          * API Reference</a></p>
          */
         virtual Model::ListFacetNamesOutcome ListFacetNames(const Model::ListFacetNamesRequest& request) const;
@@ -1509,7 +1583,7 @@ namespace Model
         /**
          * <p>Retrieves the names of facets that exist in a schema.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetNames">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1519,7 +1593,7 @@ namespace Model
         /**
          * <p>Retrieves the names of facets that exist in a schema.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetNames">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1532,7 +1606,7 @@ namespace Model
          * identity attributes. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIncomingTypedLinks">AWS
          * API Reference</a></p>
          */
         virtual Model::ListIncomingTypedLinksOutcome ListIncomingTypedLinks(const Model::ListIncomingTypedLinksRequest& request) const;
@@ -1543,7 +1617,7 @@ namespace Model
          * identity attributes. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIncomingTypedLinks">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1556,7 +1630,7 @@ namespace Model
          * identity attributes. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIncomingTypedLinks">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1564,17 +1638,15 @@ namespace Model
         virtual void ListIncomingTypedLinksAsync(const Model::ListIncomingTypedLinksRequest& request, const ListIncomingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists objects and indexed values attached to the index.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">AWS
+         * <p>Lists objects attached to the specified index.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIndex">AWS
          * API Reference</a></p>
          */
         virtual Model::ListIndexOutcome ListIndex(const Model::ListIndexRequest& request) const;
 
         /**
-         * <p>Lists objects and indexed values attached to the index.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">AWS
+         * <p>Lists objects attached to the specified index.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIndex">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1582,9 +1654,8 @@ namespace Model
         virtual Model::ListIndexOutcomeCallable ListIndexCallable(const Model::ListIndexRequest& request) const;
 
         /**
-         * <p>Lists objects and indexed values attached to the index.</p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex">AWS
+         * <p>Lists objects attached to the specified index.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIndex">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1592,9 +1663,40 @@ namespace Model
         virtual void ListIndexAsync(const Model::ListIndexRequest& request, const ListIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the major version families of each managed schema. If a major version
+         * ARN is provided as SchemaArn, the minor version revisions in that family are
+         * listed instead.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListManagedSchemaArns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListManagedSchemaArnsOutcome ListManagedSchemaArns(const Model::ListManagedSchemaArnsRequest& request) const;
+
+        /**
+         * <p>Lists the major version families of each managed schema. If a major version
+         * ARN is provided as SchemaArn, the minor version revisions in that family are
+         * listed instead.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListManagedSchemaArns">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListManagedSchemaArnsOutcomeCallable ListManagedSchemaArnsCallable(const Model::ListManagedSchemaArnsRequest& request) const;
+
+        /**
+         * <p>Lists the major version families of each managed schema. If a major version
+         * ARN is provided as SchemaArn, the minor version revisions in that family are
+         * listed instead.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListManagedSchemaArns">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListManagedSchemaArnsAsync(const Model::ListManagedSchemaArnsRequest& request, const ListManagedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all attributes that are associated with an object. </p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectAttributes">AWS
          * API Reference</a></p>
          */
         virtual Model::ListObjectAttributesOutcome ListObjectAttributes(const Model::ListObjectAttributesRequest& request) const;
@@ -1602,7 +1704,7 @@ namespace Model
         /**
          * <p>Lists all attributes that are associated with an object. </p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectAttributes">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1612,7 +1714,7 @@ namespace Model
         /**
          * <p>Lists all attributes that are associated with an object. </p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectAttributes">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1622,7 +1724,7 @@ namespace Model
         /**
          * <p>Returns a paginated list of child objects that are associated with a given
          * object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectChildren">AWS
          * API Reference</a></p>
          */
         virtual Model::ListObjectChildrenOutcome ListObjectChildren(const Model::ListObjectChildrenRequest& request) const;
@@ -1630,7 +1732,7 @@ namespace Model
         /**
          * <p>Returns a paginated list of child objects that are associated with a given
          * object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectChildren">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1640,7 +1742,7 @@ namespace Model
         /**
          * <p>Returns a paginated list of child objects that are associated with a given
          * object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectChildren">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1659,7 +1761,7 @@ namespace Model
          * order of the paths and nodes returned is consistent among multiple API calls
          * unless the objects are deleted or moved. Paths not leading to the directory root
          * are ignored from the target object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParentPaths">AWS
          * API Reference</a></p>
          */
         virtual Model::ListObjectParentPathsOutcome ListObjectParentPaths(const Model::ListObjectParentPathsRequest& request) const;
@@ -1676,7 +1778,7 @@ namespace Model
          * order of the paths and nodes returned is consistent among multiple API calls
          * unless the objects are deleted or moved. Paths not leading to the directory root
          * are ignored from the target object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParentPaths">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1695,7 +1797,7 @@ namespace Model
          * order of the paths and nodes returned is consistent among multiple API calls
          * unless the objects are deleted or moved. Paths not leading to the directory root
          * are ignored from the target object.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParentPaths">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1705,7 +1807,7 @@ namespace Model
         /**
          * <p>Lists parent objects that are associated with a given object in pagination
          * fashion.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParents">AWS
          * API Reference</a></p>
          */
         virtual Model::ListObjectParentsOutcome ListObjectParents(const Model::ListObjectParentsRequest& request) const;
@@ -1713,7 +1815,7 @@ namespace Model
         /**
          * <p>Lists parent objects that are associated with a given object in pagination
          * fashion.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParents">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1723,7 +1825,7 @@ namespace Model
         /**
          * <p>Lists parent objects that are associated with a given object in pagination
          * fashion.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParents">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1733,7 +1835,7 @@ namespace Model
         /**
          * <p>Returns policies attached to an object in pagination fashion.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectPolicies">AWS
          * API Reference</a></p>
          */
         virtual Model::ListObjectPoliciesOutcome ListObjectPolicies(const Model::ListObjectPoliciesRequest& request) const;
@@ -1741,7 +1843,7 @@ namespace Model
         /**
          * <p>Returns policies attached to an object in pagination fashion.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectPolicies">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1751,7 +1853,7 @@ namespace Model
         /**
          * <p>Returns policies attached to an object in pagination fashion.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectPolicies">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1764,7 +1866,7 @@ namespace Model
          * identity attributes. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListOutgoingTypedLinks">AWS
          * API Reference</a></p>
          */
         virtual Model::ListOutgoingTypedLinksOutcome ListOutgoingTypedLinks(const Model::ListOutgoingTypedLinksRequest& request) const;
@@ -1775,7 +1877,7 @@ namespace Model
          * identity attributes. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListOutgoingTypedLinks">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1788,7 +1890,7 @@ namespace Model
          * identity attributes. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListOutgoingTypedLinks">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1798,7 +1900,7 @@ namespace Model
         /**
          * <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is
          * attached.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPolicyAttachments">AWS
          * API Reference</a></p>
          */
         virtual Model::ListPolicyAttachmentsOutcome ListPolicyAttachments(const Model::ListPolicyAttachmentsRequest& request) const;
@@ -1806,7 +1908,7 @@ namespace Model
         /**
          * <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is
          * attached.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPolicyAttachments">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1816,7 +1918,7 @@ namespace Model
         /**
          * <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is
          * attached.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPolicyAttachments">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1824,17 +1926,19 @@ namespace Model
         virtual void ListPolicyAttachmentsAsync(const Model::ListPolicyAttachmentsRequest& request, const ListPolicyAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists schema major versions for a published schema. If <code>SchemaArn</code>
-         * is provided, lists the minor version.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">AWS
+         * <p>Lists the major version families of each published schema. If a major version
+         * ARN is provided as <code>SchemaArn</code>, the minor version revisions in that
+         * family are listed instead.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPublishedSchemaArns">AWS
          * API Reference</a></p>
          */
         virtual Model::ListPublishedSchemaArnsOutcome ListPublishedSchemaArns(const Model::ListPublishedSchemaArnsRequest& request) const;
 
         /**
-         * <p>Lists schema major versions for a published schema. If <code>SchemaArn</code>
-         * is provided, lists the minor version.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">AWS
+         * <p>Lists the major version families of each published schema. If a major version
+         * ARN is provided as <code>SchemaArn</code>, the minor version revisions in that
+         * family are listed instead.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPublishedSchemaArns">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1842,9 +1946,10 @@ namespace Model
         virtual Model::ListPublishedSchemaArnsOutcomeCallable ListPublishedSchemaArnsCallable(const Model::ListPublishedSchemaArnsRequest& request) const;
 
         /**
-         * <p>Lists schema major versions for a published schema. If <code>SchemaArn</code>
-         * is provided, lists the minor version.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns">AWS
+         * <p>Lists the major version families of each published schema. If a major version
+         * ARN is provided as <code>SchemaArn</code>, the minor version revisions in that
+         * family are listed instead.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPublishedSchemaArns">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1855,7 +1960,7 @@ namespace Model
          * <p>Returns tags for a resource. Tagging is currently supported only for
          * directories with a limit of 50 tags per directory. All 50 tags are returned for
          * a given directory with this API call.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
@@ -1864,7 +1969,7 @@ namespace Model
          * <p>Returns tags for a resource. Tagging is currently supported only for
          * directories with a limit of 50 tags per directory. All 50 tags are returned for
          * a given directory with this API call.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTagsForResource">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1875,7 +1980,7 @@ namespace Model
          * <p>Returns tags for a resource. Tagging is currently supported only for
          * directories with a limit of 50 tags per directory. All 50 tags are returned for
          * a given directory with this API call.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTagsForResource">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1887,7 +1992,7 @@ namespace Model
          * <a>TypedLinkFacet</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetAttributes">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTypedLinkFacetAttributesOutcome ListTypedLinkFacetAttributes(const Model::ListTypedLinkFacetAttributesRequest& request) const;
@@ -1897,7 +2002,7 @@ namespace Model
          * <a>TypedLinkFacet</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetAttributes">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1909,7 +2014,7 @@ namespace Model
          * <a>TypedLinkFacet</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetAttributes">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1921,7 +2026,7 @@ namespace Model
          * particular schema. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetNames">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTypedLinkFacetNamesOutcome ListTypedLinkFacetNames(const Model::ListTypedLinkFacetNamesRequest& request) const;
@@ -1931,7 +2036,7 @@ namespace Model
          * particular schema. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetNames">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1943,7 +2048,7 @@ namespace Model
          * particular schema. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetNames">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1960,7 +2065,7 @@ namespace Model
          * object are ignored. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/LookupPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::LookupPolicyOutcome LookupPolicy(const Model::LookupPolicyRequest& request) const;
@@ -1975,7 +2080,7 @@ namespace Model
          * object are ignored. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/LookupPolicy">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1992,7 +2097,7 @@ namespace Model
          * object are ignored. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/LookupPolicy">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2002,7 +2107,7 @@ namespace Model
         /**
          * <p>Publishes a development schema with a major version and a recommended minor
          * version.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PublishSchema">AWS
          * API Reference</a></p>
          */
         virtual Model::PublishSchemaOutcome PublishSchema(const Model::PublishSchemaRequest& request) const;
@@ -2010,7 +2115,7 @@ namespace Model
         /**
          * <p>Publishes a development schema with a major version and a recommended minor
          * version.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PublishSchema">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2020,7 +2125,7 @@ namespace Model
         /**
          * <p>Publishes a development schema with a major version and a recommended minor
          * version.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PublishSchema">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2032,7 +2137,7 @@ namespace Model
          * development schemas. See <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON
          * Schema Format</a> for more information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PutSchemaFromJson">AWS
          * API Reference</a></p>
          */
         virtual Model::PutSchemaFromJsonOutcome PutSchemaFromJson(const Model::PutSchemaFromJsonRequest& request) const;
@@ -2042,7 +2147,7 @@ namespace Model
          * development schemas. See <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON
          * Schema Format</a> for more information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PutSchemaFromJson">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2054,7 +2159,7 @@ namespace Model
          * development schemas. See <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_schemas.html#jsonformat">JSON
          * Schema Format</a> for more information.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PutSchemaFromJson">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2064,7 +2169,7 @@ namespace Model
         /**
          * <p>Removes the specified facet from the specified object.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/RemoveFacetFromObject">AWS
          * API Reference</a></p>
          */
         virtual Model::RemoveFacetFromObjectOutcome RemoveFacetFromObject(const Model::RemoveFacetFromObjectRequest& request) const;
@@ -2072,7 +2177,7 @@ namespace Model
         /**
          * <p>Removes the specified facet from the specified object.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/RemoveFacetFromObject">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2082,7 +2187,7 @@ namespace Model
         /**
          * <p>Removes the specified facet from the specified object.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/RemoveFacetFromObject">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2091,14 +2196,14 @@ namespace Model
 
         /**
          * <p>An API operation for adding tags to a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
          * <p>An API operation for adding tags to a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TagResource">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2107,7 +2212,7 @@ namespace Model
 
         /**
          * <p>An API operation for adding tags to a resource.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TagResource">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2117,7 +2222,7 @@ namespace Model
         /**
          * <p>An API operation for removing tags from a resource.</p><p><h3>See Also:</h3> 
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
@@ -2125,7 +2230,7 @@ namespace Model
         /**
          * <p>An API operation for removing tags from a resource.</p><p><h3>See Also:</h3> 
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UntagResource">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2135,7 +2240,7 @@ namespace Model
         /**
          * <p>An API operation for removing tags from a resource.</p><p><h3>See Also:</h3> 
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UntagResource">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2149,7 +2254,7 @@ namespace Model
          * <code>ObjectTypes</code>.</p> </li> <li> <p>Deletes existing
          * <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p>
          * </li> </ol><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateFacet">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateFacetOutcome UpdateFacet(const Model::UpdateFacetRequest& request) const;
@@ -2161,7 +2266,7 @@ namespace Model
          * <code>ObjectTypes</code>.</p> </li> <li> <p>Deletes existing
          * <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p>
          * </li> </ol><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateFacet">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2175,7 +2280,7 @@ namespace Model
          * <code>ObjectTypes</code>.</p> </li> <li> <p>Deletes existing
          * <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.</p>
          * </li> </ol><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateFacet">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2183,15 +2288,46 @@ namespace Model
         virtual void UpdateFacetAsync(const Model::UpdateFacetRequest& request, const UpdateFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a given typed link’s attributes. Attributes to be updated must not
+         * contribute to the typed link’s identity, as defined by its
+         * <code>IdentityAttributeOrder</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateLinkAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLinkAttributesOutcome UpdateLinkAttributes(const Model::UpdateLinkAttributesRequest& request) const;
+
+        /**
+         * <p>Updates a given typed link’s attributes. Attributes to be updated must not
+         * contribute to the typed link’s identity, as defined by its
+         * <code>IdentityAttributeOrder</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateLinkAttributes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateLinkAttributesOutcomeCallable UpdateLinkAttributesCallable(const Model::UpdateLinkAttributesRequest& request) const;
+
+        /**
+         * <p>Updates a given typed link’s attributes. Attributes to be updated must not
+         * contribute to the typed link’s identity, as defined by its
+         * <code>IdentityAttributeOrder</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateLinkAttributes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateLinkAttributesAsync(const Model::UpdateLinkAttributesRequest& request, const UpdateLinkAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a given object's attributes.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateObjectAttributes">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateObjectAttributesOutcome UpdateObjectAttributes(const Model::UpdateObjectAttributesRequest& request) const;
 
         /**
          * <p>Updates a given object's attributes.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateObjectAttributes">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2200,7 +2336,7 @@ namespace Model
 
         /**
          * <p>Updates a given object's attributes.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateObjectAttributes">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2210,7 +2346,7 @@ namespace Model
         /**
          * <p>Updates the schema name with a new name. Only development schema names can be
          * updated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateSchema">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateSchemaOutcome UpdateSchema(const Model::UpdateSchemaRequest& request) const;
@@ -2218,7 +2354,7 @@ namespace Model
         /**
          * <p>Updates the schema name with a new name. Only development schema names can be
          * updated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateSchema">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2228,7 +2364,7 @@ namespace Model
         /**
          * <p>Updates the schema name with a new name. Only development schema names can be
          * updated.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateSchema">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2239,7 +2375,7 @@ namespace Model
          * <p>Updates a <a>TypedLinkFacet</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateTypedLinkFacet">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateTypedLinkFacetOutcome UpdateTypedLinkFacet(const Model::UpdateTypedLinkFacetRequest& request) const;
@@ -2248,7 +2384,7 @@ namespace Model
          * <p>Updates a <a>TypedLinkFacet</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateTypedLinkFacet">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2259,7 +2395,7 @@ namespace Model
          * <p>Updates a <a>TypedLinkFacet</a>. For more information, see <a
          * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
          * link</a>.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateTypedLinkFacet">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2274,7 +2410,7 @@ namespace Model
          * This is a synchronous API call and upgrades only one schema on a given directory
          * per call. To upgrade multiple directories from one schema, you would need to
          * call this API on each directory.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradeAppliedSchema">AWS
          * API Reference</a></p>
          */
         virtual Model::UpgradeAppliedSchemaOutcome UpgradeAppliedSchema(const Model::UpgradeAppliedSchemaRequest& request) const;
@@ -2287,7 +2423,7 @@ namespace Model
          * This is a synchronous API call and upgrades only one schema on a given directory
          * per call. To upgrade multiple directories from one schema, you would need to
          * call this API on each directory.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradeAppliedSchema">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2302,7 +2438,7 @@ namespace Model
          * This is a synchronous API call and upgrades only one schema on a given directory
          * per call. To upgrade multiple directories from one schema, you would need to
          * call this API on each directory.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradeAppliedSchema">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2313,7 +2449,7 @@ namespace Model
          * <p>Upgrades a published schema under a new minor version revision using the
          * current contents of <code>DevelopmentSchemaArn</code>.</p><p><h3>See Also:</h3> 
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradePublishedSchema">AWS
          * API Reference</a></p>
          */
         virtual Model::UpgradePublishedSchemaOutcome UpgradePublishedSchema(const Model::UpgradePublishedSchemaRequest& request) const;
@@ -2322,7 +2458,7 @@ namespace Model
          * <p>Upgrades a published schema under a new minor version revision using the
          * current contents of <code>DevelopmentSchemaArn</code>.</p><p><h3>See Also:</h3> 
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradePublishedSchema">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -2333,7 +2469,7 @@ namespace Model
          * <p>Upgrades a published schema under a new minor version revision using the
          * current contents of <code>DevelopmentSchemaArn</code>.</p><p><h3>See Also:</h3> 
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradePublishedSchema">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -2373,6 +2509,8 @@ namespace Model
         void GetAppliedSchemaVersionAsyncHelper(const Model::GetAppliedSchemaVersionRequest& request, const GetAppliedSchemaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDirectoryAsyncHelper(const Model::GetDirectoryRequest& request, const GetDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFacetAsyncHelper(const Model::GetFacetRequest& request, const GetFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLinkAttributesAsyncHelper(const Model::GetLinkAttributesRequest& request, const GetLinkAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetObjectAttributesAsyncHelper(const Model::GetObjectAttributesRequest& request, const GetObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetObjectInformationAsyncHelper(const Model::GetObjectInformationRequest& request, const GetObjectInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSchemaAsJsonAsyncHelper(const Model::GetSchemaAsJsonRequest& request, const GetSchemaAsJsonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTypedLinkFacetInformationAsyncHelper(const Model::GetTypedLinkFacetInformationRequest& request, const GetTypedLinkFacetInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2384,6 +2522,7 @@ namespace Model
         void ListFacetNamesAsyncHelper(const Model::ListFacetNamesRequest& request, const ListFacetNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIncomingTypedLinksAsyncHelper(const Model::ListIncomingTypedLinksRequest& request, const ListIncomingTypedLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIndexAsyncHelper(const Model::ListIndexRequest& request, const ListIndexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListManagedSchemaArnsAsyncHelper(const Model::ListManagedSchemaArnsRequest& request, const ListManagedSchemaArnsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectAttributesAsyncHelper(const Model::ListObjectAttributesRequest& request, const ListObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectChildrenAsyncHelper(const Model::ListObjectChildrenRequest& request, const ListObjectChildrenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListObjectParentPathsAsyncHelper(const Model::ListObjectParentPathsRequest& request, const ListObjectParentPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2402,6 +2541,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFacetAsyncHelper(const Model::UpdateFacetRequest& request, const UpdateFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateLinkAttributesAsyncHelper(const Model::UpdateLinkAttributesRequest& request, const UpdateLinkAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateObjectAttributesAsyncHelper(const Model::UpdateObjectAttributesRequest& request, const UpdateObjectAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSchemaAsyncHelper(const Model::UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTypedLinkFacetAsyncHelper(const Model::UpdateTypedLinkFacetRequest& request, const UpdateTypedLinkFacetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KinesisAnalytics
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     KinesisStreamsOutputUpdate();
-    KinesisStreamsOutputUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    KinesisStreamsOutputUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    KinesisStreamsOutputUpdate(Aws::Utils::Json::JsonView jsonValue);
+    KinesisStreamsOutputUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -43,7 +43,7 @@ StaticIp::StaticIp() :
 {
 }
 
-StaticIp::StaticIp(const JsonValue& jsonValue) : 
+StaticIp::StaticIp(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_supportCodeHasBeenSet(false),
@@ -59,7 +59,7 @@ StaticIp::StaticIp(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StaticIp& StaticIp::operator =(const JsonValue& jsonValue)
+StaticIp& StaticIp::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -35,7 +36,7 @@ namespace Model
 
   /**
    * <p>Indicates whether an AWS Config rule is compliant. A rule is compliant if all
-   * of the resources that the rule evaluated comply with it, and it is noncompliant
+   * of the resources that the rule evaluated comply with it. A rule is noncompliant
    * if any of these resources do not comply.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ComplianceByConfigRule">AWS
    * API Reference</a></p>
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ComplianceByConfigRule();
-    ComplianceByConfigRule(const Aws::Utils::Json::JsonValue& jsonValue);
-    ComplianceByConfigRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ComplianceByConfigRule(Aws::Utils::Json::JsonView jsonValue);
+    ComplianceByConfigRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

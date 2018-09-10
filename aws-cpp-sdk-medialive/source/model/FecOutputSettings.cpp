@@ -38,7 +38,7 @@ FecOutputSettings::FecOutputSettings() :
 {
 }
 
-FecOutputSettings::FecOutputSettings(const JsonValue& jsonValue) : 
+FecOutputSettings::FecOutputSettings(JsonView jsonValue) : 
     m_columnDepth(0),
     m_columnDepthHasBeenSet(false),
     m_includeFec(FecOutputIncludeFec::NOT_SET),
@@ -49,7 +49,7 @@ FecOutputSettings::FecOutputSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FecOutputSettings& FecOutputSettings::operator =(const JsonValue& jsonValue)
+FecOutputSettings& FecOutputSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("columnDepth"))
   {

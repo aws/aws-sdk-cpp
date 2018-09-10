@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DeviceFarm
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     Job();
-    Job(const Aws::Utils::Json::JsonValue& jsonValue);
-    Job& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Job(Aws::Utils::Json::JsonView jsonValue);
+    Job& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -490,6 +491,42 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline Job& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline Job& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline Job& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+
+
+    /**
      * <p>Represents the total (metered or unmetered) minutes used by the job.</p>
      */
     inline const DeviceMinutes& GetDeviceMinutes() const{ return m_deviceMinutes; }
@@ -513,6 +550,61 @@ namespace Model
      * <p>Represents the total (metered or unmetered) minutes used by the job.</p>
      */
     inline Job& WithDeviceMinutes(DeviceMinutes&& value) { SetDeviceMinutes(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline const Aws::String& GetVideoEndpoint() const{ return m_videoEndpoint; }
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline void SetVideoEndpoint(const Aws::String& value) { m_videoEndpointHasBeenSet = true; m_videoEndpoint = value; }
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline void SetVideoEndpoint(Aws::String&& value) { m_videoEndpointHasBeenSet = true; m_videoEndpoint = std::move(value); }
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline void SetVideoEndpoint(const char* value) { m_videoEndpointHasBeenSet = true; m_videoEndpoint.assign(value); }
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline Job& WithVideoEndpoint(const Aws::String& value) { SetVideoEndpoint(value); return *this;}
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline Job& WithVideoEndpoint(Aws::String&& value) { SetVideoEndpoint(std::move(value)); return *this;}
+
+    /**
+     * <p>The endpoint for streaming device video.</p>
+     */
+    inline Job& WithVideoEndpoint(const char* value) { SetVideoEndpoint(value); return *this;}
+
+
+    /**
+     * <p>This value is set to true if video capture is enabled; otherwise, it is set
+     * to false.</p>
+     */
+    inline bool GetVideoCapture() const{ return m_videoCapture; }
+
+    /**
+     * <p>This value is set to true if video capture is enabled; otherwise, it is set
+     * to false.</p>
+     */
+    inline void SetVideoCapture(bool value) { m_videoCaptureHasBeenSet = true; m_videoCapture = value; }
+
+    /**
+     * <p>This value is set to true if video capture is enabled; otherwise, it is set
+     * to false.</p>
+     */
+    inline Job& WithVideoCapture(bool value) { SetVideoCapture(value); return *this;}
 
   private:
 
@@ -549,8 +641,17 @@ namespace Model
     Device m_device;
     bool m_deviceHasBeenSet;
 
+    Aws::String m_instanceArn;
+    bool m_instanceArnHasBeenSet;
+
     DeviceMinutes m_deviceMinutes;
     bool m_deviceMinutesHasBeenSet;
+
+    Aws::String m_videoEndpoint;
+    bool m_videoEndpointHasBeenSet;
+
+    bool m_videoCapture;
+    bool m_videoCaptureHasBeenSet;
   };
 
 } // namespace Model

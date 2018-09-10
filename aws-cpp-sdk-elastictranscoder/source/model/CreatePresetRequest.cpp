@@ -72,7 +72,7 @@ Aws::String CreatePresetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

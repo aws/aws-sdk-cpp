@@ -39,7 +39,7 @@ GroupInformation::GroupInformation() :
 {
 }
 
-GroupInformation::GroupInformation(const JsonValue& jsonValue) : 
+GroupInformation::GroupInformation(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -51,7 +51,7 @@ GroupInformation::GroupInformation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GroupInformation& GroupInformation::operator =(const JsonValue& jsonValue)
+GroupInformation& GroupInformation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Arn"))
   {

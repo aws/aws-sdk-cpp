@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/ContinuousBackupsStatus.h>
+#include <aws/dynamodb/model/PointInTimeRecoveryDescription.h>
 #include <utility>
 
 namespace Aws
@@ -25,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -33,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the backup and restore settings on the table when the backup was
-   * created.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the continuous backups and point in time recovery settings on the
+   * table.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ContinuousBackupsDescription">AWS
    * API Reference</a></p>
    */
@@ -42,45 +44,79 @@ namespace Model
   {
   public:
     ContinuousBackupsDescription();
-    ContinuousBackupsDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    ContinuousBackupsDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ContinuousBackupsDescription(Aws::Utils::Json::JsonView jsonValue);
+    ContinuousBackupsDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>ContinuousBackupsStatus can be one of the following states : ENABLED,
-     * DISABLED</p>
+     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states:
+     * ENABLED, DISABLED</p>
      */
     inline const ContinuousBackupsStatus& GetContinuousBackupsStatus() const{ return m_continuousBackupsStatus; }
 
     /**
-     * <p>ContinuousBackupsStatus can be one of the following states : ENABLED,
-     * DISABLED</p>
+     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states:
+     * ENABLED, DISABLED</p>
      */
     inline void SetContinuousBackupsStatus(const ContinuousBackupsStatus& value) { m_continuousBackupsStatusHasBeenSet = true; m_continuousBackupsStatus = value; }
 
     /**
-     * <p>ContinuousBackupsStatus can be one of the following states : ENABLED,
-     * DISABLED</p>
+     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states:
+     * ENABLED, DISABLED</p>
      */
     inline void SetContinuousBackupsStatus(ContinuousBackupsStatus&& value) { m_continuousBackupsStatusHasBeenSet = true; m_continuousBackupsStatus = std::move(value); }
 
     /**
-     * <p>ContinuousBackupsStatus can be one of the following states : ENABLED,
-     * DISABLED</p>
+     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states:
+     * ENABLED, DISABLED</p>
      */
     inline ContinuousBackupsDescription& WithContinuousBackupsStatus(const ContinuousBackupsStatus& value) { SetContinuousBackupsStatus(value); return *this;}
 
     /**
-     * <p>ContinuousBackupsStatus can be one of the following states : ENABLED,
-     * DISABLED</p>
+     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states:
+     * ENABLED, DISABLED</p>
      */
     inline ContinuousBackupsDescription& WithContinuousBackupsStatus(ContinuousBackupsStatus&& value) { SetContinuousBackupsStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The description of the point in time recovery settings applied to the
+     * table.</p>
+     */
+    inline const PointInTimeRecoveryDescription& GetPointInTimeRecoveryDescription() const{ return m_pointInTimeRecoveryDescription; }
+
+    /**
+     * <p>The description of the point in time recovery settings applied to the
+     * table.</p>
+     */
+    inline void SetPointInTimeRecoveryDescription(const PointInTimeRecoveryDescription& value) { m_pointInTimeRecoveryDescriptionHasBeenSet = true; m_pointInTimeRecoveryDescription = value; }
+
+    /**
+     * <p>The description of the point in time recovery settings applied to the
+     * table.</p>
+     */
+    inline void SetPointInTimeRecoveryDescription(PointInTimeRecoveryDescription&& value) { m_pointInTimeRecoveryDescriptionHasBeenSet = true; m_pointInTimeRecoveryDescription = std::move(value); }
+
+    /**
+     * <p>The description of the point in time recovery settings applied to the
+     * table.</p>
+     */
+    inline ContinuousBackupsDescription& WithPointInTimeRecoveryDescription(const PointInTimeRecoveryDescription& value) { SetPointInTimeRecoveryDescription(value); return *this;}
+
+    /**
+     * <p>The description of the point in time recovery settings applied to the
+     * table.</p>
+     */
+    inline ContinuousBackupsDescription& WithPointInTimeRecoveryDescription(PointInTimeRecoveryDescription&& value) { SetPointInTimeRecoveryDescription(std::move(value)); return *this;}
 
   private:
 
     ContinuousBackupsStatus m_continuousBackupsStatus;
     bool m_continuousBackupsStatusHasBeenSet;
+
+    PointInTimeRecoveryDescription m_pointInTimeRecoveryDescription;
+    bool m_pointInTimeRecoveryDescriptionHasBeenSet;
   };
 
 } // namespace Model

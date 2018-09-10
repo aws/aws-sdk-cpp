@@ -45,43 +45,43 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs containing information about the request
-     * operation.</p>
+     * operations.</p>
      */
     inline const Aws::Vector<Operation>& GetOperations() const{ return m_operations; }
 
     /**
      * <p>An array of key-value pairs containing information about the request
-     * operation.</p>
+     * operations.</p>
      */
     inline void SetOperations(const Aws::Vector<Operation>& value) { m_operations = value; }
 
     /**
      * <p>An array of key-value pairs containing information about the request
-     * operation.</p>
+     * operations.</p>
      */
     inline void SetOperations(Aws::Vector<Operation>&& value) { m_operations = std::move(value); }
 
     /**
      * <p>An array of key-value pairs containing information about the request
-     * operation.</p>
+     * operations.</p>
      */
     inline RebootInstanceResult& WithOperations(const Aws::Vector<Operation>& value) { SetOperations(value); return *this;}
 
     /**
      * <p>An array of key-value pairs containing information about the request
-     * operation.</p>
+     * operations.</p>
      */
     inline RebootInstanceResult& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
      * <p>An array of key-value pairs containing information about the request
-     * operation.</p>
+     * operations.</p>
      */
     inline RebootInstanceResult& AddOperations(const Operation& value) { m_operations.push_back(value); return *this; }
 
     /**
      * <p>An array of key-value pairs containing information about the request
-     * operation.</p>
+     * operations.</p>
      */
     inline RebootInstanceResult& AddOperations(Operation&& value) { m_operations.push_back(std::move(value)); return *this; }
 

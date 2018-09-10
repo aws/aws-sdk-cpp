@@ -27,8 +27,20 @@ namespace Model
   {
     NOT_SET,
     ml_t2_medium,
+    ml_t2_large,
+    ml_t2_xlarge,
+    ml_t2_2xlarge,
     ml_m4_xlarge,
-    ml_p2_xlarge
+    ml_m4_2xlarge,
+    ml_m4_4xlarge,
+    ml_m4_10xlarge,
+    ml_m4_16xlarge,
+    ml_p2_xlarge,
+    ml_p2_8xlarge,
+    ml_p2_16xlarge,
+    ml_p3_2xlarge,
+    ml_p3_8xlarge,
+    ml_p3_16xlarge
   };
 
 namespace InstanceTypeMapper

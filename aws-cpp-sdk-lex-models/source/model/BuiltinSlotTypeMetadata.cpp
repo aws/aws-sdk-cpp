@@ -34,14 +34,14 @@ BuiltinSlotTypeMetadata::BuiltinSlotTypeMetadata() :
 {
 }
 
-BuiltinSlotTypeMetadata::BuiltinSlotTypeMetadata(const JsonValue& jsonValue) : 
+BuiltinSlotTypeMetadata::BuiltinSlotTypeMetadata(JsonView jsonValue) : 
     m_signatureHasBeenSet(false),
     m_supportedLocalesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BuiltinSlotTypeMetadata& BuiltinSlotTypeMetadata::operator =(const JsonValue& jsonValue)
+BuiltinSlotTypeMetadata& BuiltinSlotTypeMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("signature"))
   {
@@ -52,7 +52,7 @@ BuiltinSlotTypeMetadata& BuiltinSlotTypeMetadata::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("supportedLocales"))
   {
-    Array<JsonValue> supportedLocalesJsonList = jsonValue.GetArray("supportedLocales");
+    Array<JsonView> supportedLocalesJsonList = jsonValue.GetArray("supportedLocales");
     for(unsigned supportedLocalesIndex = 0; supportedLocalesIndex < supportedLocalesJsonList.GetLength(); ++supportedLocalesIndex)
     {
       m_supportedLocales.push_back(LocaleMapper::GetLocaleForName(supportedLocalesJsonList[supportedLocalesIndex].AsString()));

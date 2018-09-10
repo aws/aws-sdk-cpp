@@ -39,7 +39,7 @@ PutEventsResult::PutEventsResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 PutEventsResult& PutEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FailedEntryCount"))
   {
     m_failedEntryCount = jsonValue.GetInteger("FailedEntryCount");
@@ -48,7 +48,7 @@ PutEventsResult& PutEventsResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("Entries"))
   {
-    Array<JsonValue> entriesJsonList = jsonValue.GetArray("Entries");
+    Array<JsonView> entriesJsonList = jsonValue.GetArray("Entries");
     for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
     {
       m_entries.push_back(entriesJsonList[entriesIndex].AsObject());

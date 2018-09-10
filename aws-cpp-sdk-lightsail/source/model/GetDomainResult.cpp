@@ -37,7 +37,7 @@ GetDomainResult::GetDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetDomainResult& GetDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("domain"))
   {
     m_domain = jsonValue.GetObject("domain");

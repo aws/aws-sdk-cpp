@@ -37,10 +37,10 @@ ListRepositoriesResult::ListRepositoriesResult(const Aws::AmazonWebServiceResult
 
 ListRepositoriesResult& ListRepositoriesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("repositories"))
   {
-    Array<JsonValue> repositoriesJsonList = jsonValue.GetArray("repositories");
+    Array<JsonView> repositoriesJsonList = jsonValue.GetArray("repositories");
     for(unsigned repositoriesIndex = 0; repositoriesIndex < repositoriesJsonList.GetLength(); ++repositoriesIndex)
     {
       m_repositories.push_back(repositoriesJsonList[repositoriesIndex].AsObject());

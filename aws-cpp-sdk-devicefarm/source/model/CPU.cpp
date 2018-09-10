@@ -36,7 +36,7 @@ CPU::CPU() :
 {
 }
 
-CPU::CPU(const JsonValue& jsonValue) : 
+CPU::CPU(JsonView jsonValue) : 
     m_frequencyHasBeenSet(false),
     m_architectureHasBeenSet(false),
     m_clock(0.0),
@@ -45,7 +45,7 @@ CPU::CPU(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CPU& CPU::operator =(const JsonValue& jsonValue)
+CPU& CPU::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("frequency"))
   {

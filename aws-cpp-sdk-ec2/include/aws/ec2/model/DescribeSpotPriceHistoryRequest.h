@@ -64,7 +64,7 @@ namespace Model
      * <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p>
      * </li> <li> <p> <code>spot-price</code> - The Spot price. The value must match
      * exactly (or use wildcards; greater than or less than comparison is not
-     * supported).</p> </li> <li> <p> <code>timestamp</code> - The timestamp of the
+     * supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of the
      * Spot price history, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
      * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
@@ -82,7 +82,7 @@ namespace Model
      * <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p>
      * </li> <li> <p> <code>spot-price</code> - The Spot price. The value must match
      * exactly (or use wildcards; greater than or less than comparison is not
-     * supported).</p> </li> <li> <p> <code>timestamp</code> - The timestamp of the
+     * supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of the
      * Spot price history, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
      * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
@@ -100,7 +100,7 @@ namespace Model
      * <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p>
      * </li> <li> <p> <code>spot-price</code> - The Spot price. The value must match
      * exactly (or use wildcards; greater than or less than comparison is not
-     * supported).</p> </li> <li> <p> <code>timestamp</code> - The timestamp of the
+     * supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of the
      * Spot price history, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
      * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
@@ -118,7 +118,7 @@ namespace Model
      * <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p>
      * </li> <li> <p> <code>spot-price</code> - The Spot price. The value must match
      * exactly (or use wildcards; greater than or less than comparison is not
-     * supported).</p> </li> <li> <p> <code>timestamp</code> - The timestamp of the
+     * supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of the
      * Spot price history, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
      * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
@@ -136,7 +136,7 @@ namespace Model
      * <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p>
      * </li> <li> <p> <code>spot-price</code> - The Spot price. The value must match
      * exactly (or use wildcards; greater than or less than comparison is not
-     * supported).</p> </li> <li> <p> <code>timestamp</code> - The timestamp of the
+     * supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of the
      * Spot price history, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
      * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
@@ -154,7 +154,7 @@ namespace Model
      * <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p>
      * </li> <li> <p> <code>spot-price</code> - The Spot price. The value must match
      * exactly (or use wildcards; greater than or less than comparison is not
-     * supported).</p> </li> <li> <p> <code>timestamp</code> - The timestamp of the
+     * supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of the
      * Spot price history, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
      * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
@@ -172,7 +172,7 @@ namespace Model
      * <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p>
      * </li> <li> <p> <code>spot-price</code> - The Spot price. The value must match
      * exactly (or use wildcards; greater than or less than comparison is not
-     * supported).</p> </li> <li> <p> <code>timestamp</code> - The timestamp of the
+     * supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of the
      * Spot price history, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
      * wildcards (* and ?). Greater than or less than comparison is not supported.</p>

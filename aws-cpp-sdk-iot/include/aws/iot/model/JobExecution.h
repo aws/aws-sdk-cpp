@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     JobExecution();
-    JobExecution(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobExecution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobExecution(Aws::Utils::Json::JsonView jsonValue);
+    JobExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -115,6 +116,25 @@ namespace Model
      * CANCELED, or REJECTED).</p>
      */
     inline JobExecution& WithStatus(JobExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Will be <code>true</code> if the job execution was canceled with the optional
+     * <code>force</code> parameter set to <code>true</code>.</p>
+     */
+    inline bool GetForceCanceled() const{ return m_forceCanceled; }
+
+    /**
+     * <p>Will be <code>true</code> if the job execution was canceled with the optional
+     * <code>force</code> parameter set to <code>true</code>.</p>
+     */
+    inline void SetForceCanceled(bool value) { m_forceCanceledHasBeenSet = true; m_forceCanceled = value; }
+
+    /**
+     * <p>Will be <code>true</code> if the job execution was canceled with the optional
+     * <code>force</code> parameter set to <code>true</code>.</p>
+     */
+    inline JobExecution& WithForceCanceled(bool value) { SetForceCanceled(value); return *this;}
 
 
     /**
@@ -298,6 +318,25 @@ namespace Model
      */
     inline JobExecution& WithExecutionNumber(long long value) { SetExecutionNumber(value); return *this;}
 
+
+    /**
+     * <p>The version of the job execution. Job execution versions are incremented each
+     * time they are updated by a device.</p>
+     */
+    inline long long GetVersionNumber() const{ return m_versionNumber; }
+
+    /**
+     * <p>The version of the job execution. Job execution versions are incremented each
+     * time they are updated by a device.</p>
+     */
+    inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
+
+    /**
+     * <p>The version of the job execution. Job execution versions are incremented each
+     * time they are updated by a device.</p>
+     */
+    inline JobExecution& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -305,6 +344,9 @@ namespace Model
 
     JobExecutionStatus m_status;
     bool m_statusHasBeenSet;
+
+    bool m_forceCanceled;
+    bool m_forceCanceledHasBeenSet;
 
     JobExecutionStatusDetails m_statusDetails;
     bool m_statusDetailsHasBeenSet;
@@ -323,6 +365,9 @@ namespace Model
 
     long long m_executionNumber;
     bool m_executionNumberHasBeenSet;
+
+    long long m_versionNumber;
+    bool m_versionNumberHasBeenSet;
   };
 
 } // namespace Model

@@ -37,7 +37,7 @@ DescribeIdentityResult::DescribeIdentityResult(const Aws::AmazonWebServiceResult
 
 DescribeIdentityResult& DescribeIdentityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityId"))
   {
     m_identityId = jsonValue.GetString("IdentityId");
@@ -46,7 +46,7 @@ DescribeIdentityResult& DescribeIdentityResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("Logins"))
   {
-    Array<JsonValue> loginsJsonList = jsonValue.GetArray("Logins");
+    Array<JsonView> loginsJsonList = jsonValue.GetArray("Logins");
     for(unsigned loginsIndex = 0; loginsIndex < loginsJsonList.GetLength(); ++loginsIndex)
     {
       m_logins.push_back(loginsJsonList[loginsIndex].AsString());

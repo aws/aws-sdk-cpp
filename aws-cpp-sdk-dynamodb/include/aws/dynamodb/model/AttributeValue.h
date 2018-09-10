@@ -36,7 +36,7 @@ public:
     AttributeValue() {};
     explicit AttributeValue(const Aws::String& s) { SetS(s); }
     explicit AttributeValue(const Aws::Vector<Aws::String>& ss) { SetSS(ss); }
-    AttributeValue(const Aws::Utils::Json::JsonValue& jsonValue) { *this = jsonValue; }
+    AttributeValue(Aws::Utils::Json::JsonView jsonValue) { *this = jsonValue; }
 
     /// returns the String value if the value is specialized to this type, otherwise an empty String
     const Aws::String& GetS() const;
@@ -151,7 +151,7 @@ public:
     /// if already specialized to another type then the behavior is undefined
     AttributeValue& SetNull(bool value);
 
-    AttributeValue& operator = (const Aws::Utils::Json::JsonValue&);
+    AttributeValue& operator = (Aws::Utils::Json::JsonView);
 
     bool operator == (const AttributeValue& other) const;
     inline bool operator != (const AttributeValue& other) const { return !(*this == other); }

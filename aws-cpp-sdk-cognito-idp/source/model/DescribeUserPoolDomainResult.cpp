@@ -37,7 +37,7 @@ DescribeUserPoolDomainResult::DescribeUserPoolDomainResult(const Aws::AmazonWebS
 
 DescribeUserPoolDomainResult& DescribeUserPoolDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DomainDescription"))
   {
     m_domainDescription = jsonValue.GetObject("DomainDescription");

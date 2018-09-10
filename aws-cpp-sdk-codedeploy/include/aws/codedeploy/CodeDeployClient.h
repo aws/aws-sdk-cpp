@@ -74,11 +74,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -339,7 +334,7 @@ namespace Model
 
         virtual ~CodeDeployClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "codedeploy"; }
+        inline virtual const char* GetServiceClientName() const override { return "CodeDeploy"; }
 
 
         /**

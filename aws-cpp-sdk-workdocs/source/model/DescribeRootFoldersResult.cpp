@@ -37,10 +37,10 @@ DescribeRootFoldersResult::DescribeRootFoldersResult(const Aws::AmazonWebService
 
 DescribeRootFoldersResult& DescribeRootFoldersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Folders"))
   {
-    Array<JsonValue> foldersJsonList = jsonValue.GetArray("Folders");
+    Array<JsonView> foldersJsonList = jsonValue.GetArray("Folders");
     for(unsigned foldersIndex = 0; foldersIndex < foldersJsonList.GetLength(); ++foldersIndex)
     {
       m_folders.push_back(foldersJsonList[foldersIndex].AsObject());

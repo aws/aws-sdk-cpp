@@ -37,7 +37,7 @@ WebACL::WebACL() :
 {
 }
 
-WebACL::WebACL(const JsonValue& jsonValue) : 
+WebACL::WebACL(JsonView jsonValue) : 
     m_webACLIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_metricNameHasBeenSet(false),
@@ -47,7 +47,7 @@ WebACL::WebACL(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WebACL& WebACL::operator =(const JsonValue& jsonValue)
+WebACL& WebACL::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WebACLId"))
   {
@@ -79,7 +79,7 @@ WebACL& WebACL::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Rules"))
   {
-    Array<JsonValue> rulesJsonList = jsonValue.GetArray("Rules");
+    Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());

@@ -44,7 +44,7 @@ WorkflowExecutionInfo::WorkflowExecutionInfo() :
 {
 }
 
-WorkflowExecutionInfo::WorkflowExecutionInfo(const JsonValue& jsonValue) : 
+WorkflowExecutionInfo::WorkflowExecutionInfo(JsonView jsonValue) : 
     m_executionHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
     m_startTimestampHasBeenSet(false),
@@ -61,7 +61,7 @@ WorkflowExecutionInfo::WorkflowExecutionInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WorkflowExecutionInfo& WorkflowExecutionInfo::operator =(const JsonValue& jsonValue)
+WorkflowExecutionInfo& WorkflowExecutionInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("execution"))
   {
@@ -114,7 +114,7 @@ WorkflowExecutionInfo& WorkflowExecutionInfo::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("tagList"))
   {
-    Array<JsonValue> tagListJsonList = jsonValue.GetArray("tagList");
+    Array<JsonView> tagListJsonList = jsonValue.GetArray("tagList");
     for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
     {
       m_tagList.push_back(tagListJsonList[tagListIndex].AsString());

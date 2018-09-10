@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * The object key name to use when a 4XX class error occurs.
+     * <p>The object key name to use when a 4XX class error occurs.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * The object key name to use when a 4XX class error occurs.
+     * <p>The object key name to use when a 4XX class error occurs.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * The object key name to use when a 4XX class error occurs.
+     * <p>The object key name to use when a 4XX class error occurs.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * The object key name to use when a 4XX class error occurs.
+     * <p>The object key name to use when a 4XX class error occurs.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * The object key name to use when a 4XX class error occurs.
+     * <p>The object key name to use when a 4XX class error occurs.</p>
      */
     inline ErrorDocument& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * The object key name to use when a 4XX class error occurs.
+     * <p>The object key name to use when a 4XX class error occurs.</p>
      */
     inline ErrorDocument& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * The object key name to use when a 4XX class error occurs.
+     * <p>The object key name to use when a 4XX class error occurs.</p>
      */
     inline ErrorDocument& WithKey(const char* value) { SetKey(value); return *this;}
 

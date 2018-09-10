@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * Thing Name
+     * The thing name.
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
 
     /**
-     * Thing Name
+     * The thing name.
      */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
-     * Thing Name
+     * The thing name.
      */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
 
     /**
-     * Thing Name
+     * The thing name.
      */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
 
     /**
-     * Thing Name
+     * The thing name.
      */
     inline GetConnectivityInfoRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
 
     /**
-     * Thing Name
+     * The thing name.
      */
     inline GetConnectivityInfoRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
 
     /**
-     * Thing Name
+     * The thing name.
      */
     inline GetConnectivityInfoRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 

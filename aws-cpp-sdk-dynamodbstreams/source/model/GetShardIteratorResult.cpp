@@ -37,7 +37,7 @@ GetShardIteratorResult::GetShardIteratorResult(const Aws::AmazonWebServiceResult
 
 GetShardIteratorResult& GetShardIteratorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ShardIterator"))
   {
     m_shardIterator = jsonValue.GetString("ShardIterator");

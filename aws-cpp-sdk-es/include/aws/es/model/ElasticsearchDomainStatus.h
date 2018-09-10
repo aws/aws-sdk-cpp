@@ -21,6 +21,7 @@
 #include <aws/es/model/EBSOptions.h>
 #include <aws/es/model/SnapshotOptions.h>
 #include <aws/es/model/VPCDerivedInfo.h>
+#include <aws/es/model/CognitoOptions.h>
 #include <aws/es/model/EncryptionAtRestOptions.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
@@ -33,6 +34,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticsearchService
@@ -49,8 +51,8 @@ namespace Model
   {
   public:
     ElasticsearchDomainStatus();
-    ElasticsearchDomainStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    ElasticsearchDomainStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ElasticsearchDomainStatus(Aws::Utils::Json::JsonView jsonValue);
+    ElasticsearchDomainStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -401,6 +403,28 @@ namespace Model
     inline ElasticsearchDomainStatus& WithProcessing(bool value) { SetProcessing(value); return *this;}
 
 
+    /**
+     * <p>The status of an Elasticsearch domain version upgrade. <code>True</code> if
+     * Amazon Elasticsearch Service is undergoing a version upgrade. <code>False</code>
+     * if the configuration is active.</p>
+     */
+    inline bool GetUpgradeProcessing() const{ return m_upgradeProcessing; }
+
+    /**
+     * <p>The status of an Elasticsearch domain version upgrade. <code>True</code> if
+     * Amazon Elasticsearch Service is undergoing a version upgrade. <code>False</code>
+     * if the configuration is active.</p>
+     */
+    inline void SetUpgradeProcessing(bool value) { m_upgradeProcessingHasBeenSet = true; m_upgradeProcessing = value; }
+
+    /**
+     * <p>The status of an Elasticsearch domain version upgrade. <code>True</code> if
+     * Amazon Elasticsearch Service is undergoing a version upgrade. <code>False</code>
+     * if the configuration is active.</p>
+     */
+    inline ElasticsearchDomainStatus& WithUpgradeProcessing(bool value) { SetUpgradeProcessing(value); return *this;}
+
+
     
     inline const Aws::String& GetElasticsearchVersion() const{ return m_elasticsearchVersion; }
 
@@ -589,6 +613,47 @@ namespace Model
 
 
     /**
+     * <p>The <code>CognitoOptions</code> for the specified domain. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+     */
+    inline const CognitoOptions& GetCognitoOptions() const{ return m_cognitoOptions; }
+
+    /**
+     * <p>The <code>CognitoOptions</code> for the specified domain. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+     */
+    inline void SetCognitoOptions(const CognitoOptions& value) { m_cognitoOptionsHasBeenSet = true; m_cognitoOptions = value; }
+
+    /**
+     * <p>The <code>CognitoOptions</code> for the specified domain. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+     */
+    inline void SetCognitoOptions(CognitoOptions&& value) { m_cognitoOptionsHasBeenSet = true; m_cognitoOptions = std::move(value); }
+
+    /**
+     * <p>The <code>CognitoOptions</code> for the specified domain. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+     */
+    inline ElasticsearchDomainStatus& WithCognitoOptions(const CognitoOptions& value) { SetCognitoOptions(value); return *this;}
+
+    /**
+     * <p>The <code>CognitoOptions</code> for the specified domain. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+     */
+    inline ElasticsearchDomainStatus& WithCognitoOptions(CognitoOptions&& value) { SetCognitoOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p> Specifies the status of the <code>EncryptionAtRestOptions</code>.</p>
      */
     inline const EncryptionAtRestOptions& GetEncryptionAtRestOptions() const{ return m_encryptionAtRestOptions; }
@@ -746,6 +811,9 @@ namespace Model
     bool m_processing;
     bool m_processingHasBeenSet;
 
+    bool m_upgradeProcessing;
+    bool m_upgradeProcessingHasBeenSet;
+
     Aws::String m_elasticsearchVersion;
     bool m_elasticsearchVersionHasBeenSet;
 
@@ -763,6 +831,9 @@ namespace Model
 
     VPCDerivedInfo m_vPCOptions;
     bool m_vPCOptionsHasBeenSet;
+
+    CognitoOptions m_cognitoOptions;
+    bool m_cognitoOptionsHasBeenSet;
 
     EncryptionAtRestOptions m_encryptionAtRestOptions;
     bool m_encryptionAtRestOptionsHasBeenSet;

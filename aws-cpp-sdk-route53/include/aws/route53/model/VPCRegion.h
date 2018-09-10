@@ -39,6 +39,7 @@ namespace Model
     ap_south_1,
     ap_northeast_1,
     ap_northeast_2,
+    ap_northeast_3,
     sa_east_1,
     ca_central_1,
     cn_north_1

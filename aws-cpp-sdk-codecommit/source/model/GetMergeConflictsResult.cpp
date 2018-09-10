@@ -39,7 +39,7 @@ GetMergeConflictsResult::GetMergeConflictsResult(const Aws::AmazonWebServiceResu
 
 GetMergeConflictsResult& GetMergeConflictsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("mergeable"))
   {
     m_mergeable = jsonValue.GetBool("mergeable");

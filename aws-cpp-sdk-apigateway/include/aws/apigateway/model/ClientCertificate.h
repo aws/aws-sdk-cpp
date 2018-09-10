@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace APIGateway
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     ClientCertificate();
-    ClientCertificate(const Aws::Utils::Json::JsonValue& jsonValue);
-    ClientCertificate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ClientCertificate(Aws::Utils::Json::JsonView jsonValue);
+    ClientCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

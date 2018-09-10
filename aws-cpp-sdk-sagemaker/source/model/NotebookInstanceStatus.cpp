@@ -36,6 +36,7 @@ namespace Aws
         static const int Stopped_HASH = HashingUtils::HashString("Stopped");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Deleting_HASH = HashingUtils::HashString("Deleting");
+        static const int Updating_HASH = HashingUtils::HashString("Updating");
 
 
         NotebookInstanceStatus GetNotebookInstanceStatusForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return NotebookInstanceStatus::Deleting;
           }
+          else if (hashCode == Updating_HASH)
+          {
+            return NotebookInstanceStatus::Updating;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "Failed";
           case NotebookInstanceStatus::Deleting:
             return "Deleting";
+          case NotebookInstanceStatus::Updating:
+            return "Updating";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

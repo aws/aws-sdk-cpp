@@ -37,7 +37,7 @@ PutDestinationResult::PutDestinationResult(const Aws::AmazonWebServiceResult<Jso
 
 PutDestinationResult& PutDestinationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetObject("destination");

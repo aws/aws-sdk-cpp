@@ -51,7 +51,7 @@ Aws::String AdminRemoveUserFromGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AdminRemoveUserFromGroupRequest::GetRequestSpecificHeaders() const

@@ -17,6 +17,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -49,96 +50,140 @@ namespace Model
 
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline ListBucketInventoryConfigurationsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline ListBucketInventoryConfigurationsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * The name of the bucket containing the inventory configurations to retrieve.
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
      */
     inline ListBucketInventoryConfigurationsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline ListBucketInventoryConfigurationsRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline ListBucketInventoryConfigurationsRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
-     * The marker used to continue an inventory configuration listing that has been
+     * <p>The marker used to continue an inventory configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline ListBucketInventoryConfigurationsRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+
+
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
+
+    
+    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
+
+    
+    inline ListBucketInventoryConfigurationsRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
+
+    
+    inline ListBucketInventoryConfigurationsRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
+
+    
+    inline ListBucketInventoryConfigurationsRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+
+    
+    inline ListBucketInventoryConfigurationsRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline ListBucketInventoryConfigurationsRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline ListBucketInventoryConfigurationsRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline ListBucketInventoryConfigurationsRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline ListBucketInventoryConfigurationsRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline ListBucketInventoryConfigurationsRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
 
   private:
 
@@ -147,6 +192,9 @@ namespace Model
 
     Aws::String m_continuationToken;
     bool m_continuationTokenHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+    bool m_customizedAccessLogTagHasBeenSet;
   };
 
 } // namespace Model

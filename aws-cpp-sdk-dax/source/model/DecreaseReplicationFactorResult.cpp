@@ -37,7 +37,7 @@ DecreaseReplicationFactorResult::DecreaseReplicationFactorResult(const Aws::Amaz
 
 DecreaseReplicationFactorResult& DecreaseReplicationFactorResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Cluster"))
   {
     m_cluster = jsonValue.GetObject("Cluster");

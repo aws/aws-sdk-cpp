@@ -37,10 +37,10 @@ ListCuratedEnvironmentImagesResult::ListCuratedEnvironmentImagesResult(const Aws
 
 ListCuratedEnvironmentImagesResult& ListCuratedEnvironmentImagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("platforms"))
   {
-    Array<JsonValue> platformsJsonList = jsonValue.GetArray("platforms");
+    Array<JsonView> platformsJsonList = jsonValue.GetArray("platforms");
     for(unsigned platformsIndex = 0; platformsIndex < platformsJsonList.GetLength(); ++platformsIndex)
     {
       m_platforms.push_back(platformsJsonList[platformsIndex].AsObject());

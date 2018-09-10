@@ -29,6 +29,8 @@ namespace Model
 {
 
 FileShareInfo::FileShareInfo() : 
+    m_fileShareType(FileShareType::NOT_SET),
+    m_fileShareTypeHasBeenSet(false),
     m_fileShareARNHasBeenSet(false),
     m_fileShareIdHasBeenSet(false),
     m_fileShareStatusHasBeenSet(false),
@@ -36,7 +38,9 @@ FileShareInfo::FileShareInfo() :
 {
 }
 
-FileShareInfo::FileShareInfo(const JsonValue& jsonValue) : 
+FileShareInfo::FileShareInfo(JsonView jsonValue) : 
+    m_fileShareType(FileShareType::NOT_SET),
+    m_fileShareTypeHasBeenSet(false),
     m_fileShareARNHasBeenSet(false),
     m_fileShareIdHasBeenSet(false),
     m_fileShareStatusHasBeenSet(false),
@@ -45,8 +49,15 @@ FileShareInfo::FileShareInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FileShareInfo& FileShareInfo::operator =(const JsonValue& jsonValue)
+FileShareInfo& FileShareInfo::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("FileShareType"))
+  {
+    m_fileShareType = FileShareTypeMapper::GetFileShareTypeForName(jsonValue.GetString("FileShareType"));
+
+    m_fileShareTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("FileShareARN"))
   {
     m_fileShareARN = jsonValue.GetString("FileShareARN");
@@ -81,6 +92,11 @@ FileShareInfo& FileShareInfo::operator =(const JsonValue& jsonValue)
 JsonValue FileShareInfo::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_fileShareTypeHasBeenSet)
+  {
+   payload.WithString("FileShareType", FileShareTypeMapper::GetNameForFileShareType(m_fileShareType));
+  }
 
   if(m_fileShareARNHasBeenSet)
   {

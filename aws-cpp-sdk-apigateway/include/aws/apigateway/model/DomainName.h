@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace APIGateway
@@ -55,43 +56,50 @@ namespace Model
   {
   public:
     DomainName();
-    DomainName(const Aws::Utils::Json::JsonValue& jsonValue);
-    DomainName& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DomainName(Aws::Utils::Json::JsonView jsonValue);
+    DomainName& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The name of the <a>DomainName</a> resource.</p>
+     * <p>The custom domain name as an API host name, for example,
+     * <code>my-api.example.com</code>.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The name of the <a>DomainName</a> resource.</p>
+     * <p>The custom domain name as an API host name, for example,
+     * <code>my-api.example.com</code>.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The name of the <a>DomainName</a> resource.</p>
+     * <p>The custom domain name as an API host name, for example,
+     * <code>my-api.example.com</code>.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The name of the <a>DomainName</a> resource.</p>
+     * <p>The custom domain name as an API host name, for example,
+     * <code>my-api.example.com</code>.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The name of the <a>DomainName</a> resource.</p>
+     * <p>The custom domain name as an API host name, for example,
+     * <code>my-api.example.com</code>.</p>
      */
     inline DomainName& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The name of the <a>DomainName</a> resource.</p>
+     * <p>The custom domain name as an API host name, for example,
+     * <code>my-api.example.com</code>.</p>
      */
     inline DomainName& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the <a>DomainName</a> resource.</p>
+     * <p>The custom domain name as an API host name, for example,
+     * <code>my-api.example.com</code>.</p>
      */
     inline DomainName& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

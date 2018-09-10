@@ -32,24 +32,26 @@ MessageRequest::MessageRequest() :
     m_addressesHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_endpointsHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false)
+    m_messageConfigurationHasBeenSet(false),
+    m_traceIdHasBeenSet(false)
 {
 }
 
-MessageRequest::MessageRequest(const JsonValue& jsonValue) : 
+MessageRequest::MessageRequest(JsonView jsonValue) : 
     m_addressesHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_endpointsHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false)
+    m_messageConfigurationHasBeenSet(false),
+    m_traceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MessageRequest& MessageRequest::operator =(const JsonValue& jsonValue)
+MessageRequest& MessageRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Addresses"))
   {
-    Aws::Map<Aws::String, JsonValue> addressesJsonMap = jsonValue.GetObject("Addresses").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> addressesJsonMap = jsonValue.GetObject("Addresses").GetAllObjects();
     for(auto& addressesItem : addressesJsonMap)
     {
       m_addresses[addressesItem.first] = addressesItem.second.AsObject();
@@ -59,7 +61,7 @@ MessageRequest& MessageRequest::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Context"))
   {
-    Aws::Map<Aws::String, JsonValue> contextJsonMap = jsonValue.GetObject("Context").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("Context").GetAllObjects();
     for(auto& contextItem : contextJsonMap)
     {
       m_context[contextItem.first] = contextItem.second.AsString();
@@ -69,7 +71,7 @@ MessageRequest& MessageRequest::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Endpoints"))
   {
-    Aws::Map<Aws::String, JsonValue> endpointsJsonMap = jsonValue.GetObject("Endpoints").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> endpointsJsonMap = jsonValue.GetObject("Endpoints").GetAllObjects();
     for(auto& endpointsItem : endpointsJsonMap)
     {
       m_endpoints[endpointsItem.first] = endpointsItem.second.AsObject();
@@ -82,6 +84,13 @@ MessageRequest& MessageRequest::operator =(const JsonValue& jsonValue)
     m_messageConfiguration = jsonValue.GetObject("MessageConfiguration");
 
     m_messageConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TraceId"))
+  {
+    m_traceId = jsonValue.GetString("TraceId");
+
+    m_traceIdHasBeenSet = true;
   }
 
   return *this;
@@ -127,6 +136,12 @@ JsonValue MessageRequest::Jsonize() const
   if(m_messageConfigurationHasBeenSet)
   {
    payload.WithObject("MessageConfiguration", m_messageConfiguration.Jsonize());
+
+  }
+
+  if(m_traceIdHasBeenSet)
+  {
+   payload.WithString("TraceId", m_traceId);
 
   }
 

@@ -30,6 +30,7 @@
 #include <aws/serverlessrepo/model/ListApplicationsResult.h>
 #include <aws/serverlessrepo/model/PutApplicationPolicyResult.h>
 #include <aws/serverlessrepo/model/UpdateApplicationResult.h>
+#include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -52,11 +53,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -78,6 +74,7 @@ namespace Model
         class CreateApplicationRequest;
         class CreateApplicationVersionRequest;
         class CreateCloudFormationChangeSetRequest;
+        class DeleteApplicationRequest;
         class GetApplicationRequest;
         class GetApplicationPolicyRequest;
         class ListApplicationVersionsRequest;
@@ -88,6 +85,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> CreateApplicationOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationVersionResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> CreateApplicationVersionOutcome;
         typedef Aws::Utils::Outcome<CreateCloudFormationChangeSetResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> CreateCloudFormationChangeSetOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> DeleteApplicationOutcome;
         typedef Aws::Utils::Outcome<GetApplicationResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> GetApplicationOutcome;
         typedef Aws::Utils::Outcome<GetApplicationPolicyResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> GetApplicationPolicyOutcome;
         typedef Aws::Utils::Outcome<ListApplicationVersionsResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> ListApplicationVersionsOutcome;
@@ -98,6 +96,7 @@ namespace Model
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
         typedef std::future<CreateApplicationVersionOutcome> CreateApplicationVersionOutcomeCallable;
         typedef std::future<CreateCloudFormationChangeSetOutcome> CreateCloudFormationChangeSetOutcomeCallable;
+        typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
         typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
         typedef std::future<GetApplicationPolicyOutcome> GetApplicationPolicyOutcomeCallable;
         typedef std::future<ListApplicationVersionsOutcome> ListApplicationVersionsOutcomeCallable;
@@ -111,6 +110,7 @@ namespace Model
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::CreateApplicationVersionRequest&, const Model::CreateApplicationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationVersionResponseReceivedHandler;
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::CreateCloudFormationChangeSetRequest&, const Model::CreateCloudFormationChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCloudFormationChangeSetResponseReceivedHandler;
+    typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::GetApplicationPolicyRequest&, const Model::GetApplicationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationPolicyResponseReceivedHandler;
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::ListApplicationVersionsRequest&, const Model::ListApplicationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationVersionsResponseReceivedHandler;
@@ -119,7 +119,51 @@ namespace Model
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
 
   /**
-   * AWS Serverless Repository
+   * <p>The AWS Serverless Application Repository makes it easy for developers and
+   * enterprises to quickly find
+ and deploy serverless applications in the AWS
+   * Cloud. For more information about serverless applications,
+ see Serverless
+   * Computing and Applications on the AWS website.</p><p>The AWS Serverless
+   * Application Repository is deeply integrated with the AWS Lambda console, so that
+   * developers of 
+ all levels can get started with serverless computing without
+   * needing to learn anything new. You can use category 
+ keywords to browse for
+   * applications such as web and mobile backends, data processing applications, or
+   * chatbots. 
+ You can also search for applications by name, publisher, or event
+   * source. To use an application, you simply choose it, 
+ configure any required
+   * fields, and deploy it with a few clicks. </p><p>You can also easily publish
+   * applications, sharing them publicly with the community at large, or privately
+
+   * within your team or across your organization. To publish a serverless
+   * application (or app), you can use the
+ AWS Management Console, AWS Command Line
+   * Interface (AWS CLI), or AWS SDKs to upload the code. Along with the
+ code, you
+   * upload a simple manifest file, also known as the AWS Serverless Application
+   * Model (AWS SAM) template.
+ For more information about AWS SAM, see AWS
+   * Serverless Application Model (AWS SAM) on the AWS Labs
+ GitHub
+   * repository.</p><p>The AWS Serverless Application Repository Developer Guide
+   * contains more information about the two developer
+ experiences
+   * available:</p><ul>
+ <li>
+ <p>Consuming Applications – Browse for applications
+   * and view information about them, including
+ source code and readme files. Also
+   * install, configure, and deploy applications of your choosing. </p>
+
+   * <p>Publishing Applications – Configure and upload applications to make them
+   * available to other
+ developers, and publish new versions of applications. </p>
+
+   * </li>
+ </ul>
    */
   class AWS_SERVERLESSAPPLICATIONREPOSITORY_API ServerlessApplicationRepositoryClient : public Aws::Client::AWSJsonClient
   {
@@ -147,20 +191,20 @@ namespace Model
 
         virtual ~ServerlessApplicationRepositoryClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "serverlessrepo"; }
+        inline virtual const char* GetServiceClientName() const override { return "ServerlessApplicationRepository"; }
 
 
         /**
-         * Creates an application, optionally including an AWS SAM file to create the first
-         * application version in the same call.<p><h3>See Also:</h3>   <a
+         * <p>Creates an application, optionally including an AWS SAM file to create the
+         * first application version in the same call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplication">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * Creates an application, optionally including an AWS SAM file to create the first
-         * application version in the same call.<p><h3>See Also:</h3>   <a
+         * <p>Creates an application, optionally including an AWS SAM file to create the
+         * first application version in the same call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplication">AWS
          * API Reference</a></p>
          *
@@ -169,8 +213,8 @@ namespace Model
         virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * Creates an application, optionally including an AWS SAM file to create the first
-         * application version in the same call.<p><h3>See Also:</h3>   <a
+         * <p>Creates an application, optionally including an AWS SAM file to create the
+         * first application version in the same call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplication">AWS
          * API Reference</a></p>
          *
@@ -179,14 +223,14 @@ namespace Model
         virtual void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates an application version.<p><h3>See Also:</h3>   <a
+         * <p>Creates an application version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplicationVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateApplicationVersionOutcome CreateApplicationVersion(const Model::CreateApplicationVersionRequest& request) const;
 
         /**
-         * Creates an application version.<p><h3>See Also:</h3>   <a
+         * <p>Creates an application version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -195,7 +239,7 @@ namespace Model
         virtual Model::CreateApplicationVersionOutcomeCallable CreateApplicationVersionCallable(const Model::CreateApplicationVersionRequest& request) const;
 
         /**
-         * Creates an application version.<p><h3>See Also:</h3>   <a
+         * <p>Creates an application version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -204,16 +248,16 @@ namespace Model
         virtual void CreateApplicationVersionAsync(const Model::CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates an AWS CloudFormation ChangeSet for the given application.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an AWS CloudFormation change set for the given
+         * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateCloudFormationChangeSetOutcome CreateCloudFormationChangeSet(const Model::CreateCloudFormationChangeSetRequest& request) const;
 
         /**
-         * Creates an AWS CloudFormation ChangeSet for the given application.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an AWS CloudFormation change set for the given
+         * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet">AWS
          * API Reference</a></p>
          *
@@ -222,8 +266,8 @@ namespace Model
         virtual Model::CreateCloudFormationChangeSetOutcomeCallable CreateCloudFormationChangeSetCallable(const Model::CreateCloudFormationChangeSetRequest& request) const;
 
         /**
-         * Creates an AWS CloudFormation ChangeSet for the given application.<p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an AWS CloudFormation change set for the given
+         * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet">AWS
          * API Reference</a></p>
          *
@@ -232,14 +276,39 @@ namespace Model
         virtual void CreateCloudFormationChangeSetAsync(const Model::CreateCloudFormationChangeSetRequest& request, const CreateCloudFormationChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Gets the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteApplicationOutcome DeleteApplication(const Model::DeleteApplicationRequest& request) const;
+
+        /**
+         * <p>Deletes the specified application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
+
+        /**
+         * <p>Deletes the specified application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the specified application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplication">AWS
          * API Reference</a></p>
          */
         virtual Model::GetApplicationOutcome GetApplication(const Model::GetApplicationRequest& request) const;
 
         /**
-         * Gets the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Gets the specified application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplication">AWS
          * API Reference</a></p>
          *
@@ -248,7 +317,7 @@ namespace Model
         virtual Model::GetApplicationOutcomeCallable GetApplicationCallable(const Model::GetApplicationRequest& request) const;
 
         /**
-         * Gets the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Gets the specified application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplication">AWS
          * API Reference</a></p>
          *
@@ -257,14 +326,14 @@ namespace Model
         virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Gets the policy for the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Retrieves the policy for the application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplicationPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::GetApplicationPolicyOutcome GetApplicationPolicy(const Model::GetApplicationPolicyRequest& request) const;
 
         /**
-         * Gets the policy for the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Retrieves the policy for the application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplicationPolicy">AWS
          * API Reference</a></p>
          *
@@ -273,7 +342,7 @@ namespace Model
         virtual Model::GetApplicationPolicyOutcomeCallable GetApplicationPolicyCallable(const Model::GetApplicationPolicyRequest& request) const;
 
         /**
-         * Gets the policy for the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Retrieves the policy for the application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/GetApplicationPolicy">AWS
          * API Reference</a></p>
          *
@@ -282,14 +351,14 @@ namespace Model
         virtual void GetApplicationPolicyAsync(const Model::GetApplicationPolicyRequest& request, const GetApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Lists versions for the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Lists versions for the specified application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationVersions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListApplicationVersionsOutcome ListApplicationVersions(const Model::ListApplicationVersionsRequest& request) const;
 
         /**
-         * Lists versions for the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Lists versions for the specified application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationVersions">AWS
          * API Reference</a></p>
          *
@@ -298,7 +367,7 @@ namespace Model
         virtual Model::ListApplicationVersionsOutcomeCallable ListApplicationVersionsCallable(const Model::ListApplicationVersionsRequest& request) const;
 
         /**
-         * Lists versions for the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Lists versions for the specified application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationVersions">AWS
          * API Reference</a></p>
          *
@@ -307,14 +376,14 @@ namespace Model
         virtual void ListApplicationVersionsAsync(const Model::ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Lists applications owned by the requester.<p><h3>See Also:</h3>   <a
+         * <p>Lists applications owned by the requester.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplications">AWS
          * API Reference</a></p>
          */
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * Lists applications owned by the requester.<p><h3>See Also:</h3>   <a
+         * <p>Lists applications owned by the requester.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplications">AWS
          * API Reference</a></p>
          *
@@ -323,7 +392,7 @@ namespace Model
         virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * Lists applications owned by the requester.<p><h3>See Also:</h3>   <a
+         * <p>Lists applications owned by the requester.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplications">AWS
          * API Reference</a></p>
          *
@@ -332,14 +401,24 @@ namespace Model
         virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Puts the policy for the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Sets the permission policy for an application. See
+ <a
+         * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+         * Permissions</a>
+ for the list of supported actions that can be used with this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutApplicationPolicyOutcome PutApplicationPolicy(const Model::PutApplicationPolicyRequest& request) const;
 
         /**
-         * Puts the policy for the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Sets the permission policy for an application. See
+ <a
+         * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+         * Permissions</a>
+ for the list of supported actions that can be used with this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy">AWS
          * API Reference</a></p>
          *
@@ -348,7 +427,12 @@ namespace Model
         virtual Model::PutApplicationPolicyOutcomeCallable PutApplicationPolicyCallable(const Model::PutApplicationPolicyRequest& request) const;
 
         /**
-         * Puts the policy for the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Sets the permission policy for an application. See
+ <a
+         * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+         * Permissions</a>
+ for the list of supported actions that can be used with this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy">AWS
          * API Reference</a></p>
          *
@@ -357,14 +441,14 @@ namespace Model
         virtual void PutApplicationPolicyAsync(const Model::PutApplicationPolicyRequest& request, const PutApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Updates the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Updates the specified application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UpdateApplication">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateApplicationOutcome UpdateApplication(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * Updates the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Updates the specified application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UpdateApplication">AWS
          * API Reference</a></p>
          *
@@ -373,7 +457,7 @@ namespace Model
         virtual Model::UpdateApplicationOutcomeCallable UpdateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
 
         /**
-         * Updates the specified application.<p><h3>See Also:</h3>   <a
+         * <p>Updates the specified application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UpdateApplication">AWS
          * API Reference</a></p>
          *
@@ -389,6 +473,7 @@ namespace Model
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationVersionAsyncHelper(const Model::CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCloudFormationChangeSetAsyncHelper(const Model::CreateCloudFormationChangeSetRequest& request, const CreateCloudFormationChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApplicationPolicyAsyncHelper(const Model::GetApplicationPolicyRequest& request, const GetApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApplicationVersionsAsyncHelper(const Model::ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

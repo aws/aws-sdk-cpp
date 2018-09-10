@@ -219,126 +219,151 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether contact information for the admin contact is concealed from
-     * WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries will
-     * return contact information for our registrar partner, Gandi, instead of the
-     * contact information that you enter.</p>
+     * <p>Specifies whether contact information is concealed from WHOIS queries. If the
+     * value is <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If the value is
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the admin contact.</p>
      */
     inline bool GetAdminPrivacy() const{ return m_adminPrivacy; }
 
     /**
-     * <p>Specifies whether contact information for the admin contact is concealed from
-     * WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries will
-     * return contact information for our registrar partner, Gandi, instead of the
-     * contact information that you enter.</p>
+     * <p>Specifies whether contact information is concealed from WHOIS queries. If the
+     * value is <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If the value is
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the admin contact.</p>
      */
     inline void SetAdminPrivacy(bool value) { m_adminPrivacy = value; }
 
     /**
-     * <p>Specifies whether contact information for the admin contact is concealed from
-     * WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries will
-     * return contact information for our registrar partner, Gandi, instead of the
-     * contact information that you enter.</p>
+     * <p>Specifies whether contact information is concealed from WHOIS queries. If the
+     * value is <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If the value is
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the admin contact.</p>
      */
     inline GetDomainDetailResult& WithAdminPrivacy(bool value) { SetAdminPrivacy(value); return *this;}
 
 
     /**
-     * <p>Specifies whether contact information for the registrant contact is concealed
-     * from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the
-     * contact information that you enter.</p>
+     * <p>Specifies whether contact information is concealed from WHOIS queries. If the
+     * value is <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If the value is
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the registrant contact (domain owner).</p>
      */
     inline bool GetRegistrantPrivacy() const{ return m_registrantPrivacy; }
 
     /**
-     * <p>Specifies whether contact information for the registrant contact is concealed
-     * from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the
-     * contact information that you enter.</p>
+     * <p>Specifies whether contact information is concealed from WHOIS queries. If the
+     * value is <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If the value is
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the registrant contact (domain owner).</p>
      */
     inline void SetRegistrantPrivacy(bool value) { m_registrantPrivacy = value; }
 
     /**
-     * <p>Specifies whether contact information for the registrant contact is concealed
-     * from WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries
-     * will return contact information for our registrar partner, Gandi, instead of the
-     * contact information that you enter.</p>
+     * <p>Specifies whether contact information is concealed from WHOIS queries. If the
+     * value is <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If the value is
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the registrant contact (domain owner).</p>
      */
     inline GetDomainDetailResult& WithRegistrantPrivacy(bool value) { SetRegistrantPrivacy(value); return *this;}
 
 
     /**
-     * <p>Specifies whether contact information for the tech contact is concealed from
-     * WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries will
-     * return contact information for our registrar partner, Gandi, instead of the
-     * contact information that you enter.</p>
+     * <p>Specifies whether contact information is concealed from WHOIS queries. If the
+     * value is <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If the value is
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the technical contact.</p>
      */
     inline bool GetTechPrivacy() const{ return m_techPrivacy; }
 
     /**
-     * <p>Specifies whether contact information for the tech contact is concealed from
-     * WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries will
-     * return contact information for our registrar partner, Gandi, instead of the
-     * contact information that you enter.</p>
+     * <p>Specifies whether contact information is concealed from WHOIS queries. If the
+     * value is <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If the value is
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the technical contact.</p>
      */
     inline void SetTechPrivacy(bool value) { m_techPrivacy = value; }
 
     /**
-     * <p>Specifies whether contact information for the tech contact is concealed from
-     * WHOIS queries. If the value is <code>true</code>, WHOIS ("who is") queries will
-     * return contact information for our registrar partner, Gandi, instead of the
-     * contact information that you enter.</p>
+     * <p>Specifies whether contact information is concealed from WHOIS queries. If the
+     * value is <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If the value is
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the technical contact.</p>
      */
     inline GetDomainDetailResult& WithTechPrivacy(bool value) { SetTechPrivacy(value); return *this;}
 
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Amazon
-     * Route 53 domains are registered by registrar Gandi. The value is <code>"GANDI
-     * SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. Domains
+     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
+     * domains are registered by our registrar associate, Gandi. The value for domains
+     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
      */
     inline const Aws::String& GetRegistrarName() const{ return m_registrarName; }
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Amazon
-     * Route 53 domains are registered by registrar Gandi. The value is <code>"GANDI
-     * SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. Domains
+     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
+     * domains are registered by our registrar associate, Gandi. The value for domains
+     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
      */
     inline void SetRegistrarName(const Aws::String& value) { m_registrarName = value; }
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Amazon
-     * Route 53 domains are registered by registrar Gandi. The value is <code>"GANDI
-     * SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. Domains
+     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
+     * domains are registered by our registrar associate, Gandi. The value for domains
+     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
      */
     inline void SetRegistrarName(Aws::String&& value) { m_registrarName = std::move(value); }
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Amazon
-     * Route 53 domains are registered by registrar Gandi. The value is <code>"GANDI
-     * SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. Domains
+     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
+     * domains are registered by our registrar associate, Gandi. The value for domains
+     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
      */
     inline void SetRegistrarName(const char* value) { m_registrarName.assign(value); }
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Amazon
-     * Route 53 domains are registered by registrar Gandi. The value is <code>"GANDI
-     * SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. Domains
+     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
+     * domains are registered by our registrar associate, Gandi. The value for domains
+     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
      */
     inline GetDomainDetailResult& WithRegistrarName(const Aws::String& value) { SetRegistrarName(value); return *this;}
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Amazon
-     * Route 53 domains are registered by registrar Gandi. The value is <code>"GANDI
-     * SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. Domains
+     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
+     * domains are registered by our registrar associate, Gandi. The value for domains
+     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
      */
     inline GetDomainDetailResult& WithRegistrarName(Aws::String&& value) { SetRegistrarName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the registrar of the domain as identified in the registry. Amazon
-     * Route 53 domains are registered by registrar Gandi. The value is <code>"GANDI
-     * SAS"</code>. </p>
+     * <p>Name of the registrar of the domain as identified in the registry. Domains
+     * with a .com, .net, or .org TLD are registered by Amazon Registrar. All other
+     * domains are registered by our registrar associate, Gandi. The value for domains
+     * that are registered by Gandi is <code>"GANDI SAS"</code>. </p>
      */
     inline GetDomainDetailResult& WithRegistrarName(const char* value) { SetRegistrarName(value); return *this;}
 
@@ -553,93 +578,93 @@ namespace Model
 
     /**
      * <p>The date when the domain was created as found in the response to a WHOIS
-     * query. The date format is Unix time.</p>
+     * query. The date and time is in Coordinated Universal time (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * <p>The date when the domain was created as found in the response to a WHOIS
-     * query. The date format is Unix time.</p>
+     * query. The date and time is in Coordinated Universal time (UTC).</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
 
     /**
      * <p>The date when the domain was created as found in the response to a WHOIS
-     * query. The date format is Unix time.</p>
+     * query. The date and time is in Coordinated Universal time (UTC).</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
 
     /**
      * <p>The date when the domain was created as found in the response to a WHOIS
-     * query. The date format is Unix time.</p>
+     * query. The date and time is in Coordinated Universal time (UTC).</p>
      */
     inline GetDomainDetailResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
      * <p>The date when the domain was created as found in the response to a WHOIS
-     * query. The date format is Unix time.</p>
+     * query. The date and time is in Coordinated Universal time (UTC).</p>
      */
     inline GetDomainDetailResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
-     * query. The date format is Unix time.</p>
+     * query. The date and time is in Coordinated Universal time (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedDate() const{ return m_updatedDate; }
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
-     * query. The date format is Unix time.</p>
+     * query. The date and time is in Coordinated Universal time (UTC).</p>
      */
     inline void SetUpdatedDate(const Aws::Utils::DateTime& value) { m_updatedDate = value; }
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
-     * query. The date format is Unix time.</p>
+     * query. The date and time is in Coordinated Universal time (UTC).</p>
      */
     inline void SetUpdatedDate(Aws::Utils::DateTime&& value) { m_updatedDate = std::move(value); }
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
-     * query. The date format is Unix time.</p>
+     * query. The date and time is in Coordinated Universal time (UTC).</p>
      */
     inline GetDomainDetailResult& WithUpdatedDate(const Aws::Utils::DateTime& value) { SetUpdatedDate(value); return *this;}
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
-     * query. The date format is Unix time.</p>
+     * query. The date and time is in Coordinated Universal time (UTC).</p>
      */
     inline GetDomainDetailResult& WithUpdatedDate(Aws::Utils::DateTime&& value) { SetUpdatedDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date when the registration for the domain is set to expire. The date
-     * format is Unix time.</p>
+     * <p>The date when the registration for the domain is set to expire. The date and
+     * time is in Coordinated Universal time (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
 
     /**
-     * <p>The date when the registration for the domain is set to expire. The date
-     * format is Unix time.</p>
+     * <p>The date when the registration for the domain is set to expire. The date and
+     * time is in Coordinated Universal time (UTC).</p>
      */
     inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDate = value; }
 
     /**
-     * <p>The date when the registration for the domain is set to expire. The date
-     * format is Unix time.</p>
+     * <p>The date when the registration for the domain is set to expire. The date and
+     * time is in Coordinated Universal time (UTC).</p>
      */
     inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDate = std::move(value); }
 
     /**
-     * <p>The date when the registration for the domain is set to expire. The date
-     * format is Unix time.</p>
+     * <p>The date when the registration for the domain is set to expire. The date and
+     * time is in Coordinated Universal time (UTC).</p>
      */
     inline GetDomainDetailResult& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
 
     /**
-     * <p>The date when the registration for the domain is set to expire. The date
-     * format is Unix time.</p>
+     * <p>The date when the registration for the domain is set to expire. The date and
+     * time is in Coordinated Universal time (UTC).</p>
      */
     inline GetDomainDetailResult& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 

@@ -35,7 +35,7 @@ Grant::Grant() :
 {
 }
 
-Grant::Grant(const JsonValue& jsonValue) : 
+Grant::Grant(JsonView jsonValue) : 
     m_granteeHasBeenSet(false),
     m_permission(Permission::NOT_SET),
     m_permissionHasBeenSet(false)
@@ -43,7 +43,7 @@ Grant::Grant(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Grant& Grant::operator =(const JsonValue& jsonValue)
+Grant& Grant::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Grantee"))
   {

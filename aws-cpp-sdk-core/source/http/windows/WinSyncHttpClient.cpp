@@ -12,7 +12,7 @@
   * express or implied. See the License for the specific language governing
   * permissions and limitations under the License.
   */
-
+#define AWS_DISABLE_DEPRECATION
 #include <aws/core/http/windows/WinSyncHttpClient.h>
 #include <aws/core/Http/HttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
@@ -35,6 +35,7 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 
 static const uint32_t HTTP_REQUEST_WRITE_BUFFER_LENGTH = 8192;
+static const char CLASS_TAG[] = "WinSyncHttpClient";
 
 WinSyncHttpClient::~WinSyncHttpClient()
 {
@@ -171,9 +172,8 @@ void WinSyncHttpClient::LogRequestInternalFailure() const
 
 }
 
-std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws::Http::HttpRequest& request, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter) const
+void WinSyncHttpClient::BuildSuccessResponse(const Aws::Http::HttpRequest& request, std::shared_ptr<HttpResponse>& response, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter) const
 {
-    auto response = Aws::MakeShared<StandardHttpResponse>(GetLogTag(), request);
     Aws::StringStream ss;
     uint64_t read = 0;
 
@@ -188,21 +188,10 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
 
     for (auto& header : rawHeaders)
     {
-        Aws::Vector<Aws::String> keyValuePair = StringUtils::Split(header, ':');
-        if (keyValuePair.size() > 1)
+        Aws::Vector<Aws::String> keyValuePair = StringUtils::Split(header, ':', 2);
+        if (keyValuePair.size() == 2)
         {
-            Aws::String headerName = keyValuePair[0];
-            headerName = StringUtils::Trim(headerName.c_str());
-
-            Aws::String headerValue(keyValuePair[1]);
-
-            for (unsigned i = 2; i < keyValuePair.size(); ++i)
-            {
-                headerValue += ":";
-                headerValue += keyValuePair[i];                 
-            }
-
-            response->AddHeader(headerName, StringUtils::Trim(headerValue.c_str()));
+            response->AddHeader(StringUtils::Trim(keyValuePair[0].c_str()), StringUtils::Trim(keyValuePair[1].c_str()));
         }
     }
 
@@ -249,19 +238,39 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::BuildSuccessResponse(const Aws:
 
         if(!success)
         {
-            return nullptr;
+            response = nullptr;
+            return;
         }
     }
 
     //go ahead and flush the response body.
     response->GetResponseBody().flush();
 
-    return response;
+    return;
 }
 
-std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& request, 
-                                                                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter, 
-                                                                 Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& request,
+	Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+	Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+{
+	std::shared_ptr<HttpResponse> response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request); 
+	MakeRequestInternal(request, response, readLimiter, writeLimiter);
+	return response;
+}
+
+std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
+	Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+	Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+{
+	std::shared_ptr<HttpResponse> response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request);
+	MakeRequestInternal(*request, response, readLimiter, writeLimiter);
+	return response;
+}
+
+void WinSyncHttpClient::MakeRequestInternal(HttpRequest& request,
+        std::shared_ptr<HttpResponse>& response,
+        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
 {
 	//we URL encode right before going over the wire to avoid double encoding problems with the signer.
 	URI& uriRef = request.GetUri();
@@ -270,12 +279,11 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& reques
     AWS_LOGSTREAM_TRACE(GetLogTag(), "Making " << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()) <<
 			" request to uri " << uriRef.GetURIString(true));
 
-    bool success = IsRequestProcessingEnabled();
-
+    bool success = false;
     void* connection = nullptr;
     void* hHttpRequest = nullptr;
 
-    if(success)
+    if(IsRequestProcessingEnabled())
     {
         if (writeLimiter != nullptr)
         {
@@ -288,20 +296,17 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& reques
         hHttpRequest = AllocateWindowsHttpRequest(request, connection);
 
         AddHeadersToRequest(request, hHttpRequest);
-        success = DoSendRequest(hHttpRequest);
+        if (DoSendRequest(hHttpRequest) && StreamPayloadToRequest(request, hHttpRequest, writeLimiter))
+        {
+            success = true;
+            BuildSuccessResponse(request, response, hHttpRequest, readLimiter);
+        }
+        else
+        {
+            response = nullptr;
+        }
     }
 
-    if(success)
-    {
-        success = StreamPayloadToRequest(request, hHttpRequest, writeLimiter);
-    }
-
-    std::shared_ptr<HttpResponse> response(nullptr);
-    if(success)
-    {
-        response = BuildSuccessResponse(request, hHttpRequest, readLimiter);
-    }
-    
     if ((!success || response == nullptr) && !IsRequestProcessingEnabled() || !ContinueRequest(request))
     {
         AWS_LOGSTREAM_INFO(GetLogTag(), "Request cancelled by client controller");
@@ -321,6 +326,4 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(HttpRequest& reques
 
     AWS_LOGSTREAM_DEBUG(GetLogTag(), "Releasing connection handle " << connection);
     GetConnectionPoolManager()->ReleaseConnectionForHost(request.GetUri().GetAuthority(), request.GetUri().GetPort(), connection);
-
-    return response;
 }

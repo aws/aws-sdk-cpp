@@ -137,7 +137,8 @@ namespace Model
      * delete from an <a>IPSet</a>. For more information, see the applicable data
      * types:</p> <ul> <li> <p> <a>IPSetUpdate</a>: Contains <code>Action</code> and
      * <code>IPSetDescriptor</code> </p> </li> <li> <p> <a>IPSetDescriptor</a>:
-     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul>
+     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul> <p>You can
+     * insert a maximum of 1000 addresses in a single request.</p>
      */
     inline const Aws::Vector<IPSetUpdate>& GetUpdates() const{ return m_updates; }
 
@@ -146,7 +147,8 @@ namespace Model
      * delete from an <a>IPSet</a>. For more information, see the applicable data
      * types:</p> <ul> <li> <p> <a>IPSetUpdate</a>: Contains <code>Action</code> and
      * <code>IPSetDescriptor</code> </p> </li> <li> <p> <a>IPSetDescriptor</a>:
-     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul>
+     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul> <p>You can
+     * insert a maximum of 1000 addresses in a single request.</p>
      */
     inline void SetUpdates(const Aws::Vector<IPSetUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
@@ -155,7 +157,8 @@ namespace Model
      * delete from an <a>IPSet</a>. For more information, see the applicable data
      * types:</p> <ul> <li> <p> <a>IPSetUpdate</a>: Contains <code>Action</code> and
      * <code>IPSetDescriptor</code> </p> </li> <li> <p> <a>IPSetDescriptor</a>:
-     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul>
+     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul> <p>You can
+     * insert a maximum of 1000 addresses in a single request.</p>
      */
     inline void SetUpdates(Aws::Vector<IPSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
 
@@ -164,7 +167,8 @@ namespace Model
      * delete from an <a>IPSet</a>. For more information, see the applicable data
      * types:</p> <ul> <li> <p> <a>IPSetUpdate</a>: Contains <code>Action</code> and
      * <code>IPSetDescriptor</code> </p> </li> <li> <p> <a>IPSetDescriptor</a>:
-     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul>
+     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul> <p>You can
+     * insert a maximum of 1000 addresses in a single request.</p>
      */
     inline UpdateIPSetRequest& WithUpdates(const Aws::Vector<IPSetUpdate>& value) { SetUpdates(value); return *this;}
 
@@ -173,7 +177,8 @@ namespace Model
      * delete from an <a>IPSet</a>. For more information, see the applicable data
      * types:</p> <ul> <li> <p> <a>IPSetUpdate</a>: Contains <code>Action</code> and
      * <code>IPSetDescriptor</code> </p> </li> <li> <p> <a>IPSetDescriptor</a>:
-     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul>
+     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul> <p>You can
+     * insert a maximum of 1000 addresses in a single request.</p>
      */
     inline UpdateIPSetRequest& WithUpdates(Aws::Vector<IPSetUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
 
@@ -182,7 +187,8 @@ namespace Model
      * delete from an <a>IPSet</a>. For more information, see the applicable data
      * types:</p> <ul> <li> <p> <a>IPSetUpdate</a>: Contains <code>Action</code> and
      * <code>IPSetDescriptor</code> </p> </li> <li> <p> <a>IPSetDescriptor</a>:
-     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul>
+     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul> <p>You can
+     * insert a maximum of 1000 addresses in a single request.</p>
      */
     inline UpdateIPSetRequest& AddUpdates(const IPSetUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 
@@ -191,7 +197,8 @@ namespace Model
      * delete from an <a>IPSet</a>. For more information, see the applicable data
      * types:</p> <ul> <li> <p> <a>IPSetUpdate</a>: Contains <code>Action</code> and
      * <code>IPSetDescriptor</code> </p> </li> <li> <p> <a>IPSetDescriptor</a>:
-     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul>
+     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul> <p>You can
+     * insert a maximum of 1000 addresses in a single request.</p>
      */
     inline UpdateIPSetRequest& AddUpdates(IPSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 

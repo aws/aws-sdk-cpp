@@ -39,7 +39,7 @@ TrustedAdvisorCheckSummary::TrustedAdvisorCheckSummary() :
 {
 }
 
-TrustedAdvisorCheckSummary::TrustedAdvisorCheckSummary(const JsonValue& jsonValue) : 
+TrustedAdvisorCheckSummary::TrustedAdvisorCheckSummary(JsonView jsonValue) : 
     m_checkIdHasBeenSet(false),
     m_timestampHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -51,7 +51,7 @@ TrustedAdvisorCheckSummary::TrustedAdvisorCheckSummary(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-TrustedAdvisorCheckSummary& TrustedAdvisorCheckSummary::operator =(const JsonValue& jsonValue)
+TrustedAdvisorCheckSummary& TrustedAdvisorCheckSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("checkId"))
   {

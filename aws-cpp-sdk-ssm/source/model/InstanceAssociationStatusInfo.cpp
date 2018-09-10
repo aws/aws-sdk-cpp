@@ -44,7 +44,7 @@ InstanceAssociationStatusInfo::InstanceAssociationStatusInfo() :
 {
 }
 
-InstanceAssociationStatusInfo::InstanceAssociationStatusInfo(const JsonValue& jsonValue) : 
+InstanceAssociationStatusInfo::InstanceAssociationStatusInfo(JsonView jsonValue) : 
     m_associationIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
@@ -61,7 +61,7 @@ InstanceAssociationStatusInfo::InstanceAssociationStatusInfo(const JsonValue& js
   *this = jsonValue;
 }
 
-InstanceAssociationStatusInfo& InstanceAssociationStatusInfo::operator =(const JsonValue& jsonValue)
+InstanceAssociationStatusInfo& InstanceAssociationStatusInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AssociationId"))
   {

@@ -52,7 +52,8 @@ namespace Model
     XCTEST_LOG,
     VIDEO,
     CUSTOMER_ARTIFACT,
-    CUSTOMER_ARTIFACT_LOG
+    CUSTOMER_ARTIFACT_LOG,
+    TESTSPEC_OUTPUT
   };
 
 namespace ArtifactTypeMapper

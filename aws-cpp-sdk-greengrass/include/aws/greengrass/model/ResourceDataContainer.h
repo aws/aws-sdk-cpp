@@ -17,6 +17,8 @@
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/greengrass/model/LocalDeviceResourceData.h>
 #include <aws/greengrass/model/LocalVolumeResourceData.h>
+#include <aws/greengrass/model/S3MachineLearningModelResourceData.h>
+#include <aws/greengrass/model/SageMakerMachineLearningModelResourceData.h>
 #include <utility>
 
 namespace Aws
@@ -26,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -34,7 +37,10 @@ namespace Model
 {
 
   /**
-   * A container of data for all resource types.<p><h3>See Also:</h3>   <a
+   * A container for resource data. The container takes only one of the following
+   * supported resource data types: ''LocalDeviceResourceData'',
+   * ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'',
+   * ''S3MachineLearningModelResourceData''.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResourceDataContainer">AWS
    * API Reference</a></p>
    */
@@ -42,61 +48,113 @@ namespace Model
   {
   public:
     ResourceDataContainer();
-    ResourceDataContainer(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceDataContainer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceDataContainer(Aws::Utils::Json::JsonView jsonValue);
+    ResourceDataContainer& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Attributes that define the Local Device Resource.
+     * Attributes that define the local device resource.
      */
     inline const LocalDeviceResourceData& GetLocalDeviceResourceData() const{ return m_localDeviceResourceData; }
 
     /**
-     * Attributes that define the Local Device Resource.
+     * Attributes that define the local device resource.
      */
     inline void SetLocalDeviceResourceData(const LocalDeviceResourceData& value) { m_localDeviceResourceDataHasBeenSet = true; m_localDeviceResourceData = value; }
 
     /**
-     * Attributes that define the Local Device Resource.
+     * Attributes that define the local device resource.
      */
     inline void SetLocalDeviceResourceData(LocalDeviceResourceData&& value) { m_localDeviceResourceDataHasBeenSet = true; m_localDeviceResourceData = std::move(value); }
 
     /**
-     * Attributes that define the Local Device Resource.
+     * Attributes that define the local device resource.
      */
     inline ResourceDataContainer& WithLocalDeviceResourceData(const LocalDeviceResourceData& value) { SetLocalDeviceResourceData(value); return *this;}
 
     /**
-     * Attributes that define the Local Device Resource.
+     * Attributes that define the local device resource.
      */
     inline ResourceDataContainer& WithLocalDeviceResourceData(LocalDeviceResourceData&& value) { SetLocalDeviceResourceData(std::move(value)); return *this;}
 
 
     /**
-     * Attributes that define the Local Volume Resource.
+     * Attributes that define the local volume resource.
      */
     inline const LocalVolumeResourceData& GetLocalVolumeResourceData() const{ return m_localVolumeResourceData; }
 
     /**
-     * Attributes that define the Local Volume Resource.
+     * Attributes that define the local volume resource.
      */
     inline void SetLocalVolumeResourceData(const LocalVolumeResourceData& value) { m_localVolumeResourceDataHasBeenSet = true; m_localVolumeResourceData = value; }
 
     /**
-     * Attributes that define the Local Volume Resource.
+     * Attributes that define the local volume resource.
      */
     inline void SetLocalVolumeResourceData(LocalVolumeResourceData&& value) { m_localVolumeResourceDataHasBeenSet = true; m_localVolumeResourceData = std::move(value); }
 
     /**
-     * Attributes that define the Local Volume Resource.
+     * Attributes that define the local volume resource.
      */
     inline ResourceDataContainer& WithLocalVolumeResourceData(const LocalVolumeResourceData& value) { SetLocalVolumeResourceData(value); return *this;}
 
     /**
-     * Attributes that define the Local Volume Resource.
+     * Attributes that define the local volume resource.
      */
     inline ResourceDataContainer& WithLocalVolumeResourceData(LocalVolumeResourceData&& value) { SetLocalVolumeResourceData(std::move(value)); return *this;}
+
+
+    /**
+     * Attributes that define an S3 machine learning resource.
+     */
+    inline const S3MachineLearningModelResourceData& GetS3MachineLearningModelResourceData() const{ return m_s3MachineLearningModelResourceData; }
+
+    /**
+     * Attributes that define an S3 machine learning resource.
+     */
+    inline void SetS3MachineLearningModelResourceData(const S3MachineLearningModelResourceData& value) { m_s3MachineLearningModelResourceDataHasBeenSet = true; m_s3MachineLearningModelResourceData = value; }
+
+    /**
+     * Attributes that define an S3 machine learning resource.
+     */
+    inline void SetS3MachineLearningModelResourceData(S3MachineLearningModelResourceData&& value) { m_s3MachineLearningModelResourceDataHasBeenSet = true; m_s3MachineLearningModelResourceData = std::move(value); }
+
+    /**
+     * Attributes that define an S3 machine learning resource.
+     */
+    inline ResourceDataContainer& WithS3MachineLearningModelResourceData(const S3MachineLearningModelResourceData& value) { SetS3MachineLearningModelResourceData(value); return *this;}
+
+    /**
+     * Attributes that define an S3 machine learning resource.
+     */
+    inline ResourceDataContainer& WithS3MachineLearningModelResourceData(S3MachineLearningModelResourceData&& value) { SetS3MachineLearningModelResourceData(std::move(value)); return *this;}
+
+
+    /**
+     * Attributes that define an SageMaker machine learning resource.
+     */
+    inline const SageMakerMachineLearningModelResourceData& GetSageMakerMachineLearningModelResourceData() const{ return m_sageMakerMachineLearningModelResourceData; }
+
+    /**
+     * Attributes that define an SageMaker machine learning resource.
+     */
+    inline void SetSageMakerMachineLearningModelResourceData(const SageMakerMachineLearningModelResourceData& value) { m_sageMakerMachineLearningModelResourceDataHasBeenSet = true; m_sageMakerMachineLearningModelResourceData = value; }
+
+    /**
+     * Attributes that define an SageMaker machine learning resource.
+     */
+    inline void SetSageMakerMachineLearningModelResourceData(SageMakerMachineLearningModelResourceData&& value) { m_sageMakerMachineLearningModelResourceDataHasBeenSet = true; m_sageMakerMachineLearningModelResourceData = std::move(value); }
+
+    /**
+     * Attributes that define an SageMaker machine learning resource.
+     */
+    inline ResourceDataContainer& WithSageMakerMachineLearningModelResourceData(const SageMakerMachineLearningModelResourceData& value) { SetSageMakerMachineLearningModelResourceData(value); return *this;}
+
+    /**
+     * Attributes that define an SageMaker machine learning resource.
+     */
+    inline ResourceDataContainer& WithSageMakerMachineLearningModelResourceData(SageMakerMachineLearningModelResourceData&& value) { SetSageMakerMachineLearningModelResourceData(std::move(value)); return *this;}
 
   private:
 
@@ -105,6 +163,12 @@ namespace Model
 
     LocalVolumeResourceData m_localVolumeResourceData;
     bool m_localVolumeResourceDataHasBeenSet;
+
+    S3MachineLearningModelResourceData m_s3MachineLearningModelResourceData;
+    bool m_s3MachineLearningModelResourceDataHasBeenSet;
+
+    SageMakerMachineLearningModelResourceData m_sageMakerMachineLearningModelResourceData;
+    bool m_sageMakerMachineLearningModelResourceDataHasBeenSet;
   };
 
 } // namespace Model

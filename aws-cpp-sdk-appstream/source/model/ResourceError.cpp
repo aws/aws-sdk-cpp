@@ -36,7 +36,7 @@ ResourceError::ResourceError() :
 {
 }
 
-ResourceError::ResourceError(const JsonValue& jsonValue) : 
+ResourceError::ResourceError(JsonView jsonValue) : 
     m_errorCode(FleetErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
@@ -45,7 +45,7 @@ ResourceError::ResourceError(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceError& ResourceError::operator =(const JsonValue& jsonValue)
+ResourceError& ResourceError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ErrorCode"))
   {

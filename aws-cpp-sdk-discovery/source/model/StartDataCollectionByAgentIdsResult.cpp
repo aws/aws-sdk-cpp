@@ -37,10 +37,10 @@ StartDataCollectionByAgentIdsResult::StartDataCollectionByAgentIdsResult(const A
 
 StartDataCollectionByAgentIdsResult& StartDataCollectionByAgentIdsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("agentsConfigurationStatus"))
   {
-    Array<JsonValue> agentsConfigurationStatusJsonList = jsonValue.GetArray("agentsConfigurationStatus");
+    Array<JsonView> agentsConfigurationStatusJsonList = jsonValue.GetArray("agentsConfigurationStatus");
     for(unsigned agentsConfigurationStatusIndex = 0; agentsConfigurationStatusIndex < agentsConfigurationStatusJsonList.GetLength(); ++agentsConfigurationStatusIndex)
     {
       m_agentsConfigurationStatus.push_back(agentsConfigurationStatusJsonList[agentsConfigurationStatusIndex].AsObject());

@@ -37,7 +37,7 @@ Aws::String DeleteConfigRuleRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteConfigRuleRequest::GetRequestSpecificHeaders() const

@@ -41,7 +41,7 @@ DescribeBandwidthRateLimitResult::DescribeBandwidthRateLimitResult(const Aws::Am
 
 DescribeBandwidthRateLimitResult& DescribeBandwidthRateLimitResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");

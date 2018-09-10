@@ -99,71 +99,71 @@ namespace Model
 
     /**
      * <p>A list of objects that contains details about the service-linked role
-     * deletion failure. If the service-linked role has active sessions or if any
-     * resources that were used by the role have not been deleted from the linked
-     * service, the role can't be deleted. This parameter includes a list of the
-     * resources that are associated with the role and the region in which the
-     * resources are being used.</p>
+     * deletion failure, if that information is returned by the service. If the
+     * service-linked role has active sessions or if any resources that were used by
+     * the role have not been deleted from the linked service, the role can't be
+     * deleted. This parameter includes a list of the resources that are associated
+     * with the role and the region in which the resources are being used.</p>
      */
     inline const Aws::Vector<RoleUsageType>& GetRoleUsageList() const{ return m_roleUsageList; }
 
     /**
      * <p>A list of objects that contains details about the service-linked role
-     * deletion failure. If the service-linked role has active sessions or if any
-     * resources that were used by the role have not been deleted from the linked
-     * service, the role can't be deleted. This parameter includes a list of the
-     * resources that are associated with the role and the region in which the
-     * resources are being used.</p>
+     * deletion failure, if that information is returned by the service. If the
+     * service-linked role has active sessions or if any resources that were used by
+     * the role have not been deleted from the linked service, the role can't be
+     * deleted. This parameter includes a list of the resources that are associated
+     * with the role and the region in which the resources are being used.</p>
      */
     inline void SetRoleUsageList(const Aws::Vector<RoleUsageType>& value) { m_roleUsageListHasBeenSet = true; m_roleUsageList = value; }
 
     /**
      * <p>A list of objects that contains details about the service-linked role
-     * deletion failure. If the service-linked role has active sessions or if any
-     * resources that were used by the role have not been deleted from the linked
-     * service, the role can't be deleted. This parameter includes a list of the
-     * resources that are associated with the role and the region in which the
-     * resources are being used.</p>
+     * deletion failure, if that information is returned by the service. If the
+     * service-linked role has active sessions or if any resources that were used by
+     * the role have not been deleted from the linked service, the role can't be
+     * deleted. This parameter includes a list of the resources that are associated
+     * with the role and the region in which the resources are being used.</p>
      */
     inline void SetRoleUsageList(Aws::Vector<RoleUsageType>&& value) { m_roleUsageListHasBeenSet = true; m_roleUsageList = std::move(value); }
 
     /**
      * <p>A list of objects that contains details about the service-linked role
-     * deletion failure. If the service-linked role has active sessions or if any
-     * resources that were used by the role have not been deleted from the linked
-     * service, the role can't be deleted. This parameter includes a list of the
-     * resources that are associated with the role and the region in which the
-     * resources are being used.</p>
+     * deletion failure, if that information is returned by the service. If the
+     * service-linked role has active sessions or if any resources that were used by
+     * the role have not been deleted from the linked service, the role can't be
+     * deleted. This parameter includes a list of the resources that are associated
+     * with the role and the region in which the resources are being used.</p>
      */
     inline DeletionTaskFailureReasonType& WithRoleUsageList(const Aws::Vector<RoleUsageType>& value) { SetRoleUsageList(value); return *this;}
 
     /**
      * <p>A list of objects that contains details about the service-linked role
-     * deletion failure. If the service-linked role has active sessions or if any
-     * resources that were used by the role have not been deleted from the linked
-     * service, the role can't be deleted. This parameter includes a list of the
-     * resources that are associated with the role and the region in which the
-     * resources are being used.</p>
+     * deletion failure, if that information is returned by the service. If the
+     * service-linked role has active sessions or if any resources that were used by
+     * the role have not been deleted from the linked service, the role can't be
+     * deleted. This parameter includes a list of the resources that are associated
+     * with the role and the region in which the resources are being used.</p>
      */
     inline DeletionTaskFailureReasonType& WithRoleUsageList(Aws::Vector<RoleUsageType>&& value) { SetRoleUsageList(std::move(value)); return *this;}
 
     /**
      * <p>A list of objects that contains details about the service-linked role
-     * deletion failure. If the service-linked role has active sessions or if any
-     * resources that were used by the role have not been deleted from the linked
-     * service, the role can't be deleted. This parameter includes a list of the
-     * resources that are associated with the role and the region in which the
-     * resources are being used.</p>
+     * deletion failure, if that information is returned by the service. If the
+     * service-linked role has active sessions or if any resources that were used by
+     * the role have not been deleted from the linked service, the role can't be
+     * deleted. This parameter includes a list of the resources that are associated
+     * with the role and the region in which the resources are being used.</p>
      */
     inline DeletionTaskFailureReasonType& AddRoleUsageList(const RoleUsageType& value) { m_roleUsageListHasBeenSet = true; m_roleUsageList.push_back(value); return *this; }
 
     /**
      * <p>A list of objects that contains details about the service-linked role
-     * deletion failure. If the service-linked role has active sessions or if any
-     * resources that were used by the role have not been deleted from the linked
-     * service, the role can't be deleted. This parameter includes a list of the
-     * resources that are associated with the role and the region in which the
-     * resources are being used.</p>
+     * deletion failure, if that information is returned by the service. If the
+     * service-linked role has active sessions or if any resources that were used by
+     * the role have not been deleted from the linked service, the role can't be
+     * deleted. This parameter includes a list of the resources that are associated
+     * with the role and the region in which the resources are being used.</p>
      */
     inline DeletionTaskFailureReasonType& AddRoleUsageList(RoleUsageType&& value) { m_roleUsageListHasBeenSet = true; m_roleUsageList.push_back(std::move(value)); return *this; }
 

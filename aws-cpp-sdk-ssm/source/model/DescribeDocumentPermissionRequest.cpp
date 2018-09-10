@@ -44,7 +44,7 @@ Aws::String DescribeDocumentPermissionRequest::SerializePayload() const
    payload.WithString("PermissionType", DocumentPermissionTypeMapper::GetNameForDocumentPermissionType(m_permissionType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeDocumentPermissionRequest::GetRequestSpecificHeaders() const

@@ -39,7 +39,7 @@ ActivityTaskTimedOutEventAttributes::ActivityTaskTimedOutEventAttributes() :
 {
 }
 
-ActivityTaskTimedOutEventAttributes::ActivityTaskTimedOutEventAttributes(const JsonValue& jsonValue) : 
+ActivityTaskTimedOutEventAttributes::ActivityTaskTimedOutEventAttributes(JsonView jsonValue) : 
     m_timeoutType(ActivityTaskTimeoutType::NOT_SET),
     m_timeoutTypeHasBeenSet(false),
     m_scheduledEventId(0),
@@ -51,7 +51,7 @@ ActivityTaskTimedOutEventAttributes::ActivityTaskTimedOutEventAttributes(const J
   *this = jsonValue;
 }
 
-ActivityTaskTimedOutEventAttributes& ActivityTaskTimedOutEventAttributes::operator =(const JsonValue& jsonValue)
+ActivityTaskTimedOutEventAttributes& ActivityTaskTimedOutEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("timeoutType"))
   {

@@ -51,7 +51,7 @@ Aws::String UnsubscribeFromEventRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UnsubscribeFromEventRequest::GetRequestSpecificHeaders() const

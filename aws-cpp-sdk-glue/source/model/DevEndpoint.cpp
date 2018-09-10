@@ -34,6 +34,7 @@ DevEndpoint::DevEndpoint() :
     m_securityGroupIdsHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_yarnEndpointAddressHasBeenSet(false),
+    m_privateAddressHasBeenSet(false),
     m_zeppelinRemoteSparkInterpreterPort(0),
     m_zeppelinRemoteSparkInterpreterPortHasBeenSet(false),
     m_publicAddressHasBeenSet(false),
@@ -48,16 +49,19 @@ DevEndpoint::DevEndpoint() :
     m_lastUpdateStatusHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
     m_lastModifiedTimestampHasBeenSet(false),
-    m_publicKeyHasBeenSet(false)
+    m_publicKeyHasBeenSet(false),
+    m_publicKeysHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
 }
 
-DevEndpoint::DevEndpoint(const JsonValue& jsonValue) : 
+DevEndpoint::DevEndpoint(JsonView jsonValue) : 
     m_endpointNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_yarnEndpointAddressHasBeenSet(false),
+    m_privateAddressHasBeenSet(false),
     m_zeppelinRemoteSparkInterpreterPort(0),
     m_zeppelinRemoteSparkInterpreterPortHasBeenSet(false),
     m_publicAddressHasBeenSet(false),
@@ -72,12 +76,14 @@ DevEndpoint::DevEndpoint(const JsonValue& jsonValue) :
     m_lastUpdateStatusHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
     m_lastModifiedTimestampHasBeenSet(false),
-    m_publicKeyHasBeenSet(false)
+    m_publicKeyHasBeenSet(false),
+    m_publicKeysHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DevEndpoint& DevEndpoint::operator =(const JsonValue& jsonValue)
+DevEndpoint& DevEndpoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EndpointName"))
   {
@@ -95,7 +101,7 @@ DevEndpoint& DevEndpoint::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
-    Array<JsonValue> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -115,6 +121,13 @@ DevEndpoint& DevEndpoint::operator =(const JsonValue& jsonValue)
     m_yarnEndpointAddress = jsonValue.GetString("YarnEndpointAddress");
 
     m_yarnEndpointAddressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PrivateAddress"))
+  {
+    m_privateAddress = jsonValue.GetString("PrivateAddress");
+
+    m_privateAddressHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ZeppelinRemoteSparkInterpreterPort"))
@@ -208,6 +221,23 @@ DevEndpoint& DevEndpoint::operator =(const JsonValue& jsonValue)
     m_publicKeyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PublicKeys"))
+  {
+    Array<JsonView> publicKeysJsonList = jsonValue.GetArray("PublicKeys");
+    for(unsigned publicKeysIndex = 0; publicKeysIndex < publicKeysJsonList.GetLength(); ++publicKeysIndex)
+    {
+      m_publicKeys.push_back(publicKeysJsonList[publicKeysIndex].AsString());
+    }
+    m_publicKeysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecurityConfiguration"))
+  {
+    m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
+
+    m_securityConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -247,6 +277,12 @@ JsonValue DevEndpoint::Jsonize() const
   if(m_yarnEndpointAddressHasBeenSet)
   {
    payload.WithString("YarnEndpointAddress", m_yarnEndpointAddress);
+
+  }
+
+  if(m_privateAddressHasBeenSet)
+  {
+   payload.WithString("PrivateAddress", m_privateAddress);
 
   }
 
@@ -323,6 +359,23 @@ JsonValue DevEndpoint::Jsonize() const
   if(m_publicKeyHasBeenSet)
   {
    payload.WithString("PublicKey", m_publicKey);
+
+  }
+
+  if(m_publicKeysHasBeenSet)
+  {
+   Array<JsonValue> publicKeysJsonList(m_publicKeys.size());
+   for(unsigned publicKeysIndex = 0; publicKeysIndex < publicKeysJsonList.GetLength(); ++publicKeysIndex)
+   {
+     publicKeysJsonList[publicKeysIndex].AsString(m_publicKeys[publicKeysIndex]);
+   }
+   payload.WithArray("PublicKeys", std::move(publicKeysJsonList));
+
+  }
+
+  if(m_securityConfigurationHasBeenSet)
+  {
+   payload.WithString("SecurityConfiguration", m_securityConfiguration);
 
   }
 

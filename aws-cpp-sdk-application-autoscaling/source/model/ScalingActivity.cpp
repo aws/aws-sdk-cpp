@@ -46,7 +46,7 @@ ScalingActivity::ScalingActivity() :
 {
 }
 
-ScalingActivity::ScalingActivity(const JsonValue& jsonValue) : 
+ScalingActivity::ScalingActivity(JsonView jsonValue) : 
     m_activityIdHasBeenSet(false),
     m_serviceNamespace(ServiceNamespace::NOT_SET),
     m_serviceNamespaceHasBeenSet(false),
@@ -65,7 +65,7 @@ ScalingActivity::ScalingActivity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ScalingActivity& ScalingActivity::operator =(const JsonValue& jsonValue)
+ScalingActivity& ScalingActivity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ActivityId"))
   {

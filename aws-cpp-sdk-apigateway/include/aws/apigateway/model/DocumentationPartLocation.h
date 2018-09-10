@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace APIGateway
@@ -43,73 +44,73 @@ namespace Model
   {
   public:
     DocumentationPartLocation();
-    DocumentationPartLocation(const Aws::Utils::Json::JsonValue& jsonValue);
-    DocumentationPartLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DocumentationPartLocation(Aws::Utils::Json::JsonView jsonValue);
+    DocumentationPartLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The type of API entity to which the documentation content applies. It is a
-     * valid and required field for API entity types of <code>API</code>,
-     * <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     * <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>,
-     * <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
-     * <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content
-     * inheritance does not apply to any entity of the <code>API</code>,
-     * <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>,
-     * <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
+     * <p>[Required] The type of API entity to which the documentation content applies.
+     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
+     * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
+     * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
+     * and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity
+     * of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>,
+     * <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code>
+     * type.</p>
      */
     inline const DocumentationPartType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of API entity to which the documentation content applies. It is a
-     * valid and required field for API entity types of <code>API</code>,
-     * <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     * <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>,
-     * <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
-     * <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content
-     * inheritance does not apply to any entity of the <code>API</code>,
-     * <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>,
-     * <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
+     * <p>[Required] The type of API entity to which the documentation content applies.
+     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
+     * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
+     * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
+     * and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity
+     * of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>,
+     * <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code>
+     * type.</p>
      */
     inline void SetType(const DocumentationPartType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of API entity to which the documentation content applies. It is a
-     * valid and required field for API entity types of <code>API</code>,
-     * <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     * <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>,
-     * <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
-     * <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content
-     * inheritance does not apply to any entity of the <code>API</code>,
-     * <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>,
-     * <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
+     * <p>[Required] The type of API entity to which the documentation content applies.
+     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
+     * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
+     * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
+     * and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity
+     * of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>,
+     * <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code>
+     * type.</p>
      */
     inline void SetType(DocumentationPartType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of API entity to which the documentation content applies. It is a
-     * valid and required field for API entity types of <code>API</code>,
-     * <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     * <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>,
-     * <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
-     * <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content
-     * inheritance does not apply to any entity of the <code>API</code>,
-     * <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>,
-     * <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
+     * <p>[Required] The type of API entity to which the documentation content applies.
+     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
+     * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
+     * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
+     * and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity
+     * of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>,
+     * <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code>
+     * type.</p>
      */
     inline DocumentationPartLocation& WithType(const DocumentationPartType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of API entity to which the documentation content applies. It is a
-     * valid and required field for API entity types of <code>API</code>,
-     * <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-     * <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>,
-     * <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>, <code>RESPONSE</code>,
-     * <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>. Content
-     * inheritance does not apply to any entity of the <code>API</code>,
-     * <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>,
-     * <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.</p>
+     * <p>[Required] The type of API entity to which the documentation content applies.
+     * Valid values are <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>,
+     * <code>RESOURCE</code>, <code>METHOD</code>, <code>PATH_PARAMETER</code>,
+     * <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
+     * <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>,
+     * and <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity
+     * of the <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>,
+     * <code>MODEL</code>, <code>REQUEST_BODY</code>, or <code>RESOURCE</code>
+     * type.</p>
      */
     inline DocumentationPartLocation& WithType(DocumentationPartType&& value) { SetType(std::move(value)); return *this;}
 

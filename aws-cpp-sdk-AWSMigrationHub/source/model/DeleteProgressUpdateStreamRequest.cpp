@@ -45,7 +45,7 @@ Aws::String DeleteProgressUpdateStreamRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteProgressUpdateStreamRequest::GetRequestSpecificHeaders() const

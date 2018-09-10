@@ -35,7 +35,7 @@ CelebrityRecognition::CelebrityRecognition() :
 {
 }
 
-CelebrityRecognition::CelebrityRecognition(const JsonValue& jsonValue) : 
+CelebrityRecognition::CelebrityRecognition(JsonView jsonValue) : 
     m_timestamp(0),
     m_timestampHasBeenSet(false),
     m_celebrityHasBeenSet(false)
@@ -43,7 +43,7 @@ CelebrityRecognition::CelebrityRecognition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CelebrityRecognition& CelebrityRecognition::operator =(const JsonValue& jsonValue)
+CelebrityRecognition& CelebrityRecognition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Timestamp"))
   {

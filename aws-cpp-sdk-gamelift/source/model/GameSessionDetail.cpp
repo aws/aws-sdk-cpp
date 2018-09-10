@@ -35,7 +35,7 @@ GameSessionDetail::GameSessionDetail() :
 {
 }
 
-GameSessionDetail::GameSessionDetail(const JsonValue& jsonValue) : 
+GameSessionDetail::GameSessionDetail(JsonView jsonValue) : 
     m_gameSessionHasBeenSet(false),
     m_protectionPolicy(ProtectionPolicy::NOT_SET),
     m_protectionPolicyHasBeenSet(false)
@@ -43,7 +43,7 @@ GameSessionDetail::GameSessionDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GameSessionDetail& GameSessionDetail::operator =(const JsonValue& jsonValue)
+GameSessionDetail& GameSessionDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GameSession"))
   {

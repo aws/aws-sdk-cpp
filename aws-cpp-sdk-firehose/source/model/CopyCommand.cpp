@@ -35,7 +35,7 @@ CopyCommand::CopyCommand() :
 {
 }
 
-CopyCommand::CopyCommand(const JsonValue& jsonValue) : 
+CopyCommand::CopyCommand(JsonView jsonValue) : 
     m_dataTableNameHasBeenSet(false),
     m_dataTableColumnsHasBeenSet(false),
     m_copyOptionsHasBeenSet(false)
@@ -43,7 +43,7 @@ CopyCommand::CopyCommand(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CopyCommand& CopyCommand::operator =(const JsonValue& jsonValue)
+CopyCommand& CopyCommand::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DataTableName"))
   {

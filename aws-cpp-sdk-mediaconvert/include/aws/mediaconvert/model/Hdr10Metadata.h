@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -31,10 +32,13 @@ namespace Model
 {
 
   /**
-   * Use the HDR master display (Hdr10Metadata) settings to provide values for HDR
-   * color. These values vary depending on the input video and must be provided by a
-   * color grader. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931
-   * color coordinate.<p><h3>See Also:</h3>   <a
+   * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
+   * to provide missing metadata. These values vary depending on the input video and
+   * must be provided by a color grader. Range is 0 to 50,000, each increment
+   * represents 0.00002 in CIE1931 color coordinate. Note that these settings are not
+   * color correction. Note that if you are creating HDR outputs inside of an HLS
+   * CMAF package, to comply with the Apple specification, you must use the HVC1 for
+   * H.265 setting.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Hdr10Metadata">AWS
    * API Reference</a></p>
    */
@@ -42,95 +46,95 @@ namespace Model
   {
   public:
     Hdr10Metadata();
-    Hdr10Metadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    Hdr10Metadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Hdr10Metadata(Aws::Utils::Json::JsonView jsonValue);
+    Hdr10Metadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline int GetBluePrimaryX() const{ return m_bluePrimaryX; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline void SetBluePrimaryX(int value) { m_bluePrimaryXHasBeenSet = true; m_bluePrimaryX = value; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline Hdr10Metadata& WithBluePrimaryX(int value) { SetBluePrimaryX(value); return *this;}
 
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline int GetBluePrimaryY() const{ return m_bluePrimaryY; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline void SetBluePrimaryY(int value) { m_bluePrimaryYHasBeenSet = true; m_bluePrimaryY = value; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline Hdr10Metadata& WithBluePrimaryY(int value) { SetBluePrimaryY(value); return *this;}
 
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline int GetGreenPrimaryX() const{ return m_greenPrimaryX; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline void SetGreenPrimaryX(int value) { m_greenPrimaryXHasBeenSet = true; m_greenPrimaryX = value; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline Hdr10Metadata& WithGreenPrimaryX(int value) { SetGreenPrimaryX(value); return *this;}
 
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline int GetGreenPrimaryY() const{ return m_greenPrimaryY; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline void SetGreenPrimaryY(int value) { m_greenPrimaryYHasBeenSet = true; m_greenPrimaryY = value; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline Hdr10Metadata& WithGreenPrimaryY(int value) { SetGreenPrimaryY(value); return *this;}
 
@@ -212,89 +216,89 @@ namespace Model
 
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline int GetRedPrimaryX() const{ return m_redPrimaryX; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline void SetRedPrimaryX(int value) { m_redPrimaryXHasBeenSet = true; m_redPrimaryX = value; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline Hdr10Metadata& WithRedPrimaryX(int value) { SetRedPrimaryX(value); return *this;}
 
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline int GetRedPrimaryY() const{ return m_redPrimaryY; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline void SetRedPrimaryY(int value) { m_redPrimaryYHasBeenSet = true; m_redPrimaryY = value; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline Hdr10Metadata& WithRedPrimaryY(int value) { SetRedPrimaryY(value); return *this;}
 
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline int GetWhitePointX() const{ return m_whitePointX; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline void SetWhitePointX(int value) { m_whitePointXHasBeenSet = true; m_whitePointX = value; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline Hdr10Metadata& WithWhitePointX(int value) { SetWhitePointX(value); return *this;}
 
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline int GetWhitePointY() const{ return m_whitePointY; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline void SetWhitePointY(int value) { m_whitePointYHasBeenSet = true; m_whitePointY = value; }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading
-     * tools. Range is 0 to 50,000, each increment represents 0.00002 in CIE1931 color
-     * coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline Hdr10Metadata& WithWhitePointY(int value) { SetWhitePointY(value); return *this;}
 

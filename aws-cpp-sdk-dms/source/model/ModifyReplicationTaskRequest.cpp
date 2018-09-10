@@ -29,7 +29,9 @@ ModifyReplicationTaskRequest::ModifyReplicationTaskRequest() :
     m_migrationTypeHasBeenSet(false),
     m_tableMappingsHasBeenSet(false),
     m_replicationTaskSettingsHasBeenSet(false),
-    m_cdcStartTimeHasBeenSet(false)
+    m_cdcStartTimeHasBeenSet(false),
+    m_cdcStartPositionHasBeenSet(false),
+    m_cdcStopPositionHasBeenSet(false)
 {
 }
 
@@ -71,7 +73,19 @@ Aws::String ModifyReplicationTaskRequest::SerializePayload() const
    payload.WithDouble("CdcStartTime", m_cdcStartTime.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  if(m_cdcStartPositionHasBeenSet)
+  {
+   payload.WithString("CdcStartPosition", m_cdcStartPosition);
+
+  }
+
+  if(m_cdcStopPositionHasBeenSet)
+  {
+   payload.WithString("CdcStopPosition", m_cdcStopPosition);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ModifyReplicationTaskRequest::GetRequestSpecificHeaders() const

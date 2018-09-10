@@ -34,18 +34,18 @@ PushSync::PushSync() :
 {
 }
 
-PushSync::PushSync(const JsonValue& jsonValue) : 
+PushSync::PushSync(JsonView jsonValue) : 
     m_applicationArnsHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PushSync& PushSync::operator =(const JsonValue& jsonValue)
+PushSync& PushSync::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationArns"))
   {
-    Array<JsonValue> applicationArnsJsonList = jsonValue.GetArray("ApplicationArns");
+    Array<JsonView> applicationArnsJsonList = jsonValue.GetArray("ApplicationArns");
     for(unsigned applicationArnsIndex = 0; applicationArnsIndex < applicationArnsJsonList.GetLength(); ++applicationArnsIndex)
     {
       m_applicationArns.push_back(applicationArnsJsonList[applicationArnsIndex].AsString());

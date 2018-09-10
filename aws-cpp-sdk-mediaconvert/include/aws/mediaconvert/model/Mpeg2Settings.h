@@ -18,6 +18,7 @@
 #include <aws/mediaconvert/model/Mpeg2AdaptiveQuantization.h>
 #include <aws/mediaconvert/model/Mpeg2CodecLevel.h>
 #include <aws/mediaconvert/model/Mpeg2CodecProfile.h>
+#include <aws/mediaconvert/model/Mpeg2DynamicSubGop.h>
 #include <aws/mediaconvert/model/Mpeg2FramerateControl.h>
 #include <aws/mediaconvert/model/Mpeg2FramerateConversionAlgorithm.h>
 #include <aws/mediaconvert/model/Mpeg2GopSizeUnits.h>
@@ -41,6 +42,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -58,8 +60,8 @@ namespace Model
   {
   public:
     Mpeg2Settings();
-    Mpeg2Settings(const Aws::Utils::Json::JsonValue& jsonValue);
-    Mpeg2Settings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Mpeg2Settings(Aws::Utils::Json::JsonView jsonValue);
+    Mpeg2Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -80,26 +82,20 @@ namespace Model
 
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits
-     * can be entered as 5000000 or 5m. Five hundred kilobits can be entered as 500000
-     * or 0.5m. For MS Smooth outputs, bitrates must be unique when rounded down to the
-     * nearest multiple of 1000.
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
+     * bitrates must be unique when rounded down to the nearest multiple of 1000.
      */
     inline int GetBitrate() const{ return m_bitrate; }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits
-     * can be entered as 5000000 or 5m. Five hundred kilobits can be entered as 500000
-     * or 0.5m. For MS Smooth outputs, bitrates must be unique when rounded down to the
-     * nearest multiple of 1000.
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
+     * bitrates must be unique when rounded down to the nearest multiple of 1000.
      */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits
-     * can be entered as 5000000 or 5m. Five hundred kilobits can be entered as 500000
-     * or 0.5m. For MS Smooth outputs, bitrates must be unique when rounded down to the
-     * nearest multiple of 1000.
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
+     * bitrates must be unique when rounded down to the nearest multiple of 1000.
      */
     inline Mpeg2Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
 
@@ -134,6 +130,57 @@ namespace Model
 
     
     inline Mpeg2Settings& WithCodecProfile(Mpeg2CodecProfile&& value) { SetCodecProfile(std::move(value)); return *this;}
+
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline const Mpeg2DynamicSubGop& GetDynamicSubGop() const{ return m_dynamicSubGop; }
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline void SetDynamicSubGop(const Mpeg2DynamicSubGop& value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = value; }
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline void SetDynamicSubGop(Mpeg2DynamicSubGop&& value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = std::move(value); }
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline Mpeg2Settings& WithDynamicSubGop(const Mpeg2DynamicSubGop& value) { SetDynamicSubGop(value); return *this;}
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline Mpeg2Settings& WithDynamicSubGop(Mpeg2DynamicSubGop&& value) { SetDynamicSubGop(std::move(value)); return *this;}
 
 
     
@@ -271,20 +318,20 @@ namespace Model
 
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or
-     * 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
+     * 5000000.
      */
     inline int GetHrdBufferSize() const{ return m_hrdBufferSize; }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or
-     * 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
+     * 5000000.
      */
     inline void SetHrdBufferSize(int value) { m_hrdBufferSizeHasBeenSet = true; m_hrdBufferSize = value; }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or
-     * 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
+     * 5000000.
      */
     inline Mpeg2Settings& WithHrdBufferSize(int value) { SetHrdBufferSize(value); return *this;}
 
@@ -322,20 +369,20 @@ namespace Model
 
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered
-     * as 5000000 or 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as
+     * 5000000.
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered
-     * as 5000000 or 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as
+     * 5000000.
      */
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered
-     * as 5000000 or 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as
+     * 5000000.
      */
     inline Mpeg2Settings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
 
@@ -597,6 +644,9 @@ namespace Model
 
     Mpeg2CodecProfile m_codecProfile;
     bool m_codecProfileHasBeenSet;
+
+    Mpeg2DynamicSubGop m_dynamicSubGop;
+    bool m_dynamicSubGopHasBeenSet;
 
     Mpeg2FramerateControl m_framerateControl;
     bool m_framerateControlHasBeenSet;

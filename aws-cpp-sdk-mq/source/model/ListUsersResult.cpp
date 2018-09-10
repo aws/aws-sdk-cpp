@@ -39,7 +39,7 @@ ListUsersResult::ListUsersResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 ListUsersResult& ListUsersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("brokerId"))
   {
     m_brokerId = jsonValue.GetString("brokerId");
@@ -60,7 +60,7 @@ ListUsersResult& ListUsersResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("users"))
   {
-    Array<JsonValue> usersJsonList = jsonValue.GetArray("users");
+    Array<JsonView> usersJsonList = jsonValue.GetArray("users");
     for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
     {
       m_users.push_back(usersJsonList[usersIndex].AsObject());

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/EncodingType.h>
 #include <aws/s3/model/RequestPayer.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -75,37 +76,37 @@ namespace Model
 
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline ListObjectsRequest& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline ListObjectsRequest& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline ListObjectsRequest& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
@@ -127,130 +128,167 @@ namespace Model
 
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline ListObjectsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline ListObjectsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline ListObjectsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
 
     /**
-     * Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.
+     * <p>Sets the maximum number of keys returned in the response. The response might
+     * contain fewer keys but will never contain more.</p>
      */
     inline int GetMaxKeys() const{ return m_maxKeys; }
 
     /**
-     * Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.
+     * <p>Sets the maximum number of keys returned in the response. The response might
+     * contain fewer keys but will never contain more.</p>
      */
     inline void SetMaxKeys(int value) { m_maxKeysHasBeenSet = true; m_maxKeys = value; }
 
     /**
-     * Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.
+     * <p>Sets the maximum number of keys returned in the response. The response might
+     * contain fewer keys but will never contain more.</p>
      */
     inline ListObjectsRequest& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
 
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline ListObjectsRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline ListObjectsRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline ListObjectsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
     /**
-     * Confirms that the requester knows that she or he will be charged for the list
+     * <p>Confirms that the requester knows that she or he will be charged for the list
      * objects request. Bucket owners need not specify this parameter in their
-     * requests.
+     * requests.</p>
      */
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     /**
-     * Confirms that the requester knows that she or he will be charged for the list
+     * <p>Confirms that the requester knows that she or he will be charged for the list
      * objects request. Bucket owners need not specify this parameter in their
-     * requests.
+     * requests.</p>
      */
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     /**
-     * Confirms that the requester knows that she or he will be charged for the list
+     * <p>Confirms that the requester knows that she or he will be charged for the list
      * objects request. Bucket owners need not specify this parameter in their
-     * requests.
+     * requests.</p>
      */
     inline void SetRequestPayer(RequestPayer&& value) { m_requestPayerHasBeenSet = true; m_requestPayer = std::move(value); }
 
     /**
-     * Confirms that the requester knows that she or he will be charged for the list
+     * <p>Confirms that the requester knows that she or he will be charged for the list
      * objects request. Bucket owners need not specify this parameter in their
-     * requests.
+     * requests.</p>
      */
     inline ListObjectsRequest& WithRequestPayer(const RequestPayer& value) { SetRequestPayer(value); return *this;}
 
     /**
-     * Confirms that the requester knows that she or he will be charged for the list
+     * <p>Confirms that the requester knows that she or he will be charged for the list
      * objects request. Bucket owners need not specify this parameter in their
-     * requests.
+     * requests.</p>
      */
     inline ListObjectsRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
+
+
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
+
+    
+    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
+
+    
+    inline ListObjectsRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
+
+    
+    inline ListObjectsRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
+
+    
+    inline ListObjectsRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+
+    
+    inline ListObjectsRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline ListObjectsRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline ListObjectsRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline ListObjectsRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline ListObjectsRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline ListObjectsRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
 
   private:
 
@@ -274,6 +312,9 @@ namespace Model
 
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+    bool m_customizedAccessLogTagHasBeenSet;
   };
 
 } // namespace Model

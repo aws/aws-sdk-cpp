@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * List of deployments for the requested groups
+     * A list of deployments for the requested groups.
      */
     inline const Aws::Vector<Deployment>& GetDeployments() const{ return m_deployments; }
 
     /**
-     * List of deployments for the requested groups
+     * A list of deployments for the requested groups.
      */
     inline void SetDeployments(const Aws::Vector<Deployment>& value) { m_deployments = value; }
 
     /**
-     * List of deployments for the requested groups
+     * A list of deployments for the requested groups.
      */
     inline void SetDeployments(Aws::Vector<Deployment>&& value) { m_deployments = std::move(value); }
 
     /**
-     * List of deployments for the requested groups
+     * A list of deployments for the requested groups.
      */
     inline ListDeploymentsResult& WithDeployments(const Aws::Vector<Deployment>& value) { SetDeployments(value); return *this;}
 
     /**
-     * List of deployments for the requested groups
+     * A list of deployments for the requested groups.
      */
     inline ListDeploymentsResult& WithDeployments(Aws::Vector<Deployment>&& value) { SetDeployments(std::move(value)); return *this;}
 
     /**
-     * List of deployments for the requested groups
+     * A list of deployments for the requested groups.
      */
     inline ListDeploymentsResult& AddDeployments(const Deployment& value) { m_deployments.push_back(value); return *this; }
 
     /**
-     * List of deployments for the requested groups
+     * A list of deployments for the requested groups.
      */
     inline ListDeploymentsResult& AddDeployments(Deployment&& value) { m_deployments.push_back(std::move(value)); return *this; }
 

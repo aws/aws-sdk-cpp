@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SWF
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     WorkflowTypeConfiguration();
-    WorkflowTypeConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    WorkflowTypeConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    WorkflowTypeConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    WorkflowTypeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

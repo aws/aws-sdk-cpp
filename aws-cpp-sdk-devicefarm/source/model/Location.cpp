@@ -36,7 +36,7 @@ Location::Location() :
 {
 }
 
-Location::Location(const JsonValue& jsonValue) : 
+Location::Location(JsonView jsonValue) : 
     m_latitude(0.0),
     m_latitudeHasBeenSet(false),
     m_longitude(0.0),
@@ -45,7 +45,7 @@ Location::Location(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Location& Location::operator =(const JsonValue& jsonValue)
+Location& Location::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("latitude"))
   {

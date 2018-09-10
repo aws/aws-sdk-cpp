@@ -31,6 +31,7 @@ StartAutomationExecutionRequest::StartAutomationExecutionRequest() :
     m_modeHasBeenSet(false),
     m_targetParameterNameHasBeenSet(false),
     m_targetsHasBeenSet(false),
+    m_targetMapsHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
     m_maxErrorsHasBeenSet(false)
 {
@@ -96,6 +97,27 @@ Aws::String StartAutomationExecutionRequest::SerializePayload() const
 
   }
 
+  if(m_targetMapsHasBeenSet)
+  {
+   Array<JsonValue> targetMapsJsonList(m_targetMaps.size());
+   for(unsigned targetMapsIndex = 0; targetMapsIndex < targetMapsJsonList.GetLength(); ++targetMapsIndex)
+   {
+     JsonValue targetMapJsonMap;
+     for(auto& targetMapItem : m_targetMaps[targetMapsIndex])
+     {
+       Array<JsonValue> targetMapValueListJsonList(targetMapItem.second.size());
+       for(unsigned targetMapValueListIndex = 0; targetMapValueListIndex < targetMapValueListJsonList.GetLength(); ++targetMapValueListIndex)
+       {
+         targetMapValueListJsonList[targetMapValueListIndex].AsString(targetMapItem.second[targetMapValueListIndex]);
+       }
+       targetMapJsonMap.WithArray(targetMapItem.first, std::move(targetMapValueListJsonList));
+     }
+     targetMapsJsonList[targetMapsIndex].AsObject(std::move(targetMapJsonMap));
+   }
+   payload.WithArray("TargetMaps", std::move(targetMapsJsonList));
+
+  }
+
   if(m_maxConcurrencyHasBeenSet)
   {
    payload.WithString("MaxConcurrency", m_maxConcurrency);
@@ -108,7 +130,7 @@ Aws::String StartAutomationExecutionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartAutomationExecutionRequest::GetRequestSpecificHeaders() const

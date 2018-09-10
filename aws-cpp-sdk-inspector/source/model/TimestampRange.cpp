@@ -34,14 +34,14 @@ TimestampRange::TimestampRange() :
 {
 }
 
-TimestampRange::TimestampRange(const JsonValue& jsonValue) : 
+TimestampRange::TimestampRange(JsonView jsonValue) : 
     m_beginDateHasBeenSet(false),
     m_endDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TimestampRange& TimestampRange::operator =(const JsonValue& jsonValue)
+TimestampRange& TimestampRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("beginDate"))
   {

@@ -41,7 +41,7 @@ TestInvokeMethodResult::TestInvokeMethodResult(const Aws::AmazonWebServiceResult
 
 TestInvokeMethodResult& TestInvokeMethodResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetInteger("status");
@@ -56,7 +56,7 @@ TestInvokeMethodResult& TestInvokeMethodResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("headers"))
   {
-    Aws::Map<Aws::String, JsonValue> headersJsonMap = jsonValue.GetObject("headers").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> headersJsonMap = jsonValue.GetObject("headers").GetAllObjects();
     for(auto& headersItem : headersJsonMap)
     {
       m_headers[headersItem.first] = headersItem.second.AsString();

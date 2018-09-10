@@ -37,7 +37,7 @@ DocumentParameter::DocumentParameter() :
 {
 }
 
-DocumentParameter::DocumentParameter(const JsonValue& jsonValue) : 
+DocumentParameter::DocumentParameter(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_type(DocumentParameterType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -47,7 +47,7 @@ DocumentParameter::DocumentParameter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DocumentParameter& DocumentParameter::operator =(const JsonValue& jsonValue)
+DocumentParameter& DocumentParameter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

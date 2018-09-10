@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Inspector
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     AgentPreview();
-    AgentPreview(const Aws::Utils::Json::JsonValue& jsonValue);
-    AgentPreview& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AgentPreview(Aws::Utils::Json::JsonView jsonValue);
+    AgentPreview& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

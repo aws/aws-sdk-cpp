@@ -35,7 +35,7 @@ InputLocation::InputLocation() :
 {
 }
 
-InputLocation::InputLocation(const JsonValue& jsonValue) : 
+InputLocation::InputLocation(JsonView jsonValue) : 
     m_passwordParamHasBeenSet(false),
     m_uriHasBeenSet(false),
     m_usernameHasBeenSet(false)
@@ -43,7 +43,7 @@ InputLocation::InputLocation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InputLocation& InputLocation::operator =(const JsonValue& jsonValue)
+InputLocation& InputLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("passwordParam"))
   {

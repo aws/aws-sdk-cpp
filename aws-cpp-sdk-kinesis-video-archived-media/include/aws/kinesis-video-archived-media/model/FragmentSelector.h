@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KinesisVideoArchivedMedia
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     FragmentSelector();
-    FragmentSelector(const Aws::Utils::Json::JsonValue& jsonValue);
-    FragmentSelector& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FragmentSelector(Aws::Utils::Json::JsonView jsonValue);
+    FragmentSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

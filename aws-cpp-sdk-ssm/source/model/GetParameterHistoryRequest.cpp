@@ -60,7 +60,7 @@ Aws::String GetParameterHistoryRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetParameterHistoryRequest::GetRequestSpecificHeaders() const

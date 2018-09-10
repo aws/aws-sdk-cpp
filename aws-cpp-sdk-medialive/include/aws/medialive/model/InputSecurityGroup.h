@@ -17,6 +17,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/InputSecurityGroupState.h>
 #include <aws/medialive/model/InputWhitelistRule.h>
 #include <utility>
 
@@ -27,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -43,8 +45,8 @@ namespace Model
   {
   public:
     InputSecurityGroup();
-    InputSecurityGroup(const Aws::Utils::Json::JsonValue& jsonValue);
-    InputSecurityGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InputSecurityGroup(Aws::Utils::Json::JsonView jsonValue);
+    InputSecurityGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -121,6 +123,73 @@ namespace Model
 
 
     /**
+     * The list of inputs currently using this Input Security Group.
+     */
+    inline const Aws::Vector<Aws::String>& GetInputs() const{ return m_inputs; }
+
+    /**
+     * The list of inputs currently using this Input Security Group.
+     */
+    inline void SetInputs(const Aws::Vector<Aws::String>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
+
+    /**
+     * The list of inputs currently using this Input Security Group.
+     */
+    inline void SetInputs(Aws::Vector<Aws::String>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
+
+    /**
+     * The list of inputs currently using this Input Security Group.
+     */
+    inline InputSecurityGroup& WithInputs(const Aws::Vector<Aws::String>& value) { SetInputs(value); return *this;}
+
+    /**
+     * The list of inputs currently using this Input Security Group.
+     */
+    inline InputSecurityGroup& WithInputs(Aws::Vector<Aws::String>&& value) { SetInputs(std::move(value)); return *this;}
+
+    /**
+     * The list of inputs currently using this Input Security Group.
+     */
+    inline InputSecurityGroup& AddInputs(const Aws::String& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+
+    /**
+     * The list of inputs currently using this Input Security Group.
+     */
+    inline InputSecurityGroup& AddInputs(Aws::String&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
+
+    /**
+     * The list of inputs currently using this Input Security Group.
+     */
+    inline InputSecurityGroup& AddInputs(const char* value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+
+
+    /**
+     * The current state of the Input Security Group.
+     */
+    inline const InputSecurityGroupState& GetState() const{ return m_state; }
+
+    /**
+     * The current state of the Input Security Group.
+     */
+    inline void SetState(const InputSecurityGroupState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * The current state of the Input Security Group.
+     */
+    inline void SetState(InputSecurityGroupState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * The current state of the Input Security Group.
+     */
+    inline InputSecurityGroup& WithState(const InputSecurityGroupState& value) { SetState(value); return *this;}
+
+    /**
+     * The current state of the Input Security Group.
+     */
+    inline InputSecurityGroup& WithState(InputSecurityGroupState&& value) { SetState(std::move(value)); return *this;}
+
+
+    /**
      * Whitelist rules and their sync status
      */
     inline const Aws::Vector<InputWhitelistRule>& GetWhitelistRules() const{ return m_whitelistRules; }
@@ -162,6 +231,12 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet;
+
+    Aws::Vector<Aws::String> m_inputs;
+    bool m_inputsHasBeenSet;
+
+    InputSecurityGroupState m_state;
+    bool m_stateHasBeenSet;
 
     Aws::Vector<InputWhitelistRule> m_whitelistRules;
     bool m_whitelistRulesHasBeenSet;

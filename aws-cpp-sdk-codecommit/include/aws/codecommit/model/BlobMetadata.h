@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeCommit
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     BlobMetadata();
-    BlobMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    BlobMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BlobMetadata(Aws::Utils::Json::JsonView jsonValue);
+    BlobMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

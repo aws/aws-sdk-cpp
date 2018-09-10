@@ -37,7 +37,7 @@ Aws::String DescribeEnvironmentStatusRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeEnvironmentStatusRequest::GetRequestSpecificHeaders() const

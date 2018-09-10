@@ -37,7 +37,7 @@ CreateRealtimeEndpointResult::CreateRealtimeEndpointResult(const Aws::AmazonWebS
 
 CreateRealtimeEndpointResult& CreateRealtimeEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MLModelId"))
   {
     m_mLModelId = jsonValue.GetString("MLModelId");

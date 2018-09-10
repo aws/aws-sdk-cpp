@@ -59,7 +59,7 @@ Aws::String SetLoadBasedAutoScalingRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SetLoadBasedAutoScalingRequest::GetRequestSpecificHeaders() const

@@ -56,7 +56,7 @@ Aws::String DescribeRaidArraysRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeRaidArraysRequest::GetRequestSpecificHeaders() const

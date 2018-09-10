@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DatabaseMigrationService
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     RefreshSchemasStatus();
-    RefreshSchemasStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    RefreshSchemasStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RefreshSchemasStatus(Aws::Utils::Json::JsonView jsonValue);
+    RefreshSchemasStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

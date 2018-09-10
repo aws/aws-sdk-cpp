@@ -51,7 +51,7 @@ Aws::String StopStreamEncryptionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopStreamEncryptionRequest::GetRequestSpecificHeaders() const

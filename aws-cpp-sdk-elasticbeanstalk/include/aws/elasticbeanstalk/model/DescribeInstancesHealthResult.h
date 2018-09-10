@@ -53,37 +53,58 @@ namespace Model
 
 
     /**
-     * <p>Detailed health information about each instance.</p>
+     * <p>Detailed health information about each instance.</p> <p>The output differs
+     * slightly between Linux and Windows environments. There is a difference in the
+     * members that are supported under the <code>&lt;CPUUtilization&gt;</code>
+     * type.</p>
      */
     inline const Aws::Vector<SingleInstanceHealth>& GetInstanceHealthList() const{ return m_instanceHealthList; }
 
     /**
-     * <p>Detailed health information about each instance.</p>
+     * <p>Detailed health information about each instance.</p> <p>The output differs
+     * slightly between Linux and Windows environments. There is a difference in the
+     * members that are supported under the <code>&lt;CPUUtilization&gt;</code>
+     * type.</p>
      */
     inline void SetInstanceHealthList(const Aws::Vector<SingleInstanceHealth>& value) { m_instanceHealthList = value; }
 
     /**
-     * <p>Detailed health information about each instance.</p>
+     * <p>Detailed health information about each instance.</p> <p>The output differs
+     * slightly between Linux and Windows environments. There is a difference in the
+     * members that are supported under the <code>&lt;CPUUtilization&gt;</code>
+     * type.</p>
      */
     inline void SetInstanceHealthList(Aws::Vector<SingleInstanceHealth>&& value) { m_instanceHealthList = std::move(value); }
 
     /**
-     * <p>Detailed health information about each instance.</p>
+     * <p>Detailed health information about each instance.</p> <p>The output differs
+     * slightly between Linux and Windows environments. There is a difference in the
+     * members that are supported under the <code>&lt;CPUUtilization&gt;</code>
+     * type.</p>
      */
     inline DescribeInstancesHealthResult& WithInstanceHealthList(const Aws::Vector<SingleInstanceHealth>& value) { SetInstanceHealthList(value); return *this;}
 
     /**
-     * <p>Detailed health information about each instance.</p>
+     * <p>Detailed health information about each instance.</p> <p>The output differs
+     * slightly between Linux and Windows environments. There is a difference in the
+     * members that are supported under the <code>&lt;CPUUtilization&gt;</code>
+     * type.</p>
      */
     inline DescribeInstancesHealthResult& WithInstanceHealthList(Aws::Vector<SingleInstanceHealth>&& value) { SetInstanceHealthList(std::move(value)); return *this;}
 
     /**
-     * <p>Detailed health information about each instance.</p>
+     * <p>Detailed health information about each instance.</p> <p>The output differs
+     * slightly between Linux and Windows environments. There is a difference in the
+     * members that are supported under the <code>&lt;CPUUtilization&gt;</code>
+     * type.</p>
      */
     inline DescribeInstancesHealthResult& AddInstanceHealthList(const SingleInstanceHealth& value) { m_instanceHealthList.push_back(value); return *this; }
 
     /**
-     * <p>Detailed health information about each instance.</p>
+     * <p>Detailed health information about each instance.</p> <p>The output differs
+     * slightly between Linux and Windows environments. There is a difference in the
+     * members that are supported under the <code>&lt;CPUUtilization&gt;</code>
+     * type.</p>
      */
     inline DescribeInstancesHealthResult& AddInstanceHealthList(SingleInstanceHealth&& value) { m_instanceHealthList.push_back(std::move(value)); return *this; }
 

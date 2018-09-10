@@ -37,10 +37,10 @@ DescribeRdsDbInstancesResult::DescribeRdsDbInstancesResult(const Aws::AmazonWebS
 
 DescribeRdsDbInstancesResult& DescribeRdsDbInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RdsDbInstances"))
   {
-    Array<JsonValue> rdsDbInstancesJsonList = jsonValue.GetArray("RdsDbInstances");
+    Array<JsonView> rdsDbInstancesJsonList = jsonValue.GetArray("RdsDbInstances");
     for(unsigned rdsDbInstancesIndex = 0; rdsDbInstancesIndex < rdsDbInstancesJsonList.GetLength(); ++rdsDbInstancesIndex)
     {
       m_rdsDbInstances.push_back(rdsDbInstancesJsonList[rdsDbInstancesIndex].AsObject());

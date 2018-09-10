@@ -36,7 +36,7 @@ Notification::Notification() :
 {
 }
 
-Notification::Notification(const JsonValue& jsonValue) : 
+Notification::Notification(JsonView jsonValue) : 
     m_snsTopicARNHasBeenSet(false),
     m_jobStatesToNotifyHasBeenSet(false),
     m_notifyAll(false),
@@ -45,7 +45,7 @@ Notification::Notification(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Notification& Notification::operator =(const JsonValue& jsonValue)
+Notification& Notification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SnsTopicARN"))
   {
@@ -56,7 +56,7 @@ Notification& Notification::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("JobStatesToNotify"))
   {
-    Array<JsonValue> jobStatesToNotifyJsonList = jsonValue.GetArray("JobStatesToNotify");
+    Array<JsonView> jobStatesToNotifyJsonList = jsonValue.GetArray("JobStatesToNotify");
     for(unsigned jobStatesToNotifyIndex = 0; jobStatesToNotifyIndex < jobStatesToNotifyJsonList.GetLength(); ++jobStatesToNotifyIndex)
     {
       m_jobStatesToNotify.push_back(JobStateMapper::GetJobStateForName(jobStatesToNotifyJsonList[jobStatesToNotifyIndex].AsString()));

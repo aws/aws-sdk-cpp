@@ -34,14 +34,14 @@ UsageInstruction::UsageInstruction() :
 {
 }
 
-UsageInstruction::UsageInstruction(const JsonValue& jsonValue) : 
+UsageInstruction::UsageInstruction(JsonView jsonValue) : 
     m_typeHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UsageInstruction& UsageInstruction::operator =(const JsonValue& jsonValue)
+UsageInstruction& UsageInstruction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

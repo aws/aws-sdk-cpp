@@ -40,7 +40,7 @@ ProvisioningArtifactDetail::ProvisioningArtifactDetail() :
 {
 }
 
-ProvisioningArtifactDetail::ProvisioningArtifactDetail(const JsonValue& jsonValue) : 
+ProvisioningArtifactDetail::ProvisioningArtifactDetail(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -53,7 +53,7 @@ ProvisioningArtifactDetail::ProvisioningArtifactDetail(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-ProvisioningArtifactDetail& ProvisioningArtifactDetail::operator =(const JsonValue& jsonValue)
+ProvisioningArtifactDetail& ProvisioningArtifactDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

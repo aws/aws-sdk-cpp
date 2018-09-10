@@ -37,7 +37,7 @@ ListSqlInjectionMatchSetsResult::ListSqlInjectionMatchSetsResult(const Aws::Amaz
 
 ListSqlInjectionMatchSetsResult& ListSqlInjectionMatchSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListSqlInjectionMatchSetsResult& ListSqlInjectionMatchSetsResult::operator =(con
 
   if(jsonValue.ValueExists("SqlInjectionMatchSets"))
   {
-    Array<JsonValue> sqlInjectionMatchSetsJsonList = jsonValue.GetArray("SqlInjectionMatchSets");
+    Array<JsonView> sqlInjectionMatchSetsJsonList = jsonValue.GetArray("SqlInjectionMatchSets");
     for(unsigned sqlInjectionMatchSetsIndex = 0; sqlInjectionMatchSetsIndex < sqlInjectionMatchSetsJsonList.GetLength(); ++sqlInjectionMatchSetsIndex)
     {
       m_sqlInjectionMatchSets.push_back(sqlInjectionMatchSetsJsonList[sqlInjectionMatchSetsIndex].AsObject());

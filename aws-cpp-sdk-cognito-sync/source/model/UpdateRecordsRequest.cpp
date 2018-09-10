@@ -61,7 +61,7 @@ Aws::String UpdateRecordsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateRecordsRequest::GetRequestSpecificHeaders() const
@@ -71,7 +71,7 @@ Aws::Http::HeaderValueCollection UpdateRecordsRequest::GetRequestSpecificHeaders
   if(m_clientContextHasBeenSet)
   {
     ss << m_clientContext;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context", ss.str()));
+    headers.emplace("x-amz-client-context",  ss.str());
     ss.str("");
   }
 

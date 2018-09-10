@@ -88,67 +88,73 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of detected faces to return. The default is 1000.</p>
+     * <p>Maximum number of results to return per paginated call. The largest value you
+     * can specify is 1000. If you specify a value greater than 1000, a maximum of 1000
+     * results is returned. The default value is 1000.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of detected faces to return. The default is 1000.</p>
+     * <p>Maximum number of results to return per paginated call. The largest value you
+     * can specify is 1000. If you specify a value greater than 1000, a maximum of 1000
+     * results is returned. The default value is 1000.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of detected faces to return. The default is 1000.</p>
+     * <p>Maximum number of results to return per paginated call. The largest value you
+     * can specify is 1000. If you specify a value greater than 1000, a maximum of 1000
+     * results is returned. The default value is 1000.</p>
      */
     inline GetFaceDetectionRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
      * <p>If the previous response was incomplete (because there are more faces to
-     * retrieve), Rekognition Video returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of faces.</p>
+     * retrieve), Amazon Rekognition Video returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of faces.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If the previous response was incomplete (because there are more faces to
-     * retrieve), Rekognition Video returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of faces.</p>
+     * retrieve), Amazon Rekognition Video returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of faces.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>If the previous response was incomplete (because there are more faces to
-     * retrieve), Rekognition Video returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of faces.</p>
+     * retrieve), Amazon Rekognition Video returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of faces.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>If the previous response was incomplete (because there are more faces to
-     * retrieve), Rekognition Video returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of faces.</p>
+     * retrieve), Amazon Rekognition Video returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of faces.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>If the previous response was incomplete (because there are more faces to
-     * retrieve), Rekognition Video returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of faces.</p>
+     * retrieve), Amazon Rekognition Video returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of faces.</p>
      */
     inline GetFaceDetectionRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If the previous response was incomplete (because there are more faces to
-     * retrieve), Rekognition Video returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of faces.</p>
+     * retrieve), Amazon Rekognition Video returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of faces.</p>
      */
     inline GetFaceDetectionRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the previous response was incomplete (because there are more faces to
-     * retrieve), Rekognition Video returns a pagination token in the response. You can
-     * use this pagination token to retrieve the next set of faces.</p>
+     * retrieve), Amazon Rekognition Video returns a pagination token in the response.
+     * You can use this pagination token to retrieve the next set of faces.</p>
      */
     inline GetFaceDetectionRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

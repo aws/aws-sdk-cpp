@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DatabaseMigrationService
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     ReplicationInstance();
-    ReplicationInstance(const Aws::Utils::Json::JsonValue& jsonValue);
-    ReplicationInstance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ReplicationInstance(Aws::Utils::Json::JsonView jsonValue);
+    ReplicationInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -732,6 +733,37 @@ namespace Model
      */
     inline ReplicationInstance& WithSecondaryAvailabilityZone(const char* value) { SetSecondaryAvailabilityZone(value); return *this;}
 
+
+    /**
+     * <p> The expiration date of the free replication instance that is part of the
+     * Free DMS program. </p>
+     */
+    inline const Aws::Utils::DateTime& GetFreeUntil() const{ return m_freeUntil; }
+
+    /**
+     * <p> The expiration date of the free replication instance that is part of the
+     * Free DMS program. </p>
+     */
+    inline void SetFreeUntil(const Aws::Utils::DateTime& value) { m_freeUntilHasBeenSet = true; m_freeUntil = value; }
+
+    /**
+     * <p> The expiration date of the free replication instance that is part of the
+     * Free DMS program. </p>
+     */
+    inline void SetFreeUntil(Aws::Utils::DateTime&& value) { m_freeUntilHasBeenSet = true; m_freeUntil = std::move(value); }
+
+    /**
+     * <p> The expiration date of the free replication instance that is part of the
+     * Free DMS program. </p>
+     */
+    inline ReplicationInstance& WithFreeUntil(const Aws::Utils::DateTime& value) { SetFreeUntil(value); return *this;}
+
+    /**
+     * <p> The expiration date of the free replication instance that is part of the
+     * Free DMS program. </p>
+     */
+    inline ReplicationInstance& WithFreeUntil(Aws::Utils::DateTime&& value) { SetFreeUntil(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_replicationInstanceIdentifier;
@@ -790,6 +822,9 @@ namespace Model
 
     Aws::String m_secondaryAvailabilityZone;
     bool m_secondaryAvailabilityZoneHasBeenSet;
+
+    Aws::Utils::DateTime m_freeUntil;
+    bool m_freeUntilHasBeenSet;
   };
 
 } // namespace Model

@@ -34,14 +34,14 @@ ImageIdentifier::ImageIdentifier() :
 {
 }
 
-ImageIdentifier::ImageIdentifier(const JsonValue& jsonValue) : 
+ImageIdentifier::ImageIdentifier(JsonView jsonValue) : 
     m_imageDigestHasBeenSet(false),
     m_imageTagHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ImageIdentifier& ImageIdentifier::operator =(const JsonValue& jsonValue)
+ImageIdentifier& ImageIdentifier::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("imageDigest"))
   {

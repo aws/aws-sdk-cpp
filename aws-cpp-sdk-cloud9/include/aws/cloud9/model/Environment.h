@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Cloud9
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Environment();
-    Environment(const Aws::Utils::Json::JsonValue& jsonValue);
-    Environment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Environment(Aws::Utils::Json::JsonView jsonValue);
+    Environment& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -158,41 +159,41 @@ namespace Model
 
     /**
      * <p>The type of environment. Valid values include the following:</p> <ul> <li>
-     * <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud
-     * (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment
-     * hosted on your own server.</p> </li> </ul>
+     * <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance
+     * connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own
+     * server connects to the environment.</p> </li> </ul>
      */
     inline const EnvironmentType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of environment. Valid values include the following:</p> <ul> <li>
-     * <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud
-     * (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment
-     * hosted on your own server.</p> </li> </ul>
+     * <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance
+     * connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own
+     * server connects to the environment.</p> </li> </ul>
      */
     inline void SetType(const EnvironmentType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of environment. Valid values include the following:</p> <ul> <li>
-     * <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud
-     * (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment
-     * hosted on your own server.</p> </li> </ul>
+     * <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance
+     * connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own
+     * server connects to the environment.</p> </li> </ul>
      */
     inline void SetType(EnvironmentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of environment. Valid values include the following:</p> <ul> <li>
-     * <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud
-     * (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment
-     * hosted on your own server.</p> </li> </ul>
+     * <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance
+     * connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own
+     * server connects to the environment.</p> </li> </ul>
      */
     inline Environment& WithType(const EnvironmentType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of environment. Valid values include the following:</p> <ul> <li>
-     * <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud
-     * (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment
-     * hosted on your own server.</p> </li> </ul>
+     * <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance
+     * connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own
+     * server connects to the environment.</p> </li> </ul>
      */
     inline Environment& WithType(EnvironmentType&& value) { SetType(std::move(value)); return *this;}
 

@@ -47,7 +47,7 @@ Aws::String ListFacetNamesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListFacetNamesRequest::GetRequestSpecificHeaders() const
@@ -57,7 +57,7 @@ Aws::Http::HeaderValueCollection ListFacetNamesRequest::GetRequestSpecificHeader
   if(m_schemaArnHasBeenSet)
   {
     ss << m_schemaArn;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-data-partition", ss.str()));
+    headers.emplace("x-amz-data-partition",  ss.str());
     ss.str("");
   }
 

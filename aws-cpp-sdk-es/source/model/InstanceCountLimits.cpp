@@ -36,7 +36,7 @@ InstanceCountLimits::InstanceCountLimits() :
 {
 }
 
-InstanceCountLimits::InstanceCountLimits(const JsonValue& jsonValue) : 
+InstanceCountLimits::InstanceCountLimits(JsonView jsonValue) : 
     m_minimumInstanceCount(0),
     m_minimumInstanceCountHasBeenSet(false),
     m_maximumInstanceCount(0),
@@ -45,7 +45,7 @@ InstanceCountLimits::InstanceCountLimits(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceCountLimits& InstanceCountLimits::operator =(const JsonValue& jsonValue)
+InstanceCountLimits& InstanceCountLimits::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MinimumInstanceCount"))
   {

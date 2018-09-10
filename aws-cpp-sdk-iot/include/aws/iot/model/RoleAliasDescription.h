@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     RoleAliasDescription();
-    RoleAliasDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    RoleAliasDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RoleAliasDescription(Aws::Utils::Json::JsonView jsonValue);
+    RoleAliasDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -81,6 +82,42 @@ namespace Model
      * <p>The role alias.</p>
      */
     inline RoleAliasDescription& WithRoleAlias(const char* value) { SetRoleAlias(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
+    inline const Aws::String& GetRoleAliasArn() const{ return m_roleAliasArn; }
+
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
+    inline void SetRoleAliasArn(const Aws::String& value) { m_roleAliasArnHasBeenSet = true; m_roleAliasArn = value; }
+
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
+    inline void SetRoleAliasArn(Aws::String&& value) { m_roleAliasArnHasBeenSet = true; m_roleAliasArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
+    inline void SetRoleAliasArn(const char* value) { m_roleAliasArnHasBeenSet = true; m_roleAliasArn.assign(value); }
+
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
+    inline RoleAliasDescription& WithRoleAliasArn(const Aws::String& value) { SetRoleAliasArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
+    inline RoleAliasDescription& WithRoleAliasArn(Aws::String&& value) { SetRoleAliasArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the role alias.</p>
+     */
+    inline RoleAliasDescription& WithRoleAliasArn(const char* value) { SetRoleAliasArn(value); return *this;}
 
 
     /**
@@ -226,6 +263,9 @@ namespace Model
 
     Aws::String m_roleAlias;
     bool m_roleAliasHasBeenSet;
+
+    Aws::String m_roleAliasArn;
+    bool m_roleAliasArnHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

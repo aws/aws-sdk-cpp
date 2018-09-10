@@ -37,7 +37,7 @@ Aws::String DescribeEC2InstanceLimitsRequest::SerializePayload() const
    payload.WithString("EC2InstanceType", EC2InstanceTypeMapper::GetNameForEC2InstanceType(m_eC2InstanceType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeEC2InstanceLimitsRequest::GetRequestSpecificHeaders() const

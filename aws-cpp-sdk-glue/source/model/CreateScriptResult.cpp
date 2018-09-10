@@ -37,7 +37,7 @@ CreateScriptResult::CreateScriptResult(const Aws::AmazonWebServiceResult<JsonVal
 
 CreateScriptResult& CreateScriptResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PythonScript"))
   {
     m_pythonScript = jsonValue.GetString("PythonScript");

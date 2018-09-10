@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -41,14 +42,14 @@ namespace Model
   {
   public:
     TeletextDestinationSettings();
-    TeletextDestinationSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    TeletextDestinationSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TeletextDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    TeletextDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * Set pageNumber to the Teletext page number for the destination captions for this
-     * output.  This value must be a three-digit hexadecimal string; strings ending in
+     * output. This value must be a three-digit hexadecimal string; strings ending in
      * -FF are invalid. If you are passing through the entire set of Teletext data, do
      * not use this field.
      */
@@ -56,7 +57,7 @@ namespace Model
 
     /**
      * Set pageNumber to the Teletext page number for the destination captions for this
-     * output.  This value must be a three-digit hexadecimal string; strings ending in
+     * output. This value must be a three-digit hexadecimal string; strings ending in
      * -FF are invalid. If you are passing through the entire set of Teletext data, do
      * not use this field.
      */
@@ -64,7 +65,7 @@ namespace Model
 
     /**
      * Set pageNumber to the Teletext page number for the destination captions for this
-     * output.  This value must be a three-digit hexadecimal string; strings ending in
+     * output. This value must be a three-digit hexadecimal string; strings ending in
      * -FF are invalid. If you are passing through the entire set of Teletext data, do
      * not use this field.
      */
@@ -72,7 +73,7 @@ namespace Model
 
     /**
      * Set pageNumber to the Teletext page number for the destination captions for this
-     * output.  This value must be a three-digit hexadecimal string; strings ending in
+     * output. This value must be a three-digit hexadecimal string; strings ending in
      * -FF are invalid. If you are passing through the entire set of Teletext data, do
      * not use this field.
      */
@@ -80,7 +81,7 @@ namespace Model
 
     /**
      * Set pageNumber to the Teletext page number for the destination captions for this
-     * output.  This value must be a three-digit hexadecimal string; strings ending in
+     * output. This value must be a three-digit hexadecimal string; strings ending in
      * -FF are invalid. If you are passing through the entire set of Teletext data, do
      * not use this field.
      */
@@ -88,7 +89,7 @@ namespace Model
 
     /**
      * Set pageNumber to the Teletext page number for the destination captions for this
-     * output.  This value must be a three-digit hexadecimal string; strings ending in
+     * output. This value must be a three-digit hexadecimal string; strings ending in
      * -FF are invalid. If you are passing through the entire set of Teletext data, do
      * not use this field.
      */
@@ -96,7 +97,7 @@ namespace Model
 
     /**
      * Set pageNumber to the Teletext page number for the destination captions for this
-     * output.  This value must be a three-digit hexadecimal string; strings ending in
+     * output. This value must be a three-digit hexadecimal string; strings ending in
      * -FF are invalid. If you are passing through the entire set of Teletext data, do
      * not use this field.
      */

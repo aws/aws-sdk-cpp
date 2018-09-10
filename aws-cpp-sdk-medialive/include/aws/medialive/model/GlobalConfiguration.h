@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     GlobalConfiguration();
-    GlobalConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    GlobalConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GlobalConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    GlobalConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

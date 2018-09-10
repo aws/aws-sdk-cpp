@@ -36,7 +36,7 @@ Aws::String CreateAppRequest::SerializePayload() const
    payload = m_createApplicationRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

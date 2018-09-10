@@ -34,14 +34,14 @@ KinesisStreamSourceConfiguration::KinesisStreamSourceConfiguration() :
 {
 }
 
-KinesisStreamSourceConfiguration::KinesisStreamSourceConfiguration(const JsonValue& jsonValue) : 
+KinesisStreamSourceConfiguration::KinesisStreamSourceConfiguration(JsonView jsonValue) : 
     m_kinesisStreamARNHasBeenSet(false),
     m_roleARNHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-KinesisStreamSourceConfiguration& KinesisStreamSourceConfiguration::operator =(const JsonValue& jsonValue)
+KinesisStreamSourceConfiguration& KinesisStreamSourceConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("KinesisStreamARN"))
   {

@@ -48,50 +48,58 @@ namespace Model
   public:
 
     /**
-     * <p>The names of the Auto Scaling groups. If you omit this parameter, all Auto
-     * Scaling groups are described.</p>
+     * <p>The names of the Auto Scaling groups. You can specify up to
+     * <code>MaxRecords</code> names. If you omit this parameter, all Auto Scaling
+     * groups are described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAutoScalingGroupNames() const{ return m_autoScalingGroupNames; }
 
     /**
-     * <p>The names of the Auto Scaling groups. If you omit this parameter, all Auto
-     * Scaling groups are described.</p>
+     * <p>The names of the Auto Scaling groups. You can specify up to
+     * <code>MaxRecords</code> names. If you omit this parameter, all Auto Scaling
+     * groups are described.</p>
      */
     inline void SetAutoScalingGroupNames(const Aws::Vector<Aws::String>& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames = value; }
 
     /**
-     * <p>The names of the Auto Scaling groups. If you omit this parameter, all Auto
-     * Scaling groups are described.</p>
+     * <p>The names of the Auto Scaling groups. You can specify up to
+     * <code>MaxRecords</code> names. If you omit this parameter, all Auto Scaling
+     * groups are described.</p>
      */
     inline void SetAutoScalingGroupNames(Aws::Vector<Aws::String>&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames = std::move(value); }
 
     /**
-     * <p>The names of the Auto Scaling groups. If you omit this parameter, all Auto
-     * Scaling groups are described.</p>
+     * <p>The names of the Auto Scaling groups. You can specify up to
+     * <code>MaxRecords</code> names. If you omit this parameter, all Auto Scaling
+     * groups are described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& WithAutoScalingGroupNames(const Aws::Vector<Aws::String>& value) { SetAutoScalingGroupNames(value); return *this;}
 
     /**
-     * <p>The names of the Auto Scaling groups. If you omit this parameter, all Auto
-     * Scaling groups are described.</p>
+     * <p>The names of the Auto Scaling groups. You can specify up to
+     * <code>MaxRecords</code> names. If you omit this parameter, all Auto Scaling
+     * groups are described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& WithAutoScalingGroupNames(Aws::Vector<Aws::String>&& value) { SetAutoScalingGroupNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of the Auto Scaling groups. If you omit this parameter, all Auto
-     * Scaling groups are described.</p>
+     * <p>The names of the Auto Scaling groups. You can specify up to
+     * <code>MaxRecords</code> names. If you omit this parameter, all Auto Scaling
+     * groups are described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& AddAutoScalingGroupNames(const Aws::String& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of the Auto Scaling groups. If you omit this parameter, all Auto
-     * Scaling groups are described.</p>
+     * <p>The names of the Auto Scaling groups. You can specify up to
+     * <code>MaxRecords</code> names. If you omit this parameter, all Auto Scaling
+     * groups are described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& AddAutoScalingGroupNames(Aws::String&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of the Auto Scaling groups. If you omit this parameter, all Auto
-     * Scaling groups are described.</p>
+     * <p>The names of the Auto Scaling groups. You can specify up to
+     * <code>MaxRecords</code> names. If you omit this parameter, all Auto Scaling
+     * groups are described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& AddAutoScalingGroupNames(const char* value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
 

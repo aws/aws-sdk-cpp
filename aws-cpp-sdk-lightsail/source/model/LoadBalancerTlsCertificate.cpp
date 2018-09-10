@@ -61,7 +61,7 @@ LoadBalancerTlsCertificate::LoadBalancerTlsCertificate() :
 {
 }
 
-LoadBalancerTlsCertificate::LoadBalancerTlsCertificate(const JsonValue& jsonValue) : 
+LoadBalancerTlsCertificate::LoadBalancerTlsCertificate(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_supportCodeHasBeenSet(false),
@@ -95,7 +95,7 @@ LoadBalancerTlsCertificate::LoadBalancerTlsCertificate(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-LoadBalancerTlsCertificate& LoadBalancerTlsCertificate::operator =(const JsonValue& jsonValue)
+LoadBalancerTlsCertificate& LoadBalancerTlsCertificate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -169,7 +169,7 @@ LoadBalancerTlsCertificate& LoadBalancerTlsCertificate::operator =(const JsonVal
 
   if(jsonValue.ValueExists("domainValidationRecords"))
   {
-    Array<JsonValue> domainValidationRecordsJsonList = jsonValue.GetArray("domainValidationRecords");
+    Array<JsonView> domainValidationRecordsJsonList = jsonValue.GetArray("domainValidationRecords");
     for(unsigned domainValidationRecordsIndex = 0; domainValidationRecordsIndex < domainValidationRecordsJsonList.GetLength(); ++domainValidationRecordsIndex)
     {
       m_domainValidationRecords.push_back(domainValidationRecordsJsonList[domainValidationRecordsIndex].AsObject());
@@ -263,7 +263,7 @@ LoadBalancerTlsCertificate& LoadBalancerTlsCertificate::operator =(const JsonVal
 
   if(jsonValue.ValueExists("subjectAlternativeNames"))
   {
-    Array<JsonValue> subjectAlternativeNamesJsonList = jsonValue.GetArray("subjectAlternativeNames");
+    Array<JsonView> subjectAlternativeNamesJsonList = jsonValue.GetArray("subjectAlternativeNames");
     for(unsigned subjectAlternativeNamesIndex = 0; subjectAlternativeNamesIndex < subjectAlternativeNamesJsonList.GetLength(); ++subjectAlternativeNamesIndex)
     {
       m_subjectAlternativeNames.push_back(subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsString());

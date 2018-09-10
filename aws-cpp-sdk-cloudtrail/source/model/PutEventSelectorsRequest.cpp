@@ -49,7 +49,7 @@ Aws::String PutEventSelectorsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutEventSelectorsRequest::GetRequestSpecificHeaders() const

@@ -35,7 +35,7 @@ ResourceQuery::ResourceQuery() :
 {
 }
 
-ResourceQuery::ResourceQuery(const JsonValue& jsonValue) : 
+ResourceQuery::ResourceQuery(JsonView jsonValue) : 
     m_type(QueryType::NOT_SET),
     m_typeHasBeenSet(false),
     m_queryHasBeenSet(false)
@@ -43,7 +43,7 @@ ResourceQuery::ResourceQuery(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceQuery& ResourceQuery::operator =(const JsonValue& jsonValue)
+ResourceQuery& ResourceQuery::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

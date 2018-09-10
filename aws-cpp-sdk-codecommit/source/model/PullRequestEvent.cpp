@@ -34,18 +34,20 @@ PullRequestEvent::PullRequestEvent() :
     m_pullRequestEventType(PullRequestEventType::NOT_SET),
     m_pullRequestEventTypeHasBeenSet(false),
     m_actorArnHasBeenSet(false),
+    m_pullRequestCreatedEventMetadataHasBeenSet(false),
     m_pullRequestStatusChangedEventMetadataHasBeenSet(false),
     m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet(false),
     m_pullRequestMergedStateChangedEventMetadataHasBeenSet(false)
 {
 }
 
-PullRequestEvent::PullRequestEvent(const JsonValue& jsonValue) : 
+PullRequestEvent::PullRequestEvent(JsonView jsonValue) : 
     m_pullRequestIdHasBeenSet(false),
     m_eventDateHasBeenSet(false),
     m_pullRequestEventType(PullRequestEventType::NOT_SET),
     m_pullRequestEventTypeHasBeenSet(false),
     m_actorArnHasBeenSet(false),
+    m_pullRequestCreatedEventMetadataHasBeenSet(false),
     m_pullRequestStatusChangedEventMetadataHasBeenSet(false),
     m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet(false),
     m_pullRequestMergedStateChangedEventMetadataHasBeenSet(false)
@@ -53,7 +55,7 @@ PullRequestEvent::PullRequestEvent(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PullRequestEvent& PullRequestEvent::operator =(const JsonValue& jsonValue)
+PullRequestEvent& PullRequestEvent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pullRequestId"))
   {
@@ -81,6 +83,13 @@ PullRequestEvent& PullRequestEvent::operator =(const JsonValue& jsonValue)
     m_actorArn = jsonValue.GetString("actorArn");
 
     m_actorArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("pullRequestCreatedEventMetadata"))
+  {
+    m_pullRequestCreatedEventMetadata = jsonValue.GetObject("pullRequestCreatedEventMetadata");
+
+    m_pullRequestCreatedEventMetadataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pullRequestStatusChangedEventMetadata"))
@@ -130,6 +139,12 @@ JsonValue PullRequestEvent::Jsonize() const
   if(m_actorArnHasBeenSet)
   {
    payload.WithString("actorArn", m_actorArn);
+
+  }
+
+  if(m_pullRequestCreatedEventMetadataHasBeenSet)
+  {
+   payload.WithObject("pullRequestCreatedEventMetadata", m_pullRequestCreatedEventMetadata.Jsonize());
 
   }
 

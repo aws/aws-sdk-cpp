@@ -34,14 +34,14 @@ RegexMatchSetSummary::RegexMatchSetSummary() :
 {
 }
 
-RegexMatchSetSummary::RegexMatchSetSummary(const JsonValue& jsonValue) : 
+RegexMatchSetSummary::RegexMatchSetSummary(JsonView jsonValue) : 
     m_regexMatchSetIdHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RegexMatchSetSummary& RegexMatchSetSummary::operator =(const JsonValue& jsonValue)
+RegexMatchSetSummary& RegexMatchSetSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RegexMatchSetId"))
   {

@@ -33,13 +33,13 @@ RouteFilterPrefix::RouteFilterPrefix() :
 {
 }
 
-RouteFilterPrefix::RouteFilterPrefix(const JsonValue& jsonValue) : 
+RouteFilterPrefix::RouteFilterPrefix(JsonView jsonValue) : 
     m_cidrHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RouteFilterPrefix& RouteFilterPrefix::operator =(const JsonValue& jsonValue)
+RouteFilterPrefix& RouteFilterPrefix::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("cidr"))
   {

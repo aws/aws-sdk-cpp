@@ -37,7 +37,7 @@ LookupDeveloperIdentityResult::LookupDeveloperIdentityResult(const Aws::AmazonWe
 
 LookupDeveloperIdentityResult& LookupDeveloperIdentityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityId"))
   {
     m_identityId = jsonValue.GetString("IdentityId");
@@ -46,7 +46,7 @@ LookupDeveloperIdentityResult& LookupDeveloperIdentityResult::operator =(const A
 
   if(jsonValue.ValueExists("DeveloperUserIdentifierList"))
   {
-    Array<JsonValue> developerUserIdentifierListJsonList = jsonValue.GetArray("DeveloperUserIdentifierList");
+    Array<JsonView> developerUserIdentifierListJsonList = jsonValue.GetArray("DeveloperUserIdentifierList");
     for(unsigned developerUserIdentifierListIndex = 0; developerUserIdentifierListIndex < developerUserIdentifierListJsonList.GetLength(); ++developerUserIdentifierListIndex)
     {
       m_developerUserIdentifierList.push_back(developerUserIdentifierListJsonList[developerUserIdentifierListIndex].AsString());

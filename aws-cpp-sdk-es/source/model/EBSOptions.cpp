@@ -40,7 +40,7 @@ EBSOptions::EBSOptions() :
 {
 }
 
-EBSOptions::EBSOptions(const JsonValue& jsonValue) : 
+EBSOptions::EBSOptions(JsonView jsonValue) : 
     m_eBSEnabled(false),
     m_eBSEnabledHasBeenSet(false),
     m_volumeType(VolumeType::NOT_SET),
@@ -53,7 +53,7 @@ EBSOptions::EBSOptions(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EBSOptions& EBSOptions::operator =(const JsonValue& jsonValue)
+EBSOptions& EBSOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EBSEnabled"))
   {

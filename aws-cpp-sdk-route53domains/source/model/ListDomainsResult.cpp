@@ -37,10 +37,10 @@ ListDomainsResult::ListDomainsResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ListDomainsResult& ListDomainsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Domains"))
   {
-    Array<JsonValue> domainsJsonList = jsonValue.GetArray("Domains");
+    Array<JsonView> domainsJsonList = jsonValue.GetArray("Domains");
     for(unsigned domainsIndex = 0; domainsIndex < domainsJsonList.GetLength(); ++domainsIndex)
     {
       m_domains.push_back(domainsJsonList[domainsIndex].AsObject());

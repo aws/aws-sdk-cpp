@@ -34,14 +34,14 @@ AncillarySourceSettings::AncillarySourceSettings() :
 {
 }
 
-AncillarySourceSettings::AncillarySourceSettings(const JsonValue& jsonValue) : 
+AncillarySourceSettings::AncillarySourceSettings(JsonView jsonValue) : 
     m_sourceAncillaryChannelNumber(0),
     m_sourceAncillaryChannelNumberHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AncillarySourceSettings& AncillarySourceSettings::operator =(const JsonValue& jsonValue)
+AncillarySourceSettings& AncillarySourceSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("sourceAncillaryChannelNumber"))
   {

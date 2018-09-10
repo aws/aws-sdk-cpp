@@ -37,10 +37,10 @@ ListOrganizationalUnitsForParentResult::ListOrganizationalUnitsForParentResult(c
 
 ListOrganizationalUnitsForParentResult& ListOrganizationalUnitsForParentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OrganizationalUnits"))
   {
-    Array<JsonValue> organizationalUnitsJsonList = jsonValue.GetArray("OrganizationalUnits");
+    Array<JsonView> organizationalUnitsJsonList = jsonValue.GetArray("OrganizationalUnits");
     for(unsigned organizationalUnitsIndex = 0; organizationalUnitsIndex < organizationalUnitsJsonList.GetLength(); ++organizationalUnitsIndex)
     {
       m_organizationalUnits.push_back(organizationalUnitsJsonList[organizationalUnitsIndex].AsObject());

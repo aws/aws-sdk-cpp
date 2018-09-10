@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectConnect
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Location();
-    Location(const Aws::Utils::Json::JsonValue& jsonValue);
-    Location& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Location(Aws::Utils::Json::JsonView jsonValue);
+    Location& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -125,6 +126,49 @@ namespace Model
      */
     inline Location& WithLocationName(const char* value) { SetLocationName(value); return *this;}
 
+
+    /**
+     * <p>The AWS region where the AWS Direct connect location is located.</p>
+     * <p>Example: us-east-1</p> <p>Default: None</p>
+     */
+    inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The AWS region where the AWS Direct connect location is located.</p>
+     * <p>Example: us-east-1</p> <p>Default: None</p>
+     */
+    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>The AWS region where the AWS Direct connect location is located.</p>
+     * <p>Example: us-east-1</p> <p>Default: None</p>
+     */
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
+
+    /**
+     * <p>The AWS region where the AWS Direct connect location is located.</p>
+     * <p>Example: us-east-1</p> <p>Default: None</p>
+     */
+    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
+
+    /**
+     * <p>The AWS region where the AWS Direct connect location is located.</p>
+     * <p>Example: us-east-1</p> <p>Default: None</p>
+     */
+    inline Location& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>The AWS region where the AWS Direct connect location is located.</p>
+     * <p>Example: us-east-1</p> <p>Default: None</p>
+     */
+    inline Location& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS region where the AWS Direct connect location is located.</p>
+     * <p>Example: us-east-1</p> <p>Default: None</p>
+     */
+    inline Location& WithRegion(const char* value) { SetRegion(value); return *this;}
+
   private:
 
     Aws::String m_locationCode;
@@ -132,6 +176,9 @@ namespace Model
 
     Aws::String m_locationName;
     bool m_locationNameHasBeenSet;
+
+    Aws::String m_region;
+    bool m_regionHasBeenSet;
   };
 
 } // namespace Model

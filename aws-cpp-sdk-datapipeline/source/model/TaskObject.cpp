@@ -36,7 +36,7 @@ TaskObject::TaskObject() :
 {
 }
 
-TaskObject::TaskObject(const JsonValue& jsonValue) : 
+TaskObject::TaskObject(JsonView jsonValue) : 
     m_taskIdHasBeenSet(false),
     m_pipelineIdHasBeenSet(false),
     m_attemptIdHasBeenSet(false),
@@ -45,7 +45,7 @@ TaskObject::TaskObject(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TaskObject& TaskObject::operator =(const JsonValue& jsonValue)
+TaskObject& TaskObject::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("taskId"))
   {
@@ -70,7 +70,7 @@ TaskObject& TaskObject::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("objects"))
   {
-    Aws::Map<Aws::String, JsonValue> objectsJsonMap = jsonValue.GetObject("objects").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> objectsJsonMap = jsonValue.GetObject("objects").GetAllObjects();
     for(auto& objectsItem : objectsJsonMap)
     {
       m_objects[objectsItem.first] = objectsItem.second.AsObject();

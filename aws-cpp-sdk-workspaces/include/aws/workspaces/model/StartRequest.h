@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WorkSpaces
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     StartRequest();
-    StartRequest(const Aws::Utils::Json::JsonValue& jsonValue);
-    StartRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StartRequest(Aws::Utils::Json::JsonView jsonValue);
+    StartRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

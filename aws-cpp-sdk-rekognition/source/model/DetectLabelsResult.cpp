@@ -39,10 +39,10 @@ DetectLabelsResult::DetectLabelsResult(const Aws::AmazonWebServiceResult<JsonVal
 
 DetectLabelsResult& DetectLabelsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Labels"))
   {
-    Array<JsonValue> labelsJsonList = jsonValue.GetArray("Labels");
+    Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsObject());

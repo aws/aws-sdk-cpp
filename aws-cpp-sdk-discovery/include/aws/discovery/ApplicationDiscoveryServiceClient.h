@@ -28,14 +28,17 @@
 #include <aws/discovery/model/DeleteTagsResult.h>
 #include <aws/discovery/model/DescribeAgentsResult.h>
 #include <aws/discovery/model/DescribeConfigurationsResult.h>
+#include <aws/discovery/model/DescribeContinuousExportsResult.h>
 #include <aws/discovery/model/DescribeExportTasksResult.h>
 #include <aws/discovery/model/DescribeTagsResult.h>
 #include <aws/discovery/model/DisassociateConfigurationItemsFromApplicationResult.h>
 #include <aws/discovery/model/GetDiscoverySummaryResult.h>
 #include <aws/discovery/model/ListConfigurationsResult.h>
 #include <aws/discovery/model/ListServerNeighborsResult.h>
+#include <aws/discovery/model/StartContinuousExportResult.h>
 #include <aws/discovery/model/StartDataCollectionByAgentIdsResult.h>
 #include <aws/discovery/model/StartExportTaskResult.h>
+#include <aws/discovery/model/StopContinuousExportResult.h>
 #include <aws/discovery/model/StopDataCollectionByAgentIdsResult.h>
 #include <aws/discovery/model/UpdateApplicationResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -60,11 +63,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -90,14 +88,17 @@ namespace Model
         class DeleteTagsRequest;
         class DescribeAgentsRequest;
         class DescribeConfigurationsRequest;
+        class DescribeContinuousExportsRequest;
         class DescribeExportTasksRequest;
         class DescribeTagsRequest;
         class DisassociateConfigurationItemsFromApplicationRequest;
         class GetDiscoverySummaryRequest;
         class ListConfigurationsRequest;
         class ListServerNeighborsRequest;
+        class StartContinuousExportRequest;
         class StartDataCollectionByAgentIdsRequest;
         class StartExportTaskRequest;
+        class StopContinuousExportRequest;
         class StopDataCollectionByAgentIdsRequest;
         class UpdateApplicationRequest;
 
@@ -108,14 +109,17 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteTagsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DeleteTagsOutcome;
         typedef Aws::Utils::Outcome<DescribeAgentsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeAgentsOutcome;
         typedef Aws::Utils::Outcome<DescribeConfigurationsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeContinuousExportsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeContinuousExportsOutcome;
         typedef Aws::Utils::Outcome<DescribeExportTasksResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeExportTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeTagsOutcome;
         typedef Aws::Utils::Outcome<DisassociateConfigurationItemsFromApplicationResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DisassociateConfigurationItemsFromApplicationOutcome;
         typedef Aws::Utils::Outcome<GetDiscoverySummaryResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> GetDiscoverySummaryOutcome;
         typedef Aws::Utils::Outcome<ListConfigurationsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> ListConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListServerNeighborsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> ListServerNeighborsOutcome;
+        typedef Aws::Utils::Outcome<StartContinuousExportResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StartContinuousExportOutcome;
         typedef Aws::Utils::Outcome<StartDataCollectionByAgentIdsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StartDataCollectionByAgentIdsOutcome;
         typedef Aws::Utils::Outcome<StartExportTaskResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StartExportTaskOutcome;
+        typedef Aws::Utils::Outcome<StopContinuousExportResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StopContinuousExportOutcome;
         typedef Aws::Utils::Outcome<StopDataCollectionByAgentIdsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StopDataCollectionByAgentIdsOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> UpdateApplicationOutcome;
 
@@ -126,14 +130,17 @@ namespace Model
         typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
         typedef std::future<DescribeAgentsOutcome> DescribeAgentsOutcomeCallable;
         typedef std::future<DescribeConfigurationsOutcome> DescribeConfigurationsOutcomeCallable;
+        typedef std::future<DescribeContinuousExportsOutcome> DescribeContinuousExportsOutcomeCallable;
         typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
         typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
         typedef std::future<DisassociateConfigurationItemsFromApplicationOutcome> DisassociateConfigurationItemsFromApplicationOutcomeCallable;
         typedef std::future<GetDiscoverySummaryOutcome> GetDiscoverySummaryOutcomeCallable;
         typedef std::future<ListConfigurationsOutcome> ListConfigurationsOutcomeCallable;
         typedef std::future<ListServerNeighborsOutcome> ListServerNeighborsOutcomeCallable;
+        typedef std::future<StartContinuousExportOutcome> StartContinuousExportOutcomeCallable;
         typedef std::future<StartDataCollectionByAgentIdsOutcome> StartDataCollectionByAgentIdsOutcomeCallable;
         typedef std::future<StartExportTaskOutcome> StartExportTaskOutcomeCallable;
+        typedef std::future<StopContinuousExportOutcome> StopContinuousExportOutcomeCallable;
         typedef std::future<StopDataCollectionByAgentIdsOutcome> StopDataCollectionByAgentIdsOutcomeCallable;
         typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
 } // namespace Model
@@ -147,14 +154,17 @@ namespace Model
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeAgentsRequest&, const Model::DescribeAgentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAgentsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeConfigurationsRequest&, const Model::DescribeConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeContinuousExportsRequest&, const Model::DescribeContinuousExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContinuousExportsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DisassociateConfigurationItemsFromApplicationRequest&, const Model::DisassociateConfigurationItemsFromApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateConfigurationItemsFromApplicationResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::GetDiscoverySummaryRequest&, const Model::GetDiscoverySummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiscoverySummaryResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::ListConfigurationsRequest&, const Model::ListConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::ListServerNeighborsRequest&, const Model::ListServerNeighborsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServerNeighborsResponseReceivedHandler;
+    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartContinuousExportRequest&, const Model::StartContinuousExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContinuousExportResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartDataCollectionByAgentIdsRequest&, const Model::StartDataCollectionByAgentIdsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDataCollectionByAgentIdsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartExportTaskRequest&, const Model::StartExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExportTaskResponseReceivedHandler;
+    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StopContinuousExportRequest&, const Model::StopContinuousExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContinuousExportResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StopDataCollectionByAgentIdsRequest&, const Model::StopDataCollectionByAgentIdsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDataCollectionByAgentIdsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
 
@@ -165,53 +175,49 @@ namespace Model
    * running in your on-premises data centers. Application Discovery Service also
    * collects application performance data, which can help you assess the outcome of
    * your migration. The data collected by Application Discovery Service is securely
-   * retained in an Amazon-hosted and managed database in the cloud. You can export
-   * the data as a CSV or XML file into your preferred visualization tool or
-   * cloud-migration solution to plan your migration. For more information, see the
-   * Application Discovery Service <a
-   * href="http://aws.amazon.com/application-discovery/faqs/">FAQ</a>.</p>
-   * <p>Application Discovery Service offers two modes of operation.</p> <ul> <li>
-   * <p> <b>Agentless discovery</b> mode is recommended for environments that use
-   * VMware vCenter Server. This mode doesn't require you to install an agent on each
-   * host. Agentless discovery gathers server information regardless of the operating
-   * systems, which minimizes the time required for initial on-premises
-   * infrastructure assessment. Agentless discovery doesn't collect information about
-   * software and software dependencies. It also doesn't work in non-VMware
-   * environments. We recommend that you use agent-based discovery for non-VMware
-   * environments and if you want to collect information about software and software
-   * dependencies. You can also run agent-based and agentless discovery
-   * simultaneously. Use agentless discovery to quickly complete the initial
-   * infrastructure assessment and then install agents on select hosts to gather
-   * information about software and software dependencies.</p> </li> <li> <p>
-   * <b>Agent-based discovery</b> mode collects a richer set of data than agentless
-   * discovery by using Amazon software, the AWS Application Discovery Agent, which
-   * you install on one or more hosts in your data center. The agent captures
-   * infrastructure and application information, including an inventory of installed
-   * software applications, system and process performance, resource utilization, and
-   * network dependencies between workloads. The information collected by agents is
-   * secured at rest and in transit to the Application Discovery Service database in
-   * the cloud. </p> </li> </ul> <p>Application Discovery Service integrates with
-   * application discovery solutions from AWS Partner Network (APN) partners.
+   * retained in an AWS-hosted and managed database in the cloud. You can export the
+   * data as a CSV or XML file into your preferred visualization tool or
+   * cloud-migration solution to plan your migration. For more information, see <a
+   * href="http://aws.amazon.com/application-discovery/faqs/">AWS Application
+   * Discovery Service FAQ</a>.</p> <p>Application Discovery Service offers two modes
+   * of operation:</p> <ul> <li> <p> <b>Agentless discovery</b> mode is recommended
+   * for environments that use VMware vCenter Server. This mode doesn't require you
+   * to install an agent on each host. Agentless discovery gathers server information
+   * regardless of the operating systems, which minimizes the time required for
+   * initial on-premises infrastructure assessment. Agentless discovery doesn't
+   * collect information about software and software dependencies. It also doesn't
+   * work in non-VMware environments. </p> </li> <li> <p> <b>Agent-based
+   * discovery</b> mode collects a richer set of data than agentless discovery by
+   * using the AWS Application Discovery Agent, which you install on one or more
+   * hosts in your data center. The agent captures infrastructure and application
+   * information, including an inventory of installed software applications, system
+   * and process performance, resource utilization, and network dependencies between
+   * workloads. The information collected by agents is secured at rest and in transit
+   * to the Application Discovery Service database in the cloud. </p> </li> </ul>
+   * <p>We recommend that you use agent-based discovery for non-VMware environments
+   * and to collect information about software and software dependencies. You can
+   * also run agent-based and agentless discovery simultaneously. Use agentless
+   * discovery to quickly complete the initial infrastructure assessment and then
+   * install agents on select hosts.</p> <p>Application Discovery Service integrates
+   * with application discovery solutions from AWS Partner Network (APN) partners.
    * Third-party application discovery tools can query Application Discovery Service
    * and write to the Application Discovery Service database using a public API. You
    * can then import the data into either a visualization tool or cloud-migration
    * solution.</p> <important> <p>Application Discovery Service doesn't gather
    * sensitive information. All data is handled according to the <a
    * href="http://aws.amazon.com/privacy/">AWS Privacy Policy</a>. You can operate
-   * Application Discovery Service using offline mode to inspect collected data
-   * before it is shared with the service.</p> </important> <p>Your AWS account must
-   * be granted access to Application Discovery Service, a process called
-   * <i>whitelisting</i>. This is true for AWS partners and customers alike. To
-   * request access, <a
-   * href="http://aws.amazon.com/application-discovery/how-to-start/"> sign up for
-   * AWS Application Discovery Service</a>.</p> <p>This API reference provides
-   * descriptions, syntax, and usage examples for each of the actions and data types
-   * for Application Discovery Service. The topic for each action shows the API
-   * request parameters and the response. Alternatively, you can use one of the AWS
-   * SDKs to access an API that is tailored to the programming language or platform
-   * that you're using. For more information, see <a
-   * href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.</p> <p>This guide is
-   * intended for use with the <a
+   * Application Discovery Service offline to inspect collected data before it is
+   * shared with the service.</p> </important> <p>Your AWS account must be granted
+   * access to Application Discovery Service, a process called <i>whitelisting</i>.
+   * This is true for AWS partners and customers alike. To request access, <a
+   * href="http://aws.amazon.com/application-discovery/">sign up for Application
+   * Discovery Service</a>. </p> <p>This API reference provides descriptions, syntax,
+   * and usage examples for each of the actions and data types for Application
+   * Discovery Service. The topic for each action shows the API request parameters
+   * and the response. Alternatively, you can use one of the AWS SDKs to access an
+   * API that is tailored to the programming language or platform that you're using.
+   * For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS
+   * SDKs</a>.</p> <p>This guide is intended for use with the <a
    * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">
    * <i>AWS Application Discovery Service User Guide</i> </a>.</p>
    */
@@ -241,7 +247,7 @@ namespace Model
 
         virtual ~ApplicationDiscoveryServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "discovery"; }
+        inline virtual const char* GetServiceClientName() const override { return "Application Discovery Service"; }
 
 
         /**
@@ -391,18 +397,20 @@ namespace Model
         virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists agents or the Connector by ID or lists all agents/Connectors associated
-         * with your user account if you did not specify an ID.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists agents or connectors as specified by ID or other filters. All
+         * agents/connectors associated with your user account can be listed if you call
+         * <code>DescribeAgents</code> as is without passing any parameters.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAgentsOutcome DescribeAgents(const Model::DescribeAgentsRequest& request) const;
 
         /**
-         * <p>Lists agents or the Connector by ID or lists all agents/Connectors associated
-         * with your user account if you did not specify an ID.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists agents or connectors as specified by ID or other filters. All
+         * agents/connectors associated with your user account can be listed if you call
+         * <code>DescribeAgents</code> as is without passing any parameters.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">AWS
          * API Reference</a></p>
          *
@@ -411,9 +419,10 @@ namespace Model
         virtual Model::DescribeAgentsOutcomeCallable DescribeAgentsCallable(const Model::DescribeAgentsRequest& request) const;
 
         /**
-         * <p>Lists agents or the Connector by ID or lists all agents/Connectors associated
-         * with your user account if you did not specify an ID.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists agents or connectors as specified by ID or other filters. All
+         * agents/connectors associated with your user account can be listed if you call
+         * <code>DescribeAgents</code> as is without passing any parameters.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeAgents">AWS
          * API Reference</a></p>
          *
@@ -422,28 +431,32 @@ namespace Model
         virtual void DescribeAgentsAsync(const Model::DescribeAgentsRequest& request, const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves attributes for a list of configuration item IDs. All of the
-         * supplied IDs must be for the same asset type (server, application, process, or
-         * connection). Output fields are specific to the asset type selected. For example,
-         * the output for a <i>server</i> configuration item includes a list of attributes
-         * about the server, such as host name, operating system, and number of network
-         * cards.</p> <p>For a complete list of outputs for each asset type, see <a
+         * <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All
+         * of the supplied IDs must be for the same asset type from one of the
+         * follwoing:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
+         * <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are
+         * specific to the asset type specified. For example, the output for a
+         * <i>server</i> configuration item includes a list of attributes about the server,
+         * such as host name, operating system, number of network cards, etc.</p> <p>For a
+         * complete list of outputs for each asset type, see <a
          * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations">Using
-         * the DescribeConfigurations Action</a>.</p><p><h3>See Also:</h3>   <a
+         * the DescribeConfigurations Action</a>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeConfigurationsOutcome DescribeConfigurations(const Model::DescribeConfigurationsRequest& request) const;
 
         /**
-         * <p>Retrieves attributes for a list of configuration item IDs. All of the
-         * supplied IDs must be for the same asset type (server, application, process, or
-         * connection). Output fields are specific to the asset type selected. For example,
-         * the output for a <i>server</i> configuration item includes a list of attributes
-         * about the server, such as host name, operating system, and number of network
-         * cards.</p> <p>For a complete list of outputs for each asset type, see <a
+         * <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All
+         * of the supplied IDs must be for the same asset type from one of the
+         * follwoing:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
+         * <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are
+         * specific to the asset type specified. For example, the output for a
+         * <i>server</i> configuration item includes a list of attributes about the server,
+         * such as host name, operating system, number of network cards, etc.</p> <p>For a
+         * complete list of outputs for each asset type, see <a
          * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations">Using
-         * the DescribeConfigurations Action</a>.</p><p><h3>See Also:</h3>   <a
+         * the DescribeConfigurations Action</a>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">AWS
          * API Reference</a></p>
          *
@@ -452,20 +465,53 @@ namespace Model
         virtual Model::DescribeConfigurationsOutcomeCallable DescribeConfigurationsCallable(const Model::DescribeConfigurationsRequest& request) const;
 
         /**
-         * <p>Retrieves attributes for a list of configuration item IDs. All of the
-         * supplied IDs must be for the same asset type (server, application, process, or
-         * connection). Output fields are specific to the asset type selected. For example,
-         * the output for a <i>server</i> configuration item includes a list of attributes
-         * about the server, such as host name, operating system, and number of network
-         * cards.</p> <p>For a complete list of outputs for each asset type, see <a
+         * <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All
+         * of the supplied IDs must be for the same asset type from one of the
+         * follwoing:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
+         * <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are
+         * specific to the asset type specified. For example, the output for a
+         * <i>server</i> configuration item includes a list of attributes about the server,
+         * such as host name, operating system, number of network cards, etc.</p> <p>For a
+         * complete list of outputs for each asset type, see <a
          * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html#DescribeConfigurations">Using
-         * the DescribeConfigurations Action</a>.</p><p><h3>See Also:</h3>   <a
+         * the DescribeConfigurations Action</a>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeConfigurations">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeConfigurationsAsync(const Model::DescribeConfigurationsRequest& request, const DescribeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists exports as specified by ID. All continuous exports associated with your
+         * user account can be listed if you call <code>DescribeContinuousExports</code> as
+         * is without passing any parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeContinuousExports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeContinuousExportsOutcome DescribeContinuousExports(const Model::DescribeContinuousExportsRequest& request) const;
+
+        /**
+         * <p>Lists exports as specified by ID. All continuous exports associated with your
+         * user account can be listed if you call <code>DescribeContinuousExports</code> as
+         * is without passing any parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeContinuousExports">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeContinuousExportsOutcomeCallable DescribeContinuousExportsCallable(const Model::DescribeContinuousExportsRequest& request) const;
+
+        /**
+         * <p>Lists exports as specified by ID. All continuous exports associated with your
+         * user account can be listed if you call <code>DescribeContinuousExports</code> as
+         * is without passing any parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeContinuousExports">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeContinuousExportsAsync(const Model::DescribeContinuousExportsRequest& request, const DescribeContinuousExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieve status of one or more export tasks. You can retrieve the status of
@@ -496,18 +542,26 @@ namespace Model
         virtual void DescribeExportTasksAsync(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list of configuration items that are tagged with a specific tag.
-         * Or retrieves a list of all tags assigned to a specific configuration
-         * item.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of configuration items that have tags as specified by the
+         * key-value pairs, name and value, passed to the optional parameter
+         * <code>filters</code>.</p> <p>There are three valid tag filter names:</p> <ul>
+         * <li> <p>tagKey</p> </li> <li> <p>tagValue</p> </li> <li> <p>configurationId</p>
+         * </li> </ul> <p>Also, all configuration items associated with your user account
+         * that have tags can be listed if you call <code>DescribeTags</code> as is without
+         * passing any parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of configuration items that are tagged with a specific tag.
-         * Or retrieves a list of all tags assigned to a specific configuration
-         * item.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of configuration items that have tags as specified by the
+         * key-value pairs, name and value, passed to the optional parameter
+         * <code>filters</code>.</p> <p>There are three valid tag filter names:</p> <ul>
+         * <li> <p>tagKey</p> </li> <li> <p>tagValue</p> </li> <li> <p>configurationId</p>
+         * </li> </ul> <p>Also, all configuration items associated with your user account
+         * that have tags can be listed if you call <code>DescribeTags</code> as is without
+         * passing any parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">AWS
          * API Reference</a></p>
          *
@@ -516,9 +570,13 @@ namespace Model
         virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of configuration items that are tagged with a specific tag.
-         * Or retrieves a list of all tags assigned to a specific configuration
-         * item.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of configuration items that have tags as specified by the
+         * key-value pairs, name and value, passed to the optional parameter
+         * <code>filters</code>.</p> <p>There are three valid tag filter names:</p> <ul>
+         * <li> <p>tagKey</p> </li> <li> <p>tagValue</p> </li> <li> <p>configurationId</p>
+         * </li> </ul> <p>Also, all configuration items associated with your user account
+         * that have tags can be listed if you call <code>DescribeTags</code> as is without
+         * passing any parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeTags">AWS
          * API Reference</a></p>
          *
@@ -555,14 +613,18 @@ namespace Model
         virtual void DisassociateConfigurationItemsFromApplicationAsync(const Model::DisassociateConfigurationItemsFromApplicationRequest& request, const DisassociateConfigurationItemsFromApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a short summary of discovered assets.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a short summary of discovered assets.</p> <p>This API operation
+         * takes no request parameters and is called as is at the command prompt as shown
+         * in the example.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDiscoverySummaryOutcome GetDiscoverySummary(const Model::GetDiscoverySummaryRequest& request) const;
 
         /**
-         * <p>Retrieves a short summary of discovered assets.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a short summary of discovered assets.</p> <p>This API operation
+         * takes no request parameters and is called as is at the command prompt as shown
+         * in the example.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">AWS
          * API Reference</a></p>
          *
@@ -571,7 +633,9 @@ namespace Model
         virtual Model::GetDiscoverySummaryOutcomeCallable GetDiscoverySummaryCallable(const Model::GetDiscoverySummaryRequest& request) const;
 
         /**
-         * <p>Retrieves a short summary of discovered assets.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a short summary of discovered assets.</p> <p>This API operation
+         * takes no request parameters and is called as is at the command prompt as shown
+         * in the example.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/GetDiscoverySummary">AWS
          * API Reference</a></p>
          *
@@ -580,18 +644,18 @@ namespace Model
         virtual void GetDiscoverySummaryAsync(const Model::GetDiscoverySummaryRequest& request, const GetDiscoverySummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list of configuration items according to criteria that you
-         * specify in a filter. The filter criteria identifies the relationship
-         * requirements.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of configuration items as specified by the value passed to
+         * the required paramater <code>configurationType</code>. Optional filtering may be
+         * applied to refine search results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListConfigurationsOutcome ListConfigurations(const Model::ListConfigurationsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of configuration items according to criteria that you
-         * specify in a filter. The filter criteria identifies the relationship
-         * requirements.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of configuration items as specified by the value passed to
+         * the required paramater <code>configurationType</code>. Optional filtering may be
+         * applied to refine search results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">AWS
          * API Reference</a></p>
          *
@@ -600,9 +664,9 @@ namespace Model
         virtual Model::ListConfigurationsOutcomeCallable ListConfigurationsCallable(const Model::ListConfigurationsRequest& request) const;
 
         /**
-         * <p>Retrieves a list of configuration items according to criteria that you
-         * specify in a filter. The filter criteria identifies the relationship
-         * requirements.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of configuration items as specified by the value passed to
+         * the required paramater <code>configurationType</code>. Optional filtering may be
+         * applied to refine search results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/ListConfigurations">AWS
          * API Reference</a></p>
          *
@@ -637,6 +701,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListServerNeighborsAsync(const Model::ListServerNeighborsRequest& request, const ListServerNeighborsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Start the continuous flow of agent's discovered data into Amazon
+         * Athena.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartContinuousExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartContinuousExportOutcome StartContinuousExport(const Model::StartContinuousExportRequest& request) const;
+
+        /**
+         * <p>Start the continuous flow of agent's discovered data into Amazon
+         * Athena.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartContinuousExport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartContinuousExportOutcomeCallable StartContinuousExportCallable(const Model::StartContinuousExportRequest& request) const;
+
+        /**
+         * <p>Start the continuous flow of agent's discovered data into Amazon
+         * Athena.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartContinuousExport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartContinuousExportAsync(const Model::StartContinuousExportRequest& request, const StartContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Instructs the specified agents or connectors to start collecting
@@ -719,6 +811,34 @@ namespace Model
         virtual void StartExportTaskAsync(const Model::StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Stop the continuous flow of agent's discovered data into Amazon
+         * Athena.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopContinuousExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopContinuousExportOutcome StopContinuousExport(const Model::StopContinuousExportRequest& request) const;
+
+        /**
+         * <p>Stop the continuous flow of agent's discovered data into Amazon
+         * Athena.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopContinuousExport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopContinuousExportOutcomeCallable StopContinuousExportCallable(const Model::StopContinuousExportRequest& request) const;
+
+        /**
+         * <p>Stop the continuous flow of agent's discovered data into Amazon
+         * Athena.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopContinuousExport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopContinuousExportAsync(const Model::StopContinuousExportRequest& request, const StopContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Instructs the specified agents or connectors to stop collecting
          * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopDataCollectionByAgentIds">AWS
@@ -783,14 +903,17 @@ namespace Model
         void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAgentsAsyncHelper(const Model::DescribeAgentsRequest& request, const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConfigurationsAsyncHelper(const Model::DescribeConfigurationsRequest& request, const DescribeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeContinuousExportsAsyncHelper(const Model::DescribeContinuousExportsRequest& request, const DescribeContinuousExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExportTasksAsyncHelper(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateConfigurationItemsFromApplicationAsyncHelper(const Model::DisassociateConfigurationItemsFromApplicationRequest& request, const DisassociateConfigurationItemsFromApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiscoverySummaryAsyncHelper(const Model::GetDiscoverySummaryRequest& request, const GetDiscoverySummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConfigurationsAsyncHelper(const Model::ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListServerNeighborsAsyncHelper(const Model::ListServerNeighborsRequest& request, const ListServerNeighborsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartContinuousExportAsyncHelper(const Model::StartContinuousExportRequest& request, const StartContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDataCollectionByAgentIdsAsyncHelper(const Model::StartDataCollectionByAgentIdsRequest& request, const StartDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartExportTaskAsyncHelper(const Model::StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopContinuousExportAsyncHelper(const Model::StopContinuousExportRequest& request, const StopContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopDataCollectionByAgentIdsAsyncHelper(const Model::StopDataCollectionByAgentIdsRequest& request, const StopDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

@@ -34,14 +34,14 @@ MetricDimension::MetricDimension() :
 {
 }
 
-MetricDimension::MetricDimension(const JsonValue& jsonValue) : 
+MetricDimension::MetricDimension(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MetricDimension& MetricDimension::operator =(const JsonValue& jsonValue)
+MetricDimension& MetricDimension::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

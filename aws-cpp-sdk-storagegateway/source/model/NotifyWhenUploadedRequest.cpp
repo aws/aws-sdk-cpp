@@ -37,7 +37,7 @@ Aws::String NotifyWhenUploadedRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection NotifyWhenUploadedRequest::GetRequestSpecificHeaders() const

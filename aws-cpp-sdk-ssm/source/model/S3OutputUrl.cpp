@@ -33,13 +33,13 @@ S3OutputUrl::S3OutputUrl() :
 {
 }
 
-S3OutputUrl::S3OutputUrl(const JsonValue& jsonValue) : 
+S3OutputUrl::S3OutputUrl(JsonView jsonValue) : 
     m_outputUrlHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-S3OutputUrl& S3OutputUrl::operator =(const JsonValue& jsonValue)
+S3OutputUrl& S3OutputUrl::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OutputUrl"))
   {

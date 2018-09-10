@@ -45,99 +45,99 @@ namespace Model
 
 
     /**
-     * The prefix used when evaluating a metrics filter.
+     * <p>The prefix used when evaluating a metrics filter.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * The prefix used when evaluating a metrics filter.
+     * <p>The prefix used when evaluating a metrics filter.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * The prefix used when evaluating a metrics filter.
+     * <p>The prefix used when evaluating a metrics filter.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * The prefix used when evaluating a metrics filter.
+     * <p>The prefix used when evaluating a metrics filter.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * The prefix used when evaluating a metrics filter.
+     * <p>The prefix used when evaluating a metrics filter.</p>
      */
     inline MetricsFilter& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * The prefix used when evaluating a metrics filter.
+     * <p>The prefix used when evaluating a metrics filter.</p>
      */
     inline MetricsFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * The prefix used when evaluating a metrics filter.
+     * <p>The prefix used when evaluating a metrics filter.</p>
      */
     inline MetricsFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
     /**
-     * The tag used when evaluating a metrics filter.
+     * <p>The tag used when evaluating a metrics filter.</p>
      */
     inline const Tag& GetTag() const{ return m_tag; }
 
     /**
-     * The tag used when evaluating a metrics filter.
+     * <p>The tag used when evaluating a metrics filter.</p>
      */
     inline void SetTag(const Tag& value) { m_tagHasBeenSet = true; m_tag = value; }
 
     /**
-     * The tag used when evaluating a metrics filter.
+     * <p>The tag used when evaluating a metrics filter.</p>
      */
     inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
 
     /**
-     * The tag used when evaluating a metrics filter.
+     * <p>The tag used when evaluating a metrics filter.</p>
      */
     inline MetricsFilter& WithTag(const Tag& value) { SetTag(value); return *this;}
 
     /**
-     * The tag used when evaluating a metrics filter.
+     * <p>The tag used when evaluating a metrics filter.</p>
      */
     inline MetricsFilter& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
 
 
     /**
-     * A conjunction (logical AND) of predicates, which is used in evaluating a metrics
-     * filter. The operator must have at least two predicates, and an object must match
-     * all of the predicates in order for the filter to apply.
+     * <p>A conjunction (logical AND) of predicates, which is used in evaluating a
+     * metrics filter. The operator must have at least two predicates, and an object
+     * must match all of the predicates in order for the filter to apply.</p>
      */
     inline const MetricsAndOperator& GetAnd() const{ return m_and; }
 
     /**
-     * A conjunction (logical AND) of predicates, which is used in evaluating a metrics
-     * filter. The operator must have at least two predicates, and an object must match
-     * all of the predicates in order for the filter to apply.
+     * <p>A conjunction (logical AND) of predicates, which is used in evaluating a
+     * metrics filter. The operator must have at least two predicates, and an object
+     * must match all of the predicates in order for the filter to apply.</p>
      */
     inline void SetAnd(const MetricsAndOperator& value) { m_andHasBeenSet = true; m_and = value; }
 
     /**
-     * A conjunction (logical AND) of predicates, which is used in evaluating a metrics
-     * filter. The operator must have at least two predicates, and an object must match
-     * all of the predicates in order for the filter to apply.
+     * <p>A conjunction (logical AND) of predicates, which is used in evaluating a
+     * metrics filter. The operator must have at least two predicates, and an object
+     * must match all of the predicates in order for the filter to apply.</p>
      */
     inline void SetAnd(MetricsAndOperator&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
 
     /**
-     * A conjunction (logical AND) of predicates, which is used in evaluating a metrics
-     * filter. The operator must have at least two predicates, and an object must match
-     * all of the predicates in order for the filter to apply.
+     * <p>A conjunction (logical AND) of predicates, which is used in evaluating a
+     * metrics filter. The operator must have at least two predicates, and an object
+     * must match all of the predicates in order for the filter to apply.</p>
      */
     inline MetricsFilter& WithAnd(const MetricsAndOperator& value) { SetAnd(value); return *this;}
 
     /**
-     * A conjunction (logical AND) of predicates, which is used in evaluating a metrics
-     * filter. The operator must have at least two predicates, and an object must match
-     * all of the predicates in order for the filter to apply.
+     * <p>A conjunction (logical AND) of predicates, which is used in evaluating a
+     * metrics filter. The operator must have at least two predicates, and an object
+     * must match all of the predicates in order for the filter to apply.</p>
      */
     inline MetricsFilter& WithAnd(MetricsAndOperator&& value) { SetAnd(std::move(value)); return *this;}
 

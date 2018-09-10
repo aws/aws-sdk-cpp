@@ -45,7 +45,7 @@ LogStream::LogStream() :
 {
 }
 
-LogStream::LogStream(const JsonValue& jsonValue) : 
+LogStream::LogStream(JsonView jsonValue) : 
     m_logStreamNameHasBeenSet(false),
     m_creationTime(0),
     m_creationTimeHasBeenSet(false),
@@ -63,7 +63,7 @@ LogStream::LogStream(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LogStream& LogStream::operator =(const JsonValue& jsonValue)
+LogStream& LogStream::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("logStreamName"))
   {

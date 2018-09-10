@@ -35,7 +35,7 @@ Filters::Filters() :
 {
 }
 
-Filters::Filters(const JsonValue& jsonValue) : 
+Filters::Filters(JsonView jsonValue) : 
     m_extendedKeyUsageHasBeenSet(false),
     m_keyUsageHasBeenSet(false),
     m_keyTypesHasBeenSet(false)
@@ -43,11 +43,11 @@ Filters::Filters(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Filters& Filters::operator =(const JsonValue& jsonValue)
+Filters& Filters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("extendedKeyUsage"))
   {
-    Array<JsonValue> extendedKeyUsageJsonList = jsonValue.GetArray("extendedKeyUsage");
+    Array<JsonView> extendedKeyUsageJsonList = jsonValue.GetArray("extendedKeyUsage");
     for(unsigned extendedKeyUsageIndex = 0; extendedKeyUsageIndex < extendedKeyUsageJsonList.GetLength(); ++extendedKeyUsageIndex)
     {
       m_extendedKeyUsage.push_back(ExtendedKeyUsageNameMapper::GetExtendedKeyUsageNameForName(extendedKeyUsageJsonList[extendedKeyUsageIndex].AsString()));
@@ -57,7 +57,7 @@ Filters& Filters::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("keyUsage"))
   {
-    Array<JsonValue> keyUsageJsonList = jsonValue.GetArray("keyUsage");
+    Array<JsonView> keyUsageJsonList = jsonValue.GetArray("keyUsage");
     for(unsigned keyUsageIndex = 0; keyUsageIndex < keyUsageJsonList.GetLength(); ++keyUsageIndex)
     {
       m_keyUsage.push_back(KeyUsageNameMapper::GetKeyUsageNameForName(keyUsageJsonList[keyUsageIndex].AsString()));
@@ -67,7 +67,7 @@ Filters& Filters::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("keyTypes"))
   {
-    Array<JsonValue> keyTypesJsonList = jsonValue.GetArray("keyTypes");
+    Array<JsonView> keyTypesJsonList = jsonValue.GetArray("keyTypes");
     for(unsigned keyTypesIndex = 0; keyTypesIndex < keyTypesJsonList.GetLength(); ++keyTypesIndex)
     {
       m_keyTypes.push_back(KeyAlgorithmMapper::GetKeyAlgorithmForName(keyTypesJsonList[keyTypesIndex].AsString()));

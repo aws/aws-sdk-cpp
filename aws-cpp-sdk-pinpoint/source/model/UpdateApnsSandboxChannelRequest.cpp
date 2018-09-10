@@ -37,7 +37,7 @@ Aws::String UpdateApnsSandboxChannelRequest::SerializePayload() const
    payload = m_aPNSSandboxChannelRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

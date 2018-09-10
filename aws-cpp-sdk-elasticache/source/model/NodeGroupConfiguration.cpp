@@ -31,6 +31,7 @@ namespace Model
 {
 
 NodeGroupConfiguration::NodeGroupConfiguration() : 
+    m_nodeGroupIdHasBeenSet(false),
     m_slotsHasBeenSet(false),
     m_replicaCount(0),
     m_replicaCountHasBeenSet(false),
@@ -40,6 +41,7 @@ NodeGroupConfiguration::NodeGroupConfiguration() :
 }
 
 NodeGroupConfiguration::NodeGroupConfiguration(const XmlNode& xmlNode) : 
+    m_nodeGroupIdHasBeenSet(false),
     m_slotsHasBeenSet(false),
     m_replicaCount(0),
     m_replicaCountHasBeenSet(false),
@@ -55,6 +57,12 @@ NodeGroupConfiguration& NodeGroupConfiguration::operator =(const XmlNode& xmlNod
 
   if(!resultNode.IsNull())
   {
+    XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
+    if(!nodeGroupIdNode.IsNull())
+    {
+      m_nodeGroupId = StringUtils::Trim(nodeGroupIdNode.GetText().c_str());
+      m_nodeGroupIdHasBeenSet = true;
+    }
     XmlNode slotsNode = resultNode.FirstChild("Slots");
     if(!slotsNode.IsNull())
     {
@@ -92,6 +100,11 @@ NodeGroupConfiguration& NodeGroupConfiguration::operator =(const XmlNode& xmlNod
 
 void NodeGroupConfiguration::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_nodeGroupIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NodeGroupId=" << StringUtils::URLEncode(m_nodeGroupId.c_str()) << "&";
+  }
+
   if(m_slotsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Slots=" << StringUtils::URLEncode(m_slots.c_str()) << "&";
@@ -120,6 +133,10 @@ void NodeGroupConfiguration::OutputToStream(Aws::OStream& oStream, const char* l
 
 void NodeGroupConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_nodeGroupIdHasBeenSet)
+  {
+      oStream << location << ".NodeGroupId=" << StringUtils::URLEncode(m_nodeGroupId.c_str()) << "&";
+  }
   if(m_slotsHasBeenSet)
   {
       oStream << location << ".Slots=" << StringUtils::URLEncode(m_slots.c_str()) << "&";

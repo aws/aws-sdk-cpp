@@ -50,7 +50,7 @@ AssessmentRun::AssessmentRun() :
 {
 }
 
-AssessmentRun::AssessmentRun(const JsonValue& jsonValue) : 
+AssessmentRun::AssessmentRun(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_assessmentTemplateArnHasBeenSet(false),
@@ -73,7 +73,7 @@ AssessmentRun::AssessmentRun(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AssessmentRun& AssessmentRun::operator =(const JsonValue& jsonValue)
+AssessmentRun& AssessmentRun::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -112,7 +112,7 @@ AssessmentRun& AssessmentRun::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("rulesPackageArns"))
   {
-    Array<JsonValue> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
+    Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
     for(unsigned rulesPackageArnsIndex = 0; rulesPackageArnsIndex < rulesPackageArnsJsonList.GetLength(); ++rulesPackageArnsIndex)
     {
       m_rulesPackageArns.push_back(rulesPackageArnsJsonList[rulesPackageArnsIndex].AsString());
@@ -122,7 +122,7 @@ AssessmentRun& AssessmentRun::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("userAttributesForFindings"))
   {
-    Array<JsonValue> userAttributesForFindingsJsonList = jsonValue.GetArray("userAttributesForFindings");
+    Array<JsonView> userAttributesForFindingsJsonList = jsonValue.GetArray("userAttributesForFindings");
     for(unsigned userAttributesForFindingsIndex = 0; userAttributesForFindingsIndex < userAttributesForFindingsJsonList.GetLength(); ++userAttributesForFindingsIndex)
     {
       m_userAttributesForFindings.push_back(userAttributesForFindingsJsonList[userAttributesForFindingsIndex].AsObject());
@@ -167,7 +167,7 @@ AssessmentRun& AssessmentRun::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("stateChanges"))
   {
-    Array<JsonValue> stateChangesJsonList = jsonValue.GetArray("stateChanges");
+    Array<JsonView> stateChangesJsonList = jsonValue.GetArray("stateChanges");
     for(unsigned stateChangesIndex = 0; stateChangesIndex < stateChangesJsonList.GetLength(); ++stateChangesIndex)
     {
       m_stateChanges.push_back(stateChangesJsonList[stateChangesIndex].AsObject());
@@ -177,7 +177,7 @@ AssessmentRun& AssessmentRun::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("notifications"))
   {
-    Array<JsonValue> notificationsJsonList = jsonValue.GetArray("notifications");
+    Array<JsonView> notificationsJsonList = jsonValue.GetArray("notifications");
     for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
     {
       m_notifications.push_back(notificationsJsonList[notificationsIndex].AsObject());
@@ -187,7 +187,7 @@ AssessmentRun& AssessmentRun::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("findingCounts"))
   {
-    Aws::Map<Aws::String, JsonValue> findingCountsJsonMap = jsonValue.GetObject("findingCounts").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> findingCountsJsonMap = jsonValue.GetObject("findingCounts").GetAllObjects();
     for(auto& findingCountsItem : findingCountsJsonMap)
     {
       m_findingCounts[SeverityMapper::GetSeverityForName(findingCountsItem.first)] = findingCountsItem.second.AsInteger();

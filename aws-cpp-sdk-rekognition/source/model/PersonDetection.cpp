@@ -35,7 +35,7 @@ PersonDetection::PersonDetection() :
 {
 }
 
-PersonDetection::PersonDetection(const JsonValue& jsonValue) : 
+PersonDetection::PersonDetection(JsonView jsonValue) : 
     m_timestamp(0),
     m_timestampHasBeenSet(false),
     m_personHasBeenSet(false)
@@ -43,7 +43,7 @@ PersonDetection::PersonDetection(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PersonDetection& PersonDetection::operator =(const JsonValue& jsonValue)
+PersonDetection& PersonDetection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Timestamp"))
   {

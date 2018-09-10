@@ -33,13 +33,13 @@ TrustedAdvisorCategorySpecificSummary::TrustedAdvisorCategorySpecificSummary() :
 {
 }
 
-TrustedAdvisorCategorySpecificSummary::TrustedAdvisorCategorySpecificSummary(const JsonValue& jsonValue) : 
+TrustedAdvisorCategorySpecificSummary::TrustedAdvisorCategorySpecificSummary(JsonView jsonValue) : 
     m_costOptimizingHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TrustedAdvisorCategorySpecificSummary& TrustedAdvisorCategorySpecificSummary::operator =(const JsonValue& jsonValue)
+TrustedAdvisorCategorySpecificSummary& TrustedAdvisorCategorySpecificSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("costOptimizing"))
   {

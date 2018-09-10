@@ -129,6 +129,28 @@ namespace Model
      */
     inline DeleteServiceRequest& WithService(const char* value) { SetService(value); return *this;}
 
+
+    /**
+     * <p>If <code>true</code>, allows you to delete a service even if it has not been
+     * scaled down to zero tasks. It is only necessary to use this if the service is
+     * using the <code>REPLICA</code> scheduling strategy.</p>
+     */
+    inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>If <code>true</code>, allows you to delete a service even if it has not been
+     * scaled down to zero tasks. It is only necessary to use this if the service is
+     * using the <code>REPLICA</code> scheduling strategy.</p>
+     */
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+
+    /**
+     * <p>If <code>true</code>, allows you to delete a service even if it has not been
+     * scaled down to zero tasks. It is only necessary to use this if the service is
+     * using the <code>REPLICA</code> scheduling strategy.</p>
+     */
+    inline DeleteServiceRequest& WithForce(bool value) { SetForce(value); return *this;}
+
   private:
 
     Aws::String m_cluster;
@@ -136,6 +158,9 @@ namespace Model
 
     Aws::String m_service;
     bool m_serviceHasBeenSet;
+
+    bool m_force;
+    bool m_forceHasBeenSet;
   };
 
 } // namespace Model

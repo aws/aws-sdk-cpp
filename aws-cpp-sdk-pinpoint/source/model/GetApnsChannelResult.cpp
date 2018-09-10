@@ -37,7 +37,7 @@ GetApnsChannelResult::GetApnsChannelResult(const Aws::AmazonWebServiceResult<Jso
 
 GetApnsChannelResult& GetApnsChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_aPNSChannelResponse = jsonValue;
 
 

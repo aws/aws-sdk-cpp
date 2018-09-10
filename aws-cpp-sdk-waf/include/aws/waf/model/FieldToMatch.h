@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAF
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     FieldToMatch();
-    FieldToMatch(const Aws::Utils::Json::JsonValue& jsonValue);
-    FieldToMatch& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FieldToMatch(Aws::Utils::Json::JsonView jsonValue);
+    FieldToMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -69,7 +70,14 @@ namespace Model
      * the first <code>8192</code> bytes of the request body are forwarded to AWS WAF
      * for inspection. To allow or block requests based on the length of the body, you
      * can create a size constraint set. For more information, see
-     * <a>CreateSizeConstraintSet</a>. </p> </li> </ul>
+     * <a>CreateSizeConstraintSet</a>. </p> </li> <li> <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will
+     * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for
+     * <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> <li> <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but
+     * rather than inspecting a single parameter, AWS WAF will inspect all parameters
+     * within the query for the value or regex pattern that you specify in
+     * <code>TargetString</code>.</p> </li> </ul>
      */
     inline const MatchFieldType& GetType() const{ return m_type; }
 
@@ -94,7 +102,14 @@ namespace Model
      * the first <code>8192</code> bytes of the request body are forwarded to AWS WAF
      * for inspection. To allow or block requests based on the length of the body, you
      * can create a size constraint set. For more information, see
-     * <a>CreateSizeConstraintSet</a>. </p> </li> </ul>
+     * <a>CreateSizeConstraintSet</a>. </p> </li> <li> <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will
+     * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for
+     * <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> <li> <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but
+     * rather than inspecting a single parameter, AWS WAF will inspect all parameters
+     * within the query for the value or regex pattern that you specify in
+     * <code>TargetString</code>.</p> </li> </ul>
      */
     inline void SetType(const MatchFieldType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -119,7 +134,14 @@ namespace Model
      * the first <code>8192</code> bytes of the request body are forwarded to AWS WAF
      * for inspection. To allow or block requests based on the length of the body, you
      * can create a size constraint set. For more information, see
-     * <a>CreateSizeConstraintSet</a>. </p> </li> </ul>
+     * <a>CreateSizeConstraintSet</a>. </p> </li> <li> <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will
+     * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for
+     * <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> <li> <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but
+     * rather than inspecting a single parameter, AWS WAF will inspect all parameters
+     * within the query for the value or regex pattern that you specify in
+     * <code>TargetString</code>.</p> </li> </ul>
      */
     inline void SetType(MatchFieldType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -144,7 +166,14 @@ namespace Model
      * the first <code>8192</code> bytes of the request body are forwarded to AWS WAF
      * for inspection. To allow or block requests based on the length of the body, you
      * can create a size constraint set. For more information, see
-     * <a>CreateSizeConstraintSet</a>. </p> </li> </ul>
+     * <a>CreateSizeConstraintSet</a>. </p> </li> <li> <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will
+     * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for
+     * <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> <li> <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but
+     * rather than inspecting a single parameter, AWS WAF will inspect all parameters
+     * within the query for the value or regex pattern that you specify in
+     * <code>TargetString</code>.</p> </li> </ul>
      */
     inline FieldToMatch& WithType(const MatchFieldType& value) { SetType(value); return *this;}
 
@@ -169,7 +198,14 @@ namespace Model
      * the first <code>8192</code> bytes of the request body are forwarded to AWS WAF
      * for inspection. To allow or block requests based on the length of the body, you
      * can create a size constraint set. For more information, see
-     * <a>CreateSizeConstraintSet</a>. </p> </li> </ul>
+     * <a>CreateSizeConstraintSet</a>. </p> </li> <li> <p>
+     * <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will
+     * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for
+     * <code>SINGLE_QUERY_ARG</code> is 30 characters.</p> </li> <li> <p>
+     * <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but
+     * rather than inspecting a single parameter, AWS WAF will inspect all parameters
+     * within the query for the value or regex pattern that you specify in
+     * <code>TargetString</code>.</p> </li> </ul>
      */
     inline FieldToMatch& WithType(MatchFieldType&& value) { SetType(std::move(value)); return *this;}
 
@@ -177,56 +213,84 @@ namespace Model
     /**
      * <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of
      * the header that you want AWS WAF to search, for example, <code>User-Agent</code>
-     * or <code>Referer</code>. If the value of <code>Type</code> is any other value,
-     * omit <code>Data</code>.</p> <p>The name of the header is not case sensitive.</p>
+     * or <code>Referer</code>. The name of the header is not case sensitive.</p>
+     * <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter
+     * the name of the parameter that you want AWS WAF to search, for example,
+     * <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not
+     * case sensitive.</p> <p>If the value of <code>Type</code> is any other value,
+     * omit <code>Data</code>.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
 
     /**
      * <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of
      * the header that you want AWS WAF to search, for example, <code>User-Agent</code>
-     * or <code>Referer</code>. If the value of <code>Type</code> is any other value,
-     * omit <code>Data</code>.</p> <p>The name of the header is not case sensitive.</p>
+     * or <code>Referer</code>. The name of the header is not case sensitive.</p>
+     * <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter
+     * the name of the parameter that you want AWS WAF to search, for example,
+     * <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not
+     * case sensitive.</p> <p>If the value of <code>Type</code> is any other value,
+     * omit <code>Data</code>.</p>
      */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
      * <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of
      * the header that you want AWS WAF to search, for example, <code>User-Agent</code>
-     * or <code>Referer</code>. If the value of <code>Type</code> is any other value,
-     * omit <code>Data</code>.</p> <p>The name of the header is not case sensitive.</p>
+     * or <code>Referer</code>. The name of the header is not case sensitive.</p>
+     * <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter
+     * the name of the parameter that you want AWS WAF to search, for example,
+     * <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not
+     * case sensitive.</p> <p>If the value of <code>Type</code> is any other value,
+     * omit <code>Data</code>.</p>
      */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
      * <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of
      * the header that you want AWS WAF to search, for example, <code>User-Agent</code>
-     * or <code>Referer</code>. If the value of <code>Type</code> is any other value,
-     * omit <code>Data</code>.</p> <p>The name of the header is not case sensitive.</p>
+     * or <code>Referer</code>. The name of the header is not case sensitive.</p>
+     * <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter
+     * the name of the parameter that you want AWS WAF to search, for example,
+     * <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not
+     * case sensitive.</p> <p>If the value of <code>Type</code> is any other value,
+     * omit <code>Data</code>.</p>
      */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
 
     /**
      * <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of
      * the header that you want AWS WAF to search, for example, <code>User-Agent</code>
-     * or <code>Referer</code>. If the value of <code>Type</code> is any other value,
-     * omit <code>Data</code>.</p> <p>The name of the header is not case sensitive.</p>
+     * or <code>Referer</code>. The name of the header is not case sensitive.</p>
+     * <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter
+     * the name of the parameter that you want AWS WAF to search, for example,
+     * <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not
+     * case sensitive.</p> <p>If the value of <code>Type</code> is any other value,
+     * omit <code>Data</code>.</p>
      */
     inline FieldToMatch& WithData(const Aws::String& value) { SetData(value); return *this;}
 
     /**
      * <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of
      * the header that you want AWS WAF to search, for example, <code>User-Agent</code>
-     * or <code>Referer</code>. If the value of <code>Type</code> is any other value,
-     * omit <code>Data</code>.</p> <p>The name of the header is not case sensitive.</p>
+     * or <code>Referer</code>. The name of the header is not case sensitive.</p>
+     * <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter
+     * the name of the parameter that you want AWS WAF to search, for example,
+     * <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not
+     * case sensitive.</p> <p>If the value of <code>Type</code> is any other value,
+     * omit <code>Data</code>.</p>
      */
     inline FieldToMatch& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
      * <p>When the value of <code>Type</code> is <code>HEADER</code>, enter the name of
      * the header that you want AWS WAF to search, for example, <code>User-Agent</code>
-     * or <code>Referer</code>. If the value of <code>Type</code> is any other value,
-     * omit <code>Data</code>.</p> <p>The name of the header is not case sensitive.</p>
+     * or <code>Referer</code>. The name of the header is not case sensitive.</p>
+     * <p>When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter
+     * the name of the parameter that you want AWS WAF to search, for example,
+     * <code>UserName</code> or <code>SalesRegion</code>. The parameter name is not
+     * case sensitive.</p> <p>If the value of <code>Type</code> is any other value,
+     * omit <code>Data</code>.</p>
      */
     inline FieldToMatch& WithData(const char* value) { SetData(value); return *this;}
 

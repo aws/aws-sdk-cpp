@@ -35,23 +35,25 @@ ResourceDataSyncItem::ResourceDataSyncItem() :
     m_lastSuccessfulSyncTimeHasBeenSet(false),
     m_lastStatus(LastResourceDataSyncStatus::NOT_SET),
     m_lastStatusHasBeenSet(false),
-    m_syncCreatedTimeHasBeenSet(false)
+    m_syncCreatedTimeHasBeenSet(false),
+    m_lastSyncStatusMessageHasBeenSet(false)
 {
 }
 
-ResourceDataSyncItem::ResourceDataSyncItem(const JsonValue& jsonValue) : 
+ResourceDataSyncItem::ResourceDataSyncItem(JsonView jsonValue) : 
     m_syncNameHasBeenSet(false),
     m_s3DestinationHasBeenSet(false),
     m_lastSyncTimeHasBeenSet(false),
     m_lastSuccessfulSyncTimeHasBeenSet(false),
     m_lastStatus(LastResourceDataSyncStatus::NOT_SET),
     m_lastStatusHasBeenSet(false),
-    m_syncCreatedTimeHasBeenSet(false)
+    m_syncCreatedTimeHasBeenSet(false),
+    m_lastSyncStatusMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResourceDataSyncItem& ResourceDataSyncItem::operator =(const JsonValue& jsonValue)
+ResourceDataSyncItem& ResourceDataSyncItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SyncName"))
   {
@@ -95,6 +97,13 @@ ResourceDataSyncItem& ResourceDataSyncItem::operator =(const JsonValue& jsonValu
     m_syncCreatedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastSyncStatusMessage"))
+  {
+    m_lastSyncStatusMessage = jsonValue.GetString("LastSyncStatusMessage");
+
+    m_lastSyncStatusMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -132,6 +141,12 @@ JsonValue ResourceDataSyncItem::Jsonize() const
   if(m_syncCreatedTimeHasBeenSet)
   {
    payload.WithDouble("SyncCreatedTime", m_syncCreatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lastSyncStatusMessageHasBeenSet)
+  {
+   payload.WithString("LastSyncStatusMessage", m_lastSyncStatusMessage);
+
   }
 
   return payload;

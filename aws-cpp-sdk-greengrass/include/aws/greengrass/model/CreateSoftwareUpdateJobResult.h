@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * The Iot Job Arn corresponding to this update.
+     * The IoT Job ARN corresponding to this update.
      */
     inline const Aws::String& GetIotJobArn() const{ return m_iotJobArn; }
 
     /**
-     * The Iot Job Arn corresponding to this update.
+     * The IoT Job ARN corresponding to this update.
      */
     inline void SetIotJobArn(const Aws::String& value) { m_iotJobArn = value; }
 
     /**
-     * The Iot Job Arn corresponding to this update.
+     * The IoT Job ARN corresponding to this update.
      */
     inline void SetIotJobArn(Aws::String&& value) { m_iotJobArn = std::move(value); }
 
     /**
-     * The Iot Job Arn corresponding to this update.
+     * The IoT Job ARN corresponding to this update.
      */
     inline void SetIotJobArn(const char* value) { m_iotJobArn.assign(value); }
 
     /**
-     * The Iot Job Arn corresponding to this update.
+     * The IoT Job ARN corresponding to this update.
      */
     inline CreateSoftwareUpdateJobResult& WithIotJobArn(const Aws::String& value) { SetIotJobArn(value); return *this;}
 
     /**
-     * The Iot Job Arn corresponding to this update.
+     * The IoT Job ARN corresponding to this update.
      */
     inline CreateSoftwareUpdateJobResult& WithIotJobArn(Aws::String&& value) { SetIotJobArn(std::move(value)); return *this;}
 
     /**
-     * The Iot Job Arn corresponding to this update.
+     * The IoT Job ARN corresponding to this update.
      */
     inline CreateSoftwareUpdateJobResult& WithIotJobArn(const char* value) { SetIotJobArn(value); return *this;}
 
 
     /**
-     * The Iot Job Id corresponding to this update.
+     * The IoT Job Id corresponding to this update.
      */
     inline const Aws::String& GetIotJobId() const{ return m_iotJobId; }
 
     /**
-     * The Iot Job Id corresponding to this update.
+     * The IoT Job Id corresponding to this update.
      */
     inline void SetIotJobId(const Aws::String& value) { m_iotJobId = value; }
 
     /**
-     * The Iot Job Id corresponding to this update.
+     * The IoT Job Id corresponding to this update.
      */
     inline void SetIotJobId(Aws::String&& value) { m_iotJobId = std::move(value); }
 
     /**
-     * The Iot Job Id corresponding to this update.
+     * The IoT Job Id corresponding to this update.
      */
     inline void SetIotJobId(const char* value) { m_iotJobId.assign(value); }
 
     /**
-     * The Iot Job Id corresponding to this update.
+     * The IoT Job Id corresponding to this update.
      */
     inline CreateSoftwareUpdateJobResult& WithIotJobId(const Aws::String& value) { SetIotJobId(value); return *this;}
 
     /**
-     * The Iot Job Id corresponding to this update.
+     * The IoT Job Id corresponding to this update.
      */
     inline CreateSoftwareUpdateJobResult& WithIotJobId(Aws::String&& value) { SetIotJobId(std::move(value)); return *this;}
 
     /**
-     * The Iot Job Id corresponding to this update.
+     * The IoT Job Id corresponding to this update.
      */
     inline CreateSoftwareUpdateJobResult& WithIotJobId(const char* value) { SetIotJobId(value); return *this;}
 

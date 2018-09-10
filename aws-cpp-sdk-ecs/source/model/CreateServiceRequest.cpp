@@ -27,6 +27,7 @@ CreateServiceRequest::CreateServiceRequest() :
     m_serviceNameHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
+    m_serviceRegistriesHasBeenSet(false),
     m_desiredCount(0),
     m_desiredCountHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
@@ -39,7 +40,9 @@ CreateServiceRequest::CreateServiceRequest() :
     m_placementStrategyHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_healthCheckGracePeriodSeconds(0),
-    m_healthCheckGracePeriodSecondsHasBeenSet(false)
+    m_healthCheckGracePeriodSecondsHasBeenSet(false),
+    m_schedulingStrategy(SchedulingStrategy::NOT_SET),
+    m_schedulingStrategyHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,17 @@ Aws::String CreateServiceRequest::SerializePayload() const
      loadBalancersJsonList[loadBalancersIndex].AsObject(m_loadBalancers[loadBalancersIndex].Jsonize());
    }
    payload.WithArray("loadBalancers", std::move(loadBalancersJsonList));
+
+  }
+
+  if(m_serviceRegistriesHasBeenSet)
+  {
+   Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
+   for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
+   {
+     serviceRegistriesJsonList[serviceRegistriesIndex].AsObject(m_serviceRegistries[serviceRegistriesIndex].Jsonize());
+   }
+   payload.WithArray("serviceRegistries", std::move(serviceRegistriesJsonList));
 
   }
 
@@ -145,7 +159,12 @@ Aws::String CreateServiceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_schedulingStrategyHasBeenSet)
+  {
+   payload.WithString("schedulingStrategy", SchedulingStrategyMapper::GetNameForSchedulingStrategy(m_schedulingStrategy));
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateServiceRequest::GetRequestSpecificHeaders() const

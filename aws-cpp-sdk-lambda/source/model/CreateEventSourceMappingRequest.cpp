@@ -73,7 +73,7 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
    payload.WithDouble("StartingPositionTimestamp", m_startingPositionTimestamp.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

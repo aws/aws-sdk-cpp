@@ -37,7 +37,7 @@ ViewBillingResult::ViewBillingResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ViewBillingResult& ViewBillingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextPageMarker"))
   {
     m_nextPageMarker = jsonValue.GetString("NextPageMarker");
@@ -46,7 +46,7 @@ ViewBillingResult& ViewBillingResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("BillingRecords"))
   {
-    Array<JsonValue> billingRecordsJsonList = jsonValue.GetArray("BillingRecords");
+    Array<JsonView> billingRecordsJsonList = jsonValue.GetArray("BillingRecords");
     for(unsigned billingRecordsIndex = 0; billingRecordsIndex < billingRecordsJsonList.GetLength(); ++billingRecordsIndex)
     {
       m_billingRecords.push_back(billingRecordsJsonList[billingRecordsIndex].AsObject());

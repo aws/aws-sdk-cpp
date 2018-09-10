@@ -34,14 +34,14 @@ PathToObjectIdentifiers::PathToObjectIdentifiers() :
 {
 }
 
-PathToObjectIdentifiers::PathToObjectIdentifiers(const JsonValue& jsonValue) : 
+PathToObjectIdentifiers::PathToObjectIdentifiers(JsonView jsonValue) : 
     m_pathHasBeenSet(false),
     m_objectIdentifiersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PathToObjectIdentifiers& PathToObjectIdentifiers::operator =(const JsonValue& jsonValue)
+PathToObjectIdentifiers& PathToObjectIdentifiers::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Path"))
   {
@@ -52,7 +52,7 @@ PathToObjectIdentifiers& PathToObjectIdentifiers::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("ObjectIdentifiers"))
   {
-    Array<JsonValue> objectIdentifiersJsonList = jsonValue.GetArray("ObjectIdentifiers");
+    Array<JsonView> objectIdentifiersJsonList = jsonValue.GetArray("ObjectIdentifiers");
     for(unsigned objectIdentifiersIndex = 0; objectIdentifiersIndex < objectIdentifiersJsonList.GetLength(); ++objectIdentifiersIndex)
     {
       m_objectIdentifiers.push_back(objectIdentifiersJsonList[objectIdentifiersIndex].AsString());

@@ -37,7 +37,7 @@ CreateKeysAndCertificateResult::CreateKeysAndCertificateResult(const Aws::Amazon
 
 CreateKeysAndCertificateResult& CreateKeysAndCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");

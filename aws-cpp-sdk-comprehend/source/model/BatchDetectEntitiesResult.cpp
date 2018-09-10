@@ -37,10 +37,10 @@ BatchDetectEntitiesResult::BatchDetectEntitiesResult(const Aws::AmazonWebService
 
 BatchDetectEntitiesResult& BatchDetectEntitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResultList"))
   {
-    Array<JsonValue> resultListJsonList = jsonValue.GetArray("ResultList");
+    Array<JsonView> resultListJsonList = jsonValue.GetArray("ResultList");
     for(unsigned resultListIndex = 0; resultListIndex < resultListJsonList.GetLength(); ++resultListIndex)
     {
       m_resultList.push_back(resultListJsonList[resultListIndex].AsObject());
@@ -49,7 +49,7 @@ BatchDetectEntitiesResult& BatchDetectEntitiesResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ErrorList"))
   {
-    Array<JsonValue> errorListJsonList = jsonValue.GetArray("ErrorList");
+    Array<JsonView> errorListJsonList = jsonValue.GetArray("ErrorList");
     for(unsigned errorListIndex = 0; errorListIndex < errorListJsonList.GetLength(); ++errorListIndex)
     {
       m_errorList.push_back(errorListJsonList[errorListIndex].AsObject());

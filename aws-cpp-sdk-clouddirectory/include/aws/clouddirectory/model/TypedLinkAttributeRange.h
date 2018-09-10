@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -36,15 +37,15 @@ namespace Model
   /**
    * <p>Identifies the range of attributes that are used by a specified
    * filter.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TypedLinkAttributeRange">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedLinkAttributeRange">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API TypedLinkAttributeRange
   {
   public:
     TypedLinkAttributeRange();
-    TypedLinkAttributeRange(const Aws::Utils::Json::JsonValue& jsonValue);
-    TypedLinkAttributeRange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TypedLinkAttributeRange(Aws::Utils::Json::JsonView jsonValue);
+    TypedLinkAttributeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

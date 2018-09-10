@@ -38,6 +38,9 @@ namespace Aws
         static const int THING_TYPE_ASSOCIATION_HASH = HashingUtils::HashString("THING_TYPE_ASSOCIATION");
         static const int JOB_HASH = HashingUtils::HashString("JOB");
         static const int JOB_EXECUTION_HASH = HashingUtils::HashString("JOB_EXECUTION");
+        static const int POLICY_HASH = HashingUtils::HashString("POLICY");
+        static const int CERTIFICATE_HASH = HashingUtils::HashString("CERTIFICATE");
+        static const int CA_CERTIFICATE_HASH = HashingUtils::HashString("CA_CERTIFICATE");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
@@ -75,6 +78,18 @@ namespace Aws
           {
             return EventType::JOB_EXECUTION;
           }
+          else if (hashCode == POLICY_HASH)
+          {
+            return EventType::POLICY;
+          }
+          else if (hashCode == CERTIFICATE_HASH)
+          {
+            return EventType::CERTIFICATE;
+          }
+          else if (hashCode == CA_CERTIFICATE_HASH)
+          {
+            return EventType::CA_CERTIFICATE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -105,6 +120,12 @@ namespace Aws
             return "JOB";
           case EventType::JOB_EXECUTION:
             return "JOB_EXECUTION";
+          case EventType::POLICY:
+            return "POLICY";
+          case EventType::CERTIFICATE:
+            return "CERTIFICATE";
+          case EventType::CA_CERTIFICATE:
+            return "CA_CERTIFICATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

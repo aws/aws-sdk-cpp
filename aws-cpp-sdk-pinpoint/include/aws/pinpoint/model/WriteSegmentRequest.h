@@ -17,6 +17,7 @@
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/pinpoint/model/SegmentDimensions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/model/SegmentGroupList.h>
 #include <utility>
 
 namespace Aws
@@ -26,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -42,8 +44,8 @@ namespace Model
   {
   public:
     WriteSegmentRequest();
-    WriteSegmentRequest(const Aws::Utils::Json::JsonValue& jsonValue);
-    WriteSegmentRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    WriteSegmentRequest(Aws::Utils::Json::JsonView jsonValue);
+    WriteSegmentRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -108,6 +110,47 @@ namespace Model
      */
     inline WriteSegmentRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments. Your request can only include one
+     * segment group. Your request can include either a SegmentGroups object or a
+     * Dimensions object, but not both.
+     */
+    inline const SegmentGroupList& GetSegmentGroups() const{ return m_segmentGroups; }
+
+    /**
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments. Your request can only include one
+     * segment group. Your request can include either a SegmentGroups object or a
+     * Dimensions object, but not both.
+     */
+    inline void SetSegmentGroups(const SegmentGroupList& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = value; }
+
+    /**
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments. Your request can only include one
+     * segment group. Your request can include either a SegmentGroups object or a
+     * Dimensions object, but not both.
+     */
+    inline void SetSegmentGroups(SegmentGroupList&& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = std::move(value); }
+
+    /**
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments. Your request can only include one
+     * segment group. Your request can include either a SegmentGroups object or a
+     * Dimensions object, but not both.
+     */
+    inline WriteSegmentRequest& WithSegmentGroups(const SegmentGroupList& value) { SetSegmentGroups(value); return *this;}
+
+    /**
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments. Your request can only include one
+     * segment group. Your request can include either a SegmentGroups object or a
+     * Dimensions object, but not both.
+     */
+    inline WriteSegmentRequest& WithSegmentGroups(SegmentGroupList&& value) { SetSegmentGroups(std::move(value)); return *this;}
+
   private:
 
     SegmentDimensions m_dimensions;
@@ -115,6 +158,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    SegmentGroupList m_segmentGroups;
+    bool m_segmentGroupsHasBeenSet;
   };
 
 } // namespace Model

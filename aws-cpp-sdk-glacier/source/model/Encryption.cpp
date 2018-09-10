@@ -36,7 +36,7 @@ Encryption::Encryption() :
 {
 }
 
-Encryption::Encryption(const JsonValue& jsonValue) : 
+Encryption::Encryption(JsonView jsonValue) : 
     m_encryptionType(EncryptionType::NOT_SET),
     m_encryptionTypeHasBeenSet(false),
     m_kMSKeyIdHasBeenSet(false),
@@ -45,7 +45,7 @@ Encryption::Encryption(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Encryption& Encryption::operator =(const JsonValue& jsonValue)
+Encryption& Encryption::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EncryptionType"))
   {

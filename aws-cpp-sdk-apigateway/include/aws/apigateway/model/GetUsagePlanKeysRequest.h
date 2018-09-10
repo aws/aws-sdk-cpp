@@ -53,51 +53,51 @@ namespace Model
 
 
     /**
-     * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
-     * containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan
-     * customer.</p>
+     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
+     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
+     * plan customer.</p>
      */
     inline const Aws::String& GetUsagePlanId() const{ return m_usagePlanId; }
 
     /**
-     * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
-     * containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan
-     * customer.</p>
+     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
+     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
+     * plan customer.</p>
      */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**
-     * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
-     * containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan
-     * customer.</p>
+     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
+     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
+     * plan customer.</p>
      */
     inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::move(value); }
 
     /**
-     * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
-     * containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan
-     * customer.</p>
+     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
+     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
+     * plan customer.</p>
      */
     inline void SetUsagePlanId(const char* value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId.assign(value); }
 
     /**
-     * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
-     * containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan
-     * customer.</p>
+     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
+     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
+     * plan customer.</p>
      */
     inline GetUsagePlanKeysRequest& WithUsagePlanId(const Aws::String& value) { SetUsagePlanId(value); return *this;}
 
     /**
-     * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
-     * containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan
-     * customer.</p>
+     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
+     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
+     * plan customer.</p>
      */
     inline GetUsagePlanKeysRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(std::move(value)); return *this;}
 
     /**
-     * <p>The Id of the <a>UsagePlan</a> resource representing the usage plan
-     * containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan
-     * customer.</p>
+     * <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage
+     * plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a
+     * plan customer.</p>
      */
     inline GetUsagePlanKeysRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 
@@ -139,17 +139,20 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of returned results per page.</p>
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of returned results per page.</p>
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of returned results per page.</p>
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
      */
     inline GetUsagePlanKeysRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

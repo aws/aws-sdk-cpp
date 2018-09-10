@@ -52,7 +52,7 @@ Aws::String DeleteLoadBalancerTlsCertificateRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteLoadBalancerTlsCertificateRequest::GetRequestSpecificHeaders() const

@@ -42,7 +42,7 @@ Aws::String CreateCertificateFromCsrRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 void CreateCertificateFromCsrRequest::AddQueryStringParameters(URI& uri) const

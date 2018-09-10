@@ -39,7 +39,7 @@ DescribeExecutionResult::DescribeExecutionResult(const Aws::AmazonWebServiceResu
 
 DescribeExecutionResult& DescribeExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("executionArn"))
   {
     m_executionArn = jsonValue.GetString("executionArn");

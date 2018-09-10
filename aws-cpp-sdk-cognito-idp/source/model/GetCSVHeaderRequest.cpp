@@ -37,7 +37,7 @@ Aws::String GetCSVHeaderRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetCSVHeaderRequest::GetRequestSpecificHeaders() const

@@ -33,6 +33,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppStream
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     Fleet();
-    Fleet(const Aws::Utils::Json::JsonValue& jsonValue);
-    Fleet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Fleet(Aws::Utils::Json::JsonView jsonValue);
+    Fleet& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -232,6 +233,42 @@ namespace Model
      * <p>The name of the image used to create the fleet.</p>
      */
     inline Fleet& WithImageName(const char* value) { SetImageName(value); return *this;}
+
+
+    /**
+     * <p>The ARN for the public, private, or shared image.</p>
+     */
+    inline const Aws::String& GetImageArn() const{ return m_imageArn; }
+
+    /**
+     * <p>The ARN for the public, private, or shared image.</p>
+     */
+    inline void SetImageArn(const Aws::String& value) { m_imageArnHasBeenSet = true; m_imageArn = value; }
+
+    /**
+     * <p>The ARN for the public, private, or shared image.</p>
+     */
+    inline void SetImageArn(Aws::String&& value) { m_imageArnHasBeenSet = true; m_imageArn = std::move(value); }
+
+    /**
+     * <p>The ARN for the public, private, or shared image.</p>
+     */
+    inline void SetImageArn(const char* value) { m_imageArnHasBeenSet = true; m_imageArn.assign(value); }
+
+    /**
+     * <p>The ARN for the public, private, or shared image.</p>
+     */
+    inline Fleet& WithImageArn(const Aws::String& value) { SetImageArn(value); return *this;}
+
+    /**
+     * <p>The ARN for the public, private, or shared image.</p>
+     */
+    inline Fleet& WithImageArn(Aws::String&& value) { SetImageArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN for the public, private, or shared image.</p>
+     */
+    inline Fleet& WithImageArn(const char* value) { SetImageArn(value); return *this;}
 
 
     /**
@@ -567,6 +604,9 @@ namespace Model
 
     Aws::String m_imageName;
     bool m_imageNameHasBeenSet;
+
+    Aws::String m_imageArn;
+    bool m_imageArnHasBeenSet;
 
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;

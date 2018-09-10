@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -50,6 +50,42 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::move(value); }
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline ReshardingConfiguration& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline ReshardingConfiguration& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(std::move(value)); return *this;}
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline ReshardingConfiguration& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
 
 
     /**
@@ -93,6 +129,9 @@ namespace Model
     inline ReshardingConfiguration& AddPreferredAvailabilityZones(const char* value) { m_preferredAvailabilityZonesHasBeenSet = true; m_preferredAvailabilityZones.push_back(value); return *this; }
 
   private:
+
+    Aws::String m_nodeGroupId;
+    bool m_nodeGroupIdHasBeenSet;
 
     Aws::Vector<Aws::String> m_preferredAvailabilityZones;
     bool m_preferredAvailabilityZonesHasBeenSet;

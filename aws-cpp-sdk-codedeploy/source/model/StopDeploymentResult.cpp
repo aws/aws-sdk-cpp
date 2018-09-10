@@ -39,7 +39,7 @@ StopDeploymentResult::StopDeploymentResult(const Aws::AmazonWebServiceResult<Jso
 
 StopDeploymentResult& StopDeploymentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("status"))
   {
     m_status = StopStatusMapper::GetStopStatusForName(jsonValue.GetString("status"));

@@ -36,7 +36,7 @@ DevicePoolCompatibilityResult::DevicePoolCompatibilityResult() :
 {
 }
 
-DevicePoolCompatibilityResult::DevicePoolCompatibilityResult(const JsonValue& jsonValue) : 
+DevicePoolCompatibilityResult::DevicePoolCompatibilityResult(JsonView jsonValue) : 
     m_deviceHasBeenSet(false),
     m_compatible(false),
     m_compatibleHasBeenSet(false),
@@ -45,7 +45,7 @@ DevicePoolCompatibilityResult::DevicePoolCompatibilityResult(const JsonValue& js
   *this = jsonValue;
 }
 
-DevicePoolCompatibilityResult& DevicePoolCompatibilityResult::operator =(const JsonValue& jsonValue)
+DevicePoolCompatibilityResult& DevicePoolCompatibilityResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("device"))
   {
@@ -63,7 +63,7 @@ DevicePoolCompatibilityResult& DevicePoolCompatibilityResult::operator =(const J
 
   if(jsonValue.ValueExists("incompatibilityMessages"))
   {
-    Array<JsonValue> incompatibilityMessagesJsonList = jsonValue.GetArray("incompatibilityMessages");
+    Array<JsonView> incompatibilityMessagesJsonList = jsonValue.GetArray("incompatibilityMessages");
     for(unsigned incompatibilityMessagesIndex = 0; incompatibilityMessagesIndex < incompatibilityMessagesJsonList.GetLength(); ++incompatibilityMessagesIndex)
     {
       m_incompatibilityMessages.push_back(incompatibilityMessagesJsonList[incompatibilityMessagesIndex].AsObject());

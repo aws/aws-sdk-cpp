@@ -33,13 +33,13 @@ Host::Host() :
 {
 }
 
-Host::Host(const JsonValue& jsonValue) : 
+Host::Host(JsonView jsonValue) : 
     m_sourcePathHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Host& Host::operator =(const JsonValue& jsonValue)
+Host& Host::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("sourcePath"))
   {

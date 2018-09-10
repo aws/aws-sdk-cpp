@@ -139,11 +139,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -682,7 +677,7 @@ namespace Model
 
         virtual ~APIGatewayClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "apigateway"; }
+        inline virtual const char* GetServiceClientName() const override { return "API Gateway"; }
 
 
         /**
@@ -2713,14 +2708,16 @@ namespace Model
         virtual void GetStagesAsync(const Model::GetStagesRequest& request, const GetStagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the Tags collection for a given resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the <a>Tags</a> collection for a given resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetTags">AWS
          * API Reference</a></p>
          */
         virtual Model::GetTagsOutcome GetTags(const Model::GetTagsRequest& request) const;
 
         /**
-         * <p>Gets the Tags collection for a given resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the <a>Tags</a> collection for a given resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetTags">AWS
          * API Reference</a></p>
          *
@@ -2729,7 +2726,8 @@ namespace Model
         virtual Model::GetTagsOutcomeCallable GetTagsCallable(const Model::GetTagsRequest& request) const;
 
         /**
-         * <p>Gets the Tags collection for a given resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the <a>Tags</a> collection for a given resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetTags">AWS
          * API Reference</a></p>
          *
@@ -3174,14 +3172,14 @@ namespace Model
         virtual void PutRestApiAsync(const Model::PutRestApiRequest& request, const PutRestApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or updates Tags on a gievn resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or updates a tag on a given resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or updates Tags on a gievn resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or updates a tag on a given resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TagResource">AWS
          * API Reference</a></p>
          *
@@ -3190,7 +3188,7 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or updates Tags on a gievn resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or updates a tag on a given resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TagResource">AWS
          * API Reference</a></p>
          *
@@ -3261,14 +3259,14 @@ namespace Model
         virtual void TestInvokeMethodAsync(const Model::TestInvokeMethodRequest& request, const TestInvokeMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes Tags from a given resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a tag from a given resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes Tags from a given resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a tag from a given resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -3277,7 +3275,7 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes Tags from a given resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a tag from a given resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UntagResource">AWS
          * API Reference</a></p>
          *

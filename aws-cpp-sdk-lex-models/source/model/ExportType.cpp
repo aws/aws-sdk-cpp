@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int ALEXA_SKILLS_KIT_HASH = HashingUtils::HashString("ALEXA_SKILLS_KIT");
+        static const int LEX_HASH = HashingUtils::HashString("LEX");
 
 
         ExportType GetExportTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == ALEXA_SKILLS_KIT_HASH)
           {
             return ExportType::ALEXA_SKILLS_KIT;
+          }
+          else if (hashCode == LEX_HASH)
+          {
+            return ExportType::LEX;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case ExportType::ALEXA_SKILLS_KIT:
             return "ALEXA_SKILLS_KIT";
+          case ExportType::LEX:
+            return "LEX";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -37,10 +37,10 @@ DescribeAddressesResult::DescribeAddressesResult(const Aws::AmazonWebServiceResu
 
 DescribeAddressesResult& DescribeAddressesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Addresses"))
   {
-    Array<JsonValue> addressesJsonList = jsonValue.GetArray("Addresses");
+    Array<JsonView> addressesJsonList = jsonValue.GetArray("Addresses");
     for(unsigned addressesIndex = 0; addressesIndex < addressesJsonList.GetLength(); ++addressesIndex)
     {
       m_addresses.push_back(addressesJsonList[addressesIndex].AsObject());

@@ -33,17 +33,17 @@ PatchFilterGroup::PatchFilterGroup() :
 {
 }
 
-PatchFilterGroup::PatchFilterGroup(const JsonValue& jsonValue) : 
+PatchFilterGroup::PatchFilterGroup(JsonView jsonValue) : 
     m_patchFiltersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PatchFilterGroup& PatchFilterGroup::operator =(const JsonValue& jsonValue)
+PatchFilterGroup& PatchFilterGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PatchFilters"))
   {
-    Array<JsonValue> patchFiltersJsonList = jsonValue.GetArray("PatchFilters");
+    Array<JsonView> patchFiltersJsonList = jsonValue.GetArray("PatchFilters");
     for(unsigned patchFiltersIndex = 0; patchFiltersIndex < patchFiltersJsonList.GetLength(); ++patchFiltersIndex)
     {
       m_patchFilters.push_back(patchFiltersJsonList[patchFiltersIndex].AsObject());

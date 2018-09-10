@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ApplicationDiscoveryService
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ConfigurationTag();
-    ConfigurationTag(const Aws::Utils::Json::JsonValue& jsonValue);
-    ConfigurationTag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ConfigurationTag(Aws::Utils::Json::JsonView jsonValue);
+    ConfigurationTag& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

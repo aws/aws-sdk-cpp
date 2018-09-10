@@ -34,14 +34,14 @@ SqlInjectionMatchSetSummary::SqlInjectionMatchSetSummary() :
 {
 }
 
-SqlInjectionMatchSetSummary::SqlInjectionMatchSetSummary(const JsonValue& jsonValue) : 
+SqlInjectionMatchSetSummary::SqlInjectionMatchSetSummary(JsonView jsonValue) : 
     m_sqlInjectionMatchSetIdHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SqlInjectionMatchSetSummary& SqlInjectionMatchSetSummary::operator =(const JsonValue& jsonValue)
+SqlInjectionMatchSetSummary& SqlInjectionMatchSetSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SqlInjectionMatchSetId"))
   {

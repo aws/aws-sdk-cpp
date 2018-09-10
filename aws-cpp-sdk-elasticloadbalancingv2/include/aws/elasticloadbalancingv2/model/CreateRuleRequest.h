@@ -90,16 +90,16 @@ namespace Model
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.
-     * Note that you can include up to three wildcard characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If the field name is <code>path-pattern</code>, you can specify a single path
-     * pattern. A path pattern is case sensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters. Note that you can
-     * include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<RuleCondition>& GetConditions() const{ return m_conditions; }
 
@@ -108,16 +108,16 @@ namespace Model
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.
-     * Note that you can include up to three wildcard characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If the field name is <code>path-pattern</code>, you can specify a single path
-     * pattern. A path pattern is case sensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters. Note that you can
-     * include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline void SetConditions(const Aws::Vector<RuleCondition>& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
 
@@ -126,16 +126,16 @@ namespace Model
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.
-     * Note that you can include up to three wildcard characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If the field name is <code>path-pattern</code>, you can specify a single path
-     * pattern. A path pattern is case sensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters. Note that you can
-     * include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
 
@@ -144,16 +144,16 @@ namespace Model
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.
-     * Note that you can include up to three wildcard characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If the field name is <code>path-pattern</code>, you can specify a single path
-     * pattern. A path pattern is case sensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters. Note that you can
-     * include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline CreateRuleRequest& WithConditions(const Aws::Vector<RuleCondition>& value) { SetConditions(value); return *this;}
 
@@ -162,16 +162,16 @@ namespace Model
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.
-     * Note that you can include up to three wildcard characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If the field name is <code>path-pattern</code>, you can specify a single path
-     * pattern. A path pattern is case sensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters. Note that you can
-     * include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline CreateRuleRequest& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(std::move(value)); return *this;}
 
@@ -180,16 +180,16 @@ namespace Model
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.
-     * Note that you can include up to three wildcard characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If the field name is <code>path-pattern</code>, you can specify a single path
-     * pattern. A path pattern is case sensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters. Note that you can
-     * include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline CreateRuleRequest& AddConditions(const RuleCondition& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
 
@@ -198,78 +198,148 @@ namespace Model
      * <p>If the field name is <code>host-header</code>, you can specify a single host
      * name (for example, my.example.com). A host name is case insensitive, can be up
      * to 128 characters in length, and can contain any of the following characters.
-     * Note that you can include up to three wildcard characters.</p> <ul> <li> <p>A-Z,
-     * a-z, 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more
-     * characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul>
-     * <p>If the field name is <code>path-pattern</code>, you can specify a single path
-     * pattern. A path pattern is case sensitive, can be up to 128 characters in
-     * length, and can contain any of the following characters. Note that you can
-     * include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p>
-     * </li> <li> <p>_ - . $ / ~ " ' @ : +</p> </li> <li> <p>&amp; (using
-     * &amp;amp;)</p> </li> <li> <p>* (matches 0 or more characters)</p> </li> <li>
-     * <p>? (matches exactly 1 character)</p> </li> </ul>
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline CreateRuleRequest& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The priority for the rule. A listener can't have multiple rules with the same
+     * <p>The rule priority. A listener can't have multiple rules with the same
      * priority.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The priority for the rule. A listener can't have multiple rules with the same
+     * <p>The rule priority. A listener can't have multiple rules with the same
      * priority.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>The priority for the rule. A listener can't have multiple rules with the same
+     * <p>The rule priority. A listener can't have multiple rules with the same
      * priority.</p>
      */
     inline CreateRuleRequest& WithPriority(int value) { SetPriority(value); return *this;}
 
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>fixed-response</code>, or
+     * <code>redirect</code>.</p> <p>If the action type is <code>forward</code>, you
+     * can specify a single target group.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>fixed-response</code>, or
+     * <code>redirect</code>.</p> <p>If the action type is <code>forward</code>, you
+     * can specify a single target group.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>fixed-response</code>, or
+     * <code>redirect</code>.</p> <p>If the action type is <code>forward</code>, you
+     * can specify a single target group.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>fixed-response</code>, or
+     * <code>redirect</code>.</p> <p>If the action type is <code>forward</code>, you
+     * can specify a single target group.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline CreateRuleRequest& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>fixed-response</code>, or
+     * <code>redirect</code>.</p> <p>If the action type is <code>forward</code>, you
+     * can specify a single target group.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline CreateRuleRequest& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>fixed-response</code>, or
+     * <code>redirect</code>.</p> <p>If the action type is <code>forward</code>, you
+     * can specify a single target group.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline CreateRuleRequest& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>An action. Each action has the type <code>forward</code> and specifies a
-     * target group.</p>
+     * <p>The actions. Each rule must include exactly one of the following types of
+     * actions: <code>forward</code>, <code>fixed-response</code>, or
+     * <code>redirect</code>.</p> <p>If the action type is <code>forward</code>, you
+     * can specify a single target group.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline CreateRuleRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 

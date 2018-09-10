@@ -25,6 +25,8 @@ using namespace Aws::Utils;
 DescribeEndpointsRequest::DescribeEndpointsRequest() : 
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
+    m_mode(DescribeEndpointsMode::NOT_SET),
+    m_modeHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -39,13 +41,18 @@ Aws::String DescribeEndpointsRequest::SerializePayload() const
 
   }
 
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("mode", DescribeEndpointsModeMapper::GetNameForDescribeEndpointsMode(m_mode));
+  }
+
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

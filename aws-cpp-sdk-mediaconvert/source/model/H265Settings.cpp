@@ -39,6 +39,8 @@ H265Settings::H265Settings() :
     m_codecLevelHasBeenSet(false),
     m_codecProfile(H265CodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
+    m_dynamicSubGop(H265DynamicSubGop::NOT_SET),
+    m_dynamicSubGopHasBeenSet(false),
     m_flickerAdaptiveQuantization(H265FlickerAdaptiveQuantization::NOT_SET),
     m_flickerAdaptiveQuantizationHasBeenSet(false),
     m_framerateControl(H265FramerateControl::NOT_SET),
@@ -79,6 +81,7 @@ H265Settings::H265Settings() :
     m_parNumeratorHasBeenSet(false),
     m_qualityTuningLevel(H265QualityTuningLevel::NOT_SET),
     m_qualityTuningLevelHasBeenSet(false),
+    m_qvbrSettingsHasBeenSet(false),
     m_rateControlMode(H265RateControlMode::NOT_SET),
     m_rateControlModeHasBeenSet(false),
     m_sampleAdaptiveOffsetFilterMode(H265SampleAdaptiveOffsetFilterMode::NOT_SET),
@@ -100,11 +103,13 @@ H265Settings::H265Settings() :
     m_tiles(H265Tiles::NOT_SET),
     m_tilesHasBeenSet(false),
     m_unregisteredSeiTimecode(H265UnregisteredSeiTimecode::NOT_SET),
-    m_unregisteredSeiTimecodeHasBeenSet(false)
+    m_unregisteredSeiTimecodeHasBeenSet(false),
+    m_writeMp4PackagingType(H265WriteMp4PackagingType::NOT_SET),
+    m_writeMp4PackagingTypeHasBeenSet(false)
 {
 }
 
-H265Settings::H265Settings(const JsonValue& jsonValue) : 
+H265Settings::H265Settings(JsonView jsonValue) : 
     m_adaptiveQuantization(H265AdaptiveQuantization::NOT_SET),
     m_adaptiveQuantizationHasBeenSet(false),
     m_alternateTransferFunctionSei(H265AlternateTransferFunctionSei::NOT_SET),
@@ -115,6 +120,8 @@ H265Settings::H265Settings(const JsonValue& jsonValue) :
     m_codecLevelHasBeenSet(false),
     m_codecProfile(H265CodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
+    m_dynamicSubGop(H265DynamicSubGop::NOT_SET),
+    m_dynamicSubGopHasBeenSet(false),
     m_flickerAdaptiveQuantization(H265FlickerAdaptiveQuantization::NOT_SET),
     m_flickerAdaptiveQuantizationHasBeenSet(false),
     m_framerateControl(H265FramerateControl::NOT_SET),
@@ -155,6 +162,7 @@ H265Settings::H265Settings(const JsonValue& jsonValue) :
     m_parNumeratorHasBeenSet(false),
     m_qualityTuningLevel(H265QualityTuningLevel::NOT_SET),
     m_qualityTuningLevelHasBeenSet(false),
+    m_qvbrSettingsHasBeenSet(false),
     m_rateControlMode(H265RateControlMode::NOT_SET),
     m_rateControlModeHasBeenSet(false),
     m_sampleAdaptiveOffsetFilterMode(H265SampleAdaptiveOffsetFilterMode::NOT_SET),
@@ -176,12 +184,14 @@ H265Settings::H265Settings(const JsonValue& jsonValue) :
     m_tiles(H265Tiles::NOT_SET),
     m_tilesHasBeenSet(false),
     m_unregisteredSeiTimecode(H265UnregisteredSeiTimecode::NOT_SET),
-    m_unregisteredSeiTimecodeHasBeenSet(false)
+    m_unregisteredSeiTimecodeHasBeenSet(false),
+    m_writeMp4PackagingType(H265WriteMp4PackagingType::NOT_SET),
+    m_writeMp4PackagingTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-H265Settings& H265Settings::operator =(const JsonValue& jsonValue)
+H265Settings& H265Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adaptiveQuantization"))
   {
@@ -216,6 +226,13 @@ H265Settings& H265Settings::operator =(const JsonValue& jsonValue)
     m_codecProfile = H265CodecProfileMapper::GetH265CodecProfileForName(jsonValue.GetString("codecProfile"));
 
     m_codecProfileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dynamicSubGop"))
+  {
+    m_dynamicSubGop = H265DynamicSubGopMapper::GetH265DynamicSubGopForName(jsonValue.GetString("dynamicSubGop"));
+
+    m_dynamicSubGopHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("flickerAdaptiveQuantization"))
@@ -358,6 +375,13 @@ H265Settings& H265Settings::operator =(const JsonValue& jsonValue)
     m_qualityTuningLevelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("qvbrSettings"))
+  {
+    m_qvbrSettings = jsonValue.GetObject("qvbrSettings");
+
+    m_qvbrSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("rateControlMode"))
   {
     m_rateControlMode = H265RateControlModeMapper::GetH265RateControlModeForName(jsonValue.GetString("rateControlMode"));
@@ -435,6 +459,13 @@ H265Settings& H265Settings::operator =(const JsonValue& jsonValue)
     m_unregisteredSeiTimecodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("writeMp4PackagingType"))
+  {
+    m_writeMp4PackagingType = H265WriteMp4PackagingTypeMapper::GetH265WriteMp4PackagingTypeForName(jsonValue.GetString("writeMp4PackagingType"));
+
+    m_writeMp4PackagingTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -466,6 +497,11 @@ JsonValue H265Settings::Jsonize() const
   if(m_codecProfileHasBeenSet)
   {
    payload.WithString("codecProfile", H265CodecProfileMapper::GetNameForH265CodecProfile(m_codecProfile));
+  }
+
+  if(m_dynamicSubGopHasBeenSet)
+  {
+   payload.WithString("dynamicSubGop", H265DynamicSubGopMapper::GetNameForH265DynamicSubGop(m_dynamicSubGop));
   }
 
   if(m_flickerAdaptiveQuantizationHasBeenSet)
@@ -580,6 +616,12 @@ JsonValue H265Settings::Jsonize() const
    payload.WithString("qualityTuningLevel", H265QualityTuningLevelMapper::GetNameForH265QualityTuningLevel(m_qualityTuningLevel));
   }
 
+  if(m_qvbrSettingsHasBeenSet)
+  {
+   payload.WithObject("qvbrSettings", m_qvbrSettings.Jsonize());
+
+  }
+
   if(m_rateControlModeHasBeenSet)
   {
    payload.WithString("rateControlMode", H265RateControlModeMapper::GetNameForH265RateControlMode(m_rateControlMode));
@@ -634,6 +676,11 @@ JsonValue H265Settings::Jsonize() const
   if(m_unregisteredSeiTimecodeHasBeenSet)
   {
    payload.WithString("unregisteredSeiTimecode", H265UnregisteredSeiTimecodeMapper::GetNameForH265UnregisteredSeiTimecode(m_unregisteredSeiTimecode));
+  }
+
+  if(m_writeMp4PackagingTypeHasBeenSet)
+  {
+   payload.WithString("writeMp4PackagingType", H265WriteMp4PackagingTypeMapper::GetNameForH265WriteMp4PackagingType(m_writeMp4PackagingType));
   }
 
   return payload;

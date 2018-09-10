@@ -42,7 +42,7 @@ Build::Build() :
 {
 }
 
-Build::Build(const JsonValue& jsonValue) : 
+Build::Build(JsonView jsonValue) : 
     m_buildIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
@@ -57,7 +57,7 @@ Build::Build(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Build& Build::operator =(const JsonValue& jsonValue)
+Build& Build::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BuildId"))
   {

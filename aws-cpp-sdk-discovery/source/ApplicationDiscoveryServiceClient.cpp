@@ -34,14 +34,17 @@
 #include <aws/discovery/model/DeleteTagsRequest.h>
 #include <aws/discovery/model/DescribeAgentsRequest.h>
 #include <aws/discovery/model/DescribeConfigurationsRequest.h>
+#include <aws/discovery/model/DescribeContinuousExportsRequest.h>
 #include <aws/discovery/model/DescribeExportTasksRequest.h>
 #include <aws/discovery/model/DescribeTagsRequest.h>
 #include <aws/discovery/model/DisassociateConfigurationItemsFromApplicationRequest.h>
 #include <aws/discovery/model/GetDiscoverySummaryRequest.h>
 #include <aws/discovery/model/ListConfigurationsRequest.h>
 #include <aws/discovery/model/ListServerNeighborsRequest.h>
+#include <aws/discovery/model/StartContinuousExportRequest.h>
 #include <aws/discovery/model/StartDataCollectionByAgentIdsRequest.h>
 #include <aws/discovery/model/StartExportTaskRequest.h>
+#include <aws/discovery/model/StopContinuousExportRequest.h>
 #include <aws/discovery/model/StopDataCollectionByAgentIdsRequest.h>
 #include <aws/discovery/model/UpdateApplicationRequest.h>
 
@@ -354,6 +357,41 @@ void ApplicationDiscoveryServiceClient::DescribeConfigurationsAsyncHelper(const 
   handler(this, request, DescribeConfigurations(request), context);
 }
 
+DescribeContinuousExportsOutcome ApplicationDiscoveryServiceClient::DescribeContinuousExports(const DescribeContinuousExportsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeContinuousExportsOutcome(DescribeContinuousExportsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeContinuousExportsOutcome(outcome.GetError());
+  }
+}
+
+DescribeContinuousExportsOutcomeCallable ApplicationDiscoveryServiceClient::DescribeContinuousExportsCallable(const DescribeContinuousExportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeContinuousExportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeContinuousExports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApplicationDiscoveryServiceClient::DescribeContinuousExportsAsync(const DescribeContinuousExportsRequest& request, const DescribeContinuousExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeContinuousExportsAsyncHelper( request, handler, context ); } );
+}
+
+void ApplicationDiscoveryServiceClient::DescribeContinuousExportsAsyncHelper(const DescribeContinuousExportsRequest& request, const DescribeContinuousExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeContinuousExports(request), context);
+}
+
 DescribeExportTasksOutcome ApplicationDiscoveryServiceClient::DescribeExportTasks(const DescribeExportTasksRequest& request) const
 {
   Aws::StringStream ss;
@@ -564,6 +602,41 @@ void ApplicationDiscoveryServiceClient::ListServerNeighborsAsyncHelper(const Lis
   handler(this, request, ListServerNeighbors(request), context);
 }
 
+StartContinuousExportOutcome ApplicationDiscoveryServiceClient::StartContinuousExport(const StartContinuousExportRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartContinuousExportOutcome(StartContinuousExportResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartContinuousExportOutcome(outcome.GetError());
+  }
+}
+
+StartContinuousExportOutcomeCallable ApplicationDiscoveryServiceClient::StartContinuousExportCallable(const StartContinuousExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartContinuousExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartContinuousExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApplicationDiscoveryServiceClient::StartContinuousExportAsync(const StartContinuousExportRequest& request, const StartContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartContinuousExportAsyncHelper( request, handler, context ); } );
+}
+
+void ApplicationDiscoveryServiceClient::StartContinuousExportAsyncHelper(const StartContinuousExportRequest& request, const StartContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartContinuousExport(request), context);
+}
+
 StartDataCollectionByAgentIdsOutcome ApplicationDiscoveryServiceClient::StartDataCollectionByAgentIds(const StartDataCollectionByAgentIdsRequest& request) const
 {
   Aws::StringStream ss;
@@ -632,6 +705,41 @@ void ApplicationDiscoveryServiceClient::StartExportTaskAsync(const StartExportTa
 void ApplicationDiscoveryServiceClient::StartExportTaskAsyncHelper(const StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartExportTask(request), context);
+}
+
+StopContinuousExportOutcome ApplicationDiscoveryServiceClient::StopContinuousExport(const StopContinuousExportRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopContinuousExportOutcome(StopContinuousExportResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopContinuousExportOutcome(outcome.GetError());
+  }
+}
+
+StopContinuousExportOutcomeCallable ApplicationDiscoveryServiceClient::StopContinuousExportCallable(const StopContinuousExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopContinuousExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopContinuousExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApplicationDiscoveryServiceClient::StopContinuousExportAsync(const StopContinuousExportRequest& request, const StopContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopContinuousExportAsyncHelper( request, handler, context ); } );
+}
+
+void ApplicationDiscoveryServiceClient::StopContinuousExportAsyncHelper(const StopContinuousExportRequest& request, const StopContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopContinuousExport(request), context);
 }
 
 StopDataCollectionByAgentIdsOutcome ApplicationDiscoveryServiceClient::StopDataCollectionByAgentIds(const StopDataCollectionByAgentIdsRequest& request) const

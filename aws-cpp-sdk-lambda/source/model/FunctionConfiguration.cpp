@@ -50,11 +50,12 @@ FunctionConfiguration::FunctionConfiguration() :
     m_environmentHasBeenSet(false),
     m_kMSKeyArnHasBeenSet(false),
     m_tracingConfigHasBeenSet(false),
-    m_masterArnHasBeenSet(false)
+    m_masterArnHasBeenSet(false),
+    m_revisionIdHasBeenSet(false)
 {
 }
 
-FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) : 
+FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) : 
     m_functionNameHasBeenSet(false),
     m_functionArnHasBeenSet(false),
     m_runtime(Runtime::NOT_SET),
@@ -76,12 +77,13 @@ FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) :
     m_environmentHasBeenSet(false),
     m_kMSKeyArnHasBeenSet(false),
     m_tracingConfigHasBeenSet(false),
-    m_masterArnHasBeenSet(false)
+    m_masterArnHasBeenSet(false),
+    m_revisionIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-FunctionConfiguration& FunctionConfiguration::operator =(const JsonValue& jsonValue)
+FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FunctionName"))
   {
@@ -209,6 +211,13 @@ FunctionConfiguration& FunctionConfiguration::operator =(const JsonValue& jsonVa
     m_masterArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RevisionId"))
+  {
+    m_revisionId = jsonValue.GetString("RevisionId");
+
+    m_revisionIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -320,6 +329,12 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_masterArnHasBeenSet)
   {
    payload.WithString("MasterArn", m_masterArn);
+
+  }
+
+  if(m_revisionIdHasBeenSet)
+  {
+   payload.WithString("RevisionId", m_revisionId);
 
   }
 

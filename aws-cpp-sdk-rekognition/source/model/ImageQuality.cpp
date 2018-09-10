@@ -36,7 +36,7 @@ ImageQuality::ImageQuality() :
 {
 }
 
-ImageQuality::ImageQuality(const JsonValue& jsonValue) : 
+ImageQuality::ImageQuality(JsonView jsonValue) : 
     m_brightness(0.0),
     m_brightnessHasBeenSet(false),
     m_sharpness(0.0),
@@ -45,7 +45,7 @@ ImageQuality::ImageQuality(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ImageQuality& ImageQuality::operator =(const JsonValue& jsonValue)
+ImageQuality& ImageQuality::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Brightness"))
   {

@@ -30,18 +30,20 @@ namespace Model
 
 Location::Location() : 
     m_locationCodeHasBeenSet(false),
-    m_locationNameHasBeenSet(false)
+    m_locationNameHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
-Location::Location(const JsonValue& jsonValue) : 
+Location::Location(JsonView jsonValue) : 
     m_locationCodeHasBeenSet(false),
-    m_locationNameHasBeenSet(false)
+    m_locationNameHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Location& Location::operator =(const JsonValue& jsonValue)
+Location& Location::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("locationCode"))
   {
@@ -55,6 +57,13 @@ Location& Location::operator =(const JsonValue& jsonValue)
     m_locationName = jsonValue.GetString("locationName");
 
     m_locationNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("region"))
+  {
+    m_region = jsonValue.GetString("region");
+
+    m_regionHasBeenSet = true;
   }
 
   return *this;
@@ -73,6 +82,12 @@ JsonValue Location::Jsonize() const
   if(m_locationNameHasBeenSet)
   {
    payload.WithString("locationName", m_locationName);
+
+  }
+
+  if(m_regionHasBeenSet)
+  {
+   payload.WithString("region", m_region);
 
   }
 

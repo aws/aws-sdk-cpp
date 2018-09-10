@@ -44,7 +44,7 @@ Aws::String RemoveTagsFromVaultRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

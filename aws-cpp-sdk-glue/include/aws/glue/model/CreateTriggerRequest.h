@@ -276,6 +276,25 @@ namespace Model
      */
     inline CreateTriggerRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>Set to true to start SCHEDULED and CONDITIONAL triggers when created. True
+     * not supported for ON_DEMAND triggers.</p>
+     */
+    inline bool GetStartOnCreation() const{ return m_startOnCreation; }
+
+    /**
+     * <p>Set to true to start SCHEDULED and CONDITIONAL triggers when created. True
+     * not supported for ON_DEMAND triggers.</p>
+     */
+    inline void SetStartOnCreation(bool value) { m_startOnCreationHasBeenSet = true; m_startOnCreation = value; }
+
+    /**
+     * <p>Set to true to start SCHEDULED and CONDITIONAL triggers when created. True
+     * not supported for ON_DEMAND triggers.</p>
+     */
+    inline CreateTriggerRequest& WithStartOnCreation(bool value) { SetStartOnCreation(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -295,6 +314,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    bool m_startOnCreation;
+    bool m_startOnCreationHasBeenSet;
   };
 
 } // namespace Model

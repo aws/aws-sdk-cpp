@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudWatchEvents
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     PutEventsResultEntry();
-    PutEventsResultEntry(const Aws::Utils::Json::JsonValue& jsonValue);
-    PutEventsResultEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PutEventsResultEntry(Aws::Utils::Json::JsonView jsonValue);
+    PutEventsResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -43,7 +43,7 @@ ExportTask::ExportTask() :
 {
 }
 
-ExportTask::ExportTask(const JsonValue& jsonValue) : 
+ExportTask::ExportTask(JsonView jsonValue) : 
     m_taskIdHasBeenSet(false),
     m_taskNameHasBeenSet(false),
     m_logGroupNameHasBeenSet(false),
@@ -59,7 +59,7 @@ ExportTask::ExportTask(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ExportTask& ExportTask::operator =(const JsonValue& jsonValue)
+ExportTask& ExportTask::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("taskId"))
   {

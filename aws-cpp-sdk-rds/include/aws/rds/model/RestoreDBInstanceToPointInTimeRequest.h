@@ -20,6 +20,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/ProcessorFeature.h>
 #include <utility>
 
 namespace Aws
@@ -236,8 +237,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
+     * same DBInstanceClass as the original DB instance.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
@@ -247,8 +248,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
+     * same DBInstanceClass as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
@@ -258,8 +259,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
+     * same DBInstanceClass as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
@@ -269,8 +270,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
+     * same DBInstanceClass as the original DB instance.</p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
@@ -280,8 +281,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
+     * same DBInstanceClass as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
@@ -291,8 +292,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
+     * same DBInstanceClass as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
@@ -302,8 +303,8 @@ namespace Model
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
-     * Instance Class</a> in the Amazon RDS User Guide. </p> <p>Default: The same
-     * DBInstanceClass as the original DB instance.</p>
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
+     * same DBInstanceClass as the original DB instance.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
 
@@ -463,15 +464,8 @@ namespace Model
      * <p>Specifies the accessibility options for the DB instance. A value of true
      * specifies an Internet-facing instance with a publicly resolvable DNS name, which
      * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
@@ -479,15 +473,8 @@ namespace Model
      * <p>Specifies the accessibility options for the DB instance. A value of true
      * specifies an Internet-facing instance with a publicly resolvable DNS name, which
      * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
@@ -495,15 +482,8 @@ namespace Model
      * <p>Specifies the accessibility options for the DB instance. A value of true
      * specifies an Internet-facing instance with a publicly resolvable DNS name, which
      * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <a>CreateDBInstance</a>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -623,105 +603,91 @@ namespace Model
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The database engine to use for the new instance.</p> <p>Default: The same as
      * source</p> <p>Constraint: Must be compatible with the engine of the source</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> </p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li> <li> <p>
+     * <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li>
+     * <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se1</code> </p>
+     * </li> <li> <p> <code>oracle-se</code> </p> </li> <li> <p> <code>postgres</code>
+     * </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li> <li> <p>
+     * <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code> </p>
+     * </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1083,8 +1049,7 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
-     * <p>Default: <code>false</code> </p>
+     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
@@ -1093,8 +1058,7 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
-     * <p>Default: <code>false</code> </p>
+     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
@@ -1103,59 +1067,152 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
-     * <p>Default: <code>false</code> </p>
+     * version 5.7.16 or higher</p> </li> </ul> <p>Default: <code>false</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
-     * Logs.</p>
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline const Aws::Vector<ProcessorFeature>& GetProcessorFeatures() const{ return m_processorFeatures; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline void SetProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = value; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline void SetProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = std::move(value); }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { SetProcessorFeatures(value); return *this;}
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { SetProcessorFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& AddProcessorFeatures(const ProcessorFeature& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(value); return *this; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& AddProcessorFeatures(ProcessorFeature&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
+     */
+    inline bool GetUseDefaultProcessorFeatures() const{ return m_useDefaultProcessorFeatures; }
+
+    /**
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
+     */
+    inline void SetUseDefaultProcessorFeatures(bool value) { m_useDefaultProcessorFeaturesHasBeenSet = true; m_useDefaultProcessorFeatures = value; }
+
+    /**
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithUseDefaultProcessorFeatures(bool value) { SetUseDefaultProcessorFeatures(value); return *this;}
 
   private:
 
@@ -1233,6 +1290,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
     bool m_enableCloudwatchLogsExportsHasBeenSet;
+
+    Aws::Vector<ProcessorFeature> m_processorFeatures;
+    bool m_processorFeaturesHasBeenSet;
+
+    bool m_useDefaultProcessorFeatures;
+    bool m_useDefaultProcessorFeaturesHasBeenSet;
   };
 
 } // namespace Model

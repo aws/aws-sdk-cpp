@@ -34,14 +34,14 @@ InputConfiguration::InputConfiguration() :
 {
 }
 
-InputConfiguration::InputConfiguration(const JsonValue& jsonValue) : 
+InputConfiguration::InputConfiguration(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_inputStartingPositionConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputConfiguration& InputConfiguration::operator =(const JsonValue& jsonValue)
+InputConfiguration& InputConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

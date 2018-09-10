@@ -33,13 +33,13 @@ ResultAttribute::ResultAttribute() :
 {
 }
 
-ResultAttribute::ResultAttribute(const JsonValue& jsonValue) : 
+ResultAttribute::ResultAttribute(JsonView jsonValue) : 
     m_typeNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResultAttribute& ResultAttribute::operator =(const JsonValue& jsonValue)
+ResultAttribute& ResultAttribute::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TypeName"))
   {

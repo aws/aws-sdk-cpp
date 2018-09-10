@@ -39,7 +39,7 @@ UtteranceData::UtteranceData() :
 {
 }
 
-UtteranceData::UtteranceData(const JsonValue& jsonValue) : 
+UtteranceData::UtteranceData(JsonView jsonValue) : 
     m_utteranceStringHasBeenSet(false),
     m_count(0),
     m_countHasBeenSet(false),
@@ -51,7 +51,7 @@ UtteranceData::UtteranceData(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UtteranceData& UtteranceData::operator =(const JsonValue& jsonValue)
+UtteranceData& UtteranceData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("utteranceString"))
   {

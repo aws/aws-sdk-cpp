@@ -38,10 +38,10 @@ namespace Model
   /**
    * <p>Contains information about an AWS access key.</p> <p> This data type is used
    * as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a>
-   * actions. </p> <note> <p>The <code>SecretAccessKey</code> value is returned only
-   * in response to <a>CreateAccessKey</a>. You can get a secret access key only when
-   * you first create an access key; you cannot recover the secret access key later.
-   * If you lose a secret access key, you must create a new access key.</p>
+   * operations. </p> <note> <p>The <code>SecretAccessKey</code> value is returned
+   * only in response to <a>CreateAccessKey</a>. You can get a secret access key only
+   * when you first create an access key; you cannot recover the secret access key
+   * later. If you lose a secret access key, you must create a new access key.</p>
    * </note><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AccessKey">AWS API
    * Reference</a></p>
@@ -130,32 +130,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the access key. <code>Active</code> means the key is valid for
-     * API calls, while <code>Inactive</code> means it is not. </p>
+     * <p>The status of the access key. <code>Active</code> means that the key is valid
+     * for API calls, while <code>Inactive</code> means it is not. </p>
      */
     inline const StatusType& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the access key. <code>Active</code> means the key is valid for
-     * API calls, while <code>Inactive</code> means it is not. </p>
+     * <p>The status of the access key. <code>Active</code> means that the key is valid
+     * for API calls, while <code>Inactive</code> means it is not. </p>
      */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the access key. <code>Active</code> means the key is valid for
-     * API calls, while <code>Inactive</code> means it is not. </p>
+     * <p>The status of the access key. <code>Active</code> means that the key is valid
+     * for API calls, while <code>Inactive</code> means it is not. </p>
      */
     inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the access key. <code>Active</code> means the key is valid for
-     * API calls, while <code>Inactive</code> means it is not. </p>
+     * <p>The status of the access key. <code>Active</code> means that the key is valid
+     * for API calls, while <code>Inactive</code> means it is not. </p>
      */
     inline AccessKey& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the access key. <code>Active</code> means the key is valid for
-     * API calls, while <code>Inactive</code> means it is not. </p>
+     * <p>The status of the access key. <code>Active</code> means that the key is valid
+     * for API calls, while <code>Inactive</code> means it is not. </p>
      */
     inline AccessKey& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 

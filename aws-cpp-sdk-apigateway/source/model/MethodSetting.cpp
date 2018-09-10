@@ -51,7 +51,7 @@ MethodSetting::MethodSetting() :
 {
 }
 
-MethodSetting::MethodSetting(const JsonValue& jsonValue) : 
+MethodSetting::MethodSetting(JsonView jsonValue) : 
     m_metricsEnabled(false),
     m_metricsEnabledHasBeenSet(false),
     m_loggingLevelHasBeenSet(false),
@@ -75,7 +75,7 @@ MethodSetting::MethodSetting(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MethodSetting& MethodSetting::operator =(const JsonValue& jsonValue)
+MethodSetting& MethodSetting::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("metricsEnabled"))
   {

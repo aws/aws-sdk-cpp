@@ -35,7 +35,7 @@ Subscription::Subscription() :
 {
 }
 
-Subscription::Subscription(const JsonValue& jsonValue) : 
+Subscription::Subscription(JsonView jsonValue) : 
     m_resourceArnHasBeenSet(false),
     m_topicArnHasBeenSet(false),
     m_eventSubscriptionsHasBeenSet(false)
@@ -43,7 +43,7 @@ Subscription::Subscription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Subscription& Subscription::operator =(const JsonValue& jsonValue)
+Subscription& Subscription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("resourceArn"))
   {
@@ -61,7 +61,7 @@ Subscription& Subscription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("eventSubscriptions"))
   {
-    Array<JsonValue> eventSubscriptionsJsonList = jsonValue.GetArray("eventSubscriptions");
+    Array<JsonView> eventSubscriptionsJsonList = jsonValue.GetArray("eventSubscriptions");
     for(unsigned eventSubscriptionsIndex = 0; eventSubscriptionsIndex < eventSubscriptionsJsonList.GetLength(); ++eventSubscriptionsIndex)
     {
       m_eventSubscriptions.push_back(eventSubscriptionsJsonList[eventSubscriptionsIndex].AsObject());

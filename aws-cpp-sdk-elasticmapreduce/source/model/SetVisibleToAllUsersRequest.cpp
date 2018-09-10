@@ -50,7 +50,7 @@ Aws::String SetVisibleToAllUsersRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SetVisibleToAllUsersRequest::GetRequestSpecificHeaders() const

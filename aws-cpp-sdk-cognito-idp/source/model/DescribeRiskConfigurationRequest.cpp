@@ -44,7 +44,7 @@ Aws::String DescribeRiskConfigurationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeRiskConfigurationRequest::GetRequestSpecificHeaders() const

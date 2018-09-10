@@ -38,6 +38,7 @@
 #include <aws/elasticfilesystem/model/DescribeMountTargetsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeTagsRequest.h>
 #include <aws/elasticfilesystem/model/ModifyMountTargetSecurityGroupsRequest.h>
+#include <aws/elasticfilesystem/model/UpdateFileSystemRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -496,5 +497,41 @@ void EFSClient::ModifyMountTargetSecurityGroupsAsync(const ModifyMountTargetSecu
 void EFSClient::ModifyMountTargetSecurityGroupsAsyncHelper(const ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyMountTargetSecurityGroups(request), context);
+}
+
+UpdateFileSystemOutcome EFSClient::UpdateFileSystem(const UpdateFileSystemRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-02-01/file-systems/";
+  ss << request.GetFileSystemId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateFileSystemOutcome(UpdateFileSystemResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateFileSystemOutcome(outcome.GetError());
+  }
+}
+
+UpdateFileSystemOutcomeCallable EFSClient::UpdateFileSystemCallable(const UpdateFileSystemRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFileSystemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFileSystem(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EFSClient::UpdateFileSystemAsync(const UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFileSystemAsyncHelper( request, handler, context ); } );
+}
+
+void EFSClient::UpdateFileSystemAsyncHelper(const UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFileSystem(request), context);
 }
 

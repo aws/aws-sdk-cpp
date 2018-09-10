@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     ComplianceItem();
-    ComplianceItem(const Aws::Utils::Json::JsonValue& jsonValue);
-    ComplianceItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ComplianceItem(Aws::Utils::Json::JsonView jsonValue);
+    ComplianceItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -183,49 +184,49 @@ namespace Model
 
     /**
      * <p>An ID for the compliance item. For example, if the compliance item is a
-     * Windows patch, the ID could be the number of the KB article. Here's an example:
+     * Windows patch, the ID could be the number of the KB article; for example:
      * KB4010320.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>An ID for the compliance item. For example, if the compliance item is a
-     * Windows patch, the ID could be the number of the KB article. Here's an example:
+     * Windows patch, the ID could be the number of the KB article; for example:
      * KB4010320.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>An ID for the compliance item. For example, if the compliance item is a
-     * Windows patch, the ID could be the number of the KB article. Here's an example:
+     * Windows patch, the ID could be the number of the KB article; for example:
      * KB4010320.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>An ID for the compliance item. For example, if the compliance item is a
-     * Windows patch, the ID could be the number of the KB article. Here's an example:
+     * Windows patch, the ID could be the number of the KB article; for example:
      * KB4010320.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>An ID for the compliance item. For example, if the compliance item is a
-     * Windows patch, the ID could be the number of the KB article. Here's an example:
+     * Windows patch, the ID could be the number of the KB article; for example:
      * KB4010320.</p>
      */
     inline ComplianceItem& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>An ID for the compliance item. For example, if the compliance item is a
-     * Windows patch, the ID could be the number of the KB article. Here's an example:
+     * Windows patch, the ID could be the number of the KB article; for example:
      * KB4010320.</p>
      */
     inline ComplianceItem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>An ID for the compliance item. For example, if the compliance item is a
-     * Windows patch, the ID could be the number of the KB article. Here's an example:
+     * Windows patch, the ID could be the number of the KB article; for example:
      * KB4010320.</p>
      */
     inline ComplianceItem& WithId(const char* value) { SetId(value); return *this;}
@@ -233,50 +234,50 @@ namespace Model
 
     /**
      * <p>A title for the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.</p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
      * <p>A title for the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.</p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
      * <p>A title for the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.</p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
      * <p>A title for the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.</p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
      * <p>A title for the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.</p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services.</p>
      */
     inline ComplianceItem& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
      * <p>A title for the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.</p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services.</p>
      */
     inline ComplianceItem& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
      * <p>A title for the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.</p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services.</p>
      */
     inline ComplianceItem& WithTitle(const char* value) { SetTitle(value); return *this;}
 

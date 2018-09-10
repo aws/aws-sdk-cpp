@@ -37,10 +37,10 @@ DescribeScalingActivitiesResult::DescribeScalingActivitiesResult(const Aws::Amaz
 
 DescribeScalingActivitiesResult& DescribeScalingActivitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ScalingActivities"))
   {
-    Array<JsonValue> scalingActivitiesJsonList = jsonValue.GetArray("ScalingActivities");
+    Array<JsonView> scalingActivitiesJsonList = jsonValue.GetArray("ScalingActivities");
     for(unsigned scalingActivitiesIndex = 0; scalingActivitiesIndex < scalingActivitiesJsonList.GetLength(); ++scalingActivitiesIndex)
     {
       m_scalingActivities.push_back(scalingActivitiesJsonList[scalingActivitiesIndex].AsObject());

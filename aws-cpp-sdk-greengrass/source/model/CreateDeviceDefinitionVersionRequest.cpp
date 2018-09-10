@@ -45,7 +45,7 @@ Aws::String CreateDeviceDefinitionVersionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateDeviceDefinitionVersionRequest::GetRequestSpecificHeaders() const
@@ -55,7 +55,7 @@ Aws::Http::HeaderValueCollection CreateDeviceDefinitionVersionRequest::GetReques
   if(m_amznClientTokenHasBeenSet)
   {
     ss << m_amznClientToken;
-    headers.insert(Aws::Http::HeaderValuePair("x-amzn-client-token", ss.str()));
+    headers.emplace("x-amzn-client-token",  ss.str());
     ss.str("");
   }
 

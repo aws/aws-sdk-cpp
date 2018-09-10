@@ -37,7 +37,7 @@ Aws::String CancelKeyDeletionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CancelKeyDeletionRequest::GetRequestSpecificHeaders() const

@@ -40,7 +40,7 @@ StackSummary::StackSummary() :
 {
 }
 
-StackSummary::StackSummary(const JsonValue& jsonValue) : 
+StackSummary::StackSummary(JsonView jsonValue) : 
     m_stackIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
@@ -53,7 +53,7 @@ StackSummary::StackSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StackSummary& StackSummary::operator =(const JsonValue& jsonValue)
+StackSummary& StackSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StackId"))
   {

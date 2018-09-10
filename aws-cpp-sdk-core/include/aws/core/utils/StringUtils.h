@@ -77,11 +77,20 @@ namespace Aws
             */
             static Aws::String URLDecode(const char* safe);
 
+            /**
+             * @brief Splits a string on a delimiter (empty items are excluded).
+             * @param toSplit, the original string to split
+             * @param splitOn, the delemiter you want to use.
+             */
+            static Aws::Vector<Aws::String> Split(const Aws::String& toSplit, char splitOn);
 
             /**
-            * Splits a string on a delimiter (empty items are excluded).
-            */
-            static Aws::Vector<Aws::String> Split(const Aws::String& toSplit, char splitOn);
+             * @brief Splits a string on a delimiter (empty items are excluded).
+             * @param toSplit, the original string to split
+             * @param splitOn, the delemiter you want to use.
+             * @param numOfTargetParts, how many target parts you want to get, if it is 0, as many as possible.
+             */
+            static Aws::Vector<Aws::String> Split(const Aws::String& toSplit, char splitOn, size_t numOfTargetParts);
 
 
             /**

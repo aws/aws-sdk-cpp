@@ -15,9 +15,10 @@
 #include <aws/s3-encryption/materials/SimpleEncryptionMaterials.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/client/AWSError.h>
 
 using namespace Aws::Utils;
-using namespace Aws::Utils::Crypto;
+using namespace Aws::Client;
 using namespace Aws::S3Encryption;
 
 namespace Aws
@@ -33,34 +34,37 @@ namespace Aws
             {
             }
 
-            void SimpleEncryptionMaterials::EncryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
+            CryptoOutcome SimpleEncryptionMaterials::EncryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
             {
                 auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
                 if (cipher == nullptr)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The cipher was not initialized correctly during encryption.");
-                    return;
+                    return CryptoOutcome(AWSError<CryptoErrors>(CryptoErrors::ENCRYPT_CONTENT_ENCRYPTION_KEY_FAILED, "EncryptContentEncryptionKeyFailed", "Failed to encrypt content encryption key(CEK)", false/*not retryable*/));
                 }
                 contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::AES_KEY_WRAP);
                 const CryptoBuffer& contentEncryptionKey = contentCryptoMaterial.GetContentEncryptionKey();
                 CryptoBuffer&& encryptResult = cipher->EncryptBuffer(contentEncryptionKey);
                 CryptoBuffer&& encryptFinalizeResult = cipher->FinalizeEncryption();
                 contentCryptoMaterial.SetEncryptedContentEncryptionKey(CryptoBuffer({ &encryptResult, &encryptFinalizeResult }));
+                return CryptoOutcome(Aws::NoResult());
             }
 
-            void SimpleEncryptionMaterials::DecryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
+            CryptoOutcome SimpleEncryptionMaterials::DecryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
             {
+                auto errorOutcome = CryptoOutcome(AWSError<CryptoErrors>(CryptoErrors::DECRYPT_CONTENT_ENCRYPTION_KEY_FAILED, "DecryptContentEncryptionKeyFailed", "Failed to decrypt content encryption key(CEK)", false/*not retryable*/));
+
                 if (contentCryptoMaterial.GetKeyWrapAlgorithm() != KeyWrapAlgorithm::AES_KEY_WRAP)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The KeyWrapAlgorithm is not AES_Key_Wrap during decryption, therefore the"
                         << " current encryption materials can not decrypt the content encryption key.");
-                    return;
+                    return errorOutcome;
                 }
                 auto cipher = CreateAES_KeyWrapImplementation(m_symmetricMasterKey);
                 if (cipher == nullptr)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The cipher was not initialized correctly during decryption.");
-                    return;
+                    return errorOutcome;
                 }
                 const CryptoBuffer& encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
                 CryptoBuffer&& decryptResult = cipher->DecryptBuffer(encryptedContentEncryptionKey);
@@ -70,7 +74,9 @@ namespace Aws
                 if (contentCryptoMaterial.GetContentEncryptionKey().GetLength() == 0u)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Content Encryption Key could not be decrypted.");
+                    return errorOutcome;
                 }
+                return CryptoOutcome(Aws::NoResult());
             }
 
         } //namespace Materials

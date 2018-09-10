@@ -33,17 +33,17 @@ TimedMetadataInsertion::TimedMetadataInsertion() :
 {
 }
 
-TimedMetadataInsertion::TimedMetadataInsertion(const JsonValue& jsonValue) : 
+TimedMetadataInsertion::TimedMetadataInsertion(JsonView jsonValue) : 
     m_id3InsertionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TimedMetadataInsertion& TimedMetadataInsertion::operator =(const JsonValue& jsonValue)
+TimedMetadataInsertion& TimedMetadataInsertion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id3Insertions"))
   {
-    Array<JsonValue> id3InsertionsJsonList = jsonValue.GetArray("id3Insertions");
+    Array<JsonView> id3InsertionsJsonList = jsonValue.GetArray("id3Insertions");
     for(unsigned id3InsertionsIndex = 0; id3InsertionsIndex < id3InsertionsJsonList.GetLength(); ++id3InsertionsIndex)
     {
       m_id3Insertions.push_back(id3InsertionsJsonList[id3InsertionsIndex].AsObject());

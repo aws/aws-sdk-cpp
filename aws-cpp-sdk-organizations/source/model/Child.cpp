@@ -35,7 +35,7 @@ Child::Child() :
 {
 }
 
-Child::Child(const JsonValue& jsonValue) : 
+Child::Child(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_type(ChildType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -43,7 +43,7 @@ Child::Child(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Child& Child::operator =(const JsonValue& jsonValue)
+Child& Child::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

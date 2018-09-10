@@ -37,10 +37,10 @@ DescribeInterconnectsResult::DescribeInterconnectsResult(const Aws::AmazonWebSer
 
 DescribeInterconnectsResult& DescribeInterconnectsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("interconnects"))
   {
-    Array<JsonValue> interconnectsJsonList = jsonValue.GetArray("interconnects");
+    Array<JsonView> interconnectsJsonList = jsonValue.GetArray("interconnects");
     for(unsigned interconnectsIndex = 0; interconnectsIndex < interconnectsJsonList.GetLength(); ++interconnectsIndex)
     {
       m_interconnects.push_back(interconnectsJsonList[interconnectsIndex].AsObject());

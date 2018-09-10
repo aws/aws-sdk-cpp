@@ -80,7 +80,7 @@ Aws::String ConfirmSignUpRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ConfirmSignUpRequest::GetRequestSpecificHeaders() const

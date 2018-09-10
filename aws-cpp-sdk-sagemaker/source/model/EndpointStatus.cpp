@@ -33,6 +33,7 @@ namespace Aws
         static const int OutOfService_HASH = HashingUtils::HashString("OutOfService");
         static const int Creating_HASH = HashingUtils::HashString("Creating");
         static const int Updating_HASH = HashingUtils::HashString("Updating");
+        static const int SystemUpdating_HASH = HashingUtils::HashString("SystemUpdating");
         static const int RollingBack_HASH = HashingUtils::HashString("RollingBack");
         static const int InService_HASH = HashingUtils::HashString("InService");
         static const int Deleting_HASH = HashingUtils::HashString("Deleting");
@@ -53,6 +54,10 @@ namespace Aws
           else if (hashCode == Updating_HASH)
           {
             return EndpointStatus::Updating;
+          }
+          else if (hashCode == SystemUpdating_HASH)
+          {
+            return EndpointStatus::SystemUpdating;
           }
           else if (hashCode == RollingBack_HASH)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "Creating";
           case EndpointStatus::Updating:
             return "Updating";
+          case EndpointStatus::SystemUpdating:
+            return "SystemUpdating";
           case EndpointStatus::RollingBack:
             return "RollingBack";
           case EndpointStatus::InService:

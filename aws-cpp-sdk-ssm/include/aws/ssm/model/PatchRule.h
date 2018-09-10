@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     PatchRule();
-    PatchRule(const Aws::Utils::Json::JsonValue& jsonValue);
-    PatchRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PatchRule(Aws::Utils::Json::JsonView jsonValue);
+    PatchRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -111,21 +112,49 @@ namespace Model
 
     /**
      * <p>The number of days after the release date of each patch matched by the rule
-     * the patch is marked as approved in the patch baseline.</p>
+     * that the patch is marked as approved in the patch baseline. For example, a value
+     * of <code>7</code> means that patches are approved seven days after they are
+     * released. </p>
      */
     inline int GetApproveAfterDays() const{ return m_approveAfterDays; }
 
     /**
      * <p>The number of days after the release date of each patch matched by the rule
-     * the patch is marked as approved in the patch baseline.</p>
+     * that the patch is marked as approved in the patch baseline. For example, a value
+     * of <code>7</code> means that patches are approved seven days after they are
+     * released. </p>
      */
     inline void SetApproveAfterDays(int value) { m_approveAfterDaysHasBeenSet = true; m_approveAfterDays = value; }
 
     /**
      * <p>The number of days after the release date of each patch matched by the rule
-     * the patch is marked as approved in the patch baseline.</p>
+     * that the patch is marked as approved in the patch baseline. For example, a value
+     * of <code>7</code> means that patches are approved seven days after they are
+     * released. </p>
      */
     inline PatchRule& WithApproveAfterDays(int value) { SetApproveAfterDays(value); return *this;}
+
+
+    /**
+     * <p>For instances identified by the approval rule filters, enables a patch
+     * baseline to apply non-security updates available in the specified repository.
+     * The default value is 'false'. Applies to Linux instances only.</p>
+     */
+    inline bool GetEnableNonSecurity() const{ return m_enableNonSecurity; }
+
+    /**
+     * <p>For instances identified by the approval rule filters, enables a patch
+     * baseline to apply non-security updates available in the specified repository.
+     * The default value is 'false'. Applies to Linux instances only.</p>
+     */
+    inline void SetEnableNonSecurity(bool value) { m_enableNonSecurityHasBeenSet = true; m_enableNonSecurity = value; }
+
+    /**
+     * <p>For instances identified by the approval rule filters, enables a patch
+     * baseline to apply non-security updates available in the specified repository.
+     * The default value is 'false'. Applies to Linux instances only.</p>
+     */
+    inline PatchRule& WithEnableNonSecurity(bool value) { SetEnableNonSecurity(value); return *this;}
 
   private:
 
@@ -137,6 +166,9 @@ namespace Model
 
     int m_approveAfterDays;
     bool m_approveAfterDaysHasBeenSet;
+
+    bool m_enableNonSecurity;
+    bool m_enableNonSecurityHasBeenSet;
   };
 
 } // namespace Model

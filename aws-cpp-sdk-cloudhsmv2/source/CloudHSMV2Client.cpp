@@ -27,6 +27,7 @@
 #include <aws/cloudhsmv2/CloudHSMV2Client.h>
 #include <aws/cloudhsmv2/CloudHSMV2Endpoint.h>
 #include <aws/cloudhsmv2/CloudHSMV2ErrorMarshaller.h>
+#include <aws/cloudhsmv2/model/CopyBackupToRegionRequest.h>
 #include <aws/cloudhsmv2/model/CreateClusterRequest.h>
 #include <aws/cloudhsmv2/model/CreateHsmRequest.h>
 #include <aws/cloudhsmv2/model/DeleteClusterRequest.h>
@@ -100,6 +101,41 @@ void CloudHSMV2Client::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+CopyBackupToRegionOutcome CloudHSMV2Client::CopyBackupToRegion(const CopyBackupToRegionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CopyBackupToRegionOutcome(CopyBackupToRegionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CopyBackupToRegionOutcome(outcome.GetError());
+  }
+}
+
+CopyBackupToRegionOutcomeCallable CloudHSMV2Client::CopyBackupToRegionCallable(const CopyBackupToRegionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CopyBackupToRegionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopyBackupToRegion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudHSMV2Client::CopyBackupToRegionAsync(const CopyBackupToRegionRequest& request, const CopyBackupToRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CopyBackupToRegionAsyncHelper( request, handler, context ); } );
+}
+
+void CloudHSMV2Client::CopyBackupToRegionAsyncHelper(const CopyBackupToRegionRequest& request, const CopyBackupToRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CopyBackupToRegion(request), context);
 }
 
 CreateClusterOutcome CloudHSMV2Client::CreateCluster(const CreateClusterRequest& request) const

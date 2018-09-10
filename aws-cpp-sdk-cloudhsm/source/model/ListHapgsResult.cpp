@@ -37,10 +37,10 @@ ListHapgsResult::ListHapgsResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 ListHapgsResult& ListHapgsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HapgList"))
   {
-    Array<JsonValue> hapgListJsonList = jsonValue.GetArray("HapgList");
+    Array<JsonView> hapgListJsonList = jsonValue.GetArray("HapgList");
     for(unsigned hapgListIndex = 0; hapgListIndex < hapgListJsonList.GetLength(); ++hapgListIndex)
     {
       m_hapgList.push_back(hapgListJsonList[hapgListIndex].AsString());

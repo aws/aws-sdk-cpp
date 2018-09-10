@@ -37,7 +37,7 @@ GetLoadBalancerResult::GetLoadBalancerResult(const Aws::AmazonWebServiceResult<J
 
 GetLoadBalancerResult& GetLoadBalancerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("loadBalancer"))
   {
     m_loadBalancer = jsonValue.GetObject("loadBalancer");

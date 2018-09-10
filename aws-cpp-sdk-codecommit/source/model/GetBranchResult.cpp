@@ -37,7 +37,7 @@ GetBranchResult::GetBranchResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetBranchResult& GetBranchResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("branch"))
   {
     m_branch = jsonValue.GetObject("branch");

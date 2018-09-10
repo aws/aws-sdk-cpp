@@ -44,7 +44,7 @@ Aws::String CountPendingDecisionTasksRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CountPendingDecisionTasksRequest::GetRequestSpecificHeaders() const

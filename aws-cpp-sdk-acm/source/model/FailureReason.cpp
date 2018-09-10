@@ -35,6 +35,12 @@ namespace Aws
         static const int DOMAIN_NOT_ALLOWED_HASH = HashingUtils::HashString("DOMAIN_NOT_ALLOWED");
         static const int INVALID_PUBLIC_DOMAIN_HASH = HashingUtils::HashString("INVALID_PUBLIC_DOMAIN");
         static const int CAA_ERROR_HASH = HashingUtils::HashString("CAA_ERROR");
+        static const int PCA_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PCA_LIMIT_EXCEEDED");
+        static const int PCA_INVALID_ARN_HASH = HashingUtils::HashString("PCA_INVALID_ARN");
+        static const int PCA_INVALID_STATE_HASH = HashingUtils::HashString("PCA_INVALID_STATE");
+        static const int PCA_REQUEST_FAILED_HASH = HashingUtils::HashString("PCA_REQUEST_FAILED");
+        static const int PCA_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("PCA_RESOURCE_NOT_FOUND");
+        static const int PCA_INVALID_ARGS_HASH = HashingUtils::HashString("PCA_INVALID_ARGS");
         static const int OTHER_HASH = HashingUtils::HashString("OTHER");
 
 
@@ -60,6 +66,30 @@ namespace Aws
           else if (hashCode == CAA_ERROR_HASH)
           {
             return FailureReason::CAA_ERROR;
+          }
+          else if (hashCode == PCA_LIMIT_EXCEEDED_HASH)
+          {
+            return FailureReason::PCA_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == PCA_INVALID_ARN_HASH)
+          {
+            return FailureReason::PCA_INVALID_ARN;
+          }
+          else if (hashCode == PCA_INVALID_STATE_HASH)
+          {
+            return FailureReason::PCA_INVALID_STATE;
+          }
+          else if (hashCode == PCA_REQUEST_FAILED_HASH)
+          {
+            return FailureReason::PCA_REQUEST_FAILED;
+          }
+          else if (hashCode == PCA_RESOURCE_NOT_FOUND_HASH)
+          {
+            return FailureReason::PCA_RESOURCE_NOT_FOUND;
+          }
+          else if (hashCode == PCA_INVALID_ARGS_HASH)
+          {
+            return FailureReason::PCA_INVALID_ARGS;
           }
           else if (hashCode == OTHER_HASH)
           {
@@ -89,6 +119,18 @@ namespace Aws
             return "INVALID_PUBLIC_DOMAIN";
           case FailureReason::CAA_ERROR:
             return "CAA_ERROR";
+          case FailureReason::PCA_LIMIT_EXCEEDED:
+            return "PCA_LIMIT_EXCEEDED";
+          case FailureReason::PCA_INVALID_ARN:
+            return "PCA_INVALID_ARN";
+          case FailureReason::PCA_INVALID_STATE:
+            return "PCA_INVALID_STATE";
+          case FailureReason::PCA_REQUEST_FAILED:
+            return "PCA_REQUEST_FAILED";
+          case FailureReason::PCA_RESOURCE_NOT_FOUND:
+            return "PCA_RESOURCE_NOT_FOUND";
+          case FailureReason::PCA_INVALID_ARGS:
+            return "PCA_INVALID_ARGS";
           case FailureReason::OTHER:
             return "OTHER";
           default:

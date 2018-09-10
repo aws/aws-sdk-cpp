@@ -36,6 +36,7 @@ CampaignResponse::CampaignResponse() :
     m_descriptionHasBeenSet(false),
     m_holdoutPercent(0),
     m_holdoutPercentHasBeenSet(false),
+    m_hookHasBeenSet(false),
     m_idHasBeenSet(false),
     m_isPaused(false),
     m_isPausedHasBeenSet(false),
@@ -55,7 +56,7 @@ CampaignResponse::CampaignResponse() :
 {
 }
 
-CampaignResponse::CampaignResponse(const JsonValue& jsonValue) : 
+CampaignResponse::CampaignResponse(JsonView jsonValue) : 
     m_additionalTreatmentsHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
@@ -63,6 +64,7 @@ CampaignResponse::CampaignResponse(const JsonValue& jsonValue) :
     m_descriptionHasBeenSet(false),
     m_holdoutPercent(0),
     m_holdoutPercentHasBeenSet(false),
+    m_hookHasBeenSet(false),
     m_idHasBeenSet(false),
     m_isPaused(false),
     m_isPausedHasBeenSet(false),
@@ -83,11 +85,11 @@ CampaignResponse::CampaignResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CampaignResponse& CampaignResponse::operator =(const JsonValue& jsonValue)
+CampaignResponse& CampaignResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AdditionalTreatments"))
   {
-    Array<JsonValue> additionalTreatmentsJsonList = jsonValue.GetArray("AdditionalTreatments");
+    Array<JsonView> additionalTreatmentsJsonList = jsonValue.GetArray("AdditionalTreatments");
     for(unsigned additionalTreatmentsIndex = 0; additionalTreatmentsIndex < additionalTreatmentsJsonList.GetLength(); ++additionalTreatmentsIndex)
     {
       m_additionalTreatments.push_back(additionalTreatmentsJsonList[additionalTreatmentsIndex].AsObject());
@@ -128,6 +130,13 @@ CampaignResponse& CampaignResponse::operator =(const JsonValue& jsonValue)
     m_holdoutPercent = jsonValue.GetInteger("HoldoutPercent");
 
     m_holdoutPercentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Hook"))
+  {
+    m_hook = jsonValue.GetObject("Hook");
+
+    m_hookHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Id"))
@@ -266,6 +275,12 @@ JsonValue CampaignResponse::Jsonize() const
   if(m_holdoutPercentHasBeenSet)
   {
    payload.WithInteger("HoldoutPercent", m_holdoutPercent);
+
+  }
+
+  if(m_hookHasBeenSet)
+  {
+   payload.WithObject("Hook", m_hook.Jsonize());
 
   }
 

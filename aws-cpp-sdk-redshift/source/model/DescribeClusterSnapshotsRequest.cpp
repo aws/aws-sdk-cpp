@@ -31,7 +31,9 @@ DescribeClusterSnapshotsRequest::DescribeClusterSnapshotsRequest() :
     m_markerHasBeenSet(false),
     m_ownerAccountHasBeenSet(false),
     m_tagKeysHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
+    m_tagValuesHasBeenSet(false),
+    m_clusterExists(false),
+    m_clusterExistsHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,11 @@ Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       tagValuesCount++;
     }
+  }
+
+  if(m_clusterExistsHasBeenSet)
+  {
+    ss << "ClusterExists=" << std::boolalpha << m_clusterExists << "&";
   }
 
   ss << "Version=2012-12-01";

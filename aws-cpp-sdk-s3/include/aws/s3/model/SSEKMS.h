@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * Specifies the use of SSE-KMS to encrypt delievered Inventory reports.<p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies the use of SSE-KMS to encrypt delievered Inventory
+   * reports.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SSEKMS">AWS API
    * Reference</a></p>
    */
@@ -49,44 +49,44 @@ namespace Model
 
 
     /**
-     * Specifies the ID of the AWS Key Management Service (KMS) master encryption key
-     * to use for encrypting Inventory reports.
+     * <p>Specifies the ID of the AWS Key Management Service (KMS) master encryption
+     * key to use for encrypting Inventory reports.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * Specifies the ID of the AWS Key Management Service (KMS) master encryption key
-     * to use for encrypting Inventory reports.
+     * <p>Specifies the ID of the AWS Key Management Service (KMS) master encryption
+     * key to use for encrypting Inventory reports.</p>
      */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * Specifies the ID of the AWS Key Management Service (KMS) master encryption key
-     * to use for encrypting Inventory reports.
+     * <p>Specifies the ID of the AWS Key Management Service (KMS) master encryption
+     * key to use for encrypting Inventory reports.</p>
      */
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * Specifies the ID of the AWS Key Management Service (KMS) master encryption key
-     * to use for encrypting Inventory reports.
+     * <p>Specifies the ID of the AWS Key Management Service (KMS) master encryption
+     * key to use for encrypting Inventory reports.</p>
      */
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * Specifies the ID of the AWS Key Management Service (KMS) master encryption key
-     * to use for encrypting Inventory reports.
+     * <p>Specifies the ID of the AWS Key Management Service (KMS) master encryption
+     * key to use for encrypting Inventory reports.</p>
      */
     inline SSEKMS& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * Specifies the ID of the AWS Key Management Service (KMS) master encryption key
-     * to use for encrypting Inventory reports.
+     * <p>Specifies the ID of the AWS Key Management Service (KMS) master encryption
+     * key to use for encrypting Inventory reports.</p>
      */
     inline SSEKMS& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * Specifies the ID of the AWS Key Management Service (KMS) master encryption key
-     * to use for encrypting Inventory reports.
+     * <p>Specifies the ID of the AWS Key Management Service (KMS) master encryption
+     * key to use for encrypting Inventory reports.</p>
      */
     inline SSEKMS& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 

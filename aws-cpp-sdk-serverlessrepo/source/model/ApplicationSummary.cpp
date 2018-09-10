@@ -33,17 +33,19 @@ ApplicationSummary::ApplicationSummary() :
     m_authorHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_homePageUrlHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_spdxLicenseIdHasBeenSet(false)
 {
 }
 
-ApplicationSummary::ApplicationSummary(const JsonValue& jsonValue) : 
+ApplicationSummary::ApplicationSummary(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_authorHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_homePageUrlHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_spdxLicenseIdHasBeenSet(false)
@@ -51,7 +53,7 @@ ApplicationSummary::ApplicationSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ApplicationSummary& ApplicationSummary::operator =(const JsonValue& jsonValue)
+ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("applicationId"))
   {
@@ -81,9 +83,16 @@ ApplicationSummary& ApplicationSummary::operator =(const JsonValue& jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("homePageUrl"))
+  {
+    m_homePageUrl = jsonValue.GetString("homePageUrl");
+
+    m_homePageUrlHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("labels"))
   {
-    Array<JsonValue> labelsJsonList = jsonValue.GetArray("labels");
+    Array<JsonView> labelsJsonList = jsonValue.GetArray("labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsString());
@@ -133,6 +142,12 @@ JsonValue ApplicationSummary::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_homePageUrlHasBeenSet)
+  {
+   payload.WithString("homePageUrl", m_homePageUrl);
 
   }
 

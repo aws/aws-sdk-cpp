@@ -39,7 +39,7 @@ LastCrawlInfo::LastCrawlInfo() :
 {
 }
 
-LastCrawlInfo::LastCrawlInfo(const JsonValue& jsonValue) : 
+LastCrawlInfo::LastCrawlInfo(JsonView jsonValue) : 
     m_status(LastCrawlStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
@@ -51,7 +51,7 @@ LastCrawlInfo::LastCrawlInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LastCrawlInfo& LastCrawlInfo::operator =(const JsonValue& jsonValue)
+LastCrawlInfo& LastCrawlInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Status"))
   {

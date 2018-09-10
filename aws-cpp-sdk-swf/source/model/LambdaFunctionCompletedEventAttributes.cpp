@@ -37,7 +37,7 @@ LambdaFunctionCompletedEventAttributes::LambdaFunctionCompletedEventAttributes()
 {
 }
 
-LambdaFunctionCompletedEventAttributes::LambdaFunctionCompletedEventAttributes(const JsonValue& jsonValue) : 
+LambdaFunctionCompletedEventAttributes::LambdaFunctionCompletedEventAttributes(JsonView jsonValue) : 
     m_scheduledEventId(0),
     m_scheduledEventIdHasBeenSet(false),
     m_startedEventId(0),
@@ -47,7 +47,7 @@ LambdaFunctionCompletedEventAttributes::LambdaFunctionCompletedEventAttributes(c
   *this = jsonValue;
 }
 
-LambdaFunctionCompletedEventAttributes& LambdaFunctionCompletedEventAttributes::operator =(const JsonValue& jsonValue)
+LambdaFunctionCompletedEventAttributes& LambdaFunctionCompletedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("scheduledEventId"))
   {

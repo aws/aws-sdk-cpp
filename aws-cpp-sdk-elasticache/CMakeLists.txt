@@ -63,7 +63,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
 
-target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${PLATFORM_DEP_LIBS} ${PROJECT_LIBS})
 
 
 setup_install()
@@ -72,7 +72,8 @@ install (FILES ${AWS_ELASTICACHE_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/e
 install (FILES ${AWS_ELASTICACHE_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/elasticache/model)
 
 if(PLATFORM_WINDOWS AND MSVC)
-    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
+    install (FILES ${NUGET_FILES} DESTINATION nuget)
 endif()
 
 do_packaging()

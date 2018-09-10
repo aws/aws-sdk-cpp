@@ -36,7 +36,7 @@ DnsRecord::DnsRecord() :
 {
 }
 
-DnsRecord::DnsRecord(const JsonValue& jsonValue) : 
+DnsRecord::DnsRecord(JsonView jsonValue) : 
     m_type(RecordType::NOT_SET),
     m_typeHasBeenSet(false),
     m_tTL(0),
@@ -45,7 +45,7 @@ DnsRecord::DnsRecord(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DnsRecord& DnsRecord::operator =(const JsonValue& jsonValue)
+DnsRecord& DnsRecord::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

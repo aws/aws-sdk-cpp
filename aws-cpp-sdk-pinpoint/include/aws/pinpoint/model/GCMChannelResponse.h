@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     GCMChannelResponse();
-    GCMChannelResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    GCMChannelResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GCMChannelResponse(Aws::Utils::Json::JsonView jsonValue);
+    GCMChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -171,17 +172,17 @@ namespace Model
 
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline GCMChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 

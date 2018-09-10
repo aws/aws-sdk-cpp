@@ -37,10 +37,10 @@ DescribeReportDefinitionsResult::DescribeReportDefinitionsResult(const Aws::Amaz
 
 DescribeReportDefinitionsResult& DescribeReportDefinitionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReportDefinitions"))
   {
-    Array<JsonValue> reportDefinitionsJsonList = jsonValue.GetArray("ReportDefinitions");
+    Array<JsonView> reportDefinitionsJsonList = jsonValue.GetArray("ReportDefinitions");
     for(unsigned reportDefinitionsIndex = 0; reportDefinitionsIndex < reportDefinitionsJsonList.GetLength(); ++reportDefinitionsIndex)
     {
       m_reportDefinitions.push_back(reportDefinitionsJsonList[reportDefinitionsIndex].AsObject());

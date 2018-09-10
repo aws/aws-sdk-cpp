@@ -138,11 +138,11 @@ namespace Model
      * Each document is specified as a string containing the complete, valid JSON text
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
-     * of any printable ASCII character ranging from the space character (\u0020)
-     * through end of the ASCII character range as well as the printable characters in
-     * the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyInputList() const{ return m_policyInputList; }
 
@@ -151,11 +151,11 @@ namespace Model
      * Each document is specified as a string containing the complete, valid JSON text
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
-     * of any printable ASCII character ranging from the space character (\u0020)
-     * through end of the ASCII character range as well as the printable characters in
-     * the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetPolicyInputList(const Aws::Vector<Aws::String>& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
 
@@ -164,11 +164,11 @@ namespace Model
      * Each document is specified as a string containing the complete, valid JSON text
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
-     * of any printable ASCII character ranging from the space character (\u0020)
-     * through end of the ASCII character range as well as the printable characters in
-     * the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = std::move(value); }
 
@@ -177,11 +177,11 @@ namespace Model
      * Each document is specified as a string containing the complete, valid JSON text
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
-     * of any printable ASCII character ranging from the space character (\u0020)
-     * through end of the ASCII character range as well as the printable characters in
-     * the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPolicyInputList(value); return *this;}
 
@@ -190,11 +190,11 @@ namespace Model
      * Each document is specified as a string containing the complete, valid JSON text
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
-     * of any printable ASCII character ranging from the space character (\u0020)
-     * through end of the ASCII character range as well as the printable characters in
-     * the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(std::move(value)); return *this;}
 
@@ -203,11 +203,11 @@ namespace Model
      * Each document is specified as a string containing the complete, valid JSON text
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
-     * of any printable ASCII character ranging from the space character (\u0020)
-     * through end of the ASCII character range as well as the printable characters in
-     * the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& AddPolicyInputList(const Aws::String& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
@@ -216,11 +216,11 @@ namespace Model
      * Each document is specified as a string containing the complete, valid JSON text
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
-     * of any printable ASCII character ranging from the space character (\u0020)
-     * through end of the ASCII character range as well as the printable characters in
-     * the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(std::move(value)); return *this; }
 
@@ -229,75 +229,75 @@ namespace Model
      * Each document is specified as a string containing the complete, valid JSON text
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
-     * of any printable ASCII character ranging from the space character (\u0020)
-     * through end of the ASCII character range as well as the printable characters in
-     * the Basic Latin and Latin-1 Supplement character set (through \u00FF). It also
-     * includes the special characters tab (\u0009), line feed (\u000A), and carriage
-     * return (\u000D).</p>
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of names of API actions to evaluate in the simulation. Each action is
-     * evaluated for each resource. Each action must include the service identifier,
-     * such as <code>iam:CreateUser</code>.</p>
+     * <p>A list of names of API operations to evaluate in the simulation. Each
+     * operation is evaluated for each resource. Each operation must include the
+     * service identifier, such as <code>iam:CreateUser</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActionNames() const{ return m_actionNames; }
 
     /**
-     * <p>A list of names of API actions to evaluate in the simulation. Each action is
-     * evaluated for each resource. Each action must include the service identifier,
-     * such as <code>iam:CreateUser</code>.</p>
+     * <p>A list of names of API operations to evaluate in the simulation. Each
+     * operation is evaluated for each resource. Each operation must include the
+     * service identifier, such as <code>iam:CreateUser</code>.</p>
      */
     inline void SetActionNames(const Aws::Vector<Aws::String>& value) { m_actionNamesHasBeenSet = true; m_actionNames = value; }
 
     /**
-     * <p>A list of names of API actions to evaluate in the simulation. Each action is
-     * evaluated for each resource. Each action must include the service identifier,
-     * such as <code>iam:CreateUser</code>.</p>
+     * <p>A list of names of API operations to evaluate in the simulation. Each
+     * operation is evaluated for each resource. Each operation must include the
+     * service identifier, such as <code>iam:CreateUser</code>.</p>
      */
     inline void SetActionNames(Aws::Vector<Aws::String>&& value) { m_actionNamesHasBeenSet = true; m_actionNames = std::move(value); }
 
     /**
-     * <p>A list of names of API actions to evaluate in the simulation. Each action is
-     * evaluated for each resource. Each action must include the service identifier,
-     * such as <code>iam:CreateUser</code>.</p>
+     * <p>A list of names of API operations to evaluate in the simulation. Each
+     * operation is evaluated for each resource. Each operation must include the
+     * service identifier, such as <code>iam:CreateUser</code>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithActionNames(const Aws::Vector<Aws::String>& value) { SetActionNames(value); return *this;}
 
     /**
-     * <p>A list of names of API actions to evaluate in the simulation. Each action is
-     * evaluated for each resource. Each action must include the service identifier,
-     * such as <code>iam:CreateUser</code>.</p>
+     * <p>A list of names of API operations to evaluate in the simulation. Each
+     * operation is evaluated for each resource. Each operation must include the
+     * service identifier, such as <code>iam:CreateUser</code>.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithActionNames(Aws::Vector<Aws::String>&& value) { SetActionNames(std::move(value)); return *this;}
 
     /**
-     * <p>A list of names of API actions to evaluate in the simulation. Each action is
-     * evaluated for each resource. Each action must include the service identifier,
-     * such as <code>iam:CreateUser</code>.</p>
+     * <p>A list of names of API operations to evaluate in the simulation. Each
+     * operation is evaluated for each resource. Each operation must include the
+     * service identifier, such as <code>iam:CreateUser</code>.</p>
      */
     inline SimulatePrincipalPolicyRequest& AddActionNames(const Aws::String& value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of names of API actions to evaluate in the simulation. Each action is
-     * evaluated for each resource. Each action must include the service identifier,
-     * such as <code>iam:CreateUser</code>.</p>
+     * <p>A list of names of API operations to evaluate in the simulation. Each
+     * operation is evaluated for each resource. Each operation must include the
+     * service identifier, such as <code>iam:CreateUser</code>.</p>
      */
     inline SimulatePrincipalPolicyRequest& AddActionNames(Aws::String&& value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of names of API actions to evaluate in the simulation. Each action is
-     * evaluated for each resource. Each action must include the service identifier,
-     * such as <code>iam:CreateUser</code>.</p>
+     * <p>A list of names of API operations to evaluate in the simulation. Each
+     * operation is evaluated for each resource. Each operation must include the
+     * service identifier, such as <code>iam:CreateUser</code>.</p>
      */
     inline SimulatePrincipalPolicyRequest& AddActionNames(const char* value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
 
 
     /**
      * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided then the value defaults to <code>*</code> (all
+     * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
      * or denied) of each combination and reports it in the response.</p> <p>The
@@ -313,7 +313,7 @@ namespace Model
 
     /**
      * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided then the value defaults to <code>*</code> (all
+     * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
      * or denied) of each combination and reports it in the response.</p> <p>The
@@ -329,7 +329,7 @@ namespace Model
 
     /**
      * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided then the value defaults to <code>*</code> (all
+     * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
      * or denied) of each combination and reports it in the response.</p> <p>The
@@ -345,7 +345,7 @@ namespace Model
 
     /**
      * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided then the value defaults to <code>*</code> (all
+     * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
      * or denied) of each combination and reports it in the response.</p> <p>The
@@ -361,7 +361,7 @@ namespace Model
 
     /**
      * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided then the value defaults to <code>*</code> (all
+     * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
      * or denied) of each combination and reports it in the response.</p> <p>The
@@ -377,7 +377,7 @@ namespace Model
 
     /**
      * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided then the value defaults to <code>*</code> (all
+     * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
      * or denied) of each combination and reports it in the response.</p> <p>The
@@ -393,7 +393,7 @@ namespace Model
 
     /**
      * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided then the value defaults to <code>*</code> (all
+     * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
      * or denied) of each combination and reports it in the response.</p> <p>The
@@ -409,7 +409,7 @@ namespace Model
 
     /**
      * <p>A list of ARNs of AWS resources to include in the simulation. If this
-     * parameter is not provided then the value defaults to <code>*</code> (all
+     * parameter is not provided, then the value defaults to <code>*</code> (all
      * resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed
      * or denied) of each combination and reports it in the response.</p> <p>The
@@ -429,11 +429,12 @@ namespace Model
      * Each resource in the simulation is treated as if it had this policy attached.
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
 
@@ -442,11 +443,12 @@ namespace Model
      * Each resource in the simulation is treated as if it had this policy attached.
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = value; }
 
@@ -455,11 +457,12 @@ namespace Model
      * Each resource in the simulation is treated as if it had this policy attached.
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = std::move(value); }
 
@@ -468,11 +471,12 @@ namespace Model
      * Each resource in the simulation is treated as if it had this policy attached.
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetResourcePolicy(const char* value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy.assign(value); }
 
@@ -481,11 +485,12 @@ namespace Model
      * Each resource in the simulation is treated as if it had this policy attached.
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
 
@@ -494,11 +499,12 @@ namespace Model
      * Each resource in the simulation is treated as if it had this policy attached.
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
 
@@ -507,11 +513,12 @@ namespace Model
      * Each resource in the simulation is treated as if it had this policy attached.
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
 
@@ -617,12 +624,13 @@ namespace Model
 
     /**
      * <p>The ARN of the IAM user that you want to specify as the simulated caller of
-     * the APIs. If you do not specify a <code>CallerArn</code>, it defaults to the ARN
-     * of the user that you specify in <code>PolicySourceArn</code>, if you specified a
-     * user. If you include both a <code>PolicySourceArn</code> (for example,
-     * <code>arn:aws:iam::123456789012:user/David</code>) and a <code>CallerArn</code>
-     * (for example, <code>arn:aws:iam::123456789012:user/Bob</code>), the result is
-     * that you simulate calling the APIs as Bob, as if Bob had David's policies.</p>
+     * the API operations. If you do not specify a <code>CallerArn</code>, it defaults
+     * to the ARN of the user that you specify in <code>PolicySourceArn</code>, if you
+     * specified a user. If you include both a <code>PolicySourceArn</code> (for
+     * example, <code>arn:aws:iam::123456789012:user/David</code>) and a
+     * <code>CallerArn</code> (for example,
+     * <code>arn:aws:iam::123456789012:user/Bob</code>), the result is that you
+     * simulate calling the API operations as Bob, as if Bob had David's policies.</p>
      * <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an
      * assumed role, federated user, or a service principal.</p> <p>
      * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
@@ -638,12 +646,13 @@ namespace Model
 
     /**
      * <p>The ARN of the IAM user that you want to specify as the simulated caller of
-     * the APIs. If you do not specify a <code>CallerArn</code>, it defaults to the ARN
-     * of the user that you specify in <code>PolicySourceArn</code>, if you specified a
-     * user. If you include both a <code>PolicySourceArn</code> (for example,
-     * <code>arn:aws:iam::123456789012:user/David</code>) and a <code>CallerArn</code>
-     * (for example, <code>arn:aws:iam::123456789012:user/Bob</code>), the result is
-     * that you simulate calling the APIs as Bob, as if Bob had David's policies.</p>
+     * the API operations. If you do not specify a <code>CallerArn</code>, it defaults
+     * to the ARN of the user that you specify in <code>PolicySourceArn</code>, if you
+     * specified a user. If you include both a <code>PolicySourceArn</code> (for
+     * example, <code>arn:aws:iam::123456789012:user/David</code>) and a
+     * <code>CallerArn</code> (for example,
+     * <code>arn:aws:iam::123456789012:user/Bob</code>), the result is that you
+     * simulate calling the API operations as Bob, as if Bob had David's policies.</p>
      * <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an
      * assumed role, federated user, or a service principal.</p> <p>
      * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
@@ -659,12 +668,13 @@ namespace Model
 
     /**
      * <p>The ARN of the IAM user that you want to specify as the simulated caller of
-     * the APIs. If you do not specify a <code>CallerArn</code>, it defaults to the ARN
-     * of the user that you specify in <code>PolicySourceArn</code>, if you specified a
-     * user. If you include both a <code>PolicySourceArn</code> (for example,
-     * <code>arn:aws:iam::123456789012:user/David</code>) and a <code>CallerArn</code>
-     * (for example, <code>arn:aws:iam::123456789012:user/Bob</code>), the result is
-     * that you simulate calling the APIs as Bob, as if Bob had David's policies.</p>
+     * the API operations. If you do not specify a <code>CallerArn</code>, it defaults
+     * to the ARN of the user that you specify in <code>PolicySourceArn</code>, if you
+     * specified a user. If you include both a <code>PolicySourceArn</code> (for
+     * example, <code>arn:aws:iam::123456789012:user/David</code>) and a
+     * <code>CallerArn</code> (for example,
+     * <code>arn:aws:iam::123456789012:user/Bob</code>), the result is that you
+     * simulate calling the API operations as Bob, as if Bob had David's policies.</p>
      * <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an
      * assumed role, federated user, or a service principal.</p> <p>
      * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
@@ -680,12 +690,13 @@ namespace Model
 
     /**
      * <p>The ARN of the IAM user that you want to specify as the simulated caller of
-     * the APIs. If you do not specify a <code>CallerArn</code>, it defaults to the ARN
-     * of the user that you specify in <code>PolicySourceArn</code>, if you specified a
-     * user. If you include both a <code>PolicySourceArn</code> (for example,
-     * <code>arn:aws:iam::123456789012:user/David</code>) and a <code>CallerArn</code>
-     * (for example, <code>arn:aws:iam::123456789012:user/Bob</code>), the result is
-     * that you simulate calling the APIs as Bob, as if Bob had David's policies.</p>
+     * the API operations. If you do not specify a <code>CallerArn</code>, it defaults
+     * to the ARN of the user that you specify in <code>PolicySourceArn</code>, if you
+     * specified a user. If you include both a <code>PolicySourceArn</code> (for
+     * example, <code>arn:aws:iam::123456789012:user/David</code>) and a
+     * <code>CallerArn</code> (for example,
+     * <code>arn:aws:iam::123456789012:user/Bob</code>), the result is that you
+     * simulate calling the API operations as Bob, as if Bob had David's policies.</p>
      * <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an
      * assumed role, federated user, or a service principal.</p> <p>
      * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
@@ -701,12 +712,13 @@ namespace Model
 
     /**
      * <p>The ARN of the IAM user that you want to specify as the simulated caller of
-     * the APIs. If you do not specify a <code>CallerArn</code>, it defaults to the ARN
-     * of the user that you specify in <code>PolicySourceArn</code>, if you specified a
-     * user. If you include both a <code>PolicySourceArn</code> (for example,
-     * <code>arn:aws:iam::123456789012:user/David</code>) and a <code>CallerArn</code>
-     * (for example, <code>arn:aws:iam::123456789012:user/Bob</code>), the result is
-     * that you simulate calling the APIs as Bob, as if Bob had David's policies.</p>
+     * the API operations. If you do not specify a <code>CallerArn</code>, it defaults
+     * to the ARN of the user that you specify in <code>PolicySourceArn</code>, if you
+     * specified a user. If you include both a <code>PolicySourceArn</code> (for
+     * example, <code>arn:aws:iam::123456789012:user/David</code>) and a
+     * <code>CallerArn</code> (for example,
+     * <code>arn:aws:iam::123456789012:user/Bob</code>), the result is that you
+     * simulate calling the API operations as Bob, as if Bob had David's policies.</p>
      * <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an
      * assumed role, federated user, or a service principal.</p> <p>
      * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
@@ -722,12 +734,13 @@ namespace Model
 
     /**
      * <p>The ARN of the IAM user that you want to specify as the simulated caller of
-     * the APIs. If you do not specify a <code>CallerArn</code>, it defaults to the ARN
-     * of the user that you specify in <code>PolicySourceArn</code>, if you specified a
-     * user. If you include both a <code>PolicySourceArn</code> (for example,
-     * <code>arn:aws:iam::123456789012:user/David</code>) and a <code>CallerArn</code>
-     * (for example, <code>arn:aws:iam::123456789012:user/Bob</code>), the result is
-     * that you simulate calling the APIs as Bob, as if Bob had David's policies.</p>
+     * the API operations. If you do not specify a <code>CallerArn</code>, it defaults
+     * to the ARN of the user that you specify in <code>PolicySourceArn</code>, if you
+     * specified a user. If you include both a <code>PolicySourceArn</code> (for
+     * example, <code>arn:aws:iam::123456789012:user/David</code>) and a
+     * <code>CallerArn</code> (for example,
+     * <code>arn:aws:iam::123456789012:user/Bob</code>), the result is that you
+     * simulate calling the API operations as Bob, as if Bob had David's policies.</p>
      * <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an
      * assumed role, federated user, or a service principal.</p> <p>
      * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
@@ -743,12 +756,13 @@ namespace Model
 
     /**
      * <p>The ARN of the IAM user that you want to specify as the simulated caller of
-     * the APIs. If you do not specify a <code>CallerArn</code>, it defaults to the ARN
-     * of the user that you specify in <code>PolicySourceArn</code>, if you specified a
-     * user. If you include both a <code>PolicySourceArn</code> (for example,
-     * <code>arn:aws:iam::123456789012:user/David</code>) and a <code>CallerArn</code>
-     * (for example, <code>arn:aws:iam::123456789012:user/Bob</code>), the result is
-     * that you simulate calling the APIs as Bob, as if Bob had David's policies.</p>
+     * the API operations. If you do not specify a <code>CallerArn</code>, it defaults
+     * to the ARN of the user that you specify in <code>PolicySourceArn</code>, if you
+     * specified a user. If you include both a <code>PolicySourceArn</code> (for
+     * example, <code>arn:aws:iam::123456789012:user/David</code>) and a
+     * <code>CallerArn</code> (for example,
+     * <code>arn:aws:iam::123456789012:user/Bob</code>), the result is that you
+     * simulate calling the API operations as Bob, as if Bob had David's policies.</p>
      * <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an
      * assumed role, federated user, or a service principal.</p> <p>
      * <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code>
@@ -814,8 +828,8 @@ namespace Model
 
 
     /**
-     * <p>Specifies the type of simulation to run. Different APIs that support
-     * resource-based policies require different combinations of resources. By
+     * <p>Specifies the type of simulation to run. Different API operations that
+     * support resource-based policies require different combinations of resources. By
      * specifying the type of simulation to run, you enable the policy simulator to
      * enforce the presence of the required resources to ensure reliable simulation
      * results. If your simulation does not match one of the following scenarios, then
@@ -828,7 +842,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
@@ -842,8 +856,8 @@ namespace Model
     inline const Aws::String& GetResourceHandlingOption() const{ return m_resourceHandlingOption; }
 
     /**
-     * <p>Specifies the type of simulation to run. Different APIs that support
-     * resource-based policies require different combinations of resources. By
+     * <p>Specifies the type of simulation to run. Different API operations that
+     * support resource-based policies require different combinations of resources. By
      * specifying the type of simulation to run, you enable the policy simulator to
      * enforce the presence of the required resources to ensure reliable simulation
      * results. If your simulation does not match one of the following scenarios, then
@@ -856,7 +870,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
@@ -870,8 +884,8 @@ namespace Model
     inline void SetResourceHandlingOption(const Aws::String& value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption = value; }
 
     /**
-     * <p>Specifies the type of simulation to run. Different APIs that support
-     * resource-based policies require different combinations of resources. By
+     * <p>Specifies the type of simulation to run. Different API operations that
+     * support resource-based policies require different combinations of resources. By
      * specifying the type of simulation to run, you enable the policy simulator to
      * enforce the presence of the required resources to ensure reliable simulation
      * results. If your simulation does not match one of the following scenarios, then
@@ -884,7 +898,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
@@ -898,8 +912,8 @@ namespace Model
     inline void SetResourceHandlingOption(Aws::String&& value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption = std::move(value); }
 
     /**
-     * <p>Specifies the type of simulation to run. Different APIs that support
-     * resource-based policies require different combinations of resources. By
+     * <p>Specifies the type of simulation to run. Different API operations that
+     * support resource-based policies require different combinations of resources. By
      * specifying the type of simulation to run, you enable the policy simulator to
      * enforce the presence of the required resources to ensure reliable simulation
      * results. If your simulation does not match one of the following scenarios, then
@@ -912,7 +926,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
@@ -926,8 +940,8 @@ namespace Model
     inline void SetResourceHandlingOption(const char* value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption.assign(value); }
 
     /**
-     * <p>Specifies the type of simulation to run. Different APIs that support
-     * resource-based policies require different combinations of resources. By
+     * <p>Specifies the type of simulation to run. Different API operations that
+     * support resource-based policies require different combinations of resources. By
      * specifying the type of simulation to run, you enable the policy simulator to
      * enforce the presence of the required resources to ensure reliable simulation
      * results. If your simulation does not match one of the following scenarios, then
@@ -940,7 +954,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
@@ -954,8 +968,8 @@ namespace Model
     inline SimulatePrincipalPolicyRequest& WithResourceHandlingOption(const Aws::String& value) { SetResourceHandlingOption(value); return *this;}
 
     /**
-     * <p>Specifies the type of simulation to run. Different APIs that support
-     * resource-based policies require different combinations of resources. By
+     * <p>Specifies the type of simulation to run. Different API operations that
+     * support resource-based policies require different combinations of resources. By
      * specifying the type of simulation to run, you enable the policy simulator to
      * enforce the presence of the required resources to ensure reliable simulation
      * results. If your simulation does not match one of the following scenarios, then
@@ -968,7 +982,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
@@ -982,8 +996,8 @@ namespace Model
     inline SimulatePrincipalPolicyRequest& WithResourceHandlingOption(Aws::String&& value) { SetResourceHandlingOption(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the type of simulation to run. Different APIs that support
-     * resource-based policies require different combinations of resources. By
+     * <p>Specifies the type of simulation to run. Different API operations that
+     * support resource-based policies require different combinations of resources. By
      * specifying the type of simulation to run, you enable the policy simulator to
      * enforce the presence of the required resources to ensure reliable simulation
      * results. If your simulation does not match one of the following scenarios, then
@@ -996,7 +1010,7 @@ namespace Model
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     * Platforms</a> in the <i>AWS EC2 User Guide</i>.</p> <ul> <li> <p>
+     * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
      * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
      * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,

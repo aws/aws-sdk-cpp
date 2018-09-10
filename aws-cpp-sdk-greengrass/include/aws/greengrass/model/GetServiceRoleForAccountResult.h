@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline const Aws::String& GetAssociatedAt() const{ return m_associatedAt; }
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline void SetAssociatedAt(const Aws::String& value) { m_associatedAt = value; }
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline void SetAssociatedAt(Aws::String&& value) { m_associatedAt = std::move(value); }
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline void SetAssociatedAt(const char* value) { m_associatedAt.assign(value); }
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline GetServiceRoleForAccountResult& WithAssociatedAt(const Aws::String& value) { SetAssociatedAt(value); return *this;}
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline GetServiceRoleForAccountResult& WithAssociatedAt(Aws::String&& value) { SetAssociatedAt(std::move(value)); return *this;}
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline GetServiceRoleForAccountResult& WithAssociatedAt(const char* value) { SetAssociatedAt(value); return *this;}
 
 
     /**
-     * Role arn which is associated to the account.
+     * The ARN of the role which is associated with the account.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * Role arn which is associated to the account.
+     * The ARN of the role which is associated with the account.
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * Role arn which is associated to the account.
+     * The ARN of the role which is associated with the account.
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * Role arn which is associated to the account.
+     * The ARN of the role which is associated with the account.
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * Role arn which is associated to the account.
+     * The ARN of the role which is associated with the account.
      */
     inline GetServiceRoleForAccountResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * Role arn which is associated to the account.
+     * The ARN of the role which is associated with the account.
      */
     inline GetServiceRoleForAccountResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * Role arn which is associated to the account.
+     * The ARN of the role which is associated with the account.
      */
     inline GetServiceRoleForAccountResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

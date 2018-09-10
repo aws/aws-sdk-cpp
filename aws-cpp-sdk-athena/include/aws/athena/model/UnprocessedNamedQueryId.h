@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Athena
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     UnprocessedNamedQueryId();
-    UnprocessedNamedQueryId(const Aws::Utils::Json::JsonValue& jsonValue);
-    UnprocessedNamedQueryId& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    UnprocessedNamedQueryId(Aws::Utils::Json::JsonView jsonValue);
+    UnprocessedNamedQueryId& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

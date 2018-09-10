@@ -34,14 +34,14 @@ Button::Button() :
 {
 }
 
-Button::Button(const JsonValue& jsonValue) : 
+Button::Button(JsonView jsonValue) : 
     m_textHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Button& Button::operator =(const JsonValue& jsonValue)
+Button& Button::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("text"))
   {

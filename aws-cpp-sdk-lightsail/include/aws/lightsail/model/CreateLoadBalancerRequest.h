@@ -100,97 +100,111 @@ namespace Model
     /**
      * <p>The path you provided to perform the load balancer health check. If you
      * didn't specify a health check path, Lightsail uses the root path of your website
-     * (e.g., <code>"/"</code>).</p>
+     * (e.g., <code>"/"</code>).</p> <p>You may want to specify a custom health check
+     * path other than the root of your application if your home page loads slowly or
+     * has a lot of media or scripting on it.</p>
      */
     inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
 
     /**
      * <p>The path you provided to perform the load balancer health check. If you
      * didn't specify a health check path, Lightsail uses the root path of your website
-     * (e.g., <code>"/"</code>).</p>
+     * (e.g., <code>"/"</code>).</p> <p>You may want to specify a custom health check
+     * path other than the root of your application if your home page loads slowly or
+     * has a lot of media or scripting on it.</p>
      */
     inline void SetHealthCheckPath(const Aws::String& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = value; }
 
     /**
      * <p>The path you provided to perform the load balancer health check. If you
      * didn't specify a health check path, Lightsail uses the root path of your website
-     * (e.g., <code>"/"</code>).</p>
+     * (e.g., <code>"/"</code>).</p> <p>You may want to specify a custom health check
+     * path other than the root of your application if your home page loads slowly or
+     * has a lot of media or scripting on it.</p>
      */
     inline void SetHealthCheckPath(Aws::String&& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = std::move(value); }
 
     /**
      * <p>The path you provided to perform the load balancer health check. If you
      * didn't specify a health check path, Lightsail uses the root path of your website
-     * (e.g., <code>"/"</code>).</p>
+     * (e.g., <code>"/"</code>).</p> <p>You may want to specify a custom health check
+     * path other than the root of your application if your home page loads slowly or
+     * has a lot of media or scripting on it.</p>
      */
     inline void SetHealthCheckPath(const char* value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath.assign(value); }
 
     /**
      * <p>The path you provided to perform the load balancer health check. If you
      * didn't specify a health check path, Lightsail uses the root path of your website
-     * (e.g., <code>"/"</code>).</p>
+     * (e.g., <code>"/"</code>).</p> <p>You may want to specify a custom health check
+     * path other than the root of your application if your home page loads slowly or
+     * has a lot of media or scripting on it.</p>
      */
     inline CreateLoadBalancerRequest& WithHealthCheckPath(const Aws::String& value) { SetHealthCheckPath(value); return *this;}
 
     /**
      * <p>The path you provided to perform the load balancer health check. If you
      * didn't specify a health check path, Lightsail uses the root path of your website
-     * (e.g., <code>"/"</code>).</p>
+     * (e.g., <code>"/"</code>).</p> <p>You may want to specify a custom health check
+     * path other than the root of your application if your home page loads slowly or
+     * has a lot of media or scripting on it.</p>
      */
     inline CreateLoadBalancerRequest& WithHealthCheckPath(Aws::String&& value) { SetHealthCheckPath(std::move(value)); return *this;}
 
     /**
      * <p>The path you provided to perform the load balancer health check. If you
      * didn't specify a health check path, Lightsail uses the root path of your website
-     * (e.g., <code>"/"</code>).</p>
+     * (e.g., <code>"/"</code>).</p> <p>You may want to specify a custom health check
+     * path other than the root of your application if your home page loads slowly or
+     * has a lot of media or scripting on it.</p>
      */
     inline CreateLoadBalancerRequest& WithHealthCheckPath(const char* value) { SetHealthCheckPath(value); return *this;}
 
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p> <p>If you specify
+     * <p>The name of the SSL/TLS certificate.</p> <p>If you specify
      * <code>certificateName</code>, then <code>certificateDomainName</code> is
      * required (and vice-versa).</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p> <p>If you specify
+     * <p>The name of the SSL/TLS certificate.</p> <p>If you specify
      * <code>certificateName</code>, then <code>certificateDomainName</code> is
      * required (and vice-versa).</p>
      */
     inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p> <p>If you specify
+     * <p>The name of the SSL/TLS certificate.</p> <p>If you specify
      * <code>certificateName</code>, then <code>certificateDomainName</code> is
      * required (and vice-versa).</p>
      */
     inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p> <p>If you specify
+     * <p>The name of the SSL/TLS certificate.</p> <p>If you specify
      * <code>certificateName</code>, then <code>certificateDomainName</code> is
      * required (and vice-versa).</p>
      */
     inline void SetCertificateName(const char* value) { m_certificateNameHasBeenSet = true; m_certificateName.assign(value); }
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p> <p>If you specify
+     * <p>The name of the SSL/TLS certificate.</p> <p>If you specify
      * <code>certificateName</code>, then <code>certificateDomainName</code> is
      * required (and vice-versa).</p>
      */
     inline CreateLoadBalancerRequest& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p> <p>If you specify
+     * <p>The name of the SSL/TLS certificate.</p> <p>If you specify
      * <code>certificateName</code>, then <code>certificateDomainName</code> is
      * required (and vice-versa).</p>
      */
     inline CreateLoadBalancerRequest& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p> <p>If you specify
+     * <p>The name of the SSL/TLS certificate.</p> <p>If you specify
      * <code>certificateName</code>, then <code>certificateDomainName</code> is
      * required (and vice-versa).</p>
      */
@@ -255,58 +269,58 @@ namespace Model
 
 
     /**
-     * <p>The alternative domain names to use with your TLS/SSL certificate (e.g.,
-     * <code>www.example.com</code>, <code>www.ejemplo.com</code>,
-     * <code>ejemplo.com</code>).</p>
+     * <p>The optional alternative domains and subdomains to use with your SSL/TLS
+     * certificate (e.g., <code>www.example.com</code>, <code>example.com</code>,
+     * <code>m.example.com</code>, <code>blog.example.com</code>).</p>
      */
     inline const Aws::Vector<Aws::String>& GetCertificateAlternativeNames() const{ return m_certificateAlternativeNames; }
 
     /**
-     * <p>The alternative domain names to use with your TLS/SSL certificate (e.g.,
-     * <code>www.example.com</code>, <code>www.ejemplo.com</code>,
-     * <code>ejemplo.com</code>).</p>
+     * <p>The optional alternative domains and subdomains to use with your SSL/TLS
+     * certificate (e.g., <code>www.example.com</code>, <code>example.com</code>,
+     * <code>m.example.com</code>, <code>blog.example.com</code>).</p>
      */
     inline void SetCertificateAlternativeNames(const Aws::Vector<Aws::String>& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames = value; }
 
     /**
-     * <p>The alternative domain names to use with your TLS/SSL certificate (e.g.,
-     * <code>www.example.com</code>, <code>www.ejemplo.com</code>,
-     * <code>ejemplo.com</code>).</p>
+     * <p>The optional alternative domains and subdomains to use with your SSL/TLS
+     * certificate (e.g., <code>www.example.com</code>, <code>example.com</code>,
+     * <code>m.example.com</code>, <code>blog.example.com</code>).</p>
      */
     inline void SetCertificateAlternativeNames(Aws::Vector<Aws::String>&& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames = std::move(value); }
 
     /**
-     * <p>The alternative domain names to use with your TLS/SSL certificate (e.g.,
-     * <code>www.example.com</code>, <code>www.ejemplo.com</code>,
-     * <code>ejemplo.com</code>).</p>
+     * <p>The optional alternative domains and subdomains to use with your SSL/TLS
+     * certificate (e.g., <code>www.example.com</code>, <code>example.com</code>,
+     * <code>m.example.com</code>, <code>blog.example.com</code>).</p>
      */
     inline CreateLoadBalancerRequest& WithCertificateAlternativeNames(const Aws::Vector<Aws::String>& value) { SetCertificateAlternativeNames(value); return *this;}
 
     /**
-     * <p>The alternative domain names to use with your TLS/SSL certificate (e.g.,
-     * <code>www.example.com</code>, <code>www.ejemplo.com</code>,
-     * <code>ejemplo.com</code>).</p>
+     * <p>The optional alternative domains and subdomains to use with your SSL/TLS
+     * certificate (e.g., <code>www.example.com</code>, <code>example.com</code>,
+     * <code>m.example.com</code>, <code>blog.example.com</code>).</p>
      */
     inline CreateLoadBalancerRequest& WithCertificateAlternativeNames(Aws::Vector<Aws::String>&& value) { SetCertificateAlternativeNames(std::move(value)); return *this;}
 
     /**
-     * <p>The alternative domain names to use with your TLS/SSL certificate (e.g.,
-     * <code>www.example.com</code>, <code>www.ejemplo.com</code>,
-     * <code>ejemplo.com</code>).</p>
+     * <p>The optional alternative domains and subdomains to use with your SSL/TLS
+     * certificate (e.g., <code>www.example.com</code>, <code>example.com</code>,
+     * <code>m.example.com</code>, <code>blog.example.com</code>).</p>
      */
     inline CreateLoadBalancerRequest& AddCertificateAlternativeNames(const Aws::String& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames.push_back(value); return *this; }
 
     /**
-     * <p>The alternative domain names to use with your TLS/SSL certificate (e.g.,
-     * <code>www.example.com</code>, <code>www.ejemplo.com</code>,
-     * <code>ejemplo.com</code>).</p>
+     * <p>The optional alternative domains and subdomains to use with your SSL/TLS
+     * certificate (e.g., <code>www.example.com</code>, <code>example.com</code>,
+     * <code>m.example.com</code>, <code>blog.example.com</code>).</p>
      */
     inline CreateLoadBalancerRequest& AddCertificateAlternativeNames(Aws::String&& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The alternative domain names to use with your TLS/SSL certificate (e.g.,
-     * <code>www.example.com</code>, <code>www.ejemplo.com</code>,
-     * <code>ejemplo.com</code>).</p>
+     * <p>The optional alternative domains and subdomains to use with your SSL/TLS
+     * certificate (e.g., <code>www.example.com</code>, <code>example.com</code>,
+     * <code>m.example.com</code>, <code>blog.example.com</code>).</p>
      */
     inline CreateLoadBalancerRequest& AddCertificateAlternativeNames(const char* value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames.push_back(value); return *this; }
 

@@ -35,7 +35,7 @@ NotificationOptions::NotificationOptions() :
 {
 }
 
-NotificationOptions::NotificationOptions(const JsonValue& jsonValue) : 
+NotificationOptions::NotificationOptions(JsonView jsonValue) : 
     m_sendEmail(false),
     m_sendEmailHasBeenSet(false),
     m_emailMessageHasBeenSet(false)
@@ -43,7 +43,7 @@ NotificationOptions::NotificationOptions(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NotificationOptions& NotificationOptions::operator =(const JsonValue& jsonValue)
+NotificationOptions& NotificationOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SendEmail"))
   {

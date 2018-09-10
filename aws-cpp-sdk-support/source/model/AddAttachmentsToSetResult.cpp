@@ -37,7 +37,7 @@ AddAttachmentsToSetResult::AddAttachmentsToSetResult(const Aws::AmazonWebService
 
 AddAttachmentsToSetResult& AddAttachmentsToSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("attachmentSetId"))
   {
     m_attachmentSetId = jsonValue.GetString("attachmentSetId");

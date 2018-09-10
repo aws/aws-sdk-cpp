@@ -37,10 +37,10 @@ PutEvaluationsResult::PutEvaluationsResult(const Aws::AmazonWebServiceResult<Jso
 
 PutEvaluationsResult& PutEvaluationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FailedEvaluations"))
   {
-    Array<JsonValue> failedEvaluationsJsonList = jsonValue.GetArray("FailedEvaluations");
+    Array<JsonView> failedEvaluationsJsonList = jsonValue.GetArray("FailedEvaluations");
     for(unsigned failedEvaluationsIndex = 0; failedEvaluationsIndex < failedEvaluationsJsonList.GetLength(); ++failedEvaluationsIndex)
     {
       m_failedEvaluations.push_back(failedEvaluationsJsonList[failedEvaluationsIndex].AsObject());

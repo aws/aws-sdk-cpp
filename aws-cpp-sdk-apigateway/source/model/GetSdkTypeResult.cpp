@@ -37,7 +37,7 @@ GetSdkTypeResult::GetSdkTypeResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 GetSdkTypeResult& GetSdkTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -58,7 +58,7 @@ GetSdkTypeResult& GetSdkTypeResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("configurationProperties"))
   {
-    Array<JsonValue> configurationPropertiesJsonList = jsonValue.GetArray("configurationProperties");
+    Array<JsonView> configurationPropertiesJsonList = jsonValue.GetArray("configurationProperties");
     for(unsigned configurationPropertiesIndex = 0; configurationPropertiesIndex < configurationPropertiesJsonList.GetLength(); ++configurationPropertiesIndex)
     {
       m_configurationProperties.push_back(configurationPropertiesJsonList[configurationPropertiesIndex].AsObject());

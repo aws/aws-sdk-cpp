@@ -52,7 +52,7 @@ Aws::String ImportMigrationTaskRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ImportMigrationTaskRequest::GetRequestSpecificHeaders() const

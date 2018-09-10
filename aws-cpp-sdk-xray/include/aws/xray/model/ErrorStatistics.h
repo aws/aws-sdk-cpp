@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace XRay
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     ErrorStatistics();
-    ErrorStatistics(const Aws::Utils::Json::JsonValue& jsonValue);
-    ErrorStatistics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ErrorStatistics(Aws::Utils::Json::JsonView jsonValue);
+    ErrorStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

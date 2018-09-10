@@ -20,6 +20,7 @@
 #include <aws/appsync/model/DynamodbDataSourceConfig.h>
 #include <aws/appsync/model/LambdaDataSourceConfig.h>
 #include <aws/appsync/model/ElasticsearchDataSourceConfig.h>
+#include <aws/appsync/model/HttpDataSourceConfig.h>
 #include <utility>
 
 namespace Aws
@@ -29,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppSync
@@ -45,8 +47,8 @@ namespace Model
   {
   public:
     DataSource();
-    DataSource(const Aws::Utils::Json::JsonValue& jsonValue);
-    DataSource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DataSource(Aws::Utils::Json::JsonView jsonValue);
+    DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -159,27 +161,67 @@ namespace Model
 
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
+     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
+     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
+     * used when when you wish to invoke a GraphQL operation without connecting to a
+     * data source, such as performing data transformation with resolvers or triggering
+     * a subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>:
+     * The data source is an HTTP endpoint.</p> </li> </ul>
      */
     inline const DataSourceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
+     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
+     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
+     * used when when you wish to invoke a GraphQL operation without connecting to a
+     * data source, such as performing data transformation with resolvers or triggering
+     * a subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>:
+     * The data source is an HTTP endpoint.</p> </li> </ul>
      */
     inline void SetType(const DataSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
+     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
+     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
+     * used when when you wish to invoke a GraphQL operation without connecting to a
+     * data source, such as performing data transformation with resolvers or triggering
+     * a subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>:
+     * The data source is an HTTP endpoint.</p> </li> </ul>
      */
     inline void SetType(DataSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
+     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
+     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
+     * used when when you wish to invoke a GraphQL operation without connecting to a
+     * data source, such as performing data transformation with resolvers or triggering
+     * a subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>:
+     * The data source is an HTTP endpoint.</p> </li> </ul>
      */
     inline DataSource& WithType(const DataSourceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the data source.</p>
+     * <p>The type of the data source.</p> <ul> <li> <p> <b>AMAZON_DYNAMODB</b>: The
+     * data source is an Amazon DynamoDB table.</p> </li> <li> <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service
+     * domain.</p> </li> <li> <p> <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
+     * function.</p> </li> <li> <p> <b>NONE</b>: There is no data source. This type is
+     * used when when you wish to invoke a GraphQL operation without connecting to a
+     * data source, such as performing data transformation with resolvers or triggering
+     * a subscription to be invoked from a mutation.</p> </li> <li> <p> <b>HTTP</b>:
+     * The data source is an HTTP endpoint.</p> </li> </ul>
      */
     inline DataSource& WithType(DataSourceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -304,6 +346,32 @@ namespace Model
      */
     inline DataSource& WithElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { SetElasticsearchConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Http endpoint settings.</p>
+     */
+    inline const HttpDataSourceConfig& GetHttpConfig() const{ return m_httpConfig; }
+
+    /**
+     * <p>Http endpoint settings.</p>
+     */
+    inline void SetHttpConfig(const HttpDataSourceConfig& value) { m_httpConfigHasBeenSet = true; m_httpConfig = value; }
+
+    /**
+     * <p>Http endpoint settings.</p>
+     */
+    inline void SetHttpConfig(HttpDataSourceConfig&& value) { m_httpConfigHasBeenSet = true; m_httpConfig = std::move(value); }
+
+    /**
+     * <p>Http endpoint settings.</p>
+     */
+    inline DataSource& WithHttpConfig(const HttpDataSourceConfig& value) { SetHttpConfig(value); return *this;}
+
+    /**
+     * <p>Http endpoint settings.</p>
+     */
+    inline DataSource& WithHttpConfig(HttpDataSourceConfig&& value) { SetHttpConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dataSourceArn;
@@ -329,6 +397,9 @@ namespace Model
 
     ElasticsearchDataSourceConfig m_elasticsearchConfig;
     bool m_elasticsearchConfigHasBeenSet;
+
+    HttpDataSourceConfig m_httpConfig;
+    bool m_httpConfigHasBeenSet;
   };
 
 } // namespace Model

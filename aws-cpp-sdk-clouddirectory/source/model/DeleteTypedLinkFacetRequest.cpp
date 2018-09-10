@@ -39,7 +39,7 @@ Aws::String DeleteTypedLinkFacetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteTypedLinkFacetRequest::GetRequestSpecificHeaders() const
@@ -49,7 +49,7 @@ Aws::Http::HeaderValueCollection DeleteTypedLinkFacetRequest::GetRequestSpecific
   if(m_schemaArnHasBeenSet)
   {
     ss << m_schemaArn;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-data-partition", ss.str()));
+    headers.emplace("x-amz-data-partition",  ss.str());
     ss.str("");
   }
 

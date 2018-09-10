@@ -34,14 +34,14 @@ GroupCertificateAuthorityProperties::GroupCertificateAuthorityProperties() :
 {
 }
 
-GroupCertificateAuthorityProperties::GroupCertificateAuthorityProperties(const JsonValue& jsonValue) : 
+GroupCertificateAuthorityProperties::GroupCertificateAuthorityProperties(JsonView jsonValue) : 
     m_groupCertificateAuthorityArnHasBeenSet(false),
     m_groupCertificateAuthorityIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GroupCertificateAuthorityProperties& GroupCertificateAuthorityProperties::operator =(const JsonValue& jsonValue)
+GroupCertificateAuthorityProperties& GroupCertificateAuthorityProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GroupCertificateAuthorityArn"))
   {

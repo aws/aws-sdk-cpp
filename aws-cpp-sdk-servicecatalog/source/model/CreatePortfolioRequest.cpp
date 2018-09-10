@@ -78,7 +78,7 @@ Aws::String CreatePortfolioRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreatePortfolioRequest::GetRequestSpecificHeaders() const

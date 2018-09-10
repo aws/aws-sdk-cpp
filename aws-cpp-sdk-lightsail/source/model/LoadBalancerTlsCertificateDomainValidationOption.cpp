@@ -35,7 +35,7 @@ LoadBalancerTlsCertificateDomainValidationOption::LoadBalancerTlsCertificateDoma
 {
 }
 
-LoadBalancerTlsCertificateDomainValidationOption::LoadBalancerTlsCertificateDomainValidationOption(const JsonValue& jsonValue) : 
+LoadBalancerTlsCertificateDomainValidationOption::LoadBalancerTlsCertificateDomainValidationOption(JsonView jsonValue) : 
     m_domainNameHasBeenSet(false),
     m_validationStatus(LoadBalancerTlsCertificateDomainStatus::NOT_SET),
     m_validationStatusHasBeenSet(false)
@@ -43,7 +43,7 @@ LoadBalancerTlsCertificateDomainValidationOption::LoadBalancerTlsCertificateDoma
   *this = jsonValue;
 }
 
-LoadBalancerTlsCertificateDomainValidationOption& LoadBalancerTlsCertificateDomainValidationOption::operator =(const JsonValue& jsonValue)
+LoadBalancerTlsCertificateDomainValidationOption& LoadBalancerTlsCertificateDomainValidationOption::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("domainName"))
   {

@@ -44,7 +44,9 @@ CPUUtilization::CPUUtilization() :
     m_iRQ(0.0),
     m_iRQHasBeenSet(false),
     m_softIRQ(0.0),
-    m_softIRQHasBeenSet(false)
+    m_softIRQHasBeenSet(false),
+    m_privileged(0.0),
+    m_privilegedHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ CPUUtilization::CPUUtilization(const XmlNode& xmlNode) :
     m_iRQ(0.0),
     m_iRQHasBeenSet(false),
     m_softIRQ(0.0),
-    m_softIRQHasBeenSet(false)
+    m_softIRQHasBeenSet(false),
+    m_privileged(0.0),
+    m_privilegedHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -115,6 +119,12 @@ CPUUtilization& CPUUtilization::operator =(const XmlNode& xmlNode)
       m_softIRQ = StringUtils::ConvertToDouble(StringUtils::Trim(softIRQNode.GetText().c_str()).c_str());
       m_softIRQHasBeenSet = true;
     }
+    XmlNode privilegedNode = resultNode.FirstChild("Privileged");
+    if(!privilegedNode.IsNull())
+    {
+      m_privileged = StringUtils::ConvertToDouble(StringUtils::Trim(privilegedNode.GetText().c_str()).c_str());
+      m_privilegedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -157,6 +167,11 @@ void CPUUtilization::OutputToStream(Aws::OStream& oStream, const char* location,
         oStream << location << index << locationValue << ".SoftIRQ=" << StringUtils::URLEncode(m_softIRQ) << "&";
   }
 
+  if(m_privilegedHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".Privileged=" << StringUtils::URLEncode(m_privileged) << "&";
+  }
+
 }
 
 void CPUUtilization::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -188,6 +203,10 @@ void CPUUtilization::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_softIRQHasBeenSet)
   {
         oStream << location << ".SoftIRQ=" << StringUtils::URLEncode(m_softIRQ) << "&";
+  }
+  if(m_privilegedHasBeenSet)
+  {
+        oStream << location << ".Privileged=" << StringUtils::URLEncode(m_privileged) << "&";
   }
 }
 

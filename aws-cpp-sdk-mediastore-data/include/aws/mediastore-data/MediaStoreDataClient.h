@@ -48,11 +48,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -129,7 +124,7 @@ namespace Model
 
         virtual ~MediaStoreDataClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mediastore"; }
+        inline virtual const char* GetServiceClientName() const override { return "MediaStore Data"; }
 
 
         /**

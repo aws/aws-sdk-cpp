@@ -37,7 +37,7 @@ GetDataEndpointResult::GetDataEndpointResult(const Aws::AmazonWebServiceResult<J
 
 GetDataEndpointResult& GetDataEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DataEndpoint"))
   {
     m_dataEndpoint = jsonValue.GetString("DataEndpoint");

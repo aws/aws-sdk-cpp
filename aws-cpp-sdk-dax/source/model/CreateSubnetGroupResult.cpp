@@ -37,7 +37,7 @@ CreateSubnetGroupResult::CreateSubnetGroupResult(const Aws::AmazonWebServiceResu
 
 CreateSubnetGroupResult& CreateSubnetGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SubnetGroup"))
   {
     m_subnetGroup = jsonValue.GetObject("SubnetGroup");

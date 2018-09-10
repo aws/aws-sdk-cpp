@@ -34,14 +34,14 @@ ParameterMapEntry::ParameterMapEntry() :
 {
 }
 
-ParameterMapEntry::ParameterMapEntry(const JsonValue& jsonValue) : 
+ParameterMapEntry::ParameterMapEntry(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ParameterMapEntry& ParameterMapEntry::operator =(const JsonValue& jsonValue)
+ParameterMapEntry& ParameterMapEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -52,7 +52,7 @@ ParameterMapEntry& ParameterMapEntry::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

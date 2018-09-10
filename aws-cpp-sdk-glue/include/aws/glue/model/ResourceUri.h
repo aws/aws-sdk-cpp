@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ResourceUri();
-    ResourceUri(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceUri& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceUri(Aws::Utils::Json::JsonView jsonValue);
+    ResourceUri& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

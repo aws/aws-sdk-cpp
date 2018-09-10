@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the job to delete.</p>
+     * <p>The name of the job definition to delete.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
 
     /**
-     * <p>The name of the job to delete.</p>
+     * <p>The name of the job definition to delete.</p>
      */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
-     * <p>The name of the job to delete.</p>
+     * <p>The name of the job definition to delete.</p>
      */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
 
     /**
-     * <p>The name of the job to delete.</p>
+     * <p>The name of the job definition to delete.</p>
      */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
 
     /**
-     * <p>The name of the job to delete.</p>
+     * <p>The name of the job definition to delete.</p>
      */
     inline DeleteJobRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
 
     /**
-     * <p>The name of the job to delete.</p>
+     * <p>The name of the job definition to delete.</p>
      */
     inline DeleteJobRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job to delete.</p>
+     * <p>The name of the job definition to delete.</p>
      */
     inline DeleteJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
 

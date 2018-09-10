@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     ComparedSourceImageFace();
-    ComparedSourceImageFace(const Aws::Utils::Json::JsonValue& jsonValue);
-    ComparedSourceImageFace& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ComparedSourceImageFace(Aws::Utils::Json::JsonView jsonValue);
+    ComparedSourceImageFace& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

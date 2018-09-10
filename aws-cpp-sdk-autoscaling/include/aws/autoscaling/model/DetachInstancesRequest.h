@@ -48,42 +48,42 @@ namespace Model
   public:
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline DetachInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline DetachInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline DetachInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline DetachInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more instance IDs.</p>
+     * <p>The IDs of the instances. You can specify up to 20 instances.</p>
      */
     inline DetachInstancesRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
@@ -125,19 +125,19 @@ namespace Model
 
 
     /**
-     * <p>If <code>True</code>, the Auto Scaling group decrements the desired capacity
+     * <p>Indicates whether the Auto Scaling group decrements the desired capacity
      * value by the number of instances detached.</p>
      */
     inline bool GetShouldDecrementDesiredCapacity() const{ return m_shouldDecrementDesiredCapacity; }
 
     /**
-     * <p>If <code>True</code>, the Auto Scaling group decrements the desired capacity
+     * <p>Indicates whether the Auto Scaling group decrements the desired capacity
      * value by the number of instances detached.</p>
      */
     inline void SetShouldDecrementDesiredCapacity(bool value) { m_shouldDecrementDesiredCapacityHasBeenSet = true; m_shouldDecrementDesiredCapacity = value; }
 
     /**
-     * <p>If <code>True</code>, the Auto Scaling group decrements the desired capacity
+     * <p>Indicates whether the Auto Scaling group decrements the desired capacity
      * value by the number of instances detached.</p>
      */
     inline DetachInstancesRequest& WithShouldDecrementDesiredCapacity(bool value) { SetShouldDecrementDesiredCapacity(value); return *this;}

@@ -37,7 +37,7 @@ DescribeApplicationResult::DescribeApplicationResult(const Aws::AmazonWebService
 
 DescribeApplicationResult& DescribeApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ApplicationDetail"))
   {
     m_applicationDetail = jsonValue.GetObject("ApplicationDetail");

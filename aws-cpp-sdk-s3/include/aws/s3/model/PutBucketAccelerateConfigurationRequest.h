@@ -18,10 +18,15 @@
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/AccelerateConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace S3
 {
 namespace Model
@@ -42,67 +47,106 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * Name of the bucket for which the accelerate configuration is set.
+     * <p>Name of the bucket for which the accelerate configuration is set.</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * Specifies the Accelerate Configuration you want to set for the bucket.
+     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
      */
     inline const AccelerateConfiguration& GetAccelerateConfiguration() const{ return m_accelerateConfiguration; }
 
     /**
-     * Specifies the Accelerate Configuration you want to set for the bucket.
+     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
      */
     inline void SetAccelerateConfiguration(const AccelerateConfiguration& value) { m_accelerateConfigurationHasBeenSet = true; m_accelerateConfiguration = value; }
 
     /**
-     * Specifies the Accelerate Configuration you want to set for the bucket.
+     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
      */
     inline void SetAccelerateConfiguration(AccelerateConfiguration&& value) { m_accelerateConfigurationHasBeenSet = true; m_accelerateConfiguration = std::move(value); }
 
     /**
-     * Specifies the Accelerate Configuration you want to set for the bucket.
+     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithAccelerateConfiguration(const AccelerateConfiguration& value) { SetAccelerateConfiguration(value); return *this;}
 
     /**
-     * Specifies the Accelerate Configuration you want to set for the bucket.
+     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithAccelerateConfiguration(AccelerateConfiguration&& value) { SetAccelerateConfiguration(std::move(value)); return *this;}
+
+
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
+
+    
+    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
+
+    
+    inline PutBucketAccelerateConfigurationRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
+
+    
+    inline PutBucketAccelerateConfigurationRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
+
+    
+    inline PutBucketAccelerateConfigurationRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+
+    
+    inline PutBucketAccelerateConfigurationRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline PutBucketAccelerateConfigurationRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline PutBucketAccelerateConfigurationRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline PutBucketAccelerateConfigurationRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline PutBucketAccelerateConfigurationRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline PutBucketAccelerateConfigurationRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
 
   private:
 
@@ -111,6 +155,9 @@ namespace Model
 
     AccelerateConfiguration m_accelerateConfiguration;
     bool m_accelerateConfigurationHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+    bool m_customizedAccessLogTagHasBeenSet;
   };
 
 } // namespace Model

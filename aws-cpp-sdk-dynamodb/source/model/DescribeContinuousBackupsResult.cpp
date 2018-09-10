@@ -37,7 +37,7 @@ DescribeContinuousBackupsResult::DescribeContinuousBackupsResult(const Aws::Amaz
 
 DescribeContinuousBackupsResult& DescribeContinuousBackupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ContinuousBackupsDescription"))
   {
     m_continuousBackupsDescription = jsonValue.GetObject("ContinuousBackupsDescription");

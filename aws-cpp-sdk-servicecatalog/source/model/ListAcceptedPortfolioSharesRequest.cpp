@@ -26,7 +26,9 @@ ListAcceptedPortfolioSharesRequest::ListAcceptedPortfolioSharesRequest() :
     m_acceptLanguageHasBeenSet(false),
     m_pageTokenHasBeenSet(false),
     m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_portfolioShareType(PortfolioShareType::NOT_SET),
+    m_portfolioShareTypeHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,12 @@ Aws::String ListAcceptedPortfolioSharesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_portfolioShareTypeHasBeenSet)
+  {
+   payload.WithString("PortfolioShareType", PortfolioShareTypeMapper::GetNameForPortfolioShareType(m_portfolioShareType));
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListAcceptedPortfolioSharesRequest::GetRequestSpecificHeaders() const

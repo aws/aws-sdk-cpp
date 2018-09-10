@@ -59,14 +59,17 @@ namespace Model
      * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
      * will incur costs that exceed your limit.</p> </important> <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to exceed
-     * the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
-     * Support</a> or your AWS sales representative for a service limit increase.</p>
-     * <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
-     * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS
-     * message that you send, Amazon SNS writes a log that includes the message price,
-     * the success or failure status, the reason for failure (if the message failed),
-     * the message dwell time, and other information.</p> <p>
+     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
+     * the limit, submit an <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
+     * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
+     * spend limit. In the <b>Use Case Description</b> field, explain that you are
+     * requesting an SMS monthly spend limit increase.</p> <p>
+     * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon
+     * SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message
+     * that you send, Amazon SNS writes a log that includes the message price, the
+     * success or failure status, the reason for failure (if the message failed), the
+     * message dwell time, and other information.</p> <p>
      * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
@@ -110,14 +113,17 @@ namespace Model
      * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
      * will incur costs that exceed your limit.</p> </important> <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to exceed
-     * the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
-     * Support</a> or your AWS sales representative for a service limit increase.</p>
-     * <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
-     * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS
-     * message that you send, Amazon SNS writes a log that includes the message price,
-     * the success or failure status, the reason for failure (if the message failed),
-     * the message dwell time, and other information.</p> <p>
+     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
+     * the limit, submit an <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
+     * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
+     * spend limit. In the <b>Use Case Description</b> field, explain that you are
+     * requesting an SMS monthly spend limit increase.</p> <p>
+     * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon
+     * SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message
+     * that you send, Amazon SNS writes a log that includes the message price, the
+     * success or failure status, the reason for failure (if the message failed), the
+     * message dwell time, and other information.</p> <p>
      * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
@@ -161,14 +167,17 @@ namespace Model
      * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
      * will incur costs that exceed your limit.</p> </important> <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to exceed
-     * the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
-     * Support</a> or your AWS sales representative for a service limit increase.</p>
-     * <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
-     * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS
-     * message that you send, Amazon SNS writes a log that includes the message price,
-     * the success or failure status, the reason for failure (if the message failed),
-     * the message dwell time, and other information.</p> <p>
+     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
+     * the limit, submit an <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
+     * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
+     * spend limit. In the <b>Use Case Description</b> field, explain that you are
+     * requesting an SMS monthly spend limit increase.</p> <p>
+     * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon
+     * SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message
+     * that you send, Amazon SNS writes a log that includes the message price, the
+     * success or failure status, the reason for failure (if the message failed), the
+     * message dwell time, and other information.</p> <p>
      * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
@@ -212,14 +221,17 @@ namespace Model
      * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
      * will incur costs that exceed your limit.</p> </important> <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to exceed
-     * the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
-     * Support</a> or your AWS sales representative for a service limit increase.</p>
-     * <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
-     * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS
-     * message that you send, Amazon SNS writes a log that includes the message price,
-     * the success or failure status, the reason for failure (if the message failed),
-     * the message dwell time, and other information.</p> <p>
+     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
+     * the limit, submit an <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
+     * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
+     * spend limit. In the <b>Use Case Description</b> field, explain that you are
+     * requesting an SMS monthly spend limit increase.</p> <p>
+     * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon
+     * SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message
+     * that you send, Amazon SNS writes a log that includes the message price, the
+     * success or failure status, the reason for failure (if the message failed), the
+     * message dwell time, and other information.</p> <p>
      * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
@@ -263,14 +275,17 @@ namespace Model
      * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
      * will incur costs that exceed your limit.</p> </important> <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to exceed
-     * the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
-     * Support</a> or your AWS sales representative for a service limit increase.</p>
-     * <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
-     * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS
-     * message that you send, Amazon SNS writes a log that includes the message price,
-     * the success or failure status, the reason for failure (if the message failed),
-     * the message dwell time, and other information.</p> <p>
+     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
+     * the limit, submit an <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
+     * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
+     * spend limit. In the <b>Use Case Description</b> field, explain that you are
+     * requesting an SMS monthly spend limit increase.</p> <p>
+     * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon
+     * SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message
+     * that you send, Amazon SNS writes a log that includes the message price, the
+     * success or failure status, the reason for failure (if the message failed), the
+     * message dwell time, and other information.</p> <p>
      * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
@@ -314,14 +329,17 @@ namespace Model
      * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
      * will incur costs that exceed your limit.</p> </important> <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to exceed
-     * the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
-     * Support</a> or your AWS sales representative for a service limit increase.</p>
-     * <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
-     * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS
-     * message that you send, Amazon SNS writes a log that includes the message price,
-     * the success or failure status, the reason for failure (if the message failed),
-     * the message dwell time, and other information.</p> <p>
+     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
+     * the limit, submit an <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
+     * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
+     * spend limit. In the <b>Use Case Description</b> field, explain that you are
+     * requesting an SMS monthly spend limit increase.</p> <p>
+     * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon
+     * SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message
+     * that you send, Amazon SNS writes a log that includes the message price, the
+     * success or failure status, the reason for failure (if the message failed), the
+     * message dwell time, and other information.</p> <p>
      * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
@@ -365,14 +383,17 @@ namespace Model
      * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
      * will incur costs that exceed your limit.</p> </important> <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to exceed
-     * the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
-     * Support</a> or your AWS sales representative for a service limit increase.</p>
-     * <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
-     * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS
-     * message that you send, Amazon SNS writes a log that includes the message price,
-     * the success or failure status, the reason for failure (if the message failed),
-     * the message dwell time, and other information.</p> <p>
+     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
+     * the limit, submit an <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
+     * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
+     * spend limit. In the <b>Use Case Description</b> field, explain that you are
+     * requesting an SMS monthly spend limit increase.</p> <p>
+     * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon
+     * SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message
+     * that you send, Amazon SNS writes a log that includes the message price, the
+     * success or failure status, the reason for failure (if the message failed), the
+     * message dwell time, and other information.</p> <p>
      * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
@@ -416,14 +437,17 @@ namespace Model
      * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
      * will incur costs that exceed your limit.</p> </important> <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to exceed
-     * the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
-     * Support</a> or your AWS sales representative for a service limit increase.</p>
-     * <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
-     * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS
-     * message that you send, Amazon SNS writes a log that includes the message price,
-     * the success or failure status, the reason for failure (if the message failed),
-     * the message dwell time, and other information.</p> <p>
+     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
+     * the limit, submit an <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
+     * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
+     * spend limit. In the <b>Use Case Description</b> field, explain that you are
+     * requesting an SMS monthly spend limit increase.</p> <p>
+     * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon
+     * SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message
+     * that you send, Amazon SNS writes a log that includes the message price, the
+     * success or failure status, the reason for failure (if the message failed), the
+     * message dwell time, and other information.</p> <p>
      * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
@@ -467,14 +491,17 @@ namespace Model
      * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
      * will incur costs that exceed your limit.</p> </important> <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to exceed
-     * the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
-     * Support</a> or your AWS sales representative for a service limit increase.</p>
-     * <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
-     * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS
-     * message that you send, Amazon SNS writes a log that includes the message price,
-     * the success or failure status, the reason for failure (if the message failed),
-     * the message dwell time, and other information.</p> <p>
+     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
+     * the limit, submit an <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
+     * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
+     * spend limit. In the <b>Use Case Description</b> field, explain that you are
+     * requesting an SMS monthly spend limit increase.</p> <p>
+     * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon
+     * SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message
+     * that you send, Amazon SNS writes a log that includes the message price, the
+     * success or failure status, the reason for failure (if the message failed), the
+     * message dwell time, and other information.</p> <p>
      * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
@@ -518,14 +545,17 @@ namespace Model
      * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
      * will incur costs that exceed your limit.</p> </important> <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to exceed
-     * the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
-     * Support</a> or your AWS sales representative for a service limit increase.</p>
-     * <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
-     * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS
-     * message that you send, Amazon SNS writes a log that includes the message price,
-     * the success or failure status, the reason for failure (if the message failed),
-     * the message dwell time, and other information.</p> <p>
+     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
+     * the limit, submit an <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
+     * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
+     * spend limit. In the <b>Use Case Description</b> field, explain that you are
+     * requesting an SMS monthly spend limit increase.</p> <p>
+     * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon
+     * SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message
+     * that you send, Amazon SNS writes a log that includes the message price, the
+     * success or failure status, the reason for failure (if the message failed), the
+     * message dwell time, and other information.</p> <p>
      * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
@@ -569,14 +599,17 @@ namespace Model
      * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
      * will incur costs that exceed your limit.</p> </important> <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to exceed
-     * the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
-     * Support</a> or your AWS sales representative for a service limit increase.</p>
-     * <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
-     * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS
-     * message that you send, Amazon SNS writes a log that includes the message price,
-     * the success or failure status, the reason for failure (if the message failed),
-     * the message dwell time, and other information.</p> <p>
+     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
+     * the limit, submit an <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
+     * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
+     * spend limit. In the <b>Use Case Description</b> field, explain that you are
+     * requesting an SMS monthly spend limit increase.</p> <p>
+     * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon
+     * SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message
+     * that you send, Amazon SNS writes a log that includes the message price, the
+     * success or failure status, the reason for failure (if the message failed), the
+     * message dwell time, and other information.</p> <p>
      * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed
@@ -620,14 +653,17 @@ namespace Model
      * <important> <p>Amazon SNS stops sending SMS messages within minutes of the limit
      * being crossed. During that interval, if you continue to send SMS messages, you
      * will incur costs that exceed your limit.</p> </important> <p>By default, the
-     * spend limit is set to the maximum allowed by Amazon SNS. If you want to exceed
-     * the maximum, contact <a href="https://aws.amazon.com/premiumsupport/">AWS
-     * Support</a> or your AWS sales representative for a service limit increase.</p>
-     * <p> <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows
-     * Amazon SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS
-     * message that you send, Amazon SNS writes a log that includes the message price,
-     * the success or failure status, the reason for failure (if the message failed),
-     * the message dwell time, and other information.</p> <p>
+     * spend limit is set to the maximum allowed by Amazon SNS. If you want to raise
+     * the limit, submit an <a
+     * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sns">SNS
+     * Limit Increase case</a>. For <b>New limit value</b>, enter your desired monthly
+     * spend limit. In the <b>Use Case Description</b> field, explain that you are
+     * requesting an SMS monthly spend limit increase.</p> <p>
+     * <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon
+     * SNS to write logs about SMS deliveries in CloudWatch Logs. For each SMS message
+     * that you send, Amazon SNS writes a log that includes the message price, the
+     * success or failure status, the reason for failure (if the message failed), the
+     * message dwell time, and other information.</p> <p>
      * <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful
      * SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The
      * value can be an integer from 0 - 100. For example, to write logs only for failed

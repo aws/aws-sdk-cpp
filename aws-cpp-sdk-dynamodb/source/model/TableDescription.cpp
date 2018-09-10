@@ -47,11 +47,12 @@ TableDescription::TableDescription() :
     m_streamSpecificationHasBeenSet(false),
     m_latestStreamLabelHasBeenSet(false),
     m_latestStreamArnHasBeenSet(false),
-    m_restoreSummaryHasBeenSet(false)
+    m_restoreSummaryHasBeenSet(false),
+    m_sSEDescriptionHasBeenSet(false)
 {
 }
 
-TableDescription::TableDescription(const JsonValue& jsonValue) : 
+TableDescription::TableDescription(JsonView jsonValue) : 
     m_attributeDefinitionsHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_keySchemaHasBeenSet(false),
@@ -70,16 +71,17 @@ TableDescription::TableDescription(const JsonValue& jsonValue) :
     m_streamSpecificationHasBeenSet(false),
     m_latestStreamLabelHasBeenSet(false),
     m_latestStreamArnHasBeenSet(false),
-    m_restoreSummaryHasBeenSet(false)
+    m_restoreSummaryHasBeenSet(false),
+    m_sSEDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TableDescription& TableDescription::operator =(const JsonValue& jsonValue)
+TableDescription& TableDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttributeDefinitions"))
   {
-    Array<JsonValue> attributeDefinitionsJsonList = jsonValue.GetArray("AttributeDefinitions");
+    Array<JsonView> attributeDefinitionsJsonList = jsonValue.GetArray("AttributeDefinitions");
     for(unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength(); ++attributeDefinitionsIndex)
     {
       m_attributeDefinitions.push_back(attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject());
@@ -96,7 +98,7 @@ TableDescription& TableDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("KeySchema"))
   {
-    Array<JsonValue> keySchemaJsonList = jsonValue.GetArray("KeySchema");
+    Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
     for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
     {
       m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());
@@ -155,7 +157,7 @@ TableDescription& TableDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("LocalSecondaryIndexes"))
   {
-    Array<JsonValue> localSecondaryIndexesJsonList = jsonValue.GetArray("LocalSecondaryIndexes");
+    Array<JsonView> localSecondaryIndexesJsonList = jsonValue.GetArray("LocalSecondaryIndexes");
     for(unsigned localSecondaryIndexesIndex = 0; localSecondaryIndexesIndex < localSecondaryIndexesJsonList.GetLength(); ++localSecondaryIndexesIndex)
     {
       m_localSecondaryIndexes.push_back(localSecondaryIndexesJsonList[localSecondaryIndexesIndex].AsObject());
@@ -165,7 +167,7 @@ TableDescription& TableDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
   {
-    Array<JsonValue> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
+    Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
     for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
     {
       m_globalSecondaryIndexes.push_back(globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject());
@@ -199,6 +201,13 @@ TableDescription& TableDescription::operator =(const JsonValue& jsonValue)
     m_restoreSummary = jsonValue.GetObject("RestoreSummary");
 
     m_restoreSummaryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SSEDescription"))
+  {
+    m_sSEDescription = jsonValue.GetObject("SSEDescription");
+
+    m_sSEDescriptionHasBeenSet = true;
   }
 
   return *this;
@@ -319,6 +328,12 @@ JsonValue TableDescription::Jsonize() const
   if(m_restoreSummaryHasBeenSet)
   {
    payload.WithObject("RestoreSummary", m_restoreSummary.Jsonize());
+
+  }
+
+  if(m_sSEDescriptionHasBeenSet)
+  {
+   payload.WithObject("SSEDescription", m_sSEDescription.Jsonize());
 
   }
 

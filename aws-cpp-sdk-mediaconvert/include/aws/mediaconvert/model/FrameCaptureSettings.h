@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     FrameCaptureSettings();
-    FrameCaptureSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    FrameCaptureSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FrameCaptureSettings(Aws::Utils::Json::JsonView jsonValue);
+    FrameCaptureSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

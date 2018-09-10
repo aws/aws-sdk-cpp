@@ -16,7 +16,6 @@
 
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSFunction.h>
 #include <aws/identity-management/IdentityManagment_EXPORTS.h>
 #include <mutex>
 
@@ -26,6 +25,7 @@ namespace Aws
     {
         namespace Json
         {
+            class JsonView;
             class JsonValue;
         }
     }
@@ -42,6 +42,7 @@ namespace Aws
         class AWS_IDENTITY_MANAGEMENT_API PersistentCognitoIdentityProvider
         {
         public:
+            virtual ~PersistentCognitoIdentityProvider() = default;
             virtual bool HasIdentityId() const = 0;
             virtual bool HasLogins() const = 0;
             virtual Aws::String GetIdentityId() const = 0;
@@ -56,12 +57,12 @@ namespace Aws
 
             inline void SetLoginsUpdatedCallback(const std::function<void(const PersistentCognitoIdentityProvider&)>& callback)
             {
-                m_loginsUpdatedCallback = Aws::BuildFunction<void(const PersistentCognitoIdentityProvider&)>(callback);
+                m_loginsUpdatedCallback = callback;
             }
 
             inline void SetIdentityIdUpdatedCallback(const std::function<void(const PersistentCognitoIdentityProvider&)>& callback)
             {
-                m_identityIdUpdatedCallback = Aws::BuildFunction<void(const PersistentCognitoIdentityProvider&)>(callback);
+                m_identityIdUpdatedCallback = callback;
             }
 
         protected:
@@ -89,7 +90,7 @@ namespace Aws
             void PersistChangesToFile(const Utils::Json::JsonValue&) const;
             void LoadAndParseDoc();
 
-            static void BuildLoginsMap(Aws::Map<Aws::String, Aws::Utils::Json::JsonValue>, Aws::Map<Aws::String, LoginAccessTokens>& logins);
+            static void BuildLoginsMap(Aws::Map<Aws::String, Aws::Utils::Json::JsonView>, Aws::Map<Aws::String, LoginAccessTokens>& logins);
 
             std::mutex m_docMutex;
             Aws::String m_identityPoolId;

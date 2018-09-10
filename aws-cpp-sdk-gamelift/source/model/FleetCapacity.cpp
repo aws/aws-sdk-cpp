@@ -36,7 +36,7 @@ FleetCapacity::FleetCapacity() :
 {
 }
 
-FleetCapacity::FleetCapacity(const JsonValue& jsonValue) : 
+FleetCapacity::FleetCapacity(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
     m_instanceType(EC2InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
@@ -45,7 +45,7 @@ FleetCapacity::FleetCapacity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FleetCapacity& FleetCapacity::operator =(const JsonValue& jsonValue)
+FleetCapacity& FleetCapacity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FleetId"))
   {

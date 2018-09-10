@@ -18,6 +18,7 @@
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/AnalyticsConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -50,101 +51,138 @@ namespace Model
 
 
     /**
-     * The name of the bucket to which an analytics configuration is stored.
+     * <p>The name of the bucket to which an analytics configuration is stored.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * The name of the bucket to which an analytics configuration is stored.
+     * <p>The name of the bucket to which an analytics configuration is stored.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * The name of the bucket to which an analytics configuration is stored.
+     * <p>The name of the bucket to which an analytics configuration is stored.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * The name of the bucket to which an analytics configuration is stored.
+     * <p>The name of the bucket to which an analytics configuration is stored.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * The name of the bucket to which an analytics configuration is stored.
+     * <p>The name of the bucket to which an analytics configuration is stored.</p>
      */
     inline PutBucketAnalyticsConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * The name of the bucket to which an analytics configuration is stored.
+     * <p>The name of the bucket to which an analytics configuration is stored.</p>
      */
     inline PutBucketAnalyticsConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * The name of the bucket to which an analytics configuration is stored.
+     * <p>The name of the bucket to which an analytics configuration is stored.</p>
      */
     inline PutBucketAnalyticsConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline PutBucketAnalyticsConfigurationRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline PutBucketAnalyticsConfigurationRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline PutBucketAnalyticsConfigurationRequest& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * The configuration and any analyses for the analytics filter.
+     * <p>The configuration and any analyses for the analytics filter.</p>
      */
     inline const AnalyticsConfiguration& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
 
     /**
-     * The configuration and any analyses for the analytics filter.
+     * <p>The configuration and any analyses for the analytics filter.</p>
      */
     inline void SetAnalyticsConfiguration(const AnalyticsConfiguration& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = value; }
 
     /**
-     * The configuration and any analyses for the analytics filter.
+     * <p>The configuration and any analyses for the analytics filter.</p>
      */
     inline void SetAnalyticsConfiguration(AnalyticsConfiguration&& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = std::move(value); }
 
     /**
-     * The configuration and any analyses for the analytics filter.
+     * <p>The configuration and any analyses for the analytics filter.</p>
      */
     inline PutBucketAnalyticsConfigurationRequest& WithAnalyticsConfiguration(const AnalyticsConfiguration& value) { SetAnalyticsConfiguration(value); return *this;}
 
     /**
-     * The configuration and any analyses for the analytics filter.
+     * <p>The configuration and any analyses for the analytics filter.</p>
      */
     inline PutBucketAnalyticsConfigurationRequest& WithAnalyticsConfiguration(AnalyticsConfiguration&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
+
+
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
+
+    
+    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
+
+    
+    inline PutBucketAnalyticsConfigurationRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
+
+    
+    inline PutBucketAnalyticsConfigurationRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
+
+    
+    inline PutBucketAnalyticsConfigurationRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+
+    
+    inline PutBucketAnalyticsConfigurationRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline PutBucketAnalyticsConfigurationRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline PutBucketAnalyticsConfigurationRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline PutBucketAnalyticsConfigurationRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline PutBucketAnalyticsConfigurationRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline PutBucketAnalyticsConfigurationRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
 
   private:
 
@@ -156,6 +194,9 @@ namespace Model
 
     AnalyticsConfiguration m_analyticsConfiguration;
     bool m_analyticsConfigurationHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+    bool m_customizedAccessLogTagHasBeenSet;
   };
 
 } // namespace Model

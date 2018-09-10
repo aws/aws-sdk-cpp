@@ -43,6 +43,7 @@
 #include <aws/appsync/model/ListResolversResult.h>
 #include <aws/appsync/model/ListTypesResult.h>
 #include <aws/appsync/model/StartSchemaCreationResult.h>
+#include <aws/appsync/model/UpdateApiKeyResult.h>
 #include <aws/appsync/model/UpdateDataSourceResult.h>
 #include <aws/appsync/model/UpdateGraphqlApiResult.h>
 #include <aws/appsync/model/UpdateResolverResult.h>
@@ -69,11 +70,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -114,6 +110,7 @@ namespace Model
         class ListResolversRequest;
         class ListTypesRequest;
         class StartSchemaCreationRequest;
+        class UpdateApiKeyRequest;
         class UpdateDataSourceRequest;
         class UpdateGraphqlApiRequest;
         class UpdateResolverRequest;
@@ -141,6 +138,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListResolversResult, Aws::Client::AWSError<AppSyncErrors>> ListResolversOutcome;
         typedef Aws::Utils::Outcome<ListTypesResult, Aws::Client::AWSError<AppSyncErrors>> ListTypesOutcome;
         typedef Aws::Utils::Outcome<StartSchemaCreationResult, Aws::Client::AWSError<AppSyncErrors>> StartSchemaCreationOutcome;
+        typedef Aws::Utils::Outcome<UpdateApiKeyResult, Aws::Client::AWSError<AppSyncErrors>> UpdateApiKeyOutcome;
         typedef Aws::Utils::Outcome<UpdateDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> UpdateDataSourceOutcome;
         typedef Aws::Utils::Outcome<UpdateGraphqlApiResult, Aws::Client::AWSError<AppSyncErrors>> UpdateGraphqlApiOutcome;
         typedef Aws::Utils::Outcome<UpdateResolverResult, Aws::Client::AWSError<AppSyncErrors>> UpdateResolverOutcome;
@@ -168,6 +166,7 @@ namespace Model
         typedef std::future<ListResolversOutcome> ListResolversOutcomeCallable;
         typedef std::future<ListTypesOutcome> ListTypesOutcomeCallable;
         typedef std::future<StartSchemaCreationOutcome> StartSchemaCreationOutcomeCallable;
+        typedef std::future<UpdateApiKeyOutcome> UpdateApiKeyOutcomeCallable;
         typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
         typedef std::future<UpdateGraphqlApiOutcome> UpdateGraphqlApiOutcomeCallable;
         typedef std::future<UpdateResolverOutcome> UpdateResolverOutcomeCallable;
@@ -198,6 +197,7 @@ namespace Model
     typedef std::function<void(const AppSyncClient*, const Model::ListResolversRequest&, const Model::ListResolversOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolversResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListTypesRequest&, const Model::ListTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTypesResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::StartSchemaCreationRequest&, const Model::StartSchemaCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSchemaCreationResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::UpdateApiKeyRequest&, const Model::UpdateApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApiKeyResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateGraphqlApiRequest&, const Model::UpdateGraphqlApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGraphqlApiResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateResolverRequest&, const Model::UpdateResolverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResolverResponseReceivedHandler;
@@ -652,14 +652,22 @@ namespace Model
         virtual void GetTypeAsync(const Model::GetTypeRequest& request, const GetTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the API keys for a given API.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted
+         * automatically sometime after they expire. However, they may still be included in
+         * the response until they have actually been deleted. You can safely call
+         * <code>DeleteApiKey</code> to manually delete a key before it's automatically
+         * deleted.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">AWS
          * API Reference</a></p>
          */
         virtual Model::ListApiKeysOutcome ListApiKeys(const Model::ListApiKeysRequest& request) const;
 
         /**
-         * <p>Lists the API keys for a given API.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted
+         * automatically sometime after they expire. However, they may still be included in
+         * the response until they have actually been deleted. You can safely call
+         * <code>DeleteApiKey</code> to manually delete a key before it's automatically
+         * deleted.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">AWS
          * API Reference</a></p>
          *
@@ -668,7 +676,11 @@ namespace Model
         virtual Model::ListApiKeysOutcomeCallable ListApiKeysCallable(const Model::ListApiKeysRequest& request) const;
 
         /**
-         * <p>Lists the API keys for a given API.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted
+         * automatically sometime after they expire. However, they may still be included in
+         * the response until they have actually been deleted. You can safely call
+         * <code>DeleteApiKey</code> to manually delete a key before it's automatically
+         * deleted.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys">AWS
          * API Reference</a></p>
          *
@@ -805,6 +817,31 @@ namespace Model
         virtual void StartSchemaCreationAsync(const Model::StartSchemaCreationRequest& request, const StartSchemaCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an API key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateApiKeyOutcome UpdateApiKey(const Model::UpdateApiKeyRequest& request) const;
+
+        /**
+         * <p>Updates an API key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateApiKeyOutcomeCallable UpdateApiKeyCallable(const Model::UpdateApiKeyRequest& request) const;
+
+        /**
+         * <p>Updates an API key.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateApiKeyAsync(const Model::UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a <code>DataSource</code> object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateDataSource">AWS
          * API Reference</a></p>
@@ -931,6 +968,7 @@ namespace Model
         void ListResolversAsyncHelper(const Model::ListResolversRequest& request, const ListResolversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTypesAsyncHelper(const Model::ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartSchemaCreationAsyncHelper(const Model::StartSchemaCreationRequest& request, const StartSchemaCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateApiKeyAsyncHelper(const Model::UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDataSourceAsyncHelper(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGraphqlApiAsyncHelper(const Model::UpdateGraphqlApiRequest& request, const UpdateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResolverAsyncHelper(const Model::UpdateResolverRequest& request, const UpdateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

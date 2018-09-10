@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DatabaseMigrationService
@@ -42,57 +43,57 @@ namespace Model
   {
   public:
     SupportedEndpointType();
-    SupportedEndpointType(const Aws::Utils::Json::JsonValue& jsonValue);
-    SupportedEndpointType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SupportedEndpointType(Aws::Utils::Json::JsonView jsonValue);
+    SupportedEndpointType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline SupportedEndpointType& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline SupportedEndpointType& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline SupportedEndpointType& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -138,6 +139,56 @@ namespace Model
      */
     inline SupportedEndpointType& WithEndpointType(ReplicationEndpointTypeValue&& value) { SetEndpointType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline const Aws::String& GetEngineDisplayName() const{ return m_engineDisplayName; }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline void SetEngineDisplayName(const Aws::String& value) { m_engineDisplayNameHasBeenSet = true; m_engineDisplayName = value; }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline void SetEngineDisplayName(Aws::String&& value) { m_engineDisplayNameHasBeenSet = true; m_engineDisplayName = std::move(value); }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline void SetEngineDisplayName(const char* value) { m_engineDisplayNameHasBeenSet = true; m_engineDisplayName.assign(value); }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline SupportedEndpointType& WithEngineDisplayName(const Aws::String& value) { SetEngineDisplayName(value); return *this;}
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline SupportedEndpointType& WithEngineDisplayName(Aws::String&& value) { SetEngineDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline SupportedEndpointType& WithEngineDisplayName(const char* value) { SetEngineDisplayName(value); return *this;}
+
   private:
 
     Aws::String m_engineName;
@@ -148,6 +199,9 @@ namespace Model
 
     ReplicationEndpointTypeValue m_endpointType;
     bool m_endpointTypeHasBeenSet;
+
+    Aws::String m_engineDisplayName;
+    bool m_engineDisplayNameHasBeenSet;
   };
 
 } // namespace Model

@@ -37,7 +37,7 @@ RemoteIpDetails::RemoteIpDetails() :
 {
 }
 
-RemoteIpDetails::RemoteIpDetails(const JsonValue& jsonValue) : 
+RemoteIpDetails::RemoteIpDetails(JsonView jsonValue) : 
     m_cityHasBeenSet(false),
     m_countryHasBeenSet(false),
     m_geoLocationHasBeenSet(false),
@@ -47,7 +47,7 @@ RemoteIpDetails::RemoteIpDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RemoteIpDetails& RemoteIpDetails::operator =(const JsonValue& jsonValue)
+RemoteIpDetails& RemoteIpDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("city"))
   {

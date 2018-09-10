@@ -37,7 +37,7 @@ RefreshTrustedAdvisorCheckResult::RefreshTrustedAdvisorCheckResult(const Aws::Am
 
 RefreshTrustedAdvisorCheckResult& RefreshTrustedAdvisorCheckResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");

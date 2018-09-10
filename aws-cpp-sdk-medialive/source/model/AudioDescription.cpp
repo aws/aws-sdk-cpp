@@ -45,7 +45,7 @@ AudioDescription::AudioDescription() :
 {
 }
 
-AudioDescription::AudioDescription(const JsonValue& jsonValue) : 
+AudioDescription::AudioDescription(JsonView jsonValue) : 
     m_audioNormalizationSettingsHasBeenSet(false),
     m_audioSelectorNameHasBeenSet(false),
     m_audioType(AudioType::NOT_SET),
@@ -63,7 +63,7 @@ AudioDescription::AudioDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AudioDescription& AudioDescription::operator =(const JsonValue& jsonValue)
+AudioDescription& AudioDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioNormalizationSettings"))
   {

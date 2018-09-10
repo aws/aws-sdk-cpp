@@ -37,7 +37,7 @@ Aws::String DescribeHandshakeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeHandshakeRequest::GetRequestSpecificHeaders() const

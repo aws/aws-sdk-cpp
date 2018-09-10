@@ -35,7 +35,7 @@ ActivityListItem::ActivityListItem() :
 {
 }
 
-ActivityListItem::ActivityListItem(const JsonValue& jsonValue) : 
+ActivityListItem::ActivityListItem(JsonView jsonValue) : 
     m_activityArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_creationDateHasBeenSet(false)
@@ -43,7 +43,7 @@ ActivityListItem::ActivityListItem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ActivityListItem& ActivityListItem::operator =(const JsonValue& jsonValue)
+ActivityListItem& ActivityListItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("activityArn"))
   {

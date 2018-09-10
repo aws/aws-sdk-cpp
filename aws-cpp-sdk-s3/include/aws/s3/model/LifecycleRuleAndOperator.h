@@ -35,9 +35,9 @@ namespace Model
 {
 
   /**
-   * This is used in a Lifecycle Rule Filter to apply a logical AND to two or more
+   * <p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more
    * predicates. The Lifecycle Rule will apply to any object matching all of the
-   * predicates configured inside the And operator.<p><h3>See Also:</h3>   <a
+   * predicates configured inside the And operator.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LifecycleRuleAndOperator">AWS
    * API Reference</a></p>
    */
@@ -74,44 +74,44 @@ namespace Model
 
 
     /**
-     * All of these tags must exist in the object's tag set in order for the rule to
-     * apply.
+     * <p>All of these tags must exist in the object's tag set in order for the rule to
+     * apply.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * All of these tags must exist in the object's tag set in order for the rule to
-     * apply.
+     * <p>All of these tags must exist in the object's tag set in order for the rule to
+     * apply.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * All of these tags must exist in the object's tag set in order for the rule to
-     * apply.
+     * <p>All of these tags must exist in the object's tag set in order for the rule to
+     * apply.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * All of these tags must exist in the object's tag set in order for the rule to
-     * apply.
+     * <p>All of these tags must exist in the object's tag set in order for the rule to
+     * apply.</p>
      */
     inline LifecycleRuleAndOperator& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * All of these tags must exist in the object's tag set in order for the rule to
-     * apply.
+     * <p>All of these tags must exist in the object's tag set in order for the rule to
+     * apply.</p>
      */
     inline LifecycleRuleAndOperator& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * All of these tags must exist in the object's tag set in order for the rule to
-     * apply.
+     * <p>All of these tags must exist in the object's tag set in order for the rule to
+     * apply.</p>
      */
     inline LifecycleRuleAndOperator& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * All of these tags must exist in the object's tag set in order for the rule to
-     * apply.
+     * <p>All of these tags must exist in the object's tag set in order for the rule to
+     * apply.</p>
      */
     inline LifecycleRuleAndOperator& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

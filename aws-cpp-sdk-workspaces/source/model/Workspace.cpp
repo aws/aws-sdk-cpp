@@ -50,7 +50,7 @@ Workspace::Workspace() :
 {
 }
 
-Workspace::Workspace(const JsonValue& jsonValue) : 
+Workspace::Workspace(JsonView jsonValue) : 
     m_workspaceIdHasBeenSet(false),
     m_directoryIdHasBeenSet(false),
     m_userNameHasBeenSet(false),
@@ -73,7 +73,7 @@ Workspace::Workspace(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Workspace& Workspace::operator =(const JsonValue& jsonValue)
+Workspace& Workspace::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WorkspaceId"))
   {
@@ -175,7 +175,7 @@ Workspace& Workspace::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ModificationStates"))
   {
-    Array<JsonValue> modificationStatesJsonList = jsonValue.GetArray("ModificationStates");
+    Array<JsonView> modificationStatesJsonList = jsonValue.GetArray("ModificationStates");
     for(unsigned modificationStatesIndex = 0; modificationStatesIndex < modificationStatesJsonList.GetLength(); ++modificationStatesIndex)
     {
       m_modificationStates.push_back(modificationStatesJsonList[modificationStatesIndex].AsObject());

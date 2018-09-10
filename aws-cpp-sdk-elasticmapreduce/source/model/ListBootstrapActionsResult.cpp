@@ -37,10 +37,10 @@ ListBootstrapActionsResult::ListBootstrapActionsResult(const Aws::AmazonWebServi
 
 ListBootstrapActionsResult& ListBootstrapActionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BootstrapActions"))
   {
-    Array<JsonValue> bootstrapActionsJsonList = jsonValue.GetArray("BootstrapActions");
+    Array<JsonView> bootstrapActionsJsonList = jsonValue.GetArray("BootstrapActions");
     for(unsigned bootstrapActionsIndex = 0; bootstrapActionsIndex < bootstrapActionsJsonList.GetLength(); ++bootstrapActionsIndex)
     {
       m_bootstrapActions.push_back(bootstrapActionsJsonList[bootstrapActionsIndex].AsObject());

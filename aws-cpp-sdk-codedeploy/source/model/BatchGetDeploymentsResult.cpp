@@ -37,10 +37,10 @@ BatchGetDeploymentsResult::BatchGetDeploymentsResult(const Aws::AmazonWebService
 
 BatchGetDeploymentsResult& BatchGetDeploymentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deploymentsInfo"))
   {
-    Array<JsonValue> deploymentsInfoJsonList = jsonValue.GetArray("deploymentsInfo");
+    Array<JsonView> deploymentsInfoJsonList = jsonValue.GetArray("deploymentsInfo");
     for(unsigned deploymentsInfoIndex = 0; deploymentsInfoIndex < deploymentsInfoJsonList.GetLength(); ++deploymentsInfoIndex)
     {
       m_deploymentsInfo.push_back(deploymentsInfoJsonList[deploymentsInfoIndex].AsObject());

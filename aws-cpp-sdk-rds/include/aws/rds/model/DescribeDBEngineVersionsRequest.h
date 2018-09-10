@@ -178,37 +178,37 @@ namespace Model
 
 
     /**
-     * <p>Not currently supported.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Not currently supported.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Not currently supported.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Not currently supported.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Not currently supported.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline DescribeDBEngineVersionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Not currently supported.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline DescribeDBEngineVersionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Not currently supported.</p>
+     * <p>This parameter is not currently supported.</p>
      */
     inline DescribeDBEngineVersionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

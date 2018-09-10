@@ -35,7 +35,7 @@ Projection::Projection() :
 {
 }
 
-Projection::Projection(const JsonValue& jsonValue) : 
+Projection::Projection(JsonView jsonValue) : 
     m_projectionType(ProjectionType::NOT_SET),
     m_projectionTypeHasBeenSet(false),
     m_nonKeyAttributesHasBeenSet(false)
@@ -43,7 +43,7 @@ Projection::Projection(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Projection& Projection::operator =(const JsonValue& jsonValue)
+Projection& Projection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ProjectionType"))
   {
@@ -54,7 +54,7 @@ Projection& Projection::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("NonKeyAttributes"))
   {
-    Array<JsonValue> nonKeyAttributesJsonList = jsonValue.GetArray("NonKeyAttributes");
+    Array<JsonView> nonKeyAttributesJsonList = jsonValue.GetArray("NonKeyAttributes");
     for(unsigned nonKeyAttributesIndex = 0; nonKeyAttributesIndex < nonKeyAttributesJsonList.GetLength(); ++nonKeyAttributesIndex)
     {
       m_nonKeyAttributes.push_back(nonKeyAttributesJsonList[nonKeyAttributesIndex].AsString());

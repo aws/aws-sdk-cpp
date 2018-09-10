@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/MemorySystemInterface.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/Core_EXPORTS.h>
 
 namespace Aws
@@ -142,6 +143,21 @@ namespace Aws
     };
 
     /**
+    * MonitoringOptions is used to set up monitoring functionalities globaly and(or) for users to customize monitoring listeners.
+    */
+    struct MonitoringOptions
+    {
+        /**
+         * These factory functions will be used to try to create customized monitoring listener factories, then be used to create monitoring listener instances. 
+         * Based on functions and factory's implementation, it may fail to create an instance.
+         * If a function failed to create factory or a created factory failed to create an instance, SDK just ignore it.
+         * By default, SDK will try to create a default Client Side Monitoring Listener.
+         */
+        std::vector<Aws::Monitoring::MonitoringFactoryCreateFunction> customizedMonitoringFactory_create_fn;
+    };
+
+
+    /**
      * You may notice that instead of taking pointers directly to your factories, we take a closure. This is because
      * if you have installed custom memory management, the allocation for your factories needs to happen after
      * the memory system has been initialized and shutdown needs to happen prior to the memory management being shutdown.
@@ -199,6 +215,13 @@ namespace Aws
          * SDK wide options for crypto
          */
         CryptoOptions cryptoOptions;
+
+        /**
+         * Options used to set up customized monitoring implementations
+         * Put your monitoring facotry in a closure (a create factory function) and put all closures in a vector.
+         * Basic usage can be found in aws-cpp-sdk-core-tests/monitoring/MonitoringTest.cpp
+         */
+        MonitoringOptions monitoringOptions;
     };
 
     /*

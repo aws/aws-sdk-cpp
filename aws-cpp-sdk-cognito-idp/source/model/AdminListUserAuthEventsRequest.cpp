@@ -59,7 +59,7 @@ Aws::String AdminListUserAuthEventsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AdminListUserAuthEventsRequest::GetRequestSpecificHeaders() const

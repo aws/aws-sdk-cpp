@@ -29,13 +29,15 @@ namespace Model
 {
 
 ConfigurationRevision::ConfigurationRevision() : 
+    m_createdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false)
 {
 }
 
-ConfigurationRevision::ConfigurationRevision(const JsonValue& jsonValue) : 
+ConfigurationRevision::ConfigurationRevision(JsonView jsonValue) : 
+    m_createdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_revision(0),
     m_revisionHasBeenSet(false)
@@ -43,8 +45,15 @@ ConfigurationRevision::ConfigurationRevision(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ConfigurationRevision& ConfigurationRevision::operator =(const JsonValue& jsonValue)
+ConfigurationRevision& ConfigurationRevision::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("created"))
+  {
+    m_created = jsonValue.GetString("created");
+
+    m_createdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
@@ -65,6 +74,11 @@ ConfigurationRevision& ConfigurationRevision::operator =(const JsonValue& jsonVa
 JsonValue ConfigurationRevision::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_createdHasBeenSet)
+  {
+   payload.WithString("created", m_created.ToGmtString(DateFormat::ISO_8601));
+  }
 
   if(m_descriptionHasBeenSet)
   {

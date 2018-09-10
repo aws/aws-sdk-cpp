@@ -33,13 +33,13 @@ StreamProcessorSettings::StreamProcessorSettings() :
 {
 }
 
-StreamProcessorSettings::StreamProcessorSettings(const JsonValue& jsonValue) : 
+StreamProcessorSettings::StreamProcessorSettings(JsonView jsonValue) : 
     m_faceSearchHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StreamProcessorSettings& StreamProcessorSettings::operator =(const JsonValue& jsonValue)
+StreamProcessorSettings& StreamProcessorSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FaceSearch"))
   {

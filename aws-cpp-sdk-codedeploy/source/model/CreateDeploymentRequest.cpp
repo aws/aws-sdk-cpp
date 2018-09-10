@@ -102,7 +102,7 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
    payload.WithString("fileExistsBehavior", FileExistsBehaviorMapper::GetNameForFileExistsBehavior(m_fileExistsBehavior));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateDeploymentRequest::GetRequestSpecificHeaders() const

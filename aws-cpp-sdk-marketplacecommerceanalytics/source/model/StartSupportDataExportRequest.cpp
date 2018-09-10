@@ -83,7 +83,7 @@ Aws::String StartSupportDataExportRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartSupportDataExportRequest::GetRequestSpecificHeaders() const

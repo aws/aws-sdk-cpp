@@ -84,42 +84,42 @@ namespace Model
 
 
     /**
-     * <p>One or more load balancer names.</p>
+     * <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
 
     /**
-     * <p>One or more load balancer names.</p>
+     * <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
      */
     inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
 
     /**
-     * <p>One or more load balancer names.</p>
+     * <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
      */
     inline void SetLoadBalancerNames(Aws::Vector<Aws::String>&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = std::move(value); }
 
     /**
-     * <p>One or more load balancer names.</p>
+     * <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
      */
     inline AttachLoadBalancersRequest& WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
 
     /**
-     * <p>One or more load balancer names.</p>
+     * <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
      */
     inline AttachLoadBalancersRequest& WithLoadBalancerNames(Aws::Vector<Aws::String>&& value) { SetLoadBalancerNames(std::move(value)); return *this;}
 
     /**
-     * <p>One or more load balancer names.</p>
+     * <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
      */
     inline AttachLoadBalancersRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
     /**
-     * <p>One or more load balancer names.</p>
+     * <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
      */
     inline AttachLoadBalancersRequest& AddLoadBalancerNames(Aws::String&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more load balancer names.</p>
+     * <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
      */
     inline AttachLoadBalancersRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 

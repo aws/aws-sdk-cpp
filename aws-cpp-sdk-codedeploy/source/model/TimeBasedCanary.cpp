@@ -36,7 +36,7 @@ TimeBasedCanary::TimeBasedCanary() :
 {
 }
 
-TimeBasedCanary::TimeBasedCanary(const JsonValue& jsonValue) : 
+TimeBasedCanary::TimeBasedCanary(JsonView jsonValue) : 
     m_canaryPercentage(0),
     m_canaryPercentageHasBeenSet(false),
     m_canaryInterval(0),
@@ -45,7 +45,7 @@ TimeBasedCanary::TimeBasedCanary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TimeBasedCanary& TimeBasedCanary::operator =(const JsonValue& jsonValue)
+TimeBasedCanary& TimeBasedCanary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("canaryPercentage"))
   {

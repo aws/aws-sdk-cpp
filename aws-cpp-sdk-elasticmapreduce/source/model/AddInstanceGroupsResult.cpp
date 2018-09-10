@@ -37,7 +37,7 @@ AddInstanceGroupsResult::AddInstanceGroupsResult(const Aws::AmazonWebServiceResu
 
 AddInstanceGroupsResult& AddInstanceGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JobFlowId"))
   {
     m_jobFlowId = jsonValue.GetString("JobFlowId");
@@ -46,7 +46,7 @@ AddInstanceGroupsResult& AddInstanceGroupsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("InstanceGroupIds"))
   {
-    Array<JsonValue> instanceGroupIdsJsonList = jsonValue.GetArray("InstanceGroupIds");
+    Array<JsonView> instanceGroupIdsJsonList = jsonValue.GetArray("InstanceGroupIds");
     for(unsigned instanceGroupIdsIndex = 0; instanceGroupIdsIndex < instanceGroupIdsJsonList.GetLength(); ++instanceGroupIdsIndex)
     {
       m_instanceGroupIds.push_back(instanceGroupIdsJsonList[instanceGroupIdsIndex].AsString());

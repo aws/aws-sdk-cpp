@@ -44,7 +44,7 @@ Aws::String RefreshSchemasRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RefreshSchemasRequest::GetRequestSpecificHeaders() const

@@ -45,44 +45,104 @@ namespace Model
 
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline CreateWebhookRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline CreateWebhookRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the build project.</p>
+     * <p>The name of the AWS CodeBuild project.</p>
      */
     inline CreateWebhookRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+
+
+    /**
+     * <p>A regular expression used to determine which branches in a repository are
+     * built when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.</p>
+     */
+    inline const Aws::String& GetBranchFilter() const{ return m_branchFilter; }
+
+    /**
+     * <p>A regular expression used to determine which branches in a repository are
+     * built when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.</p>
+     */
+    inline void SetBranchFilter(const Aws::String& value) { m_branchFilterHasBeenSet = true; m_branchFilter = value; }
+
+    /**
+     * <p>A regular expression used to determine which branches in a repository are
+     * built when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.</p>
+     */
+    inline void SetBranchFilter(Aws::String&& value) { m_branchFilterHasBeenSet = true; m_branchFilter = std::move(value); }
+
+    /**
+     * <p>A regular expression used to determine which branches in a repository are
+     * built when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.</p>
+     */
+    inline void SetBranchFilter(const char* value) { m_branchFilterHasBeenSet = true; m_branchFilter.assign(value); }
+
+    /**
+     * <p>A regular expression used to determine which branches in a repository are
+     * built when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.</p>
+     */
+    inline CreateWebhookRequest& WithBranchFilter(const Aws::String& value) { SetBranchFilter(value); return *this;}
+
+    /**
+     * <p>A regular expression used to determine which branches in a repository are
+     * built when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.</p>
+     */
+    inline CreateWebhookRequest& WithBranchFilter(Aws::String&& value) { SetBranchFilter(std::move(value)); return *this;}
+
+    /**
+     * <p>A regular expression used to determine which branches in a repository are
+     * built when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.</p>
+     */
+    inline CreateWebhookRequest& WithBranchFilter(const char* value) { SetBranchFilter(value); return *this;}
 
   private:
 
     Aws::String m_projectName;
     bool m_projectNameHasBeenSet;
+
+    Aws::String m_branchFilter;
+    bool m_branchFilterHasBeenSet;
   };
 
 } // namespace Model

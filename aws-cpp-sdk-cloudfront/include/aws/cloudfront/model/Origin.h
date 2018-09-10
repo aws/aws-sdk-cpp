@@ -43,7 +43,7 @@ namespace Model
    * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
    * CloudFront Limits</a> in the <i>AWS General Reference</i>.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/Origin">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/Origin">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Origin
@@ -151,15 +151,17 @@ namespace Model
     /**
      * <p> <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which
      * you want CloudFront to get objects for this origin, for example,
-     * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
-     * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
-     * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
-     * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
-     * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>
-     * <li> <p>The bucket name must not contain adjacent periods.</p> </li> </ul> <p>
-     * <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you
-     * want CloudFront to get objects for this origin, for example,
+     * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
+     * configured as a website endpoint, enter the Amazon S3 static website hosting
+     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
+     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
+     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
+     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
+     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
+     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
+     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
+     * Origins</b>: The DNS domain name for the HTTP server from which you want
+     * CloudFront to get objects for this origin, for example,
      * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
      * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
      * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>
@@ -170,15 +172,17 @@ namespace Model
     /**
      * <p> <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which
      * you want CloudFront to get objects for this origin, for example,
-     * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
-     * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
-     * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
-     * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
-     * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>
-     * <li> <p>The bucket name must not contain adjacent periods.</p> </li> </ul> <p>
-     * <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you
-     * want CloudFront to get objects for this origin, for example,
+     * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
+     * configured as a website endpoint, enter the Amazon S3 static website hosting
+     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
+     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
+     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
+     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
+     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
+     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
+     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
+     * Origins</b>: The DNS domain name for the HTTP server from which you want
+     * CloudFront to get objects for this origin, for example,
      * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
      * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
      * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>
@@ -189,15 +193,17 @@ namespace Model
     /**
      * <p> <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which
      * you want CloudFront to get objects for this origin, for example,
-     * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
-     * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
-     * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
-     * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
-     * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>
-     * <li> <p>The bucket name must not contain adjacent periods.</p> </li> </ul> <p>
-     * <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you
-     * want CloudFront to get objects for this origin, for example,
+     * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
+     * configured as a website endpoint, enter the Amazon S3 static website hosting
+     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
+     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
+     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
+     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
+     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
+     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
+     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
+     * Origins</b>: The DNS domain name for the HTTP server from which you want
+     * CloudFront to get objects for this origin, for example,
      * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
      * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
      * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>
@@ -208,15 +214,17 @@ namespace Model
     /**
      * <p> <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which
      * you want CloudFront to get objects for this origin, for example,
-     * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
-     * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
-     * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
-     * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
-     * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>
-     * <li> <p>The bucket name must not contain adjacent periods.</p> </li> </ul> <p>
-     * <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you
-     * want CloudFront to get objects for this origin, for example,
+     * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
+     * configured as a website endpoint, enter the Amazon S3 static website hosting
+     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
+     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
+     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
+     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
+     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
+     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
+     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
+     * Origins</b>: The DNS domain name for the HTTP server from which you want
+     * CloudFront to get objects for this origin, for example,
      * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
      * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
      * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>
@@ -227,15 +235,17 @@ namespace Model
     /**
      * <p> <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which
      * you want CloudFront to get objects for this origin, for example,
-     * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
-     * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
-     * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
-     * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
-     * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>
-     * <li> <p>The bucket name must not contain adjacent periods.</p> </li> </ul> <p>
-     * <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you
-     * want CloudFront to get objects for this origin, for example,
+     * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
+     * configured as a website endpoint, enter the Amazon S3 static website hosting
+     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
+     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
+     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
+     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
+     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
+     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
+     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
+     * Origins</b>: The DNS domain name for the HTTP server from which you want
+     * CloudFront to get objects for this origin, for example,
      * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
      * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
      * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>
@@ -246,15 +256,17 @@ namespace Model
     /**
      * <p> <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which
      * you want CloudFront to get objects for this origin, for example,
-     * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
-     * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
-     * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
-     * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
-     * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>
-     * <li> <p>The bucket name must not contain adjacent periods.</p> </li> </ul> <p>
-     * <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you
-     * want CloudFront to get objects for this origin, for example,
+     * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
+     * configured as a website endpoint, enter the Amazon S3 static website hosting
+     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
+     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
+     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
+     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
+     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
+     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
+     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
+     * Origins</b>: The DNS domain name for the HTTP server from which you want
+     * CloudFront to get objects for this origin, for example,
      * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
      * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
      * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>
@@ -265,15 +277,17 @@ namespace Model
     /**
      * <p> <b>Amazon S3 origins</b>: The DNS name of the Amazon S3 bucket from which
      * you want CloudFront to get objects for this origin, for example,
-     * <code>myawsbucket.s3.amazonaws.com</code>.</p> <p>Constraints for Amazon S3
-     * origins: </p> <ul> <li> <p>If you configured Amazon S3 Transfer Acceleration for
-     * your bucket, don't specify the <code>s3-accelerate</code> endpoint for
-     * <code>DomainName</code>.</p> </li> <li> <p>The bucket name must be between 3 and
-     * 63 characters long (inclusive).</p> </li> <li> <p>The bucket name must contain
-     * only lowercase characters, numbers, periods, underscores, and dashes.</p> </li>
-     * <li> <p>The bucket name must not contain adjacent periods.</p> </li> </ul> <p>
-     * <b>Custom Origins</b>: The DNS domain name for the HTTP server from which you
-     * want CloudFront to get objects for this origin, for example,
+     * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
+     * configured as a website endpoint, enter the Amazon S3 static website hosting
+     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
+     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
+     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
+     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
+     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
+     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
+     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
+     * Origins</b>: The DNS domain name for the HTTP server from which you want
+     * CloudFront to get objects for this origin, for example,
      * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
      * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
      * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>

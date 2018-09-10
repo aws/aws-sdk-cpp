@@ -40,7 +40,7 @@ InstancePortState::InstancePortState() :
 {
 }
 
-InstancePortState::InstancePortState(const JsonValue& jsonValue) : 
+InstancePortState::InstancePortState(JsonView jsonValue) : 
     m_fromPort(0),
     m_fromPortHasBeenSet(false),
     m_toPort(0),
@@ -53,7 +53,7 @@ InstancePortState::InstancePortState(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstancePortState& InstancePortState::operator =(const JsonValue& jsonValue)
+InstancePortState& InstancePortState::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("fromPort"))
   {

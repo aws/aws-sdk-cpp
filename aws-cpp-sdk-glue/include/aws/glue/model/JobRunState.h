@@ -31,7 +31,8 @@ namespace Model
     STOPPING,
     STOPPED,
     SUCCEEDED,
-    FAILED
+    FAILED,
+    TIMEOUT
   };
 
 namespace JobRunStateMapper

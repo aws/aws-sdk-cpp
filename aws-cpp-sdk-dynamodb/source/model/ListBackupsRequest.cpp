@@ -28,7 +28,9 @@ ListBackupsRequest::ListBackupsRequest() :
     m_limitHasBeenSet(false),
     m_timeRangeLowerBoundHasBeenSet(false),
     m_timeRangeUpperBoundHasBeenSet(false),
-    m_exclusiveStartBackupArnHasBeenSet(false)
+    m_exclusiveStartBackupArnHasBeenSet(false),
+    m_backupType(BackupTypeFilter::NOT_SET),
+    m_backupTypeHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,12 @@ Aws::String ListBackupsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_backupTypeHasBeenSet)
+  {
+   payload.WithString("BackupType", BackupTypeFilterMapper::GetNameForBackupTypeFilter(m_backupType));
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListBackupsRequest::GetRequestSpecificHeaders() const

@@ -37,7 +37,7 @@ Aws::String DeleteKeyPairRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteKeyPairRequest::GetRequestSpecificHeaders() const

@@ -36,7 +36,7 @@ DeploymentStyle::DeploymentStyle() :
 {
 }
 
-DeploymentStyle::DeploymentStyle(const JsonValue& jsonValue) : 
+DeploymentStyle::DeploymentStyle(JsonView jsonValue) : 
     m_deploymentType(DeploymentType::NOT_SET),
     m_deploymentTypeHasBeenSet(false),
     m_deploymentOption(DeploymentOption::NOT_SET),
@@ -45,7 +45,7 @@ DeploymentStyle::DeploymentStyle(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeploymentStyle& DeploymentStyle::operator =(const JsonValue& jsonValue)
+DeploymentStyle& DeploymentStyle::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("deploymentType"))
   {

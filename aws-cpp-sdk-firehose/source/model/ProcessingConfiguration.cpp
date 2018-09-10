@@ -35,7 +35,7 @@ ProcessingConfiguration::ProcessingConfiguration() :
 {
 }
 
-ProcessingConfiguration::ProcessingConfiguration(const JsonValue& jsonValue) : 
+ProcessingConfiguration::ProcessingConfiguration(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_processorsHasBeenSet(false)
@@ -43,7 +43,7 @@ ProcessingConfiguration::ProcessingConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProcessingConfiguration& ProcessingConfiguration::operator =(const JsonValue& jsonValue)
+ProcessingConfiguration& ProcessingConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Enabled"))
   {
@@ -54,7 +54,7 @@ ProcessingConfiguration& ProcessingConfiguration::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("Processors"))
   {
-    Array<JsonValue> processorsJsonList = jsonValue.GetArray("Processors");
+    Array<JsonView> processorsJsonList = jsonValue.GetArray("Processors");
     for(unsigned processorsIndex = 0; processorsIndex < processorsJsonList.GetLength(); ++processorsIndex)
     {
       m_processors.push_back(processorsJsonList[processorsIndex].AsObject());

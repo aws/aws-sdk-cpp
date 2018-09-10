@@ -41,13 +41,13 @@ QueryResult::QueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) :
 
 QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Items"))
   {
-    Array<JsonValue> itemsJsonList = jsonValue.GetArray("Items");
+    Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
     for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
     {
-      Aws::Map<Aws::String, JsonValue> attributeMapJsonMap = itemsJsonList[itemsIndex].GetAllObjects();
+      Aws::Map<Aws::String, JsonView> attributeMapJsonMap = itemsJsonList[itemsIndex].GetAllObjects();
       Aws::Map<Aws::String, AttributeValue> attributeMapMap;
       for(auto& attributeMapItem : attributeMapJsonMap)
       {
@@ -71,7 +71,7 @@ QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
 
   if(jsonValue.ValueExists("LastEvaluatedKey"))
   {
-    Aws::Map<Aws::String, JsonValue> lastEvaluatedKeyJsonMap = jsonValue.GetObject("LastEvaluatedKey").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> lastEvaluatedKeyJsonMap = jsonValue.GetObject("LastEvaluatedKey").GetAllObjects();
     for(auto& lastEvaluatedKeyItem : lastEvaluatedKeyJsonMap)
     {
       m_lastEvaluatedKey[lastEvaluatedKeyItem.first] = lastEvaluatedKeyItem.second.AsObject();

@@ -52,7 +52,7 @@ Aws::String AddResourcePermissionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AddResourcePermissionsRequest::GetRequestSpecificHeaders() const
@@ -62,7 +62,7 @@ Aws::Http::HeaderValueCollection AddResourcePermissionsRequest::GetRequestSpecif
   if(m_authenticationTokenHasBeenSet)
   {
     ss << m_authenticationToken;
-    headers.insert(Aws::Http::HeaderValuePair("authentication", ss.str()));
+    headers.emplace("authentication",  ss.str());
     ss.str("");
   }
 

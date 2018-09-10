@@ -196,43 +196,50 @@ namespace Model
 
     /**
      * <p>Product description filter value. Specify this parameter to show only the
-     * available offerings matching the specified product description.</p>
+     * available offerings that contain the specified product description.</p> <note>
+     * <p>The results show offerings that partially match the filter value.</p> </note>
      */
     inline const Aws::String& GetProductDescription() const{ return m_productDescription; }
 
     /**
      * <p>Product description filter value. Specify this parameter to show only the
-     * available offerings matching the specified product description.</p>
+     * available offerings that contain the specified product description.</p> <note>
+     * <p>The results show offerings that partially match the filter value.</p> </note>
      */
     inline void SetProductDescription(const Aws::String& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
 
     /**
      * <p>Product description filter value. Specify this parameter to show only the
-     * available offerings matching the specified product description.</p>
+     * available offerings that contain the specified product description.</p> <note>
+     * <p>The results show offerings that partially match the filter value.</p> </note>
      */
     inline void SetProductDescription(Aws::String&& value) { m_productDescriptionHasBeenSet = true; m_productDescription = std::move(value); }
 
     /**
      * <p>Product description filter value. Specify this parameter to show only the
-     * available offerings matching the specified product description.</p>
+     * available offerings that contain the specified product description.</p> <note>
+     * <p>The results show offerings that partially match the filter value.</p> </note>
      */
     inline void SetProductDescription(const char* value) { m_productDescriptionHasBeenSet = true; m_productDescription.assign(value); }
 
     /**
      * <p>Product description filter value. Specify this parameter to show only the
-     * available offerings matching the specified product description.</p>
+     * available offerings that contain the specified product description.</p> <note>
+     * <p>The results show offerings that partially match the filter value.</p> </note>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithProductDescription(const Aws::String& value) { SetProductDescription(value); return *this;}
 
     /**
      * <p>Product description filter value. Specify this parameter to show only the
-     * available offerings matching the specified product description.</p>
+     * available offerings that contain the specified product description.</p> <note>
+     * <p>The results show offerings that partially match the filter value.</p> </note>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithProductDescription(Aws::String&& value) { SetProductDescription(std::move(value)); return *this;}
 
     /**
      * <p>Product description filter value. Specify this parameter to show only the
-     * available offerings matching the specified product description.</p>
+     * available offerings that contain the specified product description.</p> <note>
+     * <p>The results show offerings that partially match the filter value.</p> </note>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithProductDescription(const char* value) { SetProductDescription(value); return *this;}
 

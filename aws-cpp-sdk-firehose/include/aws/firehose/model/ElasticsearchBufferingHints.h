@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     ElasticsearchBufferingHints();
-    ElasticsearchBufferingHints(const Aws::Utils::Json::JsonValue& jsonValue);
-    ElasticsearchBufferingHints& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ElasticsearchBufferingHints(Aws::Utils::Json::JsonView jsonValue);
+    ElasticsearchBufferingHints& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

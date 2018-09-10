@@ -37,10 +37,10 @@ TestMetricFilterResult::TestMetricFilterResult(const Aws::AmazonWebServiceResult
 
 TestMetricFilterResult& TestMetricFilterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("matches"))
   {
-    Array<JsonValue> matchesJsonList = jsonValue.GetArray("matches");
+    Array<JsonView> matchesJsonList = jsonValue.GetArray("matches");
     for(unsigned matchesIndex = 0; matchesIndex < matchesJsonList.GetLength(); ++matchesIndex)
     {
       m_matches.push_back(matchesJsonList[matchesIndex].AsObject());

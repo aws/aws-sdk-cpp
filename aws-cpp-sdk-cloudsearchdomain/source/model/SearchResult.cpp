@@ -37,7 +37,7 @@ SearchResult::SearchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 
 SearchResult& SearchResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
@@ -52,7 +52,7 @@ SearchResult& SearchResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   if(jsonValue.ValueExists("facets"))
   {
-    Aws::Map<Aws::String, JsonValue> facetsJsonMap = jsonValue.GetObject("facets").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> facetsJsonMap = jsonValue.GetObject("facets").GetAllObjects();
     for(auto& facetsItem : facetsJsonMap)
     {
       m_facets[facetsItem.first] = facetsItem.second.AsObject();
@@ -61,7 +61,7 @@ SearchResult& SearchResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   if(jsonValue.ValueExists("stats"))
   {
-    Aws::Map<Aws::String, JsonValue> statsJsonMap = jsonValue.GetObject("stats").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> statsJsonMap = jsonValue.GetObject("stats").GetAllObjects();
     for(auto& statsItem : statsJsonMap)
     {
       m_stats[statsItem.first] = statsItem.second.AsObject();

@@ -291,9 +291,9 @@ ListGroupResourcesOutcome ResourceGroupsClient::ListGroupResources(const ListGro
   Aws::Http::URI uri = m_uri;
   ss << "/groups/";
   ss << request.GetGroupName();
-  ss << "/resource-identifiers";
+  ss << "/resource-identifiers-list";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListGroupResourcesOutcome(ListGroupResourcesResult(outcome.GetResult()));
@@ -326,9 +326,9 @@ ListGroupsOutcome ResourceGroupsClient::ListGroups(const ListGroupsRequest& requ
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/groups";
+  ss << "/groups-list";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
     return ListGroupsOutcome(ListGroupsResult(outcome.GetResult()));

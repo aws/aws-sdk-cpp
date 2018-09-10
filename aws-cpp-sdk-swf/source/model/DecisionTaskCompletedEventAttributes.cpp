@@ -37,7 +37,7 @@ DecisionTaskCompletedEventAttributes::DecisionTaskCompletedEventAttributes() :
 {
 }
 
-DecisionTaskCompletedEventAttributes::DecisionTaskCompletedEventAttributes(const JsonValue& jsonValue) : 
+DecisionTaskCompletedEventAttributes::DecisionTaskCompletedEventAttributes(JsonView jsonValue) : 
     m_executionContextHasBeenSet(false),
     m_scheduledEventId(0),
     m_scheduledEventIdHasBeenSet(false),
@@ -47,7 +47,7 @@ DecisionTaskCompletedEventAttributes::DecisionTaskCompletedEventAttributes(const
   *this = jsonValue;
 }
 
-DecisionTaskCompletedEventAttributes& DecisionTaskCompletedEventAttributes::operator =(const JsonValue& jsonValue)
+DecisionTaskCompletedEventAttributes& DecisionTaskCompletedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("executionContext"))
   {

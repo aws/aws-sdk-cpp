@@ -30,6 +30,7 @@ namespace Model
 
 Configuration::Configuration() : 
     m_arnHasBeenSet(false),
+    m_createdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_engineType(EngineType::NOT_SET),
     m_engineTypeHasBeenSet(false),
@@ -40,8 +41,9 @@ Configuration::Configuration() :
 {
 }
 
-Configuration::Configuration(const JsonValue& jsonValue) : 
+Configuration::Configuration(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_createdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_engineType(EngineType::NOT_SET),
     m_engineTypeHasBeenSet(false),
@@ -53,13 +55,20 @@ Configuration::Configuration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Configuration& Configuration::operator =(const JsonValue& jsonValue)
+Configuration& Configuration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("created"))
+  {
+    m_created = jsonValue.GetString("created");
+
+    m_createdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
@@ -115,6 +124,11 @@ JsonValue Configuration::Jsonize() const
   {
    payload.WithString("arn", m_arn);
 
+  }
+
+  if(m_createdHasBeenSet)
+  {
+   payload.WithString("created", m_created.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_descriptionHasBeenSet)

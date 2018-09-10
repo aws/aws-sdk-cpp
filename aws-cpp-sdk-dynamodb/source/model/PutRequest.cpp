@@ -33,17 +33,17 @@ PutRequest::PutRequest() :
 {
 }
 
-PutRequest::PutRequest(const JsonValue& jsonValue) : 
+PutRequest::PutRequest(JsonView jsonValue) : 
     m_itemHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PutRequest& PutRequest::operator =(const JsonValue& jsonValue)
+PutRequest& PutRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Item"))
   {
-    Aws::Map<Aws::String, JsonValue> itemJsonMap = jsonValue.GetObject("Item").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> itemJsonMap = jsonValue.GetObject("Item").GetAllObjects();
     for(auto& itemItem : itemJsonMap)
     {
       m_item[itemItem.first] = itemItem.second.AsObject();

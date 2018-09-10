@@ -33,13 +33,13 @@ DashIsoEncryptionSettings::DashIsoEncryptionSettings() :
 {
 }
 
-DashIsoEncryptionSettings::DashIsoEncryptionSettings(const JsonValue& jsonValue) : 
+DashIsoEncryptionSettings::DashIsoEncryptionSettings(JsonView jsonValue) : 
     m_spekeKeyProviderHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DashIsoEncryptionSettings& DashIsoEncryptionSettings::operator =(const JsonValue& jsonValue)
+DashIsoEncryptionSettings& DashIsoEncryptionSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("spekeKeyProvider"))
   {

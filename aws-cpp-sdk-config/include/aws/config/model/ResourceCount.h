@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -42,33 +43,33 @@ namespace Model
   {
   public:
     ResourceCount();
-    ResourceCount(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceCount& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceCount(Aws::Utils::Json::JsonView jsonValue);
+    ResourceCount& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The resource type, for example <code>"AWS::EC2::Instance"</code>.</p>
+     * <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type, for example <code>"AWS::EC2::Instance"</code>.</p>
+     * <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type, for example <code>"AWS::EC2::Instance"</code>.</p>
+     * <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type, for example <code>"AWS::EC2::Instance"</code>.</p>
+     * <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
      */
     inline ResourceCount& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type, for example <code>"AWS::EC2::Instance"</code>.</p>
+     * <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
      */
     inline ResourceCount& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

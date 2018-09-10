@@ -37,7 +37,7 @@ CACertificate::CACertificate() :
 {
 }
 
-CACertificate::CACertificate(const JsonValue& jsonValue) : 
+CACertificate::CACertificate(JsonView jsonValue) : 
     m_certificateArnHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
     m_status(CACertificateStatus::NOT_SET),
@@ -47,7 +47,7 @@ CACertificate::CACertificate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CACertificate& CACertificate::operator =(const JsonValue& jsonValue)
+CACertificate& CACertificate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("certificateArn"))
   {

@@ -38,7 +38,7 @@ DocumentationPartLocation::DocumentationPartLocation() :
 {
 }
 
-DocumentationPartLocation::DocumentationPartLocation(const JsonValue& jsonValue) : 
+DocumentationPartLocation::DocumentationPartLocation(JsonView jsonValue) : 
     m_type(DocumentationPartType::NOT_SET),
     m_typeHasBeenSet(false),
     m_pathHasBeenSet(false),
@@ -49,7 +49,7 @@ DocumentationPartLocation::DocumentationPartLocation(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-DocumentationPartLocation& DocumentationPartLocation::operator =(const JsonValue& jsonValue)
+DocumentationPartLocation& DocumentationPartLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

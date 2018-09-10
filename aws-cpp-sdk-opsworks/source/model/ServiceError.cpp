@@ -38,7 +38,7 @@ ServiceError::ServiceError() :
 {
 }
 
-ServiceError::ServiceError(const JsonValue& jsonValue) : 
+ServiceError::ServiceError(JsonView jsonValue) : 
     m_serviceErrorIdHasBeenSet(false),
     m_stackIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
@@ -49,7 +49,7 @@ ServiceError::ServiceError(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ServiceError& ServiceError::operator =(const JsonValue& jsonValue)
+ServiceError& ServiceError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ServiceErrorId"))
   {

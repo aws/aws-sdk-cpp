@@ -51,7 +51,7 @@ ContainerInstance::ContainerInstance() :
 {
 }
 
-ContainerInstance::ContainerInstance(const JsonValue& jsonValue) : 
+ContainerInstance::ContainerInstance(JsonView jsonValue) : 
     m_containerInstanceArnHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
     m_version(0),
@@ -75,7 +75,7 @@ ContainerInstance::ContainerInstance(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ContainerInstance& ContainerInstance::operator =(const JsonValue& jsonValue)
+ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("containerInstanceArn"))
   {
@@ -107,7 +107,7 @@ ContainerInstance& ContainerInstance::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("remainingResources"))
   {
-    Array<JsonValue> remainingResourcesJsonList = jsonValue.GetArray("remainingResources");
+    Array<JsonView> remainingResourcesJsonList = jsonValue.GetArray("remainingResources");
     for(unsigned remainingResourcesIndex = 0; remainingResourcesIndex < remainingResourcesJsonList.GetLength(); ++remainingResourcesIndex)
     {
       m_remainingResources.push_back(remainingResourcesJsonList[remainingResourcesIndex].AsObject());
@@ -117,7 +117,7 @@ ContainerInstance& ContainerInstance::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("registeredResources"))
   {
-    Array<JsonValue> registeredResourcesJsonList = jsonValue.GetArray("registeredResources");
+    Array<JsonView> registeredResourcesJsonList = jsonValue.GetArray("registeredResources");
     for(unsigned registeredResourcesIndex = 0; registeredResourcesIndex < registeredResourcesJsonList.GetLength(); ++registeredResourcesIndex)
     {
       m_registeredResources.push_back(registeredResourcesJsonList[registeredResourcesIndex].AsObject());
@@ -162,7 +162,7 @@ ContainerInstance& ContainerInstance::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Array<JsonValue> attributesJsonList = jsonValue.GetArray("attributes");
+    Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -179,7 +179,7 @@ ContainerInstance& ContainerInstance::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attachments"))
   {
-    Array<JsonValue> attachmentsJsonList = jsonValue.GetArray("attachments");
+    Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
     for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
     {
       m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());

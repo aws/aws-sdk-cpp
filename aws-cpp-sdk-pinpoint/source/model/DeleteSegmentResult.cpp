@@ -37,7 +37,7 @@ DeleteSegmentResult::DeleteSegmentResult(const Aws::AmazonWebServiceResult<JsonV
 
 DeleteSegmentResult& DeleteSegmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_segmentResponse = jsonValue;
 
 

@@ -44,7 +44,7 @@ Aws::String GetApplicationRevisionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetApplicationRevisionRequest::GetRequestSpecificHeaders() const

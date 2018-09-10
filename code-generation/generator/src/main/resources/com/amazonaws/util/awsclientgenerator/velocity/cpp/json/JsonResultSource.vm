@@ -33,7 +33,7 @@ ${typeInfo.className}::${typeInfo.className}(const Aws::AmazonWebServiceResult<J
 ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
 #if($shape.hasPayloadMembers())
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
 #else
   AWS_UNREFERENCED_PARAM(result);
 #end

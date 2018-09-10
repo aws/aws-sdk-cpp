@@ -37,7 +37,7 @@ Aws::String DescribeFleetPortSettingsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeFleetPortSettingsRequest::GetRequestSpecificHeaders() const

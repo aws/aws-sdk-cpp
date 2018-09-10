@@ -37,7 +37,7 @@ Aws::String DisableKeyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DisableKeyRequest::GetRequestSpecificHeaders() const

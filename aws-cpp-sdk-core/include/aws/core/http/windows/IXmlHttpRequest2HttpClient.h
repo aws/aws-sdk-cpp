@@ -51,7 +51,14 @@ namespace Aws
              */
             virtual std::shared_ptr<HttpResponse> MakeRequest(HttpRequest& request,
                 Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const;
+                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
+
+            /**
+             * Makes http request, returns http response.
+             */
+            virtual std::shared_ptr<HttpResponse> MakeRequest(const std::shared_ptr<HttpRequest>& request,
+                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
+                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
 
             /**
              * You must call this method before making any calls to the constructor, unless you have already
@@ -60,7 +67,15 @@ namespace Aws
             static void InitCOM();
 
         private:
+            void MakeRequestInternal(HttpRequest& request,
+                    std::shared_ptr<HttpResponse>& response,
+                    Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                    Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const;
+
             void FillClientSettings(const HttpRequestComHandle&) const;
+
+            //we can't reuse these com objects like we do in other http clients, just put a new one back into the resource manager.
+            void ReturnHandleToResourceManager() const;
 
             mutable Aws::Utils::ExclusiveOwnershipResourceManager<HttpRequestComHandle> m_resourceManager;
             Aws::String m_proxyUserName;

@@ -58,7 +58,7 @@ Aws::String PutImageRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutImageRequest::GetRequestSpecificHeaders() const

@@ -76,7 +76,7 @@ Aws::String GenerateDataKeyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GenerateDataKeyRequest::GetRequestSpecificHeaders() const

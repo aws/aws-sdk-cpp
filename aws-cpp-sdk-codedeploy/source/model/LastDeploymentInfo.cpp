@@ -37,7 +37,7 @@ LastDeploymentInfo::LastDeploymentInfo() :
 {
 }
 
-LastDeploymentInfo::LastDeploymentInfo(const JsonValue& jsonValue) : 
+LastDeploymentInfo::LastDeploymentInfo(JsonView jsonValue) : 
     m_deploymentIdHasBeenSet(false),
     m_status(DeploymentStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -47,7 +47,7 @@ LastDeploymentInfo::LastDeploymentInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LastDeploymentInfo& LastDeploymentInfo::operator =(const JsonValue& jsonValue)
+LastDeploymentInfo& LastDeploymentInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("deploymentId"))
   {

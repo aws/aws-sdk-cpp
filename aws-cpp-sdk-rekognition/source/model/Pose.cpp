@@ -38,7 +38,7 @@ Pose::Pose() :
 {
 }
 
-Pose::Pose(const JsonValue& jsonValue) : 
+Pose::Pose(JsonView jsonValue) : 
     m_roll(0.0),
     m_rollHasBeenSet(false),
     m_yaw(0.0),
@@ -49,7 +49,7 @@ Pose::Pose(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Pose& Pose::operator =(const JsonValue& jsonValue)
+Pose& Pose::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Roll"))
   {

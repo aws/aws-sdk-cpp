@@ -36,7 +36,7 @@ AccountTakeoverActionType::AccountTakeoverActionType() :
 {
 }
 
-AccountTakeoverActionType::AccountTakeoverActionType(const JsonValue& jsonValue) : 
+AccountTakeoverActionType::AccountTakeoverActionType(JsonView jsonValue) : 
     m_notify(false),
     m_notifyHasBeenSet(false),
     m_eventAction(AccountTakeoverEventActionType::NOT_SET),
@@ -45,7 +45,7 @@ AccountTakeoverActionType::AccountTakeoverActionType(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-AccountTakeoverActionType& AccountTakeoverActionType::operator =(const JsonValue& jsonValue)
+AccountTakeoverActionType& AccountTakeoverActionType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Notify"))
   {

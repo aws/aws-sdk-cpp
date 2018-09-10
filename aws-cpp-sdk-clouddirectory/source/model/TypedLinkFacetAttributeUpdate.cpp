@@ -35,7 +35,7 @@ TypedLinkFacetAttributeUpdate::TypedLinkFacetAttributeUpdate() :
 {
 }
 
-TypedLinkFacetAttributeUpdate::TypedLinkFacetAttributeUpdate(const JsonValue& jsonValue) : 
+TypedLinkFacetAttributeUpdate::TypedLinkFacetAttributeUpdate(JsonView jsonValue) : 
     m_attributeHasBeenSet(false),
     m_action(UpdateActionType::NOT_SET),
     m_actionHasBeenSet(false)
@@ -43,7 +43,7 @@ TypedLinkFacetAttributeUpdate::TypedLinkFacetAttributeUpdate(const JsonValue& js
   *this = jsonValue;
 }
 
-TypedLinkFacetAttributeUpdate& TypedLinkFacetAttributeUpdate::operator =(const JsonValue& jsonValue)
+TypedLinkFacetAttributeUpdate& TypedLinkFacetAttributeUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Attribute"))
   {

@@ -34,6 +34,8 @@ CreateStageRequest::CreateStageRequest() :
     m_variablesHasBeenSet(false),
     m_documentationVersionHasBeenSet(false),
     m_canarySettingsHasBeenSet(false),
+    m_tracingEnabled(false),
+    m_tracingEnabledHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -94,6 +96,12 @@ Aws::String CreateStageRequest::SerializePayload() const
 
   }
 
+  if(m_tracingEnabledHasBeenSet)
+  {
+   payload.WithBool("tracingEnabled", m_tracingEnabled);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -105,7 +113,7 @@ Aws::String CreateStageRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

@@ -35,7 +35,7 @@ AlgorithmSpecification::AlgorithmSpecification() :
 {
 }
 
-AlgorithmSpecification::AlgorithmSpecification(const JsonValue& jsonValue) : 
+AlgorithmSpecification::AlgorithmSpecification(JsonView jsonValue) : 
     m_trainingImageHasBeenSet(false),
     m_trainingInputMode(TrainingInputMode::NOT_SET),
     m_trainingInputModeHasBeenSet(false)
@@ -43,7 +43,7 @@ AlgorithmSpecification::AlgorithmSpecification(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AlgorithmSpecification& AlgorithmSpecification::operator =(const JsonValue& jsonValue)
+AlgorithmSpecification& AlgorithmSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TrainingImage"))
   {

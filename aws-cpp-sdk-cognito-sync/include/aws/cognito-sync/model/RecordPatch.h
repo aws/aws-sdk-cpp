@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoSync
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     RecordPatch();
-    RecordPatch(const Aws::Utils::Json::JsonValue& jsonValue);
-    RecordPatch& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RecordPatch(Aws::Utils::Json::JsonView jsonValue);
+    RecordPatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

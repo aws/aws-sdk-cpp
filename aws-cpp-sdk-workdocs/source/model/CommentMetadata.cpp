@@ -38,7 +38,7 @@ CommentMetadata::CommentMetadata() :
 {
 }
 
-CommentMetadata::CommentMetadata(const JsonValue& jsonValue) : 
+CommentMetadata::CommentMetadata(JsonView jsonValue) : 
     m_commentIdHasBeenSet(false),
     m_contributorHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
@@ -49,7 +49,7 @@ CommentMetadata::CommentMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CommentMetadata& CommentMetadata::operator =(const JsonValue& jsonValue)
+CommentMetadata& CommentMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CommentId"))
   {

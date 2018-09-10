@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p> A complex type that contains zero or more <code>Tag</code>
    * elements.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagKeys">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/TagKeys">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API TagKeys

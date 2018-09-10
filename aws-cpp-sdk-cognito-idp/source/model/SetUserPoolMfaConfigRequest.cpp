@@ -58,7 +58,7 @@ Aws::String SetUserPoolMfaConfigRequest::SerializePayload() const
    payload.WithString("MfaConfiguration", UserPoolMfaTypeMapper::GetNameForUserPoolMfaType(m_mfaConfiguration));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SetUserPoolMfaConfigRequest::GetRequestSpecificHeaders() const

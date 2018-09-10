@@ -51,7 +51,7 @@ LoadBalancer::LoadBalancer() :
 {
 }
 
-LoadBalancer::LoadBalancer(const JsonValue& jsonValue) : 
+LoadBalancer::LoadBalancer(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_supportCodeHasBeenSet(false),
@@ -75,7 +75,7 @@ LoadBalancer::LoadBalancer(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LoadBalancer& LoadBalancer::operator =(const JsonValue& jsonValue)
+LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -142,7 +142,7 @@ LoadBalancer& LoadBalancer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("publicPorts"))
   {
-    Array<JsonValue> publicPortsJsonList = jsonValue.GetArray("publicPorts");
+    Array<JsonView> publicPortsJsonList = jsonValue.GetArray("publicPorts");
     for(unsigned publicPortsIndex = 0; publicPortsIndex < publicPortsJsonList.GetLength(); ++publicPortsIndex)
     {
       m_publicPorts.push_back(publicPortsJsonList[publicPortsIndex].AsInteger());
@@ -166,7 +166,7 @@ LoadBalancer& LoadBalancer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("instanceHealthSummary"))
   {
-    Array<JsonValue> instanceHealthSummaryJsonList = jsonValue.GetArray("instanceHealthSummary");
+    Array<JsonView> instanceHealthSummaryJsonList = jsonValue.GetArray("instanceHealthSummary");
     for(unsigned instanceHealthSummaryIndex = 0; instanceHealthSummaryIndex < instanceHealthSummaryJsonList.GetLength(); ++instanceHealthSummaryIndex)
     {
       m_instanceHealthSummary.push_back(instanceHealthSummaryJsonList[instanceHealthSummaryIndex].AsObject());
@@ -176,7 +176,7 @@ LoadBalancer& LoadBalancer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tlsCertificateSummaries"))
   {
-    Array<JsonValue> tlsCertificateSummariesJsonList = jsonValue.GetArray("tlsCertificateSummaries");
+    Array<JsonView> tlsCertificateSummariesJsonList = jsonValue.GetArray("tlsCertificateSummaries");
     for(unsigned tlsCertificateSummariesIndex = 0; tlsCertificateSummariesIndex < tlsCertificateSummariesJsonList.GetLength(); ++tlsCertificateSummariesIndex)
     {
       m_tlsCertificateSummaries.push_back(tlsCertificateSummariesJsonList[tlsCertificateSummariesIndex].AsObject());
@@ -186,7 +186,7 @@ LoadBalancer& LoadBalancer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("configurationOptions"))
   {
-    Aws::Map<Aws::String, JsonValue> configurationOptionsJsonMap = jsonValue.GetObject("configurationOptions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> configurationOptionsJsonMap = jsonValue.GetObject("configurationOptions").GetAllObjects();
     for(auto& configurationOptionsItem : configurationOptionsJsonMap)
     {
       m_configurationOptions[LoadBalancerAttributeNameMapper::GetLoadBalancerAttributeNameForName(configurationOptionsItem.first)] = configurationOptionsItem.second.AsString();

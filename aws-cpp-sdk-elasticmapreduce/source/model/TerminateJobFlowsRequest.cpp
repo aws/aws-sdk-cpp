@@ -42,7 +42,7 @@ Aws::String TerminateJobFlowsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection TerminateJobFlowsRequest::GetRequestSpecificHeaders() const

@@ -34,14 +34,14 @@ EventCategoryGroup::EventCategoryGroup() :
 {
 }
 
-EventCategoryGroup::EventCategoryGroup(const JsonValue& jsonValue) : 
+EventCategoryGroup::EventCategoryGroup(JsonView jsonValue) : 
     m_sourceTypeHasBeenSet(false),
     m_eventCategoriesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EventCategoryGroup& EventCategoryGroup::operator =(const JsonValue& jsonValue)
+EventCategoryGroup& EventCategoryGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SourceType"))
   {
@@ -52,7 +52,7 @@ EventCategoryGroup& EventCategoryGroup::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("EventCategories"))
   {
-    Array<JsonValue> eventCategoriesJsonList = jsonValue.GetArray("EventCategories");
+    Array<JsonView> eventCategoriesJsonList = jsonValue.GetArray("EventCategories");
     for(unsigned eventCategoriesIndex = 0; eventCategoriesIndex < eventCategoriesJsonList.GetLength(); ++eventCategoriesIndex)
     {
       m_eventCategories.push_back(eventCategoriesJsonList[eventCategoriesIndex].AsString());

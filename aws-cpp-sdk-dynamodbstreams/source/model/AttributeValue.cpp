@@ -45,7 +45,7 @@ AttributeValue::AttributeValue() :
 {
 }
 
-AttributeValue::AttributeValue(const JsonValue& jsonValue) : 
+AttributeValue::AttributeValue(JsonView jsonValue) : 
     m_sHasBeenSet(false),
     m_nHasBeenSet(false),
     m_bHasBeenSet(false),
@@ -62,7 +62,7 @@ AttributeValue::AttributeValue(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AttributeValue& AttributeValue::operator =(const JsonValue& jsonValue)
+AttributeValue& AttributeValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S"))
   {
@@ -86,7 +86,7 @@ AttributeValue& AttributeValue::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SS"))
   {
-    Array<JsonValue> sSJsonList = jsonValue.GetArray("SS");
+    Array<JsonView> sSJsonList = jsonValue.GetArray("SS");
     for(unsigned sSIndex = 0; sSIndex < sSJsonList.GetLength(); ++sSIndex)
     {
       m_sS.push_back(sSJsonList[sSIndex].AsString());
@@ -96,7 +96,7 @@ AttributeValue& AttributeValue::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("NS"))
   {
-    Array<JsonValue> nSJsonList = jsonValue.GetArray("NS");
+    Array<JsonView> nSJsonList = jsonValue.GetArray("NS");
     for(unsigned nSIndex = 0; nSIndex < nSJsonList.GetLength(); ++nSIndex)
     {
       m_nS.push_back(nSJsonList[nSIndex].AsString());
@@ -106,7 +106,7 @@ AttributeValue& AttributeValue::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("BS"))
   {
-    Array<JsonValue> bSJsonList = jsonValue.GetArray("BS");
+    Array<JsonView> bSJsonList = jsonValue.GetArray("BS");
     for(unsigned bSIndex = 0; bSIndex < bSJsonList.GetLength(); ++bSIndex)
     {
       m_bS.push_back(HashingUtils::Base64Decode(bSJsonList[bSIndex].AsString()));
@@ -116,7 +116,7 @@ AttributeValue& AttributeValue::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("M"))
   {
-    Aws::Map<Aws::String, JsonValue> mJsonMap = jsonValue.GetObject("M").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> mJsonMap = jsonValue.GetObject("M").GetAllObjects();
     for(auto& mItem : mJsonMap)
     {
       m_m[mItem.first] = mItem.second.AsObject();
@@ -126,7 +126,7 @@ AttributeValue& AttributeValue::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("L"))
   {
-    Array<JsonValue> lJsonList = jsonValue.GetArray("L");
+    Array<JsonView> lJsonList = jsonValue.GetArray("L");
     for(unsigned lIndex = 0; lIndex < lJsonList.GetLength(); ++lIndex)
     {
       m_l.push_back(lJsonList[lIndex].AsObject());

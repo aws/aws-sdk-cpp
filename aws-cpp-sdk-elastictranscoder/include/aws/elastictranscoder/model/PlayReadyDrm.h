@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticTranscoder
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     PlayReadyDrm();
-    PlayReadyDrm(const Aws::Utils::Json::JsonValue& jsonValue);
-    PlayReadyDrm& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PlayReadyDrm(Aws::Utils::Json::JsonView jsonValue);
+    PlayReadyDrm& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

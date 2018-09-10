@@ -50,7 +50,7 @@ DirectoryLimits::DirectoryLimits() :
 {
 }
 
-DirectoryLimits::DirectoryLimits(const JsonValue& jsonValue) : 
+DirectoryLimits::DirectoryLimits(JsonView jsonValue) : 
     m_cloudOnlyDirectoriesLimit(0),
     m_cloudOnlyDirectoriesLimitHasBeenSet(false),
     m_cloudOnlyDirectoriesCurrentCount(0),
@@ -73,7 +73,7 @@ DirectoryLimits::DirectoryLimits(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DirectoryLimits& DirectoryLimits::operator =(const JsonValue& jsonValue)
+DirectoryLimits& DirectoryLimits::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CloudOnlyDirectoriesLimit"))
   {

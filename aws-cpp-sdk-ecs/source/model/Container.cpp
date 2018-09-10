@@ -37,11 +37,13 @@ Container::Container() :
     m_exitCodeHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_networkBindingsHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
+    m_networkInterfacesHasBeenSet(false),
+    m_healthStatus(HealthStatus::NOT_SET),
+    m_healthStatusHasBeenSet(false)
 {
 }
 
-Container::Container(const JsonValue& jsonValue) : 
+Container::Container(JsonView jsonValue) : 
     m_containerArnHasBeenSet(false),
     m_taskArnHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -50,12 +52,14 @@ Container::Container(const JsonValue& jsonValue) :
     m_exitCodeHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_networkBindingsHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
+    m_networkInterfacesHasBeenSet(false),
+    m_healthStatus(HealthStatus::NOT_SET),
+    m_healthStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Container& Container::operator =(const JsonValue& jsonValue)
+Container& Container::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("containerArn"))
   {
@@ -101,7 +105,7 @@ Container& Container::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("networkBindings"))
   {
-    Array<JsonValue> networkBindingsJsonList = jsonValue.GetArray("networkBindings");
+    Array<JsonView> networkBindingsJsonList = jsonValue.GetArray("networkBindings");
     for(unsigned networkBindingsIndex = 0; networkBindingsIndex < networkBindingsJsonList.GetLength(); ++networkBindingsIndex)
     {
       m_networkBindings.push_back(networkBindingsJsonList[networkBindingsIndex].AsObject());
@@ -111,12 +115,19 @@ Container& Container::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("networkInterfaces"))
   {
-    Array<JsonValue> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
+    Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
     for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
     {
       m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());
     }
     m_networkInterfacesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("healthStatus"))
+  {
+    m_healthStatus = HealthStatusMapper::GetHealthStatusForName(jsonValue.GetString("healthStatus"));
+
+    m_healthStatusHasBeenSet = true;
   }
 
   return *this;
@@ -182,6 +193,11 @@ JsonValue Container::Jsonize() const
    }
    payload.WithArray("networkInterfaces", std::move(networkInterfacesJsonList));
 
+  }
+
+  if(m_healthStatusHasBeenSet)
+  {
+   payload.WithString("healthStatus", HealthStatusMapper::GetNameForHealthStatus(m_healthStatus));
   }
 
   return payload;

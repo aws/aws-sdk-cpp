@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AlexaForBusiness
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Profile();
-    Profile(const Aws::Utils::Json::JsonValue& jsonValue);
-    Profile& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Profile(Aws::Utils::Json::JsonView jsonValue);
+    Profile& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

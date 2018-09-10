@@ -35,7 +35,7 @@ ExternalWorkflowExecutionCancelRequestedEventAttributes::ExternalWorkflowExecuti
 {
 }
 
-ExternalWorkflowExecutionCancelRequestedEventAttributes::ExternalWorkflowExecutionCancelRequestedEventAttributes(const JsonValue& jsonValue) : 
+ExternalWorkflowExecutionCancelRequestedEventAttributes::ExternalWorkflowExecutionCancelRequestedEventAttributes(JsonView jsonValue) : 
     m_workflowExecutionHasBeenSet(false),
     m_initiatedEventId(0),
     m_initiatedEventIdHasBeenSet(false)
@@ -43,7 +43,7 @@ ExternalWorkflowExecutionCancelRequestedEventAttributes::ExternalWorkflowExecuti
   *this = jsonValue;
 }
 
-ExternalWorkflowExecutionCancelRequestedEventAttributes& ExternalWorkflowExecutionCancelRequestedEventAttributes::operator =(const JsonValue& jsonValue)
+ExternalWorkflowExecutionCancelRequestedEventAttributes& ExternalWorkflowExecutionCancelRequestedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowExecution"))
   {

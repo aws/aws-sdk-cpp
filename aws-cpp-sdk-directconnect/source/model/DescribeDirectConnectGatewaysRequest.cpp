@@ -52,7 +52,7 @@ Aws::String DescribeDirectConnectGatewaysRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeDirectConnectGatewaysRequest::GetRequestSpecificHeaders() const

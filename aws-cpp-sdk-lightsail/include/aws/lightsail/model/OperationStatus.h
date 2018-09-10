@@ -29,7 +29,8 @@ namespace Model
     NotStarted,
     Started,
     Failed,
-    Completed
+    Completed,
+    Succeeded
   };
 
 namespace OperationStatusMapper

@@ -35,7 +35,7 @@ RegexMatchSetUpdate::RegexMatchSetUpdate() :
 {
 }
 
-RegexMatchSetUpdate::RegexMatchSetUpdate(const JsonValue& jsonValue) : 
+RegexMatchSetUpdate::RegexMatchSetUpdate(JsonView jsonValue) : 
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_regexMatchTupleHasBeenSet(false)
@@ -43,7 +43,7 @@ RegexMatchSetUpdate::RegexMatchSetUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RegexMatchSetUpdate& RegexMatchSetUpdate::operator =(const JsonValue& jsonValue)
+RegexMatchSetUpdate& RegexMatchSetUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {

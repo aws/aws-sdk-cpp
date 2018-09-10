@@ -41,7 +41,7 @@ CreateAccountStatus::CreateAccountStatus() :
 {
 }
 
-CreateAccountStatus::CreateAccountStatus(const JsonValue& jsonValue) : 
+CreateAccountStatus::CreateAccountStatus(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_accountNameHasBeenSet(false),
     m_state(CreateAccountState::NOT_SET),
@@ -55,7 +55,7 @@ CreateAccountStatus::CreateAccountStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CreateAccountStatus& CreateAccountStatus::operator =(const JsonValue& jsonValue)
+CreateAccountStatus& CreateAccountStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

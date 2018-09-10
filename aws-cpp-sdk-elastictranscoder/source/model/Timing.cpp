@@ -38,7 +38,7 @@ Timing::Timing() :
 {
 }
 
-Timing::Timing(const JsonValue& jsonValue) : 
+Timing::Timing(JsonView jsonValue) : 
     m_submitTimeMillis(0),
     m_submitTimeMillisHasBeenSet(false),
     m_startTimeMillis(0),
@@ -49,7 +49,7 @@ Timing::Timing(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Timing& Timing::operator =(const JsonValue& jsonValue)
+Timing& Timing::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SubmitTimeMillis"))
   {

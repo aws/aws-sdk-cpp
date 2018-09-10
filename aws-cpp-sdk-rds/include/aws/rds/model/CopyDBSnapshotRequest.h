@@ -692,7 +692,7 @@ namespace Model
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
-     * Group Considerations</a>. </p>
+     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
@@ -704,7 +704,7 @@ namespace Model
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
-     * Group Considerations</a>. </p>
+     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
@@ -716,7 +716,7 @@ namespace Model
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
-     * Group Considerations</a>. </p>
+     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
@@ -728,7 +728,7 @@ namespace Model
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
-     * Group Considerations</a>. </p>
+     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
@@ -740,7 +740,7 @@ namespace Model
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
-     * Group Considerations</a>. </p>
+     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CopyDBSnapshotRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
@@ -752,7 +752,7 @@ namespace Model
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
-     * Group Considerations</a>. </p>
+     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CopyDBSnapshotRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
@@ -764,7 +764,7 @@ namespace Model
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
-     * Group Considerations</a>. </p>
+     * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CopyDBSnapshotRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 

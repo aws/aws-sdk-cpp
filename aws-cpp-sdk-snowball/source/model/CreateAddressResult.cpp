@@ -37,7 +37,7 @@ CreateAddressResult::CreateAddressResult(const Aws::AmazonWebServiceResult<JsonV
 
 CreateAddressResult& CreateAddressResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AddressId"))
   {
     m_addressId = jsonValue.GetString("AddressId");

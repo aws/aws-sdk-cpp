@@ -23,6 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateJobRequest::CreateJobRequest() : 
+    m_billingTagsSource(BillingTagsSource::NOT_SET),
+    m_billingTagsSourceHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_jobTemplateHasBeenSet(false),
@@ -36,6 +38,11 @@ CreateJobRequest::CreateJobRequest() :
 Aws::String CreateJobRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_billingTagsSourceHasBeenSet)
+  {
+   payload.WithString("billingTagsSource", BillingTagsSourceMapper::GetNameForBillingTagsSource(m_billingTagsSource));
+  }
 
   if(m_clientRequestTokenHasBeenSet)
   {
@@ -78,7 +85,7 @@ Aws::String CreateJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

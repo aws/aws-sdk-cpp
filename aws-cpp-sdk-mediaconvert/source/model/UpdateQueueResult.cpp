@@ -37,7 +37,7 @@ UpdateQueueResult::UpdateQueueResult(const Aws::AmazonWebServiceResult<JsonValue
 
 UpdateQueueResult& UpdateQueueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("queue"))
   {
     m_queue = jsonValue.GetObject("queue");

@@ -37,7 +37,7 @@ GetTableVersionResult::GetTableVersionResult(const Aws::AmazonWebServiceResult<J
 
 GetTableVersionResult& GetTableVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TableVersion"))
   {
     m_tableVersion = jsonValue.GetObject("TableVersion");

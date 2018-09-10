@@ -44,7 +44,7 @@ Aws::String CloseInstancePublicPortsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CloseInstancePublicPortsRequest::GetRequestSpecificHeaders() const

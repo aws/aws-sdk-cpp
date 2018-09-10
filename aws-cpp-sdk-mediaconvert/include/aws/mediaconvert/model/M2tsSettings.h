@@ -24,6 +24,7 @@
 #include <aws/mediaconvert/model/M2tsEbpAudioInterval.h>
 #include <aws/mediaconvert/model/M2tsEbpPlacement.h>
 #include <aws/mediaconvert/model/M2tsEsRateInPes.h>
+#include <aws/mediaconvert/model/M2tsNielsenId3.h>
 #include <aws/mediaconvert/model/M2tsPcrControl.h>
 #include <aws/mediaconvert/model/M2tsRateMode.h>
 #include <aws/mediaconvert/model/M2tsScte35Source.h>
@@ -38,6 +39,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -54,8 +56,8 @@ namespace Model
   {
   public:
     M2tsSettings();
-    M2tsSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    M2tsSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    M2tsSettings(Aws::Utils::Json::JsonView jsonValue);
+    M2tsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -94,42 +96,42 @@ namespace Model
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
      * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation. Can be entered as decimal or hexadecimal values.
+     * comma separation.
      */
     inline const Aws::Vector<int>& GetAudioPids() const{ return m_audioPids; }
 
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
      * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation. Can be entered as decimal or hexadecimal values.
+     * comma separation.
      */
     inline void SetAudioPids(const Aws::Vector<int>& value) { m_audioPidsHasBeenSet = true; m_audioPids = value; }
 
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
      * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation. Can be entered as decimal or hexadecimal values.
+     * comma separation.
      */
     inline void SetAudioPids(Aws::Vector<int>&& value) { m_audioPidsHasBeenSet = true; m_audioPids = std::move(value); }
 
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
      * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation. Can be entered as decimal or hexadecimal values.
+     * comma separation.
      */
     inline M2tsSettings& WithAudioPids(const Aws::Vector<int>& value) { SetAudioPids(value); return *this;}
 
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
      * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation. Can be entered as decimal or hexadecimal values.
+     * comma separation.
      */
     inline M2tsSettings& WithAudioPids(Aws::Vector<int>&& value) { SetAudioPids(std::move(value)); return *this;}
 
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
      * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation. Can be entered as decimal or hexadecimal values.
+     * comma separation.
      */
     inline M2tsSettings& AddAudioPids(int value) { m_audioPidsHasBeenSet = true; m_audioPids.push_back(value); return *this; }
 
@@ -207,42 +209,42 @@ namespace Model
     /**
      * Packet Identifier (PID) for input source DVB Subtitle data to this output.
      * Multiple values are accepted, and can be entered in ranges and/or by comma
-     * separation. Can be entered as decimal or hexadecimal values.
+     * separation.
      */
     inline const Aws::Vector<int>& GetDvbSubPids() const{ return m_dvbSubPids; }
 
     /**
      * Packet Identifier (PID) for input source DVB Subtitle data to this output.
      * Multiple values are accepted, and can be entered in ranges and/or by comma
-     * separation. Can be entered as decimal or hexadecimal values.
+     * separation.
      */
     inline void SetDvbSubPids(const Aws::Vector<int>& value) { m_dvbSubPidsHasBeenSet = true; m_dvbSubPids = value; }
 
     /**
      * Packet Identifier (PID) for input source DVB Subtitle data to this output.
      * Multiple values are accepted, and can be entered in ranges and/or by comma
-     * separation. Can be entered as decimal or hexadecimal values.
+     * separation.
      */
     inline void SetDvbSubPids(Aws::Vector<int>&& value) { m_dvbSubPidsHasBeenSet = true; m_dvbSubPids = std::move(value); }
 
     /**
      * Packet Identifier (PID) for input source DVB Subtitle data to this output.
      * Multiple values are accepted, and can be entered in ranges and/or by comma
-     * separation. Can be entered as decimal or hexadecimal values.
+     * separation.
      */
     inline M2tsSettings& WithDvbSubPids(const Aws::Vector<int>& value) { SetDvbSubPids(value); return *this;}
 
     /**
      * Packet Identifier (PID) for input source DVB Subtitle data to this output.
      * Multiple values are accepted, and can be entered in ranges and/or by comma
-     * separation. Can be entered as decimal or hexadecimal values.
+     * separation.
      */
     inline M2tsSettings& WithDvbSubPids(Aws::Vector<int>&& value) { SetDvbSubPids(std::move(value)); return *this;}
 
     /**
      * Packet Identifier (PID) for input source DVB Subtitle data to this output.
      * Multiple values are accepted, and can be entered in ranges and/or by comma
-     * separation. Can be entered as decimal or hexadecimal values.
+     * separation.
      */
     inline M2tsSettings& AddDvbSubPids(int value) { m_dvbSubPidsHasBeenSet = true; m_dvbSubPids.push_back(value); return *this; }
 
@@ -264,20 +266,17 @@ namespace Model
 
 
     /**
-     * Packet Identifier (PID) for input source DVB Teletext data to this output. Can
-     * be entered as a decimal or hexadecimal value.
+     * Packet Identifier (PID) for input source DVB Teletext data to this output.
      */
     inline int GetDvbTeletextPid() const{ return m_dvbTeletextPid; }
 
     /**
-     * Packet Identifier (PID) for input source DVB Teletext data to this output. Can
-     * be entered as a decimal or hexadecimal value.
+     * Packet Identifier (PID) for input source DVB Teletext data to this output.
      */
     inline void SetDvbTeletextPid(int value) { m_dvbTeletextPidHasBeenSet = true; m_dvbTeletextPid = value; }
 
     /**
-     * Packet Identifier (PID) for input source DVB Teletext data to this output. Can
-     * be entered as a decimal or hexadecimal value.
+     * Packet Identifier (PID) for input source DVB Teletext data to this output.
      */
     inline M2tsSettings& WithDvbTeletextPid(int value) { SetDvbTeletextPid(value); return *this;}
 
@@ -396,6 +395,22 @@ namespace Model
     inline M2tsSettings& WithMinEbpInterval(int value) { SetMinEbpInterval(value); return *this;}
 
 
+    
+    inline const M2tsNielsenId3& GetNielsenId3() const{ return m_nielsenId3; }
+
+    
+    inline void SetNielsenId3(const M2tsNielsenId3& value) { m_nielsenId3HasBeenSet = true; m_nielsenId3 = value; }
+
+    
+    inline void SetNielsenId3(M2tsNielsenId3&& value) { m_nielsenId3HasBeenSet = true; m_nielsenId3 = std::move(value); }
+
+    
+    inline M2tsSettings& WithNielsenId3(const M2tsNielsenId3& value) { SetNielsenId3(value); return *this;}
+
+    
+    inline M2tsSettings& WithNielsenId3(M2tsNielsenId3&& value) { SetNielsenId3(std::move(value)); return *this;}
+
+
     /**
      * Value in bits per second of extra null packets to insert into the transport
      * stream. This can be used if a downstream encryption system requires periodic
@@ -456,21 +471,21 @@ namespace Model
     /**
      * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
      * stream. When no value is given, the encoder will assign the same value as the
-     * Video PID. Can be entered as a decimal or hexadecimal value.
+     * Video PID.
      */
     inline int GetPcrPid() const{ return m_pcrPid; }
 
     /**
      * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
      * stream. When no value is given, the encoder will assign the same value as the
-     * Video PID. Can be entered as a decimal or hexadecimal value.
+     * Video PID.
      */
     inline void SetPcrPid(int value) { m_pcrPidHasBeenSet = true; m_pcrPid = value; }
 
     /**
      * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
      * stream. When no value is given, the encoder will assign the same value as the
-     * Video PID. Can be entered as a decimal or hexadecimal value.
+     * Video PID.
      */
     inline M2tsSettings& WithPcrPid(int value) { SetPcrPid(value); return *this;}
 
@@ -496,38 +511,32 @@ namespace Model
 
     /**
      * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline int GetPmtPid() const{ return m_pmtPid; }
 
     /**
      * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline void SetPmtPid(int value) { m_pmtPidHasBeenSet = true; m_pmtPid = value; }
 
     /**
      * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline M2tsSettings& WithPmtPid(int value) { SetPmtPid(value); return *this;}
 
 
     /**
      * Packet Identifier (PID) of the private metadata stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline int GetPrivateMetadataPid() const{ return m_privateMetadataPid; }
 
     /**
      * Packet Identifier (PID) of the private metadata stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline void SetPrivateMetadataPid(int value) { m_privateMetadataPidHasBeenSet = true; m_privateMetadataPid = value; }
 
     /**
      * Packet Identifier (PID) of the private metadata stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline M2tsSettings& WithPrivateMetadataPid(int value) { SetPrivateMetadataPid(value); return *this;}
 
@@ -565,20 +574,17 @@ namespace Model
 
 
     /**
-     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be
-     * entered as a decimal or hexadecimal value.
+     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
      */
     inline int GetScte35Pid() const{ return m_scte35Pid; }
 
     /**
-     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be
-     * entered as a decimal or hexadecimal value.
+     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
      */
     inline void SetScte35Pid(int value) { m_scte35PidHasBeenSet = true; m_scte35Pid = value; }
 
     /**
-     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be
-     * entered as a decimal or hexadecimal value.
+     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
      */
     inline M2tsSettings& WithScte35Pid(int value) { SetScte35Pid(value); return *this;}
 
@@ -648,6 +654,22 @@ namespace Model
 
 
     /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     */
+    inline int GetTimedMetadataPid() const{ return m_timedMetadataPid; }
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     */
+    inline void SetTimedMetadataPid(int value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid = value; }
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     */
+    inline M2tsSettings& WithTimedMetadataPid(int value) { SetTimedMetadataPid(value); return *this;}
+
+
+    /**
      * The value of the transport stream ID field in the Program Map Table.
      */
     inline int GetTransportStreamId() const{ return m_transportStreamId; }
@@ -665,19 +687,16 @@ namespace Model
 
     /**
      * Packet Identifier (PID) of the elementary video stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline int GetVideoPid() const{ return m_videoPid; }
 
     /**
      * Packet Identifier (PID) of the elementary video stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline void SetVideoPid(int value) { m_videoPidHasBeenSet = true; m_videoPid = value; }
 
     /**
      * Packet Identifier (PID) of the elementary video stream in the transport stream.
-     * Can be entered as a decimal or hexadecimal value.
      */
     inline M2tsSettings& WithVideoPid(int value) { SetVideoPid(value); return *this;}
 
@@ -731,6 +750,9 @@ namespace Model
     int m_minEbpInterval;
     bool m_minEbpIntervalHasBeenSet;
 
+    M2tsNielsenId3 m_nielsenId3;
+    bool m_nielsenId3HasBeenSet;
+
     double m_nullPacketBitrate;
     bool m_nullPacketBitrateHasBeenSet;
 
@@ -772,6 +794,9 @@ namespace Model
 
     double m_segmentationTime;
     bool m_segmentationTimeHasBeenSet;
+
+    int m_timedMetadataPid;
+    bool m_timedMetadataPidHasBeenSet;
 
     int m_transportStreamId;
     bool m_transportStreamIdHasBeenSet;

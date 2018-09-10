@@ -37,7 +37,7 @@ RuntimeConfiguration::RuntimeConfiguration() :
 {
 }
 
-RuntimeConfiguration::RuntimeConfiguration(const JsonValue& jsonValue) : 
+RuntimeConfiguration::RuntimeConfiguration(JsonView jsonValue) : 
     m_serverProcessesHasBeenSet(false),
     m_maxConcurrentGameSessionActivations(0),
     m_maxConcurrentGameSessionActivationsHasBeenSet(false),
@@ -47,11 +47,11 @@ RuntimeConfiguration::RuntimeConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RuntimeConfiguration& RuntimeConfiguration::operator =(const JsonValue& jsonValue)
+RuntimeConfiguration& RuntimeConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ServerProcesses"))
   {
-    Array<JsonValue> serverProcessesJsonList = jsonValue.GetArray("ServerProcesses");
+    Array<JsonView> serverProcessesJsonList = jsonValue.GetArray("ServerProcesses");
     for(unsigned serverProcessesIndex = 0; serverProcessesIndex < serverProcessesJsonList.GetLength(); ++serverProcessesIndex)
     {
       m_serverProcesses.push_back(serverProcessesJsonList[serverProcessesIndex].AsObject());

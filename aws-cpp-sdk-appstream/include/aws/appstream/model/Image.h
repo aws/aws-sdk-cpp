@@ -22,6 +22,7 @@
 #include <aws/appstream/model/ImageStateChangeReason.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/appstream/model/ImagePermissions.h>
 #include <aws/appstream/model/Application.h>
 #include <utility>
 
@@ -32,6 +33,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppStream
@@ -48,8 +50,8 @@ namespace Model
   {
   public:
     Image();
-    Image(const Aws::Utils::Json::JsonValue& jsonValue);
-    Image& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Image(Aws::Utils::Json::JsonView jsonValue);
+    Image& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -498,6 +500,37 @@ namespace Model
      */
     inline Image& WithAppstreamAgentVersion(const char* value) { SetAppstreamAgentVersion(value); return *this;}
 
+
+    /**
+     * <p>The permissions to provide to the destination AWS account for the specified
+     * image.</p>
+     */
+    inline const ImagePermissions& GetImagePermissions() const{ return m_imagePermissions; }
+
+    /**
+     * <p>The permissions to provide to the destination AWS account for the specified
+     * image.</p>
+     */
+    inline void SetImagePermissions(const ImagePermissions& value) { m_imagePermissionsHasBeenSet = true; m_imagePermissions = value; }
+
+    /**
+     * <p>The permissions to provide to the destination AWS account for the specified
+     * image.</p>
+     */
+    inline void SetImagePermissions(ImagePermissions&& value) { m_imagePermissionsHasBeenSet = true; m_imagePermissions = std::move(value); }
+
+    /**
+     * <p>The permissions to provide to the destination AWS account for the specified
+     * image.</p>
+     */
+    inline Image& WithImagePermissions(const ImagePermissions& value) { SetImagePermissions(value); return *this;}
+
+    /**
+     * <p>The permissions to provide to the destination AWS account for the specified
+     * image.</p>
+     */
+    inline Image& WithImagePermissions(ImagePermissions&& value) { SetImagePermissions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -541,6 +574,9 @@ namespace Model
 
     Aws::String m_appstreamAgentVersion;
     bool m_appstreamAgentVersionHasBeenSet;
+
+    ImagePermissions m_imagePermissions;
+    bool m_imagePermissionsHasBeenSet;
   };
 
 } // namespace Model

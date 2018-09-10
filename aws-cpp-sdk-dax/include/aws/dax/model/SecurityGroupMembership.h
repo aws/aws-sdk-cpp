@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DAX
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     SecurityGroupMembership();
-    SecurityGroupMembership(const Aws::Utils::Json::JsonValue& jsonValue);
-    SecurityGroupMembership& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SecurityGroupMembership(Aws::Utils::Json::JsonView jsonValue);
+    SecurityGroupMembership& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

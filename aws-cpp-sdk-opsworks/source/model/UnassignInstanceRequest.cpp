@@ -37,7 +37,7 @@ Aws::String UnassignInstanceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UnassignInstanceRequest::GetRequestSpecificHeaders() const

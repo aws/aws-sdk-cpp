@@ -44,7 +44,7 @@ Aws::String DeleteChapCredentialsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteChapCredentialsRequest::GetRequestSpecificHeaders() const

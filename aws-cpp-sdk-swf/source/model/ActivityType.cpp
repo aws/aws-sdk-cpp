@@ -34,14 +34,14 @@ ActivityType::ActivityType() :
 {
 }
 
-ActivityType::ActivityType(const JsonValue& jsonValue) : 
+ActivityType::ActivityType(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ActivityType& ActivityType::operator =(const JsonValue& jsonValue)
+ActivityType& ActivityType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

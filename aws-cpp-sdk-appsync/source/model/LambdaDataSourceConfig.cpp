@@ -33,13 +33,13 @@ LambdaDataSourceConfig::LambdaDataSourceConfig() :
 {
 }
 
-LambdaDataSourceConfig::LambdaDataSourceConfig(const JsonValue& jsonValue) : 
+LambdaDataSourceConfig::LambdaDataSourceConfig(JsonView jsonValue) : 
     m_lambdaFunctionArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LambdaDataSourceConfig& LambdaDataSourceConfig::operator =(const JsonValue& jsonValue)
+LambdaDataSourceConfig& LambdaDataSourceConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("lambdaFunctionArn"))
   {

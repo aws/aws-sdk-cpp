@@ -80,7 +80,7 @@ Aws::String UpdatePipelineRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

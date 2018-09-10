@@ -177,6 +177,28 @@ namespace Model
      */
     inline DBClusterRole& WithStatus(const char* value) { SetStatus(value); return *this;}
 
+
+    
+    inline const Aws::String& GetFeatureName() const{ return m_featureName; }
+
+    
+    inline void SetFeatureName(const Aws::String& value) { m_featureNameHasBeenSet = true; m_featureName = value; }
+
+    
+    inline void SetFeatureName(Aws::String&& value) { m_featureNameHasBeenSet = true; m_featureName = std::move(value); }
+
+    
+    inline void SetFeatureName(const char* value) { m_featureNameHasBeenSet = true; m_featureName.assign(value); }
+
+    
+    inline DBClusterRole& WithFeatureName(const Aws::String& value) { SetFeatureName(value); return *this;}
+
+    
+    inline DBClusterRole& WithFeatureName(Aws::String&& value) { SetFeatureName(std::move(value)); return *this;}
+
+    
+    inline DBClusterRole& WithFeatureName(const char* value) { SetFeatureName(value); return *this;}
+
   private:
 
     Aws::String m_roleArn;
@@ -184,6 +206,9 @@ namespace Model
 
     Aws::String m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_featureName;
+    bool m_featureNameHasBeenSet;
   };
 
 } // namespace Model

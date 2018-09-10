@@ -37,7 +37,13 @@ PutInventoryResult::PutInventoryResult(const Aws::AmazonWebServiceResult<JsonVal
 
 PutInventoryResult& PutInventoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Message"))
+  {
+    m_message = jsonValue.GetString("Message");
+
+  }
+
 
 
   return *this;

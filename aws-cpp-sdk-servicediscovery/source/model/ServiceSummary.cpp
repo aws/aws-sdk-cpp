@@ -38,7 +38,7 @@ ServiceSummary::ServiceSummary() :
 {
 }
 
-ServiceSummary::ServiceSummary(const JsonValue& jsonValue) : 
+ServiceSummary::ServiceSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -49,7 +49,7 @@ ServiceSummary::ServiceSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ServiceSummary& ServiceSummary::operator =(const JsonValue& jsonValue)
+ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

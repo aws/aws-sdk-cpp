@@ -51,7 +51,7 @@ Aws::String AdminForgetDeviceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AdminForgetDeviceRequest::GetRequestSpecificHeaders() const

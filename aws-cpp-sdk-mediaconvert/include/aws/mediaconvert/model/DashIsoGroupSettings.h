@@ -19,6 +19,7 @@
 #include <aws/mediaconvert/model/DashIsoEncryptionSettings.h>
 #include <aws/mediaconvert/model/DashIsoHbbtvCompliance.h>
 #include <aws/mediaconvert/model/DashIsoSegmentControl.h>
+#include <aws/mediaconvert/model/DashIsoWriteSegmentTimelineInRepresentation.h>
 #include <utility>
 
 namespace Aws
@@ -28,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -45,8 +47,8 @@ namespace Model
   {
   public:
     DashIsoGroupSettings();
-    DashIsoGroupSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    DashIsoGroupSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DashIsoGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    DashIsoGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -299,6 +301,42 @@ namespace Model
      */
     inline DashIsoGroupSettings& WithSegmentLength(int value) { SetSegmentLength(value); return *this;}
 
+
+    /**
+     * When ENABLED, segment durations are indicated in the manifest using
+     * SegmentTimeline and SegmentTimeline will be promoted down into Representation
+     * from AdaptationSet.
+     */
+    inline const DashIsoWriteSegmentTimelineInRepresentation& GetWriteSegmentTimelineInRepresentation() const{ return m_writeSegmentTimelineInRepresentation; }
+
+    /**
+     * When ENABLED, segment durations are indicated in the manifest using
+     * SegmentTimeline and SegmentTimeline will be promoted down into Representation
+     * from AdaptationSet.
+     */
+    inline void SetWriteSegmentTimelineInRepresentation(const DashIsoWriteSegmentTimelineInRepresentation& value) { m_writeSegmentTimelineInRepresentationHasBeenSet = true; m_writeSegmentTimelineInRepresentation = value; }
+
+    /**
+     * When ENABLED, segment durations are indicated in the manifest using
+     * SegmentTimeline and SegmentTimeline will be promoted down into Representation
+     * from AdaptationSet.
+     */
+    inline void SetWriteSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation&& value) { m_writeSegmentTimelineInRepresentationHasBeenSet = true; m_writeSegmentTimelineInRepresentation = std::move(value); }
+
+    /**
+     * When ENABLED, segment durations are indicated in the manifest using
+     * SegmentTimeline and SegmentTimeline will be promoted down into Representation
+     * from AdaptationSet.
+     */
+    inline DashIsoGroupSettings& WithWriteSegmentTimelineInRepresentation(const DashIsoWriteSegmentTimelineInRepresentation& value) { SetWriteSegmentTimelineInRepresentation(value); return *this;}
+
+    /**
+     * When ENABLED, segment durations are indicated in the manifest using
+     * SegmentTimeline and SegmentTimeline will be promoted down into Representation
+     * from AdaptationSet.
+     */
+    inline DashIsoGroupSettings& WithWriteSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation&& value) { SetWriteSegmentTimelineInRepresentation(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_baseUrl;
@@ -324,6 +362,9 @@ namespace Model
 
     int m_segmentLength;
     bool m_segmentLengthHasBeenSet;
+
+    DashIsoWriteSegmentTimelineInRepresentation m_writeSegmentTimelineInRepresentation;
+    bool m_writeSegmentTimelineInRepresentationHasBeenSet;
   };
 
 } // namespace Model

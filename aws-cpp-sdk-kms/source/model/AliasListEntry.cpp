@@ -35,7 +35,7 @@ AliasListEntry::AliasListEntry() :
 {
 }
 
-AliasListEntry::AliasListEntry(const JsonValue& jsonValue) : 
+AliasListEntry::AliasListEntry(JsonView jsonValue) : 
     m_aliasNameHasBeenSet(false),
     m_aliasArnHasBeenSet(false),
     m_targetKeyIdHasBeenSet(false)
@@ -43,7 +43,7 @@ AliasListEntry::AliasListEntry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AliasListEntry& AliasListEntry::operator =(const JsonValue& jsonValue)
+AliasListEntry& AliasListEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AliasName"))
   {

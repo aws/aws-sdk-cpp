@@ -38,7 +38,7 @@ OperationSummary::OperationSummary() :
 {
 }
 
-OperationSummary::OperationSummary(const JsonValue& jsonValue) : 
+OperationSummary::OperationSummary(JsonView jsonValue) : 
     m_operationIdHasBeenSet(false),
     m_status(OperationStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -49,7 +49,7 @@ OperationSummary::OperationSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OperationSummary& OperationSummary::operator =(const JsonValue& jsonValue)
+OperationSummary& OperationSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OperationId"))
   {

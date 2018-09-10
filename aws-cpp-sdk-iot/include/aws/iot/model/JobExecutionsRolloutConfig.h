@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -39,8 +40,8 @@ namespace Model
   {
   public:
     JobExecutionsRolloutConfig();
-    JobExecutionsRolloutConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobExecutionsRolloutConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobExecutionsRolloutConfig(Aws::Utils::Json::JsonView jsonValue);
+    JobExecutionsRolloutConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     Output();
-    Output(const Aws::Utils::Json::JsonValue& jsonValue);
-    Output& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Output(Aws::Utils::Json::JsonView jsonValue);
+    Output& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -236,70 +237,70 @@ namespace Model
     /**
      * Use Name modifier (NameModifier) to have the service add a string to the end of
      * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier is
-     * required. Name modifier also accepts format identifiers. For DASH ISO outputs,
-     * if you use the format identifiers $Number$ or $Time$ in one output, you must use
-     * them in the same way in all outputs of the output group.
+     * URI. When you create multiple outputs in the same output group, Name modifier
+     * (NameModifier) is required. Name modifier also accepts format identifiers. For
+     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
+     * output, you must use them in the same way in all outputs of the output group.
      */
     inline const Aws::String& GetNameModifier() const{ return m_nameModifier; }
 
     /**
      * Use Name modifier (NameModifier) to have the service add a string to the end of
      * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier is
-     * required. Name modifier also accepts format identifiers. For DASH ISO outputs,
-     * if you use the format identifiers $Number$ or $Time$ in one output, you must use
-     * them in the same way in all outputs of the output group.
+     * URI. When you create multiple outputs in the same output group, Name modifier
+     * (NameModifier) is required. Name modifier also accepts format identifiers. For
+     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
+     * output, you must use them in the same way in all outputs of the output group.
      */
     inline void SetNameModifier(const Aws::String& value) { m_nameModifierHasBeenSet = true; m_nameModifier = value; }
 
     /**
      * Use Name modifier (NameModifier) to have the service add a string to the end of
      * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier is
-     * required. Name modifier also accepts format identifiers. For DASH ISO outputs,
-     * if you use the format identifiers $Number$ or $Time$ in one output, you must use
-     * them in the same way in all outputs of the output group.
+     * URI. When you create multiple outputs in the same output group, Name modifier
+     * (NameModifier) is required. Name modifier also accepts format identifiers. For
+     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
+     * output, you must use them in the same way in all outputs of the output group.
      */
     inline void SetNameModifier(Aws::String&& value) { m_nameModifierHasBeenSet = true; m_nameModifier = std::move(value); }
 
     /**
      * Use Name modifier (NameModifier) to have the service add a string to the end of
      * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier is
-     * required. Name modifier also accepts format identifiers. For DASH ISO outputs,
-     * if you use the format identifiers $Number$ or $Time$ in one output, you must use
-     * them in the same way in all outputs of the output group.
+     * URI. When you create multiple outputs in the same output group, Name modifier
+     * (NameModifier) is required. Name modifier also accepts format identifiers. For
+     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
+     * output, you must use them in the same way in all outputs of the output group.
      */
     inline void SetNameModifier(const char* value) { m_nameModifierHasBeenSet = true; m_nameModifier.assign(value); }
 
     /**
      * Use Name modifier (NameModifier) to have the service add a string to the end of
      * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier is
-     * required. Name modifier also accepts format identifiers. For DASH ISO outputs,
-     * if you use the format identifiers $Number$ or $Time$ in one output, you must use
-     * them in the same way in all outputs of the output group.
+     * URI. When you create multiple outputs in the same output group, Name modifier
+     * (NameModifier) is required. Name modifier also accepts format identifiers. For
+     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
+     * output, you must use them in the same way in all outputs of the output group.
      */
     inline Output& WithNameModifier(const Aws::String& value) { SetNameModifier(value); return *this;}
 
     /**
      * Use Name modifier (NameModifier) to have the service add a string to the end of
      * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier is
-     * required. Name modifier also accepts format identifiers. For DASH ISO outputs,
-     * if you use the format identifiers $Number$ or $Time$ in one output, you must use
-     * them in the same way in all outputs of the output group.
+     * URI. When you create multiple outputs in the same output group, Name modifier
+     * (NameModifier) is required. Name modifier also accepts format identifiers. For
+     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
+     * output, you must use them in the same way in all outputs of the output group.
      */
     inline Output& WithNameModifier(Aws::String&& value) { SetNameModifier(std::move(value)); return *this;}
 
     /**
      * Use Name modifier (NameModifier) to have the service add a string to the end of
      * each output filename. You specify the base filename as part of your destination
-     * URI. When you create multiple outputs in the same output group, Name modifier is
-     * required. Name modifier also accepts format identifiers. For DASH ISO outputs,
-     * if you use the format identifiers $Number$ or $Time$ in one output, you must use
-     * them in the same way in all outputs of the output group.
+     * URI. When you create multiple outputs in the same output group, Name modifier
+     * (NameModifier) is required. Name modifier also accepts format identifiers. For
+     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
+     * output, you must use them in the same way in all outputs of the output group.
      */
     inline Output& WithNameModifier(const char* value) { SetNameModifier(value); return *this;}
 

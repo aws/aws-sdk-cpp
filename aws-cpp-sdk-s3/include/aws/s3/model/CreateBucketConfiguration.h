@@ -43,32 +43,32 @@ namespace Model
 
 
     /**
-     * Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket will be created in US Standard.
+     * <p>Specifies the region where the bucket will be created. If you don't specify a
+     * region, the bucket will be created in US Standard.</p>
      */
     inline const BucketLocationConstraint& GetLocationConstraint() const{ return m_locationConstraint; }
 
     /**
-     * Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket will be created in US Standard.
+     * <p>Specifies the region where the bucket will be created. If you don't specify a
+     * region, the bucket will be created in US Standard.</p>
      */
     inline void SetLocationConstraint(const BucketLocationConstraint& value) { m_locationConstraintHasBeenSet = true; m_locationConstraint = value; }
 
     /**
-     * Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket will be created in US Standard.
+     * <p>Specifies the region where the bucket will be created. If you don't specify a
+     * region, the bucket will be created in US Standard.</p>
      */
     inline void SetLocationConstraint(BucketLocationConstraint&& value) { m_locationConstraintHasBeenSet = true; m_locationConstraint = std::move(value); }
 
     /**
-     * Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket will be created in US Standard.
+     * <p>Specifies the region where the bucket will be created. If you don't specify a
+     * region, the bucket will be created in US Standard.</p>
      */
     inline CreateBucketConfiguration& WithLocationConstraint(const BucketLocationConstraint& value) { SetLocationConstraint(value); return *this;}
 
     /**
-     * Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket will be created in US Standard.
+     * <p>Specifies the region where the bucket will be created. If you don't specify a
+     * region, the bucket will be created in US Standard.</p>
      */
     inline CreateBucketConfiguration& WithLocationConstraint(BucketLocationConstraint&& value) { SetLocationConstraint(std::move(value)); return *this;}
 

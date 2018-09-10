@@ -20,6 +20,7 @@
 #include <aws/medialive/model/DvbSubDestinationSettings.h>
 #include <aws/medialive/model/EmbeddedDestinationSettings.h>
 #include <aws/medialive/model/EmbeddedPlusScte20DestinationSettings.h>
+#include <aws/medialive/model/RtmpCaptionInfoDestinationSettings.h>
 #include <aws/medialive/model/Scte20PlusEmbeddedDestinationSettings.h>
 #include <aws/medialive/model/Scte27DestinationSettings.h>
 #include <aws/medialive/model/SmpteTtDestinationSettings.h>
@@ -35,6 +36,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -52,8 +54,8 @@ namespace Model
   {
   public:
     CaptionDestinationSettings();
-    CaptionDestinationSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    CaptionDestinationSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CaptionDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    CaptionDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -135,6 +137,22 @@ namespace Model
 
     
     inline CaptionDestinationSettings& WithEmbeddedPlusScte20DestinationSettings(EmbeddedPlusScte20DestinationSettings&& value) { SetEmbeddedPlusScte20DestinationSettings(std::move(value)); return *this;}
+
+
+    
+    inline const RtmpCaptionInfoDestinationSettings& GetRtmpCaptionInfoDestinationSettings() const{ return m_rtmpCaptionInfoDestinationSettings; }
+
+    
+    inline void SetRtmpCaptionInfoDestinationSettings(const RtmpCaptionInfoDestinationSettings& value) { m_rtmpCaptionInfoDestinationSettingsHasBeenSet = true; m_rtmpCaptionInfoDestinationSettings = value; }
+
+    
+    inline void SetRtmpCaptionInfoDestinationSettings(RtmpCaptionInfoDestinationSettings&& value) { m_rtmpCaptionInfoDestinationSettingsHasBeenSet = true; m_rtmpCaptionInfoDestinationSettings = std::move(value); }
+
+    
+    inline CaptionDestinationSettings& WithRtmpCaptionInfoDestinationSettings(const RtmpCaptionInfoDestinationSettings& value) { SetRtmpCaptionInfoDestinationSettings(value); return *this;}
+
+    
+    inline CaptionDestinationSettings& WithRtmpCaptionInfoDestinationSettings(RtmpCaptionInfoDestinationSettings&& value) { SetRtmpCaptionInfoDestinationSettings(std::move(value)); return *this;}
 
 
     
@@ -248,6 +266,9 @@ namespace Model
 
     EmbeddedPlusScte20DestinationSettings m_embeddedPlusScte20DestinationSettings;
     bool m_embeddedPlusScte20DestinationSettingsHasBeenSet;
+
+    RtmpCaptionInfoDestinationSettings m_rtmpCaptionInfoDestinationSettings;
+    bool m_rtmpCaptionInfoDestinationSettingsHasBeenSet;
 
     Scte20PlusEmbeddedDestinationSettings m_scte20PlusEmbeddedDestinationSettings;
     bool m_scte20PlusEmbeddedDestinationSettingsHasBeenSet;

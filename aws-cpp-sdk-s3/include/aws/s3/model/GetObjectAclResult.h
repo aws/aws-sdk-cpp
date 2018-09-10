@@ -62,37 +62,37 @@ namespace Model
 
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline const Aws::Vector<Grant>& GetGrants() const{ return m_grants; }
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline void SetGrants(const Aws::Vector<Grant>& value) { m_grants = value; }
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline void SetGrants(Aws::Vector<Grant>&& value) { m_grants = std::move(value); }
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline GetObjectAclResult& WithGrants(const Aws::Vector<Grant>& value) { SetGrants(value); return *this;}
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline GetObjectAclResult& WithGrants(Aws::Vector<Grant>&& value) { SetGrants(std::move(value)); return *this;}
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline GetObjectAclResult& AddGrants(const Grant& value) { m_grants.push_back(value); return *this; }
 
     /**
-     * A list of grants.
+     * <p>A list of grants.</p>
      */
     inline GetObjectAclResult& AddGrants(Grant&& value) { m_grants.push_back(std::move(value)); return *this; }
 

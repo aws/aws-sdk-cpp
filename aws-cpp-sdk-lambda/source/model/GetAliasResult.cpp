@@ -37,7 +37,7 @@ GetAliasResult::GetAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 
 GetAliasResult& GetAliasResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AliasArn"))
   {
     m_aliasArn = jsonValue.GetString("AliasArn");
@@ -65,6 +65,12 @@ GetAliasResult& GetAliasResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("RoutingConfig"))
   {
     m_routingConfig = jsonValue.GetObject("RoutingConfig");
+
+  }
+
+  if(jsonValue.ValueExists("RevisionId"))
+  {
+    m_revisionId = jsonValue.GetString("RevisionId");
 
   }
 

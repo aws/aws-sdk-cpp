@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Support
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     TrustedAdvisorCheckRefreshStatus();
-    TrustedAdvisorCheckRefreshStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    TrustedAdvisorCheckRefreshStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TrustedAdvisorCheckRefreshStatus(Aws::Utils::Json::JsonView jsonValue);
+    TrustedAdvisorCheckRefreshStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

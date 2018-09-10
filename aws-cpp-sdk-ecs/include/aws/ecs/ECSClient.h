@@ -74,11 +74,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -272,7 +267,7 @@ namespace Model
 
         virtual ~ECSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "ecs"; }
+        inline virtual const char* GetServiceClientName() const override { return "ECS"; }
 
 
         /**
@@ -361,33 +356,37 @@ namespace Model
          * are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a
          * load balancer are considered healthy if they are in the <code>RUNNING</code>
          * state and the container instance they are hosted on is reported as healthy by
-         * the load balancer. The default value for <code>minimumHealthyPercent</code> is
-         * 50% in the console and 100% for the AWS CLI, the AWS SDKs, and the APIs.</p>
-         * <p>The <code>maximumPercent</code> parameter represents an upper limit on the
-         * number of your service's tasks that are allowed in the <code>RUNNING</code> or
-         * <code>PENDING</code> state during a deployment, as a percentage of the
-         * <code>desiredCount</code> (rounded down to the nearest integer). This parameter
-         * enables you to define the deployment batch size. For example, if your service
-         * has a <code>desiredCount</code> of four tasks and a <code>maximumPercent</code>
-         * value of 200%, the scheduler can start four new tasks before stopping the four
-         * older tasks (provided that the cluster resources required to do this are
-         * available). The default value for <code>maximumPercent</code> is 200%.</p>
-         * <p>When the service scheduler launches new tasks, it determines task placement
-         * in your cluster using the following logic:</p> <ul> <li> <p>Determine which of
-         * the container instances in your cluster can support your service's task
-         * definition (for example, they have the required CPU, memory, ports, and
-         * container instance attributes).</p> </li> <li> <p>By default, the service
-         * scheduler attempts to balance tasks across Availability Zones in this manner
-         * (although you can choose a different placement strategy) with the
+         * the load balancer. The default value for a replica service for
+         * <code>minimumHealthyPercent</code> is 50% in the console and 100% for the AWS
+         * CLI, the AWS SDKs, and the APIs. The default value for a daemon service for
+         * <code>minimumHealthyPercent</code> is 0% for the AWS CLI, the AWS SDKs, and the
+         * APIs and 50% for the console.</p> <p>The <code>maximumPercent</code> parameter
+         * represents an upper limit on the number of your service's tasks that are allowed
+         * in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment,
+         * as a percentage of the <code>desiredCount</code> (rounded down to the nearest
+         * integer). This parameter enables you to define the deployment batch size. For
+         * example, if your replica service has a <code>desiredCount</code> of four tasks
+         * and a <code>maximumPercent</code> value of 200%, the scheduler can start four
+         * new tasks before stopping the four older tasks (provided that the cluster
+         * resources required to do this are available). The default value for a replica
+         * service for <code>maximumPercent</code> is 200%. If you are using a daemon
+         * service type, the <code>maximumPercent</code> should remain at 100%, which is
+         * the default value.</p> <p>When the service scheduler launches new tasks, it
+         * determines task placement in your cluster using the following logic:</p> <ul>
+         * <li> <p>Determine which of the container instances in your cluster can support
+         * your service's task definition (for example, they have the required CPU, memory,
+         * ports, and container instance attributes).</p> </li> <li> <p>By default, the
+         * service scheduler attempts to balance tasks across Availability Zones in this
+         * manner (although you can choose a different placement strategy) with the
          * <code>placementStrategy</code> parameter):</p> <ul> <li> <p>Sort the valid
-         * container instances by the fewest number of running tasks for this service in
-         * the same Availability Zone as the instance. For example, if zone A has one
-         * running service task and zones B and C each have zero, valid container instances
-         * in either zone B or C are considered optimal for placement.</p> </li> <li>
-         * <p>Place the new service task on a valid container instance in an optimal
-         * Availability Zone (based on the previous steps), favoring container instances
-         * with the fewest number of running tasks for this service.</p> </li> </ul> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * container instances, giving priority to instances that have the fewest number of
+         * running tasks for this service in their respective Availability Zone. For
+         * example, if zone A has one running service task and zones B and C each have
+         * zero, valid container instances in either zone B or C are considered optimal for
+         * placement.</p> </li> <li> <p>Place the new service task on a valid container
+         * instance in an optimal Availability Zone (based on the previous steps), favoring
+         * container instances with the fewest number of running tasks for this
+         * service.</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
          * API Reference</a></p>
          */
@@ -421,33 +420,37 @@ namespace Model
          * are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a
          * load balancer are considered healthy if they are in the <code>RUNNING</code>
          * state and the container instance they are hosted on is reported as healthy by
-         * the load balancer. The default value for <code>minimumHealthyPercent</code> is
-         * 50% in the console and 100% for the AWS CLI, the AWS SDKs, and the APIs.</p>
-         * <p>The <code>maximumPercent</code> parameter represents an upper limit on the
-         * number of your service's tasks that are allowed in the <code>RUNNING</code> or
-         * <code>PENDING</code> state during a deployment, as a percentage of the
-         * <code>desiredCount</code> (rounded down to the nearest integer). This parameter
-         * enables you to define the deployment batch size. For example, if your service
-         * has a <code>desiredCount</code> of four tasks and a <code>maximumPercent</code>
-         * value of 200%, the scheduler can start four new tasks before stopping the four
-         * older tasks (provided that the cluster resources required to do this are
-         * available). The default value for <code>maximumPercent</code> is 200%.</p>
-         * <p>When the service scheduler launches new tasks, it determines task placement
-         * in your cluster using the following logic:</p> <ul> <li> <p>Determine which of
-         * the container instances in your cluster can support your service's task
-         * definition (for example, they have the required CPU, memory, ports, and
-         * container instance attributes).</p> </li> <li> <p>By default, the service
-         * scheduler attempts to balance tasks across Availability Zones in this manner
-         * (although you can choose a different placement strategy) with the
+         * the load balancer. The default value for a replica service for
+         * <code>minimumHealthyPercent</code> is 50% in the console and 100% for the AWS
+         * CLI, the AWS SDKs, and the APIs. The default value for a daemon service for
+         * <code>minimumHealthyPercent</code> is 0% for the AWS CLI, the AWS SDKs, and the
+         * APIs and 50% for the console.</p> <p>The <code>maximumPercent</code> parameter
+         * represents an upper limit on the number of your service's tasks that are allowed
+         * in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment,
+         * as a percentage of the <code>desiredCount</code> (rounded down to the nearest
+         * integer). This parameter enables you to define the deployment batch size. For
+         * example, if your replica service has a <code>desiredCount</code> of four tasks
+         * and a <code>maximumPercent</code> value of 200%, the scheduler can start four
+         * new tasks before stopping the four older tasks (provided that the cluster
+         * resources required to do this are available). The default value for a replica
+         * service for <code>maximumPercent</code> is 200%. If you are using a daemon
+         * service type, the <code>maximumPercent</code> should remain at 100%, which is
+         * the default value.</p> <p>When the service scheduler launches new tasks, it
+         * determines task placement in your cluster using the following logic:</p> <ul>
+         * <li> <p>Determine which of the container instances in your cluster can support
+         * your service's task definition (for example, they have the required CPU, memory,
+         * ports, and container instance attributes).</p> </li> <li> <p>By default, the
+         * service scheduler attempts to balance tasks across Availability Zones in this
+         * manner (although you can choose a different placement strategy) with the
          * <code>placementStrategy</code> parameter):</p> <ul> <li> <p>Sort the valid
-         * container instances by the fewest number of running tasks for this service in
-         * the same Availability Zone as the instance. For example, if zone A has one
-         * running service task and zones B and C each have zero, valid container instances
-         * in either zone B or C are considered optimal for placement.</p> </li> <li>
-         * <p>Place the new service task on a valid container instance in an optimal
-         * Availability Zone (based on the previous steps), favoring container instances
-         * with the fewest number of running tasks for this service.</p> </li> </ul> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * container instances, giving priority to instances that have the fewest number of
+         * running tasks for this service in their respective Availability Zone. For
+         * example, if zone A has one running service task and zones B and C each have
+         * zero, valid container instances in either zone B or C are considered optimal for
+         * placement.</p> </li> <li> <p>Place the new service task on a valid container
+         * instance in an optimal Availability Zone (based on the previous steps), favoring
+         * container instances with the fewest number of running tasks for this
+         * service.</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
          * API Reference</a></p>
          *
@@ -483,33 +486,37 @@ namespace Model
          * are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a
          * load balancer are considered healthy if they are in the <code>RUNNING</code>
          * state and the container instance they are hosted on is reported as healthy by
-         * the load balancer. The default value for <code>minimumHealthyPercent</code> is
-         * 50% in the console and 100% for the AWS CLI, the AWS SDKs, and the APIs.</p>
-         * <p>The <code>maximumPercent</code> parameter represents an upper limit on the
-         * number of your service's tasks that are allowed in the <code>RUNNING</code> or
-         * <code>PENDING</code> state during a deployment, as a percentage of the
-         * <code>desiredCount</code> (rounded down to the nearest integer). This parameter
-         * enables you to define the deployment batch size. For example, if your service
-         * has a <code>desiredCount</code> of four tasks and a <code>maximumPercent</code>
-         * value of 200%, the scheduler can start four new tasks before stopping the four
-         * older tasks (provided that the cluster resources required to do this are
-         * available). The default value for <code>maximumPercent</code> is 200%.</p>
-         * <p>When the service scheduler launches new tasks, it determines task placement
-         * in your cluster using the following logic:</p> <ul> <li> <p>Determine which of
-         * the container instances in your cluster can support your service's task
-         * definition (for example, they have the required CPU, memory, ports, and
-         * container instance attributes).</p> </li> <li> <p>By default, the service
-         * scheduler attempts to balance tasks across Availability Zones in this manner
-         * (although you can choose a different placement strategy) with the
+         * the load balancer. The default value for a replica service for
+         * <code>minimumHealthyPercent</code> is 50% in the console and 100% for the AWS
+         * CLI, the AWS SDKs, and the APIs. The default value for a daemon service for
+         * <code>minimumHealthyPercent</code> is 0% for the AWS CLI, the AWS SDKs, and the
+         * APIs and 50% for the console.</p> <p>The <code>maximumPercent</code> parameter
+         * represents an upper limit on the number of your service's tasks that are allowed
+         * in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment,
+         * as a percentage of the <code>desiredCount</code> (rounded down to the nearest
+         * integer). This parameter enables you to define the deployment batch size. For
+         * example, if your replica service has a <code>desiredCount</code> of four tasks
+         * and a <code>maximumPercent</code> value of 200%, the scheduler can start four
+         * new tasks before stopping the four older tasks (provided that the cluster
+         * resources required to do this are available). The default value for a replica
+         * service for <code>maximumPercent</code> is 200%. If you are using a daemon
+         * service type, the <code>maximumPercent</code> should remain at 100%, which is
+         * the default value.</p> <p>When the service scheduler launches new tasks, it
+         * determines task placement in your cluster using the following logic:</p> <ul>
+         * <li> <p>Determine which of the container instances in your cluster can support
+         * your service's task definition (for example, they have the required CPU, memory,
+         * ports, and container instance attributes).</p> </li> <li> <p>By default, the
+         * service scheduler attempts to balance tasks across Availability Zones in this
+         * manner (although you can choose a different placement strategy) with the
          * <code>placementStrategy</code> parameter):</p> <ul> <li> <p>Sort the valid
-         * container instances by the fewest number of running tasks for this service in
-         * the same Availability Zone as the instance. For example, if zone A has one
-         * running service task and zones B and C each have zero, valid container instances
-         * in either zone B or C are considered optimal for placement.</p> </li> <li>
-         * <p>Place the new service task on a valid container instance in an optimal
-         * Availability Zone (based on the previous steps), favoring container instances
-         * with the fewest number of running tasks for this service.</p> </li> </ul> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * container instances, giving priority to instances that have the fewest number of
+         * running tasks for this service in their respective Availability Zone. For
+         * example, if zone A has one running service task and zones B and C each have
+         * zero, valid container instances in either zone B or C are considered optimal for
+         * placement.</p> </li> <li> <p>Place the new service task on a valid container
+         * instance in an optimal Availability Zone (based on the previous steps), favoring
+         * container instances with the fewest number of running tasks for this
+         * service.</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
          * API Reference</a></p>
          *
@@ -594,8 +601,10 @@ namespace Model
          * API operations. However, in the future, <code>INACTIVE</code> services may be
          * cleaned up and purged from Amazon ECS record keeping, and
          * <a>DescribeServices</a> API operations on those services return a
-         * <code>ServiceNotFoundException</code> error.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * <code>ServiceNotFoundException</code> error.</p> </note> <important> <p>If you
+         * attempt to create a new service with the same name as an existing service in
+         * either <code>ACTIVE</code> or <code>DRAINING</code> status, you will receive an
+         * error.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">AWS
          * API Reference</a></p>
          */
@@ -616,8 +625,10 @@ namespace Model
          * API operations. However, in the future, <code>INACTIVE</code> services may be
          * cleaned up and purged from Amazon ECS record keeping, and
          * <a>DescribeServices</a> API operations on those services return a
-         * <code>ServiceNotFoundException</code> error.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * <code>ServiceNotFoundException</code> error.</p> </note> <important> <p>If you
+         * attempt to create a new service with the same name as an existing service in
+         * either <code>ACTIVE</code> or <code>DRAINING</code> status, you will receive an
+         * error.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">AWS
          * API Reference</a></p>
          *
@@ -640,8 +651,10 @@ namespace Model
          * API operations. However, in the future, <code>INACTIVE</code> services may be
          * cleaned up and purged from Amazon ECS record keeping, and
          * <a>DescribeServices</a> API operations on those services return a
-         * <code>ServiceNotFoundException</code> error.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * <code>ServiceNotFoundException</code> error.</p> </note> <important> <p>If you
+         * attempt to create a new service with the same name as an existing service in
+         * either <code>ACTIVE</code> or <code>DRAINING</code> status, you will receive an
+         * error.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService">AWS
          * API Reference</a></p>
          *
@@ -1309,7 +1322,7 @@ namespace Model
          * network modes correspond to those described in <a
          * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
          * settings</a> in the Docker run reference. If you specify the <code>awsvpc</code>
-         * network mode, the task is allocated an Elastic Network Interface, and you must
+         * network mode, the task is allocated an elastic network interface, and you must
          * specify a <a>NetworkConfiguration</a> when you create a service or run a task
          * with the task definition. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
@@ -1339,7 +1352,7 @@ namespace Model
          * network modes correspond to those described in <a
          * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
          * settings</a> in the Docker run reference. If you specify the <code>awsvpc</code>
-         * network mode, the task is allocated an Elastic Network Interface, and you must
+         * network mode, the task is allocated an elastic network interface, and you must
          * specify a <a>NetworkConfiguration</a> when you create a service or run a task
          * with the task definition. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
@@ -1371,7 +1384,7 @@ namespace Model
          * network modes correspond to those described in <a
          * href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
          * settings</a> in the Docker run reference. If you specify the <code>awsvpc</code>
-         * network mode, the task is allocated an Elastic Network Interface, and you must
+         * network mode, the task is allocated an elastic network interface, and you must
          * specify a <a>NetworkConfiguration</a> when you create a service or run a task
          * with the task definition. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
@@ -1403,7 +1416,7 @@ namespace Model
          * DescribeTasks command using an exponential backoff algorithm to ensure that you
          * allow enough time for the previous command to propagate through the system. To
          * do this, run the DescribeTasks command repeatedly, starting with a couple of
-         * seconds of wait time, and increasing gradually up to five minutes of wait
+         * seconds of wait time and increasing gradually up to five minutes of wait
          * time.</p> </li> <li> <p>Add wait time between subsequent commands, even if the
          * DescribeTasks command returns an accurate response. Apply an exponential backoff
          * algorithm starting with a couple of seconds of wait time, and increase gradually
@@ -1432,7 +1445,7 @@ namespace Model
          * DescribeTasks command using an exponential backoff algorithm to ensure that you
          * allow enough time for the previous command to propagate through the system. To
          * do this, run the DescribeTasks command repeatedly, starting with a couple of
-         * seconds of wait time, and increasing gradually up to five minutes of wait
+         * seconds of wait time and increasing gradually up to five minutes of wait
          * time.</p> </li> <li> <p>Add wait time between subsequent commands, even if the
          * DescribeTasks command returns an accurate response. Apply an exponential backoff
          * algorithm starting with a couple of seconds of wait time, and increase gradually
@@ -1463,7 +1476,7 @@ namespace Model
          * DescribeTasks command using an exponential backoff algorithm to ensure that you
          * allow enough time for the previous command to propagate through the system. To
          * do this, run the DescribeTasks command repeatedly, starting with a couple of
-         * seconds of wait time, and increasing gradually up to five minutes of wait
+         * seconds of wait time and increasing gradually up to five minutes of wait
          * time.</p> </li> <li> <p>Add wait time between subsequent commands, even if the
          * DescribeTasks command returns an accurate response. Apply an exponential backoff
          * algorithm starting with a couple of seconds of wait time, and increase gradually
@@ -1828,55 +1841,64 @@ namespace Model
          * or task definition used in a service.</p> <p>You can add to or subtract from the
          * number of instantiations of a task definition in a service by specifying the
          * cluster that the service is running in and a new <code>desiredCount</code>
-         * parameter.</p> <p>You can use <a>UpdateService</a> to modify your task
-         * definition and deploy a new version of your service.</p> <p>You can also update
-         * the deployment configuration of a service. When a deployment is triggered by
-         * updating the task definition of a service, the service scheduler uses the
-         * deployment configuration parameters, <code>minimumHealthyPercent</code> and
-         * <code>maximumPercent</code>, to determine the deployment strategy.</p> <ul> <li>
-         * <p>If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
-         * <code>desiredCount</code> temporarily during a deployment. For example, if
-         * <code>desiredCount</code> is four tasks, a minimum of 50% allows the scheduler
-         * to stop two existing tasks before starting two new tasks. Tasks for services
-         * that do not use a load balancer are considered healthy if they are in the
-         * <code>RUNNING</code> state. Tasks for services that use a load balancer are
-         * considered healthy if they are in the <code>RUNNING</code> state and the
-         * container instance they are hosted on is reported as healthy by the load
-         * balancer.</p> </li> <li> <p>The <code>maximumPercent</code> parameter represents
-         * an upper limit on the number of running tasks during a deployment, which enables
-         * you to define the deployment batch size. For example, if
-         * <code>desiredCount</code> is four tasks, a maximum of 200% starts four new tasks
-         * before stopping the four older tasks (provided that the cluster resources
-         * required to do this are available).</p> </li> </ul> <p>When <a>UpdateService</a>
-         * stops a task during a deployment, the equivalent of <code>docker stop</code> is
-         * issued to the containers running in the task. This results in a
-         * <code>SIGTERM</code> and a 30-second timeout, after which <code>SIGKILL</code>
-         * is sent and the containers are forcibly stopped. If the container handles the
-         * <code>SIGTERM</code> gracefully and exits within 30 seconds from receiving it,
-         * no <code>SIGKILL</code> is sent.</p> <p>When the service scheduler launches new
-         * tasks, it determines task placement in your cluster with the following
-         * logic:</p> <ul> <li> <p>Determine which of the container instances in your
-         * cluster can support your service's task definition (for example, they have the
-         * required CPU, memory, ports, and container instance attributes).</p> </li> <li>
-         * <p>By default, the service scheduler attempts to balance tasks across
-         * Availability Zones in this manner (although you can choose a different placement
-         * strategy):</p> <ul> <li> <p>Sort the valid container instances by the fewest
-         * number of running tasks for this service in the same Availability Zone as the
-         * instance. For example, if zone A has one running service task and zones B and C
-         * each have zero, valid container instances in either zone B or C are considered
-         * optimal for placement.</p> </li> <li> <p>Place the new service task on a valid
-         * container instance in an optimal Availability Zone (based on the previous
-         * steps), favoring container instances with the fewest number of running tasks for
-         * this service.</p> </li> </ul> </li> </ul> <p>When the service scheduler stops
-         * running tasks, it attempts to maintain balance across the Availability Zones in
-         * your cluster using the following logic: </p> <ul> <li> <p>Sort the container
-         * instances by the largest number of running tasks for this service in the same
+         * parameter.</p> <p>If you have updated the Docker image of your application, you
+         * can create a new task definition with that image and deploy it to your service.
+         * The service scheduler uses the minimum healthy percent and maximum percent
+         * parameters (in the service's deployment configuration) to determine the
+         * deployment strategy.</p> <note> <p>If your updated Docker image uses the same
+         * tag as what is in the existing task definition for your service (for example,
+         * <code>my_image:latest</code>), you do not need to create a new revision of your
+         * task definition. You can update the service using the
+         * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
+         * pull the current image/tag combination from your repository when they start.</p>
+         * </note> <p>You can also update the deployment configuration of a service. When a
+         * deployment is triggered by updating the task definition of a service, the
+         * service scheduler uses the deployment configuration parameters,
+         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>, to determine
+         * the deployment strategy.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code>
+         * is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily
+         * during a deployment. For example, if <code>desiredCount</code> is four tasks, a
+         * minimum of 50% allows the scheduler to stop two existing tasks before starting
+         * two new tasks. Tasks for services that do not use a load balancer are considered
+         * healthy if they are in the <code>RUNNING</code> state. Tasks for services that
+         * use a load balancer are considered healthy if they are in the
+         * <code>RUNNING</code> state and the container instance they are hosted on is
+         * reported as healthy by the load balancer.</p> </li> <li> <p>The
+         * <code>maximumPercent</code> parameter represents an upper limit on the number of
+         * running tasks during a deployment, which enables you to define the deployment
+         * batch size. For example, if <code>desiredCount</code> is four tasks, a maximum
+         * of 200% starts four new tasks before stopping the four older tasks (provided
+         * that the cluster resources required to do this are available).</p> </li> </ul>
+         * <p>When <a>UpdateService</a> stops a task during a deployment, the equivalent of
+         * <code>docker stop</code> is issued to the containers running in the task. This
+         * results in a <code>SIGTERM</code> and a 30-second timeout, after which
+         * <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the
+         * container handles the <code>SIGTERM</code> gracefully and exits within 30
+         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p> <p>When the
+         * service scheduler launches new tasks, it determines task placement in your
+         * cluster with the following logic:</p> <ul> <li> <p>Determine which of the
+         * container instances in your cluster can support your service's task definition
+         * (for example, they have the required CPU, memory, ports, and container instance
+         * attributes).</p> </li> <li> <p>By default, the service scheduler attempts to
+         * balance tasks across Availability Zones in this manner (although you can choose
+         * a different placement strategy):</p> <ul> <li> <p>Sort the valid container
+         * instances by the fewest number of running tasks for this service in the same
          * Availability Zone as the instance. For example, if zone A has one running
-         * service task and zones B and C each have two, container instances in either zone
-         * B or C are considered optimal for termination.</p> </li> <li> <p>Stop the task
-         * on a container instance in an optimal Availability Zone (based on the previous
-         * steps), favoring container instances with the largest number of running tasks
-         * for this service.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * service task and zones B and C each have zero, valid container instances in
+         * either zone B or C are considered optimal for placement.</p> </li> <li> <p>Place
+         * the new service task on a valid container instance in an optimal Availability
+         * Zone (based on the previous steps), favoring container instances with the fewest
+         * number of running tasks for this service.</p> </li> </ul> </li> </ul> <p>When
+         * the service scheduler stops running tasks, it attempts to maintain balance
+         * across the Availability Zones in your cluster using the following logic: </p>
+         * <ul> <li> <p>Sort the container instances by the largest number of running tasks
+         * for this service in the same Availability Zone as the instance. For example, if
+         * zone A has one running service task and zones B and C each have two, container
+         * instances in either zone B or C are considered optimal for termination.</p>
+         * </li> <li> <p>Stop the task on a container instance in an optimal Availability
+         * Zone (based on the previous steps), favoring container instances with the
+         * largest number of running tasks for this service.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">AWS
          * API Reference</a></p>
          */
@@ -1887,55 +1909,64 @@ namespace Model
          * or task definition used in a service.</p> <p>You can add to or subtract from the
          * number of instantiations of a task definition in a service by specifying the
          * cluster that the service is running in and a new <code>desiredCount</code>
-         * parameter.</p> <p>You can use <a>UpdateService</a> to modify your task
-         * definition and deploy a new version of your service.</p> <p>You can also update
-         * the deployment configuration of a service. When a deployment is triggered by
-         * updating the task definition of a service, the service scheduler uses the
-         * deployment configuration parameters, <code>minimumHealthyPercent</code> and
-         * <code>maximumPercent</code>, to determine the deployment strategy.</p> <ul> <li>
-         * <p>If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
-         * <code>desiredCount</code> temporarily during a deployment. For example, if
-         * <code>desiredCount</code> is four tasks, a minimum of 50% allows the scheduler
-         * to stop two existing tasks before starting two new tasks. Tasks for services
-         * that do not use a load balancer are considered healthy if they are in the
-         * <code>RUNNING</code> state. Tasks for services that use a load balancer are
-         * considered healthy if they are in the <code>RUNNING</code> state and the
-         * container instance they are hosted on is reported as healthy by the load
-         * balancer.</p> </li> <li> <p>The <code>maximumPercent</code> parameter represents
-         * an upper limit on the number of running tasks during a deployment, which enables
-         * you to define the deployment batch size. For example, if
-         * <code>desiredCount</code> is four tasks, a maximum of 200% starts four new tasks
-         * before stopping the four older tasks (provided that the cluster resources
-         * required to do this are available).</p> </li> </ul> <p>When <a>UpdateService</a>
-         * stops a task during a deployment, the equivalent of <code>docker stop</code> is
-         * issued to the containers running in the task. This results in a
-         * <code>SIGTERM</code> and a 30-second timeout, after which <code>SIGKILL</code>
-         * is sent and the containers are forcibly stopped. If the container handles the
-         * <code>SIGTERM</code> gracefully and exits within 30 seconds from receiving it,
-         * no <code>SIGKILL</code> is sent.</p> <p>When the service scheduler launches new
-         * tasks, it determines task placement in your cluster with the following
-         * logic:</p> <ul> <li> <p>Determine which of the container instances in your
-         * cluster can support your service's task definition (for example, they have the
-         * required CPU, memory, ports, and container instance attributes).</p> </li> <li>
-         * <p>By default, the service scheduler attempts to balance tasks across
-         * Availability Zones in this manner (although you can choose a different placement
-         * strategy):</p> <ul> <li> <p>Sort the valid container instances by the fewest
-         * number of running tasks for this service in the same Availability Zone as the
-         * instance. For example, if zone A has one running service task and zones B and C
-         * each have zero, valid container instances in either zone B or C are considered
-         * optimal for placement.</p> </li> <li> <p>Place the new service task on a valid
-         * container instance in an optimal Availability Zone (based on the previous
-         * steps), favoring container instances with the fewest number of running tasks for
-         * this service.</p> </li> </ul> </li> </ul> <p>When the service scheduler stops
-         * running tasks, it attempts to maintain balance across the Availability Zones in
-         * your cluster using the following logic: </p> <ul> <li> <p>Sort the container
-         * instances by the largest number of running tasks for this service in the same
+         * parameter.</p> <p>If you have updated the Docker image of your application, you
+         * can create a new task definition with that image and deploy it to your service.
+         * The service scheduler uses the minimum healthy percent and maximum percent
+         * parameters (in the service's deployment configuration) to determine the
+         * deployment strategy.</p> <note> <p>If your updated Docker image uses the same
+         * tag as what is in the existing task definition for your service (for example,
+         * <code>my_image:latest</code>), you do not need to create a new revision of your
+         * task definition. You can update the service using the
+         * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
+         * pull the current image/tag combination from your repository when they start.</p>
+         * </note> <p>You can also update the deployment configuration of a service. When a
+         * deployment is triggered by updating the task definition of a service, the
+         * service scheduler uses the deployment configuration parameters,
+         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>, to determine
+         * the deployment strategy.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code>
+         * is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily
+         * during a deployment. For example, if <code>desiredCount</code> is four tasks, a
+         * minimum of 50% allows the scheduler to stop two existing tasks before starting
+         * two new tasks. Tasks for services that do not use a load balancer are considered
+         * healthy if they are in the <code>RUNNING</code> state. Tasks for services that
+         * use a load balancer are considered healthy if they are in the
+         * <code>RUNNING</code> state and the container instance they are hosted on is
+         * reported as healthy by the load balancer.</p> </li> <li> <p>The
+         * <code>maximumPercent</code> parameter represents an upper limit on the number of
+         * running tasks during a deployment, which enables you to define the deployment
+         * batch size. For example, if <code>desiredCount</code> is four tasks, a maximum
+         * of 200% starts four new tasks before stopping the four older tasks (provided
+         * that the cluster resources required to do this are available).</p> </li> </ul>
+         * <p>When <a>UpdateService</a> stops a task during a deployment, the equivalent of
+         * <code>docker stop</code> is issued to the containers running in the task. This
+         * results in a <code>SIGTERM</code> and a 30-second timeout, after which
+         * <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the
+         * container handles the <code>SIGTERM</code> gracefully and exits within 30
+         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p> <p>When the
+         * service scheduler launches new tasks, it determines task placement in your
+         * cluster with the following logic:</p> <ul> <li> <p>Determine which of the
+         * container instances in your cluster can support your service's task definition
+         * (for example, they have the required CPU, memory, ports, and container instance
+         * attributes).</p> </li> <li> <p>By default, the service scheduler attempts to
+         * balance tasks across Availability Zones in this manner (although you can choose
+         * a different placement strategy):</p> <ul> <li> <p>Sort the valid container
+         * instances by the fewest number of running tasks for this service in the same
          * Availability Zone as the instance. For example, if zone A has one running
-         * service task and zones B and C each have two, container instances in either zone
-         * B or C are considered optimal for termination.</p> </li> <li> <p>Stop the task
-         * on a container instance in an optimal Availability Zone (based on the previous
-         * steps), favoring container instances with the largest number of running tasks
-         * for this service.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * service task and zones B and C each have zero, valid container instances in
+         * either zone B or C are considered optimal for placement.</p> </li> <li> <p>Place
+         * the new service task on a valid container instance in an optimal Availability
+         * Zone (based on the previous steps), favoring container instances with the fewest
+         * number of running tasks for this service.</p> </li> </ul> </li> </ul> <p>When
+         * the service scheduler stops running tasks, it attempts to maintain balance
+         * across the Availability Zones in your cluster using the following logic: </p>
+         * <ul> <li> <p>Sort the container instances by the largest number of running tasks
+         * for this service in the same Availability Zone as the instance. For example, if
+         * zone A has one running service task and zones B and C each have two, container
+         * instances in either zone B or C are considered optimal for termination.</p>
+         * </li> <li> <p>Stop the task on a container instance in an optimal Availability
+         * Zone (based on the previous steps), favoring container instances with the
+         * largest number of running tasks for this service.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">AWS
          * API Reference</a></p>
          *
@@ -1948,55 +1979,64 @@ namespace Model
          * or task definition used in a service.</p> <p>You can add to or subtract from the
          * number of instantiations of a task definition in a service by specifying the
          * cluster that the service is running in and a new <code>desiredCount</code>
-         * parameter.</p> <p>You can use <a>UpdateService</a> to modify your task
-         * definition and deploy a new version of your service.</p> <p>You can also update
-         * the deployment configuration of a service. When a deployment is triggered by
-         * updating the task definition of a service, the service scheduler uses the
-         * deployment configuration parameters, <code>minimumHealthyPercent</code> and
-         * <code>maximumPercent</code>, to determine the deployment strategy.</p> <ul> <li>
-         * <p>If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore
-         * <code>desiredCount</code> temporarily during a deployment. For example, if
-         * <code>desiredCount</code> is four tasks, a minimum of 50% allows the scheduler
-         * to stop two existing tasks before starting two new tasks. Tasks for services
-         * that do not use a load balancer are considered healthy if they are in the
-         * <code>RUNNING</code> state. Tasks for services that use a load balancer are
-         * considered healthy if they are in the <code>RUNNING</code> state and the
-         * container instance they are hosted on is reported as healthy by the load
-         * balancer.</p> </li> <li> <p>The <code>maximumPercent</code> parameter represents
-         * an upper limit on the number of running tasks during a deployment, which enables
-         * you to define the deployment batch size. For example, if
-         * <code>desiredCount</code> is four tasks, a maximum of 200% starts four new tasks
-         * before stopping the four older tasks (provided that the cluster resources
-         * required to do this are available).</p> </li> </ul> <p>When <a>UpdateService</a>
-         * stops a task during a deployment, the equivalent of <code>docker stop</code> is
-         * issued to the containers running in the task. This results in a
-         * <code>SIGTERM</code> and a 30-second timeout, after which <code>SIGKILL</code>
-         * is sent and the containers are forcibly stopped. If the container handles the
-         * <code>SIGTERM</code> gracefully and exits within 30 seconds from receiving it,
-         * no <code>SIGKILL</code> is sent.</p> <p>When the service scheduler launches new
-         * tasks, it determines task placement in your cluster with the following
-         * logic:</p> <ul> <li> <p>Determine which of the container instances in your
-         * cluster can support your service's task definition (for example, they have the
-         * required CPU, memory, ports, and container instance attributes).</p> </li> <li>
-         * <p>By default, the service scheduler attempts to balance tasks across
-         * Availability Zones in this manner (although you can choose a different placement
-         * strategy):</p> <ul> <li> <p>Sort the valid container instances by the fewest
-         * number of running tasks for this service in the same Availability Zone as the
-         * instance. For example, if zone A has one running service task and zones B and C
-         * each have zero, valid container instances in either zone B or C are considered
-         * optimal for placement.</p> </li> <li> <p>Place the new service task on a valid
-         * container instance in an optimal Availability Zone (based on the previous
-         * steps), favoring container instances with the fewest number of running tasks for
-         * this service.</p> </li> </ul> </li> </ul> <p>When the service scheduler stops
-         * running tasks, it attempts to maintain balance across the Availability Zones in
-         * your cluster using the following logic: </p> <ul> <li> <p>Sort the container
-         * instances by the largest number of running tasks for this service in the same
+         * parameter.</p> <p>If you have updated the Docker image of your application, you
+         * can create a new task definition with that image and deploy it to your service.
+         * The service scheduler uses the minimum healthy percent and maximum percent
+         * parameters (in the service's deployment configuration) to determine the
+         * deployment strategy.</p> <note> <p>If your updated Docker image uses the same
+         * tag as what is in the existing task definition for your service (for example,
+         * <code>my_image:latest</code>), you do not need to create a new revision of your
+         * task definition. You can update the service using the
+         * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
+         * pull the current image/tag combination from your repository when they start.</p>
+         * </note> <p>You can also update the deployment configuration of a service. When a
+         * deployment is triggered by updating the task definition of a service, the
+         * service scheduler uses the deployment configuration parameters,
+         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>, to determine
+         * the deployment strategy.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code>
+         * is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily
+         * during a deployment. For example, if <code>desiredCount</code> is four tasks, a
+         * minimum of 50% allows the scheduler to stop two existing tasks before starting
+         * two new tasks. Tasks for services that do not use a load balancer are considered
+         * healthy if they are in the <code>RUNNING</code> state. Tasks for services that
+         * use a load balancer are considered healthy if they are in the
+         * <code>RUNNING</code> state and the container instance they are hosted on is
+         * reported as healthy by the load balancer.</p> </li> <li> <p>The
+         * <code>maximumPercent</code> parameter represents an upper limit on the number of
+         * running tasks during a deployment, which enables you to define the deployment
+         * batch size. For example, if <code>desiredCount</code> is four tasks, a maximum
+         * of 200% starts four new tasks before stopping the four older tasks (provided
+         * that the cluster resources required to do this are available).</p> </li> </ul>
+         * <p>When <a>UpdateService</a> stops a task during a deployment, the equivalent of
+         * <code>docker stop</code> is issued to the containers running in the task. This
+         * results in a <code>SIGTERM</code> and a 30-second timeout, after which
+         * <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the
+         * container handles the <code>SIGTERM</code> gracefully and exits within 30
+         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p> <p>When the
+         * service scheduler launches new tasks, it determines task placement in your
+         * cluster with the following logic:</p> <ul> <li> <p>Determine which of the
+         * container instances in your cluster can support your service's task definition
+         * (for example, they have the required CPU, memory, ports, and container instance
+         * attributes).</p> </li> <li> <p>By default, the service scheduler attempts to
+         * balance tasks across Availability Zones in this manner (although you can choose
+         * a different placement strategy):</p> <ul> <li> <p>Sort the valid container
+         * instances by the fewest number of running tasks for this service in the same
          * Availability Zone as the instance. For example, if zone A has one running
-         * service task and zones B and C each have two, container instances in either zone
-         * B or C are considered optimal for termination.</p> </li> <li> <p>Stop the task
-         * on a container instance in an optimal Availability Zone (based on the previous
-         * steps), favoring container instances with the largest number of running tasks
-         * for this service.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * service task and zones B and C each have zero, valid container instances in
+         * either zone B or C are considered optimal for placement.</p> </li> <li> <p>Place
+         * the new service task on a valid container instance in an optimal Availability
+         * Zone (based on the previous steps), favoring container instances with the fewest
+         * number of running tasks for this service.</p> </li> </ul> </li> </ul> <p>When
+         * the service scheduler stops running tasks, it attempts to maintain balance
+         * across the Availability Zones in your cluster using the following logic: </p>
+         * <ul> <li> <p>Sort the container instances by the largest number of running tasks
+         * for this service in the same Availability Zone as the instance. For example, if
+         * zone A has one running service task and zones B and C each have two, container
+         * instances in either zone B or C are considered optimal for termination.</p>
+         * </li> <li> <p>Stop the task on a container instance in an optimal Availability
+         * Zone (based on the previous steps), favoring container instances with the
+         * largest number of running tasks for this service.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">AWS
          * API Reference</a></p>
          *

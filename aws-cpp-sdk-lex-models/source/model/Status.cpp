@@ -32,6 +32,7 @@ namespace Aws
 
         static const int BUILDING_HASH = HashingUtils::HashString("BUILDING");
         static const int READY_HASH = HashingUtils::HashString("READY");
+        static const int READY_BASIC_TESTING_HASH = HashingUtils::HashString("READY_BASIC_TESTING");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int NOT_BUILT_HASH = HashingUtils::HashString("NOT_BUILT");
 
@@ -46,6 +47,10 @@ namespace Aws
           else if (hashCode == READY_HASH)
           {
             return Status::READY;
+          }
+          else if (hashCode == READY_BASIC_TESTING_HASH)
+          {
+            return Status::READY_BASIC_TESTING;
           }
           else if (hashCode == FAILED_HASH)
           {
@@ -73,6 +78,8 @@ namespace Aws
             return "BUILDING";
           case Status::READY:
             return "READY";
+          case Status::READY_BASIC_TESTING:
+            return "READY_BASIC_TESTING";
           case Status::FAILED:
             return "FAILED";
           case Status::NOT_BUILT:

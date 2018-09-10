@@ -174,185 +174,136 @@ namespace Model
 
 
     /**
-     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
-     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
-     * use when launching Amazon EC2 instances in the job flow. For details about the
-     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
-     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
-     * supports both Hadoop 0.18 and 0.20), you can use the
-     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
-     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
-     * EMR AMI version API parameter options allowed you to use latest for the latest
-     * AMI version rather than specify a numerical value. Some regions no longer
-     * support this deprecated option as they only have a newer release label version
-     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
-     * later).</p> </note>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline const Aws::String& GetAmiVersion() const{ return m_amiVersion; }
 
     /**
-     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
-     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
-     * use when launching Amazon EC2 instances in the job flow. For details about the
-     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
-     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
-     * supports both Hadoop 0.18 and 0.20), you can use the
-     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
-     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
-     * EMR AMI version API parameter options allowed you to use latest for the latest
-     * AMI version rather than specify a numerical value. Some regions no longer
-     * support this deprecated option as they only have a newer release label version
-     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
-     * later).</p> </note>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline void SetAmiVersion(const Aws::String& value) { m_amiVersionHasBeenSet = true; m_amiVersion = value; }
 
     /**
-     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
-     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
-     * use when launching Amazon EC2 instances in the job flow. For details about the
-     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
-     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
-     * supports both Hadoop 0.18 and 0.20), you can use the
-     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
-     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
-     * EMR AMI version API parameter options allowed you to use latest for the latest
-     * AMI version rather than specify a numerical value. Some regions no longer
-     * support this deprecated option as they only have a newer release label version
-     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
-     * later).</p> </note>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline void SetAmiVersion(Aws::String&& value) { m_amiVersionHasBeenSet = true; m_amiVersion = std::move(value); }
 
     /**
-     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
-     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
-     * use when launching Amazon EC2 instances in the job flow. For details about the
-     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
-     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
-     * supports both Hadoop 0.18 and 0.20), you can use the
-     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
-     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
-     * EMR AMI version API parameter options allowed you to use latest for the latest
-     * AMI version rather than specify a numerical value. Some regions no longer
-     * support this deprecated option as they only have a newer release label version
-     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
-     * later).</p> </note>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline void SetAmiVersion(const char* value) { m_amiVersionHasBeenSet = true; m_amiVersion.assign(value); }
 
     /**
-     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
-     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
-     * use when launching Amazon EC2 instances in the job flow. For details about the
-     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
-     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
-     * supports both Hadoop 0.18 and 0.20), you can use the
-     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
-     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
-     * EMR AMI version API parameter options allowed you to use latest for the latest
-     * AMI version rather than specify a numerical value. Some regions no longer
-     * support this deprecated option as they only have a newer release label version
-     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
-     * later).</p> </note>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline RunJobFlowRequest& WithAmiVersion(const Aws::String& value) { SetAmiVersion(value); return *this;}
 
     /**
-     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
-     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
-     * use when launching Amazon EC2 instances in the job flow. For details about the
-     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
-     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
-     * supports both Hadoop 0.18 and 0.20), you can use the
-     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
-     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
-     * EMR AMI version API parameter options allowed you to use latest for the latest
-     * AMI version rather than specify a numerical value. Some regions no longer
-     * support this deprecated option as they only have a newer release label version
-     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
-     * later).</p> </note>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline RunJobFlowRequest& WithAmiVersion(Aws::String&& value) { SetAmiVersion(std::move(value)); return *this;}
 
     /**
-     * <p>For Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-     * later, the Linux AMI is determined by the <code>ReleaseLabel</code> specified or
-     * by <code>CustomAmiID</code>. The version of the Amazon Machine Image (AMI) to
-     * use when launching Amazon EC2 instances in the job flow. For details about the
-     * AMI versions currently supported in EMR version 3.x and 2.x, see <a
-     * href="emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide</i>. </p>
-     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI 1.0
-     * supports both Hadoop 0.18 and 0.20), you can use the
-     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to modify the
-     * version of Hadoop from the defaults shown above.</p> <note> <p>Previously, the
-     * EMR AMI version API parameter options allowed you to use latest for the latest
-     * AMI version rather than specify a numerical value. Some regions no longer
-     * support this deprecated option as they only have a newer release label version
-     * of EMR, which requires you to specify an EMR release label release (EMR 4.x or
-     * later).</p> </note>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline RunJobFlowRequest& WithAmiVersion(const char* value) { SetAmiVersion(value); return *this;}
 
 
     /**
-     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use <code>AmiVersion</code> instead.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
 
     /**
-     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use <code>AmiVersion</code> instead.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
 
     /**
-     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use <code>AmiVersion</code> instead.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
 
     /**
-     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use <code>AmiVersion</code> instead.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
 
     /**
-     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use <code>AmiVersion</code> instead.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline RunJobFlowRequest& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
 
     /**
-     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use <code>AmiVersion</code> instead.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline RunJobFlowRequest& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
 
     /**
-     * <p> The release label for the Amazon EMR release. For Amazon EMR 3.x and 2.x
-     * AMIs, use <code>AmiVersion</code> instead.</p>
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
      */
     inline RunJobFlowRequest& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
 

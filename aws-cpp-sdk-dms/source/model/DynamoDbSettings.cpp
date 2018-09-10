@@ -33,13 +33,13 @@ DynamoDbSettings::DynamoDbSettings() :
 {
 }
 
-DynamoDbSettings::DynamoDbSettings(const JsonValue& jsonValue) : 
+DynamoDbSettings::DynamoDbSettings(JsonView jsonValue) : 
     m_serviceAccessRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DynamoDbSettings& DynamoDbSettings::operator =(const JsonValue& jsonValue)
+DynamoDbSettings& DynamoDbSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ServiceAccessRoleArn"))
   {

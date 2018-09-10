@@ -48,6 +48,7 @@ namespace Aws
         static const int MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS_HASH = HashingUtils::HashString("MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS");
         static const int INVALID_FULL_NAME_TARGET_HASH = HashingUtils::HashString("INVALID_FULL_NAME_TARGET");
         static const int UNRECOGNIZED_SERVICE_PRINCIPAL_HASH = HashingUtils::HashString("UNRECOGNIZED_SERVICE_PRINCIPAL");
+        static const int INVALID_ROLE_NAME_HASH = HashingUtils::HashString("INVALID_ROLE_NAME");
 
 
         InvalidInputExceptionReason GetInvalidInputExceptionReasonForName(const Aws::String& name)
@@ -125,6 +126,10 @@ namespace Aws
           {
             return InvalidInputExceptionReason::UNRECOGNIZED_SERVICE_PRINCIPAL;
           }
+          else if (hashCode == INVALID_ROLE_NAME_HASH)
+          {
+            return InvalidInputExceptionReason::INVALID_ROLE_NAME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -175,6 +180,8 @@ namespace Aws
             return "INVALID_FULL_NAME_TARGET";
           case InvalidInputExceptionReason::UNRECOGNIZED_SERVICE_PRINCIPAL:
             return "UNRECOGNIZED_SERVICE_PRINCIPAL";
+          case InvalidInputExceptionReason::INVALID_ROLE_NAME:
+            return "INVALID_ROLE_NAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

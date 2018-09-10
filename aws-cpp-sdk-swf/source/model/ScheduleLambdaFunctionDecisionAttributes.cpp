@@ -37,7 +37,7 @@ ScheduleLambdaFunctionDecisionAttributes::ScheduleLambdaFunctionDecisionAttribut
 {
 }
 
-ScheduleLambdaFunctionDecisionAttributes::ScheduleLambdaFunctionDecisionAttributes(const JsonValue& jsonValue) : 
+ScheduleLambdaFunctionDecisionAttributes::ScheduleLambdaFunctionDecisionAttributes(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_controlHasBeenSet(false),
@@ -47,7 +47,7 @@ ScheduleLambdaFunctionDecisionAttributes::ScheduleLambdaFunctionDecisionAttribut
   *this = jsonValue;
 }
 
-ScheduleLambdaFunctionDecisionAttributes& ScheduleLambdaFunctionDecisionAttributes::operator =(const JsonValue& jsonValue)
+ScheduleLambdaFunctionDecisionAttributes& ScheduleLambdaFunctionDecisionAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

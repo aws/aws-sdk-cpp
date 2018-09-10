@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/TimeToLiveDescription.h>
+#include <aws/dynamodb/model/SSEDescription.h>
 #include <aws/dynamodb/model/LocalSecondaryIndexInfo.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexInfo.h>
 #include <utility>
@@ -29,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -46,8 +48,8 @@ namespace Model
   {
   public:
     SourceTableFeatureDetails();
-    SourceTableFeatureDetails(const Aws::Utils::Json::JsonValue& jsonValue);
-    SourceTableFeatureDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SourceTableFeatureDetails(Aws::Utils::Json::JsonView jsonValue);
+    SourceTableFeatureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -202,6 +204,37 @@ namespace Model
      */
     inline SourceTableFeatureDetails& WithTimeToLiveDescription(TimeToLiveDescription&& value) { SetTimeToLiveDescription(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The description of the server-side encryption status on the table when the
+     * backup was created.</p>
+     */
+    inline const SSEDescription& GetSSEDescription() const{ return m_sSEDescription; }
+
+    /**
+     * <p>The description of the server-side encryption status on the table when the
+     * backup was created.</p>
+     */
+    inline void SetSSEDescription(const SSEDescription& value) { m_sSEDescriptionHasBeenSet = true; m_sSEDescription = value; }
+
+    /**
+     * <p>The description of the server-side encryption status on the table when the
+     * backup was created.</p>
+     */
+    inline void SetSSEDescription(SSEDescription&& value) { m_sSEDescriptionHasBeenSet = true; m_sSEDescription = std::move(value); }
+
+    /**
+     * <p>The description of the server-side encryption status on the table when the
+     * backup was created.</p>
+     */
+    inline SourceTableFeatureDetails& WithSSEDescription(const SSEDescription& value) { SetSSEDescription(value); return *this;}
+
+    /**
+     * <p>The description of the server-side encryption status on the table when the
+     * backup was created.</p>
+     */
+    inline SourceTableFeatureDetails& WithSSEDescription(SSEDescription&& value) { SetSSEDescription(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<LocalSecondaryIndexInfo> m_localSecondaryIndexes;
@@ -215,6 +248,9 @@ namespace Model
 
     TimeToLiveDescription m_timeToLiveDescription;
     bool m_timeToLiveDescriptionHasBeenSet;
+
+    SSEDescription m_sSEDescription;
+    bool m_sSEDescriptionHasBeenSet;
   };
 
 } // namespace Model

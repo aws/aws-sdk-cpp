@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Inspector
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     RulesPackage();
-    RulesPackage(const Aws::Utils::Json::JsonValue& jsonValue);
-    RulesPackage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RulesPackage(Aws::Utils::Json::JsonView jsonValue);
+    RulesPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

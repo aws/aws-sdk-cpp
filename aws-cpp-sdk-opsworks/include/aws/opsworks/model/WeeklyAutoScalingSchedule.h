@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -53,8 +54,8 @@ namespace Model
   {
   public:
     WeeklyAutoScalingSchedule();
-    WeeklyAutoScalingSchedule(const Aws::Utils::Json::JsonValue& jsonValue);
-    WeeklyAutoScalingSchedule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    WeeklyAutoScalingSchedule(Aws::Utils::Json::JsonView jsonValue);
+    WeeklyAutoScalingSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

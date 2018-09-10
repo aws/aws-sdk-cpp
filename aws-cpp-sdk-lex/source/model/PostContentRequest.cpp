@@ -43,21 +43,21 @@ Aws::Http::HeaderValueCollection PostContentRequest::GetRequestSpecificHeaders()
   if(m_sessionAttributesHasBeenSet)
   {
     ss << m_sessionAttributes;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-lex-session-attributes", ss.str()));
+    headers.emplace("x-amz-lex-session-attributes",  ss.str());
     ss.str("");
   }
 
   if(m_requestAttributesHasBeenSet)
   {
     ss << m_requestAttributes;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-lex-request-attributes", ss.str()));
+    headers.emplace("x-amz-lex-request-attributes",  ss.str());
     ss.str("");
   }
 
   if(m_acceptHasBeenSet)
   {
     ss << m_accept;
-    headers.insert(Aws::Http::HeaderValuePair("accept", ss.str()));
+    headers.emplace("accept",  ss.str());
     ss.str("");
   }
 

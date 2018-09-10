@@ -37,7 +37,7 @@ GetComplianceSummaryByConfigRuleResult::GetComplianceSummaryByConfigRuleResult(c
 
 GetComplianceSummaryByConfigRuleResult& GetComplianceSummaryByConfigRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ComplianceSummary"))
   {
     m_complianceSummary = jsonValue.GetObject("ComplianceSummary");

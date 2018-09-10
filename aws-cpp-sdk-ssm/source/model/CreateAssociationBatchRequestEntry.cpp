@@ -40,7 +40,7 @@ CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry() :
 {
 }
 
-CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry(const JsonValue& jsonValue) : 
+CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_parametersHasBeenSet(false),
@@ -53,7 +53,7 @@ CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry(const Jso
   *this = jsonValue;
 }
 
-CreateAssociationBatchRequestEntry& CreateAssociationBatchRequestEntry::operator =(const JsonValue& jsonValue)
+CreateAssociationBatchRequestEntry& CreateAssociationBatchRequestEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -71,10 +71,10 @@ CreateAssociationBatchRequestEntry& CreateAssociationBatchRequestEntry::operator
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
-      Array<JsonValue> parameterValueListJsonList = parametersItem.second.AsArray();
+      Array<JsonView> parameterValueListJsonList = parametersItem.second.AsArray();
       Aws::Vector<Aws::String> parameterValueListList;
       parameterValueListList.reserve((size_t)parameterValueListJsonList.GetLength());
       for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
@@ -95,7 +95,7 @@ CreateAssociationBatchRequestEntry& CreateAssociationBatchRequestEntry::operator
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonValue> targetsJsonList = jsonValue.GetArray("Targets");
+    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());

@@ -35,7 +35,7 @@ RecurringCharge::RecurringCharge() :
 {
 }
 
-RecurringCharge::RecurringCharge(const JsonValue& jsonValue) : 
+RecurringCharge::RecurringCharge(JsonView jsonValue) : 
     m_costHasBeenSet(false),
     m_frequency(RecurringChargeFrequency::NOT_SET),
     m_frequencyHasBeenSet(false)
@@ -43,7 +43,7 @@ RecurringCharge::RecurringCharge(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RecurringCharge& RecurringCharge::operator =(const JsonValue& jsonValue)
+RecurringCharge& RecurringCharge::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("cost"))
   {

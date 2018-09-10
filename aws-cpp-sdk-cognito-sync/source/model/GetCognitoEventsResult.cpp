@@ -37,10 +37,10 @@ GetCognitoEventsResult::GetCognitoEventsResult(const Aws::AmazonWebServiceResult
 
 GetCognitoEventsResult& GetCognitoEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Events"))
   {
-    Aws::Map<Aws::String, JsonValue> eventsJsonMap = jsonValue.GetObject("Events").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> eventsJsonMap = jsonValue.GetObject("Events").GetAllObjects();
     for(auto& eventsItem : eventsJsonMap)
     {
       m_events[eventsItem.first] = eventsItem.second.AsString();

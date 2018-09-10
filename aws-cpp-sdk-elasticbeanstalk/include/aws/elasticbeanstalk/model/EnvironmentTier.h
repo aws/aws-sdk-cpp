@@ -122,37 +122,58 @@ namespace Model
 
 
     /**
-     * <p>The version of this environment tier.</p>
+     * <p>The version of this environment tier. When you don't set a value to it,
+     * Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
+     * <p>This member is deprecated. Any specific version that you set may become out
+     * of date. We recommend leaving it unspecified.</p> </note>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version of this environment tier.</p>
+     * <p>The version of this environment tier. When you don't set a value to it,
+     * Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
+     * <p>This member is deprecated. Any specific version that you set may become out
+     * of date. We recommend leaving it unspecified.</p> </note>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version of this environment tier.</p>
+     * <p>The version of this environment tier. When you don't set a value to it,
+     * Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
+     * <p>This member is deprecated. Any specific version that you set may become out
+     * of date. We recommend leaving it unspecified.</p> </note>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version of this environment tier.</p>
+     * <p>The version of this environment tier. When you don't set a value to it,
+     * Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
+     * <p>This member is deprecated. Any specific version that you set may become out
+     * of date. We recommend leaving it unspecified.</p> </note>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version of this environment tier.</p>
+     * <p>The version of this environment tier. When you don't set a value to it,
+     * Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
+     * <p>This member is deprecated. Any specific version that you set may become out
+     * of date. We recommend leaving it unspecified.</p> </note>
      */
     inline EnvironmentTier& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version of this environment tier.</p>
+     * <p>The version of this environment tier. When you don't set a value to it,
+     * Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
+     * <p>This member is deprecated. Any specific version that you set may become out
+     * of date. We recommend leaving it unspecified.</p> </note>
      */
     inline EnvironmentTier& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of this environment tier.</p>
+     * <p>The version of this environment tier. When you don't set a value to it,
+     * Elastic Beanstalk uses the latest compatible worker tier version.</p> <note>
+     * <p>This member is deprecated. Any specific version that you set may become out
+     * of date. We recommend leaving it unspecified.</p> </note>
      */
     inline EnvironmentTier& WithVersion(const char* value) { SetVersion(value); return *this;}
 

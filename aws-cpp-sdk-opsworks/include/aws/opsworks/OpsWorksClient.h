@@ -39,6 +39,7 @@
 #include <aws/opsworks/model/DescribeLayersResult.h>
 #include <aws/opsworks/model/DescribeLoadBasedAutoScalingResult.h>
 #include <aws/opsworks/model/DescribeMyUserProfileResult.h>
+#include <aws/opsworks/model/DescribeOperatingSystemsResult.h>
 #include <aws/opsworks/model/DescribePermissionsResult.h>
 #include <aws/opsworks/model/DescribeRaidArraysResult.h>
 #include <aws/opsworks/model/DescribeRdsDbInstancesResult.h>
@@ -79,11 +80,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -207,6 +203,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeLayersResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeLayersOutcome;
         typedef Aws::Utils::Outcome<DescribeLoadBasedAutoScalingResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeLoadBasedAutoScalingOutcome;
         typedef Aws::Utils::Outcome<DescribeMyUserProfileResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeMyUserProfileOutcome;
+        typedef Aws::Utils::Outcome<DescribeOperatingSystemsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeOperatingSystemsOutcome;
         typedef Aws::Utils::Outcome<DescribePermissionsResult, Aws::Client::AWSError<OpsWorksErrors>> DescribePermissionsOutcome;
         typedef Aws::Utils::Outcome<DescribeRaidArraysResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeRaidArraysOutcome;
         typedef Aws::Utils::Outcome<DescribeRdsDbInstancesResult, Aws::Client::AWSError<OpsWorksErrors>> DescribeRdsDbInstancesOutcome;
@@ -281,6 +278,7 @@ namespace Model
         typedef std::future<DescribeLayersOutcome> DescribeLayersOutcomeCallable;
         typedef std::future<DescribeLoadBasedAutoScalingOutcome> DescribeLoadBasedAutoScalingOutcomeCallable;
         typedef std::future<DescribeMyUserProfileOutcome> DescribeMyUserProfileOutcomeCallable;
+        typedef std::future<DescribeOperatingSystemsOutcome> DescribeOperatingSystemsOutcomeCallable;
         typedef std::future<DescribePermissionsOutcome> DescribePermissionsOutcomeCallable;
         typedef std::future<DescribeRaidArraysOutcome> DescribeRaidArraysOutcomeCallable;
         typedef std::future<DescribeRdsDbInstancesOutcome> DescribeRdsDbInstancesOutcomeCallable;
@@ -358,6 +356,7 @@ namespace Model
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeLayersRequest&, const Model::DescribeLayersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLayersResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeLoadBasedAutoScalingRequest&, const Model::DescribeLoadBasedAutoScalingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBasedAutoScalingResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeMyUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMyUserProfileResponseReceivedHandler;
+    typedef std::function<void(const OpsWorksClient*, const Model::DescribeOperatingSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOperatingSystemsResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribePermissionsRequest&, const Model::DescribePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePermissionsResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeRaidArraysRequest&, const Model::DescribeRaidArraysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRaidArraysResponseReceivedHandler;
     typedef std::function<void(const OpsWorksClient*, const Model::DescribeRdsDbInstancesRequest&, const Model::DescribeRdsDbInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRdsDbInstancesResponseReceivedHandler;
@@ -433,8 +432,10 @@ namespace Model
    * <p>opsworks.us-east-2.amazonaws.com</p> </li> <li>
    * <p>opsworks.us-west-1.amazonaws.com</p> </li> <li>
    * <p>opsworks.us-west-2.amazonaws.com</p> </li> <li>
-   * <p>opsworks.eu-west-1.amazonaws.com</p> </li> <li>
+   * <p>opsworks.ca-central-1.amazonaws.com (API only; not available in the AWS
+   * console)</p> </li> <li> <p>opsworks.eu-west-1.amazonaws.com</p> </li> <li>
    * <p>opsworks.eu-west-2.amazonaws.com</p> </li> <li>
+   * <p>opsworks.eu-west-3.amazonaws.com</p> </li> <li>
    * <p>opsworks.eu-central-1.amazonaws.com</p> </li> <li>
    * <p>opsworks.ap-northeast-1.amazonaws.com</p> </li> <li>
    * <p>opsworks.ap-northeast-2.amazonaws.com</p> </li> <li>
@@ -478,7 +479,7 @@ namespace Model
 
         virtual ~OpsWorksClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "opsworks"; }
+        inline virtual const char* GetServiceClientName() const override { return "OpsWorks"; }
 
 
         /**
@@ -713,7 +714,7 @@ namespace Model
          * a Stack</a>. By default, all parameters are set to the values used by the parent
          * stack.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must
          * have an attached policy that explicitly grants permissions. For more information
-         * on user permissions, see <a
+         * about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">AWS
@@ -727,7 +728,7 @@ namespace Model
          * a Stack</a>. By default, all parameters are set to the values used by the parent
          * stack.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must
          * have an attached policy that explicitly grants permissions. For more information
-         * on user permissions, see <a
+         * about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">AWS
@@ -743,7 +744,7 @@ namespace Model
          * a Stack</a>. By default, all parameters are set to the values used by the parent
          * stack.</p> <p> <b>Required Permissions</b>: To use this action, an IAM user must
          * have an attached policy that explicitly grants permissions. For more information
-         * on user permissions, see <a
+         * about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CloneStack">AWS
@@ -960,7 +961,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">Create
          * a New Stack</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM
          * user must have an attached policy that explicitly grants permissions. For more
-         * information on user permissions, see <a
+         * information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">AWS
@@ -973,7 +974,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">Create
          * a New Stack</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM
          * user must have an attached policy that explicitly grants permissions. For more
-         * information on user permissions, see <a
+         * information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">AWS
@@ -988,7 +989,7 @@ namespace Model
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">Create
          * a New Stack</a>.</p> <p> <b>Required Permissions</b>: To use this action, an IAM
          * user must have an attached policy that explicitly grants permissions. For more
-         * information on user permissions, see <a
+         * information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateStack">AWS
@@ -1001,7 +1002,7 @@ namespace Model
         /**
          * <p>Creates a new user profile.</p> <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have an attached policy that explicitly grants
-         * permissions. For more information on user permissions, see <a
+         * permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">AWS
@@ -1012,7 +1013,7 @@ namespace Model
         /**
          * <p>Creates a new user profile.</p> <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have an attached policy that explicitly grants
-         * permissions. For more information on user permissions, see <a
+         * permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">AWS
@@ -1025,7 +1026,7 @@ namespace Model
         /**
          * <p>Creates a new user profile.</p> <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have an attached policy that explicitly grants
-         * permissions. For more information on user permissions, see <a
+         * permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateUserProfile">AWS
@@ -1228,7 +1229,7 @@ namespace Model
         /**
          * <p>Deletes a user profile.</p> <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have an attached policy that explicitly grants
-         * permissions. For more information on user permissions, see <a
+         * permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">AWS
@@ -1239,7 +1240,7 @@ namespace Model
         /**
          * <p>Deletes a user profile.</p> <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have an attached policy that explicitly grants
-         * permissions. For more information on user permissions, see <a
+         * permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">AWS
@@ -1252,7 +1253,7 @@ namespace Model
         /**
          * <p>Deletes a user profile.</p> <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have an attached policy that explicitly grants
-         * permissions. For more information on user permissions, see <a
+         * permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DeleteUserProfile">AWS
@@ -1363,7 +1364,7 @@ namespace Model
         /**
          * <p>Deregister a registered Amazon EC2 or on-premises instance. This action
          * removes the instance from the stack and returns it to your control. This action
-         * can not be used with instances that were created with AWS OpsWorks Stacks.</p>
+         * cannot be used with instances that were created with AWS OpsWorks Stacks.</p>
          * <p> <b>Required Permissions</b>: To use this action, an IAM user must have a
          * Manage permissions level for the stack or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
@@ -1377,7 +1378,7 @@ namespace Model
         /**
          * <p>Deregister a registered Amazon EC2 or on-premises instance. This action
          * removes the instance from the stack and returns it to your control. This action
-         * can not be used with instances that were created with AWS OpsWorks Stacks.</p>
+         * cannot be used with instances that were created with AWS OpsWorks Stacks.</p>
          * <p> <b>Required Permissions</b>: To use this action, an IAM user must have a
          * Manage permissions level for the stack or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
@@ -1393,7 +1394,7 @@ namespace Model
         /**
          * <p>Deregister a registered Amazon EC2 or on-premises instance. This action
          * removes the instance from the stack and returns it to your control. This action
-         * can not be used with instances that were created with AWS OpsWorks Stacks.</p>
+         * cannot be used with instances that were created with AWS OpsWorks Stacks.</p>
          * <p> <b>Required Permissions</b>: To use this action, an IAM user must have a
          * Manage permissions level for the stack or an attached policy that explicitly
          * grants permissions. For more information on user permissions, see <a
@@ -1534,7 +1535,7 @@ namespace Model
          * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">AWS
@@ -1547,7 +1548,7 @@ namespace Model
          * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">AWS
@@ -1562,7 +1563,7 @@ namespace Model
          * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeApps">AWS
@@ -1577,7 +1578,7 @@ namespace Model
          * only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">AWS
@@ -1590,7 +1591,7 @@ namespace Model
          * only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">AWS
@@ -1605,7 +1606,7 @@ namespace Model
          * only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeCommands">AWS
@@ -1620,7 +1621,8 @@ namespace Model
          * call accepts only one resource-identifying parameter.</p> </note> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">AWS
@@ -1633,7 +1635,8 @@ namespace Model
          * call accepts only one resource-identifying parameter.</p> </note> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">AWS
@@ -1648,7 +1651,8 @@ namespace Model
          * call accepts only one resource-identifying parameter.</p> </note> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeDeployments">AWS
@@ -1666,7 +1670,7 @@ namespace Model
          * has a maximum of one element.</p> <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have a Show, Deploy, or Manage permissions level for
          * the stack or an attached policy that explicitly grants permission. For more
-         * information on user permissions, see <a
+         * information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p> <p>This call accepts only one resource-identifying
          * parameter.</p><p><h3>See Also:</h3>   <a
@@ -1683,7 +1687,7 @@ namespace Model
          * has a maximum of one element.</p> <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have a Show, Deploy, or Manage permissions level for
          * the stack or an attached policy that explicitly grants permission. For more
-         * information on user permissions, see <a
+         * information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p> <p>This call accepts only one resource-identifying
          * parameter.</p><p><h3>See Also:</h3>   <a
@@ -1702,7 +1706,7 @@ namespace Model
          * has a maximum of one element.</p> <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have a Show, Deploy, or Manage permissions level for
          * the stack or an attached policy that explicitly grants permission. For more
-         * information on user permissions, see <a
+         * information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p> <p>This call accepts only one resource-identifying
          * parameter.</p><p><h3>See Also:</h3>   <a
@@ -1719,8 +1723,8 @@ namespace Model
          * IP addresses</a>.</p> <note> <p>This call accepts only one resource-identifying
          * parameter.</p> </note> <p> <b>Required Permissions</b>: To use this action, an
          * IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
-         * an attached policy that explicitly grants permissions. For more information on
-         * user permissions, see <a
+         * an attached policy that explicitly grants permissions. For more information
+         * about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">AWS
@@ -1734,8 +1738,8 @@ namespace Model
          * IP addresses</a>.</p> <note> <p>This call accepts only one resource-identifying
          * parameter.</p> </note> <p> <b>Required Permissions</b>: To use this action, an
          * IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
-         * an attached policy that explicitly grants permissions. For more information on
-         * user permissions, see <a
+         * an attached policy that explicitly grants permissions. For more information
+         * about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">AWS
@@ -1751,8 +1755,8 @@ namespace Model
          * IP addresses</a>.</p> <note> <p>This call accepts only one resource-identifying
          * parameter.</p> </note> <p> <b>Required Permissions</b>: To use this action, an
          * IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
-         * an attached policy that explicitly grants permissions. For more information on
-         * user permissions, see <a
+         * an attached policy that explicitly grants permissions. For more information
+         * about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticIps">AWS
@@ -1767,7 +1771,7 @@ namespace Model
          * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">AWS
@@ -1780,7 +1784,7 @@ namespace Model
          * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">AWS
@@ -1795,7 +1799,7 @@ namespace Model
          * accepts only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeElasticLoadBalancers">AWS
@@ -1810,7 +1814,7 @@ namespace Model
          * only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">AWS
@@ -1823,7 +1827,7 @@ namespace Model
          * only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">AWS
@@ -1838,7 +1842,7 @@ namespace Model
          * only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeInstances">AWS
@@ -1853,7 +1857,8 @@ namespace Model
          * <p>This call accepts only one resource-identifying parameter.</p> </note> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">AWS
@@ -1866,7 +1871,8 @@ namespace Model
          * <p>This call accepts only one resource-identifying parameter.</p> </note> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">AWS
@@ -1881,7 +1887,8 @@ namespace Model
          * <p>This call accepts only one resource-identifying parameter.</p> </note> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">AWS
@@ -1896,7 +1903,8 @@ namespace Model
          * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">AWS
@@ -1909,7 +1917,8 @@ namespace Model
          * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">AWS
@@ -1924,7 +1933,8 @@ namespace Model
          * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLoadBasedAutoScaling">AWS
@@ -1937,7 +1947,7 @@ namespace Model
         /**
          * <p>Describes a user's SSH information.</p> <p> <b>Required Permissions</b>: To
          * use this action, an IAM user must have self-management enabled or an attached
-         * policy that explicitly grants permissions. For more information on user
+         * policy that explicitly grants permissions. For more information about user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
@@ -1949,7 +1959,7 @@ namespace Model
         /**
          * <p>Describes a user's SSH information.</p> <p> <b>Required Permissions</b>: To
          * use this action, an IAM user must have self-management enabled or an attached
-         * policy that explicitly grants permissions. For more information on user
+         * policy that explicitly grants permissions. For more information about user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
@@ -1963,7 +1973,7 @@ namespace Model
         /**
          * <p>Describes a user's SSH information.</p> <p> <b>Required Permissions</b>: To
          * use this action, an IAM user must have self-management enabled or an attached
-         * policy that explicitly grants permissions. For more information on user
+         * policy that explicitly grants permissions. For more information about user
          * permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
@@ -1973,6 +1983,33 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeMyUserProfileAsync(const DescribeMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        /**
+         * <p>Describes the operating systems that are supported by AWS OpsWorks
+         * Stacks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeOperatingSystemsOutcome DescribeOperatingSystems() const;
+
+        /**
+         * <p>Describes the operating systems that are supported by AWS OpsWorks
+         * Stacks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeOperatingSystemsOutcomeCallable DescribeOperatingSystemsCallable() const;
+
+        /**
+         * <p>Describes the operating systems that are supported by AWS OpsWorks
+         * Stacks.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeOperatingSystemsAsync(const DescribeOperatingSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
          * <p>Describes the permissions for a specified stack.</p> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Manage permissions
@@ -2018,7 +2055,7 @@ namespace Model
          * resource-identifying parameter.</p> </note> <p> <b>Required Permissions</b>: To
          * use this action, an IAM user must have a Show, Deploy, or Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
-         * For more information on user permissions, see <a
+         * For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">AWS
@@ -2031,7 +2068,7 @@ namespace Model
          * resource-identifying parameter.</p> </note> <p> <b>Required Permissions</b>: To
          * use this action, an IAM user must have a Show, Deploy, or Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
-         * For more information on user permissions, see <a
+         * For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">AWS
@@ -2046,7 +2083,7 @@ namespace Model
          * resource-identifying parameter.</p> </note> <p> <b>Required Permissions</b>: To
          * use this action, an IAM user must have a Show, Deploy, or Manage permissions
          * level for the stack, or an attached policy that explicitly grants permissions.
-         * For more information on user permissions, see <a
+         * For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeRaidArrays">AWS
@@ -2060,7 +2097,7 @@ namespace Model
          * <p>Describes Amazon RDS instances.</p> <p> <b>Required Permissions</b>: To use
          * this action, an IAM user must have a Show, Deploy, or Manage permissions level
          * for the stack, or an attached policy that explicitly grants permissions. For
-         * more information on user permissions, see <a
+         * more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p> <p>This call accepts only one resource-identifying
          * parameter.</p><p><h3>See Also:</h3>   <a
@@ -2073,7 +2110,7 @@ namespace Model
          * <p>Describes Amazon RDS instances.</p> <p> <b>Required Permissions</b>: To use
          * this action, an IAM user must have a Show, Deploy, or Manage permissions level
          * for the stack, or an attached policy that explicitly grants permissions. For
-         * more information on user permissions, see <a
+         * more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p> <p>This call accepts only one resource-identifying
          * parameter.</p><p><h3>See Also:</h3>   <a
@@ -2088,7 +2125,7 @@ namespace Model
          * <p>Describes Amazon RDS instances.</p> <p> <b>Required Permissions</b>: To use
          * this action, an IAM user must have a Show, Deploy, or Manage permissions level
          * for the stack, or an attached policy that explicitly grants permissions. For
-         * more information on user permissions, see <a
+         * more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p> <p>This call accepts only one resource-identifying
          * parameter.</p><p><h3>See Also:</h3>   <a
@@ -2103,7 +2140,7 @@ namespace Model
          * <p>Describes AWS OpsWorks Stacks service errors.</p> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p> <p>This call accepts only one resource-identifying
          * parameter.</p><p><h3>See Also:</h3>   <a
@@ -2116,7 +2153,7 @@ namespace Model
          * <p>Describes AWS OpsWorks Stacks service errors.</p> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p> <p>This call accepts only one resource-identifying
          * parameter.</p><p><h3>See Also:</h3>   <a
@@ -2131,7 +2168,7 @@ namespace Model
          * <p>Describes AWS OpsWorks Stacks service errors.</p> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p> <p>This call accepts only one resource-identifying
          * parameter.</p><p><h3>See Also:</h3>   <a
@@ -2146,7 +2183,8 @@ namespace Model
          * <p>Requests a description of a stack's provisioning parameters.</p> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">AWS
@@ -2158,7 +2196,8 @@ namespace Model
          * <p>Requests a description of a stack's provisioning parameters.</p> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">AWS
@@ -2172,7 +2211,8 @@ namespace Model
          * <p>Requests a description of a stack's provisioning parameters.</p> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackProvisioningParameters">AWS
@@ -2187,8 +2227,8 @@ namespace Model
          * of instances in each state, such as <code>running_setup</code> or
          * <code>online</code>.</p> <p> <b>Required Permissions</b>: To use this action, an
          * IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
-         * an attached policy that explicitly grants permissions. For more information on
-         * user permissions, see <a
+         * an attached policy that explicitly grants permissions. For more information
+         * about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">AWS
@@ -2201,8 +2241,8 @@ namespace Model
          * of instances in each state, such as <code>running_setup</code> or
          * <code>online</code>.</p> <p> <b>Required Permissions</b>: To use this action, an
          * IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
-         * an attached policy that explicitly grants permissions. For more information on
-         * user permissions, see <a
+         * an attached policy that explicitly grants permissions. For more information
+         * about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">AWS
@@ -2217,8 +2257,8 @@ namespace Model
          * of instances in each state, such as <code>running_setup</code> or
          * <code>online</code>.</p> <p> <b>Required Permissions</b>: To use this action, an
          * IAM user must have a Show, Deploy, or Manage permissions level for the stack, or
-         * an attached policy that explicitly grants permissions. For more information on
-         * user permissions, see <a
+         * an attached policy that explicitly grants permissions. For more information
+         * about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStackSummary">AWS
@@ -2232,7 +2272,7 @@ namespace Model
          * <p>Requests a description of one or more stacks.</p> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">AWS
@@ -2244,7 +2284,7 @@ namespace Model
          * <p>Requests a description of one or more stacks.</p> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">AWS
@@ -2258,7 +2298,7 @@ namespace Model
          * <p>Requests a description of one or more stacks.</p> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeStacks">AWS
@@ -2273,7 +2313,8 @@ namespace Model
          * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">AWS
@@ -2286,7 +2327,8 @@ namespace Model
          * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">AWS
@@ -2301,7 +2343,8 @@ namespace Model
          * <note> <p>You must specify at least one of the parameters.</p> </note> <p>
          * <b>Required Permissions</b>: To use this action, an IAM user must have a Show,
          * Deploy, or Manage permissions level for the stack, or an attached policy that
-         * explicitly grants permissions. For more information on user permissions, see <a
+         * explicitly grants permissions. For more information about user permissions, see
+         * <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeTimeBasedAutoScaling">AWS
@@ -2314,7 +2357,7 @@ namespace Model
         /**
          * <p>Describe specified users.</p> <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have an attached policy that explicitly grants
-         * permissions. For more information on user permissions, see <a
+         * permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">AWS
@@ -2325,7 +2368,7 @@ namespace Model
         /**
          * <p>Describe specified users.</p> <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have an attached policy that explicitly grants
-         * permissions. For more information on user permissions, see <a
+         * permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">AWS
@@ -2338,7 +2381,7 @@ namespace Model
         /**
          * <p>Describe specified users.</p> <p> <b>Required Permissions</b>: To use this
          * action, an IAM user must have an attached policy that explicitly grants
-         * permissions. For more information on user permissions, see <a
+         * permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeUserProfiles">AWS
@@ -2353,7 +2396,7 @@ namespace Model
          * only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">AWS
@@ -2366,7 +2409,7 @@ namespace Model
          * only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">AWS
@@ -2381,7 +2424,7 @@ namespace Model
          * only one resource-identifying parameter.</p> </note> <p> <b>Required
          * Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or
          * Manage permissions level for the stack, or an attached policy that explicitly
-         * grants permissions. For more information on user permissions, see <a
+         * grants permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeVolumes">AWS
@@ -3281,13 +3324,13 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Unassigns a registered instance from all of it's layers. The instance remains
-         * in the stack as an unassigned instance and can be assigned to another layer, as
-         * needed. You cannot use this action with instances that were created with AWS
-         * OpsWorks Stacks.</p> <p> <b>Required Permissions</b>: To use this action, an IAM
-         * user must have a Manage permissions level for the stack or an attached policy
-         * that explicitly grants permissions. For more information on user permissions,
-         * see <a
+         * <p>Unassigns a registered instance from all layers that are using the instance.
+         * The instance remains in the stack as an unassigned instance, and can be assigned
+         * to another layer as needed. You cannot use this action with instances that were
+         * created with AWS OpsWorks Stacks.</p> <p> <b>Required Permissions</b>: To use
+         * this action, an IAM user must have a Manage permissions level for the stack or
+         * an attached policy that explicitly grants permissions. For more information
+         * about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">AWS
@@ -3296,13 +3339,13 @@ namespace Model
         virtual Model::UnassignInstanceOutcome UnassignInstance(const Model::UnassignInstanceRequest& request) const;
 
         /**
-         * <p>Unassigns a registered instance from all of it's layers. The instance remains
-         * in the stack as an unassigned instance and can be assigned to another layer, as
-         * needed. You cannot use this action with instances that were created with AWS
-         * OpsWorks Stacks.</p> <p> <b>Required Permissions</b>: To use this action, an IAM
-         * user must have a Manage permissions level for the stack or an attached policy
-         * that explicitly grants permissions. For more information on user permissions,
-         * see <a
+         * <p>Unassigns a registered instance from all layers that are using the instance.
+         * The instance remains in the stack as an unassigned instance, and can be assigned
+         * to another layer as needed. You cannot use this action with instances that were
+         * created with AWS OpsWorks Stacks.</p> <p> <b>Required Permissions</b>: To use
+         * this action, an IAM user must have a Manage permissions level for the stack or
+         * an attached policy that explicitly grants permissions. For more information
+         * about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">AWS
@@ -3313,13 +3356,13 @@ namespace Model
         virtual Model::UnassignInstanceOutcomeCallable UnassignInstanceCallable(const Model::UnassignInstanceRequest& request) const;
 
         /**
-         * <p>Unassigns a registered instance from all of it's layers. The instance remains
-         * in the stack as an unassigned instance and can be assigned to another layer, as
-         * needed. You cannot use this action with instances that were created with AWS
-         * OpsWorks Stacks.</p> <p> <b>Required Permissions</b>: To use this action, an IAM
-         * user must have a Manage permissions level for the stack or an attached policy
-         * that explicitly grants permissions. For more information on user permissions,
-         * see <a
+         * <p>Unassigns a registered instance from all layers that are using the instance.
+         * The instance remains in the stack as an unassigned instance, and can be assigned
+         * to another layer as needed. You cannot use this action with instances that were
+         * created with AWS OpsWorks Stacks.</p> <p> <b>Required Permissions</b>: To use
+         * this action, an IAM user must have a Manage permissions level for the stack or
+         * an attached policy that explicitly grants permissions. For more information
+         * about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UnassignInstance">AWS
@@ -3572,7 +3615,7 @@ namespace Model
         /**
          * <p>Updates a user's SSH public key.</p> <p> <b>Required Permissions</b>: To use
          * this action, an IAM user must have self-management enabled or an attached policy
-         * that explicitly grants permissions. For more information on user permissions,
+         * that explicitly grants permissions. For more information about user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
@@ -3584,7 +3627,7 @@ namespace Model
         /**
          * <p>Updates a user's SSH public key.</p> <p> <b>Required Permissions</b>: To use
          * this action, an IAM user must have self-management enabled or an attached policy
-         * that explicitly grants permissions. For more information on user permissions,
+         * that explicitly grants permissions. For more information about user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
@@ -3598,7 +3641,7 @@ namespace Model
         /**
          * <p>Updates a user's SSH public key.</p> <p> <b>Required Permissions</b>: To use
          * this action, an IAM user must have self-management enabled or an attached policy
-         * that explicitly grants permissions. For more information on user permissions,
+         * that explicitly grants permissions. For more information about user permissions,
          * see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
@@ -3692,7 +3735,7 @@ namespace Model
         /**
          * <p>Updates a specified user profile.</p> <p> <b>Required Permissions</b>: To use
          * this action, an IAM user must have an attached policy that explicitly grants
-         * permissions. For more information on user permissions, see <a
+         * permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">AWS
@@ -3703,7 +3746,7 @@ namespace Model
         /**
          * <p>Updates a specified user profile.</p> <p> <b>Required Permissions</b>: To use
          * this action, an IAM user must have an attached policy that explicitly grants
-         * permissions. For more information on user permissions, see <a
+         * permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">AWS
@@ -3716,7 +3759,7 @@ namespace Model
         /**
          * <p>Updates a specified user profile.</p> <p> <b>Required Permissions</b>: To use
          * this action, an IAM user must have an attached policy that explicitly grants
-         * permissions. For more information on user permissions, see <a
+         * permissions. For more information about user permissions, see <a
          * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
          * User Permissions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateUserProfile">AWS
@@ -3812,6 +3855,7 @@ namespace Model
         void DescribeLayersAsyncHelper(const Model::DescribeLayersRequest& request, const DescribeLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLoadBasedAutoScalingAsyncHelper(const Model::DescribeLoadBasedAutoScalingRequest& request, const DescribeLoadBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMyUserProfileAsyncHelper(const DescribeMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeOperatingSystemsAsyncHelper(const DescribeOperatingSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePermissionsAsyncHelper(const Model::DescribePermissionsRequest& request, const DescribePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRaidArraysAsyncHelper(const Model::DescribeRaidArraysRequest& request, const DescribeRaidArraysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRdsDbInstancesAsyncHelper(const Model::DescribeRdsDbInstancesRequest& request, const DescribeRdsDbInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

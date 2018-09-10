@@ -74,7 +74,7 @@ Aws::String PollForDecisionTaskRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PollForDecisionTaskRequest::GetRequestSpecificHeaders() const

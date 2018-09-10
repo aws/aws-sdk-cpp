@@ -39,7 +39,7 @@ IpRouteInfo::IpRouteInfo() :
 {
 }
 
-IpRouteInfo::IpRouteInfo(const JsonValue& jsonValue) : 
+IpRouteInfo::IpRouteInfo(JsonView jsonValue) : 
     m_directoryIdHasBeenSet(false),
     m_cidrIpHasBeenSet(false),
     m_ipRouteStatusMsg(IpRouteStatusMsg::NOT_SET),
@@ -51,7 +51,7 @@ IpRouteInfo::IpRouteInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IpRouteInfo& IpRouteInfo::operator =(const JsonValue& jsonValue)
+IpRouteInfo& IpRouteInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DirectoryId"))
   {

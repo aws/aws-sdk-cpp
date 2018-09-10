@@ -34,14 +34,14 @@ DocumentDefaultVersionDescription::DocumentDefaultVersionDescription() :
 {
 }
 
-DocumentDefaultVersionDescription::DocumentDefaultVersionDescription(const JsonValue& jsonValue) : 
+DocumentDefaultVersionDescription::DocumentDefaultVersionDescription(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_defaultVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DocumentDefaultVersionDescription& DocumentDefaultVersionDescription::operator =(const JsonValue& jsonValue)
+DocumentDefaultVersionDescription& DocumentDefaultVersionDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

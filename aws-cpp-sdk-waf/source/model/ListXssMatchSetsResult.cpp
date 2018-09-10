@@ -37,7 +37,7 @@ ListXssMatchSetsResult::ListXssMatchSetsResult(const Aws::AmazonWebServiceResult
 
 ListXssMatchSetsResult& ListXssMatchSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListXssMatchSetsResult& ListXssMatchSetsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("XssMatchSets"))
   {
-    Array<JsonValue> xssMatchSetsJsonList = jsonValue.GetArray("XssMatchSets");
+    Array<JsonView> xssMatchSetsJsonList = jsonValue.GetArray("XssMatchSets");
     for(unsigned xssMatchSetsIndex = 0; xssMatchSetsIndex < xssMatchSetsJsonList.GetLength(); ++xssMatchSetsIndex)
     {
       m_xssMatchSets.push_back(xssMatchSetsJsonList[xssMatchSetsIndex].AsObject());

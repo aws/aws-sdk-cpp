@@ -36,7 +36,7 @@ ScalingRule::ScalingRule() :
 {
 }
 
-ScalingRule::ScalingRule(const JsonValue& jsonValue) : 
+ScalingRule::ScalingRule(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_actionHasBeenSet(false),
@@ -45,7 +45,7 @@ ScalingRule::ScalingRule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ScalingRule& ScalingRule::operator =(const JsonValue& jsonValue)
+ScalingRule& ScalingRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

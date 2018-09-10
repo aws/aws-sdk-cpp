@@ -34,14 +34,14 @@ DomainValidationOption::DomainValidationOption() :
 {
 }
 
-DomainValidationOption::DomainValidationOption(const JsonValue& jsonValue) : 
+DomainValidationOption::DomainValidationOption(JsonView jsonValue) : 
     m_domainNameHasBeenSet(false),
     m_validationDomainHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DomainValidationOption& DomainValidationOption::operator =(const JsonValue& jsonValue)
+DomainValidationOption& DomainValidationOption::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DomainName"))
   {

@@ -35,7 +35,7 @@ GroupOwnerSetting::GroupOwnerSetting() :
 {
 }
 
-GroupOwnerSetting::GroupOwnerSetting(const JsonValue& jsonValue) : 
+GroupOwnerSetting::GroupOwnerSetting(JsonView jsonValue) : 
     m_autoAddGroupOwner(false),
     m_autoAddGroupOwnerHasBeenSet(false),
     m_groupOwnerHasBeenSet(false)
@@ -43,7 +43,7 @@ GroupOwnerSetting::GroupOwnerSetting(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GroupOwnerSetting& GroupOwnerSetting::operator =(const JsonValue& jsonValue)
+GroupOwnerSetting& GroupOwnerSetting::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AutoAddGroupOwner"))
   {

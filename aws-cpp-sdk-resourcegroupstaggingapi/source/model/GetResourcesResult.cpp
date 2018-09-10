@@ -37,7 +37,7 @@ GetResourcesResult::GetResourcesResult(const Aws::AmazonWebServiceResult<JsonVal
 
 GetResourcesResult& GetResourcesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PaginationToken"))
   {
     m_paginationToken = jsonValue.GetString("PaginationToken");
@@ -46,7 +46,7 @@ GetResourcesResult& GetResourcesResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("ResourceTagMappingList"))
   {
-    Array<JsonValue> resourceTagMappingListJsonList = jsonValue.GetArray("ResourceTagMappingList");
+    Array<JsonView> resourceTagMappingListJsonList = jsonValue.GetArray("ResourceTagMappingList");
     for(unsigned resourceTagMappingListIndex = 0; resourceTagMappingListIndex < resourceTagMappingListJsonList.GetLength(); ++resourceTagMappingListIndex)
     {
       m_resourceTagMappingList.push_back(resourceTagMappingListJsonList[resourceTagMappingListIndex].AsObject());

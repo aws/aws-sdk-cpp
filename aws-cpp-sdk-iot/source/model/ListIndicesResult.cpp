@@ -37,10 +37,10 @@ ListIndicesResult::ListIndicesResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ListIndicesResult& ListIndicesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("indexNames"))
   {
-    Array<JsonValue> indexNamesJsonList = jsonValue.GetArray("indexNames");
+    Array<JsonView> indexNamesJsonList = jsonValue.GetArray("indexNames");
     for(unsigned indexNamesIndex = 0; indexNamesIndex < indexNamesJsonList.GetLength(); ++indexNamesIndex)
     {
       m_indexNames.push_back(indexNamesJsonList[indexNamesIndex].AsString());

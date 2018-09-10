@@ -64,7 +64,7 @@ Aws::String DescribeMaintenanceWindowTargetsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeMaintenanceWindowTargetsRequest::GetRequestSpecificHeaders() const

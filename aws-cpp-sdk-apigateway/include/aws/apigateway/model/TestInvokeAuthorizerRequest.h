@@ -48,73 +48,80 @@ namespace Model
 
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline TestInvokeAuthorizerRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline TestInvokeAuthorizerRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
     inline TestInvokeAuthorizerRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
 
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
+     * <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a>
+     * ID.</p>
      */
     inline const Aws::String& GetAuthorizerId() const{ return m_authorizerId; }
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
+     * <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a>
+     * ID.</p>
      */
     inline void SetAuthorizerId(const Aws::String& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = value; }
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
+     * <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a>
+     * ID.</p>
      */
     inline void SetAuthorizerId(Aws::String&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = std::move(value); }
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
+     * <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a>
+     * ID.</p>
      */
     inline void SetAuthorizerId(const char* value) { m_authorizerIdHasBeenSet = true; m_authorizerId.assign(value); }
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
+     * <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a>
+     * ID.</p>
      */
     inline TestInvokeAuthorizerRequest& WithAuthorizerId(const Aws::String& value) { SetAuthorizerId(value); return *this;}
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
+     * <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a>
+     * ID.</p>
      */
     inline TestInvokeAuthorizerRequest& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
+     * <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a>
+     * ID.</p>
      */
     inline TestInvokeAuthorizerRequest& WithAuthorizerId(const char* value) { SetAuthorizerId(value); return *this;}
 

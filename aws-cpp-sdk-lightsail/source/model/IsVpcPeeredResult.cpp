@@ -39,7 +39,7 @@ IsVpcPeeredResult::IsVpcPeeredResult(const Aws::AmazonWebServiceResult<JsonValue
 
 IsVpcPeeredResult& IsVpcPeeredResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("isPeered"))
   {
     m_isPeered = jsonValue.GetBool("isPeered");

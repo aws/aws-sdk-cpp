@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -34,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Information on resource definition version<p><h3>See Also:</h3>   <a
+   * Information about a resource definition version.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResourceDefinitionVersion">AWS
    * API Reference</a></p>
    */
@@ -42,43 +43,43 @@ namespace Model
   {
   public:
     ResourceDefinitionVersion();
-    ResourceDefinitionVersion(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceDefinitionVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
+    ResourceDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * List of resources.
+     * A list of resources.
      */
     inline const Aws::Vector<Resource>& GetResources() const{ return m_resources; }
 
     /**
-     * List of resources.
+     * A list of resources.
      */
     inline void SetResources(const Aws::Vector<Resource>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
-     * List of resources.
+     * A list of resources.
      */
     inline void SetResources(Aws::Vector<Resource>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
-     * List of resources.
+     * A list of resources.
      */
     inline ResourceDefinitionVersion& WithResources(const Aws::Vector<Resource>& value) { SetResources(value); return *this;}
 
     /**
-     * List of resources.
+     * A list of resources.
      */
     inline ResourceDefinitionVersion& WithResources(Aws::Vector<Resource>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * List of resources.
+     * A list of resources.
      */
     inline ResourceDefinitionVersion& AddResources(const Resource& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
     /**
-     * List of resources.
+     * A list of resources.
      */
     inline ResourceDefinitionVersion& AddResources(Resource&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 

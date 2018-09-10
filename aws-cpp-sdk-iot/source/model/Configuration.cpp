@@ -34,14 +34,14 @@ Configuration::Configuration() :
 {
 }
 
-Configuration::Configuration(const JsonValue& jsonValue) : 
+Configuration::Configuration(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Configuration& Configuration::operator =(const JsonValue& jsonValue)
+Configuration& Configuration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Enabled"))
   {

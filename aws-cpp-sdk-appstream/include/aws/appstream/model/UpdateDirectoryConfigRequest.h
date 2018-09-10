@@ -47,37 +47,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the directory configuration.</p>
+     * <p>The name of the Directory Config object.</p>
      */
     inline const Aws::String& GetDirectoryName() const{ return m_directoryName; }
 
     /**
-     * <p>The name of the directory configuration.</p>
+     * <p>The name of the Directory Config object.</p>
      */
     inline void SetDirectoryName(const Aws::String& value) { m_directoryNameHasBeenSet = true; m_directoryName = value; }
 
     /**
-     * <p>The name of the directory configuration.</p>
+     * <p>The name of the Directory Config object.</p>
      */
     inline void SetDirectoryName(Aws::String&& value) { m_directoryNameHasBeenSet = true; m_directoryName = std::move(value); }
 
     /**
-     * <p>The name of the directory configuration.</p>
+     * <p>The name of the Directory Config object.</p>
      */
     inline void SetDirectoryName(const char* value) { m_directoryNameHasBeenSet = true; m_directoryName.assign(value); }
 
     /**
-     * <p>The name of the directory configuration.</p>
+     * <p>The name of the Directory Config object.</p>
      */
     inline UpdateDirectoryConfigRequest& WithDirectoryName(const Aws::String& value) { SetDirectoryName(value); return *this;}
 
     /**
-     * <p>The name of the directory configuration.</p>
+     * <p>The name of the Directory Config object.</p>
      */
     inline UpdateDirectoryConfigRequest& WithDirectoryName(Aws::String&& value) { SetDirectoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the directory configuration.</p>
+     * <p>The name of the Directory Config object.</p>
      */
     inline UpdateDirectoryConfigRequest& WithDirectoryName(const char* value) { SetDirectoryName(value); return *this;}
 

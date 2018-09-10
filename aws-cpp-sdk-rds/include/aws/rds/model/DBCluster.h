@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/rds/model/ScalingConfigurationInfo.h>
 #include <aws/rds/model/DBClusterOptionGroupStatus.h>
 #include <aws/rds/model/DBClusterMember.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
@@ -438,32 +439,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies the earliest time to which a database can be restored with
-     * point-in-time restore.</p>
+     * <p>The earliest time to which a database can be restored with point-in-time
+     * restore.</p>
      */
     inline const Aws::Utils::DateTime& GetEarliestRestorableTime() const{ return m_earliestRestorableTime; }
 
     /**
-     * <p>Specifies the earliest time to which a database can be restored with
-     * point-in-time restore.</p>
+     * <p>The earliest time to which a database can be restored with point-in-time
+     * restore.</p>
      */
     inline void SetEarliestRestorableTime(const Aws::Utils::DateTime& value) { m_earliestRestorableTimeHasBeenSet = true; m_earliestRestorableTime = value; }
 
     /**
-     * <p>Specifies the earliest time to which a database can be restored with
-     * point-in-time restore.</p>
+     * <p>The earliest time to which a database can be restored with point-in-time
+     * restore.</p>
      */
     inline void SetEarliestRestorableTime(Aws::Utils::DateTime&& value) { m_earliestRestorableTimeHasBeenSet = true; m_earliestRestorableTime = std::move(value); }
 
     /**
-     * <p>Specifies the earliest time to which a database can be restored with
-     * point-in-time restore.</p>
+     * <p>The earliest time to which a database can be restored with point-in-time
+     * restore.</p>
      */
     inline DBCluster& WithEarliestRestorableTime(const Aws::Utils::DateTime& value) { SetEarliestRestorableTime(value); return *this;}
 
     /**
-     * <p>Specifies the earliest time to which a database can be restored with
-     * point-in-time restore.</p>
+     * <p>The earliest time to which a database can be restored with point-in-time
+     * restore.</p>
      */
     inline DBCluster& WithEarliestRestorableTime(Aws::Utils::DateTime&& value) { SetEarliestRestorableTime(std::move(value)); return *this;}
 
@@ -1400,6 +1401,212 @@ namespace Model
      */
     inline DBCluster& WithClusterCreateTime(Aws::Utils::DateTime&& value) { SetClusterCreateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The earliest time to which a DB cluster can be backtracked.</p>
+     */
+    inline const Aws::Utils::DateTime& GetEarliestBacktrackTime() const{ return m_earliestBacktrackTime; }
+
+    /**
+     * <p>The earliest time to which a DB cluster can be backtracked.</p>
+     */
+    inline void SetEarliestBacktrackTime(const Aws::Utils::DateTime& value) { m_earliestBacktrackTimeHasBeenSet = true; m_earliestBacktrackTime = value; }
+
+    /**
+     * <p>The earliest time to which a DB cluster can be backtracked.</p>
+     */
+    inline void SetEarliestBacktrackTime(Aws::Utils::DateTime&& value) { m_earliestBacktrackTimeHasBeenSet = true; m_earliestBacktrackTime = std::move(value); }
+
+    /**
+     * <p>The earliest time to which a DB cluster can be backtracked.</p>
+     */
+    inline DBCluster& WithEarliestBacktrackTime(const Aws::Utils::DateTime& value) { SetEarliestBacktrackTime(value); return *this;}
+
+    /**
+     * <p>The earliest time to which a DB cluster can be backtracked.</p>
+     */
+    inline DBCluster& WithEarliestBacktrackTime(Aws::Utils::DateTime&& value) { SetEarliestBacktrackTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The target backtrack window, in seconds. If this value is set to 0,
+     * backtracking is disabled for the DB cluster. Otherwise, backtracking is
+     * enabled.</p>
+     */
+    inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
+
+    /**
+     * <p>The target backtrack window, in seconds. If this value is set to 0,
+     * backtracking is disabled for the DB cluster. Otherwise, backtracking is
+     * enabled.</p>
+     */
+    inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
+
+    /**
+     * <p>The target backtrack window, in seconds. If this value is set to 0,
+     * backtracking is disabled for the DB cluster. Otherwise, backtracking is
+     * enabled.</p>
+     */
+    inline DBCluster& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
+
+
+    /**
+     * <p>The number of change records stored for Backtrack.</p>
+     */
+    inline long long GetBacktrackConsumedChangeRecords() const{ return m_backtrackConsumedChangeRecords; }
+
+    /**
+     * <p>The number of change records stored for Backtrack.</p>
+     */
+    inline void SetBacktrackConsumedChangeRecords(long long value) { m_backtrackConsumedChangeRecordsHasBeenSet = true; m_backtrackConsumedChangeRecords = value; }
+
+    /**
+     * <p>The number of change records stored for Backtrack.</p>
+     */
+    inline DBCluster& WithBacktrackConsumedChangeRecords(long long value) { SetBacktrackConsumedChangeRecords(value); return *this;}
+
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEnabledCloudwatchLogsExports() const{ return m_enabledCloudwatchLogsExports; }
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     */
+    inline void SetEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = value; }
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     */
+    inline void SetEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = std::move(value); }
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     */
+    inline DBCluster& WithEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnabledCloudwatchLogsExports(value); return *this;}
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     */
+    inline DBCluster& WithEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnabledCloudwatchLogsExports(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     */
+    inline DBCluster& AddEnabledCloudwatchLogsExports(const Aws::String& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     */
+    inline DBCluster& AddEnabledCloudwatchLogsExports(Aws::String&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of log types that this DB cluster is configured to export to
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     */
+    inline DBCluster& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
+
+
+    
+    inline int GetCapacity() const{ return m_capacity; }
+
+    
+    inline void SetCapacity(int value) { m_capacityHasBeenSet = true; m_capacity = value; }
+
+    
+    inline DBCluster& WithCapacity(int value) { SetCapacity(value); return *this;}
+
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline DBCluster& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline DBCluster& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline DBCluster& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
+
+
+    
+    inline const ScalingConfigurationInfo& GetScalingConfigurationInfo() const{ return m_scalingConfigurationInfo; }
+
+    
+    inline void SetScalingConfigurationInfo(const ScalingConfigurationInfo& value) { m_scalingConfigurationInfoHasBeenSet = true; m_scalingConfigurationInfo = value; }
+
+    
+    inline void SetScalingConfigurationInfo(ScalingConfigurationInfo&& value) { m_scalingConfigurationInfoHasBeenSet = true; m_scalingConfigurationInfo = std::move(value); }
+
+    
+    inline DBCluster& WithScalingConfigurationInfo(const ScalingConfigurationInfo& value) { SetScalingConfigurationInfo(value); return *this;}
+
+    
+    inline DBCluster& WithScalingConfigurationInfo(ScalingConfigurationInfo&& value) { SetScalingConfigurationInfo(std::move(value)); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -1506,6 +1713,27 @@ namespace Model
 
     Aws::Utils::DateTime m_clusterCreateTime;
     bool m_clusterCreateTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_earliestBacktrackTime;
+    bool m_earliestBacktrackTimeHasBeenSet;
+
+    long long m_backtrackWindow;
+    bool m_backtrackWindowHasBeenSet;
+
+    long long m_backtrackConsumedChangeRecords;
+    bool m_backtrackConsumedChangeRecordsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
+    bool m_enabledCloudwatchLogsExportsHasBeenSet;
+
+    int m_capacity;
+    bool m_capacityHasBeenSet;
+
+    Aws::String m_engineMode;
+    bool m_engineModeHasBeenSet;
+
+    ScalingConfigurationInfo m_scalingConfigurationInfo;
+    bool m_scalingConfigurationInfoHasBeenSet;
   };
 
 } // namespace Model

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -34,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Attributes that define the Local Volume Resource.<p><h3>See Also:</h3>   <a
+   * Attributes that define a local volume resource.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/LocalVolumeResourceData">AWS
    * API Reference</a></p>
    */
@@ -42,105 +43,117 @@ namespace Model
   {
   public:
     LocalVolumeResourceData();
-    LocalVolumeResourceData(const Aws::Utils::Json::JsonValue& jsonValue);
-    LocalVolumeResourceData& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LocalVolumeResourceData(Aws::Utils::Json::JsonView jsonValue);
+    LocalVolumeResourceData& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Local destination path of the resource.
+     * The absolute local path of the resource inside the lambda environment.
      */
     inline const Aws::String& GetDestinationPath() const{ return m_destinationPath; }
 
     /**
-     * Local destination path of the resource.
+     * The absolute local path of the resource inside the lambda environment.
      */
     inline void SetDestinationPath(const Aws::String& value) { m_destinationPathHasBeenSet = true; m_destinationPath = value; }
 
     /**
-     * Local destination path of the resource.
+     * The absolute local path of the resource inside the lambda environment.
      */
     inline void SetDestinationPath(Aws::String&& value) { m_destinationPathHasBeenSet = true; m_destinationPath = std::move(value); }
 
     /**
-     * Local destination path of the resource.
+     * The absolute local path of the resource inside the lambda environment.
      */
     inline void SetDestinationPath(const char* value) { m_destinationPathHasBeenSet = true; m_destinationPath.assign(value); }
 
     /**
-     * Local destination path of the resource.
+     * The absolute local path of the resource inside the lambda environment.
      */
     inline LocalVolumeResourceData& WithDestinationPath(const Aws::String& value) { SetDestinationPath(value); return *this;}
 
     /**
-     * Local destination path of the resource.
+     * The absolute local path of the resource inside the lambda environment.
      */
     inline LocalVolumeResourceData& WithDestinationPath(Aws::String&& value) { SetDestinationPath(std::move(value)); return *this;}
 
     /**
-     * Local destination path of the resource.
+     * The absolute local path of the resource inside the lambda environment.
      */
     inline LocalVolumeResourceData& WithDestinationPath(const char* value) { SetDestinationPath(value); return *this;}
 
 
     /**
-     * Group owner related settings for local resources.
+     * Allows you to configure additional group privileges for the Lambda process. This
+     * field is optional.
      */
     inline const GroupOwnerSetting& GetGroupOwnerSetting() const{ return m_groupOwnerSetting; }
 
     /**
-     * Group owner related settings for local resources.
+     * Allows you to configure additional group privileges for the Lambda process. This
+     * field is optional.
      */
     inline void SetGroupOwnerSetting(const GroupOwnerSetting& value) { m_groupOwnerSettingHasBeenSet = true; m_groupOwnerSetting = value; }
 
     /**
-     * Group owner related settings for local resources.
+     * Allows you to configure additional group privileges for the Lambda process. This
+     * field is optional.
      */
     inline void SetGroupOwnerSetting(GroupOwnerSetting&& value) { m_groupOwnerSettingHasBeenSet = true; m_groupOwnerSetting = std::move(value); }
 
     /**
-     * Group owner related settings for local resources.
+     * Allows you to configure additional group privileges for the Lambda process. This
+     * field is optional.
      */
     inline LocalVolumeResourceData& WithGroupOwnerSetting(const GroupOwnerSetting& value) { SetGroupOwnerSetting(value); return *this;}
 
     /**
-     * Group owner related settings for local resources.
+     * Allows you to configure additional group privileges for the Lambda process. This
+     * field is optional.
      */
     inline LocalVolumeResourceData& WithGroupOwnerSetting(GroupOwnerSetting&& value) { SetGroupOwnerSetting(std::move(value)); return *this;}
 
 
     /**
-     * Local source path of the resource.
+     * The local absolute path of the volume resource on the host. The source path for
+     * a volume resource type cannot start with ''/sys''.
      */
     inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
 
     /**
-     * Local source path of the resource.
+     * The local absolute path of the volume resource on the host. The source path for
+     * a volume resource type cannot start with ''/sys''.
      */
     inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
 
     /**
-     * Local source path of the resource.
+     * The local absolute path of the volume resource on the host. The source path for
+     * a volume resource type cannot start with ''/sys''.
      */
     inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
 
     /**
-     * Local source path of the resource.
+     * The local absolute path of the volume resource on the host. The source path for
+     * a volume resource type cannot start with ''/sys''.
      */
     inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
 
     /**
-     * Local source path of the resource.
+     * The local absolute path of the volume resource on the host. The source path for
+     * a volume resource type cannot start with ''/sys''.
      */
     inline LocalVolumeResourceData& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
 
     /**
-     * Local source path of the resource.
+     * The local absolute path of the volume resource on the host. The source path for
+     * a volume resource type cannot start with ''/sys''.
      */
     inline LocalVolumeResourceData& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
 
     /**
-     * Local source path of the resource.
+     * The local absolute path of the volume resource on the host. The source path for
+     * a volume resource type cannot start with ''/sys''.
      */
     inline LocalVolumeResourceData& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
 

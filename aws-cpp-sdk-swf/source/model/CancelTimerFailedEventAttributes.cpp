@@ -37,7 +37,7 @@ CancelTimerFailedEventAttributes::CancelTimerFailedEventAttributes() :
 {
 }
 
-CancelTimerFailedEventAttributes::CancelTimerFailedEventAttributes(const JsonValue& jsonValue) : 
+CancelTimerFailedEventAttributes::CancelTimerFailedEventAttributes(JsonView jsonValue) : 
     m_timerIdHasBeenSet(false),
     m_cause(CancelTimerFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
@@ -47,7 +47,7 @@ CancelTimerFailedEventAttributes::CancelTimerFailedEventAttributes(const JsonVal
   *this = jsonValue;
 }
 
-CancelTimerFailedEventAttributes& CancelTimerFailedEventAttributes::operator =(const JsonValue& jsonValue)
+CancelTimerFailedEventAttributes& CancelTimerFailedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("timerId"))
   {

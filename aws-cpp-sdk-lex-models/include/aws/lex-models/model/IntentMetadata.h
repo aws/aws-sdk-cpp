@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace LexModelBuildingService
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     IntentMetadata();
-    IntentMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    IntentMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    IntentMetadata(Aws::Utils::Json::JsonView jsonValue);
+    IntentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

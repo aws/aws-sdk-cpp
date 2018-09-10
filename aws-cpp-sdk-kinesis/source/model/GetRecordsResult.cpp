@@ -39,10 +39,10 @@ GetRecordsResult::GetRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 GetRecordsResult& GetRecordsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Records"))
   {
-    Array<JsonValue> recordsJsonList = jsonValue.GetArray("Records");
+    Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
     for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());

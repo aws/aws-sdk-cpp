@@ -34,14 +34,14 @@ ParameterObject::ParameterObject() :
 {
 }
 
-ParameterObject::ParameterObject(const JsonValue& jsonValue) : 
+ParameterObject::ParameterObject(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_attributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ParameterObject& ParameterObject::operator =(const JsonValue& jsonValue)
+ParameterObject& ParameterObject::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -52,7 +52,7 @@ ParameterObject& ParameterObject::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Array<JsonValue> attributesJsonList = jsonValue.GetArray("attributes");
+    Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());

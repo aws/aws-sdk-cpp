@@ -37,7 +37,7 @@ GetCommitResult::GetCommitResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetCommitResult& GetCommitResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("commit"))
   {
     m_commit = jsonValue.GetObject("commit");

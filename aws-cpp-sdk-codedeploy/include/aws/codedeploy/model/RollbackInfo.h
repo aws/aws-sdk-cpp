@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     RollbackInfo();
-    RollbackInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    RollbackInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RollbackInfo(Aws::Utils::Json::JsonView jsonValue);
+    RollbackInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -47,7 +47,7 @@ CrawlerMetrics::CrawlerMetrics() :
 {
 }
 
-CrawlerMetrics::CrawlerMetrics(const JsonValue& jsonValue) : 
+CrawlerMetrics::CrawlerMetrics(JsonView jsonValue) : 
     m_crawlerNameHasBeenSet(false),
     m_timeLeftSeconds(0.0),
     m_timeLeftSecondsHasBeenSet(false),
@@ -67,7 +67,7 @@ CrawlerMetrics::CrawlerMetrics(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CrawlerMetrics& CrawlerMetrics::operator =(const JsonValue& jsonValue)
+CrawlerMetrics& CrawlerMetrics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CrawlerName"))
   {

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeCommit
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Difference();
-    Difference(const Aws::Utils::Json::JsonValue& jsonValue);
-    Difference& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Difference(Aws::Utils::Json::JsonView jsonValue);
+    Difference& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

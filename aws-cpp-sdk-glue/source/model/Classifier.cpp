@@ -30,18 +30,20 @@ namespace Model
 
 Classifier::Classifier() : 
     m_grokClassifierHasBeenSet(false),
-    m_xMLClassifierHasBeenSet(false)
+    m_xMLClassifierHasBeenSet(false),
+    m_jsonClassifierHasBeenSet(false)
 {
 }
 
-Classifier::Classifier(const JsonValue& jsonValue) : 
+Classifier::Classifier(JsonView jsonValue) : 
     m_grokClassifierHasBeenSet(false),
-    m_xMLClassifierHasBeenSet(false)
+    m_xMLClassifierHasBeenSet(false),
+    m_jsonClassifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Classifier& Classifier::operator =(const JsonValue& jsonValue)
+Classifier& Classifier::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GrokClassifier"))
   {
@@ -55,6 +57,13 @@ Classifier& Classifier::operator =(const JsonValue& jsonValue)
     m_xMLClassifier = jsonValue.GetObject("XMLClassifier");
 
     m_xMLClassifierHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JsonClassifier"))
+  {
+    m_jsonClassifier = jsonValue.GetObject("JsonClassifier");
+
+    m_jsonClassifierHasBeenSet = true;
   }
 
   return *this;
@@ -73,6 +82,12 @@ JsonValue Classifier::Jsonize() const
   if(m_xMLClassifierHasBeenSet)
   {
    payload.WithObject("XMLClassifier", m_xMLClassifier.Jsonize());
+
+  }
+
+  if(m_jsonClassifierHasBeenSet)
+  {
+   payload.WithObject("JsonClassifier", m_jsonClassifier.Jsonize());
 
   }
 

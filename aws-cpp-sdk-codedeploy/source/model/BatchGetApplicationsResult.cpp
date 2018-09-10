@@ -37,10 +37,10 @@ BatchGetApplicationsResult::BatchGetApplicationsResult(const Aws::AmazonWebServi
 
 BatchGetApplicationsResult& BatchGetApplicationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("applicationsInfo"))
   {
-    Array<JsonValue> applicationsInfoJsonList = jsonValue.GetArray("applicationsInfo");
+    Array<JsonView> applicationsInfoJsonList = jsonValue.GetArray("applicationsInfo");
     for(unsigned applicationsInfoIndex = 0; applicationsInfoIndex < applicationsInfoJsonList.GetLength(); ++applicationsInfoIndex)
     {
       m_applicationsInfo.push_back(applicationsInfoJsonList[applicationsInfoIndex].AsObject());

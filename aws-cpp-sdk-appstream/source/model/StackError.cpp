@@ -35,7 +35,7 @@ StackError::StackError() :
 {
 }
 
-StackError::StackError(const JsonValue& jsonValue) : 
+StackError::StackError(JsonView jsonValue) : 
     m_errorCode(StackErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false)
@@ -43,7 +43,7 @@ StackError::StackError(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StackError& StackError::operator =(const JsonValue& jsonValue)
+StackError& StackError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ErrorCode"))
   {

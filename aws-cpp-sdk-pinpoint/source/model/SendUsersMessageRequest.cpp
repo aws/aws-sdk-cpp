@@ -31,23 +31,25 @@ namespace Model
 SendUsersMessageRequest::SendUsersMessageRequest() : 
     m_contextHasBeenSet(false),
     m_messageConfigurationHasBeenSet(false),
+    m_traceIdHasBeenSet(false),
     m_usersHasBeenSet(false)
 {
 }
 
-SendUsersMessageRequest::SendUsersMessageRequest(const JsonValue& jsonValue) : 
+SendUsersMessageRequest::SendUsersMessageRequest(JsonView jsonValue) : 
     m_contextHasBeenSet(false),
     m_messageConfigurationHasBeenSet(false),
+    m_traceIdHasBeenSet(false),
     m_usersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SendUsersMessageRequest& SendUsersMessageRequest::operator =(const JsonValue& jsonValue)
+SendUsersMessageRequest& SendUsersMessageRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Context"))
   {
-    Aws::Map<Aws::String, JsonValue> contextJsonMap = jsonValue.GetObject("Context").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("Context").GetAllObjects();
     for(auto& contextItem : contextJsonMap)
     {
       m_context[contextItem.first] = contextItem.second.AsString();
@@ -62,9 +64,16 @@ SendUsersMessageRequest& SendUsersMessageRequest::operator =(const JsonValue& js
     m_messageConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TraceId"))
+  {
+    m_traceId = jsonValue.GetString("TraceId");
+
+    m_traceIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Users"))
   {
-    Aws::Map<Aws::String, JsonValue> usersJsonMap = jsonValue.GetObject("Users").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> usersJsonMap = jsonValue.GetObject("Users").GetAllObjects();
     for(auto& usersItem : usersJsonMap)
     {
       m_users[usersItem.first] = usersItem.second.AsObject();
@@ -93,6 +102,12 @@ JsonValue SendUsersMessageRequest::Jsonize() const
   if(m_messageConfigurationHasBeenSet)
   {
    payload.WithObject("MessageConfiguration", m_messageConfiguration.Jsonize());
+
+  }
+
+  if(m_traceIdHasBeenSet)
+  {
+   payload.WithString("TraceId", m_traceId);
 
   }
 

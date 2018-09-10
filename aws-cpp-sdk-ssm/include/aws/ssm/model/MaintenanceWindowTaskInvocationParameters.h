@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     MaintenanceWindowTaskInvocationParameters();
-    MaintenanceWindowTaskInvocationParameters(const Aws::Utils::Json::JsonValue& jsonValue);
-    MaintenanceWindowTaskInvocationParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MaintenanceWindowTaskInvocationParameters(Aws::Utils::Json::JsonView jsonValue);
+    MaintenanceWindowTaskInvocationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -76,27 +77,27 @@ namespace Model
 
 
     /**
-     * <p>The parameters for a AUTOMATION task type.</p>
+     * <p>The parameters for an AUTOMATION task type.</p>
      */
     inline const MaintenanceWindowAutomationParameters& GetAutomation() const{ return m_automation; }
 
     /**
-     * <p>The parameters for a AUTOMATION task type.</p>
+     * <p>The parameters for an AUTOMATION task type.</p>
      */
     inline void SetAutomation(const MaintenanceWindowAutomationParameters& value) { m_automationHasBeenSet = true; m_automation = value; }
 
     /**
-     * <p>The parameters for a AUTOMATION task type.</p>
+     * <p>The parameters for an AUTOMATION task type.</p>
      */
     inline void SetAutomation(MaintenanceWindowAutomationParameters&& value) { m_automationHasBeenSet = true; m_automation = std::move(value); }
 
     /**
-     * <p>The parameters for a AUTOMATION task type.</p>
+     * <p>The parameters for an AUTOMATION task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithAutomation(const MaintenanceWindowAutomationParameters& value) { SetAutomation(value); return *this;}
 
     /**
-     * <p>The parameters for a AUTOMATION task type.</p>
+     * <p>The parameters for an AUTOMATION task type.</p>
      */
     inline MaintenanceWindowTaskInvocationParameters& WithAutomation(MaintenanceWindowAutomationParameters&& value) { SetAutomation(std::move(value)); return *this;}
 

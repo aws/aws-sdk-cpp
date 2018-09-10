@@ -36,7 +36,7 @@ InventoryFilter::InventoryFilter() :
 {
 }
 
-InventoryFilter::InventoryFilter(const JsonValue& jsonValue) : 
+InventoryFilter::InventoryFilter(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valuesHasBeenSet(false),
     m_type(InventoryQueryOperatorType::NOT_SET),
@@ -45,7 +45,7 @@ InventoryFilter::InventoryFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InventoryFilter& InventoryFilter::operator =(const JsonValue& jsonValue)
+InventoryFilter& InventoryFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -56,7 +56,7 @@ InventoryFilter& InventoryFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

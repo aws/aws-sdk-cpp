@@ -44,7 +44,7 @@ Aws::String StopAutomationExecutionRequest::SerializePayload() const
    payload.WithString("Type", StopTypeMapper::GetNameForStopType(m_type));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopAutomationExecutionRequest::GetRequestSpecificHeaders() const

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -36,7 +37,7 @@ namespace Model
   /**
    * <p>An object representing a constraint on task placement in the task
    * definition.</p> <p>If you are using the Fargate launch type, task placement
-   * contraints are not supported.</p> <p>For more information, see <a
+   * constraints are not supported.</p> <p>For more information, see <a
    * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
    * Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     TaskDefinitionPlacementConstraint();
-    TaskDefinitionPlacementConstraint(const Aws::Utils::Json::JsonValue& jsonValue);
-    TaskDefinitionPlacementConstraint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TaskDefinitionPlacementConstraint(Aws::Utils::Json::JsonView jsonValue);
+    TaskDefinitionPlacementConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,7 +37,7 @@ AttributeValue::AttributeValue() :
 {
 }
 
-AttributeValue::AttributeValue(const JsonValue& jsonValue) : 
+AttributeValue::AttributeValue(JsonView jsonValue) : 
     m_sHasBeenSet(false),
     m_n(0.0),
     m_nHasBeenSet(false),
@@ -47,7 +47,7 @@ AttributeValue::AttributeValue(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AttributeValue& AttributeValue::operator =(const JsonValue& jsonValue)
+AttributeValue& AttributeValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S"))
   {
@@ -65,7 +65,7 @@ AttributeValue& AttributeValue::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SL"))
   {
-    Array<JsonValue> sLJsonList = jsonValue.GetArray("SL");
+    Array<JsonView> sLJsonList = jsonValue.GetArray("SL");
     for(unsigned sLIndex = 0; sLIndex < sLJsonList.GetLength(); ++sLIndex)
     {
       m_sL.push_back(sLJsonList[sLIndex].AsString());
@@ -75,7 +75,7 @@ AttributeValue& AttributeValue::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SDM"))
   {
-    Aws::Map<Aws::String, JsonValue> sDMJsonMap = jsonValue.GetObject("SDM").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> sDMJsonMap = jsonValue.GetObject("SDM").GetAllObjects();
     for(auto& sDMItem : sDMJsonMap)
     {
       m_sDM[sDMItem.first] = sDMItem.second.AsDouble();

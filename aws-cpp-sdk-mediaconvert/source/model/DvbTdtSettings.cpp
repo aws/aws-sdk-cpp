@@ -34,14 +34,14 @@ DvbTdtSettings::DvbTdtSettings() :
 {
 }
 
-DvbTdtSettings::DvbTdtSettings(const JsonValue& jsonValue) : 
+DvbTdtSettings::DvbTdtSettings(JsonView jsonValue) : 
     m_tdtInterval(0),
     m_tdtIntervalHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DvbTdtSettings& DvbTdtSettings::operator =(const JsonValue& jsonValue)
+DvbTdtSettings& DvbTdtSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("tdtInterval"))
   {

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iot/model/AwsJobExecutionsRolloutConfig.h>
 #include <aws/iot/model/TargetSelection.h>
 #include <aws/iot/model/OTAUpdateStatus.h>
 #include <aws/iot/model/ErrorInfo.h>
@@ -32,6 +33,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -48,8 +50,8 @@ namespace Model
   {
   public:
     OTAUpdateInfo();
-    OTAUpdateInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    OTAUpdateInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OTAUpdateInfo(Aws::Utils::Json::JsonView jsonValue);
+    OTAUpdateInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -252,6 +254,32 @@ namespace Model
      * <p>The targets of the OTA update.</p>
      */
     inline OTAUpdateInfo& AddTargets(const char* value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+
+
+    /**
+     * <p>Configuration for the rollout of OTA updates.</p>
+     */
+    inline const AwsJobExecutionsRolloutConfig& GetAwsJobExecutionsRolloutConfig() const{ return m_awsJobExecutionsRolloutConfig; }
+
+    /**
+     * <p>Configuration for the rollout of OTA updates.</p>
+     */
+    inline void SetAwsJobExecutionsRolloutConfig(const AwsJobExecutionsRolloutConfig& value) { m_awsJobExecutionsRolloutConfigHasBeenSet = true; m_awsJobExecutionsRolloutConfig = value; }
+
+    /**
+     * <p>Configuration for the rollout of OTA updates.</p>
+     */
+    inline void SetAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig&& value) { m_awsJobExecutionsRolloutConfigHasBeenSet = true; m_awsJobExecutionsRolloutConfig = std::move(value); }
+
+    /**
+     * <p>Configuration for the rollout of OTA updates.</p>
+     */
+    inline OTAUpdateInfo& WithAwsJobExecutionsRolloutConfig(const AwsJobExecutionsRolloutConfig& value) { SetAwsJobExecutionsRolloutConfig(value); return *this;}
+
+    /**
+     * <p>Configuration for the rollout of OTA updates.</p>
+     */
+    inline OTAUpdateInfo& WithAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig&& value) { SetAwsJobExecutionsRolloutConfig(std::move(value)); return *this;}
 
 
     /**
@@ -544,6 +572,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_targets;
     bool m_targetsHasBeenSet;
+
+    AwsJobExecutionsRolloutConfig m_awsJobExecutionsRolloutConfig;
+    bool m_awsJobExecutionsRolloutConfigHasBeenSet;
 
     TargetSelection m_targetSelection;
     bool m_targetSelectionHasBeenSet;

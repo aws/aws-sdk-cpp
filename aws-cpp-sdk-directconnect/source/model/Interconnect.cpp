@@ -38,11 +38,12 @@ Interconnect::Interconnect() :
     m_bandwidthHasBeenSet(false),
     m_loaIssueTimeHasBeenSet(false),
     m_lagIdHasBeenSet(false),
-    m_awsDeviceHasBeenSet(false)
+    m_awsDeviceHasBeenSet(false),
+    m_awsDeviceV2HasBeenSet(false)
 {
 }
 
-Interconnect::Interconnect(const JsonValue& jsonValue) : 
+Interconnect::Interconnect(JsonView jsonValue) : 
     m_interconnectIdHasBeenSet(false),
     m_interconnectNameHasBeenSet(false),
     m_interconnectState(InterconnectState::NOT_SET),
@@ -52,12 +53,13 @@ Interconnect::Interconnect(const JsonValue& jsonValue) :
     m_bandwidthHasBeenSet(false),
     m_loaIssueTimeHasBeenSet(false),
     m_lagIdHasBeenSet(false),
-    m_awsDeviceHasBeenSet(false)
+    m_awsDeviceHasBeenSet(false),
+    m_awsDeviceV2HasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Interconnect& Interconnect::operator =(const JsonValue& jsonValue)
+Interconnect& Interconnect::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("interconnectId"))
   {
@@ -122,6 +124,13 @@ Interconnect& Interconnect::operator =(const JsonValue& jsonValue)
     m_awsDeviceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("awsDeviceV2"))
+  {
+    m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
+
+    m_awsDeviceV2HasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +187,12 @@ JsonValue Interconnect::Jsonize() const
   if(m_awsDeviceHasBeenSet)
   {
    payload.WithString("awsDevice", m_awsDevice);
+
+  }
+
+  if(m_awsDeviceV2HasBeenSet)
+  {
+   payload.WithString("awsDeviceV2", m_awsDeviceV2);
 
   }
 

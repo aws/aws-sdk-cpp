@@ -117,11 +117,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -481,20 +476,18 @@ namespace Model
 
 
         /**
-         * Associates a role with a group. The role will be used by the AWS Greengrass core
-         * in order to access AWS cloud services. The role's permissions will allow
-         * Greengrass core Lambda functions to perform actions against the cloud.<p><h3>See
-         * Also:</h3>   <a
+         * Associates a role with a group. Your AWS Greengrass core will use the role to
+         * access AWS cloud services. The role's permissions should allow Greengrass core
+         * Lambda functions to perform actions against the cloud.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateRoleToGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateRoleToGroupOutcome AssociateRoleToGroup(const Model::AssociateRoleToGroupRequest& request) const;
 
         /**
-         * Associates a role with a group. The role will be used by the AWS Greengrass core
-         * in order to access AWS cloud services. The role's permissions will allow
-         * Greengrass core Lambda functions to perform actions against the cloud.<p><h3>See
-         * Also:</h3>   <a
+         * Associates a role with a group. Your AWS Greengrass core will use the role to
+         * access AWS cloud services. The role's permissions should allow Greengrass core
+         * Lambda functions to perform actions against the cloud.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateRoleToGroup">AWS
          * API Reference</a></p>
          *
@@ -503,10 +496,9 @@ namespace Model
         virtual Model::AssociateRoleToGroupOutcomeCallable AssociateRoleToGroupCallable(const Model::AssociateRoleToGroupRequest& request) const;
 
         /**
-         * Associates a role with a group. The role will be used by the AWS Greengrass core
-         * in order to access AWS cloud services. The role's permissions will allow
-         * Greengrass core Lambda functions to perform actions against the cloud.<p><h3>See
-         * Also:</h3>   <a
+         * Associates a role with a group. Your AWS Greengrass core will use the role to
+         * access AWS cloud services. The role's permissions should allow Greengrass core
+         * Lambda functions to perform actions against the cloud.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateRoleToGroup">AWS
          * API Reference</a></p>
          *
@@ -515,20 +507,20 @@ namespace Model
         virtual void AssociateRoleToGroupAsync(const Model::AssociateRoleToGroupRequest& request, const AssociateRoleToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Associates a role which is used by AWS Greengrass. AWS Greengrass uses the role
-         * to access your Lambda functions and AWS IoT resources. This is necessary for
-         * deployments to succeed. It needs to have minimum permissions in policy
-         * ``AWSGreengrassResourceAccessRolePolicy``<p><h3>See Also:</h3>   <a
+         * Associates a role with your account. AWS Greengrass will use the role to access
+         * your Lambda functions and AWS IoT resources. This is necessary for deployments
+         * to succeed. The role must have at least minimum permissions in the policy
+         * ''AWSGreengrassResourceAccessRolePolicy''.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateServiceRoleToAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateServiceRoleToAccountOutcome AssociateServiceRoleToAccount(const Model::AssociateServiceRoleToAccountRequest& request) const;
 
         /**
-         * Associates a role which is used by AWS Greengrass. AWS Greengrass uses the role
-         * to access your Lambda functions and AWS IoT resources. This is necessary for
-         * deployments to succeed. It needs to have minimum permissions in policy
-         * ``AWSGreengrassResourceAccessRolePolicy``<p><h3>See Also:</h3>   <a
+         * Associates a role with your account. AWS Greengrass will use the role to access
+         * your Lambda functions and AWS IoT resources. This is necessary for deployments
+         * to succeed. The role must have at least minimum permissions in the policy
+         * ''AWSGreengrassResourceAccessRolePolicy''.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateServiceRoleToAccount">AWS
          * API Reference</a></p>
          *
@@ -537,10 +529,10 @@ namespace Model
         virtual Model::AssociateServiceRoleToAccountOutcomeCallable AssociateServiceRoleToAccountCallable(const Model::AssociateServiceRoleToAccountRequest& request) const;
 
         /**
-         * Associates a role which is used by AWS Greengrass. AWS Greengrass uses the role
-         * to access your Lambda functions and AWS IoT resources. This is necessary for
-         * deployments to succeed. It needs to have minimum permissions in policy
-         * ``AWSGreengrassResourceAccessRolePolicy``<p><h3>See Also:</h3>   <a
+         * Associates a role with your account. AWS Greengrass will use the role to access
+         * your Lambda functions and AWS IoT resources. This is necessary for deployments
+         * to succeed. The role must have at least minimum permissions in the policy
+         * ''AWSGreengrassResourceAccessRolePolicy''.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateServiceRoleToAccount">AWS
          * API Reference</a></p>
          *
@@ -549,9 +541,9 @@ namespace Model
         virtual void AssociateServiceRoleToAccountAsync(const Model::AssociateServiceRoleToAccountRequest& request, const AssociateServiceRoleToAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates a core definition. You may optionally provide the initial version of the
-         * core definition or use ''CreateCoreDefinitionVersion'' at a later time. AWS
-         * Greengrass Groups must each contain exactly 1 AWS Greengrass Core.<p><h3>See
+         * Creates a core definition. You may provide the initial version of the core
+         * definition now or use ''CreateCoreDefinitionVersion'' at a later time. AWS
+         * Greengrass groups must each contain exactly one AWS Greengrass core.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinition">AWS
          * API Reference</a></p>
@@ -559,9 +551,9 @@ namespace Model
         virtual Model::CreateCoreDefinitionOutcome CreateCoreDefinition(const Model::CreateCoreDefinitionRequest& request) const;
 
         /**
-         * Creates a core definition. You may optionally provide the initial version of the
-         * core definition or use ''CreateCoreDefinitionVersion'' at a later time. AWS
-         * Greengrass Groups must each contain exactly 1 AWS Greengrass Core.<p><h3>See
+         * Creates a core definition. You may provide the initial version of the core
+         * definition now or use ''CreateCoreDefinitionVersion'' at a later time. AWS
+         * Greengrass groups must each contain exactly one AWS Greengrass core.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinition">AWS
          * API Reference</a></p>
@@ -571,9 +563,9 @@ namespace Model
         virtual Model::CreateCoreDefinitionOutcomeCallable CreateCoreDefinitionCallable(const Model::CreateCoreDefinitionRequest& request) const;
 
         /**
-         * Creates a core definition. You may optionally provide the initial version of the
-         * core definition or use ''CreateCoreDefinitionVersion'' at a later time. AWS
-         * Greengrass Groups must each contain exactly 1 AWS Greengrass Core.<p><h3>See
+         * Creates a core definition. You may provide the initial version of the core
+         * definition now or use ''CreateCoreDefinitionVersion'' at a later time. AWS
+         * Greengrass groups must each contain exactly one AWS Greengrass core.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinition">AWS
          * API Reference</a></p>
@@ -584,7 +576,7 @@ namespace Model
 
         /**
          * Creates a version of a core definition that has already been defined. AWS
-         * Greengrass Groups must each contain exactly 1 AWS Greengrass Core.<p><h3>See
+         * Greengrass groups must each contain exactly one AWS Greengrass core.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinitionVersion">AWS
          * API Reference</a></p>
@@ -593,7 +585,7 @@ namespace Model
 
         /**
          * Creates a version of a core definition that has already been defined. AWS
-         * Greengrass Groups must each contain exactly 1 AWS Greengrass Core.<p><h3>See
+         * Greengrass groups must each contain exactly one AWS Greengrass core.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinitionVersion">AWS
          * API Reference</a></p>
@@ -604,7 +596,7 @@ namespace Model
 
         /**
          * Creates a version of a core definition that has already been defined. AWS
-         * Greengrass Groups must each contain exactly 1 AWS Greengrass Core.<p><h3>See
+         * Greengrass groups must each contain exactly one AWS Greengrass core.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinitionVersion">AWS
          * API Reference</a></p>
@@ -639,8 +631,8 @@ namespace Model
         virtual void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates a device definition. You may optinally provide the initial version of
-         * the device definition or use ``CreateDeviceDefinitionVersion`` at a later
+         * Creates a device definition. You may provide the initial version of the device
+         * definition now or use ''CreateDeviceDefinitionVersion'' at a later
          * time.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinition">AWS
          * API Reference</a></p>
@@ -648,8 +640,8 @@ namespace Model
         virtual Model::CreateDeviceDefinitionOutcome CreateDeviceDefinition(const Model::CreateDeviceDefinitionRequest& request) const;
 
         /**
-         * Creates a device definition. You may optinally provide the initial version of
-         * the device definition or use ``CreateDeviceDefinitionVersion`` at a later
+         * Creates a device definition. You may provide the initial version of the device
+         * definition now or use ''CreateDeviceDefinitionVersion'' at a later
          * time.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinition">AWS
          * API Reference</a></p>
@@ -659,8 +651,8 @@ namespace Model
         virtual Model::CreateDeviceDefinitionOutcomeCallable CreateDeviceDefinitionCallable(const Model::CreateDeviceDefinitionRequest& request) const;
 
         /**
-         * Creates a device definition. You may optinally provide the initial version of
-         * the device definition or use ``CreateDeviceDefinitionVersion`` at a later
+         * Creates a device definition. You may provide the initial version of the device
+         * definition now or use ''CreateDeviceDefinitionVersion'' at a later
          * time.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinition">AWS
          * API Reference</a></p>
@@ -701,7 +693,7 @@ namespace Model
          * Creates a Lambda function definition which contains a list of Lambda functions
          * and their configurations to be used in a group. You can create an initial
          * version of the definition by providing a list of Lambda functions and their
-         * configurations now, or use ``CreateFunctionDefinitionVersion`` later.<p><h3>See
+         * configurations now, or use ''CreateFunctionDefinitionVersion'' later.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinition">AWS
          * API Reference</a></p>
@@ -712,7 +704,7 @@ namespace Model
          * Creates a Lambda function definition which contains a list of Lambda functions
          * and their configurations to be used in a group. You can create an initial
          * version of the definition by providing a list of Lambda functions and their
-         * configurations now, or use ``CreateFunctionDefinitionVersion`` later.<p><h3>See
+         * configurations now, or use ''CreateFunctionDefinitionVersion'' later.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinition">AWS
          * API Reference</a></p>
@@ -725,7 +717,7 @@ namespace Model
          * Creates a Lambda function definition which contains a list of Lambda functions
          * and their configurations to be used in a group. You can create an initial
          * version of the definition by providing a list of Lambda functions and their
-         * configurations now, or use ``CreateFunctionDefinitionVersion`` later.<p><h3>See
+         * configurations now, or use ''CreateFunctionDefinitionVersion'' later.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinition">AWS
          * API Reference</a></p>
@@ -735,7 +727,7 @@ namespace Model
         virtual void CreateFunctionDefinitionAsync(const Model::CreateFunctionDefinitionRequest& request, const CreateFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Create a version of a Lambda function definition that has already been
+         * Creates a version of a Lambda function definition that has already been
          * defined.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinitionVersion">AWS
          * API Reference</a></p>
@@ -743,7 +735,7 @@ namespace Model
         virtual Model::CreateFunctionDefinitionVersionOutcome CreateFunctionDefinitionVersion(const Model::CreateFunctionDefinitionVersionRequest& request) const;
 
         /**
-         * Create a version of a Lambda function definition that has already been
+         * Creates a version of a Lambda function definition that has already been
          * defined.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinitionVersion">AWS
          * API Reference</a></p>
@@ -753,7 +745,7 @@ namespace Model
         virtual Model::CreateFunctionDefinitionVersionOutcomeCallable CreateFunctionDefinitionVersionCallable(const Model::CreateFunctionDefinitionVersionRequest& request) const;
 
         /**
-         * Create a version of a Lambda function definition that has already been
+         * Creates a version of a Lambda function definition that has already been
          * defined.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinitionVersion">AWS
          * API Reference</a></p>
@@ -763,16 +755,16 @@ namespace Model
         virtual void CreateFunctionDefinitionVersionAsync(const Model::CreateFunctionDefinitionVersionRequest& request, const CreateFunctionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates a group. You may optionally provide the initial version of the group or
-         * use ''CreateGroupVersion'' at a later time.<p><h3>See Also:</h3>   <a
+         * Creates a group. You may provide the initial version of the group or use
+         * ''CreateGroupVersion'' at a later time.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
 
         /**
-         * Creates a group. You may optionally provide the initial version of the group or
-         * use ''CreateGroupVersion'' at a later time.<p><h3>See Also:</h3>   <a
+         * Creates a group. You may provide the initial version of the group or use
+         * ''CreateGroupVersion'' at a later time.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroup">AWS
          * API Reference</a></p>
          *
@@ -781,8 +773,8 @@ namespace Model
         virtual Model::CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request) const;
 
         /**
-         * Creates a group. You may optionally provide the initial version of the group or
-         * use ''CreateGroupVersion'' at a later time.<p><h3>See Also:</h3>   <a
+         * Creates a group. You may provide the initial version of the group or use
+         * ''CreateGroupVersion'' at a later time.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroup">AWS
          * API Reference</a></p>
          *
@@ -847,8 +839,8 @@ namespace Model
         virtual void CreateGroupVersionAsync(const Model::CreateGroupVersionRequest& request, const CreateGroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates a logger definition. You may optionally provide the initial version of
-         * the logger definition or use ``CreateLoggerDefinitionVersion`` at a later
+         * Creates a logger definition. You may provide the initial version of the logger
+         * definition now or use ''CreateLoggerDefinitionVersion'' at a later
          * time.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinition">AWS
          * API Reference</a></p>
@@ -856,8 +848,8 @@ namespace Model
         virtual Model::CreateLoggerDefinitionOutcome CreateLoggerDefinition(const Model::CreateLoggerDefinitionRequest& request) const;
 
         /**
-         * Creates a logger definition. You may optionally provide the initial version of
-         * the logger definition or use ``CreateLoggerDefinitionVersion`` at a later
+         * Creates a logger definition. You may provide the initial version of the logger
+         * definition now or use ''CreateLoggerDefinitionVersion'' at a later
          * time.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinition">AWS
          * API Reference</a></p>
@@ -867,8 +859,8 @@ namespace Model
         virtual Model::CreateLoggerDefinitionOutcomeCallable CreateLoggerDefinitionCallable(const Model::CreateLoggerDefinitionRequest& request) const;
 
         /**
-         * Creates a logger definition. You may optionally provide the initial version of
-         * the logger definition or use ``CreateLoggerDefinitionVersion`` at a later
+         * Creates a logger definition. You may provide the initial version of the logger
+         * definition now or use ''CreateLoggerDefinitionVersion'' at a later
          * time.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinition">AWS
          * API Reference</a></p>
@@ -908,7 +900,7 @@ namespace Model
         /**
          * Creates a resource definition which contains a list of resources to be used in a
          * group. You can create an initial version of the definition by providing a list
-         * of resources now, or use ``CreateResourceDefinitionVersion`` later.<p><h3>See
+         * of resources now, or use ''CreateResourceDefinitionVersion'' later.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition">AWS
          * API Reference</a></p>
@@ -918,7 +910,7 @@ namespace Model
         /**
          * Creates a resource definition which contains a list of resources to be used in a
          * group. You can create an initial version of the definition by providing a list
-         * of resources now, or use ``CreateResourceDefinitionVersion`` later.<p><h3>See
+         * of resources now, or use ''CreateResourceDefinitionVersion'' later.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition">AWS
          * API Reference</a></p>
@@ -930,7 +922,7 @@ namespace Model
         /**
          * Creates a resource definition which contains a list of resources to be used in a
          * group. You can create an initial version of the definition by providing a list
-         * of resources now, or use ``CreateResourceDefinitionVersion`` later.<p><h3>See
+         * of resources now, or use ''CreateResourceDefinitionVersion'' later.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition">AWS
          * API Reference</a></p>
@@ -940,7 +932,7 @@ namespace Model
         virtual void CreateResourceDefinitionAsync(const Model::CreateResourceDefinitionRequest& request, const CreateResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Create a version of a resource definition that has already been
+         * Creates a version of a resource definition that has already been
          * defined.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion">AWS
          * API Reference</a></p>
@@ -948,7 +940,7 @@ namespace Model
         virtual Model::CreateResourceDefinitionVersionOutcome CreateResourceDefinitionVersion(const Model::CreateResourceDefinitionVersionRequest& request) const;
 
         /**
-         * Create a version of a resource definition that has already been
+         * Creates a version of a resource definition that has already been
          * defined.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion">AWS
          * API Reference</a></p>
@@ -958,7 +950,7 @@ namespace Model
         virtual Model::CreateResourceDefinitionVersionOutcomeCallable CreateResourceDefinitionVersionCallable(const Model::CreateResourceDefinitionVersionRequest& request) const;
 
         /**
-         * Create a version of a resource definition that has already been
+         * Creates a version of a resource definition that has already been
          * defined.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion">AWS
          * API Reference</a></p>
@@ -968,16 +960,22 @@ namespace Model
         virtual void CreateResourceDefinitionVersionAsync(const Model::CreateResourceDefinitionVersionRequest& request, const CreateResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates an Iot Job that will trigger your Greengrass Cores to update the
-         * software they are running.<p><h3>See Also:</h3>   <a
+         * Creates a software update for a core or group of cores (specified as an IoT
+         * thing group.) Use this to update the OTA Agent as well as the Greengrass core
+         * software. It makes use of the IoT Jobs feature which provides additional
+         * commands to manage a Greengrass core software update job.<p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSoftwareUpdateJobOutcome CreateSoftwareUpdateJob(const Model::CreateSoftwareUpdateJobRequest& request) const;
 
         /**
-         * Creates an Iot Job that will trigger your Greengrass Cores to update the
-         * software they are running.<p><h3>See Also:</h3>   <a
+         * Creates a software update for a core or group of cores (specified as an IoT
+         * thing group.) Use this to update the OTA Agent as well as the Greengrass core
+         * software. It makes use of the IoT Jobs feature which provides additional
+         * commands to manage a Greengrass core software update job.<p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob">AWS
          * API Reference</a></p>
          *
@@ -986,8 +984,11 @@ namespace Model
         virtual Model::CreateSoftwareUpdateJobOutcomeCallable CreateSoftwareUpdateJobCallable(const Model::CreateSoftwareUpdateJobRequest& request) const;
 
         /**
-         * Creates an Iot Job that will trigger your Greengrass Cores to update the
-         * software they are running.<p><h3>See Also:</h3>   <a
+         * Creates a software update for a core or group of cores (specified as an IoT
+         * thing group.) Use this to update the OTA Agent as well as the Greengrass core
+         * software. It makes use of the IoT Jobs feature which provides additional
+         * commands to manage a Greengrass core software update job.<p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob">AWS
          * API Reference</a></p>
          *
@@ -996,20 +997,18 @@ namespace Model
         virtual void CreateSoftwareUpdateJobAsync(const Model::CreateSoftwareUpdateJobRequest& request, const CreateSoftwareUpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates a subscription definition. You may optionally provide the initial
-         * version of the subscription definition or use
-         * ``CreateSubscriptionDefinitionVersion`` at a later time.<p><h3>See Also:</h3>  
-         * <a
+         * Creates a subscription definition. You may provide the initial version of the
+         * subscription definition now or use ''CreateSubscriptionDefinitionVersion'' at a
+         * later time.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSubscriptionDefinitionOutcome CreateSubscriptionDefinition(const Model::CreateSubscriptionDefinitionRequest& request) const;
 
         /**
-         * Creates a subscription definition. You may optionally provide the initial
-         * version of the subscription definition or use
-         * ``CreateSubscriptionDefinitionVersion`` at a later time.<p><h3>See Also:</h3>  
-         * <a
+         * Creates a subscription definition. You may provide the initial version of the
+         * subscription definition now or use ''CreateSubscriptionDefinitionVersion'' at a
+         * later time.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinition">AWS
          * API Reference</a></p>
          *
@@ -1018,10 +1017,9 @@ namespace Model
         virtual Model::CreateSubscriptionDefinitionOutcomeCallable CreateSubscriptionDefinitionCallable(const Model::CreateSubscriptionDefinitionRequest& request) const;
 
         /**
-         * Creates a subscription definition. You may optionally provide the initial
-         * version of the subscription definition or use
-         * ``CreateSubscriptionDefinitionVersion`` at a later time.<p><h3>See Also:</h3>  
-         * <a
+         * Creates a subscription definition. You may provide the initial version of the
+         * subscription definition now or use ''CreateSubscriptionDefinitionVersion'' at a
+         * later time.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinition">AWS
          * API Reference</a></p>
          *
@@ -1058,16 +1056,14 @@ namespace Model
         virtual void CreateSubscriptionDefinitionVersionAsync(const Model::CreateSubscriptionDefinitionVersionRequest& request, const CreateSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes a core definition. The core definition must not have been used in a
-         * deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a core definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteCoreDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteCoreDefinitionOutcome DeleteCoreDefinition(const Model::DeleteCoreDefinitionRequest& request) const;
 
         /**
-         * Deletes a core definition. The core definition must not have been used in a
-         * deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a core definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteCoreDefinition">AWS
          * API Reference</a></p>
          *
@@ -1076,8 +1072,7 @@ namespace Model
         virtual Model::DeleteCoreDefinitionOutcomeCallable DeleteCoreDefinitionCallable(const Model::DeleteCoreDefinitionRequest& request) const;
 
         /**
-         * Deletes a core definition. The core definition must not have been used in a
-         * deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a core definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteCoreDefinition">AWS
          * API Reference</a></p>
          *
@@ -1086,16 +1081,14 @@ namespace Model
         virtual void DeleteCoreDefinitionAsync(const Model::DeleteCoreDefinitionRequest& request, const DeleteCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes a device definition. The device definition must not have been used in a
-         * deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a device definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteDeviceDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDeviceDefinitionOutcome DeleteDeviceDefinition(const Model::DeleteDeviceDefinitionRequest& request) const;
 
         /**
-         * Deletes a device definition. The device definition must not have been used in a
-         * deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a device definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteDeviceDefinition">AWS
          * API Reference</a></p>
          *
@@ -1104,8 +1097,7 @@ namespace Model
         virtual Model::DeleteDeviceDefinitionOutcomeCallable DeleteDeviceDefinitionCallable(const Model::DeleteDeviceDefinitionRequest& request) const;
 
         /**
-         * Deletes a device definition. The device definition must not have been used in a
-         * deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a device definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteDeviceDefinition">AWS
          * API Reference</a></p>
          *
@@ -1114,16 +1106,14 @@ namespace Model
         virtual void DeleteDeviceDefinitionAsync(const Model::DeleteDeviceDefinitionRequest& request, const DeleteDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes a Lambda function definition. The Lambda function definition must not
-         * have been used in a deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a Lambda function definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteFunctionDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteFunctionDefinitionOutcome DeleteFunctionDefinition(const Model::DeleteFunctionDefinitionRequest& request) const;
 
         /**
-         * Deletes a Lambda function definition. The Lambda function definition must not
-         * have been used in a deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a Lambda function definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteFunctionDefinition">AWS
          * API Reference</a></p>
          *
@@ -1132,8 +1122,7 @@ namespace Model
         virtual Model::DeleteFunctionDefinitionOutcomeCallable DeleteFunctionDefinitionCallable(const Model::DeleteFunctionDefinitionRequest& request) const;
 
         /**
-         * Deletes a Lambda function definition. The Lambda function definition must not
-         * have been used in a deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a Lambda function definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteFunctionDefinition">AWS
          * API Reference</a></p>
          *
@@ -1142,16 +1131,14 @@ namespace Model
         virtual void DeleteFunctionDefinitionAsync(const Model::DeleteFunctionDefinitionRequest& request, const DeleteFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes a group. The group must not have been used in deployment.<p><h3>See
-         * Also:</h3>   <a
+         * Deletes a group.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
 
         /**
-         * Deletes a group. The group must not have been used in deployment.<p><h3>See
-         * Also:</h3>   <a
+         * Deletes a group.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteGroup">AWS
          * API Reference</a></p>
          *
@@ -1160,8 +1147,7 @@ namespace Model
         virtual Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request) const;
 
         /**
-         * Deletes a group. The group must not have been used in deployment.<p><h3>See
-         * Also:</h3>   <a
+         * Deletes a group.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteGroup">AWS
          * API Reference</a></p>
          *
@@ -1170,16 +1156,14 @@ namespace Model
         virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes a logger definition. The logger definition must not have been used in a
-         * deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a logger definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteLoggerDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteLoggerDefinitionOutcome DeleteLoggerDefinition(const Model::DeleteLoggerDefinitionRequest& request) const;
 
         /**
-         * Deletes a logger definition. The logger definition must not have been used in a
-         * deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a logger definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteLoggerDefinition">AWS
          * API Reference</a></p>
          *
@@ -1188,8 +1172,7 @@ namespace Model
         virtual Model::DeleteLoggerDefinitionOutcomeCallable DeleteLoggerDefinitionCallable(const Model::DeleteLoggerDefinitionRequest& request) const;
 
         /**
-         * Deletes a logger definition. The logger definition must not have been used in a
-         * deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a logger definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteLoggerDefinition">AWS
          * API Reference</a></p>
          *
@@ -1223,16 +1206,14 @@ namespace Model
         virtual void DeleteResourceDefinitionAsync(const Model::DeleteResourceDefinitionRequest& request, const DeleteResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Deletes a subscription definition. The subscription definition must not have
-         * been used in a deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a subscription definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteSubscriptionDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteSubscriptionDefinitionOutcome DeleteSubscriptionDefinition(const Model::DeleteSubscriptionDefinitionRequest& request) const;
 
         /**
-         * Deletes a subscription definition. The subscription definition must not have
-         * been used in a deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a subscription definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteSubscriptionDefinition">AWS
          * API Reference</a></p>
          *
@@ -1241,8 +1222,7 @@ namespace Model
         virtual Model::DeleteSubscriptionDefinitionOutcomeCallable DeleteSubscriptionDefinitionCallable(const Model::DeleteSubscriptionDefinitionRequest& request) const;
 
         /**
-         * Deletes a subscription definition. The subscription definition must not have
-         * been used in a deployment.<p><h3>See Also:</h3>   <a
+         * Deletes a subscription definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteSubscriptionDefinition">AWS
          * API Reference</a></p>
          *
@@ -1276,7 +1256,7 @@ namespace Model
         virtual void DisassociateRoleFromGroupAsync(const Model::DisassociateRoleFromGroupRequest& request, const DisassociateRoleFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Disassociates the service role from the account. Without a service role,
+         * Disassociates the service role from your account. Without a service role,
          * deployments will not work.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateServiceRoleFromAccount">AWS
          * API Reference</a></p>
@@ -1284,7 +1264,7 @@ namespace Model
         virtual Model::DisassociateServiceRoleFromAccountOutcome DisassociateServiceRoleFromAccount(const Model::DisassociateServiceRoleFromAccountRequest& request) const;
 
         /**
-         * Disassociates the service role from the account. Without a service role,
+         * Disassociates the service role from your account. Without a service role,
          * deployments will not work.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateServiceRoleFromAccount">AWS
          * API Reference</a></p>
@@ -1294,7 +1274,7 @@ namespace Model
         virtual Model::DisassociateServiceRoleFromAccountOutcomeCallable DisassociateServiceRoleFromAccountCallable(const Model::DisassociateServiceRoleFromAccountRequest& request) const;
 
         /**
-         * Disassociates the service role from the account. Without a service role,
+         * Disassociates the service role from your account. Without a service role,
          * deployments will not work.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateServiceRoleFromAccount">AWS
          * API Reference</a></p>
@@ -1482,7 +1462,7 @@ namespace Model
         virtual void GetDeviceDefinitionVersionAsync(const Model::GetDeviceDefinitionVersionRequest& request, const GetDeviceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Retrieves information about a Lambda function definition, such as its creation
+         * Retrieves information about a Lambda function definition, including its creation
          * time and latest version.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinition">AWS
          * API Reference</a></p>
@@ -1490,7 +1470,7 @@ namespace Model
         virtual Model::GetFunctionDefinitionOutcome GetFunctionDefinition(const Model::GetFunctionDefinitionRequest& request) const;
 
         /**
-         * Retrieves information about a Lambda function definition, such as its creation
+         * Retrieves information about a Lambda function definition, including its creation
          * time and latest version.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinition">AWS
          * API Reference</a></p>
@@ -1500,7 +1480,7 @@ namespace Model
         virtual Model::GetFunctionDefinitionOutcomeCallable GetFunctionDefinitionCallable(const Model::GetFunctionDefinitionRequest& request) const;
 
         /**
-         * Retrieves information about a Lambda function definition, such as its creation
+         * Retrieves information about a Lambda function definition, including its creation
          * time and latest version.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinition">AWS
          * API Reference</a></p>
@@ -1510,18 +1490,18 @@ namespace Model
         virtual void GetFunctionDefinitionAsync(const Model::GetFunctionDefinitionRequest& request, const GetFunctionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Retrieves information about a Lambda function definition version, such as which
-         * Lambda functions are included in the version and their configurations.<p><h3>See
-         * Also:</h3>   <a
+         * Retrieves information about a Lambda function definition version, including
+         * which Lambda functions are included in the version and their
+         * configurations.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinitionVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::GetFunctionDefinitionVersionOutcome GetFunctionDefinitionVersion(const Model::GetFunctionDefinitionVersionRequest& request) const;
 
         /**
-         * Retrieves information about a Lambda function definition version, such as which
-         * Lambda functions are included in the version and their configurations.<p><h3>See
-         * Also:</h3>   <a
+         * Retrieves information about a Lambda function definition version, including
+         * which Lambda functions are included in the version and their
+         * configurations.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinitionVersion">AWS
          * API Reference</a></p>
          *
@@ -1530,9 +1510,9 @@ namespace Model
         virtual Model::GetFunctionDefinitionVersionOutcomeCallable GetFunctionDefinitionVersionCallable(const Model::GetFunctionDefinitionVersionRequest& request) const;
 
         /**
-         * Retrieves information about a Lambda function definition version, such as which
-         * Lambda functions are included in the version and their configurations.<p><h3>See
-         * Also:</h3>   <a
+         * Retrieves information about a Lambda function definition version, including
+         * which Lambda functions are included in the version and their
+         * configurations.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinitionVersion">AWS
          * API Reference</a></p>
          *
@@ -1700,16 +1680,16 @@ namespace Model
         virtual void GetLoggerDefinitionVersionAsync(const Model::GetLoggerDefinitionVersionRequest& request, const GetLoggerDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Retrieves information about a resource definition, such as its creation time and
-         * latest version.<p><h3>See Also:</h3>   <a
+         * Retrieves information about a resource definition, including its creation time
+         * and latest version.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::GetResourceDefinitionOutcome GetResourceDefinition(const Model::GetResourceDefinitionRequest& request) const;
 
         /**
-         * Retrieves information about a resource definition, such as its creation time and
-         * latest version.<p><h3>See Also:</h3>   <a
+         * Retrieves information about a resource definition, including its creation time
+         * and latest version.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition">AWS
          * API Reference</a></p>
          *
@@ -1718,8 +1698,8 @@ namespace Model
         virtual Model::GetResourceDefinitionOutcomeCallable GetResourceDefinitionCallable(const Model::GetResourceDefinitionRequest& request) const;
 
         /**
-         * Retrieves information about a resource definition, such as its creation time and
-         * latest version.<p><h3>See Also:</h3>   <a
+         * Retrieves information about a resource definition, including its creation time
+         * and latest version.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition">AWS
          * API Reference</a></p>
          *
@@ -1728,7 +1708,7 @@ namespace Model
         virtual void GetResourceDefinitionAsync(const Model::GetResourceDefinitionRequest& request, const GetResourceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Retrieves information about a resource definition version, such as which
+         * Retrieves information about a resource definition version, including which
          * resources are included in the version.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion">AWS
          * API Reference</a></p>
@@ -1736,7 +1716,7 @@ namespace Model
         virtual Model::GetResourceDefinitionVersionOutcome GetResourceDefinitionVersion(const Model::GetResourceDefinitionVersionRequest& request) const;
 
         /**
-         * Retrieves information about a resource definition version, such as which
+         * Retrieves information about a resource definition version, including which
          * resources are included in the version.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion">AWS
          * API Reference</a></p>
@@ -1746,7 +1726,7 @@ namespace Model
         virtual Model::GetResourceDefinitionVersionOutcomeCallable GetResourceDefinitionVersionCallable(const Model::GetResourceDefinitionVersionRequest& request) const;
 
         /**
-         * Retrieves information about a resource definition version, such as which
+         * Retrieves information about a resource definition version, including which
          * resources are included in the version.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion">AWS
          * API Reference</a></p>
@@ -1756,16 +1736,16 @@ namespace Model
         virtual void GetResourceDefinitionVersionAsync(const Model::GetResourceDefinitionVersionRequest& request, const GetResourceDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Retrieves the service role that is attached to the account.<p><h3>See Also:</h3>
-         * <a
+         * Retrieves the service role that is attached to your account.<p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetServiceRoleForAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::GetServiceRoleForAccountOutcome GetServiceRoleForAccount(const Model::GetServiceRoleForAccountRequest& request) const;
 
         /**
-         * Retrieves the service role that is attached to the account.<p><h3>See Also:</h3>
-         * <a
+         * Retrieves the service role that is attached to your account.<p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetServiceRoleForAccount">AWS
          * API Reference</a></p>
          *
@@ -1774,8 +1754,8 @@ namespace Model
         virtual Model::GetServiceRoleForAccountOutcomeCallable GetServiceRoleForAccountCallable(const Model::GetServiceRoleForAccountRequest& request) const;
 
         /**
-         * Retrieves the service role that is attached to the account.<p><h3>See Also:</h3>
-         * <a
+         * Retrieves the service role that is attached to your account.<p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetServiceRoleForAccount">AWS
          * API Reference</a></p>
          *
@@ -1837,14 +1817,14 @@ namespace Model
         virtual void GetSubscriptionDefinitionVersionAsync(const Model::GetSubscriptionDefinitionVersionRequest& request, const GetSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Lists versions of a core definition.<p><h3>See Also:</h3>   <a
+         * Lists the versions of a core definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitionVersions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListCoreDefinitionVersionsOutcome ListCoreDefinitionVersions(const Model::ListCoreDefinitionVersionsRequest& request) const;
 
         /**
-         * Lists versions of a core definition.<p><h3>See Also:</h3>   <a
+         * Lists the versions of a core definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitionVersions">AWS
          * API Reference</a></p>
          *
@@ -1853,7 +1833,7 @@ namespace Model
         virtual Model::ListCoreDefinitionVersionsOutcomeCallable ListCoreDefinitionVersionsCallable(const Model::ListCoreDefinitionVersionsRequest& request) const;
 
         /**
-         * Lists versions of a core definition.<p><h3>See Also:</h3>   <a
+         * Lists the versions of a core definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitionVersions">AWS
          * API Reference</a></p>
          *
@@ -2037,14 +2017,14 @@ namespace Model
         virtual void ListGroupCertificateAuthoritiesAsync(const Model::ListGroupCertificateAuthoritiesRequest& request, const ListGroupCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * List the versions of a group.<p><h3>See Also:</h3>   <a
+         * Lists the versions of a group.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupVersions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListGroupVersionsOutcome ListGroupVersions(const Model::ListGroupVersionsRequest& request) const;
 
         /**
-         * List the versions of a group.<p><h3>See Also:</h3>   <a
+         * Lists the versions of a group.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupVersions">AWS
          * API Reference</a></p>
          *
@@ -2053,7 +2033,7 @@ namespace Model
         virtual Model::ListGroupVersionsOutcomeCallable ListGroupVersionsCallable(const Model::ListGroupVersionsRequest& request) const;
 
         /**
-         * List the versions of a group.<p><h3>See Also:</h3>   <a
+         * Lists the versions of a group.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupVersions">AWS
          * API Reference</a></p>
          *
@@ -2393,14 +2373,14 @@ namespace Model
         virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Updates the Cert expiry time for a group.<p><h3>See Also:</h3>   <a
+         * Updates the Certificate expiry time for a group.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroupCertificateConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateGroupCertificateConfigurationOutcome UpdateGroupCertificateConfiguration(const Model::UpdateGroupCertificateConfigurationRequest& request) const;
 
         /**
-         * Updates the Cert expiry time for a group.<p><h3>See Also:</h3>   <a
+         * Updates the Certificate expiry time for a group.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroupCertificateConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2409,7 +2389,7 @@ namespace Model
         virtual Model::UpdateGroupCertificateConfigurationOutcomeCallable UpdateGroupCertificateConfigurationCallable(const Model::UpdateGroupCertificateConfigurationRequest& request) const;
 
         /**
-         * Updates the Cert expiry time for a group.<p><h3>See Also:</h3>   <a
+         * Updates the Certificate expiry time for a group.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroupCertificateConfiguration">AWS
          * API Reference</a></p>
          *

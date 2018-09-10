@@ -35,6 +35,9 @@ Channel::Channel() :
     m_encoderSettingsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_inputAttachmentsHasBeenSet(false),
+    m_inputSpecificationHasBeenSet(false),
+    m_logLevel(LogLevel::NOT_SET),
+    m_logLevelHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_pipelinesRunningCount(0),
     m_pipelinesRunningCountHasBeenSet(false),
@@ -44,13 +47,16 @@ Channel::Channel() :
 {
 }
 
-Channel::Channel(const JsonValue& jsonValue) : 
+Channel::Channel(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_egressEndpointsHasBeenSet(false),
     m_encoderSettingsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_inputAttachmentsHasBeenSet(false),
+    m_inputSpecificationHasBeenSet(false),
+    m_logLevel(LogLevel::NOT_SET),
+    m_logLevelHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_pipelinesRunningCount(0),
     m_pipelinesRunningCountHasBeenSet(false),
@@ -61,7 +67,7 @@ Channel::Channel(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Channel& Channel::operator =(const JsonValue& jsonValue)
+Channel& Channel::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -72,7 +78,7 @@ Channel& Channel::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("destinations"))
   {
-    Array<JsonValue> destinationsJsonList = jsonValue.GetArray("destinations");
+    Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
@@ -82,7 +88,7 @@ Channel& Channel::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("egressEndpoints"))
   {
-    Array<JsonValue> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");
+    Array<JsonView> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");
     for(unsigned egressEndpointsIndex = 0; egressEndpointsIndex < egressEndpointsJsonList.GetLength(); ++egressEndpointsIndex)
     {
       m_egressEndpoints.push_back(egressEndpointsJsonList[egressEndpointsIndex].AsObject());
@@ -106,12 +112,26 @@ Channel& Channel::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("inputAttachments"))
   {
-    Array<JsonValue> inputAttachmentsJsonList = jsonValue.GetArray("inputAttachments");
+    Array<JsonView> inputAttachmentsJsonList = jsonValue.GetArray("inputAttachments");
     for(unsigned inputAttachmentsIndex = 0; inputAttachmentsIndex < inputAttachmentsJsonList.GetLength(); ++inputAttachmentsIndex)
     {
       m_inputAttachments.push_back(inputAttachmentsJsonList[inputAttachmentsIndex].AsObject());
     }
     m_inputAttachmentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputSpecification"))
+  {
+    m_inputSpecification = jsonValue.GetObject("inputSpecification");
+
+    m_inputSpecificationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("logLevel"))
+  {
+    m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("logLevel"));
+
+    m_logLevelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -198,6 +218,17 @@ JsonValue Channel::Jsonize() const
    }
    payload.WithArray("inputAttachments", std::move(inputAttachmentsJsonList));
 
+  }
+
+  if(m_inputSpecificationHasBeenSet)
+  {
+   payload.WithObject("inputSpecification", m_inputSpecification.Jsonize());
+
+  }
+
+  if(m_logLevelHasBeenSet)
+  {
+   payload.WithString("logLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
   }
 
   if(m_nameHasBeenSet)

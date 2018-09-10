@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the directory configuration.</p>
+     * <p>Information about the Directory Config object.</p>
      */
     inline const DirectoryConfig& GetDirectoryConfig() const{ return m_directoryConfig; }
 
     /**
-     * <p>Information about the directory configuration.</p>
+     * <p>Information about the Directory Config object.</p>
      */
     inline void SetDirectoryConfig(const DirectoryConfig& value) { m_directoryConfig = value; }
 
     /**
-     * <p>Information about the directory configuration.</p>
+     * <p>Information about the Directory Config object.</p>
      */
     inline void SetDirectoryConfig(DirectoryConfig&& value) { m_directoryConfig = std::move(value); }
 
     /**
-     * <p>Information about the directory configuration.</p>
+     * <p>Information about the Directory Config object.</p>
      */
     inline UpdateDirectoryConfigResult& WithDirectoryConfig(const DirectoryConfig& value) { SetDirectoryConfig(value); return *this;}
 
     /**
-     * <p>Information about the directory configuration.</p>
+     * <p>Information about the Directory Config object.</p>
      */
     inline UpdateDirectoryConfigResult& WithDirectoryConfig(DirectoryConfig&& value) { SetDirectoryConfig(std::move(value)); return *this;}
 

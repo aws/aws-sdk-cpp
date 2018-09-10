@@ -30,12 +30,14 @@
 #include <aws/guardduty/model/AcceptInvitationRequest.h>
 #include <aws/guardduty/model/ArchiveFindingsRequest.h>
 #include <aws/guardduty/model/CreateDetectorRequest.h>
+#include <aws/guardduty/model/CreateFilterRequest.h>
 #include <aws/guardduty/model/CreateIPSetRequest.h>
 #include <aws/guardduty/model/CreateMembersRequest.h>
 #include <aws/guardduty/model/CreateSampleFindingsRequest.h>
 #include <aws/guardduty/model/CreateThreatIntelSetRequest.h>
 #include <aws/guardduty/model/DeclineInvitationsRequest.h>
 #include <aws/guardduty/model/DeleteDetectorRequest.h>
+#include <aws/guardduty/model/DeleteFilterRequest.h>
 #include <aws/guardduty/model/DeleteIPSetRequest.h>
 #include <aws/guardduty/model/DeleteInvitationsRequest.h>
 #include <aws/guardduty/model/DeleteMembersRequest.h>
@@ -43,6 +45,7 @@
 #include <aws/guardduty/model/DisassociateFromMasterAccountRequest.h>
 #include <aws/guardduty/model/DisassociateMembersRequest.h>
 #include <aws/guardduty/model/GetDetectorRequest.h>
+#include <aws/guardduty/model/GetFilterRequest.h>
 #include <aws/guardduty/model/GetFindingsRequest.h>
 #include <aws/guardduty/model/GetFindingsStatisticsRequest.h>
 #include <aws/guardduty/model/GetIPSetRequest.h>
@@ -52,6 +55,7 @@
 #include <aws/guardduty/model/GetThreatIntelSetRequest.h>
 #include <aws/guardduty/model/InviteMembersRequest.h>
 #include <aws/guardduty/model/ListDetectorsRequest.h>
+#include <aws/guardduty/model/ListFiltersRequest.h>
 #include <aws/guardduty/model/ListFindingsRequest.h>
 #include <aws/guardduty/model/ListIPSetsRequest.h>
 #include <aws/guardduty/model/ListInvitationsRequest.h>
@@ -61,6 +65,7 @@
 #include <aws/guardduty/model/StopMonitoringMembersRequest.h>
 #include <aws/guardduty/model/UnarchiveFindingsRequest.h>
 #include <aws/guardduty/model/UpdateDetectorRequest.h>
+#include <aws/guardduty/model/UpdateFilterRequest.h>
 #include <aws/guardduty/model/UpdateFindingsFeedbackRequest.h>
 #include <aws/guardduty/model/UpdateIPSetRequest.h>
 #include <aws/guardduty/model/UpdateThreatIntelSetRequest.h>
@@ -236,6 +241,43 @@ void GuardDutyClient::CreateDetectorAsync(const CreateDetectorRequest& request, 
 void GuardDutyClient::CreateDetectorAsyncHelper(const CreateDetectorRequest& request, const CreateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateDetector(request), context);
+}
+
+CreateFilterOutcome GuardDutyClient::CreateFilter(const CreateFilterRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/detector/";
+  ss << request.GetDetectorId();
+  ss << "/filter";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateFilterOutcome(CreateFilterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateFilterOutcome(outcome.GetError());
+  }
+}
+
+CreateFilterOutcomeCallable GuardDutyClient::CreateFilterCallable(const CreateFilterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFilterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFilter(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::CreateFilterAsync(const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFilterAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::CreateFilterAsyncHelper(const CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFilter(request), context);
 }
 
 CreateIPSetOutcome GuardDutyClient::CreateIPSet(const CreateIPSetRequest& request) const
@@ -455,6 +497,44 @@ void GuardDutyClient::DeleteDetectorAsync(const DeleteDetectorRequest& request, 
 void GuardDutyClient::DeleteDetectorAsyncHelper(const DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDetector(request), context);
+}
+
+DeleteFilterOutcome GuardDutyClient::DeleteFilter(const DeleteFilterRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/detector/";
+  ss << request.GetDetectorId();
+  ss << "/filter/";
+  ss << request.GetFilterName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteFilterOutcome(DeleteFilterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteFilterOutcome(outcome.GetError());
+  }
+}
+
+DeleteFilterOutcomeCallable GuardDutyClient::DeleteFilterCallable(const DeleteFilterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFilterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFilter(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::DeleteFilterAsync(const DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFilterAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::DeleteFilterAsyncHelper(const DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFilter(request), context);
 }
 
 DeleteIPSetOutcome GuardDutyClient::DeleteIPSet(const DeleteIPSetRequest& request) const
@@ -713,6 +793,44 @@ void GuardDutyClient::GetDetectorAsync(const GetDetectorRequest& request, const 
 void GuardDutyClient::GetDetectorAsyncHelper(const GetDetectorRequest& request, const GetDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDetector(request), context);
+}
+
+GetFilterOutcome GuardDutyClient::GetFilter(const GetFilterRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/detector/";
+  ss << request.GetDetectorId();
+  ss << "/filter/";
+  ss << request.GetFilterName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetFilterOutcome(GetFilterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetFilterOutcome(outcome.GetError());
+  }
+}
+
+GetFilterOutcomeCallable GuardDutyClient::GetFilterCallable(const GetFilterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFilterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFilter(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::GetFilterAsync(const GetFilterRequest& request, const GetFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFilterAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::GetFilterAsyncHelper(const GetFilterRequest& request, const GetFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFilter(request), context);
 }
 
 GetFindingsOutcome GuardDutyClient::GetFindings(const GetFindingsRequest& request) const
@@ -1046,6 +1164,43 @@ void GuardDutyClient::ListDetectorsAsyncHelper(const ListDetectorsRequest& reque
   handler(this, request, ListDetectors(request), context);
 }
 
+ListFiltersOutcome GuardDutyClient::ListFilters(const ListFiltersRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/detector/";
+  ss << request.GetDetectorId();
+  ss << "/filter";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListFiltersOutcome(ListFiltersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListFiltersOutcome(outcome.GetError());
+  }
+}
+
+ListFiltersOutcomeCallable GuardDutyClient::ListFiltersCallable(const ListFiltersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFiltersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFilters(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::ListFiltersAsync(const ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFiltersAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::ListFiltersAsyncHelper(const ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFilters(request), context);
+}
+
 ListFindingsOutcome GuardDutyClient::ListFindings(const ListFindingsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1374,6 +1529,44 @@ void GuardDutyClient::UpdateDetectorAsync(const UpdateDetectorRequest& request, 
 void GuardDutyClient::UpdateDetectorAsyncHelper(const UpdateDetectorRequest& request, const UpdateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDetector(request), context);
+}
+
+UpdateFilterOutcome GuardDutyClient::UpdateFilter(const UpdateFilterRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/detector/";
+  ss << request.GetDetectorId();
+  ss << "/filter/";
+  ss << request.GetFilterName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateFilterOutcome(UpdateFilterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateFilterOutcome(outcome.GetError());
+  }
+}
+
+UpdateFilterOutcomeCallable GuardDutyClient::UpdateFilterCallable(const UpdateFilterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFilterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFilter(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::UpdateFilterAsync(const UpdateFilterRequest& request, const UpdateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFilterAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::UpdateFilterAsyncHelper(const UpdateFilterRequest& request, const UpdateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFilter(request), context);
 }
 
 UpdateFindingsFeedbackOutcome GuardDutyClient::UpdateFindingsFeedback(const UpdateFindingsFeedbackRequest& request) const

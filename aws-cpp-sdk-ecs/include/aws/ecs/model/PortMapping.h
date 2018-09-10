@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     PortMapping();
-    PortMapping(const Aws::Utils::Json::JsonValue& jsonValue);
-    PortMapping& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PortMapping(Aws::Utils::Json::JsonView jsonValue);
+    PortMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -98,7 +99,7 @@ namespace Model
      * <p>The port number on the container instance to reserve for your container.</p>
      * <p>If using containers in a task with the <code>awsvpc</code> or
      * <code>host</code> network mode, the <code>hostPort</code> can either be left
-     * blank or needs to be the same value as the <code>containerPort</code>.</p> <p>If
+     * blank or set to the same value as the <code>containerPort</code>.</p> <p>If
      * using containers in a task with the <code>bridge</code> network mode, you can
      * specify a non-reserved host port for your container port mapping, or you can
      * omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying a
@@ -128,7 +129,7 @@ namespace Model
      * <p>The port number on the container instance to reserve for your container.</p>
      * <p>If using containers in a task with the <code>awsvpc</code> or
      * <code>host</code> network mode, the <code>hostPort</code> can either be left
-     * blank or needs to be the same value as the <code>containerPort</code>.</p> <p>If
+     * blank or set to the same value as the <code>containerPort</code>.</p> <p>If
      * using containers in a task with the <code>bridge</code> network mode, you can
      * specify a non-reserved host port for your container port mapping, or you can
      * omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying a
@@ -158,7 +159,7 @@ namespace Model
      * <p>The port number on the container instance to reserve for your container.</p>
      * <p>If using containers in a task with the <code>awsvpc</code> or
      * <code>host</code> network mode, the <code>hostPort</code> can either be left
-     * blank or needs to be the same value as the <code>containerPort</code>.</p> <p>If
+     * blank or set to the same value as the <code>containerPort</code>.</p> <p>If
      * using containers in a task with the <code>bridge</code> network mode, you can
      * specify a non-reserved host port for your container port mapping, or you can
      * omit the <code>hostPort</code> (or set it to <code>0</code>) while specifying a

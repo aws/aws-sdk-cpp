@@ -369,7 +369,8 @@ namespace Model
      * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
      * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
      * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     * use the Python runtime v3.6, set the value to "python3.6".</p> <note> <p>Node
+     * use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
+     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".</p> <note> <p>Node
      * v0.10.42 is currently marked as deprecated. You must migrate existing functions
      * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
      * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
@@ -384,7 +385,8 @@ namespace Model
      * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
      * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
      * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     * use the Python runtime v3.6, set the value to "python3.6".</p> <note> <p>Node
+     * use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
+     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".</p> <note> <p>Node
      * v0.10.42 is currently marked as deprecated. You must migrate existing functions
      * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
      * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
@@ -399,7 +401,8 @@ namespace Model
      * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
      * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
      * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     * use the Python runtime v3.6, set the value to "python3.6".</p> <note> <p>Node
+     * use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
+     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".</p> <note> <p>Node
      * v0.10.42 is currently marked as deprecated. You must migrate existing functions
      * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
      * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
@@ -414,7 +417,8 @@ namespace Model
      * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
      * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
      * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     * use the Python runtime v3.6, set the value to "python3.6".</p> <note> <p>Node
+     * use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
+     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".</p> <note> <p>Node
      * v0.10.42 is currently marked as deprecated. You must migrate existing functions
      * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
      * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
@@ -429,7 +433,8 @@ namespace Model
      * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
      * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
      * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     * use the Python runtime v3.6, set the value to "python3.6".</p> <note> <p>Node
+     * use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
+     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".</p> <note> <p>Node
      * v0.10.42 is currently marked as deprecated. You must migrate existing functions
      * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
      * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
@@ -442,31 +447,31 @@ namespace Model
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::move(value); }
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline UpdateFunctionConfigurationRequest& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline UpdateFunctionConfigurationRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
 
@@ -546,6 +551,70 @@ namespace Model
      */
     inline UpdateFunctionConfigurationRequest& WithTracingConfig(TracingConfig&& value) { SetTracingConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional value you can use to ensure you are updating the latest update of
+     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
+     * match the latest <code>RevisionId</code> of the function or alias, it will fail
+     * with an error message, advising you to retrieve the latest function version or
+     * alias <code>RevisionID</code> using either or .</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -583,6 +652,9 @@ namespace Model
 
     TracingConfig m_tracingConfig;
     bool m_tracingConfigHasBeenSet;
+
+    Aws::String m_revisionId;
+    bool m_revisionIdHasBeenSet;
   };
 
 } // namespace Model

@@ -37,7 +37,7 @@ GetFacetResult::GetFacetResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 
 GetFacetResult& GetFacetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Facet"))
   {
     m_facet = jsonValue.GetObject("Facet");

@@ -35,6 +35,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Snowball
@@ -54,8 +55,8 @@ namespace Model
   {
   public:
     JobMetadata();
-    JobMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobMetadata(Aws::Utils::Json::JsonView jsonValue);
+    JobMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -155,27 +156,27 @@ namespace Model
 
 
     /**
-     * <p>The type of appliance used with this job.</p>
+     * <p>The type of device used with this job.</p>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of appliance used with this job.</p>
+     * <p>The type of device used with this job.</p>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of appliance used with this job.</p>
+     * <p>The type of device used with this job.</p>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of appliance used with this job.</p>
+     * <p>The type of device used with this job.</p>
      */
     inline JobMetadata& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of appliance used with this job.</p>
+     * <p>The type of device used with this job.</p>
      */
     inline JobMetadata& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
@@ -531,7 +532,7 @@ namespace Model
 
     /**
      * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the appliance is at AWS. This data is only available while a job has a
+     * the device is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
@@ -539,7 +540,7 @@ namespace Model
 
     /**
      * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the appliance is at AWS. This data is only available while a job has a
+     * the device is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
@@ -547,7 +548,7 @@ namespace Model
 
     /**
      * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the appliance is at AWS. This data is only available while a job has a
+     * the device is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
@@ -555,7 +556,7 @@ namespace Model
 
     /**
      * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the appliance is at AWS. This data is only available while a job has a
+     * the device is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
@@ -563,7 +564,7 @@ namespace Model
 
     /**
      * <p>A value that defines the real-time status of a Snowball's data transfer while
-     * the appliance is at AWS. This data is only available while a job has a
+     * the device is at AWS. This data is only available while a job has a
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */

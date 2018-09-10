@@ -37,7 +37,7 @@ ListByteMatchSetsResult::ListByteMatchSetsResult(const Aws::AmazonWebServiceResu
 
 ListByteMatchSetsResult& ListByteMatchSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListByteMatchSetsResult& ListByteMatchSetsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("ByteMatchSets"))
   {
-    Array<JsonValue> byteMatchSetsJsonList = jsonValue.GetArray("ByteMatchSets");
+    Array<JsonView> byteMatchSetsJsonList = jsonValue.GetArray("ByteMatchSets");
     for(unsigned byteMatchSetsIndex = 0; byteMatchSetsIndex < byteMatchSetsJsonList.GetLength(); ++byteMatchSetsIndex)
     {
       m_byteMatchSets.push_back(byteMatchSetsJsonList[byteMatchSetsIndex].AsObject());

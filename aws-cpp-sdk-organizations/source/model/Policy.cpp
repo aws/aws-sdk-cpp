@@ -34,14 +34,14 @@ Policy::Policy() :
 {
 }
 
-Policy::Policy(const JsonValue& jsonValue) : 
+Policy::Policy(JsonView jsonValue) : 
     m_policySummaryHasBeenSet(false),
     m_contentHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Policy& Policy::operator =(const JsonValue& jsonValue)
+Policy& Policy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PolicySummary"))
   {

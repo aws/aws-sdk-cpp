@@ -42,7 +42,7 @@ S3Location::S3Location() :
 {
 }
 
-S3Location::S3Location(const JsonValue& jsonValue) : 
+S3Location::S3Location(JsonView jsonValue) : 
     m_bucketNameHasBeenSet(false),
     m_prefixHasBeenSet(false),
     m_encryptionHasBeenSet(false),
@@ -57,7 +57,7 @@ S3Location::S3Location(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-S3Location& S3Location::operator =(const JsonValue& jsonValue)
+S3Location& S3Location::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BucketName"))
   {
@@ -89,7 +89,7 @@ S3Location& S3Location::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AccessControlList"))
   {
-    Array<JsonValue> accessControlListJsonList = jsonValue.GetArray("AccessControlList");
+    Array<JsonView> accessControlListJsonList = jsonValue.GetArray("AccessControlList");
     for(unsigned accessControlListIndex = 0; accessControlListIndex < accessControlListJsonList.GetLength(); ++accessControlListIndex)
     {
       m_accessControlList.push_back(accessControlListJsonList[accessControlListIndex].AsObject());
@@ -99,7 +99,7 @@ S3Location& S3Location::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Tagging"))
   {
-    Aws::Map<Aws::String, JsonValue> taggingJsonMap = jsonValue.GetObject("Tagging").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> taggingJsonMap = jsonValue.GetObject("Tagging").GetAllObjects();
     for(auto& taggingItem : taggingJsonMap)
     {
       m_tagging[taggingItem.first] = taggingItem.second.AsString();
@@ -109,7 +109,7 @@ S3Location& S3Location::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("UserMetadata"))
   {
-    Aws::Map<Aws::String, JsonValue> userMetadataJsonMap = jsonValue.GetObject("UserMetadata").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> userMetadataJsonMap = jsonValue.GetObject("UserMetadata").GetAllObjects();
     for(auto& userMetadataItem : userMetadataJsonMap)
     {
       m_userMetadata[userMetadataItem.first] = userMetadataItem.second.AsString();

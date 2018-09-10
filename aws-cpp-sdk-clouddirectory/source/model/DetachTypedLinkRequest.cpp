@@ -39,7 +39,7 @@ Aws::String DetachTypedLinkRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DetachTypedLinkRequest::GetRequestSpecificHeaders() const
@@ -49,7 +49,7 @@ Aws::Http::HeaderValueCollection DetachTypedLinkRequest::GetRequestSpecificHeade
   if(m_directoryArnHasBeenSet)
   {
     ss << m_directoryArn;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-data-partition", ss.str()));
+    headers.emplace("x-amz-data-partition",  ss.str());
     ss.str("");
   }
 

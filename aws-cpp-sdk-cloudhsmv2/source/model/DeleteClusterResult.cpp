@@ -37,7 +37,7 @@ DeleteClusterResult::DeleteClusterResult(const Aws::AmazonWebServiceResult<JsonV
 
 DeleteClusterResult& DeleteClusterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Cluster"))
   {
     m_cluster = jsonValue.GetObject("Cluster");

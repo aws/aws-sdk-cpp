@@ -37,7 +37,7 @@ Aws::String EnableKeyRotationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection EnableKeyRotationRequest::GetRequestSpecificHeaders() const

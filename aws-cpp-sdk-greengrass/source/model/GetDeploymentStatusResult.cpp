@@ -39,7 +39,7 @@ GetDeploymentStatusResult::GetDeploymentStatusResult(const Aws::AmazonWebService
 
 GetDeploymentStatusResult& GetDeploymentStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeploymentStatus"))
   {
     m_deploymentStatus = jsonValue.GetString("DeploymentStatus");
@@ -54,7 +54,7 @@ GetDeploymentStatusResult& GetDeploymentStatusResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ErrorDetails"))
   {
-    Array<JsonValue> errorDetailsJsonList = jsonValue.GetArray("ErrorDetails");
+    Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("ErrorDetails");
     for(unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex)
     {
       m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsObject());

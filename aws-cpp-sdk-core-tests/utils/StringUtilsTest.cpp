@@ -26,13 +26,116 @@ using namespace Aws::Utils;
 TEST(StringUtilsTest, TestSplitHappyPath)
 {
     Aws::String toSplit = "test1,test2,test3,test4";
-    Aws::Vector<Aws::String> splits = StringUtils::Split(toSplit, ',');
 
+    Aws::Vector<Aws::String> splits = StringUtils::Split(toSplit, ',');
     ASSERT_EQ(4uL, splits.size());
     EXPECT_STREQ("test1", splits[0].c_str());
     EXPECT_STREQ("test2", splits[1].c_str());
     EXPECT_STREQ("test3", splits[2].c_str());
     EXPECT_STREQ("test4", splits[3].c_str());
+
+    Aws::Vector<Aws::String> splits1 = StringUtils::Split(toSplit, ',', 1);
+    ASSERT_EQ(1uL, splits1.size());
+    EXPECT_STREQ("test1,test2,test3,test4", splits1[0].c_str());
+
+    Aws::Vector<Aws::String> splits2 = StringUtils::Split(toSplit, ',', 2);
+    ASSERT_EQ(2uL, splits2.size());
+    EXPECT_STREQ("test1", splits2[0].c_str());
+    EXPECT_STREQ("test2,test3,test4", splits2[1].c_str());
+
+    Aws::Vector<Aws::String> splits3 = StringUtils::Split(toSplit, ',', 3);
+    ASSERT_EQ(3uL, splits3.size());
+    EXPECT_STREQ("test1", splits3[0].c_str());
+    EXPECT_STREQ("test2", splits3[1].c_str());
+    EXPECT_STREQ("test3,test4", splits3[2].c_str());
+
+    Aws::Vector<Aws::String> splits4 = StringUtils::Split(toSplit, ',', 4);
+    ASSERT_EQ(4uL, splits4.size());
+    EXPECT_STREQ("test1", splits4[0].c_str());
+    EXPECT_STREQ("test2", splits4[1].c_str());
+    EXPECT_STREQ("test3", splits4[2].c_str());
+    EXPECT_STREQ("test4", splits4[3].c_str());
+
+    Aws::Vector<Aws::String> splits5 = StringUtils::Split(toSplit, ',', 5);
+    ASSERT_EQ(4uL, splits5.size());
+    EXPECT_STREQ("test1", splits5[0].c_str());
+    EXPECT_STREQ("test2", splits5[1].c_str());
+    EXPECT_STREQ("test3", splits5[2].c_str());
+    EXPECT_STREQ("test4", splits5[3].c_str());
+
+    Aws::Vector<Aws::String> splits6 = StringUtils::Split(toSplit, ',', 6);
+    ASSERT_EQ(4uL, splits6.size());
+    EXPECT_STREQ("test1", splits6[0].c_str());
+    EXPECT_STREQ("test2", splits6[1].c_str());
+    EXPECT_STREQ("test3", splits6[2].c_str());
+    EXPECT_STREQ("test4", splits6[3].c_str());
+
+    Aws::Vector<Aws::String> splits100 = StringUtils::Split(toSplit, ',', 100);
+    ASSERT_EQ(4uL, splits100.size());
+    EXPECT_STREQ("test1", splits100[0].c_str());
+    EXPECT_STREQ("test2", splits100[1].c_str());
+    EXPECT_STREQ("test3", splits100[2].c_str());
+    EXPECT_STREQ("test4", splits100[3].c_str());
+}
+
+TEST(StringUtilsTest, TestSplitHappyPathWithNewLine)
+{
+    Aws::StringStream ss;
+    ss << "test1" << "," << "test2" << std::endl << "test3" << "," << "test4";
+    Aws::String toSplit = ss.str();
+
+    ss.str("");
+    ss << "test2" << std::endl << "test3";
+    Aws::Vector<Aws::String> splits = StringUtils::Split(toSplit, ',');
+    ASSERT_EQ(3uL, splits.size());
+    EXPECT_STREQ("test1", splits[0].c_str());
+    EXPECT_STREQ(ss.str().c_str(), splits[1].c_str());
+    EXPECT_STREQ("test4", splits[2].c_str());
+
+    ss.str("");
+    ss << "test1" << "," << "test2" << std::endl << "test3" << "," << "test4";
+    Aws::Vector<Aws::String> splits1 = StringUtils::Split(toSplit, ',', 1);
+    ASSERT_EQ(1uL, splits1.size());
+    EXPECT_STREQ(ss.str().c_str(), splits1[0].c_str());
+
+    ss.str("");
+    ss << "test2" << std::endl << "test3" << "," << "test4";
+    Aws::Vector<Aws::String> splits2 = StringUtils::Split(toSplit, ',', 2);
+    ASSERT_EQ(2uL, splits2.size());
+    EXPECT_STREQ("test1", splits2[0].c_str());
+    EXPECT_STREQ(ss.str().c_str(), splits2[1].c_str());
+
+    ss.str("");
+    ss << "test2" << std::endl << "test3";
+    Aws::Vector<Aws::String> splits3 = StringUtils::Split(toSplit, ',', 3);
+    ASSERT_EQ(3uL, splits3.size());
+    EXPECT_STREQ("test1", splits3[0].c_str());
+    EXPECT_STREQ(ss.str().c_str(), splits3[1].c_str());
+    EXPECT_STREQ("test4", splits3[2].c_str());
+
+    ss.str("");
+    ss << "test2" << std::endl << "test3";
+    Aws::Vector<Aws::String> splits4 = StringUtils::Split(toSplit, ',', 4);
+    ASSERT_EQ(3uL, splits4.size());
+    EXPECT_STREQ("test1", splits4[0].c_str());
+    EXPECT_STREQ(ss.str().c_str(), splits4[1].c_str());
+    EXPECT_STREQ("test4", splits4[2].c_str());
+
+    ss.str("");
+    ss << "test2" << std::endl << "test3";
+    Aws::Vector<Aws::String> splits5 = StringUtils::Split(toSplit, ',', 5);
+    ASSERT_EQ(3uL, splits5.size());
+    EXPECT_STREQ("test1", splits5[0].c_str());
+    EXPECT_STREQ(ss.str().c_str(), splits5[1].c_str());
+    EXPECT_STREQ("test4", splits5[2].c_str());
+
+    ss.str("");
+    ss << "test2" << std::endl << "test3";
+    Aws::Vector<Aws::String> splits100 = StringUtils::Split(toSplit, ',', 100);
+    ASSERT_EQ(3uL, splits100.size());
+    EXPECT_STREQ("test1", splits100[0].c_str());
+    EXPECT_STREQ(ss.str().c_str(), splits100[1].c_str());
+    EXPECT_STREQ("test4", splits100[2].c_str());
 }
 
 TEST(StringUtilsTest, TestSplitOnLineHappyPath)

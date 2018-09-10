@@ -46,7 +46,7 @@ EC2InstanceCounts::EC2InstanceCounts() :
 {
 }
 
-EC2InstanceCounts::EC2InstanceCounts(const JsonValue& jsonValue) : 
+EC2InstanceCounts::EC2InstanceCounts(JsonView jsonValue) : 
     m_dESIRED(0),
     m_dESIREDHasBeenSet(false),
     m_mINIMUM(0),
@@ -65,7 +65,7 @@ EC2InstanceCounts::EC2InstanceCounts(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EC2InstanceCounts& EC2InstanceCounts::operator =(const JsonValue& jsonValue)
+EC2InstanceCounts& EC2InstanceCounts::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DESIRED"))
   {

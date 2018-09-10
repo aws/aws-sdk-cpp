@@ -34,14 +34,14 @@ ThingTypeProperties::ThingTypeProperties() :
 {
 }
 
-ThingTypeProperties::ThingTypeProperties(const JsonValue& jsonValue) : 
+ThingTypeProperties::ThingTypeProperties(JsonView jsonValue) : 
     m_thingTypeDescriptionHasBeenSet(false),
     m_searchableAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ThingTypeProperties& ThingTypeProperties::operator =(const JsonValue& jsonValue)
+ThingTypeProperties& ThingTypeProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("thingTypeDescription"))
   {
@@ -52,7 +52,7 @@ ThingTypeProperties& ThingTypeProperties::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("searchableAttributes"))
   {
-    Array<JsonValue> searchableAttributesJsonList = jsonValue.GetArray("searchableAttributes");
+    Array<JsonView> searchableAttributesJsonList = jsonValue.GetArray("searchableAttributes");
     for(unsigned searchableAttributesIndex = 0; searchableAttributesIndex < searchableAttributesJsonList.GetLength(); ++searchableAttributesIndex)
     {
       m_searchableAttributes.push_back(searchableAttributesJsonList[searchableAttributesIndex].AsString());

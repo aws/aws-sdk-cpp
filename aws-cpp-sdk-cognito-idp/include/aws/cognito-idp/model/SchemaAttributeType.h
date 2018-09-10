@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     SchemaAttributeType();
-    SchemaAttributeType(const Aws::Utils::Json::JsonValue& jsonValue);
-    SchemaAttributeType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SchemaAttributeType(Aws::Utils::Json::JsonView jsonValue);
+    SchemaAttributeType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -129,17 +130,17 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the attribute can be changed once it has been created.</p>
+     * <p>Specifies whether the value of the attribute can be changed.</p>
      */
     inline bool GetMutable() const{ return m_mutable; }
 
     /**
-     * <p>Specifies whether the attribute can be changed once it has been created.</p>
+     * <p>Specifies whether the value of the attribute can be changed.</p>
      */
     inline void SetMutable(bool value) { m_mutableHasBeenSet = true; m_mutable = value; }
 
     /**
-     * <p>Specifies whether the attribute can be changed once it has been created.</p>
+     * <p>Specifies whether the value of the attribute can be changed.</p>
      */
     inline SchemaAttributeType& WithMutable(bool value) { SetMutable(value); return *this;}
 

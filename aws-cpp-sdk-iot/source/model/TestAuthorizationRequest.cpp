@@ -84,7 +84,7 @@ Aws::String TestAuthorizationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 void TestAuthorizationRequest::AddQueryStringParameters(URI& uri) const

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -43,63 +44,162 @@ namespace Model
   {
   public:
     EndpointUser();
-    EndpointUser(const Aws::Utils::Json::JsonValue& jsonValue);
-    EndpointUser& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EndpointUser(Aws::Utils::Json::JsonView jsonValue);
+    EndpointUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Custom attributes specific to the user.
+     * Custom attributes that describe the user by associating a name with an array of
+     * values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetUserAttributes() const{ return m_userAttributes; }
 
     /**
-     * Custom attributes specific to the user.
+     * Custom attributes that describe the user by associating a name with an array of
+     * values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline void SetUserAttributes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
 
     /**
-     * Custom attributes specific to the user.
+     * Custom attributes that describe the user by associating a name with an array of
+     * values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline void SetUserAttributes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::move(value); }
 
     /**
-     * Custom attributes specific to the user.
+     * Custom attributes that describe the user by associating a name with an array of
+     * values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointUser& WithUserAttributes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetUserAttributes(value); return *this;}
 
     /**
-     * Custom attributes specific to the user.
+     * Custom attributes that describe the user by associating a name with an array of
+     * values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointUser& WithUserAttributes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetUserAttributes(std::move(value)); return *this;}
 
     /**
-     * Custom attributes specific to the user.
+     * Custom attributes that describe the user by associating a name with an array of
+     * values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointUser& AddUserAttributes(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, value); return *this; }
 
     /**
-     * Custom attributes specific to the user.
+     * Custom attributes that describe the user by associating a name with an array of
+     * values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointUser& AddUserAttributes(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * Custom attributes specific to the user.
+     * Custom attributes that describe the user by associating a name with an array of
+     * values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointUser& AddUserAttributes(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Custom attributes specific to the user.
+     * Custom attributes that describe the user by associating a name with an array of
+     * values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointUser& AddUserAttributes(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Custom attributes specific to the user.
+     * Custom attributes that describe the user by associating a name with an array of
+     * values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointUser& AddUserAttributes(const char* key, Aws::Vector<Aws::String>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Custom attributes specific to the user.
+     * Custom attributes that describe the user by associating a name with an array of
+     * values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointUser& AddUserAttributes(const char* key, const Aws::Vector<Aws::String>& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, value); return *this; }
 

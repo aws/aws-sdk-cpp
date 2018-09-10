@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace StorageGateway
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     CachediSCSIVolume();
-    CachediSCSIVolume(const Aws::Utils::Json::JsonValue& jsonValue);
-    CachediSCSIVolume& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CachediSCSIVolume(Aws::Utils::Json::JsonView jsonValue);
+    CachediSCSIVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -373,6 +374,28 @@ namespace Model
      */
     inline CachediSCSIVolume& WithVolumeUsedInBytes(long long value) { SetVolumeUsedInBytes(value); return *this;}
 
+
+    
+    inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
+
+    
+    inline void SetKMSKey(const Aws::String& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
+
+    
+    inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::move(value); }
+
+    
+    inline void SetKMSKey(const char* value) { m_kMSKeyHasBeenSet = true; m_kMSKey.assign(value); }
+
+    
+    inline CachediSCSIVolume& WithKMSKey(const Aws::String& value) { SetKMSKey(value); return *this;}
+
+    
+    inline CachediSCSIVolume& WithKMSKey(Aws::String&& value) { SetKMSKey(std::move(value)); return *this;}
+
+    
+    inline CachediSCSIVolume& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
+
   private:
 
     Aws::String m_volumeARN;
@@ -404,6 +427,9 @@ namespace Model
 
     long long m_volumeUsedInBytes;
     bool m_volumeUsedInBytesHasBeenSet;
+
+    Aws::String m_kMSKey;
+    bool m_kMSKeyHasBeenSet;
   };
 
 } // namespace Model

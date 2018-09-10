@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -36,7 +37,7 @@ namespace Model
    * To insert ID3 tags in your output, specify two values. Use ID3 tag (Id3) to
    * specify the base 64 encoded string and use Timecode (TimeCode) to specify the
    * time when the tag should be inserted. To insert multiple ID3 tags in your
-   * output, create mulitple instances of ID3 insertion (Id3Insertion).<p><h3>See
+   * output, create multiple instances of ID3 insertion (Id3Insertion).<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Id3Insertion">AWS
    * API Reference</a></p>
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     Id3Insertion();
-    Id3Insertion(const Aws::Utils::Json::JsonValue& jsonValue);
-    Id3Insertion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Id3Insertion(Aws::Utils::Json::JsonView jsonValue);
+    Id3Insertion& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

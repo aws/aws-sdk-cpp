@@ -21,9 +21,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <memory>
-#include <mutex>
 
 namespace Aws
 {
@@ -35,8 +35,7 @@ namespace Aws
 
     namespace Auth
     {
-        static int REFRESH_THRESHOLD = 1000 * 60 * 15;
-        static int EXPIRATION_GRACE_PERIOD = 5 * 1000;
+        static int REFRESH_THRESHOLD = 1000 * 60 * 5;
 
         /**
          * Simple data object around aws credentials
@@ -162,7 +161,8 @@ namespace Aws
              *  to aid your implementation of GetAWSCredentials.
              */
             virtual bool IsTimeToRefresh(long reloadFrequency);
-
+            virtual void Reload();
+            mutable Aws::Utils::Threading::ReaderWriterLock m_reloadLock;
         private:
             long long m_lastLoadedMs;
         };
@@ -243,13 +243,13 @@ namespace Aws
         public:
 
             /**
-            * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 15 minutes.
+            * Initializes with refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
             */
             ProfileConfigFileAWSCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
 
             /**
             * Initializes with a profile override and
-            * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 15 minutes.
+            * refreshRateMs as the frequency at which the file is reparsed in milliseconds. Defaults to 5 minutes.
             */
             ProfileConfigFileAWSCredentialsProvider(const char* profile, long refreshRateMs = REFRESH_THRESHOLD);
 
@@ -273,6 +273,8 @@ namespace Aws
              */
             static Aws::String GetProfileDirectory();
 
+        protected:
+            void Reload() override;
         private:
 
             /**
@@ -283,7 +285,6 @@ namespace Aws
             Aws::String m_profileToUse;
             std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_configFileLoader;
             std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_credentialsFileLoader;
-            mutable std::mutex m_reloadMutex;
             long m_loadFrequencyMs;
         };
 
@@ -295,13 +296,13 @@ namespace Aws
         {
         public:
             /**
-             * Initializes the provider to refresh credentials form the EC2 instance metadata service every 15 minutes.
+             * Initializes the provider to refresh credentials form the EC2 instance metadata service every 5 minutes.
              * Constructs an EC2MetadataClient using the default http stack (most likely what you want).
              */
             InstanceProfileCredentialsProvider(long refreshRateMs = REFRESH_THRESHOLD);
 
             /**
-             * Initializes the provider to refresh credentials form the EC2 instance metadata service every 15 minutes,
+             * Initializes the provider to refresh credentials form the EC2 instance metadata service every 5 minutes,
              * uses a supplied EC2MetadataClient.
              */
             InstanceProfileCredentialsProvider(const std::shared_ptr<Aws::Config::EC2InstanceProfileConfigLoader>&, long refreshRateMs = REFRESH_THRESHOLD);
@@ -311,32 +312,44 @@ namespace Aws
             */
             AWSCredentials GetAWSCredentials() override;
 
+        protected:
+            void Reload() override;
+
         private:
             void RefreshIfExpired();
 
             std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_ec2MetadataConfigLoader;
             long m_loadFrequencyMs;
-            mutable std::mutex m_reloadMutex;
         };
 
         /**
-        * Credentials provider implementation that loads credentials from the Amazon
-        * ECS IAM ROLE.
+        * ECS credentials provider implementation that loads credentials from the Amazon
+        * ECS metadata service or an arbitrary endpoint.
         */
         class AWS_CORE_API TaskRoleCredentialsProvider : public AWSCredentialsProvider
         {
         public:
             /**
-             * Initializes the provider to refresh credentials form the ECS IAM ROLE service every 15 minutes,
-             * or before it expires
-             * Constructs an ECSCredentialsClient using the default http stack (most likely what you want).
+             * Initializes the provider to retrieve credentials from the ECS metadata service every 5 minutes,
+             * or before it expires.
+             * @param resourcePath A path appended to the metadata service endpoint.
+             * @param refreshRateMs The number of milliseconds after which the credentials will be fetched again.
              */
             TaskRoleCredentialsProvider(const char* resourcePath, long refreshRateMs = REFRESH_THRESHOLD);
 
             /**
-             * Initializes the provider to refresh credentials form the ECS IAM ROLE service every 15 minutes,
-             * or before it expires
-             * Constructs an AWSHttpResourceClient using the given client
+             * Initializes the provider to retrieve credentials from a provided endpoint every 5 minutes or before it
+             * expires.
+             * @param endpoint The full URI to resolve to get credentials.
+             * @param token An optional authorization token passed to the URI via the 'Authorization' HTTP header.
+             * @param refreshRateMs The number of milliseconds after which the credentials will be fetched again.
+             */
+            TaskRoleCredentialsProvider(const char* endpoint, const char* token, long refreshRateMs = REFRESH_THRESHOLD);
+
+            /**
+             * Initializes the provider to retrieve credentials using the provided client.
+             * @param client The ECSCredentialsClient instance to use when retrieving credentials.
+             * @param refreshRateMs The number of milliseconds after which the credentials will be fetched again.
              */
             TaskRoleCredentialsProvider(const std::shared_ptr<Aws::Internal::ECSCredentialsClient>& client,
                     long refreshRateMs = REFRESH_THRESHOLD);
@@ -345,21 +358,15 @@ namespace Aws
             */
             AWSCredentials GetAWSCredentials() override;
 
+        protected:
+            void Reload() override;
         private:
-            /**
-             * See if the Credentials will expire soon, EXPIRATION_GRACE_PERIOD millseconds before expiration, refresh it.
-             */
-            inline bool ExpiresSoon() 
-            {
-                return (m_expirationDate.Millis() - Aws::Utils::DateTime::Now().Millis() < EXPIRATION_GRACE_PERIOD);
-            }
-
+            bool ExpiresSoon() const;
             void RefreshIfExpired();
 
         private:
             std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
             long m_loadFrequencyMs;
-            mutable std::mutex m_reloadMutex;
             Aws::Utils::DateTime m_expirationDate;
             Aws::Auth::AWSCredentials m_credentials;
         };

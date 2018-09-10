@@ -25,6 +25,8 @@ using namespace Aws::Utils;
 InviteMembersRequest::InviteMembersRequest() : 
     m_accountIdsHasBeenSet(false),
     m_detectorIdHasBeenSet(false),
+    m_disableEmailNotification(false),
+    m_disableEmailNotificationHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
@@ -44,13 +46,19 @@ Aws::String InviteMembersRequest::SerializePayload() const
 
   }
 
+  if(m_disableEmailNotificationHasBeenSet)
+  {
+   payload.WithBool("disableEmailNotification", m_disableEmailNotification);
+
+  }
+
   if(m_messageHasBeenSet)
   {
    payload.WithString("message", m_message);
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

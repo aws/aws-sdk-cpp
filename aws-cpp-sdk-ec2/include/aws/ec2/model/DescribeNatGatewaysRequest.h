@@ -58,21 +58,16 @@ namespace Model
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
-     * key/value combination of a tag assigned to the resource. Specify the key of the
-     * tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
-     * NAT gateway resides.</p> </li> </ul>
+     * resides.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway
+     * resides.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilter() const{ return m_filter; }
 
@@ -82,21 +77,16 @@ namespace Model
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
-     * key/value combination of a tag assigned to the resource. Specify the key of the
-     * tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
-     * NAT gateway resides.</p> </li> </ul>
+     * resides.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway
+     * resides.</p> </li> </ul>
      */
     inline void SetFilter(const Aws::Vector<Filter>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
@@ -106,21 +96,16 @@ namespace Model
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
-     * key/value combination of a tag assigned to the resource. Specify the key of the
-     * tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
-     * NAT gateway resides.</p> </li> </ul>
+     * resides.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway
+     * resides.</p> </li> </ul>
      */
     inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
@@ -130,21 +115,16 @@ namespace Model
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
-     * key/value combination of a tag assigned to the resource. Specify the key of the
-     * tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
-     * NAT gateway resides.</p> </li> </ul>
+     * resides.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway
+     * resides.</p> </li> </ul>
      */
     inline DescribeNatGatewaysRequest& WithFilter(const Aws::Vector<Filter>& value) { SetFilter(value); return *this;}
 
@@ -154,21 +134,16 @@ namespace Model
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
-     * key/value combination of a tag assigned to the resource. Specify the key of the
-     * tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
-     * NAT gateway resides.</p> </li> </ul>
+     * resides.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway
+     * resides.</p> </li> </ul>
      */
     inline DescribeNatGatewaysRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(std::move(value)); return *this;}
 
@@ -178,21 +153,16 @@ namespace Model
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
-     * key/value combination of a tag assigned to the resource. Specify the key of the
-     * tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
-     * NAT gateway resides.</p> </li> </ul>
+     * resides.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway
+     * resides.</p> </li> </ul>
      */
     inline DescribeNatGatewaysRequest& AddFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
 
@@ -202,21 +172,16 @@ namespace Model
      * gateway (<code>pending</code> | <code>failed</code> | <code>available</code> |
      * <code>deleting</code> | <code>deleted</code>).</p> </li> <li> <p>
      * <code>subnet-id</code> - The ID of the subnet in which the NAT gateway
-     * resides.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> - The
-     * key/value combination of a tag assigned to the resource. Specify the key of the
-     * tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the
-     * NAT gateway resides.</p> </li> </ul>
+     * resides.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value
+     * combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources
+     * that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway
+     * resides.</p> </li> </ul>
      */
     inline DescribeNatGatewaysRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 

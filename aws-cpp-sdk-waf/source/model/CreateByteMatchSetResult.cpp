@@ -37,7 +37,7 @@ CreateByteMatchSetResult::CreateByteMatchSetResult(const Aws::AmazonWebServiceRe
 
 CreateByteMatchSetResult& CreateByteMatchSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ByteMatchSet"))
   {
     m_byteMatchSet = jsonValue.GetObject("ByteMatchSet");

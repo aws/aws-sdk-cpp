@@ -31,19 +31,21 @@ namespace Model
 PullRequestSourceReferenceUpdatedEventMetadata::PullRequestSourceReferenceUpdatedEventMetadata() : 
     m_repositoryNameHasBeenSet(false),
     m_beforeCommitIdHasBeenSet(false),
-    m_afterCommitIdHasBeenSet(false)
+    m_afterCommitIdHasBeenSet(false),
+    m_mergeBaseHasBeenSet(false)
 {
 }
 
-PullRequestSourceReferenceUpdatedEventMetadata::PullRequestSourceReferenceUpdatedEventMetadata(const JsonValue& jsonValue) : 
+PullRequestSourceReferenceUpdatedEventMetadata::PullRequestSourceReferenceUpdatedEventMetadata(JsonView jsonValue) : 
     m_repositoryNameHasBeenSet(false),
     m_beforeCommitIdHasBeenSet(false),
-    m_afterCommitIdHasBeenSet(false)
+    m_afterCommitIdHasBeenSet(false),
+    m_mergeBaseHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PullRequestSourceReferenceUpdatedEventMetadata& PullRequestSourceReferenceUpdatedEventMetadata::operator =(const JsonValue& jsonValue)
+PullRequestSourceReferenceUpdatedEventMetadata& PullRequestSourceReferenceUpdatedEventMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("repositoryName"))
   {
@@ -64,6 +66,13 @@ PullRequestSourceReferenceUpdatedEventMetadata& PullRequestSourceReferenceUpdate
     m_afterCommitId = jsonValue.GetString("afterCommitId");
 
     m_afterCommitIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mergeBase"))
+  {
+    m_mergeBase = jsonValue.GetString("mergeBase");
+
+    m_mergeBaseHasBeenSet = true;
   }
 
   return *this;
@@ -88,6 +97,12 @@ JsonValue PullRequestSourceReferenceUpdatedEventMetadata::Jsonize() const
   if(m_afterCommitIdHasBeenSet)
   {
    payload.WithString("afterCommitId", m_afterCommitId);
+
+  }
+
+  if(m_mergeBaseHasBeenSet)
+  {
+   payload.WithString("mergeBase", m_mergeBase);
 
   }
 

@@ -33,13 +33,13 @@ CompleteWorkflowExecutionDecisionAttributes::CompleteWorkflowExecutionDecisionAt
 {
 }
 
-CompleteWorkflowExecutionDecisionAttributes::CompleteWorkflowExecutionDecisionAttributes(const JsonValue& jsonValue) : 
+CompleteWorkflowExecutionDecisionAttributes::CompleteWorkflowExecutionDecisionAttributes(JsonView jsonValue) : 
     m_resultHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CompleteWorkflowExecutionDecisionAttributes& CompleteWorkflowExecutionDecisionAttributes::operator =(const JsonValue& jsonValue)
+CompleteWorkflowExecutionDecisionAttributes& CompleteWorkflowExecutionDecisionAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("result"))
   {

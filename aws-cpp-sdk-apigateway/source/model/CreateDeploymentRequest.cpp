@@ -32,7 +32,9 @@ CreateDeploymentRequest::CreateDeploymentRequest() :
     m_cacheClusterSize(CacheClusterSize::NOT_SET),
     m_cacheClusterSizeHasBeenSet(false),
     m_variablesHasBeenSet(false),
-    m_canarySettingsHasBeenSet(false)
+    m_canarySettingsHasBeenSet(false),
+    m_tracingEnabled(false),
+    m_tracingEnabledHasBeenSet(false)
 {
 }
 
@@ -86,7 +88,13 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_tracingEnabledHasBeenSet)
+  {
+   payload.WithBool("tracingEnabled", m_tracingEnabled);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

@@ -33,13 +33,13 @@ AvailBlanking::AvailBlanking() :
 {
 }
 
-AvailBlanking::AvailBlanking(const JsonValue& jsonValue) : 
+AvailBlanking::AvailBlanking(JsonView jsonValue) : 
     m_availBlankingImageHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AvailBlanking& AvailBlanking::operator =(const JsonValue& jsonValue)
+AvailBlanking& AvailBlanking::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("availBlankingImage"))
   {

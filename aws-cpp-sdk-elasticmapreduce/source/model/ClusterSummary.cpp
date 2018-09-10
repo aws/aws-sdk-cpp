@@ -37,7 +37,7 @@ ClusterSummary::ClusterSummary() :
 {
 }
 
-ClusterSummary::ClusterSummary(const JsonValue& jsonValue) : 
+ClusterSummary::ClusterSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -47,7 +47,7 @@ ClusterSummary::ClusterSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ClusterSummary& ClusterSummary::operator =(const JsonValue& jsonValue)
+ClusterSummary& ClusterSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

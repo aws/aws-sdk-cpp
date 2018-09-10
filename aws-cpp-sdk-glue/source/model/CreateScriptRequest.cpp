@@ -61,7 +61,7 @@ Aws::String CreateScriptRequest::SerializePayload() const
    payload.WithString("Language", LanguageMapper::GetNameForLanguage(m_language));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateScriptRequest::GetRequestSpecificHeaders() const

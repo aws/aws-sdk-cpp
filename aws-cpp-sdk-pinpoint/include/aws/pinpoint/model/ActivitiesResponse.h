@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/model/ActivityResponse.h>
 #include <utility>
 
@@ -26,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -42,8 +44,8 @@ namespace Model
   {
   public:
     ActivitiesResponse();
-    ActivitiesResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    ActivitiesResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ActivitiesResponse(Aws::Utils::Json::JsonView jsonValue);
+    ActivitiesResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -82,10 +84,56 @@ namespace Model
      */
     inline ActivitiesResponse& AddItem(ActivityResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * The string that you use in a subsequent request to get the next page of results
+     * in a paginated response.
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * The string that you use in a subsequent request to get the next page of results
+     * in a paginated response.
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * The string that you use in a subsequent request to get the next page of results
+     * in a paginated response.
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * The string that you use in a subsequent request to get the next page of results
+     * in a paginated response.
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * The string that you use in a subsequent request to get the next page of results
+     * in a paginated response.
+     */
+    inline ActivitiesResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * The string that you use in a subsequent request to get the next page of results
+     * in a paginated response.
+     */
+    inline ActivitiesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * The string that you use in a subsequent request to get the next page of results
+     * in a paginated response.
+     */
+    inline ActivitiesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
   private:
 
     Aws::Vector<ActivityResponse> m_item;
     bool m_itemHasBeenSet;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
   };
 
 } // namespace Model

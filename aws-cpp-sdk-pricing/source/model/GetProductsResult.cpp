@@ -37,7 +37,7 @@ GetProductsResult::GetProductsResult(const Aws::AmazonWebServiceResult<JsonValue
 
 GetProductsResult& GetProductsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FormatVersion"))
   {
     m_formatVersion = jsonValue.GetString("FormatVersion");
@@ -46,7 +46,7 @@ GetProductsResult& GetProductsResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("PriceList"))
   {
-    Array<JsonValue> priceListJsonList = jsonValue.GetArray("PriceList");
+    Array<JsonView> priceListJsonList = jsonValue.GetArray("PriceList");
     for(unsigned priceListIndex = 0; priceListIndex < priceListJsonList.GetLength(); ++priceListIndex)
     {
       m_priceList.push_back(priceListJsonList[priceListIndex].AsString());

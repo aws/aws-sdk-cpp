@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     JobSummary();
-    JobSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobSummary(Aws::Utils::Json::JsonView jsonValue);
+    JobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

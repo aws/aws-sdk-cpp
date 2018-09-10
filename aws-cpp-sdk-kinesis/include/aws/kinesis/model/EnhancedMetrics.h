@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Kinesis
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     EnhancedMetrics();
-    EnhancedMetrics(const Aws::Utils::Json::JsonValue& jsonValue);
-    EnhancedMetrics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EnhancedMetrics(Aws::Utils::Json::JsonView jsonValue);
+    EnhancedMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -58,8 +59,8 @@ namespace Model
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
-     * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
-     * Kinesis Streams Developer Guide</i>.</p>
+     * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
+     * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
     inline const Aws::Vector<MetricsName>& GetShardLevelMetrics() const{ return m_shardLevelMetrics; }
 
@@ -74,8 +75,8 @@ namespace Model
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
-     * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
-     * Kinesis Streams Developer Guide</i>.</p>
+     * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
+     * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
     inline void SetShardLevelMetrics(const Aws::Vector<MetricsName>& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics = value; }
 
@@ -90,8 +91,8 @@ namespace Model
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
-     * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
-     * Kinesis Streams Developer Guide</i>.</p>
+     * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
+     * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
     inline void SetShardLevelMetrics(Aws::Vector<MetricsName>&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics = std::move(value); }
 
@@ -106,8 +107,8 @@ namespace Model
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
-     * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
-     * Kinesis Streams Developer Guide</i>.</p>
+     * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
+     * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
     inline EnhancedMetrics& WithShardLevelMetrics(const Aws::Vector<MetricsName>& value) { SetShardLevelMetrics(value); return *this;}
 
@@ -122,8 +123,8 @@ namespace Model
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
-     * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
-     * Kinesis Streams Developer Guide</i>.</p>
+     * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
+     * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
     inline EnhancedMetrics& WithShardLevelMetrics(Aws::Vector<MetricsName>&& value) { SetShardLevelMetrics(std::move(value)); return *this;}
 
@@ -138,8 +139,8 @@ namespace Model
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
-     * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
-     * Kinesis Streams Developer Guide</i>.</p>
+     * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
+     * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
     inline EnhancedMetrics& AddShardLevelMetrics(const MetricsName& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics.push_back(value); return *this; }
 
@@ -154,8 +155,8 @@ namespace Model
      * <code>IteratorAgeMilliseconds</code> </p> </li> <li> <p> <code>ALL</code> </p>
      * </li> </ul> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring
-     * the Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon
-     * Kinesis Streams Developer Guide</i>.</p>
+     * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
+     * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
     inline EnhancedMetrics& AddShardLevelMetrics(MetricsName&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics.push_back(std::move(value)); return *this; }
 

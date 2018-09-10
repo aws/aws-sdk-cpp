@@ -30,7 +30,9 @@ CreateFileSystemResult::CreateFileSystemResult() :
     m_lifeCycleState(LifeCycleState::NOT_SET),
     m_numberOfMountTargets(0),
     m_performanceMode(PerformanceMode::NOT_SET),
-    m_encrypted(false)
+    m_encrypted(false),
+    m_throughputMode(ThroughputMode::NOT_SET),
+    m_provisionedThroughputInMibps(0.0)
 {
 }
 
@@ -38,14 +40,16 @@ CreateFileSystemResult::CreateFileSystemResult(const Aws::AmazonWebServiceResult
     m_lifeCycleState(LifeCycleState::NOT_SET),
     m_numberOfMountTargets(0),
     m_performanceMode(PerformanceMode::NOT_SET),
-    m_encrypted(false)
+    m_encrypted(false),
+    m_throughputMode(ThroughputMode::NOT_SET),
+    m_provisionedThroughputInMibps(0.0)
 {
   *this = result;
 }
 
 CreateFileSystemResult& CreateFileSystemResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
@@ -109,6 +113,18 @@ CreateFileSystemResult& CreateFileSystemResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
+  if(jsonValue.ValueExists("ThroughputMode"))
+  {
+    m_throughputMode = ThroughputModeMapper::GetThroughputModeForName(jsonValue.GetString("ThroughputMode"));
+
+  }
+
+  if(jsonValue.ValueExists("ProvisionedThroughputInMibps"))
+  {
+    m_provisionedThroughputInMibps = jsonValue.GetDouble("ProvisionedThroughputInMibps");
 
   }
 

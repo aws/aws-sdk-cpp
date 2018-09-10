@@ -32,6 +32,7 @@ namespace Aws
 
         static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
         static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
+        static const int SHARED_HASH = HashingUtils::HashString("SHARED");
 
 
         VisibilityType GetVisibilityTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == PRIVATE__HASH)
           {
             return VisibilityType::PRIVATE_;
+          }
+          else if (hashCode == SHARED_HASH)
+          {
+            return VisibilityType::SHARED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "PUBLIC";
           case VisibilityType::PRIVATE_:
             return "PRIVATE";
+          case VisibilityType::SHARED:
+            return "SHARED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

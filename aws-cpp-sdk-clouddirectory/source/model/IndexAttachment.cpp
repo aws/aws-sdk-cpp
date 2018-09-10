@@ -34,18 +34,18 @@ IndexAttachment::IndexAttachment() :
 {
 }
 
-IndexAttachment::IndexAttachment(const JsonValue& jsonValue) : 
+IndexAttachment::IndexAttachment(JsonView jsonValue) : 
     m_indexedAttributesHasBeenSet(false),
     m_objectIdentifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-IndexAttachment& IndexAttachment::operator =(const JsonValue& jsonValue)
+IndexAttachment& IndexAttachment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IndexedAttributes"))
   {
-    Array<JsonValue> indexedAttributesJsonList = jsonValue.GetArray("IndexedAttributes");
+    Array<JsonView> indexedAttributesJsonList = jsonValue.GetArray("IndexedAttributes");
     for(unsigned indexedAttributesIndex = 0; indexedAttributesIndex < indexedAttributesJsonList.GetLength(); ++indexedAttributesIndex)
     {
       m_indexedAttributes.push_back(indexedAttributesJsonList[indexedAttributesIndex].AsObject());

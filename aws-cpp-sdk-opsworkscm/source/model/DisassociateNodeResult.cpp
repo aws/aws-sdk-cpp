@@ -37,7 +37,7 @@ DisassociateNodeResult::DisassociateNodeResult(const Aws::AmazonWebServiceResult
 
 DisassociateNodeResult& DisassociateNodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NodeAssociationStatusToken"))
   {
     m_nodeAssociationStatusToken = jsonValue.GetString("NodeAssociationStatusToken");

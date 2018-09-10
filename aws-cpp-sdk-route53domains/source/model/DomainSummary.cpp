@@ -38,7 +38,7 @@ DomainSummary::DomainSummary() :
 {
 }
 
-DomainSummary::DomainSummary(const JsonValue& jsonValue) : 
+DomainSummary::DomainSummary(JsonView jsonValue) : 
     m_domainNameHasBeenSet(false),
     m_autoRenew(false),
     m_autoRenewHasBeenSet(false),
@@ -49,7 +49,7 @@ DomainSummary::DomainSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DomainSummary& DomainSummary::operator =(const JsonValue& jsonValue)
+DomainSummary& DomainSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DomainName"))
   {

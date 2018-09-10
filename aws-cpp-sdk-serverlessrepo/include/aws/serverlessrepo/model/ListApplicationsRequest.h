@@ -49,53 +49,53 @@ namespace Model
 
 
     /**
-     * The total number of items to return
+     * <p>The total number of items to return.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * The total number of items to return
+     * <p>The total number of items to return.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * The total number of items to return
+     * <p>The total number of items to return.</p>
      */
     inline ListApplicationsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
 
     /**
-     * A token to specify where to start paginating
+     * <p>A token to specify where to start paginating.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * A token to specify where to start paginating
+     * <p>A token to specify where to start paginating.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * A token to specify where to start paginating
+     * <p>A token to specify where to start paginating.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * A token to specify where to start paginating
+     * <p>A token to specify where to start paginating.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * A token to specify where to start paginating
+     * <p>A token to specify where to start paginating.</p>
      */
     inline ListApplicationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * A token to specify where to start paginating
+     * <p>A token to specify where to start paginating.</p>
      */
     inline ListApplicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * A token to specify where to start paginating
+     * <p>A token to specify where to start paginating.</p>
      */
     inline ListApplicationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

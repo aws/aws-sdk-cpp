@@ -37,10 +37,10 @@ DescribeVpcPeeringConnectionsResult::DescribeVpcPeeringConnectionsResult(const A
 
 DescribeVpcPeeringConnectionsResult& DescribeVpcPeeringConnectionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VpcPeeringConnections"))
   {
-    Array<JsonValue> vpcPeeringConnectionsJsonList = jsonValue.GetArray("VpcPeeringConnections");
+    Array<JsonView> vpcPeeringConnectionsJsonList = jsonValue.GetArray("VpcPeeringConnections");
     for(unsigned vpcPeeringConnectionsIndex = 0; vpcPeeringConnectionsIndex < vpcPeeringConnectionsJsonList.GetLength(); ++vpcPeeringConnectionsIndex)
     {
       m_vpcPeeringConnections.push_back(vpcPeeringConnectionsJsonList[vpcPeeringConnectionsIndex].AsObject());

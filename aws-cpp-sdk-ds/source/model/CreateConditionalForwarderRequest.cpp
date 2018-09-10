@@ -56,7 +56,7 @@ Aws::String CreateConditionalForwarderRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateConditionalForwarderRequest::GetRequestSpecificHeaders() const

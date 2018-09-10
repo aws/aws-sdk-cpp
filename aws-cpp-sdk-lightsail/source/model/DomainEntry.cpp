@@ -38,7 +38,7 @@ DomainEntry::DomainEntry() :
 {
 }
 
-DomainEntry::DomainEntry(const JsonValue& jsonValue) : 
+DomainEntry::DomainEntry(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_targetHasBeenSet(false),
@@ -49,7 +49,7 @@ DomainEntry::DomainEntry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DomainEntry& DomainEntry::operator =(const JsonValue& jsonValue)
+DomainEntry& DomainEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

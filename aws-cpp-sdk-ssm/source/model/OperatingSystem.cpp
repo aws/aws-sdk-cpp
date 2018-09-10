@@ -32,8 +32,11 @@ namespace Aws
 
         static const int WINDOWS_HASH = HashingUtils::HashString("WINDOWS");
         static const int AMAZON_LINUX_HASH = HashingUtils::HashString("AMAZON_LINUX");
+        static const int AMAZON_LINUX_2_HASH = HashingUtils::HashString("AMAZON_LINUX_2");
         static const int UBUNTU_HASH = HashingUtils::HashString("UBUNTU");
         static const int REDHAT_ENTERPRISE_LINUX_HASH = HashingUtils::HashString("REDHAT_ENTERPRISE_LINUX");
+        static const int SUSE_HASH = HashingUtils::HashString("SUSE");
+        static const int CENTOS_HASH = HashingUtils::HashString("CENTOS");
 
 
         OperatingSystem GetOperatingSystemForName(const Aws::String& name)
@@ -47,6 +50,10 @@ namespace Aws
           {
             return OperatingSystem::AMAZON_LINUX;
           }
+          else if (hashCode == AMAZON_LINUX_2_HASH)
+          {
+            return OperatingSystem::AMAZON_LINUX_2;
+          }
           else if (hashCode == UBUNTU_HASH)
           {
             return OperatingSystem::UBUNTU;
@@ -54,6 +61,14 @@ namespace Aws
           else if (hashCode == REDHAT_ENTERPRISE_LINUX_HASH)
           {
             return OperatingSystem::REDHAT_ENTERPRISE_LINUX;
+          }
+          else if (hashCode == SUSE_HASH)
+          {
+            return OperatingSystem::SUSE;
+          }
+          else if (hashCode == CENTOS_HASH)
+          {
+            return OperatingSystem::CENTOS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -73,10 +88,16 @@ namespace Aws
             return "WINDOWS";
           case OperatingSystem::AMAZON_LINUX:
             return "AMAZON_LINUX";
+          case OperatingSystem::AMAZON_LINUX_2:
+            return "AMAZON_LINUX_2";
           case OperatingSystem::UBUNTU:
             return "UBUNTU";
           case OperatingSystem::REDHAT_ENTERPRISE_LINUX:
             return "REDHAT_ENTERPRISE_LINUX";
+          case OperatingSystem::SUSE:
+            return "SUSE";
+          case OperatingSystem::CENTOS:
+            return "CENTOS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -37,7 +37,7 @@ SearchFacesResult::SearchFacesResult(const Aws::AmazonWebServiceResult<JsonValue
 
 SearchFacesResult& SearchFacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SearchedFaceId"))
   {
     m_searchedFaceId = jsonValue.GetString("SearchedFaceId");
@@ -46,7 +46,7 @@ SearchFacesResult& SearchFacesResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("FaceMatches"))
   {
-    Array<JsonValue> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
+    Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
     for(unsigned faceMatchesIndex = 0; faceMatchesIndex < faceMatchesJsonList.GetLength(); ++faceMatchesIndex)
     {
       m_faceMatches.push_back(faceMatchesJsonList[faceMatchesIndex].AsObject());

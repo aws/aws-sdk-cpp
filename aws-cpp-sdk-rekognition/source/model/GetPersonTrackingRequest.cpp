@@ -59,7 +59,7 @@ Aws::String GetPersonTrackingRequest::SerializePayload() const
    payload.WithString("SortBy", PersonTrackingSortByMapper::GetNameForPersonTrackingSortBy(m_sortBy));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetPersonTrackingRequest::GetRequestSpecificHeaders() const

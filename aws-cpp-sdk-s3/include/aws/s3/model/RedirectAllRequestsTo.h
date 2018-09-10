@@ -44,68 +44,68 @@ namespace Model
 
 
     /**
-     * Name of the host where requests will be redirected.
+     * <p>Name of the host where requests will be redirected.</p>
      */
     inline const Aws::String& GetHostName() const{ return m_hostName; }
 
     /**
-     * Name of the host where requests will be redirected.
+     * <p>Name of the host where requests will be redirected.</p>
      */
     inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
 
     /**
-     * Name of the host where requests will be redirected.
+     * <p>Name of the host where requests will be redirected.</p>
      */
     inline void SetHostName(Aws::String&& value) { m_hostNameHasBeenSet = true; m_hostName = std::move(value); }
 
     /**
-     * Name of the host where requests will be redirected.
+     * <p>Name of the host where requests will be redirected.</p>
      */
     inline void SetHostName(const char* value) { m_hostNameHasBeenSet = true; m_hostName.assign(value); }
 
     /**
-     * Name of the host where requests will be redirected.
+     * <p>Name of the host where requests will be redirected.</p>
      */
     inline RedirectAllRequestsTo& WithHostName(const Aws::String& value) { SetHostName(value); return *this;}
 
     /**
-     * Name of the host where requests will be redirected.
+     * <p>Name of the host where requests will be redirected.</p>
      */
     inline RedirectAllRequestsTo& WithHostName(Aws::String&& value) { SetHostName(std::move(value)); return *this;}
 
     /**
-     * Name of the host where requests will be redirected.
+     * <p>Name of the host where requests will be redirected.</p>
      */
     inline RedirectAllRequestsTo& WithHostName(const char* value) { SetHostName(value); return *this;}
 
 
     /**
-     * Protocol to use (http, https) when redirecting requests. The default is the
-     * protocol that is used in the original request.
+     * <p>Protocol to use (http, https) when redirecting requests. The default is the
+     * protocol that is used in the original request.</p>
      */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
 
     /**
-     * Protocol to use (http, https) when redirecting requests. The default is the
-     * protocol that is used in the original request.
+     * <p>Protocol to use (http, https) when redirecting requests. The default is the
+     * protocol that is used in the original request.</p>
      */
     inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * Protocol to use (http, https) when redirecting requests. The default is the
-     * protocol that is used in the original request.
+     * <p>Protocol to use (http, https) when redirecting requests. The default is the
+     * protocol that is used in the original request.</p>
      */
     inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * Protocol to use (http, https) when redirecting requests. The default is the
-     * protocol that is used in the original request.
+     * <p>Protocol to use (http, https) when redirecting requests. The default is the
+     * protocol that is used in the original request.</p>
      */
     inline RedirectAllRequestsTo& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
 
     /**
-     * Protocol to use (http, https) when redirecting requests. The default is the
-     * protocol that is used in the original request.
+     * <p>Protocol to use (http, https) when redirecting requests. The default is the
+     * protocol that is used in the original request.</p>
      */
     inline RedirectAllRequestsTo& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
 

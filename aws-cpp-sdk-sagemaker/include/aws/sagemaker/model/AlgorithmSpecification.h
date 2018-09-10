@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -36,12 +37,11 @@ namespace Model
   /**
    * <p>Specifies the training algorithm to use in a <a
    * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html">CreateTrainingJob</a>
-   * request. </p> <p>For more information about algorithms provided by Amazon
+   * request.</p> <p>For more information about algorithms provided by Amazon
    * SageMaker, see <a
    * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-   * For information about using your own algorithms, see <a
-   * href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring
-   * Your Own Algorithms </a>. </p><p><h3>See Also:</h3>   <a
+   * For information about using your own algorithms, see <a>your-algorithms</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AlgorithmSpecification">AWS
    * API Reference</a></p>
    */
@@ -49,64 +49,57 @@ namespace Model
   {
   public:
     AlgorithmSpecification();
-    AlgorithmSpecification(const Aws::Utils::Json::JsonValue& jsonValue);
-    AlgorithmSpecification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AlgorithmSpecification(Aws::Utils::Json::JsonView jsonValue);
+    AlgorithmSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
-     * For information about using your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker
-     * Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>
+     * For information about docker registry paths for built-in algorithms, see
+     * <a>sagemaker-algo-docker-registry-paths</a>.</p>
      */
     inline const Aws::String& GetTrainingImage() const{ return m_trainingImage; }
 
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
-     * For information about using your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker
-     * Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>
+     * For information about docker registry paths for built-in algorithms, see
+     * <a>sagemaker-algo-docker-registry-paths</a>.</p>
      */
     inline void SetTrainingImage(const Aws::String& value) { m_trainingImageHasBeenSet = true; m_trainingImage = value; }
 
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
-     * For information about using your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker
-     * Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>
+     * For information about docker registry paths for built-in algorithms, see
+     * <a>sagemaker-algo-docker-registry-paths</a>.</p>
      */
     inline void SetTrainingImage(Aws::String&& value) { m_trainingImageHasBeenSet = true; m_trainingImage = std::move(value); }
 
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
-     * For information about using your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker
-     * Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>
+     * For information about docker registry paths for built-in algorithms, see
+     * <a>sagemaker-algo-docker-registry-paths</a>.</p>
      */
     inline void SetTrainingImage(const char* value) { m_trainingImageHasBeenSet = true; m_trainingImage.assign(value); }
 
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
-     * For information about using your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker
-     * Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>
+     * For information about docker registry paths for built-in algorithms, see
+     * <a>sagemaker-algo-docker-registry-paths</a>.</p>
      */
     inline AlgorithmSpecification& WithTrainingImage(const Aws::String& value) { SetTrainingImage(value); return *this;}
 
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
-     * For information about using your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker
-     * Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>
+     * For information about docker registry paths for built-in algorithms, see
+     * <a>sagemaker-algo-docker-registry-paths</a>.</p>
      */
     inline AlgorithmSpecification& WithTrainingImage(Aws::String&& value) { SetTrainingImage(std::move(value)); return *this;}
 
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
-     * For information about using your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker
-     * Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>
+     * For information about docker registry paths for built-in algorithms, see
+     * <a>sagemaker-algo-docker-registry-paths</a>.</p>
      */
     inline AlgorithmSpecification& WithTrainingImage(const char* value) { SetTrainingImage(value); return *this;}
 
@@ -120,7 +113,7 @@ namespace Model
      * mounts the directory to docker volume for training container. If an algorithm
      * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
      * directly from S3 to the container. </p> <p> In File mode, make sure you
-     * provision ML storage volume with sufficient capacity to accomodate the data
+     * provision ML storage volume with sufficient capacity to accommodate the data
      * download from S3. In addition to the training data, the ML storage volume also
      * stores the output model. The algorithm container use ML storage volume to also
      * store intermediate information, if any. </p> <p> For distributed algorithms
@@ -142,7 +135,7 @@ namespace Model
      * mounts the directory to docker volume for training container. If an algorithm
      * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
      * directly from S3 to the container. </p> <p> In File mode, make sure you
-     * provision ML storage volume with sufficient capacity to accomodate the data
+     * provision ML storage volume with sufficient capacity to accommodate the data
      * download from S3. In addition to the training data, the ML storage volume also
      * stores the output model. The algorithm container use ML storage volume to also
      * store intermediate information, if any. </p> <p> For distributed algorithms
@@ -164,7 +157,7 @@ namespace Model
      * mounts the directory to docker volume for training container. If an algorithm
      * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
      * directly from S3 to the container. </p> <p> In File mode, make sure you
-     * provision ML storage volume with sufficient capacity to accomodate the data
+     * provision ML storage volume with sufficient capacity to accommodate the data
      * download from S3. In addition to the training data, the ML storage volume also
      * stores the output model. The algorithm container use ML storage volume to also
      * store intermediate information, if any. </p> <p> For distributed algorithms
@@ -186,7 +179,7 @@ namespace Model
      * mounts the directory to docker volume for training container. If an algorithm
      * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
      * directly from S3 to the container. </p> <p> In File mode, make sure you
-     * provision ML storage volume with sufficient capacity to accomodate the data
+     * provision ML storage volume with sufficient capacity to accommodate the data
      * download from S3. In addition to the training data, the ML storage volume also
      * stores the output model. The algorithm container use ML storage volume to also
      * store intermediate information, if any. </p> <p> For distributed algorithms
@@ -208,7 +201,7 @@ namespace Model
      * mounts the directory to docker volume for training container. If an algorithm
      * supports the <code>Pipe</code> input mode, Amazon SageMaker streams data
      * directly from S3 to the container. </p> <p> In File mode, make sure you
-     * provision ML storage volume with sufficient capacity to accomodate the data
+     * provision ML storage volume with sufficient capacity to accommodate the data
      * download from S3. In addition to the training data, the ML storage volume also
      * stores the output model. The algorithm container use ML storage volume to also
      * store intermediate information, if any. </p> <p> For distributed algorithms

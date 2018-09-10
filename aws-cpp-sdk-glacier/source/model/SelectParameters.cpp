@@ -37,7 +37,7 @@ SelectParameters::SelectParameters() :
 {
 }
 
-SelectParameters::SelectParameters(const JsonValue& jsonValue) : 
+SelectParameters::SelectParameters(JsonView jsonValue) : 
     m_inputSerializationHasBeenSet(false),
     m_expressionType(ExpressionType::NOT_SET),
     m_expressionTypeHasBeenSet(false),
@@ -47,7 +47,7 @@ SelectParameters::SelectParameters(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SelectParameters& SelectParameters::operator =(const JsonValue& jsonValue)
+SelectParameters& SelectParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InputSerialization"))
   {

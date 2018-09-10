@@ -37,7 +37,7 @@ GetInstanceAccessDetailsResult::GetInstanceAccessDetailsResult(const Aws::Amazon
 
 GetInstanceAccessDetailsResult& GetInstanceAccessDetailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("accessDetails"))
   {
     m_accessDetails = jsonValue.GetObject("accessDetails");

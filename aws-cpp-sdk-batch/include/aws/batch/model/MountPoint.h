@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Batch
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     MountPoint();
-    MountPoint(const Aws::Utils::Json::JsonValue& jsonValue);
-    MountPoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MountPoint(Aws::Utils::Json::JsonView jsonValue);
+    MountPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

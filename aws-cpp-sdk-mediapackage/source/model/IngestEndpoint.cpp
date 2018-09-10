@@ -29,13 +29,15 @@ namespace Model
 {
 
 IngestEndpoint::IngestEndpoint() : 
+    m_idHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_usernameHasBeenSet(false)
 {
 }
 
-IngestEndpoint::IngestEndpoint(const JsonValue& jsonValue) : 
+IngestEndpoint::IngestEndpoint(JsonView jsonValue) : 
+    m_idHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_usernameHasBeenSet(false)
@@ -43,8 +45,15 @@ IngestEndpoint::IngestEndpoint(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IngestEndpoint& IngestEndpoint::operator =(const JsonValue& jsonValue)
+IngestEndpoint& IngestEndpoint::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("password"))
   {
     m_password = jsonValue.GetString("password");
@@ -72,6 +81,12 @@ IngestEndpoint& IngestEndpoint::operator =(const JsonValue& jsonValue)
 JsonValue IngestEndpoint::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
 
   if(m_passwordHasBeenSet)
   {

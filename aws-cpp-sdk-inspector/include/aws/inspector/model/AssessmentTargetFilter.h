@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Inspector
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     AssessmentTargetFilter();
-    AssessmentTargetFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    AssessmentTargetFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AssessmentTargetFilter(Aws::Utils::Json::JsonView jsonValue);
+    AssessmentTargetFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

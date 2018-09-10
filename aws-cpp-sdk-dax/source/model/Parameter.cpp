@@ -45,7 +45,7 @@ Parameter::Parameter() :
 {
 }
 
-Parameter::Parameter(const JsonValue& jsonValue) : 
+Parameter::Parameter(JsonView jsonValue) : 
     m_parameterNameHasBeenSet(false),
     m_parameterType(ParameterType::NOT_SET),
     m_parameterTypeHasBeenSet(false),
@@ -63,7 +63,7 @@ Parameter::Parameter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Parameter& Parameter::operator =(const JsonValue& jsonValue)
+Parameter& Parameter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ParameterName"))
   {
@@ -88,7 +88,7 @@ Parameter& Parameter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("NodeTypeSpecificValues"))
   {
-    Array<JsonValue> nodeTypeSpecificValuesJsonList = jsonValue.GetArray("NodeTypeSpecificValues");
+    Array<JsonView> nodeTypeSpecificValuesJsonList = jsonValue.GetArray("NodeTypeSpecificValues");
     for(unsigned nodeTypeSpecificValuesIndex = 0; nodeTypeSpecificValuesIndex < nodeTypeSpecificValuesJsonList.GetLength(); ++nodeTypeSpecificValuesIndex)
     {
       m_nodeTypeSpecificValues.push_back(nodeTypeSpecificValuesJsonList[nodeTypeSpecificValuesIndex].AsObject());

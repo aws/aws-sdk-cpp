@@ -146,66 +146,66 @@ namespace Model
 
     /**
      * <p>The time stamp that indicates an earlier time. If not specified, the action
-     * returns paginated results that contain configuration items that start from when
-     * the first configuration item was recorded.</p>
+     * returns paginated results that contain configuration items that start when the
+     * first configuration item was recorded.</p>
      */
     inline const Aws::Utils::DateTime& GetEarlierTime() const{ return m_earlierTime; }
 
     /**
      * <p>The time stamp that indicates an earlier time. If not specified, the action
-     * returns paginated results that contain configuration items that start from when
-     * the first configuration item was recorded.</p>
+     * returns paginated results that contain configuration items that start when the
+     * first configuration item was recorded.</p>
      */
     inline void SetEarlierTime(const Aws::Utils::DateTime& value) { m_earlierTimeHasBeenSet = true; m_earlierTime = value; }
 
     /**
      * <p>The time stamp that indicates an earlier time. If not specified, the action
-     * returns paginated results that contain configuration items that start from when
-     * the first configuration item was recorded.</p>
+     * returns paginated results that contain configuration items that start when the
+     * first configuration item was recorded.</p>
      */
     inline void SetEarlierTime(Aws::Utils::DateTime&& value) { m_earlierTimeHasBeenSet = true; m_earlierTime = std::move(value); }
 
     /**
      * <p>The time stamp that indicates an earlier time. If not specified, the action
-     * returns paginated results that contain configuration items that start from when
-     * the first configuration item was recorded.</p>
+     * returns paginated results that contain configuration items that start when the
+     * first configuration item was recorded.</p>
      */
     inline GetResourceConfigHistoryRequest& WithEarlierTime(const Aws::Utils::DateTime& value) { SetEarlierTime(value); return *this;}
 
     /**
      * <p>The time stamp that indicates an earlier time. If not specified, the action
-     * returns paginated results that contain configuration items that start from when
-     * the first configuration item was recorded.</p>
+     * returns paginated results that contain configuration items that start when the
+     * first configuration item was recorded.</p>
      */
     inline GetResourceConfigHistoryRequest& WithEarlierTime(Aws::Utils::DateTime&& value) { SetEarlierTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The chronological order for configuration items listed. By default the
+     * <p>The chronological order for configuration items listed. By default, the
      * results are listed in reverse chronological order.</p>
      */
     inline const ChronologicalOrder& GetChronologicalOrder() const{ return m_chronologicalOrder; }
 
     /**
-     * <p>The chronological order for configuration items listed. By default the
+     * <p>The chronological order for configuration items listed. By default, the
      * results are listed in reverse chronological order.</p>
      */
     inline void SetChronologicalOrder(const ChronologicalOrder& value) { m_chronologicalOrderHasBeenSet = true; m_chronologicalOrder = value; }
 
     /**
-     * <p>The chronological order for configuration items listed. By default the
+     * <p>The chronological order for configuration items listed. By default, the
      * results are listed in reverse chronological order.</p>
      */
     inline void SetChronologicalOrder(ChronologicalOrder&& value) { m_chronologicalOrderHasBeenSet = true; m_chronologicalOrder = std::move(value); }
 
     /**
-     * <p>The chronological order for configuration items listed. By default the
+     * <p>The chronological order for configuration items listed. By default, the
      * results are listed in reverse chronological order.</p>
      */
     inline GetResourceConfigHistoryRequest& WithChronologicalOrder(const ChronologicalOrder& value) { SetChronologicalOrder(value); return *this;}
 
     /**
-     * <p>The chronological order for configuration items listed. By default the
+     * <p>The chronological order for configuration items listed. By default, the
      * results are listed in reverse chronological order.</p>
      */
     inline GetResourceConfigHistoryRequest& WithChronologicalOrder(ChronologicalOrder&& value) { SetChronologicalOrder(std::move(value)); return *this;}
@@ -213,22 +213,22 @@ namespace Model
 
     /**
      * <p>The maximum number of configuration items returned on each page. The default
-     * is 10. You cannot specify a limit greater than 100. If you specify 0, AWS Config
-     * uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
+     * Config uses the default.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of configuration items returned on each page. The default
-     * is 10. You cannot specify a limit greater than 100. If you specify 0, AWS Config
-     * uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
+     * Config uses the default.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of configuration items returned on each page. The default
-     * is 10. You cannot specify a limit greater than 100. If you specify 0, AWS Config
-     * uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
+     * Config uses the default.</p>
      */
     inline GetResourceConfigHistoryRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

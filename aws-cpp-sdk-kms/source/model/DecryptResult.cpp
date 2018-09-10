@@ -38,7 +38,7 @@ DecryptResult::DecryptResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 
 DecryptResult& DecryptResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");

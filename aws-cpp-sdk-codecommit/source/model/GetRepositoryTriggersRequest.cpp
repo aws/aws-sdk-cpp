@@ -37,7 +37,7 @@ Aws::String GetRepositoryTriggersRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetRepositoryTriggersRequest::GetRequestSpecificHeaders() const

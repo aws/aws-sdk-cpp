@@ -22,6 +22,7 @@
 #include <aws/transcribe/model/Media.h>
 #include <aws/transcribe/model/Transcript.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/transcribe/model/Settings.h>
 #include <utility>
 
 namespace Aws
@@ -31,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace TranscribeService
@@ -48,69 +50,69 @@ namespace Model
   {
   public:
     TranscriptionJob();
-    TranscriptionJob(const Aws::Utils::Json::JsonValue& jsonValue);
-    TranscriptionJob& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TranscriptionJob(Aws::Utils::Json::JsonView jsonValue);
+    TranscriptionJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>A name to identify the transcription job.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline const Aws::String& GetTranscriptionJobName() const{ return m_transcriptionJobName; }
 
     /**
-     * <p>A name to identify the transcription job.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline void SetTranscriptionJobName(const Aws::String& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = value; }
 
     /**
-     * <p>A name to identify the transcription job.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline void SetTranscriptionJobName(Aws::String&& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = std::move(value); }
 
     /**
-     * <p>A name to identify the transcription job.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline void SetTranscriptionJobName(const char* value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName.assign(value); }
 
     /**
-     * <p>A name to identify the transcription job.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline TranscriptionJob& WithTranscriptionJobName(const Aws::String& value) { SetTranscriptionJobName(value); return *this;}
 
     /**
-     * <p>A name to identify the transcription job.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline TranscriptionJob& WithTranscriptionJobName(Aws::String&& value) { SetTranscriptionJobName(std::move(value)); return *this;}
 
     /**
-     * <p>A name to identify the transcription job.</p>
+     * <p>The name of the transcription job.</p>
      */
     inline TranscriptionJob& WithTranscriptionJobName(const char* value) { SetTranscriptionJobName(value); return *this;}
 
 
     /**
-     * <p>The identifier assigned to the job when it was created.</p>
+     * <p>The status of the transcription job.</p>
      */
     inline const TranscriptionJobStatus& GetTranscriptionJobStatus() const{ return m_transcriptionJobStatus; }
 
     /**
-     * <p>The identifier assigned to the job when it was created.</p>
+     * <p>The status of the transcription job.</p>
      */
     inline void SetTranscriptionJobStatus(const TranscriptionJobStatus& value) { m_transcriptionJobStatusHasBeenSet = true; m_transcriptionJobStatus = value; }
 
     /**
-     * <p>The identifier assigned to the job when it was created.</p>
+     * <p>The status of the transcription job.</p>
      */
     inline void SetTranscriptionJobStatus(TranscriptionJobStatus&& value) { m_transcriptionJobStatusHasBeenSet = true; m_transcriptionJobStatus = std::move(value); }
 
     /**
-     * <p>The identifier assigned to the job when it was created.</p>
+     * <p>The status of the transcription job.</p>
      */
     inline TranscriptionJob& WithTranscriptionJobStatus(const TranscriptionJobStatus& value) { SetTranscriptionJobStatus(value); return *this;}
 
     /**
-     * <p>The identifier assigned to the job when it was created.</p>
+     * <p>The status of the transcription job.</p>
      */
     inline TranscriptionJob& WithTranscriptionJobStatus(TranscriptionJobStatus&& value) { SetTranscriptionJobStatus(std::move(value)); return *this;}
 
@@ -184,27 +186,27 @@ namespace Model
 
 
     /**
-     * <p>An object that describes the input media for a transcription job.</p>
+     * <p>An object that describes the input media for the transcription job.</p>
      */
     inline const Media& GetMedia() const{ return m_media; }
 
     /**
-     * <p>An object that describes the input media for a transcription job.</p>
+     * <p>An object that describes the input media for the transcription job.</p>
      */
     inline void SetMedia(const Media& value) { m_mediaHasBeenSet = true; m_media = value; }
 
     /**
-     * <p>An object that describes the input media for a transcription job.</p>
+     * <p>An object that describes the input media for the transcription job.</p>
      */
     inline void SetMedia(Media&& value) { m_mediaHasBeenSet = true; m_media = std::move(value); }
 
     /**
-     * <p>An object that describes the input media for a transcription job.</p>
+     * <p>An object that describes the input media for the transcription job.</p>
      */
     inline TranscriptionJob& WithMedia(const Media& value) { SetMedia(value); return *this;}
 
     /**
-     * <p>An object that describes the input media for a transcription job.</p>
+     * <p>An object that describes the input media for the transcription job.</p>
      */
     inline TranscriptionJob& WithMedia(Media&& value) { SetMedia(std::move(value)); return *this;}
 
@@ -236,53 +238,53 @@ namespace Model
 
 
     /**
-     * <p>Timestamp of the date and time that the job was created.</p>
+     * <p>A timestamp that shows when the job was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>Timestamp of the date and time that the job was created.</p>
+     * <p>A timestamp that shows when the job was created.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>Timestamp of the date and time that the job was created.</p>
+     * <p>A timestamp that shows when the job was created.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>Timestamp of the date and time that the job was created.</p>
+     * <p>A timestamp that shows when the job was created.</p>
      */
     inline TranscriptionJob& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>Timestamp of the date and time that the job was created.</p>
+     * <p>A timestamp that shows when the job was created.</p>
      */
     inline TranscriptionJob& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Timestamp of the date and time that the job completed.</p>
+     * <p>A timestamp that shows when the job was completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
 
     /**
-     * <p>Timestamp of the date and time that the job completed.</p>
+     * <p>A timestamp that shows when the job was completed.</p>
      */
     inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
 
     /**
-     * <p>Timestamp of the date and time that the job completed.</p>
+     * <p>A timestamp that shows when the job was completed.</p>
      */
     inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
 
     /**
-     * <p>Timestamp of the date and time that the job completed.</p>
+     * <p>A timestamp that shows when the job was completed.</p>
      */
     inline TranscriptionJob& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
 
     /**
-     * <p>Timestamp of the date and time that the job completed.</p>
+     * <p>A timestamp that shows when the job was completed.</p>
      */
     inline TranscriptionJob& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
 
@@ -329,6 +331,47 @@ namespace Model
      */
     inline TranscriptionJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
+
+    /**
+     * <p>Optional settings for the transcription job. Use these settings to turn on
+     * speaker recognition, to set the maximum number of speakers that should be
+     * identified and to specify a custom vocabulary to use when processing the
+     * transcription job.</p>
+     */
+    inline const Settings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>Optional settings for the transcription job. Use these settings to turn on
+     * speaker recognition, to set the maximum number of speakers that should be
+     * identified and to specify a custom vocabulary to use when processing the
+     * transcription job.</p>
+     */
+    inline void SetSettings(const Settings& value) { m_settingsHasBeenSet = true; m_settings = value; }
+
+    /**
+     * <p>Optional settings for the transcription job. Use these settings to turn on
+     * speaker recognition, to set the maximum number of speakers that should be
+     * identified and to specify a custom vocabulary to use when processing the
+     * transcription job.</p>
+     */
+    inline void SetSettings(Settings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
+
+    /**
+     * <p>Optional settings for the transcription job. Use these settings to turn on
+     * speaker recognition, to set the maximum number of speakers that should be
+     * identified and to specify a custom vocabulary to use when processing the
+     * transcription job.</p>
+     */
+    inline TranscriptionJob& WithSettings(const Settings& value) { SetSettings(value); return *this;}
+
+    /**
+     * <p>Optional settings for the transcription job. Use these settings to turn on
+     * speaker recognition, to set the maximum number of speakers that should be
+     * identified and to specify a custom vocabulary to use when processing the
+     * transcription job.</p>
+     */
+    inline TranscriptionJob& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -360,6 +403,9 @@ namespace Model
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;
+
+    Settings m_settings;
+    bool m_settingsHasBeenSet;
   };
 
 } // namespace Model

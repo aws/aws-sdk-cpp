@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 FilterLogEventsRequest::FilterLogEventsRequest() : 
     m_logGroupNameHasBeenSet(false),
     m_logStreamNamesHasBeenSet(false),
+    m_logStreamNamePrefixHasBeenSet(false),
     m_startTime(0),
     m_startTimeHasBeenSet(false),
     m_endTime(0),
@@ -56,6 +57,12 @@ Aws::String FilterLogEventsRequest::SerializePayload() const
      logStreamNamesJsonList[logStreamNamesIndex].AsString(m_logStreamNames[logStreamNamesIndex]);
    }
    payload.WithArray("logStreamNames", std::move(logStreamNamesJsonList));
+
+  }
+
+  if(m_logStreamNamePrefixHasBeenSet)
+  {
+   payload.WithString("logStreamNamePrefix", m_logStreamNamePrefix);
 
   }
 
@@ -95,7 +102,7 @@ Aws::String FilterLogEventsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection FilterLogEventsRequest::GetRequestSpecificHeaders() const

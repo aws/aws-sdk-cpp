@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     PartitionValueList();
-    PartitionValueList(const Aws::Utils::Json::JsonValue& jsonValue);
-    PartitionValueList& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PartitionValueList(Aws::Utils::Json::JsonView jsonValue);
+    PartitionValueList& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

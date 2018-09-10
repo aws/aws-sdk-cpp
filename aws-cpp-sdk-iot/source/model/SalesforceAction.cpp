@@ -34,14 +34,14 @@ SalesforceAction::SalesforceAction() :
 {
 }
 
-SalesforceAction::SalesforceAction(const JsonValue& jsonValue) : 
+SalesforceAction::SalesforceAction(JsonView jsonValue) : 
     m_tokenHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SalesforceAction& SalesforceAction::operator =(const JsonValue& jsonValue)
+SalesforceAction& SalesforceAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("token"))
   {

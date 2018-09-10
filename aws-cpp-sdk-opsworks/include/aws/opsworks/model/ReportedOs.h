@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ReportedOs();
-    ReportedOs(const Aws::Utils::Json::JsonValue& jsonValue);
-    ReportedOs& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ReportedOs(Aws::Utils::Json::JsonView jsonValue);
+    ReportedOs& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

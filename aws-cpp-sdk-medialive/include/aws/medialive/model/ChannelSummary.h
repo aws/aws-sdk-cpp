@@ -17,6 +17,8 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/InputSpecification.h>
+#include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
@@ -30,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -46,8 +49,8 @@ namespace Model
   {
   public:
     ChannelSummary();
-    ChannelSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    ChannelSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ChannelSummary(Aws::Utils::Json::JsonView jsonValue);
+    ChannelSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -266,6 +269,48 @@ one destination per
     inline ChannelSummary& AddInputAttachments(InputAttachment&& value) { m_inputAttachmentsHasBeenSet = true; m_inputAttachments.push_back(std::move(value)); return *this; }
 
 
+    
+    inline const InputSpecification& GetInputSpecification() const{ return m_inputSpecification; }
+
+    
+    inline void SetInputSpecification(const InputSpecification& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = value; }
+
+    
+    inline void SetInputSpecification(InputSpecification&& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = std::move(value); }
+
+    
+    inline ChannelSummary& WithInputSpecification(const InputSpecification& value) { SetInputSpecification(value); return *this;}
+
+    
+    inline ChannelSummary& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline ChannelSummary& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline ChannelSummary& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+
+
     /**
      * The name of the channel. (user-mutable)
      */
@@ -385,6 +430,12 @@ one destination per
 
     Aws::Vector<InputAttachment> m_inputAttachments;
     bool m_inputAttachmentsHasBeenSet;
+
+    InputSpecification m_inputSpecification;
+    bool m_inputSpecificationHasBeenSet;
+
+    LogLevel m_logLevel;
+    bool m_logLevelHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

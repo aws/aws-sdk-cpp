@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     DeleteRequest();
-    DeleteRequest(const Aws::Utils::Json::JsonValue& jsonValue);
-    DeleteRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DeleteRequest(Aws::Utils::Json::JsonView jsonValue);
+    DeleteRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

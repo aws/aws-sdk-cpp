@@ -44,7 +44,7 @@ Aws::String UpdateElasticIpRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateElasticIpRequest::GetRequestSpecificHeaders() const

@@ -37,7 +37,7 @@ Aws::String ResendContactReachabilityEmailRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ResendContactReachabilityEmailRequest::GetRequestSpecificHeaders() const

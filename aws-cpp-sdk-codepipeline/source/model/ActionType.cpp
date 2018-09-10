@@ -37,7 +37,7 @@ ActionType::ActionType() :
 {
 }
 
-ActionType::ActionType(const JsonValue& jsonValue) : 
+ActionType::ActionType(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_settingsHasBeenSet(false),
     m_actionConfigurationPropertiesHasBeenSet(false),
@@ -47,7 +47,7 @@ ActionType::ActionType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ActionType& ActionType::operator =(const JsonValue& jsonValue)
+ActionType& ActionType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -65,7 +65,7 @@ ActionType& ActionType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("actionConfigurationProperties"))
   {
-    Array<JsonValue> actionConfigurationPropertiesJsonList = jsonValue.GetArray("actionConfigurationProperties");
+    Array<JsonView> actionConfigurationPropertiesJsonList = jsonValue.GetArray("actionConfigurationProperties");
     for(unsigned actionConfigurationPropertiesIndex = 0; actionConfigurationPropertiesIndex < actionConfigurationPropertiesJsonList.GetLength(); ++actionConfigurationPropertiesIndex)
     {
       m_actionConfigurationProperties.push_back(actionConfigurationPropertiesJsonList[actionConfigurationPropertiesIndex].AsObject());

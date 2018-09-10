@@ -34,14 +34,14 @@ RegistrationConfig::RegistrationConfig() :
 {
 }
 
-RegistrationConfig::RegistrationConfig(const JsonValue& jsonValue) : 
+RegistrationConfig::RegistrationConfig(JsonView jsonValue) : 
     m_templateBodyHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RegistrationConfig& RegistrationConfig::operator =(const JsonValue& jsonValue)
+RegistrationConfig& RegistrationConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("templateBody"))
   {

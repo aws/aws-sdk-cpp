@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     OutgoingCertificate();
-    OutgoingCertificate(const Aws::Utils::Json::JsonValue& jsonValue);
-    OutgoingCertificate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OutgoingCertificate(Aws::Utils::Json::JsonView jsonValue);
+    OutgoingCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

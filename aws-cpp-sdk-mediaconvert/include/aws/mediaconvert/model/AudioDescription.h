@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -47,34 +48,24 @@ namespace Model
   {
   public:
     AudioDescription();
-    AudioDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    AudioDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AudioDescription(Aws::Utils::Json::JsonView jsonValue);
+    AudioDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    /**
-     * Settings for Audio Normalization
-     */
+    
     inline const AudioNormalizationSettings& GetAudioNormalizationSettings() const{ return m_audioNormalizationSettings; }
 
-    /**
-     * Settings for Audio Normalization
-     */
+    
     inline void SetAudioNormalizationSettings(const AudioNormalizationSettings& value) { m_audioNormalizationSettingsHasBeenSet = true; m_audioNormalizationSettings = value; }
 
-    /**
-     * Settings for Audio Normalization
-     */
+    
     inline void SetAudioNormalizationSettings(AudioNormalizationSettings&& value) { m_audioNormalizationSettingsHasBeenSet = true; m_audioNormalizationSettings = std::move(value); }
 
-    /**
-     * Settings for Audio Normalization
-     */
+    
     inline AudioDescription& WithAudioNormalizationSettings(const AudioNormalizationSettings& value) { SetAudioNormalizationSettings(value); return *this;}
 
-    /**
-     * Settings for Audio Normalization
-     */
+    
     inline AudioDescription& WithAudioNormalizationSettings(AudioNormalizationSettings&& value) { SetAudioNormalizationSettings(std::move(value)); return *this;}
 
 
@@ -235,6 +226,63 @@ namespace Model
 
 
     /**
+     * Specify the language for this audio output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code. The language specified will be used when
+     * 'Follow Input Language Code' is not selected or when 'Follow Input Language
+     * Code' is selected but there is no ISO 639 language code specified by the input.
+     */
+    inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
+
+    /**
+     * Specify the language for this audio output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code. The language specified will be used when
+     * 'Follow Input Language Code' is not selected or when 'Follow Input Language
+     * Code' is selected but there is no ISO 639 language code specified by the input.
+     */
+    inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
+
+    /**
+     * Specify the language for this audio output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code. The language specified will be used when
+     * 'Follow Input Language Code' is not selected or when 'Follow Input Language
+     * Code' is selected but there is no ISO 639 language code specified by the input.
+     */
+    inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
+
+    /**
+     * Specify the language for this audio output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code. The language specified will be used when
+     * 'Follow Input Language Code' is not selected or when 'Follow Input Language
+     * Code' is selected but there is no ISO 639 language code specified by the input.
+     */
+    inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
+
+    /**
+     * Specify the language for this audio output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code. The language specified will be used when
+     * 'Follow Input Language Code' is not selected or when 'Follow Input Language
+     * Code' is selected but there is no ISO 639 language code specified by the input.
+     */
+    inline AudioDescription& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
+
+    /**
+     * Specify the language for this audio output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code. The language specified will be used when
+     * 'Follow Input Language Code' is not selected or when 'Follow Input Language
+     * Code' is selected but there is no ISO 639 language code specified by the input.
+     */
+    inline AudioDescription& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
+
+    /**
+     * Specify the language for this audio output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code. The language specified will be used when
+     * 'Follow Input Language Code' is not selected or when 'Follow Input Language
+     * Code' is selected but there is no ISO 639 language code specified by the input.
+     */
+    inline AudioDescription& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
+
+
+    /**
      * Indicates the language of the audio output track. The ISO 639 language specified
      * in the 'Language Code' drop down will be used when 'Follow Input Language Code'
      * is not selected or when 'Follow Input Language Code' is selected but there is no
@@ -382,6 +430,9 @@ namespace Model
 
     AudioCodecSettings m_codecSettings;
     bool m_codecSettingsHasBeenSet;
+
+    Aws::String m_customLanguageCode;
+    bool m_customLanguageCodeHasBeenSet;
 
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet;

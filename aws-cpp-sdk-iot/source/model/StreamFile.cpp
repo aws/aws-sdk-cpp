@@ -35,7 +35,7 @@ StreamFile::StreamFile() :
 {
 }
 
-StreamFile::StreamFile(const JsonValue& jsonValue) : 
+StreamFile::StreamFile(JsonView jsonValue) : 
     m_fileId(0),
     m_fileIdHasBeenSet(false),
     m_s3LocationHasBeenSet(false)
@@ -43,7 +43,7 @@ StreamFile::StreamFile(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StreamFile& StreamFile::operator =(const JsonValue& jsonValue)
+StreamFile& StreamFile::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("fileId"))
   {

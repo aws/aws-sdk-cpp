@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * The id of the application to get policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The id of the application to get policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The id of the application to get policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The id of the application to get policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The id of the application to get policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline GetApplicationPolicyRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The id of the application to get policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline GetApplicationPolicyRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The id of the application to get policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline GetApplicationPolicyRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 

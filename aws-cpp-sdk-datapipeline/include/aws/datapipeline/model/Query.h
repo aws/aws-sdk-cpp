@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DataPipeline
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Query();
-    Query(const Aws::Utils::Json::JsonValue& jsonValue);
-    Query& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Query(Aws::Utils::Json::JsonView jsonValue);
+    Query& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

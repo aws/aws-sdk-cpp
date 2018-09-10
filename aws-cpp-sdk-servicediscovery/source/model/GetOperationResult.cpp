@@ -37,7 +37,7 @@ GetOperationResult::GetOperationResult(const Aws::AmazonWebServiceResult<JsonVal
 
 GetOperationResult& GetOperationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Operation"))
   {
     m_operation = jsonValue.GetObject("Operation");

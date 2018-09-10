@@ -37,7 +37,7 @@ CreateIPSetResult::CreateIPSetResult(const Aws::AmazonWebServiceResult<JsonValue
 
 CreateIPSetResult& CreateIPSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IPSet"))
   {
     m_iPSet = jsonValue.GetObject("IPSet");

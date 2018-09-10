@@ -37,10 +37,10 @@ DetectTextResult::DetectTextResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 DetectTextResult& DetectTextResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TextDetections"))
   {
-    Array<JsonValue> textDetectionsJsonList = jsonValue.GetArray("TextDetections");
+    Array<JsonView> textDetectionsJsonList = jsonValue.GetArray("TextDetections");
     for(unsigned textDetectionsIndex = 0; textDetectionsIndex < textDetectionsJsonList.GetLength(); ++textDetectionsIndex)
     {
       m_textDetections.push_back(textDetectionsJsonList[textDetectionsIndex].AsObject());

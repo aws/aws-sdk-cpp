@@ -34,14 +34,14 @@ DateTimeRange::DateTimeRange() :
 {
 }
 
-DateTimeRange::DateTimeRange(const JsonValue& jsonValue) : 
+DateTimeRange::DateTimeRange(JsonView jsonValue) : 
     m_fromHasBeenSet(false),
     m_toHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DateTimeRange& DateTimeRange::operator =(const JsonValue& jsonValue)
+DateTimeRange& DateTimeRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("from"))
   {

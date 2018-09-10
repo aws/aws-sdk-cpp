@@ -37,7 +37,7 @@ DiscoverInputSchemaResult::DiscoverInputSchemaResult(const Aws::AmazonWebService
 
 DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InputSchema"))
   {
     m_inputSchema = jsonValue.GetObject("InputSchema");
@@ -46,10 +46,10 @@ DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ParsedInputRecords"))
   {
-    Array<JsonValue> parsedInputRecordsJsonList = jsonValue.GetArray("ParsedInputRecords");
+    Array<JsonView> parsedInputRecordsJsonList = jsonValue.GetArray("ParsedInputRecords");
     for(unsigned parsedInputRecordsIndex = 0; parsedInputRecordsIndex < parsedInputRecordsJsonList.GetLength(); ++parsedInputRecordsIndex)
     {
-      Array<JsonValue> parsedInputRecordJsonList = parsedInputRecordsJsonList[parsedInputRecordsIndex].AsArray();
+      Array<JsonView> parsedInputRecordJsonList = parsedInputRecordsJsonList[parsedInputRecordsIndex].AsArray();
       Aws::Vector<Aws::String> parsedInputRecordList;
       parsedInputRecordList.reserve((size_t)parsedInputRecordJsonList.GetLength());
       for(unsigned parsedInputRecordIndex = 0; parsedInputRecordIndex < parsedInputRecordJsonList.GetLength(); ++parsedInputRecordIndex)
@@ -62,7 +62,7 @@ DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("ProcessedInputRecords"))
   {
-    Array<JsonValue> processedInputRecordsJsonList = jsonValue.GetArray("ProcessedInputRecords");
+    Array<JsonView> processedInputRecordsJsonList = jsonValue.GetArray("ProcessedInputRecords");
     for(unsigned processedInputRecordsIndex = 0; processedInputRecordsIndex < processedInputRecordsJsonList.GetLength(); ++processedInputRecordsIndex)
     {
       m_processedInputRecords.push_back(processedInputRecordsJsonList[processedInputRecordsIndex].AsString());
@@ -71,7 +71,7 @@ DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("RawInputRecords"))
   {
-    Array<JsonValue> rawInputRecordsJsonList = jsonValue.GetArray("RawInputRecords");
+    Array<JsonView> rawInputRecordsJsonList = jsonValue.GetArray("RawInputRecords");
     for(unsigned rawInputRecordsIndex = 0; rawInputRecordsIndex < rawInputRecordsJsonList.GetLength(); ++rawInputRecordsIndex)
     {
       m_rawInputRecords.push_back(rawInputRecordsJsonList[rawInputRecordsIndex].AsString());

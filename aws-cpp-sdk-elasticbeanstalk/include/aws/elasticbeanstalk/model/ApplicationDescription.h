@@ -53,6 +53,42 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
+    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
+    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
+    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
+    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
+    inline ApplicationDescription& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
+    inline ApplicationDescription& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
+    inline ApplicationDescription& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+
+
+    /**
      * <p>The name of the application.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
@@ -292,6 +328,9 @@ namespace Model
     inline ApplicationDescription& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_applicationArn;
+    bool m_applicationArnHasBeenSet;
 
     Aws::String m_applicationName;
     bool m_applicationNameHasBeenSet;

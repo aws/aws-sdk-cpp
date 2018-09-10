@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dax/model/NotificationConfiguration.h>
 #include <aws/dax/model/ParameterGroupStatus.h>
+#include <aws/dax/model/SSEDescription.h>
 #include <aws/dax/model/Node.h>
 #include <aws/dax/model/SecurityGroupMembership.h>
 #include <utility>
@@ -31,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DAX
@@ -48,8 +50,8 @@ namespace Model
   {
   public:
     Cluster();
-    Cluster(const Aws::Utils::Json::JsonValue& jsonValue);
-    Cluster& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Cluster(Aws::Utils::Json::JsonView jsonValue);
+    Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -640,6 +642,37 @@ namespace Model
      */
     inline Cluster& WithParameterGroup(ParameterGroupStatus&& value) { SetParameterGroup(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The description of the server-side encryption status on the specified DAX
+     * cluster.</p>
+     */
+    inline const SSEDescription& GetSSEDescription() const{ return m_sSEDescription; }
+
+    /**
+     * <p>The description of the server-side encryption status on the specified DAX
+     * cluster.</p>
+     */
+    inline void SetSSEDescription(const SSEDescription& value) { m_sSEDescriptionHasBeenSet = true; m_sSEDescription = value; }
+
+    /**
+     * <p>The description of the server-side encryption status on the specified DAX
+     * cluster.</p>
+     */
+    inline void SetSSEDescription(SSEDescription&& value) { m_sSEDescriptionHasBeenSet = true; m_sSEDescription = std::move(value); }
+
+    /**
+     * <p>The description of the server-side encryption status on the specified DAX
+     * cluster.</p>
+     */
+    inline Cluster& WithSSEDescription(const SSEDescription& value) { SetSSEDescription(value); return *this;}
+
+    /**
+     * <p>The description of the server-side encryption status on the specified DAX
+     * cluster.</p>
+     */
+    inline Cluster& WithSSEDescription(SSEDescription&& value) { SetSSEDescription(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterName;
@@ -689,6 +722,9 @@ namespace Model
 
     ParameterGroupStatus m_parameterGroup;
     bool m_parameterGroupHasBeenSet;
+
+    SSEDescription m_sSEDescription;
+    bool m_sSEDescriptionHasBeenSet;
   };
 
 } // namespace Model

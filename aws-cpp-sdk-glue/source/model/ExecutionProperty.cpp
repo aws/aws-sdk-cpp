@@ -34,14 +34,14 @@ ExecutionProperty::ExecutionProperty() :
 {
 }
 
-ExecutionProperty::ExecutionProperty(const JsonValue& jsonValue) : 
+ExecutionProperty::ExecutionProperty(JsonView jsonValue) : 
     m_maxConcurrentRuns(0),
     m_maxConcurrentRunsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ExecutionProperty& ExecutionProperty::operator =(const JsonValue& jsonValue)
+ExecutionProperty& ExecutionProperty::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MaxConcurrentRuns"))
   {

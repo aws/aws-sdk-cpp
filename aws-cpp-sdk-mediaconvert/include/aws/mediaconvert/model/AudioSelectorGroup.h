@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -42,72 +43,72 @@ namespace Model
   {
   public:
     AudioSelectorGroup();
-    AudioSelectorGroup(const Aws::Utils::Json::JsonValue& jsonValue);
-    AudioSelectorGroup& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AudioSelectorGroup(Aws::Utils::Json::JsonView jsonValue);
+    AudioSelectorGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Name of an "Audio Selector":#inputs-audio_selector within the same input to
-     * include in the group.  Audio selector names are standardized, based on their
-     * order within the input (e.g. "Audio Selector 1").  The audio_selector_name
-     * parameter can be repeated to add any number of audio selectors to the group.
+     * Name of an Audio Selector within the same input to include in the group.  Audio
+     * selector names are standardized, based on their order within the input (e.g.,
+     * "Audio Selector 1"). The audio selector name parameter can be repeated to add
+     * any number of audio selectors to the group.
      */
     inline const Aws::Vector<Aws::String>& GetAudioSelectorNames() const{ return m_audioSelectorNames; }
 
     /**
-     * Name of an "Audio Selector":#inputs-audio_selector within the same input to
-     * include in the group.  Audio selector names are standardized, based on their
-     * order within the input (e.g. "Audio Selector 1").  The audio_selector_name
-     * parameter can be repeated to add any number of audio selectors to the group.
+     * Name of an Audio Selector within the same input to include in the group.  Audio
+     * selector names are standardized, based on their order within the input (e.g.,
+     * "Audio Selector 1"). The audio selector name parameter can be repeated to add
+     * any number of audio selectors to the group.
      */
     inline void SetAudioSelectorNames(const Aws::Vector<Aws::String>& value) { m_audioSelectorNamesHasBeenSet = true; m_audioSelectorNames = value; }
 
     /**
-     * Name of an "Audio Selector":#inputs-audio_selector within the same input to
-     * include in the group.  Audio selector names are standardized, based on their
-     * order within the input (e.g. "Audio Selector 1").  The audio_selector_name
-     * parameter can be repeated to add any number of audio selectors to the group.
+     * Name of an Audio Selector within the same input to include in the group.  Audio
+     * selector names are standardized, based on their order within the input (e.g.,
+     * "Audio Selector 1"). The audio selector name parameter can be repeated to add
+     * any number of audio selectors to the group.
      */
     inline void SetAudioSelectorNames(Aws::Vector<Aws::String>&& value) { m_audioSelectorNamesHasBeenSet = true; m_audioSelectorNames = std::move(value); }
 
     /**
-     * Name of an "Audio Selector":#inputs-audio_selector within the same input to
-     * include in the group.  Audio selector names are standardized, based on their
-     * order within the input (e.g. "Audio Selector 1").  The audio_selector_name
-     * parameter can be repeated to add any number of audio selectors to the group.
+     * Name of an Audio Selector within the same input to include in the group.  Audio
+     * selector names are standardized, based on their order within the input (e.g.,
+     * "Audio Selector 1"). The audio selector name parameter can be repeated to add
+     * any number of audio selectors to the group.
      */
     inline AudioSelectorGroup& WithAudioSelectorNames(const Aws::Vector<Aws::String>& value) { SetAudioSelectorNames(value); return *this;}
 
     /**
-     * Name of an "Audio Selector":#inputs-audio_selector within the same input to
-     * include in the group.  Audio selector names are standardized, based on their
-     * order within the input (e.g. "Audio Selector 1").  The audio_selector_name
-     * parameter can be repeated to add any number of audio selectors to the group.
+     * Name of an Audio Selector within the same input to include in the group.  Audio
+     * selector names are standardized, based on their order within the input (e.g.,
+     * "Audio Selector 1"). The audio selector name parameter can be repeated to add
+     * any number of audio selectors to the group.
      */
     inline AudioSelectorGroup& WithAudioSelectorNames(Aws::Vector<Aws::String>&& value) { SetAudioSelectorNames(std::move(value)); return *this;}
 
     /**
-     * Name of an "Audio Selector":#inputs-audio_selector within the same input to
-     * include in the group.  Audio selector names are standardized, based on their
-     * order within the input (e.g. "Audio Selector 1").  The audio_selector_name
-     * parameter can be repeated to add any number of audio selectors to the group.
+     * Name of an Audio Selector within the same input to include in the group.  Audio
+     * selector names are standardized, based on their order within the input (e.g.,
+     * "Audio Selector 1"). The audio selector name parameter can be repeated to add
+     * any number of audio selectors to the group.
      */
     inline AudioSelectorGroup& AddAudioSelectorNames(const Aws::String& value) { m_audioSelectorNamesHasBeenSet = true; m_audioSelectorNames.push_back(value); return *this; }
 
     /**
-     * Name of an "Audio Selector":#inputs-audio_selector within the same input to
-     * include in the group.  Audio selector names are standardized, based on their
-     * order within the input (e.g. "Audio Selector 1").  The audio_selector_name
-     * parameter can be repeated to add any number of audio selectors to the group.
+     * Name of an Audio Selector within the same input to include in the group.  Audio
+     * selector names are standardized, based on their order within the input (e.g.,
+     * "Audio Selector 1"). The audio selector name parameter can be repeated to add
+     * any number of audio selectors to the group.
      */
     inline AudioSelectorGroup& AddAudioSelectorNames(Aws::String&& value) { m_audioSelectorNamesHasBeenSet = true; m_audioSelectorNames.push_back(std::move(value)); return *this; }
 
     /**
-     * Name of an "Audio Selector":#inputs-audio_selector within the same input to
-     * include in the group.  Audio selector names are standardized, based on their
-     * order within the input (e.g. "Audio Selector 1").  The audio_selector_name
-     * parameter can be repeated to add any number of audio selectors to the group.
+     * Name of an Audio Selector within the same input to include in the group.  Audio
+     * selector names are standardized, based on their order within the input (e.g.,
+     * "Audio Selector 1"). The audio selector name parameter can be repeated to add
+     * any number of audio selectors to the group.
      */
     inline AudioSelectorGroup& AddAudioSelectorNames(const char* value) { m_audioSelectorNamesHasBeenSet = true; m_audioSelectorNames.push_back(value); return *this; }
 

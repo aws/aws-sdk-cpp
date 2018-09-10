@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     APNSMessage();
-    APNSMessage(const Aws::Utils::Json::JsonValue& jsonValue);
-    APNSMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    APNSMessage(Aws::Utils::Json::JsonView jsonValue);
+    APNSMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -128,37 +129,37 @@ namespace Model
 
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline APNSMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline APNSMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline APNSMessage& WithBody(const char* value) { SetBody(value); return *this;}
 
@@ -214,44 +215,65 @@ namespace Model
 
 
     /**
-     * Multiple notifications with the same collapse identifier are displayed to the
-     * user as a single notification. The value of this key must not exceed 64 bytes.
+     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
+     * messages into a single push notification instead of delivering each message
+     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
+     * value to set the apns-collapse-id request header when it sends the message to
+     * APNs.
      */
     inline const Aws::String& GetCollapseId() const{ return m_collapseId; }
 
     /**
-     * Multiple notifications with the same collapse identifier are displayed to the
-     * user as a single notification. The value of this key must not exceed 64 bytes.
+     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
+     * messages into a single push notification instead of delivering each message
+     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
+     * value to set the apns-collapse-id request header when it sends the message to
+     * APNs.
      */
     inline void SetCollapseId(const Aws::String& value) { m_collapseIdHasBeenSet = true; m_collapseId = value; }
 
     /**
-     * Multiple notifications with the same collapse identifier are displayed to the
-     * user as a single notification. The value of this key must not exceed 64 bytes.
+     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
+     * messages into a single push notification instead of delivering each message
+     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
+     * value to set the apns-collapse-id request header when it sends the message to
+     * APNs.
      */
     inline void SetCollapseId(Aws::String&& value) { m_collapseIdHasBeenSet = true; m_collapseId = std::move(value); }
 
     /**
-     * Multiple notifications with the same collapse identifier are displayed to the
-     * user as a single notification. The value of this key must not exceed 64 bytes.
+     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
+     * messages into a single push notification instead of delivering each message
+     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
+     * value to set the apns-collapse-id request header when it sends the message to
+     * APNs.
      */
     inline void SetCollapseId(const char* value) { m_collapseIdHasBeenSet = true; m_collapseId.assign(value); }
 
     /**
-     * Multiple notifications with the same collapse identifier are displayed to the
-     * user as a single notification. The value of this key must not exceed 64 bytes.
+     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
+     * messages into a single push notification instead of delivering each message
+     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
+     * value to set the apns-collapse-id request header when it sends the message to
+     * APNs.
      */
     inline APNSMessage& WithCollapseId(const Aws::String& value) { SetCollapseId(value); return *this;}
 
     /**
-     * Multiple notifications with the same collapse identifier are displayed to the
-     * user as a single notification. The value of this key must not exceed 64 bytes.
+     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
+     * messages into a single push notification instead of delivering each message
+     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
+     * value to set the apns-collapse-id request header when it sends the message to
+     * APNs.
      */
     inline APNSMessage& WithCollapseId(Aws::String&& value) { SetCollapseId(std::move(value)); return *this;}
 
     /**
-     * Multiple notifications with the same collapse identifier are displayed to the
-     * user as a single notification. The value of this key must not exceed 64 bytes.
+     * An ID that, if assigned to multiple messages, causes APNs to coalesce the
+     * messages into a single push notification instead of delivering each message
+     * individually. The value must not exceed 64 bytes. Amazon Pinpoint uses this
+     * value to set the apns-collapse-id request header when it sends the message to
+     * APNs.
      */
     inline APNSMessage& WithCollapseId(const char* value) { SetCollapseId(value); return *this;}
 
@@ -402,37 +424,170 @@ namespace Model
 
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
+     * request header when it sends the message to APNs. Accepts the following
+     * values:
+
+"5" - Low priority. Messages might be delayed, delivered in groups, and
+     * throttled.
+
+"10" - High priority. Messages are sent immediately. High priority
+     * messages must cause an alert, sound, or badge on the receiving device.
+
+The
+     * default value is "10".
+
+The equivalent values for FCM or GCM messages are
+     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
+     * converts them.
+
+For more information about the apns-priority parameter, see
+     * Communicating with APNs in the APNs Local and Remote Notification Programming
+     * Guide.
      */
     inline const Aws::String& GetPriority() const{ return m_priority; }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
+     * request header when it sends the message to APNs. Accepts the following
+     * values:
+
+"5" - Low priority. Messages might be delayed, delivered in groups, and
+     * throttled.
+
+"10" - High priority. Messages are sent immediately. High priority
+     * messages must cause an alert, sound, or badge on the receiving device.
+
+The
+     * default value is "10".
+
+The equivalent values for FCM or GCM messages are
+     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
+     * converts them.
+
+For more information about the apns-priority parameter, see
+     * Communicating with APNs in the APNs Local and Remote Notification Programming
+     * Guide.
      */
     inline void SetPriority(const Aws::String& value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
+     * request header when it sends the message to APNs. Accepts the following
+     * values:
+
+"5" - Low priority. Messages might be delayed, delivered in groups, and
+     * throttled.
+
+"10" - High priority. Messages are sent immediately. High priority
+     * messages must cause an alert, sound, or badge on the receiving device.
+
+The
+     * default value is "10".
+
+The equivalent values for FCM or GCM messages are
+     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
+     * converts them.
+
+For more information about the apns-priority parameter, see
+     * Communicating with APNs in the APNs Local and Remote Notification Programming
+     * Guide.
      */
     inline void SetPriority(Aws::String&& value) { m_priorityHasBeenSet = true; m_priority = std::move(value); }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
+     * request header when it sends the message to APNs. Accepts the following
+     * values:
+
+"5" - Low priority. Messages might be delayed, delivered in groups, and
+     * throttled.
+
+"10" - High priority. Messages are sent immediately. High priority
+     * messages must cause an alert, sound, or badge on the receiving device.
+
+The
+     * default value is "10".
+
+The equivalent values for FCM or GCM messages are
+     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
+     * converts them.
+
+For more information about the apns-priority parameter, see
+     * Communicating with APNs in the APNs Local and Remote Notification Programming
+     * Guide.
      */
     inline void SetPriority(const char* value) { m_priorityHasBeenSet = true; m_priority.assign(value); }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
+     * request header when it sends the message to APNs. Accepts the following
+     * values:
+
+"5" - Low priority. Messages might be delayed, delivered in groups, and
+     * throttled.
+
+"10" - High priority. Messages are sent immediately. High priority
+     * messages must cause an alert, sound, or badge on the receiving device.
+
+The
+     * default value is "10".
+
+The equivalent values for FCM or GCM messages are
+     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
+     * converts them.
+
+For more information about the apns-priority parameter, see
+     * Communicating with APNs in the APNs Local and Remote Notification Programming
+     * Guide.
      */
     inline APNSMessage& WithPriority(const Aws::String& value) { SetPriority(value); return *this;}
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
+     * request header when it sends the message to APNs. Accepts the following
+     * values:
+
+"5" - Low priority. Messages might be delayed, delivered in groups, and
+     * throttled.
+
+"10" - High priority. Messages are sent immediately. High priority
+     * messages must cause an alert, sound, or badge on the receiving device.
+
+The
+     * default value is "10".
+
+The equivalent values for FCM or GCM messages are
+     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
+     * converts them.
+
+For more information about the apns-priority parameter, see
+     * Communicating with APNs in the APNs Local and Remote Notification Programming
+     * Guide.
      */
     inline APNSMessage& WithPriority(Aws::String&& value) { SetPriority(std::move(value)); return *this;}
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the apns-priority
+     * request header when it sends the message to APNs. Accepts the following
+     * values:
+
+"5" - Low priority. Messages might be delayed, delivered in groups, and
+     * throttled.
+
+"10" - High priority. Messages are sent immediately. High priority
+     * messages must cause an alert, sound, or badge on the receiving device.
+
+The
+     * default value is "10".
+
+The equivalent values for FCM or GCM messages are
+     * "normal" and "high". Amazon Pinpoint accepts these values for APNs messages and
+     * converts them.
+
+For more information about the apns-priority parameter, see
+     * Communicating with APNs in the APNs Local and Remote Notification Programming
+     * Guide.
      */
     inline APNSMessage& WithPriority(const char* value) { SetPriority(value); return *this;}
 
@@ -674,29 +829,26 @@ namespace Model
 
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept if
-     * APNS is unable to deliver the notification the first time. If the value is 0,
-     * APNS treats the notification as if it expires immediately and does not store the
-     * notification or attempt to redeliver it. This value is converted to the
-     * expiration field when sent to APNS
+     * The length of time (in seconds) that APNs stores and attempts to deliver the
+     * message. If the value is 0, APNs does not store the message or attempt to
+     * deliver it more than once. Amazon Pinpoint uses this value to set the
+     * apns-expiration request header when it sends the message to APNs.
      */
     inline int GetTimeToLive() const{ return m_timeToLive; }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept if
-     * APNS is unable to deliver the notification the first time. If the value is 0,
-     * APNS treats the notification as if it expires immediately and does not store the
-     * notification or attempt to redeliver it. This value is converted to the
-     * expiration field when sent to APNS
+     * The length of time (in seconds) that APNs stores and attempts to deliver the
+     * message. If the value is 0, APNs does not store the message or attempt to
+     * deliver it more than once. Amazon Pinpoint uses this value to set the
+     * apns-expiration request header when it sends the message to APNs.
      */
     inline void SetTimeToLive(int value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept if
-     * APNS is unable to deliver the notification the first time. If the value is 0,
-     * APNS treats the notification as if it expires immediately and does not store the
-     * notification or attempt to redeliver it. This value is converted to the
-     * expiration field when sent to APNS
+     * The length of time (in seconds) that APNs stores and attempts to deliver the
+     * message. If the value is 0, APNs does not store the message or attempt to
+     * deliver it more than once. Amazon Pinpoint uses this value to set the
+     * apns-expiration request header when it sends the message to APNs.
      */
     inline APNSMessage& WithTimeToLive(int value) { SetTimeToLive(value); return *this;}
 

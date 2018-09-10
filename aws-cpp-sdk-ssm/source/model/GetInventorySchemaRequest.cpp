@@ -68,7 +68,7 @@ Aws::String GetInventorySchemaRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetInventorySchemaRequest::GetRequestSpecificHeaders() const

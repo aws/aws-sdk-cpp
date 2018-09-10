@@ -39,7 +39,7 @@ MessageConfiguration::MessageConfiguration() :
 {
 }
 
-MessageConfiguration::MessageConfiguration(const JsonValue& jsonValue) : 
+MessageConfiguration::MessageConfiguration(JsonView jsonValue) : 
     m_aDMMessageHasBeenSet(false),
     m_aPNSMessageHasBeenSet(false),
     m_baiduMessageHasBeenSet(false),
@@ -51,7 +51,7 @@ MessageConfiguration::MessageConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MessageConfiguration& MessageConfiguration::operator =(const JsonValue& jsonValue)
+MessageConfiguration& MessageConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ADMMessage"))
   {

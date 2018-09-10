@@ -40,7 +40,7 @@ Notification::Notification() :
 {
 }
 
-Notification::Notification(const JsonValue& jsonValue) : 
+Notification::Notification(JsonView jsonValue) : 
     m_notificationType(NotificationType::NOT_SET),
     m_notificationTypeHasBeenSet(false),
     m_comparisonOperator(ComparisonOperator::NOT_SET),
@@ -53,7 +53,7 @@ Notification::Notification(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Notification& Notification::operator =(const JsonValue& jsonValue)
+Notification& Notification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NotificationType"))
   {

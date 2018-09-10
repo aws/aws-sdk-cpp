@@ -43,7 +43,7 @@ Service::Service() :
 {
 }
 
-Service::Service(const JsonValue& jsonValue) : 
+Service::Service(JsonView jsonValue) : 
     m_actionHasBeenSet(false),
     m_archived(false),
     m_archivedHasBeenSet(false),
@@ -59,7 +59,7 @@ Service::Service(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Service& Service::operator =(const JsonValue& jsonValue)
+Service& Service::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("action"))
   {

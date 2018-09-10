@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -41,15 +42,15 @@ namespace Model
    * information for an object inside a <a>BatchRead</a> operation. For more
    * information, see <a>ListIncomingTypedLinks</a> and
    * <a>BatchReadRequest$Operations</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchListIncomingTypedLinks">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListIncomingTypedLinks">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchListIncomingTypedLinks
   {
   public:
     BatchListIncomingTypedLinks();
-    BatchListIncomingTypedLinks(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchListIncomingTypedLinks& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchListIncomingTypedLinks(Aws::Utils::Json::JsonView jsonValue);
+    BatchListIncomingTypedLinks& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

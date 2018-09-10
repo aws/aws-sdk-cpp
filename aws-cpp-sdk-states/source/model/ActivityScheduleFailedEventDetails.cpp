@@ -34,14 +34,14 @@ ActivityScheduleFailedEventDetails::ActivityScheduleFailedEventDetails() :
 {
 }
 
-ActivityScheduleFailedEventDetails::ActivityScheduleFailedEventDetails(const JsonValue& jsonValue) : 
+ActivityScheduleFailedEventDetails::ActivityScheduleFailedEventDetails(JsonView jsonValue) : 
     m_errorHasBeenSet(false),
     m_causeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ActivityScheduleFailedEventDetails& ActivityScheduleFailedEventDetails::operator =(const JsonValue& jsonValue)
+ActivityScheduleFailedEventDetails& ActivityScheduleFailedEventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("error"))
   {

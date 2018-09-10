@@ -34,14 +34,14 @@ PhaseContext::PhaseContext() :
 {
 }
 
-PhaseContext::PhaseContext(const JsonValue& jsonValue) : 
+PhaseContext::PhaseContext(JsonView jsonValue) : 
     m_statusCodeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PhaseContext& PhaseContext::operator =(const JsonValue& jsonValue)
+PhaseContext& PhaseContext::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("statusCode"))
   {

@@ -34,14 +34,14 @@ SizeConstraintSetSummary::SizeConstraintSetSummary() :
 {
 }
 
-SizeConstraintSetSummary::SizeConstraintSetSummary(const JsonValue& jsonValue) : 
+SizeConstraintSetSummary::SizeConstraintSetSummary(JsonView jsonValue) : 
     m_sizeConstraintSetIdHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SizeConstraintSetSummary& SizeConstraintSetSummary::operator =(const JsonValue& jsonValue)
+SizeConstraintSetSummary& SizeConstraintSetSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SizeConstraintSetId"))
   {

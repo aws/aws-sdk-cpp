@@ -38,6 +38,9 @@
 #include <aws/mediaconvert/model/ListJobsResult.h>
 #include <aws/mediaconvert/model/ListPresetsResult.h>
 #include <aws/mediaconvert/model/ListQueuesResult.h>
+#include <aws/mediaconvert/model/ListTagsForResourceResult.h>
+#include <aws/mediaconvert/model/TagResourceResult.h>
+#include <aws/mediaconvert/model/UntagResourceResult.h>
 #include <aws/mediaconvert/model/UpdateJobTemplateResult.h>
 #include <aws/mediaconvert/model/UpdatePresetResult.h>
 #include <aws/mediaconvert/model/UpdateQueueResult.h>
@@ -63,11 +66,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -103,6 +101,9 @@ namespace Model
         class ListJobsRequest;
         class ListPresetsRequest;
         class ListQueuesRequest;
+        class ListTagsForResourceRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateJobTemplateRequest;
         class UpdatePresetRequest;
         class UpdateQueueRequest;
@@ -124,6 +125,9 @@ namespace Model
         typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<MediaConvertErrors>> ListJobsOutcome;
         typedef Aws::Utils::Outcome<ListPresetsResult, Aws::Client::AWSError<MediaConvertErrors>> ListPresetsOutcome;
         typedef Aws::Utils::Outcome<ListQueuesResult, Aws::Client::AWSError<MediaConvertErrors>> ListQueuesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaConvertErrors>> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<MediaConvertErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<MediaConvertErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateJobTemplateResult, Aws::Client::AWSError<MediaConvertErrors>> UpdateJobTemplateOutcome;
         typedef Aws::Utils::Outcome<UpdatePresetResult, Aws::Client::AWSError<MediaConvertErrors>> UpdatePresetOutcome;
         typedef Aws::Utils::Outcome<UpdateQueueResult, Aws::Client::AWSError<MediaConvertErrors>> UpdateQueueOutcome;
@@ -145,6 +149,9 @@ namespace Model
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
         typedef std::future<ListPresetsOutcome> ListPresetsOutcomeCallable;
         typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateJobTemplateOutcome> UpdateJobTemplateOutcomeCallable;
         typedef std::future<UpdatePresetOutcome> UpdatePresetOutcomeCallable;
         typedef std::future<UpdateQueueOutcome> UpdateQueueOutcomeCallable;
@@ -169,6 +176,9 @@ namespace Model
     typedef std::function<void(const MediaConvertClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::ListPresetsRequest&, const Model::ListPresetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPresetsResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::ListQueuesRequest&, const Model::ListQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueuesResponseReceivedHandler;
+    typedef std::function<void(const MediaConvertClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const MediaConvertClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const MediaConvertClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::UpdateJobTemplateRequest&, const Model::UpdateJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobTemplateResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::UpdatePresetRequest&, const Model::UpdatePresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePresetResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::UpdateQueueRequest&, const Model::UpdateQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQueueResponseReceivedHandler;
@@ -202,7 +212,7 @@ namespace Model
 
         virtual ~MediaConvertClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mediaconvert"; }
+        inline virtual const char* GetServiceClientName() const override { return "MediaConvert"; }
 
 
         /**
@@ -709,6 +719,99 @@ namespace Model
         virtual void ListQueuesAsync(const Model::ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Retrieve the tags for a MediaConvert resource.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * Retrieve the tags for a MediaConvert resource.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * Retrieve the tags for a MediaConvert resource.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Add tags to a MediaConvert queue, preset, or job template. For information about
+         * tagging, see the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * Add tags to a MediaConvert queue, preset, or job template. For information about
+         * tagging, see the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * Add tags to a MediaConvert queue, preset, or job template. For information about
+         * tagging, see the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Remove tags from a MediaConvert queue, preset, or job template. For information
+         * about tagging, see the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * Remove tags from a MediaConvert queue, preset, or job template. For information
+         * about tagging, see the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * Remove tags from a MediaConvert queue, preset, or job template. For information
+         * about tagging, see the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/tagging-resources.html<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Modify one of your existing job templates.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UpdateJobTemplate">AWS
          * API Reference</a></p>
@@ -805,6 +908,9 @@ namespace Model
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPresetsAsyncHelper(const Model::ListPresetsRequest& request, const ListPresetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListQueuesAsyncHelper(const Model::ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateJobTemplateAsyncHelper(const Model::UpdateJobTemplateRequest& request, const UpdateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePresetAsyncHelper(const Model::UpdatePresetRequest& request, const UpdatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateQueueAsyncHelper(const Model::UpdateQueueRequest& request, const UpdateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

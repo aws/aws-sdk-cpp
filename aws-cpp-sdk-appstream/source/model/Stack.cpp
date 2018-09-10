@@ -35,23 +35,31 @@ Stack::Stack() :
     m_displayNameHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_storageConnectorsHasBeenSet(false),
-    m_stackErrorsHasBeenSet(false)
+    m_redirectURLHasBeenSet(false),
+    m_feedbackURLHasBeenSet(false),
+    m_stackErrorsHasBeenSet(false),
+    m_userSettingsHasBeenSet(false),
+    m_applicationSettingsHasBeenSet(false)
 {
 }
 
-Stack::Stack(const JsonValue& jsonValue) : 
+Stack::Stack(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_storageConnectorsHasBeenSet(false),
-    m_stackErrorsHasBeenSet(false)
+    m_redirectURLHasBeenSet(false),
+    m_feedbackURLHasBeenSet(false),
+    m_stackErrorsHasBeenSet(false),
+    m_userSettingsHasBeenSet(false),
+    m_applicationSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Stack& Stack::operator =(const JsonValue& jsonValue)
+Stack& Stack::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Arn"))
   {
@@ -90,7 +98,7 @@ Stack& Stack::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("StorageConnectors"))
   {
-    Array<JsonValue> storageConnectorsJsonList = jsonValue.GetArray("StorageConnectors");
+    Array<JsonView> storageConnectorsJsonList = jsonValue.GetArray("StorageConnectors");
     for(unsigned storageConnectorsIndex = 0; storageConnectorsIndex < storageConnectorsJsonList.GetLength(); ++storageConnectorsIndex)
     {
       m_storageConnectors.push_back(storageConnectorsJsonList[storageConnectorsIndex].AsObject());
@@ -98,14 +106,45 @@ Stack& Stack::operator =(const JsonValue& jsonValue)
     m_storageConnectorsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RedirectURL"))
+  {
+    m_redirectURL = jsonValue.GetString("RedirectURL");
+
+    m_redirectURLHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FeedbackURL"))
+  {
+    m_feedbackURL = jsonValue.GetString("FeedbackURL");
+
+    m_feedbackURLHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("StackErrors"))
   {
-    Array<JsonValue> stackErrorsJsonList = jsonValue.GetArray("StackErrors");
+    Array<JsonView> stackErrorsJsonList = jsonValue.GetArray("StackErrors");
     for(unsigned stackErrorsIndex = 0; stackErrorsIndex < stackErrorsJsonList.GetLength(); ++stackErrorsIndex)
     {
       m_stackErrors.push_back(stackErrorsJsonList[stackErrorsIndex].AsObject());
     }
     m_stackErrorsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UserSettings"))
+  {
+    Array<JsonView> userSettingsJsonList = jsonValue.GetArray("UserSettings");
+    for(unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex)
+    {
+      m_userSettings.push_back(userSettingsJsonList[userSettingsIndex].AsObject());
+    }
+    m_userSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationSettings"))
+  {
+    m_applicationSettings = jsonValue.GetObject("ApplicationSettings");
+
+    m_applicationSettingsHasBeenSet = true;
   }
 
   return *this;
@@ -155,6 +194,18 @@ JsonValue Stack::Jsonize() const
 
   }
 
+  if(m_redirectURLHasBeenSet)
+  {
+   payload.WithString("RedirectURL", m_redirectURL);
+
+  }
+
+  if(m_feedbackURLHasBeenSet)
+  {
+   payload.WithString("FeedbackURL", m_feedbackURL);
+
+  }
+
   if(m_stackErrorsHasBeenSet)
   {
    Array<JsonValue> stackErrorsJsonList(m_stackErrors.size());
@@ -163,6 +214,23 @@ JsonValue Stack::Jsonize() const
      stackErrorsJsonList[stackErrorsIndex].AsObject(m_stackErrors[stackErrorsIndex].Jsonize());
    }
    payload.WithArray("StackErrors", std::move(stackErrorsJsonList));
+
+  }
+
+  if(m_userSettingsHasBeenSet)
+  {
+   Array<JsonValue> userSettingsJsonList(m_userSettings.size());
+   for(unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex)
+   {
+     userSettingsJsonList[userSettingsIndex].AsObject(m_userSettings[userSettingsIndex].Jsonize());
+   }
+   payload.WithArray("UserSettings", std::move(userSettingsJsonList));
+
+  }
+
+  if(m_applicationSettingsHasBeenSet)
+  {
+   payload.WithObject("ApplicationSettings", m_applicationSettings.Jsonize());
 
   }
 

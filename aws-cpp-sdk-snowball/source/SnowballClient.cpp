@@ -41,6 +41,7 @@
 #include <aws/snowball/model/GetSnowballUsageRequest.h>
 #include <aws/snowball/model/ListClusterJobsRequest.h>
 #include <aws/snowball/model/ListClustersRequest.h>
+#include <aws/snowball/model/ListCompatibleImagesRequest.h>
 #include <aws/snowball/model/ListJobsRequest.h>
 #include <aws/snowball/model/UpdateClusterRequest.h>
 #include <aws/snowball/model/UpdateJobRequest.h>
@@ -597,6 +598,41 @@ void SnowballClient::ListClustersAsync(const ListClustersRequest& request, const
 void SnowballClient::ListClustersAsyncHelper(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListClusters(request), context);
+}
+
+ListCompatibleImagesOutcome SnowballClient::ListCompatibleImages(const ListCompatibleImagesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListCompatibleImagesOutcome(ListCompatibleImagesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListCompatibleImagesOutcome(outcome.GetError());
+  }
+}
+
+ListCompatibleImagesOutcomeCallable SnowballClient::ListCompatibleImagesCallable(const ListCompatibleImagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCompatibleImagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCompatibleImages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SnowballClient::ListCompatibleImagesAsync(const ListCompatibleImagesRequest& request, const ListCompatibleImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCompatibleImagesAsyncHelper( request, handler, context ); } );
+}
+
+void SnowballClient::ListCompatibleImagesAsyncHelper(const ListCompatibleImagesRequest& request, const ListCompatibleImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCompatibleImages(request), context);
 }
 
 ListJobsOutcome SnowballClient::ListJobs(const ListJobsRequest& request) const

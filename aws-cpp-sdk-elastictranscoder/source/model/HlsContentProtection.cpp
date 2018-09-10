@@ -38,7 +38,7 @@ HlsContentProtection::HlsContentProtection() :
 {
 }
 
-HlsContentProtection::HlsContentProtection(const JsonValue& jsonValue) : 
+HlsContentProtection::HlsContentProtection(JsonView jsonValue) : 
     m_methodHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_keyMd5HasBeenSet(false),
@@ -49,7 +49,7 @@ HlsContentProtection::HlsContentProtection(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HlsContentProtection& HlsContentProtection::operator =(const JsonValue& jsonValue)
+HlsContentProtection& HlsContentProtection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Method"))
   {

@@ -51,7 +51,7 @@ Aws::String CreateEnvironmentMembershipRequest::SerializePayload() const
    payload.WithString("permissions", MemberPermissionsMapper::GetNameForMemberPermissions(m_permissions));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateEnvironmentMembershipRequest::GetRequestSpecificHeaders() const

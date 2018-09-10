@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -44,57 +45,64 @@ namespace Model
   {
   public:
     LoadBalancerInfo();
-    LoadBalancerInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    LoadBalancerInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LoadBalancerInfo(Aws::Utils::Json::JsonView jsonValue);
+    LoadBalancerInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>An array containing information about the load balancer to use for load
      * balancing in a deployment. In Elastic Load Balancing, load balancers are used
-     * with Classic Load Balancers.</p>
+     * with Classic Load Balancers.</p> <note> <p> Adding more than one load balancer
+     * to the array is not supported. </p> </note>
      */
     inline const Aws::Vector<ELBInfo>& GetElbInfoList() const{ return m_elbInfoList; }
 
     /**
      * <p>An array containing information about the load balancer to use for load
      * balancing in a deployment. In Elastic Load Balancing, load balancers are used
-     * with Classic Load Balancers.</p>
+     * with Classic Load Balancers.</p> <note> <p> Adding more than one load balancer
+     * to the array is not supported. </p> </note>
      */
     inline void SetElbInfoList(const Aws::Vector<ELBInfo>& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList = value; }
 
     /**
      * <p>An array containing information about the load balancer to use for load
      * balancing in a deployment. In Elastic Load Balancing, load balancers are used
-     * with Classic Load Balancers.</p>
+     * with Classic Load Balancers.</p> <note> <p> Adding more than one load balancer
+     * to the array is not supported. </p> </note>
      */
     inline void SetElbInfoList(Aws::Vector<ELBInfo>&& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList = std::move(value); }
 
     /**
      * <p>An array containing information about the load balancer to use for load
      * balancing in a deployment. In Elastic Load Balancing, load balancers are used
-     * with Classic Load Balancers.</p>
+     * with Classic Load Balancers.</p> <note> <p> Adding more than one load balancer
+     * to the array is not supported. </p> </note>
      */
     inline LoadBalancerInfo& WithElbInfoList(const Aws::Vector<ELBInfo>& value) { SetElbInfoList(value); return *this;}
 
     /**
      * <p>An array containing information about the load balancer to use for load
      * balancing in a deployment. In Elastic Load Balancing, load balancers are used
-     * with Classic Load Balancers.</p>
+     * with Classic Load Balancers.</p> <note> <p> Adding more than one load balancer
+     * to the array is not supported. </p> </note>
      */
     inline LoadBalancerInfo& WithElbInfoList(Aws::Vector<ELBInfo>&& value) { SetElbInfoList(std::move(value)); return *this;}
 
     /**
      * <p>An array containing information about the load balancer to use for load
      * balancing in a deployment. In Elastic Load Balancing, load balancers are used
-     * with Classic Load Balancers.</p>
+     * with Classic Load Balancers.</p> <note> <p> Adding more than one load balancer
+     * to the array is not supported. </p> </note>
      */
     inline LoadBalancerInfo& AddElbInfoList(const ELBInfo& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList.push_back(value); return *this; }
 
     /**
      * <p>An array containing information about the load balancer to use for load
      * balancing in a deployment. In Elastic Load Balancing, load balancers are used
-     * with Classic Load Balancers.</p>
+     * with Classic Load Balancers.</p> <note> <p> Adding more than one load balancer
+     * to the array is not supported. </p> </note>
      */
     inline LoadBalancerInfo& AddElbInfoList(ELBInfo&& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList.push_back(std::move(value)); return *this; }
 
@@ -102,49 +110,56 @@ namespace Model
     /**
      * <p>An array containing information about the target group to use for load
      * balancing in a deployment. In Elastic Load Balancing, target groups are used
-     * with Application Load Balancers.</p>
+     * with Application Load Balancers.</p> <note> <p> Adding more than one target
+     * group to the array is not supported. </p> </note>
      */
     inline const Aws::Vector<TargetGroupInfo>& GetTargetGroupInfoList() const{ return m_targetGroupInfoList; }
 
     /**
      * <p>An array containing information about the target group to use for load
      * balancing in a deployment. In Elastic Load Balancing, target groups are used
-     * with Application Load Balancers.</p>
+     * with Application Load Balancers.</p> <note> <p> Adding more than one target
+     * group to the array is not supported. </p> </note>
      */
     inline void SetTargetGroupInfoList(const Aws::Vector<TargetGroupInfo>& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList = value; }
 
     /**
      * <p>An array containing information about the target group to use for load
      * balancing in a deployment. In Elastic Load Balancing, target groups are used
-     * with Application Load Balancers.</p>
+     * with Application Load Balancers.</p> <note> <p> Adding more than one target
+     * group to the array is not supported. </p> </note>
      */
     inline void SetTargetGroupInfoList(Aws::Vector<TargetGroupInfo>&& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList = std::move(value); }
 
     /**
      * <p>An array containing information about the target group to use for load
      * balancing in a deployment. In Elastic Load Balancing, target groups are used
-     * with Application Load Balancers.</p>
+     * with Application Load Balancers.</p> <note> <p> Adding more than one target
+     * group to the array is not supported. </p> </note>
      */
     inline LoadBalancerInfo& WithTargetGroupInfoList(const Aws::Vector<TargetGroupInfo>& value) { SetTargetGroupInfoList(value); return *this;}
 
     /**
      * <p>An array containing information about the target group to use for load
      * balancing in a deployment. In Elastic Load Balancing, target groups are used
-     * with Application Load Balancers.</p>
+     * with Application Load Balancers.</p> <note> <p> Adding more than one target
+     * group to the array is not supported. </p> </note>
      */
     inline LoadBalancerInfo& WithTargetGroupInfoList(Aws::Vector<TargetGroupInfo>&& value) { SetTargetGroupInfoList(std::move(value)); return *this;}
 
     /**
      * <p>An array containing information about the target group to use for load
      * balancing in a deployment. In Elastic Load Balancing, target groups are used
-     * with Application Load Balancers.</p>
+     * with Application Load Balancers.</p> <note> <p> Adding more than one target
+     * group to the array is not supported. </p> </note>
      */
     inline LoadBalancerInfo& AddTargetGroupInfoList(const TargetGroupInfo& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList.push_back(value); return *this; }
 
     /**
      * <p>An array containing information about the target group to use for load
      * balancing in a deployment. In Elastic Load Balancing, target groups are used
-     * with Application Load Balancers.</p>
+     * with Application Load Balancers.</p> <note> <p> Adding more than one target
+     * group to the array is not supported. </p> </note>
      */
     inline LoadBalancerInfo& AddTargetGroupInfoList(TargetGroupInfo&& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList.push_back(std::move(value)); return *this; }
 

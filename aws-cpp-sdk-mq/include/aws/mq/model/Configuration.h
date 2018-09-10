@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/mq/model/EngineType.h>
 #include <aws/mq/model/ConfigurationRevision.h>
 #include <utility>
@@ -27,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MQ
@@ -43,8 +45,8 @@ namespace Model
   {
   public:
     Configuration();
-    Configuration(const Aws::Utils::Json::JsonValue& jsonValue);
-    Configuration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Configuration(Aws::Utils::Json::JsonView jsonValue);
+    Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -82,6 +84,32 @@ namespace Model
      * Required. The ARN of the configuration.
      */
     inline Configuration& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * Required. The date and time of the configuration revision.
+     */
+    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     */
+    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     */
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     */
+    inline Configuration& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
+
+    /**
+     * Required. The date and time of the configuration revision.
+     */
+    inline Configuration& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
 
     /**
@@ -302,6 +330,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    Aws::Utils::DateTime m_created;
+    bool m_createdHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

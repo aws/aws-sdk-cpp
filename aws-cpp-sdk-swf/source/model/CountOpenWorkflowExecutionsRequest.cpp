@@ -65,7 +65,7 @@ Aws::String CountOpenWorkflowExecutionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CountOpenWorkflowExecutionsRequest::GetRequestSpecificHeaders() const

@@ -20,6 +20,8 @@
 #include <aws/gamelift/model/ScalingAdjustmentType.h>
 #include <aws/gamelift/model/ComparisonOperatorType.h>
 #include <aws/gamelift/model/MetricName.h>
+#include <aws/gamelift/model/PolicyType.h>
+#include <aws/gamelift/model/TargetConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -29,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -38,24 +41,15 @@ namespace Model
 
   /**
    * <p>Rule that controls how a fleet is scaled. Scaling policies are uniquely
-   * identified by the combination of name and fleet ID.</p> <p>Fleet-related
-   * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-   * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-   * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-   * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-   * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-   * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-   * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-   * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-   * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-   * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-   * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
+   * identified by the combination of name and fleet ID.</p> <p>Operations related to
+   * fleet capacity scaling include:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
    * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-   * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-   * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-   * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-   * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-   * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p>
+   * <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
+   * <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+   * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
+   * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+   * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ScalingPolicy">AWS
    * API Reference</a></p>
    */
@@ -63,8 +57,8 @@ namespace Model
   {
   public:
     ScalingPolicy();
-    ScalingPolicy(const Aws::Utils::Json::JsonValue& jsonValue);
-    ScalingPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ScalingPolicy(Aws::Utils::Json::JsonView jsonValue);
+    ScalingPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -155,72 +149,92 @@ namespace Model
 
 
     /**
-     * <p>Current status of the scaling policy. The scaling policy is only in force
-     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> -- The
-     * scaling policy is currently in force.</p> </li> <li> <p> <b>UPDATE_REQUESTED</b>
-     * -- A request to update the scaling policy has been received.</p> </li> <li> <p>
-     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
-     * <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been
-     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
-     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
-     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
-     * policy. It should be removed and recreated.</p> </li> </ul>
+     * <p>Current status of the scaling policy. The scaling policy can be in force only
+     * when in an <code>ACTIVE</code> status. Scaling policies can be suspended for
+     * individual fleets (see <a>StopFleetActions</a>; if suspended for a fleet, the
+     * policy status does not change. View a fleet's stopped actions by calling
+     * <a>DescribeFleetCapacity</a>.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling
+     * policy can be used for auto-scaling a fleet.</p> </li> <li> <p>
+     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been
+     * received.</p> </li> <li> <p> <b>UPDATING</b> -- A change is being made to the
+     * scaling policy.</p> </li> <li> <p> <b>DELETE_REQUESTED</b> -- A request to
+     * delete the scaling policy has been received.</p> </li> <li> <p> <b>DELETING</b>
+     * -- The scaling policy is being deleted.</p> </li> <li> <p> <b>DELETED</b> -- The
+     * scaling policy has been deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error
+     * occurred in creating the policy. It should be removed and recreated.</p> </li>
+     * </ul>
      */
     inline const ScalingStatusType& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Current status of the scaling policy. The scaling policy is only in force
-     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> -- The
-     * scaling policy is currently in force.</p> </li> <li> <p> <b>UPDATE_REQUESTED</b>
-     * -- A request to update the scaling policy has been received.</p> </li> <li> <p>
-     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
-     * <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been
-     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
-     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
-     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
-     * policy. It should be removed and recreated.</p> </li> </ul>
+     * <p>Current status of the scaling policy. The scaling policy can be in force only
+     * when in an <code>ACTIVE</code> status. Scaling policies can be suspended for
+     * individual fleets (see <a>StopFleetActions</a>; if suspended for a fleet, the
+     * policy status does not change. View a fleet's stopped actions by calling
+     * <a>DescribeFleetCapacity</a>.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling
+     * policy can be used for auto-scaling a fleet.</p> </li> <li> <p>
+     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been
+     * received.</p> </li> <li> <p> <b>UPDATING</b> -- A change is being made to the
+     * scaling policy.</p> </li> <li> <p> <b>DELETE_REQUESTED</b> -- A request to
+     * delete the scaling policy has been received.</p> </li> <li> <p> <b>DELETING</b>
+     * -- The scaling policy is being deleted.</p> </li> <li> <p> <b>DELETED</b> -- The
+     * scaling policy has been deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error
+     * occurred in creating the policy. It should be removed and recreated.</p> </li>
+     * </ul>
      */
     inline void SetStatus(const ScalingStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Current status of the scaling policy. The scaling policy is only in force
-     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> -- The
-     * scaling policy is currently in force.</p> </li> <li> <p> <b>UPDATE_REQUESTED</b>
-     * -- A request to update the scaling policy has been received.</p> </li> <li> <p>
-     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
-     * <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been
-     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
-     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
-     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
-     * policy. It should be removed and recreated.</p> </li> </ul>
+     * <p>Current status of the scaling policy. The scaling policy can be in force only
+     * when in an <code>ACTIVE</code> status. Scaling policies can be suspended for
+     * individual fleets (see <a>StopFleetActions</a>; if suspended for a fleet, the
+     * policy status does not change. View a fleet's stopped actions by calling
+     * <a>DescribeFleetCapacity</a>.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling
+     * policy can be used for auto-scaling a fleet.</p> </li> <li> <p>
+     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been
+     * received.</p> </li> <li> <p> <b>UPDATING</b> -- A change is being made to the
+     * scaling policy.</p> </li> <li> <p> <b>DELETE_REQUESTED</b> -- A request to
+     * delete the scaling policy has been received.</p> </li> <li> <p> <b>DELETING</b>
+     * -- The scaling policy is being deleted.</p> </li> <li> <p> <b>DELETED</b> -- The
+     * scaling policy has been deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error
+     * occurred in creating the policy. It should be removed and recreated.</p> </li>
+     * </ul>
      */
     inline void SetStatus(ScalingStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Current status of the scaling policy. The scaling policy is only in force
-     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> -- The
-     * scaling policy is currently in force.</p> </li> <li> <p> <b>UPDATE_REQUESTED</b>
-     * -- A request to update the scaling policy has been received.</p> </li> <li> <p>
-     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
-     * <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been
-     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
-     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
-     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
-     * policy. It should be removed and recreated.</p> </li> </ul>
+     * <p>Current status of the scaling policy. The scaling policy can be in force only
+     * when in an <code>ACTIVE</code> status. Scaling policies can be suspended for
+     * individual fleets (see <a>StopFleetActions</a>; if suspended for a fleet, the
+     * policy status does not change. View a fleet's stopped actions by calling
+     * <a>DescribeFleetCapacity</a>.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling
+     * policy can be used for auto-scaling a fleet.</p> </li> <li> <p>
+     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been
+     * received.</p> </li> <li> <p> <b>UPDATING</b> -- A change is being made to the
+     * scaling policy.</p> </li> <li> <p> <b>DELETE_REQUESTED</b> -- A request to
+     * delete the scaling policy has been received.</p> </li> <li> <p> <b>DELETING</b>
+     * -- The scaling policy is being deleted.</p> </li> <li> <p> <b>DELETED</b> -- The
+     * scaling policy has been deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error
+     * occurred in creating the policy. It should be removed and recreated.</p> </li>
+     * </ul>
      */
     inline ScalingPolicy& WithStatus(const ScalingStatusType& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Current status of the scaling policy. The scaling policy is only in force
-     * when in an <code>ACTIVE</code> status.</p> <ul> <li> <p> <b>ACTIVE</b> -- The
-     * scaling policy is currently in force.</p> </li> <li> <p> <b>UPDATE_REQUESTED</b>
-     * -- A request to update the scaling policy has been received.</p> </li> <li> <p>
-     * <b>UPDATING</b> -- A change is being made to the scaling policy.</p> </li> <li>
-     * <p> <b>DELETE_REQUESTED</b> -- A request to delete the scaling policy has been
-     * received.</p> </li> <li> <p> <b>DELETING</b> -- The scaling policy is being
-     * deleted.</p> </li> <li> <p> <b>DELETED</b> -- The scaling policy has been
-     * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
-     * policy. It should be removed and recreated.</p> </li> </ul>
+     * <p>Current status of the scaling policy. The scaling policy can be in force only
+     * when in an <code>ACTIVE</code> status. Scaling policies can be suspended for
+     * individual fleets (see <a>StopFleetActions</a>; if suspended for a fleet, the
+     * policy status does not change. View a fleet's stopped actions by calling
+     * <a>DescribeFleetCapacity</a>.</p> <ul> <li> <p> <b>ACTIVE</b> -- The scaling
+     * policy can be used for auto-scaling a fleet.</p> </li> <li> <p>
+     * <b>UPDATE_REQUESTED</b> -- A request to update the scaling policy has been
+     * received.</p> </li> <li> <p> <b>UPDATING</b> -- A change is being made to the
+     * scaling policy.</p> </li> <li> <p> <b>DELETE_REQUESTED</b> -- A request to
+     * delete the scaling policy has been received.</p> </li> <li> <p> <b>DELETING</b>
+     * -- The scaling policy is being deleted.</p> </li> <li> <p> <b>DELETED</b> -- The
+     * scaling policy has been deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error
+     * occurred in creating the policy. It should be removed and recreated.</p> </li>
+     * </ul>
      */
     inline ScalingPolicy& WithStatus(ScalingStatusType&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -369,109 +383,231 @@ namespace Model
 
 
     /**
-     * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
-     * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> -- number of game
-     * sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> -- number
-     * of game sessions currently running (game session status =
-     * <code>ACTIVE</code>).</p> </li> <li> <p> <b>CurrentPlayerSessions</b> -- number
-     * of active or reserved player sessions (player session status =
-     * <code>ACTIVE</code> or <code>RESERVED</code>). </p> </li> <li> <p>
-     * <b>AvailablePlayerSessions</b> -- number of player session slots currently
-     * available in active game sessions across the fleet, calculated by subtracting a
-     * game session's current player session count from its maximum player session
-     * count. This number does include game sessions that are not currently accepting
-     * players (game session <code>PlayerSessionCreationPolicy</code> =
-     * <code>DENY_ALL</code>).</p> </li> <li> <p> <b>ActiveInstances</b> -- number of
-     * instances currently running a game session.</p> </li> <li> <p>
-     * <b>IdleInstances</b> -- number of instances not currently running a game
-     * session.</p> </li> </ul>
+     * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
+     * adjustment. For detailed descriptions of fleet metrics, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
+     * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
+     * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
+     * currently running.</p> </li> <li> <p> <b>ActiveInstances</b> -- Fleet instances
+     * that are currently running at least one game session.</p> </li> <li> <p>
+     * <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host
+     * simultaneously, given current capacity.</p> </li> <li> <p>
+     * <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game
+     * sessions. This includes game sessions that are not currently accepting players.
+     * Reserved player slots are not included.</p> </li> <li> <p>
+     * <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are
+     * being used by a player or are reserved for a player. </p> </li> <li> <p>
+     * <b>IdleInstances</b> -- Active instances that are currently hosting zero game
+     * sessions. </p> </li> <li> <p> <b>PercentAvailableGameSessions</b> -- Unused
+     * percentage of the total number of game sessions that a fleet could host
+     * simultaneously, given current capacity. Use this metric for a target-based
+     * scaling policy.</p> </li> <li> <p> <b>PercentIdleInstances</b> -- Percentage of
+     * the total number of active instances that are hosting zero game sessions.</p>
+     * </li> <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in
+     * any queue, where the current fleet is the top-priority destination.</p> </li>
+     * <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement
+     * requests, in any queue, where the current fleet is the top-priority destination.
+     * </p> </li> </ul>
      */
     inline const MetricName& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
-     * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> -- number of game
-     * sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> -- number
-     * of game sessions currently running (game session status =
-     * <code>ACTIVE</code>).</p> </li> <li> <p> <b>CurrentPlayerSessions</b> -- number
-     * of active or reserved player sessions (player session status =
-     * <code>ACTIVE</code> or <code>RESERVED</code>). </p> </li> <li> <p>
-     * <b>AvailablePlayerSessions</b> -- number of player session slots currently
-     * available in active game sessions across the fleet, calculated by subtracting a
-     * game session's current player session count from its maximum player session
-     * count. This number does include game sessions that are not currently accepting
-     * players (game session <code>PlayerSessionCreationPolicy</code> =
-     * <code>DENY_ALL</code>).</p> </li> <li> <p> <b>ActiveInstances</b> -- number of
-     * instances currently running a game session.</p> </li> <li> <p>
-     * <b>IdleInstances</b> -- number of instances not currently running a game
-     * session.</p> </li> </ul>
+     * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
+     * adjustment. For detailed descriptions of fleet metrics, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
+     * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
+     * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
+     * currently running.</p> </li> <li> <p> <b>ActiveInstances</b> -- Fleet instances
+     * that are currently running at least one game session.</p> </li> <li> <p>
+     * <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host
+     * simultaneously, given current capacity.</p> </li> <li> <p>
+     * <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game
+     * sessions. This includes game sessions that are not currently accepting players.
+     * Reserved player slots are not included.</p> </li> <li> <p>
+     * <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are
+     * being used by a player or are reserved for a player. </p> </li> <li> <p>
+     * <b>IdleInstances</b> -- Active instances that are currently hosting zero game
+     * sessions. </p> </li> <li> <p> <b>PercentAvailableGameSessions</b> -- Unused
+     * percentage of the total number of game sessions that a fleet could host
+     * simultaneously, given current capacity. Use this metric for a target-based
+     * scaling policy.</p> </li> <li> <p> <b>PercentIdleInstances</b> -- Percentage of
+     * the total number of active instances that are hosting zero game sessions.</p>
+     * </li> <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in
+     * any queue, where the current fleet is the top-priority destination.</p> </li>
+     * <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement
+     * requests, in any queue, where the current fleet is the top-priority destination.
+     * </p> </li> </ul>
      */
     inline void SetMetricName(const MetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
-     * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> -- number of game
-     * sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> -- number
-     * of game sessions currently running (game session status =
-     * <code>ACTIVE</code>).</p> </li> <li> <p> <b>CurrentPlayerSessions</b> -- number
-     * of active or reserved player sessions (player session status =
-     * <code>ACTIVE</code> or <code>RESERVED</code>). </p> </li> <li> <p>
-     * <b>AvailablePlayerSessions</b> -- number of player session slots currently
-     * available in active game sessions across the fleet, calculated by subtracting a
-     * game session's current player session count from its maximum player session
-     * count. This number does include game sessions that are not currently accepting
-     * players (game session <code>PlayerSessionCreationPolicy</code> =
-     * <code>DENY_ALL</code>).</p> </li> <li> <p> <b>ActiveInstances</b> -- number of
-     * instances currently running a game session.</p> </li> <li> <p>
-     * <b>IdleInstances</b> -- number of instances not currently running a game
-     * session.</p> </li> </ul>
+     * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
+     * adjustment. For detailed descriptions of fleet metrics, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
+     * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
+     * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
+     * currently running.</p> </li> <li> <p> <b>ActiveInstances</b> -- Fleet instances
+     * that are currently running at least one game session.</p> </li> <li> <p>
+     * <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host
+     * simultaneously, given current capacity.</p> </li> <li> <p>
+     * <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game
+     * sessions. This includes game sessions that are not currently accepting players.
+     * Reserved player slots are not included.</p> </li> <li> <p>
+     * <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are
+     * being used by a player or are reserved for a player. </p> </li> <li> <p>
+     * <b>IdleInstances</b> -- Active instances that are currently hosting zero game
+     * sessions. </p> </li> <li> <p> <b>PercentAvailableGameSessions</b> -- Unused
+     * percentage of the total number of game sessions that a fleet could host
+     * simultaneously, given current capacity. Use this metric for a target-based
+     * scaling policy.</p> </li> <li> <p> <b>PercentIdleInstances</b> -- Percentage of
+     * the total number of active instances that are hosting zero game sessions.</p>
+     * </li> <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in
+     * any queue, where the current fleet is the top-priority destination.</p> </li>
+     * <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement
+     * requests, in any queue, where the current fleet is the top-priority destination.
+     * </p> </li> </ul>
      */
     inline void SetMetricName(MetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
-     * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
-     * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> -- number of game
-     * sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> -- number
-     * of game sessions currently running (game session status =
-     * <code>ACTIVE</code>).</p> </li> <li> <p> <b>CurrentPlayerSessions</b> -- number
-     * of active or reserved player sessions (player session status =
-     * <code>ACTIVE</code> or <code>RESERVED</code>). </p> </li> <li> <p>
-     * <b>AvailablePlayerSessions</b> -- number of player session slots currently
-     * available in active game sessions across the fleet, calculated by subtracting a
-     * game session's current player session count from its maximum player session
-     * count. This number does include game sessions that are not currently accepting
-     * players (game session <code>PlayerSessionCreationPolicy</code> =
-     * <code>DENY_ALL</code>).</p> </li> <li> <p> <b>ActiveInstances</b> -- number of
-     * instances currently running a game session.</p> </li> <li> <p>
-     * <b>IdleInstances</b> -- number of instances not currently running a game
-     * session.</p> </li> </ul>
+     * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
+     * adjustment. For detailed descriptions of fleet metrics, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
+     * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
+     * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
+     * currently running.</p> </li> <li> <p> <b>ActiveInstances</b> -- Fleet instances
+     * that are currently running at least one game session.</p> </li> <li> <p>
+     * <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host
+     * simultaneously, given current capacity.</p> </li> <li> <p>
+     * <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game
+     * sessions. This includes game sessions that are not currently accepting players.
+     * Reserved player slots are not included.</p> </li> <li> <p>
+     * <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are
+     * being used by a player or are reserved for a player. </p> </li> <li> <p>
+     * <b>IdleInstances</b> -- Active instances that are currently hosting zero game
+     * sessions. </p> </li> <li> <p> <b>PercentAvailableGameSessions</b> -- Unused
+     * percentage of the total number of game sessions that a fleet could host
+     * simultaneously, given current capacity. Use this metric for a target-based
+     * scaling policy.</p> </li> <li> <p> <b>PercentIdleInstances</b> -- Percentage of
+     * the total number of active instances that are hosting zero game sessions.</p>
+     * </li> <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in
+     * any queue, where the current fleet is the top-priority destination.</p> </li>
+     * <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement
+     * requests, in any queue, where the current fleet is the top-priority destination.
+     * </p> </li> </ul>
      */
     inline ScalingPolicy& WithMetricName(const MetricName& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>Name of the Amazon GameLift-defined metric that is used to trigger an
-     * adjustment.</p> <ul> <li> <p> <b>ActivatingGameSessions</b> -- number of game
-     * sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).</p> </li> <li> <p> <b>ActiveGameSessions</b> -- number
-     * of game sessions currently running (game session status =
-     * <code>ACTIVE</code>).</p> </li> <li> <p> <b>CurrentPlayerSessions</b> -- number
-     * of active or reserved player sessions (player session status =
-     * <code>ACTIVE</code> or <code>RESERVED</code>). </p> </li> <li> <p>
-     * <b>AvailablePlayerSessions</b> -- number of player session slots currently
-     * available in active game sessions across the fleet, calculated by subtracting a
-     * game session's current player session count from its maximum player session
-     * count. This number does include game sessions that are not currently accepting
-     * players (game session <code>PlayerSessionCreationPolicy</code> =
-     * <code>DENY_ALL</code>).</p> </li> <li> <p> <b>ActiveInstances</b> -- number of
-     * instances currently running a game session.</p> </li> <li> <p>
-     * <b>IdleInstances</b> -- number of instances not currently running a game
-     * session.</p> </li> </ul>
+     * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
+     * adjustment. For detailed descriptions of fleet metrics, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
+     * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
+     * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
+     * currently running.</p> </li> <li> <p> <b>ActiveInstances</b> -- Fleet instances
+     * that are currently running at least one game session.</p> </li> <li> <p>
+     * <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host
+     * simultaneously, given current capacity.</p> </li> <li> <p>
+     * <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game
+     * sessions. This includes game sessions that are not currently accepting players.
+     * Reserved player slots are not included.</p> </li> <li> <p>
+     * <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are
+     * being used by a player or are reserved for a player. </p> </li> <li> <p>
+     * <b>IdleInstances</b> -- Active instances that are currently hosting zero game
+     * sessions. </p> </li> <li> <p> <b>PercentAvailableGameSessions</b> -- Unused
+     * percentage of the total number of game sessions that a fleet could host
+     * simultaneously, given current capacity. Use this metric for a target-based
+     * scaling policy.</p> </li> <li> <p> <b>PercentIdleInstances</b> -- Percentage of
+     * the total number of active instances that are hosting zero game sessions.</p>
+     * </li> <li> <p> <b>QueueDepth</b> -- Pending game session placement requests, in
+     * any queue, where the current fleet is the top-priority destination.</p> </li>
+     * <li> <p> <b>WaitTime</b> -- Current wait time for pending game session placement
+     * requests, in any queue, where the current fleet is the top-priority destination.
+     * </p> </li> </ul>
      */
     inline ScalingPolicy& WithMetricName(MetricName&& value) { SetMetricName(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Type of scaling policy to create. For a target-based policy, set the
+     * parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
+     * <i>TargetConfiguration</i>. For a rule-based policy set the following
+     * parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
+     * <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and
+     * <i>ScalingAdjustment</i>.</p>
+     */
+    inline const PolicyType& GetPolicyType() const{ return m_policyType; }
+
+    /**
+     * <p>Type of scaling policy to create. For a target-based policy, set the
+     * parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
+     * <i>TargetConfiguration</i>. For a rule-based policy set the following
+     * parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
+     * <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and
+     * <i>ScalingAdjustment</i>.</p>
+     */
+    inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
+
+    /**
+     * <p>Type of scaling policy to create. For a target-based policy, set the
+     * parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
+     * <i>TargetConfiguration</i>. For a rule-based policy set the following
+     * parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
+     * <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and
+     * <i>ScalingAdjustment</i>.</p>
+     */
+    inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
+
+    /**
+     * <p>Type of scaling policy to create. For a target-based policy, set the
+     * parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
+     * <i>TargetConfiguration</i>. For a rule-based policy set the following
+     * parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
+     * <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and
+     * <i>ScalingAdjustment</i>.</p>
+     */
+    inline ScalingPolicy& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
+
+    /**
+     * <p>Type of scaling policy to create. For a target-based policy, set the
+     * parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
+     * <i>TargetConfiguration</i>. For a rule-based policy set the following
+     * parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
+     * <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and
+     * <i>ScalingAdjustment</i>.</p>
+     */
+    inline ScalingPolicy& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Object that contains settings for a target-based scaling policy.</p>
+     */
+    inline const TargetConfiguration& GetTargetConfiguration() const{ return m_targetConfiguration; }
+
+    /**
+     * <p>Object that contains settings for a target-based scaling policy.</p>
+     */
+    inline void SetTargetConfiguration(const TargetConfiguration& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = value; }
+
+    /**
+     * <p>Object that contains settings for a target-based scaling policy.</p>
+     */
+    inline void SetTargetConfiguration(TargetConfiguration&& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = std::move(value); }
+
+    /**
+     * <p>Object that contains settings for a target-based scaling policy.</p>
+     */
+    inline ScalingPolicy& WithTargetConfiguration(const TargetConfiguration& value) { SetTargetConfiguration(value); return *this;}
+
+    /**
+     * <p>Object that contains settings for a target-based scaling policy.</p>
+     */
+    inline ScalingPolicy& WithTargetConfiguration(TargetConfiguration&& value) { SetTargetConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -501,6 +637,12 @@ namespace Model
 
     MetricName m_metricName;
     bool m_metricNameHasBeenSet;
+
+    PolicyType m_policyType;
+    bool m_policyTypeHasBeenSet;
+
+    TargetConfiguration m_targetConfiguration;
+    bool m_targetConfigurationHasBeenSet;
   };
 
 } // namespace Model

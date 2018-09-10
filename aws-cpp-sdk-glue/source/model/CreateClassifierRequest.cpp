@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreateClassifierRequest::CreateClassifierRequest() : 
     m_grokClassifierHasBeenSet(false),
-    m_xMLClassifierHasBeenSet(false)
+    m_xMLClassifierHasBeenSet(false),
+    m_jsonClassifierHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,13 @@ Aws::String CreateClassifierRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_jsonClassifierHasBeenSet)
+  {
+   payload.WithObject("JsonClassifier", m_jsonClassifier.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateClassifierRequest::GetRequestSpecificHeaders() const

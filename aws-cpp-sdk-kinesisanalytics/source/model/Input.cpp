@@ -38,7 +38,7 @@ Input::Input() :
 {
 }
 
-Input::Input(const JsonValue& jsonValue) : 
+Input::Input(JsonView jsonValue) : 
     m_namePrefixHasBeenSet(false),
     m_inputProcessingConfigurationHasBeenSet(false),
     m_kinesisStreamsInputHasBeenSet(false),
@@ -49,7 +49,7 @@ Input::Input(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Input& Input::operator =(const JsonValue& jsonValue)
+Input& Input::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NamePrefix"))
   {

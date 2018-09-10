@@ -35,7 +35,7 @@ Principal::Principal() :
 {
 }
 
-Principal::Principal(const JsonValue& jsonValue) : 
+Principal::Principal(JsonView jsonValue) : 
     m_principalARNHasBeenSet(false),
     m_principalType(PrincipalType::NOT_SET),
     m_principalTypeHasBeenSet(false)
@@ -43,7 +43,7 @@ Principal::Principal(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Principal& Principal::operator =(const JsonValue& jsonValue)
+Principal& Principal::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PrincipalARN"))
   {

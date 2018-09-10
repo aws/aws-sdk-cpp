@@ -32,7 +32,8 @@ static const char* CLIENT_CONFIGURATION_ALLOCATION_TAG = "ClientConfiguration";
 static Aws::String ComputeUserAgentString()
 {
   Aws::StringStream ss;
-  ss << "aws-sdk-cpp/" << Version::GetVersionString() << " " <<  Aws::OSVersionInfo::ComputeOSVersionString();
+  ss << "aws-sdk-cpp/" << Version::GetVersionString() << " " <<  Aws::OSVersionInfo::ComputeOSVersionString()
+      << " " << Version::GetCompilerVersionString();
   return ss.str();
 }
 
@@ -53,6 +54,7 @@ ClientConfiguration::ClientConfiguration() :
     readRateLimiter(nullptr),
     httpLibOverride(Aws::Http::TransferLibType::DEFAULT_CLIENT),
     followRedirects(true),
+    disableExpectHeader(false),
     enableClockSkewAdjustment(true)
 {
 }

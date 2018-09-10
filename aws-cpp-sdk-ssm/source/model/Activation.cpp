@@ -44,7 +44,7 @@ Activation::Activation() :
 {
 }
 
-Activation::Activation(const JsonValue& jsonValue) : 
+Activation::Activation(JsonView jsonValue) : 
     m_activationIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_defaultInstanceNameHasBeenSet(false),
@@ -61,7 +61,7 @@ Activation::Activation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Activation& Activation::operator =(const JsonValue& jsonValue)
+Activation& Activation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ActivationId"))
   {

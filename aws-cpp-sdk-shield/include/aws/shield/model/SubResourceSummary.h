@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Shield
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     SubResourceSummary();
-    SubResourceSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    SubResourceSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SubResourceSummary(Aws::Utils::Json::JsonView jsonValue);
+    SubResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

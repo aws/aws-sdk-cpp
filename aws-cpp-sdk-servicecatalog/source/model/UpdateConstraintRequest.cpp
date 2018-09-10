@@ -51,7 +51,7 @@ Aws::String UpdateConstraintRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateConstraintRequest::GetRequestSpecificHeaders() const

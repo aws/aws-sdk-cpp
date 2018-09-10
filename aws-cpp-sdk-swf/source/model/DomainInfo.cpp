@@ -36,7 +36,7 @@ DomainInfo::DomainInfo() :
 {
 }
 
-DomainInfo::DomainInfo(const JsonValue& jsonValue) : 
+DomainInfo::DomainInfo(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_status(RegistrationStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -45,7 +45,7 @@ DomainInfo::DomainInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DomainInfo& DomainInfo::operator =(const JsonValue& jsonValue)
+DomainInfo& DomainInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

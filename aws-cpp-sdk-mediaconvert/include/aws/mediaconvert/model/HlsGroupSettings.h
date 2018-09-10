@@ -40,6 +40,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -57,8 +58,8 @@ namespace Model
   {
   public:
     HlsGroupSettings();
-    HlsGroupSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    HlsGroupSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HlsGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    HlsGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -378,6 +379,52 @@ namespace Model
 
 
     /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a
+     * problem with how devices play back the end of your video asset. If you know that
+     * player devices are hanging on the final segment of your video because the length
+     * of your final segment is too short, use this setting to specify a minimum final
+     * segment length, in seconds. Choose a value that is greater than or equal to 1
+     * and less than your segment length. When you specify a value for this setting,
+     * the encoder will combine any final segment that is shorter than the length that
+     * you specify with the previous segment. For example, your segment length is 3
+     * seconds and your final segment is .5 seconds without a minimum final segment
+     * length; when you set the minimum final segment length to 1, your final segment
+     * is 3.5 seconds.
+     */
+    inline double GetMinFinalSegmentLength() const{ return m_minFinalSegmentLength; }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a
+     * problem with how devices play back the end of your video asset. If you know that
+     * player devices are hanging on the final segment of your video because the length
+     * of your final segment is too short, use this setting to specify a minimum final
+     * segment length, in seconds. Choose a value that is greater than or equal to 1
+     * and less than your segment length. When you specify a value for this setting,
+     * the encoder will combine any final segment that is shorter than the length that
+     * you specify with the previous segment. For example, your segment length is 3
+     * seconds and your final segment is .5 seconds without a minimum final segment
+     * length; when you set the minimum final segment length to 1, your final segment
+     * is 3.5 seconds.
+     */
+    inline void SetMinFinalSegmentLength(double value) { m_minFinalSegmentLengthHasBeenSet = true; m_minFinalSegmentLength = value; }
+
+    /**
+     * Keep this setting at the default value of 0, unless you are troubleshooting a
+     * problem with how devices play back the end of your video asset. If you know that
+     * player devices are hanging on the final segment of your video because the length
+     * of your final segment is too short, use this setting to specify a minimum final
+     * segment length, in seconds. Choose a value that is greater than or equal to 1
+     * and less than your segment length. When you specify a value for this setting,
+     * the encoder will combine any final segment that is shorter than the length that
+     * you specify with the previous segment. For example, your segment length is 3
+     * seconds and your final segment is .5 seconds without a minimum final segment
+     * length; when you set the minimum final segment length to 1, your final segment
+     * is 3.5 seconds.
+     */
+    inline HlsGroupSettings& WithMinFinalSegmentLength(double value) { SetMinFinalSegmentLength(value); return *this;}
+
+
+    /**
      * When set, Minimum Segment Size is enforced by looking ahead and back within the
      * specified range for a nearby avail and extending the segment size if needed.
      */
@@ -598,6 +645,9 @@ namespace Model
 
     HlsManifestDurationFormat m_manifestDurationFormat;
     bool m_manifestDurationFormatHasBeenSet;
+
+    double m_minFinalSegmentLength;
+    bool m_minFinalSegmentLengthHasBeenSet;
 
     int m_minSegmentLength;
     bool m_minSegmentLengthHasBeenSet;

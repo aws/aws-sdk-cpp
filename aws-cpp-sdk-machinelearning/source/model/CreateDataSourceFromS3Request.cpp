@@ -59,7 +59,7 @@ Aws::String CreateDataSourceFromS3Request::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateDataSourceFromS3Request::GetRequestSpecificHeaders() const

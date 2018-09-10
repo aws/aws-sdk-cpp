@@ -58,7 +58,7 @@ GlacierJobDescription::GlacierJobDescription() :
 {
 }
 
-GlacierJobDescription::GlacierJobDescription(const JsonValue& jsonValue) : 
+GlacierJobDescription::GlacierJobDescription(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
     m_jobDescriptionHasBeenSet(false),
     m_action(ActionCode::NOT_SET),
@@ -89,7 +89,7 @@ GlacierJobDescription::GlacierJobDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GlacierJobDescription& GlacierJobDescription::operator =(const JsonValue& jsonValue)
+GlacierJobDescription& GlacierJobDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobId"))
   {

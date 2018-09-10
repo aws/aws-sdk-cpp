@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the egress-only Internet gateways.</p>
+     * <p>Information about the egress-only internet gateways.</p>
      */
     inline const Aws::Vector<EgressOnlyInternetGateway>& GetEgressOnlyInternetGateways() const{ return m_egressOnlyInternetGateways; }
 
     /**
-     * <p>Information about the egress-only Internet gateways.</p>
+     * <p>Information about the egress-only internet gateways.</p>
      */
     inline void SetEgressOnlyInternetGateways(const Aws::Vector<EgressOnlyInternetGateway>& value) { m_egressOnlyInternetGateways = value; }
 
     /**
-     * <p>Information about the egress-only Internet gateways.</p>
+     * <p>Information about the egress-only internet gateways.</p>
      */
     inline void SetEgressOnlyInternetGateways(Aws::Vector<EgressOnlyInternetGateway>&& value) { m_egressOnlyInternetGateways = std::move(value); }
 
     /**
-     * <p>Information about the egress-only Internet gateways.</p>
+     * <p>Information about the egress-only internet gateways.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysResponse& WithEgressOnlyInternetGateways(const Aws::Vector<EgressOnlyInternetGateway>& value) { SetEgressOnlyInternetGateways(value); return *this;}
 
     /**
-     * <p>Information about the egress-only Internet gateways.</p>
+     * <p>Information about the egress-only internet gateways.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysResponse& WithEgressOnlyInternetGateways(Aws::Vector<EgressOnlyInternetGateway>&& value) { SetEgressOnlyInternetGateways(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the egress-only Internet gateways.</p>
+     * <p>Information about the egress-only internet gateways.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysResponse& AddEgressOnlyInternetGateways(const EgressOnlyInternetGateway& value) { m_egressOnlyInternetGateways.push_back(value); return *this; }
 
     /**
-     * <p>Information about the egress-only Internet gateways.</p>
+     * <p>Information about the egress-only internet gateways.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysResponse& AddEgressOnlyInternetGateways(EgressOnlyInternetGateway&& value) { m_egressOnlyInternetGateways.push_back(std::move(value)); return *this; }
 

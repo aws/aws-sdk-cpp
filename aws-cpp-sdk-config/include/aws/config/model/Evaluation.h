@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Evaluation();
-    Evaluation(const Aws::Utils::Json::JsonValue& jsonValue);
-    Evaluation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Evaluation(Aws::Utils::Json::JsonView jsonValue);
+    Evaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -129,7 +130,7 @@ namespace Model
      * <code>INSUFFICIENT_DATA</code> value for this data type.</p> <p>Similarly, AWS
      * Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      * <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For
-     * example, an AWS Lambda function for a custom Config rule cannot pass an
+     * example, an AWS Lambda function for a custom AWS Config rule cannot pass an
      * <code>INSUFFICIENT_DATA</code> value to AWS Config.</p>
      */
     inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
@@ -142,7 +143,7 @@ namespace Model
      * <code>INSUFFICIENT_DATA</code> value for this data type.</p> <p>Similarly, AWS
      * Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      * <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For
-     * example, an AWS Lambda function for a custom Config rule cannot pass an
+     * example, an AWS Lambda function for a custom AWS Config rule cannot pass an
      * <code>INSUFFICIENT_DATA</code> value to AWS Config.</p>
      */
     inline void SetComplianceType(const ComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
@@ -155,7 +156,7 @@ namespace Model
      * <code>INSUFFICIENT_DATA</code> value for this data type.</p> <p>Similarly, AWS
      * Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      * <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For
-     * example, an AWS Lambda function for a custom Config rule cannot pass an
+     * example, an AWS Lambda function for a custom AWS Config rule cannot pass an
      * <code>INSUFFICIENT_DATA</code> value to AWS Config.</p>
      */
     inline void SetComplianceType(ComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
@@ -168,7 +169,7 @@ namespace Model
      * <code>INSUFFICIENT_DATA</code> value for this data type.</p> <p>Similarly, AWS
      * Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      * <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For
-     * example, an AWS Lambda function for a custom Config rule cannot pass an
+     * example, an AWS Lambda function for a custom AWS Config rule cannot pass an
      * <code>INSUFFICIENT_DATA</code> value to AWS Config.</p>
      */
     inline Evaluation& WithComplianceType(const ComplianceType& value) { SetComplianceType(value); return *this;}
@@ -181,7 +182,7 @@ namespace Model
      * <code>INSUFFICIENT_DATA</code> value for this data type.</p> <p>Similarly, AWS
      * Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      * <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For
-     * example, an AWS Lambda function for a custom Config rule cannot pass an
+     * example, an AWS Lambda function for a custom AWS Config rule cannot pass an
      * <code>INSUFFICIENT_DATA</code> value to AWS Config.</p>
      */
     inline Evaluation& WithComplianceType(ComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}

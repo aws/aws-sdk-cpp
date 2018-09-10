@@ -36,7 +36,7 @@ MonetaryAmount::MonetaryAmount() :
 {
 }
 
-MonetaryAmount::MonetaryAmount(const JsonValue& jsonValue) : 
+MonetaryAmount::MonetaryAmount(JsonView jsonValue) : 
     m_amount(0.0),
     m_amountHasBeenSet(false),
     m_currencyCode(CurrencyCode::NOT_SET),
@@ -45,7 +45,7 @@ MonetaryAmount::MonetaryAmount(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MonetaryAmount& MonetaryAmount::operator =(const JsonValue& jsonValue)
+MonetaryAmount& MonetaryAmount::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("amount"))
   {

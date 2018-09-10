@@ -50,7 +50,7 @@ AacSettings::AacSettings() :
 {
 }
 
-AacSettings::AacSettings(const JsonValue& jsonValue) : 
+AacSettings::AacSettings(JsonView jsonValue) : 
     m_audioDescriptionBroadcasterMix(AacAudioDescriptionBroadcasterMix::NOT_SET),
     m_audioDescriptionBroadcasterMixHasBeenSet(false),
     m_bitrate(0),
@@ -73,7 +73,7 @@ AacSettings::AacSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AacSettings& AacSettings::operator =(const JsonValue& jsonValue)
+AacSettings& AacSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioDescriptionBroadcasterMix"))
   {

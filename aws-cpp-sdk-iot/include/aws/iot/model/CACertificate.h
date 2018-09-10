@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     CACertificate();
-    CACertificate(const Aws::Utils::Json::JsonValue& jsonValue);
-    CACertificate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CACertificate(Aws::Utils::Json::JsonView jsonValue);
+    CACertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

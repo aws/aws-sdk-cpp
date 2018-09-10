@@ -16,12 +16,15 @@
 #pragma once
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/model/FleetType.h>
+#include <aws/gamelift/model/EC2InstanceType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/gamelift/model/FleetStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/model/ProtectionPolicy.h>
 #include <aws/gamelift/model/OperatingSystem.h>
 #include <aws/gamelift/model/ResourceCreationLimitPolicy.h>
+#include <aws/gamelift/model/FleetAction.h>
 #include <utility>
 
 namespace Aws
@@ -31,6 +34,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -41,22 +45,19 @@ namespace Model
   /**
    * <p>General properties describing a fleet.</p> <p>Fleet-related operations
    * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-   * <a>ListFleets</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-   * <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+   * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+   * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+   * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
    * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
    * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
    * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-   * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-   * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-   * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-   * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-   * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-   * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-   * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-   * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-   * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-   * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-   * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+   * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+   * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+   * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+   * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+   * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+   * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetAttributes">AWS
    * API Reference</a></p>
    */
@@ -64,8 +65,8 @@ namespace Model
   {
   public:
     FleetAttributes();
-    FleetAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    FleetAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FleetAttributes(Aws::Utils::Json::JsonView jsonValue);
+    FleetAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -139,6 +140,78 @@ namespace Model
      * <p>Identifier for a fleet that is unique across all regions.</p>
      */
     inline FleetAttributes& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the fleet uses on-demand or spot instances. A spot instance
+     * in use may be interrupted with a two-minute notification.</p>
+     */
+    inline const FleetType& GetFleetType() const{ return m_fleetType; }
+
+    /**
+     * <p>Indicates whether the fleet uses on-demand or spot instances. A spot instance
+     * in use may be interrupted with a two-minute notification.</p>
+     */
+    inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
+
+    /**
+     * <p>Indicates whether the fleet uses on-demand or spot instances. A spot instance
+     * in use may be interrupted with a two-minute notification.</p>
+     */
+    inline void SetFleetType(FleetType&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
+
+    /**
+     * <p>Indicates whether the fleet uses on-demand or spot instances. A spot instance
+     * in use may be interrupted with a two-minute notification.</p>
+     */
+    inline FleetAttributes& WithFleetType(const FleetType& value) { SetFleetType(value); return *this;}
+
+    /**
+     * <p>Indicates whether the fleet uses on-demand or spot instances. A spot instance
+     * in use may be interrupted with a two-minute notification.</p>
+     */
+    inline FleetAttributes& WithFleetType(FleetType&& value) { SetFleetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>EC2 instance type indicating the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * for detailed descriptions.</p>
+     */
+    inline const EC2InstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>EC2 instance type indicating the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * for detailed descriptions.</p>
+     */
+    inline void SetInstanceType(const EC2InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>EC2 instance type indicating the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * for detailed descriptions.</p>
+     */
+    inline void SetInstanceType(EC2InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * <p>EC2 instance type indicating the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * for detailed descriptions.</p>
+     */
+    inline FleetAttributes& WithInstanceType(const EC2InstanceType& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>EC2 instance type indicating the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * for detailed descriptions.</p>
+     */
+    inline FleetAttributes& WithInstanceType(EC2InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
 
     /**
@@ -775,6 +848,49 @@ namespace Model
      */
     inline FleetAttributes& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 
+
+    /**
+     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
+     * This includes auto-scaling.</p>
+     */
+    inline const Aws::Vector<FleetAction>& GetStoppedActions() const{ return m_stoppedActions; }
+
+    /**
+     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
+     * This includes auto-scaling.</p>
+     */
+    inline void SetStoppedActions(const Aws::Vector<FleetAction>& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = value; }
+
+    /**
+     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
+     * This includes auto-scaling.</p>
+     */
+    inline void SetStoppedActions(Aws::Vector<FleetAction>&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions = std::move(value); }
+
+    /**
+     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
+     * This includes auto-scaling.</p>
+     */
+    inline FleetAttributes& WithStoppedActions(const Aws::Vector<FleetAction>& value) { SetStoppedActions(value); return *this;}
+
+    /**
+     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
+     * This includes auto-scaling.</p>
+     */
+    inline FleetAttributes& WithStoppedActions(Aws::Vector<FleetAction>&& value) { SetStoppedActions(std::move(value)); return *this;}
+
+    /**
+     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
+     * This includes auto-scaling.</p>
+     */
+    inline FleetAttributes& AddStoppedActions(const FleetAction& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(value); return *this; }
+
+    /**
+     * <p>List of fleet actions that have been suspended using <a>StopFleetActions</a>.
+     * This includes auto-scaling.</p>
+     */
+    inline FleetAttributes& AddStoppedActions(FleetAction&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_fleetId;
@@ -782,6 +898,12 @@ namespace Model
 
     Aws::String m_fleetArn;
     bool m_fleetArnHasBeenSet;
+
+    FleetType m_fleetType;
+    bool m_fleetTypeHasBeenSet;
+
+    EC2InstanceType m_instanceType;
+    bool m_instanceTypeHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
@@ -821,6 +943,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_metricGroups;
     bool m_metricGroupsHasBeenSet;
+
+    Aws::Vector<FleetAction> m_stoppedActions;
+    bool m_stoppedActionsHasBeenSet;
   };
 
 } // namespace Model

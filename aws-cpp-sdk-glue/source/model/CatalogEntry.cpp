@@ -34,14 +34,14 @@ CatalogEntry::CatalogEntry() :
 {
 }
 
-CatalogEntry::CatalogEntry(const JsonValue& jsonValue) : 
+CatalogEntry::CatalogEntry(JsonView jsonValue) : 
     m_databaseNameHasBeenSet(false),
     m_tableNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CatalogEntry& CatalogEntry::operator =(const JsonValue& jsonValue)
+CatalogEntry& CatalogEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DatabaseName"))
   {

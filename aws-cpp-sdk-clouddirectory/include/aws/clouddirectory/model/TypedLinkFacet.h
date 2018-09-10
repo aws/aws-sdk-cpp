@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -37,15 +38,15 @@ namespace Model
   /**
    * <p>Defines the typed links structure and its attributes. To create a typed link
    * facet, use the <a>CreateTypedLinkFacet</a> API.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TypedLinkFacet">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedLinkFacet">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API TypedLinkFacet
   {
   public:
     TypedLinkFacet();
-    TypedLinkFacet(const Aws::Utils::Json::JsonValue& jsonValue);
-    TypedLinkFacet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TypedLinkFacet(Aws::Utils::Json::JsonView jsonValue);
+    TypedLinkFacet& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,7 +37,7 @@ Aws::String DisassociateWebACLRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DisassociateWebACLRequest::GetRequestSpecificHeaders() const

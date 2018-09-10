@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline const Aws::Vector<ApplicationPolicyStatement>& GetStatements() const{ return m_statements; }
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline void SetStatements(const Aws::Vector<ApplicationPolicyStatement>& value) { m_statements = value; }
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline void SetStatements(Aws::Vector<ApplicationPolicyStatement>&& value) { m_statements = std::move(value); }
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline PutApplicationPolicyResult& WithStatements(const Aws::Vector<ApplicationPolicyStatement>& value) { SetStatements(value); return *this;}
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline PutApplicationPolicyResult& WithStatements(Aws::Vector<ApplicationPolicyStatement>&& value) { SetStatements(std::move(value)); return *this;}
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline PutApplicationPolicyResult& AddStatements(const ApplicationPolicyStatement& value) { m_statements.push_back(value); return *this; }
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline PutApplicationPolicyResult& AddStatements(ApplicationPolicyStatement&& value) { m_statements.push_back(std::move(value)); return *this; }
 

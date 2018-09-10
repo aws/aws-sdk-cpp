@@ -35,7 +35,7 @@ Contributor::Contributor() :
 {
 }
 
-Contributor::Contributor(const JsonValue& jsonValue) : 
+Contributor::Contributor(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_value(0),
     m_valueHasBeenSet(false)
@@ -43,7 +43,7 @@ Contributor::Contributor(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Contributor& Contributor::operator =(const JsonValue& jsonValue)
+Contributor& Contributor::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

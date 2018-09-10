@@ -37,7 +37,7 @@ Attribute::Attribute() :
 {
 }
 
-Attribute::Attribute(const JsonValue& jsonValue) : 
+Attribute::Attribute(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_targetType(TargetType::NOT_SET),
@@ -47,7 +47,7 @@ Attribute::Attribute(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Attribute& Attribute::operator =(const JsonValue& jsonValue)
+Attribute& Attribute::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

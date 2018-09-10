@@ -58,7 +58,7 @@ Aws::String PutJobSuccessResultRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutJobSuccessResultRequest::GetRequestSpecificHeaders() const

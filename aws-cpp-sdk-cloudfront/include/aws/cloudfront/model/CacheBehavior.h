@@ -61,7 +61,7 @@ namespace Model
    * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
    * Behaviors</a> in the <i>Amazon CloudFront Developer Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CacheBehavior">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CacheBehavior">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CacheBehavior
@@ -197,49 +197,49 @@ namespace Model
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
      * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior.</p>
+     * or for the default cache behavior in your distribution.</p>
      */
     inline const Aws::String& GetTargetOriginId() const{ return m_targetOriginId; }
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
      * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior.</p>
+     * or for the default cache behavior in your distribution.</p>
      */
     inline void SetTargetOriginId(const Aws::String& value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId = value; }
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
      * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior.</p>
+     * or for the default cache behavior in your distribution.</p>
      */
     inline void SetTargetOriginId(Aws::String&& value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId = std::move(value); }
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
      * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior.</p>
+     * or for the default cache behavior in your distribution.</p>
      */
     inline void SetTargetOriginId(const char* value) { m_targetOriginIdHasBeenSet = true; m_targetOriginId.assign(value); }
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
      * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior.</p>
+     * or for the default cache behavior in your distribution.</p>
      */
     inline CacheBehavior& WithTargetOriginId(const Aws::String& value) { SetTargetOriginId(value); return *this;}
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
      * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior.</p>
+     * or for the default cache behavior in your distribution.</p>
      */
     inline CacheBehavior& WithTargetOriginId(Aws::String&& value) { SetTargetOriginId(std::move(value)); return *this;}
 
     /**
      * <p>The value of <code>ID</code> for the origin that you want CloudFront to route
      * requests to when a request matches the path pattern either for a cache behavior
-     * or for the default cache behavior.</p>
+     * or for the default cache behavior in your distribution.</p>
      */
     inline CacheBehavior& WithTargetOriginId(const char* value) { SetTargetOriginId(value); return *this;}
 
@@ -730,6 +730,56 @@ namespace Model
      */
     inline CacheBehavior& WithLambdaFunctionAssociations(LambdaFunctionAssociations&& value) { SetLambdaFunctionAssociations(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The value of <code>ID</code> for the field-level encryption configuration
+     * that you want CloudFront to use for encrypting specific fields of data for a
+     * cache behavior or for the default cache behavior in your distribution.</p>
+     */
+    inline const Aws::String& GetFieldLevelEncryptionId() const{ return m_fieldLevelEncryptionId; }
+
+    /**
+     * <p>The value of <code>ID</code> for the field-level encryption configuration
+     * that you want CloudFront to use for encrypting specific fields of data for a
+     * cache behavior or for the default cache behavior in your distribution.</p>
+     */
+    inline void SetFieldLevelEncryptionId(const Aws::String& value) { m_fieldLevelEncryptionIdHasBeenSet = true; m_fieldLevelEncryptionId = value; }
+
+    /**
+     * <p>The value of <code>ID</code> for the field-level encryption configuration
+     * that you want CloudFront to use for encrypting specific fields of data for a
+     * cache behavior or for the default cache behavior in your distribution.</p>
+     */
+    inline void SetFieldLevelEncryptionId(Aws::String&& value) { m_fieldLevelEncryptionIdHasBeenSet = true; m_fieldLevelEncryptionId = std::move(value); }
+
+    /**
+     * <p>The value of <code>ID</code> for the field-level encryption configuration
+     * that you want CloudFront to use for encrypting specific fields of data for a
+     * cache behavior or for the default cache behavior in your distribution.</p>
+     */
+    inline void SetFieldLevelEncryptionId(const char* value) { m_fieldLevelEncryptionIdHasBeenSet = true; m_fieldLevelEncryptionId.assign(value); }
+
+    /**
+     * <p>The value of <code>ID</code> for the field-level encryption configuration
+     * that you want CloudFront to use for encrypting specific fields of data for a
+     * cache behavior or for the default cache behavior in your distribution.</p>
+     */
+    inline CacheBehavior& WithFieldLevelEncryptionId(const Aws::String& value) { SetFieldLevelEncryptionId(value); return *this;}
+
+    /**
+     * <p>The value of <code>ID</code> for the field-level encryption configuration
+     * that you want CloudFront to use for encrypting specific fields of data for a
+     * cache behavior or for the default cache behavior in your distribution.</p>
+     */
+    inline CacheBehavior& WithFieldLevelEncryptionId(Aws::String&& value) { SetFieldLevelEncryptionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The value of <code>ID</code> for the field-level encryption configuration
+     * that you want CloudFront to use for encrypting specific fields of data for a
+     * cache behavior or for the default cache behavior in your distribution.</p>
+     */
+    inline CacheBehavior& WithFieldLevelEncryptionId(const char* value) { SetFieldLevelEncryptionId(value); return *this;}
+
   private:
 
     Aws::String m_pathPattern;
@@ -767,6 +817,9 @@ namespace Model
 
     LambdaFunctionAssociations m_lambdaFunctionAssociations;
     bool m_lambdaFunctionAssociationsHasBeenSet;
+
+    Aws::String m_fieldLevelEncryptionId;
+    bool m_fieldLevelEncryptionIdHasBeenSet;
   };
 
 } // namespace Model

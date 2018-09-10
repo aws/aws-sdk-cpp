@@ -47,7 +47,7 @@ Deployment::Deployment() :
 {
 }
 
-Deployment::Deployment(const JsonValue& jsonValue) : 
+Deployment::Deployment(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
@@ -67,7 +67,7 @@ Deployment::Deployment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Deployment& Deployment::operator =(const JsonValue& jsonValue)
+Deployment& Deployment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

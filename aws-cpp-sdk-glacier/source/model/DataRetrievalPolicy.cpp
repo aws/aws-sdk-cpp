@@ -33,17 +33,17 @@ DataRetrievalPolicy::DataRetrievalPolicy() :
 {
 }
 
-DataRetrievalPolicy::DataRetrievalPolicy(const JsonValue& jsonValue) : 
+DataRetrievalPolicy::DataRetrievalPolicy(JsonView jsonValue) : 
     m_rulesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DataRetrievalPolicy& DataRetrievalPolicy::operator =(const JsonValue& jsonValue)
+DataRetrievalPolicy& DataRetrievalPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Rules"))
   {
-    Array<JsonValue> rulesJsonList = jsonValue.GetArray("Rules");
+    Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());

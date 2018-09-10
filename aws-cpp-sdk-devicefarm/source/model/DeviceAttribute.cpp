@@ -37,6 +37,9 @@ namespace Aws
         static const int REMOTE_ACCESS_ENABLED_HASH = HashingUtils::HashString("REMOTE_ACCESS_ENABLED");
         static const int REMOTE_DEBUG_ENABLED_HASH = HashingUtils::HashString("REMOTE_DEBUG_ENABLED");
         static const int APPIUM_VERSION_HASH = HashingUtils::HashString("APPIUM_VERSION");
+        static const int INSTANCE_ARN_HASH = HashingUtils::HashString("INSTANCE_ARN");
+        static const int INSTANCE_LABELS_HASH = HashingUtils::HashString("INSTANCE_LABELS");
+        static const int FLEET_TYPE_HASH = HashingUtils::HashString("FLEET_TYPE");
 
 
         DeviceAttribute GetDeviceAttributeForName(const Aws::String& name)
@@ -70,6 +73,18 @@ namespace Aws
           {
             return DeviceAttribute::APPIUM_VERSION;
           }
+          else if (hashCode == INSTANCE_ARN_HASH)
+          {
+            return DeviceAttribute::INSTANCE_ARN;
+          }
+          else if (hashCode == INSTANCE_LABELS_HASH)
+          {
+            return DeviceAttribute::INSTANCE_LABELS;
+          }
+          else if (hashCode == FLEET_TYPE_HASH)
+          {
+            return DeviceAttribute::FLEET_TYPE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +113,12 @@ namespace Aws
             return "REMOTE_DEBUG_ENABLED";
           case DeviceAttribute::APPIUM_VERSION:
             return "APPIUM_VERSION";
+          case DeviceAttribute::INSTANCE_ARN:
+            return "INSTANCE_ARN";
+          case DeviceAttribute::INSTANCE_LABELS:
+            return "INSTANCE_LABELS";
+          case DeviceAttribute::FLEET_TYPE:
+            return "FLEET_TYPE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

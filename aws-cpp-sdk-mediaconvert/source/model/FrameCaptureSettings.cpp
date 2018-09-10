@@ -40,7 +40,7 @@ FrameCaptureSettings::FrameCaptureSettings() :
 {
 }
 
-FrameCaptureSettings::FrameCaptureSettings(const JsonValue& jsonValue) : 
+FrameCaptureSettings::FrameCaptureSettings(JsonView jsonValue) : 
     m_framerateDenominator(0),
     m_framerateDenominatorHasBeenSet(false),
     m_framerateNumerator(0),
@@ -53,7 +53,7 @@ FrameCaptureSettings::FrameCaptureSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FrameCaptureSettings& FrameCaptureSettings::operator =(const JsonValue& jsonValue)
+FrameCaptureSettings& FrameCaptureSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("framerateDenominator"))
   {

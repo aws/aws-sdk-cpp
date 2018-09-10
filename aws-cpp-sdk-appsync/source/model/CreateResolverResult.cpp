@@ -37,7 +37,7 @@ CreateResolverResult::CreateResolverResult(const Aws::AmazonWebServiceResult<Jso
 
 CreateResolverResult& CreateResolverResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resolver"))
   {
     m_resolver = jsonValue.GetObject("resolver");

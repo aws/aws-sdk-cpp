@@ -35,7 +35,7 @@ Function::Function() :
 {
 }
 
-Function::Function(const JsonValue& jsonValue) : 
+Function::Function(JsonView jsonValue) : 
     m_functionArnHasBeenSet(false),
     m_functionConfigurationHasBeenSet(false),
     m_idHasBeenSet(false)
@@ -43,7 +43,7 @@ Function::Function(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Function& Function::operator =(const JsonValue& jsonValue)
+Function& Function::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FunctionArn"))
   {

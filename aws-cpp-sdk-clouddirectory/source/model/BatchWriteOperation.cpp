@@ -42,11 +42,12 @@ BatchWriteOperation::BatchWriteOperation() :
     m_attachToIndexHasBeenSet(false),
     m_detachFromIndexHasBeenSet(false),
     m_attachTypedLinkHasBeenSet(false),
-    m_detachTypedLinkHasBeenSet(false)
+    m_detachTypedLinkHasBeenSet(false),
+    m_updateLinkAttributesHasBeenSet(false)
 {
 }
 
-BatchWriteOperation::BatchWriteOperation(const JsonValue& jsonValue) : 
+BatchWriteOperation::BatchWriteOperation(JsonView jsonValue) : 
     m_createObjectHasBeenSet(false),
     m_attachObjectHasBeenSet(false),
     m_detachObjectHasBeenSet(false),
@@ -60,12 +61,13 @@ BatchWriteOperation::BatchWriteOperation(const JsonValue& jsonValue) :
     m_attachToIndexHasBeenSet(false),
     m_detachFromIndexHasBeenSet(false),
     m_attachTypedLinkHasBeenSet(false),
-    m_detachTypedLinkHasBeenSet(false)
+    m_detachTypedLinkHasBeenSet(false),
+    m_updateLinkAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchWriteOperation& BatchWriteOperation::operator =(const JsonValue& jsonValue)
+BatchWriteOperation& BatchWriteOperation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CreateObject"))
   {
@@ -165,6 +167,13 @@ BatchWriteOperation& BatchWriteOperation::operator =(const JsonValue& jsonValue)
     m_detachTypedLinkHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UpdateLinkAttributes"))
+  {
+    m_updateLinkAttributes = jsonValue.GetObject("UpdateLinkAttributes");
+
+    m_updateLinkAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -253,6 +262,12 @@ JsonValue BatchWriteOperation::Jsonize() const
   if(m_detachTypedLinkHasBeenSet)
   {
    payload.WithObject("DetachTypedLink", m_detachTypedLink.Jsonize());
+
+  }
+
+  if(m_updateLinkAttributesHasBeenSet)
+  {
+   payload.WithObject("UpdateLinkAttributes", m_updateLinkAttributes.Jsonize());
 
   }
 

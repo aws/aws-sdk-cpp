@@ -44,7 +44,7 @@ Aws::String DeleteRegexPatternSetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteRegexPatternSetRequest::GetRequestSpecificHeaders() const

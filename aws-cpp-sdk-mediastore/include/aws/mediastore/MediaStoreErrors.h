@@ -57,6 +57,7 @@ enum class MediaStoreErrors
 
   CONTAINER_IN_USE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONTAINER_NOT_FOUND,
+  CORS_POLICY_NOT_FOUND,
   LIMIT_EXCEEDED,
   POLICY_NOT_FOUND
 };

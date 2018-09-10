@@ -44,7 +44,7 @@ Aws::String DeleteProductRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteProductRequest::GetRequestSpecificHeaders() const

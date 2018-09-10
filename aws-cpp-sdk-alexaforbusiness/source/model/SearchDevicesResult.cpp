@@ -39,10 +39,10 @@ SearchDevicesResult::SearchDevicesResult(const Aws::AmazonWebServiceResult<JsonV
 
 SearchDevicesResult& SearchDevicesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Devices"))
   {
-    Array<JsonValue> devicesJsonList = jsonValue.GetArray("Devices");
+    Array<JsonView> devicesJsonList = jsonValue.GetArray("Devices");
     for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
     {
       m_devices.push_back(devicesJsonList[devicesIndex].AsObject());

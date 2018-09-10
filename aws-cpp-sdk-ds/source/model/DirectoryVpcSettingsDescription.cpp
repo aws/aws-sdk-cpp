@@ -36,7 +36,7 @@ DirectoryVpcSettingsDescription::DirectoryVpcSettingsDescription() :
 {
 }
 
-DirectoryVpcSettingsDescription::DirectoryVpcSettingsDescription(const JsonValue& jsonValue) : 
+DirectoryVpcSettingsDescription::DirectoryVpcSettingsDescription(JsonView jsonValue) : 
     m_vpcIdHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_securityGroupIdHasBeenSet(false),
@@ -45,7 +45,7 @@ DirectoryVpcSettingsDescription::DirectoryVpcSettingsDescription(const JsonValue
   *this = jsonValue;
 }
 
-DirectoryVpcSettingsDescription& DirectoryVpcSettingsDescription::operator =(const JsonValue& jsonValue)
+DirectoryVpcSettingsDescription& DirectoryVpcSettingsDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VpcId"))
   {
@@ -56,7 +56,7 @@ DirectoryVpcSettingsDescription& DirectoryVpcSettingsDescription::operator =(con
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonValue> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -73,7 +73,7 @@ DirectoryVpcSettingsDescription& DirectoryVpcSettingsDescription::operator =(con
 
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
-    Array<JsonValue> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());

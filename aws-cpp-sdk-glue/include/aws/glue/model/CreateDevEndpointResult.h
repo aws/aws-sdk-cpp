@@ -495,6 +495,49 @@ namespace Model
 
 
     /**
+     * <p>The name of the SecurityConfiguration structure being used with this
+     * DevEndpoint.</p>
+     */
+    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure being used with this
+     * DevEndpoint.</p>
+     */
+    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfiguration = value; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure being used with this
+     * DevEndpoint.</p>
+     */
+    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfiguration = std::move(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure being used with this
+     * DevEndpoint.</p>
+     */
+    inline void SetSecurityConfiguration(const char* value) { m_securityConfiguration.assign(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure being used with this
+     * DevEndpoint.</p>
+     */
+    inline CreateDevEndpointResult& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure being used with this
+     * DevEndpoint.</p>
+     */
+    inline CreateDevEndpointResult& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure being used with this
+     * DevEndpoint.</p>
+     */
+    inline CreateDevEndpointResult& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+
+
+    /**
      * <p>The point in time at which this DevEndpoint was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
@@ -546,6 +589,8 @@ namespace Model
     Aws::String m_extraJarsS3Path;
 
     Aws::String m_failureReason;
+
+    Aws::String m_securityConfiguration;
 
     Aws::Utils::DateTime m_createdTimestamp;
   };

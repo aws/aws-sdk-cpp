@@ -36,7 +36,7 @@ InstanceAssociation::InstanceAssociation() :
 {
 }
 
-InstanceAssociation::InstanceAssociation(const JsonValue& jsonValue) : 
+InstanceAssociation::InstanceAssociation(JsonView jsonValue) : 
     m_associationIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_contentHasBeenSet(false),
@@ -45,7 +45,7 @@ InstanceAssociation::InstanceAssociation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceAssociation& InstanceAssociation::operator =(const JsonValue& jsonValue)
+InstanceAssociation& InstanceAssociation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AssociationId"))
   {

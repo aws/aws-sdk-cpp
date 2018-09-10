@@ -26,6 +26,7 @@ namespace Model
   enum class EnvironmentType
   {
     NOT_SET,
+    WINDOWS_CONTAINER,
     LINUX_CONTAINER
   };
 

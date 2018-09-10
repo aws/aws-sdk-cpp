@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -42,43 +43,50 @@ namespace Model
   {
   public:
     MountPoint();
-    MountPoint(const Aws::Utils::Json::JsonValue& jsonValue);
-    MountPoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MountPoint(Aws::Utils::Json::JsonView jsonValue);
+    MountPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. Must be a volume name referenced in the
+     * <code>name</code> parameter of task definition <code>volume</code>.</p>
      */
     inline const Aws::String& GetSourceVolume() const{ return m_sourceVolume; }
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. Must be a volume name referenced in the
+     * <code>name</code> parameter of task definition <code>volume</code>.</p>
      */
     inline void SetSourceVolume(const Aws::String& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = value; }
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. Must be a volume name referenced in the
+     * <code>name</code> parameter of task definition <code>volume</code>.</p>
      */
     inline void SetSourceVolume(Aws::String&& value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume = std::move(value); }
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. Must be a volume name referenced in the
+     * <code>name</code> parameter of task definition <code>volume</code>.</p>
      */
     inline void SetSourceVolume(const char* value) { m_sourceVolumeHasBeenSet = true; m_sourceVolume.assign(value); }
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. Must be a volume name referenced in the
+     * <code>name</code> parameter of task definition <code>volume</code>.</p>
      */
     inline MountPoint& WithSourceVolume(const Aws::String& value) { SetSourceVolume(value); return *this;}
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. Must be a volume name referenced in the
+     * <code>name</code> parameter of task definition <code>volume</code>.</p>
      */
     inline MountPoint& WithSourceVolume(Aws::String&& value) { SetSourceVolume(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the volume to mount.</p>
+     * <p>The name of the volume to mount. Must be a volume name referenced in the
+     * <code>name</code> parameter of task definition <code>volume</code>.</p>
      */
     inline MountPoint& WithSourceVolume(const char* value) { SetSourceVolume(value); return *this;}
 

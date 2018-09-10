@@ -39,11 +39,12 @@ ConfigRule::ConfigRule() :
     m_maximumExecutionFrequency(MaximumExecutionFrequency::NOT_SET),
     m_maximumExecutionFrequencyHasBeenSet(false),
     m_configRuleState(ConfigRuleState::NOT_SET),
-    m_configRuleStateHasBeenSet(false)
+    m_configRuleStateHasBeenSet(false),
+    m_createdByHasBeenSet(false)
 {
 }
 
-ConfigRule::ConfigRule(const JsonValue& jsonValue) : 
+ConfigRule::ConfigRule(JsonView jsonValue) : 
     m_configRuleNameHasBeenSet(false),
     m_configRuleArnHasBeenSet(false),
     m_configRuleIdHasBeenSet(false),
@@ -54,12 +55,13 @@ ConfigRule::ConfigRule(const JsonValue& jsonValue) :
     m_maximumExecutionFrequency(MaximumExecutionFrequency::NOT_SET),
     m_maximumExecutionFrequencyHasBeenSet(false),
     m_configRuleState(ConfigRuleState::NOT_SET),
-    m_configRuleStateHasBeenSet(false)
+    m_configRuleStateHasBeenSet(false),
+    m_createdByHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ConfigRule& ConfigRule::operator =(const JsonValue& jsonValue)
+ConfigRule& ConfigRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ConfigRuleName"))
   {
@@ -124,6 +126,13 @@ ConfigRule& ConfigRule::operator =(const JsonValue& jsonValue)
     m_configRuleStateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreatedBy"))
+  {
+    m_createdBy = jsonValue.GetString("CreatedBy");
+
+    m_createdByHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -181,6 +190,12 @@ JsonValue ConfigRule::Jsonize() const
   if(m_configRuleStateHasBeenSet)
   {
    payload.WithString("ConfigRuleState", ConfigRuleStateMapper::GetNameForConfigRuleState(m_configRuleState));
+  }
+
+  if(m_createdByHasBeenSet)
+  {
+   payload.WithString("CreatedBy", m_createdBy);
+
   }
 
   return payload;

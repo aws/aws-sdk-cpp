@@ -44,171 +44,178 @@ namespace Model
 
 
     /**
-     * Arn of the function definition version.
+     * The ARN of the function definition version.
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * Arn of the function definition version.
+     * The ARN of the function definition version.
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * Arn of the function definition version.
+     * The ARN of the function definition version.
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * Arn of the function definition version.
+     * The ARN of the function definition version.
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * Arn of the function definition version.
+     * The ARN of the function definition version.
      */
     inline GetFunctionDefinitionVersionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * Arn of the function definition version.
+     * The ARN of the function definition version.
      */
     inline GetFunctionDefinitionVersionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * Arn of the function definition version.
+     * The ARN of the function definition version.
      */
     inline GetFunctionDefinitionVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * Timestamp when the funtion definition version was created.
+     * The time, in milliseconds since the epoch, when the function definition version
+     * was created.
      */
     inline const Aws::String& GetCreationTimestamp() const{ return m_creationTimestamp; }
 
     /**
-     * Timestamp when the funtion definition version was created.
+     * The time, in milliseconds since the epoch, when the function definition version
+     * was created.
      */
     inline void SetCreationTimestamp(const Aws::String& value) { m_creationTimestamp = value; }
 
     /**
-     * Timestamp when the funtion definition version was created.
+     * The time, in milliseconds since the epoch, when the function definition version
+     * was created.
      */
     inline void SetCreationTimestamp(Aws::String&& value) { m_creationTimestamp = std::move(value); }
 
     /**
-     * Timestamp when the funtion definition version was created.
+     * The time, in milliseconds since the epoch, when the function definition version
+     * was created.
      */
     inline void SetCreationTimestamp(const char* value) { m_creationTimestamp.assign(value); }
 
     /**
-     * Timestamp when the funtion definition version was created.
+     * The time, in milliseconds since the epoch, when the function definition version
+     * was created.
      */
     inline GetFunctionDefinitionVersionResult& WithCreationTimestamp(const Aws::String& value) { SetCreationTimestamp(value); return *this;}
 
     /**
-     * Timestamp when the funtion definition version was created.
+     * The time, in milliseconds since the epoch, when the function definition version
+     * was created.
      */
     inline GetFunctionDefinitionVersionResult& WithCreationTimestamp(Aws::String&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
     /**
-     * Timestamp when the funtion definition version was created.
+     * The time, in milliseconds since the epoch, when the function definition version
+     * was created.
      */
     inline GetFunctionDefinitionVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
 
     /**
-     * Information on the definition
+     * Information on the definition.
      */
     inline const FunctionDefinitionVersion& GetDefinition() const{ return m_definition; }
 
     /**
-     * Information on the definition
+     * Information on the definition.
      */
     inline void SetDefinition(const FunctionDefinitionVersion& value) { m_definition = value; }
 
     /**
-     * Information on the definition
+     * Information on the definition.
      */
     inline void SetDefinition(FunctionDefinitionVersion&& value) { m_definition = std::move(value); }
 
     /**
-     * Information on the definition
+     * Information on the definition.
      */
     inline GetFunctionDefinitionVersionResult& WithDefinition(const FunctionDefinitionVersion& value) { SetDefinition(value); return *this;}
 
     /**
-     * Information on the definition
+     * Information on the definition.
      */
     inline GetFunctionDefinitionVersionResult& WithDefinition(FunctionDefinitionVersion&& value) { SetDefinition(std::move(value)); return *this;}
 
 
     /**
-     * Id of the function definition the version belongs to.
+     * The ID of the function definition version.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Id of the function definition the version belongs to.
+     * The ID of the function definition version.
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * Id of the function definition the version belongs to.
+     * The ID of the function definition version.
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * Id of the function definition the version belongs to.
+     * The ID of the function definition version.
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * Id of the function definition the version belongs to.
+     * The ID of the function definition version.
      */
     inline GetFunctionDefinitionVersionResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Id of the function definition the version belongs to.
+     * The ID of the function definition version.
      */
     inline GetFunctionDefinitionVersionResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Id of the function definition the version belongs to.
+     * The ID of the function definition version.
      */
     inline GetFunctionDefinitionVersionResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Version of the function definition version.
+     * The version of the function definition version.
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * Version of the function definition version.
+     * The version of the function definition version.
      */
     inline void SetVersion(const Aws::String& value) { m_version = value; }
 
     /**
-     * Version of the function definition version.
+     * The version of the function definition version.
      */
     inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
 
     /**
-     * Version of the function definition version.
+     * The version of the function definition version.
      */
     inline void SetVersion(const char* value) { m_version.assign(value); }
 
     /**
-     * Version of the function definition version.
+     * The version of the function definition version.
      */
     inline GetFunctionDefinitionVersionResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * Version of the function definition version.
+     * The version of the function definition version.
      */
     inline GetFunctionDefinitionVersionResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * Version of the function definition version.
+     * The version of the function definition version.
      */
     inline GetFunctionDefinitionVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
 

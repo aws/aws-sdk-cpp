@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WorkDocs
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     SharePrincipal();
-    SharePrincipal(const Aws::Utils::Json::JsonValue& jsonValue);
-    SharePrincipal& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SharePrincipal(Aws::Utils::Json::JsonView jsonValue);
+    SharePrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

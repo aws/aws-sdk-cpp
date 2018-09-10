@@ -61,6 +61,15 @@ cmake -DCMAKE_BUILD_TYPE=Release  <path-to-root-of-this-source-code>
 make
 sudo make install
 ```
+To uninstall these libraries:
+```
+sudo make uninstall
+```
+You may define a custom uninstall target when you are using SDK as a sub-project, but make sure it comes before the default definition in `CMakeLists.txt`, and you can uninstall SDK related libraries by:
+```
+sudo make uninstall-awssdk
+```
+
 * For Visual Studio:
 ```
 cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64"

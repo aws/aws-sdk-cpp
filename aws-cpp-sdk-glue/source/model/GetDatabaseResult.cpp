@@ -37,7 +37,7 @@ GetDatabaseResult::GetDatabaseResult(const Aws::AmazonWebServiceResult<JsonValue
 
 GetDatabaseResult& GetDatabaseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetObject("Database");

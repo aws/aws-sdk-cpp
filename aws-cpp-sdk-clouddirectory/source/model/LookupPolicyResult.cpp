@@ -37,10 +37,10 @@ LookupPolicyResult::LookupPolicyResult(const Aws::AmazonWebServiceResult<JsonVal
 
 LookupPolicyResult& LookupPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PolicyToPathList"))
   {
-    Array<JsonValue> policyToPathListJsonList = jsonValue.GetArray("PolicyToPathList");
+    Array<JsonView> policyToPathListJsonList = jsonValue.GetArray("PolicyToPathList");
     for(unsigned policyToPathListIndex = 0; policyToPathListIndex < policyToPathListJsonList.GetLength(); ++policyToPathListIndex)
     {
       m_policyToPathList.push_back(policyToPathListJsonList[policyToPathListIndex].AsObject());

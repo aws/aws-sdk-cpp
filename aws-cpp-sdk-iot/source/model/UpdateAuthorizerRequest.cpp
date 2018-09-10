@@ -64,7 +64,7 @@ Aws::String UpdateAuthorizerRequest::SerializePayload() const
    payload.WithString("status", AuthorizerStatusMapper::GetNameForAuthorizerStatus(m_status));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

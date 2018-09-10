@@ -42,7 +42,7 @@ Trigger::Trigger() :
 {
 }
 
-Trigger::Trigger(const JsonValue& jsonValue) : 
+Trigger::Trigger(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_idHasBeenSet(false),
     m_type(TriggerType::NOT_SET),
@@ -57,7 +57,7 @@ Trigger::Trigger(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Trigger& Trigger::operator =(const JsonValue& jsonValue)
+Trigger& Trigger::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -103,7 +103,7 @@ Trigger& Trigger::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Actions"))
   {
-    Array<JsonValue> actionsJsonList = jsonValue.GetArray("Actions");
+    Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());

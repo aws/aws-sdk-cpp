@@ -35,7 +35,7 @@ Configurations::Configurations() :
 {
 }
 
-Configurations::Configurations(const JsonValue& jsonValue) : 
+Configurations::Configurations(JsonView jsonValue) : 
     m_currentHasBeenSet(false),
     m_historyHasBeenSet(false),
     m_pendingHasBeenSet(false)
@@ -43,7 +43,7 @@ Configurations::Configurations(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Configurations& Configurations::operator =(const JsonValue& jsonValue)
+Configurations& Configurations::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("current"))
   {
@@ -54,7 +54,7 @@ Configurations& Configurations::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("history"))
   {
-    Array<JsonValue> historyJsonList = jsonValue.GetArray("history");
+    Array<JsonView> historyJsonList = jsonValue.GetArray("history");
     for(unsigned historyIndex = 0; historyIndex < historyJsonList.GetLength(); ++historyIndex)
     {
       m_history.push_back(historyJsonList[historyIndex].AsObject());

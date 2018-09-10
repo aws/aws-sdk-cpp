@@ -34,18 +34,18 @@ BatchListObjectChildrenResponse::BatchListObjectChildrenResponse() :
 {
 }
 
-BatchListObjectChildrenResponse::BatchListObjectChildrenResponse(const JsonValue& jsonValue) : 
+BatchListObjectChildrenResponse::BatchListObjectChildrenResponse(JsonView jsonValue) : 
     m_childrenHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchListObjectChildrenResponse& BatchListObjectChildrenResponse::operator =(const JsonValue& jsonValue)
+BatchListObjectChildrenResponse& BatchListObjectChildrenResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Children"))
   {
-    Aws::Map<Aws::String, JsonValue> childrenJsonMap = jsonValue.GetObject("Children").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> childrenJsonMap = jsonValue.GetObject("Children").GetAllObjects();
     for(auto& childrenItem : childrenJsonMap)
     {
       m_children[childrenItem.first] = childrenItem.second.AsString();

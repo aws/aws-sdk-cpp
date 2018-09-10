@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * Container for information regarding the access control for replicas.<p><h3>See
-   * Also:</h3>   <a
+   * <p>Container for information regarding the access control for
+   * replicas.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AccessControlTranslation">AWS
    * API Reference</a></p>
    */
@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * The override value for the owner of the replica object.
+     * <p>The override value for the owner of the replica object.</p>
      */
     inline const OwnerOverride& GetOwner() const{ return m_owner; }
 
     /**
-     * The override value for the owner of the replica object.
+     * <p>The override value for the owner of the replica object.</p>
      */
     inline void SetOwner(const OwnerOverride& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * The override value for the owner of the replica object.
+     * <p>The override value for the owner of the replica object.</p>
      */
     inline void SetOwner(OwnerOverride&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * The override value for the owner of the replica object.
+     * <p>The override value for the owner of the replica object.</p>
      */
     inline AccessControlTranslation& WithOwner(const OwnerOverride& value) { SetOwner(value); return *this;}
 
     /**
-     * The override value for the owner of the replica object.
+     * <p>The override value for the owner of the replica object.</p>
      */
     inline AccessControlTranslation& WithOwner(OwnerOverride&& value) { SetOwner(std::move(value)); return *this;}
 

@@ -31,7 +31,8 @@ UpdateDataSourceRequest::UpdateDataSourceRequest() :
     m_serviceRoleArnHasBeenSet(false),
     m_dynamodbConfigHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
-    m_elasticsearchConfigHasBeenSet(false)
+    m_elasticsearchConfigHasBeenSet(false),
+    m_httpConfigHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,13 @@ Aws::String UpdateDataSourceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_httpConfigHasBeenSet)
+  {
+   payload.WithObject("httpConfig", m_httpConfig.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

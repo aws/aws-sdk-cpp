@@ -37,7 +37,7 @@ GetPolicyResult::GetPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetPolicyResult& GetPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("policyName"))
   {
     m_policyName = jsonValue.GetString("policyName");
@@ -59,6 +59,24 @@ GetPolicyResult& GetPolicyResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("defaultVersionId"))
   {
     m_defaultVersionId = jsonValue.GetString("defaultVersionId");
+
+  }
+
+  if(jsonValue.ValueExists("creationDate"))
+  {
+    m_creationDate = jsonValue.GetDouble("creationDate");
+
+  }
+
+  if(jsonValue.ValueExists("lastModifiedDate"))
+  {
+    m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
+
+  }
+
+  if(jsonValue.ValueExists("generationId"))
+  {
+    m_generationId = jsonValue.GetString("generationId");
 
   }
 

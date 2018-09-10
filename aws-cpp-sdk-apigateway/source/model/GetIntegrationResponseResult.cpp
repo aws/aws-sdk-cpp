@@ -39,7 +39,7 @@ GetIntegrationResponseResult::GetIntegrationResponseResult(const Aws::AmazonWebS
 
 GetIntegrationResponseResult& GetIntegrationResponseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
@@ -54,7 +54,7 @@ GetIntegrationResponseResult& GetIntegrationResponseResult::operator =(const Aws
 
   if(jsonValue.ValueExists("responseParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
     for(auto& responseParametersItem : responseParametersJsonMap)
     {
       m_responseParameters[responseParametersItem.first] = responseParametersItem.second.AsString();
@@ -63,7 +63,7 @@ GetIntegrationResponseResult& GetIntegrationResponseResult::operator =(const Aws
 
   if(jsonValue.ValueExists("responseTemplates"))
   {
-    Aws::Map<Aws::String, JsonValue> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
     for(auto& responseTemplatesItem : responseTemplatesJsonMap)
     {
       m_responseTemplates[responseTemplatesItem.first] = responseTemplatesItem.second.AsString();

@@ -65,7 +65,7 @@ Aws::String UpdateAuthEventFeedbackRequest::SerializePayload() const
    payload.WithString("FeedbackValue", FeedbackValueTypeMapper::GetNameForFeedbackValueType(m_feedbackValue));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateAuthEventFeedbackRequest::GetRequestSpecificHeaders() const

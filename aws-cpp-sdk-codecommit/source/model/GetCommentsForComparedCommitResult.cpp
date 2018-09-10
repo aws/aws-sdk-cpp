@@ -37,10 +37,10 @@ GetCommentsForComparedCommitResult::GetCommentsForComparedCommitResult(const Aws
 
 GetCommentsForComparedCommitResult& GetCommentsForComparedCommitResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("commentsForComparedCommitData"))
   {
-    Array<JsonValue> commentsForComparedCommitDataJsonList = jsonValue.GetArray("commentsForComparedCommitData");
+    Array<JsonView> commentsForComparedCommitDataJsonList = jsonValue.GetArray("commentsForComparedCommitData");
     for(unsigned commentsForComparedCommitDataIndex = 0; commentsForComparedCommitDataIndex < commentsForComparedCommitDataJsonList.GetLength(); ++commentsForComparedCommitDataIndex)
     {
       m_commentsForComparedCommitData.push_back(commentsForComparedCommitDataJsonList[commentsForComparedCommitDataIndex].AsObject());

@@ -49,198 +49,198 @@ namespace Model
 
 
     /**
-     * Contains information about where to publish the inventory results.
+     * <p>Contains information about where to publish the inventory results.</p>
      */
     inline const InventoryDestination& GetDestination() const{ return m_destination; }
 
     /**
-     * Contains information about where to publish the inventory results.
+     * <p>Contains information about where to publish the inventory results.</p>
      */
     inline void SetDestination(const InventoryDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * Contains information about where to publish the inventory results.
+     * <p>Contains information about where to publish the inventory results.</p>
      */
     inline void SetDestination(InventoryDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * Contains information about where to publish the inventory results.
+     * <p>Contains information about where to publish the inventory results.</p>
      */
     inline InventoryConfiguration& WithDestination(const InventoryDestination& value) { SetDestination(value); return *this;}
 
     /**
-     * Contains information about where to publish the inventory results.
+     * <p>Contains information about where to publish the inventory results.</p>
      */
     inline InventoryConfiguration& WithDestination(InventoryDestination&& value) { SetDestination(std::move(value)); return *this;}
 
 
     /**
-     * Specifies whether the inventory is enabled or disabled.
+     * <p>Specifies whether the inventory is enabled or disabled.</p>
      */
     inline bool GetIsEnabled() const{ return m_isEnabled; }
 
     /**
-     * Specifies whether the inventory is enabled or disabled.
+     * <p>Specifies whether the inventory is enabled or disabled.</p>
      */
     inline void SetIsEnabled(bool value) { m_isEnabledHasBeenSet = true; m_isEnabled = value; }
 
     /**
-     * Specifies whether the inventory is enabled or disabled.
+     * <p>Specifies whether the inventory is enabled or disabled.</p>
      */
     inline InventoryConfiguration& WithIsEnabled(bool value) { SetIsEnabled(value); return *this;}
 
 
     /**
-     * Specifies an inventory filter. The inventory only includes objects that meet the
-     * filter's criteria.
+     * <p>Specifies an inventory filter. The inventory only includes objects that meet
+     * the filter's criteria.</p>
      */
     inline const InventoryFilter& GetFilter() const{ return m_filter; }
 
     /**
-     * Specifies an inventory filter. The inventory only includes objects that meet the
-     * filter's criteria.
+     * <p>Specifies an inventory filter. The inventory only includes objects that meet
+     * the filter's criteria.</p>
      */
     inline void SetFilter(const InventoryFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * Specifies an inventory filter. The inventory only includes objects that meet the
-     * filter's criteria.
+     * <p>Specifies an inventory filter. The inventory only includes objects that meet
+     * the filter's criteria.</p>
      */
     inline void SetFilter(InventoryFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * Specifies an inventory filter. The inventory only includes objects that meet the
-     * filter's criteria.
+     * <p>Specifies an inventory filter. The inventory only includes objects that meet
+     * the filter's criteria.</p>
      */
     inline InventoryConfiguration& WithFilter(const InventoryFilter& value) { SetFilter(value); return *this;}
 
     /**
-     * Specifies an inventory filter. The inventory only includes objects that meet the
-     * filter's criteria.
+     * <p>Specifies an inventory filter. The inventory only includes objects that meet
+     * the filter's criteria.</p>
      */
     inline InventoryConfiguration& WithFilter(InventoryFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline InventoryConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline InventoryConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The ID used to identify the inventory configuration.
+     * <p>The ID used to identify the inventory configuration.</p>
      */
     inline InventoryConfiguration& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Specifies which object version(s) to included in the inventory results.
+     * <p>Specifies which object version(s) to included in the inventory results.</p>
      */
     inline const InventoryIncludedObjectVersions& GetIncludedObjectVersions() const{ return m_includedObjectVersions; }
 
     /**
-     * Specifies which object version(s) to included in the inventory results.
+     * <p>Specifies which object version(s) to included in the inventory results.</p>
      */
     inline void SetIncludedObjectVersions(const InventoryIncludedObjectVersions& value) { m_includedObjectVersionsHasBeenSet = true; m_includedObjectVersions = value; }
 
     /**
-     * Specifies which object version(s) to included in the inventory results.
+     * <p>Specifies which object version(s) to included in the inventory results.</p>
      */
     inline void SetIncludedObjectVersions(InventoryIncludedObjectVersions&& value) { m_includedObjectVersionsHasBeenSet = true; m_includedObjectVersions = std::move(value); }
 
     /**
-     * Specifies which object version(s) to included in the inventory results.
+     * <p>Specifies which object version(s) to included in the inventory results.</p>
      */
     inline InventoryConfiguration& WithIncludedObjectVersions(const InventoryIncludedObjectVersions& value) { SetIncludedObjectVersions(value); return *this;}
 
     /**
-     * Specifies which object version(s) to included in the inventory results.
+     * <p>Specifies which object version(s) to included in the inventory results.</p>
      */
     inline InventoryConfiguration& WithIncludedObjectVersions(InventoryIncludedObjectVersions&& value) { SetIncludedObjectVersions(std::move(value)); return *this;}
 
 
     /**
-     * Contains the optional fields that are included in the inventory results.
+     * <p>Contains the optional fields that are included in the inventory results.</p>
      */
     inline const Aws::Vector<InventoryOptionalField>& GetOptionalFields() const{ return m_optionalFields; }
 
     /**
-     * Contains the optional fields that are included in the inventory results.
+     * <p>Contains the optional fields that are included in the inventory results.</p>
      */
     inline void SetOptionalFields(const Aws::Vector<InventoryOptionalField>& value) { m_optionalFieldsHasBeenSet = true; m_optionalFields = value; }
 
     /**
-     * Contains the optional fields that are included in the inventory results.
+     * <p>Contains the optional fields that are included in the inventory results.</p>
      */
     inline void SetOptionalFields(Aws::Vector<InventoryOptionalField>&& value) { m_optionalFieldsHasBeenSet = true; m_optionalFields = std::move(value); }
 
     /**
-     * Contains the optional fields that are included in the inventory results.
+     * <p>Contains the optional fields that are included in the inventory results.</p>
      */
     inline InventoryConfiguration& WithOptionalFields(const Aws::Vector<InventoryOptionalField>& value) { SetOptionalFields(value); return *this;}
 
     /**
-     * Contains the optional fields that are included in the inventory results.
+     * <p>Contains the optional fields that are included in the inventory results.</p>
      */
     inline InventoryConfiguration& WithOptionalFields(Aws::Vector<InventoryOptionalField>&& value) { SetOptionalFields(std::move(value)); return *this;}
 
     /**
-     * Contains the optional fields that are included in the inventory results.
+     * <p>Contains the optional fields that are included in the inventory results.</p>
      */
     inline InventoryConfiguration& AddOptionalFields(const InventoryOptionalField& value) { m_optionalFieldsHasBeenSet = true; m_optionalFields.push_back(value); return *this; }
 
     /**
-     * Contains the optional fields that are included in the inventory results.
+     * <p>Contains the optional fields that are included in the inventory results.</p>
      */
     inline InventoryConfiguration& AddOptionalFields(InventoryOptionalField&& value) { m_optionalFieldsHasBeenSet = true; m_optionalFields.push_back(std::move(value)); return *this; }
 
 
     /**
-     * Specifies the schedule for generating inventory results.
+     * <p>Specifies the schedule for generating inventory results.</p>
      */
     inline const InventorySchedule& GetSchedule() const{ return m_schedule; }
 
     /**
-     * Specifies the schedule for generating inventory results.
+     * <p>Specifies the schedule for generating inventory results.</p>
      */
     inline void SetSchedule(const InventorySchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
-     * Specifies the schedule for generating inventory results.
+     * <p>Specifies the schedule for generating inventory results.</p>
      */
     inline void SetSchedule(InventorySchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
-     * Specifies the schedule for generating inventory results.
+     * <p>Specifies the schedule for generating inventory results.</p>
      */
     inline InventoryConfiguration& WithSchedule(const InventorySchedule& value) { SetSchedule(value); return *this;}
 
     /**
-     * Specifies the schedule for generating inventory results.
+     * <p>Specifies the schedule for generating inventory results.</p>
      */
     inline InventoryConfiguration& WithSchedule(InventorySchedule&& value) { SetSchedule(std::move(value)); return *this;}
 

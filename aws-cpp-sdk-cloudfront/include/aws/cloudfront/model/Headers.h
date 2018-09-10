@@ -47,7 +47,7 @@ namespace Model
    * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">How
    * CloudFront Forwards and Caches Headers</a> in the <i>Amazon CloudFront Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/Headers">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/Headers">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Headers

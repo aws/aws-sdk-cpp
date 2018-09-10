@@ -44,7 +44,7 @@ Aws::String DeregisterEventTopicRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeregisterEventTopicRequest::GetRequestSpecificHeaders() const

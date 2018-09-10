@@ -39,7 +39,7 @@ NewBGPPeer::NewBGPPeer() :
 {
 }
 
-NewBGPPeer::NewBGPPeer(const JsonValue& jsonValue) : 
+NewBGPPeer::NewBGPPeer(JsonView jsonValue) : 
     m_asn(0),
     m_asnHasBeenSet(false),
     m_authKeyHasBeenSet(false),
@@ -51,7 +51,7 @@ NewBGPPeer::NewBGPPeer(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NewBGPPeer& NewBGPPeer::operator =(const JsonValue& jsonValue)
+NewBGPPeer& NewBGPPeer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("asn"))
   {

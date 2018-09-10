@@ -26,7 +26,8 @@ namespace S3
 {
 namespace S3Endpoint
 {
-  static const int CN_REGION_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
+  static const int CN_NORTH_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
+  static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString("cn-northwest-1");
   
   static const int US_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-east-1");
   static const int US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1");
@@ -61,7 +62,7 @@ namespace S3Endpoint
 
     ss << regionName << ".amazonaws.com";
     
-    if(hash == CN_REGION_HASH)
+    if (hash == CN_NORTH_HASH || hash == CN_NORTHWEST_1_HASH)
     {
       ss << ".cn"; 
     }

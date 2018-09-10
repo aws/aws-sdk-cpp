@@ -35,7 +35,7 @@ BatchAttachObject::BatchAttachObject() :
 {
 }
 
-BatchAttachObject::BatchAttachObject(const JsonValue& jsonValue) : 
+BatchAttachObject::BatchAttachObject(JsonView jsonValue) : 
     m_parentReferenceHasBeenSet(false),
     m_childReferenceHasBeenSet(false),
     m_linkNameHasBeenSet(false)
@@ -43,7 +43,7 @@ BatchAttachObject::BatchAttachObject(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchAttachObject& BatchAttachObject::operator =(const JsonValue& jsonValue)
+BatchAttachObject& BatchAttachObject::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ParentReference"))
   {

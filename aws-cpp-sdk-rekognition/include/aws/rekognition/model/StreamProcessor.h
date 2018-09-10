@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     StreamProcessor();
-    StreamProcessor(const Aws::Utils::Json::JsonValue& jsonValue);
-    StreamProcessor& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StreamProcessor(Aws::Utils::Json::JsonView jsonValue);
+    StreamProcessor& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

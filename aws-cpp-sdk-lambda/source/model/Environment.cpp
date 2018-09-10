@@ -33,17 +33,17 @@ Environment::Environment() :
 {
 }
 
-Environment::Environment(const JsonValue& jsonValue) : 
+Environment::Environment(JsonView jsonValue) : 
     m_variablesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Environment& Environment::operator =(const JsonValue& jsonValue)
+Environment& Environment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Variables"))
   {
-    Aws::Map<Aws::String, JsonValue> variablesJsonMap = jsonValue.GetObject("Variables").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> variablesJsonMap = jsonValue.GetObject("Variables").GetAllObjects();
     for(auto& variablesItem : variablesJsonMap)
     {
       m_variables[variablesItem.first] = variablesItem.second.AsString();

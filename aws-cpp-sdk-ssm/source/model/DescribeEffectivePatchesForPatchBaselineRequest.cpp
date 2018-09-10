@@ -52,7 +52,7 @@ Aws::String DescribeEffectivePatchesForPatchBaselineRequest::SerializePayload() 
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeEffectivePatchesForPatchBaselineRequest::GetRequestSpecificHeaders() const

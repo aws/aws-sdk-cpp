@@ -51,7 +51,12 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_enablePerformanceInsights(false),
     m_enablePerformanceInsightsHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_enableCloudwatchLogsExportsHasBeenSet(false)
+    m_performanceInsightsRetentionPeriod(0),
+    m_performanceInsightsRetentionPeriodHasBeenSet(false),
+    m_enableCloudwatchLogsExportsHasBeenSet(false),
+    m_processorFeaturesHasBeenSet(false),
+    m_useDefaultProcessorFeatures(false),
+    m_useDefaultProcessorFeaturesHasBeenSet(false)
 {
 }
 
@@ -169,6 +174,11 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
     ss << "PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
   }
 
+  if(m_performanceInsightsRetentionPeriodHasBeenSet)
+  {
+    ss << "PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
+  }
+
   if(m_enableCloudwatchLogsExportsHasBeenSet)
   {
     unsigned enableCloudwatchLogsExportsCount = 1;
@@ -178,6 +188,21 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       enableCloudwatchLogsExportsCount++;
     }
+  }
+
+  if(m_processorFeaturesHasBeenSet)
+  {
+    unsigned processorFeaturesCount = 1;
+    for(auto& item : m_processorFeatures)
+    {
+      item.OutputToStream(ss, "ProcessorFeatures.member.", processorFeaturesCount, "");
+      processorFeaturesCount++;
+    }
+  }
+
+  if(m_useDefaultProcessorFeaturesHasBeenSet)
+  {
+    ss << "UseDefaultProcessorFeatures=" << std::boolalpha << m_useDefaultProcessorFeatures << "&";
   }
 
   ss << "Version=2014-10-31";

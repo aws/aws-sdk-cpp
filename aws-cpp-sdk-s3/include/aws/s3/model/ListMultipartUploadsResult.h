@@ -47,195 +47,195 @@ namespace Model
 
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucket = value; }
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucket = std::move(value); }
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline void SetBucket(const char* value) { m_bucket.assign(value); }
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline ListMultipartUploadsResult& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline ListMultipartUploadsResult& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * Name of the bucket to which the multipart upload was initiated.
+     * <p>Name of the bucket to which the multipart upload was initiated.</p>
      */
     inline ListMultipartUploadsResult& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * The key at or after which the listing began.
+     * <p>The key at or after which the listing began.</p>
      */
     inline const Aws::String& GetKeyMarker() const{ return m_keyMarker; }
 
     /**
-     * The key at or after which the listing began.
+     * <p>The key at or after which the listing began.</p>
      */
     inline void SetKeyMarker(const Aws::String& value) { m_keyMarker = value; }
 
     /**
-     * The key at or after which the listing began.
+     * <p>The key at or after which the listing began.</p>
      */
     inline void SetKeyMarker(Aws::String&& value) { m_keyMarker = std::move(value); }
 
     /**
-     * The key at or after which the listing began.
+     * <p>The key at or after which the listing began.</p>
      */
     inline void SetKeyMarker(const char* value) { m_keyMarker.assign(value); }
 
     /**
-     * The key at or after which the listing began.
+     * <p>The key at or after which the listing began.</p>
      */
     inline ListMultipartUploadsResult& WithKeyMarker(const Aws::String& value) { SetKeyMarker(value); return *this;}
 
     /**
-     * The key at or after which the listing began.
+     * <p>The key at or after which the listing began.</p>
      */
     inline ListMultipartUploadsResult& WithKeyMarker(Aws::String&& value) { SetKeyMarker(std::move(value)); return *this;}
 
     /**
-     * The key at or after which the listing began.
+     * <p>The key at or after which the listing began.</p>
      */
     inline ListMultipartUploadsResult& WithKeyMarker(const char* value) { SetKeyMarker(value); return *this;}
 
 
     /**
-     * Upload ID after which listing began.
+     * <p>Upload ID after which listing began.</p>
      */
     inline const Aws::String& GetUploadIdMarker() const{ return m_uploadIdMarker; }
 
     /**
-     * Upload ID after which listing began.
+     * <p>Upload ID after which listing began.</p>
      */
     inline void SetUploadIdMarker(const Aws::String& value) { m_uploadIdMarker = value; }
 
     /**
-     * Upload ID after which listing began.
+     * <p>Upload ID after which listing began.</p>
      */
     inline void SetUploadIdMarker(Aws::String&& value) { m_uploadIdMarker = std::move(value); }
 
     /**
-     * Upload ID after which listing began.
+     * <p>Upload ID after which listing began.</p>
      */
     inline void SetUploadIdMarker(const char* value) { m_uploadIdMarker.assign(value); }
 
     /**
-     * Upload ID after which listing began.
+     * <p>Upload ID after which listing began.</p>
      */
     inline ListMultipartUploadsResult& WithUploadIdMarker(const Aws::String& value) { SetUploadIdMarker(value); return *this;}
 
     /**
-     * Upload ID after which listing began.
+     * <p>Upload ID after which listing began.</p>
      */
     inline ListMultipartUploadsResult& WithUploadIdMarker(Aws::String&& value) { SetUploadIdMarker(std::move(value)); return *this;}
 
     /**
-     * Upload ID after which listing began.
+     * <p>Upload ID after which listing began.</p>
      */
     inline ListMultipartUploadsResult& WithUploadIdMarker(const char* value) { SetUploadIdMarker(value); return *this;}
 
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the key-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the key-marker request parameter in a subsequent request.</p>
      */
     inline const Aws::String& GetNextKeyMarker() const{ return m_nextKeyMarker; }
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the key-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the key-marker request parameter in a subsequent request.</p>
      */
     inline void SetNextKeyMarker(const Aws::String& value) { m_nextKeyMarker = value; }
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the key-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the key-marker request parameter in a subsequent request.</p>
      */
     inline void SetNextKeyMarker(Aws::String&& value) { m_nextKeyMarker = std::move(value); }
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the key-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the key-marker request parameter in a subsequent request.</p>
      */
     inline void SetNextKeyMarker(const char* value) { m_nextKeyMarker.assign(value); }
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the key-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the key-marker request parameter in a subsequent request.</p>
      */
     inline ListMultipartUploadsResult& WithNextKeyMarker(const Aws::String& value) { SetNextKeyMarker(value); return *this;}
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the key-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the key-marker request parameter in a subsequent request.</p>
      */
     inline ListMultipartUploadsResult& WithNextKeyMarker(Aws::String&& value) { SetNextKeyMarker(std::move(value)); return *this;}
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the key-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the key-marker request parameter in a subsequent request.</p>
      */
     inline ListMultipartUploadsResult& WithNextKeyMarker(const char* value) { SetNextKeyMarker(value); return *this;}
 
 
     /**
-     * When a prefix is provided in the request, this field contains the specified
-     * prefix. The result contains only keys starting with the specified prefix.
+     * <p>When a prefix is provided in the request, this field contains the specified
+     * prefix. The result contains only keys starting with the specified prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * When a prefix is provided in the request, this field contains the specified
-     * prefix. The result contains only keys starting with the specified prefix.
+     * <p>When a prefix is provided in the request, this field contains the specified
+     * prefix. The result contains only keys starting with the specified prefix.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
 
     /**
-     * When a prefix is provided in the request, this field contains the specified
-     * prefix. The result contains only keys starting with the specified prefix.
+     * <p>When a prefix is provided in the request, this field contains the specified
+     * prefix. The result contains only keys starting with the specified prefix.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefix = std::move(value); }
 
     /**
-     * When a prefix is provided in the request, this field contains the specified
-     * prefix. The result contains only keys starting with the specified prefix.
+     * <p>When a prefix is provided in the request, this field contains the specified
+     * prefix. The result contains only keys starting with the specified prefix.</p>
      */
     inline void SetPrefix(const char* value) { m_prefix.assign(value); }
 
     /**
-     * When a prefix is provided in the request, this field contains the specified
-     * prefix. The result contains only keys starting with the specified prefix.
+     * <p>When a prefix is provided in the request, this field contains the specified
+     * prefix. The result contains only keys starting with the specified prefix.</p>
      */
     inline ListMultipartUploadsResult& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * When a prefix is provided in the request, this field contains the specified
-     * prefix. The result contains only keys starting with the specified prefix.
+     * <p>When a prefix is provided in the request, this field contains the specified
+     * prefix. The result contains only keys starting with the specified prefix.</p>
      */
     inline ListMultipartUploadsResult& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * When a prefix is provided in the request, this field contains the specified
-     * prefix. The result contains only keys starting with the specified prefix.
+     * <p>When a prefix is provided in the request, this field contains the specified
+     * prefix. The result contains only keys starting with the specified prefix.</p>
      */
     inline ListMultipartUploadsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
@@ -263,88 +263,88 @@ namespace Model
 
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the upload-id-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the upload-id-marker request parameter in a subsequent request.</p>
      */
     inline const Aws::String& GetNextUploadIdMarker() const{ return m_nextUploadIdMarker; }
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the upload-id-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the upload-id-marker request parameter in a subsequent request.</p>
      */
     inline void SetNextUploadIdMarker(const Aws::String& value) { m_nextUploadIdMarker = value; }
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the upload-id-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the upload-id-marker request parameter in a subsequent request.</p>
      */
     inline void SetNextUploadIdMarker(Aws::String&& value) { m_nextUploadIdMarker = std::move(value); }
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the upload-id-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the upload-id-marker request parameter in a subsequent request.</p>
      */
     inline void SetNextUploadIdMarker(const char* value) { m_nextUploadIdMarker.assign(value); }
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the upload-id-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the upload-id-marker request parameter in a subsequent request.</p>
      */
     inline ListMultipartUploadsResult& WithNextUploadIdMarker(const Aws::String& value) { SetNextUploadIdMarker(value); return *this;}
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the upload-id-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the upload-id-marker request parameter in a subsequent request.</p>
      */
     inline ListMultipartUploadsResult& WithNextUploadIdMarker(Aws::String&& value) { SetNextUploadIdMarker(std::move(value)); return *this;}
 
     /**
-     * When a list is truncated, this element specifies the value that should be used
-     * for the upload-id-marker request parameter in a subsequent request.
+     * <p>When a list is truncated, this element specifies the value that should be
+     * used for the upload-id-marker request parameter in a subsequent request.</p>
      */
     inline ListMultipartUploadsResult& WithNextUploadIdMarker(const char* value) { SetNextUploadIdMarker(value); return *this;}
 
 
     /**
-     * Maximum number of multipart uploads that could have been included in the
-     * response.
+     * <p>Maximum number of multipart uploads that could have been included in the
+     * response.</p>
      */
     inline int GetMaxUploads() const{ return m_maxUploads; }
 
     /**
-     * Maximum number of multipart uploads that could have been included in the
-     * response.
+     * <p>Maximum number of multipart uploads that could have been included in the
+     * response.</p>
      */
     inline void SetMaxUploads(int value) { m_maxUploads = value; }
 
     /**
-     * Maximum number of multipart uploads that could have been included in the
-     * response.
+     * <p>Maximum number of multipart uploads that could have been included in the
+     * response.</p>
      */
     inline ListMultipartUploadsResult& WithMaxUploads(int value) { SetMaxUploads(value); return *this;}
 
 
     /**
-     * Indicates whether the returned list of multipart uploads is truncated. A value
-     * of true indicates that the list was truncated. The list can be truncated if the
-     * number of multipart uploads exceeds the limit allowed or specified by max
-     * uploads.
+     * <p>Indicates whether the returned list of multipart uploads is truncated. A
+     * value of true indicates that the list was truncated. The list can be truncated
+     * if the number of multipart uploads exceeds the limit allowed or specified by max
+     * uploads.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
-     * Indicates whether the returned list of multipart uploads is truncated. A value
-     * of true indicates that the list was truncated. The list can be truncated if the
-     * number of multipart uploads exceeds the limit allowed or specified by max
-     * uploads.
+     * <p>Indicates whether the returned list of multipart uploads is truncated. A
+     * value of true indicates that the list was truncated. The list can be truncated
+     * if the number of multipart uploads exceeds the limit allowed or specified by max
+     * uploads.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
-     * Indicates whether the returned list of multipart uploads is truncated. A value
-     * of true indicates that the list was truncated. The list can be truncated if the
-     * number of multipart uploads exceeds the limit allowed or specified by max
-     * uploads.
+     * <p>Indicates whether the returned list of multipart uploads is truncated. A
+     * value of true indicates that the list was truncated. The list can be truncated
+     * if the number of multipart uploads exceeds the limit allowed or specified by max
+     * uploads.</p>
      */
     inline ListMultipartUploadsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
@@ -394,27 +394,27 @@ namespace Model
 
 
     /**
-     * Encoding type used by Amazon S3 to encode object keys in the response.
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
      */
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
     /**
-     * Encoding type used by Amazon S3 to encode object keys in the response.
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
      */
     inline void SetEncodingType(const EncodingType& value) { m_encodingType = value; }
 
     /**
-     * Encoding type used by Amazon S3 to encode object keys in the response.
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
      */
     inline void SetEncodingType(EncodingType&& value) { m_encodingType = std::move(value); }
 
     /**
-     * Encoding type used by Amazon S3 to encode object keys in the response.
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
      */
     inline ListMultipartUploadsResult& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
 
     /**
-     * Encoding type used by Amazon S3 to encode object keys in the response.
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
      */
     inline ListMultipartUploadsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
 

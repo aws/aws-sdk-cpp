@@ -38,7 +38,7 @@ QueryExecution::QueryExecution() :
 {
 }
 
-QueryExecution::QueryExecution(const JsonValue& jsonValue) : 
+QueryExecution::QueryExecution(JsonView jsonValue) : 
     m_queryExecutionIdHasBeenSet(false),
     m_queryHasBeenSet(false),
     m_resultConfigurationHasBeenSet(false),
@@ -49,7 +49,7 @@ QueryExecution::QueryExecution(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-QueryExecution& QueryExecution::operator =(const JsonValue& jsonValue)
+QueryExecution& QueryExecution::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("QueryExecutionId"))
   {

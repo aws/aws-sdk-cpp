@@ -43,7 +43,7 @@ GetExportResult::GetExportResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetExportResult& GetExportResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");

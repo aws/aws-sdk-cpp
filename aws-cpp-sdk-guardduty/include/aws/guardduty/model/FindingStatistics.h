@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GuardDuty
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     FindingStatistics();
-    FindingStatistics(const Aws::Utils::Json::JsonValue& jsonValue);
-    FindingStatistics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FindingStatistics(Aws::Utils::Json::JsonView jsonValue);
+    FindingStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

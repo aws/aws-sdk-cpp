@@ -38,7 +38,7 @@ ConfigurationTag::ConfigurationTag() :
 {
 }
 
-ConfigurationTag::ConfigurationTag(const JsonValue& jsonValue) : 
+ConfigurationTag::ConfigurationTag(JsonView jsonValue) : 
     m_configurationType(ConfigurationItemType::NOT_SET),
     m_configurationTypeHasBeenSet(false),
     m_configurationIdHasBeenSet(false),
@@ -49,7 +49,7 @@ ConfigurationTag::ConfigurationTag(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ConfigurationTag& ConfigurationTag::operator =(const JsonValue& jsonValue)
+ConfigurationTag& ConfigurationTag::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("configurationType"))
   {

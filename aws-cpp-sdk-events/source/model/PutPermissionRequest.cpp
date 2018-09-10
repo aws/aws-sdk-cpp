@@ -51,7 +51,7 @@ Aws::String PutPermissionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutPermissionRequest::GetRequestSpecificHeaders() const

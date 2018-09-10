@@ -37,10 +37,10 @@ GetStagesResult::GetStagesResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetStagesResult& GetStagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("item"))
   {
-    Array<JsonValue> itemJsonList = jsonValue.GetArray("item");
+    Array<JsonView> itemJsonList = jsonValue.GetArray("item");
     for(unsigned itemIndex = 0; itemIndex < itemJsonList.GetLength(); ++itemIndex)
     {
       m_item.push_back(itemJsonList[itemIndex].AsObject());

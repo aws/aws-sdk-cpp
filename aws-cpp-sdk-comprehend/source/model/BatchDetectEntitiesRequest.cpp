@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 BatchDetectEntitiesRequest::BatchDetectEntitiesRequest() : 
     m_textListHasBeenSet(false),
+    m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false)
 {
 }
@@ -45,11 +46,10 @@ Aws::String BatchDetectEntitiesRequest::SerializePayload() const
 
   if(m_languageCodeHasBeenSet)
   {
-   payload.WithString("LanguageCode", m_languageCode);
-
+   payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchDetectEntitiesRequest::GetRequestSpecificHeaders() const

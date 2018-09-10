@@ -35,7 +35,7 @@ KinesisAction::KinesisAction() :
 {
 }
 
-KinesisAction::KinesisAction(const JsonValue& jsonValue) : 
+KinesisAction::KinesisAction(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_streamNameHasBeenSet(false),
     m_partitionKeyHasBeenSet(false)
@@ -43,7 +43,7 @@ KinesisAction::KinesisAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-KinesisAction& KinesisAction::operator =(const JsonValue& jsonValue)
+KinesisAction& KinesisAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("roleArn"))
   {

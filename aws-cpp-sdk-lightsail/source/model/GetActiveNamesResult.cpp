@@ -37,10 +37,10 @@ GetActiveNamesResult::GetActiveNamesResult(const Aws::AmazonWebServiceResult<Jso
 
 GetActiveNamesResult& GetActiveNamesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("activeNames"))
   {
-    Array<JsonValue> activeNamesJsonList = jsonValue.GetArray("activeNames");
+    Array<JsonView> activeNamesJsonList = jsonValue.GetArray("activeNames");
     for(unsigned activeNamesIndex = 0; activeNamesIndex < activeNamesJsonList.GetLength(); ++activeNamesIndex)
     {
       m_activeNames.push_back(activeNamesJsonList[activeNamesIndex].AsString());

@@ -34,14 +34,14 @@ AccessPoliciesStatus::AccessPoliciesStatus() :
 {
 }
 
-AccessPoliciesStatus::AccessPoliciesStatus(const JsonValue& jsonValue) : 
+AccessPoliciesStatus::AccessPoliciesStatus(JsonView jsonValue) : 
     m_optionsHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AccessPoliciesStatus& AccessPoliciesStatus::operator =(const JsonValue& jsonValue)
+AccessPoliciesStatus& AccessPoliciesStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Options"))
   {

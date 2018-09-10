@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -33,9 +34,10 @@ namespace Model
 {
 
   /**
-   * Use Manual audio remixing (RemixSettings) to adjust audio levels for each output
-   * channel. With audio remixing, you can output more or fewer audio channels than
-   * your input audio source provides.<p><h3>See Also:</h3>   <a
+   * Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio
+   * channel in each output of your job. With audio remixing, you can output more or
+   * fewer audio channels than your input audio source provides.<p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/RemixSettings">AWS
    * API Reference</a></p>
    */
@@ -43,8 +45,8 @@ namespace Model
   {
   public:
     RemixSettings();
-    RemixSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    RemixSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RemixSettings(Aws::Utils::Json::JsonView jsonValue);
+    RemixSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,7 +37,7 @@ ListIPSetsResult::ListIPSetsResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 ListIPSetsResult& ListIPSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListIPSetsResult& ListIPSetsResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("IPSets"))
   {
-    Array<JsonValue> iPSetsJsonList = jsonValue.GetArray("IPSets");
+    Array<JsonView> iPSetsJsonList = jsonValue.GetArray("IPSets");
     for(unsigned iPSetsIndex = 0; iPSetsIndex < iPSetsJsonList.GetLength(); ++iPSetsIndex)
     {
       m_iPSets.push_back(iPSetsJsonList[iPSetsIndex].AsObject());

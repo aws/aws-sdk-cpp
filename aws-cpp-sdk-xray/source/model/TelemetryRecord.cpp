@@ -42,7 +42,7 @@ TelemetryRecord::TelemetryRecord() :
 {
 }
 
-TelemetryRecord::TelemetryRecord(const JsonValue& jsonValue) : 
+TelemetryRecord::TelemetryRecord(JsonView jsonValue) : 
     m_timestampHasBeenSet(false),
     m_segmentsReceivedCount(0),
     m_segmentsReceivedCountHasBeenSet(false),
@@ -57,7 +57,7 @@ TelemetryRecord::TelemetryRecord(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TelemetryRecord& TelemetryRecord::operator =(const JsonValue& jsonValue)
+TelemetryRecord& TelemetryRecord::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Timestamp"))
   {

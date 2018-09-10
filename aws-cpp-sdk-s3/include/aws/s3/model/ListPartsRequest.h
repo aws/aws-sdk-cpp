@@ -18,6 +18,7 @@
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/RequestPayer.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -96,72 +97,72 @@ namespace Model
 
 
     /**
-     * Sets the maximum number of parts to return.
+     * <p>Sets the maximum number of parts to return.</p>
      */
     inline int GetMaxParts() const{ return m_maxParts; }
 
     /**
-     * Sets the maximum number of parts to return.
+     * <p>Sets the maximum number of parts to return.</p>
      */
     inline void SetMaxParts(int value) { m_maxPartsHasBeenSet = true; m_maxParts = value; }
 
     /**
-     * Sets the maximum number of parts to return.
+     * <p>Sets the maximum number of parts to return.</p>
      */
     inline ListPartsRequest& WithMaxParts(int value) { SetMaxParts(value); return *this;}
 
 
     /**
-     * Specifies the part after which listing should begin. Only parts with higher part
-     * numbers will be listed.
+     * <p>Specifies the part after which listing should begin. Only parts with higher
+     * part numbers will be listed.</p>
      */
     inline int GetPartNumberMarker() const{ return m_partNumberMarker; }
 
     /**
-     * Specifies the part after which listing should begin. Only parts with higher part
-     * numbers will be listed.
+     * <p>Specifies the part after which listing should begin. Only parts with higher
+     * part numbers will be listed.</p>
      */
     inline void SetPartNumberMarker(int value) { m_partNumberMarkerHasBeenSet = true; m_partNumberMarker = value; }
 
     /**
-     * Specifies the part after which listing should begin. Only parts with higher part
-     * numbers will be listed.
+     * <p>Specifies the part after which listing should begin. Only parts with higher
+     * part numbers will be listed.</p>
      */
     inline ListPartsRequest& WithPartNumberMarker(int value) { SetPartNumberMarker(value); return *this;}
 
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline void SetUploadId(const Aws::String& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline void SetUploadId(Aws::String&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::move(value); }
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline void SetUploadId(const char* value) { m_uploadIdHasBeenSet = true; m_uploadId.assign(value); }
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline ListPartsRequest& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline ListPartsRequest& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
 
     /**
-     * Upload ID identifying the multipart upload whose parts are being listed.
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline ListPartsRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
 
@@ -180,6 +181,43 @@ namespace Model
 
     
     inline ListPartsRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
+
+
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
+
+    
+    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
+
+    
+    inline ListPartsRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
+
+    
+    inline ListPartsRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
+
+    
+    inline ListPartsRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+
+    
+    inline ListPartsRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline ListPartsRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline ListPartsRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline ListPartsRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline ListPartsRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline ListPartsRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
 
   private:
 
@@ -200,6 +238,9 @@ namespace Model
 
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+    bool m_customizedAccessLogTagHasBeenSet;
   };
 
 } // namespace Model

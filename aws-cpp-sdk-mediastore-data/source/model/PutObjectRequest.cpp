@@ -41,13 +41,13 @@ Aws::Http::HeaderValueCollection PutObjectRequest::GetRequestSpecificHeaders() c
   if(m_cacheControlHasBeenSet)
   {
     ss << m_cacheControl;
-    headers.insert(Aws::Http::HeaderValuePair("cache-control", ss.str()));
+    headers.emplace("cache-control",  ss.str());
     ss.str("");
   }
 
   if(m_storageClassHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-storage-class", StorageClassMapper::GetNameForStorageClass(m_storageClass)));
+    headers.emplace("x-amz-storage-class", StorageClassMapper::GetNameForStorageClass(m_storageClass));
   }
 
   return headers;

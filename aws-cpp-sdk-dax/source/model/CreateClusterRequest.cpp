@@ -35,7 +35,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_notificationTopicArnHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_parameterGroupNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sSESpecificationHasBeenSet(false)
 {
 }
 
@@ -130,7 +131,13 @@ Aws::String CreateClusterRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_sSESpecificationHasBeenSet)
+  {
+   payload.WithObject("SSESpecification", m_sSESpecification.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateClusterRequest::GetRequestSpecificHeaders() const

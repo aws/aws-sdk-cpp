@@ -49,7 +49,7 @@ Aws::String TestRepositoryTriggersRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection TestRepositoryTriggersRequest::GetRequestSpecificHeaders() const

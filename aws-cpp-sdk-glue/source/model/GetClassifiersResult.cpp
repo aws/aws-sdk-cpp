@@ -37,10 +37,10 @@ GetClassifiersResult::GetClassifiersResult(const Aws::AmazonWebServiceResult<Jso
 
 GetClassifiersResult& GetClassifiersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Classifiers"))
   {
-    Array<JsonValue> classifiersJsonList = jsonValue.GetArray("Classifiers");
+    Array<JsonView> classifiersJsonList = jsonValue.GetArray("Classifiers");
     for(unsigned classifiersIndex = 0; classifiersIndex < classifiersJsonList.GetLength(); ++classifiersIndex)
     {
       m_classifiers.push_back(classifiersJsonList[classifiersIndex].AsObject());

@@ -30,18 +30,20 @@ namespace Model
 
 BrokerInstance::BrokerInstance() : 
     m_consoleURLHasBeenSet(false),
-    m_endpointsHasBeenSet(false)
+    m_endpointsHasBeenSet(false),
+    m_ipAddressHasBeenSet(false)
 {
 }
 
-BrokerInstance::BrokerInstance(const JsonValue& jsonValue) : 
+BrokerInstance::BrokerInstance(JsonView jsonValue) : 
     m_consoleURLHasBeenSet(false),
-    m_endpointsHasBeenSet(false)
+    m_endpointsHasBeenSet(false),
+    m_ipAddressHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BrokerInstance& BrokerInstance::operator =(const JsonValue& jsonValue)
+BrokerInstance& BrokerInstance::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("consoleURL"))
   {
@@ -52,12 +54,19 @@ BrokerInstance& BrokerInstance::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("endpoints"))
   {
-    Array<JsonValue> endpointsJsonList = jsonValue.GetArray("endpoints");
+    Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
     for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
     {
       m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsString());
     }
     m_endpointsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ipAddress"))
+  {
+    m_ipAddress = jsonValue.GetString("ipAddress");
+
+    m_ipAddressHasBeenSet = true;
   }
 
   return *this;
@@ -81,6 +90,12 @@ JsonValue BrokerInstance::Jsonize() const
      endpointsJsonList[endpointsIndex].AsString(m_endpoints[endpointsIndex]);
    }
    payload.WithArray("endpoints", std::move(endpointsJsonList));
+
+  }
+
+  if(m_ipAddressHasBeenSet)
+  {
+   payload.WithString("ipAddress", m_ipAddress);
 
   }
 

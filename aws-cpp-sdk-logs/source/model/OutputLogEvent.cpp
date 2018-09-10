@@ -37,7 +37,7 @@ OutputLogEvent::OutputLogEvent() :
 {
 }
 
-OutputLogEvent::OutputLogEvent(const JsonValue& jsonValue) : 
+OutputLogEvent::OutputLogEvent(JsonView jsonValue) : 
     m_timestamp(0),
     m_timestampHasBeenSet(false),
     m_messageHasBeenSet(false),
@@ -47,7 +47,7 @@ OutputLogEvent::OutputLogEvent(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OutputLogEvent& OutputLogEvent::operator =(const JsonValue& jsonValue)
+OutputLogEvent& OutputLogEvent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("timestamp"))
   {

@@ -141,10 +141,10 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
      * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
      */
     inline const Aws::String& GetTargetBucket() const{ return m_targetBucket; }
@@ -154,10 +154,10 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
      * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
      */
     inline void SetTargetBucket(const Aws::String& value) { m_targetBucketHasBeenSet = true; m_targetBucket = value; }
@@ -167,10 +167,10 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
      * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
      */
     inline void SetTargetBucket(Aws::String&& value) { m_targetBucketHasBeenSet = true; m_targetBucket = std::move(value); }
@@ -180,10 +180,10 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
      * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
      */
     inline void SetTargetBucket(const char* value) { m_targetBucketHasBeenSet = true; m_targetBucket.assign(value); }
@@ -193,10 +193,10 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
      * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
      */
     inline CopySnapshotRequest& WithTargetBucket(const Aws::String& value) { SetTargetBucket(value); return *this;}
@@ -206,10 +206,10 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
      * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
      */
     inline CopySnapshotRequest& WithTargetBucket(Aws::String&& value) { SetTargetBucket(std::move(value)); return *this;}
@@ -219,10 +219,10 @@ namespace Model
      * used only when exporting a snapshot for external access.</p> <p>When using this
      * parameter to export a snapshot, be sure Amazon ElastiCache has the needed
      * permissions to this S3 bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html#Snapshots.Exporting.GrantAccess">Step
      * 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon
      * ElastiCache User Guide</i>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Snapshots.Exporting.html">Exporting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Snapshots.Exporting.html">Exporting
      * a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
      */
     inline CopySnapshotRequest& WithTargetBucket(const char* value) { SetTargetBucket(value); return *this;}

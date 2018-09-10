@@ -29,20 +29,29 @@ namespace Model
 {
 
 Resource::Resource() : 
+    m_accessKeyDetailsHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
 }
 
-Resource::Resource(const JsonValue& jsonValue) : 
+Resource::Resource(JsonView jsonValue) : 
+    m_accessKeyDetailsHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Resource& Resource::operator =(const JsonValue& jsonValue)
+Resource& Resource::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("accessKeyDetails"))
+  {
+    m_accessKeyDetails = jsonValue.GetObject("accessKeyDetails");
+
+    m_accessKeyDetailsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("instanceDetails"))
   {
     m_instanceDetails = jsonValue.GetObject("instanceDetails");
@@ -63,6 +72,12 @@ Resource& Resource::operator =(const JsonValue& jsonValue)
 JsonValue Resource::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accessKeyDetailsHasBeenSet)
+  {
+   payload.WithObject("accessKeyDetails", m_accessKeyDetails.Jsonize());
+
+  }
 
   if(m_instanceDetailsHasBeenSet)
   {

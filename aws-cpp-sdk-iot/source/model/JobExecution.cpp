@@ -32,32 +32,40 @@ JobExecution::JobExecution() :
     m_jobIdHasBeenSet(false),
     m_status(JobExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_forceCanceled(false),
+    m_forceCanceledHasBeenSet(false),
     m_statusDetailsHasBeenSet(false),
     m_thingArnHasBeenSet(false),
     m_queuedAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_executionNumber(0),
-    m_executionNumberHasBeenSet(false)
+    m_executionNumberHasBeenSet(false),
+    m_versionNumber(0),
+    m_versionNumberHasBeenSet(false)
 {
 }
 
-JobExecution::JobExecution(const JsonValue& jsonValue) : 
+JobExecution::JobExecution(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
     m_status(JobExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_forceCanceled(false),
+    m_forceCanceledHasBeenSet(false),
     m_statusDetailsHasBeenSet(false),
     m_thingArnHasBeenSet(false),
     m_queuedAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_executionNumber(0),
-    m_executionNumberHasBeenSet(false)
+    m_executionNumberHasBeenSet(false),
+    m_versionNumber(0),
+    m_versionNumberHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-JobExecution& JobExecution::operator =(const JsonValue& jsonValue)
+JobExecution& JobExecution::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("jobId"))
   {
@@ -71,6 +79,13 @@ JobExecution& JobExecution::operator =(const JsonValue& jsonValue)
     m_status = JobExecutionStatusMapper::GetJobExecutionStatusForName(jsonValue.GetString("status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("forceCanceled"))
+  {
+    m_forceCanceled = jsonValue.GetBool("forceCanceled");
+
+    m_forceCanceledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("statusDetails"))
@@ -115,6 +130,13 @@ JobExecution& JobExecution::operator =(const JsonValue& jsonValue)
     m_executionNumberHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("versionNumber"))
+  {
+    m_versionNumber = jsonValue.GetInt64("versionNumber");
+
+    m_versionNumberHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +153,12 @@ JsonValue JobExecution::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", JobExecutionStatusMapper::GetNameForJobExecutionStatus(m_status));
+  }
+
+  if(m_forceCanceledHasBeenSet)
+  {
+   payload.WithBool("forceCanceled", m_forceCanceled);
+
   }
 
   if(m_statusDetailsHasBeenSet)
@@ -163,6 +191,12 @@ JsonValue JobExecution::Jsonize() const
   if(m_executionNumberHasBeenSet)
   {
    payload.WithInt64("executionNumber", m_executionNumber);
+
+  }
+
+  if(m_versionNumberHasBeenSet)
+  {
+   payload.WithInt64("versionNumber", m_versionNumber);
 
   }
 

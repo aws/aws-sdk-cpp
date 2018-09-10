@@ -37,7 +37,7 @@ DeleteAdmChannelResult::DeleteAdmChannelResult(const Aws::AmazonWebServiceResult
 
 DeleteAdmChannelResult& DeleteAdmChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_aDMChannelResponse = jsonValue;
 
 

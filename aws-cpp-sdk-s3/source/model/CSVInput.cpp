@@ -37,7 +37,9 @@ CSVInput::CSVInput() :
     m_quoteEscapeCharacterHasBeenSet(false),
     m_recordDelimiterHasBeenSet(false),
     m_fieldDelimiterHasBeenSet(false),
-    m_quoteCharacterHasBeenSet(false)
+    m_quoteCharacterHasBeenSet(false),
+    m_allowQuotedRecordDelimiter(false),
+    m_allowQuotedRecordDelimiterHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ CSVInput::CSVInput(const XmlNode& xmlNode) :
     m_quoteEscapeCharacterHasBeenSet(false),
     m_recordDelimiterHasBeenSet(false),
     m_fieldDelimiterHasBeenSet(false),
-    m_quoteCharacterHasBeenSet(false)
+    m_quoteCharacterHasBeenSet(false),
+    m_allowQuotedRecordDelimiter(false),
+    m_allowQuotedRecordDelimiterHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -95,6 +99,12 @@ CSVInput& CSVInput::operator =(const XmlNode& xmlNode)
       m_quoteCharacter = StringUtils::Trim(quoteCharacterNode.GetText().c_str());
       m_quoteCharacterHasBeenSet = true;
     }
+    XmlNode allowQuotedRecordDelimiterNode = resultNode.FirstChild("AllowQuotedRecordDelimiter");
+    if(!allowQuotedRecordDelimiterNode.IsNull())
+    {
+      m_allowQuotedRecordDelimiter = StringUtils::ConvertToBool(StringUtils::Trim(allowQuotedRecordDelimiterNode.GetText().c_str()).c_str());
+      m_allowQuotedRecordDelimiterHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -137,6 +147,14 @@ void CSVInput::AddToNode(XmlNode& parentNode) const
   {
    XmlNode quoteCharacterNode = parentNode.CreateChildElement("QuoteCharacter");
    quoteCharacterNode.SetText(m_quoteCharacter);
+  }
+
+  if(m_allowQuotedRecordDelimiterHasBeenSet)
+  {
+   XmlNode allowQuotedRecordDelimiterNode = parentNode.CreateChildElement("AllowQuotedRecordDelimiter");
+   ss << std::boolalpha << m_allowQuotedRecordDelimiter;
+   allowQuotedRecordDelimiterNode.SetText(ss.str());
+   ss.str("");
   }
 
 }

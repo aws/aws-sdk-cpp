@@ -26,10 +26,11 @@ namespace Model
   enum class ConfigurationItemStatus
   {
     NOT_SET,
-    Ok,
-    Failed,
-    Discovered,
-    Deleted
+    OK,
+    ResourceDiscovered,
+    ResourceNotRecorded,
+    ResourceDeleted,
+    ResourceDeletedNotRecorded
   };
 
 namespace ConfigurationItemStatusMapper

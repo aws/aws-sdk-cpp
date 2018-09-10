@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GuardDuty
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     NetworkInterface();
-    NetworkInterface(const Aws::Utils::Json::JsonValue& jsonValue);
-    NetworkInterface& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
+    NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -88,6 +89,42 @@ namespace Model
      * A list of EC2 instance IPv6 address information.
      */
     inline NetworkInterface& AddIpv6Addresses(const char* value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+
+    /**
+     * The ID of the network interface
+     */
+    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * The ID of the network interface
+     */
+    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
+
+    /**
+     * The ID of the network interface
+     */
+    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
+
+    /**
+     * The ID of the network interface
+     */
+    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
+
+    /**
+     * The ID of the network interface
+     */
+    inline NetworkInterface& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
+
+    /**
+     * The ID of the network interface
+     */
+    inline NetworkInterface& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
+
+    /**
+     * The ID of the network interface
+     */
+    inline NetworkInterface& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 
 
     /**
@@ -381,6 +418,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_ipv6Addresses;
     bool m_ipv6AddressesHasBeenSet;
+
+    Aws::String m_networkInterfaceId;
+    bool m_networkInterfaceIdHasBeenSet;
 
     Aws::String m_privateDnsName;
     bool m_privateDnsNameHasBeenSet;

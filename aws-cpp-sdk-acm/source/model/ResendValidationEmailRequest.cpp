@@ -51,7 +51,7 @@ Aws::String ResendValidationEmailRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ResendValidationEmailRequest::GetRequestSpecificHeaders() const

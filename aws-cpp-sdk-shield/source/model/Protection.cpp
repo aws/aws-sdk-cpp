@@ -35,7 +35,7 @@ Protection::Protection() :
 {
 }
 
-Protection::Protection(const JsonValue& jsonValue) : 
+Protection::Protection(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_resourceArnHasBeenSet(false)
@@ -43,7 +43,7 @@ Protection::Protection(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Protection& Protection::operator =(const JsonValue& jsonValue)
+Protection& Protection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

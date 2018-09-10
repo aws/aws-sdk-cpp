@@ -37,7 +37,7 @@ RecordingGroup::RecordingGroup() :
 {
 }
 
-RecordingGroup::RecordingGroup(const JsonValue& jsonValue) : 
+RecordingGroup::RecordingGroup(JsonView jsonValue) : 
     m_allSupported(false),
     m_allSupportedHasBeenSet(false),
     m_includeGlobalResourceTypes(false),
@@ -47,7 +47,7 @@ RecordingGroup::RecordingGroup(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RecordingGroup& RecordingGroup::operator =(const JsonValue& jsonValue)
+RecordingGroup& RecordingGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("allSupported"))
   {
@@ -65,7 +65,7 @@ RecordingGroup& RecordingGroup::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("resourceTypes"))
   {
-    Array<JsonValue> resourceTypesJsonList = jsonValue.GetArray("resourceTypes");
+    Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("resourceTypes");
     for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
     {
       m_resourceTypes.push_back(ResourceTypeMapper::GetResourceTypeForName(resourceTypesJsonList[resourceTypesIndex].AsString()));

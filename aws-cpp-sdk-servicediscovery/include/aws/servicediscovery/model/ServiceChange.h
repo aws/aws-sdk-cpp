@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceDiscovery
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ServiceChange();
-    ServiceChange(const Aws::Utils::Json::JsonValue& jsonValue);
-    ServiceChange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ServiceChange(Aws::Utils::Json::JsonView jsonValue);
+    ServiceChange& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -86,32 +87,32 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline const DnsConfigChange& GetDnsConfig() const{ return m_dnsConfig; }
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline void SetDnsConfig(const DnsConfigChange& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline void SetDnsConfig(DnsConfigChange&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline ServiceChange& WithDnsConfig(const DnsConfigChange& value) { SetDnsConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline ServiceChange& WithDnsConfig(DnsConfigChange&& value) { SetDnsConfig(std::move(value)); return *this;}
 

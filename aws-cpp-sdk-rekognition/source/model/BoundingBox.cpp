@@ -40,7 +40,7 @@ BoundingBox::BoundingBox() :
 {
 }
 
-BoundingBox::BoundingBox(const JsonValue& jsonValue) : 
+BoundingBox::BoundingBox(JsonView jsonValue) : 
     m_width(0.0),
     m_widthHasBeenSet(false),
     m_height(0.0),
@@ -53,7 +53,7 @@ BoundingBox::BoundingBox(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BoundingBox& BoundingBox::operator =(const JsonValue& jsonValue)
+BoundingBox& BoundingBox::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Width"))
   {

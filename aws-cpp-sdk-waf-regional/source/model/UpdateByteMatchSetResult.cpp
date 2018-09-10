@@ -37,7 +37,7 @@ UpdateByteMatchSetResult::UpdateByteMatchSetResult(const Aws::AmazonWebServiceRe
 
 UpdateByteMatchSetResult& UpdateByteMatchSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ChangeToken"))
   {
     m_changeToken = jsonValue.GetString("ChangeToken");

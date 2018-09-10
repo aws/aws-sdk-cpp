@@ -20,6 +20,8 @@
 #include <aws/devicefarm/model/DevicePlatform.h>
 #include <aws/devicefarm/model/CPU.h>
 #include <aws/devicefarm/model/Resolution.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/devicefarm/model/DeviceInstance.h>
 #include <utility>
 
 namespace Aws
@@ -29,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DeviceFarm
@@ -46,8 +49,8 @@ namespace Model
   {
   public:
     Device();
-    Device(const Aws::Utils::Json::JsonValue& jsonValue);
-    Device& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Device(Aws::Utils::Json::JsonView jsonValue);
+    Device& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -193,6 +196,42 @@ namespace Model
      * <p>The device's model name.</p>
      */
     inline Device& WithModel(const char* value) { SetModel(value); return *this;}
+
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline const Aws::String& GetModelId() const{ return m_modelId; }
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline Device& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline Device& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline Device& WithModelId(const char* value) { SetModelId(value); return *this;}
 
 
     /**
@@ -611,6 +650,42 @@ namespace Model
      */
     inline Device& WithFleetName(const char* value) { SetFleetName(value); return *this;}
 
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline const Aws::Vector<DeviceInstance>& GetInstances() const{ return m_instances; }
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline void SetInstances(const Aws::Vector<DeviceInstance>& value) { m_instancesHasBeenSet = true; m_instances = value; }
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline void SetInstances(Aws::Vector<DeviceInstance>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline Device& WithInstances(const Aws::Vector<DeviceInstance>& value) { SetInstances(value); return *this;}
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline Device& WithInstances(Aws::Vector<DeviceInstance>&& value) { SetInstances(std::move(value)); return *this;}
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline Device& AddInstances(const DeviceInstance& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
+    inline Device& AddInstances(DeviceInstance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -624,6 +699,9 @@ namespace Model
 
     Aws::String m_model;
     bool m_modelHasBeenSet;
+
+    Aws::String m_modelId;
+    bool m_modelIdHasBeenSet;
 
     DeviceFormFactor m_formFactor;
     bool m_formFactorHasBeenSet;
@@ -666,6 +744,9 @@ namespace Model
 
     Aws::String m_fleetName;
     bool m_fleetNameHasBeenSet;
+
+    Aws::Vector<DeviceInstance> m_instances;
+    bool m_instancesHasBeenSet;
   };
 
 } // namespace Model

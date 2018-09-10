@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     CampaignLimits();
-    CampaignLimits(const Aws::Utils::Json::JsonValue& jsonValue);
-    CampaignLimits& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CampaignLimits(Aws::Utils::Json::JsonView jsonValue);
+    CampaignLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -62,39 +63,42 @@ namespace Model
 
 
     /**
-     * The maximum duration of a campaign from the scheduled start. Must be a minimum
-     * of 60 seconds.
+     * The length of time (in seconds) that the campaign can run before it ends and
+     * message deliveries stop. This duration begins at the scheduled start time for
+     * the campaign. The minimum value is 60.
      */
     inline int GetMaximumDuration() const{ return m_maximumDuration; }
 
     /**
-     * The maximum duration of a campaign from the scheduled start. Must be a minimum
-     * of 60 seconds.
+     * The length of time (in seconds) that the campaign can run before it ends and
+     * message deliveries stop. This duration begins at the scheduled start time for
+     * the campaign. The minimum value is 60.
      */
     inline void SetMaximumDuration(int value) { m_maximumDurationHasBeenSet = true; m_maximumDuration = value; }
 
     /**
-     * The maximum duration of a campaign from the scheduled start. Must be a minimum
-     * of 60 seconds.
+     * The length of time (in seconds) that the campaign can run before it ends and
+     * message deliveries stop. This duration begins at the scheduled start time for
+     * the campaign. The minimum value is 60.
      */
     inline CampaignLimits& WithMaximumDuration(int value) { SetMaximumDuration(value); return *this;}
 
 
     /**
-     * The maximum number of messages per second that the campaign will send. This is a
-     * best effort maximum cap and can go as high as 20000 and as low as 50
+     * The number of messages that the campaign can send per second. The minimum value
+     * is 50, and the maximum is 20000.
      */
     inline int GetMessagesPerSecond() const{ return m_messagesPerSecond; }
 
     /**
-     * The maximum number of messages per second that the campaign will send. This is a
-     * best effort maximum cap and can go as high as 20000 and as low as 50
+     * The number of messages that the campaign can send per second. The minimum value
+     * is 50, and the maximum is 20000.
      */
     inline void SetMessagesPerSecond(int value) { m_messagesPerSecondHasBeenSet = true; m_messagesPerSecond = value; }
 
     /**
-     * The maximum number of messages per second that the campaign will send. This is a
-     * best effort maximum cap and can go as high as 20000 and as low as 50
+     * The number of messages that the campaign can send per second. The minimum value
+     * is 50, and the maximum is 20000.
      */
     inline CampaignLimits& WithMessagesPerSecond(int value) { SetMessagesPerSecond(value); return *this;}
 

@@ -37,7 +37,7 @@ GetAssignmentResult::GetAssignmentResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetAssignmentResult& GetAssignmentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Assignment"))
   {
     m_assignment = jsonValue.GetObject("Assignment");

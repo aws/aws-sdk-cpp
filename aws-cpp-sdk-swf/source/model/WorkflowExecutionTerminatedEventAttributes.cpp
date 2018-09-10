@@ -38,7 +38,7 @@ WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttr
 {
 }
 
-WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttributes(const JsonValue& jsonValue) : 
+WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttributes(JsonView jsonValue) : 
     m_reasonHasBeenSet(false),
     m_detailsHasBeenSet(false),
     m_childPolicy(ChildPolicy::NOT_SET),
@@ -49,7 +49,7 @@ WorkflowExecutionTerminatedEventAttributes::WorkflowExecutionTerminatedEventAttr
   *this = jsonValue;
 }
 
-WorkflowExecutionTerminatedEventAttributes& WorkflowExecutionTerminatedEventAttributes::operator =(const JsonValue& jsonValue)
+WorkflowExecutionTerminatedEventAttributes& WorkflowExecutionTerminatedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("reason"))
   {

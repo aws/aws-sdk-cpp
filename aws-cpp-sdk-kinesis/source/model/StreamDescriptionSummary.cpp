@@ -41,11 +41,13 @@ StreamDescriptionSummary::StreamDescriptionSummary() :
     m_encryptionTypeHasBeenSet(false),
     m_keyIdHasBeenSet(false),
     m_openShardCount(0),
-    m_openShardCountHasBeenSet(false)
+    m_openShardCountHasBeenSet(false),
+    m_consumerCount(0),
+    m_consumerCountHasBeenSet(false)
 {
 }
 
-StreamDescriptionSummary::StreamDescriptionSummary(const JsonValue& jsonValue) : 
+StreamDescriptionSummary::StreamDescriptionSummary(JsonView jsonValue) : 
     m_streamNameHasBeenSet(false),
     m_streamARNHasBeenSet(false),
     m_streamStatus(StreamStatus::NOT_SET),
@@ -58,12 +60,14 @@ StreamDescriptionSummary::StreamDescriptionSummary(const JsonValue& jsonValue) :
     m_encryptionTypeHasBeenSet(false),
     m_keyIdHasBeenSet(false),
     m_openShardCount(0),
-    m_openShardCountHasBeenSet(false)
+    m_openShardCountHasBeenSet(false),
+    m_consumerCount(0),
+    m_consumerCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StreamDescriptionSummary& StreamDescriptionSummary::operator =(const JsonValue& jsonValue)
+StreamDescriptionSummary& StreamDescriptionSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StreamName"))
   {
@@ -102,7 +106,7 @@ StreamDescriptionSummary& StreamDescriptionSummary::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("EnhancedMonitoring"))
   {
-    Array<JsonValue> enhancedMonitoringJsonList = jsonValue.GetArray("EnhancedMonitoring");
+    Array<JsonView> enhancedMonitoringJsonList = jsonValue.GetArray("EnhancedMonitoring");
     for(unsigned enhancedMonitoringIndex = 0; enhancedMonitoringIndex < enhancedMonitoringJsonList.GetLength(); ++enhancedMonitoringIndex)
     {
       m_enhancedMonitoring.push_back(enhancedMonitoringJsonList[enhancedMonitoringIndex].AsObject());
@@ -129,6 +133,13 @@ StreamDescriptionSummary& StreamDescriptionSummary::operator =(const JsonValue& 
     m_openShardCount = jsonValue.GetInteger("OpenShardCount");
 
     m_openShardCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConsumerCount"))
+  {
+    m_consumerCount = jsonValue.GetInteger("ConsumerCount");
+
+    m_consumerCountHasBeenSet = true;
   }
 
   return *this;
@@ -191,6 +202,12 @@ JsonValue StreamDescriptionSummary::Jsonize() const
   if(m_openShardCountHasBeenSet)
   {
    payload.WithInteger("OpenShardCount", m_openShardCount);
+
+  }
+
+  if(m_consumerCountHasBeenSet)
+  {
+   payload.WithInteger("ConsumerCount", m_consumerCount);
 
   }
 

@@ -42,7 +42,7 @@ ResourceComplianceSummaryItem::ResourceComplianceSummaryItem() :
 {
 }
 
-ResourceComplianceSummaryItem::ResourceComplianceSummaryItem(const JsonValue& jsonValue) : 
+ResourceComplianceSummaryItem::ResourceComplianceSummaryItem(JsonView jsonValue) : 
     m_complianceTypeHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
@@ -57,7 +57,7 @@ ResourceComplianceSummaryItem::ResourceComplianceSummaryItem(const JsonValue& js
   *this = jsonValue;
 }
 
-ResourceComplianceSummaryItem& ResourceComplianceSummaryItem::operator =(const JsonValue& jsonValue)
+ResourceComplianceSummaryItem& ResourceComplianceSummaryItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ComplianceType"))
   {

@@ -20,6 +20,7 @@
 #include <aws/dms/model/DmsSslModeValue.h>
 #include <aws/dms/model/DynamoDbSettings.h>
 #include <aws/dms/model/S3Settings.h>
+#include <aws/dms/model/DmsTransferSettings.h>
 #include <aws/dms/model/MongoDbSettings.h>
 #include <utility>
 
@@ -30,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DatabaseMigrationService
@@ -46,8 +48,8 @@ namespace Model
   {
   public:
     Endpoint();
-    Endpoint(const Aws::Utils::Json::JsonValue& jsonValue);
-    Endpoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Endpoint(Aws::Utils::Json::JsonView jsonValue);
+    Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -129,52 +131,102 @@ namespace Model
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline Endpoint& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline Endpoint& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
      * <p>The database engine name. Valid values, depending on the EndPointType,
-     * include MYSQL, ORACLE, POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE,
-     * DYNAMODB, MONGODB, and SQLSERVER.</p>
+     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
+     * s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</p>
      */
     inline Endpoint& WithEngineName(const char* value) { SetEngineName(value); return *this;}
+
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline const Aws::String& GetEngineDisplayName() const{ return m_engineDisplayName; }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline void SetEngineDisplayName(const Aws::String& value) { m_engineDisplayNameHasBeenSet = true; m_engineDisplayName = value; }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline void SetEngineDisplayName(Aws::String&& value) { m_engineDisplayNameHasBeenSet = true; m_engineDisplayName = std::move(value); }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline void SetEngineDisplayName(const char* value) { m_engineDisplayNameHasBeenSet = true; m_engineDisplayName.assign(value); }
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline Endpoint& WithEngineDisplayName(const Aws::String& value) { SetEngineDisplayName(value); return *this;}
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline Endpoint& WithEngineDisplayName(Aws::String&& value) { SetEngineDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The expanded name for the engine name. For example, if the
+     * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
+     * Aurora MySQL."</p>
+     */
+    inline Endpoint& WithEngineDisplayName(const char* value) { SetEngineDisplayName(value); return *this;}
 
 
     /**
@@ -553,6 +605,78 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline Endpoint& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline Endpoint& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by the service access IAM role.</p>
+     */
+    inline Endpoint& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline const Aws::String& GetExternalTableDefinition() const{ return m_externalTableDefinition; }
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline void SetExternalTableDefinition(const Aws::String& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = value; }
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline void SetExternalTableDefinition(Aws::String&& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = std::move(value); }
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline void SetExternalTableDefinition(const char* value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition.assign(value); }
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline Endpoint& WithExternalTableDefinition(const Aws::String& value) { SetExternalTableDefinition(value); return *this;}
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline Endpoint& WithExternalTableDefinition(Aws::String&& value) { SetExternalTableDefinition(std::move(value)); return *this;}
+
+    /**
+     * <p>The external table definition.</p>
+     */
+    inline Endpoint& WithExternalTableDefinition(const char* value) { SetExternalTableDefinition(value); return *this;}
+
+
+    /**
      * <p> Value returned by a call to CreateEndpoint that can be used for
      * cross-account validation. Use it on a subsequent call to CreateEndpoint to
      * create the endpoint with a cross-account. </p>
@@ -665,6 +789,77 @@ namespace Model
 
 
     /**
+     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
+     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
+     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
+     * optional parameter to use GZIP to compress the target files. Set to NONE (the
+     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
+     * "none"|"gzip" } </p>
+     */
+    inline const DmsTransferSettings& GetDmsTransferSettings() const{ return m_dmsTransferSettings; }
+
+    /**
+     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
+     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
+     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
+     * optional parameter to use GZIP to compress the target files. Set to NONE (the
+     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
+     * "none"|"gzip" } </p>
+     */
+    inline void SetDmsTransferSettings(const DmsTransferSettings& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = value; }
+
+    /**
+     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
+     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
+     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
+     * optional parameter to use GZIP to compress the target files. Set to NONE (the
+     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
+     * "none"|"gzip" } </p>
+     */
+    inline void SetDmsTransferSettings(DmsTransferSettings&& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = std::move(value); }
+
+    /**
+     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
+     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
+     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
+     * optional parameter to use GZIP to compress the target files. Set to NONE (the
+     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
+     * "none"|"gzip" } </p>
+     */
+    inline Endpoint& WithDmsTransferSettings(const DmsTransferSettings& value) { SetDmsTransferSettings(value); return *this;}
+
+    /**
+     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
+     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
+     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
+     * optional parameter to use GZIP to compress the target files. Set to NONE (the
+     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
+     * "none"|"gzip" } </p>
+     */
+    inline Endpoint& WithDmsTransferSettings(DmsTransferSettings&& value) { SetDmsTransferSettings(std::move(value)); return *this;}
+
+
+    /**
      * <p>The settings for the MongoDB source endpoint. For more information, see the
      * <code>MongoDbSettings</code> structure.</p>
      */
@@ -705,6 +900,9 @@ namespace Model
     Aws::String m_engineName;
     bool m_engineNameHasBeenSet;
 
+    Aws::String m_engineDisplayName;
+    bool m_engineDisplayNameHasBeenSet;
+
     Aws::String m_username;
     bool m_usernameHasBeenSet;
 
@@ -735,6 +933,12 @@ namespace Model
     DmsSslModeValue m_sslMode;
     bool m_sslModeHasBeenSet;
 
+    Aws::String m_serviceAccessRoleArn;
+    bool m_serviceAccessRoleArnHasBeenSet;
+
+    Aws::String m_externalTableDefinition;
+    bool m_externalTableDefinitionHasBeenSet;
+
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;
 
@@ -743,6 +947,9 @@ namespace Model
 
     S3Settings m_s3Settings;
     bool m_s3SettingsHasBeenSet;
+
+    DmsTransferSettings m_dmsTransferSettings;
+    bool m_dmsTransferSettingsHasBeenSet;
 
     MongoDbSettings m_mongoDbSettings;
     bool m_mongoDbSettingsHasBeenSet;

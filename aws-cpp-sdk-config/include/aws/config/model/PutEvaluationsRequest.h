@@ -101,43 +101,43 @@ namespace Model
 
     /**
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.
-     * Identifies the rule and the event that triggered the evaluation</p>
+     * Identifies the rule and the event that triggered the evaluation.</p>
      */
     inline const Aws::String& GetResultToken() const{ return m_resultToken; }
 
     /**
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.
-     * Identifies the rule and the event that triggered the evaluation</p>
+     * Identifies the rule and the event that triggered the evaluation.</p>
      */
     inline void SetResultToken(const Aws::String& value) { m_resultTokenHasBeenSet = true; m_resultToken = value; }
 
     /**
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.
-     * Identifies the rule and the event that triggered the evaluation</p>
+     * Identifies the rule and the event that triggered the evaluation.</p>
      */
     inline void SetResultToken(Aws::String&& value) { m_resultTokenHasBeenSet = true; m_resultToken = std::move(value); }
 
     /**
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.
-     * Identifies the rule and the event that triggered the evaluation</p>
+     * Identifies the rule and the event that triggered the evaluation.</p>
      */
     inline void SetResultToken(const char* value) { m_resultTokenHasBeenSet = true; m_resultToken.assign(value); }
 
     /**
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.
-     * Identifies the rule and the event that triggered the evaluation</p>
+     * Identifies the rule and the event that triggered the evaluation.</p>
      */
     inline PutEvaluationsRequest& WithResultToken(const Aws::String& value) { SetResultToken(value); return *this;}
 
     /**
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.
-     * Identifies the rule and the event that triggered the evaluation</p>
+     * Identifies the rule and the event that triggered the evaluation.</p>
      */
     inline PutEvaluationsRequest& WithResultToken(Aws::String&& value) { SetResultToken(std::move(value)); return *this;}
 
     /**
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.
-     * Identifies the rule and the event that triggered the evaluation</p>
+     * Identifies the rule and the event that triggered the evaluation.</p>
      */
     inline PutEvaluationsRequest& WithResultToken(const char* value) { SetResultToken(value); return *this;}
 

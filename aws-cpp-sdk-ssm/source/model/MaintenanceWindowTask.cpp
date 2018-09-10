@@ -47,7 +47,7 @@ MaintenanceWindowTask::MaintenanceWindowTask() :
 {
 }
 
-MaintenanceWindowTask::MaintenanceWindowTask(const JsonValue& jsonValue) : 
+MaintenanceWindowTask::MaintenanceWindowTask(JsonView jsonValue) : 
     m_windowIdHasBeenSet(false),
     m_windowTaskIdHasBeenSet(false),
     m_taskArnHasBeenSet(false),
@@ -67,7 +67,7 @@ MaintenanceWindowTask::MaintenanceWindowTask(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MaintenanceWindowTask& MaintenanceWindowTask::operator =(const JsonValue& jsonValue)
+MaintenanceWindowTask& MaintenanceWindowTask::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WindowId"))
   {
@@ -99,7 +99,7 @@ MaintenanceWindowTask& MaintenanceWindowTask::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonValue> targetsJsonList = jsonValue.GetArray("Targets");
+    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());
@@ -109,7 +109,7 @@ MaintenanceWindowTask& MaintenanceWindowTask::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("TaskParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> taskParametersJsonMap = jsonValue.GetObject("TaskParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> taskParametersJsonMap = jsonValue.GetObject("TaskParameters").GetAllObjects();
     for(auto& taskParametersItem : taskParametersJsonMap)
     {
       m_taskParameters[taskParametersItem.first] = taskParametersItem.second.AsObject();

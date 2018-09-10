@@ -59,7 +59,8 @@ AutoScalingGroup::AutoScalingGroup() :
     m_tagsHasBeenSet(false),
     m_terminationPoliciesHasBeenSet(false),
     m_newInstancesProtectedFromScaleIn(false),
-    m_newInstancesProtectedFromScaleInHasBeenSet(false)
+    m_newInstancesProtectedFromScaleInHasBeenSet(false),
+    m_serviceLinkedRoleARNHasBeenSet(false)
 {
 }
 
@@ -92,7 +93,8 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_tagsHasBeenSet(false),
     m_terminationPoliciesHasBeenSet(false),
     m_newInstancesProtectedFromScaleIn(false),
-    m_newInstancesProtectedFromScaleInHasBeenSet(false)
+    m_newInstancesProtectedFromScaleInHasBeenSet(false),
+    m_serviceLinkedRoleARNHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -289,6 +291,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_newInstancesProtectedFromScaleIn = StringUtils::ConvertToBool(StringUtils::Trim(newInstancesProtectedFromScaleInNode.GetText().c_str()).c_str());
       m_newInstancesProtectedFromScaleInHasBeenSet = true;
     }
+    XmlNode serviceLinkedRoleARNNode = resultNode.FirstChild("ServiceLinkedRoleARN");
+    if(!serviceLinkedRoleARNNode.IsNull())
+    {
+      m_serviceLinkedRoleARN = StringUtils::Trim(serviceLinkedRoleARNNode.GetText().c_str());
+      m_serviceLinkedRoleARNHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -453,6 +461,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".NewInstancesProtectedFromScaleIn=" << std::boolalpha << m_newInstancesProtectedFromScaleIn << "&";
   }
 
+  if(m_serviceLinkedRoleARNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ServiceLinkedRoleARN=" << StringUtils::URLEncode(m_serviceLinkedRoleARN.c_str()) << "&";
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -590,6 +603,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_newInstancesProtectedFromScaleInHasBeenSet)
   {
       oStream << location << ".NewInstancesProtectedFromScaleIn=" << std::boolalpha << m_newInstancesProtectedFromScaleIn << "&";
+  }
+  if(m_serviceLinkedRoleARNHasBeenSet)
+  {
+      oStream << location << ".ServiceLinkedRoleARN=" << StringUtils::URLEncode(m_serviceLinkedRoleARN.c_str()) << "&";
   }
 }
 

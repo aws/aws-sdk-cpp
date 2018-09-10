@@ -256,7 +256,7 @@ namespace Model
     /**
      * <p>The network configuration for the service. This parameter is required for
      * task definitions that use the <code>awsvpc</code> network mode to receive their
-     * own Elastic Network Interface, and it is not supported for other network modes.
+     * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -271,7 +271,7 @@ namespace Model
     /**
      * <p>The network configuration for the service. This parameter is required for
      * task definitions that use the <code>awsvpc</code> network mode to receive their
-     * own Elastic Network Interface, and it is not supported for other network modes.
+     * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -286,7 +286,7 @@ namespace Model
     /**
      * <p>The network configuration for the service. This parameter is required for
      * task definitions that use the <code>awsvpc</code> network mode to receive their
-     * own Elastic Network Interface, and it is not supported for other network modes.
+     * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -301,7 +301,7 @@ namespace Model
     /**
      * <p>The network configuration for the service. This parameter is required for
      * task definitions that use the <code>awsvpc</code> network mode to receive their
-     * own Elastic Network Interface, and it is not supported for other network modes.
+     * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -316,7 +316,7 @@ namespace Model
     /**
      * <p>The network configuration for the service. This parameter is required for
      * task definitions that use the <code>awsvpc</code> network mode to receive their
-     * own Elastic Network Interface, and it is not supported for other network modes.
+     * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -330,53 +330,65 @@ namespace Model
 
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline UpdateServiceRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline UpdateServiceRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version you want to update your service to run.</p>
+     * <p>The platform version that your service should run.</p>
      */
     inline UpdateServiceRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
 
     /**
-     * <p>Whether or not to force a new deployment of the service.</p>
+     * <p>Whether to force a new deployment of the service. Deployments are not forced
+     * by default. You can use this option to trigger a new deployment with no service
+     * definition changes. For example, you can update a service's tasks to use a newer
+     * Docker image with the same image/tag combination (<code>my_image:latest</code>)
+     * or to roll Fargate tasks onto a newer platform version.</p>
      */
     inline bool GetForceNewDeployment() const{ return m_forceNewDeployment; }
 
     /**
-     * <p>Whether or not to force a new deployment of the service.</p>
+     * <p>Whether to force a new deployment of the service. Deployments are not forced
+     * by default. You can use this option to trigger a new deployment with no service
+     * definition changes. For example, you can update a service's tasks to use a newer
+     * Docker image with the same image/tag combination (<code>my_image:latest</code>)
+     * or to roll Fargate tasks onto a newer platform version.</p>
      */
     inline void SetForceNewDeployment(bool value) { m_forceNewDeploymentHasBeenSet = true; m_forceNewDeployment = value; }
 
     /**
-     * <p>Whether or not to force a new deployment of the service.</p>
+     * <p>Whether to force a new deployment of the service. Deployments are not forced
+     * by default. You can use this option to trigger a new deployment with no service
+     * definition changes. For example, you can update a service's tasks to use a newer
+     * Docker image with the same image/tag combination (<code>my_image:latest</code>)
+     * or to roll Fargate tasks onto a newer platform version.</p>
      */
     inline UpdateServiceRequest& WithForceNewDeployment(bool value) { SetForceNewDeployment(value); return *this;}
 
@@ -385,11 +397,12 @@ namespace Model
      * <p>The period of time, in seconds, that the Amazon ECS service scheduler should
      * ignore unhealthy Elastic Load Balancing target health checks after a task has
      * first started. This is only valid if your service is configured to use a load
-     * balancer. If your service's tasks take a while to start and respond to ELB
-     * health checks, you can specify a health check grace period of up to 1,800
-     * seconds during which the ECS service scheduler will ignore ELB health check
-     * status. This grace period can prevent the ECS service scheduler from marking
-     * tasks as unhealthy and stopping them before they have time to come up.</p>
+     * balancer. If your service's tasks take a while to start and respond to Elastic
+     * Load Balancing health checks, you can specify a health check grace period of up
+     * to 1,800 seconds during which the ECS service scheduler ignores the Elastic Load
+     * Balancing health check status. This grace period can prevent the ECS service
+     * scheduler from marking tasks as unhealthy and stopping them before they have
+     * time to come up.</p>
      */
     inline int GetHealthCheckGracePeriodSeconds() const{ return m_healthCheckGracePeriodSeconds; }
 
@@ -397,11 +410,12 @@ namespace Model
      * <p>The period of time, in seconds, that the Amazon ECS service scheduler should
      * ignore unhealthy Elastic Load Balancing target health checks after a task has
      * first started. This is only valid if your service is configured to use a load
-     * balancer. If your service's tasks take a while to start and respond to ELB
-     * health checks, you can specify a health check grace period of up to 1,800
-     * seconds during which the ECS service scheduler will ignore ELB health check
-     * status. This grace period can prevent the ECS service scheduler from marking
-     * tasks as unhealthy and stopping them before they have time to come up.</p>
+     * balancer. If your service's tasks take a while to start and respond to Elastic
+     * Load Balancing health checks, you can specify a health check grace period of up
+     * to 1,800 seconds during which the ECS service scheduler ignores the Elastic Load
+     * Balancing health check status. This grace period can prevent the ECS service
+     * scheduler from marking tasks as unhealthy and stopping them before they have
+     * time to come up.</p>
      */
     inline void SetHealthCheckGracePeriodSeconds(int value) { m_healthCheckGracePeriodSecondsHasBeenSet = true; m_healthCheckGracePeriodSeconds = value; }
 
@@ -409,11 +423,12 @@ namespace Model
      * <p>The period of time, in seconds, that the Amazon ECS service scheduler should
      * ignore unhealthy Elastic Load Balancing target health checks after a task has
      * first started. This is only valid if your service is configured to use a load
-     * balancer. If your service's tasks take a while to start and respond to ELB
-     * health checks, you can specify a health check grace period of up to 1,800
-     * seconds during which the ECS service scheduler will ignore ELB health check
-     * status. This grace period can prevent the ECS service scheduler from marking
-     * tasks as unhealthy and stopping them before they have time to come up.</p>
+     * balancer. If your service's tasks take a while to start and respond to Elastic
+     * Load Balancing health checks, you can specify a health check grace period of up
+     * to 1,800 seconds during which the ECS service scheduler ignores the Elastic Load
+     * Balancing health check status. This grace period can prevent the ECS service
+     * scheduler from marking tasks as unhealthy and stopping them before they have
+     * time to come up.</p>
      */
     inline UpdateServiceRequest& WithHealthCheckGracePeriodSeconds(int value) { SetHealthCheckGracePeriodSeconds(value); return *this;}
 

@@ -38,7 +38,7 @@ ExpectedAttributeValue::ExpectedAttributeValue() :
 {
 }
 
-ExpectedAttributeValue::ExpectedAttributeValue(const JsonValue& jsonValue) : 
+ExpectedAttributeValue::ExpectedAttributeValue(JsonView jsonValue) : 
     m_valueHasBeenSet(false),
     m_exists(false),
     m_existsHasBeenSet(false),
@@ -49,7 +49,7 @@ ExpectedAttributeValue::ExpectedAttributeValue(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ExpectedAttributeValue& ExpectedAttributeValue::operator =(const JsonValue& jsonValue)
+ExpectedAttributeValue& ExpectedAttributeValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {
@@ -74,7 +74,7 @@ ExpectedAttributeValue& ExpectedAttributeValue::operator =(const JsonValue& json
 
   if(jsonValue.ValueExists("AttributeValueList"))
   {
-    Array<JsonValue> attributeValueListJsonList = jsonValue.GetArray("AttributeValueList");
+    Array<JsonView> attributeValueListJsonList = jsonValue.GetArray("AttributeValueList");
     for(unsigned attributeValueListIndex = 0; attributeValueListIndex < attributeValueListJsonList.GetLength(); ++attributeValueListIndex)
     {
       m_attributeValueList.push_back(attributeValueListJsonList[attributeValueListIndex].AsObject());

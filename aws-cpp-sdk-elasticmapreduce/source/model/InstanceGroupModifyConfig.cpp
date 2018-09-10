@@ -37,7 +37,7 @@ InstanceGroupModifyConfig::InstanceGroupModifyConfig() :
 {
 }
 
-InstanceGroupModifyConfig::InstanceGroupModifyConfig(const JsonValue& jsonValue) : 
+InstanceGroupModifyConfig::InstanceGroupModifyConfig(JsonView jsonValue) : 
     m_instanceGroupIdHasBeenSet(false),
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
@@ -47,7 +47,7 @@ InstanceGroupModifyConfig::InstanceGroupModifyConfig(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-InstanceGroupModifyConfig& InstanceGroupModifyConfig::operator =(const JsonValue& jsonValue)
+InstanceGroupModifyConfig& InstanceGroupModifyConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceGroupId"))
   {
@@ -65,7 +65,7 @@ InstanceGroupModifyConfig& InstanceGroupModifyConfig::operator =(const JsonValue
 
   if(jsonValue.ValueExists("EC2InstanceIdsToTerminate"))
   {
-    Array<JsonValue> eC2InstanceIdsToTerminateJsonList = jsonValue.GetArray("EC2InstanceIdsToTerminate");
+    Array<JsonView> eC2InstanceIdsToTerminateJsonList = jsonValue.GetArray("EC2InstanceIdsToTerminate");
     for(unsigned eC2InstanceIdsToTerminateIndex = 0; eC2InstanceIdsToTerminateIndex < eC2InstanceIdsToTerminateJsonList.GetLength(); ++eC2InstanceIdsToTerminateIndex)
     {
       m_eC2InstanceIdsToTerminate.push_back(eC2InstanceIdsToTerminateJsonList[eC2InstanceIdsToTerminateIndex].AsString());

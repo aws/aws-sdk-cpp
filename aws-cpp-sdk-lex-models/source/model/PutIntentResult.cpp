@@ -26,18 +26,20 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutIntentResult::PutIntentResult()
+PutIntentResult::PutIntentResult() : 
+    m_createVersion(false)
 {
 }
 
-PutIntentResult::PutIntentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+PutIntentResult::PutIntentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_createVersion(false)
 {
   *this = result;
 }
 
 PutIntentResult& PutIntentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -52,7 +54,7 @@ PutIntentResult& PutIntentResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("slots"))
   {
-    Array<JsonValue> slotsJsonList = jsonValue.GetArray("slots");
+    Array<JsonView> slotsJsonList = jsonValue.GetArray("slots");
     for(unsigned slotsIndex = 0; slotsIndex < slotsJsonList.GetLength(); ++slotsIndex)
     {
       m_slots.push_back(slotsJsonList[slotsIndex].AsObject());
@@ -61,7 +63,7 @@ PutIntentResult& PutIntentResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("sampleUtterances"))
   {
-    Array<JsonValue> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
+    Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
     for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
     {
       m_sampleUtterances.push_back(sampleUtterancesJsonList[sampleUtterancesIndex].AsString());
@@ -131,6 +133,12 @@ PutIntentResult& PutIntentResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("checksum"))
   {
     m_checksum = jsonValue.GetString("checksum");
+
+  }
+
+  if(jsonValue.ValueExists("createVersion"))
+  {
+    m_createVersion = jsonValue.GetBool("createVersion");
 
   }
 

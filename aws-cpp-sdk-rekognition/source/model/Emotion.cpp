@@ -36,7 +36,7 @@ Emotion::Emotion() :
 {
 }
 
-Emotion::Emotion(const JsonValue& jsonValue) : 
+Emotion::Emotion(JsonView jsonValue) : 
     m_type(EmotionName::NOT_SET),
     m_typeHasBeenSet(false),
     m_confidence(0.0),
@@ -45,7 +45,7 @@ Emotion::Emotion(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Emotion& Emotion::operator =(const JsonValue& jsonValue)
+Emotion& Emotion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

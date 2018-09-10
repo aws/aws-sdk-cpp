@@ -37,7 +37,7 @@ TransferData::TransferData() :
 {
 }
 
-TransferData::TransferData(const JsonValue& jsonValue) : 
+TransferData::TransferData(JsonView jsonValue) : 
     m_transferMessageHasBeenSet(false),
     m_rejectReasonHasBeenSet(false),
     m_transferDateHasBeenSet(false),
@@ -47,7 +47,7 @@ TransferData::TransferData(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TransferData& TransferData::operator =(const JsonValue& jsonValue)
+TransferData& TransferData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("transferMessage"))
   {

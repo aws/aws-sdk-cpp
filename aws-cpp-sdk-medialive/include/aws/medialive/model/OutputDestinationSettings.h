@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     OutputDestinationSettings();
-    OutputDestinationSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    OutputDestinationSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OutputDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    OutputDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -81,6 +82,42 @@ namespace Model
      * key used to extract the password from EC2 Parameter store
      */
     inline OutputDestinationSettings& WithPasswordParam(const char* value) { SetPasswordParam(value); return *this;}
+
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline OutputDestinationSettings& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline OutputDestinationSettings& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+    inline OutputDestinationSettings& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
 
     /**
@@ -158,6 +195,9 @@ namespace Model
 
     Aws::String m_passwordParam;
     bool m_passwordParamHasBeenSet;
+
+    Aws::String m_streamName;
+    bool m_streamNameHasBeenSet;
 
     Aws::String m_url;
     bool m_urlHasBeenSet;

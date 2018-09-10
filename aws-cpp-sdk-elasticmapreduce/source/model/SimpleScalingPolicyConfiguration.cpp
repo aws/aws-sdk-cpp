@@ -38,7 +38,7 @@ SimpleScalingPolicyConfiguration::SimpleScalingPolicyConfiguration() :
 {
 }
 
-SimpleScalingPolicyConfiguration::SimpleScalingPolicyConfiguration(const JsonValue& jsonValue) : 
+SimpleScalingPolicyConfiguration::SimpleScalingPolicyConfiguration(JsonView jsonValue) : 
     m_adjustmentType(AdjustmentType::NOT_SET),
     m_adjustmentTypeHasBeenSet(false),
     m_scalingAdjustment(0),
@@ -49,7 +49,7 @@ SimpleScalingPolicyConfiguration::SimpleScalingPolicyConfiguration(const JsonVal
   *this = jsonValue;
 }
 
-SimpleScalingPolicyConfiguration& SimpleScalingPolicyConfiguration::operator =(const JsonValue& jsonValue)
+SimpleScalingPolicyConfiguration& SimpleScalingPolicyConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AdjustmentType"))
   {

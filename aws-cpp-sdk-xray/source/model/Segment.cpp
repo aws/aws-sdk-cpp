@@ -34,14 +34,14 @@ Segment::Segment() :
 {
 }
 
-Segment::Segment(const JsonValue& jsonValue) : 
+Segment::Segment(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_documentHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Segment& Segment::operator =(const JsonValue& jsonValue)
+Segment& Segment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

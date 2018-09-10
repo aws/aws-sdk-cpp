@@ -34,14 +34,14 @@ AudioSelector::AudioSelector() :
 {
 }
 
-AudioSelector::AudioSelector(const JsonValue& jsonValue) : 
+AudioSelector::AudioSelector(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_selectorSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AudioSelector& AudioSelector::operator =(const JsonValue& jsonValue)
+AudioSelector& AudioSelector::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

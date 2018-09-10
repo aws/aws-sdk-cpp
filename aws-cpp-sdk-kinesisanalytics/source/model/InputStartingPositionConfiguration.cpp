@@ -34,14 +34,14 @@ InputStartingPositionConfiguration::InputStartingPositionConfiguration() :
 {
 }
 
-InputStartingPositionConfiguration::InputStartingPositionConfiguration(const JsonValue& jsonValue) : 
+InputStartingPositionConfiguration::InputStartingPositionConfiguration(JsonView jsonValue) : 
     m_inputStartingPosition(InputStartingPosition::NOT_SET),
     m_inputStartingPositionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputStartingPositionConfiguration& InputStartingPositionConfiguration::operator =(const JsonValue& jsonValue)
+InputStartingPositionConfiguration& InputStartingPositionConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InputStartingPosition"))
   {

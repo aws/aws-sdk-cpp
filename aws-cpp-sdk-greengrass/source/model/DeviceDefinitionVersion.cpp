@@ -33,17 +33,17 @@ DeviceDefinitionVersion::DeviceDefinitionVersion() :
 {
 }
 
-DeviceDefinitionVersion::DeviceDefinitionVersion(const JsonValue& jsonValue) : 
+DeviceDefinitionVersion::DeviceDefinitionVersion(JsonView jsonValue) : 
     m_devicesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DeviceDefinitionVersion& DeviceDefinitionVersion::operator =(const JsonValue& jsonValue)
+DeviceDefinitionVersion& DeviceDefinitionVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Devices"))
   {
-    Array<JsonValue> devicesJsonList = jsonValue.GetArray("Devices");
+    Array<JsonView> devicesJsonList = jsonValue.GetArray("Devices");
     for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
     {
       m_devices.push_back(devicesJsonList[devicesIndex].AsObject());

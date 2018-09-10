@@ -36,7 +36,7 @@ CurrentRevision::CurrentRevision() :
 {
 }
 
-CurrentRevision::CurrentRevision(const JsonValue& jsonValue) : 
+CurrentRevision::CurrentRevision(JsonView jsonValue) : 
     m_revisionHasBeenSet(false),
     m_changeIdentifierHasBeenSet(false),
     m_createdHasBeenSet(false),
@@ -45,7 +45,7 @@ CurrentRevision::CurrentRevision(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CurrentRevision& CurrentRevision::operator =(const JsonValue& jsonValue)
+CurrentRevision& CurrentRevision::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("revision"))
   {

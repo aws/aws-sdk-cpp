@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Information on the group<p><h3>See Also:</h3>   <a
+   * Information about a group.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GroupInformation">AWS
    * API Reference</a></p>
    */
@@ -41,259 +42,259 @@ namespace Model
   {
   public:
     GroupInformation();
-    GroupInformation(const Aws::Utils::Json::JsonValue& jsonValue);
-    GroupInformation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GroupInformation(Aws::Utils::Json::JsonView jsonValue);
+    GroupInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Arn of a group.
+     * The ARN of the group.
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * Arn of a group.
+     * The ARN of the group.
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * Arn of a group.
+     * The ARN of the group.
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * Arn of a group.
+     * The ARN of the group.
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * Arn of a group.
+     * The ARN of the group.
      */
     inline GroupInformation& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * Arn of a group.
+     * The ARN of the group.
      */
     inline GroupInformation& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * Arn of a group.
+     * The ARN of the group.
      */
     inline GroupInformation& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * Timestamp of when the group was created.
+     * The time, in milliseconds since the epoch, when the group was created.
      */
     inline const Aws::String& GetCreationTimestamp() const{ return m_creationTimestamp; }
 
     /**
-     * Timestamp of when the group was created.
+     * The time, in milliseconds since the epoch, when the group was created.
      */
     inline void SetCreationTimestamp(const Aws::String& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
 
     /**
-     * Timestamp of when the group was created.
+     * The time, in milliseconds since the epoch, when the group was created.
      */
     inline void SetCreationTimestamp(Aws::String&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
 
     /**
-     * Timestamp of when the group was created.
+     * The time, in milliseconds since the epoch, when the group was created.
      */
     inline void SetCreationTimestamp(const char* value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp.assign(value); }
 
     /**
-     * Timestamp of when the group was created.
+     * The time, in milliseconds since the epoch, when the group was created.
      */
     inline GroupInformation& WithCreationTimestamp(const Aws::String& value) { SetCreationTimestamp(value); return *this;}
 
     /**
-     * Timestamp of when the group was created.
+     * The time, in milliseconds since the epoch, when the group was created.
      */
     inline GroupInformation& WithCreationTimestamp(Aws::String&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
     /**
-     * Timestamp of when the group was created.
+     * The time, in milliseconds since the epoch, when the group was created.
      */
     inline GroupInformation& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
 
     /**
-     * Id of a group.
+     * The ID of the group.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Id of a group.
+     * The ID of the group.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * Id of a group.
+     * The ID of the group.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * Id of a group.
+     * The ID of the group.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * Id of a group.
+     * The ID of the group.
      */
     inline GroupInformation& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Id of a group.
+     * The ID of the group.
      */
     inline GroupInformation& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Id of a group.
+     * The ID of the group.
      */
     inline GroupInformation& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Last updated timestamp of the group.
+     * The time, in milliseconds since the epoch, when the group was last updated.
      */
     inline const Aws::String& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
 
     /**
-     * Last updated timestamp of the group.
+     * The time, in milliseconds since the epoch, when the group was last updated.
      */
     inline void SetLastUpdatedTimestamp(const Aws::String& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = value; }
 
     /**
-     * Last updated timestamp of the group.
+     * The time, in milliseconds since the epoch, when the group was last updated.
      */
     inline void SetLastUpdatedTimestamp(Aws::String&& value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp = std::move(value); }
 
     /**
-     * Last updated timestamp of the group.
+     * The time, in milliseconds since the epoch, when the group was last updated.
      */
     inline void SetLastUpdatedTimestamp(const char* value) { m_lastUpdatedTimestampHasBeenSet = true; m_lastUpdatedTimestamp.assign(value); }
 
     /**
-     * Last updated timestamp of the group.
+     * The time, in milliseconds since the epoch, when the group was last updated.
      */
     inline GroupInformation& WithLastUpdatedTimestamp(const Aws::String& value) { SetLastUpdatedTimestamp(value); return *this;}
 
     /**
-     * Last updated timestamp of the group.
+     * The time, in milliseconds since the epoch, when the group was last updated.
      */
     inline GroupInformation& WithLastUpdatedTimestamp(Aws::String&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
 
     /**
-     * Last updated timestamp of the group.
+     * The time, in milliseconds since the epoch, when the group was last updated.
      */
     inline GroupInformation& WithLastUpdatedTimestamp(const char* value) { SetLastUpdatedTimestamp(value); return *this;}
 
 
     /**
-     * Last version of the group.
+     * The latest version of the group.
      */
     inline const Aws::String& GetLatestVersion() const{ return m_latestVersion; }
 
     /**
-     * Last version of the group.
+     * The latest version of the group.
      */
     inline void SetLatestVersion(const Aws::String& value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
 
     /**
-     * Last version of the group.
+     * The latest version of the group.
      */
     inline void SetLatestVersion(Aws::String&& value) { m_latestVersionHasBeenSet = true; m_latestVersion = std::move(value); }
 
     /**
-     * Last version of the group.
+     * The latest version of the group.
      */
     inline void SetLatestVersion(const char* value) { m_latestVersionHasBeenSet = true; m_latestVersion.assign(value); }
 
     /**
-     * Last version of the group.
+     * The latest version of the group.
      */
     inline GroupInformation& WithLatestVersion(const Aws::String& value) { SetLatestVersion(value); return *this;}
 
     /**
-     * Last version of the group.
+     * The latest version of the group.
      */
     inline GroupInformation& WithLatestVersion(Aws::String&& value) { SetLatestVersion(std::move(value)); return *this;}
 
     /**
-     * Last version of the group.
+     * The latest version of the group.
      */
     inline GroupInformation& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
 
 
     /**
-     * Latest version arn of the group.
+     * The ARN of the latest version of the group.
      */
     inline const Aws::String& GetLatestVersionArn() const{ return m_latestVersionArn; }
 
     /**
-     * Latest version arn of the group.
+     * The ARN of the latest version of the group.
      */
     inline void SetLatestVersionArn(const Aws::String& value) { m_latestVersionArnHasBeenSet = true; m_latestVersionArn = value; }
 
     /**
-     * Latest version arn of the group.
+     * The ARN of the latest version of the group.
      */
     inline void SetLatestVersionArn(Aws::String&& value) { m_latestVersionArnHasBeenSet = true; m_latestVersionArn = std::move(value); }
 
     /**
-     * Latest version arn of the group.
+     * The ARN of the latest version of the group.
      */
     inline void SetLatestVersionArn(const char* value) { m_latestVersionArnHasBeenSet = true; m_latestVersionArn.assign(value); }
 
     /**
-     * Latest version arn of the group.
+     * The ARN of the latest version of the group.
      */
     inline GroupInformation& WithLatestVersionArn(const Aws::String& value) { SetLatestVersionArn(value); return *this;}
 
     /**
-     * Latest version arn of the group.
+     * The ARN of the latest version of the group.
      */
     inline GroupInformation& WithLatestVersionArn(Aws::String&& value) { SetLatestVersionArn(std::move(value)); return *this;}
 
     /**
-     * Latest version arn of the group.
+     * The ARN of the latest version of the group.
      */
     inline GroupInformation& WithLatestVersionArn(const char* value) { SetLatestVersionArn(value); return *this;}
 
 
     /**
-     * Name of a group.
+     * The name of the group.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * Name of a group.
+     * The name of the group.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * Name of a group.
+     * The name of the group.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * Name of a group.
+     * The name of the group.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * Name of a group.
+     * The name of the group.
      */
     inline GroupInformation& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * Name of a group.
+     * The name of the group.
      */
     inline GroupInformation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * Name of a group.
+     * The name of the group.
      */
     inline GroupInformation& WithName(const char* value) { SetName(value); return *this;}
 

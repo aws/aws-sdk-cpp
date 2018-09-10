@@ -128,100 +128,107 @@ namespace Model
 
     /**
      * <p>The filters to use to list a specified set of devices. Supported filter keys
-     * are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
-     * UnassociatedOnly.</p>
+     * are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType,
+     * DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus (ONLINE and
+     * OFFLINE).</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>The filters to use to list a specified set of devices. Supported filter keys
-     * are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
-     * UnassociatedOnly.</p>
+     * are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType,
+     * DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus (ONLINE and
+     * OFFLINE).</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>The filters to use to list a specified set of devices. Supported filter keys
-     * are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
-     * UnassociatedOnly.</p>
+     * are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType,
+     * DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus (ONLINE and
+     * OFFLINE).</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>The filters to use to list a specified set of devices. Supported filter keys
-     * are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
-     * UnassociatedOnly.</p>
+     * are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType,
+     * DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus (ONLINE and
+     * OFFLINE).</p>
      */
     inline SearchDevicesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>The filters to use to list a specified set of devices. Supported filter keys
-     * are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
-     * UnassociatedOnly.</p>
+     * are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType,
+     * DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus (ONLINE and
+     * OFFLINE).</p>
      */
     inline SearchDevicesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>The filters to use to list a specified set of devices. Supported filter keys
-     * are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
-     * UnassociatedOnly.</p>
+     * are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType,
+     * DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus (ONLINE and
+     * OFFLINE).</p>
      */
     inline SearchDevicesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>The filters to use to list a specified set of devices. Supported filter keys
-     * are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
-     * UnassociatedOnly.</p>
+     * are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType,
+     * DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus (ONLINE and
+     * OFFLINE).</p>
      */
     inline SearchDevicesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The sort order to use in listing the specified set of devices. Supported sort
-     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, and
-     * DeviceSerialNumber.</p>
+     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
+     * ConnectionStatus.</p>
      */
     inline const Aws::Vector<Sort>& GetSortCriteria() const{ return m_sortCriteria; }
 
     /**
      * <p>The sort order to use in listing the specified set of devices. Supported sort
-     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, and
-     * DeviceSerialNumber.</p>
+     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
+     * ConnectionStatus.</p>
      */
     inline void SetSortCriteria(const Aws::Vector<Sort>& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = value; }
 
     /**
      * <p>The sort order to use in listing the specified set of devices. Supported sort
-     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, and
-     * DeviceSerialNumber.</p>
+     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
+     * ConnectionStatus.</p>
      */
     inline void SetSortCriteria(Aws::Vector<Sort>&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria = std::move(value); }
 
     /**
      * <p>The sort order to use in listing the specified set of devices. Supported sort
-     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, and
-     * DeviceSerialNumber.</p>
+     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
+     * ConnectionStatus.</p>
      */
     inline SearchDevicesRequest& WithSortCriteria(const Aws::Vector<Sort>& value) { SetSortCriteria(value); return *this;}
 
     /**
      * <p>The sort order to use in listing the specified set of devices. Supported sort
-     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, and
-     * DeviceSerialNumber.</p>
+     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
+     * ConnectionStatus.</p>
      */
     inline SearchDevicesRequest& WithSortCriteria(Aws::Vector<Sort>&& value) { SetSortCriteria(std::move(value)); return *this;}
 
     /**
      * <p>The sort order to use in listing the specified set of devices. Supported sort
-     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, and
-     * DeviceSerialNumber.</p>
+     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
+     * ConnectionStatus.</p>
      */
     inline SearchDevicesRequest& AddSortCriteria(const Sort& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria.push_back(value); return *this; }
 
     /**
      * <p>The sort order to use in listing the specified set of devices. Supported sort
-     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, and
-     * DeviceSerialNumber.</p>
+     * keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and
+     * ConnectionStatus.</p>
      */
     inline SearchDevicesRequest& AddSortCriteria(Sort&& value) { m_sortCriteriaHasBeenSet = true; m_sortCriteria.push_back(std::move(value)); return *this; }
 

@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     API_KEY,
     AWS_IAM,
-    AMAZON_COGNITO_USER_POOLS
+    AMAZON_COGNITO_USER_POOLS,
+    OPENID_CONNECT
   };
 
 namespace AuthenticationTypeMapper

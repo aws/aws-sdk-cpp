@@ -34,14 +34,14 @@ RetryStrategy::RetryStrategy() :
 {
 }
 
-RetryStrategy::RetryStrategy(const JsonValue& jsonValue) : 
+RetryStrategy::RetryStrategy(JsonView jsonValue) : 
     m_attempts(0),
     m_attemptsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RetryStrategy& RetryStrategy::operator =(const JsonValue& jsonValue)
+RetryStrategy& RetryStrategy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("attempts"))
   {

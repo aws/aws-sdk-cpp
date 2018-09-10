@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Organizations
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     OrganizationalUnit();
-    OrganizationalUnit(const Aws::Utils::Json::JsonValue& jsonValue);
-    OrganizationalUnit& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OrganizationalUnit(Aws::Utils::Json::JsonView jsonValue);
+    OrganizationalUnit& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -41,7 +41,7 @@ StepScalingPolicyConfiguration::StepScalingPolicyConfiguration() :
 {
 }
 
-StepScalingPolicyConfiguration::StepScalingPolicyConfiguration(const JsonValue& jsonValue) : 
+StepScalingPolicyConfiguration::StepScalingPolicyConfiguration(JsonView jsonValue) : 
     m_adjustmentType(AdjustmentType::NOT_SET),
     m_adjustmentTypeHasBeenSet(false),
     m_stepAdjustmentsHasBeenSet(false),
@@ -55,7 +55,7 @@ StepScalingPolicyConfiguration::StepScalingPolicyConfiguration(const JsonValue& 
   *this = jsonValue;
 }
 
-StepScalingPolicyConfiguration& StepScalingPolicyConfiguration::operator =(const JsonValue& jsonValue)
+StepScalingPolicyConfiguration& StepScalingPolicyConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AdjustmentType"))
   {
@@ -66,7 +66,7 @@ StepScalingPolicyConfiguration& StepScalingPolicyConfiguration::operator =(const
 
   if(jsonValue.ValueExists("StepAdjustments"))
   {
-    Array<JsonValue> stepAdjustmentsJsonList = jsonValue.GetArray("StepAdjustments");
+    Array<JsonView> stepAdjustmentsJsonList = jsonValue.GetArray("StepAdjustments");
     for(unsigned stepAdjustmentsIndex = 0; stepAdjustmentsIndex < stepAdjustmentsJsonList.GetLength(); ++stepAdjustmentsIndex)
     {
       m_stepAdjustments.push_back(stepAdjustmentsJsonList[stepAdjustmentsIndex].AsObject());

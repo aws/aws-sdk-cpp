@@ -45,7 +45,7 @@ Aws::String ListGeoMatchSetsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListGeoMatchSetsRequest::GetRequestSpecificHeaders() const

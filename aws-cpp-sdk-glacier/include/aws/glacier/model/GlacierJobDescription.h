@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glacier
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     GlacierJobDescription();
-    GlacierJobDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    GlacierJobDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GlacierJobDescription(Aws::Utils::Json::JsonView jsonValue);
+    GlacierJobDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -721,49 +722,49 @@ namespace Model
 
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline const Aws::String& GetTier() const{ return m_tier; }
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline void SetTier(const Aws::String& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline void SetTier(Aws::String&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline void SetTier(const char* value) { m_tierHasBeenSet = true; m_tier.assign(value); }
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline GlacierJobDescription& WithTier(const Aws::String& value) { SetTier(value); return *this;}
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
     inline GlacierJobDescription& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
 
     /**
-     * <p>The retrieval option to use for the archive retrieval. Valid values are
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
@@ -833,27 +834,27 @@ namespace Model
 
 
     /**
-     * <p>Contains the parameters that define a select job.</p>
+     * <p>Contains the parameters used for a select.</p>
      */
     inline const SelectParameters& GetSelectParameters() const{ return m_selectParameters; }
 
     /**
-     * <p>Contains the parameters that define a select job.</p>
+     * <p>Contains the parameters used for a select.</p>
      */
     inline void SetSelectParameters(const SelectParameters& value) { m_selectParametersHasBeenSet = true; m_selectParameters = value; }
 
     /**
-     * <p>Contains the parameters that define a select job.</p>
+     * <p>Contains the parameters used for a select.</p>
      */
     inline void SetSelectParameters(SelectParameters&& value) { m_selectParametersHasBeenSet = true; m_selectParameters = std::move(value); }
 
     /**
-     * <p>Contains the parameters that define a select job.</p>
+     * <p>Contains the parameters used for a select.</p>
      */
     inline GlacierJobDescription& WithSelectParameters(const SelectParameters& value) { SetSelectParameters(value); return *this;}
 
     /**
-     * <p>Contains the parameters that define a select job.</p>
+     * <p>Contains the parameters used for a select.</p>
      */
     inline GlacierJobDescription& WithSelectParameters(SelectParameters&& value) { SetSelectParameters(std::move(value)); return *this;}
 

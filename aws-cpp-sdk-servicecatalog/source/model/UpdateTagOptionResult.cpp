@@ -37,7 +37,7 @@ UpdateTagOptionResult::UpdateTagOptionResult(const Aws::AmazonWebServiceResult<J
 
 UpdateTagOptionResult& UpdateTagOptionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TagOptionDetail"))
   {
     m_tagOptionDetail = jsonValue.GetObject("TagOptionDetail");

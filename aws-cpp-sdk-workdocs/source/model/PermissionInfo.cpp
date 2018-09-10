@@ -36,7 +36,7 @@ PermissionInfo::PermissionInfo() :
 {
 }
 
-PermissionInfo::PermissionInfo(const JsonValue& jsonValue) : 
+PermissionInfo::PermissionInfo(JsonView jsonValue) : 
     m_role(RoleType::NOT_SET),
     m_roleHasBeenSet(false),
     m_type(RolePermissionType::NOT_SET),
@@ -45,7 +45,7 @@ PermissionInfo::PermissionInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PermissionInfo& PermissionInfo::operator =(const JsonValue& jsonValue)
+PermissionInfo& PermissionInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Role"))
   {

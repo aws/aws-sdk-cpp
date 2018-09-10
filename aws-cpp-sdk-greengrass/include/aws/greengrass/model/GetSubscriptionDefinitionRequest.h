@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline const Aws::String& GetSubscriptionDefinitionId() const{ return m_subscriptionDefinitionId; }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline void SetSubscriptionDefinitionId(const Aws::String& value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId = value; }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline void SetSubscriptionDefinitionId(Aws::String&& value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId = std::move(value); }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline void SetSubscriptionDefinitionId(const char* value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId.assign(value); }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline GetSubscriptionDefinitionRequest& WithSubscriptionDefinitionId(const Aws::String& value) { SetSubscriptionDefinitionId(value); return *this;}
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline GetSubscriptionDefinitionRequest& WithSubscriptionDefinitionId(Aws::String&& value) { SetSubscriptionDefinitionId(std::move(value)); return *this;}
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline GetSubscriptionDefinitionRequest& WithSubscriptionDefinitionId(const char* value) { SetSubscriptionDefinitionId(value); return *this;}
 

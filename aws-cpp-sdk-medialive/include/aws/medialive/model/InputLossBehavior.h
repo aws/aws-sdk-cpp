@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     InputLossBehavior();
-    InputLossBehavior(const Aws::Utils::Json::JsonValue& jsonValue);
-    InputLossBehavior& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InputLossBehavior(Aws::Utils::Json::JsonView jsonValue);
+    InputLossBehavior& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

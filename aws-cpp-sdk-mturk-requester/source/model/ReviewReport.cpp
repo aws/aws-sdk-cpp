@@ -34,18 +34,18 @@ ReviewReport::ReviewReport() :
 {
 }
 
-ReviewReport::ReviewReport(const JsonValue& jsonValue) : 
+ReviewReport::ReviewReport(JsonView jsonValue) : 
     m_reviewResultsHasBeenSet(false),
     m_reviewActionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ReviewReport& ReviewReport::operator =(const JsonValue& jsonValue)
+ReviewReport& ReviewReport::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReviewResults"))
   {
-    Array<JsonValue> reviewResultsJsonList = jsonValue.GetArray("ReviewResults");
+    Array<JsonView> reviewResultsJsonList = jsonValue.GetArray("ReviewResults");
     for(unsigned reviewResultsIndex = 0; reviewResultsIndex < reviewResultsJsonList.GetLength(); ++reviewResultsIndex)
     {
       m_reviewResults.push_back(reviewResultsJsonList[reviewResultsIndex].AsObject());
@@ -55,7 +55,7 @@ ReviewReport& ReviewReport::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ReviewActions"))
   {
-    Array<JsonValue> reviewActionsJsonList = jsonValue.GetArray("ReviewActions");
+    Array<JsonView> reviewActionsJsonList = jsonValue.GetArray("ReviewActions");
     for(unsigned reviewActionsIndex = 0; reviewActionsIndex < reviewActionsJsonList.GetLength(); ++reviewActionsIndex)
     {
       m_reviewActions.push_back(reviewActionsJsonList[reviewActionsIndex].AsObject());

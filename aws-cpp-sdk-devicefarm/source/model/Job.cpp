@@ -43,11 +43,15 @@ Job::Job() :
     m_countersHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_deviceHasBeenSet(false),
-    m_deviceMinutesHasBeenSet(false)
+    m_instanceArnHasBeenSet(false),
+    m_deviceMinutesHasBeenSet(false),
+    m_videoEndpointHasBeenSet(false),
+    m_videoCapture(false),
+    m_videoCaptureHasBeenSet(false)
 {
 }
 
-Job::Job(const JsonValue& jsonValue) : 
+Job::Job(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_type(TestType::NOT_SET),
@@ -62,12 +66,16 @@ Job::Job(const JsonValue& jsonValue) :
     m_countersHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_deviceHasBeenSet(false),
-    m_deviceMinutesHasBeenSet(false)
+    m_instanceArnHasBeenSet(false),
+    m_deviceMinutesHasBeenSet(false),
+    m_videoEndpointHasBeenSet(false),
+    m_videoCapture(false),
+    m_videoCaptureHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Job& Job::operator =(const JsonValue& jsonValue)
+Job& Job::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -146,11 +154,32 @@ Job& Job::operator =(const JsonValue& jsonValue)
     m_deviceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instanceArn"))
+  {
+    m_instanceArn = jsonValue.GetString("instanceArn");
+
+    m_instanceArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("deviceMinutes"))
   {
     m_deviceMinutes = jsonValue.GetObject("deviceMinutes");
 
     m_deviceMinutesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("videoEndpoint"))
+  {
+    m_videoEndpoint = jsonValue.GetString("videoEndpoint");
+
+    m_videoEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("videoCapture"))
+  {
+    m_videoCapture = jsonValue.GetBool("videoCapture");
+
+    m_videoCaptureHasBeenSet = true;
   }
 
   return *this;
@@ -220,9 +249,27 @@ JsonValue Job::Jsonize() const
 
   }
 
+  if(m_instanceArnHasBeenSet)
+  {
+   payload.WithString("instanceArn", m_instanceArn);
+
+  }
+
   if(m_deviceMinutesHasBeenSet)
   {
    payload.WithObject("deviceMinutes", m_deviceMinutes.Jsonize());
+
+  }
+
+  if(m_videoEndpointHasBeenSet)
+  {
+   payload.WithString("videoEndpoint", m_videoEndpoint);
+
+  }
+
+  if(m_videoCaptureHasBeenSet)
+  {
+   payload.WithBool("videoCapture", m_videoCapture);
 
   }
 

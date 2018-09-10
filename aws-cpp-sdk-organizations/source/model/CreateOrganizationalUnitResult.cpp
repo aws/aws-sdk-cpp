@@ -37,7 +37,7 @@ CreateOrganizationalUnitResult::CreateOrganizationalUnitResult(const Aws::Amazon
 
 CreateOrganizationalUnitResult& CreateOrganizationalUnitResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OrganizationalUnit"))
   {
     m_organizationalUnit = jsonValue.GetObject("OrganizationalUnit");

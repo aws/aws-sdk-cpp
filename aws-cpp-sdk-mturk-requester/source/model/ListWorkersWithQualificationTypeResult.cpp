@@ -39,7 +39,7 @@ ListWorkersWithQualificationTypeResult::ListWorkersWithQualificationTypeResult(c
 
 ListWorkersWithQualificationTypeResult& ListWorkersWithQualificationTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -54,7 +54,7 @@ ListWorkersWithQualificationTypeResult& ListWorkersWithQualificationTypeResult::
 
   if(jsonValue.ValueExists("Qualifications"))
   {
-    Array<JsonValue> qualificationsJsonList = jsonValue.GetArray("Qualifications");
+    Array<JsonView> qualificationsJsonList = jsonValue.GetArray("Qualifications");
     for(unsigned qualificationsIndex = 0; qualificationsIndex < qualificationsJsonList.GetLength(); ++qualificationsIndex)
     {
       m_qualifications.push_back(qualificationsJsonList[qualificationsIndex].AsObject());

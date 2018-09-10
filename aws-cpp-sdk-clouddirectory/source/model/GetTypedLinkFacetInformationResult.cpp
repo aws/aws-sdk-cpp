@@ -37,10 +37,10 @@ GetTypedLinkFacetInformationResult::GetTypedLinkFacetInformationResult(const Aws
 
 GetTypedLinkFacetInformationResult& GetTypedLinkFacetInformationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityAttributeOrder"))
   {
-    Array<JsonValue> identityAttributeOrderJsonList = jsonValue.GetArray("IdentityAttributeOrder");
+    Array<JsonView> identityAttributeOrderJsonList = jsonValue.GetArray("IdentityAttributeOrder");
     for(unsigned identityAttributeOrderIndex = 0; identityAttributeOrderIndex < identityAttributeOrderJsonList.GetLength(); ++identityAttributeOrderIndex)
     {
       m_identityAttributeOrder.push_back(identityAttributeOrderJsonList[identityAttributeOrderIndex].AsString());

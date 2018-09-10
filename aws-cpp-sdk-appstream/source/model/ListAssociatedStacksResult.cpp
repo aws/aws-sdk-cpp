@@ -37,10 +37,10 @@ ListAssociatedStacksResult::ListAssociatedStacksResult(const Aws::AmazonWebServi
 
 ListAssociatedStacksResult& ListAssociatedStacksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Names"))
   {
-    Array<JsonValue> namesJsonList = jsonValue.GetArray("Names");
+    Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
     for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
     {
       m_names.push_back(namesJsonList[namesIndex].AsString());

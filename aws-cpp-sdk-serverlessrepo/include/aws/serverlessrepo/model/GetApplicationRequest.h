@@ -49,73 +49,73 @@ namespace Model
 
 
     /**
-     * The id of the application to get
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The id of the application to get
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The id of the application to get
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The id of the application to get
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The id of the application to get
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline GetApplicationRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The id of the application to get
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline GetApplicationRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The id of the application to get
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline GetApplicationRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * The semantic version of the application to get
+     * <p>The semantic version of the application to get.</p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
 
     /**
-     * The semantic version of the application to get
+     * <p>The semantic version of the application to get.</p>
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
 
     /**
-     * The semantic version of the application to get
+     * <p>The semantic version of the application to get.</p>
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
 
     /**
-     * The semantic version of the application to get
+     * <p>The semantic version of the application to get.</p>
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
 
     /**
-     * The semantic version of the application to get
+     * <p>The semantic version of the application to get.</p>
      */
     inline GetApplicationRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
 
     /**
-     * The semantic version of the application to get
+     * <p>The semantic version of the application to get.</p>
      */
     inline GetApplicationRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
 
     /**
-     * The semantic version of the application to get
+     * <p>The semantic version of the application to get.</p>
      */
     inline GetApplicationRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
 

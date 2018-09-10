@@ -37,7 +37,7 @@ AccountAttribute::AccountAttribute() :
 {
 }
 
-AccountAttribute::AccountAttribute(const JsonValue& jsonValue) : 
+AccountAttribute::AccountAttribute(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_maximum(0),
     m_maximumHasBeenSet(false),
@@ -47,7 +47,7 @@ AccountAttribute::AccountAttribute(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AccountAttribute& AccountAttribute::operator =(const JsonValue& jsonValue)
+AccountAttribute& AccountAttribute::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

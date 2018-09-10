@@ -22,7 +22,7 @@ TEST(URITest, DefaultConstructor)
     URI uri;
     EXPECT_EQ(Scheme::HTTP, uri.GetScheme());
     EXPECT_EQ(HTTP_DEFAULT_PORT, uri.GetPort());
-	    
+        
 }
 
 TEST(URITest, TestSchemeChanges)
@@ -78,6 +78,11 @@ TEST(URITest, TestAddQueryStringParameters)
     uri.AddQueryStringParameter("test2", "value3");
     uri.AddQueryStringParameter("test2", "value2");
 
+    Aws::Map<Aws::String, Aws::String> moreQueries;
+    moreQueries.emplace("test3", "value3");
+    moreQueries.emplace("x-test4", "value4");
+    uri.AddQueryStringParameter(moreQueries);
+
     //parameter collection shouldn't  be encoded when accessed
     QueryStringParameterCollection queryStringParams = uri.GetQueryStringParameters();
     EXPECT_STREQ("test needs escaping", queryStringParams.begin()->first.c_str());
@@ -92,13 +97,20 @@ TEST(URITest, TestAddQueryStringParameters)
     nextEntry++;
     EXPECT_STREQ("test2", nextEntry->first.c_str());
     EXPECT_STREQ("value3", nextEntry->second.c_str());
+    nextEntry++;
+    EXPECT_STREQ("test3", nextEntry->first.c_str());
+    EXPECT_STREQ("value3", nextEntry->second.c_str());
+    nextEntry++;
+    EXPECT_STREQ("x-test4", nextEntry->first.c_str());
+    EXPECT_STREQ("value4", nextEntry->second.c_str());
+
 
     //it should be encoded in the actual query string.
     //request has not been canonicalized. There should be no reordering of the query string.
-    EXPECT_STREQ("?test1=value1&test%20needs%20escaping=value%20needs%20escaping&test2=value3&test2=value2", uri.GetQueryString().c_str());
+    EXPECT_STREQ("?test1=value1&test%20needs%20escaping=value%20needs%20escaping&test2=value3&test2=value2&test3=value3&x-test4=value4", uri.GetQueryString().c_str());
 
     //let's go ahead and make sure the url is constructed properly.
-    EXPECT_STREQ("http://www.test.com/path/to/resource?test1=value1&test%20needs%20escaping=value%20needs%20escaping&test2=value3&test2=value2",
+    EXPECT_STREQ("http://www.test.com/path/to/resource?test1=value1&test%20needs%20escaping=value%20needs%20escaping&test2=value3&test2=value2&test3=value3&x-test4=value4",
         uri.GetURIString().c_str());
 }
 

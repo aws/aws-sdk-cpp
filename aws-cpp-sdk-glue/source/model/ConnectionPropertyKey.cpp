@@ -41,6 +41,7 @@ namespace Aws
         static const int CONFIG_FILES_HASH = HashingUtils::HashString("CONFIG_FILES");
         static const int INSTANCE_ID_HASH = HashingUtils::HashString("INSTANCE_ID");
         static const int JDBC_CONNECTION_URL_HASH = HashingUtils::HashString("JDBC_CONNECTION_URL");
+        static const int JDBC_ENFORCE_SSL_HASH = HashingUtils::HashString("JDBC_ENFORCE_SSL");
 
 
         ConnectionPropertyKey GetConnectionPropertyKeyForName(const Aws::String& name)
@@ -90,6 +91,10 @@ namespace Aws
           {
             return ConnectionPropertyKey::JDBC_CONNECTION_URL;
           }
+          else if (hashCode == JDBC_ENFORCE_SSL_HASH)
+          {
+            return ConnectionPropertyKey::JDBC_ENFORCE_SSL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -126,6 +131,8 @@ namespace Aws
             return "INSTANCE_ID";
           case ConnectionPropertyKey::JDBC_CONNECTION_URL:
             return "JDBC_CONNECTION_URL";
+          case ConnectionPropertyKey::JDBC_ENFORCE_SSL:
+            return "JDBC_ENFORCE_SSL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

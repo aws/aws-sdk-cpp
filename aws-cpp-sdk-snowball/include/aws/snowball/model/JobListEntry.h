@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Snowball
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     JobListEntry();
-    JobListEntry(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobListEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobListEntry(Aws::Utils::Json::JsonView jsonValue);
+    JobListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -179,27 +180,27 @@ namespace Model
 
 
     /**
-     * <p>The type of appliance used with this job.</p>
+     * <p>The type of device used with this job.</p>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of appliance used with this job.</p>
+     * <p>The type of device used with this job.</p>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of appliance used with this job.</p>
+     * <p>The type of device used with this job.</p>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of appliance used with this job.</p>
+     * <p>The type of device used with this job.</p>
      */
     inline JobListEntry& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of appliance used with this job.</p>
+     * <p>The type of device used with this job.</p>
      */
     inline JobListEntry& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 

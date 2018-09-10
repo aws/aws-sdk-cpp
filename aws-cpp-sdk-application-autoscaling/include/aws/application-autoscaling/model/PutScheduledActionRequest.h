@@ -49,35 +49,45 @@ namespace Model
 
 
     /**
-     * <p>The namespace of the AWS service. For more information, see <a
+     * <p>The namespace of the AWS service that provides the resource or
+     * <code>custom-resource</code> for a resource provided by your own application or
+     * service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
 
     /**
-     * <p>The namespace of the AWS service. For more information, see <a
+     * <p>The namespace of the AWS service that provides the resource or
+     * <code>custom-resource</code> for a resource provided by your own application or
+     * service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
 
     /**
-     * <p>The namespace of the AWS service. For more information, see <a
+     * <p>The namespace of the AWS service that provides the resource or
+     * <code>custom-resource</code> for a resource provided by your own application or
+     * service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
 
     /**
-     * <p>The namespace of the AWS service. For more information, see <a
+     * <p>The namespace of the AWS service that provides the resource or
+     * <code>custom-resource</code> for a resource provided by your own application or
+     * service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline PutScheduledActionRequest& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
 
     /**
-     * <p>The namespace of the AWS service. For more information, see <a
+     * <p>The namespace of the AWS service that provides the resource or
+     * <code>custom-resource</code> for a resource provided by your own application or
+     * service. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
@@ -95,7 +105,8 @@ namespace Model
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://en.wikipedia.org/wiki/Cron">Cron</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
 
@@ -110,7 +121,8 @@ namespace Model
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://en.wikipedia.org/wiki/Cron">Cron</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
@@ -125,7 +137,8 @@ namespace Model
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://en.wikipedia.org/wiki/Cron">Cron</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
@@ -140,7 +153,8 @@ namespace Model
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://en.wikipedia.org/wiki/Cron">Cron</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline void SetSchedule(const char* value) { m_scheduleHasBeenSet = true; m_schedule.assign(value); }
 
@@ -155,7 +169,8 @@ namespace Model
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://en.wikipedia.org/wiki/Cron">Cron</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline PutScheduledActionRequest& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
 
@@ -170,7 +185,8 @@ namespace Model
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://en.wikipedia.org/wiki/Cron">Cron</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline PutScheduledActionRequest& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
@@ -185,7 +201,8 @@ namespace Model
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="https://en.wikipedia.org/wiki/Cron">Cron</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline PutScheduledActionRequest& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 
@@ -246,7 +263,14 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>Custom resources are not supported with a resource type. This parameter must
+     * specify the <code>OutputValue</code> from the CloudFormation template stack used
+     * to access the resources. The unique identifier is defined by the service
+     * provider.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -270,7 +294,14 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>Custom resources are not supported with a resource type. This parameter must
+     * specify the <code>OutputValue</code> from the CloudFormation template stack used
+     * to access the resources. The unique identifier is defined by the service
+     * provider.</p> </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -294,7 +325,14 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>Custom resources are not supported with a resource type. This parameter must
+     * specify the <code>OutputValue</code> from the CloudFormation template stack used
+     * to access the resources. The unique identifier is defined by the service
+     * provider.</p> </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
@@ -318,7 +356,14 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>Custom resources are not supported with a resource type. This parameter must
+     * specify the <code>OutputValue</code> from the CloudFormation template stack used
+     * to access the resources. The unique identifier is defined by the service
+     * provider.</p> </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -342,7 +387,14 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>Custom resources are not supported with a resource type. This parameter must
+     * specify the <code>OutputValue</code> from the CloudFormation template stack used
+     * to access the resources. The unique identifier is defined by the service
+     * provider.</p> </li> </ul>
      */
     inline PutScheduledActionRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -366,7 +418,14 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>Custom resources are not supported with a resource type. This parameter must
+     * specify the <code>OutputValue</code> from the CloudFormation template stack used
+     * to access the resources. The unique identifier is defined by the service
+     * provider.</p> </li> </ul>
      */
     inline PutScheduledActionRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -390,7 +449,14 @@ namespace Model
      * <code>index</code> and the unique identifier is the resource ID. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
-     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> </ul>
+     * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
+     * <p>Amazon SageMaker endpoint variants - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>Custom resources are not supported with a resource type. This parameter must
+     * specify the <code>OutputValue</code> from the CloudFormation template stack used
+     * to access the resources. The unique identifier is defined by the service
+     * provider.</p> </li> </ul>
      */
     inline PutScheduledActionRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -415,8 +481,11 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
+     * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
+     * a custom resource provided by your own application or service.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -440,8 +509,11 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
+     * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
+     * a custom resource provided by your own application or service.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -465,8 +537,11 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
+     * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
+     * a custom resource provided by your own application or service.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
@@ -490,8 +565,11 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
+     * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
+     * a custom resource provided by your own application or service.</p> </li> </ul>
      */
     inline PutScheduledActionRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -515,8 +593,11 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
+     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
+     * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
+     * a custom resource provided by your own application or service.</p> </li> </ul>
      */
     inline PutScheduledActionRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 

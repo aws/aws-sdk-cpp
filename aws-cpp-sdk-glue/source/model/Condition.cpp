@@ -37,7 +37,7 @@ Condition::Condition() :
 {
 }
 
-Condition::Condition(const JsonValue& jsonValue) : 
+Condition::Condition(JsonView jsonValue) : 
     m_logicalOperator(LogicalOperator::NOT_SET),
     m_logicalOperatorHasBeenSet(false),
     m_jobNameHasBeenSet(false),
@@ -47,7 +47,7 @@ Condition::Condition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Condition& Condition::operator =(const JsonValue& jsonValue)
+Condition& Condition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LogicalOperator"))
   {

@@ -45,7 +45,7 @@ ScalingPolicy::ScalingPolicy() :
 {
 }
 
-ScalingPolicy::ScalingPolicy(const JsonValue& jsonValue) : 
+ScalingPolicy::ScalingPolicy(JsonView jsonValue) : 
     m_policyARNHasBeenSet(false),
     m_policyNameHasBeenSet(false),
     m_serviceNamespace(ServiceNamespace::NOT_SET),
@@ -63,7 +63,7 @@ ScalingPolicy::ScalingPolicy(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ScalingPolicy& ScalingPolicy::operator =(const JsonValue& jsonValue)
+ScalingPolicy& ScalingPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PolicyARN"))
   {
@@ -123,7 +123,7 @@ ScalingPolicy& ScalingPolicy::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Alarms"))
   {
-    Array<JsonValue> alarmsJsonList = jsonValue.GetArray("Alarms");
+    Array<JsonView> alarmsJsonList = jsonValue.GetArray("Alarms");
     for(unsigned alarmsIndex = 0; alarmsIndex < alarmsJsonList.GetLength(); ++alarmsIndex)
     {
       m_alarms.push_back(alarmsJsonList[alarmsIndex].AsObject());

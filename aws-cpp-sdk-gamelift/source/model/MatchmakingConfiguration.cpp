@@ -49,7 +49,7 @@ MatchmakingConfiguration::MatchmakingConfiguration() :
 {
 }
 
-MatchmakingConfiguration::MatchmakingConfiguration(const JsonValue& jsonValue) : 
+MatchmakingConfiguration::MatchmakingConfiguration(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_gameSessionQueueArnsHasBeenSet(false),
@@ -71,7 +71,7 @@ MatchmakingConfiguration::MatchmakingConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MatchmakingConfiguration& MatchmakingConfiguration::operator =(const JsonValue& jsonValue)
+MatchmakingConfiguration& MatchmakingConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -89,7 +89,7 @@ MatchmakingConfiguration& MatchmakingConfiguration::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("GameSessionQueueArns"))
   {
-    Array<JsonValue> gameSessionQueueArnsJsonList = jsonValue.GetArray("GameSessionQueueArns");
+    Array<JsonView> gameSessionQueueArnsJsonList = jsonValue.GetArray("GameSessionQueueArns");
     for(unsigned gameSessionQueueArnsIndex = 0; gameSessionQueueArnsIndex < gameSessionQueueArnsJsonList.GetLength(); ++gameSessionQueueArnsIndex)
     {
       m_gameSessionQueueArns.push_back(gameSessionQueueArnsJsonList[gameSessionQueueArnsIndex].AsString());
@@ -155,7 +155,7 @@ MatchmakingConfiguration& MatchmakingConfiguration::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("GameProperties"))
   {
-    Array<JsonValue> gamePropertiesJsonList = jsonValue.GetArray("GameProperties");
+    Array<JsonView> gamePropertiesJsonList = jsonValue.GetArray("GameProperties");
     for(unsigned gamePropertiesIndex = 0; gamePropertiesIndex < gamePropertiesJsonList.GetLength(); ++gamePropertiesIndex)
     {
       m_gameProperties.push_back(gamePropertiesJsonList[gamePropertiesIndex].AsObject());

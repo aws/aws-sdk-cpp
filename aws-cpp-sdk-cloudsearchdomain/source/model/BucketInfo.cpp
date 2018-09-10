@@ -33,17 +33,17 @@ BucketInfo::BucketInfo() :
 {
 }
 
-BucketInfo::BucketInfo(const JsonValue& jsonValue) : 
+BucketInfo::BucketInfo(JsonView jsonValue) : 
     m_bucketsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BucketInfo& BucketInfo::operator =(const JsonValue& jsonValue)
+BucketInfo& BucketInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("buckets"))
   {
-    Array<JsonValue> bucketsJsonList = jsonValue.GetArray("buckets");
+    Array<JsonView> bucketsJsonList = jsonValue.GetArray("buckets");
     for(unsigned bucketsIndex = 0; bucketsIndex < bucketsJsonList.GetLength(); ++bucketsIndex)
     {
       m_buckets.push_back(bucketsJsonList[bucketsIndex].AsObject());

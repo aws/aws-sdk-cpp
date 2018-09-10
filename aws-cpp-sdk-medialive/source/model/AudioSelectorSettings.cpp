@@ -34,14 +34,14 @@ AudioSelectorSettings::AudioSelectorSettings() :
 {
 }
 
-AudioSelectorSettings::AudioSelectorSettings(const JsonValue& jsonValue) : 
+AudioSelectorSettings::AudioSelectorSettings(JsonView jsonValue) : 
     m_audioLanguageSelectionHasBeenSet(false),
     m_audioPidSelectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AudioSelectorSettings& AudioSelectorSettings::operator =(const JsonValue& jsonValue)
+AudioSelectorSettings& AudioSelectorSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioLanguageSelection"))
   {

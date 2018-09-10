@@ -37,7 +37,7 @@ Aws::String DescribeBuildRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeBuildRequest::GetRequestSpecificHeaders() const

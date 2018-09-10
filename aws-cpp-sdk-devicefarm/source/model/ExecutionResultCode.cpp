@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int PARSING_FAILED_HASH = HashingUtils::HashString("PARSING_FAILED");
+        static const int VPC_ENDPOINT_SETUP_FAILED_HASH = HashingUtils::HashString("VPC_ENDPOINT_SETUP_FAILED");
 
 
         ExecutionResultCode GetExecutionResultCodeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == PARSING_FAILED_HASH)
           {
             return ExecutionResultCode::PARSING_FAILED;
+          }
+          else if (hashCode == VPC_ENDPOINT_SETUP_FAILED_HASH)
+          {
+            return ExecutionResultCode::VPC_ENDPOINT_SETUP_FAILED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case ExecutionResultCode::PARSING_FAILED:
             return "PARSING_FAILED";
+          case ExecutionResultCode::VPC_ENDPOINT_SETUP_FAILED:
+            return "VPC_ENDPOINT_SETUP_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Budgets
@@ -35,8 +36,9 @@ namespace Model
 {
 
   /**
-   * A structure to relate notification and a list of subscribers who belong to the
-   * notification.<p><h3>See Also:</h3>   <a
+   * <p>A notification with subscribers. A notification can have one SNS subscriber
+   * and up to ten email subscribers, for a total of 11 subscribers.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/NotificationWithSubscribers">AWS
    * API Reference</a></p>
    */
@@ -44,46 +46,70 @@ namespace Model
   {
   public:
     NotificationWithSubscribers();
-    NotificationWithSubscribers(const Aws::Utils::Json::JsonValue& jsonValue);
-    NotificationWithSubscribers& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NotificationWithSubscribers(Aws::Utils::Json::JsonView jsonValue);
+    NotificationWithSubscribers& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The notification associated with a budget.</p>
+     */
     inline const Notification& GetNotification() const{ return m_notification; }
 
-    
+    /**
+     * <p>The notification associated with a budget.</p>
+     */
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
-    
+    /**
+     * <p>The notification associated with a budget.</p>
+     */
     inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
-    
+    /**
+     * <p>The notification associated with a budget.</p>
+     */
     inline NotificationWithSubscribers& WithNotification(const Notification& value) { SetNotification(value); return *this;}
 
-    
+    /**
+     * <p>The notification associated with a budget.</p>
+     */
     inline NotificationWithSubscribers& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>A list of subscribers who are subscribed to this notification.</p>
+     */
     inline const Aws::Vector<Subscriber>& GetSubscribers() const{ return m_subscribers; }
 
-    
+    /**
+     * <p>A list of subscribers who are subscribed to this notification.</p>
+     */
     inline void SetSubscribers(const Aws::Vector<Subscriber>& value) { m_subscribersHasBeenSet = true; m_subscribers = value; }
 
-    
+    /**
+     * <p>A list of subscribers who are subscribed to this notification.</p>
+     */
     inline void SetSubscribers(Aws::Vector<Subscriber>&& value) { m_subscribersHasBeenSet = true; m_subscribers = std::move(value); }
 
-    
+    /**
+     * <p>A list of subscribers who are subscribed to this notification.</p>
+     */
     inline NotificationWithSubscribers& WithSubscribers(const Aws::Vector<Subscriber>& value) { SetSubscribers(value); return *this;}
 
-    
+    /**
+     * <p>A list of subscribers who are subscribed to this notification.</p>
+     */
     inline NotificationWithSubscribers& WithSubscribers(Aws::Vector<Subscriber>&& value) { SetSubscribers(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A list of subscribers who are subscribed to this notification.</p>
+     */
     inline NotificationWithSubscribers& AddSubscribers(const Subscriber& value) { m_subscribersHasBeenSet = true; m_subscribers.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of subscribers who are subscribed to this notification.</p>
+     */
     inline NotificationWithSubscribers& AddSubscribers(Subscriber&& value) { m_subscribersHasBeenSet = true; m_subscribers.push_back(std::move(value)); return *this; }
 
   private:

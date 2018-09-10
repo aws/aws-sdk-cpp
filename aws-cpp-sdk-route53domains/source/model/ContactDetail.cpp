@@ -48,7 +48,7 @@ ContactDetail::ContactDetail() :
 {
 }
 
-ContactDetail::ContactDetail(const JsonValue& jsonValue) : 
+ContactDetail::ContactDetail(JsonView jsonValue) : 
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
     m_contactType(ContactType::NOT_SET),
@@ -69,7 +69,7 @@ ContactDetail::ContactDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ContactDetail& ContactDetail::operator =(const JsonValue& jsonValue)
+ContactDetail& ContactDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FirstName"))
   {
@@ -164,7 +164,7 @@ ContactDetail& ContactDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ExtraParams"))
   {
-    Array<JsonValue> extraParamsJsonList = jsonValue.GetArray("ExtraParams");
+    Array<JsonView> extraParamsJsonList = jsonValue.GetArray("ExtraParams");
     for(unsigned extraParamsIndex = 0; extraParamsIndex < extraParamsJsonList.GetLength(); ++extraParamsIndex)
     {
       m_extraParams.push_back(extraParamsJsonList[extraParamsIndex].AsObject());

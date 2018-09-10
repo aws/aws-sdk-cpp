@@ -38,7 +38,7 @@ DevicePool::DevicePool() :
 {
 }
 
-DevicePool::DevicePool(const JsonValue& jsonValue) : 
+DevicePool::DevicePool(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -49,7 +49,7 @@ DevicePool::DevicePool(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DevicePool& DevicePool::operator =(const JsonValue& jsonValue)
+DevicePool& DevicePool::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -81,7 +81,7 @@ DevicePool& DevicePool::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("rules"))
   {
-    Array<JsonValue> rulesJsonList = jsonValue.GetArray("rules");
+    Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());

@@ -37,7 +37,7 @@ CreateEnvironmentEC2Result::CreateEnvironmentEC2Result(const Aws::AmazonWebServi
 
 CreateEnvironmentEC2Result& CreateEnvironmentEC2Result::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");

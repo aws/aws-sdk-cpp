@@ -37,10 +37,16 @@ UpdateConfigurationResult::UpdateConfigurationResult(const Aws::AmazonWebService
 
 UpdateConfigurationResult& UpdateConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
+
+  }
+
+  if(jsonValue.ValueExists("created"))
+  {
+    m_created = jsonValue.GetString("created");
 
   }
 
@@ -64,7 +70,7 @@ UpdateConfigurationResult& UpdateConfigurationResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("warnings"))
   {
-    Array<JsonValue> warningsJsonList = jsonValue.GetArray("warnings");
+    Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());

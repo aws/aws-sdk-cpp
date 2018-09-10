@@ -43,7 +43,7 @@ JobListEntry::JobListEntry() :
 {
 }
 
-JobListEntry::JobListEntry(const JsonValue& jsonValue) : 
+JobListEntry::JobListEntry(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
     m_jobState(JobState::NOT_SET),
     m_jobStateHasBeenSet(false),
@@ -59,7 +59,7 @@ JobListEntry::JobListEntry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobListEntry& JobListEntry::operator =(const JsonValue& jsonValue)
+JobListEntry& JobListEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobId"))
   {

@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     REGIONAL,
-    EDGE
+    EDGE,
+    PRIVATE_
   };
 
 namespace EndpointTypeMapper

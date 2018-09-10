@@ -36,7 +36,7 @@ ProvisionedThroughput::ProvisionedThroughput() :
 {
 }
 
-ProvisionedThroughput::ProvisionedThroughput(const JsonValue& jsonValue) : 
+ProvisionedThroughput::ProvisionedThroughput(JsonView jsonValue) : 
     m_readCapacityUnits(0),
     m_readCapacityUnitsHasBeenSet(false),
     m_writeCapacityUnits(0),
@@ -45,7 +45,7 @@ ProvisionedThroughput::ProvisionedThroughput(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProvisionedThroughput& ProvisionedThroughput::operator =(const JsonValue& jsonValue)
+ProvisionedThroughput& ProvisionedThroughput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReadCapacityUnits"))
   {

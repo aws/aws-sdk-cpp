@@ -89,20 +89,20 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of returned results per page. The value is 25 by default
-     * and could be between 1 - 500.</p>
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of returned results per page. The value is 25 by default
-     * and could be between 1 - 500.</p>
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of returned results per page. The value is 25 by default
-     * and could be between 1 - 500.</p>
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
      */
     inline GetClientCertificatesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

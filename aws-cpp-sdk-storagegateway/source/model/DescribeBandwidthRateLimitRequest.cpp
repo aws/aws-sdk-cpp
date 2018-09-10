@@ -37,7 +37,7 @@ Aws::String DescribeBandwidthRateLimitRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeBandwidthRateLimitRequest::GetRequestSpecificHeaders() const

@@ -41,7 +41,7 @@ AdminGetUserResult::AdminGetUserResult(const Aws::AmazonWebServiceResult<JsonVal
 
 AdminGetUserResult& AdminGetUserResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
@@ -50,7 +50,7 @@ AdminGetUserResult& AdminGetUserResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("UserAttributes"))
   {
-    Array<JsonValue> userAttributesJsonList = jsonValue.GetArray("UserAttributes");
+    Array<JsonView> userAttributesJsonList = jsonValue.GetArray("UserAttributes");
     for(unsigned userAttributesIndex = 0; userAttributesIndex < userAttributesJsonList.GetLength(); ++userAttributesIndex)
     {
       m_userAttributes.push_back(userAttributesJsonList[userAttributesIndex].AsObject());
@@ -83,7 +83,7 @@ AdminGetUserResult& AdminGetUserResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("MFAOptions"))
   {
-    Array<JsonValue> mFAOptionsJsonList = jsonValue.GetArray("MFAOptions");
+    Array<JsonView> mFAOptionsJsonList = jsonValue.GetArray("MFAOptions");
     for(unsigned mFAOptionsIndex = 0; mFAOptionsIndex < mFAOptionsJsonList.GetLength(); ++mFAOptionsIndex)
     {
       m_mFAOptions.push_back(mFAOptionsJsonList[mFAOptionsIndex].AsObject());
@@ -98,7 +98,7 @@ AdminGetUserResult& AdminGetUserResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("UserMFASettingList"))
   {
-    Array<JsonValue> userMFASettingListJsonList = jsonValue.GetArray("UserMFASettingList");
+    Array<JsonView> userMFASettingListJsonList = jsonValue.GetArray("UserMFASettingList");
     for(unsigned userMFASettingListIndex = 0; userMFASettingListIndex < userMFASettingListJsonList.GetLength(); ++userMFASettingListIndex)
     {
       m_userMFASettingList.push_back(userMFASettingListJsonList[userMFASettingListIndex].AsString());

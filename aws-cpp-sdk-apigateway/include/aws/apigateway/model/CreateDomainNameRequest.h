@@ -47,37 +47,37 @@ namespace Model
 
 
     /**
-     * <p>(Required) The name of the <a>DomainName</a> resource.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>(Required) The name of the <a>DomainName</a> resource.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>(Required) The name of the <a>DomainName</a> resource.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>(Required) The name of the <a>DomainName</a> resource.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>(Required) The name of the <a>DomainName</a> resource.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
      */
     inline CreateDomainNameRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>(Required) The name of the <a>DomainName</a> resource.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
      */
     inline CreateDomainNameRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>(Required) The name of the <a>DomainName</a> resource.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource.</p>
      */
     inline CreateDomainNameRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

@@ -56,7 +56,7 @@ Aws::String DescribeServiceErrorsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeServiceErrorsRequest::GetRequestSpecificHeaders() const

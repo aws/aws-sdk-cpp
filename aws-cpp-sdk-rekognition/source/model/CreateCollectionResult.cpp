@@ -39,7 +39,7 @@ CreateCollectionResult::CreateCollectionResult(const Aws::AmazonWebServiceResult
 
 CreateCollectionResult& CreateCollectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = jsonValue.GetInteger("StatusCode");

@@ -65,11 +65,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -243,7 +238,7 @@ namespace Model
    * href="http://docs.aws.amazon.com/kms/latest/developerguide/">AWS Key Management
    * Service Developer Guide</a>.</p> <note> <p>AWS provides SDKs that consist of
    * libraries and sample code for various programming languages and platforms (Java,
-   * Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create
+   * Ruby, .Net, macOS, Android, etc.). The SDKs provide a convenient way to create
    * programmatic access to AWS KMS and other AWS services. For example, the SDKs
    * take care of tasks such as signing requests (see below), managing errors, and
    * retrying requests automatically. For more information about the AWS SDKs,
@@ -258,7 +253,7 @@ namespace Model
    * using an access key ID and a secret access key. We strongly recommend that you
    * <i>do not</i> use your AWS account (root) access key ID and secret key for
    * everyday work with AWS KMS. Instead, use the access key ID and secret access key
-   * for an IAM user, or you can use the AWS Security Token Service to generate
+   * for an IAM user. You can also use the AWS Security Token Service to generate
    * temporary security credentials that you can use to sign requests.</p> <p>All AWS
    * KMS operations require <a
    * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
@@ -281,11 +276,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
    * Version 4 Signing Process</a> - This set of topics walks you through the process
    * of signing a request using an access key ID and a secret access key.</p> </li>
-   * </ul> <p> <b>Commonly Used APIs</b> </p> <p>Of the APIs discussed in this guide,
-   * the following will prove the most useful for most applications. You will likely
-   * perform actions other than these, such as creating keys and assigning policies,
-   * by using the console.</p> <ul> <li> <p> <a>Encrypt</a> </p> </li> <li> <p>
-   * <a>Decrypt</a> </p> </li> <li> <p> <a>GenerateDataKey</a> </p> </li> <li> <p>
+   * </ul> <p> <b>Commonly Used API Operations</b> </p> <p>Of the API operations
+   * discussed in this guide, the following will prove the most useful for most
+   * applications. You will likely perform operations other than these, such as
+   * creating keys and assigning policies, by using the console.</p> <ul> <li> <p>
+   * <a>Encrypt</a> </p> </li> <li> <p> <a>Decrypt</a> </p> </li> <li> <p>
+   * <a>GenerateDataKey</a> </p> </li> <li> <p>
    * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> </ul>
    */
   class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient
@@ -314,7 +310,7 @@ namespace Model
 
         virtual ~KMSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "kms"; }
+        inline virtual const char* GetServiceClientName() const override { return "KMS"; }
 
 
         /**
@@ -325,7 +321,11 @@ namespace Model
          * of a CMK, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
          * Customer Master Keys</a> in the <i>AWS Key Management Service Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>The result of this operation varies with the key state of the
+         * CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">AWS
          * API Reference</a></p>
          */
@@ -339,7 +339,11 @@ namespace Model
          * of a CMK, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
          * Customer Master Keys</a> in the <i>AWS Key Management Service Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>The result of this operation varies with the key state of the
+         * CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">AWS
          * API Reference</a></p>
          *
@@ -355,7 +359,11 @@ namespace Model
          * of a CMK, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
          * Customer Master Keys</a> in the <i>AWS Key Management Service Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>The result of this operation varies with the key state of the
+         * CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion">AWS
          * API Reference</a></p>
          *
@@ -364,48 +372,52 @@ namespace Model
         virtual void CancelKeyDeletionAsync(const Model::CancelKeyDeletionRequest& request, const CancelKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a display name for a customer master key (CMK). You can use an alias
-         * to identify a CMK in selected operations, such as <a>Encrypt</a> and
-         * <a>GenerateDataKey</a>. </p> <p>Each CMK can have multiple aliases, but each
-         * alias points to only one CMK. The alias name must be unique in the AWS account
-         * and region. To simplify code that runs in multiple regions, use the same alias
-         * name, but point it to a different CMK in each region. </p> <p>Because an alias
-         * is not a property of a CMK, you can delete and change the aliases of a CMK
-         * without affecting the CMK. Also, aliases do not appear in the response from the
-         * <a>DescribeKey</a> operation. To get the aliases of all CMKs, use the
-         * <a>ListAliases</a> operation.</p> <p>An alias must start with the word
-         * <code>alias</code> followed by a forward slash (<code>alias/</code>). The alias
-         * name can contain only alphanumeric characters, forward slashes (/), underscores
-         * (_), and dashes (-). Alias names cannot begin with <code>aws</code>; that alias
-         * name prefix is reserved by Amazon Web Services (AWS).</p> <p>The alias and the
-         * CMK it is mapped to must be in the same AWS account and the same region. You
-         * cannot perform this operation on an alias in a different AWS account.</p> <p>To
-         * map an existing alias to a different CMK, call <a>UpdateAlias</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a display name for a customer-managed customer master key (CMK). You
+         * can use an alias to identify a CMK in selected operations, such as
+         * <a>Encrypt</a> and <a>GenerateDataKey</a>. </p> <p>Each CMK can have multiple
+         * aliases, but each alias points to only one CMK. The alias name must be unique in
+         * the AWS account and region. To simplify code that runs in multiple regions, use
+         * the same alias name, but point it to a different CMK in each region. </p>
+         * <p>Because an alias is not a property of a CMK, you can delete and change the
+         * aliases of a CMK without affecting the CMK. Also, aliases do not appear in the
+         * response from the <a>DescribeKey</a> operation. To get the aliases of all CMKs,
+         * use the <a>ListAliases</a> operation.</p> <p>The alias name can contain only
+         * alphanumeric characters, forward slashes (/), underscores (_), and dashes (-).
+         * Alias names cannot begin with <b>aws/</b>. That alias name prefix is reserved
+         * for AWS managed CMKs.</p> <p>The alias and the CMK it is mapped to must be in
+         * the same AWS account and the same region. You cannot perform this operation on
+         * an alias in a different AWS account.</p> <p>To map an existing alias to a
+         * different CMK, call <a>UpdateAlias</a>.</p> <p>The result of this operation
+         * varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">AWS API
          * Reference</a></p>
          */
         virtual Model::CreateAliasOutcome CreateAlias(const Model::CreateAliasRequest& request) const;
 
         /**
-         * <p>Creates a display name for a customer master key (CMK). You can use an alias
-         * to identify a CMK in selected operations, such as <a>Encrypt</a> and
-         * <a>GenerateDataKey</a>. </p> <p>Each CMK can have multiple aliases, but each
-         * alias points to only one CMK. The alias name must be unique in the AWS account
-         * and region. To simplify code that runs in multiple regions, use the same alias
-         * name, but point it to a different CMK in each region. </p> <p>Because an alias
-         * is not a property of a CMK, you can delete and change the aliases of a CMK
-         * without affecting the CMK. Also, aliases do not appear in the response from the
-         * <a>DescribeKey</a> operation. To get the aliases of all CMKs, use the
-         * <a>ListAliases</a> operation.</p> <p>An alias must start with the word
-         * <code>alias</code> followed by a forward slash (<code>alias/</code>). The alias
-         * name can contain only alphanumeric characters, forward slashes (/), underscores
-         * (_), and dashes (-). Alias names cannot begin with <code>aws</code>; that alias
-         * name prefix is reserved by Amazon Web Services (AWS).</p> <p>The alias and the
-         * CMK it is mapped to must be in the same AWS account and the same region. You
-         * cannot perform this operation on an alias in a different AWS account.</p> <p>To
-         * map an existing alias to a different CMK, call <a>UpdateAlias</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a display name for a customer-managed customer master key (CMK). You
+         * can use an alias to identify a CMK in selected operations, such as
+         * <a>Encrypt</a> and <a>GenerateDataKey</a>. </p> <p>Each CMK can have multiple
+         * aliases, but each alias points to only one CMK. The alias name must be unique in
+         * the AWS account and region. To simplify code that runs in multiple regions, use
+         * the same alias name, but point it to a different CMK in each region. </p>
+         * <p>Because an alias is not a property of a CMK, you can delete and change the
+         * aliases of a CMK without affecting the CMK. Also, aliases do not appear in the
+         * response from the <a>DescribeKey</a> operation. To get the aliases of all CMKs,
+         * use the <a>ListAliases</a> operation.</p> <p>The alias name can contain only
+         * alphanumeric characters, forward slashes (/), underscores (_), and dashes (-).
+         * Alias names cannot begin with <b>aws/</b>. That alias name prefix is reserved
+         * for AWS managed CMKs.</p> <p>The alias and the CMK it is mapped to must be in
+         * the same AWS account and the same region. You cannot perform this operation on
+         * an alias in a different AWS account.</p> <p>To map an existing alias to a
+         * different CMK, call <a>UpdateAlias</a>.</p> <p>The result of this operation
+         * varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">AWS API
          * Reference</a></p>
          *
@@ -414,24 +426,26 @@ namespace Model
         virtual Model::CreateAliasOutcomeCallable CreateAliasCallable(const Model::CreateAliasRequest& request) const;
 
         /**
-         * <p>Creates a display name for a customer master key (CMK). You can use an alias
-         * to identify a CMK in selected operations, such as <a>Encrypt</a> and
-         * <a>GenerateDataKey</a>. </p> <p>Each CMK can have multiple aliases, but each
-         * alias points to only one CMK. The alias name must be unique in the AWS account
-         * and region. To simplify code that runs in multiple regions, use the same alias
-         * name, but point it to a different CMK in each region. </p> <p>Because an alias
-         * is not a property of a CMK, you can delete and change the aliases of a CMK
-         * without affecting the CMK. Also, aliases do not appear in the response from the
-         * <a>DescribeKey</a> operation. To get the aliases of all CMKs, use the
-         * <a>ListAliases</a> operation.</p> <p>An alias must start with the word
-         * <code>alias</code> followed by a forward slash (<code>alias/</code>). The alias
-         * name can contain only alphanumeric characters, forward slashes (/), underscores
-         * (_), and dashes (-). Alias names cannot begin with <code>aws</code>; that alias
-         * name prefix is reserved by Amazon Web Services (AWS).</p> <p>The alias and the
-         * CMK it is mapped to must be in the same AWS account and the same region. You
-         * cannot perform this operation on an alias in a different AWS account.</p> <p>To
-         * map an existing alias to a different CMK, call <a>UpdateAlias</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a display name for a customer-managed customer master key (CMK). You
+         * can use an alias to identify a CMK in selected operations, such as
+         * <a>Encrypt</a> and <a>GenerateDataKey</a>. </p> <p>Each CMK can have multiple
+         * aliases, but each alias points to only one CMK. The alias name must be unique in
+         * the AWS account and region. To simplify code that runs in multiple regions, use
+         * the same alias name, but point it to a different CMK in each region. </p>
+         * <p>Because an alias is not a property of a CMK, you can delete and change the
+         * aliases of a CMK without affecting the CMK. Also, aliases do not appear in the
+         * response from the <a>DescribeKey</a> operation. To get the aliases of all CMKs,
+         * use the <a>ListAliases</a> operation.</p> <p>The alias name can contain only
+         * alphanumeric characters, forward slashes (/), underscores (_), and dashes (-).
+         * Alias names cannot begin with <b>aws/</b>. That alias name prefix is reserved
+         * for AWS managed CMKs.</p> <p>The alias and the CMK it is mapped to must be in
+         * the same AWS account and the same region. You cannot perform this operation on
+         * an alias in a different AWS account.</p> <p>To map an existing alias to a
+         * different CMK, call <a>UpdateAlias</a>.</p> <p>The result of this operation
+         * varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias">AWS API
          * Reference</a></p>
          *
@@ -443,11 +457,14 @@ namespace Model
          * <p>Adds a grant to a customer master key (CMK). The grant specifies who can use
          * the CMK and under what conditions. When setting permissions, grants are an
          * alternative to key policies. </p> <p>To perform this operation on a CMK in a
-         * different AWS account, specify the key ARN in the value of the KeyId parameter.
-         * For more information about grants, see <a
+         * different AWS account, specify the key ARN in the value of the
+         * <code>KeyId</code> parameter. For more information about grants, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
-         * in the <i>AWS Key Management Service Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>The result of
+         * this operation varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant">AWS API
          * Reference</a></p>
          */
@@ -457,11 +474,14 @@ namespace Model
          * <p>Adds a grant to a customer master key (CMK). The grant specifies who can use
          * the CMK and under what conditions. When setting permissions, grants are an
          * alternative to key policies. </p> <p>To perform this operation on a CMK in a
-         * different AWS account, specify the key ARN in the value of the KeyId parameter.
-         * For more information about grants, see <a
+         * different AWS account, specify the key ARN in the value of the
+         * <code>KeyId</code> parameter. For more information about grants, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
-         * in the <i>AWS Key Management Service Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>The result of
+         * this operation varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant">AWS API
          * Reference</a></p>
          *
@@ -473,11 +493,14 @@ namespace Model
          * <p>Adds a grant to a customer master key (CMK). The grant specifies who can use
          * the CMK and under what conditions. When setting permissions, grants are an
          * alternative to key policies. </p> <p>To perform this operation on a CMK in a
-         * different AWS account, specify the key ARN in the value of the KeyId parameter.
-         * For more information about grants, see <a
+         * different AWS account, specify the key ARN in the value of the
+         * <code>KeyId</code> parameter. For more information about grants, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/grants.html">Grants</a>
-         * in the <i>AWS Key Management Service Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>The result of
+         * this operation varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant">AWS API
          * Reference</a></p>
          *
@@ -487,7 +510,7 @@ namespace Model
 
         /**
          * <p>Creates a customer master key (CMK) in the caller's AWS account.</p> <p>You
-         * can use a CMK to encrypt small amounts of data (4 KiB or less) directly, but
+         * can use a CMK to encrypt small amounts of data (4 KiB or less) directly. But
          * CMKs are more commonly used to encrypt data encryption keys (DEKs), which are
          * used to encrypt raw data. For more information about DEKs and the difference
          * between CMKs and DEKs, see the following:</p> <ul> <li> <p>The
@@ -503,7 +526,7 @@ namespace Model
 
         /**
          * <p>Creates a customer master key (CMK) in the caller's AWS account.</p> <p>You
-         * can use a CMK to encrypt small amounts of data (4 KiB or less) directly, but
+         * can use a CMK to encrypt small amounts of data (4 KiB or less) directly. But
          * CMKs are more commonly used to encrypt data encryption keys (DEKs), which are
          * used to encrypt raw data. For more information about DEKs and the difference
          * between CMKs and DEKs, see the following:</p> <ul> <li> <p>The
@@ -521,7 +544,7 @@ namespace Model
 
         /**
          * <p>Creates a customer master key (CMK) in the caller's AWS account.</p> <p>You
-         * can use a CMK to encrypt small amounts of data (4 KiB or less) directly, but
+         * can use a CMK to encrypt small amounts of data (4 KiB or less) directly. But
          * CMKs are more commonly used to encrypt data encryption keys (DEKs), which are
          * used to encrypt raw data. For more information about DEKs and the difference
          * between CMKs and DEKs, see the following:</p> <ul> <li> <p>The
@@ -542,15 +565,17 @@ namespace Model
          * encrypted by using any of the following operations:</p> <ul> <li> <p>
          * <a>GenerateDataKey</a> </p> </li> <li> <p>
          * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a>Encrypt</a> </p>
-         * </li> </ul> <p>Note that if a caller has been granted access permissions to all
-         * keys (through, for example, IAM user policies that grant <code>Decrypt</code>
-         * permission on all resources), then ciphertext encrypted by using keys in other
-         * accounts where the key grants access to the caller can be decrypted. To remedy
-         * this, we recommend that you do not grant <code>Decrypt</code> access in an IAM
-         * user policy. Instead grant <code>Decrypt</code> access only in key policies. If
-         * you must grant <code>Decrypt</code> access in an IAM user policy, you should
-         * scope the resource to specific keys or to specific trusted
-         * accounts.</p><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>Whenever possible, use key policies to give users permission to
+         * call the Decrypt operation on the CMK, instead of IAM policies. Otherwise, you
+         * might create an IAM user policy that gives the user Decrypt permission on all
+         * CMKs. This user could decrypt ciphertext that was encrypted by CMKs in other
+         * accounts if the key policy for the cross-account CMK permits it. If you must use
+         * an IAM policy for <code>Decrypt</code> permissions, limit the user to particular
+         * CMKs or particular trusted accounts.</p> <p>The result of this operation varies
+         * with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">AWS API
          * Reference</a></p>
          */
@@ -561,15 +586,17 @@ namespace Model
          * encrypted by using any of the following operations:</p> <ul> <li> <p>
          * <a>GenerateDataKey</a> </p> </li> <li> <p>
          * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a>Encrypt</a> </p>
-         * </li> </ul> <p>Note that if a caller has been granted access permissions to all
-         * keys (through, for example, IAM user policies that grant <code>Decrypt</code>
-         * permission on all resources), then ciphertext encrypted by using keys in other
-         * accounts where the key grants access to the caller can be decrypted. To remedy
-         * this, we recommend that you do not grant <code>Decrypt</code> access in an IAM
-         * user policy. Instead grant <code>Decrypt</code> access only in key policies. If
-         * you must grant <code>Decrypt</code> access in an IAM user policy, you should
-         * scope the resource to specific keys or to specific trusted
-         * accounts.</p><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>Whenever possible, use key policies to give users permission to
+         * call the Decrypt operation on the CMK, instead of IAM policies. Otherwise, you
+         * might create an IAM user policy that gives the user Decrypt permission on all
+         * CMKs. This user could decrypt ciphertext that was encrypted by CMKs in other
+         * accounts if the key policy for the cross-account CMK permits it. If you must use
+         * an IAM policy for <code>Decrypt</code> permissions, limit the user to particular
+         * CMKs or particular trusted accounts.</p> <p>The result of this operation varies
+         * with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">AWS API
          * Reference</a></p>
          *
@@ -582,15 +609,17 @@ namespace Model
          * encrypted by using any of the following operations:</p> <ul> <li> <p>
          * <a>GenerateDataKey</a> </p> </li> <li> <p>
          * <a>GenerateDataKeyWithoutPlaintext</a> </p> </li> <li> <p> <a>Encrypt</a> </p>
-         * </li> </ul> <p>Note that if a caller has been granted access permissions to all
-         * keys (through, for example, IAM user policies that grant <code>Decrypt</code>
-         * permission on all resources), then ciphertext encrypted by using keys in other
-         * accounts where the key grants access to the caller can be decrypted. To remedy
-         * this, we recommend that you do not grant <code>Decrypt</code> access in an IAM
-         * user policy. Instead grant <code>Decrypt</code> access only in key policies. If
-         * you must grant <code>Decrypt</code> access in an IAM user policy, you should
-         * scope the resource to specific keys or to specific trusted
-         * accounts.</p><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>Whenever possible, use key policies to give users permission to
+         * call the Decrypt operation on the CMK, instead of IAM policies. Otherwise, you
+         * might create an IAM user policy that gives the user Decrypt permission on all
+         * CMKs. This user could decrypt ciphertext that was encrypted by CMKs in other
+         * accounts if the key policy for the cross-account CMK permits it. If you must use
+         * an IAM policy for <code>Decrypt</code> permissions, limit the user to particular
+         * CMKs or particular trusted accounts.</p> <p>The result of this operation varies
+         * with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt">AWS API
          * Reference</a></p>
          *
@@ -657,8 +686,12 @@ namespace Model
          * the specified CMK is in the <code>PendingDeletion</code> state, this operation
          * does not change the CMK's state. Otherwise, it changes the CMK's state to
          * <code>PendingImport</code>.</p> <p>After you delete key material, you can use
-         * <a>ImportKeyMaterial</a> to reimport the same key material into the
-         * CMK.</p><p><h3>See Also:</h3>   <a
+         * <a>ImportKeyMaterial</a> to reimport the same key material into the CMK.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial">AWS
          * API Reference</a></p>
          */
@@ -674,8 +707,12 @@ namespace Model
          * the specified CMK is in the <code>PendingDeletion</code> state, this operation
          * does not change the CMK's state. Otherwise, it changes the CMK's state to
          * <code>PendingImport</code>.</p> <p>After you delete key material, you can use
-         * <a>ImportKeyMaterial</a> to reimport the same key material into the
-         * CMK.</p><p><h3>See Also:</h3>   <a
+         * <a>ImportKeyMaterial</a> to reimport the same key material into the CMK.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial">AWS
          * API Reference</a></p>
          *
@@ -693,8 +730,12 @@ namespace Model
          * the specified CMK is in the <code>PendingDeletion</code> state, this operation
          * does not change the CMK's state. Otherwise, it changes the CMK's state to
          * <code>PendingImport</code>.</p> <p>After you delete key material, you can use
-         * <a>ImportKeyMaterial</a> to reimport the same key material into the
-         * CMK.</p><p><h3>See Also:</h3>   <a
+         * <a>ImportKeyMaterial</a> to reimport the same key material into the CMK.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial">AWS
          * API Reference</a></p>
          *
@@ -704,7 +745,12 @@ namespace Model
 
         /**
          * <p>Provides detailed information about the specified customer master key
-         * (CMK).</p> <p>To perform this operation on a CMK in a different AWS account,
+         * (CMK).</p> <p>You can use <code>DescribeKey</code> on a predefined AWS alias,
+         * that is, an AWS alias with no key ID. When you do, AWS KMS associates the alias
+         * with an <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
+         * managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
+         * response.</p> <p>To perform this operation on a CMK in a different AWS account,
          * specify the key ARN or alias ARN in the value of the KeyId
          * parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">AWS API
@@ -714,7 +760,12 @@ namespace Model
 
         /**
          * <p>Provides detailed information about the specified customer master key
-         * (CMK).</p> <p>To perform this operation on a CMK in a different AWS account,
+         * (CMK).</p> <p>You can use <code>DescribeKey</code> on a predefined AWS alias,
+         * that is, an AWS alias with no key ID. When you do, AWS KMS associates the alias
+         * with an <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
+         * managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
+         * response.</p> <p>To perform this operation on a CMK in a different AWS account,
          * specify the key ARN or alias ARN in the value of the KeyId
          * parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">AWS API
@@ -726,7 +777,12 @@ namespace Model
 
         /**
          * <p>Provides detailed information about the specified customer master key
-         * (CMK).</p> <p>To perform this operation on a CMK in a different AWS account,
+         * (CMK).</p> <p>You can use <code>DescribeKey</code> on a predefined AWS alias,
+         * that is, an AWS alias with no key ID. When you do, AWS KMS associates the alias
+         * with an <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
+         * managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
+         * response.</p> <p>To perform this operation on a CMK in a different AWS account,
          * specify the key ARN or alias ARN in the value of the KeyId
          * parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeKey">AWS API
@@ -743,7 +799,11 @@ namespace Model
          * affects the use of a CMK, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
          * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-         * Management Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Management Service Developer Guide</i>.</p> <p>The result of this operation
+         * varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">AWS API
          * Reference</a></p>
          */
@@ -756,7 +816,11 @@ namespace Model
          * affects the use of a CMK, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
          * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-         * Management Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Management Service Developer Guide</i>.</p> <p>The result of this operation
+         * varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">AWS API
          * Reference</a></p>
          *
@@ -771,7 +835,11 @@ namespace Model
          * affects the use of a CMK, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
          * Key State Affects the Use of a Customer Master Key</a> in the <i>AWS Key
-         * Management Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Management Service Developer Guide</i>.</p> <p>The result of this operation
+         * varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey">AWS API
          * Reference</a></p>
          *
@@ -780,18 +848,30 @@ namespace Model
         virtual void DisableKeyAsync(const Model::DisableKeyRequest& request, const DisableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables automatic rotation of the key material for the specified customer
-         * master key (CMK). You cannot perform this operation on a CMK in a different AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+         * rotation of the key material</a> for the specified customer master key (CMK).
+         * You cannot perform this operation on a CMK in a different AWS account.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">AWS
          * API Reference</a></p>
          */
         virtual Model::DisableKeyRotationOutcome DisableKeyRotation(const Model::DisableKeyRotationRequest& request) const;
 
         /**
-         * <p>Disables automatic rotation of the key material for the specified customer
-         * master key (CMK). You cannot perform this operation on a CMK in a different AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+         * rotation of the key material</a> for the specified customer master key (CMK).
+         * You cannot perform this operation on a CMK in a different AWS account.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">AWS
          * API Reference</a></p>
          *
@@ -800,9 +880,15 @@ namespace Model
         virtual Model::DisableKeyRotationOutcomeCallable DisableKeyRotationCallable(const Model::DisableKeyRotationRequest& request) const;
 
         /**
-         * <p>Disables automatic rotation of the key material for the specified customer
-         * master key (CMK). You cannot perform this operation on a CMK in a different AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+         * rotation of the key material</a> for the specified customer master key (CMK).
+         * You cannot perform this operation on a CMK in a different AWS account.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKeyRotation">AWS
          * API Reference</a></p>
          *
@@ -813,7 +899,11 @@ namespace Model
         /**
          * <p>Sets the state of a customer master key (CMK) to enabled, thereby permitting
          * its use for cryptographic operations. You cannot perform this operation on a CMK
-         * in a different AWS account.</p><p><h3>See Also:</h3>   <a
+         * in a different AWS account.</p> <p>The result of this operation varies with the
+         * key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">AWS API
          * Reference</a></p>
          */
@@ -822,7 +912,11 @@ namespace Model
         /**
          * <p>Sets the state of a customer master key (CMK) to enabled, thereby permitting
          * its use for cryptographic operations. You cannot perform this operation on a CMK
-         * in a different AWS account.</p><p><h3>See Also:</h3>   <a
+         * in a different AWS account.</p> <p>The result of this operation varies with the
+         * key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">AWS API
          * Reference</a></p>
          *
@@ -833,7 +927,11 @@ namespace Model
         /**
          * <p>Sets the state of a customer master key (CMK) to enabled, thereby permitting
          * its use for cryptographic operations. You cannot perform this operation on a CMK
-         * in a different AWS account.</p><p><h3>See Also:</h3>   <a
+         * in a different AWS account.</p> <p>The result of this operation varies with the
+         * key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey">AWS API
          * Reference</a></p>
          *
@@ -842,18 +940,30 @@ namespace Model
         virtual void EnableKeyAsync(const Model::EnableKeyRequest& request, const EnableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables automatic rotation of the key material for the specified customer
-         * master key (CMK). You cannot perform this operation on a CMK in a different AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+         * rotation of the key material</a> for the specified customer master key (CMK).
+         * You cannot perform this operation on a CMK in a different AWS account.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">AWS
          * API Reference</a></p>
          */
         virtual Model::EnableKeyRotationOutcome EnableKeyRotation(const Model::EnableKeyRotationRequest& request) const;
 
         /**
-         * <p>Enables automatic rotation of the key material for the specified customer
-         * master key (CMK). You cannot perform this operation on a CMK in a different AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+         * rotation of the key material</a> for the specified customer master key (CMK).
+         * You cannot perform this operation on a CMK in a different AWS account.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">AWS
          * API Reference</a></p>
          *
@@ -862,9 +972,15 @@ namespace Model
         virtual Model::EnableKeyRotationOutcomeCallable EnableKeyRotationCallable(const Model::EnableKeyRotationRequest& request) const;
 
         /**
-         * <p>Enables automatic rotation of the key material for the specified customer
-         * master key (CMK). You cannot perform this operation on a CMK in a different AWS
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+         * rotation of the key material</a> for the specified customer master key (CMK).
+         * You cannot perform this operation on a CMK in a different AWS account.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKeyRotation">AWS
          * API Reference</a></p>
          *
@@ -876,21 +992,24 @@ namespace Model
          * <p>Encrypts plaintext into ciphertext by using a customer master key (CMK). The
          * <code>Encrypt</code> operation has two primary use cases:</p> <ul> <li> <p>You
          * can encrypt up to 4 kilobytes (4096 bytes) of arbitrary data such as an RSA key,
-         * a database password, or other sensitive information.</p> </li> <li> <p>To move
-         * encrypted data from one AWS region to another, you can use this operation to
-         * encrypt in the new region the plaintext data key that was used to encrypt the
-         * data in the original region. This provides you with an encrypted copy of the
-         * data key that can be decrypted in the new region and used there to decrypt the
-         * encrypted data.</p> </li> </ul> <p>To perform this operation on a CMK in a
+         * a database password, or other sensitive information.</p> </li> <li> <p>You can
+         * use the <code>Encrypt</code> operation to move encrypted data from one AWS
+         * region to another. In the first region, generate a data key and use the
+         * plaintext key to encrypt the data. Then, in the new region, call the
+         * <code>Encrypt</code> method on same plaintext data key. Now, you can safely move
+         * the encrypted data and encrypted data key to the new region, and decrypt in the
+         * new region when necessary.</p> </li> </ul> <p>You don't need use this operation
+         * to encrypt a data key within a region. The <a>GenerateDataKey</a> and
+         * <a>GenerateDataKeyWithoutPlaintext</a> operations return an encrypted data
+         * key.</p> <p>Also, you don't need to use this operation to encrypt data in your
+         * application. You can use the plaintext and encrypted data keys that the
+         * <code>GenerateDataKey</code> operation returns.</p> <p>The result of this
+         * operation varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p> <p>To perform this operation on a CMK in a
          * different AWS account, specify the key ARN or alias ARN in the value of the
-         * KeyId parameter.</p> <p>Unless you are moving encrypted data from one region to
-         * another, you don't use this operation to encrypt a generated data key within a
-         * region. To get data keys that are already encrypted, call the
-         * <a>GenerateDataKey</a> or <a>GenerateDataKeyWithoutPlaintext</a> operation. Data
-         * keys don't need to be encrypted again by calling <code>Encrypt</code>.</p> <p>To
-         * encrypt data locally in your application, use the <a>GenerateDataKey</a>
-         * operation to return a plaintext data encryption key and a copy of the key
-         * encrypted under the CMK of your choosing.</p><p><h3>See Also:</h3>   <a
+         * KeyId parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt">AWS API
          * Reference</a></p>
          */
@@ -900,21 +1019,24 @@ namespace Model
          * <p>Encrypts plaintext into ciphertext by using a customer master key (CMK). The
          * <code>Encrypt</code> operation has two primary use cases:</p> <ul> <li> <p>You
          * can encrypt up to 4 kilobytes (4096 bytes) of arbitrary data such as an RSA key,
-         * a database password, or other sensitive information.</p> </li> <li> <p>To move
-         * encrypted data from one AWS region to another, you can use this operation to
-         * encrypt in the new region the plaintext data key that was used to encrypt the
-         * data in the original region. This provides you with an encrypted copy of the
-         * data key that can be decrypted in the new region and used there to decrypt the
-         * encrypted data.</p> </li> </ul> <p>To perform this operation on a CMK in a
+         * a database password, or other sensitive information.</p> </li> <li> <p>You can
+         * use the <code>Encrypt</code> operation to move encrypted data from one AWS
+         * region to another. In the first region, generate a data key and use the
+         * plaintext key to encrypt the data. Then, in the new region, call the
+         * <code>Encrypt</code> method on same plaintext data key. Now, you can safely move
+         * the encrypted data and encrypted data key to the new region, and decrypt in the
+         * new region when necessary.</p> </li> </ul> <p>You don't need use this operation
+         * to encrypt a data key within a region. The <a>GenerateDataKey</a> and
+         * <a>GenerateDataKeyWithoutPlaintext</a> operations return an encrypted data
+         * key.</p> <p>Also, you don't need to use this operation to encrypt data in your
+         * application. You can use the plaintext and encrypted data keys that the
+         * <code>GenerateDataKey</code> operation returns.</p> <p>The result of this
+         * operation varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p> <p>To perform this operation on a CMK in a
          * different AWS account, specify the key ARN or alias ARN in the value of the
-         * KeyId parameter.</p> <p>Unless you are moving encrypted data from one region to
-         * another, you don't use this operation to encrypt a generated data key within a
-         * region. To get data keys that are already encrypted, call the
-         * <a>GenerateDataKey</a> or <a>GenerateDataKeyWithoutPlaintext</a> operation. Data
-         * keys don't need to be encrypted again by calling <code>Encrypt</code>.</p> <p>To
-         * encrypt data locally in your application, use the <a>GenerateDataKey</a>
-         * operation to return a plaintext data encryption key and a copy of the key
-         * encrypted under the CMK of your choosing.</p><p><h3>See Also:</h3>   <a
+         * KeyId parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt">AWS API
          * Reference</a></p>
          *
@@ -926,21 +1048,24 @@ namespace Model
          * <p>Encrypts plaintext into ciphertext by using a customer master key (CMK). The
          * <code>Encrypt</code> operation has two primary use cases:</p> <ul> <li> <p>You
          * can encrypt up to 4 kilobytes (4096 bytes) of arbitrary data such as an RSA key,
-         * a database password, or other sensitive information.</p> </li> <li> <p>To move
-         * encrypted data from one AWS region to another, you can use this operation to
-         * encrypt in the new region the plaintext data key that was used to encrypt the
-         * data in the original region. This provides you with an encrypted copy of the
-         * data key that can be decrypted in the new region and used there to decrypt the
-         * encrypted data.</p> </li> </ul> <p>To perform this operation on a CMK in a
+         * a database password, or other sensitive information.</p> </li> <li> <p>You can
+         * use the <code>Encrypt</code> operation to move encrypted data from one AWS
+         * region to another. In the first region, generate a data key and use the
+         * plaintext key to encrypt the data. Then, in the new region, call the
+         * <code>Encrypt</code> method on same plaintext data key. Now, you can safely move
+         * the encrypted data and encrypted data key to the new region, and decrypt in the
+         * new region when necessary.</p> </li> </ul> <p>You don't need use this operation
+         * to encrypt a data key within a region. The <a>GenerateDataKey</a> and
+         * <a>GenerateDataKeyWithoutPlaintext</a> operations return an encrypted data
+         * key.</p> <p>Also, you don't need to use this operation to encrypt data in your
+         * application. You can use the plaintext and encrypted data keys that the
+         * <code>GenerateDataKey</code> operation returns.</p> <p>The result of this
+         * operation varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p> <p>To perform this operation on a CMK in a
          * different AWS account, specify the key ARN or alias ARN in the value of the
-         * KeyId parameter.</p> <p>Unless you are moving encrypted data from one region to
-         * another, you don't use this operation to encrypt a generated data key within a
-         * region. To get data keys that are already encrypted, call the
-         * <a>GenerateDataKey</a> or <a>GenerateDataKeyWithoutPlaintext</a> operation. Data
-         * keys don't need to be encrypted again by calling <code>Encrypt</code>.</p> <p>To
-         * encrypt data locally in your application, use the <a>GenerateDataKey</a>
-         * operation to return a plaintext data encryption key and a copy of the key
-         * encrypted under the CMK of your choosing.</p><p><h3>See Also:</h3>   <a
+         * KeyId parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt">AWS API
          * Reference</a></p>
          *
@@ -981,8 +1106,12 @@ namespace Model
          * choose an encryption context that you can reconstruct on the fly to better
          * secure the ciphertext. For more information, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-         * Context</a> in the <i>AWS Key Management Service Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>The
+         * result of this operation varies with the key state of the CMK. For details, see
+         * <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">AWS
          * API Reference</a></p>
          */
@@ -1021,8 +1150,12 @@ namespace Model
          * choose an encryption context that you can reconstruct on the fly to better
          * secure the ciphertext. For more information, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-         * Context</a> in the <i>AWS Key Management Service Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>The
+         * result of this operation varies with the key state of the CMK. For details, see
+         * <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">AWS
          * API Reference</a></p>
          *
@@ -1063,8 +1196,12 @@ namespace Model
          * choose an encryption context that you can reconstruct on the fly to better
          * secure the ciphertext. For more information, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/encryption-context.html">Encryption
-         * Context</a> in the <i>AWS Key Management Service Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p> <p>The
+         * result of this operation varies with the key state of the CMK. For details, see
+         * <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey">AWS
          * API Reference</a></p>
          *
@@ -1086,10 +1223,13 @@ namespace Model
          * encrypted data key and then stores it in the container. Later, a different
          * component of the system, called the <i>data plane</i>, puts encrypted data into
          * the containers. To do this, it passes the encrypted data key to the
-         * <a>Decrypt</a> operation, then uses the returned plaintext data key to encrypt
-         * data, and finally stores the encrypted data in the container. In this system,
-         * the control plane never sees the plaintext data key.</p><p><h3>See Also:</h3>  
-         * <a
+         * <a>Decrypt</a> operation. It then uses the returned plaintext data key to
+         * encrypt data and finally stores the encrypted data in the container. In this
+         * system, the control plane never sees the plaintext data key.</p> <p>The result
+         * of this operation varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext">AWS
          * API Reference</a></p>
          */
@@ -1109,10 +1249,13 @@ namespace Model
          * encrypted data key and then stores it in the container. Later, a different
          * component of the system, called the <i>data plane</i>, puts encrypted data into
          * the containers. To do this, it passes the encrypted data key to the
-         * <a>Decrypt</a> operation, then uses the returned plaintext data key to encrypt
-         * data, and finally stores the encrypted data in the container. In this system,
-         * the control plane never sees the plaintext data key.</p><p><h3>See Also:</h3>  
-         * <a
+         * <a>Decrypt</a> operation. It then uses the returned plaintext data key to
+         * encrypt data and finally stores the encrypted data in the container. In this
+         * system, the control plane never sees the plaintext data key.</p> <p>The result
+         * of this operation varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext">AWS
          * API Reference</a></p>
          *
@@ -1134,10 +1277,13 @@ namespace Model
          * encrypted data key and then stores it in the container. Later, a different
          * component of the system, called the <i>data plane</i>, puts encrypted data into
          * the containers. To do this, it passes the encrypted data key to the
-         * <a>Decrypt</a> operation, then uses the returned plaintext data key to encrypt
-         * data, and finally stores the encrypted data in the container. In this system,
-         * the control plane never sees the plaintext data key.</p><p><h3>See Also:</h3>  
-         * <a
+         * <a>Decrypt</a> operation. It then uses the returned plaintext data key to
+         * encrypt data and finally stores the encrypted data in the container. In this
+         * system, the control plane never sees the plaintext data key.</p> <p>The result
+         * of this operation varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext">AWS
          * API Reference</a></p>
          *
@@ -1214,20 +1360,42 @@ namespace Model
         virtual void GetKeyPolicyAsync(const Model::GetKeyPolicyRequest& request, const GetKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a Boolean value that indicates whether automatic rotation of the key
-         * material is enabled for the specified customer master key (CMK).</p> <p>To
-         * perform this operation on a CMK in a different AWS account, specify the key ARN
-         * in the value of the KeyId parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a Boolean value that indicates whether <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+         * rotation of the key material</a> is enabled for the specified customer master
+         * key (CMK).</p> <p>The result of this operation varies with the key state of the
+         * CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p> <ul> <li> <p>Disabled: The key rotation status
+         * does not change when you disable a CMK. However, while the CMK is disabled, AWS
+         * KMS does not rotate the backing key.</p> </li> <li> <p>Pending deletion: While a
+         * CMK is pending deletion, its key rotation status is <code>false</code> and AWS
+         * KMS does not rotate the backing key. If you cancel the deletion, the original
+         * key rotation status is restored.</p> </li> </ul> <p>To perform this operation on
+         * a CMK in a different AWS account, specify the key ARN in the value of the
+         * <code>KeyId</code> parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::GetKeyRotationStatusOutcome GetKeyRotationStatus(const Model::GetKeyRotationStatusRequest& request) const;
 
         /**
-         * <p>Gets a Boolean value that indicates whether automatic rotation of the key
-         * material is enabled for the specified customer master key (CMK).</p> <p>To
-         * perform this operation on a CMK in a different AWS account, specify the key ARN
-         * in the value of the KeyId parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a Boolean value that indicates whether <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+         * rotation of the key material</a> is enabled for the specified customer master
+         * key (CMK).</p> <p>The result of this operation varies with the key state of the
+         * CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p> <ul> <li> <p>Disabled: The key rotation status
+         * does not change when you disable a CMK. However, while the CMK is disabled, AWS
+         * KMS does not rotate the backing key.</p> </li> <li> <p>Pending deletion: While a
+         * CMK is pending deletion, its key rotation status is <code>false</code> and AWS
+         * KMS does not rotate the backing key. If you cancel the deletion, the original
+         * key rotation status is restored.</p> </li> </ul> <p>To perform this operation on
+         * a CMK in a different AWS account, specify the key ARN in the value of the
+         * <code>KeyId</code> parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">AWS
          * API Reference</a></p>
          *
@@ -1236,10 +1404,21 @@ namespace Model
         virtual Model::GetKeyRotationStatusOutcomeCallable GetKeyRotationStatusCallable(const Model::GetKeyRotationStatusRequest& request) const;
 
         /**
-         * <p>Gets a Boolean value that indicates whether automatic rotation of the key
-         * material is enabled for the specified customer master key (CMK).</p> <p>To
-         * perform this operation on a CMK in a different AWS account, specify the key ARN
-         * in the value of the KeyId parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a Boolean value that indicates whether <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic
+         * rotation of the key material</a> is enabled for the specified customer master
+         * key (CMK).</p> <p>The result of this operation varies with the key state of the
+         * CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p> <ul> <li> <p>Disabled: The key rotation status
+         * does not change when you disable a CMK. However, while the CMK is disabled, AWS
+         * KMS does not rotate the backing key.</p> </li> <li> <p>Pending deletion: While a
+         * CMK is pending deletion, its key rotation status is <code>false</code> and AWS
+         * KMS does not rotate the backing key. If you cancel the deletion, the original
+         * key rotation status is restored.</p> </li> </ul> <p>To perform this operation on
+         * a CMK in a different AWS account, specify the key ARN in the value of the
+         * <code>KeyId</code> parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyRotationStatus">AWS
          * API Reference</a></p>
          *
@@ -1263,8 +1442,12 @@ namespace Model
          * <a>ImportKeyMaterial</a> request. The public key and import token from the same
          * response must be used together. These items are valid for 24 hours. When they
          * expire, they cannot be used for a subsequent <a>ImportKeyMaterial</a> request.
-         * To get new ones, send another <code>GetParametersForImport</code>
-         * request.</p><p><h3>See Also:</h3>   <a
+         * To get new ones, send another <code>GetParametersForImport</code> request.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport">AWS
          * API Reference</a></p>
          */
@@ -1286,8 +1469,12 @@ namespace Model
          * <a>ImportKeyMaterial</a> request. The public key and import token from the same
          * response must be used together. These items are valid for 24 hours. When they
          * expire, they cannot be used for a subsequent <a>ImportKeyMaterial</a> request.
-         * To get new ones, send another <code>GetParametersForImport</code>
-         * request.</p><p><h3>See Also:</h3>   <a
+         * To get new ones, send another <code>GetParametersForImport</code> request.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport">AWS
          * API Reference</a></p>
          *
@@ -1311,8 +1498,12 @@ namespace Model
          * <a>ImportKeyMaterial</a> request. The public key and import token from the same
          * response must be used together. These items are valid for 24 hours. When they
          * expire, they cannot be used for a subsequent <a>ImportKeyMaterial</a> request.
-         * To get new ones, send another <code>GetParametersForImport</code>
-         * request.</p><p><h3>See Also:</h3>   <a
+         * To get new ones, send another <code>GetParametersForImport</code> request.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport">AWS
          * API Reference</a></p>
          *
@@ -1348,8 +1539,12 @@ namespace Model
          * this operation is successful, the CMK's key state changes from
          * <code>PendingImport</code> to <code>Enabled</code>, and you can use the CMK.
          * After you successfully import key material into a CMK, you can reimport the same
-         * key material into that CMK, but you cannot import different key
-         * material.</p><p><h3>See Also:</h3>   <a
+         * key material into that CMK, but you cannot import different key material.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial">AWS
          * API Reference</a></p>
          */
@@ -1383,8 +1578,12 @@ namespace Model
          * this operation is successful, the CMK's key state changes from
          * <code>PendingImport</code> to <code>Enabled</code>, and you can use the CMK.
          * After you successfully import key material into a CMK, you can reimport the same
-         * key material into that CMK, but you cannot import different key
-         * material.</p><p><h3>See Also:</h3>   <a
+         * key material into that CMK, but you cannot import different key material.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial">AWS
          * API Reference</a></p>
          *
@@ -1420,8 +1619,12 @@ namespace Model
          * this operation is successful, the CMK's key state changes from
          * <code>PendingImport</code> to <code>Enabled</code>, and you can use the CMK.
          * After you successfully import key material into a CMK, you can reimport the same
-         * key material into that CMK, but you cannot import different key
-         * material.</p><p><h3>See Also:</h3>   <a
+         * key material into that CMK, but you cannot import different key material.</p>
+         * <p>The result of this operation varies with the key state of the CMK. For
+         * details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ImportKeyMaterial">AWS
          * API Reference</a></p>
          *
@@ -1430,30 +1633,42 @@ namespace Model
         virtual void ImportKeyMaterialAsync(const Model::ImportKeyMaterialRequest& request, const ImportKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of all aliases in the caller's AWS account and region. You cannot
+         * <p>Gets a list of aliases in the caller's AWS account and region. You cannot
          * list aliases in other accounts. For more information about aliases, see
-         * <a>CreateAlias</a>.</p> <p>The response might include several aliases that do
-         * not have a <code>TargetKeyId</code> field because they are not associated with a
-         * CMK. These are predefined aliases that are reserved for CMKs managed by AWS
-         * services. If an alias is not associated with a CMK, the alias does not count
-         * against the <a
-         * href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">alias
-         * limit</a> for your account.</p><p><h3>See Also:</h3>   <a
+         * <a>CreateAlias</a>.</p> <p>By default, the ListAliases command returns all
+         * aliases in the account and region. To get only the aliases that point to a
+         * particular customer master key (CMK), use the <code>KeyId</code> parameter.</p>
+         * <p>The <code>ListAliases</code> response can include aliases that you created
+         * and associated with your customer managed CMKs, and aliases that AWS created and
+         * associated with AWS managed CMKs in your account. You can recognize AWS aliases
+         * because their names have the format <code>aws/&lt;service-name&gt;</code>, such
+         * as <code>aws/dynamodb</code>.</p> <p>The response might also include aliases
+         * that have no <code>TargetKeyId</code> field. These are predefined aliases that
+         * AWS has created but has not yet associated with a CMK. Aliases that AWS creates
+         * in your account, including predefined aliases, do not count against your <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
+         * KMS aliases limit</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">AWS API
          * Reference</a></p>
          */
         virtual Model::ListAliasesOutcome ListAliases(const Model::ListAliasesRequest& request) const;
 
         /**
-         * <p>Gets a list of all aliases in the caller's AWS account and region. You cannot
+         * <p>Gets a list of aliases in the caller's AWS account and region. You cannot
          * list aliases in other accounts. For more information about aliases, see
-         * <a>CreateAlias</a>.</p> <p>The response might include several aliases that do
-         * not have a <code>TargetKeyId</code> field because they are not associated with a
-         * CMK. These are predefined aliases that are reserved for CMKs managed by AWS
-         * services. If an alias is not associated with a CMK, the alias does not count
-         * against the <a
-         * href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">alias
-         * limit</a> for your account.</p><p><h3>See Also:</h3>   <a
+         * <a>CreateAlias</a>.</p> <p>By default, the ListAliases command returns all
+         * aliases in the account and region. To get only the aliases that point to a
+         * particular customer master key (CMK), use the <code>KeyId</code> parameter.</p>
+         * <p>The <code>ListAliases</code> response can include aliases that you created
+         * and associated with your customer managed CMKs, and aliases that AWS created and
+         * associated with AWS managed CMKs in your account. You can recognize AWS aliases
+         * because their names have the format <code>aws/&lt;service-name&gt;</code>, such
+         * as <code>aws/dynamodb</code>.</p> <p>The response might also include aliases
+         * that have no <code>TargetKeyId</code> field. These are predefined aliases that
+         * AWS has created but has not yet associated with a CMK. Aliases that AWS creates
+         * in your account, including predefined aliases, do not count against your <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
+         * KMS aliases limit</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">AWS API
          * Reference</a></p>
          *
@@ -1462,15 +1677,21 @@ namespace Model
         virtual Model::ListAliasesOutcomeCallable ListAliasesCallable(const Model::ListAliasesRequest& request) const;
 
         /**
-         * <p>Gets a list of all aliases in the caller's AWS account and region. You cannot
+         * <p>Gets a list of aliases in the caller's AWS account and region. You cannot
          * list aliases in other accounts. For more information about aliases, see
-         * <a>CreateAlias</a>.</p> <p>The response might include several aliases that do
-         * not have a <code>TargetKeyId</code> field because they are not associated with a
-         * CMK. These are predefined aliases that are reserved for CMKs managed by AWS
-         * services. If an alias is not associated with a CMK, the alias does not count
-         * against the <a
-         * href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">alias
-         * limit</a> for your account.</p><p><h3>See Also:</h3>   <a
+         * <a>CreateAlias</a>.</p> <p>By default, the ListAliases command returns all
+         * aliases in the account and region. To get only the aliases that point to a
+         * particular customer master key (CMK), use the <code>KeyId</code> parameter.</p>
+         * <p>The <code>ListAliases</code> response can include aliases that you created
+         * and associated with your customer managed CMKs, and aliases that AWS created and
+         * associated with AWS managed CMKs in your account. You can recognize AWS aliases
+         * because their names have the format <code>aws/&lt;service-name&gt;</code>, such
+         * as <code>aws/dynamodb</code>.</p> <p>The response might also include aliases
+         * that have no <code>TargetKeyId</code> field. These are predefined aliases that
+         * AWS has created but has not yet associated with a CMK. Aliases that AWS creates
+         * in your account, including predefined aliases, do not count against your <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
+         * KMS aliases limit</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">AWS API
          * Reference</a></p>
          *
@@ -1481,7 +1702,8 @@ namespace Model
         /**
          * <p>Gets a list of all grants for the specified customer master key (CMK).</p>
          * <p>To perform this operation on a CMK in a different AWS account, specify the
-         * key ARN in the value of the KeyId parameter.</p><p><h3>See Also:</h3>   <a
+         * key ARN in the value of the <code>KeyId</code> parameter.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">AWS API
          * Reference</a></p>
          */
@@ -1490,7 +1712,8 @@ namespace Model
         /**
          * <p>Gets a list of all grants for the specified customer master key (CMK).</p>
          * <p>To perform this operation on a CMK in a different AWS account, specify the
-         * key ARN in the value of the KeyId parameter.</p><p><h3>See Also:</h3>   <a
+         * key ARN in the value of the <code>KeyId</code> parameter.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">AWS API
          * Reference</a></p>
          *
@@ -1501,7 +1724,8 @@ namespace Model
         /**
          * <p>Gets a list of all grants for the specified customer master key (CMK).</p>
          * <p>To perform this operation on a CMK in a different AWS account, specify the
-         * key ARN in the value of the KeyId parameter.</p><p><h3>See Also:</h3>   <a
+         * key ARN in the value of the <code>KeyId</code> parameter.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants">AWS API
          * Reference</a></p>
          *
@@ -1691,9 +1915,13 @@ namespace Model
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
          * policies</a> to permit reencryption from or to the CMK. This permission is
          * automatically included in the key policy when you create a CMK through the
-         * console, but you must include it manually when you create a CMK programmatically
-         * or when you set a key policy with the <a>PutKeyPolicy</a>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * console. But you must include it manually when you create a CMK programmatically
+         * or when you set a key policy with the <a>PutKeyPolicy</a> operation.</p> <p>The
+         * result of this operation varies with the key state of the CMK. For details, see
+         * <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt">AWS API
          * Reference</a></p>
          */
@@ -1711,9 +1939,13 @@ namespace Model
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
          * policies</a> to permit reencryption from or to the CMK. This permission is
          * automatically included in the key policy when you create a CMK through the
-         * console, but you must include it manually when you create a CMK programmatically
-         * or when you set a key policy with the <a>PutKeyPolicy</a>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * console. But you must include it manually when you create a CMK programmatically
+         * or when you set a key policy with the <a>PutKeyPolicy</a> operation.</p> <p>The
+         * result of this operation varies with the key state of the CMK. For details, see
+         * <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt">AWS API
          * Reference</a></p>
          *
@@ -1733,9 +1965,13 @@ namespace Model
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">key
          * policies</a> to permit reencryption from or to the CMK. This permission is
          * automatically included in the key policy when you create a CMK through the
-         * console, but you must include it manually when you create a CMK programmatically
-         * or when you set a key policy with the <a>PutKeyPolicy</a>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * console. But you must include it manually when you create a CMK programmatically
+         * or when you set a key policy with the <a>PutKeyPolicy</a> operation.</p> <p>The
+         * result of this operation varies with the key state of the CMK. For details, see
+         * <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt">AWS API
          * Reference</a></p>
          *
@@ -1805,7 +2041,7 @@ namespace Model
          * <p>Revokes the specified grant for the specified customer master key (CMK). You
          * can revoke a grant to actively deny operations that depend on it.</p> <p>To
          * perform this operation on a CMK in a different AWS account, specify the key ARN
-         * in the value of the KeyId parameter.</p><p><h3>See Also:</h3>   <a
+         * in the value of the <code>KeyId</code> parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">AWS API
          * Reference</a></p>
          */
@@ -1815,7 +2051,7 @@ namespace Model
          * <p>Revokes the specified grant for the specified customer master key (CMK). You
          * can revoke a grant to actively deny operations that depend on it.</p> <p>To
          * perform this operation on a CMK in a different AWS account, specify the key ARN
-         * in the value of the KeyId parameter.</p><p><h3>See Also:</h3>   <a
+         * in the value of the <code>KeyId</code> parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">AWS API
          * Reference</a></p>
          *
@@ -1827,7 +2063,7 @@ namespace Model
          * <p>Revokes the specified grant for the specified customer master key (CMK). You
          * can revoke a grant to actively deny operations that depend on it.</p> <p>To
          * perform this operation on a CMK in a different AWS account, specify the key ARN
-         * in the value of the KeyId parameter.</p><p><h3>See Also:</h3>   <a
+         * in the value of the <code>KeyId</code> parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant">AWS API
          * Reference</a></p>
          *
@@ -1851,7 +2087,11 @@ namespace Model
          * CMK for deletion, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
          * Customer Master Keys</a> in the <i>AWS Key Management Service Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>The result of this operation varies with the key state of the
+         * CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">AWS
          * API Reference</a></p>
          */
@@ -1873,7 +2113,11 @@ namespace Model
          * CMK for deletion, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
          * Customer Master Keys</a> in the <i>AWS Key Management Service Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>The result of this operation varies with the key state of the
+         * CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">AWS
          * API Reference</a></p>
          *
@@ -1897,7 +2141,11 @@ namespace Model
          * CMK for deletion, see <a
          * href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
          * Customer Master Keys</a> in the <i>AWS Key Management Service Developer
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>The result of this operation varies with the key state of the
+         * CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion">AWS
          * API Reference</a></p>
          *
@@ -1906,40 +2154,40 @@ namespace Model
         virtual void ScheduleKeyDeletionAsync(const Model::ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or overwrites one or more tags for the specified customer master key
-         * (CMK). You cannot perform this operation on a CMK in a different AWS
-         * account.</p> <p>Each tag consists of a tag key and a tag value. Tag keys and tag
-         * values are both required, but tag values can be empty (null) strings.</p> <p>You
-         * cannot use the same tag key more than once per CMK. For example, consider a CMK
-         * with one tag whose tag key is <code>Purpose</code> and tag value is
-         * <code>Test</code>. If you send a <code>TagResource</code> request for this CMK
-         * with a tag key of <code>Purpose</code> and a tag value of <code>Prod</code>, it
-         * does not create a second tag. Instead, the original tag is overwritten with the
-         * new tag value.</p> <p>For information about the rules that apply to tag keys and
-         * tag values, see <a
+         * <p>Adds or edits tags for a customer master key (CMK). You cannot perform this
+         * operation on a CMK in a different AWS account.</p> <p>Each tag consists of a tag
+         * key and a tag value. Tag keys and tag values are both required, but tag values
+         * can be empty (null) strings.</p> <p>You can only use a tag key once for each
+         * CMK. If you use the tag key again, AWS KMS replaces the current tag value with
+         * the specified value.</p> <p>For information about the rules that apply to tag
+         * keys and tag values, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
          * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>The result of this operation varies with the key state of the
+         * CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource">AWS API
          * Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or overwrites one or more tags for the specified customer master key
-         * (CMK). You cannot perform this operation on a CMK in a different AWS
-         * account.</p> <p>Each tag consists of a tag key and a tag value. Tag keys and tag
-         * values are both required, but tag values can be empty (null) strings.</p> <p>You
-         * cannot use the same tag key more than once per CMK. For example, consider a CMK
-         * with one tag whose tag key is <code>Purpose</code> and tag value is
-         * <code>Test</code>. If you send a <code>TagResource</code> request for this CMK
-         * with a tag key of <code>Purpose</code> and a tag value of <code>Prod</code>, it
-         * does not create a second tag. Instead, the original tag is overwritten with the
-         * new tag value.</p> <p>For information about the rules that apply to tag keys and
-         * tag values, see <a
+         * <p>Adds or edits tags for a customer master key (CMK). You cannot perform this
+         * operation on a CMK in a different AWS account.</p> <p>Each tag consists of a tag
+         * key and a tag value. Tag keys and tag values are both required, but tag values
+         * can be empty (null) strings.</p> <p>You can only use a tag key once for each
+         * CMK. If you use the tag key again, AWS KMS replaces the current tag value with
+         * the specified value.</p> <p>For information about the rules that apply to tag
+         * keys and tag values, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
          * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>The result of this operation varies with the key state of the
+         * CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource">AWS API
          * Reference</a></p>
          *
@@ -1948,20 +2196,20 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds or overwrites one or more tags for the specified customer master key
-         * (CMK). You cannot perform this operation on a CMK in a different AWS
-         * account.</p> <p>Each tag consists of a tag key and a tag value. Tag keys and tag
-         * values are both required, but tag values can be empty (null) strings.</p> <p>You
-         * cannot use the same tag key more than once per CMK. For example, consider a CMK
-         * with one tag whose tag key is <code>Purpose</code> and tag value is
-         * <code>Test</code>. If you send a <code>TagResource</code> request for this CMK
-         * with a tag key of <code>Purpose</code> and a tag value of <code>Prod</code>, it
-         * does not create a second tag. Instead, the original tag is overwritten with the
-         * new tag value.</p> <p>For information about the rules that apply to tag keys and
-         * tag values, see <a
+         * <p>Adds or edits tags for a customer master key (CMK). You cannot perform this
+         * operation on a CMK in a different AWS account.</p> <p>Each tag consists of a tag
+         * key and a tag value. Tag keys and tag values are both required, but tag values
+         * can be empty (null) strings.</p> <p>You can only use a tag key once for each
+         * CMK. If you use the tag key again, AWS KMS replaces the current tag value with
+         * the specified value.</p> <p>For information about the rules that apply to tag
+         * keys and tag values, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
          * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>The result of this operation varies with the key state of the
+         * CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource">AWS API
          * Reference</a></p>
          *
@@ -1970,22 +2218,28 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified tag or tags from the specified customer master key
-         * (CMK). You cannot perform this operation on a CMK in a different AWS
-         * account.</p> <p>To remove a tag, you specify the tag key for each tag to remove.
-         * You do not specify the tag value. To overwrite the tag value for an existing
-         * tag, use <a>TagResource</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from the specified customer master key (CMK). You
+         * cannot perform this operation on a CMK in a different AWS account.</p> <p>To
+         * remove a tag, specify the tag key. To change the tag value of an existing tag
+         * key, use <a>TagResource</a>.</p> <p>The result of this operation varies with the
+         * key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the specified tag or tags from the specified customer master key
-         * (CMK). You cannot perform this operation on a CMK in a different AWS
-         * account.</p> <p>To remove a tag, you specify the tag key for each tag to remove.
-         * You do not specify the tag value. To overwrite the tag value for an existing
-         * tag, use <a>TagResource</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from the specified customer master key (CMK). You
+         * cannot perform this operation on a CMK in a different AWS account.</p> <p>To
+         * remove a tag, specify the tag key. To change the tag value of an existing tag
+         * key, use <a>TagResource</a>.</p> <p>The result of this operation varies with the
+         * key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1994,11 +2248,14 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes the specified tag or tags from the specified customer master key
-         * (CMK). You cannot perform this operation on a CMK in a different AWS
-         * account.</p> <p>To remove a tag, you specify the tag key for each tag to remove.
-         * You do not specify the tag value. To overwrite the tag value for an existing
-         * tag, use <a>TagResource</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from the specified customer master key (CMK). You
+         * cannot perform this operation on a CMK in a different AWS account.</p> <p>To
+         * remove a tag, specify the tag key. To change the tag value of an existing tag
+         * key, use <a>TagResource</a>.</p> <p>The result of this operation varies with the
+         * key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -2022,7 +2279,11 @@ namespace Model
          * (<code>alias/</code>). The alias name can contain only alphanumeric characters,
          * forward slashes (/), underscores (_), and dashes (-). Alias names cannot begin
          * with <code>aws</code>; that alias name prefix is reserved by Amazon Web Services
-         * (AWS).</p><p><h3>See Also:</h3>   <a
+         * (AWS).</p> <p>The result of this operation varies with the key state of the CMK.
+         * For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">AWS API
          * Reference</a></p>
          */
@@ -2044,7 +2305,11 @@ namespace Model
          * (<code>alias/</code>). The alias name can contain only alphanumeric characters,
          * forward slashes (/), underscores (_), and dashes (-). Alias names cannot begin
          * with <code>aws</code>; that alias name prefix is reserved by Amazon Web Services
-         * (AWS).</p><p><h3>See Also:</h3>   <a
+         * (AWS).</p> <p>The result of this operation varies with the key state of the CMK.
+         * For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">AWS API
          * Reference</a></p>
          *
@@ -2068,7 +2333,11 @@ namespace Model
          * (<code>alias/</code>). The alias name can contain only alphanumeric characters,
          * forward slashes (/), underscores (_), and dashes (-). Alias names cannot begin
          * with <code>aws</code>; that alias name prefix is reserved by Amazon Web Services
-         * (AWS).</p><p><h3>See Also:</h3>   <a
+         * (AWS).</p> <p>The result of this operation varies with the key state of the CMK.
+         * For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias">AWS API
          * Reference</a></p>
          *
@@ -2077,18 +2346,26 @@ namespace Model
         virtual void UpdateAliasAsync(const Model::UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the description of a customer master key (CMK). To see the decription
-         * of a CMK, use <a>DescribeKey</a>. </p> <p>You cannot perform this operation on a
-         * CMK in a different AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the description of a customer master key (CMK). To see the
+         * description of a CMK, use <a>DescribeKey</a>. </p> <p>You cannot perform this
+         * operation on a CMK in a different AWS account.</p> <p>The result of this
+         * operation varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateKeyDescriptionOutcome UpdateKeyDescription(const Model::UpdateKeyDescriptionRequest& request) const;
 
         /**
-         * <p>Updates the description of a customer master key (CMK). To see the decription
-         * of a CMK, use <a>DescribeKey</a>. </p> <p>You cannot perform this operation on a
-         * CMK in a different AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the description of a customer master key (CMK). To see the
+         * description of a CMK, use <a>DescribeKey</a>. </p> <p>You cannot perform this
+         * operation on a CMK in a different AWS account.</p> <p>The result of this
+         * operation varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">AWS
          * API Reference</a></p>
          *
@@ -2097,9 +2374,13 @@ namespace Model
         virtual Model::UpdateKeyDescriptionOutcomeCallable UpdateKeyDescriptionCallable(const Model::UpdateKeyDescriptionRequest& request) const;
 
         /**
-         * <p>Updates the description of a customer master key (CMK). To see the decription
-         * of a CMK, use <a>DescribeKey</a>. </p> <p>You cannot perform this operation on a
-         * CMK in a different AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the description of a customer master key (CMK). To see the
+         * description of a CMK, use <a>DescribeKey</a>. </p> <p>You cannot perform this
+         * operation on a CMK in a different AWS account.</p> <p>The result of this
+         * operation varies with the key state of the CMK. For details, see <a
+         * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+         * Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription">AWS
          * API Reference</a></p>
          *

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticTranscoder
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     TimeSpan();
-    TimeSpan(const Aws::Utils::Json::JsonValue& jsonValue);
-    TimeSpan& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TimeSpan(Aws::Utils::Json::JsonView jsonValue);
+    TimeSpan& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,7 +37,7 @@ UpdateStateMachineResult::UpdateStateMachineResult(const Aws::AmazonWebServiceRe
 
 UpdateStateMachineResult& UpdateStateMachineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("updateDate"))
   {
     m_updateDate = jsonValue.GetDouble("updateDate");

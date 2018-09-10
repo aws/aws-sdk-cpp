@@ -32,12 +32,12 @@ BatchRemoveFacetFromObjectResponse::BatchRemoveFacetFromObjectResponse()
 {
 }
 
-BatchRemoveFacetFromObjectResponse::BatchRemoveFacetFromObjectResponse(const JsonValue& jsonValue)
+BatchRemoveFacetFromObjectResponse::BatchRemoveFacetFromObjectResponse(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-BatchRemoveFacetFromObjectResponse& BatchRemoveFacetFromObjectResponse::operator =(const JsonValue& jsonValue)
+BatchRemoveFacetFromObjectResponse& BatchRemoveFacetFromObjectResponse::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

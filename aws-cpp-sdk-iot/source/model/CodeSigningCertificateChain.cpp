@@ -29,29 +29,20 @@ namespace Model
 {
 
 CodeSigningCertificateChain::CodeSigningCertificateChain() : 
-    m_streamHasBeenSet(false),
     m_certificateNameHasBeenSet(false),
     m_inlineDocumentHasBeenSet(false)
 {
 }
 
-CodeSigningCertificateChain::CodeSigningCertificateChain(const JsonValue& jsonValue) : 
-    m_streamHasBeenSet(false),
+CodeSigningCertificateChain::CodeSigningCertificateChain(JsonView jsonValue) : 
     m_certificateNameHasBeenSet(false),
     m_inlineDocumentHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CodeSigningCertificateChain& CodeSigningCertificateChain::operator =(const JsonValue& jsonValue)
+CodeSigningCertificateChain& CodeSigningCertificateChain::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("stream"))
-  {
-    m_stream = jsonValue.GetObject("stream");
-
-    m_streamHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("certificateName"))
   {
     m_certificateName = jsonValue.GetString("certificateName");
@@ -72,12 +63,6 @@ CodeSigningCertificateChain& CodeSigningCertificateChain::operator =(const JsonV
 JsonValue CodeSigningCertificateChain::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_streamHasBeenSet)
-  {
-   payload.WithObject("stream", m_stream.Jsonize());
-
-  }
 
   if(m_certificateNameHasBeenSet)
   {

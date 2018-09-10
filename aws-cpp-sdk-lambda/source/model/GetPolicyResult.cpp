@@ -37,10 +37,16 @@ GetPolicyResult::GetPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetPolicyResult& GetPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Policy"))
   {
     m_policy = jsonValue.GetString("Policy");
+
+  }
+
+  if(jsonValue.ValueExists("RevisionId"))
+  {
+    m_revisionId = jsonValue.GetString("RevisionId");
 
   }
 

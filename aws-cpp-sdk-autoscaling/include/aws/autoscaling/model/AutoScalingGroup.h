@@ -432,20 +432,20 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
-     * health status of an EC2 instance that has come into service.</p>
+     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
+     * checking the health status of an EC2 instance that has come into service.</p>
      */
     inline int GetHealthCheckGracePeriod() const{ return m_healthCheckGracePeriod; }
 
     /**
-     * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
-     * health status of an EC2 instance that has come into service.</p>
+     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
+     * checking the health status of an EC2 instance that has come into service.</p>
      */
     inline void SetHealthCheckGracePeriod(int value) { m_healthCheckGracePeriodHasBeenSet = true; m_healthCheckGracePeriod = value; }
 
     /**
-     * <p>The amount of time, in seconds, that Auto Scaling waits before checking the
-     * health status of an EC2 instance that has come into service.</p>
+     * <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before
+     * checking the health status of an EC2 instance that has come into service.</p>
      */
     inline AutoScalingGroup& WithHealthCheckGracePeriod(int value) { SetHealthCheckGracePeriod(value); return *this;}
 
@@ -836,6 +836,49 @@ namespace Model
      */
     inline AutoScalingGroup& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline const Aws::String& GetServiceLinkedRoleARN() const{ return m_serviceLinkedRoleARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline void SetServiceLinkedRoleARN(const Aws::String& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline void SetServiceLinkedRoleARN(Aws::String&& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline void SetServiceLinkedRoleARN(const char* value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline AutoScalingGroup& WithServiceLinkedRoleARN(const Aws::String& value) { SetServiceLinkedRoleARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline AutoScalingGroup& WithServiceLinkedRoleARN(Aws::String&& value) { SetServiceLinkedRoleARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
+     * Scaling group uses to call other AWS services on your behalf.</p>
+     */
+    inline AutoScalingGroup& WithServiceLinkedRoleARN(const char* value) { SetServiceLinkedRoleARN(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -906,6 +949,9 @@ namespace Model
 
     bool m_newInstancesProtectedFromScaleIn;
     bool m_newInstancesProtectedFromScaleInHasBeenSet;
+
+    Aws::String m_serviceLinkedRoleARN;
+    bool m_serviceLinkedRoleARNHasBeenSet;
   };
 
 } // namespace Model

@@ -42,7 +42,7 @@ ProvisionedProductDetail::ProvisionedProductDetail() :
 {
 }
 
-ProvisionedProductDetail::ProvisionedProductDetail(const JsonValue& jsonValue) : 
+ProvisionedProductDetail::ProvisionedProductDetail(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_typeHasBeenSet(false),
@@ -57,7 +57,7 @@ ProvisionedProductDetail::ProvisionedProductDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProvisionedProductDetail& ProvisionedProductDetail::operator =(const JsonValue& jsonValue)
+ProvisionedProductDetail& ProvisionedProductDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

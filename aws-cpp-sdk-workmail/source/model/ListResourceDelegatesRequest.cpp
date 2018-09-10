@@ -59,7 +59,7 @@ Aws::String ListResourceDelegatesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListResourceDelegatesRequest::GetRequestSpecificHeaders() const

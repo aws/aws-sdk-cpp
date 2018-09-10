@@ -35,7 +35,7 @@ IPSetUpdate::IPSetUpdate() :
 {
 }
 
-IPSetUpdate::IPSetUpdate(const JsonValue& jsonValue) : 
+IPSetUpdate::IPSetUpdate(JsonView jsonValue) : 
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_iPSetDescriptorHasBeenSet(false)
@@ -43,7 +43,7 @@ IPSetUpdate::IPSetUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IPSetUpdate& IPSetUpdate::operator =(const JsonValue& jsonValue)
+IPSetUpdate& IPSetUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {

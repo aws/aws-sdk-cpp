@@ -37,7 +37,7 @@ UpdatePipelineNotificationsResult::UpdatePipelineNotificationsResult(const Aws::
 
 UpdatePipelineNotificationsResult& UpdatePipelineNotificationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Pipeline"))
   {
     m_pipeline = jsonValue.GetObject("Pipeline");

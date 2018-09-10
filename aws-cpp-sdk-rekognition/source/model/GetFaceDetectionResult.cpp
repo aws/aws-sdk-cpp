@@ -39,7 +39,7 @@ GetFaceDetectionResult::GetFaceDetectionResult(const Aws::AmazonWebServiceResult
 
 GetFaceDetectionResult& GetFaceDetectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = VideoJobStatusMapper::GetVideoJobStatusForName(jsonValue.GetString("JobStatus"));
@@ -66,7 +66,7 @@ GetFaceDetectionResult& GetFaceDetectionResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("Faces"))
   {
-    Array<JsonValue> facesJsonList = jsonValue.GetArray("Faces");
+    Array<JsonView> facesJsonList = jsonValue.GetArray("Faces");
     for(unsigned facesIndex = 0; facesIndex < facesJsonList.GetLength(); ++facesIndex)
     {
       m_faces.push_back(facesJsonList[facesIndex].AsObject());

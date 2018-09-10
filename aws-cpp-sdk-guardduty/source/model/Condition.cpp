@@ -42,7 +42,7 @@ Condition::Condition() :
 {
 }
 
-Condition::Condition(const JsonValue& jsonValue) : 
+Condition::Condition(JsonView jsonValue) : 
     m_eqHasBeenSet(false),
     m_gt(0),
     m_gtHasBeenSet(false),
@@ -57,11 +57,11 @@ Condition::Condition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Condition& Condition::operator =(const JsonValue& jsonValue)
+Condition& Condition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("eq"))
   {
-    Array<JsonValue> eqJsonList = jsonValue.GetArray("eq");
+    Array<JsonView> eqJsonList = jsonValue.GetArray("eq");
     for(unsigned eqIndex = 0; eqIndex < eqJsonList.GetLength(); ++eqIndex)
     {
       m_eq.push_back(eqJsonList[eqIndex].AsString());
@@ -99,7 +99,7 @@ Condition& Condition::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("neq"))
   {
-    Array<JsonValue> neqJsonList = jsonValue.GetArray("neq");
+    Array<JsonView> neqJsonList = jsonValue.GetArray("neq");
     for(unsigned neqIndex = 0; neqIndex < neqJsonList.GetLength(); ++neqIndex)
     {
       m_neq.push_back(neqJsonList[neqIndex].AsString());

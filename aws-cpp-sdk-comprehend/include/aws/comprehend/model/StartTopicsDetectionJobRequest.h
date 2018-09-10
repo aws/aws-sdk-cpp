@@ -74,70 +74,99 @@ namespace Model
 
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>Specifies where to send the output files. The output is a compressed archive
+     * with two files, <code>topic-terms.csv</code> that lists the terms associated
+     * with each topic, and <code>doc-topics.csv</code> that lists the documents
+     * associated with each topic</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>Specifies where to send the output files. The output is a compressed archive
+     * with two files, <code>topic-terms.csv</code> that lists the terms associated
+     * with each topic, and <code>doc-topics.csv</code> that lists the documents
+     * associated with each topic</p>
      */
     inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>Specifies where to send the output files. The output is a compressed archive
+     * with two files, <code>topic-terms.csv</code> that lists the terms associated
+     * with each topic, and <code>doc-topics.csv</code> that lists the documents
+     * associated with each topic</p>
      */
     inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>Specifies where to send the output files. The output is a compressed archive
+     * with two files, <code>topic-terms.csv</code> that lists the terms associated
+     * with each topic, and <code>doc-topics.csv</code> that lists the documents
+     * associated with each topic</p>
      */
     inline StartTopicsDetectionJobRequest& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
-     * <p>Specifies where to send the output files.</p>
+     * <p>Specifies where to send the output files. The output is a compressed archive
+     * with two files, <code>topic-terms.csv</code> that lists the terms associated
+     * with each topic, and <code>doc-topics.csv</code> that lists the documents
+     * associated with each topic</p>
      */
     inline StartTopicsDetectionJobRequest& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. </p>
+     * (IAM) role that grants Amazon Comprehend read access to your input data. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
      */
     inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. </p>
+     * (IAM) role that grants Amazon Comprehend read access to your input data. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
      */
     inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. </p>
+     * (IAM) role that grants Amazon Comprehend read access to your input data. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
      */
     inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. </p>
+     * (IAM) role that grants Amazon Comprehend read access to your input data. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
      */
     inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. </p>
+     * (IAM) role that grants Amazon Comprehend read access to your input data. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
      */
     inline StartTopicsDetectionJobRequest& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. </p>
+     * (IAM) role that grants Amazon Comprehend read access to your input data. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
      */
     inline StartTopicsDetectionJobRequest& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role that grants Amazon Comprehend read access to your input data. </p>
+     * (IAM) role that grants Amazon Comprehend read access to your input data. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.</p>
      */
     inline StartTopicsDetectionJobRequest& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
 

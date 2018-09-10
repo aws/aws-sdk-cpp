@@ -35,7 +35,7 @@ SqlInjectionMatchSetUpdate::SqlInjectionMatchSetUpdate() :
 {
 }
 
-SqlInjectionMatchSetUpdate::SqlInjectionMatchSetUpdate(const JsonValue& jsonValue) : 
+SqlInjectionMatchSetUpdate::SqlInjectionMatchSetUpdate(JsonView jsonValue) : 
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_sqlInjectionMatchTupleHasBeenSet(false)
@@ -43,7 +43,7 @@ SqlInjectionMatchSetUpdate::SqlInjectionMatchSetUpdate(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-SqlInjectionMatchSetUpdate& SqlInjectionMatchSetUpdate::operator =(const JsonValue& jsonValue)
+SqlInjectionMatchSetUpdate& SqlInjectionMatchSetUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {

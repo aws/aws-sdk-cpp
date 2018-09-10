@@ -38,4 +38,5 @@ public class Metadata {
     private String timestampFormat;
     private Map<String, String> additionalHeaders;
     private boolean standalone;
+    private String serviceId;
 }

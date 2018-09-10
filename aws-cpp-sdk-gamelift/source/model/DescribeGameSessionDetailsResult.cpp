@@ -37,10 +37,10 @@ DescribeGameSessionDetailsResult::DescribeGameSessionDetailsResult(const Aws::Am
 
 DescribeGameSessionDetailsResult& DescribeGameSessionDetailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GameSessionDetails"))
   {
-    Array<JsonValue> gameSessionDetailsJsonList = jsonValue.GetArray("GameSessionDetails");
+    Array<JsonView> gameSessionDetailsJsonList = jsonValue.GetArray("GameSessionDetails");
     for(unsigned gameSessionDetailsIndex = 0; gameSessionDetailsIndex < gameSessionDetailsJsonList.GetLength(); ++gameSessionDetailsIndex)
     {
       m_gameSessionDetails.push_back(gameSessionDetailsJsonList[gameSessionDetailsIndex].AsObject());

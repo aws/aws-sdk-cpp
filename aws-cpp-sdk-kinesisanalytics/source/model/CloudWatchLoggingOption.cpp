@@ -34,14 +34,14 @@ CloudWatchLoggingOption::CloudWatchLoggingOption() :
 {
 }
 
-CloudWatchLoggingOption::CloudWatchLoggingOption(const JsonValue& jsonValue) : 
+CloudWatchLoggingOption::CloudWatchLoggingOption(JsonView jsonValue) : 
     m_logStreamARNHasBeenSet(false),
     m_roleARNHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CloudWatchLoggingOption& CloudWatchLoggingOption::operator =(const JsonValue& jsonValue)
+CloudWatchLoggingOption& CloudWatchLoggingOption::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LogStreamARN"))
   {

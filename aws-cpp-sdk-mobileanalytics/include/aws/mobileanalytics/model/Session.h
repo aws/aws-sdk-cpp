@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MobileAnalytics
@@ -39,8 +40,8 @@ namespace Model
   {
   public:
     Session();
-    Session(const Aws::Utils::Json::JsonValue& jsonValue);
-    Session& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Session(Aws::Utils::Json::JsonView jsonValue);
+    Session& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -36,7 +36,7 @@ DeviceConfigurationType::DeviceConfigurationType() :
 {
 }
 
-DeviceConfigurationType::DeviceConfigurationType(const JsonValue& jsonValue) : 
+DeviceConfigurationType::DeviceConfigurationType(JsonView jsonValue) : 
     m_challengeRequiredOnNewDevice(false),
     m_challengeRequiredOnNewDeviceHasBeenSet(false),
     m_deviceOnlyRememberedOnUserPrompt(false),
@@ -45,7 +45,7 @@ DeviceConfigurationType::DeviceConfigurationType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeviceConfigurationType& DeviceConfigurationType::operator =(const JsonValue& jsonValue)
+DeviceConfigurationType& DeviceConfigurationType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ChallengeRequiredOnNewDevice"))
   {

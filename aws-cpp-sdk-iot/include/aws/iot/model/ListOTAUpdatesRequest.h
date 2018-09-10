@@ -66,37 +66,37 @@ namespace Model
 
 
     /**
-     * <p>A token used to retreive the next set of results.</p>
+     * <p>A token used to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token used to retreive the next set of results.</p>
+     * <p>A token used to retrieve the next set of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A token used to retreive the next set of results.</p>
+     * <p>A token used to retrieve the next set of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>A token used to retreive the next set of results.</p>
+     * <p>A token used to retrieve the next set of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A token used to retreive the next set of results.</p>
+     * <p>A token used to retrieve the next set of results.</p>
      */
     inline ListOTAUpdatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token used to retreive the next set of results.</p>
+     * <p>A token used to retrieve the next set of results.</p>
      */
     inline ListOTAUpdatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token used to retreive the next set of results.</p>
+     * <p>A token used to retrieve the next set of results.</p>
      */
     inline ListOTAUpdatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

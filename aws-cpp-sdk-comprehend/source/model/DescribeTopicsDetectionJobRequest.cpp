@@ -37,7 +37,7 @@ Aws::String DescribeTopicsDetectionJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeTopicsDetectionJobRequest::GetRequestSpecificHeaders() const

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     M3u8Settings();
-    M3u8Settings(const Aws::Utils::Json::JsonValue& jsonValue);
-    M3u8Settings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    M3u8Settings(Aws::Utils::Json::JsonView jsonValue);
+    M3u8Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -116,58 +117,37 @@ namespace Model
 
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline const Aws::String& GetEcmPid() const{ return m_ecmPid; }
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline void SetEcmPid(const Aws::String& value) { m_ecmPidHasBeenSet = true; m_ecmPid = value; }
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline void SetEcmPid(Aws::String&& value) { m_ecmPidHasBeenSet = true; m_ecmPid = std::move(value); }
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline void SetEcmPid(const char* value) { m_ecmPidHasBeenSet = true; m_ecmPid.assign(value); }
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline M3u8Settings& WithEcmPid(const Aws::String& value) { SetEcmPid(value); return *this;}
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline M3u8Settings& WithEcmPid(Aws::String&& value) { SetEcmPid(std::move(value)); return *this;}
 
     /**
-     * ThePlatform-protected transport streams using 'microsoft' as Target Client
-     * include an ECM stream. This ECM stream contains the size, IV, and PTS of every
-     * sample in the transport stream.  This stream PID is specified here. This PID has
-     * no effect on non ThePlatform-protected streams.
+     * This parameter is unused and deprecated.
      */
     inline M3u8Settings& WithEcmPid(const char* value) { SetEcmPid(value); return *this;}
 
@@ -475,6 +455,56 @@ namespace Model
 
 
     /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline const Aws::String& GetTimedMetadataPid() const{ return m_timedMetadataPid; }
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline void SetTimedMetadataPid(const Aws::String& value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid = value; }
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline void SetTimedMetadataPid(Aws::String&& value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid = std::move(value); }
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline void SetTimedMetadataPid(const char* value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid.assign(value); }
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline M3u8Settings& WithTimedMetadataPid(const Aws::String& value) { SetTimedMetadataPid(value); return *this;}
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline M3u8Settings& WithTimedMetadataPid(Aws::String&& value) { SetTimedMetadataPid(std::move(value)); return *this;}
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline M3u8Settings& WithTimedMetadataPid(const char* value) { SetTimedMetadataPid(value); return *this;}
+
+
+    /**
      * The value of the transport stream ID field in the Program Map Table.
      */
     inline int GetTransportStreamId() const{ return m_transportStreamId; }
@@ -572,6 +602,9 @@ namespace Model
 
     M3u8TimedMetadataBehavior m_timedMetadataBehavior;
     bool m_timedMetadataBehaviorHasBeenSet;
+
+    Aws::String m_timedMetadataPid;
+    bool m_timedMetadataPidHasBeenSet;
 
     int m_transportStreamId;
     bool m_transportStreamIdHasBeenSet;

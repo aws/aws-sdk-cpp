@@ -44,11 +44,18 @@ JobRun::JobRun() :
     m_errorMessageHasBeenSet(false),
     m_predecessorRunsHasBeenSet(false),
     m_allocatedCapacity(0),
-    m_allocatedCapacityHasBeenSet(false)
+    m_allocatedCapacityHasBeenSet(false),
+    m_executionTime(0),
+    m_executionTimeHasBeenSet(false),
+    m_timeout(0),
+    m_timeoutHasBeenSet(false),
+    m_notificationPropertyHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false),
+    m_logGroupNameHasBeenSet(false)
 {
 }
 
-JobRun::JobRun(const JsonValue& jsonValue) : 
+JobRun::JobRun(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_attempt(0),
     m_attemptHasBeenSet(false),
@@ -64,12 +71,19 @@ JobRun::JobRun(const JsonValue& jsonValue) :
     m_errorMessageHasBeenSet(false),
     m_predecessorRunsHasBeenSet(false),
     m_allocatedCapacity(0),
-    m_allocatedCapacityHasBeenSet(false)
+    m_allocatedCapacityHasBeenSet(false),
+    m_executionTime(0),
+    m_executionTimeHasBeenSet(false),
+    m_timeout(0),
+    m_timeoutHasBeenSet(false),
+    m_notificationPropertyHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false),
+    m_logGroupNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-JobRun& JobRun::operator =(const JsonValue& jsonValue)
+JobRun& JobRun::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -136,7 +150,7 @@ JobRun& JobRun::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Arguments"))
   {
-    Aws::Map<Aws::String, JsonValue> argumentsJsonMap = jsonValue.GetObject("Arguments").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> argumentsJsonMap = jsonValue.GetObject("Arguments").GetAllObjects();
     for(auto& argumentsItem : argumentsJsonMap)
     {
       m_arguments[argumentsItem.first] = argumentsItem.second.AsString();
@@ -153,7 +167,7 @@ JobRun& JobRun::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("PredecessorRuns"))
   {
-    Array<JsonValue> predecessorRunsJsonList = jsonValue.GetArray("PredecessorRuns");
+    Array<JsonView> predecessorRunsJsonList = jsonValue.GetArray("PredecessorRuns");
     for(unsigned predecessorRunsIndex = 0; predecessorRunsIndex < predecessorRunsJsonList.GetLength(); ++predecessorRunsIndex)
     {
       m_predecessorRuns.push_back(predecessorRunsJsonList[predecessorRunsIndex].AsObject());
@@ -166,6 +180,41 @@ JobRun& JobRun::operator =(const JsonValue& jsonValue)
     m_allocatedCapacity = jsonValue.GetInteger("AllocatedCapacity");
 
     m_allocatedCapacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExecutionTime"))
+  {
+    m_executionTime = jsonValue.GetInteger("ExecutionTime");
+
+    m_executionTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Timeout"))
+  {
+    m_timeout = jsonValue.GetInteger("Timeout");
+
+    m_timeoutHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NotificationProperty"))
+  {
+    m_notificationProperty = jsonValue.GetObject("NotificationProperty");
+
+    m_notificationPropertyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SecurityConfiguration"))
+  {
+    m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
+
+    m_securityConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LogGroupName"))
+  {
+    m_logGroupName = jsonValue.GetString("LogGroupName");
+
+    m_logGroupNameHasBeenSet = true;
   }
 
   return *this;
@@ -256,6 +305,36 @@ JsonValue JobRun::Jsonize() const
   if(m_allocatedCapacityHasBeenSet)
   {
    payload.WithInteger("AllocatedCapacity", m_allocatedCapacity);
+
+  }
+
+  if(m_executionTimeHasBeenSet)
+  {
+   payload.WithInteger("ExecutionTime", m_executionTime);
+
+  }
+
+  if(m_timeoutHasBeenSet)
+  {
+   payload.WithInteger("Timeout", m_timeout);
+
+  }
+
+  if(m_notificationPropertyHasBeenSet)
+  {
+   payload.WithObject("NotificationProperty", m_notificationProperty.Jsonize());
+
+  }
+
+  if(m_securityConfigurationHasBeenSet)
+  {
+   payload.WithString("SecurityConfiguration", m_securityConfiguration);
+
+  }
+
+  if(m_logGroupNameHasBeenSet)
+  {
+   payload.WithString("LogGroupName", m_logGroupName);
 
   }
 

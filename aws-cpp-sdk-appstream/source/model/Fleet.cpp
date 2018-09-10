@@ -34,6 +34,7 @@ Fleet::Fleet() :
     m_displayNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_imageNameHasBeenSet(false),
+    m_imageArnHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_fleetType(FleetType::NOT_SET),
     m_fleetTypeHasBeenSet(false),
@@ -53,12 +54,13 @@ Fleet::Fleet() :
 {
 }
 
-Fleet::Fleet(const JsonValue& jsonValue) : 
+Fleet::Fleet(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_imageNameHasBeenSet(false),
+    m_imageArnHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_fleetType(FleetType::NOT_SET),
     m_fleetTypeHasBeenSet(false),
@@ -79,7 +81,7 @@ Fleet::Fleet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Fleet& Fleet::operator =(const JsonValue& jsonValue)
+Fleet& Fleet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Arn"))
   {
@@ -114,6 +116,13 @@ Fleet& Fleet::operator =(const JsonValue& jsonValue)
     m_imageName = jsonValue.GetString("ImageName");
 
     m_imageNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImageArn"))
+  {
+    m_imageArn = jsonValue.GetString("ImageArn");
+
+    m_imageArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("InstanceType"))
@@ -174,7 +183,7 @@ Fleet& Fleet::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("FleetErrors"))
   {
-    Array<JsonValue> fleetErrorsJsonList = jsonValue.GetArray("FleetErrors");
+    Array<JsonView> fleetErrorsJsonList = jsonValue.GetArray("FleetErrors");
     for(unsigned fleetErrorsIndex = 0; fleetErrorsIndex < fleetErrorsJsonList.GetLength(); ++fleetErrorsIndex)
     {
       m_fleetErrors.push_back(fleetErrorsJsonList[fleetErrorsIndex].AsObject());
@@ -230,6 +239,12 @@ JsonValue Fleet::Jsonize() const
   if(m_imageNameHasBeenSet)
   {
    payload.WithString("ImageName", m_imageName);
+
+  }
+
+  if(m_imageArnHasBeenSet)
+  {
+   payload.WithString("ImageArn", m_imageArn);
 
   }
 

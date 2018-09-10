@@ -36,6 +36,8 @@
 #include <aws/waf/model/DeleteByteMatchSetResult.h>
 #include <aws/waf/model/DeleteGeoMatchSetResult.h>
 #include <aws/waf/model/DeleteIPSetResult.h>
+#include <aws/waf/model/DeleteLoggingConfigurationResult.h>
+#include <aws/waf/model/DeletePermissionPolicyResult.h>
 #include <aws/waf/model/DeleteRateBasedRuleResult.h>
 #include <aws/waf/model/DeleteRegexMatchSetResult.h>
 #include <aws/waf/model/DeleteRegexPatternSetResult.h>
@@ -50,6 +52,8 @@
 #include <aws/waf/model/GetChangeTokenStatusResult.h>
 #include <aws/waf/model/GetGeoMatchSetResult.h>
 #include <aws/waf/model/GetIPSetResult.h>
+#include <aws/waf/model/GetLoggingConfigurationResult.h>
+#include <aws/waf/model/GetPermissionPolicyResult.h>
 #include <aws/waf/model/GetRateBasedRuleResult.h>
 #include <aws/waf/model/GetRateBasedRuleManagedKeysResult.h>
 #include <aws/waf/model/GetRegexMatchSetResult.h>
@@ -65,6 +69,7 @@
 #include <aws/waf/model/ListByteMatchSetsResult.h>
 #include <aws/waf/model/ListGeoMatchSetsResult.h>
 #include <aws/waf/model/ListIPSetsResult.h>
+#include <aws/waf/model/ListLoggingConfigurationsResult.h>
 #include <aws/waf/model/ListRateBasedRulesResult.h>
 #include <aws/waf/model/ListRegexMatchSetsResult.h>
 #include <aws/waf/model/ListRegexPatternSetsResult.h>
@@ -75,6 +80,8 @@
 #include <aws/waf/model/ListSubscribedRuleGroupsResult.h>
 #include <aws/waf/model/ListWebACLsResult.h>
 #include <aws/waf/model/ListXssMatchSetsResult.h>
+#include <aws/waf/model/PutLoggingConfigurationResult.h>
+#include <aws/waf/model/PutPermissionPolicyResult.h>
 #include <aws/waf/model/UpdateByteMatchSetResult.h>
 #include <aws/waf/model/UpdateGeoMatchSetResult.h>
 #include <aws/waf/model/UpdateIPSetResult.h>
@@ -109,11 +116,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -147,6 +149,8 @@ namespace Model
         class DeleteByteMatchSetRequest;
         class DeleteGeoMatchSetRequest;
         class DeleteIPSetRequest;
+        class DeleteLoggingConfigurationRequest;
+        class DeletePermissionPolicyRequest;
         class DeleteRateBasedRuleRequest;
         class DeleteRegexMatchSetRequest;
         class DeleteRegexPatternSetRequest;
@@ -161,6 +165,8 @@ namespace Model
         class GetChangeTokenStatusRequest;
         class GetGeoMatchSetRequest;
         class GetIPSetRequest;
+        class GetLoggingConfigurationRequest;
+        class GetPermissionPolicyRequest;
         class GetRateBasedRuleRequest;
         class GetRateBasedRuleManagedKeysRequest;
         class GetRegexMatchSetRequest;
@@ -176,6 +182,7 @@ namespace Model
         class ListByteMatchSetsRequest;
         class ListGeoMatchSetsRequest;
         class ListIPSetsRequest;
+        class ListLoggingConfigurationsRequest;
         class ListRateBasedRulesRequest;
         class ListRegexMatchSetsRequest;
         class ListRegexPatternSetsRequest;
@@ -186,6 +193,8 @@ namespace Model
         class ListSubscribedRuleGroupsRequest;
         class ListWebACLsRequest;
         class ListXssMatchSetsRequest;
+        class PutLoggingConfigurationRequest;
+        class PutPermissionPolicyRequest;
         class UpdateByteMatchSetRequest;
         class UpdateGeoMatchSetRequest;
         class UpdateIPSetRequest;
@@ -214,6 +223,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteByteMatchSetResult, Aws::Client::AWSError<WAFErrors>> DeleteByteMatchSetOutcome;
         typedef Aws::Utils::Outcome<DeleteGeoMatchSetResult, Aws::Client::AWSError<WAFErrors>> DeleteGeoMatchSetOutcome;
         typedef Aws::Utils::Outcome<DeleteIPSetResult, Aws::Client::AWSError<WAFErrors>> DeleteIPSetOutcome;
+        typedef Aws::Utils::Outcome<DeleteLoggingConfigurationResult, Aws::Client::AWSError<WAFErrors>> DeleteLoggingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeletePermissionPolicyResult, Aws::Client::AWSError<WAFErrors>> DeletePermissionPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteRateBasedRuleResult, Aws::Client::AWSError<WAFErrors>> DeleteRateBasedRuleOutcome;
         typedef Aws::Utils::Outcome<DeleteRegexMatchSetResult, Aws::Client::AWSError<WAFErrors>> DeleteRegexMatchSetOutcome;
         typedef Aws::Utils::Outcome<DeleteRegexPatternSetResult, Aws::Client::AWSError<WAFErrors>> DeleteRegexPatternSetOutcome;
@@ -228,6 +239,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetChangeTokenStatusResult, Aws::Client::AWSError<WAFErrors>> GetChangeTokenStatusOutcome;
         typedef Aws::Utils::Outcome<GetGeoMatchSetResult, Aws::Client::AWSError<WAFErrors>> GetGeoMatchSetOutcome;
         typedef Aws::Utils::Outcome<GetIPSetResult, Aws::Client::AWSError<WAFErrors>> GetIPSetOutcome;
+        typedef Aws::Utils::Outcome<GetLoggingConfigurationResult, Aws::Client::AWSError<WAFErrors>> GetLoggingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetPermissionPolicyResult, Aws::Client::AWSError<WAFErrors>> GetPermissionPolicyOutcome;
         typedef Aws::Utils::Outcome<GetRateBasedRuleResult, Aws::Client::AWSError<WAFErrors>> GetRateBasedRuleOutcome;
         typedef Aws::Utils::Outcome<GetRateBasedRuleManagedKeysResult, Aws::Client::AWSError<WAFErrors>> GetRateBasedRuleManagedKeysOutcome;
         typedef Aws::Utils::Outcome<GetRegexMatchSetResult, Aws::Client::AWSError<WAFErrors>> GetRegexMatchSetOutcome;
@@ -243,6 +256,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListByteMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListByteMatchSetsOutcome;
         typedef Aws::Utils::Outcome<ListGeoMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListGeoMatchSetsOutcome;
         typedef Aws::Utils::Outcome<ListIPSetsResult, Aws::Client::AWSError<WAFErrors>> ListIPSetsOutcome;
+        typedef Aws::Utils::Outcome<ListLoggingConfigurationsResult, Aws::Client::AWSError<WAFErrors>> ListLoggingConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListRateBasedRulesResult, Aws::Client::AWSError<WAFErrors>> ListRateBasedRulesOutcome;
         typedef Aws::Utils::Outcome<ListRegexMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListRegexMatchSetsOutcome;
         typedef Aws::Utils::Outcome<ListRegexPatternSetsResult, Aws::Client::AWSError<WAFErrors>> ListRegexPatternSetsOutcome;
@@ -253,6 +267,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSubscribedRuleGroupsResult, Aws::Client::AWSError<WAFErrors>> ListSubscribedRuleGroupsOutcome;
         typedef Aws::Utils::Outcome<ListWebACLsResult, Aws::Client::AWSError<WAFErrors>> ListWebACLsOutcome;
         typedef Aws::Utils::Outcome<ListXssMatchSetsResult, Aws::Client::AWSError<WAFErrors>> ListXssMatchSetsOutcome;
+        typedef Aws::Utils::Outcome<PutLoggingConfigurationResult, Aws::Client::AWSError<WAFErrors>> PutLoggingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<PutPermissionPolicyResult, Aws::Client::AWSError<WAFErrors>> PutPermissionPolicyOutcome;
         typedef Aws::Utils::Outcome<UpdateByteMatchSetResult, Aws::Client::AWSError<WAFErrors>> UpdateByteMatchSetOutcome;
         typedef Aws::Utils::Outcome<UpdateGeoMatchSetResult, Aws::Client::AWSError<WAFErrors>> UpdateGeoMatchSetOutcome;
         typedef Aws::Utils::Outcome<UpdateIPSetResult, Aws::Client::AWSError<WAFErrors>> UpdateIPSetOutcome;
@@ -281,6 +297,8 @@ namespace Model
         typedef std::future<DeleteByteMatchSetOutcome> DeleteByteMatchSetOutcomeCallable;
         typedef std::future<DeleteGeoMatchSetOutcome> DeleteGeoMatchSetOutcomeCallable;
         typedef std::future<DeleteIPSetOutcome> DeleteIPSetOutcomeCallable;
+        typedef std::future<DeleteLoggingConfigurationOutcome> DeleteLoggingConfigurationOutcomeCallable;
+        typedef std::future<DeletePermissionPolicyOutcome> DeletePermissionPolicyOutcomeCallable;
         typedef std::future<DeleteRateBasedRuleOutcome> DeleteRateBasedRuleOutcomeCallable;
         typedef std::future<DeleteRegexMatchSetOutcome> DeleteRegexMatchSetOutcomeCallable;
         typedef std::future<DeleteRegexPatternSetOutcome> DeleteRegexPatternSetOutcomeCallable;
@@ -295,6 +313,8 @@ namespace Model
         typedef std::future<GetChangeTokenStatusOutcome> GetChangeTokenStatusOutcomeCallable;
         typedef std::future<GetGeoMatchSetOutcome> GetGeoMatchSetOutcomeCallable;
         typedef std::future<GetIPSetOutcome> GetIPSetOutcomeCallable;
+        typedef std::future<GetLoggingConfigurationOutcome> GetLoggingConfigurationOutcomeCallable;
+        typedef std::future<GetPermissionPolicyOutcome> GetPermissionPolicyOutcomeCallable;
         typedef std::future<GetRateBasedRuleOutcome> GetRateBasedRuleOutcomeCallable;
         typedef std::future<GetRateBasedRuleManagedKeysOutcome> GetRateBasedRuleManagedKeysOutcomeCallable;
         typedef std::future<GetRegexMatchSetOutcome> GetRegexMatchSetOutcomeCallable;
@@ -310,6 +330,7 @@ namespace Model
         typedef std::future<ListByteMatchSetsOutcome> ListByteMatchSetsOutcomeCallable;
         typedef std::future<ListGeoMatchSetsOutcome> ListGeoMatchSetsOutcomeCallable;
         typedef std::future<ListIPSetsOutcome> ListIPSetsOutcomeCallable;
+        typedef std::future<ListLoggingConfigurationsOutcome> ListLoggingConfigurationsOutcomeCallable;
         typedef std::future<ListRateBasedRulesOutcome> ListRateBasedRulesOutcomeCallable;
         typedef std::future<ListRegexMatchSetsOutcome> ListRegexMatchSetsOutcomeCallable;
         typedef std::future<ListRegexPatternSetsOutcome> ListRegexPatternSetsOutcomeCallable;
@@ -320,6 +341,8 @@ namespace Model
         typedef std::future<ListSubscribedRuleGroupsOutcome> ListSubscribedRuleGroupsOutcomeCallable;
         typedef std::future<ListWebACLsOutcome> ListWebACLsOutcomeCallable;
         typedef std::future<ListXssMatchSetsOutcome> ListXssMatchSetsOutcomeCallable;
+        typedef std::future<PutLoggingConfigurationOutcome> PutLoggingConfigurationOutcomeCallable;
+        typedef std::future<PutPermissionPolicyOutcome> PutPermissionPolicyOutcomeCallable;
         typedef std::future<UpdateByteMatchSetOutcome> UpdateByteMatchSetOutcomeCallable;
         typedef std::future<UpdateGeoMatchSetOutcome> UpdateGeoMatchSetOutcomeCallable;
         typedef std::future<UpdateIPSetOutcome> UpdateIPSetOutcomeCallable;
@@ -351,6 +374,8 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::DeleteByteMatchSetRequest&, const Model::DeleteByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteByteMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteGeoMatchSetRequest&, const Model::DeleteGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGeoMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteIPSetRequest&, const Model::DeleteIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIPSetResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::DeleteLoggingConfigurationRequest&, const Model::DeleteLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLoggingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::DeletePermissionPolicyRequest&, const Model::DeletePermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePermissionPolicyResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteRateBasedRuleRequest&, const Model::DeleteRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRateBasedRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteRegexMatchSetRequest&, const Model::DeleteRegexMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRegexMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::DeleteRegexPatternSetRequest&, const Model::DeleteRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRegexPatternSetResponseReceivedHandler;
@@ -365,6 +390,8 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::GetChangeTokenStatusRequest&, const Model::GetChangeTokenStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChangeTokenStatusResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetGeoMatchSetRequest&, const Model::GetGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGeoMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetIPSetRequest&, const Model::GetIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIPSetResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::GetLoggingConfigurationRequest&, const Model::GetLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoggingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::GetPermissionPolicyRequest&, const Model::GetPermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPermissionPolicyResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetRateBasedRuleRequest&, const Model::GetRateBasedRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRateBasedRuleResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetRateBasedRuleManagedKeysRequest&, const Model::GetRateBasedRuleManagedKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRateBasedRuleManagedKeysResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::GetRegexMatchSetRequest&, const Model::GetRegexMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegexMatchSetResponseReceivedHandler;
@@ -380,6 +407,7 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::ListByteMatchSetsRequest&, const Model::ListByteMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListByteMatchSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListGeoMatchSetsRequest&, const Model::ListGeoMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGeoMatchSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListIPSetsRequest&, const Model::ListIPSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIPSetsResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::ListLoggingConfigurationsRequest&, const Model::ListLoggingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLoggingConfigurationsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListRateBasedRulesRequest&, const Model::ListRateBasedRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRateBasedRulesResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListRegexMatchSetsRequest&, const Model::ListRegexMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegexMatchSetsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListRegexPatternSetsRequest&, const Model::ListRegexPatternSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRegexPatternSetsResponseReceivedHandler;
@@ -390,6 +418,8 @@ namespace Model
     typedef std::function<void(const WAFClient*, const Model::ListSubscribedRuleGroupsRequest&, const Model::ListSubscribedRuleGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscribedRuleGroupsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListWebACLsRequest&, const Model::ListWebACLsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebACLsResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::ListXssMatchSetsRequest&, const Model::ListXssMatchSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListXssMatchSetsResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::PutLoggingConfigurationRequest&, const Model::PutLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLoggingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const WAFClient*, const Model::PutPermissionPolicyRequest&, const Model::PutPermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPermissionPolicyResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateByteMatchSetRequest&, const Model::UpdateByteMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateByteMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateGeoMatchSetRequest&, const Model::UpdateGeoMatchSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGeoMatchSetResponseReceivedHandler;
     typedef std::function<void(const WAFClient*, const Model::UpdateIPSetRequest&, const Model::UpdateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIPSetResponseReceivedHandler;
@@ -440,7 +470,7 @@ namespace Model
 
         virtual ~WAFClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "waf"; }
+        inline virtual const char* GetServiceClientName() const override { return "WAF"; }
 
 
         /**
@@ -1647,6 +1677,65 @@ namespace Model
         virtual void DeleteIPSetAsync(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Permanently deletes the <a>LoggingConfiguration</a> from the specified web
+         * ACL.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLoggingConfigurationOutcome DeleteLoggingConfiguration(const Model::DeleteLoggingConfigurationRequest& request) const;
+
+        /**
+         * <p>Permanently deletes the <a>LoggingConfiguration</a> from the specified web
+         * ACL.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteLoggingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLoggingConfigurationOutcomeCallable DeleteLoggingConfigurationCallable(const Model::DeleteLoggingConfigurationRequest& request) const;
+
+        /**
+         * <p>Permanently deletes the <a>LoggingConfiguration</a> from the specified web
+         * ACL.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeleteLoggingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLoggingConfigurationAsync(const Model::DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Permanently deletes an IAM policy from the specified RuleGroup.</p> <p>The
+         * user making the request must be the owner of the RuleGroup.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeletePermissionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePermissionPolicyOutcome DeletePermissionPolicy(const Model::DeletePermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Permanently deletes an IAM policy from the specified RuleGroup.</p> <p>The
+         * user making the request must be the owner of the RuleGroup.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeletePermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePermissionPolicyOutcomeCallable DeletePermissionPolicyCallable(const Model::DeletePermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Permanently deletes an IAM policy from the specified RuleGroup.</p> <p>The
+         * user making the request must be the owner of the RuleGroup.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeletePermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePermissionPolicyAsync(const Model::DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's
          * still used in any <code>WebACL</code> objects or if it still includes any
          * predicates, such as <code>ByteMatchSet</code> objects.</p> <p>If you just want
@@ -2318,6 +2407,62 @@ namespace Model
         virtual void GetIPSetAsync(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the <a>LoggingConfiguration</a> for the specified web
+         * ACL.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLoggingConfigurationOutcome GetLoggingConfiguration(const Model::GetLoggingConfigurationRequest& request) const;
+
+        /**
+         * <p>Returns the <a>LoggingConfiguration</a> for the specified web
+         * ACL.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetLoggingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLoggingConfigurationOutcomeCallable GetLoggingConfigurationCallable(const Model::GetLoggingConfigurationRequest& request) const;
+
+        /**
+         * <p>Returns the <a>LoggingConfiguration</a> for the specified web
+         * ACL.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetLoggingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLoggingConfigurationAsync(const Model::GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the IAM policy attached to the RuleGroup.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetPermissionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPermissionPolicyOutcome GetPermissionPolicy(const Model::GetPermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the IAM policy attached to the RuleGroup.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetPermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPermissionPolicyOutcomeCallable GetPermissionPolicyCallable(const Model::GetPermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the IAM policy attached to the RuleGroup.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetPermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPermissionPolicyAsync(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code>
          * that you included in the <code>GetRateBasedRule</code> request.</p><p><h3>See
          * Also:</h3>   <a
@@ -2780,6 +2925,34 @@ namespace Model
         virtual void ListIPSetsAsync(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns an array of <a>LoggingConfiguration</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListLoggingConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLoggingConfigurationsOutcome ListLoggingConfigurations(const Model::ListLoggingConfigurationsRequest& request) const;
+
+        /**
+         * <p>Returns an array of <a>LoggingConfiguration</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListLoggingConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListLoggingConfigurationsOutcomeCallable ListLoggingConfigurationsCallable(const Model::ListLoggingConfigurationsRequest& request) const;
+
+        /**
+         * <p>Returns an array of <a>LoggingConfiguration</a> objects.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListLoggingConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListLoggingConfigurationsAsync(const Model::ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an array of <a>RuleSummary</a> objects.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/ListRateBasedRules">AWS
          * API Reference</a></p>
@@ -3048,6 +3221,152 @@ namespace Model
         virtual void ListXssMatchSetsAsync(const Model::ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You
+         * can access information about all traffic that AWS WAF inspects using the
+         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose
+         * delivery stream. For more information, see <a
+         * href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Creating
+         * an Amazon Kinesis Data Firehose Delivery Stream</a>. </p> </li> <li>
+         * <p>Associate that delivery stream to your web ACL using a
+         * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
+         * successfully enable logging using a <code>PutLoggingConfiguration</code>
+         * request, AWS WAF will create a service linked role with the necessary
+         * permissions to write logs to the Amazon Kinesis Data Firehose delivery stream.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+         * Web ACL Traffic Information</a> in the <i>AWS WAF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutLoggingConfigurationOutcome PutLoggingConfiguration(const Model::PutLoggingConfigurationRequest& request) const;
+
+        /**
+         * <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You
+         * can access information about all traffic that AWS WAF inspects using the
+         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose
+         * delivery stream. For more information, see <a
+         * href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Creating
+         * an Amazon Kinesis Data Firehose Delivery Stream</a>. </p> </li> <li>
+         * <p>Associate that delivery stream to your web ACL using a
+         * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
+         * successfully enable logging using a <code>PutLoggingConfiguration</code>
+         * request, AWS WAF will create a service linked role with the necessary
+         * permissions to write logs to the Amazon Kinesis Data Firehose delivery stream.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+         * Web ACL Traffic Information</a> in the <i>AWS WAF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutLoggingConfigurationOutcomeCallable PutLoggingConfigurationCallable(const Model::PutLoggingConfigurationRequest& request) const;
+
+        /**
+         * <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You
+         * can access information about all traffic that AWS WAF inspects using the
+         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose
+         * delivery stream. For more information, see <a
+         * href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Creating
+         * an Amazon Kinesis Data Firehose Delivery Stream</a>. </p> </li> <li>
+         * <p>Associate that delivery stream to your web ACL using a
+         * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
+         * successfully enable logging using a <code>PutLoggingConfiguration</code>
+         * request, AWS WAF will create a service linked role with the necessary
+         * permissions to write logs to the Amazon Kinesis Data Firehose delivery stream.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+         * Web ACL Traffic Information</a> in the <i>AWS WAF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutLoggingConfigurationAsync(const Model::PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Attaches a IAM policy to the specified resource. The only supported use for
+         * this action is to share a RuleGroup across accounts.</p> <p>The
+         * <code>PutPermissionPolicy</code> is subject to the following restrictions:</p>
+         * <ul> <li> <p>You can attach only one policy with each
+         * <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The policy must
+         * include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+         * </p> </li> <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p>
+         * </li> <li> <p>The <code>Action</code> in the policy must be
+         * <code>waf:UpdateWebACL</code>, <code>waf-regional:UpdateWebACL</code>,
+         * <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code> . Any
+         * extra or wildcard actions in the policy will be rejected.</p> </li> <li> <p>The
+         * policy cannot include a <code>Resource</code> parameter.</p> </li> <li> <p>The
+         * ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must
+         * exist in the same region.</p> </li> <li> <p>The user making the request must be
+         * the owner of the RuleGroup.</p> </li> <li> <p>Your policy must be composed using
+         * IAM Policy version 2012-10-17.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+         * Policies</a>. </p> <p>An example of a valid policy parameter is shown in the
+         * Examples section below.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutPermissionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPermissionPolicyOutcome PutPermissionPolicy(const Model::PutPermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Attaches a IAM policy to the specified resource. The only supported use for
+         * this action is to share a RuleGroup across accounts.</p> <p>The
+         * <code>PutPermissionPolicy</code> is subject to the following restrictions:</p>
+         * <ul> <li> <p>You can attach only one policy with each
+         * <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The policy must
+         * include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+         * </p> </li> <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p>
+         * </li> <li> <p>The <code>Action</code> in the policy must be
+         * <code>waf:UpdateWebACL</code>, <code>waf-regional:UpdateWebACL</code>,
+         * <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code> . Any
+         * extra or wildcard actions in the policy will be rejected.</p> </li> <li> <p>The
+         * policy cannot include a <code>Resource</code> parameter.</p> </li> <li> <p>The
+         * ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must
+         * exist in the same region.</p> </li> <li> <p>The user making the request must be
+         * the owner of the RuleGroup.</p> </li> <li> <p>Your policy must be composed using
+         * IAM Policy version 2012-10-17.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+         * Policies</a>. </p> <p>An example of a valid policy parameter is shown in the
+         * Examples section below.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutPermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutPermissionPolicyOutcomeCallable PutPermissionPolicyCallable(const Model::PutPermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Attaches a IAM policy to the specified resource. The only supported use for
+         * this action is to share a RuleGroup across accounts.</p> <p>The
+         * <code>PutPermissionPolicy</code> is subject to the following restrictions:</p>
+         * <ul> <li> <p>You can attach only one policy with each
+         * <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The policy must
+         * include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+         * </p> </li> <li> <p> <code>Effect</code> must specify <code>Allow</code>.</p>
+         * </li> <li> <p>The <code>Action</code> in the policy must be
+         * <code>waf:UpdateWebACL</code>, <code>waf-regional:UpdateWebACL</code>,
+         * <code>waf:GetRuleGroup</code> and <code>waf-regional:GetRuleGroup</code> . Any
+         * extra or wildcard actions in the policy will be rejected.</p> </li> <li> <p>The
+         * policy cannot include a <code>Resource</code> parameter.</p> </li> <li> <p>The
+         * ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must
+         * exist in the same region.</p> </li> <li> <p>The user making the request must be
+         * the owner of the RuleGroup.</p> </li> <li> <p>Your policy must be composed using
+         * IAM Policy version 2012-10-17.</p> </li> </ul> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+         * Policies</a>. </p> <p>An example of a valid policy parameter is shown in the
+         * Examples section below.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutPermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutPermissionPolicyAsync(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Inserts or deletes <a>ByteMatchTuple</a> objects (filters) in a
          * <a>ByteMatchSet</a>. For each <code>ByteMatchTuple</code> object, you specify
          * the following values: </p> <ul> <li> <p>Whether to insert or delete the object
@@ -3248,9 +3567,10 @@ namespace Model
          * CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP
          * addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
          * <code>192.0.2.44/32</code> (for the individual IP address
-         * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports /8, /16, /24, and
-         * /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
-         * For more information about CIDR notation, see the Wikipedia entry <a
+         * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports IPv4 address
+         * ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
+         * ranges: /16, /24, /32, /48, /56, /64, and /128. For more information about CIDR
+         * notation, see the Wikipedia entry <a
          * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>.</p> <p>IPv6 addresses can be represented using any of
          * the following formats:</p> <ul> <li>
@@ -3270,8 +3590,9 @@ namespace Model
          * WAF to watch for.</p> </li> </ol> <p>When you update an <code>IPSet</code>, you
          * specify the IP addresses that you want to add and/or the IP addresses that you
          * want to delete. If you want to change an IP address, you delete the existing IP
-         * address and add the new one.</p> <p>For more information about how to use the
-         * AWS WAF API to allow or block HTTP requests, see the <a
+         * address and add the new one.</p> <p>You can insert a maximum of 1000 addresses
+         * in a single request.</p> <p>For more information about how to use the AWS WAF
+         * API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">AWS API
@@ -3289,9 +3610,10 @@ namespace Model
          * CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP
          * addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
          * <code>192.0.2.44/32</code> (for the individual IP address
-         * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports /8, /16, /24, and
-         * /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
-         * For more information about CIDR notation, see the Wikipedia entry <a
+         * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports IPv4 address
+         * ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
+         * ranges: /16, /24, /32, /48, /56, /64, and /128. For more information about CIDR
+         * notation, see the Wikipedia entry <a
          * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>.</p> <p>IPv6 addresses can be represented using any of
          * the following formats:</p> <ul> <li>
@@ -3311,8 +3633,9 @@ namespace Model
          * WAF to watch for.</p> </li> </ol> <p>When you update an <code>IPSet</code>, you
          * specify the IP addresses that you want to add and/or the IP addresses that you
          * want to delete. If you want to change an IP address, you delete the existing IP
-         * address and add the new one.</p> <p>For more information about how to use the
-         * AWS WAF API to allow or block HTTP requests, see the <a
+         * address and add the new one.</p> <p>You can insert a maximum of 1000 addresses
+         * in a single request.</p> <p>For more information about how to use the AWS WAF
+         * API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">AWS API
@@ -3332,9 +3655,10 @@ namespace Model
          * CIDR notation, for example, <code>192.0.2.0/24</code> (for the range of IP
          * addresses from <code>192.0.2.0</code> to <code>192.0.2.255</code>) or
          * <code>192.0.2.44/32</code> (for the individual IP address
-         * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports /8, /16, /24, and
-         * /32 IP address ranges for IPv4, and /24, /32, /48, /56, /64 and /128 for IPv6.
-         * For more information about CIDR notation, see the Wikipedia entry <a
+         * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports IPv4 address
+         * ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
+         * ranges: /16, /24, /32, /48, /56, /64, and /128. For more information about CIDR
+         * notation, see the Wikipedia entry <a
          * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>.</p> <p>IPv6 addresses can be represented using any of
          * the following formats:</p> <ul> <li>
@@ -3354,8 +3678,9 @@ namespace Model
          * WAF to watch for.</p> </li> </ol> <p>When you update an <code>IPSet</code>, you
          * specify the IP addresses that you want to add and/or the IP addresses that you
          * want to delete. If you want to change an IP address, you delete the existing IP
-         * address and add the new one.</p> <p>For more information about how to use the
-         * AWS WAF API to allow or block HTTP requests, see the <a
+         * address and add the new one.</p> <p>You can insert a maximum of 1000 addresses
+         * in a single request.</p> <p>For more information about how to use the AWS WAF
+         * API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">AWS API
@@ -3850,12 +4175,13 @@ namespace Model
          * transformations on the request, such as converting it to lowercase, before
          * checking its length. Note that transformations of the request body are not
          * supported because the AWS resource forwards only the first <code>8192</code>
-         * bytes of your request to AWS WAF.</p> </li> <li> <p>A
-         * <code>ComparisonOperator</code> used for evaluating the selected part of the
-         * request against the specified <code>Size</code>, such as equals, greater than,
-         * less than, and so on.</p> </li> <li> <p>The length, in bytes, that you want AWS
-         * WAF to watch for in selected part of the request. The length is computed after
-         * applying the transformation.</p> </li> </ul> <p>For example, you can add a
+         * bytes of your request to AWS WAF.</p> <p>You can only specify a single type of
+         * TextTransformation.</p> </li> <li> <p>A <code>ComparisonOperator</code> used for
+         * evaluating the selected part of the request against the specified
+         * <code>Size</code>, such as equals, greater than, less than, and so on.</p> </li>
+         * <li> <p>The length, in bytes, that you want AWS WAF to watch for in selected
+         * part of the request. The length is computed after applying the
+         * transformation.</p> </li> </ul> <p>For example, you can add a
          * <code>SizeConstraintSetUpdate</code> object that matches web requests in which
          * the length of the <code>User-Agent</code> header is greater than 100 bytes. You
          * can then configure AWS WAF to block those requests.</p> <p>To create and
@@ -3887,12 +4213,13 @@ namespace Model
          * transformations on the request, such as converting it to lowercase, before
          * checking its length. Note that transformations of the request body are not
          * supported because the AWS resource forwards only the first <code>8192</code>
-         * bytes of your request to AWS WAF.</p> </li> <li> <p>A
-         * <code>ComparisonOperator</code> used for evaluating the selected part of the
-         * request against the specified <code>Size</code>, such as equals, greater than,
-         * less than, and so on.</p> </li> <li> <p>The length, in bytes, that you want AWS
-         * WAF to watch for in selected part of the request. The length is computed after
-         * applying the transformation.</p> </li> </ul> <p>For example, you can add a
+         * bytes of your request to AWS WAF.</p> <p>You can only specify a single type of
+         * TextTransformation.</p> </li> <li> <p>A <code>ComparisonOperator</code> used for
+         * evaluating the selected part of the request against the specified
+         * <code>Size</code>, such as equals, greater than, less than, and so on.</p> </li>
+         * <li> <p>The length, in bytes, that you want AWS WAF to watch for in selected
+         * part of the request. The length is computed after applying the
+         * transformation.</p> </li> </ul> <p>For example, you can add a
          * <code>SizeConstraintSetUpdate</code> object that matches web requests in which
          * the length of the <code>User-Agent</code> header is greater than 100 bytes. You
          * can then configure AWS WAF to block those requests.</p> <p>To create and
@@ -3926,12 +4253,13 @@ namespace Model
          * transformations on the request, such as converting it to lowercase, before
          * checking its length. Note that transformations of the request body are not
          * supported because the AWS resource forwards only the first <code>8192</code>
-         * bytes of your request to AWS WAF.</p> </li> <li> <p>A
-         * <code>ComparisonOperator</code> used for evaluating the selected part of the
-         * request against the specified <code>Size</code>, such as equals, greater than,
-         * less than, and so on.</p> </li> <li> <p>The length, in bytes, that you want AWS
-         * WAF to watch for in selected part of the request. The length is computed after
-         * applying the transformation.</p> </li> </ul> <p>For example, you can add a
+         * bytes of your request to AWS WAF.</p> <p>You can only specify a single type of
+         * TextTransformation.</p> </li> <li> <p>A <code>ComparisonOperator</code> used for
+         * evaluating the selected part of the request against the specified
+         * <code>Size</code>, such as equals, greater than, less than, and so on.</p> </li>
+         * <li> <p>The length, in bytes, that you want AWS WAF to watch for in selected
+         * part of the request. The length is computed after applying the
+         * transformation.</p> </li> </ul> <p>For example, you can add a
          * <code>SizeConstraintSetUpdate</code> object that matches web requests in which
          * the length of the <code>User-Agent</code> header is greater than 100 bytes. You
          * can then configure AWS WAF to block those requests.</p> <p>To create and
@@ -3960,16 +4288,17 @@ namespace Model
          * Whether to insert the object into or delete the object from the array. To change
          * a <code>SqlInjectionMatchTuple</code>, you delete the existing object and add a
          * new one.</p> </li> <li> <p> <code>FieldToMatch</code>: The part of web requests
-         * that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header,
-         * the name of the header.</p> </li> <li> <p> <code>TextTransformation</code>:
-         * Which text transformation, if any, to perform on the web request before
-         * inspecting the request for snippets of malicious SQL code.</p> </li> </ul>
-         * <p>You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront
-         * requests you want to allow, block, or count. For example, if you're receiving
-         * requests that contain snippets of SQL code in the query string and you want to
-         * block the requests, you can create a <code>SqlInjectionMatchSet</code> with the
-         * applicable settings, and then configure AWS WAF to block the requests. </p>
-         * <p>To create and configure a <code>SqlInjectionMatchSet</code>, perform the
+         * that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header or
+         * custom query parameter, the name of the header or parameter.</p> </li> <li> <p>
+         * <code>TextTransformation</code>: Which text transformation, if any, to perform
+         * on the web request before inspecting the request for snippets of malicious SQL
+         * code.</p> <p>You can only specify a single type of TextTransformation.</p> </li>
+         * </ul> <p>You use <code>SqlInjectionMatchSet</code> objects to specify which
+         * CloudFront requests you want to allow, block, or count. For example, if you're
+         * receiving requests that contain snippets of SQL code in the query string and you
+         * want to block the requests, you can create a <code>SqlInjectionMatchSet</code>
+         * with the applicable settings, and then configure AWS WAF to block the requests.
+         * </p> <p>To create and configure a <code>SqlInjectionMatchSet</code>, perform the
          * following steps:</p> <ol> <li> <p>Submit a <a>CreateSqlInjectionMatchSet</a>
          * request.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get the change token
          * that you provide in the <code>ChangeToken</code> parameter of an
@@ -3992,16 +4321,17 @@ namespace Model
          * Whether to insert the object into or delete the object from the array. To change
          * a <code>SqlInjectionMatchTuple</code>, you delete the existing object and add a
          * new one.</p> </li> <li> <p> <code>FieldToMatch</code>: The part of web requests
-         * that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header,
-         * the name of the header.</p> </li> <li> <p> <code>TextTransformation</code>:
-         * Which text transformation, if any, to perform on the web request before
-         * inspecting the request for snippets of malicious SQL code.</p> </li> </ul>
-         * <p>You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront
-         * requests you want to allow, block, or count. For example, if you're receiving
-         * requests that contain snippets of SQL code in the query string and you want to
-         * block the requests, you can create a <code>SqlInjectionMatchSet</code> with the
-         * applicable settings, and then configure AWS WAF to block the requests. </p>
-         * <p>To create and configure a <code>SqlInjectionMatchSet</code>, perform the
+         * that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header or
+         * custom query parameter, the name of the header or parameter.</p> </li> <li> <p>
+         * <code>TextTransformation</code>: Which text transformation, if any, to perform
+         * on the web request before inspecting the request for snippets of malicious SQL
+         * code.</p> <p>You can only specify a single type of TextTransformation.</p> </li>
+         * </ul> <p>You use <code>SqlInjectionMatchSet</code> objects to specify which
+         * CloudFront requests you want to allow, block, or count. For example, if you're
+         * receiving requests that contain snippets of SQL code in the query string and you
+         * want to block the requests, you can create a <code>SqlInjectionMatchSet</code>
+         * with the applicable settings, and then configure AWS WAF to block the requests.
+         * </p> <p>To create and configure a <code>SqlInjectionMatchSet</code>, perform the
          * following steps:</p> <ol> <li> <p>Submit a <a>CreateSqlInjectionMatchSet</a>
          * request.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get the change token
          * that you provide in the <code>ChangeToken</code> parameter of an
@@ -4026,16 +4356,17 @@ namespace Model
          * Whether to insert the object into or delete the object from the array. To change
          * a <code>SqlInjectionMatchTuple</code>, you delete the existing object and add a
          * new one.</p> </li> <li> <p> <code>FieldToMatch</code>: The part of web requests
-         * that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header,
-         * the name of the header.</p> </li> <li> <p> <code>TextTransformation</code>:
-         * Which text transformation, if any, to perform on the web request before
-         * inspecting the request for snippets of malicious SQL code.</p> </li> </ul>
-         * <p>You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront
-         * requests you want to allow, block, or count. For example, if you're receiving
-         * requests that contain snippets of SQL code in the query string and you want to
-         * block the requests, you can create a <code>SqlInjectionMatchSet</code> with the
-         * applicable settings, and then configure AWS WAF to block the requests. </p>
-         * <p>To create and configure a <code>SqlInjectionMatchSet</code>, perform the
+         * that you want AWS WAF to inspect and, if you want AWS WAF to inspect a header or
+         * custom query parameter, the name of the header or parameter.</p> </li> <li> <p>
+         * <code>TextTransformation</code>: Which text transformation, if any, to perform
+         * on the web request before inspecting the request for snippets of malicious SQL
+         * code.</p> <p>You can only specify a single type of TextTransformation.</p> </li>
+         * </ul> <p>You use <code>SqlInjectionMatchSet</code> objects to specify which
+         * CloudFront requests you want to allow, block, or count. For example, if you're
+         * receiving requests that contain snippets of SQL code in the query string and you
+         * want to block the requests, you can create a <code>SqlInjectionMatchSet</code>
+         * with the applicable settings, and then configure AWS WAF to block the requests.
+         * </p> <p>To create and configure a <code>SqlInjectionMatchSet</code>, perform the
          * following steps:</p> <ol> <li> <p>Submit a <a>CreateSqlInjectionMatchSet</a>
          * request.</p> </li> <li> <p>Use <a>GetChangeToken</a> to get the change token
          * that you provide in the <code>ChangeToken</code> parameter of an
@@ -4208,21 +4539,22 @@ namespace Model
          * object into or delete the object from the array. To change a
          * <code>XssMatchTuple</code>, you delete the existing object and add a new
          * one.</p> </li> <li> <p> <code>FieldToMatch</code>: The part of web requests that
-         * you want AWS WAF to inspect and, if you want AWS WAF to inspect a header, the
-         * name of the header.</p> </li> <li> <p> <code>TextTransformation</code>: Which
-         * text transformation, if any, to perform on the web request before inspecting the
-         * request for cross-site scripting attacks.</p> </li> </ul> <p>You use
-         * <code>XssMatchSet</code> objects to specify which CloudFront requests you want
-         * to allow, block, or count. For example, if you're receiving requests that
-         * contain cross-site scripting attacks in the request body and you want to block
-         * the requests, you can create an <code>XssMatchSet</code> with the applicable
-         * settings, and then configure AWS WAF to block the requests. </p> <p>To create
-         * and configure an <code>XssMatchSet</code>, perform the following steps:</p> <ol>
-         * <li> <p>Submit a <a>CreateXssMatchSet</a> request.</p> </li> <li> <p>Use
-         * <a>GetChangeToken</a> to get the change token that you provide in the
-         * <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</p> </li>
-         * <li> <p>Submit an <code>UpdateXssMatchSet</code> request to specify the parts of
-         * web requests that you want AWS WAF to inspect for cross-site scripting
+         * you want AWS WAF to inspect and, if you want AWS WAF to inspect a header or
+         * custom query parameter, the name of the header or parameter.</p> </li> <li> <p>
+         * <code>TextTransformation</code>: Which text transformation, if any, to perform
+         * on the web request before inspecting the request for cross-site scripting
+         * attacks.</p> <p>You can only specify a single type of TextTransformation.</p>
+         * </li> </ul> <p>You use <code>XssMatchSet</code> objects to specify which
+         * CloudFront requests you want to allow, block, or count. For example, if you're
+         * receiving requests that contain cross-site scripting attacks in the request body
+         * and you want to block the requests, you can create an <code>XssMatchSet</code>
+         * with the applicable settings, and then configure AWS WAF to block the requests.
+         * </p> <p>To create and configure an <code>XssMatchSet</code>, perform the
+         * following steps:</p> <ol> <li> <p>Submit a <a>CreateXssMatchSet</a> request.</p>
+         * </li> <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide
+         * in the <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</p>
+         * </li> <li> <p>Submit an <code>UpdateXssMatchSet</code> request to specify the
+         * parts of web requests that you want AWS WAF to inspect for cross-site scripting
          * attacks.</p> </li> </ol> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -4239,21 +4571,22 @@ namespace Model
          * object into or delete the object from the array. To change a
          * <code>XssMatchTuple</code>, you delete the existing object and add a new
          * one.</p> </li> <li> <p> <code>FieldToMatch</code>: The part of web requests that
-         * you want AWS WAF to inspect and, if you want AWS WAF to inspect a header, the
-         * name of the header.</p> </li> <li> <p> <code>TextTransformation</code>: Which
-         * text transformation, if any, to perform on the web request before inspecting the
-         * request for cross-site scripting attacks.</p> </li> </ul> <p>You use
-         * <code>XssMatchSet</code> objects to specify which CloudFront requests you want
-         * to allow, block, or count. For example, if you're receiving requests that
-         * contain cross-site scripting attacks in the request body and you want to block
-         * the requests, you can create an <code>XssMatchSet</code> with the applicable
-         * settings, and then configure AWS WAF to block the requests. </p> <p>To create
-         * and configure an <code>XssMatchSet</code>, perform the following steps:</p> <ol>
-         * <li> <p>Submit a <a>CreateXssMatchSet</a> request.</p> </li> <li> <p>Use
-         * <a>GetChangeToken</a> to get the change token that you provide in the
-         * <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</p> </li>
-         * <li> <p>Submit an <code>UpdateXssMatchSet</code> request to specify the parts of
-         * web requests that you want AWS WAF to inspect for cross-site scripting
+         * you want AWS WAF to inspect and, if you want AWS WAF to inspect a header or
+         * custom query parameter, the name of the header or parameter.</p> </li> <li> <p>
+         * <code>TextTransformation</code>: Which text transformation, if any, to perform
+         * on the web request before inspecting the request for cross-site scripting
+         * attacks.</p> <p>You can only specify a single type of TextTransformation.</p>
+         * </li> </ul> <p>You use <code>XssMatchSet</code> objects to specify which
+         * CloudFront requests you want to allow, block, or count. For example, if you're
+         * receiving requests that contain cross-site scripting attacks in the request body
+         * and you want to block the requests, you can create an <code>XssMatchSet</code>
+         * with the applicable settings, and then configure AWS WAF to block the requests.
+         * </p> <p>To create and configure an <code>XssMatchSet</code>, perform the
+         * following steps:</p> <ol> <li> <p>Submit a <a>CreateXssMatchSet</a> request.</p>
+         * </li> <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide
+         * in the <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</p>
+         * </li> <li> <p>Submit an <code>UpdateXssMatchSet</code> request to specify the
+         * parts of web requests that you want AWS WAF to inspect for cross-site scripting
          * attacks.</p> </li> </ol> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -4272,21 +4605,22 @@ namespace Model
          * object into or delete the object from the array. To change a
          * <code>XssMatchTuple</code>, you delete the existing object and add a new
          * one.</p> </li> <li> <p> <code>FieldToMatch</code>: The part of web requests that
-         * you want AWS WAF to inspect and, if you want AWS WAF to inspect a header, the
-         * name of the header.</p> </li> <li> <p> <code>TextTransformation</code>: Which
-         * text transformation, if any, to perform on the web request before inspecting the
-         * request for cross-site scripting attacks.</p> </li> </ul> <p>You use
-         * <code>XssMatchSet</code> objects to specify which CloudFront requests you want
-         * to allow, block, or count. For example, if you're receiving requests that
-         * contain cross-site scripting attacks in the request body and you want to block
-         * the requests, you can create an <code>XssMatchSet</code> with the applicable
-         * settings, and then configure AWS WAF to block the requests. </p> <p>To create
-         * and configure an <code>XssMatchSet</code>, perform the following steps:</p> <ol>
-         * <li> <p>Submit a <a>CreateXssMatchSet</a> request.</p> </li> <li> <p>Use
-         * <a>GetChangeToken</a> to get the change token that you provide in the
-         * <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</p> </li>
-         * <li> <p>Submit an <code>UpdateXssMatchSet</code> request to specify the parts of
-         * web requests that you want AWS WAF to inspect for cross-site scripting
+         * you want AWS WAF to inspect and, if you want AWS WAF to inspect a header or
+         * custom query parameter, the name of the header or parameter.</p> </li> <li> <p>
+         * <code>TextTransformation</code>: Which text transformation, if any, to perform
+         * on the web request before inspecting the request for cross-site scripting
+         * attacks.</p> <p>You can only specify a single type of TextTransformation.</p>
+         * </li> </ul> <p>You use <code>XssMatchSet</code> objects to specify which
+         * CloudFront requests you want to allow, block, or count. For example, if you're
+         * receiving requests that contain cross-site scripting attacks in the request body
+         * and you want to block the requests, you can create an <code>XssMatchSet</code>
+         * with the applicable settings, and then configure AWS WAF to block the requests.
+         * </p> <p>To create and configure an <code>XssMatchSet</code>, perform the
+         * following steps:</p> <ol> <li> <p>Submit a <a>CreateXssMatchSet</a> request.</p>
+         * </li> <li> <p>Use <a>GetChangeToken</a> to get the change token that you provide
+         * in the <code>ChangeToken</code> parameter of an <a>UpdateIPSet</a> request.</p>
+         * </li> <li> <p>Submit an <code>UpdateXssMatchSet</code> request to specify the
+         * parts of web requests that you want AWS WAF to inspect for cross-site scripting
          * attacks.</p> </li> </ol> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
@@ -4318,6 +4652,8 @@ namespace Model
         void DeleteByteMatchSetAsyncHelper(const Model::DeleteByteMatchSetRequest& request, const DeleteByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGeoMatchSetAsyncHelper(const Model::DeleteGeoMatchSetRequest& request, const DeleteGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIPSetAsyncHelper(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteLoggingConfigurationAsyncHelper(const Model::DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePermissionPolicyAsyncHelper(const Model::DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRateBasedRuleAsyncHelper(const Model::DeleteRateBasedRuleRequest& request, const DeleteRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRegexMatchSetAsyncHelper(const Model::DeleteRegexMatchSetRequest& request, const DeleteRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRegexPatternSetAsyncHelper(const Model::DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4332,6 +4668,8 @@ namespace Model
         void GetChangeTokenStatusAsyncHelper(const Model::GetChangeTokenStatusRequest& request, const GetChangeTokenStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGeoMatchSetAsyncHelper(const Model::GetGeoMatchSetRequest& request, const GetGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIPSetAsyncHelper(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLoggingConfigurationAsyncHelper(const Model::GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPermissionPolicyAsyncHelper(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRateBasedRuleAsyncHelper(const Model::GetRateBasedRuleRequest& request, const GetRateBasedRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRateBasedRuleManagedKeysAsyncHelper(const Model::GetRateBasedRuleManagedKeysRequest& request, const GetRateBasedRuleManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRegexMatchSetAsyncHelper(const Model::GetRegexMatchSetRequest& request, const GetRegexMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4347,6 +4685,7 @@ namespace Model
         void ListByteMatchSetsAsyncHelper(const Model::ListByteMatchSetsRequest& request, const ListByteMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGeoMatchSetsAsyncHelper(const Model::ListGeoMatchSetsRequest& request, const ListGeoMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIPSetsAsyncHelper(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListLoggingConfigurationsAsyncHelper(const Model::ListLoggingConfigurationsRequest& request, const ListLoggingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRateBasedRulesAsyncHelper(const Model::ListRateBasedRulesRequest& request, const ListRateBasedRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRegexMatchSetsAsyncHelper(const Model::ListRegexMatchSetsRequest& request, const ListRegexMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRegexPatternSetsAsyncHelper(const Model::ListRegexPatternSetsRequest& request, const ListRegexPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4357,6 +4696,8 @@ namespace Model
         void ListSubscribedRuleGroupsAsyncHelper(const Model::ListSubscribedRuleGroupsRequest& request, const ListSubscribedRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWebACLsAsyncHelper(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListXssMatchSetsAsyncHelper(const Model::ListXssMatchSetsRequest& request, const ListXssMatchSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutLoggingConfigurationAsyncHelper(const Model::PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutPermissionPolicyAsyncHelper(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateByteMatchSetAsyncHelper(const Model::UpdateByteMatchSetRequest& request, const UpdateByteMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGeoMatchSetAsyncHelper(const Model::UpdateGeoMatchSetRequest& request, const UpdateGeoMatchSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIPSetAsyncHelper(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

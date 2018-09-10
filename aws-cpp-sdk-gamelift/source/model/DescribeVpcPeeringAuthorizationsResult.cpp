@@ -37,10 +37,10 @@ DescribeVpcPeeringAuthorizationsResult::DescribeVpcPeeringAuthorizationsResult(c
 
 DescribeVpcPeeringAuthorizationsResult& DescribeVpcPeeringAuthorizationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VpcPeeringAuthorizations"))
   {
-    Array<JsonValue> vpcPeeringAuthorizationsJsonList = jsonValue.GetArray("VpcPeeringAuthorizations");
+    Array<JsonView> vpcPeeringAuthorizationsJsonList = jsonValue.GetArray("VpcPeeringAuthorizations");
     for(unsigned vpcPeeringAuthorizationsIndex = 0; vpcPeeringAuthorizationsIndex < vpcPeeringAuthorizationsJsonList.GetLength(); ++vpcPeeringAuthorizationsIndex)
     {
       m_vpcPeeringAuthorizations.push_back(vpcPeeringAuthorizationsJsonList[vpcPeeringAuthorizationsIndex].AsObject());

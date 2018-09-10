@@ -46,6 +46,7 @@
 #include <aws/codecommit/model/PostCommentForComparedCommitResult.h>
 #include <aws/codecommit/model/PostCommentForPullRequestResult.h>
 #include <aws/codecommit/model/PostCommentReplyResult.h>
+#include <aws/codecommit/model/PutFileResult.h>
 #include <aws/codecommit/model/PutRepositoryTriggersResult.h>
 #include <aws/codecommit/model/TestRepositoryTriggersResult.h>
 #include <aws/codecommit/model/UpdateCommentResult.h>
@@ -75,11 +76,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -124,6 +120,7 @@ namespace Model
         class PostCommentForComparedCommitRequest;
         class PostCommentForPullRequestRequest;
         class PostCommentReplyRequest;
+        class PutFileRequest;
         class PutRepositoryTriggersRequest;
         class TestRepositoryTriggersRequest;
         class UpdateCommentRequest;
@@ -160,6 +157,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PostCommentForComparedCommitResult, Aws::Client::AWSError<CodeCommitErrors>> PostCommentForComparedCommitOutcome;
         typedef Aws::Utils::Outcome<PostCommentForPullRequestResult, Aws::Client::AWSError<CodeCommitErrors>> PostCommentForPullRequestOutcome;
         typedef Aws::Utils::Outcome<PostCommentReplyResult, Aws::Client::AWSError<CodeCommitErrors>> PostCommentReplyOutcome;
+        typedef Aws::Utils::Outcome<PutFileResult, Aws::Client::AWSError<CodeCommitErrors>> PutFileOutcome;
         typedef Aws::Utils::Outcome<PutRepositoryTriggersResult, Aws::Client::AWSError<CodeCommitErrors>> PutRepositoryTriggersOutcome;
         typedef Aws::Utils::Outcome<TestRepositoryTriggersResult, Aws::Client::AWSError<CodeCommitErrors>> TestRepositoryTriggersOutcome;
         typedef Aws::Utils::Outcome<UpdateCommentResult, Aws::Client::AWSError<CodeCommitErrors>> UpdateCommentOutcome;
@@ -196,6 +194,7 @@ namespace Model
         typedef std::future<PostCommentForComparedCommitOutcome> PostCommentForComparedCommitOutcomeCallable;
         typedef std::future<PostCommentForPullRequestOutcome> PostCommentForPullRequestOutcomeCallable;
         typedef std::future<PostCommentReplyOutcome> PostCommentReplyOutcomeCallable;
+        typedef std::future<PutFileOutcome> PutFileOutcomeCallable;
         typedef std::future<PutRepositoryTriggersOutcome> PutRepositoryTriggersOutcomeCallable;
         typedef std::future<TestRepositoryTriggersOutcome> TestRepositoryTriggersOutcomeCallable;
         typedef std::future<UpdateCommentOutcome> UpdateCommentOutcomeCallable;
@@ -235,6 +234,7 @@ namespace Model
     typedef std::function<void(const CodeCommitClient*, const Model::PostCommentForComparedCommitRequest&, const Model::PostCommentForComparedCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentForComparedCommitResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PostCommentForPullRequestRequest&, const Model::PostCommentForPullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentForPullRequestResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PostCommentReplyRequest&, const Model::PostCommentReplyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostCommentReplyResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::PutFileRequest&, const Model::PutFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFileResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::PutRepositoryTriggersRequest&, const Model::PutRepositoryTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRepositoryTriggersResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::TestRepositoryTriggersRequest&, const Model::TestRepositoryTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestRepositoryTriggersResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::UpdateCommentRequest&, const Model::UpdateCommentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCommentResponseReceivedHandler;
@@ -269,9 +269,11 @@ namespace Model
    * which returns information about a specified branch.</p> </li> <li> <p>
    * <a>ListBranches</a>, which lists all branches for a specified repository.</p>
    * </li> <li> <p> <a>UpdateDefaultBranch</a>, which changes the default branch for
-   * a repository.</p> </li> </ul> <p>Information about committed code in a
-   * repository, by calling the following:</p> <ul> <li> <p> <a>GetBlob</a>, which
-   * returns the base-64 encoded content of an individual Git blob object within a
+   * a repository.</p> </li> </ul> <p>Files, by calling the following:</p> <ul> <li>
+   * <p> <a>PutFile</a>, which adds or modifies a file in a specified repository and
+   * branch.</p> </li> </ul> <p>Information about committed code in a repository, by
+   * calling the following:</p> <ul> <li> <p> <a>GetBlob</a>, which returns the
+   * base-64 encoded content of an individual Git blob object within a
    * repository.</p> </li> <li> <p> <a>GetCommit</a>, which returns information about
    * a commit, including commit messages and author and committer information.</p>
    * </li> <li> <p> <a>GetDifferences</a>, which returns information about the
@@ -342,7 +344,7 @@ namespace Model
 
         virtual ~CodeCommitClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "codecommit"; }
+        inline virtual const char* GetServiceClientName() const override { return "CodeCommit"; }
 
 
         /**
@@ -1122,6 +1124,37 @@ namespace Model
         virtual void PostCommentReplyAsync(const Model::PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Adds or updates a file in a branch in an AWS CodeCommit repository, and
+         * generates a commit for the addition in the specified branch.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutFileOutcome PutFile(const Model::PutFileRequest& request) const;
+
+        /**
+         * <p>Adds or updates a file in a branch in an AWS CodeCommit repository, and
+         * generates a commit for the addition in the specified branch.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutFileOutcomeCallable PutFileCallable(const Model::PutFileRequest& request) const;
+
+        /**
+         * <p>Adds or updates a file in a branch in an AWS CodeCommit repository, and
+         * generates a commit for the addition in the specified branch.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutFileAsync(const Model::PutFileRequest& request, const PutFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Replaces all triggers for a repository. This can be used to create or delete
          * triggers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutRepositoryTriggers">AWS
@@ -1437,6 +1470,7 @@ namespace Model
         void PostCommentForComparedCommitAsyncHelper(const Model::PostCommentForComparedCommitRequest& request, const PostCommentForComparedCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostCommentForPullRequestAsyncHelper(const Model::PostCommentForPullRequestRequest& request, const PostCommentForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostCommentReplyAsyncHelper(const Model::PostCommentReplyRequest& request, const PostCommentReplyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutFileAsyncHelper(const Model::PutFileRequest& request, const PutFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRepositoryTriggersAsyncHelper(const Model::PutRepositoryTriggersRequest& request, const PutRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestRepositoryTriggersAsyncHelper(const Model::TestRepositoryTriggersRequest& request, const TestRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCommentAsyncHelper(const Model::UpdateCommentRequest& request, const UpdateCommentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

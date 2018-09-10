@@ -37,7 +37,7 @@ CreateMLModelResult::CreateMLModelResult(const Aws::AmazonWebServiceResult<JsonV
 
 CreateMLModelResult& CreateMLModelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MLModelId"))
   {
     m_mLModelId = jsonValue.GetString("MLModelId");

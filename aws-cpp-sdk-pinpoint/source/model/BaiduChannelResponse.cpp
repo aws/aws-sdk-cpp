@@ -47,7 +47,7 @@ BaiduChannelResponse::BaiduChannelResponse() :
 {
 }
 
-BaiduChannelResponse::BaiduChannelResponse(const JsonValue& jsonValue) : 
+BaiduChannelResponse::BaiduChannelResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_credentialHasBeenSet(false),
@@ -67,7 +67,7 @@ BaiduChannelResponse::BaiduChannelResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BaiduChannelResponse& BaiduChannelResponse::operator =(const JsonValue& jsonValue)
+BaiduChannelResponse& BaiduChannelResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

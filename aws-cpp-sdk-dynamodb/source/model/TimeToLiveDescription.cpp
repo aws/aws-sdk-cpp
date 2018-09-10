@@ -35,7 +35,7 @@ TimeToLiveDescription::TimeToLiveDescription() :
 {
 }
 
-TimeToLiveDescription::TimeToLiveDescription(const JsonValue& jsonValue) : 
+TimeToLiveDescription::TimeToLiveDescription(JsonView jsonValue) : 
     m_timeToLiveStatus(TimeToLiveStatus::NOT_SET),
     m_timeToLiveStatusHasBeenSet(false),
     m_attributeNameHasBeenSet(false)
@@ -43,7 +43,7 @@ TimeToLiveDescription::TimeToLiveDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TimeToLiveDescription& TimeToLiveDescription::operator =(const JsonValue& jsonValue)
+TimeToLiveDescription& TimeToLiveDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TimeToLiveStatus"))
   {

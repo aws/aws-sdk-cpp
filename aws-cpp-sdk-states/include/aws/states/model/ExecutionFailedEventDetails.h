@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SFN
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ExecutionFailedEventDetails();
-    ExecutionFailedEventDetails(const Aws::Utils::Json::JsonValue& jsonValue);
-    ExecutionFailedEventDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ExecutionFailedEventDetails(Aws::Utils::Json::JsonView jsonValue);
+    ExecutionFailedEventDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -72,7 +72,7 @@ Aws::String PutSubscriptionFilterRequest::SerializePayload() const
    payload.WithString("distribution", DistributionMapper::GetNameForDistribution(m_distribution));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutSubscriptionFilterRequest::GetRequestSpecificHeaders() const

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticsearchService
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     LogPublishingOptionsStatus();
-    LogPublishingOptionsStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    LogPublishingOptionsStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LogPublishingOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
+    LogPublishingOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

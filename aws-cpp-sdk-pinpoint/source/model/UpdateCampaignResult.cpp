@@ -37,7 +37,7 @@ UpdateCampaignResult::UpdateCampaignResult(const Aws::AmazonWebServiceResult<Jso
 
 UpdateCampaignResult& UpdateCampaignResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_campaignResponse = jsonValue;
 
 

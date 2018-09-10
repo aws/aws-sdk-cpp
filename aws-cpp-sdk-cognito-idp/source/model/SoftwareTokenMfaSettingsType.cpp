@@ -36,7 +36,7 @@ SoftwareTokenMfaSettingsType::SoftwareTokenMfaSettingsType() :
 {
 }
 
-SoftwareTokenMfaSettingsType::SoftwareTokenMfaSettingsType(const JsonValue& jsonValue) : 
+SoftwareTokenMfaSettingsType::SoftwareTokenMfaSettingsType(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_preferredMfa(false),
@@ -45,7 +45,7 @@ SoftwareTokenMfaSettingsType::SoftwareTokenMfaSettingsType(const JsonValue& json
   *this = jsonValue;
 }
 
-SoftwareTokenMfaSettingsType& SoftwareTokenMfaSettingsType::operator =(const JsonValue& jsonValue)
+SoftwareTokenMfaSettingsType& SoftwareTokenMfaSettingsType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Enabled"))
   {

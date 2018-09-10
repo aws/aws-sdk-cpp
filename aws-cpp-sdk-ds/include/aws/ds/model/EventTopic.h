@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectoryService
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     EventTopic();
-    EventTopic(const Aws::Utils::Json::JsonValue& jsonValue);
-    EventTopic& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EventTopic(Aws::Utils::Json::JsonView jsonValue);
+    EventTopic& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

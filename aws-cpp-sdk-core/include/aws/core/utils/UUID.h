@@ -44,11 +44,11 @@ namespace Aws
             /**
              * Returns the current UUID as a GUID string
              */
-            operator Aws::String();
+            operator Aws::String() const;
             /**
              * Returns a copy of the raw uuid
              */
-            inline operator ByteBuffer() { return ByteBuffer(m_uuid, sizeof(m_uuid)); }
+            inline operator ByteBuffer() const { return ByteBuffer(m_uuid, sizeof(m_uuid)); }
 
             /**
              * Generates a UUID. It will always try to prefer a random implementation from the entropy source on the machine. If none, is available, it will

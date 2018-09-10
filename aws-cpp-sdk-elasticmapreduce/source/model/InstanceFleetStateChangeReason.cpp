@@ -35,7 +35,7 @@ InstanceFleetStateChangeReason::InstanceFleetStateChangeReason() :
 {
 }
 
-InstanceFleetStateChangeReason::InstanceFleetStateChangeReason(const JsonValue& jsonValue) : 
+InstanceFleetStateChangeReason::InstanceFleetStateChangeReason(JsonView jsonValue) : 
     m_code(InstanceFleetStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -43,7 +43,7 @@ InstanceFleetStateChangeReason::InstanceFleetStateChangeReason(const JsonValue& 
   *this = jsonValue;
 }
 
-InstanceFleetStateChangeReason& InstanceFleetStateChangeReason::operator =(const JsonValue& jsonValue)
+InstanceFleetStateChangeReason& InstanceFleetStateChangeReason::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Code"))
   {

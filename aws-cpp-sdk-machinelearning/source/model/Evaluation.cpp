@@ -48,7 +48,7 @@ Evaluation::Evaluation() :
 {
 }
 
-Evaluation::Evaluation(const JsonValue& jsonValue) : 
+Evaluation::Evaluation(JsonView jsonValue) : 
     m_evaluationIdHasBeenSet(false),
     m_mLModelIdHasBeenSet(false),
     m_evaluationDataSourceIdHasBeenSet(false),
@@ -69,7 +69,7 @@ Evaluation::Evaluation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Evaluation& Evaluation::operator =(const JsonValue& jsonValue)
+Evaluation& Evaluation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EvaluationId"))
   {

@@ -37,10 +37,10 @@ DescribeVolumesResult::DescribeVolumesResult(const Aws::AmazonWebServiceResult<J
 
 DescribeVolumesResult& DescribeVolumesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Volumes"))
   {
-    Array<JsonValue> volumesJsonList = jsonValue.GetArray("Volumes");
+    Array<JsonView> volumesJsonList = jsonValue.GetArray("Volumes");
     for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
     {
       m_volumes.push_back(volumesJsonList[volumesIndex].AsObject());

@@ -34,14 +34,14 @@ VideoSelectorPid::VideoSelectorPid() :
 {
 }
 
-VideoSelectorPid::VideoSelectorPid(const JsonValue& jsonValue) : 
+VideoSelectorPid::VideoSelectorPid(JsonView jsonValue) : 
     m_pid(0),
     m_pidHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-VideoSelectorPid& VideoSelectorPid::operator =(const JsonValue& jsonValue)
+VideoSelectorPid& VideoSelectorPid::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pid"))
   {

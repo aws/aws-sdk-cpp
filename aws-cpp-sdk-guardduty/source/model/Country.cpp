@@ -34,14 +34,14 @@ Country::Country() :
 {
 }
 
-Country::Country(const JsonValue& jsonValue) : 
+Country::Country(JsonView jsonValue) : 
     m_countryCodeHasBeenSet(false),
     m_countryNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Country& Country::operator =(const JsonValue& jsonValue)
+Country& Country::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("countryCode"))
   {

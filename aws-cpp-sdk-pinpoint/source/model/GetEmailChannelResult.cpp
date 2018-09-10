@@ -37,7 +37,7 @@ GetEmailChannelResult::GetEmailChannelResult(const Aws::AmazonWebServiceResult<J
 
 GetEmailChannelResult& GetEmailChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_emailChannelResponse = jsonValue;
 
 

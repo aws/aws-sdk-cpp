@@ -34,14 +34,14 @@ RecordMarkerDecisionAttributes::RecordMarkerDecisionAttributes() :
 {
 }
 
-RecordMarkerDecisionAttributes::RecordMarkerDecisionAttributes(const JsonValue& jsonValue) : 
+RecordMarkerDecisionAttributes::RecordMarkerDecisionAttributes(JsonView jsonValue) : 
     m_markerNameHasBeenSet(false),
     m_detailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RecordMarkerDecisionAttributes& RecordMarkerDecisionAttributes::operator =(const JsonValue& jsonValue)
+RecordMarkerDecisionAttributes& RecordMarkerDecisionAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("markerName"))
   {

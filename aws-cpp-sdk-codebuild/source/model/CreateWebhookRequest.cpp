@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateWebhookRequest::CreateWebhookRequest() : 
-    m_projectNameHasBeenSet(false)
+    m_projectNameHasBeenSet(false),
+    m_branchFilterHasBeenSet(false)
 {
 }
 
@@ -37,7 +38,13 @@ Aws::String CreateWebhookRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_branchFilterHasBeenSet)
+  {
+   payload.WithString("branchFilter", m_branchFilter);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateWebhookRequest::GetRequestSpecificHeaders() const

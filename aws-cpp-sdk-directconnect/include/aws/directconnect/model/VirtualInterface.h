@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectConnect
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     VirtualInterface();
-    VirtualInterface(const Aws::Utils::Json::JsonValue& jsonValue);
-    VirtualInterface& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    VirtualInterface(Aws::Utils::Json::JsonView jsonValue);
+    VirtualInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -455,6 +456,85 @@ namespace Model
     
     inline VirtualInterface& AddBgpPeers(BGPPeer&& value) { m_bgpPeersHasBeenSet = true; m_bgpPeers.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The AWS region where the virtual interface is located.</p> <p>Example:
+     * us-east-1</p> <p>Default: None</p>
+     */
+    inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The AWS region where the virtual interface is located.</p> <p>Example:
+     * us-east-1</p> <p>Default: None</p>
+     */
+    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>The AWS region where the virtual interface is located.</p> <p>Example:
+     * us-east-1</p> <p>Default: None</p>
+     */
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
+
+    /**
+     * <p>The AWS region where the virtual interface is located.</p> <p>Example:
+     * us-east-1</p> <p>Default: None</p>
+     */
+    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
+
+    /**
+     * <p>The AWS region where the virtual interface is located.</p> <p>Example:
+     * us-east-1</p> <p>Default: None</p>
+     */
+    inline VirtualInterface& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>The AWS region where the virtual interface is located.</p> <p>Example:
+     * us-east-1</p> <p>Default: None</p>
+     */
+    inline VirtualInterface& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS region where the virtual interface is located.</p> <p>Example:
+     * us-east-1</p> <p>Default: None</p>
+     */
+    inline VirtualInterface& WithRegion(const char* value) { SetRegion(value); return *this;}
+
+
+    /**
+     * <p>The Direct Connection endpoint which the virtual interface terminates on.</p>
+     */
+    inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
+
+    /**
+     * <p>The Direct Connection endpoint which the virtual interface terminates on.</p>
+     */
+    inline void SetAwsDeviceV2(const Aws::String& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = value; }
+
+    /**
+     * <p>The Direct Connection endpoint which the virtual interface terminates on.</p>
+     */
+    inline void SetAwsDeviceV2(Aws::String&& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = std::move(value); }
+
+    /**
+     * <p>The Direct Connection endpoint which the virtual interface terminates on.</p>
+     */
+    inline void SetAwsDeviceV2(const char* value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2.assign(value); }
+
+    /**
+     * <p>The Direct Connection endpoint which the virtual interface terminates on.</p>
+     */
+    inline VirtualInterface& WithAwsDeviceV2(const Aws::String& value) { SetAwsDeviceV2(value); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the virtual interface terminates on.</p>
+     */
+    inline VirtualInterface& WithAwsDeviceV2(Aws::String&& value) { SetAwsDeviceV2(std::move(value)); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the virtual interface terminates on.</p>
+     */
+    inline VirtualInterface& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
+
   private:
 
     Aws::String m_ownerAccount;
@@ -513,6 +593,12 @@ namespace Model
 
     Aws::Vector<BGPPeer> m_bgpPeers;
     bool m_bgpPeersHasBeenSet;
+
+    Aws::String m_region;
+    bool m_regionHasBeenSet;
+
+    Aws::String m_awsDeviceV2;
+    bool m_awsDeviceV2HasBeenSet;
   };
 
 } // namespace Model

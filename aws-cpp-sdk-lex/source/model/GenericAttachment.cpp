@@ -37,7 +37,7 @@ GenericAttachment::GenericAttachment() :
 {
 }
 
-GenericAttachment::GenericAttachment(const JsonValue& jsonValue) : 
+GenericAttachment::GenericAttachment(JsonView jsonValue) : 
     m_titleHasBeenSet(false),
     m_subTitleHasBeenSet(false),
     m_attachmentLinkUrlHasBeenSet(false),
@@ -47,7 +47,7 @@ GenericAttachment::GenericAttachment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GenericAttachment& GenericAttachment::operator =(const JsonValue& jsonValue)
+GenericAttachment& GenericAttachment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("title"))
   {
@@ -79,7 +79,7 @@ GenericAttachment& GenericAttachment::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("buttons"))
   {
-    Array<JsonValue> buttonsJsonList = jsonValue.GetArray("buttons");
+    Array<JsonView> buttonsJsonList = jsonValue.GetArray("buttons");
     for(unsigned buttonsIndex = 0; buttonsIndex < buttonsJsonList.GetLength(); ++buttonsIndex)
     {
       m_buttons.push_back(buttonsJsonList[buttonsIndex].AsObject());

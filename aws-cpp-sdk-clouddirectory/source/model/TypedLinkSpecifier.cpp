@@ -36,7 +36,7 @@ TypedLinkSpecifier::TypedLinkSpecifier() :
 {
 }
 
-TypedLinkSpecifier::TypedLinkSpecifier(const JsonValue& jsonValue) : 
+TypedLinkSpecifier::TypedLinkSpecifier(JsonView jsonValue) : 
     m_typedLinkFacetHasBeenSet(false),
     m_sourceObjectReferenceHasBeenSet(false),
     m_targetObjectReferenceHasBeenSet(false),
@@ -45,7 +45,7 @@ TypedLinkSpecifier::TypedLinkSpecifier(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TypedLinkSpecifier& TypedLinkSpecifier::operator =(const JsonValue& jsonValue)
+TypedLinkSpecifier& TypedLinkSpecifier::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TypedLinkFacet"))
   {
@@ -70,7 +70,7 @@ TypedLinkSpecifier& TypedLinkSpecifier::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("IdentityAttributeValues"))
   {
-    Array<JsonValue> identityAttributeValuesJsonList = jsonValue.GetArray("IdentityAttributeValues");
+    Array<JsonView> identityAttributeValuesJsonList = jsonValue.GetArray("IdentityAttributeValues");
     for(unsigned identityAttributeValuesIndex = 0; identityAttributeValuesIndex < identityAttributeValuesJsonList.GetLength(); ++identityAttributeValuesIndex)
     {
       m_identityAttributeValues.push_back(identityAttributeValuesJsonList[identityAttributeValuesIndex].AsObject());

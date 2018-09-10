@@ -52,7 +52,7 @@ UserPoolClientType::UserPoolClientType() :
 {
 }
 
-UserPoolClientType::UserPoolClientType(const JsonValue& jsonValue) : 
+UserPoolClientType::UserPoolClientType(JsonView jsonValue) : 
     m_userPoolIdHasBeenSet(false),
     m_clientNameHasBeenSet(false),
     m_clientIdHasBeenSet(false),
@@ -77,7 +77,7 @@ UserPoolClientType::UserPoolClientType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserPoolClientType& UserPoolClientType::operator =(const JsonValue& jsonValue)
+UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UserPoolId"))
   {
@@ -130,7 +130,7 @@ UserPoolClientType& UserPoolClientType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ReadAttributes"))
   {
-    Array<JsonValue> readAttributesJsonList = jsonValue.GetArray("ReadAttributes");
+    Array<JsonView> readAttributesJsonList = jsonValue.GetArray("ReadAttributes");
     for(unsigned readAttributesIndex = 0; readAttributesIndex < readAttributesJsonList.GetLength(); ++readAttributesIndex)
     {
       m_readAttributes.push_back(readAttributesJsonList[readAttributesIndex].AsString());
@@ -140,7 +140,7 @@ UserPoolClientType& UserPoolClientType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("WriteAttributes"))
   {
-    Array<JsonValue> writeAttributesJsonList = jsonValue.GetArray("WriteAttributes");
+    Array<JsonView> writeAttributesJsonList = jsonValue.GetArray("WriteAttributes");
     for(unsigned writeAttributesIndex = 0; writeAttributesIndex < writeAttributesJsonList.GetLength(); ++writeAttributesIndex)
     {
       m_writeAttributes.push_back(writeAttributesJsonList[writeAttributesIndex].AsString());
@@ -150,7 +150,7 @@ UserPoolClientType& UserPoolClientType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ExplicitAuthFlows"))
   {
-    Array<JsonValue> explicitAuthFlowsJsonList = jsonValue.GetArray("ExplicitAuthFlows");
+    Array<JsonView> explicitAuthFlowsJsonList = jsonValue.GetArray("ExplicitAuthFlows");
     for(unsigned explicitAuthFlowsIndex = 0; explicitAuthFlowsIndex < explicitAuthFlowsJsonList.GetLength(); ++explicitAuthFlowsIndex)
     {
       m_explicitAuthFlows.push_back(ExplicitAuthFlowsTypeMapper::GetExplicitAuthFlowsTypeForName(explicitAuthFlowsJsonList[explicitAuthFlowsIndex].AsString()));
@@ -160,7 +160,7 @@ UserPoolClientType& UserPoolClientType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SupportedIdentityProviders"))
   {
-    Array<JsonValue> supportedIdentityProvidersJsonList = jsonValue.GetArray("SupportedIdentityProviders");
+    Array<JsonView> supportedIdentityProvidersJsonList = jsonValue.GetArray("SupportedIdentityProviders");
     for(unsigned supportedIdentityProvidersIndex = 0; supportedIdentityProvidersIndex < supportedIdentityProvidersJsonList.GetLength(); ++supportedIdentityProvidersIndex)
     {
       m_supportedIdentityProviders.push_back(supportedIdentityProvidersJsonList[supportedIdentityProvidersIndex].AsString());
@@ -170,7 +170,7 @@ UserPoolClientType& UserPoolClientType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("CallbackURLs"))
   {
-    Array<JsonValue> callbackURLsJsonList = jsonValue.GetArray("CallbackURLs");
+    Array<JsonView> callbackURLsJsonList = jsonValue.GetArray("CallbackURLs");
     for(unsigned callbackURLsIndex = 0; callbackURLsIndex < callbackURLsJsonList.GetLength(); ++callbackURLsIndex)
     {
       m_callbackURLs.push_back(callbackURLsJsonList[callbackURLsIndex].AsString());
@@ -180,7 +180,7 @@ UserPoolClientType& UserPoolClientType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("LogoutURLs"))
   {
-    Array<JsonValue> logoutURLsJsonList = jsonValue.GetArray("LogoutURLs");
+    Array<JsonView> logoutURLsJsonList = jsonValue.GetArray("LogoutURLs");
     for(unsigned logoutURLsIndex = 0; logoutURLsIndex < logoutURLsJsonList.GetLength(); ++logoutURLsIndex)
     {
       m_logoutURLs.push_back(logoutURLsJsonList[logoutURLsIndex].AsString());
@@ -197,7 +197,7 @@ UserPoolClientType& UserPoolClientType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AllowedOAuthFlows"))
   {
-    Array<JsonValue> allowedOAuthFlowsJsonList = jsonValue.GetArray("AllowedOAuthFlows");
+    Array<JsonView> allowedOAuthFlowsJsonList = jsonValue.GetArray("AllowedOAuthFlows");
     for(unsigned allowedOAuthFlowsIndex = 0; allowedOAuthFlowsIndex < allowedOAuthFlowsJsonList.GetLength(); ++allowedOAuthFlowsIndex)
     {
       m_allowedOAuthFlows.push_back(OAuthFlowTypeMapper::GetOAuthFlowTypeForName(allowedOAuthFlowsJsonList[allowedOAuthFlowsIndex].AsString()));
@@ -207,7 +207,7 @@ UserPoolClientType& UserPoolClientType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AllowedOAuthScopes"))
   {
-    Array<JsonValue> allowedOAuthScopesJsonList = jsonValue.GetArray("AllowedOAuthScopes");
+    Array<JsonView> allowedOAuthScopesJsonList = jsonValue.GetArray("AllowedOAuthScopes");
     for(unsigned allowedOAuthScopesIndex = 0; allowedOAuthScopesIndex < allowedOAuthScopesJsonList.GetLength(); ++allowedOAuthScopesIndex)
     {
       m_allowedOAuthScopes.push_back(allowedOAuthScopesJsonList[allowedOAuthScopesIndex].AsString());

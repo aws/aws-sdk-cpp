@@ -18,6 +18,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/iam/model/PolicyScopeType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iam/model/PolicyUsageType.h>
 #include <utility>
 
 namespace Aws
@@ -124,79 +125,137 @@ namespace Model
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies. This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline const Aws::String& GetPathPrefix() const{ return m_pathPrefix; }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies. This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline void SetPathPrefix(const Aws::String& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies. This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = std::move(value); }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies. This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline void SetPathPrefix(const char* value) { m_pathPrefixHasBeenSet = true; m_pathPrefix.assign(value); }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies. This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline ListPoliciesRequest& WithPathPrefix(const Aws::String& value) { SetPathPrefix(value); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies. This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline ListPoliciesRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies. This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline ListPoliciesRequest& WithPathPrefix(const char* value) { SetPathPrefix(value); return *this;}
+
+
+    /**
+     * <p>The policy usage method to use for filtering the results.</p> <p>To list only
+     * permissions policies,
+     * set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value
+     * to <code>PermissionsBoundary</code>.</p> <p>This parameter is optional. If it is
+     * not included, all policies are returned. </p>
+     */
+    inline const PolicyUsageType& GetPolicyUsageFilter() const{ return m_policyUsageFilter; }
+
+    /**
+     * <p>The policy usage method to use for filtering the results.</p> <p>To list only
+     * permissions policies,
+     * set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value
+     * to <code>PermissionsBoundary</code>.</p> <p>This parameter is optional. If it is
+     * not included, all policies are returned. </p>
+     */
+    inline void SetPolicyUsageFilter(const PolicyUsageType& value) { m_policyUsageFilterHasBeenSet = true; m_policyUsageFilter = value; }
+
+    /**
+     * <p>The policy usage method to use for filtering the results.</p> <p>To list only
+     * permissions policies,
+     * set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value
+     * to <code>PermissionsBoundary</code>.</p> <p>This parameter is optional. If it is
+     * not included, all policies are returned. </p>
+     */
+    inline void SetPolicyUsageFilter(PolicyUsageType&& value) { m_policyUsageFilterHasBeenSet = true; m_policyUsageFilter = std::move(value); }
+
+    /**
+     * <p>The policy usage method to use for filtering the results.</p> <p>To list only
+     * permissions policies,
+     * set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value
+     * to <code>PermissionsBoundary</code>.</p> <p>This parameter is optional. If it is
+     * not included, all policies are returned. </p>
+     */
+    inline ListPoliciesRequest& WithPolicyUsageFilter(const PolicyUsageType& value) { SetPolicyUsageFilter(value); return *this;}
+
+    /**
+     * <p>The policy usage method to use for filtering the results.</p> <p>To list only
+     * permissions policies,
+     * set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>. To list
+     * only the policies used to set permissions boundaries, set the value
+     * to <code>PermissionsBoundary</code>.</p> <p>This parameter is optional. If it is
+     * not included, all policies are returned. </p>
+     */
+    inline ListPoliciesRequest& WithPolicyUsageFilter(PolicyUsageType&& value) { SetPolicyUsageFilter(std::move(value)); return *this;}
 
 
     /**
@@ -302,6 +361,9 @@ namespace Model
 
     Aws::String m_pathPrefix;
     bool m_pathPrefixHasBeenSet;
+
+    PolicyUsageType m_policyUsageFilter;
+    bool m_policyUsageFilterHasBeenSet;
 
     Aws::String m_marker;
     bool m_markerHasBeenSet;

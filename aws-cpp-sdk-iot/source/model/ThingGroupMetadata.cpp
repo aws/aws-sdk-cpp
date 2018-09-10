@@ -35,7 +35,7 @@ ThingGroupMetadata::ThingGroupMetadata() :
 {
 }
 
-ThingGroupMetadata::ThingGroupMetadata(const JsonValue& jsonValue) : 
+ThingGroupMetadata::ThingGroupMetadata(JsonView jsonValue) : 
     m_parentGroupNameHasBeenSet(false),
     m_rootToParentThingGroupsHasBeenSet(false),
     m_creationDateHasBeenSet(false)
@@ -43,7 +43,7 @@ ThingGroupMetadata::ThingGroupMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ThingGroupMetadata& ThingGroupMetadata::operator =(const JsonValue& jsonValue)
+ThingGroupMetadata& ThingGroupMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("parentGroupName"))
   {
@@ -54,7 +54,7 @@ ThingGroupMetadata& ThingGroupMetadata::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("rootToParentThingGroups"))
   {
-    Array<JsonValue> rootToParentThingGroupsJsonList = jsonValue.GetArray("rootToParentThingGroups");
+    Array<JsonView> rootToParentThingGroupsJsonList = jsonValue.GetArray("rootToParentThingGroups");
     for(unsigned rootToParentThingGroupsIndex = 0; rootToParentThingGroupsIndex < rootToParentThingGroupsJsonList.GetLength(); ++rootToParentThingGroupsIndex)
     {
       m_rootToParentThingGroups.push_back(rootToParentThingGroupsJsonList[rootToParentThingGroupsIndex].AsObject());

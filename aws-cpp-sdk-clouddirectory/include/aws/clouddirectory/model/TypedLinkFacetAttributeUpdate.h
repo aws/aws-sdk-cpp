@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -35,15 +36,15 @@ namespace Model
 
   /**
    * <p>A typed link facet attribute update.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TypedLinkFacetAttributeUpdate">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedLinkFacetAttributeUpdate">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API TypedLinkFacetAttributeUpdate
   {
   public:
     TypedLinkFacetAttributeUpdate();
-    TypedLinkFacetAttributeUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    TypedLinkFacetAttributeUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TypedLinkFacetAttributeUpdate(Aws::Utils::Json::JsonView jsonValue);
+    TypedLinkFacetAttributeUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

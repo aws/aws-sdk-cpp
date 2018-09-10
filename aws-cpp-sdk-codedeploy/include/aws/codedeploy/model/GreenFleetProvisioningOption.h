@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     GreenFleetProvisioningOption();
-    GreenFleetProvisioningOption(const Aws::Utils::Json::JsonValue& jsonValue);
-    GreenFleetProvisioningOption& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GreenFleetProvisioningOption(Aws::Utils::Json::JsonView jsonValue);
+    GreenFleetProvisioningOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -42,7 +42,7 @@ Aws::String BatchGetNamedQueryRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchGetNamedQueryRequest::GetRequestSpecificHeaders() const

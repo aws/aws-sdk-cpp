@@ -35,7 +35,7 @@ ActivityTaskStartedEventAttributes::ActivityTaskStartedEventAttributes() :
 {
 }
 
-ActivityTaskStartedEventAttributes::ActivityTaskStartedEventAttributes(const JsonValue& jsonValue) : 
+ActivityTaskStartedEventAttributes::ActivityTaskStartedEventAttributes(JsonView jsonValue) : 
     m_identityHasBeenSet(false),
     m_scheduledEventId(0),
     m_scheduledEventIdHasBeenSet(false)
@@ -43,7 +43,7 @@ ActivityTaskStartedEventAttributes::ActivityTaskStartedEventAttributes(const Jso
   *this = jsonValue;
 }
 
-ActivityTaskStartedEventAttributes& ActivityTaskStartedEventAttributes::operator =(const JsonValue& jsonValue)
+ActivityTaskStartedEventAttributes& ActivityTaskStartedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("identity"))
   {

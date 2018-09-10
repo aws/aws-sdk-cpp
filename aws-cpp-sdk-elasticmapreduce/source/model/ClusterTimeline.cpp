@@ -35,7 +35,7 @@ ClusterTimeline::ClusterTimeline() :
 {
 }
 
-ClusterTimeline::ClusterTimeline(const JsonValue& jsonValue) : 
+ClusterTimeline::ClusterTimeline(JsonView jsonValue) : 
     m_creationDateTimeHasBeenSet(false),
     m_readyDateTimeHasBeenSet(false),
     m_endDateTimeHasBeenSet(false)
@@ -43,7 +43,7 @@ ClusterTimeline::ClusterTimeline(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ClusterTimeline& ClusterTimeline::operator =(const JsonValue& jsonValue)
+ClusterTimeline& ClusterTimeline::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CreationDateTime"))
   {

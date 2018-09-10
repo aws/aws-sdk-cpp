@@ -70,7 +70,7 @@ Aws::String CreateCommentRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateCommentRequest::GetRequestSpecificHeaders() const
@@ -80,7 +80,7 @@ Aws::Http::HeaderValueCollection CreateCommentRequest::GetRequestSpecificHeaders
   if(m_authenticationTokenHasBeenSet)
   {
     ss << m_authenticationToken;
-    headers.insert(Aws::Http::HeaderValuePair("authentication", ss.str()));
+    headers.emplace("authentication",  ss.str());
     ss.str("");
   }
 

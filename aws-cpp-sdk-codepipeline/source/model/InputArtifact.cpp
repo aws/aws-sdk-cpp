@@ -33,13 +33,13 @@ InputArtifact::InputArtifact() :
 {
 }
 
-InputArtifact::InputArtifact(const JsonValue& jsonValue) : 
+InputArtifact::InputArtifact(JsonView jsonValue) : 
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputArtifact& InputArtifact::operator =(const JsonValue& jsonValue)
+InputArtifact& InputArtifact::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

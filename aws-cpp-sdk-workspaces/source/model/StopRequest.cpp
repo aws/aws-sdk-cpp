@@ -33,13 +33,13 @@ StopRequest::StopRequest() :
 {
 }
 
-StopRequest::StopRequest(const JsonValue& jsonValue) : 
+StopRequest::StopRequest(JsonView jsonValue) : 
     m_workspaceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StopRequest& StopRequest::operator =(const JsonValue& jsonValue)
+StopRequest& StopRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WorkspaceId"))
   {

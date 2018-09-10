@@ -37,7 +37,7 @@ NamespaceFilter::NamespaceFilter() :
 {
 }
 
-NamespaceFilter::NamespaceFilter(const JsonValue& jsonValue) : 
+NamespaceFilter::NamespaceFilter(JsonView jsonValue) : 
     m_name(NamespaceFilterName::NOT_SET),
     m_nameHasBeenSet(false),
     m_valuesHasBeenSet(false),
@@ -47,7 +47,7 @@ NamespaceFilter::NamespaceFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NamespaceFilter& NamespaceFilter::operator =(const JsonValue& jsonValue)
+NamespaceFilter& NamespaceFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -58,7 +58,7 @@ NamespaceFilter& NamespaceFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

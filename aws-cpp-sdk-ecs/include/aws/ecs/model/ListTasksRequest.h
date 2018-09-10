@@ -495,27 +495,27 @@ namespace Model
 
 
     /**
-     * <p>The launch type for services you want to list.</p>
+     * <p>The launch type for services to list.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type for services you want to list.</p>
+     * <p>The launch type for services to list.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type for services you want to list.</p>
+     * <p>The launch type for services to list.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type for services you want to list.</p>
+     * <p>The launch type for services to list.</p>
      */
     inline ListTasksRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type for services you want to list.</p>
+     * <p>The launch type for services to list.</p>
      */
     inline ListTasksRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
 

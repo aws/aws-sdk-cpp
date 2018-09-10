@@ -37,10 +37,10 @@ DescribeTrailsResult::DescribeTrailsResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeTrailsResult& DescribeTrailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("trailList"))
   {
-    Array<JsonValue> trailListJsonList = jsonValue.GetArray("trailList");
+    Array<JsonView> trailListJsonList = jsonValue.GetArray("trailList");
     for(unsigned trailListIndex = 0; trailListIndex < trailListJsonList.GetLength(); ++trailListIndex)
     {
       m_trailList.push_back(trailListJsonList[trailListIndex].AsObject());

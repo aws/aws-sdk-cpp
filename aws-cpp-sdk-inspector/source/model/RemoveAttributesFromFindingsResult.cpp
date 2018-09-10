@@ -37,10 +37,10 @@ RemoveAttributesFromFindingsResult::RemoveAttributesFromFindingsResult(const Aws
 
 RemoveAttributesFromFindingsResult& RemoveAttributesFromFindingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("failedItems"))
   {
-    Aws::Map<Aws::String, JsonValue> failedItemsJsonMap = jsonValue.GetObject("failedItems").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> failedItemsJsonMap = jsonValue.GetObject("failedItems").GetAllObjects();
     for(auto& failedItemsItem : failedItemsJsonMap)
     {
       m_failedItems[failedItemsItem.first] = failedItemsItem.second.AsObject();

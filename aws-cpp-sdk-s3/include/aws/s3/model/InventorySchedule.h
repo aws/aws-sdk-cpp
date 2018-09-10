@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * Specifies how frequently inventory results are produced.
+     * <p>Specifies how frequently inventory results are produced.</p>
      */
     inline const InventoryFrequency& GetFrequency() const{ return m_frequency; }
 
     /**
-     * Specifies how frequently inventory results are produced.
+     * <p>Specifies how frequently inventory results are produced.</p>
      */
     inline void SetFrequency(const InventoryFrequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**
-     * Specifies how frequently inventory results are produced.
+     * <p>Specifies how frequently inventory results are produced.</p>
      */
     inline void SetFrequency(InventoryFrequency&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
 
     /**
-     * Specifies how frequently inventory results are produced.
+     * <p>Specifies how frequently inventory results are produced.</p>
      */
     inline InventorySchedule& WithFrequency(const InventoryFrequency& value) { SetFrequency(value); return *this;}
 
     /**
-     * Specifies how frequently inventory results are produced.
+     * <p>Specifies how frequently inventory results are produced.</p>
      */
     inline InventorySchedule& WithFrequency(InventoryFrequency&& value) { SetFrequency(std::move(value)); return *this;}
 

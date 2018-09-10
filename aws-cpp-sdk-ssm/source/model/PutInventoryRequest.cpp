@@ -49,7 +49,7 @@ Aws::String PutInventoryRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutInventoryRequest::GetRequestSpecificHeaders() const

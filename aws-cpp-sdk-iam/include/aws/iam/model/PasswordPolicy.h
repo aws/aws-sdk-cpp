@@ -34,7 +34,7 @@ namespace Model
   /**
    * <p>Contains information about the account password policy.</p> <p> This data
    * type is used as a response element in the <a>GetAccountPasswordPolicy</a>
-   * action. </p><p><h3>See Also:</h3>   <a
+   * operation. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PasswordPolicy">AWS
    * API Reference</a></p>
    */
@@ -147,21 +147,21 @@ namespace Model
 
     /**
      * <p>Indicates whether passwords in the account expire. Returns true if
-     * MaxPasswordAge is contains a value greater than 0. Returns false if
+     * <code>MaxPasswordAge</code> contains a value greater than 0. Returns false if
      * MaxPasswordAge is 0 or not present.</p>
      */
     inline bool GetExpirePasswords() const{ return m_expirePasswords; }
 
     /**
      * <p>Indicates whether passwords in the account expire. Returns true if
-     * MaxPasswordAge is contains a value greater than 0. Returns false if
+     * <code>MaxPasswordAge</code> contains a value greater than 0. Returns false if
      * MaxPasswordAge is 0 or not present.</p>
      */
     inline void SetExpirePasswords(bool value) { m_expirePasswordsHasBeenSet = true; m_expirePasswords = value; }
 
     /**
      * <p>Indicates whether passwords in the account expire. Returns true if
-     * MaxPasswordAge is contains a value greater than 0. Returns false if
+     * <code>MaxPasswordAge</code> contains a value greater than 0. Returns false if
      * MaxPasswordAge is 0 or not present.</p>
      */
     inline PasswordPolicy& WithExpirePasswords(bool value) { SetExpirePasswords(value); return *this;}

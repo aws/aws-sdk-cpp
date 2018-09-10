@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAF
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     Predicate();
-    Predicate(const Aws::Utils::Json::JsonValue& jsonValue);
-    Predicate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Predicate(Aws::Utils::Json::JsonView jsonValue);
+    Predicate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -105,32 +106,32 @@ namespace Model
 
 
     /**
-     * <p>The type of predicate in a <code>Rule</code>, such as
-     * <code>ByteMatchSet</code> or <code>IPSet</code>.</p>
+     * <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code>
+     * or <code>IPSet</code>.</p>
      */
     inline const PredicateType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of predicate in a <code>Rule</code>, such as
-     * <code>ByteMatchSet</code> or <code>IPSet</code>.</p>
+     * <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code>
+     * or <code>IPSet</code>.</p>
      */
     inline void SetType(const PredicateType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of predicate in a <code>Rule</code>, such as
-     * <code>ByteMatchSet</code> or <code>IPSet</code>.</p>
+     * <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code>
+     * or <code>IPSet</code>.</p>
      */
     inline void SetType(PredicateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of predicate in a <code>Rule</code>, such as
-     * <code>ByteMatchSet</code> or <code>IPSet</code>.</p>
+     * <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code>
+     * or <code>IPSet</code>.</p>
      */
     inline Predicate& WithType(const PredicateType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of predicate in a <code>Rule</code>, such as
-     * <code>ByteMatchSet</code> or <code>IPSet</code>.</p>
+     * <p>The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code>
+     * or <code>IPSet</code>.</p>
      */
     inline Predicate& WithType(PredicateType&& value) { SetType(std::move(value)); return *this;}
 

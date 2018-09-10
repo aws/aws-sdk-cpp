@@ -37,7 +37,7 @@ Aws::String StartLoggingRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartLoggingRequest::GetRequestSpecificHeaders() const

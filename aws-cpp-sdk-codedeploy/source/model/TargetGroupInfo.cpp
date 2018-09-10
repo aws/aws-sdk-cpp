@@ -33,13 +33,13 @@ TargetGroupInfo::TargetGroupInfo() :
 {
 }
 
-TargetGroupInfo::TargetGroupInfo(const JsonValue& jsonValue) : 
+TargetGroupInfo::TargetGroupInfo(JsonView jsonValue) : 
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TargetGroupInfo& TargetGroupInfo::operator =(const JsonValue& jsonValue)
+TargetGroupInfo& TargetGroupInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

@@ -36,7 +36,7 @@ OrganizationSummary::OrganizationSummary() :
 {
 }
 
-OrganizationSummary::OrganizationSummary(const JsonValue& jsonValue) : 
+OrganizationSummary::OrganizationSummary(JsonView jsonValue) : 
     m_organizationIdHasBeenSet(false),
     m_aliasHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
@@ -45,7 +45,7 @@ OrganizationSummary::OrganizationSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OrganizationSummary& OrganizationSummary::operator =(const JsonValue& jsonValue)
+OrganizationSummary& OrganizationSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OrganizationId"))
   {

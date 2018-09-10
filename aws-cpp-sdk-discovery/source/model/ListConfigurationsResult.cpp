@@ -37,13 +37,13 @@ ListConfigurationsResult::ListConfigurationsResult(const Aws::AmazonWebServiceRe
 
 ListConfigurationsResult& ListConfigurationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("configurations"))
   {
-    Array<JsonValue> configurationsJsonList = jsonValue.GetArray("configurations");
+    Array<JsonView> configurationsJsonList = jsonValue.GetArray("configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
-      Aws::Map<Aws::String, JsonValue> configurationJsonMap = configurationsJsonList[configurationsIndex].GetAllObjects();
+      Aws::Map<Aws::String, JsonView> configurationJsonMap = configurationsJsonList[configurationsIndex].GetAllObjects();
       Aws::Map<Aws::String, Aws::String> configurationMap;
       for(auto& configurationItem : configurationJsonMap)
       {

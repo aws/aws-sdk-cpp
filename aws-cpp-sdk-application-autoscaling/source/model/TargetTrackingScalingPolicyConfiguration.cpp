@@ -42,7 +42,7 @@ TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfigurati
 {
 }
 
-TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfiguration(const JsonValue& jsonValue) : 
+TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfiguration(JsonView jsonValue) : 
     m_targetValue(0.0),
     m_targetValueHasBeenSet(false),
     m_predefinedMetricSpecificationHasBeenSet(false),
@@ -57,7 +57,7 @@ TargetTrackingScalingPolicyConfiguration::TargetTrackingScalingPolicyConfigurati
   *this = jsonValue;
 }
 
-TargetTrackingScalingPolicyConfiguration& TargetTrackingScalingPolicyConfiguration::operator =(const JsonValue& jsonValue)
+TargetTrackingScalingPolicyConfiguration& TargetTrackingScalingPolicyConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TargetValue"))
   {

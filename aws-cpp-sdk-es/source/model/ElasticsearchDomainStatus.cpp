@@ -40,19 +40,22 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus() :
     m_endpointsHasBeenSet(false),
     m_processing(false),
     m_processingHasBeenSet(false),
+    m_upgradeProcessing(false),
+    m_upgradeProcessingHasBeenSet(false),
     m_elasticsearchVersionHasBeenSet(false),
     m_elasticsearchClusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
+    m_cognitoOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
 {
 }
 
-ElasticsearchDomainStatus::ElasticsearchDomainStatus(const JsonValue& jsonValue) : 
+ElasticsearchDomainStatus::ElasticsearchDomainStatus(JsonView jsonValue) : 
     m_domainIdHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_aRNHasBeenSet(false),
@@ -64,12 +67,15 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus(const JsonValue& jsonValue)
     m_endpointsHasBeenSet(false),
     m_processing(false),
     m_processingHasBeenSet(false),
+    m_upgradeProcessing(false),
+    m_upgradeProcessingHasBeenSet(false),
     m_elasticsearchVersionHasBeenSet(false),
     m_elasticsearchClusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
+    m_cognitoOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
@@ -77,7 +83,7 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue& jsonValue)
+ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DomainId"))
   {
@@ -123,7 +129,7 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Endpoints"))
   {
-    Aws::Map<Aws::String, JsonValue> endpointsJsonMap = jsonValue.GetObject("Endpoints").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> endpointsJsonMap = jsonValue.GetObject("Endpoints").GetAllObjects();
     for(auto& endpointsItem : endpointsJsonMap)
     {
       m_endpoints[endpointsItem.first] = endpointsItem.second.AsString();
@@ -136,6 +142,13 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue
     m_processing = jsonValue.GetBool("Processing");
 
     m_processingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UpgradeProcessing"))
+  {
+    m_upgradeProcessing = jsonValue.GetBool("UpgradeProcessing");
+
+    m_upgradeProcessingHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ElasticsearchVersion"))
@@ -180,6 +193,13 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue
     m_vPCOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CognitoOptions"))
+  {
+    m_cognitoOptions = jsonValue.GetObject("CognitoOptions");
+
+    m_cognitoOptionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("EncryptionAtRestOptions"))
   {
     m_encryptionAtRestOptions = jsonValue.GetObject("EncryptionAtRestOptions");
@@ -189,7 +209,7 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue
 
   if(jsonValue.ValueExists("AdvancedOptions"))
   {
-    Aws::Map<Aws::String, JsonValue> advancedOptionsJsonMap = jsonValue.GetObject("AdvancedOptions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> advancedOptionsJsonMap = jsonValue.GetObject("AdvancedOptions").GetAllObjects();
     for(auto& advancedOptionsItem : advancedOptionsJsonMap)
     {
       m_advancedOptions[advancedOptionsItem.first] = advancedOptionsItem.second.AsString();
@@ -199,7 +219,7 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(const JsonValue
 
   if(jsonValue.ValueExists("LogPublishingOptions"))
   {
-    Aws::Map<Aws::String, JsonValue> logPublishingOptionsJsonMap = jsonValue.GetObject("LogPublishingOptions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> logPublishingOptionsJsonMap = jsonValue.GetObject("LogPublishingOptions").GetAllObjects();
     for(auto& logPublishingOptionsItem : logPublishingOptionsJsonMap)
     {
       m_logPublishingOptions[LogTypeMapper::GetLogTypeForName(logPublishingOptionsItem.first)] = logPublishingOptionsItem.second.AsObject();
@@ -267,6 +287,12 @@ JsonValue ElasticsearchDomainStatus::Jsonize() const
 
   }
 
+  if(m_upgradeProcessingHasBeenSet)
+  {
+   payload.WithBool("UpgradeProcessing", m_upgradeProcessing);
+
+  }
+
   if(m_elasticsearchVersionHasBeenSet)
   {
    payload.WithString("ElasticsearchVersion", m_elasticsearchVersion);
@@ -300,6 +326,12 @@ JsonValue ElasticsearchDomainStatus::Jsonize() const
   if(m_vPCOptionsHasBeenSet)
   {
    payload.WithObject("VPCOptions", m_vPCOptions.Jsonize());
+
+  }
+
+  if(m_cognitoOptionsHasBeenSet)
+  {
+   payload.WithObject("CognitoOptions", m_cognitoOptions.Jsonize());
 
   }
 

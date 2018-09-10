@@ -36,7 +36,7 @@ StaticKeyProvider::StaticKeyProvider() :
 {
 }
 
-StaticKeyProvider::StaticKeyProvider(const JsonValue& jsonValue) : 
+StaticKeyProvider::StaticKeyProvider(JsonView jsonValue) : 
     m_keyFormatHasBeenSet(false),
     m_keyFormatVersionsHasBeenSet(false),
     m_staticKeyValueHasBeenSet(false),
@@ -45,7 +45,7 @@ StaticKeyProvider::StaticKeyProvider(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StaticKeyProvider& StaticKeyProvider::operator =(const JsonValue& jsonValue)
+StaticKeyProvider& StaticKeyProvider::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("keyFormat"))
   {

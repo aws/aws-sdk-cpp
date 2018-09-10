@@ -69,7 +69,7 @@ Aws::String SearchDevicesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SearchDevicesRequest::GetRequestSpecificHeaders() const

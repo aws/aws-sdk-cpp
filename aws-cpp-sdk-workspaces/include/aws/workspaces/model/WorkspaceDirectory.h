@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WorkSpaces
@@ -37,8 +38,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about an AWS Directory Service directory for use with
-   * Amazon WorkSpaces.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about an AWS Directory Service directory for use with Amazon
+   * WorkSpaces.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceDirectory">AWS
    * API Reference</a></p>
    */
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     WorkspaceDirectory();
-    WorkspaceDirectory(const Aws::Utils::Json::JsonValue& jsonValue);
-    WorkspaceDirectory& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    WorkspaceDirectory(Aws::Utils::Json::JsonView jsonValue);
+    WorkspaceDirectory& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -483,6 +484,55 @@ namespace Model
      */
     inline WorkspaceDirectory& WithWorkspaceCreationProperties(DefaultWorkspaceCreationProperties&& value) { SetWorkspaceCreationProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The identifiers of the IP access control groups associated with the
+     * directory.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIpGroupIds() const{ return m_ipGroupIds; }
+
+    /**
+     * <p>The identifiers of the IP access control groups associated with the
+     * directory.</p>
+     */
+    inline void SetIpGroupIds(const Aws::Vector<Aws::String>& value) { m_ipGroupIdsHasBeenSet = true; m_ipGroupIds = value; }
+
+    /**
+     * <p>The identifiers of the IP access control groups associated with the
+     * directory.</p>
+     */
+    inline void SetIpGroupIds(Aws::Vector<Aws::String>&& value) { m_ipGroupIdsHasBeenSet = true; m_ipGroupIds = std::move(value); }
+
+    /**
+     * <p>The identifiers of the IP access control groups associated with the
+     * directory.</p>
+     */
+    inline WorkspaceDirectory& WithIpGroupIds(const Aws::Vector<Aws::String>& value) { SetIpGroupIds(value); return *this;}
+
+    /**
+     * <p>The identifiers of the IP access control groups associated with the
+     * directory.</p>
+     */
+    inline WorkspaceDirectory& WithIpGroupIds(Aws::Vector<Aws::String>&& value) { SetIpGroupIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifiers of the IP access control groups associated with the
+     * directory.</p>
+     */
+    inline WorkspaceDirectory& AddIpGroupIds(const Aws::String& value) { m_ipGroupIdsHasBeenSet = true; m_ipGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p>The identifiers of the IP access control groups associated with the
+     * directory.</p>
+     */
+    inline WorkspaceDirectory& AddIpGroupIds(Aws::String&& value) { m_ipGroupIdsHasBeenSet = true; m_ipGroupIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The identifiers of the IP access control groups associated with the
+     * directory.</p>
+     */
+    inline WorkspaceDirectory& AddIpGroupIds(const char* value) { m_ipGroupIdsHasBeenSet = true; m_ipGroupIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_directoryId;
@@ -520,6 +570,9 @@ namespace Model
 
     DefaultWorkspaceCreationProperties m_workspaceCreationProperties;
     bool m_workspaceCreationPropertiesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_ipGroupIds;
+    bool m_ipGroupIdsHasBeenSet;
   };
 
 } // namespace Model

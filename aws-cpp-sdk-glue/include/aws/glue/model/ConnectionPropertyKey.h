@@ -36,7 +36,8 @@ namespace Model
     JDBC_ENGINE_VERSION,
     CONFIG_FILES,
     INSTANCE_ID,
-    JDBC_CONNECTION_URL
+    JDBC_CONNECTION_URL,
+    JDBC_ENFORCE_SSL
   };
 
 namespace ConnectionPropertyKeyMapper

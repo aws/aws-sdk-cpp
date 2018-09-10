@@ -84,42 +84,32 @@ namespace Model
 
 
     /**
-     * <p>Filter the certificate list by one or more of the following values. For more
-     * information, see the <a>Filters</a> structure.</p> <ul> <li>
-     * <p>extendedKeyUsage</p> </li> <li> <p>keyUsage</p> </li> <li> <p>keyTypes</p>
-     * </li> </ul>
+     * <p>Filter the certificate list. For more information, see the <a>Filters</a>
+     * structure.</p>
      */
     inline const Filters& GetIncludes() const{ return m_includes; }
 
     /**
-     * <p>Filter the certificate list by one or more of the following values. For more
-     * information, see the <a>Filters</a> structure.</p> <ul> <li>
-     * <p>extendedKeyUsage</p> </li> <li> <p>keyUsage</p> </li> <li> <p>keyTypes</p>
-     * </li> </ul>
+     * <p>Filter the certificate list. For more information, see the <a>Filters</a>
+     * structure.</p>
      */
     inline void SetIncludes(const Filters& value) { m_includesHasBeenSet = true; m_includes = value; }
 
     /**
-     * <p>Filter the certificate list by one or more of the following values. For more
-     * information, see the <a>Filters</a> structure.</p> <ul> <li>
-     * <p>extendedKeyUsage</p> </li> <li> <p>keyUsage</p> </li> <li> <p>keyTypes</p>
-     * </li> </ul>
+     * <p>Filter the certificate list. For more information, see the <a>Filters</a>
+     * structure.</p>
      */
     inline void SetIncludes(Filters&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
 
     /**
-     * <p>Filter the certificate list by one or more of the following values. For more
-     * information, see the <a>Filters</a> structure.</p> <ul> <li>
-     * <p>extendedKeyUsage</p> </li> <li> <p>keyUsage</p> </li> <li> <p>keyTypes</p>
-     * </li> </ul>
+     * <p>Filter the certificate list. For more information, see the <a>Filters</a>
+     * structure.</p>
      */
     inline ListCertificatesRequest& WithIncludes(const Filters& value) { SetIncludes(value); return *this;}
 
     /**
-     * <p>Filter the certificate list by one or more of the following values. For more
-     * information, see the <a>Filters</a> structure.</p> <ul> <li>
-     * <p>extendedKeyUsage</p> </li> <li> <p>keyUsage</p> </li> <li> <p>keyTypes</p>
-     * </li> </ul>
+     * <p>Filter the certificate list. For more information, see the <a>Filters</a>
+     * structure.</p>
      */
     inline ListCertificatesRequest& WithIncludes(Filters&& value) { SetIncludes(std::move(value)); return *this;}
 

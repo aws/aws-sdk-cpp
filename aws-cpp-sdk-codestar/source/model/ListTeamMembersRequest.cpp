@@ -52,7 +52,7 @@ Aws::String ListTeamMembersRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListTeamMembersRequest::GetRequestSpecificHeaders() const

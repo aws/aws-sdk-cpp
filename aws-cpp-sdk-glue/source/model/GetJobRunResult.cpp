@@ -37,7 +37,7 @@ GetJobRunResult::GetJobRunResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetJobRunResult& GetJobRunResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JobRun"))
   {
     m_jobRun = jsonValue.GetObject("JobRun");

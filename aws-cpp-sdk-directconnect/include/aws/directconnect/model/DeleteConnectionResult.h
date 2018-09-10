@@ -340,46 +340,89 @@ namespace Model
 
 
     /**
-     * <p>The Direct Connection endpoint which the physical connection terminates
-     * on.</p>
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The Direct Connection endpoint
+     * which the physical connection terminates on.</p>
      */
     inline const Aws::String& GetAwsDevice() const{ return m_awsDevice; }
 
     /**
-     * <p>The Direct Connection endpoint which the physical connection terminates
-     * on.</p>
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The Direct Connection endpoint
+     * which the physical connection terminates on.</p>
      */
     inline void SetAwsDevice(const Aws::String& value) { m_awsDevice = value; }
 
     /**
-     * <p>The Direct Connection endpoint which the physical connection terminates
-     * on.</p>
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The Direct Connection endpoint
+     * which the physical connection terminates on.</p>
      */
     inline void SetAwsDevice(Aws::String&& value) { m_awsDevice = std::move(value); }
 
     /**
-     * <p>The Direct Connection endpoint which the physical connection terminates
-     * on.</p>
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The Direct Connection endpoint
+     * which the physical connection terminates on.</p>
      */
     inline void SetAwsDevice(const char* value) { m_awsDevice.assign(value); }
 
     /**
-     * <p>The Direct Connection endpoint which the physical connection terminates
-     * on.</p>
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The Direct Connection endpoint
+     * which the physical connection terminates on.</p>
      */
     inline DeleteConnectionResult& WithAwsDevice(const Aws::String& value) { SetAwsDevice(value); return *this;}
 
     /**
-     * <p>The Direct Connection endpoint which the physical connection terminates
-     * on.</p>
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The Direct Connection endpoint
+     * which the physical connection terminates on.</p>
      */
     inline DeleteConnectionResult& WithAwsDevice(Aws::String&& value) { SetAwsDevice(std::move(value)); return *this;}
+
+    /**
+     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The Direct Connection endpoint
+     * which the physical connection terminates on.</p>
+     */
+    inline DeleteConnectionResult& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
+
 
     /**
      * <p>The Direct Connection endpoint which the physical connection terminates
      * on.</p>
      */
-    inline DeleteConnectionResult& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
+    inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline void SetAwsDeviceV2(const Aws::String& value) { m_awsDeviceV2 = value; }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline void SetAwsDeviceV2(Aws::String&& value) { m_awsDeviceV2 = std::move(value); }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline void SetAwsDeviceV2(const char* value) { m_awsDeviceV2.assign(value); }
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline DeleteConnectionResult& WithAwsDeviceV2(const Aws::String& value) { SetAwsDeviceV2(value); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline DeleteConnectionResult& WithAwsDeviceV2(Aws::String&& value) { SetAwsDeviceV2(std::move(value)); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the physical connection terminates
+     * on.</p>
+     */
+    inline DeleteConnectionResult& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
 
   private:
 
@@ -406,6 +449,8 @@ namespace Model
     Aws::String m_lagId;
 
     Aws::String m_awsDevice;
+
+    Aws::String m_awsDeviceV2;
   };
 
 } // namespace Model

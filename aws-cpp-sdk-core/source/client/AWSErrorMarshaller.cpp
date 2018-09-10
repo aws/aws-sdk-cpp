@@ -37,23 +37,24 @@ AWS_CORE_API const char* TYPE = "__type";
 AWSError<CoreErrors> JsonErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const
 {
     JsonValue exceptionPayload(httpResponse.GetResponseBody());
-    if (!exceptionPayload.WasParseSuccessful()) 
+    JsonView payloadView(exceptionPayload);
+    if (!exceptionPayload.WasParseSuccessful())
     {
         return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "", "Failed to parse error payload", false);
     }
 
-    AWS_LOGSTREAM_TRACE(AWS_ERROR_MARSHALLER_LOG_TAG, "Error response is " << exceptionPayload.WriteReadable());
+    AWS_LOGSTREAM_TRACE(AWS_ERROR_MARSHALLER_LOG_TAG, "Error response is " << payloadView.WriteReadable());
 
-    Aws::String message(exceptionPayload.ValueExists(MESSAGE_CAMEL_CASE) ? exceptionPayload.GetString(MESSAGE_CAMEL_CASE) :
-            exceptionPayload.ValueExists(MESSAGE_LOWER_CASE) ? exceptionPayload.GetString(MESSAGE_LOWER_CASE) : "");
+    Aws::String message(payloadView.ValueExists(MESSAGE_CAMEL_CASE) ? payloadView.GetString(MESSAGE_CAMEL_CASE) :
+            payloadView.ValueExists(MESSAGE_LOWER_CASE) ? payloadView.GetString(MESSAGE_LOWER_CASE) : "");
 
     if (httpResponse.HasHeader(ERROR_TYPE_HEADER))
     {
         return Marshall(httpResponse.GetHeader(ERROR_TYPE_HEADER), message);
     }
-    else if (exceptionPayload.ValueExists(TYPE))
+    else if (payloadView.ValueExists(TYPE))
     {
-        return Marshall(exceptionPayload.GetString(TYPE), message);
+        return Marshall(payloadView.GetString(TYPE), message);
     }
     else
     {
@@ -109,29 +110,6 @@ AWSError<CoreErrors> XmlErrorMarshaller::Marshall(const Aws::Http::HttpResponse&
     return error;
 }
 
-bool XmlErrorMarshaller::ContainsError(const Aws::Http::HttpResponse& httpResponse)
-{ 
-    auto readPointer = httpResponse.GetResponseBody().tellg();
-    XmlDocument doc = XmlDocument::CreateFromXmlStream(httpResponse.GetResponseBody());
-    if (!doc.WasParseSuccessful())
-    {
-        httpResponse.GetResponseBody().seekg(readPointer);
-        return false;
-    }
-
-    if (doc.GetRootElement().GetName() == "Error"           ||
-        doc.GetRootElement().GetName() == "Errors"          ||
-        !doc.GetRootElement().FirstChild("Error").IsNull()  ||
-        !doc.GetRootElement().FirstChild("Errors").IsNull())
-    {
-        httpResponse.GetResponseBody().seekg(readPointer);
-        return true;
-    }
-
-    httpResponse.GetResponseBody().seekg(readPointer);
-    return false;
-}
-
 AWSError<CoreErrors> AWSErrorMarshaller::Marshall(const Aws::String& exceptionName, const Aws::String& message) const
 {
     if(exceptionName.empty())
@@ -159,15 +137,15 @@ AWSError<CoreErrors> AWSErrorMarshaller::Marshall(const Aws::String& exceptionNa
     AWSError<CoreErrors> error = FindErrorByName(formalExceptionName.c_str());
     if (error.GetErrorType() != CoreErrors::UNKNOWN)
     {
-        AWS_LOGSTREAM_WARN(AWS_ERROR_MARSHALLER_LOG_TAG, "Encountered AWSError\n" << formalExceptionName.c_str() << 
-                "\n" << message.c_str() << ":");
+        AWS_LOGSTREAM_WARN(AWS_ERROR_MARSHALLER_LOG_TAG, "Encountered AWSError '" << formalExceptionName.c_str() <<
+                "': " << message.c_str());
         error.SetExceptionName(formalExceptionName);
         error.SetMessage(message);
         return error;
     }    
 
-    AWS_LOGSTREAM_WARN(AWS_ERROR_MARSHALLER_LOG_TAG, "Encountered Unknown AWSError\n" << exceptionName.c_str() << 
-            "\n" <<  message.c_str() << ":");
+    AWS_LOGSTREAM_WARN(AWS_ERROR_MARSHALLER_LOG_TAG, "Encountered Unknown AWSError '" << exceptionName.c_str() <<
+            "': " <<  message.c_str());
 
     return AWSError<CoreErrors>(CoreErrors::UNKNOWN, exceptionName, "Unable to parse ExceptionName: " + exceptionName + " Message: " + message, false);
 }

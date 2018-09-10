@@ -24,6 +24,8 @@
 #include <aws/acm/model/FailureReason.h>
 #include <aws/acm/model/CertificateType.h>
 #include <aws/acm/model/RenewalSummary.h>
+#include <aws/acm/model/RenewalEligibility.h>
+#include <aws/acm/model/CertificateOptions.h>
 #include <aws/acm/model/DomainValidation.h>
 #include <aws/acm/model/KeyUsage.h>
 #include <aws/acm/model/ExtendedKeyUsage.h>
@@ -36,6 +38,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ACM
@@ -53,8 +56,8 @@ namespace Model
   {
   public:
     CertificateDetail();
-    CertificateDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    CertificateDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CertificateDetail(Aws::Utils::Json::JsonView jsonValue);
+    CertificateDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -1013,6 +1016,135 @@ namespace Model
      */
     inline CertificateDetail& AddExtendedKeyUsages(ExtendedKeyUsage&& value) { m_extendedKeyUsagesHasBeenSet = true; m_extendedKeyUsages.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
+     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
+     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
+     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
+     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
+     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline CertificateDetail& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
+     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline CertificateDetail& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
+     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    inline CertificateDetail& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether the certificate is eligible for renewal.</p>
+     */
+    inline const RenewalEligibility& GetRenewalEligibility() const{ return m_renewalEligibility; }
+
+    /**
+     * <p>Specifies whether the certificate is eligible for renewal.</p>
+     */
+    inline void SetRenewalEligibility(const RenewalEligibility& value) { m_renewalEligibilityHasBeenSet = true; m_renewalEligibility = value; }
+
+    /**
+     * <p>Specifies whether the certificate is eligible for renewal.</p>
+     */
+    inline void SetRenewalEligibility(RenewalEligibility&& value) { m_renewalEligibilityHasBeenSet = true; m_renewalEligibility = std::move(value); }
+
+    /**
+     * <p>Specifies whether the certificate is eligible for renewal.</p>
+     */
+    inline CertificateDetail& WithRenewalEligibility(const RenewalEligibility& value) { SetRenewalEligibility(value); return *this;}
+
+    /**
+     * <p>Specifies whether the certificate is eligible for renewal.</p>
+     */
+    inline CertificateDetail& WithRenewalEligibility(RenewalEligibility&& value) { SetRenewalEligibility(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Value that specifies whether to add the certificate to a transparency log.
+     * Certificate transparency makes it possible to detect SSL certificates that have
+     * been mistakenly or maliciously issued. A browser might respond to certificate
+     * that has not been logged by showing an error message. The logs are
+     * cryptographically secure. </p>
+     */
+    inline const CertificateOptions& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>Value that specifies whether to add the certificate to a transparency log.
+     * Certificate transparency makes it possible to detect SSL certificates that have
+     * been mistakenly or maliciously issued. A browser might respond to certificate
+     * that has not been logged by showing an error message. The logs are
+     * cryptographically secure. </p>
+     */
+    inline void SetOptions(const CertificateOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    /**
+     * <p>Value that specifies whether to add the certificate to a transparency log.
+     * Certificate transparency makes it possible to detect SSL certificates that have
+     * been mistakenly or maliciously issued. A browser might respond to certificate
+     * that has not been logged by showing an error message. The logs are
+     * cryptographically secure. </p>
+     */
+    inline void SetOptions(CertificateOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    /**
+     * <p>Value that specifies whether to add the certificate to a transparency log.
+     * Certificate transparency makes it possible to detect SSL certificates that have
+     * been mistakenly or maliciously issued. A browser might respond to certificate
+     * that has not been logged by showing an error message. The logs are
+     * cryptographically secure. </p>
+     */
+    inline CertificateDetail& WithOptions(const CertificateOptions& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p>Value that specifies whether to add the certificate to a transparency log.
+     * Certificate transparency makes it possible to detect SSL certificates that have
+     * been mistakenly or maliciously issued. A browser might respond to certificate
+     * that has not been logged by showing an error message. The logs are
+     * cryptographically secure. </p>
+     */
+    inline CertificateDetail& WithOptions(CertificateOptions&& value) { SetOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_certificateArn;
@@ -1083,6 +1215,15 @@ namespace Model
 
     Aws::Vector<ExtendedKeyUsage> m_extendedKeyUsages;
     bool m_extendedKeyUsagesHasBeenSet;
+
+    Aws::String m_certificateAuthorityArn;
+    bool m_certificateAuthorityArnHasBeenSet;
+
+    RenewalEligibility m_renewalEligibility;
+    bool m_renewalEligibilityHasBeenSet;
+
+    CertificateOptions m_options;
+    bool m_optionsHasBeenSet;
   };
 
 } // namespace Model

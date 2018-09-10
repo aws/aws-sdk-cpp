@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -59,8 +60,8 @@ namespace Model
   {
   public:
     DocumentKeyValuesFilter();
-    DocumentKeyValuesFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    DocumentKeyValuesFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DocumentKeyValuesFilter(Aws::Utils::Json::JsonView jsonValue);
+    DocumentKeyValuesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

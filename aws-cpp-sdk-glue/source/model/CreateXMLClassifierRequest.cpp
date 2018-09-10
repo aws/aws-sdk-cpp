@@ -35,7 +35,7 @@ CreateXMLClassifierRequest::CreateXMLClassifierRequest() :
 {
 }
 
-CreateXMLClassifierRequest::CreateXMLClassifierRequest(const JsonValue& jsonValue) : 
+CreateXMLClassifierRequest::CreateXMLClassifierRequest(JsonView jsonValue) : 
     m_classificationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_rowTagHasBeenSet(false)
@@ -43,7 +43,7 @@ CreateXMLClassifierRequest::CreateXMLClassifierRequest(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-CreateXMLClassifierRequest& CreateXMLClassifierRequest::operator =(const JsonValue& jsonValue)
+CreateXMLClassifierRequest& CreateXMLClassifierRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Classification"))
   {

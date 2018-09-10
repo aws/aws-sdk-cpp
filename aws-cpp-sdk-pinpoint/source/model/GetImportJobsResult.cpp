@@ -37,7 +37,7 @@ GetImportJobsResult::GetImportJobsResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetImportJobsResult& GetImportJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_importJobsResponse = jsonValue;
 
 

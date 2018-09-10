@@ -47,37 +47,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the <a>DomainName</a> resource to be deleted.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The name of the <a>DomainName</a> resource to be deleted.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The name of the <a>DomainName</a> resource to be deleted.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The name of the <a>DomainName</a> resource to be deleted.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The name of the <a>DomainName</a> resource to be deleted.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
      */
     inline DeleteDomainNameRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The name of the <a>DomainName</a> resource to be deleted.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
      */
     inline DeleteDomainNameRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the <a>DomainName</a> resource to be deleted.</p>
+     * <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
      */
     inline DeleteDomainNameRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

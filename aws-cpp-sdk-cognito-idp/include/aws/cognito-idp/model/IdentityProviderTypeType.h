@@ -29,7 +29,8 @@ namespace Model
     SAML,
     Facebook,
     Google,
-    LoginWithAmazon
+    LoginWithAmazon,
+    OIDC
   };
 
 namespace IdentityProviderTypeTypeMapper

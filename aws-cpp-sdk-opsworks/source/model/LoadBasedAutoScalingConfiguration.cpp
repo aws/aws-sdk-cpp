@@ -37,7 +37,7 @@ LoadBasedAutoScalingConfiguration::LoadBasedAutoScalingConfiguration() :
 {
 }
 
-LoadBasedAutoScalingConfiguration::LoadBasedAutoScalingConfiguration(const JsonValue& jsonValue) : 
+LoadBasedAutoScalingConfiguration::LoadBasedAutoScalingConfiguration(JsonView jsonValue) : 
     m_layerIdHasBeenSet(false),
     m_enable(false),
     m_enableHasBeenSet(false),
@@ -47,7 +47,7 @@ LoadBasedAutoScalingConfiguration::LoadBasedAutoScalingConfiguration(const JsonV
   *this = jsonValue;
 }
 
-LoadBasedAutoScalingConfiguration& LoadBasedAutoScalingConfiguration::operator =(const JsonValue& jsonValue)
+LoadBasedAutoScalingConfiguration& LoadBasedAutoScalingConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LayerId"))
   {

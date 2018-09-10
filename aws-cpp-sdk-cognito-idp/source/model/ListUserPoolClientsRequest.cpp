@@ -52,7 +52,7 @@ Aws::String ListUserPoolClientsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListUserPoolClientsRequest::GetRequestSpecificHeaders() const

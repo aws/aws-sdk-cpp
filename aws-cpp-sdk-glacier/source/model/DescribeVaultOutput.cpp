@@ -40,7 +40,7 @@ DescribeVaultOutput::DescribeVaultOutput() :
 {
 }
 
-DescribeVaultOutput::DescribeVaultOutput(const JsonValue& jsonValue) : 
+DescribeVaultOutput::DescribeVaultOutput(JsonView jsonValue) : 
     m_vaultARNHasBeenSet(false),
     m_vaultNameHasBeenSet(false),
     m_creationDateHasBeenSet(false),
@@ -53,7 +53,7 @@ DescribeVaultOutput::DescribeVaultOutput(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DescribeVaultOutput& DescribeVaultOutput::operator =(const JsonValue& jsonValue)
+DescribeVaultOutput& DescribeVaultOutput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VaultARN"))
   {

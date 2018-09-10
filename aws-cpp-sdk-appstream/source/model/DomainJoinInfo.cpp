@@ -34,14 +34,14 @@ DomainJoinInfo::DomainJoinInfo() :
 {
 }
 
-DomainJoinInfo::DomainJoinInfo(const JsonValue& jsonValue) : 
+DomainJoinInfo::DomainJoinInfo(JsonView jsonValue) : 
     m_directoryNameHasBeenSet(false),
     m_organizationalUnitDistinguishedNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DomainJoinInfo& DomainJoinInfo::operator =(const JsonValue& jsonValue)
+DomainJoinInfo& DomainJoinInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DirectoryName"))
   {

@@ -36,7 +36,7 @@ CampaignSmsMessage::CampaignSmsMessage() :
 {
 }
 
-CampaignSmsMessage::CampaignSmsMessage(const JsonValue& jsonValue) : 
+CampaignSmsMessage::CampaignSmsMessage(JsonView jsonValue) : 
     m_bodyHasBeenSet(false),
     m_messageType(MessageType::NOT_SET),
     m_messageTypeHasBeenSet(false),
@@ -45,7 +45,7 @@ CampaignSmsMessage::CampaignSmsMessage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CampaignSmsMessage& CampaignSmsMessage::operator =(const JsonValue& jsonValue)
+CampaignSmsMessage& CampaignSmsMessage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Body"))
   {

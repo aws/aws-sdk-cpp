@@ -67,6 +67,7 @@ namespace Aws
         static const char* const SECRET_KEY_KEY = "aws_secret_access_key";
         static const char* const SESSION_TOKEN_KEY = "aws_session_token";
         static const char* const ROLE_ARN_KEY = "role_arn";
+        static const char* const EXTERNAL_ID_KEY = "external_id";
         static const char* const SOURCE_PROFILE_KEY = "source_profile";
         static const char* const PROFILE_PREFIX = "profile ";
         static const char EQ = '=';
@@ -186,6 +187,13 @@ namespace Aws
                     {
                         AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found role arn " << assumeRoleArnIter->second);
                         profile.SetRoleArn(assumeRoleArnIter->second);
+                    }
+
+                    auto externalIdIter = m_profileKeyValuePairs.find(EXTERNAL_ID_KEY);
+                    if (externalIdIter != m_profileKeyValuePairs.end())
+                    {
+                        AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found external id " << externalIdIter->second);
+                        profile.SetExternalId(externalIdIter->second);
                     }
 
                     auto sourceProfileIter = m_profileKeyValuePairs.find(SOURCE_PROFILE_KEY);
@@ -322,12 +330,13 @@ namespace Aws
             const char* secretAccessKey = "SecretAccessKey";
             Aws::String accessKey, secretKey, token;
 
-            accessKey = credentialsDoc.GetString(accessKeyId);
+            auto credentialsView = credentialsDoc.View();
+            accessKey = credentialsView.GetString(accessKeyId);
             AWS_LOGSTREAM_INFO(EC2_INSTANCE_PROFILE_LOG_TAG, 
                     "Successfully pulled credentials from metadata service with access key " << accessKey);
 
-            secretKey = credentialsDoc.GetString(secretAccessKey);
-            token = credentialsDoc.GetString("Token");
+            secretKey = credentialsView.GetString(secretAccessKey);
+            token = credentialsView.GetString("Token");
 
             auto region = m_ec2metadataClient->GetCurrentRegion();
 

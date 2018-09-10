@@ -140,6 +140,11 @@ namespace Aws
             void AddQueryStringParameter(const char* key, const Aws::String& value);
 
             /**
+            * Adds multiple query string parameters to underlying query string.
+            */
+            void AddQueryStringParameter(const Aws::Map<Aws::String, Aws::String>& queryStringPairs);
+
+            /**
             * Converts the URI to a String usable for its context. e.g. an http request.
             */
             Aws::String GetURIString(bool includeQueryString = true) const;

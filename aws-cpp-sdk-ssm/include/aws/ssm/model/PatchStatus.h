@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     PatchStatus();
-    PatchStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    PatchStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PatchStatus(Aws::Utils::Json::JsonView jsonValue);
+    PatchStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

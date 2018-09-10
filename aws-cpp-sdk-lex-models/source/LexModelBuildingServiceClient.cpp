@@ -50,6 +50,7 @@
 #include <aws/lex-models/model/GetBuiltinIntentsRequest.h>
 #include <aws/lex-models/model/GetBuiltinSlotTypesRequest.h>
 #include <aws/lex-models/model/GetExportRequest.h>
+#include <aws/lex-models/model/GetImportRequest.h>
 #include <aws/lex-models/model/GetIntentRequest.h>
 #include <aws/lex-models/model/GetIntentVersionsRequest.h>
 #include <aws/lex-models/model/GetIntentsRequest.h>
@@ -61,6 +62,7 @@
 #include <aws/lex-models/model/PutBotAliasRequest.h>
 #include <aws/lex-models/model/PutIntentRequest.h>
 #include <aws/lex-models/model/PutSlotTypeRequest.h>
+#include <aws/lex-models/model/StartImportRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -980,6 +982,42 @@ void LexModelBuildingServiceClient::GetExportAsyncHelper(const GetExportRequest&
   handler(this, request, GetExport(request), context);
 }
 
+GetImportOutcome LexModelBuildingServiceClient::GetImport(const GetImportRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/imports/";
+  ss << request.GetImportId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetImportOutcome(GetImportResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetImportOutcome(outcome.GetError());
+  }
+}
+
+GetImportOutcomeCallable LexModelBuildingServiceClient::GetImportCallable(const GetImportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelBuildingServiceClient::GetImportAsync(const GetImportRequest& request, const GetImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetImportAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelBuildingServiceClient::GetImportAsyncHelper(const GetImportRequest& request, const GetImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetImport(request), context);
+}
+
 GetIntentOutcome LexModelBuildingServiceClient::GetIntent(const GetIntentRequest& request) const
 {
   Aws::StringStream ss;
@@ -1386,5 +1424,40 @@ void LexModelBuildingServiceClient::PutSlotTypeAsync(const PutSlotTypeRequest& r
 void LexModelBuildingServiceClient::PutSlotTypeAsyncHelper(const PutSlotTypeRequest& request, const PutSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutSlotType(request), context);
+}
+
+StartImportOutcome LexModelBuildingServiceClient::StartImport(const StartImportRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/imports/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartImportOutcome(StartImportResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartImportOutcome(outcome.GetError());
+  }
+}
+
+StartImportOutcomeCallable LexModelBuildingServiceClient::StartImportCallable(const StartImportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartImport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelBuildingServiceClient::StartImportAsync(const StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartImportAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelBuildingServiceClient::StartImportAsyncHelper(const StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartImport(request), context);
 }
 

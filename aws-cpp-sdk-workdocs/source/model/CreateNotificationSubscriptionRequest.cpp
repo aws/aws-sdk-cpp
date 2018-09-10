@@ -52,7 +52,7 @@ Aws::String CreateNotificationSubscriptionRequest::SerializePayload() const
    payload.WithString("SubscriptionType", SubscriptionTypeMapper::GetNameForSubscriptionType(m_subscriptionType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

@@ -22,10 +22,10 @@
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Array.h>
+#include <aws/core/utils/threading/ReaderWriterLock.h>
 
 #include <memory>
 #include <atomic>
-#include <mutex>
 #include <chrono>
 
 namespace Aws
@@ -207,16 +207,28 @@ namespace Aws
             bool m_includeSha256HashHeader;
 
         private:
-            Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials, const Aws::String& stringToSign, const Aws::String& simpleDate) const;
+            Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials,
+                    const Aws::String& stringToSign, const Aws::String& simpleDate) const;
+
+            Aws::String GenerateSignature(const Aws::Auth::AWSCredentials& credentials,
+                    const Aws::String& stringToSign, const Aws::String& simpleDate, const Aws::String& region, 
+                    const Aws::String& serviceName) const;
+
+            Aws::String GenerateSignature(const Aws::String& stringToSign, const Aws::Utils::ByteBuffer& key) const;
+            bool ServiceRequireUnsignedPayload(const Aws::String& serviceName) const;
             Aws::String ComputePayloadHash(Aws::Http::HttpRequest&) const;
-            Aws::String GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate, const Aws::String& canonicalRequestHash) const;
-            const Aws::Utils::ByteBuffer& ComputeLongLivedHash(const Aws::String& secretKey, const Aws::String& simpleDate) const;
+            Aws::String GenerateStringToSign(const Aws::String& dateValue, const Aws::String& simpleDate,
+                    const Aws::String& canonicalRequestHash, const Aws::String& region,
+                    const Aws::String& serviceName) const;
+            Aws::Utils::ByteBuffer ComputeHash(const Aws::String& secretKey, const Aws::String& simpleDate) const;
+            Aws::Utils::ByteBuffer ComputeHash(const Aws::String& secretKey,
+                    const Aws::String& simpleDate, const Aws::String& region, const Aws::String& serviceName) const;
 
             bool ShouldSignHeader(const Aws::String& header) const;
 
             std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
-            Aws::String m_serviceName;
-            Aws::String m_region;
+            const Aws::String m_serviceName;
+            const Aws::String m_region;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256> m_hash;
             Aws::UniquePtr<Aws::Utils::Crypto::Sha256HMAC> m_HMAC;
 
@@ -228,7 +240,7 @@ namespace Aws
             mutable Aws::Utils::ByteBuffer m_partialSignature;
             mutable Aws::String m_currentDateStr;
             mutable Aws::String m_currentSecretKey;
-            mutable std::mutex m_partialSignatureLock;
+            mutable Utils::Threading::ReaderWriterLock m_partialSignatureLock;
             PayloadSigningPolicy m_payloadSigningPolicy;
             bool m_urlEscapePath;
         };

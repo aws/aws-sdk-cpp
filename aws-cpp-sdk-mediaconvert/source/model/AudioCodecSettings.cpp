@@ -40,7 +40,7 @@ AudioCodecSettings::AudioCodecSettings() :
 {
 }
 
-AudioCodecSettings::AudioCodecSettings(const JsonValue& jsonValue) : 
+AudioCodecSettings::AudioCodecSettings(JsonView jsonValue) : 
     m_aacSettingsHasBeenSet(false),
     m_ac3SettingsHasBeenSet(false),
     m_aiffSettingsHasBeenSet(false),
@@ -53,7 +53,7 @@ AudioCodecSettings::AudioCodecSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AudioCodecSettings& AudioCodecSettings::operator =(const JsonValue& jsonValue)
+AudioCodecSettings& AudioCodecSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("aacSettings"))
   {

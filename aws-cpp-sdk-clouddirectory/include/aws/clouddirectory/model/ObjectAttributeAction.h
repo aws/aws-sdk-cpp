@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -35,15 +36,15 @@ namespace Model
 
   /**
    * <p>The action to take on the object attribute.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ObjectAttributeAction">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ObjectAttributeAction">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API ObjectAttributeAction
   {
   public:
     ObjectAttributeAction();
-    ObjectAttributeAction(const Aws::Utils::Json::JsonValue& jsonValue);
-    ObjectAttributeAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ObjectAttributeAction(Aws::Utils::Json::JsonView jsonValue);
+    ObjectAttributeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

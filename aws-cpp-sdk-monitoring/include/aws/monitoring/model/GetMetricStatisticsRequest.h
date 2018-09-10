@@ -547,36 +547,36 @@ namespace Model
 
     /**
      * <p>The unit for a given metric. Metrics may be reported in multiple units. Not
-     * supplying a unit results in all units being returned. If the metric only ever
-     * reports one unit, specifying a unit has no effect.</p>
+     * supplying a unit results in all units being returned. If you specify only a unit
+     * that the metric does not report, the results of the call are null.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
 
     /**
      * <p>The unit for a given metric. Metrics may be reported in multiple units. Not
-     * supplying a unit results in all units being returned. If the metric only ever
-     * reports one unit, specifying a unit has no effect.</p>
+     * supplying a unit results in all units being returned. If you specify only a unit
+     * that the metric does not report, the results of the call are null.</p>
      */
     inline void SetUnit(const StandardUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
      * <p>The unit for a given metric. Metrics may be reported in multiple units. Not
-     * supplying a unit results in all units being returned. If the metric only ever
-     * reports one unit, specifying a unit has no effect.</p>
+     * supplying a unit results in all units being returned. If you specify only a unit
+     * that the metric does not report, the results of the call are null.</p>
      */
     inline void SetUnit(StandardUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
      * <p>The unit for a given metric. Metrics may be reported in multiple units. Not
-     * supplying a unit results in all units being returned. If the metric only ever
-     * reports one unit, specifying a unit has no effect.</p>
+     * supplying a unit results in all units being returned. If you specify only a unit
+     * that the metric does not report, the results of the call are null.</p>
      */
     inline GetMetricStatisticsRequest& WithUnit(const StandardUnit& value) { SetUnit(value); return *this;}
 
     /**
      * <p>The unit for a given metric. Metrics may be reported in multiple units. Not
-     * supplying a unit results in all units being returned. If the metric only ever
-     * reports one unit, specifying a unit has no effect.</p>
+     * supplying a unit results in all units being returned. If you specify only a unit
+     * that the metric does not report, the results of the call are null.</p>
      */
     inline GetMetricStatisticsRequest& WithUnit(StandardUnit&& value) { SetUnit(std::move(value)); return *this;}
 

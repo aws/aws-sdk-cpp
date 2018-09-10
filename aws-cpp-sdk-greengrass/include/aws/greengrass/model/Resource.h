@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -34,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Information on the resource.<p><h3>See Also:</h3>   <a
+   * Information about a resource.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Resource">AWS
    * API Reference</a></p>
    */
@@ -42,79 +43,107 @@ namespace Model
   {
   public:
     Resource();
-    Resource(const Aws::Utils::Json::JsonValue& jsonValue);
-    Resource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Resource(Aws::Utils::Json::JsonView jsonValue);
+    Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Resource Id.
+     * The resource ID, used to refer to a resource in the Lambda function
+     * configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+     * This must be unique within a Greengrass group.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Resource Id.
+     * The resource ID, used to refer to a resource in the Lambda function
+     * configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+     * This must be unique within a Greengrass group.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * Resource Id.
+     * The resource ID, used to refer to a resource in the Lambda function
+     * configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+     * This must be unique within a Greengrass group.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * Resource Id.
+     * The resource ID, used to refer to a resource in the Lambda function
+     * configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+     * This must be unique within a Greengrass group.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * Resource Id.
+     * The resource ID, used to refer to a resource in the Lambda function
+     * configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+     * This must be unique within a Greengrass group.
      */
     inline Resource& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Resource Id.
+     * The resource ID, used to refer to a resource in the Lambda function
+     * configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+     * This must be unique within a Greengrass group.
      */
     inline Resource& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Resource Id.
+     * The resource ID, used to refer to a resource in the Lambda function
+     * configuration. Max length is 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+     * This must be unique within a Greengrass group.
      */
     inline Resource& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * A descriptive resource name.
+     * The descriptive resource name, which is displayed on the Greengrass console. Max
+     * length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique
+     * within a Greengrass group.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * A descriptive resource name.
+     * The descriptive resource name, which is displayed on the Greengrass console. Max
+     * length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique
+     * within a Greengrass group.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * A descriptive resource name.
+     * The descriptive resource name, which is displayed on the Greengrass console. Max
+     * length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique
+     * within a Greengrass group.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * A descriptive resource name.
+     * The descriptive resource name, which is displayed on the Greengrass console. Max
+     * length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique
+     * within a Greengrass group.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * A descriptive resource name.
+     * The descriptive resource name, which is displayed on the Greengrass console. Max
+     * length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique
+     * within a Greengrass group.
      */
     inline Resource& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * A descriptive resource name.
+     * The descriptive resource name, which is displayed on the Greengrass console. Max
+     * length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique
+     * within a Greengrass group.
      */
     inline Resource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * A descriptive resource name.
+     * The descriptive resource name, which is displayed on the Greengrass console. Max
+     * length 128 characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique
+     * within a Greengrass group.
      */
     inline Resource& WithName(const char* value) { SetName(value); return *this;}
 

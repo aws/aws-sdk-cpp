@@ -34,14 +34,14 @@ AgentVersion::AgentVersion() :
 {
 }
 
-AgentVersion::AgentVersion(const JsonValue& jsonValue) : 
+AgentVersion::AgentVersion(JsonView jsonValue) : 
     m_versionHasBeenSet(false),
     m_configurationManagerHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AgentVersion& AgentVersion::operator =(const JsonValue& jsonValue)
+AgentVersion& AgentVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Version"))
   {

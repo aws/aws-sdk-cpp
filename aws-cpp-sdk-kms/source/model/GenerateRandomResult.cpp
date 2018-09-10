@@ -38,7 +38,7 @@ GenerateRandomResult::GenerateRandomResult(const Aws::AmazonWebServiceResult<Jso
 
 GenerateRandomResult& GenerateRandomResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Plaintext"))
   {
     m_plaintext = HashingUtils::Base64Decode(jsonValue.GetString("Plaintext"));

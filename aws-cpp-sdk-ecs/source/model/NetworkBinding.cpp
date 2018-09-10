@@ -39,7 +39,7 @@ NetworkBinding::NetworkBinding() :
 {
 }
 
-NetworkBinding::NetworkBinding(const JsonValue& jsonValue) : 
+NetworkBinding::NetworkBinding(JsonView jsonValue) : 
     m_bindIPHasBeenSet(false),
     m_containerPort(0),
     m_containerPortHasBeenSet(false),
@@ -51,7 +51,7 @@ NetworkBinding::NetworkBinding(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NetworkBinding& NetworkBinding::operator =(const JsonValue& jsonValue)
+NetworkBinding& NetworkBinding::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bindIP"))
   {

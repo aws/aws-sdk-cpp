@@ -34,14 +34,14 @@ LifecyclePolicyPreviewSummary::LifecyclePolicyPreviewSummary() :
 {
 }
 
-LifecyclePolicyPreviewSummary::LifecyclePolicyPreviewSummary(const JsonValue& jsonValue) : 
+LifecyclePolicyPreviewSummary::LifecyclePolicyPreviewSummary(JsonView jsonValue) : 
     m_expiringImageTotalCount(0),
     m_expiringImageTotalCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LifecyclePolicyPreviewSummary& LifecyclePolicyPreviewSummary::operator =(const JsonValue& jsonValue)
+LifecyclePolicyPreviewSummary& LifecyclePolicyPreviewSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("expiringImageTotalCount"))
   {

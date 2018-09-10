@@ -35,7 +35,7 @@ InstanceInformationFilter::InstanceInformationFilter() :
 {
 }
 
-InstanceInformationFilter::InstanceInformationFilter(const JsonValue& jsonValue) : 
+InstanceInformationFilter::InstanceInformationFilter(JsonView jsonValue) : 
     m_key(InstanceInformationFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueSetHasBeenSet(false)
@@ -43,7 +43,7 @@ InstanceInformationFilter::InstanceInformationFilter(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-InstanceInformationFilter& InstanceInformationFilter::operator =(const JsonValue& jsonValue)
+InstanceInformationFilter& InstanceInformationFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("key"))
   {
@@ -54,7 +54,7 @@ InstanceInformationFilter& InstanceInformationFilter::operator =(const JsonValue
 
   if(jsonValue.ValueExists("valueSet"))
   {
-    Array<JsonValue> valueSetJsonList = jsonValue.GetArray("valueSet");
+    Array<JsonView> valueSetJsonList = jsonValue.GetArray("valueSet");
     for(unsigned valueSetIndex = 0; valueSetIndex < valueSetJsonList.GetLength(); ++valueSetIndex)
     {
       m_valueSet.push_back(valueSetJsonList[valueSetIndex].AsString());

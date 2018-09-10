@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     AccountTakeoverActionType();
-    AccountTakeoverActionType(const Aws::Utils::Json::JsonValue& jsonValue);
-    AccountTakeoverActionType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AccountTakeoverActionType(Aws::Utils::Json::JsonView jsonValue);
+    AccountTakeoverActionType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -35,7 +35,7 @@ ParameterGroupStatus::ParameterGroupStatus() :
 {
 }
 
-ParameterGroupStatus::ParameterGroupStatus(const JsonValue& jsonValue) : 
+ParameterGroupStatus::ParameterGroupStatus(JsonView jsonValue) : 
     m_parameterGroupNameHasBeenSet(false),
     m_parameterApplyStatusHasBeenSet(false),
     m_nodeIdsToRebootHasBeenSet(false)
@@ -43,7 +43,7 @@ ParameterGroupStatus::ParameterGroupStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ParameterGroupStatus& ParameterGroupStatus::operator =(const JsonValue& jsonValue)
+ParameterGroupStatus& ParameterGroupStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ParameterGroupName"))
   {
@@ -61,7 +61,7 @@ ParameterGroupStatus& ParameterGroupStatus::operator =(const JsonValue& jsonValu
 
   if(jsonValue.ValueExists("NodeIdsToReboot"))
   {
-    Array<JsonValue> nodeIdsToRebootJsonList = jsonValue.GetArray("NodeIdsToReboot");
+    Array<JsonView> nodeIdsToRebootJsonList = jsonValue.GetArray("NodeIdsToReboot");
     for(unsigned nodeIdsToRebootIndex = 0; nodeIdsToRebootIndex < nodeIdsToRebootJsonList.GetLength(); ++nodeIdsToRebootIndex)
     {
       m_nodeIdsToReboot.push_back(nodeIdsToRebootJsonList[nodeIdsToRebootIndex].AsString());

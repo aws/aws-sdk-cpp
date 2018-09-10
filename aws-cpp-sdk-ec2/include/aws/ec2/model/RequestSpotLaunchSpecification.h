@@ -609,51 +609,37 @@ namespace Model
 
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data for the instance.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data for the instance.</p>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data for the instance.</p>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data for the instance.</p>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data for the instance.</p>
      */
     inline RequestSpotLaunchSpecification& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data for the instance.</p>
      */
     inline RequestSpotLaunchSpecification& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
-     * <p>The user data to make available to the instances. If you are using an AWS SDK
-     * or command line tool, Base64-encoding is performed for you, and you can load the
-     * text from a file. Otherwise, you must provide Base64-encoded text.</p>
+     * <p>The Base64-encoded user data for the instance.</p>
      */
     inline RequestSpotLaunchSpecification& WithUserData(const char* value) { SetUserData(value); return *this;}
 

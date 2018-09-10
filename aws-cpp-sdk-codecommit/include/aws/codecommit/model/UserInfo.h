@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeCommit
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     UserInfo();
-    UserInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    UserInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    UserInfo(Aws::Utils::Json::JsonView jsonValue);
+    UserInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -120,37 +121,44 @@ namespace Model
 
 
     /**
-     * <p>The date when the specified commit was pushed to the repository.</p>
+     * <p>The date when the specified commit was commited, in timestamp format with GMT
+     * offset.</p>
      */
     inline const Aws::String& GetDate() const{ return m_date; }
 
     /**
-     * <p>The date when the specified commit was pushed to the repository.</p>
+     * <p>The date when the specified commit was commited, in timestamp format with GMT
+     * offset.</p>
      */
     inline void SetDate(const Aws::String& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
-     * <p>The date when the specified commit was pushed to the repository.</p>
+     * <p>The date when the specified commit was commited, in timestamp format with GMT
+     * offset.</p>
      */
     inline void SetDate(Aws::String&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
 
     /**
-     * <p>The date when the specified commit was pushed to the repository.</p>
+     * <p>The date when the specified commit was commited, in timestamp format with GMT
+     * offset.</p>
      */
     inline void SetDate(const char* value) { m_dateHasBeenSet = true; m_date.assign(value); }
 
     /**
-     * <p>The date when the specified commit was pushed to the repository.</p>
+     * <p>The date when the specified commit was commited, in timestamp format with GMT
+     * offset.</p>
      */
     inline UserInfo& WithDate(const Aws::String& value) { SetDate(value); return *this;}
 
     /**
-     * <p>The date when the specified commit was pushed to the repository.</p>
+     * <p>The date when the specified commit was commited, in timestamp format with GMT
+     * offset.</p>
      */
     inline UserInfo& WithDate(Aws::String&& value) { SetDate(std::move(value)); return *this;}
 
     /**
-     * <p>The date when the specified commit was pushed to the repository.</p>
+     * <p>The date when the specified commit was commited, in timestamp format with GMT
+     * offset.</p>
      */
     inline UserInfo& WithDate(const char* value) { SetDate(value); return *this;}
 

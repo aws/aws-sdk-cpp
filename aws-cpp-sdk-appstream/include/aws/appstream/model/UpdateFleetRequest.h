@@ -86,6 +86,42 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline const Aws::String& GetImageArn() const{ return m_imageArn; }
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline void SetImageArn(const Aws::String& value) { m_imageArnHasBeenSet = true; m_imageArn = value; }
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline void SetImageArn(Aws::String&& value) { m_imageArnHasBeenSet = true; m_imageArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline void SetImageArn(const char* value) { m_imageArnHasBeenSet = true; m_imageArn.assign(value); }
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline UpdateFleetRequest& WithImageArn(const Aws::String& value) { SetImageArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline UpdateFleetRequest& WithImageArn(Aws::String&& value) { SetImageArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline UpdateFleetRequest& WithImageArn(const char* value) { SetImageArn(value); return *this;}
+
+
+    /**
      * <p>A unique name for the fleet.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -504,6 +540,9 @@ namespace Model
 
     Aws::String m_imageName;
     bool m_imageNameHasBeenSet;
+
+    Aws::String m_imageArn;
+    bool m_imageArnHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

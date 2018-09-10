@@ -39,7 +39,7 @@ RespondToAuthChallengeResult::RespondToAuthChallengeResult(const Aws::AmazonWebS
 
 RespondToAuthChallengeResult& RespondToAuthChallengeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ChallengeName"))
   {
     m_challengeName = ChallengeNameTypeMapper::GetChallengeNameTypeForName(jsonValue.GetString("ChallengeName"));
@@ -54,7 +54,7 @@ RespondToAuthChallengeResult& RespondToAuthChallengeResult::operator =(const Aws
 
   if(jsonValue.ValueExists("ChallengeParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> challengeParametersJsonMap = jsonValue.GetObject("ChallengeParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> challengeParametersJsonMap = jsonValue.GetObject("ChallengeParameters").GetAllObjects();
     for(auto& challengeParametersItem : challengeParametersJsonMap)
     {
       m_challengeParameters[challengeParametersItem.first] = challengeParametersItem.second.AsString();

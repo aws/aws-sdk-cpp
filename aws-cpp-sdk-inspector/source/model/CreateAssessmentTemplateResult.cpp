@@ -37,7 +37,7 @@ CreateAssessmentTemplateResult::CreateAssessmentTemplateResult(const Aws::Amazon
 
 CreateAssessmentTemplateResult& CreateAssessmentTemplateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assessmentTemplateArn"))
   {
     m_assessmentTemplateArn = jsonValue.GetString("assessmentTemplateArn");

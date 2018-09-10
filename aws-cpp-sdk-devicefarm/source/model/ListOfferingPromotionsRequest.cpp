@@ -37,7 +37,7 @@ Aws::String ListOfferingPromotionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListOfferingPromotionsRequest::GetRequestSpecificHeaders() const

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     TriggerConfig();
-    TriggerConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    TriggerConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TriggerConfig(Aws::Utils::Json::JsonView jsonValue);
+    TriggerConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

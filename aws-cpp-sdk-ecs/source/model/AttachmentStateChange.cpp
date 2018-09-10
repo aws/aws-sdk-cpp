@@ -34,14 +34,14 @@ AttachmentStateChange::AttachmentStateChange() :
 {
 }
 
-AttachmentStateChange::AttachmentStateChange(const JsonValue& jsonValue) : 
+AttachmentStateChange::AttachmentStateChange(JsonView jsonValue) : 
     m_attachmentArnHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AttachmentStateChange& AttachmentStateChange::operator =(const JsonValue& jsonValue)
+AttachmentStateChange& AttachmentStateChange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("attachmentArn"))
   {

@@ -35,7 +35,7 @@ ProcessorParameter::ProcessorParameter() :
 {
 }
 
-ProcessorParameter::ProcessorParameter(const JsonValue& jsonValue) : 
+ProcessorParameter::ProcessorParameter(JsonView jsonValue) : 
     m_parameterName(ProcessorParameterName::NOT_SET),
     m_parameterNameHasBeenSet(false),
     m_parameterValueHasBeenSet(false)
@@ -43,7 +43,7 @@ ProcessorParameter::ProcessorParameter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProcessorParameter& ProcessorParameter::operator =(const JsonValue& jsonValue)
+ProcessorParameter& ProcessorParameter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ParameterName"))
   {

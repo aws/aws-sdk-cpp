@@ -42,7 +42,7 @@ Connection::Connection() :
 {
 }
 
-Connection::Connection(const JsonValue& jsonValue) : 
+Connection::Connection(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_connectionType(ConnectionType::NOT_SET),
@@ -57,7 +57,7 @@ Connection::Connection(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Connection& Connection::operator =(const JsonValue& jsonValue)
+Connection& Connection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -82,7 +82,7 @@ Connection& Connection::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("MatchCriteria"))
   {
-    Array<JsonValue> matchCriteriaJsonList = jsonValue.GetArray("MatchCriteria");
+    Array<JsonView> matchCriteriaJsonList = jsonValue.GetArray("MatchCriteria");
     for(unsigned matchCriteriaIndex = 0; matchCriteriaIndex < matchCriteriaJsonList.GetLength(); ++matchCriteriaIndex)
     {
       m_matchCriteria.push_back(matchCriteriaJsonList[matchCriteriaIndex].AsString());
@@ -92,7 +92,7 @@ Connection& Connection::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ConnectionProperties"))
   {
-    Aws::Map<Aws::String, JsonValue> connectionPropertiesJsonMap = jsonValue.GetObject("ConnectionProperties").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> connectionPropertiesJsonMap = jsonValue.GetObject("ConnectionProperties").GetAllObjects();
     for(auto& connectionPropertiesItem : connectionPropertiesJsonMap)
     {
       m_connectionProperties[ConnectionPropertyKeyMapper::GetConnectionPropertyKeyForName(connectionPropertiesItem.first)] = connectionPropertiesItem.second.AsString();

@@ -44,7 +44,7 @@ Aws::String DeleteMetricFilterRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteMetricFilterRequest::GetRequestSpecificHeaders() const

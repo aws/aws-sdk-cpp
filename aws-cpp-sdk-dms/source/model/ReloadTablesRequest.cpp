@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 ReloadTablesRequest::ReloadTablesRequest() : 
     m_replicationTaskArnHasBeenSet(false),
-    m_tablesToReloadHasBeenSet(false)
+    m_tablesToReloadHasBeenSet(false),
+    m_reloadOption(ReloadOptionValue::NOT_SET),
+    m_reloadOptionHasBeenSet(false)
 {
 }
 
@@ -49,7 +51,12 @@ Aws::String ReloadTablesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_reloadOptionHasBeenSet)
+  {
+   payload.WithString("ReloadOption", ReloadOptionValueMapper::GetNameForReloadOptionValue(m_reloadOption));
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ReloadTablesRequest::GetRequestSpecificHeaders() const

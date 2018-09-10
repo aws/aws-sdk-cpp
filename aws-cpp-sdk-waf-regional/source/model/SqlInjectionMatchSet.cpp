@@ -35,7 +35,7 @@ SqlInjectionMatchSet::SqlInjectionMatchSet() :
 {
 }
 
-SqlInjectionMatchSet::SqlInjectionMatchSet(const JsonValue& jsonValue) : 
+SqlInjectionMatchSet::SqlInjectionMatchSet(JsonView jsonValue) : 
     m_sqlInjectionMatchSetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_sqlInjectionMatchTuplesHasBeenSet(false)
@@ -43,7 +43,7 @@ SqlInjectionMatchSet::SqlInjectionMatchSet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SqlInjectionMatchSet& SqlInjectionMatchSet::operator =(const JsonValue& jsonValue)
+SqlInjectionMatchSet& SqlInjectionMatchSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SqlInjectionMatchSetId"))
   {
@@ -61,7 +61,7 @@ SqlInjectionMatchSet& SqlInjectionMatchSet::operator =(const JsonValue& jsonValu
 
   if(jsonValue.ValueExists("SqlInjectionMatchTuples"))
   {
-    Array<JsonValue> sqlInjectionMatchTuplesJsonList = jsonValue.GetArray("SqlInjectionMatchTuples");
+    Array<JsonView> sqlInjectionMatchTuplesJsonList = jsonValue.GetArray("SqlInjectionMatchTuples");
     for(unsigned sqlInjectionMatchTuplesIndex = 0; sqlInjectionMatchTuplesIndex < sqlInjectionMatchTuplesJsonList.GetLength(); ++sqlInjectionMatchTuplesIndex)
     {
       m_sqlInjectionMatchTuples.push_back(sqlInjectionMatchTuplesJsonList[sqlInjectionMatchTuplesIndex].AsObject());

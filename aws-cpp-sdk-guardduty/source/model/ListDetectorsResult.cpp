@@ -37,10 +37,10 @@ ListDetectorsResult::ListDetectorsResult(const Aws::AmazonWebServiceResult<JsonV
 
 ListDetectorsResult& ListDetectorsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("detectorIds"))
   {
-    Array<JsonValue> detectorIdsJsonList = jsonValue.GetArray("detectorIds");
+    Array<JsonView> detectorIdsJsonList = jsonValue.GetArray("detectorIds");
     for(unsigned detectorIdsIndex = 0; detectorIdsIndex < detectorIdsJsonList.GetLength(); ++detectorIdsIndex)
     {
       m_detectorIds.push_back(detectorIdsJsonList[detectorIdsIndex].AsString());

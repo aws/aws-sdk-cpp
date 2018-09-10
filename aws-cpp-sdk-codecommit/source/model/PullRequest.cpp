@@ -42,7 +42,7 @@ PullRequest::PullRequest() :
 {
 }
 
-PullRequest::PullRequest(const JsonValue& jsonValue) : 
+PullRequest::PullRequest(JsonView jsonValue) : 
     m_pullRequestIdHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -57,7 +57,7 @@ PullRequest::PullRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PullRequest& PullRequest::operator =(const JsonValue& jsonValue)
+PullRequest& PullRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pullRequestId"))
   {
@@ -110,7 +110,7 @@ PullRequest& PullRequest::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("pullRequestTargets"))
   {
-    Array<JsonValue> pullRequestTargetsJsonList = jsonValue.GetArray("pullRequestTargets");
+    Array<JsonView> pullRequestTargetsJsonList = jsonValue.GetArray("pullRequestTargets");
     for(unsigned pullRequestTargetsIndex = 0; pullRequestTargetsIndex < pullRequestTargetsJsonList.GetLength(); ++pullRequestTargetsIndex)
     {
       m_pullRequestTargets.push_back(pullRequestTargetsJsonList[pullRequestTargetsIndex].AsObject());

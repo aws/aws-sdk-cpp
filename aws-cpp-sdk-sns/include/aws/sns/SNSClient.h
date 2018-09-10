@@ -257,7 +257,7 @@ namespace Model
 
         virtual ~SNSClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "sns"; }
+        inline virtual const char* GetServiceClientName() const override { return "SNS"; }
 
 
        /**
@@ -881,7 +881,8 @@ namespace Model
          * the NextToken string received from the previous call. When there are no more
          * records to return, NextToken will be null. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * SNS Mobile Push Notifications</a>. </p> <p>This action is throttled at 30
+         * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">AWS
          * API Reference</a></p>
          */
@@ -897,7 +898,8 @@ namespace Model
          * the NextToken string received from the previous call. When there are no more
          * records to return, NextToken will be null. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * SNS Mobile Push Notifications</a>. </p> <p>This action is throttled at 30
+         * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">AWS
          * API Reference</a></p>
          *
@@ -915,7 +917,8 @@ namespace Model
          * the NextToken string received from the previous call. When there are no more
          * records to return, NextToken will be null. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * SNS Mobile Push Notifications</a>. </p> <p>This action is throttled at 30
+         * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplication">AWS
          * API Reference</a></p>
          *
@@ -982,7 +985,8 @@ namespace Model
          * received from the previous call. When there are no more records to return,
          * NextToken will be null. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * SNS Mobile Push Notifications</a>. </p> <p>This action is throttled at 15
+         * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">AWS
          * API Reference</a></p>
          */
@@ -998,7 +1002,8 @@ namespace Model
          * received from the previous call. When there are no more records to return,
          * NextToken will be null. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * SNS Mobile Push Notifications</a>. </p> <p>This action is throttled at 15
+         * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">AWS
          * API Reference</a></p>
          *
@@ -1016,7 +1021,8 @@ namespace Model
          * received from the previous call. When there are no more records to return,
          * NextToken will be null. For more information, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon
-         * SNS Mobile Push Notifications</a>. </p><p><h3>See Also:</h3>   <a
+         * SNS Mobile Push Notifications</a>. </p> <p>This action is throttled at 15
+         * transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications">AWS
          * API Reference</a></p>
          *
@@ -1029,7 +1035,8 @@ namespace Model
          * list of subscriptions, up to 100. If there are more subscriptions, a
          * <code>NextToken</code> is also returned. Use the <code>NextToken</code>
          * parameter in a new <code>ListSubscriptions</code> call to get further
-         * results.</p><p><h3>See Also:</h3>   <a
+         * results.</p> <p>This action is throttled at 30 transactions per second
+         * (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">AWS
          * API Reference</a></p>
          */
@@ -1040,7 +1047,8 @@ namespace Model
          * list of subscriptions, up to 100. If there are more subscriptions, a
          * <code>NextToken</code> is also returned. Use the <code>NextToken</code>
          * parameter in a new <code>ListSubscriptions</code> call to get further
-         * results.</p><p><h3>See Also:</h3>   <a
+         * results.</p> <p>This action is throttled at 30 transactions per second
+         * (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">AWS
          * API Reference</a></p>
          *
@@ -1053,7 +1061,8 @@ namespace Model
          * list of subscriptions, up to 100. If there are more subscriptions, a
          * <code>NextToken</code> is also returned. Use the <code>NextToken</code>
          * parameter in a new <code>ListSubscriptions</code> call to get further
-         * results.</p><p><h3>See Also:</h3>   <a
+         * results.</p> <p>This action is throttled at 30 transactions per second
+         * (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptions">AWS
          * API Reference</a></p>
          *
@@ -1066,7 +1075,8 @@ namespace Model
          * limited list of subscriptions, up to 100. If there are more subscriptions, a
          * <code>NextToken</code> is also returned. Use the <code>NextToken</code>
          * parameter in a new <code>ListSubscriptionsByTopic</code> call to get further
-         * results.</p><p><h3>See Also:</h3>   <a
+         * results.</p> <p>This action is throttled at 30 transactions per second
+         * (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">AWS
          * API Reference</a></p>
          */
@@ -1077,7 +1087,8 @@ namespace Model
          * limited list of subscriptions, up to 100. If there are more subscriptions, a
          * <code>NextToken</code> is also returned. Use the <code>NextToken</code>
          * parameter in a new <code>ListSubscriptionsByTopic</code> call to get further
-         * results.</p><p><h3>See Also:</h3>   <a
+         * results.</p> <p>This action is throttled at 30 transactions per second
+         * (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">AWS
          * API Reference</a></p>
          *
@@ -1090,7 +1101,8 @@ namespace Model
          * limited list of subscriptions, up to 100. If there are more subscriptions, a
          * <code>NextToken</code> is also returned. Use the <code>NextToken</code>
          * parameter in a new <code>ListSubscriptionsByTopic</code> call to get further
-         * results.</p><p><h3>See Also:</h3>   <a
+         * results.</p> <p>This action is throttled at 30 transactions per second
+         * (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSubscriptionsByTopic">AWS
          * API Reference</a></p>
          *
@@ -1102,9 +1114,10 @@ namespace Model
          * <p>Returns a list of the requester's topics. Each call returns a limited list of
          * topics, up to 100. If there are more topics, a <code>NextToken</code> is also
          * returned. Use the <code>NextToken</code> parameter in a new
-         * <code>ListTopics</code> call to get further results.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">AWS
-         * API Reference</a></p>
+         * <code>ListTopics</code> call to get further results.</p> <p>This action is
+         * throttled at 30 transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">AWS API
+         * Reference</a></p>
          */
         virtual Model::ListTopicsOutcome ListTopics(const Model::ListTopicsRequest& request) const;
 
@@ -1112,9 +1125,10 @@ namespace Model
          * <p>Returns a list of the requester's topics. Each call returns a limited list of
          * topics, up to 100. If there are more topics, a <code>NextToken</code> is also
          * returned. Use the <code>NextToken</code> parameter in a new
-         * <code>ListTopics</code> call to get further results.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">AWS
-         * API Reference</a></p>
+         * <code>ListTopics</code> call to get further results.</p> <p>This action is
+         * throttled at 30 transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1124,9 +1138,10 @@ namespace Model
          * <p>Returns a list of the requester's topics. Each call returns a limited list of
          * topics, up to 100. If there are more topics, a <code>NextToken</code> is also
          * returned. Use the <code>NextToken</code> parameter in a new
-         * <code>ListTopics</code> call to get further results.</p><p><h3>See Also:</h3>  
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">AWS
-         * API Reference</a></p>
+         * <code>ListTopics</code> call to get further results.</p> <p>This action is
+         * throttled at 30 transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListTopics">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1164,15 +1179,17 @@ namespace Model
         virtual void OptInPhoneNumberAsync(const Model::OptInPhoneNumberRequest& request, const OptInPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sends a message to all of a topic's subscribed endpoints. When a
-         * <code>messageId</code> is returned, the message has been saved and Amazon SNS
-         * will attempt to deliver it to the topic's subscribers shortly. The format of the
-         * outgoing message to each subscribed endpoint depends on the notification
-         * protocol.</p> <p>To use the <code>Publish</code> action for sending a message to
-         * a mobile endpoint, such as an app on a Kindle device or mobile phone, you must
-         * specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned
-         * when making a call with the <code>CreatePlatformEndpoint</code> action. </p>
-         * <p>For more information about formatting messages, see <a
+         * <p>Sends a message to an Amazon SNS topic or sends a text message (SMS message)
+         * directly to a phone number. </p> <p>If you send a message to a topic, Amazon SNS
+         * delivers the message to each endpoint that is subscribed to the topic. The
+         * format of the message depends on the notification protocol for each subscribed
+         * endpoint.</p> <p>When a <code>messageId</code> is returned, the message has been
+         * saved and Amazon SNS will attempt to deliver it shortly.</p> <p>To use the
+         * <code>Publish</code> action for sending a message to a mobile endpoint, such as
+         * an app on a Kindle device or mobile phone, you must specify the EndpointArn for
+         * the TargetArn parameter. The EndpointArn is returned when making a call with the
+         * <code>CreatePlatformEndpoint</code> action. </p> <p>For more information about
+         * formatting messages, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
          * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1182,15 +1199,17 @@ namespace Model
         virtual Model::PublishOutcome Publish(const Model::PublishRequest& request) const;
 
         /**
-         * <p>Sends a message to all of a topic's subscribed endpoints. When a
-         * <code>messageId</code> is returned, the message has been saved and Amazon SNS
-         * will attempt to deliver it to the topic's subscribers shortly. The format of the
-         * outgoing message to each subscribed endpoint depends on the notification
-         * protocol.</p> <p>To use the <code>Publish</code> action for sending a message to
-         * a mobile endpoint, such as an app on a Kindle device or mobile phone, you must
-         * specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned
-         * when making a call with the <code>CreatePlatformEndpoint</code> action. </p>
-         * <p>For more information about formatting messages, see <a
+         * <p>Sends a message to an Amazon SNS topic or sends a text message (SMS message)
+         * directly to a phone number. </p> <p>If you send a message to a topic, Amazon SNS
+         * delivers the message to each endpoint that is subscribed to the topic. The
+         * format of the message depends on the notification protocol for each subscribed
+         * endpoint.</p> <p>When a <code>messageId</code> is returned, the message has been
+         * saved and Amazon SNS will attempt to deliver it shortly.</p> <p>To use the
+         * <code>Publish</code> action for sending a message to a mobile endpoint, such as
+         * an app on a Kindle device or mobile phone, you must specify the EndpointArn for
+         * the TargetArn parameter. The EndpointArn is returned when making a call with the
+         * <code>CreatePlatformEndpoint</code> action. </p> <p>For more information about
+         * formatting messages, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
          * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1202,15 +1221,17 @@ namespace Model
         virtual Model::PublishOutcomeCallable PublishCallable(const Model::PublishRequest& request) const;
 
         /**
-         * <p>Sends a message to all of a topic's subscribed endpoints. When a
-         * <code>messageId</code> is returned, the message has been saved and Amazon SNS
-         * will attempt to deliver it to the topic's subscribers shortly. The format of the
-         * outgoing message to each subscribed endpoint depends on the notification
-         * protocol.</p> <p>To use the <code>Publish</code> action for sending a message to
-         * a mobile endpoint, such as an app on a Kindle device or mobile phone, you must
-         * specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned
-         * when making a call with the <code>CreatePlatformEndpoint</code> action. </p>
-         * <p>For more information about formatting messages, see <a
+         * <p>Sends a message to an Amazon SNS topic or sends a text message (SMS message)
+         * directly to a phone number. </p> <p>If you send a message to a topic, Amazon SNS
+         * delivers the message to each endpoint that is subscribed to the topic. The
+         * format of the message depends on the notification protocol for each subscribed
+         * endpoint.</p> <p>When a <code>messageId</code> is returned, the message has been
+         * saved and Amazon SNS will attempt to deliver it shortly.</p> <p>To use the
+         * <code>Publish</code> action for sending a message to a mobile endpoint, such as
+         * an app on a Kindle device or mobile phone, you must specify the EndpointArn for
+         * the TargetArn parameter. The EndpointArn is returned when making a call with the
+         * <code>CreatePlatformEndpoint</code> action. </p> <p>For more information about
+         * formatting messages, see <a
          * href="http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send
          * Custom Platform-Specific Payloads in Messages to Mobile Devices</a>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1376,7 +1397,7 @@ namespace Model
         virtual void SetSMSAttributesAsync(const Model::SetSMSAttributesRequest& request, const SetSMSAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows a subscription owner to set an attribute of the topic to a new
+         * <p>Allows a subscription owner to set an attribute of the subscription to a new
          * value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">AWS
          * API Reference</a></p>
@@ -1384,7 +1405,7 @@ namespace Model
         virtual Model::SetSubscriptionAttributesOutcome SetSubscriptionAttributes(const Model::SetSubscriptionAttributesRequest& request) const;
 
         /**
-         * <p>Allows a subscription owner to set an attribute of the topic to a new
+         * <p>Allows a subscription owner to set an attribute of the subscription to a new
          * value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">AWS
          * API Reference</a></p>
@@ -1394,7 +1415,7 @@ namespace Model
         virtual Model::SetSubscriptionAttributesOutcomeCallable SetSubscriptionAttributesCallable(const Model::SetSubscriptionAttributesRequest& request) const;
 
         /**
-         * <p>Allows a subscription owner to set an attribute of the topic to a new
+         * <p>Allows a subscription owner to set an attribute of the subscription to a new
          * value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetSubscriptionAttributes">AWS
          * API Reference</a></p>
@@ -1435,9 +1456,10 @@ namespace Model
          * <p>Prepares to subscribe an endpoint by sending the endpoint a confirmation
          * message. To actually create a subscription, the endpoint owner must call the
          * <code>ConfirmSubscription</code> action with the token from the confirmation
-         * message. Confirmation tokens are valid for three days.</p><p><h3>See Also:</h3> 
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">AWS
-         * API Reference</a></p>
+         * message. Confirmation tokens are valid for three days.</p> <p>This action is
+         * throttled at 100 transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">AWS API
+         * Reference</a></p>
          */
         virtual Model::SubscribeOutcome Subscribe(const Model::SubscribeRequest& request) const;
 
@@ -1445,9 +1467,10 @@ namespace Model
          * <p>Prepares to subscribe an endpoint by sending the endpoint a confirmation
          * message. To actually create a subscription, the endpoint owner must call the
          * <code>ConfirmSubscription</code> action with the token from the confirmation
-         * message. Confirmation tokens are valid for three days.</p><p><h3>See Also:</h3> 
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">AWS
-         * API Reference</a></p>
+         * message. Confirmation tokens are valid for three days.</p> <p>This action is
+         * throttled at 100 transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -1457,9 +1480,10 @@ namespace Model
          * <p>Prepares to subscribe an endpoint by sending the endpoint a confirmation
          * message. To actually create a subscription, the endpoint owner must call the
          * <code>ConfirmSubscription</code> action with the token from the confirmation
-         * message. Confirmation tokens are valid for three days.</p><p><h3>See Also:</h3> 
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">AWS
-         * API Reference</a></p>
+         * message. Confirmation tokens are valid for three days.</p> <p>This action is
+         * throttled at 100 transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1472,7 +1496,8 @@ namespace Model
          * call does not require authentication and the requester is not the subscription
          * owner, a final cancellation message is delivered to the endpoint, so that the
          * endpoint owner can easily resubscribe to the topic if the
-         * <code>Unsubscribe</code> request was unintended.</p><p><h3>See Also:</h3>   <a
+         * <code>Unsubscribe</code> request was unintended.</p> <p>This action is throttled
+         * at 100 transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">AWS API
          * Reference</a></p>
          */
@@ -1485,7 +1510,8 @@ namespace Model
          * call does not require authentication and the requester is not the subscription
          * owner, a final cancellation message is delivered to the endpoint, so that the
          * endpoint owner can easily resubscribe to the topic if the
-         * <code>Unsubscribe</code> request was unintended.</p><p><h3>See Also:</h3>   <a
+         * <code>Unsubscribe</code> request was unintended.</p> <p>This action is throttled
+         * at 100 transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">AWS API
          * Reference</a></p>
          *
@@ -1500,7 +1526,8 @@ namespace Model
          * call does not require authentication and the requester is not the subscription
          * owner, a final cancellation message is delivered to the endpoint, so that the
          * endpoint owner can easily resubscribe to the topic if the
-         * <code>Unsubscribe</code> request was unintended.</p><p><h3>See Also:</h3>   <a
+         * <code>Unsubscribe</code> request was unintended.</p> <p>This action is throttled
+         * at 100 transactions per second (TPS).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Unsubscribe">AWS API
          * Reference</a></p>
          *

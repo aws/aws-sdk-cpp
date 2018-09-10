@@ -38,7 +38,7 @@ Type::Type() :
 {
 }
 
-Type::Type(const JsonValue& jsonValue) : 
+Type::Type(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_arnHasBeenSet(false),
@@ -49,7 +49,7 @@ Type::Type(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Type& Type::operator =(const JsonValue& jsonValue)
+Type& Type::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

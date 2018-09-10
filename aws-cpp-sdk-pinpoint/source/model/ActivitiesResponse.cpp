@@ -29,26 +29,35 @@ namespace Model
 {
 
 ActivitiesResponse::ActivitiesResponse() : 
-    m_itemHasBeenSet(false)
+    m_itemHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
-ActivitiesResponse::ActivitiesResponse(const JsonValue& jsonValue) : 
-    m_itemHasBeenSet(false)
+ActivitiesResponse::ActivitiesResponse(JsonView jsonValue) : 
+    m_itemHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ActivitiesResponse& ActivitiesResponse::operator =(const JsonValue& jsonValue)
+ActivitiesResponse& ActivitiesResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Item"))
   {
-    Array<JsonValue> itemJsonList = jsonValue.GetArray("Item");
+    Array<JsonView> itemJsonList = jsonValue.GetArray("Item");
     for(unsigned itemIndex = 0; itemIndex < itemJsonList.GetLength(); ++itemIndex)
     {
       m_item.push_back(itemJsonList[itemIndex].AsObject());
     }
     m_itemHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+    m_nextTokenHasBeenSet = true;
   }
 
   return *this;
@@ -66,6 +75,12 @@ JsonValue ActivitiesResponse::Jsonize() const
      itemJsonList[itemIndex].AsObject(m_item[itemIndex].Jsonize());
    }
    payload.WithArray("Item", std::move(itemJsonList));
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
 
   }
 

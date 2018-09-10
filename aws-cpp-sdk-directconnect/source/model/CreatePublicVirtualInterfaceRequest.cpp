@@ -44,7 +44,7 @@ Aws::String CreatePublicVirtualInterfaceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreatePublicVirtualInterfaceRequest::GetRequestSpecificHeaders() const

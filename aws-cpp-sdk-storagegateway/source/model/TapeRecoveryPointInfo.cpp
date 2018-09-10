@@ -37,7 +37,7 @@ TapeRecoveryPointInfo::TapeRecoveryPointInfo() :
 {
 }
 
-TapeRecoveryPointInfo::TapeRecoveryPointInfo(const JsonValue& jsonValue) : 
+TapeRecoveryPointInfo::TapeRecoveryPointInfo(JsonView jsonValue) : 
     m_tapeARNHasBeenSet(false),
     m_tapeRecoveryPointTimeHasBeenSet(false),
     m_tapeSizeInBytes(0),
@@ -47,7 +47,7 @@ TapeRecoveryPointInfo::TapeRecoveryPointInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TapeRecoveryPointInfo& TapeRecoveryPointInfo::operator =(const JsonValue& jsonValue)
+TapeRecoveryPointInfo& TapeRecoveryPointInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TapeARN"))
   {

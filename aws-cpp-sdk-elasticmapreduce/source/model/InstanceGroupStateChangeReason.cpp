@@ -35,7 +35,7 @@ InstanceGroupStateChangeReason::InstanceGroupStateChangeReason() :
 {
 }
 
-InstanceGroupStateChangeReason::InstanceGroupStateChangeReason(const JsonValue& jsonValue) : 
+InstanceGroupStateChangeReason::InstanceGroupStateChangeReason(JsonView jsonValue) : 
     m_code(InstanceGroupStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -43,7 +43,7 @@ InstanceGroupStateChangeReason::InstanceGroupStateChangeReason(const JsonValue& 
   *this = jsonValue;
 }
 
-InstanceGroupStateChangeReason& InstanceGroupStateChangeReason::operator =(const JsonValue& jsonValue)
+InstanceGroupStateChangeReason& InstanceGroupStateChangeReason::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Code"))
   {

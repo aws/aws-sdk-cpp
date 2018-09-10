@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -40,10 +41,10 @@ namespace Model
    * used in <a>MatchmakingConfiguration</a> objects.</p> <p>A rule set may define
    * the following elements for a match. For detailed information and examples
    * showing how to construct a rule set, see <a
-   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-rules.html">Create
-   * Matchmaking Rules for Your Game</a>. </p> <ul> <li> <p>Teams -- Required. A rule
-   * set must define one or multiple teams for the match and set minimum and maximum
-   * team sizes. For example, a rule set might describe a 4x4 match that requires all
+   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+   * a FlexMatch Rule Set</a>. </p> <ul> <li> <p>Teams -- Required. A rule set must
+   * define one or multiple teams for the match and set minimum and maximum team
+   * sizes. For example, a rule set might describe a 4x4 match that requires all
    * eight slots to be filled. </p> </li> <li> <p>Player attributes -- Optional.
    * These attributes specify a set of player characteristics to evaluate when
    * looking for a match. Matchmaking requests that use a rule set with player
@@ -51,15 +52,17 @@ namespace Model
    * attribute might specify a player's skill or level.</p> </li> <li> <p>Rules --
    * Optional. Rules define how to evaluate potential players for a match based on
    * player attributes. A rule might specify minimum requirements for individual
-   * players--such as each player must meet a certain skill level, or may describe an
-   * entire group--such as all teams must be evenly matched or have at least one
-   * player in a certain role. </p> </li> <li> <p>Expansions -- Optional. Expansions
-   * allow you to relax the rules after a period of time if no acceptable matches are
-   * found. This feature lets you balance getting players into games in a reasonable
-   * amount of time instead of making them wait indefinitely for the best possible
-   * match. For example, you might use an expansion to increase the maximum skill
-   * variance between players after 30 seconds.</p> </li> </ul><p><h3>See Also:</h3> 
-   * <a
+   * players, teams, or entire matches. For example, a rule might require each player
+   * to meet a certain skill level, each team to have at least one player in a
+   * certain role, or the match to have a minimum average skill level. or may
+   * describe an entire group--such as all teams must be evenly matched or have at
+   * least one player in a certain role. </p> </li> <li> <p>Expansions -- Optional.
+   * Expansions allow you to relax the rules after a period of time when no
+   * acceptable matches are found. This feature lets you balance getting players into
+   * games in a reasonable amount of time instead of making them wait indefinitely
+   * for the best possible match. For example, you might use an expansion to increase
+   * the maximum skill variance between players after 30 seconds.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/MatchmakingRuleSet">AWS
    * API Reference</a></p>
    */
@@ -67,8 +70,8 @@ namespace Model
   {
   public:
     MatchmakingRuleSet();
-    MatchmakingRuleSet(const Aws::Utils::Json::JsonValue& jsonValue);
-    MatchmakingRuleSet& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MatchmakingRuleSet(Aws::Utils::Json::JsonView jsonValue);
+    MatchmakingRuleSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

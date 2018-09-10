@@ -35,7 +35,7 @@ BatchDetachObject::BatchDetachObject() :
 {
 }
 
-BatchDetachObject::BatchDetachObject(const JsonValue& jsonValue) : 
+BatchDetachObject::BatchDetachObject(JsonView jsonValue) : 
     m_parentReferenceHasBeenSet(false),
     m_linkNameHasBeenSet(false),
     m_batchReferenceNameHasBeenSet(false)
@@ -43,7 +43,7 @@ BatchDetachObject::BatchDetachObject(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchDetachObject& BatchDetachObject::operator =(const JsonValue& jsonValue)
+BatchDetachObject& BatchDetachObject::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ParentReference"))
   {

@@ -30,18 +30,20 @@ namespace Model
 
 WriteSegmentRequest::WriteSegmentRequest() : 
     m_dimensionsHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_segmentGroupsHasBeenSet(false)
 {
 }
 
-WriteSegmentRequest::WriteSegmentRequest(const JsonValue& jsonValue) : 
+WriteSegmentRequest::WriteSegmentRequest(JsonView jsonValue) : 
     m_dimensionsHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_segmentGroupsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WriteSegmentRequest& WriteSegmentRequest::operator =(const JsonValue& jsonValue)
+WriteSegmentRequest& WriteSegmentRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Dimensions"))
   {
@@ -55,6 +57,13 @@ WriteSegmentRequest& WriteSegmentRequest::operator =(const JsonValue& jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SegmentGroups"))
+  {
+    m_segmentGroups = jsonValue.GetObject("SegmentGroups");
+
+    m_segmentGroupsHasBeenSet = true;
   }
 
   return *this;
@@ -73,6 +82,12 @@ JsonValue WriteSegmentRequest::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_segmentGroupsHasBeenSet)
+  {
+   payload.WithObject("SegmentGroups", m_segmentGroups.Jsonize());
 
   }
 

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -35,15 +36,15 @@ namespace Model
   /**
    * <p>Represents the output batch <a>AttachObject</a> response
    * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchAttachObjectResponse">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchAttachObjectResponse">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchAttachObjectResponse
   {
   public:
     BatchAttachObjectResponse();
-    BatchAttachObjectResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchAttachObjectResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchAttachObjectResponse(Aws::Utils::Json::JsonView jsonValue);
+    BatchAttachObjectResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

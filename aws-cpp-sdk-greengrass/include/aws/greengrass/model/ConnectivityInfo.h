@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Connectivity Info<p><h3>See Also:</h3>   <a
+   * Information about a Greengrass core's connectivity.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ConnectivityInfo">AWS
    * API Reference</a></p>
    */
@@ -41,79 +42,79 @@ namespace Model
   {
   public:
     ConnectivityInfo();
-    ConnectivityInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    ConnectivityInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ConnectivityInfo(Aws::Utils::Json::JsonView jsonValue);
+    ConnectivityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Endpoint for the GGC. Can be an IP address or DNS.
+     * The endpoint for the Greengrass core. Can be an IP address or DNS.
      */
     inline const Aws::String& GetHostAddress() const{ return m_hostAddress; }
 
     /**
-     * Endpoint for the GGC. Can be an IP address or DNS.
+     * The endpoint for the Greengrass core. Can be an IP address or DNS.
      */
     inline void SetHostAddress(const Aws::String& value) { m_hostAddressHasBeenSet = true; m_hostAddress = value; }
 
     /**
-     * Endpoint for the GGC. Can be an IP address or DNS.
+     * The endpoint for the Greengrass core. Can be an IP address or DNS.
      */
     inline void SetHostAddress(Aws::String&& value) { m_hostAddressHasBeenSet = true; m_hostAddress = std::move(value); }
 
     /**
-     * Endpoint for the GGC. Can be an IP address or DNS.
+     * The endpoint for the Greengrass core. Can be an IP address or DNS.
      */
     inline void SetHostAddress(const char* value) { m_hostAddressHasBeenSet = true; m_hostAddress.assign(value); }
 
     /**
-     * Endpoint for the GGC. Can be an IP address or DNS.
+     * The endpoint for the Greengrass core. Can be an IP address or DNS.
      */
     inline ConnectivityInfo& WithHostAddress(const Aws::String& value) { SetHostAddress(value); return *this;}
 
     /**
-     * Endpoint for the GGC. Can be an IP address or DNS.
+     * The endpoint for the Greengrass core. Can be an IP address or DNS.
      */
     inline ConnectivityInfo& WithHostAddress(Aws::String&& value) { SetHostAddress(std::move(value)); return *this;}
 
     /**
-     * Endpoint for the GGC. Can be an IP address or DNS.
+     * The endpoint for the Greengrass core. Can be an IP address or DNS.
      */
     inline ConnectivityInfo& WithHostAddress(const char* value) { SetHostAddress(value); return *this;}
 
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the connectivity information.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the connectivity information.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the connectivity information.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the connectivity information.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the connectivity information.
      */
     inline ConnectivityInfo& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the connectivity information.
      */
     inline ConnectivityInfo& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the connectivity information.
      */
     inline ConnectivityInfo& WithId(const char* value) { SetId(value); return *this;}
 
@@ -155,17 +156,17 @@ namespace Model
 
 
     /**
-     * Port of the GGC. Usually 8883.
+     * The port of the Greengrass core. Usually 8883.
      */
     inline int GetPortNumber() const{ return m_portNumber; }
 
     /**
-     * Port of the GGC. Usually 8883.
+     * The port of the Greengrass core. Usually 8883.
      */
     inline void SetPortNumber(int value) { m_portNumberHasBeenSet = true; m_portNumber = value; }
 
     /**
-     * Port of the GGC. Usually 8883.
+     * The port of the Greengrass core. Usually 8883.
      */
     inline ConnectivityInfo& WithPortNumber(int value) { SetPortNumber(value); return *this;}
 

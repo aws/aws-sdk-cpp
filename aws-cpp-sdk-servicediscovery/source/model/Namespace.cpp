@@ -43,7 +43,7 @@ Namespace::Namespace() :
 {
 }
 
-Namespace::Namespace(const JsonValue& jsonValue) : 
+Namespace::Namespace(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -59,7 +59,7 @@ Namespace::Namespace(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Namespace& Namespace::operator =(const JsonValue& jsonValue)
+Namespace& Namespace::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

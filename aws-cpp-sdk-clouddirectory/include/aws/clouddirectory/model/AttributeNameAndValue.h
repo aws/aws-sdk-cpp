@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -36,15 +37,15 @@ namespace Model
   /**
    * <p>Identifies the attribute name and value for a typed link.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttributeNameAndValue">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttributeNameAndValue">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API AttributeNameAndValue
   {
   public:
     AttributeNameAndValue();
-    AttributeNameAndValue(const Aws::Utils::Json::JsonValue& jsonValue);
-    AttributeNameAndValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AttributeNameAndValue(Aws::Utils::Json::JsonView jsonValue);
+    AttributeNameAndValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

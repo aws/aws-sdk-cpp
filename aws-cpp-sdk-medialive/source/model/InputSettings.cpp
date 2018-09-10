@@ -46,7 +46,7 @@ InputSettings::InputSettings() :
 {
 }
 
-InputSettings::InputSettings(const JsonValue& jsonValue) : 
+InputSettings::InputSettings(JsonView jsonValue) : 
     m_audioSelectorsHasBeenSet(false),
     m_captionSelectorsHasBeenSet(false),
     m_deblockFilter(InputDeblockFilter::NOT_SET),
@@ -65,11 +65,11 @@ InputSettings::InputSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InputSettings& InputSettings::operator =(const JsonValue& jsonValue)
+InputSettings& InputSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioSelectors"))
   {
-    Array<JsonValue> audioSelectorsJsonList = jsonValue.GetArray("audioSelectors");
+    Array<JsonView> audioSelectorsJsonList = jsonValue.GetArray("audioSelectors");
     for(unsigned audioSelectorsIndex = 0; audioSelectorsIndex < audioSelectorsJsonList.GetLength(); ++audioSelectorsIndex)
     {
       m_audioSelectors.push_back(audioSelectorsJsonList[audioSelectorsIndex].AsObject());
@@ -79,7 +79,7 @@ InputSettings& InputSettings::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("captionSelectors"))
   {
-    Array<JsonValue> captionSelectorsJsonList = jsonValue.GetArray("captionSelectors");
+    Array<JsonView> captionSelectorsJsonList = jsonValue.GetArray("captionSelectors");
     for(unsigned captionSelectorsIndex = 0; captionSelectorsIndex < captionSelectorsJsonList.GetLength(); ++captionSelectorsIndex)
     {
       m_captionSelectors.push_back(captionSelectorsJsonList[captionSelectorsIndex].AsObject());

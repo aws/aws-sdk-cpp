@@ -83,49 +83,73 @@ namespace Model
 
     /**
      * <p>An array of strings representing the instance name(s) you want to attach to
-     * your load balancer.</p>
+     * your load balancer.</p> <p>An instance must be <code>running</code> before you
+     * can attach it to your load balancer.</p> <p>There are no additional limits on
+     * the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceNames() const{ return m_instanceNames; }
 
     /**
      * <p>An array of strings representing the instance name(s) you want to attach to
-     * your load balancer.</p>
+     * your load balancer.</p> <p>An instance must be <code>running</code> before you
+     * can attach it to your load balancer.</p> <p>There are no additional limits on
+     * the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).</p>
      */
     inline void SetInstanceNames(const Aws::Vector<Aws::String>& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = value; }
 
     /**
      * <p>An array of strings representing the instance name(s) you want to attach to
-     * your load balancer.</p>
+     * your load balancer.</p> <p>An instance must be <code>running</code> before you
+     * can attach it to your load balancer.</p> <p>There are no additional limits on
+     * the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).</p>
      */
     inline void SetInstanceNames(Aws::Vector<Aws::String>&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames = std::move(value); }
 
     /**
      * <p>An array of strings representing the instance name(s) you want to attach to
-     * your load balancer.</p>
+     * your load balancer.</p> <p>An instance must be <code>running</code> before you
+     * can attach it to your load balancer.</p> <p>There are no additional limits on
+     * the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).</p>
      */
     inline AttachInstancesToLoadBalancerRequest& WithInstanceNames(const Aws::Vector<Aws::String>& value) { SetInstanceNames(value); return *this;}
 
     /**
      * <p>An array of strings representing the instance name(s) you want to attach to
-     * your load balancer.</p>
+     * your load balancer.</p> <p>An instance must be <code>running</code> before you
+     * can attach it to your load balancer.</p> <p>There are no additional limits on
+     * the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).</p>
      */
     inline AttachInstancesToLoadBalancerRequest& WithInstanceNames(Aws::Vector<Aws::String>&& value) { SetInstanceNames(std::move(value)); return *this;}
 
     /**
      * <p>An array of strings representing the instance name(s) you want to attach to
-     * your load balancer.</p>
+     * your load balancer.</p> <p>An instance must be <code>running</code> before you
+     * can attach it to your load balancer.</p> <p>There are no additional limits on
+     * the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).</p>
      */
     inline AttachInstancesToLoadBalancerRequest& AddInstanceNames(const Aws::String& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
 
     /**
      * <p>An array of strings representing the instance name(s) you want to attach to
-     * your load balancer.</p>
+     * your load balancer.</p> <p>An instance must be <code>running</code> before you
+     * can attach it to your load balancer.</p> <p>There are no additional limits on
+     * the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).</p>
      */
     inline AttachInstancesToLoadBalancerRequest& AddInstanceNames(Aws::String&& value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array of strings representing the instance name(s) you want to attach to
-     * your load balancer.</p>
+     * your load balancer.</p> <p>An instance must be <code>running</code> before you
+     * can attach it to your load balancer.</p> <p>There are no additional limits on
+     * the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).</p>
      */
     inline AttachInstancesToLoadBalancerRequest& AddInstanceNames(const char* value) { m_instanceNamesHasBeenSet = true; m_instanceNames.push_back(value); return *this; }
 

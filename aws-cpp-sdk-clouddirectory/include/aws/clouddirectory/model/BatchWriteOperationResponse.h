@@ -29,6 +29,7 @@
 #include <aws/clouddirectory/model/BatchDetachFromIndexResponse.h>
 #include <aws/clouddirectory/model/BatchAttachTypedLinkResponse.h>
 #include <aws/clouddirectory/model/BatchDetachTypedLinkResponse.h>
+#include <aws/clouddirectory/model/BatchUpdateLinkAttributesResponse.h>
 #include <utility>
 
 namespace Aws
@@ -38,6 +39,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -48,15 +50,15 @@ namespace Model
   /**
    * <p>Represents the output of a <code>BatchWrite</code> response
    * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWriteOperationResponse">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchWriteOperationResponse">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchWriteOperationResponse
   {
   public:
     BatchWriteOperationResponse();
-    BatchWriteOperationResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchWriteOperationResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchWriteOperationResponse(Aws::Utils::Json::JsonView jsonValue);
+    BatchWriteOperationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -468,6 +470,32 @@ namespace Model
      */
     inline BatchWriteOperationResponse& WithDetachTypedLink(BatchDetachTypedLinkResponse&& value) { SetDetachTypedLink(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
+     */
+    inline const BatchUpdateLinkAttributesResponse& GetUpdateLinkAttributes() const{ return m_updateLinkAttributes; }
+
+    /**
+     * <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
+     */
+    inline void SetUpdateLinkAttributes(const BatchUpdateLinkAttributesResponse& value) { m_updateLinkAttributesHasBeenSet = true; m_updateLinkAttributes = value; }
+
+    /**
+     * <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
+     */
+    inline void SetUpdateLinkAttributes(BatchUpdateLinkAttributesResponse&& value) { m_updateLinkAttributesHasBeenSet = true; m_updateLinkAttributes = std::move(value); }
+
+    /**
+     * <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
+     */
+    inline BatchWriteOperationResponse& WithUpdateLinkAttributes(const BatchUpdateLinkAttributesResponse& value) { SetUpdateLinkAttributes(value); return *this;}
+
+    /**
+     * <p>Represents the output of a <code>BatchWrite</code> response operation.</p>
+     */
+    inline BatchWriteOperationResponse& WithUpdateLinkAttributes(BatchUpdateLinkAttributesResponse&& value) { SetUpdateLinkAttributes(std::move(value)); return *this;}
+
   private:
 
     BatchCreateObjectResponse m_createObject;
@@ -511,6 +539,9 @@ namespace Model
 
     BatchDetachTypedLinkResponse m_detachTypedLink;
     bool m_detachTypedLinkHasBeenSet;
+
+    BatchUpdateLinkAttributesResponse m_updateLinkAttributes;
+    bool m_updateLinkAttributesHasBeenSet;
   };
 
 } // namespace Model

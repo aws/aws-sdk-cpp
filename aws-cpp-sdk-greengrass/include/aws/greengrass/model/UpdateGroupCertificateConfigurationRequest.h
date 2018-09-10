@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline const Aws::String& GetCertificateExpiryInMilliseconds() const{ return m_certificateExpiryInMilliseconds; }
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline void SetCertificateExpiryInMilliseconds(const Aws::String& value) { m_certificateExpiryInMillisecondsHasBeenSet = true; m_certificateExpiryInMilliseconds = value; }
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline void SetCertificateExpiryInMilliseconds(Aws::String&& value) { m_certificateExpiryInMillisecondsHasBeenSet = true; m_certificateExpiryInMilliseconds = std::move(value); }
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline void SetCertificateExpiryInMilliseconds(const char* value) { m_certificateExpiryInMillisecondsHasBeenSet = true; m_certificateExpiryInMilliseconds.assign(value); }
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline UpdateGroupCertificateConfigurationRequest& WithCertificateExpiryInMilliseconds(const Aws::String& value) { SetCertificateExpiryInMilliseconds(value); return *this;}
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline UpdateGroupCertificateConfigurationRequest& WithCertificateExpiryInMilliseconds(Aws::String&& value) { SetCertificateExpiryInMilliseconds(std::move(value)); return *this;}
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline UpdateGroupCertificateConfigurationRequest& WithCertificateExpiryInMilliseconds(const char* value) { SetCertificateExpiryInMilliseconds(value); return *this;}
 
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline UpdateGroupCertificateConfigurationRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline UpdateGroupCertificateConfigurationRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline UpdateGroupCertificateConfigurationRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 

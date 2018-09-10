@@ -37,7 +37,7 @@ GetClassifierResult::GetClassifierResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetClassifierResult& GetClassifierResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Classifier"))
   {
     m_classifier = jsonValue.GetObject("Classifier");

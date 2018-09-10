@@ -34,11 +34,11 @@ namespace Model
 {
 
   /**
-   * <p>Describes a lifecycle hook, which tells Auto Scaling that you want to perform
-   * an action whenever it launches instances or whenever it terminates
+   * <p>Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want
+   * to perform an action whenever it launches instances or whenever it terminates
    * instances.</p> <p>For more information, see <a
-   * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/lifecycle-hooks.html">Auto
-   * Scaling Lifecycle Hooks</a> in the <i>Auto Scaling User Guide</i>.</p><p><h3>See
+   * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Lifecycle
+   * Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LifecycleHook">AWS
    * API Reference</a></p>
@@ -128,93 +128,107 @@ namespace Model
 
     /**
      * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * For a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.</p>
+     * The following are possible values:</p> <ul> <li>
+     * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline const Aws::String& GetLifecycleTransition() const{ return m_lifecycleTransition; }
 
     /**
      * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * For a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.</p>
+     * The following are possible values:</p> <ul> <li>
+     * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline void SetLifecycleTransition(const Aws::String& value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition = value; }
 
     /**
      * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * For a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.</p>
+     * The following are possible values:</p> <ul> <li>
+     * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline void SetLifecycleTransition(Aws::String&& value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition = std::move(value); }
 
     /**
      * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * For a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.</p>
+     * The following are possible values:</p> <ul> <li>
+     * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline void SetLifecycleTransition(const char* value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition.assign(value); }
 
     /**
      * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * For a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.</p>
+     * The following are possible values:</p> <ul> <li>
+     * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline LifecycleHook& WithLifecycleTransition(const Aws::String& value) { SetLifecycleTransition(value); return *this;}
 
     /**
      * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * For a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.</p>
+     * The following are possible values:</p> <ul> <li>
+     * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline LifecycleHook& WithLifecycleTransition(Aws::String&& value) { SetLifecycleTransition(std::move(value)); return *this;}
 
     /**
      * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * For a list of lifecycle hook types, see <a>DescribeLifecycleHookTypes</a>.</p>
+     * The following are possible values:</p> <ul> <li>
+     * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline LifecycleHook& WithLifecycleTransition(const char* value) { SetLifecycleTransition(value); return *this;}
 
 
     /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
+     * <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to
+     * when an instance is in the transition state for the lifecycle hook. The
+     * notification target can be either an SQS queue or an SNS topic.</p>
      */
     inline const Aws::String& GetNotificationTargetARN() const{ return m_notificationTargetARN; }
 
     /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
+     * <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to
+     * when an instance is in the transition state for the lifecycle hook. The
+     * notification target can be either an SQS queue or an SNS topic.</p>
      */
     inline void SetNotificationTargetARN(const Aws::String& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = value; }
 
     /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
+     * <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to
+     * when an instance is in the transition state for the lifecycle hook. The
+     * notification target can be either an SQS queue or an SNS topic.</p>
      */
     inline void SetNotificationTargetARN(Aws::String&& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = std::move(value); }
 
     /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
+     * <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to
+     * when an instance is in the transition state for the lifecycle hook. The
+     * notification target can be either an SQS queue or an SNS topic.</p>
      */
     inline void SetNotificationTargetARN(const char* value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN.assign(value); }
 
     /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
+     * <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to
+     * when an instance is in the transition state for the lifecycle hook. The
+     * notification target can be either an SQS queue or an SNS topic.</p>
      */
     inline LifecycleHook& WithNotificationTargetARN(const Aws::String& value) { SetNotificationTargetARN(value); return *this;}
 
     /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
+     * <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to
+     * when an instance is in the transition state for the lifecycle hook. The
+     * notification target can be either an SQS queue or an SNS topic.</p>
      */
     inline LifecycleHook& WithNotificationTargetARN(Aws::String&& value) { SetNotificationTargetARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the target that Auto Scaling sends notifications to when an
-     * instance is in the transition state for the lifecycle hook. The notification
-     * target can be either an SQS queue or an SNS topic.</p>
+     * <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to
+     * when an instance is in the transition state for the lifecycle hook. The
+     * notification target can be either an SQS queue or an SNS topic.</p>
      */
     inline LifecycleHook& WithNotificationTargetARN(const char* value) { SetNotificationTargetARN(value); return *this;}
 
@@ -263,68 +277,68 @@ namespace Model
 
 
     /**
-     * <p>Additional information that you want to include any time Auto Scaling sends a
-     * message to the notification target.</p>
+     * <p>Additional information that you want to include any time Amazon EC2 Auto
+     * Scaling sends a message to the notification target.</p>
      */
     inline const Aws::String& GetNotificationMetadata() const{ return m_notificationMetadata; }
 
     /**
-     * <p>Additional information that you want to include any time Auto Scaling sends a
-     * message to the notification target.</p>
+     * <p>Additional information that you want to include any time Amazon EC2 Auto
+     * Scaling sends a message to the notification target.</p>
      */
     inline void SetNotificationMetadata(const Aws::String& value) { m_notificationMetadataHasBeenSet = true; m_notificationMetadata = value; }
 
     /**
-     * <p>Additional information that you want to include any time Auto Scaling sends a
-     * message to the notification target.</p>
+     * <p>Additional information that you want to include any time Amazon EC2 Auto
+     * Scaling sends a message to the notification target.</p>
      */
     inline void SetNotificationMetadata(Aws::String&& value) { m_notificationMetadataHasBeenSet = true; m_notificationMetadata = std::move(value); }
 
     /**
-     * <p>Additional information that you want to include any time Auto Scaling sends a
-     * message to the notification target.</p>
+     * <p>Additional information that you want to include any time Amazon EC2 Auto
+     * Scaling sends a message to the notification target.</p>
      */
     inline void SetNotificationMetadata(const char* value) { m_notificationMetadataHasBeenSet = true; m_notificationMetadata.assign(value); }
 
     /**
-     * <p>Additional information that you want to include any time Auto Scaling sends a
-     * message to the notification target.</p>
+     * <p>Additional information that you want to include any time Amazon EC2 Auto
+     * Scaling sends a message to the notification target.</p>
      */
     inline LifecycleHook& WithNotificationMetadata(const Aws::String& value) { SetNotificationMetadata(value); return *this;}
 
     /**
-     * <p>Additional information that you want to include any time Auto Scaling sends a
-     * message to the notification target.</p>
+     * <p>Additional information that you want to include any time Amazon EC2 Auto
+     * Scaling sends a message to the notification target.</p>
      */
     inline LifecycleHook& WithNotificationMetadata(Aws::String&& value) { SetNotificationMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>Additional information that you want to include any time Auto Scaling sends a
-     * message to the notification target.</p>
+     * <p>Additional information that you want to include any time Amazon EC2 Auto
+     * Scaling sends a message to the notification target.</p>
      */
     inline LifecycleHook& WithNotificationMetadata(const char* value) { SetNotificationMetadata(value); return *this;}
 
 
     /**
      * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
-     * out. If the lifecycle hook times out, Auto Scaling performs the default action.
-     * You can prevent the lifecycle hook from timing out by calling
+     * out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the
+     * default action. You can prevent the lifecycle hook from timing out by calling
      * <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
     inline int GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
 
     /**
      * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
-     * out. If the lifecycle hook times out, Auto Scaling performs the default action.
-     * You can prevent the lifecycle hook from timing out by calling
+     * out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the
+     * default action. You can prevent the lifecycle hook from timing out by calling
      * <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
     inline void SetHeartbeatTimeout(int value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
 
     /**
      * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
-     * out. If the lifecycle hook times out, Auto Scaling performs the default action.
-     * You can prevent the lifecycle hook from timing out by calling
+     * out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the
+     * default action. You can prevent the lifecycle hook from timing out by calling
      * <a>RecordLifecycleActionHeartbeat</a>.</p>
      */
     inline LifecycleHook& WithHeartbeatTimeout(int value) { SetHeartbeatTimeout(value); return *this;}

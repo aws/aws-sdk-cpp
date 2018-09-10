@@ -41,7 +41,7 @@ Aws::String UpdateDocumentVersionRequest::SerializePayload() const
    payload.WithString("VersionStatus", DocumentVersionStatusMapper::GetNameForDocumentVersionStatus(m_versionStatus));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateDocumentVersionRequest::GetRequestSpecificHeaders() const
@@ -51,7 +51,7 @@ Aws::Http::HeaderValueCollection UpdateDocumentVersionRequest::GetRequestSpecifi
   if(m_authenticationTokenHasBeenSet)
   {
     ss << m_authenticationToken;
-    headers.insert(Aws::Http::HeaderValuePair("authentication", ss.str()));
+    headers.emplace("authentication",  ss.str());
     ss.str("");
   }
 

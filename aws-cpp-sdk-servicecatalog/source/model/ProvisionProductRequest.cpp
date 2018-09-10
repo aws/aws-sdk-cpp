@@ -109,7 +109,7 @@ Aws::String ProvisionProductRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ProvisionProductRequest::GetRequestSpecificHeaders() const

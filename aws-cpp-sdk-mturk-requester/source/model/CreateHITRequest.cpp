@@ -156,7 +156,7 @@ Aws::String CreateHITRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateHITRequest::GetRequestSpecificHeaders() const

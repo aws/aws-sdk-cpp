@@ -37,7 +37,7 @@ CreateDeploymentResult::CreateDeploymentResult(const Aws::AmazonWebServiceResult
 
 CreateDeploymentResult& CreateDeploymentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -58,10 +58,10 @@ CreateDeploymentResult& CreateDeploymentResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("apiSummary"))
   {
-    Aws::Map<Aws::String, JsonValue> apiSummaryJsonMap = jsonValue.GetObject("apiSummary").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> apiSummaryJsonMap = jsonValue.GetObject("apiSummary").GetAllObjects();
     for(auto& apiSummaryItem : apiSummaryJsonMap)
     {
-      Aws::Map<Aws::String, JsonValue> mapOfMethodSnapshotJsonMap = apiSummaryItem.second.GetAllObjects();
+      Aws::Map<Aws::String, JsonView> mapOfMethodSnapshotJsonMap = apiSummaryItem.second.GetAllObjects();
       Aws::Map<Aws::String, MethodSnapshot> mapOfMethodSnapshotMap;
       for(auto& mapOfMethodSnapshotItem : mapOfMethodSnapshotJsonMap)
       {

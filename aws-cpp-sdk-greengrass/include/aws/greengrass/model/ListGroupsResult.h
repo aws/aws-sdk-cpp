@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * Groups
+     * Information about a group.
      */
     inline const Aws::Vector<GroupInformation>& GetGroups() const{ return m_groups; }
 
     /**
-     * Groups
+     * Information about a group.
      */
     inline void SetGroups(const Aws::Vector<GroupInformation>& value) { m_groups = value; }
 
     /**
-     * Groups
+     * Information about a group.
      */
     inline void SetGroups(Aws::Vector<GroupInformation>&& value) { m_groups = std::move(value); }
 
     /**
-     * Groups
+     * Information about a group.
      */
     inline ListGroupsResult& WithGroups(const Aws::Vector<GroupInformation>& value) { SetGroups(value); return *this;}
 
     /**
-     * Groups
+     * Information about a group.
      */
     inline ListGroupsResult& WithGroups(Aws::Vector<GroupInformation>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * Groups
+     * Information about a group.
      */
     inline ListGroupsResult& AddGroups(const GroupInformation& value) { m_groups.push_back(value); return *this; }
 
     /**
-     * Groups
+     * Information about a group.
      */
     inline ListGroupsResult& AddGroups(GroupInformation&& value) { m_groups.push_back(std::move(value)); return *this; }
 

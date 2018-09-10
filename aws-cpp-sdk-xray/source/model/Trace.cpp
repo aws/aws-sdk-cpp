@@ -36,7 +36,7 @@ Trace::Trace() :
 {
 }
 
-Trace::Trace(const JsonValue& jsonValue) : 
+Trace::Trace(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_duration(0.0),
     m_durationHasBeenSet(false),
@@ -45,7 +45,7 @@ Trace::Trace(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Trace& Trace::operator =(const JsonValue& jsonValue)
+Trace& Trace::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -63,7 +63,7 @@ Trace& Trace::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Segments"))
   {
-    Array<JsonValue> segmentsJsonList = jsonValue.GetArray("Segments");
+    Array<JsonView> segmentsJsonList = jsonValue.GetArray("Segments");
     for(unsigned segmentsIndex = 0; segmentsIndex < segmentsJsonList.GetLength(); ++segmentsIndex)
     {
       m_segments.push_back(segmentsJsonList[segmentsIndex].AsObject());

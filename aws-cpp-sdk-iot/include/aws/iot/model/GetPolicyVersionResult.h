@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -206,6 +207,94 @@ namespace Model
      */
     inline GetPolicyVersionResult& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
 
+
+    /**
+     * <p>The date the policy version was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The date the policy version was created.</p>
+     */
+    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
+
+    /**
+     * <p>The date the policy version was created.</p>
+     */
+    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
+
+    /**
+     * <p>The date the policy version was created.</p>
+     */
+    inline GetPolicyVersionResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
+
+    /**
+     * <p>The date the policy version was created.</p>
+     */
+    inline GetPolicyVersionResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date the policy version was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+
+    /**
+     * <p>The date the policy version was last modified.</p>
+     */
+    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDate = value; }
+
+    /**
+     * <p>The date the policy version was last modified.</p>
+     */
+    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDate = std::move(value); }
+
+    /**
+     * <p>The date the policy version was last modified.</p>
+     */
+    inline GetPolicyVersionResult& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
+
+    /**
+     * <p>The date the policy version was last modified.</p>
+     */
+    inline GetPolicyVersionResult& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The generation ID of the policy version.</p>
+     */
+    inline const Aws::String& GetGenerationId() const{ return m_generationId; }
+
+    /**
+     * <p>The generation ID of the policy version.</p>
+     */
+    inline void SetGenerationId(const Aws::String& value) { m_generationId = value; }
+
+    /**
+     * <p>The generation ID of the policy version.</p>
+     */
+    inline void SetGenerationId(Aws::String&& value) { m_generationId = std::move(value); }
+
+    /**
+     * <p>The generation ID of the policy version.</p>
+     */
+    inline void SetGenerationId(const char* value) { m_generationId.assign(value); }
+
+    /**
+     * <p>The generation ID of the policy version.</p>
+     */
+    inline GetPolicyVersionResult& WithGenerationId(const Aws::String& value) { SetGenerationId(value); return *this;}
+
+    /**
+     * <p>The generation ID of the policy version.</p>
+     */
+    inline GetPolicyVersionResult& WithGenerationId(Aws::String&& value) { SetGenerationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The generation ID of the policy version.</p>
+     */
+    inline GetPolicyVersionResult& WithGenerationId(const char* value) { SetGenerationId(value); return *this;}
+
   private:
 
     Aws::String m_policyArn;
@@ -217,6 +306,12 @@ namespace Model
     Aws::String m_policyVersionId;
 
     bool m_isDefaultVersion;
+
+    Aws::Utils::DateTime m_creationDate;
+
+    Aws::Utils::DateTime m_lastModifiedDate;
+
+    Aws::String m_generationId;
   };
 
 } // namespace Model

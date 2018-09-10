@@ -37,7 +37,7 @@ AssessmentTarget::AssessmentTarget() :
 {
 }
 
-AssessmentTarget::AssessmentTarget(const JsonValue& jsonValue) : 
+AssessmentTarget::AssessmentTarget(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_resourceGroupArnHasBeenSet(false),
@@ -47,7 +47,7 @@ AssessmentTarget::AssessmentTarget(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AssessmentTarget& AssessmentTarget::operator =(const JsonValue& jsonValue)
+AssessmentTarget& AssessmentTarget::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

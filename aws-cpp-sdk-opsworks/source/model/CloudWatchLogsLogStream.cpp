@@ -49,7 +49,7 @@ CloudWatchLogsLogStream::CloudWatchLogsLogStream() :
 {
 }
 
-CloudWatchLogsLogStream::CloudWatchLogsLogStream(const JsonValue& jsonValue) : 
+CloudWatchLogsLogStream::CloudWatchLogsLogStream(JsonView jsonValue) : 
     m_logGroupNameHasBeenSet(false),
     m_datetimeFormatHasBeenSet(false),
     m_timeZone(CloudWatchLogsTimeZone::NOT_SET),
@@ -71,7 +71,7 @@ CloudWatchLogsLogStream::CloudWatchLogsLogStream(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CloudWatchLogsLogStream& CloudWatchLogsLogStream::operator =(const JsonValue& jsonValue)
+CloudWatchLogsLogStream& CloudWatchLogsLogStream::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LogGroupName"))
   {

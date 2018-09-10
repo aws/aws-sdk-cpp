@@ -35,7 +35,7 @@ Order::Order() :
 {
 }
 
-Order::Order(const JsonValue& jsonValue) : 
+Order::Order(JsonView jsonValue) : 
     m_columnHasBeenSet(false),
     m_sortOrder(0),
     m_sortOrderHasBeenSet(false)
@@ -43,7 +43,7 @@ Order::Order(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Order& Order::operator =(const JsonValue& jsonValue)
+Order& Order::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Column"))
   {

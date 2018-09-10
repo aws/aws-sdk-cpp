@@ -37,7 +37,7 @@ PutResourcePolicyResult::PutResourcePolicyResult(const Aws::AmazonWebServiceResu
 
 PutResourcePolicyResult& PutResourcePolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resourcePolicy"))
   {
     m_resourcePolicy = jsonValue.GetObject("resourcePolicy");

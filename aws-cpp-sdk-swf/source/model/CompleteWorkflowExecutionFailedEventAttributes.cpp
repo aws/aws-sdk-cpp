@@ -36,7 +36,7 @@ CompleteWorkflowExecutionFailedEventAttributes::CompleteWorkflowExecutionFailedE
 {
 }
 
-CompleteWorkflowExecutionFailedEventAttributes::CompleteWorkflowExecutionFailedEventAttributes(const JsonValue& jsonValue) : 
+CompleteWorkflowExecutionFailedEventAttributes::CompleteWorkflowExecutionFailedEventAttributes(JsonView jsonValue) : 
     m_cause(CompleteWorkflowExecutionFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
@@ -45,7 +45,7 @@ CompleteWorkflowExecutionFailedEventAttributes::CompleteWorkflowExecutionFailedE
   *this = jsonValue;
 }
 
-CompleteWorkflowExecutionFailedEventAttributes& CompleteWorkflowExecutionFailedEventAttributes::operator =(const JsonValue& jsonValue)
+CompleteWorkflowExecutionFailedEventAttributes& CompleteWorkflowExecutionFailedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("cause"))
   {

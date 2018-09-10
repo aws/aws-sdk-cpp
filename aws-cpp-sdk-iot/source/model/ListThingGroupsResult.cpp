@@ -37,10 +37,10 @@ ListThingGroupsResult::ListThingGroupsResult(const Aws::AmazonWebServiceResult<J
 
 ListThingGroupsResult& ListThingGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("thingGroups"))
   {
-    Array<JsonValue> thingGroupsJsonList = jsonValue.GetArray("thingGroups");
+    Array<JsonView> thingGroupsJsonList = jsonValue.GetArray("thingGroups");
     for(unsigned thingGroupsIndex = 0; thingGroupsIndex < thingGroupsJsonList.GetLength(); ++thingGroupsIndex)
     {
       m_thingGroups.push_back(thingGroupsJsonList[thingGroupsIndex].AsObject());

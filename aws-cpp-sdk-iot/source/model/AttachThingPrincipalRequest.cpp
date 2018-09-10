@@ -41,7 +41,7 @@ Aws::Http::HeaderValueCollection AttachThingPrincipalRequest::GetRequestSpecific
   if(m_principalHasBeenSet)
   {
     ss << m_principal;
-    headers.insert(Aws::Http::HeaderValuePair("x-amzn-principal", ss.str()));
+    headers.emplace("x-amzn-principal",  ss.str());
     ss.str("");
   }
 

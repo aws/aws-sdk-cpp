@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaPackage
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     HlsPackage();
-    HlsPackage(const Aws::Utils::Json::JsonValue& jsonValue);
-    HlsPackage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HlsPackage(Aws::Utils::Json::JsonView jsonValue);
+    HlsPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -234,7 +235,7 @@ entry will be included in the
 inserted into
      * manifests. Additionally, when an interval is specified
 ID3Timed Metadata
-     * messages will be generated every 5 seconds using the 
+     * messages will be generated every 5 seconds using the
 ingest time of the
      * content.
 If the interval is not specified, or set to 0, then
@@ -255,7 +256,7 @@ it will
 inserted into
      * manifests. Additionally, when an interval is specified
 ID3Timed Metadata
-     * messages will be generated every 5 seconds using the 
+     * messages will be generated every 5 seconds using the
 ingest time of the
      * content.
 If the interval is not specified, or set to 0, then
@@ -276,7 +277,7 @@ it will
 inserted into
      * manifests. Additionally, when an interval is specified
 ID3Timed Metadata
-     * messages will be generated every 5 seconds using the 
+     * messages will be generated every 5 seconds using the
 ingest time of the
      * content.
 If the interval is not specified, or set to 0, then

@@ -37,7 +37,7 @@ Relationship::Relationship() :
 {
 }
 
-Relationship::Relationship(const JsonValue& jsonValue) : 
+Relationship::Relationship(JsonView jsonValue) : 
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
@@ -47,7 +47,7 @@ Relationship::Relationship(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Relationship& Relationship::operator =(const JsonValue& jsonValue)
+Relationship& Relationship::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("resourceType"))
   {

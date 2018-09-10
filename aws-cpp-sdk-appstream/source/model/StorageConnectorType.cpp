@@ -31,6 +31,8 @@ namespace Aws
       {
 
         static const int HOMEFOLDERS_HASH = HashingUtils::HashString("HOMEFOLDERS");
+        static const int GOOGLE_DRIVE_HASH = HashingUtils::HashString("GOOGLE_DRIVE");
+        static const int ONE_DRIVE_HASH = HashingUtils::HashString("ONE_DRIVE");
 
 
         StorageConnectorType GetStorageConnectorTypeForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           if (hashCode == HOMEFOLDERS_HASH)
           {
             return StorageConnectorType::HOMEFOLDERS;
+          }
+          else if (hashCode == GOOGLE_DRIVE_HASH)
+          {
+            return StorageConnectorType::GOOGLE_DRIVE;
+          }
+          else if (hashCode == ONE_DRIVE_HASH)
+          {
+            return StorageConnectorType::ONE_DRIVE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +66,10 @@ namespace Aws
           {
           case StorageConnectorType::HOMEFOLDERS:
             return "HOMEFOLDERS";
+          case StorageConnectorType::GOOGLE_DRIVE:
+            return "GOOGLE_DRIVE";
+          case StorageConnectorType::ONE_DRIVE:
+            return "ONE_DRIVE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

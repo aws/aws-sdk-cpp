@@ -37,7 +37,7 @@ CreateEndpointResult::CreateEndpointResult(const Aws::AmazonWebServiceResult<Jso
 
 CreateEndpointResult& CreateEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetObject("Endpoint");

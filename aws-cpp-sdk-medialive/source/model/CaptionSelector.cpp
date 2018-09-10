@@ -35,7 +35,7 @@ CaptionSelector::CaptionSelector() :
 {
 }
 
-CaptionSelector::CaptionSelector(const JsonValue& jsonValue) : 
+CaptionSelector::CaptionSelector(JsonView jsonValue) : 
     m_languageCodeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_selectorSettingsHasBeenSet(false)
@@ -43,7 +43,7 @@ CaptionSelector::CaptionSelector(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CaptionSelector& CaptionSelector::operator =(const JsonValue& jsonValue)
+CaptionSelector& CaptionSelector::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("languageCode"))
   {

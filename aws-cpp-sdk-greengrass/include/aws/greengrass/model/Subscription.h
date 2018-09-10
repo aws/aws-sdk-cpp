@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Information on subscription<p><h3>See Also:</h3>   <a
+   * Information about a subscription.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Subscription">AWS
    * API Reference</a></p>
    */
@@ -41,151 +42,165 @@ namespace Model
   {
   public:
     Subscription();
-    Subscription(const Aws::Utils::Json::JsonValue& jsonValue);
-    Subscription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Subscription(Aws::Utils::Json::JsonView jsonValue);
+    Subscription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Element Id for this entry in the list.
+     * The id of the subscription.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Element Id for this entry in the list.
+     * The id of the subscription.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * Element Id for this entry in the list.
+     * The id of the subscription.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * Element Id for this entry in the list.
+     * The id of the subscription.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * Element Id for this entry in the list.
+     * The id of the subscription.
      */
     inline Subscription& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Element Id for this entry in the list.
+     * The id of the subscription.
      */
     inline Subscription& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Element Id for this entry in the list.
+     * The id of the subscription.
      */
     inline Subscription& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
+     * The source of the subscription. Can be a thing ARN, a Lambda function ARN,
+     * 'cloud' (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
+     * The source of the subscription. Can be a thing ARN, a Lambda function ARN,
+     * 'cloud' (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
+     * The source of the subscription. Can be a thing ARN, a Lambda function ARN,
+     * 'cloud' (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
+     * The source of the subscription. Can be a thing ARN, a Lambda function ARN,
+     * 'cloud' (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
+     * The source of the subscription. Can be a thing ARN, a Lambda function ARN,
+     * 'cloud' (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline Subscription& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
+     * The source of the subscription. Can be a thing ARN, a Lambda function ARN,
+     * 'cloud' (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline Subscription& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
+     * The source of the subscription. Can be a thing ARN, a Lambda function ARN,
+     * 'cloud' (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline Subscription& WithSource(const char* value) { SetSource(value); return *this;}
 
 
     /**
-     * Subject of the message.
+     * The subject of the message.
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
 
     /**
-     * Subject of the message.
+     * The subject of the message.
      */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
-     * Subject of the message.
+     * The subject of the message.
      */
     inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
 
     /**
-     * Subject of the message.
+     * The subject of the message.
      */
     inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
 
     /**
-     * Subject of the message.
+     * The subject of the message.
      */
     inline Subscription& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
 
     /**
-     * Subject of the message.
+     * The subject of the message.
      */
     inline Subscription& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
 
     /**
-     * Subject of the message.
+     * The subject of the message.
      */
     inline Subscription& WithSubject(const char* value) { SetSubject(value); return *this;}
 
 
     /**
-     * Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
+     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud'
+     * (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
 
     /**
-     * Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
+     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud'
+     * (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
-     * Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
+     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud'
+     * (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
-     * Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
+     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud'
+     * (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
 
     /**
-     * Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
+     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud'
+     * (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline Subscription& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
 
     /**
-     * Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
+     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud'
+     * (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline Subscription& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
-     * Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
+     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud'
+     * (which represents the IoT cloud), or 'GGShadowService'.
      */
     inline Subscription& WithTarget(const char* value) { SetTarget(value); return *this;}
 

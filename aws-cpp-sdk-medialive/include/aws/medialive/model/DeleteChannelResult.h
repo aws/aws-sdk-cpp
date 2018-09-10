@@ -18,6 +18,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
+#include <aws/medialive/model/InputSpecification.h>
+#include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
@@ -284,6 +286,48 @@ one destination per
     inline DeleteChannelResult& AddInputAttachments(InputAttachment&& value) { m_inputAttachments.push_back(std::move(value)); return *this; }
 
 
+    
+    inline const InputSpecification& GetInputSpecification() const{ return m_inputSpecification; }
+
+    
+    inline void SetInputSpecification(const InputSpecification& value) { m_inputSpecification = value; }
+
+    
+    inline void SetInputSpecification(InputSpecification&& value) { m_inputSpecification = std::move(value); }
+
+    
+    inline DeleteChannelResult& WithInputSpecification(const InputSpecification& value) { SetInputSpecification(value); return *this;}
+
+    
+    inline DeleteChannelResult& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline void SetLogLevel(const LogLevel& value) { m_logLevel = value; }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline void SetLogLevel(LogLevel&& value) { m_logLevel = std::move(value); }
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline DeleteChannelResult& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
+
+    /**
+     * The log level being written to CloudWatch Logs.
+     */
+    inline DeleteChannelResult& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+
+
     /**
      * The name of the channel. (user-mutable)
      */
@@ -400,6 +444,10 @@ one destination per
     Aws::String m_id;
 
     Aws::Vector<InputAttachment> m_inputAttachments;
+
+    InputSpecification m_inputSpecification;
+
+    LogLevel m_logLevel;
 
     Aws::String m_name;
 

@@ -33,6 +33,7 @@ namespace Aws
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
         static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static const int DELETION_IN_PROGRESS_HASH = HashingUtils::HashString("DELETION_IN_PROGRESS");
 
 
         JobStatus GetJobStatusForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == COMPLETED_HASH)
           {
             return JobStatus::COMPLETED;
+          }
+          else if (hashCode == DELETION_IN_PROGRESS_HASH)
+          {
+            return JobStatus::DELETION_IN_PROGRESS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "CANCELED";
           case JobStatus::COMPLETED:
             return "COMPLETED";
+          case JobStatus::DELETION_IN_PROGRESS:
+            return "DELETION_IN_PROGRESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

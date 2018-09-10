@@ -33,6 +33,7 @@ Device::Device() :
     m_nameHasBeenSet(false),
     m_manufacturerHasBeenSet(false),
     m_modelHasBeenSet(false),
+    m_modelIdHasBeenSet(false),
     m_formFactor(DeviceFormFactor::NOT_SET),
     m_formFactorHasBeenSet(false),
     m_platform(DevicePlatform::NOT_SET),
@@ -52,15 +53,17 @@ Device::Device() :
     m_remoteDebugEnabled(false),
     m_remoteDebugEnabledHasBeenSet(false),
     m_fleetTypeHasBeenSet(false),
-    m_fleetNameHasBeenSet(false)
+    m_fleetNameHasBeenSet(false),
+    m_instancesHasBeenSet(false)
 {
 }
 
-Device::Device(const JsonValue& jsonValue) : 
+Device::Device(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_manufacturerHasBeenSet(false),
     m_modelHasBeenSet(false),
+    m_modelIdHasBeenSet(false),
     m_formFactor(DeviceFormFactor::NOT_SET),
     m_formFactorHasBeenSet(false),
     m_platform(DevicePlatform::NOT_SET),
@@ -80,12 +83,13 @@ Device::Device(const JsonValue& jsonValue) :
     m_remoteDebugEnabled(false),
     m_remoteDebugEnabledHasBeenSet(false),
     m_fleetTypeHasBeenSet(false),
-    m_fleetNameHasBeenSet(false)
+    m_fleetNameHasBeenSet(false),
+    m_instancesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Device& Device::operator =(const JsonValue& jsonValue)
+Device& Device::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -113,6 +117,13 @@ Device& Device::operator =(const JsonValue& jsonValue)
     m_model = jsonValue.GetString("model");
 
     m_modelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("modelId"))
+  {
+    m_modelId = jsonValue.GetString("modelId");
+
+    m_modelIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("formFactor"))
@@ -213,6 +224,16 @@ Device& Device::operator =(const JsonValue& jsonValue)
     m_fleetNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instances"))
+  {
+    Array<JsonView> instancesJsonList = jsonValue.GetArray("instances");
+    for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
+    {
+      m_instances.push_back(instancesJsonList[instancesIndex].AsObject());
+    }
+    m_instancesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -241,6 +262,12 @@ JsonValue Device::Jsonize() const
   if(m_modelHasBeenSet)
   {
    payload.WithString("model", m_model);
+
+  }
+
+  if(m_modelIdHasBeenSet)
+  {
+   payload.WithString("modelId", m_modelId);
 
   }
 
@@ -323,6 +350,17 @@ JsonValue Device::Jsonize() const
   if(m_fleetNameHasBeenSet)
   {
    payload.WithString("fleetName", m_fleetName);
+
+  }
+
+  if(m_instancesHasBeenSet)
+  {
+   Array<JsonValue> instancesJsonList(m_instances.size());
+   for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
+   {
+     instancesJsonList[instancesIndex].AsObject(m_instances[instancesIndex].Jsonize());
+   }
+   payload.WithArray("instances", std::move(instancesJsonList));
 
   }
 

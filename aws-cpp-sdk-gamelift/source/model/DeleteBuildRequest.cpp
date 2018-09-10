@@ -37,7 +37,7 @@ Aws::String DeleteBuildRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteBuildRequest::GetRequestSpecificHeaders() const

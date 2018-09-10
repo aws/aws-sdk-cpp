@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     InstancesCount();
-    InstancesCount(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstancesCount& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstancesCount(Aws::Utils::Json::JsonView jsonValue);
+    InstancesCount& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -270,6 +271,22 @@ namespace Model
 
 
     /**
+     * <p>The number of instances with <code>stop_failed</code> status.</p>
+     */
+    inline int GetStopFailed() const{ return m_stopFailed; }
+
+    /**
+     * <p>The number of instances with <code>stop_failed</code> status.</p>
+     */
+    inline void SetStopFailed(int value) { m_stopFailedHasBeenSet = true; m_stopFailed = value; }
+
+    /**
+     * <p>The number of instances with <code>stop_failed</code> status.</p>
+     */
+    inline InstancesCount& WithStopFailed(int value) { SetStopFailed(value); return *this;}
+
+
+    /**
      * <p>The number of instances with <code>stopped</code> status.</p>
      */
     inline int GetStopped() const{ return m_stopped; }
@@ -391,6 +408,9 @@ namespace Model
 
     int m_startFailed;
     bool m_startFailedHasBeenSet;
+
+    int m_stopFailed;
+    bool m_stopFailedHasBeenSet;
 
     int m_stopped;
     bool m_stoppedHasBeenSet;

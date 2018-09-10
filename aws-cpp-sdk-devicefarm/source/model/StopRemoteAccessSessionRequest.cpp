@@ -37,7 +37,7 @@ Aws::String StopRemoteAccessSessionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopRemoteAccessSessionRequest::GetRequestSpecificHeaders() const

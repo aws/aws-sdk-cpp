@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DeviceFarm
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ScheduleRunTest();
-    ScheduleRunTest(const Aws::Utils::Json::JsonValue& jsonValue);
-    ScheduleRunTest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ScheduleRunTest(Aws::Utils::Json::JsonView jsonValue);
+    ScheduleRunTest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -173,6 +174,42 @@ namespace Model
      * <p>The ARN of the uploaded test that will be run.</p>
      */
     inline ScheduleRunTest& WithTestPackageArn(const char* value) { SetTestPackageArn(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline const Aws::String& GetTestSpecArn() const{ return m_testSpecArn; }
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline void SetTestSpecArn(const Aws::String& value) { m_testSpecArnHasBeenSet = true; m_testSpecArn = value; }
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline void SetTestSpecArn(Aws::String&& value) { m_testSpecArnHasBeenSet = true; m_testSpecArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline void SetTestSpecArn(const char* value) { m_testSpecArnHasBeenSet = true; m_testSpecArn.assign(value); }
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline ScheduleRunTest& WithTestSpecArn(const Aws::String& value) { SetTestSpecArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline ScheduleRunTest& WithTestSpecArn(Aws::String&& value) { SetTestSpecArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the YAML-formatted test specification.</p>
+     */
+    inline ScheduleRunTest& WithTestSpecArn(const char* value) { SetTestSpecArn(value); return *this;}
 
 
     /**
@@ -698,6 +735,9 @@ namespace Model
 
     Aws::String m_testPackageArn;
     bool m_testPackageArnHasBeenSet;
+
+    Aws::String m_testSpecArn;
+    bool m_testSpecArnHasBeenSet;
 
     Aws::String m_filter;
     bool m_filterHasBeenSet;

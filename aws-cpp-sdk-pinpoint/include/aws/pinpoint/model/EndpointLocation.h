@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Endpoint location data<p><h3>See Also:</h3>   <a
+   * Location data for the endpoint.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointLocation">AWS
    * API Reference</a></p>
    */
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     EndpointLocation();
-    EndpointLocation(const Aws::Utils::Json::JsonValue& jsonValue);
-    EndpointLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EndpointLocation(Aws::Utils::Json::JsonView jsonValue);
+    EndpointLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -83,75 +84,76 @@ namespace Model
 
 
     /**
-     * Country according to ISO 3166-1 Alpha-2 codes. For example, US.
+     * The two-letter code for the country or region of the endpoint. Specified as an
+     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
      */
     inline const Aws::String& GetCountry() const{ return m_country; }
 
     /**
-     * Country according to ISO 3166-1 Alpha-2 codes. For example, US.
+     * The two-letter code for the country or region of the endpoint. Specified as an
+     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
      */
     inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
 
     /**
-     * Country according to ISO 3166-1 Alpha-2 codes. For example, US.
+     * The two-letter code for the country or region of the endpoint. Specified as an
+     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
      */
     inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
 
     /**
-     * Country according to ISO 3166-1 Alpha-2 codes. For example, US.
+     * The two-letter code for the country or region of the endpoint. Specified as an
+     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
      */
     inline void SetCountry(const char* value) { m_countryHasBeenSet = true; m_country.assign(value); }
 
     /**
-     * Country according to ISO 3166-1 Alpha-2 codes. For example, US.
+     * The two-letter code for the country or region of the endpoint. Specified as an
+     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
      */
     inline EndpointLocation& WithCountry(const Aws::String& value) { SetCountry(value); return *this;}
 
     /**
-     * Country according to ISO 3166-1 Alpha-2 codes. For example, US.
+     * The two-letter code for the country or region of the endpoint. Specified as an
+     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
      */
     inline EndpointLocation& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
 
     /**
-     * Country according to ISO 3166-1 Alpha-2 codes. For example, US.
+     * The two-letter code for the country or region of the endpoint. Specified as an
+     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
      */
     inline EndpointLocation& WithCountry(const char* value) { SetCountry(value); return *this;}
 
 
     /**
-     * The latitude of the endpoint location. Rounded to one decimal (Roughly
-     * corresponding to a mile).
+     * The latitude of the endpoint location, rounded to one decimal place.
      */
     inline double GetLatitude() const{ return m_latitude; }
 
     /**
-     * The latitude of the endpoint location. Rounded to one decimal (Roughly
-     * corresponding to a mile).
+     * The latitude of the endpoint location, rounded to one decimal place.
      */
     inline void SetLatitude(double value) { m_latitudeHasBeenSet = true; m_latitude = value; }
 
     /**
-     * The latitude of the endpoint location. Rounded to one decimal (Roughly
-     * corresponding to a mile).
+     * The latitude of the endpoint location, rounded to one decimal place.
      */
     inline EndpointLocation& WithLatitude(double value) { SetLatitude(value); return *this;}
 
 
     /**
-     * The longitude of the endpoint location. Rounded to one decimal (Roughly
-     * corresponding to a mile).
+     * The longitude of the endpoint location, rounded to one decimal place.
      */
     inline double GetLongitude() const{ return m_longitude; }
 
     /**
-     * The longitude of the endpoint location. Rounded to one decimal (Roughly
-     * corresponding to a mile).
+     * The longitude of the endpoint location, rounded to one decimal place.
      */
     inline void SetLongitude(double value) { m_longitudeHasBeenSet = true; m_longitude = value; }
 
     /**
-     * The longitude of the endpoint location. Rounded to one decimal (Roughly
-     * corresponding to a mile).
+     * The longitude of the endpoint location, rounded to one decimal place.
      */
     inline EndpointLocation& WithLongitude(double value) { SetLongitude(value); return *this;}
 
@@ -193,37 +195,44 @@ namespace Model
 
 
     /**
-     * The region of the endpoint location. For example, corresponds to a state in US.
+     * The region of the endpoint location. For example, in the United States, this
+     * corresponds to a state.
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * The region of the endpoint location. For example, corresponds to a state in US.
+     * The region of the endpoint location. For example, in the United States, this
+     * corresponds to a state.
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * The region of the endpoint location. For example, corresponds to a state in US.
+     * The region of the endpoint location. For example, in the United States, this
+     * corresponds to a state.
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * The region of the endpoint location. For example, corresponds to a state in US.
+     * The region of the endpoint location. For example, in the United States, this
+     * corresponds to a state.
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * The region of the endpoint location. For example, corresponds to a state in US.
+     * The region of the endpoint location. For example, in the United States, this
+     * corresponds to a state.
      */
     inline EndpointLocation& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * The region of the endpoint location. For example, corresponds to a state in US.
+     * The region of the endpoint location. For example, in the United States, this
+     * corresponds to a state.
      */
     inline EndpointLocation& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * The region of the endpoint location. For example, corresponds to a state in US.
+     * The region of the endpoint location. For example, in the United States, this
+     * corresponds to a state.
      */
     inline EndpointLocation& WithRegion(const char* value) { SetRegion(value); return *this;}
 

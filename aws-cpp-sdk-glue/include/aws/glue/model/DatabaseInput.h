@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     DatabaseInput();
-    DatabaseInput(const Aws::Utils::Json::JsonValue& jsonValue);
-    DatabaseInput& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DatabaseInput(Aws::Utils::Json::JsonView jsonValue);
+    DatabaseInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -164,74 +165,62 @@ namespace Model
 
 
     /**
-     * <p>A list of key-value pairs that define parameters and properties of the
-     * database.</p>
+     * <p>Thes key-value pairs define parameters and properties of the database.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>A list of key-value pairs that define parameters and properties of the
-     * database.</p>
+     * <p>Thes key-value pairs define parameters and properties of the database.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>A list of key-value pairs that define parameters and properties of the
-     * database.</p>
+     * <p>Thes key-value pairs define parameters and properties of the database.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>A list of key-value pairs that define parameters and properties of the
-     * database.</p>
+     * <p>Thes key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>A list of key-value pairs that define parameters and properties of the
-     * database.</p>
+     * <p>Thes key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A list of key-value pairs that define parameters and properties of the
-     * database.</p>
+     * <p>Thes key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>A list of key-value pairs that define parameters and properties of the
-     * database.</p>
+     * <p>Thes key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of key-value pairs that define parameters and properties of the
-     * database.</p>
+     * <p>Thes key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of key-value pairs that define parameters and properties of the
-     * database.</p>
+     * <p>Thes key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A list of key-value pairs that define parameters and properties of the
-     * database.</p>
+     * <p>Thes key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of key-value pairs that define parameters and properties of the
-     * database.</p>
+     * <p>Thes key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of key-value pairs that define parameters and properties of the
-     * database.</p>
+     * <p>Thes key-value pairs define parameters and properties of the database.</p>
      */
     inline DatabaseInput& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

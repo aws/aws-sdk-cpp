@@ -37,7 +37,7 @@ DescribeIdentityPoolUsageResult::DescribeIdentityPoolUsageResult(const Aws::Amaz
 
 DescribeIdentityPoolUsageResult& DescribeIdentityPoolUsageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityPoolUsage"))
   {
     m_identityPoolUsage = jsonValue.GetObject("IdentityPoolUsage");

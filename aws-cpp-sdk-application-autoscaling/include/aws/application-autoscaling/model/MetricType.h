@@ -34,6 +34,7 @@ namespace Model
     EC2SpotFleetRequestAverageCPUUtilization,
     EC2SpotFleetRequestAverageNetworkIn,
     EC2SpotFleetRequestAverageNetworkOut,
+    SageMakerVariantInvocationsPerInstance,
     ECSServiceAverageCPUUtilization,
     ECSServiceAverageMemoryUtilization
   };

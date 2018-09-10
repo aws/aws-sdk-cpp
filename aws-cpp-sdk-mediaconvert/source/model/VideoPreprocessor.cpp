@@ -37,7 +37,7 @@ VideoPreprocessor::VideoPreprocessor() :
 {
 }
 
-VideoPreprocessor::VideoPreprocessor(const JsonValue& jsonValue) : 
+VideoPreprocessor::VideoPreprocessor(JsonView jsonValue) : 
     m_colorCorrectorHasBeenSet(false),
     m_deinterlacerHasBeenSet(false),
     m_imageInserterHasBeenSet(false),
@@ -47,7 +47,7 @@ VideoPreprocessor::VideoPreprocessor(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VideoPreprocessor& VideoPreprocessor::operator =(const JsonValue& jsonValue)
+VideoPreprocessor& VideoPreprocessor::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("colorCorrector"))
   {

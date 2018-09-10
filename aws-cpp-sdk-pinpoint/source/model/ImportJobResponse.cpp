@@ -51,7 +51,7 @@ ImportJobResponse::ImportJobResponse() :
 {
 }
 
-ImportJobResponse::ImportJobResponse(const JsonValue& jsonValue) : 
+ImportJobResponse::ImportJobResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_completedPieces(0),
     m_completedPiecesHasBeenSet(false),
@@ -75,7 +75,7 @@ ImportJobResponse::ImportJobResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ImportJobResponse& ImportJobResponse::operator =(const JsonValue& jsonValue)
+ImportJobResponse& ImportJobResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {
@@ -121,7 +121,7 @@ ImportJobResponse& ImportJobResponse::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Failures"))
   {
-    Array<JsonValue> failuresJsonList = jsonValue.GetArray("Failures");
+    Array<JsonView> failuresJsonList = jsonValue.GetArray("Failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsString());

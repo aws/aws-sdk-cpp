@@ -121,7 +121,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p> <p>Default: <code>standard</code> </p>
+     * </p>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
@@ -130,7 +130,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p> <p>Default: <code>standard</code> </p>
+     * </p>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
@@ -139,7 +139,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p> <p>Default: <code>standard</code> </p>
+     * </p>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
@@ -148,7 +148,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p> <p>Default: <code>standard</code> </p>
+     * </p>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
 
@@ -157,7 +157,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p> <p>Default: <code>standard</code> </p>
+     * </p>
      */
     inline Ebs& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
@@ -166,7 +166,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p> <p>Default: <code>standard</code> </p>
+     * </p>
      */
     inline Ebs& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
@@ -175,26 +175,26 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p> <p>Default: <code>standard</code> </p>
+     * </p>
      */
     inline Ebs& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
 
     /**
-     * <p>Indicates whether the volume is deleted on instance termination.</p>
-     * <p>Default: <code>true</code> </p>
+     * <p>Indicates whether the volume is deleted on instance termination. The default
+     * is <code>true</code>.</p>
      */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
 
     /**
-     * <p>Indicates whether the volume is deleted on instance termination.</p>
-     * <p>Default: <code>true</code> </p>
+     * <p>Indicates whether the volume is deleted on instance termination. The default
+     * is <code>true</code>.</p>
      */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
     /**
-     * <p>Indicates whether the volume is deleted on instance termination.</p>
-     * <p>Default: <code>true</code> </p>
+     * <p>Indicates whether the volume is deleted on instance termination. The default
+     * is <code>true</code>.</p>
      */
     inline Ebs& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
 

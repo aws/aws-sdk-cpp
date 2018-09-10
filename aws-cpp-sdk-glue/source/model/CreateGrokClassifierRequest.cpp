@@ -36,7 +36,7 @@ CreateGrokClassifierRequest::CreateGrokClassifierRequest() :
 {
 }
 
-CreateGrokClassifierRequest::CreateGrokClassifierRequest(const JsonValue& jsonValue) : 
+CreateGrokClassifierRequest::CreateGrokClassifierRequest(JsonView jsonValue) : 
     m_classificationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_grokPatternHasBeenSet(false),
@@ -45,7 +45,7 @@ CreateGrokClassifierRequest::CreateGrokClassifierRequest(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-CreateGrokClassifierRequest& CreateGrokClassifierRequest::operator =(const JsonValue& jsonValue)
+CreateGrokClassifierRequest& CreateGrokClassifierRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Classification"))
   {

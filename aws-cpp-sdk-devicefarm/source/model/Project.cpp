@@ -37,7 +37,7 @@ Project::Project() :
 {
 }
 
-Project::Project(const JsonValue& jsonValue) : 
+Project::Project(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_defaultJobTimeoutMinutes(0),
@@ -47,7 +47,7 @@ Project::Project(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Project& Project::operator =(const JsonValue& jsonValue)
+Project& Project::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

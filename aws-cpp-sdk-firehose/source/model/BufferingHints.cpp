@@ -36,7 +36,7 @@ BufferingHints::BufferingHints() :
 {
 }
 
-BufferingHints::BufferingHints(const JsonValue& jsonValue) : 
+BufferingHints::BufferingHints(JsonView jsonValue) : 
     m_sizeInMBs(0),
     m_sizeInMBsHasBeenSet(false),
     m_intervalInSeconds(0),
@@ -45,7 +45,7 @@ BufferingHints::BufferingHints(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BufferingHints& BufferingHints::operator =(const JsonValue& jsonValue)
+BufferingHints& BufferingHints::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SizeInMBs"))
   {

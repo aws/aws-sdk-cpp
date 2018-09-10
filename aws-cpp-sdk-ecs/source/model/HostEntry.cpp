@@ -34,14 +34,14 @@ HostEntry::HostEntry() :
 {
 }
 
-HostEntry::HostEntry(const JsonValue& jsonValue) : 
+HostEntry::HostEntry(JsonView jsonValue) : 
     m_hostnameHasBeenSet(false),
     m_ipAddressHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HostEntry& HostEntry::operator =(const JsonValue& jsonValue)
+HostEntry& HostEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("hostname"))
   {

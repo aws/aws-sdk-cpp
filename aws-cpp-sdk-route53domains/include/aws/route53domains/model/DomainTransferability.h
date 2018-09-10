@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Route53Domains
@@ -32,12 +33,18 @@ namespace Route53Domains
 namespace Model
 {
 
+  /**
+   * <p>A complex type that contains information about whether the specified domain
+   * can be transferred to Amazon Route 53.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DomainTransferability">AWS
+   * API Reference</a></p>
+   */
   class AWS_ROUTE53DOMAINS_API DomainTransferability
   {
   public:
     DomainTransferability();
-    DomainTransferability(const Aws::Utils::Json::JsonValue& jsonValue);
-    DomainTransferability& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DomainTransferability(Aws::Utils::Json::JsonView jsonValue);
+    DomainTransferability& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

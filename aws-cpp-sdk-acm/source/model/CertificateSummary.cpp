@@ -34,14 +34,14 @@ CertificateSummary::CertificateSummary() :
 {
 }
 
-CertificateSummary::CertificateSummary(const JsonValue& jsonValue) : 
+CertificateSummary::CertificateSummary(JsonView jsonValue) : 
     m_certificateArnHasBeenSet(false),
     m_domainNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CertificateSummary& CertificateSummary::operator =(const JsonValue& jsonValue)
+CertificateSummary& CertificateSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CertificateArn"))
   {

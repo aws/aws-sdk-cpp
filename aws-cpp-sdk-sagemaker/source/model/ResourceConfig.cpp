@@ -39,7 +39,7 @@ ResourceConfig::ResourceConfig() :
 {
 }
 
-ResourceConfig::ResourceConfig(const JsonValue& jsonValue) : 
+ResourceConfig::ResourceConfig(JsonView jsonValue) : 
     m_instanceType(TrainingInstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_instanceCount(0),
@@ -51,7 +51,7 @@ ResourceConfig::ResourceConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceConfig& ResourceConfig::operator =(const JsonValue& jsonValue)
+ResourceConfig& ResourceConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceType"))
   {

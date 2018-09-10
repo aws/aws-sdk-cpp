@@ -35,6 +35,7 @@
 #include <aws/snowball/model/GetSnowballUsageResult.h>
 #include <aws/snowball/model/ListClusterJobsResult.h>
 #include <aws/snowball/model/ListClustersResult.h>
+#include <aws/snowball/model/ListCompatibleImagesResult.h>
 #include <aws/snowball/model/ListJobsResult.h>
 #include <aws/snowball/model/UpdateClusterResult.h>
 #include <aws/snowball/model/UpdateJobResult.h>
@@ -60,11 +61,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -97,6 +93,7 @@ namespace Model
         class GetSnowballUsageRequest;
         class ListClusterJobsRequest;
         class ListClustersRequest;
+        class ListCompatibleImagesRequest;
         class ListJobsRequest;
         class UpdateClusterRequest;
         class UpdateJobRequest;
@@ -115,6 +112,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSnowballUsageResult, Aws::Client::AWSError<SnowballErrors>> GetSnowballUsageOutcome;
         typedef Aws::Utils::Outcome<ListClusterJobsResult, Aws::Client::AWSError<SnowballErrors>> ListClusterJobsOutcome;
         typedef Aws::Utils::Outcome<ListClustersResult, Aws::Client::AWSError<SnowballErrors>> ListClustersOutcome;
+        typedef Aws::Utils::Outcome<ListCompatibleImagesResult, Aws::Client::AWSError<SnowballErrors>> ListCompatibleImagesOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<SnowballErrors>> ListJobsOutcome;
         typedef Aws::Utils::Outcome<UpdateClusterResult, Aws::Client::AWSError<SnowballErrors>> UpdateClusterOutcome;
         typedef Aws::Utils::Outcome<UpdateJobResult, Aws::Client::AWSError<SnowballErrors>> UpdateJobOutcome;
@@ -133,6 +131,7 @@ namespace Model
         typedef std::future<GetSnowballUsageOutcome> GetSnowballUsageOutcomeCallable;
         typedef std::future<ListClusterJobsOutcome> ListClusterJobsOutcomeCallable;
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
+        typedef std::future<ListCompatibleImagesOutcome> ListCompatibleImagesOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
         typedef std::future<UpdateClusterOutcome> UpdateClusterOutcomeCallable;
         typedef std::future<UpdateJobOutcome> UpdateJobOutcomeCallable;
@@ -154,17 +153,18 @@ namespace Model
     typedef std::function<void(const SnowballClient*, const Model::GetSnowballUsageRequest&, const Model::GetSnowballUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSnowballUsageResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::ListClusterJobsRequest&, const Model::ListClusterJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClusterJobsResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
+    typedef std::function<void(const SnowballClient*, const Model::ListCompatibleImagesRequest&, const Model::ListCompatibleImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCompatibleImagesResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::UpdateClusterRequest&, const Model::UpdateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::UpdateJobRequest&, const Model::UpdateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobResponseReceivedHandler;
 
   /**
    * <p>AWS Snowball is a petabyte-scale data transport solution that uses secure
-   * appliances to transfer large amounts of data between your on-premises data
-   * centers and Amazon Simple Storage Service (Amazon S3). The Snowball commands
-   * described here provide access to the same functionality that is available in the
-   * AWS Snowball Management Console, which enables you to create and manage jobs for
-   * Snowball. To transfer data locally with a Snowball appliance, you'll need to use
+   * devices to transfer large amounts of data between your on-premises data centers
+   * and Amazon Simple Storage Service (Amazon S3). The Snowball commands described
+   * here provide access to the same functionality that is available in the AWS
+   * Snowball Management Console, which enables you to create and manage jobs for
+   * Snowball. To transfer data locally with a Snowball device, you'll need to use
    * the Snowball client or the Amazon S3 API adapter for Snowball. For more
    * information, see the <a
    * href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
@@ -196,7 +196,7 @@ namespace Model
 
         virtual ~SnowballClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "snowball"; }
+        inline virtual const char* GetServiceClientName() const override { return "Snowball"; }
 
 
         /**
@@ -233,8 +233,8 @@ namespace Model
         /**
          * <p>Cancels the specified job. You can only cancel a job before its
          * <code>JobState</code> value changes to <code>PreparingAppliance</code>.
-         * Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action will
-         * return a job's <code>JobState</code> as part of the response element data
+         * Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action returns
+         * a job's <code>JobState</code> as part of the response element data
          * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">AWS
          * API Reference</a></p>
@@ -244,8 +244,8 @@ namespace Model
         /**
          * <p>Cancels the specified job. You can only cancel a job before its
          * <code>JobState</code> value changes to <code>PreparingAppliance</code>.
-         * Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action will
-         * return a job's <code>JobState</code> as part of the response element data
+         * Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action returns
+         * a job's <code>JobState</code> as part of the response element data
          * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">AWS
          * API Reference</a></p>
@@ -257,8 +257,8 @@ namespace Model
         /**
          * <p>Cancels the specified job. You can only cancel a job before its
          * <code>JobState</code> value changes to <code>PreparingAppliance</code>.
-         * Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action will
-         * return a job's <code>JobState</code> as part of the response element data
+         * Requesting the <code>ListJobs</code> or <code>DescribeJob</code> action returns
+         * a job's <code>JobState</code> as part of the response element data
          * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CancelJob">AWS
          * API Reference</a></p>
@@ -718,6 +718,46 @@ namespace Model
         virtual void ListClustersAsync(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
+         * (AMIs) that are owned by your AWS account that would be supported for use on a
+         * Snowball Edge device. Currently, supported AMIs are based on the CentOS 7
+         * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS
+         * - Xenial (HVM) images, available on the AWS Marketplace.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCompatibleImagesOutcome ListCompatibleImages(const Model::ListCompatibleImagesRequest& request) const;
+
+        /**
+         * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
+         * (AMIs) that are owned by your AWS account that would be supported for use on a
+         * Snowball Edge device. Currently, supported AMIs are based on the CentOS 7
+         * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS
+         * - Xenial (HVM) images, available on the AWS Marketplace.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCompatibleImagesOutcomeCallable ListCompatibleImagesCallable(const Model::ListCompatibleImagesRequest& request) const;
+
+        /**
+         * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
+         * (AMIs) that are owned by your AWS account that would be supported for use on a
+         * Snowball Edge device. Currently, supported AMIs are based on the CentOS 7
+         * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS
+         * - Xenial (HVM) images, available on the AWS Marketplace.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCompatibleImagesAsync(const Model::ListCompatibleImagesRequest& request, const ListCompatibleImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an array of <code>JobListEntry</code> objects of the specified
          * length. Each <code>JobListEntry</code> object contains a job's state, a job's
          * ID, and a value that indicates whether the job is a job part, in the case of
@@ -847,6 +887,7 @@ namespace Model
         void GetSnowballUsageAsyncHelper(const Model::GetSnowballUsageRequest& request, const GetSnowballUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClusterJobsAsyncHelper(const Model::ListClusterJobsRequest& request, const ListClusterJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCompatibleImagesAsyncHelper(const Model::ListCompatibleImagesRequest& request, const ListCompatibleImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClusterAsyncHelper(const Model::UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateJobAsyncHelper(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

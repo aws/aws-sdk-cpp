@@ -38,7 +38,7 @@ LifecyclePolicyPreviewResult::LifecyclePolicyPreviewResult() :
 {
 }
 
-LifecyclePolicyPreviewResult::LifecyclePolicyPreviewResult(const JsonValue& jsonValue) : 
+LifecyclePolicyPreviewResult::LifecyclePolicyPreviewResult(JsonView jsonValue) : 
     m_imageTagsHasBeenSet(false),
     m_imageDigestHasBeenSet(false),
     m_imagePushedAtHasBeenSet(false),
@@ -49,11 +49,11 @@ LifecyclePolicyPreviewResult::LifecyclePolicyPreviewResult(const JsonValue& json
   *this = jsonValue;
 }
 
-LifecyclePolicyPreviewResult& LifecyclePolicyPreviewResult::operator =(const JsonValue& jsonValue)
+LifecyclePolicyPreviewResult& LifecyclePolicyPreviewResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("imageTags"))
   {
-    Array<JsonValue> imageTagsJsonList = jsonValue.GetArray("imageTags");
+    Array<JsonView> imageTagsJsonList = jsonValue.GetArray("imageTags");
     for(unsigned imageTagsIndex = 0; imageTagsIndex < imageTagsJsonList.GetLength(); ++imageTagsIndex)
     {
       m_imageTags.push_back(imageTagsJsonList[imageTagsIndex].AsString());

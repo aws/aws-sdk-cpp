@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -41,8 +42,8 @@ namespace Model
    * (<code>Id</code>). Each word belongs to a line and has a parent identifier
    * (<code>ParentId</code>) that identifies the line of text in which the word
    * appears. The word <code>Id</code> is also an index for the word within a line of
-   * words. </p> <p>For more information, see <a>text-detection</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * words. </p> <p>For more information, see Detecting Text in the Amazon
+   * Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TextDetection">AWS
    * API Reference</a></p>
    */
@@ -50,8 +51,8 @@ namespace Model
   {
   public:
     TextDetection();
-    TextDetection(const Aws::Utils::Json::JsonValue& jsonValue);
-    TextDetection& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TextDetection(Aws::Utils::Json::JsonView jsonValue);
+    TextDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

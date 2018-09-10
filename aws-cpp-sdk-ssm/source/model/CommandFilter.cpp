@@ -35,7 +35,7 @@ CommandFilter::CommandFilter() :
 {
 }
 
-CommandFilter::CommandFilter(const JsonValue& jsonValue) : 
+CommandFilter::CommandFilter(JsonView jsonValue) : 
     m_key(CommandFilterKey::NOT_SET),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
@@ -43,7 +43,7 @@ CommandFilter::CommandFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CommandFilter& CommandFilter::operator =(const JsonValue& jsonValue)
+CommandFilter& CommandFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("key"))
   {

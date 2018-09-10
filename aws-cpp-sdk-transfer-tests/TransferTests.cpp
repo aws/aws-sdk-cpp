@@ -83,7 +83,7 @@ static const char* UNICODE_FILE_KEY = "UnicodeFileKey";
 static const char* CANCEL_TEST_FILE_NAME = "CancelTestFile.txt";
 static const char* CANCEL_FILE_KEY = "CancelFileKey";
 
-static const char* TEST_BUCKET_NAME_BASE = "transferintegrationtest";
+static const char* TEST_BUCKET_NAME_BASE = "transfertests";
 static const unsigned SMALL_TEST_SIZE = MB5 / 2;
 static const unsigned MEDIUM_TEST_SIZE = MB5 * 3 / 2;
 
@@ -160,9 +160,12 @@ class MockS3Client : public S3Client
 {
 public:
     MockS3Client(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration()):
-        S3Client(clientConfiguration), listObjectsV2RequestCount(0) 
+        S3Client(clientConfiguration), executor(clientConfiguration.executor), listObjectsV2RequestCount(0) 
+    {}
+
+    ~MockS3Client() 
     {
-        executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
+        executor = nullptr;
     }
 
     // Override this function to do verification.
@@ -197,14 +200,21 @@ public:
         m_executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
     }
 
-protected:
+    void TearDown()
+    {
+        m_executor = nullptr;
+    }
 
+protected:
+    // Executor used by transferManager
     std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
 
     static Aws::String GetTestBucketName()
     {
         static const std::string suffix = Aws::String(Aws::Utils::UUID::RandomUUID()).c_str();
-        return Aws::Testing::GetAwsResourcePrefix() + TEST_BUCKET_NAME_BASE + suffix.c_str();
+        Aws::StringStream s;
+        s << Aws::Testing::GetAwsResourcePrefix() << TEST_BUCKET_NAME_BASE << suffix;
+        return Aws::Utils::StringUtils::ToLower(s.str().c_str());
     }
 
     static bool AreFilesSame(const Aws::String& fileName, const Aws::String& fileName2)
@@ -311,7 +321,8 @@ protected:
         config.scheme = Scheme::HTTP;
         config.connectTimeoutMs = 3000;
         config.requestTimeoutMs = 60000;
-
+        // executor used for s3Client
+        config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 5);
         m_s3Client = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG, config);
 
         DeleteBucket(GetTestBucketName());
@@ -507,7 +518,8 @@ TEST_F(TransferTests, TransferManager_ThreadExecutorJoinsAsyncOperations)
     transferManagerConfig.s3Client = m_s3Client;
     Aws::Utils::Threading::Semaphore ev(0, 1);
     transferManagerConfig.downloadProgressCallback = [&ev](const TransferManager*, const std::shared_ptr<const TransferHandle>&){ ev.Release(); };
-
+    // When httpRequest returns with error, downloadProgressCallback will not be called.
+    transferManagerConfig.errorCallback = [&ev](const TransferManager*, const std::shared_ptr<const TransferHandle>&, const Aws::Client::AWSError<Aws::S3::S3Errors>&){ ev.Release(); };
     std::shared_ptr<TransferHandle> uploadHandle, downloadHandle;
     {
         auto transferManager = TransferManager::Create(transferManagerConfig);
@@ -540,8 +552,11 @@ TEST_F(TransferTests, TransferManager_SinglePartUploadTest)
 
     TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.s3Client = m_s3Client;
+    Aws::Map<Aws::String, Aws::String> queries;
+    queries.emplace("x-key", "value");
+    queries.emplace("y-key", "value");
+    transferManagerConfig.customizedAccessLogTag = queries;
     auto transferManager = TransferManager::Create(transferManagerConfig);
-
 
     // Test with default behavior of using file name as key
     auto requestPtr = transferManager->UploadFile(testFileName, GetTestBucketName(), TEST_FILE_KEY, 
@@ -775,12 +790,14 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
     ASSERT_TRUE(Aws::FileSystem::CreateDirectoryIfNotExists(uploadDir.c_str()));
     auto smallTestFileName = Aws::FileSystem::Join(uploadDir, SMALL_TEST_FILE_NAME);
     auto contentTestFileName = Aws::FileSystem::Join(uploadDir, CONTENT_TEST_FILE_NAME);
+    auto emptyTestFileName = Aws::FileSystem::Join(uploadDir, EMPTY_TEST_FILE_NAME);
     auto nestedDirectory = Aws::FileSystem::Join(uploadDir, "nested");
     ASSERT_TRUE(Aws::FileSystem::CreateDirectoryIfNotExists(nestedDirectory.c_str()));
     auto nestedFileName = Aws::FileSystem::Join(nestedDirectory, "nestedFile");
 
     ScopedTestFile smallFile(smallTestFileName, SMALL_TEST_SIZE, testString);
     ScopedTestFile contentFile(contentTestFileName, CONTENT_TEST_FILE_TEXT);
+    ScopedTestFile emptyFile(emptyTestFileName, 0, testString);
     ScopedTestFile nestedFile(nestedFileName, CONTENT_TEST_FILE_TEXT);
 
     if (EmptyBucket(GetTestBucketName()))
@@ -802,7 +819,7 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
             {
                 directoryUploads.push_back(std::const_pointer_cast<TransferHandle>(handle)); 
 
-                if (directoryUploads.size() == 3)
+                if (directoryUploads.size() == 4)
                 {
                     directoryUploadSignal.notify_one();
                 }
@@ -811,7 +828,7 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
             {
                 directoryDownloads.push_back(std::const_pointer_cast<TransferHandle>(handle));
 
-                if (directoryDownloads.size() == 3)
+                if (directoryDownloads.size() == 4)
                 {
                     directoryDownloadSignal.notify_one();
                 }
@@ -828,14 +845,14 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
     {
         std::unique_lock<std::mutex> locker(semaphoreLock);
         // if upload is fast enough, we might not need to wait here
-        if (directoryUploads.size() < 3)
+        if (directoryUploads.size() < 4)
         {
             directoryUploadSignal.wait(locker);
         }
     }
 
-    ASSERT_EQ(3u, directoryUploads.size());
-    Aws::Set<Aws::String> pathsUploading = { smallTestFileName, contentTestFileName, nestedFileName };
+    ASSERT_EQ(4u, directoryUploads.size());
+    Aws::Set<Aws::String> pathsUploading = { smallTestFileName, contentTestFileName, emptyTestFileName, nestedFileName };
 
     for (auto handle : directoryUploads)
     {
@@ -866,13 +883,13 @@ TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
 
     {
         std::unique_lock<std::mutex> locker(semaphoreLock);
-        if (directoryDownloads.size() < 3)
+        if (directoryDownloads.size() < 4)
         {
             directoryDownloadSignal.wait(locker);
         }
     }
 
-    ASSERT_EQ(3u, directoryDownloads.size());
+    ASSERT_EQ(4u, directoryDownloads.size());
     
     for (auto handle : directoryDownloads)
     {
@@ -1109,6 +1126,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
     bool completedPartsStayedCompletedDuringRetry = true;
     bool completionCheckDone = false;
     const char uuid[] = "Bjarne Stroustrup!";
+    std::atomic<bool> cancelHasBeenCalled(false);
 
     TransferManagerConfiguration transferManagerConfig(m_executor.get());
     transferManagerConfig.transferStatusUpdatedCallback = 
@@ -1119,8 +1137,8 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryUploadTest)
                 ASSERT_NE(nullptr, handle->GetContext());
                 ASSERT_STREQ(uuid, handle->GetContext()->GetUUID().c_str());
             }
-
-            if (!retryInProgress && handle->GetCompletedParts().size() >= 15 &&  handle->GetStatus() != TransferStatus::CANCELED)
+            bool expected = false;
+            if (handle->GetCompletedParts().size() >= 15 && cancelHasBeenCalled.compare_exchange_strong(expected, true))
             {
                 std::const_pointer_cast<TransferHandle>(handle)->Cancel();
             }
@@ -1225,6 +1243,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     bool retryInProgress = false;
     bool completedPartsStayedCompletedDuringRetry = true;
     bool completionCheckDone = false;
+    std::atomic<bool> cancelHasBeenCalled(false);
 
     std::shared_ptr<TransferHandle> requestPtr(nullptr);
 
@@ -1232,7 +1251,8 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     transferManagerConfig.transferStatusUpdatedCallback =
         [&](const TransferManager* manager, const std::shared_ptr<const TransferHandle>& handle)
         {
-            if (!retryInProgress && handle->GetCompletedParts().size() >= 15 && handle->GetStatus() != TransferStatus::CANCELED)
+            bool expected = false;
+            if (handle->GetCompletedParts().size() >= 15 && cancelHasBeenCalled.compare_exchange_strong(expected, true))
             {
                 const_cast<TransferManager*>(manager)->AbortMultipartUpload(std::const_pointer_cast<TransferHandle>(handle));
             }
@@ -1273,6 +1293,15 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     ListMultipartUploadsOutcome listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
 
     EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+    // S3 has eventual consistency, even thought we called AbortMultiPartUpload and get successful return,
+    // following call of listMultiPartUpload will not gurantee to return 0.
+    size_t retries = 0;
+    while (listMultipartOutcome.GetResult().GetUploads().size() != 0u && retries++ < 5)
+    {
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        listMultipartOutcome = m_s3Client->ListMultipartUploads(listMultipartRequest);
+        EXPECT_TRUE(listMultipartOutcome.IsSuccess());
+    }
     ASSERT_EQ(0u, listMultipartOutcome.GetResult().GetUploads().size());
 
     HeadObjectRequest headObjectRequest;
@@ -1287,7 +1316,7 @@ TEST_F(TransferTests, TransferManager_AbortAndRetryUploadTest)
     ASSERT_NE(requestPtr, tempPtr);
     requestPtr->WaitUntilFinished();
 
-    size_t retries = 0;
+    retries = 0;
     //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
     while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
     {
@@ -1540,6 +1569,7 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
         bool completedPartsStayedCompletedDuringRetry = true;
         bool completionCheckDone = false;
         const char uuid[] = "Bjarne Stroustrup!";
+        std::atomic<bool> cancelHasBeenCalled(false);
 
         TransferManagerConfiguration downloadConfig(m_executor.get());
         downloadConfig.s3Client = m_s3Client;
@@ -1550,7 +1580,8 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
                 ASSERT_STREQ(uuid, handle->GetContext()->GetUUID().c_str());
 
                 ASSERT_EQ(downloadFileName, handle->GetTargetFilePath());
-                if (!retryInProgress && handle->GetCompletedParts().size() >= 15 &&  handle->GetStatus() != TransferStatus::CANCELED)
+                bool expected = false;
+                if (handle->GetCompletedParts().size() >= 15u && cancelHasBeenCalled.compare_exchange_strong(expected, true))
                 {
                     std::const_pointer_cast<TransferHandle>(handle)->Cancel();
                 }
@@ -1578,7 +1609,12 @@ TEST_F(TransferTests, TransferManager_CancelAndRetryDownloadTest)
             requestPtr->WaitUntilFinished();
         }
 
-        ASSERT_EQ(TransferStatus::CANCELED, requestPtr->GetStatus());    
+        // call Cancel() in TransferStatusUpdateCallback function will not set status to CANCELED immediately.
+        // It only set up m_cancel to true, status will be updated by following UpdateStatus() call.
+        while (requestPtr->GetStatus() != TransferStatus::CANCELED) 
+        {
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
         ASSERT_TRUE(15u <= requestPtr->GetCompletedParts().size()); 
         ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
         ASSERT_TRUE(15u >= requestPtr->GetFailedParts().size()); //some may have been in flight at cancelation time.

@@ -37,7 +37,7 @@ PutImageResult::PutImageResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 
 PutImageResult& PutImageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetObject("image");

@@ -34,18 +34,20 @@ BrokerSummary::BrokerSummary() :
     m_brokerNameHasBeenSet(false),
     m_brokerState(BrokerState::NOT_SET),
     m_brokerStateHasBeenSet(false),
+    m_createdHasBeenSet(false),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_deploymentModeHasBeenSet(false),
     m_hostInstanceTypeHasBeenSet(false)
 {
 }
 
-BrokerSummary::BrokerSummary(const JsonValue& jsonValue) : 
+BrokerSummary::BrokerSummary(JsonView jsonValue) : 
     m_brokerArnHasBeenSet(false),
     m_brokerIdHasBeenSet(false),
     m_brokerNameHasBeenSet(false),
     m_brokerState(BrokerState::NOT_SET),
     m_brokerStateHasBeenSet(false),
+    m_createdHasBeenSet(false),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_deploymentModeHasBeenSet(false),
     m_hostInstanceTypeHasBeenSet(false)
@@ -53,7 +55,7 @@ BrokerSummary::BrokerSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BrokerSummary& BrokerSummary::operator =(const JsonValue& jsonValue)
+BrokerSummary& BrokerSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("brokerArn"))
   {
@@ -81,6 +83,13 @@ BrokerSummary& BrokerSummary::operator =(const JsonValue& jsonValue)
     m_brokerState = BrokerStateMapper::GetBrokerStateForName(jsonValue.GetString("brokerState"));
 
     m_brokerStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("created"))
+  {
+    m_created = jsonValue.GetString("created");
+
+    m_createdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("deploymentMode"))
@@ -125,6 +134,11 @@ JsonValue BrokerSummary::Jsonize() const
   if(m_brokerStateHasBeenSet)
   {
    payload.WithString("brokerState", BrokerStateMapper::GetNameForBrokerState(m_brokerState));
+  }
+
+  if(m_createdHasBeenSet)
+  {
+   payload.WithString("created", m_created.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_deploymentModeHasBeenSet)

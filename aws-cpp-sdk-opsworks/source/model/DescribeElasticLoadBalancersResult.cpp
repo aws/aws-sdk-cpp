@@ -37,10 +37,10 @@ DescribeElasticLoadBalancersResult::DescribeElasticLoadBalancersResult(const Aws
 
 DescribeElasticLoadBalancersResult& DescribeElasticLoadBalancersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ElasticLoadBalancers"))
   {
-    Array<JsonValue> elasticLoadBalancersJsonList = jsonValue.GetArray("ElasticLoadBalancers");
+    Array<JsonView> elasticLoadBalancersJsonList = jsonValue.GetArray("ElasticLoadBalancers");
     for(unsigned elasticLoadBalancersIndex = 0; elasticLoadBalancersIndex < elasticLoadBalancersJsonList.GetLength(); ++elasticLoadBalancersIndex)
     {
       m_elasticLoadBalancers.push_back(elasticLoadBalancersJsonList[elasticLoadBalancersIndex].AsObject());

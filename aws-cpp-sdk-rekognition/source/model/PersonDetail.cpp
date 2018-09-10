@@ -36,7 +36,7 @@ PersonDetail::PersonDetail() :
 {
 }
 
-PersonDetail::PersonDetail(const JsonValue& jsonValue) : 
+PersonDetail::PersonDetail(JsonView jsonValue) : 
     m_index(0),
     m_indexHasBeenSet(false),
     m_boundingBoxHasBeenSet(false),
@@ -45,7 +45,7 @@ PersonDetail::PersonDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PersonDetail& PersonDetail::operator =(const JsonValue& jsonValue)
+PersonDetail& PersonDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Index"))
   {

@@ -41,7 +41,7 @@ DescribeTrainingJobResult::DescribeTrainingJobResult(const Aws::AmazonWebService
 
 DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TrainingJobName"))
   {
     m_trainingJobName = jsonValue.GetString("TrainingJobName");
@@ -51,6 +51,12 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("TrainingJobArn"))
   {
     m_trainingJobArn = jsonValue.GetString("TrainingJobArn");
+
+  }
+
+  if(jsonValue.ValueExists("TuningJobArn"))
+  {
+    m_tuningJobArn = jsonValue.GetString("TuningJobArn");
 
   }
 
@@ -80,7 +86,7 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("HyperParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> hyperParametersJsonMap = jsonValue.GetObject("HyperParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> hyperParametersJsonMap = jsonValue.GetObject("HyperParameters").GetAllObjects();
     for(auto& hyperParametersItem : hyperParametersJsonMap)
     {
       m_hyperParameters[hyperParametersItem.first] = hyperParametersItem.second.AsString();
@@ -101,7 +107,7 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("InputDataConfig"))
   {
-    Array<JsonValue> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
+    Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
     for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
     {
       m_inputDataConfig.push_back(inputDataConfigJsonList[inputDataConfigIndex].AsObject());
@@ -117,6 +123,12 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("ResourceConfig"))
   {
     m_resourceConfig = jsonValue.GetObject("ResourceConfig");
+
+  }
+
+  if(jsonValue.ValueExists("VpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("VpcConfig");
 
   }
 
@@ -148,6 +160,15 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
 
+  }
+
+  if(jsonValue.ValueExists("SecondaryStatusTransitions"))
+  {
+    Array<JsonView> secondaryStatusTransitionsJsonList = jsonValue.GetArray("SecondaryStatusTransitions");
+    for(unsigned secondaryStatusTransitionsIndex = 0; secondaryStatusTransitionsIndex < secondaryStatusTransitionsJsonList.GetLength(); ++secondaryStatusTransitionsIndex)
+    {
+      m_secondaryStatusTransitions.push_back(secondaryStatusTransitionsJsonList[secondaryStatusTransitionsIndex].AsObject());
+    }
   }
 
 

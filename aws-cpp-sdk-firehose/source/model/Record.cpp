@@ -34,13 +34,13 @@ Record::Record() :
 {
 }
 
-Record::Record(const JsonValue& jsonValue) : 
+Record::Record(JsonView jsonValue) : 
     m_dataHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Record& Record::operator =(const JsonValue& jsonValue)
+Record& Record::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Data"))
   {

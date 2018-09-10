@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     GLACIER,
-    STANDARD_IA
+    STANDARD_IA,
+    ONEZONE_IA
   };
 
 namespace TransitionStorageClassMapper

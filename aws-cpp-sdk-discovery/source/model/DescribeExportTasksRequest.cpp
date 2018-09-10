@@ -69,7 +69,7 @@ Aws::String DescribeExportTasksRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeExportTasksRequest::GetRequestSpecificHeaders() const

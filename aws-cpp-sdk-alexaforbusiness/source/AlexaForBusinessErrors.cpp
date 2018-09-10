@@ -32,6 +32,7 @@ static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsEx
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int INVALID_USER_STATUS_HASH = HashingUtils::HashString("InvalidUserStatusException");
+static const int DEVICE_NOT_REGISTERED_HASH = HashingUtils::HashString("DeviceNotRegisteredException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int NAME_IN_USE_HASH = HashingUtils::HashString("NameInUseException");
 
@@ -55,6 +56,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_USER_STATUS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AlexaForBusinessErrors::INVALID_USER_STATUS), false);
+  }
+  else if (hashCode == DEVICE_NOT_REGISTERED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AlexaForBusinessErrors::DEVICE_NOT_REGISTERED), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {

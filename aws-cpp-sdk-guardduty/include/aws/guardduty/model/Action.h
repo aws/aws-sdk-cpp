@@ -19,6 +19,7 @@
 #include <aws/guardduty/model/AwsApiCallAction.h>
 #include <aws/guardduty/model/DnsRequestAction.h>
 #include <aws/guardduty/model/NetworkConnectionAction.h>
+#include <aws/guardduty/model/PortProbeAction.h>
 #include <utility>
 
 namespace Aws
@@ -28,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GuardDuty
@@ -44,8 +46,8 @@ namespace Model
   {
   public:
     Action();
-    Action(const Aws::Utils::Json::JsonValue& jsonValue);
-    Action& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Action(Aws::Utils::Json::JsonView jsonValue);
+    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -162,6 +164,32 @@ namespace Model
      */
     inline Action& WithNetworkConnectionAction(NetworkConnectionAction&& value) { SetNetworkConnectionAction(std::move(value)); return *this;}
 
+
+    /**
+     * Information about the PORT_PROBE action described in this finding.
+     */
+    inline const PortProbeAction& GetPortProbeAction() const{ return m_portProbeAction; }
+
+    /**
+     * Information about the PORT_PROBE action described in this finding.
+     */
+    inline void SetPortProbeAction(const PortProbeAction& value) { m_portProbeActionHasBeenSet = true; m_portProbeAction = value; }
+
+    /**
+     * Information about the PORT_PROBE action described in this finding.
+     */
+    inline void SetPortProbeAction(PortProbeAction&& value) { m_portProbeActionHasBeenSet = true; m_portProbeAction = std::move(value); }
+
+    /**
+     * Information about the PORT_PROBE action described in this finding.
+     */
+    inline Action& WithPortProbeAction(const PortProbeAction& value) { SetPortProbeAction(value); return *this;}
+
+    /**
+     * Information about the PORT_PROBE action described in this finding.
+     */
+    inline Action& WithPortProbeAction(PortProbeAction&& value) { SetPortProbeAction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_actionType;
@@ -175,6 +203,9 @@ namespace Model
 
     NetworkConnectionAction m_networkConnectionAction;
     bool m_networkConnectionActionHasBeenSet;
+
+    PortProbeAction m_portProbeAction;
+    bool m_portProbeActionHasBeenSet;
   };
 
 } // namespace Model

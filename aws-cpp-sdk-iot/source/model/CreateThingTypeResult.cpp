@@ -37,7 +37,7 @@ CreateThingTypeResult::CreateThingTypeResult(const Aws::AmazonWebServiceResult<J
 
 CreateThingTypeResult& CreateThingTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("thingTypeName"))
   {
     m_thingTypeName = jsonValue.GetString("thingTypeName");

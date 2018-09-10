@@ -37,7 +37,7 @@ RequestCertificateResult::RequestCertificateResult(const Aws::AmazonWebServiceRe
 
 RequestCertificateResult& RequestCertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CertificateArn"))
   {
     m_certificateArn = jsonValue.GetString("CertificateArn");

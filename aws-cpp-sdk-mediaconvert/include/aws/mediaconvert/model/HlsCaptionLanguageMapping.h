@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
-#include <aws/mediaconvert/model/LanguageCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/LanguageCode.h>
 #include <utility>
 
 namespace Aws
@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     HlsCaptionLanguageMapping();
-    HlsCaptionLanguageMapping(const Aws::Utils::Json::JsonValue& jsonValue);
-    HlsCaptionLanguageMapping& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HlsCaptionLanguageMapping(Aws::Utils::Json::JsonView jsonValue);
+    HlsCaptionLanguageMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -61,6 +62,49 @@ namespace Model
      * Caption channel.
      */
     inline HlsCaptionLanguageMapping& WithCaptionChannel(int value) { SetCaptionChannel(value); return *this;}
+
+
+    /**
+     * Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3
+     * three-letter language code
+     */
+    inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
+
+    /**
+     * Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3
+     * three-letter language code
+     */
+    inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
+
+    /**
+     * Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3
+     * three-letter language code
+     */
+    inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
+
+    /**
+     * Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3
+     * three-letter language code
+     */
+    inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
+
+    /**
+     * Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3
+     * three-letter language code
+     */
+    inline HlsCaptionLanguageMapping& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
+
+    /**
+     * Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3
+     * three-letter language code
+     */
+    inline HlsCaptionLanguageMapping& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
+
+    /**
+     * Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3
+     * three-letter language code
+     */
+    inline HlsCaptionLanguageMapping& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
 
 
     
@@ -118,6 +162,9 @@ namespace Model
 
     int m_captionChannel;
     bool m_captionChannelHasBeenSet;
+
+    Aws::String m_customLanguageCode;
+    bool m_customLanguageCodeHasBeenSet;
 
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet;

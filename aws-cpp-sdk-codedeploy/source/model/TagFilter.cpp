@@ -36,7 +36,7 @@ TagFilter::TagFilter() :
 {
 }
 
-TagFilter::TagFilter(const JsonValue& jsonValue) : 
+TagFilter::TagFilter(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_type(TagFilterType::NOT_SET),
@@ -45,7 +45,7 @@ TagFilter::TagFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TagFilter& TagFilter::operator =(const JsonValue& jsonValue)
+TagFilter& TagFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

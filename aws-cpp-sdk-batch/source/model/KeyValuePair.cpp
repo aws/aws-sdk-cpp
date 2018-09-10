@@ -34,14 +34,14 @@ KeyValuePair::KeyValuePair() :
 {
 }
 
-KeyValuePair::KeyValuePair(const JsonValue& jsonValue) : 
+KeyValuePair::KeyValuePair(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-KeyValuePair& KeyValuePair::operator =(const JsonValue& jsonValue)
+KeyValuePair& KeyValuePair::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

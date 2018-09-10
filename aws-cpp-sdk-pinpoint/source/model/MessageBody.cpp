@@ -34,14 +34,14 @@ MessageBody::MessageBody() :
 {
 }
 
-MessageBody::MessageBody(const JsonValue& jsonValue) : 
+MessageBody::MessageBody(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
     m_requestIDHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MessageBody& MessageBody::operator =(const JsonValue& jsonValue)
+MessageBody& MessageBody::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Message"))
   {

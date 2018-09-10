@@ -33,25 +33,27 @@ SegmentDimensions::SegmentDimensions() :
     m_behaviorHasBeenSet(false),
     m_demographicHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_metricsHasBeenSet(false),
     m_userAttributesHasBeenSet(false)
 {
 }
 
-SegmentDimensions::SegmentDimensions(const JsonValue& jsonValue) : 
+SegmentDimensions::SegmentDimensions(JsonView jsonValue) : 
     m_attributesHasBeenSet(false),
     m_behaviorHasBeenSet(false),
     m_demographicHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_metricsHasBeenSet(false),
     m_userAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SegmentDimensions& SegmentDimensions::operator =(const JsonValue& jsonValue)
+SegmentDimensions& SegmentDimensions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsObject();
@@ -80,9 +82,19 @@ SegmentDimensions& SegmentDimensions::operator =(const JsonValue& jsonValue)
     m_locationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Metrics"))
+  {
+    Aws::Map<Aws::String, JsonView> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
+    for(auto& metricsItem : metricsJsonMap)
+    {
+      m_metrics[metricsItem.first] = metricsItem.second.AsObject();
+    }
+    m_metricsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("UserAttributes"))
   {
-    Aws::Map<Aws::String, JsonValue> userAttributesJsonMap = jsonValue.GetObject("UserAttributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> userAttributesJsonMap = jsonValue.GetObject("UserAttributes").GetAllObjects();
     for(auto& userAttributesItem : userAttributesJsonMap)
     {
       m_userAttributes[userAttributesItem.first] = userAttributesItem.second.AsObject();
@@ -123,6 +135,17 @@ JsonValue SegmentDimensions::Jsonize() const
   if(m_locationHasBeenSet)
   {
    payload.WithObject("Location", m_location.Jsonize());
+
+  }
+
+  if(m_metricsHasBeenSet)
+  {
+   JsonValue metricsJsonMap;
+   for(auto& metricsItem : m_metrics)
+   {
+     metricsJsonMap.WithObject(metricsItem.first, metricsItem.second.Jsonize());
+   }
+   payload.WithObject("Metrics", std::move(metricsJsonMap));
 
   }
 

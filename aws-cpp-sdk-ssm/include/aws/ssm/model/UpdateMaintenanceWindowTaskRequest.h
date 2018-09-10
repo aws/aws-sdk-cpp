@@ -210,121 +210,239 @@ namespace Model
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution. </p>
+     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
+     * use your account's service-linked role for Systems Manager by default. If no
+     * service-linked role for Systems Manager exists in your account, it will be
+     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
+     * specifying a service role ARN.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
+     * Role Permissions for Systems Manager</a> and <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
+     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution. </p>
+     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
+     * use your account's service-linked role for Systems Manager by default. If no
+     * service-linked role for Systems Manager exists in your account, it will be
+     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
+     * specifying a service role ARN.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
+     * Role Permissions for Systems Manager</a> and <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
+     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution. </p>
+     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
+     * use your account's service-linked role for Systems Manager by default. If no
+     * service-linked role for Systems Manager exists in your account, it will be
+     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
+     * specifying a service role ARN.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
+     * Role Permissions for Systems Manager</a> and <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
+     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution. </p>
+     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
+     * use your account's service-linked role for Systems Manager by default. If no
+     * service-linked role for Systems Manager exists in your account, it will be
+     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
+     * specifying a service role ARN.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
+     * Role Permissions for Systems Manager</a> and <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
+     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution. </p>
+     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
+     * use your account's service-linked role for Systems Manager by default. If no
+     * service-linked role for Systems Manager exists in your account, it will be
+     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
+     * specifying a service role ARN.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
+     * Role Permissions for Systems Manager</a> and <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
+     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution. </p>
+     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
+     * use your account's service-linked role for Systems Manager by default. If no
+     * service-linked role for Systems Manager exists in your account, it will be
+     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
+     * specifying a service role ARN.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
+     * Role Permissions for Systems Manager</a> and <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
+     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The IAM service role ARN to modify. The system assumes this role during task
-     * execution. </p>
+     * execution.</p> <p>If you do not specify a service role ARN, Systems Manager will
+     * use your account's service-linked role for Systems Manager by default. If no
+     * service-linked role for Systems Manager exists in your account, it will be
+     * created when you run <code>RegisterTaskWithMaintenanceWindow</code> without
+     * specifying a service role ARN.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
+     * Role Permissions for Systems Manager</a> and <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
+     * Tasks? </a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
 
     /**
-     * <p>The parameters to modify. The map has the following format:</p> <p>Key:
-     * string, between 1 and 255 characters</p> <p>Value: an array of strings, each
-     * string is between 1 and 255 characters</p>
+     * <p>The parameters to modify.</p> <note> <p> <code>TaskParameters</code> has been
+     * deprecated. To specify parameters to pass to a task when it runs, instead use
+     * the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+     * structure. For information about how Systems Manager handles these options for
+     * the supported Maintenance Window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The map has the
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& GetTaskParameters() const{ return m_taskParameters; }
 
     /**
-     * <p>The parameters to modify. The map has the following format:</p> <p>Key:
-     * string, between 1 and 255 characters</p> <p>Value: an array of strings, each
-     * string is between 1 and 255 characters</p>
+     * <p>The parameters to modify.</p> <note> <p> <code>TaskParameters</code> has been
+     * deprecated. To specify parameters to pass to a task when it runs, instead use
+     * the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+     * structure. For information about how Systems Manager handles these options for
+     * the supported Maintenance Window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The map has the
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline void SetTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { m_taskParametersHasBeenSet = true; m_taskParameters = value; }
 
     /**
-     * <p>The parameters to modify. The map has the following format:</p> <p>Key:
-     * string, between 1 and 255 characters</p> <p>Value: an array of strings, each
-     * string is between 1 and 255 characters</p>
+     * <p>The parameters to modify.</p> <note> <p> <code>TaskParameters</code> has been
+     * deprecated. To specify parameters to pass to a task when it runs, instead use
+     * the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+     * structure. For information about how Systems Manager handles these options for
+     * the supported Maintenance Window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The map has the
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline void SetTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParametersHasBeenSet = true; m_taskParameters = std::move(value); }
 
     /**
-     * <p>The parameters to modify. The map has the following format:</p> <p>Key:
-     * string, between 1 and 255 characters</p> <p>Value: an array of strings, each
-     * string is between 1 and 255 characters</p>
+     * <p>The parameters to modify.</p> <note> <p> <code>TaskParameters</code> has been
+     * deprecated. To specify parameters to pass to a task when it runs, instead use
+     * the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+     * structure. For information about how Systems Manager handles these options for
+     * the supported Maintenance Window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The map has the
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { SetTaskParameters(value); return *this;}
 
     /**
-     * <p>The parameters to modify. The map has the following format:</p> <p>Key:
-     * string, between 1 and 255 characters</p> <p>Value: an array of strings, each
-     * string is between 1 and 255 characters</p>
+     * <p>The parameters to modify.</p> <note> <p> <code>TaskParameters</code> has been
+     * deprecated. To specify parameters to pass to a task when it runs, instead use
+     * the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+     * structure. For information about how Systems Manager handles these options for
+     * the supported Maintenance Window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The map has the
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { SetTaskParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters to modify. The map has the following format:</p> <p>Key:
-     * string, between 1 and 255 characters</p> <p>Value: an array of strings, each
-     * string is between 1 and 255 characters</p>
+     * <p>The parameters to modify.</p> <note> <p> <code>TaskParameters</code> has been
+     * deprecated. To specify parameters to pass to a task when it runs, instead use
+     * the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+     * structure. For information about how Systems Manager handles these options for
+     * the supported Maintenance Window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The map has the
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& AddTaskParameters(const Aws::String& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The parameters to modify. The map has the following format:</p> <p>Key:
-     * string, between 1 and 255 characters</p> <p>Value: an array of strings, each
-     * string is between 1 and 255 characters</p>
+     * <p>The parameters to modify.</p> <note> <p> <code>TaskParameters</code> has been
+     * deprecated. To specify parameters to pass to a task when it runs, instead use
+     * the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+     * structure. For information about how Systems Manager handles these options for
+     * the supported Maintenance Window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The map has the
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& AddTaskParameters(Aws::String&& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The parameters to modify. The map has the following format:</p> <p>Key:
-     * string, between 1 and 255 characters</p> <p>Value: an array of strings, each
-     * string is between 1 and 255 characters</p>
+     * <p>The parameters to modify.</p> <note> <p> <code>TaskParameters</code> has been
+     * deprecated. To specify parameters to pass to a task when it runs, instead use
+     * the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+     * structure. For information about how Systems Manager handles these options for
+     * the supported Maintenance Window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The map has the
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& AddTaskParameters(const Aws::String& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters to modify. The map has the following format:</p> <p>Key:
-     * string, between 1 and 255 characters</p> <p>Value: an array of strings, each
-     * string is between 1 and 255 characters</p>
+     * <p>The parameters to modify.</p> <note> <p> <code>TaskParameters</code> has been
+     * deprecated. To specify parameters to pass to a task when it runs, instead use
+     * the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+     * structure. For information about how Systems Manager handles these options for
+     * the supported Maintenance Window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The map has the
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& AddTaskParameters(Aws::String&& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The parameters to modify. The map has the following format:</p> <p>Key:
-     * string, between 1 and 255 characters</p> <p>Value: an array of strings, each
-     * string is between 1 and 255 characters</p>
+     * <p>The parameters to modify.</p> <note> <p> <code>TaskParameters</code> has been
+     * deprecated. To specify parameters to pass to a task when it runs, instead use
+     * the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+     * structure. For information about how Systems Manager handles these options for
+     * the supported Maintenance Window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The map has the
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& AddTaskParameters(const char* key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters to modify. The map has the following format:</p> <p>Key:
-     * string, between 1 and 255 characters</p> <p>Value: an array of strings, each
-     * string is between 1 and 255 characters</p>
+     * <p>The parameters to modify.</p> <note> <p> <code>TaskParameters</code> has been
+     * deprecated. To specify parameters to pass to a task when it runs, instead use
+     * the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+     * structure. For information about how Systems Manager handles these options for
+     * the supported Maintenance Window task types, see
+     * <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note> <p>The map has the
+     * following format:</p> <p>Key: string, between 1 and 255 characters</p> <p>Value:
+     * an array of strings, each string is between 1 and 255 characters</p>
      */
     inline UpdateMaintenanceWindowTaskRequest& AddTaskParameters(const char* key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace(key, value); return *this; }
 
@@ -480,27 +598,57 @@ namespace Model
 
 
     /**
-     * <p>The new logging location in Amazon S3 to specify.</p>
+     * <p>The new logging location in Amazon S3 to specify.</p> <note> <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+     * logs, instead use the <code>OutputS3BucketName</code> and
+     * <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
 
     /**
-     * <p>The new logging location in Amazon S3 to specify.</p>
+     * <p>The new logging location in Amazon S3 to specify.</p> <note> <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+     * logs, instead use the <code>OutputS3BucketName</code> and
+     * <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = value; }
 
     /**
-     * <p>The new logging location in Amazon S3 to specify.</p>
+     * <p>The new logging location in Amazon S3 to specify.</p> <note> <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+     * logs, instead use the <code>OutputS3BucketName</code> and
+     * <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::move(value); }
 
     /**
-     * <p>The new logging location in Amazon S3 to specify.</p>
+     * <p>The new logging location in Amazon S3 to specify.</p> <note> <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+     * logs, instead use the <code>OutputS3BucketName</code> and
+     * <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
 
     /**
-     * <p>The new logging location in Amazon S3 to specify.</p>
+     * <p>The new logging location in Amazon S3 to specify.</p> <note> <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+     * logs, instead use the <code>OutputS3BucketName</code> and
+     * <code>OutputS3KeyPrefix</code> options in the
+     * <code>TaskInvocationParameters</code> structure. For information about how
+     * Systems Manager handles these options for the supported Maintenance Window task
+     * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p> </note>
      */
     inline UpdateMaintenanceWindowTaskRequest& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
 

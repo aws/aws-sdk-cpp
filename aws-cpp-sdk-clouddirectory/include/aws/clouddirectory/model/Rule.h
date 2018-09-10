@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -37,15 +38,15 @@ namespace Model
   /**
    * <p>Contains an Amazon Resource Name (ARN) and parameters that are associated
    * with the rule.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/Rule">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/Rule">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API Rule
   {
   public:
     Rule();
-    Rule(const Aws::Utils::Json::JsonValue& jsonValue);
-    Rule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Rule(Aws::Utils::Json::JsonView jsonValue);
+    Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

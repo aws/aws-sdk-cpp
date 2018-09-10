@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     DeleteReplicaAction();
-    DeleteReplicaAction(const Aws::Utils::Json::JsonValue& jsonValue);
-    DeleteReplicaAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DeleteReplicaAction(Aws::Utils::Json::JsonView jsonValue);
+    DeleteReplicaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

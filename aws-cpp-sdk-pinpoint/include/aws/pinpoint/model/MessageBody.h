@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -41,43 +42,43 @@ namespace Model
   {
   public:
     MessageBody();
-    MessageBody(const Aws::Utils::Json::JsonValue& jsonValue);
-    MessageBody& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MessageBody(Aws::Utils::Json::JsonView jsonValue);
+    MessageBody& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline MessageBody& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline MessageBody& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      */
     inline MessageBody& WithMessage(const char* value) { SetMessage(value); return *this;}
 

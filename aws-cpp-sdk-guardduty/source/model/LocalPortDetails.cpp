@@ -35,7 +35,7 @@ LocalPortDetails::LocalPortDetails() :
 {
 }
 
-LocalPortDetails::LocalPortDetails(const JsonValue& jsonValue) : 
+LocalPortDetails::LocalPortDetails(JsonView jsonValue) : 
     m_port(0),
     m_portHasBeenSet(false),
     m_portNameHasBeenSet(false)
@@ -43,7 +43,7 @@ LocalPortDetails::LocalPortDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LocalPortDetails& LocalPortDetails::operator =(const JsonValue& jsonValue)
+LocalPortDetails& LocalPortDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("port"))
   {

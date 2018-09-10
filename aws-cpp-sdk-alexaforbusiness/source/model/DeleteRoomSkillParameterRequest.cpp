@@ -51,7 +51,7 @@ Aws::String DeleteRoomSkillParameterRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteRoomSkillParameterRequest::GetRequestSpecificHeaders() const

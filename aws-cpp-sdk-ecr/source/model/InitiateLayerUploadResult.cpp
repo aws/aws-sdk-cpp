@@ -39,7 +39,7 @@ InitiateLayerUploadResult::InitiateLayerUploadResult(const Aws::AmazonWebService
 
 InitiateLayerUploadResult& InitiateLayerUploadResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("uploadId"))
   {
     m_uploadId = jsonValue.GetString("uploadId");

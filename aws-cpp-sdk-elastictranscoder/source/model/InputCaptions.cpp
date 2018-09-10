@@ -34,14 +34,14 @@ InputCaptions::InputCaptions() :
 {
 }
 
-InputCaptions::InputCaptions(const JsonValue& jsonValue) : 
+InputCaptions::InputCaptions(JsonView jsonValue) : 
     m_mergePolicyHasBeenSet(false),
     m_captionSourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputCaptions& InputCaptions::operator =(const JsonValue& jsonValue)
+InputCaptions& InputCaptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MergePolicy"))
   {
@@ -52,7 +52,7 @@ InputCaptions& InputCaptions::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("CaptionSources"))
   {
-    Array<JsonValue> captionSourcesJsonList = jsonValue.GetArray("CaptionSources");
+    Array<JsonView> captionSourcesJsonList = jsonValue.GetArray("CaptionSources");
     for(unsigned captionSourcesIndex = 0; captionSourcesIndex < captionSourcesJsonList.GetLength(); ++captionSourcesIndex)
     {
       m_captionSources.push_back(captionSourcesJsonList[captionSourcesIndex].AsObject());

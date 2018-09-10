@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Condition();
-    Condition(const Aws::Utils::Json::JsonValue& jsonValue);
-    Condition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Condition(Aws::Utils::Json::JsonView jsonValue);
+    Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -118,32 +119,32 @@ namespace Model
 
 
     /**
-     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED
-     * and FAILED.</p>
+     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED,
+     * TIMEOUT and FAILED.</p>
      */
     inline const JobRunState& GetState() const{ return m_state; }
 
     /**
-     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED
-     * and FAILED.</p>
+     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED,
+     * TIMEOUT and FAILED.</p>
      */
     inline void SetState(const JobRunState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED
-     * and FAILED.</p>
+     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED,
+     * TIMEOUT and FAILED.</p>
      */
     inline void SetState(JobRunState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED
-     * and FAILED.</p>
+     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED,
+     * TIMEOUT and FAILED.</p>
      */
     inline Condition& WithState(const JobRunState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED
-     * and FAILED.</p>
+     * <p>The condition state. Currently, the values supported are SUCCEEDED, STOPPED,
+     * TIMEOUT and FAILED.</p>
      */
     inline Condition& WithState(JobRunState&& value) { SetState(std::move(value)); return *this;}
 

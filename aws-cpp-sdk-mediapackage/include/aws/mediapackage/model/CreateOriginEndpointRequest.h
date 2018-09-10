@@ -17,6 +17,7 @@
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/mediapackage/MediaPackageRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage/model/CmafPackageCreateOrUpdateParameters.h>
 #include <aws/mediapackage/model/DashPackage.h>
 #include <aws/mediapackage/model/HlsPackage.h>
 #include <aws/mediapackage/model/MssPackage.h>
@@ -105,6 +106,22 @@ This
 
      */
     inline CreateOriginEndpointRequest& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+
+
+    
+    inline const CmafPackageCreateOrUpdateParameters& GetCmafPackage() const{ return m_cmafPackage; }
+
+    
+    inline void SetCmafPackage(const CmafPackageCreateOrUpdateParameters& value) { m_cmafPackageHasBeenSet = true; m_cmafPackage = value; }
+
+    
+    inline void SetCmafPackage(CmafPackageCreateOrUpdateParameters&& value) { m_cmafPackageHasBeenSet = true; m_cmafPackage = std::move(value); }
+
+    
+    inline CreateOriginEndpointRequest& WithCmafPackage(const CmafPackageCreateOrUpdateParameters& value) { SetCmafPackage(value); return *this;}
+
+    
+    inline CreateOriginEndpointRequest& WithCmafPackage(CmafPackageCreateOrUpdateParameters&& value) { SetCmafPackage(std::move(value)); return *this;}
 
 
     
@@ -393,6 +410,9 @@ If not
 
     Aws::String m_channelId;
     bool m_channelIdHasBeenSet;
+
+    CmafPackageCreateOrUpdateParameters m_cmafPackage;
+    bool m_cmafPackageHasBeenSet;
 
     DashPackage m_dashPackage;
     bool m_dashPackageHasBeenSet;

@@ -33,25 +33,29 @@ GraphqlApi::GraphqlApi() :
     m_apiIdHasBeenSet(false),
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
+    m_logConfigHasBeenSet(false),
     m_userPoolConfigHasBeenSet(false),
+    m_openIDConnectConfigHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_urisHasBeenSet(false)
 {
 }
 
-GraphqlApi::GraphqlApi(const JsonValue& jsonValue) : 
+GraphqlApi::GraphqlApi(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_apiIdHasBeenSet(false),
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
+    m_logConfigHasBeenSet(false),
     m_userPoolConfigHasBeenSet(false),
+    m_openIDConnectConfigHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_urisHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GraphqlApi& GraphqlApi::operator =(const JsonValue& jsonValue)
+GraphqlApi& GraphqlApi::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -74,11 +78,25 @@ GraphqlApi& GraphqlApi::operator =(const JsonValue& jsonValue)
     m_authenticationTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("logConfig"))
+  {
+    m_logConfig = jsonValue.GetObject("logConfig");
+
+    m_logConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("userPoolConfig"))
   {
     m_userPoolConfig = jsonValue.GetObject("userPoolConfig");
 
     m_userPoolConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("openIDConnectConfig"))
+  {
+    m_openIDConnectConfig = jsonValue.GetObject("openIDConnectConfig");
+
+    m_openIDConnectConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("arn"))
@@ -90,7 +108,7 @@ GraphqlApi& GraphqlApi::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("uris"))
   {
-    Aws::Map<Aws::String, JsonValue> urisJsonMap = jsonValue.GetObject("uris").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> urisJsonMap = jsonValue.GetObject("uris").GetAllObjects();
     for(auto& urisItem : urisJsonMap)
     {
       m_uris[urisItem.first] = urisItem.second.AsString();
@@ -122,9 +140,21 @@ JsonValue GraphqlApi::Jsonize() const
    payload.WithString("authenticationType", AuthenticationTypeMapper::GetNameForAuthenticationType(m_authenticationType));
   }
 
+  if(m_logConfigHasBeenSet)
+  {
+   payload.WithObject("logConfig", m_logConfig.Jsonize());
+
+  }
+
   if(m_userPoolConfigHasBeenSet)
   {
    payload.WithObject("userPoolConfig", m_userPoolConfig.Jsonize());
+
+  }
+
+  if(m_openIDConnectConfigHasBeenSet)
+  {
+   payload.WithObject("openIDConnectConfig", m_openIDConnectConfig.Jsonize());
 
   }
 

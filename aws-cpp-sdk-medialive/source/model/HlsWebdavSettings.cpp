@@ -42,7 +42,7 @@ HlsWebdavSettings::HlsWebdavSettings() :
 {
 }
 
-HlsWebdavSettings::HlsWebdavSettings(const JsonValue& jsonValue) : 
+HlsWebdavSettings::HlsWebdavSettings(JsonView jsonValue) : 
     m_connectionRetryInterval(0),
     m_connectionRetryIntervalHasBeenSet(false),
     m_filecacheDuration(0),
@@ -57,7 +57,7 @@ HlsWebdavSettings::HlsWebdavSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HlsWebdavSettings& HlsWebdavSettings::operator =(const JsonValue& jsonValue)
+HlsWebdavSettings& HlsWebdavSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("connectionRetryInterval"))
   {

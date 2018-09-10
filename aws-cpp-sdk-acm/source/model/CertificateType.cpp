@@ -32,6 +32,7 @@ namespace Aws
 
         static const int IMPORTED_HASH = HashingUtils::HashString("IMPORTED");
         static const int AMAZON_ISSUED_HASH = HashingUtils::HashString("AMAZON_ISSUED");
+        static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
 
 
         CertificateType GetCertificateTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == AMAZON_ISSUED_HASH)
           {
             return CertificateType::AMAZON_ISSUED;
+          }
+          else if (hashCode == PRIVATE__HASH)
+          {
+            return CertificateType::PRIVATE_;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "IMPORTED";
           case CertificateType::AMAZON_ISSUED:
             return "AMAZON_ISSUED";
+          case CertificateType::PRIVATE_:
+            return "PRIVATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

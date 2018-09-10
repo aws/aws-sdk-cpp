@@ -36,7 +36,7 @@ CampaignEmailMessage::CampaignEmailMessage() :
 {
 }
 
-CampaignEmailMessage::CampaignEmailMessage(const JsonValue& jsonValue) : 
+CampaignEmailMessage::CampaignEmailMessage(JsonView jsonValue) : 
     m_bodyHasBeenSet(false),
     m_fromAddressHasBeenSet(false),
     m_htmlBodyHasBeenSet(false),
@@ -45,7 +45,7 @@ CampaignEmailMessage::CampaignEmailMessage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CampaignEmailMessage& CampaignEmailMessage::operator =(const JsonValue& jsonValue)
+CampaignEmailMessage& CampaignEmailMessage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Body"))
   {

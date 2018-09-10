@@ -253,49 +253,49 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * <p>The maximum number of parts to be returned. The default limit is 50. The
      * number of parts returned might be fewer than the specified limit, but the number
      * of returned parts never exceeds the limit.</p>
      */
     inline const Aws::String& GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * <p>The maximum number of parts to be returned. The default limit is 50. The
      * number of parts returned might be fewer than the specified limit, but the number
      * of returned parts never exceeds the limit.</p>
      */
     inline void SetLimit(const Aws::String& value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * <p>The maximum number of parts to be returned. The default limit is 50. The
      * number of parts returned might be fewer than the specified limit, but the number
      * of returned parts never exceeds the limit.</p>
      */
     inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = std::move(value); }
 
     /**
-     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * <p>The maximum number of parts to be returned. The default limit is 50. The
      * number of parts returned might be fewer than the specified limit, but the number
      * of returned parts never exceeds the limit.</p>
      */
     inline void SetLimit(const char* value) { m_limitHasBeenSet = true; m_limit.assign(value); }
 
     /**
-     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * <p>The maximum number of parts to be returned. The default limit is 50. The
      * number of parts returned might be fewer than the specified limit, but the number
      * of returned parts never exceeds the limit.</p>
      */
     inline ListPartsRequest& WithLimit(const Aws::String& value) { SetLimit(value); return *this;}
 
     /**
-     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * <p>The maximum number of parts to be returned. The default limit is 50. The
      * number of parts returned might be fewer than the specified limit, but the number
      * of returned parts never exceeds the limit.</p>
      */
     inline ListPartsRequest& WithLimit(Aws::String&& value) { SetLimit(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum number of parts to be returned. The default limit is 1000. The
+     * <p>The maximum number of parts to be returned. The default limit is 50. The
      * number of parts returned might be fewer than the specified limit, but the number
      * of returned parts never exceeds the limit.</p>
      */

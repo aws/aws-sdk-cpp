@@ -35,7 +35,7 @@ SearchStatus::SearchStatus() :
 {
 }
 
-SearchStatus::SearchStatus(const JsonValue& jsonValue) : 
+SearchStatus::SearchStatus(JsonView jsonValue) : 
     m_timems(0),
     m_timemsHasBeenSet(false),
     m_ridHasBeenSet(false)
@@ -43,7 +43,7 @@ SearchStatus::SearchStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SearchStatus& SearchStatus::operator =(const JsonValue& jsonValue)
+SearchStatus& SearchStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("timems"))
   {

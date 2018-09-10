@@ -37,7 +37,7 @@ CaptionSource::CaptionSource() :
 {
 }
 
-CaptionSource::CaptionSource(const JsonValue& jsonValue) : 
+CaptionSource::CaptionSource(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_languageHasBeenSet(false),
     m_timeOffsetHasBeenSet(false),
@@ -47,7 +47,7 @@ CaptionSource::CaptionSource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CaptionSource& CaptionSource::operator =(const JsonValue& jsonValue)
+CaptionSource& CaptionSource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

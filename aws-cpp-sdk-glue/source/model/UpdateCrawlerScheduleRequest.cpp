@@ -44,7 +44,7 @@ Aws::String UpdateCrawlerScheduleRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateCrawlerScheduleRequest::GetRequestSpecificHeaders() const

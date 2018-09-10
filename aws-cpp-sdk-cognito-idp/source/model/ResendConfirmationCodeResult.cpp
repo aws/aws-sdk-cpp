@@ -37,7 +37,7 @@ ResendConfirmationCodeResult::ResendConfirmationCodeResult(const Aws::AmazonWebS
 
 ResendConfirmationCodeResult& ResendConfirmationCodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CodeDeliveryDetails"))
   {
     m_codeDeliveryDetails = jsonValue.GetObject("CodeDeliveryDetails");

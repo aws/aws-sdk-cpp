@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ProcessorParameter();
-    ProcessorParameter(const Aws::Utils::Json::JsonValue& jsonValue);
-    ProcessorParameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ProcessorParameter(Aws::Utils::Json::JsonView jsonValue);
+    ProcessorParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

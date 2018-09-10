@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -48,43 +49,64 @@ namespace Model
   {
   public:
     RedshiftDestinationUpdate();
-    RedshiftDestinationUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    RedshiftDestinationUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RedshiftDestinationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    RedshiftDestinationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline RedshiftDestinationUpdate& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline RedshiftDestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline RedshiftDestinationUpdate& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -224,32 +246,32 @@ namespace Model
 
 
     /**
-     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
-     * Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline const RedshiftRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
-     * Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline void SetRetryOptions(const RedshiftRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
-     * Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline void SetRetryOptions(RedshiftRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
 
     /**
-     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
-     * Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline RedshiftDestinationUpdate& WithRetryOptions(const RedshiftRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>The retry behavior in case Kinesis Firehose is unable to deliver documents to
-     * Amazon Redshift. Default value is 3600 (60 minutes).</p>
+     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
+     * documents to Amazon Redshift. Default value is 3600 (60 minutes).</p>
      */
     inline RedshiftDestinationUpdate& WithRetryOptions(RedshiftRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
 
@@ -257,7 +279,7 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon Redshift
+     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
      * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
      * compression formats.</p>
      */
@@ -266,7 +288,7 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon Redshift
+     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
      * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
      * compression formats.</p>
      */
@@ -275,7 +297,7 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon Redshift
+     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
      * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
      * compression formats.</p>
      */
@@ -284,7 +306,7 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon Redshift
+     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
      * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
      * compression formats.</p>
      */
@@ -293,7 +315,7 @@ namespace Model
     /**
      * <p>The Amazon S3 destination.</p> <p>The compression formats <code>SNAPPY</code>
      * or <code>ZIP</code> cannot be specified in
-     * <b>RedshiftDestinationUpdate.S3Update</b> because the Amazon Redshift
+     * <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift
      * <code>COPY</code> operation that reads from the S3 bucket doesn't support these
      * compression formats.</p>
      */
@@ -379,27 +401,27 @@ namespace Model
 
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline RedshiftDestinationUpdate& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
 
     /**
-     * <p>The CloudWatch logging options for your delivery stream.</p>
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
     inline RedshiftDestinationUpdate& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 

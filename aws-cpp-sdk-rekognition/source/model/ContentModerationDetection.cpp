@@ -35,7 +35,7 @@ ContentModerationDetection::ContentModerationDetection() :
 {
 }
 
-ContentModerationDetection::ContentModerationDetection(const JsonValue& jsonValue) : 
+ContentModerationDetection::ContentModerationDetection(JsonView jsonValue) : 
     m_timestamp(0),
     m_timestampHasBeenSet(false),
     m_moderationLabelHasBeenSet(false)
@@ -43,7 +43,7 @@ ContentModerationDetection::ContentModerationDetection(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-ContentModerationDetection& ContentModerationDetection::operator =(const JsonValue& jsonValue)
+ContentModerationDetection& ContentModerationDetection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Timestamp"))
   {

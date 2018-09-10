@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -33,8 +34,14 @@ namespace Model
 {
 
   /**
-   * <p>Information about an Amazon S3 bucket to write instance-level logs
-   * to.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about an Amazon S3 bucket to write instance-level logs to.</p>
+   * <note> <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket
+   * to contain logs, instead use the <code>OutputS3BucketName</code> and
+   * <code>OutputS3KeyPrefix</code> options in the
+   * <code>TaskInvocationParameters</code> structure. For information about how
+   * Systems Manager handles these options for the supported Maintenance Window task
+   * types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
+   * </note><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LoggingInfo">AWS API
    * Reference</a></p>
    */
@@ -42,8 +49,8 @@ namespace Model
   {
   public:
     LoggingInfo();
-    LoggingInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    LoggingInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LoggingInfo(Aws::Utils::Json::JsonView jsonValue);
+    LoggingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

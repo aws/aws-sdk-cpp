@@ -26,10 +26,12 @@ CreateChannelRequest::CreateChannelRequest() :
     m_destinationsHasBeenSet(false),
     m_encoderSettingsHasBeenSet(false),
     m_inputAttachmentsHasBeenSet(false),
+    m_inputSpecificationHasBeenSet(false),
+    m_logLevel(LogLevel::NOT_SET),
+    m_logLevelHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_requestId(Aws::Utils::UUID::RandomUUID()),
     m_requestIdHasBeenSet(true),
-    m_reservedHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
 }
@@ -66,6 +68,17 @@ Aws::String CreateChannelRequest::SerializePayload() const
 
   }
 
+  if(m_inputSpecificationHasBeenSet)
+  {
+   payload.WithObject("inputSpecification", m_inputSpecification.Jsonize());
+
+  }
+
+  if(m_logLevelHasBeenSet)
+  {
+   payload.WithString("logLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -78,19 +91,13 @@ Aws::String CreateChannelRequest::SerializePayload() const
 
   }
 
-  if(m_reservedHasBeenSet)
-  {
-   payload.WithString("reserved", m_reserved);
-
-  }
-
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

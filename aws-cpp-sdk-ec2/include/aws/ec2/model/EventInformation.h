@@ -102,7 +102,7 @@ namespace Model
      * <li> <p> <code>cancelled</code> - The Spot Fleet is canceled and has no running
      * Spot Instances. The Spot Fleet will be deleted two days after its instances were
      * terminated.</p> </li> <li> <p> <code>cancelled_running</code> - The Spot Fleet
-     * is canceled and will not launch additional Spot Instances, but its existing Spot
+     * is canceled and does not launch additional Spot Instances. Existing Spot
      * Instances continue to run until they are interrupted or terminated.</p> </li>
      * <li> <p> <code>cancelled_terminating</code> - The Spot Fleet is canceled and its
      * Spot Instances are terminating.</p> </li> <li> <p> <code>expired</code> - The
@@ -146,7 +146,7 @@ namespace Model
      * <li> <p> <code>cancelled</code> - The Spot Fleet is canceled and has no running
      * Spot Instances. The Spot Fleet will be deleted two days after its instances were
      * terminated.</p> </li> <li> <p> <code>cancelled_running</code> - The Spot Fleet
-     * is canceled and will not launch additional Spot Instances, but its existing Spot
+     * is canceled and does not launch additional Spot Instances. Existing Spot
      * Instances continue to run until they are interrupted or terminated.</p> </li>
      * <li> <p> <code>cancelled_terminating</code> - The Spot Fleet is canceled and its
      * Spot Instances are terminating.</p> </li> <li> <p> <code>expired</code> - The
@@ -190,7 +190,7 @@ namespace Model
      * <li> <p> <code>cancelled</code> - The Spot Fleet is canceled and has no running
      * Spot Instances. The Spot Fleet will be deleted two days after its instances were
      * terminated.</p> </li> <li> <p> <code>cancelled_running</code> - The Spot Fleet
-     * is canceled and will not launch additional Spot Instances, but its existing Spot
+     * is canceled and does not launch additional Spot Instances. Existing Spot
      * Instances continue to run until they are interrupted or terminated.</p> </li>
      * <li> <p> <code>cancelled_terminating</code> - The Spot Fleet is canceled and its
      * Spot Instances are terminating.</p> </li> <li> <p> <code>expired</code> - The
@@ -234,7 +234,7 @@ namespace Model
      * <li> <p> <code>cancelled</code> - The Spot Fleet is canceled and has no running
      * Spot Instances. The Spot Fleet will be deleted two days after its instances were
      * terminated.</p> </li> <li> <p> <code>cancelled_running</code> - The Spot Fleet
-     * is canceled and will not launch additional Spot Instances, but its existing Spot
+     * is canceled and does not launch additional Spot Instances. Existing Spot
      * Instances continue to run until they are interrupted or terminated.</p> </li>
      * <li> <p> <code>cancelled_terminating</code> - The Spot Fleet is canceled and its
      * Spot Instances are terminating.</p> </li> <li> <p> <code>expired</code> - The
@@ -278,7 +278,7 @@ namespace Model
      * <li> <p> <code>cancelled</code> - The Spot Fleet is canceled and has no running
      * Spot Instances. The Spot Fleet will be deleted two days after its instances were
      * terminated.</p> </li> <li> <p> <code>cancelled_running</code> - The Spot Fleet
-     * is canceled and will not launch additional Spot Instances, but its existing Spot
+     * is canceled and does not launch additional Spot Instances. Existing Spot
      * Instances continue to run until they are interrupted or terminated.</p> </li>
      * <li> <p> <code>cancelled_terminating</code> - The Spot Fleet is canceled and its
      * Spot Instances are terminating.</p> </li> <li> <p> <code>expired</code> - The
@@ -322,7 +322,7 @@ namespace Model
      * <li> <p> <code>cancelled</code> - The Spot Fleet is canceled and has no running
      * Spot Instances. The Spot Fleet will be deleted two days after its instances were
      * terminated.</p> </li> <li> <p> <code>cancelled_running</code> - The Spot Fleet
-     * is canceled and will not launch additional Spot Instances, but its existing Spot
+     * is canceled and does not launch additional Spot Instances. Existing Spot
      * Instances continue to run until they are interrupted or terminated.</p> </li>
      * <li> <p> <code>cancelled_terminating</code> - The Spot Fleet is canceled and its
      * Spot Instances are terminating.</p> </li> <li> <p> <code>expired</code> - The
@@ -366,7 +366,7 @@ namespace Model
      * <li> <p> <code>cancelled</code> - The Spot Fleet is canceled and has no running
      * Spot Instances. The Spot Fleet will be deleted two days after its instances were
      * terminated.</p> </li> <li> <p> <code>cancelled_running</code> - The Spot Fleet
-     * is canceled and will not launch additional Spot Instances, but its existing Spot
+     * is canceled and does not launch additional Spot Instances. Existing Spot
      * Instances continue to run until they are interrupted or terminated.</p> </li>
      * <li> <p> <code>cancelled_terminating</code> - The Spot Fleet is canceled and its
      * Spot Instances are terminating.</p> </li> <li> <p> <code>expired</code> - The

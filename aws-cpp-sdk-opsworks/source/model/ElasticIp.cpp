@@ -37,7 +37,7 @@ ElasticIp::ElasticIp() :
 {
 }
 
-ElasticIp::ElasticIp(const JsonValue& jsonValue) : 
+ElasticIp::ElasticIp(JsonView jsonValue) : 
     m_ipHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_domainHasBeenSet(false),
@@ -47,7 +47,7 @@ ElasticIp::ElasticIp(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ElasticIp& ElasticIp::operator =(const JsonValue& jsonValue)
+ElasticIp& ElasticIp::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Ip"))
   {

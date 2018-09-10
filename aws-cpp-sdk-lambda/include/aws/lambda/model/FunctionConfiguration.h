@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lambda
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     FunctionConfiguration();
-    FunctionConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    FunctionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FunctionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    FunctionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -500,31 +501,31 @@ namespace Model
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::move(value); }
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline FunctionConfiguration& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic.</p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline FunctionConfiguration& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
 
@@ -671,6 +672,42 @@ namespace Model
      */
     inline FunctionConfiguration& WithMasterArn(const char* value) { SetMasterArn(value); return *this;}
 
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline FunctionConfiguration& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline FunctionConfiguration& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline FunctionConfiguration& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -726,6 +763,9 @@ namespace Model
 
     Aws::String m_masterArn;
     bool m_masterArnHasBeenSet;
+
+    Aws::String m_revisionId;
+    bool m_revisionIdHasBeenSet;
   };
 
 } // namespace Model

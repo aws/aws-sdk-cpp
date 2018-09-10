@@ -32,12 +32,12 @@ BatchAttachPolicyResponse::BatchAttachPolicyResponse()
 {
 }
 
-BatchAttachPolicyResponse::BatchAttachPolicyResponse(const JsonValue& jsonValue)
+BatchAttachPolicyResponse::BatchAttachPolicyResponse(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-BatchAttachPolicyResponse& BatchAttachPolicyResponse::operator =(const JsonValue& jsonValue)
+BatchAttachPolicyResponse& BatchAttachPolicyResponse::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

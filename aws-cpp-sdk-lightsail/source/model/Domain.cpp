@@ -40,7 +40,7 @@ Domain::Domain() :
 {
 }
 
-Domain::Domain(const JsonValue& jsonValue) : 
+Domain::Domain(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_supportCodeHasBeenSet(false),
@@ -53,7 +53,7 @@ Domain::Domain(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Domain& Domain::operator =(const JsonValue& jsonValue)
+Domain& Domain::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -99,7 +99,7 @@ Domain& Domain::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("domainEntries"))
   {
-    Array<JsonValue> domainEntriesJsonList = jsonValue.GetArray("domainEntries");
+    Array<JsonView> domainEntriesJsonList = jsonValue.GetArray("domainEntries");
     for(unsigned domainEntriesIndex = 0; domainEntriesIndex < domainEntriesJsonList.GetLength(); ++domainEntriesIndex)
     {
       m_domainEntries.push_back(domainEntriesJsonList[domainEntriesIndex].AsObject());

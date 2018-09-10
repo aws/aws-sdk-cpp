@@ -27,6 +27,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 PostContentResult::PostContentResult() : 
+    m_messageFormat(MessageFormatType::NOT_SET),
     m_dialogState(DialogState::NOT_SET)
 {
 }
@@ -37,6 +38,7 @@ PostContentResult::PostContentResult(PostContentResult&& toMove) :
     m_slots(std::move(toMove.m_slots)),
     m_sessionAttributes(std::move(toMove.m_sessionAttributes)),
     m_message(std::move(toMove.m_message)),
+    m_messageFormat(toMove.m_messageFormat),
     m_dialogState(toMove.m_dialogState),
     m_slotToElicit(std::move(toMove.m_slotToElicit)),
     m_inputTranscript(std::move(toMove.m_inputTranscript)),
@@ -56,6 +58,7 @@ PostContentResult& PostContentResult::operator=(PostContentResult&& toMove)
    m_slots = std::move(toMove.m_slots);
    m_sessionAttributes = std::move(toMove.m_sessionAttributes);
    m_message = std::move(toMove.m_message);
+   m_messageFormat = toMove.m_messageFormat;
    m_dialogState = toMove.m_dialogState;
    m_slotToElicit = std::move(toMove.m_slotToElicit);
    m_inputTranscript = std::move(toMove.m_inputTranscript);
@@ -65,6 +68,7 @@ PostContentResult& PostContentResult::operator=(PostContentResult&& toMove)
 }
 
 PostContentResult::PostContentResult(Aws::AmazonWebServiceResult<ResponseStream>&& result) : 
+    m_messageFormat(MessageFormatType::NOT_SET),
     m_dialogState(DialogState::NOT_SET)
 {
   *this = std::move(result);
@@ -103,6 +107,12 @@ PostContentResult& PostContentResult::operator =(Aws::AmazonWebServiceResult<Res
   if(messageIter != headers.end())
   {
     m_message = messageIter->second;
+  }
+
+  const auto& messageFormatIter = headers.find("x-amz-lex-message-format");
+  if(messageFormatIter != headers.end())
+  {
+    m_messageFormat = MessageFormatTypeMapper::GetMessageFormatTypeForName(messageFormatIter->second);
   }
 
   const auto& dialogStateIter = headers.find("x-amz-lex-dialog-state");

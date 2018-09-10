@@ -64,7 +64,7 @@ BurnInDestinationSettings::BurnInDestinationSettings() :
 {
 }
 
-BurnInDestinationSettings::BurnInDestinationSettings(const JsonValue& jsonValue) : 
+BurnInDestinationSettings::BurnInDestinationSettings(JsonView jsonValue) : 
     m_alignment(BurnInAlignment::NOT_SET),
     m_alignmentHasBeenSet(false),
     m_backgroundColor(BurnInBackgroundColor::NOT_SET),
@@ -101,7 +101,7 @@ BurnInDestinationSettings::BurnInDestinationSettings(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-BurnInDestinationSettings& BurnInDestinationSettings::operator =(const JsonValue& jsonValue)
+BurnInDestinationSettings& BurnInDestinationSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("alignment"))
   {

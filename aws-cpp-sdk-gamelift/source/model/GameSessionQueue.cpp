@@ -38,7 +38,7 @@ GameSessionQueue::GameSessionQueue() :
 {
 }
 
-GameSessionQueue::GameSessionQueue(const JsonValue& jsonValue) : 
+GameSessionQueue::GameSessionQueue(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_gameSessionQueueArnHasBeenSet(false),
     m_timeoutInSeconds(0),
@@ -49,7 +49,7 @@ GameSessionQueue::GameSessionQueue(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GameSessionQueue& GameSessionQueue::operator =(const JsonValue& jsonValue)
+GameSessionQueue& GameSessionQueue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -74,7 +74,7 @@ GameSessionQueue& GameSessionQueue::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("PlayerLatencyPolicies"))
   {
-    Array<JsonValue> playerLatencyPoliciesJsonList = jsonValue.GetArray("PlayerLatencyPolicies");
+    Array<JsonView> playerLatencyPoliciesJsonList = jsonValue.GetArray("PlayerLatencyPolicies");
     for(unsigned playerLatencyPoliciesIndex = 0; playerLatencyPoliciesIndex < playerLatencyPoliciesJsonList.GetLength(); ++playerLatencyPoliciesIndex)
     {
       m_playerLatencyPolicies.push_back(playerLatencyPoliciesJsonList[playerLatencyPoliciesIndex].AsObject());
@@ -84,7 +84,7 @@ GameSessionQueue& GameSessionQueue::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Destinations"))
   {
-    Array<JsonValue> destinationsJsonList = jsonValue.GetArray("Destinations");
+    Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());

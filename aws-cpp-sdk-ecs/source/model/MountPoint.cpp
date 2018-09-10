@@ -36,7 +36,7 @@ MountPoint::MountPoint() :
 {
 }
 
-MountPoint::MountPoint(const JsonValue& jsonValue) : 
+MountPoint::MountPoint(JsonView jsonValue) : 
     m_sourceVolumeHasBeenSet(false),
     m_containerPathHasBeenSet(false),
     m_readOnly(false),
@@ -45,7 +45,7 @@ MountPoint::MountPoint(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MountPoint& MountPoint::operator =(const JsonValue& jsonValue)
+MountPoint& MountPoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("sourceVolume"))
   {

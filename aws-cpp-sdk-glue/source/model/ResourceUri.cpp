@@ -35,7 +35,7 @@ ResourceUri::ResourceUri() :
 {
 }
 
-ResourceUri::ResourceUri(const JsonValue& jsonValue) : 
+ResourceUri::ResourceUri(JsonView jsonValue) : 
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_uriHasBeenSet(false)
@@ -43,7 +43,7 @@ ResourceUri::ResourceUri(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceUri& ResourceUri::operator =(const JsonValue& jsonValue)
+ResourceUri& ResourceUri::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceType"))
   {

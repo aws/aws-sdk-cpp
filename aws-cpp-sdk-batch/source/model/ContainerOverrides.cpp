@@ -38,7 +38,7 @@ ContainerOverrides::ContainerOverrides() :
 {
 }
 
-ContainerOverrides::ContainerOverrides(const JsonValue& jsonValue) : 
+ContainerOverrides::ContainerOverrides(JsonView jsonValue) : 
     m_vcpus(0),
     m_vcpusHasBeenSet(false),
     m_memory(0),
@@ -49,7 +49,7 @@ ContainerOverrides::ContainerOverrides(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ContainerOverrides& ContainerOverrides::operator =(const JsonValue& jsonValue)
+ContainerOverrides& ContainerOverrides::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("vcpus"))
   {
@@ -67,7 +67,7 @@ ContainerOverrides& ContainerOverrides::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("command"))
   {
-    Array<JsonValue> commandJsonList = jsonValue.GetArray("command");
+    Array<JsonView> commandJsonList = jsonValue.GetArray("command");
     for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
     {
       m_command.push_back(commandJsonList[commandIndex].AsString());
@@ -77,7 +77,7 @@ ContainerOverrides& ContainerOverrides::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("environment"))
   {
-    Array<JsonValue> environmentJsonList = jsonValue.GetArray("environment");
+    Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
     for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
     {
       m_environment.push_back(environmentJsonList[environmentIndex].AsObject());

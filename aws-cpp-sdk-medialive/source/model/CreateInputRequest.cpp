@@ -88,7 +88,7 @@ Aws::String CreateInputRequest::SerializePayload() const
    payload.WithString("type", InputTypeMapper::GetNameForInputType(m_type));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

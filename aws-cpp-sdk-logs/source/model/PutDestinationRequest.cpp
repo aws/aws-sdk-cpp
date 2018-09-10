@@ -51,7 +51,7 @@ Aws::String PutDestinationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutDestinationRequest::GetRequestSpecificHeaders() const

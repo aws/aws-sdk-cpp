@@ -115,17 +115,20 @@ namespace Model
 
 
     /**
-     * <p>The number of traces that were processed to get this set of summaries.</p>
+     * <p>The total number of traces processed, including traces that did not match the
+     * specified filter expression.</p>
      */
     inline long long GetTracesProcessedCount() const{ return m_tracesProcessedCount; }
 
     /**
-     * <p>The number of traces that were processed to get this set of summaries.</p>
+     * <p>The total number of traces processed, including traces that did not match the
+     * specified filter expression.</p>
      */
     inline void SetTracesProcessedCount(long long value) { m_tracesProcessedCount = value; }
 
     /**
-     * <p>The number of traces that were processed to get this set of summaries.</p>
+     * <p>The total number of traces processed, including traces that did not match the
+     * specified filter expression.</p>
      */
     inline GetTraceSummariesResult& WithTracesProcessedCount(long long value) { SetTracesProcessedCount(value); return *this;}
 

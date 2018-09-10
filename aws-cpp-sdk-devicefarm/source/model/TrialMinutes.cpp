@@ -36,7 +36,7 @@ TrialMinutes::TrialMinutes() :
 {
 }
 
-TrialMinutes::TrialMinutes(const JsonValue& jsonValue) : 
+TrialMinutes::TrialMinutes(JsonView jsonValue) : 
     m_total(0.0),
     m_totalHasBeenSet(false),
     m_remaining(0.0),
@@ -45,7 +45,7 @@ TrialMinutes::TrialMinutes(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TrialMinutes& TrialMinutes::operator =(const JsonValue& jsonValue)
+TrialMinutes& TrialMinutes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("total"))
   {

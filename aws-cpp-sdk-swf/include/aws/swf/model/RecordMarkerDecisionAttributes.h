@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SWF
@@ -55,8 +56,8 @@ namespace Model
   {
   public:
     RecordMarkerDecisionAttributes();
-    RecordMarkerDecisionAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    RecordMarkerDecisionAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RecordMarkerDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
+    RecordMarkerDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

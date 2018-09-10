@@ -309,7 +309,11 @@ namespace Model
      * <p>The number of hours that you want to retain the data in the stream. Kinesis
      * Video Streams retains the data in a data store that is associated with the
      * stream.</p> <p>The default value is 0, indicating that the stream does not
-     * persist data.</p>
+     * persist data.</p> <p>When the <code>DataRetentionInHours</code> value is 0,
+     * consumers can still consume the fragments that remain in the service host
+     * buffer, which has a retention time limit of 5 minutes and a retention memory
+     * limit of 200 MB. Fragments are removed from the buffer when either limit is
+     * reached.</p>
      */
     inline int GetDataRetentionInHours() const{ return m_dataRetentionInHours; }
 
@@ -317,7 +321,11 @@ namespace Model
      * <p>The number of hours that you want to retain the data in the stream. Kinesis
      * Video Streams retains the data in a data store that is associated with the
      * stream.</p> <p>The default value is 0, indicating that the stream does not
-     * persist data.</p>
+     * persist data.</p> <p>When the <code>DataRetentionInHours</code> value is 0,
+     * consumers can still consume the fragments that remain in the service host
+     * buffer, which has a retention time limit of 5 minutes and a retention memory
+     * limit of 200 MB. Fragments are removed from the buffer when either limit is
+     * reached.</p>
      */
     inline void SetDataRetentionInHours(int value) { m_dataRetentionInHoursHasBeenSet = true; m_dataRetentionInHours = value; }
 
@@ -325,7 +333,11 @@ namespace Model
      * <p>The number of hours that you want to retain the data in the stream. Kinesis
      * Video Streams retains the data in a data store that is associated with the
      * stream.</p> <p>The default value is 0, indicating that the stream does not
-     * persist data.</p>
+     * persist data.</p> <p>When the <code>DataRetentionInHours</code> value is 0,
+     * consumers can still consume the fragments that remain in the service host
+     * buffer, which has a retention time limit of 5 minutes and a retention memory
+     * limit of 200 MB. Fragments are removed from the buffer when either limit is
+     * reached.</p>
      */
     inline CreateStreamRequest& WithDataRetentionInHours(int value) { SetDataRetentionInHours(value); return *this;}
 

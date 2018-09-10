@@ -51,73 +51,73 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis data stream.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
 
     /**
-     * <p>The name of the Amazon Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis data stream.</p>
      */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
-     * <p>The name of the Amazon Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis data stream.</p>
      */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis data stream.</p>
      */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
 
     /**
-     * <p>The name of the Amazon Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis data stream.</p>
      */
     inline GetShardIteratorRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis data stream.</p>
      */
     inline GetShardIteratorRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon Kinesis stream.</p>
+     * <p>The name of the Amazon Kinesis data stream.</p>
      */
     inline GetShardIteratorRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
 
     /**
-     * <p>The shard ID of the Kinesis Streams shard to get the iterator for.</p>
+     * <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
      */
     inline const Aws::String& GetShardId() const{ return m_shardId; }
 
     /**
-     * <p>The shard ID of the Kinesis Streams shard to get the iterator for.</p>
+     * <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
      */
     inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
 
     /**
-     * <p>The shard ID of the Kinesis Streams shard to get the iterator for.</p>
+     * <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
      */
     inline void SetShardId(Aws::String&& value) { m_shardIdHasBeenSet = true; m_shardId = std::move(value); }
 
     /**
-     * <p>The shard ID of the Kinesis Streams shard to get the iterator for.</p>
+     * <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
      */
     inline void SetShardId(const char* value) { m_shardIdHasBeenSet = true; m_shardId.assign(value); }
 
     /**
-     * <p>The shard ID of the Kinesis Streams shard to get the iterator for.</p>
+     * <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
      */
     inline GetShardIteratorRequest& WithShardId(const Aws::String& value) { SetShardId(value); return *this;}
 
     /**
-     * <p>The shard ID of the Kinesis Streams shard to get the iterator for.</p>
+     * <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
      */
     inline GetShardIteratorRequest& WithShardId(Aws::String&& value) { SetShardId(std::move(value)); return *this;}
 
     /**
-     * <p>The shard ID of the Kinesis Streams shard to get the iterator for.</p>
+     * <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
      */
     inline GetShardIteratorRequest& WithShardId(const char* value) { SetShardId(value); return *this;}
 

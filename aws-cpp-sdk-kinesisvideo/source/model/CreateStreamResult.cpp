@@ -37,7 +37,7 @@ CreateStreamResult::CreateStreamResult(const Aws::AmazonWebServiceResult<JsonVal
 
 CreateStreamResult& CreateStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StreamARN"))
   {
     m_streamARN = jsonValue.GetString("StreamARN");

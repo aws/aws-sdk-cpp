@@ -35,7 +35,7 @@ AudioLanguageSelection::AudioLanguageSelection() :
 {
 }
 
-AudioLanguageSelection::AudioLanguageSelection(const JsonValue& jsonValue) : 
+AudioLanguageSelection::AudioLanguageSelection(JsonView jsonValue) : 
     m_languageCodeHasBeenSet(false),
     m_languageSelectionPolicy(AudioLanguageSelectionPolicy::NOT_SET),
     m_languageSelectionPolicyHasBeenSet(false)
@@ -43,7 +43,7 @@ AudioLanguageSelection::AudioLanguageSelection(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AudioLanguageSelection& AudioLanguageSelection::operator =(const JsonValue& jsonValue)
+AudioLanguageSelection& AudioLanguageSelection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("languageCode"))
   {

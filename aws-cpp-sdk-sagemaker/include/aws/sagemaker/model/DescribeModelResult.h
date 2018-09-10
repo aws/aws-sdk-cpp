@@ -17,6 +17,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ContainerDefinition.h>
+#include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -160,6 +161,37 @@ namespace Model
 
 
     /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
+     * to. For more information, see <a>host-vpc</a> </p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
+     * to. For more information, see <a>host-vpc</a> </p>
+     */
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
+     * to. For more information, see <a>host-vpc</a> </p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
+     * to. For more information, see <a>host-vpc</a> </p>
+     */
+    inline DescribeModelResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
+     * to. For more information, see <a>host-vpc</a> </p>
+     */
+    inline DescribeModelResult& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>A timestamp that shows when the model was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
@@ -227,6 +259,8 @@ namespace Model
     ContainerDefinition m_primaryContainer;
 
     Aws::String m_executionRoleArn;
+
+    VpcConfig m_vpcConfig;
 
     Aws::Utils::DateTime m_creationTime;
 

@@ -66,7 +66,7 @@ Aws::String CreateDataSourceFromRDSRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateDataSourceFromRDSRequest::GetRequestSpecificHeaders() const

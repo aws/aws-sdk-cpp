@@ -37,10 +37,10 @@ DescribeFleetPortSettingsResult::DescribeFleetPortSettingsResult(const Aws::Amaz
 
 DescribeFleetPortSettingsResult& DescribeFleetPortSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InboundPermissions"))
   {
-    Array<JsonValue> inboundPermissionsJsonList = jsonValue.GetArray("InboundPermissions");
+    Array<JsonView> inboundPermissionsJsonList = jsonValue.GetArray("InboundPermissions");
     for(unsigned inboundPermissionsIndex = 0; inboundPermissionsIndex < inboundPermissionsJsonList.GetLength(); ++inboundPermissionsIndex)
     {
       m_inboundPermissions.push_back(inboundPermissionsJsonList[inboundPermissionsIndex].AsObject());

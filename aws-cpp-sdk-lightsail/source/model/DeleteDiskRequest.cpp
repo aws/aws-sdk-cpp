@@ -37,7 +37,7 @@ Aws::String DeleteDiskRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteDiskRequest::GetRequestSpecificHeaders() const

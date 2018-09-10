@@ -28,6 +28,7 @@
 #include <aws/rds/model/OptionGroupMembership.h>
 #include <aws/rds/model/DBInstanceStatusInfo.h>
 #include <aws/rds/model/DomainMembership.h>
+#include <aws/rds/model/ProcessorFeature.h>
 #include <utility>
 
 namespace Aws
@@ -966,50 +967,74 @@ namespace Model
 
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReadReplicaDBClusterIdentifiers() const{ return m_readReplicaDBClusterIdentifiers; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline void SetReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = value; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline void SetReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = std::move(value); }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { SetReadReplicaDBClusterIdentifiers(value); return *this;}
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { SetReadReplicaDBClusterIdentifiers(std::move(value)); return *this;}
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const Aws::String& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(Aws::String&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Contains one or more identifiers of Aurora DB clusters that are Read Replicas
-     * of this DB instance.</p>
+     * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
+     * instance is replicated as a Read Replica. For example, when you create an Aurora
+     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora Read Replica is shown. This output does not contain information about
+     * cross region Aurora Read Replicas.</p>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const char* value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
 
@@ -1192,15 +1217,7 @@ namespace Model
      * <p>Specifies the accessibility options for the DB instance. A value of true
      * specifies an Internet-facing instance with a publicly resolvable DNS name, which
      * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
+     * with a DNS name that resolves to a private IP address.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
@@ -1208,15 +1225,7 @@ namespace Model
      * <p>Specifies the accessibility options for the DB instance. A value of true
      * specifies an Internet-facing instance with a publicly resolvable DNS name, which
      * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
+     * with a DNS name that resolves to a private IP address.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
@@ -1224,15 +1233,7 @@ namespace Model
      * <p>Specifies the accessibility options for the DB instance. A value of true
      * specifies an Internet-facing instance with a publicly resolvable DNS name, which
      * resolves to a public IP address. A value of false specifies an internal instance
-     * with a DNS name that resolves to a private IP address.</p> <p>Default: The
-     * default behavior varies depending on whether a VPC has been requested or not.
-     * The following list shows the default behavior in each case.</p> <ul> <li> <p>
-     * <b>Default VPC:</b>true</p> </li> <li> <p> <b>VPC:</b>false</p> </li> </ul>
-     * <p>If no DB subnet group has been specified as part of the request and the
-     * PubliclyAccessible value has not been set, the DB instance is publicly
-     * accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is
-     * private.</p>
+     * with a DNS name that resolves to a private IP address.</p>
      */
     inline DBInstance& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
@@ -1737,8 +1738,9 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>. </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
+     * Guide</i>. </p>
      */
     inline int GetPromotionTier() const{ return m_promotionTier; }
 
@@ -1746,8 +1748,9 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>. </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
+     * Guide</i>. </p>
      */
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
@@ -1755,8 +1758,9 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html#Aurora.Managing.FaultTolerance">
-     * Fault Tolerance for an Aurora DB Cluster</a>. </p>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
+     * Guide</i>. </p>
      */
     inline DBInstance& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
 
@@ -1951,52 +1955,138 @@ namespace Model
 
 
     /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years). </p>
+     */
+    inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years). </p>
+     */
+    inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years). </p>
+     */
+    inline DBInstance& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
+
+
+    /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::Vector<Aws::String>& GetEnabledCloudwatchLogsExports() const{ return m_enabledCloudwatchLogsExports; }
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = value; }
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = std::move(value); }
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& WithEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnabledCloudwatchLogsExports(value); return *this;}
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& WithEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnabledCloudwatchLogsExports(std::move(value)); return *this;}
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(const Aws::String& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(Aws::String&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of log types that this DB instance is configured to export to
-     * CloudWatch Logs.</p>
+     * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
+     * log types for each DB engine, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
+
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline const Aws::Vector<ProcessorFeature>& GetProcessorFeatures() const{ return m_processorFeatures; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline void SetProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = value; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline void SetProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = std::move(value); }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline DBInstance& WithProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { SetProcessorFeatures(value); return *this;}
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline DBInstance& WithProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { SetProcessorFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline DBInstance& AddProcessorFeatures(const ProcessorFeature& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(value); return *this; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline DBInstance& AddProcessorFeatures(ProcessorFeature&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -2153,8 +2243,14 @@ namespace Model
     Aws::String m_performanceInsightsKMSKeyId;
     bool m_performanceInsightsKMSKeyIdHasBeenSet;
 
+    int m_performanceInsightsRetentionPeriod;
+    bool m_performanceInsightsRetentionPeriodHasBeenSet;
+
     Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
     bool m_enabledCloudwatchLogsExportsHasBeenSet;
+
+    Aws::Vector<ProcessorFeature> m_processorFeatures;
+    bool m_processorFeaturesHasBeenSet;
   };
 
 } // namespace Model

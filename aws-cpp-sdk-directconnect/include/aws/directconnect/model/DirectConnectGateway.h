@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectConnect
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     DirectConnectGateway();
-    DirectConnectGateway(const Aws::Utils::Json::JsonValue& jsonValue);
-    DirectConnectGateway& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DirectConnectGateway(Aws::Utils::Json::JsonView jsonValue);
+    DirectConnectGateway& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

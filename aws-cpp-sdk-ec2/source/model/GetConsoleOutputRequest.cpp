@@ -23,7 +23,9 @@ using namespace Aws::Utils;
 GetConsoleOutputRequest::GetConsoleOutputRequest() : 
     m_instanceIdHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_latest(false),
+    m_latestHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,11 @@ Aws::String GetConsoleOutputRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_latestHasBeenSet)
+  {
+    ss << "Latest=" << std::boolalpha << m_latest << "&";
   }
 
   ss << "Version=2016-11-15";

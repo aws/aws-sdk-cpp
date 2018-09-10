@@ -33,6 +33,7 @@ namespace Aws
         static const int SRV_HASH = HashingUtils::HashString("SRV");
         static const int A_HASH = HashingUtils::HashString("A");
         static const int AAAA_HASH = HashingUtils::HashString("AAAA");
+        static const int CNAME_HASH = HashingUtils::HashString("CNAME");
 
 
         RecordType GetRecordTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == AAAA_HASH)
           {
             return RecordType::AAAA;
+          }
+          else if (hashCode == CNAME_HASH)
+          {
+            return RecordType::CNAME;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "A";
           case RecordType::AAAA:
             return "AAAA";
+          case RecordType::CNAME:
+            return "CNAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

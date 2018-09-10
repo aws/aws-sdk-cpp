@@ -36,7 +36,7 @@ ServerEvent::ServerEvent() :
 {
 }
 
-ServerEvent::ServerEvent(const JsonValue& jsonValue) : 
+ServerEvent::ServerEvent(JsonView jsonValue) : 
     m_createdAtHasBeenSet(false),
     m_serverNameHasBeenSet(false),
     m_messageHasBeenSet(false),
@@ -45,7 +45,7 @@ ServerEvent::ServerEvent(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ServerEvent& ServerEvent::operator =(const JsonValue& jsonValue)
+ServerEvent& ServerEvent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CreatedAt"))
   {

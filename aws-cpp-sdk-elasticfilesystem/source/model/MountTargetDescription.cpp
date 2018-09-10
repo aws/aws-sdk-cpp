@@ -40,7 +40,7 @@ MountTargetDescription::MountTargetDescription() :
 {
 }
 
-MountTargetDescription::MountTargetDescription(const JsonValue& jsonValue) : 
+MountTargetDescription::MountTargetDescription(JsonView jsonValue) : 
     m_ownerIdHasBeenSet(false),
     m_mountTargetIdHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
@@ -53,7 +53,7 @@ MountTargetDescription::MountTargetDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MountTargetDescription& MountTargetDescription::operator =(const JsonValue& jsonValue)
+MountTargetDescription& MountTargetDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OwnerId"))
   {

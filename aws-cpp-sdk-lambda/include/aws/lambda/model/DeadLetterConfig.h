@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lambda
@@ -33,8 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-   * Amazon SQS queue or Amazon SNS topic.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you
+   * specify as your Dead Letter Queue (DLQ). For more information, see <a>dlq</a>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeadLetterConfig">AWS
    * API Reference</a></p>
    */
@@ -42,50 +44,57 @@ namespace Model
   {
   public:
     DeadLetterConfig();
-    DeadLetterConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    DeadLetterConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DeadLetterConfig(Aws::Utils::Json::JsonView jsonValue);
+    DeadLetterConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you
-     * specify as your Dead Letter Queue (DLQ).</p>
+     * specify as your Dead Letter Queue (DLQ). <a>dlq</a>. For more information, see
+     * <a>dlq</a>. </p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you
-     * specify as your Dead Letter Queue (DLQ).</p>
+     * specify as your Dead Letter Queue (DLQ). <a>dlq</a>. For more information, see
+     * <a>dlq</a>. </p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you
-     * specify as your Dead Letter Queue (DLQ).</p>
+     * specify as your Dead Letter Queue (DLQ). <a>dlq</a>. For more information, see
+     * <a>dlq</a>. </p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you
-     * specify as your Dead Letter Queue (DLQ).</p>
+     * specify as your Dead Letter Queue (DLQ). <a>dlq</a>. For more information, see
+     * <a>dlq</a>. </p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you
-     * specify as your Dead Letter Queue (DLQ).</p>
+     * specify as your Dead Letter Queue (DLQ). <a>dlq</a>. For more information, see
+     * <a>dlq</a>. </p>
      */
     inline DeadLetterConfig& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you
-     * specify as your Dead Letter Queue (DLQ).</p>
+     * specify as your Dead Letter Queue (DLQ). <a>dlq</a>. For more information, see
+     * <a>dlq</a>. </p>
      */
     inline DeadLetterConfig& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic you
-     * specify as your Dead Letter Queue (DLQ).</p>
+     * specify as your Dead Letter Queue (DLQ). <a>dlq</a>. For more information, see
+     * <a>dlq</a>. </p>
      */
     inline DeadLetterConfig& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 

@@ -45,7 +45,7 @@ Aws::String UpdateQueueRequest::SerializePayload() const
    payload.WithString("status", QueueStatusMapper::GetNameForQueueStatus(m_status));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

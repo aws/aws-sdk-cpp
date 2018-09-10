@@ -25,7 +25,6 @@ namespace Aws
     namespace Client
     {
         enum class CoreErrors;
-
         /**
          * Container for Error enumerations with additional exception information. Name, message, retryable etc....
          */
@@ -53,7 +52,7 @@ namespace Aws
                 m_errorType(static_cast<ERROR_TYPE>(rhs.GetErrorType())), m_exceptionName(rhs.GetExceptionName()), 
                 m_message(rhs.GetMessage()), m_responseHeaders(rhs.GetResponseHeaders()), 
                 m_responseCode(rhs.GetResponseCode()), m_isRetryable(rhs.ShouldRetry())
-            {}          
+            {}
 
             /**
              * Gets underlying errorType.
@@ -108,6 +107,21 @@ namespace Aws
             Aws::Http::HttpResponseCode m_responseCode;
             bool m_isRetryable;
         };
+
+        template<typename T>
+        Aws::OStream& operator << (Aws::OStream& s, const AWSError<T>& e)
+        {
+            s << "HTTP response code: " << static_cast<int>(e.GetResponseCode()) << "\n"
+              << "Exception name: " << e.GetExceptionName() << "\n"
+              << "Error message: " << e.GetMessage() << "\n"
+              << e.GetResponseHeaders().size() << " response headers:";
+
+            for (auto&& header : e.GetResponseHeaders())
+            {
+                s << "\n" << header.first << " : " << header.second;
+            }
+            return s;
+        }
 
     } // namespace Client
 } // namespace Aws

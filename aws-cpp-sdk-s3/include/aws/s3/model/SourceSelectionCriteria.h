@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * Container for filters that define which source objects should be
-   * replicated.<p><h3>See Also:</h3>   <a
+   * <p>Container for filters that define which source objects should be
+   * replicated.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SourceSelectionCriteria">AWS
    * API Reference</a></p>
    */
@@ -49,27 +49,32 @@ namespace Model
 
 
     /**
-     * Container for filter information of selection of KMS Encrypted S3 objects.
+     * <p>Container for filter information of selection of KMS Encrypted S3
+     * objects.</p>
      */
     inline const SseKmsEncryptedObjects& GetSseKmsEncryptedObjects() const{ return m_sseKmsEncryptedObjects; }
 
     /**
-     * Container for filter information of selection of KMS Encrypted S3 objects.
+     * <p>Container for filter information of selection of KMS Encrypted S3
+     * objects.</p>
      */
     inline void SetSseKmsEncryptedObjects(const SseKmsEncryptedObjects& value) { m_sseKmsEncryptedObjectsHasBeenSet = true; m_sseKmsEncryptedObjects = value; }
 
     /**
-     * Container for filter information of selection of KMS Encrypted S3 objects.
+     * <p>Container for filter information of selection of KMS Encrypted S3
+     * objects.</p>
      */
     inline void SetSseKmsEncryptedObjects(SseKmsEncryptedObjects&& value) { m_sseKmsEncryptedObjectsHasBeenSet = true; m_sseKmsEncryptedObjects = std::move(value); }
 
     /**
-     * Container for filter information of selection of KMS Encrypted S3 objects.
+     * <p>Container for filter information of selection of KMS Encrypted S3
+     * objects.</p>
      */
     inline SourceSelectionCriteria& WithSseKmsEncryptedObjects(const SseKmsEncryptedObjects& value) { SetSseKmsEncryptedObjects(value); return *this;}
 
     /**
-     * Container for filter information of selection of KMS Encrypted S3 objects.
+     * <p>Container for filter information of selection of KMS Encrypted S3
+     * objects.</p>
      */
     inline SourceSelectionCriteria& WithSseKmsEncryptedObjects(SseKmsEncryptedObjects&& value) { SetSseKmsEncryptedObjects(std::move(value)); return *this;}
 

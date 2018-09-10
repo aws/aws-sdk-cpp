@@ -34,14 +34,14 @@ ElasticsearchVersionStatus::ElasticsearchVersionStatus() :
 {
 }
 
-ElasticsearchVersionStatus::ElasticsearchVersionStatus(const JsonValue& jsonValue) : 
+ElasticsearchVersionStatus::ElasticsearchVersionStatus(JsonView jsonValue) : 
     m_optionsHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ElasticsearchVersionStatus& ElasticsearchVersionStatus::operator =(const JsonValue& jsonValue)
+ElasticsearchVersionStatus& ElasticsearchVersionStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Options"))
   {

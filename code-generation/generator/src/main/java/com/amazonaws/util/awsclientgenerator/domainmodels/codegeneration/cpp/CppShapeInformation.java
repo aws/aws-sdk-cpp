@@ -27,6 +27,7 @@ public class CppShapeInformation {
    private final ServiceModel serviceModel;
    private final String className;
    private final String jsonType = "Aws::Utils::Json::JsonValue";
+   private final String jsonViewType = "Aws::Utils::Json::JsonView";
    private final String xmlDocType = "Aws::Utils::Xml::XmlDocument";
    private final String xmlNodeType = "Aws::Utils::Xml::XmlNode";
    private final String exportValue;

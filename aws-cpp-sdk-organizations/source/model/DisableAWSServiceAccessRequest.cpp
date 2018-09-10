@@ -37,7 +37,7 @@ Aws::String DisableAWSServiceAccessRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DisableAWSServiceAccessRequest::GetRequestSpecificHeaders() const

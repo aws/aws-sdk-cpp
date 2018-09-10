@@ -51,7 +51,7 @@ Aws::String PollForTaskRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PollForTaskRequest::GetRequestSpecificHeaders() const

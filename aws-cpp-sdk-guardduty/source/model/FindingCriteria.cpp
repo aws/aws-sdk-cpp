@@ -33,17 +33,17 @@ FindingCriteria::FindingCriteria() :
 {
 }
 
-FindingCriteria::FindingCriteria(const JsonValue& jsonValue) : 
+FindingCriteria::FindingCriteria(JsonView jsonValue) : 
     m_criterionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-FindingCriteria& FindingCriteria::operator =(const JsonValue& jsonValue)
+FindingCriteria& FindingCriteria::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("criterion"))
   {
-    Aws::Map<Aws::String, JsonValue> criterionJsonMap = jsonValue.GetObject("criterion").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> criterionJsonMap = jsonValue.GetObject("criterion").GetAllObjects();
     for(auto& criterionItem : criterionJsonMap)
     {
       m_criterion[criterionItem.first] = criterionItem.second.AsObject();

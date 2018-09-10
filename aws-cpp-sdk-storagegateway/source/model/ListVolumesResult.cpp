@@ -37,7 +37,7 @@ ListVolumesResult::ListVolumesResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ListVolumesResult& ListVolumesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
@@ -52,7 +52,7 @@ ListVolumesResult& ListVolumesResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("VolumeInfos"))
   {
-    Array<JsonValue> volumeInfosJsonList = jsonValue.GetArray("VolumeInfos");
+    Array<JsonView> volumeInfosJsonList = jsonValue.GetArray("VolumeInfos");
     for(unsigned volumeInfosIndex = 0; volumeInfosIndex < volumeInfosJsonList.GetLength(); ++volumeInfosIndex)
     {
       m_volumeInfos.push_back(volumeInfosJsonList[volumeInfosIndex].AsObject());

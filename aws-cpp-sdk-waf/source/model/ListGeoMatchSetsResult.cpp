@@ -37,7 +37,7 @@ ListGeoMatchSetsResult::ListGeoMatchSetsResult(const Aws::AmazonWebServiceResult
 
 ListGeoMatchSetsResult& ListGeoMatchSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListGeoMatchSetsResult& ListGeoMatchSetsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("GeoMatchSets"))
   {
-    Array<JsonValue> geoMatchSetsJsonList = jsonValue.GetArray("GeoMatchSets");
+    Array<JsonView> geoMatchSetsJsonList = jsonValue.GetArray("GeoMatchSets");
     for(unsigned geoMatchSetsIndex = 0; geoMatchSetsIndex < geoMatchSetsJsonList.GetLength(); ++geoMatchSetsIndex)
     {
       m_geoMatchSets.push_back(geoMatchSetsJsonList[geoMatchSetsIndex].AsObject());

@@ -37,7 +37,7 @@ ServiceFilter::ServiceFilter() :
 {
 }
 
-ServiceFilter::ServiceFilter(const JsonValue& jsonValue) : 
+ServiceFilter::ServiceFilter(JsonView jsonValue) : 
     m_name(ServiceFilterName::NOT_SET),
     m_nameHasBeenSet(false),
     m_valuesHasBeenSet(false),
@@ -47,7 +47,7 @@ ServiceFilter::ServiceFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ServiceFilter& ServiceFilter::operator =(const JsonValue& jsonValue)
+ServiceFilter& ServiceFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -58,7 +58,7 @@ ServiceFilter& ServiceFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

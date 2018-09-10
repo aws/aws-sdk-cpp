@@ -37,10 +37,10 @@ DescribeChapCredentialsResult::DescribeChapCredentialsResult(const Aws::AmazonWe
 
 DescribeChapCredentialsResult& DescribeChapCredentialsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ChapCredentials"))
   {
-    Array<JsonValue> chapCredentialsJsonList = jsonValue.GetArray("ChapCredentials");
+    Array<JsonView> chapCredentialsJsonList = jsonValue.GetArray("ChapCredentials");
     for(unsigned chapCredentialsIndex = 0; chapCredentialsIndex < chapCredentialsJsonList.GetLength(); ++chapCredentialsIndex)
     {
       m_chapCredentials.push_back(chapCredentialsJsonList[chapCredentialsIndex].AsObject());

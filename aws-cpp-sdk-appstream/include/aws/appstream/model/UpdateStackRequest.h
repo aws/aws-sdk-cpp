@@ -18,7 +18,10 @@
 #include <aws/appstream/AppStreamRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appstream/model/ApplicationSettings.h>
 #include <aws/appstream/model/StorageConnector.h>
+#include <aws/appstream/model/StackAttribute.h>
+#include <aws/appstream/model/UserSetting.h>
 #include <utility>
 
 namespace Aws
@@ -191,19 +194,197 @@ namespace Model
 
 
     /**
-     * <p>Deletes the storage connectors currently enabled for the stack.</p>
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
      */
-    inline bool GetDeleteStorageConnectors() const{ return m_deleteStorageConnectors; }
+    inline const Aws::String& GetRedirectURL() const{ return m_redirectURL; }
 
     /**
-     * <p>Deletes the storage connectors currently enabled for the stack.</p>
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
      */
-    inline void SetDeleteStorageConnectors(bool value) { m_deleteStorageConnectorsHasBeenSet = true; m_deleteStorageConnectors = value; }
+    inline void SetRedirectURL(const Aws::String& value) { m_redirectURLHasBeenSet = true; m_redirectURL = value; }
 
     /**
-     * <p>Deletes the storage connectors currently enabled for the stack.</p>
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
      */
-    inline UpdateStackRequest& WithDeleteStorageConnectors(bool value) { SetDeleteStorageConnectors(value); return *this;}
+    inline void SetRedirectURL(Aws::String&& value) { m_redirectURLHasBeenSet = true; m_redirectURL = std::move(value); }
+
+    /**
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
+     */
+    inline void SetRedirectURL(const char* value) { m_redirectURLHasBeenSet = true; m_redirectURL.assign(value); }
+
+    /**
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
+     */
+    inline UpdateStackRequest& WithRedirectURL(const Aws::String& value) { SetRedirectURL(value); return *this;}
+
+    /**
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
+     */
+    inline UpdateStackRequest& WithRedirectURL(Aws::String&& value) { SetRedirectURL(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
+     */
+    inline UpdateStackRequest& WithRedirectURL(const char* value) { SetRedirectURL(value); return *this;}
+
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline const Aws::String& GetFeedbackURL() const{ return m_feedbackURL; }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline void SetFeedbackURL(const Aws::String& value) { m_feedbackURLHasBeenSet = true; m_feedbackURL = value; }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline void SetFeedbackURL(Aws::String&& value) { m_feedbackURLHasBeenSet = true; m_feedbackURL = std::move(value); }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline void SetFeedbackURL(const char* value) { m_feedbackURLHasBeenSet = true; m_feedbackURL.assign(value); }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline UpdateStackRequest& WithFeedbackURL(const Aws::String& value) { SetFeedbackURL(value); return *this;}
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline UpdateStackRequest& WithFeedbackURL(Aws::String&& value) { SetFeedbackURL(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline UpdateStackRequest& WithFeedbackURL(const char* value) { SetFeedbackURL(value); return *this;}
+
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline const Aws::Vector<StackAttribute>& GetAttributesToDelete() const{ return m_attributesToDelete; }
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline void SetAttributesToDelete(const Aws::Vector<StackAttribute>& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete = value; }
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline void SetAttributesToDelete(Aws::Vector<StackAttribute>&& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete = std::move(value); }
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline UpdateStackRequest& WithAttributesToDelete(const Aws::Vector<StackAttribute>& value) { SetAttributesToDelete(value); return *this;}
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline UpdateStackRequest& WithAttributesToDelete(Aws::Vector<StackAttribute>&& value) { SetAttributesToDelete(std::move(value)); return *this;}
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline UpdateStackRequest& AddAttributesToDelete(const StackAttribute& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete.push_back(value); return *this; }
+
+    /**
+     * <p>The stack attributes to delete.</p>
+     */
+    inline UpdateStackRequest& AddAttributesToDelete(StackAttribute&& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default, these actions are enabled.</p>
+     */
+    inline const Aws::Vector<UserSetting>& GetUserSettings() const{ return m_userSettings; }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default, these actions are enabled.</p>
+     */
+    inline void SetUserSettings(const Aws::Vector<UserSetting>& value) { m_userSettingsHasBeenSet = true; m_userSettings = value; }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default, these actions are enabled.</p>
+     */
+    inline void SetUserSettings(Aws::Vector<UserSetting>&& value) { m_userSettingsHasBeenSet = true; m_userSettings = std::move(value); }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default, these actions are enabled.</p>
+     */
+    inline UpdateStackRequest& WithUserSettings(const Aws::Vector<UserSetting>& value) { SetUserSettings(value); return *this;}
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default, these actions are enabled.</p>
+     */
+    inline UpdateStackRequest& WithUserSettings(Aws::Vector<UserSetting>&& value) { SetUserSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default, these actions are enabled.</p>
+     */
+    inline UpdateStackRequest& AddUserSettings(const UserSetting& value) { m_userSettingsHasBeenSet = true; m_userSettings.push_back(value); return *this; }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default, these actions are enabled.</p>
+     */
+    inline UpdateStackRequest& AddUserSettings(UserSetting&& value) { m_userSettingsHasBeenSet = true; m_userSettings.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The persistent application settings for users of a stack. When these settings
+     * are enabled, changes that users make to applications and Windows settings are
+     * automatically saved after each session and applied to the next session.</p>
+     */
+    inline const ApplicationSettings& GetApplicationSettings() const{ return m_applicationSettings; }
+
+    /**
+     * <p>The persistent application settings for users of a stack. When these settings
+     * are enabled, changes that users make to applications and Windows settings are
+     * automatically saved after each session and applied to the next session.</p>
+     */
+    inline void SetApplicationSettings(const ApplicationSettings& value) { m_applicationSettingsHasBeenSet = true; m_applicationSettings = value; }
+
+    /**
+     * <p>The persistent application settings for users of a stack. When these settings
+     * are enabled, changes that users make to applications and Windows settings are
+     * automatically saved after each session and applied to the next session.</p>
+     */
+    inline void SetApplicationSettings(ApplicationSettings&& value) { m_applicationSettingsHasBeenSet = true; m_applicationSettings = std::move(value); }
+
+    /**
+     * <p>The persistent application settings for users of a stack. When these settings
+     * are enabled, changes that users make to applications and Windows settings are
+     * automatically saved after each session and applied to the next session.</p>
+     */
+    inline UpdateStackRequest& WithApplicationSettings(const ApplicationSettings& value) { SetApplicationSettings(value); return *this;}
+
+    /**
+     * <p>The persistent application settings for users of a stack. When these settings
+     * are enabled, changes that users make to applications and Windows settings are
+     * automatically saved after each session and applied to the next session.</p>
+     */
+    inline UpdateStackRequest& WithApplicationSettings(ApplicationSettings&& value) { SetApplicationSettings(std::move(value)); return *this;}
 
   private:
 
@@ -219,8 +400,20 @@ namespace Model
     Aws::Vector<StorageConnector> m_storageConnectors;
     bool m_storageConnectorsHasBeenSet;
 
-    bool m_deleteStorageConnectors;
-    bool m_deleteStorageConnectorsHasBeenSet;
+    Aws::String m_redirectURL;
+    bool m_redirectURLHasBeenSet;
+
+    Aws::String m_feedbackURL;
+    bool m_feedbackURLHasBeenSet;
+
+    Aws::Vector<StackAttribute> m_attributesToDelete;
+    bool m_attributesToDeleteHasBeenSet;
+
+    Aws::Vector<UserSetting> m_userSettings;
+    bool m_userSettingsHasBeenSet;
+
+    ApplicationSettings m_applicationSettings;
+    bool m_applicationSettingsHasBeenSet;
   };
 
 } // namespace Model

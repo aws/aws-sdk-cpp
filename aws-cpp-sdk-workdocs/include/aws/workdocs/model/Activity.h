@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WorkDocs
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     Activity();
-    Activity(const Aws::Utils::Json::JsonValue& jsonValue);
-    Activity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Activity(Aws::Utils::Json::JsonView jsonValue);
+    Activity& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

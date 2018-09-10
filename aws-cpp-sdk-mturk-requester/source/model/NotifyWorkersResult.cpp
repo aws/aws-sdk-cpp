@@ -37,10 +37,10 @@ NotifyWorkersResult::NotifyWorkersResult(const Aws::AmazonWebServiceResult<JsonV
 
 NotifyWorkersResult& NotifyWorkersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NotifyWorkersFailureStatuses"))
   {
-    Array<JsonValue> notifyWorkersFailureStatusesJsonList = jsonValue.GetArray("NotifyWorkersFailureStatuses");
+    Array<JsonView> notifyWorkersFailureStatusesJsonList = jsonValue.GetArray("NotifyWorkersFailureStatuses");
     for(unsigned notifyWorkersFailureStatusesIndex = 0; notifyWorkersFailureStatusesIndex < notifyWorkersFailureStatusesJsonList.GetLength(); ++notifyWorkersFailureStatusesIndex)
     {
       m_notifyWorkersFailureStatuses.push_back(notifyWorkersFailureStatusesJsonList[notifyWorkersFailureStatusesIndex].AsObject());

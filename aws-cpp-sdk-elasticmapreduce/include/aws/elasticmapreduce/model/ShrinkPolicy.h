@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ShrinkPolicy();
-    ShrinkPolicy(const Aws::Utils::Json::JsonValue& jsonValue);
-    ShrinkPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ShrinkPolicy(Aws::Utils::Json::JsonView jsonValue);
+    ShrinkPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

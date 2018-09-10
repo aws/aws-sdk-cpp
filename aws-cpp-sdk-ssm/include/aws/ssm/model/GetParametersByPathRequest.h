@@ -48,109 +48,131 @@ namespace Model
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
-     * Here is an example of a hierarchy:
+     * and end with the parameter name. A parameter name hierarchy can have a maximum
+     * of 15 levels. Here is an example of a hierarchy:
      * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
-     * Here is an example of a hierarchy:
+     * and end with the parameter name. A parameter name hierarchy can have a maximum
+     * of 15 levels. Here is an example of a hierarchy:
      * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
-     * Here is an example of a hierarchy:
+     * and end with the parameter name. A parameter name hierarchy can have a maximum
+     * of 15 levels. Here is an example of a hierarchy:
      * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
-     * Here is an example of a hierarchy:
+     * and end with the parameter name. A parameter name hierarchy can have a maximum
+     * of 15 levels. Here is an example of a hierarchy:
      * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
-     * Here is an example of a hierarchy:
+     * and end with the parameter name. A parameter name hierarchy can have a maximum
+     * of 15 levels. Here is an example of a hierarchy:
      * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline GetParametersByPathRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
-     * Here is an example of a hierarchy:
+     * and end with the parameter name. A parameter name hierarchy can have a maximum
+     * of 15 levels. Here is an example of a hierarchy:
      * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline GetParametersByPathRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/)
-     * and end with the parameter name. A hierarchy can have a maximum of 15 levels.
-     * Here is an example of a hierarchy:
+     * and end with the parameter name. A parameter name hierarchy can have a maximum
+     * of 15 levels. Here is an example of a hierarchy:
      * <code>/Finance/Prod/IAD/WinServ2016/license33</code> </p>
      */
     inline GetParametersByPathRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
 
     /**
-     * <p>Retrieve all parameters within a hierarchy.</p>
+     * <p>Retrieve all parameters within a hierarchy.</p> <important> <p>If a user has
+     * access to a path, then the user can access all levels of that path. For example,
+     * if a user has permission to access path /a, then the user can also access /a/b.
+     * Even if a user has explicitly been denied access in IAM for parameter /a, they
+     * can still call the GetParametersByPath API action recursively and view /a/b.</p>
+     * </important>
      */
     inline bool GetRecursive() const{ return m_recursive; }
 
     /**
-     * <p>Retrieve all parameters within a hierarchy.</p>
+     * <p>Retrieve all parameters within a hierarchy.</p> <important> <p>If a user has
+     * access to a path, then the user can access all levels of that path. For example,
+     * if a user has permission to access path /a, then the user can also access /a/b.
+     * Even if a user has explicitly been denied access in IAM for parameter /a, they
+     * can still call the GetParametersByPath API action recursively and view /a/b.</p>
+     * </important>
      */
     inline void SetRecursive(bool value) { m_recursiveHasBeenSet = true; m_recursive = value; }
 
     /**
-     * <p>Retrieve all parameters within a hierarchy.</p>
+     * <p>Retrieve all parameters within a hierarchy.</p> <important> <p>If a user has
+     * access to a path, then the user can access all levels of that path. For example,
+     * if a user has permission to access path /a, then the user can also access /a/b.
+     * Even if a user has explicitly been denied access in IAM for parameter /a, they
+     * can still call the GetParametersByPath API action recursively and view /a/b.</p>
+     * </important>
      */
     inline GetParametersByPathRequest& WithRecursive(bool value) { SetRecursive(value); return *this;}
 
 
     /**
-     * <p>Filters to limit the request results.</p>
+     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
+     * the parameter name.</p> </note>
      */
     inline const Aws::Vector<ParameterStringFilter>& GetParameterFilters() const{ return m_parameterFilters; }
 
     /**
-     * <p>Filters to limit the request results.</p>
+     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
+     * the parameter name.</p> </note>
      */
     inline void SetParameterFilters(const Aws::Vector<ParameterStringFilter>& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters = value; }
 
     /**
-     * <p>Filters to limit the request results.</p>
+     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
+     * the parameter name.</p> </note>
      */
     inline void SetParameterFilters(Aws::Vector<ParameterStringFilter>&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters = std::move(value); }
 
     /**
-     * <p>Filters to limit the request results.</p>
+     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
+     * the parameter name.</p> </note>
      */
     inline GetParametersByPathRequest& WithParameterFilters(const Aws::Vector<ParameterStringFilter>& value) { SetParameterFilters(value); return *this;}
 
     /**
-     * <p>Filters to limit the request results.</p>
+     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
+     * the parameter name.</p> </note>
      */
     inline GetParametersByPathRequest& WithParameterFilters(Aws::Vector<ParameterStringFilter>&& value) { SetParameterFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Filters to limit the request results.</p>
+     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
+     * the parameter name.</p> </note>
      */
     inline GetParametersByPathRequest& AddParameterFilters(const ParameterStringFilter& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters.push_back(value); return *this; }
 
     /**
-     * <p>Filters to limit the request results.</p>
+     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
+     * the parameter name.</p> </note>
      */
     inline GetParametersByPathRequest& AddParameterFilters(ParameterStringFilter&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters.push_back(std::move(value)); return *this; }
 

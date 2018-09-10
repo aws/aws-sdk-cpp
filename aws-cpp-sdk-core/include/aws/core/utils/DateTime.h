@@ -119,9 +119,14 @@ namespace Aws
             DateTime& operator=(const std::chrono::system_clock::time_point& timepointToAssign);
 
             /**
+             * Assign from an ISO8601 or RFC822 formatted string
+             */
+            DateTime& operator=(const Aws::String& timestamp);
+
+            /**
              * Whether or not parsing the timestamp from string was successful.
              */
-            inline bool WasParseSuccessful() { return m_valid; }
+            inline bool WasParseSuccessful() const { return m_valid; }
 
             /**
              * Convert dateTime to local time string using predefined format.
@@ -201,8 +206,8 @@ namespace Aws
             /**
              * Get an instance of DateTime representing this very instant.
              */
-            static DateTime Now(); 
-            
+            static DateTime Now();
+
             /**
              * Get the millis since epoch representing this very instant.
              */
@@ -233,10 +238,11 @@ namespace Aws
              */
             static std::chrono::milliseconds Diff(const DateTime& a, const DateTime& b);
 
+            std::chrono::milliseconds operator - (const DateTime& other);
         private:
             std::chrono::system_clock::time_point m_time;
             bool m_valid;
-                        
+
             void ConvertTimestampStringToTimePoint(const char* timestamp, DateFormat format);
             tm GetTimeStruct(bool localTime) const;
             tm ConvertTimestampToLocalTimeStruct() const;

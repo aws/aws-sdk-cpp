@@ -42,7 +42,7 @@ Aws::String StartConfigRulesEvaluationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartConfigRulesEvaluationRequest::GetRequestSpecificHeaders() const

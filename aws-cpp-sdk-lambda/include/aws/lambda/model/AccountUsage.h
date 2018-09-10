@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lambda
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     AccountUsage();
-    AccountUsage(const Aws::Utils::Json::JsonValue& jsonValue);
-    AccountUsage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AccountUsage(Aws::Utils::Json::JsonView jsonValue);
+    AccountUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

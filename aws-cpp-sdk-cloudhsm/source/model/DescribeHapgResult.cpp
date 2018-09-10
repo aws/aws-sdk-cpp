@@ -39,7 +39,7 @@ DescribeHapgResult::DescribeHapgResult(const Aws::AmazonWebServiceResult<JsonVal
 
 DescribeHapgResult& DescribeHapgResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HapgArn"))
   {
     m_hapgArn = jsonValue.GetString("HapgArn");
@@ -54,7 +54,7 @@ DescribeHapgResult& DescribeHapgResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("HsmsLastActionFailed"))
   {
-    Array<JsonValue> hsmsLastActionFailedJsonList = jsonValue.GetArray("HsmsLastActionFailed");
+    Array<JsonView> hsmsLastActionFailedJsonList = jsonValue.GetArray("HsmsLastActionFailed");
     for(unsigned hsmsLastActionFailedIndex = 0; hsmsLastActionFailedIndex < hsmsLastActionFailedJsonList.GetLength(); ++hsmsLastActionFailedIndex)
     {
       m_hsmsLastActionFailed.push_back(hsmsLastActionFailedJsonList[hsmsLastActionFailedIndex].AsString());
@@ -63,7 +63,7 @@ DescribeHapgResult& DescribeHapgResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("HsmsPendingDeletion"))
   {
-    Array<JsonValue> hsmsPendingDeletionJsonList = jsonValue.GetArray("HsmsPendingDeletion");
+    Array<JsonView> hsmsPendingDeletionJsonList = jsonValue.GetArray("HsmsPendingDeletion");
     for(unsigned hsmsPendingDeletionIndex = 0; hsmsPendingDeletionIndex < hsmsPendingDeletionJsonList.GetLength(); ++hsmsPendingDeletionIndex)
     {
       m_hsmsPendingDeletion.push_back(hsmsPendingDeletionJsonList[hsmsPendingDeletionIndex].AsString());
@@ -72,7 +72,7 @@ DescribeHapgResult& DescribeHapgResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("HsmsPendingRegistration"))
   {
-    Array<JsonValue> hsmsPendingRegistrationJsonList = jsonValue.GetArray("HsmsPendingRegistration");
+    Array<JsonView> hsmsPendingRegistrationJsonList = jsonValue.GetArray("HsmsPendingRegistration");
     for(unsigned hsmsPendingRegistrationIndex = 0; hsmsPendingRegistrationIndex < hsmsPendingRegistrationJsonList.GetLength(); ++hsmsPendingRegistrationIndex)
     {
       m_hsmsPendingRegistration.push_back(hsmsPendingRegistrationJsonList[hsmsPendingRegistrationIndex].AsString());
@@ -93,7 +93,7 @@ DescribeHapgResult& DescribeHapgResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("PartitionSerialList"))
   {
-    Array<JsonValue> partitionSerialListJsonList = jsonValue.GetArray("PartitionSerialList");
+    Array<JsonView> partitionSerialListJsonList = jsonValue.GetArray("PartitionSerialList");
     for(unsigned partitionSerialListIndex = 0; partitionSerialListIndex < partitionSerialListJsonList.GetLength(); ++partitionSerialListIndex)
     {
       m_partitionSerialList.push_back(partitionSerialListJsonList[partitionSerialListIndex].AsString());

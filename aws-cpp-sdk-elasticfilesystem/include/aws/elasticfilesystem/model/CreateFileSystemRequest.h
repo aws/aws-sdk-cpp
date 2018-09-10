@@ -18,6 +18,7 @@
 #include <aws/elasticfilesystem/EFSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticfilesystem/model/PerformanceMode.h>
+#include <aws/elasticfilesystem/model/ThroughputMode.h>
 #include <utility>
 
 namespace Aws
@@ -138,7 +139,7 @@ namespace Model
 
 
     /**
-     * <p>A boolean value that, if true, creates an encrypted file system. When
+     * <p>A Boolean value that, if true, creates an encrypted file system. When
      * creating an encrypted file system, you have the option of specifying a
      * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing AWS Key Management
      * Service (AWS KMS) customer master key (CMK). If you don't specify a CMK, then
@@ -148,7 +149,7 @@ namespace Model
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>A boolean value that, if true, creates an encrypted file system. When
+     * <p>A Boolean value that, if true, creates an encrypted file system. When
      * creating an encrypted file system, you have the option of specifying a
      * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing AWS Key Management
      * Service (AWS KMS) customer master key (CMK). If you don't specify a CMK, then
@@ -158,7 +159,7 @@ namespace Model
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>A boolean value that, if true, creates an encrypted file system. When
+     * <p>A Boolean value that, if true, creates an encrypted file system. When
      * creating an encrypted file system, you have the option of specifying a
      * <a>CreateFileSystemRequest$KmsKeyId</a> for an existing AWS Key Management
      * Service (AWS KMS) customer master key (CMK). If you don't specify a CMK, then
@@ -169,130 +170,204 @@ namespace Model
 
 
     /**
-     * <p>The id of the AWS KMS CMK that will be used to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default CMK. If
-     * this parameter is not specified, the default CMK for Amazon EFS is used. This id
-     * can be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key. For example,
+     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
+     * This parameter is only required if you want to use a non-default CMK. If this
+     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
+     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
+     * identifier of the key, for example,
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
-     * Amazon Resource Name for the key. For example,
+     * Amazon Resource Name (ARN) for the key, for example,
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Key alias - A previously created display name for a key. For
      * example, <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An
-     * Amazon Resource Name for a key alias. For example,
+     * ARN for a key alias, for example,
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>Note that if the KmsKeyId is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
+     * </ul> <p>If KmsKeyId is specified, the <a>CreateFileSystemRequest$Encrypted</a>
+     * parameter must be set to true.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The id of the AWS KMS CMK that will be used to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default CMK. If
-     * this parameter is not specified, the default CMK for Amazon EFS is used. This id
-     * can be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key. For example,
+     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
+     * This parameter is only required if you want to use a non-default CMK. If this
+     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
+     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
+     * identifier of the key, for example,
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
-     * Amazon Resource Name for the key. For example,
+     * Amazon Resource Name (ARN) for the key, for example,
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Key alias - A previously created display name for a key. For
      * example, <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An
-     * Amazon Resource Name for a key alias. For example,
+     * ARN for a key alias, for example,
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>Note that if the KmsKeyId is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
+     * </ul> <p>If KmsKeyId is specified, the <a>CreateFileSystemRequest$Encrypted</a>
+     * parameter must be set to true.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The id of the AWS KMS CMK that will be used to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default CMK. If
-     * this parameter is not specified, the default CMK for Amazon EFS is used. This id
-     * can be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key. For example,
+     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
+     * This parameter is only required if you want to use a non-default CMK. If this
+     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
+     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
+     * identifier of the key, for example,
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
-     * Amazon Resource Name for the key. For example,
+     * Amazon Resource Name (ARN) for the key, for example,
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Key alias - A previously created display name for a key. For
      * example, <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An
-     * Amazon Resource Name for a key alias. For example,
+     * ARN for a key alias, for example,
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>Note that if the KmsKeyId is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
+     * </ul> <p>If KmsKeyId is specified, the <a>CreateFileSystemRequest$Encrypted</a>
+     * parameter must be set to true.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The id of the AWS KMS CMK that will be used to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default CMK. If
-     * this parameter is not specified, the default CMK for Amazon EFS is used. This id
-     * can be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key. For example,
+     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
+     * This parameter is only required if you want to use a non-default CMK. If this
+     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
+     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
+     * identifier of the key, for example,
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
-     * Amazon Resource Name for the key. For example,
+     * Amazon Resource Name (ARN) for the key, for example,
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Key alias - A previously created display name for a key. For
      * example, <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An
-     * Amazon Resource Name for a key alias. For example,
+     * ARN for a key alias, for example,
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>Note that if the KmsKeyId is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
+     * </ul> <p>If KmsKeyId is specified, the <a>CreateFileSystemRequest$Encrypted</a>
+     * parameter must be set to true.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The id of the AWS KMS CMK that will be used to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default CMK. If
-     * this parameter is not specified, the default CMK for Amazon EFS is used. This id
-     * can be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key. For example,
+     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
+     * This parameter is only required if you want to use a non-default CMK. If this
+     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
+     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
+     * identifier of the key, for example,
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
-     * Amazon Resource Name for the key. For example,
+     * Amazon Resource Name (ARN) for the key, for example,
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Key alias - A previously created display name for a key. For
      * example, <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An
-     * Amazon Resource Name for a key alias. For example,
+     * ARN for a key alias, for example,
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>Note that if the KmsKeyId is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
+     * </ul> <p>If KmsKeyId is specified, the <a>CreateFileSystemRequest$Encrypted</a>
+     * parameter must be set to true.</p>
      */
     inline CreateFileSystemRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The id of the AWS KMS CMK that will be used to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default CMK. If
-     * this parameter is not specified, the default CMK for Amazon EFS is used. This id
-     * can be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key. For example,
+     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
+     * This parameter is only required if you want to use a non-default CMK. If this
+     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
+     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
+     * identifier of the key, for example,
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
-     * Amazon Resource Name for the key. For example,
+     * Amazon Resource Name (ARN) for the key, for example,
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Key alias - A previously created display name for a key. For
      * example, <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An
-     * Amazon Resource Name for a key alias. For example,
+     * ARN for a key alias, for example,
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>Note that if the KmsKeyId is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
+     * </ul> <p>If KmsKeyId is specified, the <a>CreateFileSystemRequest$Encrypted</a>
+     * parameter must be set to true.</p>
      */
     inline CreateFileSystemRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The id of the AWS KMS CMK that will be used to protect the encrypted file
-     * system. This parameter is only required if you want to use a non-default CMK. If
-     * this parameter is not specified, the default CMK for Amazon EFS is used. This id
-     * can be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key. For example,
+     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
+     * This parameter is only required if you want to use a non-default CMK. If this
+     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
+     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
+     * identifier of the key, for example,
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
-     * Amazon Resource Name for the key. For example,
+     * Amazon Resource Name (ARN) for the key, for example,
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
      * </li> <li> <p>Key alias - A previously created display name for a key. For
      * example, <code>alias/projectKey1</code>.</p> </li> <li> <p>Key alias ARN - An
-     * Amazon Resource Name for a key alias. For example,
+     * ARN for a key alias, for example,
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
-     * </ul> <p>Note that if the KmsKeyId is specified, the
-     * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
+     * </ul> <p>If KmsKeyId is specified, the <a>CreateFileSystemRequest$Encrypted</a>
+     * parameter must be set to true.</p>
      */
     inline CreateFileSystemRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The throughput mode for the file system to be created. There are two
+     * throughput modes to choose from for your file system: bursting and provisioned.
+     * You can decrease your file system's throughput in Provisioned Throughput mode or
+     * change between the throughput modes as long as it’s been more than 24 hours
+     * since the last decrease or throughput mode change.</p>
+     */
+    inline const ThroughputMode& GetThroughputMode() const{ return m_throughputMode; }
+
+    /**
+     * <p>The throughput mode for the file system to be created. There are two
+     * throughput modes to choose from for your file system: bursting and provisioned.
+     * You can decrease your file system's throughput in Provisioned Throughput mode or
+     * change between the throughput modes as long as it’s been more than 24 hours
+     * since the last decrease or throughput mode change.</p>
+     */
+    inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
+
+    /**
+     * <p>The throughput mode for the file system to be created. There are two
+     * throughput modes to choose from for your file system: bursting and provisioned.
+     * You can decrease your file system's throughput in Provisioned Throughput mode or
+     * change between the throughput modes as long as it’s been more than 24 hours
+     * since the last decrease or throughput mode change.</p>
+     */
+    inline void SetThroughputMode(ThroughputMode&& value) { m_throughputModeHasBeenSet = true; m_throughputMode = std::move(value); }
+
+    /**
+     * <p>The throughput mode for the file system to be created. There are two
+     * throughput modes to choose from for your file system: bursting and provisioned.
+     * You can decrease your file system's throughput in Provisioned Throughput mode or
+     * change between the throughput modes as long as it’s been more than 24 hours
+     * since the last decrease or throughput mode change.</p>
+     */
+    inline CreateFileSystemRequest& WithThroughputMode(const ThroughputMode& value) { SetThroughputMode(value); return *this;}
+
+    /**
+     * <p>The throughput mode for the file system to be created. There are two
+     * throughput modes to choose from for your file system: bursting and provisioned.
+     * You can decrease your file system's throughput in Provisioned Throughput mode or
+     * change between the throughput modes as long as it’s been more than 24 hours
+     * since the last decrease or throughput mode change.</p>
+     */
+    inline CreateFileSystemRequest& WithThroughputMode(ThroughputMode&& value) { SetThroughputMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The throughput, measured in MiB/s, that you want to provision for a file
+     * system that you're creating. The limit on throughput is 1024 MiB/s. You can get
+     * these limits increased by contacting AWS Support. For more information, see <a
+     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     */
+    inline double GetProvisionedThroughputInMibps() const{ return m_provisionedThroughputInMibps; }
+
+    /**
+     * <p>The throughput, measured in MiB/s, that you want to provision for a file
+     * system that you're creating. The limit on throughput is 1024 MiB/s. You can get
+     * these limits increased by contacting AWS Support. For more information, see <a
+     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     */
+    inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibpsHasBeenSet = true; m_provisionedThroughputInMibps = value; }
+
+    /**
+     * <p>The throughput, measured in MiB/s, that you want to provision for a file
+     * system that you're creating. The limit on throughput is 1024 MiB/s. You can get
+     * these limits increased by contacting AWS Support. For more information, see <a
+     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     */
+    inline CreateFileSystemRequest& WithProvisionedThroughputInMibps(double value) { SetProvisionedThroughputInMibps(value); return *this;}
 
   private:
 
@@ -307,6 +382,12 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    ThroughputMode m_throughputMode;
+    bool m_throughputModeHasBeenSet;
+
+    double m_provisionedThroughputInMibps;
+    bool m_provisionedThroughputInMibpsHasBeenSet;
   };
 
 } // namespace Model

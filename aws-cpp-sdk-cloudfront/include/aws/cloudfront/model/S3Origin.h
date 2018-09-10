@@ -36,7 +36,7 @@ namespace Model
    * <p>A complex type that contains information about the Amazon S3 bucket from
    * which you want CloudFront to get your media files for
    * distribution.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/S3Origin">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/S3Origin">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API S3Origin

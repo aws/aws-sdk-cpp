@@ -67,7 +67,7 @@ Aws::String UpdateServerRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateServerRequest::GetRequestSpecificHeaders() const

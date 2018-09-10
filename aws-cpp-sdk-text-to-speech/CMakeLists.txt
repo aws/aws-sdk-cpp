@@ -116,7 +116,7 @@ set_compiler_warnings(${PROJECT_NAME})
 target_include_directories(${PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>)
-target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS} ${PLATFORM_LIBS})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_LIBS} ${PLATFORM_DEP_LIBS} ${PLATFORM_LIBS})
 
 setup_install()
 

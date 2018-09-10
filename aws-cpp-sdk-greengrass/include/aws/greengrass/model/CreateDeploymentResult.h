@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * The arn of the deployment.
+     * The ARN of the deployment.
      */
     inline const Aws::String& GetDeploymentArn() const{ return m_deploymentArn; }
 
     /**
-     * The arn of the deployment.
+     * The ARN of the deployment.
      */
     inline void SetDeploymentArn(const Aws::String& value) { m_deploymentArn = value; }
 
     /**
-     * The arn of the deployment.
+     * The ARN of the deployment.
      */
     inline void SetDeploymentArn(Aws::String&& value) { m_deploymentArn = std::move(value); }
 
     /**
-     * The arn of the deployment.
+     * The ARN of the deployment.
      */
     inline void SetDeploymentArn(const char* value) { m_deploymentArn.assign(value); }
 
     /**
-     * The arn of the deployment.
+     * The ARN of the deployment.
      */
     inline CreateDeploymentResult& WithDeploymentArn(const Aws::String& value) { SetDeploymentArn(value); return *this;}
 
     /**
-     * The arn of the deployment.
+     * The ARN of the deployment.
      */
     inline CreateDeploymentResult& WithDeploymentArn(Aws::String&& value) { SetDeploymentArn(std::move(value)); return *this;}
 
     /**
-     * The arn of the deployment.
+     * The ARN of the deployment.
      */
     inline CreateDeploymentResult& WithDeploymentArn(const char* value) { SetDeploymentArn(value); return *this;}
 
 
     /**
-     * The id of the deployment.
+     * The ID of the deployment.
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * The id of the deployment.
+     * The ID of the deployment.
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentId = value; }
 
     /**
-     * The id of the deployment.
+     * The ID of the deployment.
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentId = std::move(value); }
 
     /**
-     * The id of the deployment.
+     * The ID of the deployment.
      */
     inline void SetDeploymentId(const char* value) { m_deploymentId.assign(value); }
 
     /**
-     * The id of the deployment.
+     * The ID of the deployment.
      */
     inline CreateDeploymentResult& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * The id of the deployment.
+     * The ID of the deployment.
      */
     inline CreateDeploymentResult& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * The id of the deployment.
+     * The ID of the deployment.
      */
     inline CreateDeploymentResult& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 

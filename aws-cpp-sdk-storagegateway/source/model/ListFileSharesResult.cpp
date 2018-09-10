@@ -37,7 +37,7 @@ ListFileSharesResult::ListFileSharesResult(const Aws::AmazonWebServiceResult<Jso
 
 ListFileSharesResult& ListFileSharesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
@@ -52,7 +52,7 @@ ListFileSharesResult& ListFileSharesResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("FileShareInfoList"))
   {
-    Array<JsonValue> fileShareInfoListJsonList = jsonValue.GetArray("FileShareInfoList");
+    Array<JsonView> fileShareInfoListJsonList = jsonValue.GetArray("FileShareInfoList");
     for(unsigned fileShareInfoListIndex = 0; fileShareInfoListIndex < fileShareInfoListJsonList.GetLength(); ++fileShareInfoListIndex)
     {
       m_fileShareInfoList.push_back(fileShareInfoListJsonList[fileShareInfoListIndex].AsObject());

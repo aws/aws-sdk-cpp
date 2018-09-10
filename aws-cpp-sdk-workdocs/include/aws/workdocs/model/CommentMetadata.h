@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WorkDocs
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     CommentMetadata();
-    CommentMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    CommentMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CommentMetadata(Aws::Utils::Json::JsonView jsonValue);
+    CommentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

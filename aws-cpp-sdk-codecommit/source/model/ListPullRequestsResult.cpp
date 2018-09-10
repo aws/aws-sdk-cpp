@@ -37,10 +37,10 @@ ListPullRequestsResult::ListPullRequestsResult(const Aws::AmazonWebServiceResult
 
 ListPullRequestsResult& ListPullRequestsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("pullRequestIds"))
   {
-    Array<JsonValue> pullRequestIdsJsonList = jsonValue.GetArray("pullRequestIds");
+    Array<JsonView> pullRequestIdsJsonList = jsonValue.GetArray("pullRequestIds");
     for(unsigned pullRequestIdsIndex = 0; pullRequestIdsIndex < pullRequestIdsJsonList.GetLength(); ++pullRequestIdsIndex)
     {
       m_pullRequestIds.push_back(pullRequestIdsJsonList[pullRequestIdsIndex].AsString());

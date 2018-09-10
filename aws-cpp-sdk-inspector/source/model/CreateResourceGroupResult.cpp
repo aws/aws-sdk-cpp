@@ -37,7 +37,7 @@ CreateResourceGroupResult::CreateResourceGroupResult(const Aws::AmazonWebService
 
 CreateResourceGroupResult& CreateResourceGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resourceGroupArn"))
   {
     m_resourceGroupArn = jsonValue.GetString("resourceGroupArn");

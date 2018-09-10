@@ -37,7 +37,7 @@ Output::Output() :
 {
 }
 
-Output::Output(const JsonValue& jsonValue) : 
+Output::Output(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_kinesisStreamsOutputHasBeenSet(false),
     m_kinesisFirehoseOutputHasBeenSet(false),
@@ -47,7 +47,7 @@ Output::Output(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Output& Output::operator =(const JsonValue& jsonValue)
+Output& Output::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

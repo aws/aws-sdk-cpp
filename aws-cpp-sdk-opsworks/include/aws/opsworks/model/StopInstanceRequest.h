@@ -79,10 +79,29 @@ namespace Model
      */
     inline StopInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether to force an instance to stop.</p>
+     */
+    inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>Specifies whether to force an instance to stop.</p>
+     */
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+
+    /**
+     * <p>Specifies whether to force an instance to stop.</p>
+     */
+    inline StopInstanceRequest& WithForce(bool value) { SetForce(value); return *this;}
+
   private:
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
+    bool m_force;
+    bool m_forceHasBeenSet;
   };
 
 } // namespace Model

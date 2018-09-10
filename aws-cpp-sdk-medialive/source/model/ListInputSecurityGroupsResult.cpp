@@ -37,10 +37,10 @@ ListInputSecurityGroupsResult::ListInputSecurityGroupsResult(const Aws::AmazonWe
 
 ListInputSecurityGroupsResult& ListInputSecurityGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("inputSecurityGroups"))
   {
-    Array<JsonValue> inputSecurityGroupsJsonList = jsonValue.GetArray("inputSecurityGroups");
+    Array<JsonView> inputSecurityGroupsJsonList = jsonValue.GetArray("inputSecurityGroups");
     for(unsigned inputSecurityGroupsIndex = 0; inputSecurityGroupsIndex < inputSecurityGroupsJsonList.GetLength(); ++inputSecurityGroupsIndex)
     {
       m_inputSecurityGroups.push_back(inputSecurityGroupsJsonList[inputSecurityGroupsIndex].AsObject());

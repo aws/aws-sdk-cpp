@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudWatchEvents
@@ -34,10 +35,10 @@ namespace Model
 
   /**
    * <p>This object enables you to specify a JSON path to extract from the event and
-   * use as the partition key for the Amazon Kinesis stream, so that you can control
-   * the shard to which the event goes. If you do not include this parameter, the
-   * default is to use the <code>eventId</code> as the partition key.</p><p><h3>See
-   * Also:</h3>   <a
+   * use as the partition key for the Amazon Kinesis data stream, so that you can
+   * control the shard to which the event goes. If you do not include this parameter,
+   * the default is to use the <code>eventId</code> as the partition
+   * key.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/KinesisParameters">AWS
    * API Reference</a></p>
    */
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     KinesisParameters();
-    KinesisParameters(const Aws::Utils::Json::JsonValue& jsonValue);
-    KinesisParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    KinesisParameters(Aws::Utils::Json::JsonView jsonValue);
+    KinesisParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

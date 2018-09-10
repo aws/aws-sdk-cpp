@@ -38,7 +38,7 @@ ActivityScheduledEventDetails::ActivityScheduledEventDetails() :
 {
 }
 
-ActivityScheduledEventDetails::ActivityScheduledEventDetails(const JsonValue& jsonValue) : 
+ActivityScheduledEventDetails::ActivityScheduledEventDetails(JsonView jsonValue) : 
     m_resourceHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_timeoutInSeconds(0),
@@ -49,7 +49,7 @@ ActivityScheduledEventDetails::ActivityScheduledEventDetails(const JsonValue& js
   *this = jsonValue;
 }
 
-ActivityScheduledEventDetails& ActivityScheduledEventDetails::operator =(const JsonValue& jsonValue)
+ActivityScheduledEventDetails& ActivityScheduledEventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("resource"))
   {

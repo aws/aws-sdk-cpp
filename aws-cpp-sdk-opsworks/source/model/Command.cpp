@@ -43,7 +43,7 @@ Command::Command() :
 {
 }
 
-Command::Command(const JsonValue& jsonValue) : 
+Command::Command(JsonView jsonValue) : 
     m_commandIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
@@ -59,7 +59,7 @@ Command::Command(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Command& Command::operator =(const JsonValue& jsonValue)
+Command& Command::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CommandId"))
   {

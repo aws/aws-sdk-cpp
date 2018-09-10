@@ -40,7 +40,7 @@ InputLossBehavior::InputLossBehavior() :
 {
 }
 
-InputLossBehavior::InputLossBehavior(const JsonValue& jsonValue) : 
+InputLossBehavior::InputLossBehavior(JsonView jsonValue) : 
     m_blackFrameMsec(0),
     m_blackFrameMsecHasBeenSet(false),
     m_inputLossImageColorHasBeenSet(false),
@@ -53,7 +53,7 @@ InputLossBehavior::InputLossBehavior(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InputLossBehavior& InputLossBehavior::operator =(const JsonValue& jsonValue)
+InputLossBehavior& InputLossBehavior::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("blackFrameMsec"))
   {

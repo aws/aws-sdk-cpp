@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/model/SegmentDimensions.h>
 #include <aws/pinpoint/model/SegmentImportResource.h>
+#include <aws/pinpoint/model/SegmentGroupList.h>
 #include <aws/pinpoint/model/SegmentType.h>
 #include <utility>
 
@@ -28,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -44,79 +46,79 @@ namespace Model
   {
   public:
     SegmentResponse();
-    SegmentResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    SegmentResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SegmentResponse(Aws::Utils::Json::JsonView jsonValue);
+    SegmentResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * The ID of the application to which the segment applies.
+     * The ID of the application that the segment applies to.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The ID of the application to which the segment applies.
+     * The ID of the application that the segment applies to.
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The ID of the application to which the segment applies.
+     * The ID of the application that the segment applies to.
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The ID of the application to which the segment applies.
+     * The ID of the application that the segment applies to.
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The ID of the application to which the segment applies.
+     * The ID of the application that the segment applies to.
      */
     inline SegmentResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The ID of the application to which the segment applies.
+     * The ID of the application that the segment applies to.
      */
     inline SegmentResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The ID of the application to which the segment applies.
+     * The ID of the application that the segment applies to.
      */
     inline SegmentResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * The date the segment was created in ISO 8601 format.
+     * The date and time when the segment was created.
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * The date the segment was created in ISO 8601 format.
+     * The date and time when the segment was created.
      */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * The date the segment was created in ISO 8601 format.
+     * The date and time when the segment was created.
      */
     inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * The date the segment was created in ISO 8601 format.
+     * The date and time when the segment was created.
      */
     inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
 
     /**
-     * The date the segment was created in ISO 8601 format.
+     * The date and time when the segment was created.
      */
     inline SegmentResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
 
     /**
-     * The date the segment was created in ISO 8601 format.
+     * The date and time when the segment was created.
      */
     inline SegmentResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
-     * The date the segment was created in ISO 8601 format.
+     * The date and time when the segment was created.
      */
     inline SegmentResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
@@ -210,75 +212,106 @@ namespace Model
 
 
     /**
-     * The date the segment was last updated in ISO 8601 format.
+     * The date and time when the segment was last modified.
      */
     inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * The date the segment was last updated in ISO 8601 format.
+     * The date and time when the segment was last modified.
      */
     inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * The date the segment was last updated in ISO 8601 format.
+     * The date and time when the segment was last modified.
      */
     inline void SetLastModifiedDate(Aws::String&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * The date the segment was last updated in ISO 8601 format.
+     * The date and time when the segment was last modified.
      */
     inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
 
     /**
-     * The date the segment was last updated in ISO 8601 format.
+     * The date and time when the segment was last modified.
      */
     inline SegmentResponse& WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * The date the segment was last updated in ISO 8601 format.
+     * The date and time when the segment was last modified.
      */
     inline SegmentResponse& WithLastModifiedDate(Aws::String&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
     /**
-     * The date the segment was last updated in ISO 8601 format.
+     * The date and time when the segment was last modified.
      */
     inline SegmentResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
 
 
     /**
-     * The name of segment
+     * The name of the segment.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * The name of segment
+     * The name of the segment.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * The name of segment
+     * The name of the segment.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * The name of segment
+     * The name of the segment.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * The name of segment
+     * The name of the segment.
      */
     inline SegmentResponse& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * The name of segment
+     * The name of the segment.
      */
     inline SegmentResponse& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * The name of segment
+     * The name of the segment.
      */
     inline SegmentResponse& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments.
+     */
+    inline const SegmentGroupList& GetSegmentGroups() const{ return m_segmentGroups; }
+
+    /**
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments.
+     */
+    inline void SetSegmentGroups(const SegmentGroupList& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = value; }
+
+    /**
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments.
+     */
+    inline void SetSegmentGroups(SegmentGroupList&& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = std::move(value); }
+
+    /**
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments.
+     */
+    inline SegmentResponse& WithSegmentGroups(const SegmentGroupList& value) { SetSegmentGroups(value); return *this;}
+
+    /**
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments.
+     */
+    inline SegmentResponse& WithSegmentGroups(SegmentGroupList&& value) { SetSegmentGroups(std::move(value)); return *this;}
 
 
     /**
@@ -384,6 +417,9 @@ IMPORT - A static segment built from an
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    SegmentGroupList m_segmentGroups;
+    bool m_segmentGroupsHasBeenSet;
 
     SegmentType m_segmentType;
     bool m_segmentTypeHasBeenSet;

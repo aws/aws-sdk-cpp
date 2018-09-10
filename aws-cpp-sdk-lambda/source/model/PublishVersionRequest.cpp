@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 PublishVersionRequest::PublishVersionRequest() : 
     m_functionNameHasBeenSet(false),
     m_codeSha256HasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_revisionIdHasBeenSet(false)
 {
 }
 
@@ -45,7 +46,13 @@ Aws::String PublishVersionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_revisionIdHasBeenSet)
+  {
+   payload.WithString("RevisionId", m_revisionId);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

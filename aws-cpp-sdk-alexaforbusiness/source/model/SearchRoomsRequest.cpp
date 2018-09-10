@@ -69,7 +69,7 @@ Aws::String SearchRoomsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SearchRoomsRequest::GetRequestSpecificHeaders() const

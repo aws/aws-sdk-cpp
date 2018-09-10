@@ -39,7 +39,7 @@ GetContactReachabilityStatusResult::GetContactReachabilityStatusResult(const Aws
 
 GetContactReachabilityStatusResult& GetContactReachabilityStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");

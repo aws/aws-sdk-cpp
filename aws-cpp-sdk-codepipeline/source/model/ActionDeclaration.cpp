@@ -40,7 +40,7 @@ ActionDeclaration::ActionDeclaration() :
 {
 }
 
-ActionDeclaration::ActionDeclaration(const JsonValue& jsonValue) : 
+ActionDeclaration::ActionDeclaration(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_actionTypeIdHasBeenSet(false),
     m_runOrder(0),
@@ -53,7 +53,7 @@ ActionDeclaration::ActionDeclaration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ActionDeclaration& ActionDeclaration::operator =(const JsonValue& jsonValue)
+ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -78,7 +78,7 @@ ActionDeclaration& ActionDeclaration::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("configuration"))
   {
-    Aws::Map<Aws::String, JsonValue> configurationJsonMap = jsonValue.GetObject("configuration").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> configurationJsonMap = jsonValue.GetObject("configuration").GetAllObjects();
     for(auto& configurationItem : configurationJsonMap)
     {
       m_configuration[configurationItem.first] = configurationItem.second.AsString();
@@ -88,7 +88,7 @@ ActionDeclaration& ActionDeclaration::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("outputArtifacts"))
   {
-    Array<JsonValue> outputArtifactsJsonList = jsonValue.GetArray("outputArtifacts");
+    Array<JsonView> outputArtifactsJsonList = jsonValue.GetArray("outputArtifacts");
     for(unsigned outputArtifactsIndex = 0; outputArtifactsIndex < outputArtifactsJsonList.GetLength(); ++outputArtifactsIndex)
     {
       m_outputArtifacts.push_back(outputArtifactsJsonList[outputArtifactsIndex].AsObject());
@@ -98,7 +98,7 @@ ActionDeclaration& ActionDeclaration::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("inputArtifacts"))
   {
-    Array<JsonValue> inputArtifactsJsonList = jsonValue.GetArray("inputArtifacts");
+    Array<JsonView> inputArtifactsJsonList = jsonValue.GetArray("inputArtifacts");
     for(unsigned inputArtifactsIndex = 0; inputArtifactsIndex < inputArtifactsJsonList.GetLength(); ++inputArtifactsIndex)
     {
       m_inputArtifacts.push_back(inputArtifactsJsonList[inputArtifactsIndex].AsObject());

@@ -50,44 +50,135 @@ namespace Model
   public:
 
     /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
+     * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> |
+     * <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> |
+     * <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+     * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.</p> <p>Alternatively,
+     * use the <code>all-current</code> option to include all resource types that are
+     * currently within their opt-in period for longer IDs.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
 
     /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
+     * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> |
+     * <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> |
+     * <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+     * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.</p> <p>Alternatively,
+     * use the <code>all-current</code> option to include all resource types that are
+     * currently within their opt-in period for longer IDs.</p>
      */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
+     * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> |
+     * <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> |
+     * <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+     * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.</p> <p>Alternatively,
+     * use the <code>all-current</code> option to include all resource types that are
+     * currently within their opt-in period for longer IDs.</p>
      */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
+     * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> |
+     * <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> |
+     * <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+     * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.</p> <p>Alternatively,
+     * use the <code>all-current</code> option to include all resource types that are
+     * currently within their opt-in period for longer IDs.</p>
      */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
 
     /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
+     * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> |
+     * <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> |
+     * <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+     * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.</p> <p>Alternatively,
+     * use the <code>all-current</code> option to include all resource types that are
+     * currently within their opt-in period for longer IDs.</p>
      */
     inline ModifyIdFormatRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
+     * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> |
+     * <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> |
+     * <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+     * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.</p> <p>Alternatively,
+     * use the <code>all-current</code> option to include all resource types that are
+     * currently within their opt-in period for longer IDs.</p>
      */
     inline ModifyIdFormatRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
-     * <p>The type of resource: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code> </p>
+     * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> |
+     * <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> |
+     * <code>subnet</code> | <code>subnet-cidr-block-association</code> |
+     * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.</p> <p>Alternatively,
+     * use the <code>all-current</code> option to include all resource types that are
+     * currently within their opt-in period for longer IDs.</p>
      */
     inline ModifyIdFormatRequest& WithResource(const char* value) { SetResource(value); return *this;}
 

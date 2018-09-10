@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline AssociateRoleToGroupRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline AssociateRoleToGroupRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      */
     inline AssociateRoleToGroupRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
 
     /**
-     * Role arn you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * Role arn you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group.
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * Role arn you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group.
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * Role arn you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group.
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * Role arn you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group.
      */
     inline AssociateRoleToGroupRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * Role arn you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group.
      */
     inline AssociateRoleToGroupRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * Role arn you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group.
      */
     inline AssociateRoleToGroupRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

@@ -26,7 +26,9 @@ UpdateProjectRequest::UpdateProjectRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_sourceHasBeenSet(false),
+    m_secondarySourcesHasBeenSet(false),
     m_artifactsHasBeenSet(false),
+    m_secondaryArtifactsHasBeenSet(false),
     m_cacheHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
@@ -62,9 +64,31 @@ Aws::String UpdateProjectRequest::SerializePayload() const
 
   }
 
+  if(m_secondarySourcesHasBeenSet)
+  {
+   Array<JsonValue> secondarySourcesJsonList(m_secondarySources.size());
+   for(unsigned secondarySourcesIndex = 0; secondarySourcesIndex < secondarySourcesJsonList.GetLength(); ++secondarySourcesIndex)
+   {
+     secondarySourcesJsonList[secondarySourcesIndex].AsObject(m_secondarySources[secondarySourcesIndex].Jsonize());
+   }
+   payload.WithArray("secondarySources", std::move(secondarySourcesJsonList));
+
+  }
+
   if(m_artifactsHasBeenSet)
   {
    payload.WithObject("artifacts", m_artifacts.Jsonize());
+
+  }
+
+  if(m_secondaryArtifactsHasBeenSet)
+  {
+   Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
+   for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
+   {
+     secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject(m_secondaryArtifacts[secondaryArtifactsIndex].Jsonize());
+   }
+   payload.WithArray("secondaryArtifacts", std::move(secondaryArtifactsJsonList));
 
   }
 
@@ -121,7 +145,7 @@ Aws::String UpdateProjectRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateProjectRequest::GetRequestSpecificHeaders() const

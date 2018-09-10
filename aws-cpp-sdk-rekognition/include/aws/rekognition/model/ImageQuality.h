@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     ImageQuality();
-    ImageQuality(const Aws::Utils::Json::JsonValue& jsonValue);
-    ImageQuality& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ImageQuality(Aws::Utils::Json::JsonView jsonValue);
+    ImageQuality& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

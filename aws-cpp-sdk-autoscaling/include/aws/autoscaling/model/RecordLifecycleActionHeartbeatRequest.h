@@ -120,50 +120,50 @@ namespace Model
 
     /**
      * <p>A token that uniquely identifies a specific lifecycle action associated with
-     * an instance. Auto Scaling sends this token to the notification target you
-     * specified when you created the lifecycle hook.</p>
+     * an instance. Amazon EC2 Auto Scaling sends this token to the notification target
+     * you specified when you created the lifecycle hook.</p>
      */
     inline const Aws::String& GetLifecycleActionToken() const{ return m_lifecycleActionToken; }
 
     /**
      * <p>A token that uniquely identifies a specific lifecycle action associated with
-     * an instance. Auto Scaling sends this token to the notification target you
-     * specified when you created the lifecycle hook.</p>
+     * an instance. Amazon EC2 Auto Scaling sends this token to the notification target
+     * you specified when you created the lifecycle hook.</p>
      */
     inline void SetLifecycleActionToken(const Aws::String& value) { m_lifecycleActionTokenHasBeenSet = true; m_lifecycleActionToken = value; }
 
     /**
      * <p>A token that uniquely identifies a specific lifecycle action associated with
-     * an instance. Auto Scaling sends this token to the notification target you
-     * specified when you created the lifecycle hook.</p>
+     * an instance. Amazon EC2 Auto Scaling sends this token to the notification target
+     * you specified when you created the lifecycle hook.</p>
      */
     inline void SetLifecycleActionToken(Aws::String&& value) { m_lifecycleActionTokenHasBeenSet = true; m_lifecycleActionToken = std::move(value); }
 
     /**
      * <p>A token that uniquely identifies a specific lifecycle action associated with
-     * an instance. Auto Scaling sends this token to the notification target you
-     * specified when you created the lifecycle hook.</p>
+     * an instance. Amazon EC2 Auto Scaling sends this token to the notification target
+     * you specified when you created the lifecycle hook.</p>
      */
     inline void SetLifecycleActionToken(const char* value) { m_lifecycleActionTokenHasBeenSet = true; m_lifecycleActionToken.assign(value); }
 
     /**
      * <p>A token that uniquely identifies a specific lifecycle action associated with
-     * an instance. Auto Scaling sends this token to the notification target you
-     * specified when you created the lifecycle hook.</p>
+     * an instance. Amazon EC2 Auto Scaling sends this token to the notification target
+     * you specified when you created the lifecycle hook.</p>
      */
     inline RecordLifecycleActionHeartbeatRequest& WithLifecycleActionToken(const Aws::String& value) { SetLifecycleActionToken(value); return *this;}
 
     /**
      * <p>A token that uniquely identifies a specific lifecycle action associated with
-     * an instance. Auto Scaling sends this token to the notification target you
-     * specified when you created the lifecycle hook.</p>
+     * an instance. Amazon EC2 Auto Scaling sends this token to the notification target
+     * you specified when you created the lifecycle hook.</p>
      */
     inline RecordLifecycleActionHeartbeatRequest& WithLifecycleActionToken(Aws::String&& value) { SetLifecycleActionToken(std::move(value)); return *this;}
 
     /**
      * <p>A token that uniquely identifies a specific lifecycle action associated with
-     * an instance. Auto Scaling sends this token to the notification target you
-     * specified when you created the lifecycle hook.</p>
+     * an instance. Amazon EC2 Auto Scaling sends this token to the notification target
+     * you specified when you created the lifecycle hook.</p>
      */
     inline RecordLifecycleActionHeartbeatRequest& WithLifecycleActionToken(const char* value) { SetLifecycleActionToken(value); return *this;}
 

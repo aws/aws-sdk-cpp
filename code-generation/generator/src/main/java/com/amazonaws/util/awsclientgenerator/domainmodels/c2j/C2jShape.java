@@ -40,4 +40,6 @@ public class C2jShape {
     private C2jErrorInfo error;
     private boolean exception;
     private String timestampFormat;
+    private boolean eventstream;
+    private boolean event;
 }

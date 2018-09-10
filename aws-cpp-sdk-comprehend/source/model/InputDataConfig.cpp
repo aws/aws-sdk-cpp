@@ -35,7 +35,7 @@ InputDataConfig::InputDataConfig() :
 {
 }
 
-InputDataConfig::InputDataConfig(const JsonValue& jsonValue) : 
+InputDataConfig::InputDataConfig(JsonView jsonValue) : 
     m_s3UriHasBeenSet(false),
     m_inputFormat(InputFormat::NOT_SET),
     m_inputFormatHasBeenSet(false)
@@ -43,7 +43,7 @@ InputDataConfig::InputDataConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InputDataConfig& InputDataConfig::operator =(const JsonValue& jsonValue)
+InputDataConfig& InputDataConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3Uri"))
   {

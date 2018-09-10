@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -34,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Information on logger definition version<p><h3>See Also:</h3>   <a
+   * Information about a logger definition version.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/LoggerDefinitionVersion">AWS
    * API Reference</a></p>
    */
@@ -42,43 +43,43 @@ namespace Model
   {
   public:
     LoggerDefinitionVersion();
-    LoggerDefinitionVersion(const Aws::Utils::Json::JsonValue& jsonValue);
-    LoggerDefinitionVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LoggerDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
+    LoggerDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline const Aws::Vector<Logger>& GetLoggers() const{ return m_loggers; }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline void SetLoggers(const Aws::Vector<Logger>& value) { m_loggersHasBeenSet = true; m_loggers = value; }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline void SetLoggers(Aws::Vector<Logger>&& value) { m_loggersHasBeenSet = true; m_loggers = std::move(value); }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline LoggerDefinitionVersion& WithLoggers(const Aws::Vector<Logger>& value) { SetLoggers(value); return *this;}
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline LoggerDefinitionVersion& WithLoggers(Aws::Vector<Logger>&& value) { SetLoggers(std::move(value)); return *this;}
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline LoggerDefinitionVersion& AddLoggers(const Logger& value) { m_loggersHasBeenSet = true; m_loggers.push_back(value); return *this; }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      */
     inline LoggerDefinitionVersion& AddLoggers(Logger&& value) { m_loggersHasBeenSet = true; m_loggers.push_back(std::move(value)); return *this; }
 

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     DeploymentReadyOption();
-    DeploymentReadyOption(const Aws::Utils::Json::JsonValue& jsonValue);
-    DeploymentReadyOption& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DeploymentReadyOption(Aws::Utils::Json::JsonView jsonValue);
+    DeploymentReadyOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -53,9 +54,10 @@ namespace Model
      * <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer
      * immediately after the new application revision is installed on the instances in
      * the replacement environment.</p> </li> <li> <p>STOP_DEPLOYMENT: Do not register
-     * new instances with load balancer unless traffic is rerouted manually. If traffic
-     * is not rerouted manually before the end of the specified wait period, the
-     * deployment status is changed to Stopped.</p> </li> </ul>
+     * new instances with a load balancer unless traffic rerouting is started using
+     * <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of
+     * the specified wait period, the deployment status is changed to Stopped.</p>
+     * </li> </ul>
      */
     inline const DeploymentReadyAction& GetActionOnTimeout() const{ return m_actionOnTimeout; }
 
@@ -65,9 +67,10 @@ namespace Model
      * <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer
      * immediately after the new application revision is installed on the instances in
      * the replacement environment.</p> </li> <li> <p>STOP_DEPLOYMENT: Do not register
-     * new instances with load balancer unless traffic is rerouted manually. If traffic
-     * is not rerouted manually before the end of the specified wait period, the
-     * deployment status is changed to Stopped.</p> </li> </ul>
+     * new instances with a load balancer unless traffic rerouting is started using
+     * <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of
+     * the specified wait period, the deployment status is changed to Stopped.</p>
+     * </li> </ul>
      */
     inline void SetActionOnTimeout(const DeploymentReadyAction& value) { m_actionOnTimeoutHasBeenSet = true; m_actionOnTimeout = value; }
 
@@ -77,9 +80,10 @@ namespace Model
      * <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer
      * immediately after the new application revision is installed on the instances in
      * the replacement environment.</p> </li> <li> <p>STOP_DEPLOYMENT: Do not register
-     * new instances with load balancer unless traffic is rerouted manually. If traffic
-     * is not rerouted manually before the end of the specified wait period, the
-     * deployment status is changed to Stopped.</p> </li> </ul>
+     * new instances with a load balancer unless traffic rerouting is started using
+     * <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of
+     * the specified wait period, the deployment status is changed to Stopped.</p>
+     * </li> </ul>
      */
     inline void SetActionOnTimeout(DeploymentReadyAction&& value) { m_actionOnTimeoutHasBeenSet = true; m_actionOnTimeout = std::move(value); }
 
@@ -89,9 +93,10 @@ namespace Model
      * <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer
      * immediately after the new application revision is installed on the instances in
      * the replacement environment.</p> </li> <li> <p>STOP_DEPLOYMENT: Do not register
-     * new instances with load balancer unless traffic is rerouted manually. If traffic
-     * is not rerouted manually before the end of the specified wait period, the
-     * deployment status is changed to Stopped.</p> </li> </ul>
+     * new instances with a load balancer unless traffic rerouting is started using
+     * <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of
+     * the specified wait period, the deployment status is changed to Stopped.</p>
+     * </li> </ul>
      */
     inline DeploymentReadyOption& WithActionOnTimeout(const DeploymentReadyAction& value) { SetActionOnTimeout(value); return *this;}
 
@@ -101,9 +106,10 @@ namespace Model
      * <p>CONTINUE_DEPLOYMENT: Register new instances with the load balancer
      * immediately after the new application revision is installed on the instances in
      * the replacement environment.</p> </li> <li> <p>STOP_DEPLOYMENT: Do not register
-     * new instances with load balancer unless traffic is rerouted manually. If traffic
-     * is not rerouted manually before the end of the specified wait period, the
-     * deployment status is changed to Stopped.</p> </li> </ul>
+     * new instances with a load balancer unless traffic rerouting is started using
+     * <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of
+     * the specified wait period, the deployment status is changed to Stopped.</p>
+     * </li> </ul>
      */
     inline DeploymentReadyOption& WithActionOnTimeout(DeploymentReadyAction&& value) { SetActionOnTimeout(std::move(value)); return *this;}
 

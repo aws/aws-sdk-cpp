@@ -35,7 +35,7 @@ EnvironmentPlatform::EnvironmentPlatform() :
 {
 }
 
-EnvironmentPlatform::EnvironmentPlatform(const JsonValue& jsonValue) : 
+EnvironmentPlatform::EnvironmentPlatform(JsonView jsonValue) : 
     m_platform(PlatformType::NOT_SET),
     m_platformHasBeenSet(false),
     m_languagesHasBeenSet(false)
@@ -43,7 +43,7 @@ EnvironmentPlatform::EnvironmentPlatform(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EnvironmentPlatform& EnvironmentPlatform::operator =(const JsonValue& jsonValue)
+EnvironmentPlatform& EnvironmentPlatform::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("platform"))
   {
@@ -54,7 +54,7 @@ EnvironmentPlatform& EnvironmentPlatform::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("languages"))
   {
-    Array<JsonValue> languagesJsonList = jsonValue.GetArray("languages");
+    Array<JsonView> languagesJsonList = jsonValue.GetArray("languages");
     for(unsigned languagesIndex = 0; languagesIndex < languagesJsonList.GetLength(); ++languagesIndex)
     {
       m_languages.push_back(languagesJsonList[languagesIndex].AsObject());

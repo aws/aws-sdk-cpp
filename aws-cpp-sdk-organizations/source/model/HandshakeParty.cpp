@@ -35,7 +35,7 @@ HandshakeParty::HandshakeParty() :
 {
 }
 
-HandshakeParty::HandshakeParty(const JsonValue& jsonValue) : 
+HandshakeParty::HandshakeParty(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_type(HandshakePartyType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -43,7 +43,7 @@ HandshakeParty::HandshakeParty(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HandshakeParty& HandshakeParty::operator =(const JsonValue& jsonValue)
+HandshakeParty& HandshakeParty::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

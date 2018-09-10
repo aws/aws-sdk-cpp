@@ -93,6 +93,7 @@ static const int DEPLOYMENT_CONFIG_ALREADY_EXISTS_HASH = HashingUtils::HashStrin
 static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRoleException");
 static const int INVALID_TRAFFIC_ROUTING_CONFIGURATION_HASH = HashingUtils::HashString("InvalidTrafficRoutingConfigurationException");
 static const int INVALID_TAG_FILTER_HASH = HashingUtils::HashString("InvalidTagFilterException");
+static const int INVALID_GIT_HUB_ACCOUNT_TOKEN_HASH = HashingUtils::HashString("InvalidGitHubAccountTokenException");
 static const int IAM_SESSION_ARN_ALREADY_REGISTERED_HASH = HashingUtils::HashString("IamSessionArnAlreadyRegisteredException");
 static const int MULTIPLE_IAM_ARNS_PROVIDED_HASH = HashingUtils::HashString("MultipleIamArnsProvidedException");
 static const int INVALID_BLUE_GREEN_DEPLOYMENT_CONFIGURATION_HASH = HashingUtils::HashString("InvalidBlueGreenDeploymentConfigurationException");
@@ -386,6 +387,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_TAG_FILTER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_TAG_FILTER), false);
+  }
+  else if (hashCode == INVALID_GIT_HUB_ACCOUNT_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_GIT_HUB_ACCOUNT_TOKEN), false);
   }
   else if (hashCode == IAM_SESSION_ARN_ALREADY_REGISTERED_HASH)
   {

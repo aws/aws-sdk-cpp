@@ -51,7 +51,7 @@ Aws::String PutLifecycleEventHookExecutionStatusRequest::SerializePayload() cons
    payload.WithString("status", LifecycleEventStatusMapper::GetNameForLifecycleEventStatus(m_status));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutLifecycleEventHookExecutionStatusRequest::GetRequestSpecificHeaders() const

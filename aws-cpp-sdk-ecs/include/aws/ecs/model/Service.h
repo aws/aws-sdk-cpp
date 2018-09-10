@@ -21,7 +21,9 @@
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
+#include <aws/ecs/model/SchedulingStrategy.h>
 #include <aws/ecs/model/LoadBalancer.h>
+#include <aws/ecs/model/ServiceRegistry.h>
 #include <aws/ecs/model/Deployment.h>
 #include <aws/ecs/model/ServiceEvent.h>
 #include <aws/ecs/model/PlacementConstraint.h>
@@ -35,6 +37,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -51,14 +54,14 @@ namespace Model
   {
   public:
     Service();
-    Service(const Aws::Utils::Json::JsonValue& jsonValue);
-    Service& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Service(Aws::Utils::Json::JsonView jsonValue);
+    Service& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -68,7 +71,7 @@ namespace Model
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -78,7 +81,7 @@ namespace Model
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -88,7 +91,7 @@ namespace Model
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -98,7 +101,7 @@ namespace Model
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -108,7 +111,7 @@ namespace Model
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -118,7 +121,7 @@ namespace Model
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
-     * <code>arn:aws:ecs</code> namespace, followed by the region of the service, the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
      * AWS account ID of the service owner, the <code>service</code> namespace, and
      * then the service name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
@@ -131,7 +134,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
@@ -139,7 +142,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
@@ -147,7 +150,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
@@ -155,7 +158,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
@@ -163,7 +166,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline Service& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
@@ -171,7 +174,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline Service& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
@@ -179,7 +182,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline Service& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -223,51 +226,136 @@ namespace Model
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::move(value); }
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline Service& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline Service& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(std::move(value)); return *this;}
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline Service& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
     /**
      * <p>A list of Elastic Load Balancing load balancer objects, containing the load
      * balancer name, the container name (as it appears in a container definition), and
-     * the container port to access from the load balancer.</p>
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers; Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
      */
     inline Service& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p/>
+     */
+    inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
+
+    /**
+     * <p/>
+     */
+    inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline Service& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline Service& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline Service& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
+
+    /**
+     * <p/>
+     */
+    inline Service& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -780,35 +868,35 @@ namespace Model
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline Service& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
     /**
      * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own Elastic Network Interface by using the <code>awsvpc</code> networking
+     * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
     inline Service& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
@@ -835,6 +923,87 @@ namespace Model
      */
     inline Service& WithHealthCheckGracePeriodSeconds(int value) { SetHealthCheckGracePeriodSeconds(value); return *this;}
 
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each container instance in your cluster. When using this strategy, do not
+     * specify a desired number of tasks or any task placement strategies.</p> <note>
+     * <p>Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.</p>
+     * </note> </li> </ul>
+     */
+    inline const SchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each container instance in your cluster. When using this strategy, do not
+     * specify a desired number of tasks or any task placement strategies.</p> <note>
+     * <p>Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.</p>
+     * </note> </li> </ul>
+     */
+    inline void SetSchedulingStrategy(const SchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each container instance in your cluster. When using this strategy, do not
+     * specify a desired number of tasks or any task placement strategies.</p> <note>
+     * <p>Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.</p>
+     * </note> </li> </ul>
+     */
+    inline void SetSchedulingStrategy(SchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each container instance in your cluster. When using this strategy, do not
+     * specify a desired number of tasks or any task placement strategies.</p> <note>
+     * <p>Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.</p>
+     * </note> </li> </ul>
+     */
+    inline Service& WithSchedulingStrategy(const SchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each container instance in your cluster. When using this strategy, do not
+     * specify a desired number of tasks or any task placement strategies.</p> <note>
+     * <p>Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.</p>
+     * </note> </li> </ul>
+     */
+    inline Service& WithSchedulingStrategy(SchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceArn;
@@ -848,6 +1017,9 @@ namespace Model
 
     Aws::Vector<LoadBalancer> m_loadBalancers;
     bool m_loadBalancersHasBeenSet;
+
+    Aws::Vector<ServiceRegistry> m_serviceRegistries;
+    bool m_serviceRegistriesHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;
@@ -896,6 +1068,9 @@ namespace Model
 
     int m_healthCheckGracePeriodSeconds;
     bool m_healthCheckGracePeriodSecondsHasBeenSet;
+
+    SchedulingStrategy m_schedulingStrategy;
+    bool m_schedulingStrategyHasBeenSet;
   };
 
 } // namespace Model

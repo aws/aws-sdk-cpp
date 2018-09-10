@@ -43,253 +43,253 @@ namespace Model
 
 
     /**
-     * Arn of the definition.
+     * The ARN of the definition.
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * Arn of the definition.
+     * The ARN of the definition.
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * Arn of the definition.
+     * The ARN of the definition.
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * Arn of the definition.
+     * The ARN of the definition.
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * Arn of the definition.
+     * The ARN of the definition.
      */
     inline CreateFunctionDefinitionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * Arn of the definition.
+     * The ARN of the definition.
      */
     inline CreateFunctionDefinitionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * Arn of the definition.
+     * The ARN of the definition.
      */
     inline CreateFunctionDefinitionResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * Timestamp of when the definition was created.
+     * The time, in milliseconds since the epoch, when the definition was created.
      */
     inline const Aws::String& GetCreationTimestamp() const{ return m_creationTimestamp; }
 
     /**
-     * Timestamp of when the definition was created.
+     * The time, in milliseconds since the epoch, when the definition was created.
      */
     inline void SetCreationTimestamp(const Aws::String& value) { m_creationTimestamp = value; }
 
     /**
-     * Timestamp of when the definition was created.
+     * The time, in milliseconds since the epoch, when the definition was created.
      */
     inline void SetCreationTimestamp(Aws::String&& value) { m_creationTimestamp = std::move(value); }
 
     /**
-     * Timestamp of when the definition was created.
+     * The time, in milliseconds since the epoch, when the definition was created.
      */
     inline void SetCreationTimestamp(const char* value) { m_creationTimestamp.assign(value); }
 
     /**
-     * Timestamp of when the definition was created.
+     * The time, in milliseconds since the epoch, when the definition was created.
      */
     inline CreateFunctionDefinitionResult& WithCreationTimestamp(const Aws::String& value) { SetCreationTimestamp(value); return *this;}
 
     /**
-     * Timestamp of when the definition was created.
+     * The time, in milliseconds since the epoch, when the definition was created.
      */
     inline CreateFunctionDefinitionResult& WithCreationTimestamp(Aws::String&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
     /**
-     * Timestamp of when the definition was created.
+     * The time, in milliseconds since the epoch, when the definition was created.
      */
     inline CreateFunctionDefinitionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
 
 
     /**
-     * Id of the definition.
+     * The ID of the definition.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Id of the definition.
+     * The ID of the definition.
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * Id of the definition.
+     * The ID of the definition.
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * Id of the definition.
+     * The ID of the definition.
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * Id of the definition.
+     * The ID of the definition.
      */
     inline CreateFunctionDefinitionResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Id of the definition.
+     * The ID of the definition.
      */
     inline CreateFunctionDefinitionResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Id of the definition.
+     * The ID of the definition.
      */
     inline CreateFunctionDefinitionResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Last updated timestamp of the definition.
+     * The time, in milliseconds since the epoch, when the definition was last updated.
      */
     inline const Aws::String& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
 
     /**
-     * Last updated timestamp of the definition.
+     * The time, in milliseconds since the epoch, when the definition was last updated.
      */
     inline void SetLastUpdatedTimestamp(const Aws::String& value) { m_lastUpdatedTimestamp = value; }
 
     /**
-     * Last updated timestamp of the definition.
+     * The time, in milliseconds since the epoch, when the definition was last updated.
      */
     inline void SetLastUpdatedTimestamp(Aws::String&& value) { m_lastUpdatedTimestamp = std::move(value); }
 
     /**
-     * Last updated timestamp of the definition.
+     * The time, in milliseconds since the epoch, when the definition was last updated.
      */
     inline void SetLastUpdatedTimestamp(const char* value) { m_lastUpdatedTimestamp.assign(value); }
 
     /**
-     * Last updated timestamp of the definition.
+     * The time, in milliseconds since the epoch, when the definition was last updated.
      */
     inline CreateFunctionDefinitionResult& WithLastUpdatedTimestamp(const Aws::String& value) { SetLastUpdatedTimestamp(value); return *this;}
 
     /**
-     * Last updated timestamp of the definition.
+     * The time, in milliseconds since the epoch, when the definition was last updated.
      */
     inline CreateFunctionDefinitionResult& WithLastUpdatedTimestamp(Aws::String&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
 
     /**
-     * Last updated timestamp of the definition.
+     * The time, in milliseconds since the epoch, when the definition was last updated.
      */
     inline CreateFunctionDefinitionResult& WithLastUpdatedTimestamp(const char* value) { SetLastUpdatedTimestamp(value); return *this;}
 
 
     /**
-     * Last version of the definition.
+     * The latest version of the definition.
      */
     inline const Aws::String& GetLatestVersion() const{ return m_latestVersion; }
 
     /**
-     * Last version of the definition.
+     * The latest version of the definition.
      */
     inline void SetLatestVersion(const Aws::String& value) { m_latestVersion = value; }
 
     /**
-     * Last version of the definition.
+     * The latest version of the definition.
      */
     inline void SetLatestVersion(Aws::String&& value) { m_latestVersion = std::move(value); }
 
     /**
-     * Last version of the definition.
+     * The latest version of the definition.
      */
     inline void SetLatestVersion(const char* value) { m_latestVersion.assign(value); }
 
     /**
-     * Last version of the definition.
+     * The latest version of the definition.
      */
     inline CreateFunctionDefinitionResult& WithLatestVersion(const Aws::String& value) { SetLatestVersion(value); return *this;}
 
     /**
-     * Last version of the definition.
+     * The latest version of the definition.
      */
     inline CreateFunctionDefinitionResult& WithLatestVersion(Aws::String&& value) { SetLatestVersion(std::move(value)); return *this;}
 
     /**
-     * Last version of the definition.
+     * The latest version of the definition.
      */
     inline CreateFunctionDefinitionResult& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
 
 
     /**
-     * Latest version arn of the definition.
+     * The ARN of the latest version of the definition.
      */
     inline const Aws::String& GetLatestVersionArn() const{ return m_latestVersionArn; }
 
     /**
-     * Latest version arn of the definition.
+     * The ARN of the latest version of the definition.
      */
     inline void SetLatestVersionArn(const Aws::String& value) { m_latestVersionArn = value; }
 
     /**
-     * Latest version arn of the definition.
+     * The ARN of the latest version of the definition.
      */
     inline void SetLatestVersionArn(Aws::String&& value) { m_latestVersionArn = std::move(value); }
 
     /**
-     * Latest version arn of the definition.
+     * The ARN of the latest version of the definition.
      */
     inline void SetLatestVersionArn(const char* value) { m_latestVersionArn.assign(value); }
 
     /**
-     * Latest version arn of the definition.
+     * The ARN of the latest version of the definition.
      */
     inline CreateFunctionDefinitionResult& WithLatestVersionArn(const Aws::String& value) { SetLatestVersionArn(value); return *this;}
 
     /**
-     * Latest version arn of the definition.
+     * The ARN of the latest version of the definition.
      */
     inline CreateFunctionDefinitionResult& WithLatestVersionArn(Aws::String&& value) { SetLatestVersionArn(std::move(value)); return *this;}
 
     /**
-     * Latest version arn of the definition.
+     * The ARN of the latest version of the definition.
      */
     inline CreateFunctionDefinitionResult& WithLatestVersionArn(const char* value) { SetLatestVersionArn(value); return *this;}
 
 
     /**
-     * Name of the definition.
+     * The name of the definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * Name of the definition.
+     * The name of the definition.
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * Name of the definition.
+     * The name of the definition.
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * Name of the definition.
+     * The name of the definition.
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * Name of the definition.
+     * The name of the definition.
      */
     inline CreateFunctionDefinitionResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * Name of the definition.
+     * The name of the definition.
      */
     inline CreateFunctionDefinitionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * Name of the definition.
+     * The name of the definition.
      */
     inline CreateFunctionDefinitionResult& WithName(const char* value) { SetName(value); return *this;}
 

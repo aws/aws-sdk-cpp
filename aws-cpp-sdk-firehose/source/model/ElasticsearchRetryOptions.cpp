@@ -34,14 +34,14 @@ ElasticsearchRetryOptions::ElasticsearchRetryOptions() :
 {
 }
 
-ElasticsearchRetryOptions::ElasticsearchRetryOptions(const JsonValue& jsonValue) : 
+ElasticsearchRetryOptions::ElasticsearchRetryOptions(JsonView jsonValue) : 
     m_durationInSeconds(0),
     m_durationInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ElasticsearchRetryOptions& ElasticsearchRetryOptions::operator =(const JsonValue& jsonValue)
+ElasticsearchRetryOptions& ElasticsearchRetryOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DurationInSeconds"))
   {

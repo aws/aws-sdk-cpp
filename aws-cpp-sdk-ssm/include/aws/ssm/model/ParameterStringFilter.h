@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -35,7 +36,8 @@ namespace Model
 
   /**
    * <p>One or more filters. Use a filter to return a more specific list of
-   * results.</p><p><h3>See Also:</h3>   <a
+   * results.</p> <note> <p>The <code>Name</code> field can't be used with the
+   * <a>GetParametersByPath</a> API action.</p> </note><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ParameterStringFilter">AWS
    * API Reference</a></p>
    */
@@ -43,8 +45,8 @@ namespace Model
   {
   public:
     ParameterStringFilter();
-    ParameterStringFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    ParameterStringFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ParameterStringFilter(Aws::Utils::Json::JsonView jsonValue);
+    ParameterStringFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

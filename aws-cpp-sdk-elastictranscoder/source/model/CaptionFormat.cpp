@@ -35,7 +35,7 @@ CaptionFormat::CaptionFormat() :
 {
 }
 
-CaptionFormat::CaptionFormat(const JsonValue& jsonValue) : 
+CaptionFormat::CaptionFormat(JsonView jsonValue) : 
     m_formatHasBeenSet(false),
     m_patternHasBeenSet(false),
     m_encryptionHasBeenSet(false)
@@ -43,7 +43,7 @@ CaptionFormat::CaptionFormat(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CaptionFormat& CaptionFormat::operator =(const JsonValue& jsonValue)
+CaptionFormat& CaptionFormat::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Format"))
   {

@@ -37,10 +37,10 @@ DescribeConfigurationRecorderStatusResult::DescribeConfigurationRecorderStatusRe
 
 DescribeConfigurationRecorderStatusResult& DescribeConfigurationRecorderStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConfigurationRecordersStatus"))
   {
-    Array<JsonValue> configurationRecordersStatusJsonList = jsonValue.GetArray("ConfigurationRecordersStatus");
+    Array<JsonView> configurationRecordersStatusJsonList = jsonValue.GetArray("ConfigurationRecordersStatus");
     for(unsigned configurationRecordersStatusIndex = 0; configurationRecordersStatusIndex < configurationRecordersStatusJsonList.GetLength(); ++configurationRecordersStatusIndex)
     {
       m_configurationRecordersStatus.push_back(configurationRecordersStatusJsonList[configurationRecordersStatusIndex].AsObject());

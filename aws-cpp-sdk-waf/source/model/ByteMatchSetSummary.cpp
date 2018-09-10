@@ -34,14 +34,14 @@ ByteMatchSetSummary::ByteMatchSetSummary() :
 {
 }
 
-ByteMatchSetSummary::ByteMatchSetSummary(const JsonValue& jsonValue) : 
+ByteMatchSetSummary::ByteMatchSetSummary(JsonView jsonValue) : 
     m_byteMatchSetIdHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ByteMatchSetSummary& ByteMatchSetSummary::operator =(const JsonValue& jsonValue)
+ByteMatchSetSummary& ByteMatchSetSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ByteMatchSetId"))
   {

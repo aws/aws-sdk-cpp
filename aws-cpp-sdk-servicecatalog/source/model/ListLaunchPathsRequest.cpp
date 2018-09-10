@@ -59,7 +59,7 @@ Aws::String ListLaunchPathsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListLaunchPathsRequest::GetRequestSpecificHeaders() const

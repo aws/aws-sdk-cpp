@@ -38,7 +38,7 @@ QuotaSettings::QuotaSettings() :
 {
 }
 
-QuotaSettings::QuotaSettings(const JsonValue& jsonValue) : 
+QuotaSettings::QuotaSettings(JsonView jsonValue) : 
     m_limit(0),
     m_limitHasBeenSet(false),
     m_offset(0),
@@ -49,7 +49,7 @@ QuotaSettings::QuotaSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-QuotaSettings& QuotaSettings::operator =(const JsonValue& jsonValue)
+QuotaSettings& QuotaSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("limit"))
   {

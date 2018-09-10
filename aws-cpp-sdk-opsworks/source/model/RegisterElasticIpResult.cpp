@@ -37,7 +37,7 @@ RegisterElasticIpResult::RegisterElasticIpResult(const Aws::AmazonWebServiceResu
 
 RegisterElasticIpResult& RegisterElasticIpResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ElasticIp"))
   {
     m_elasticIp = jsonValue.GetString("ElasticIp");

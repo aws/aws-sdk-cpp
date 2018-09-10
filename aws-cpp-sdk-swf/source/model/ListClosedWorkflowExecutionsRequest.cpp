@@ -102,7 +102,7 @@ Aws::String ListClosedWorkflowExecutionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListClosedWorkflowExecutionsRequest::GetRequestSpecificHeaders() const

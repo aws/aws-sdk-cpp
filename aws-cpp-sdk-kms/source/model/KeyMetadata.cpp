@@ -51,7 +51,7 @@ KeyMetadata::KeyMetadata() :
 {
 }
 
-KeyMetadata::KeyMetadata(const JsonValue& jsonValue) : 
+KeyMetadata::KeyMetadata(JsonView jsonValue) : 
     m_aWSAccountIdHasBeenSet(false),
     m_keyIdHasBeenSet(false),
     m_arnHasBeenSet(false),
@@ -75,7 +75,7 @@ KeyMetadata::KeyMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-KeyMetadata& KeyMetadata::operator =(const JsonValue& jsonValue)
+KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AWSAccountId"))
   {

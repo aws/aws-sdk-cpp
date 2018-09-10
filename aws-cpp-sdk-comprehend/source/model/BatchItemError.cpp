@@ -36,7 +36,7 @@ BatchItemError::BatchItemError() :
 {
 }
 
-BatchItemError::BatchItemError(const JsonValue& jsonValue) : 
+BatchItemError::BatchItemError(JsonView jsonValue) : 
     m_index(0),
     m_indexHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
@@ -45,7 +45,7 @@ BatchItemError::BatchItemError(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchItemError& BatchItemError::operator =(const JsonValue& jsonValue)
+BatchItemError& BatchItemError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Index"))
   {

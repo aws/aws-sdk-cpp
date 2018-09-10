@@ -37,10 +37,10 @@ BatchStopJobRunResult::BatchStopJobRunResult(const Aws::AmazonWebServiceResult<J
 
 BatchStopJobRunResult& BatchStopJobRunResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SuccessfulSubmissions"))
   {
-    Array<JsonValue> successfulSubmissionsJsonList = jsonValue.GetArray("SuccessfulSubmissions");
+    Array<JsonView> successfulSubmissionsJsonList = jsonValue.GetArray("SuccessfulSubmissions");
     for(unsigned successfulSubmissionsIndex = 0; successfulSubmissionsIndex < successfulSubmissionsJsonList.GetLength(); ++successfulSubmissionsIndex)
     {
       m_successfulSubmissions.push_back(successfulSubmissionsJsonList[successfulSubmissionsIndex].AsObject());
@@ -49,7 +49,7 @@ BatchStopJobRunResult& BatchStopJobRunResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("Errors"))
   {
-    Array<JsonValue> errorsJsonList = jsonValue.GetArray("Errors");
+    Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

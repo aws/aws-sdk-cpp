@@ -29,6 +29,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace S3
 {
 namespace Model
@@ -49,31 +53,33 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * The canned ACL to apply to the object.
+     * <p>The canned ACL to apply to the object.</p>
      */
     inline const ObjectCannedACL& GetACL() const{ return m_aCL; }
 
     /**
-     * The canned ACL to apply to the object.
+     * <p>The canned ACL to apply to the object.</p>
      */
     inline void SetACL(const ObjectCannedACL& value) { m_aCLHasBeenSet = true; m_aCL = value; }
 
     /**
-     * The canned ACL to apply to the object.
+     * <p>The canned ACL to apply to the object.</p>
      */
     inline void SetACL(ObjectCannedACL&& value) { m_aCLHasBeenSet = true; m_aCL = std::move(value); }
 
     /**
-     * The canned ACL to apply to the object.
+     * <p>The canned ACL to apply to the object.</p>
      */
     inline CopyObjectRequest& WithACL(const ObjectCannedACL& value) { SetACL(value); return *this;}
 
     /**
-     * The canned ACL to apply to the object.
+     * <p>The canned ACL to apply to the object.</p>
      */
     inline CopyObjectRequest& WithACL(ObjectCannedACL&& value) { SetACL(std::move(value)); return *this;}
 
@@ -101,532 +107,546 @@ namespace Model
 
 
     /**
-     * Specifies caching behavior along the request/reply chain.
+     * <p>Specifies caching behavior along the request/reply chain.</p>
      */
     inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
 
     /**
-     * Specifies caching behavior along the request/reply chain.
+     * <p>Specifies caching behavior along the request/reply chain.</p>
      */
     inline void SetCacheControl(const Aws::String& value) { m_cacheControlHasBeenSet = true; m_cacheControl = value; }
 
     /**
-     * Specifies caching behavior along the request/reply chain.
+     * <p>Specifies caching behavior along the request/reply chain.</p>
      */
     inline void SetCacheControl(Aws::String&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::move(value); }
 
     /**
-     * Specifies caching behavior along the request/reply chain.
+     * <p>Specifies caching behavior along the request/reply chain.</p>
      */
     inline void SetCacheControl(const char* value) { m_cacheControlHasBeenSet = true; m_cacheControl.assign(value); }
 
     /**
-     * Specifies caching behavior along the request/reply chain.
+     * <p>Specifies caching behavior along the request/reply chain.</p>
      */
     inline CopyObjectRequest& WithCacheControl(const Aws::String& value) { SetCacheControl(value); return *this;}
 
     /**
-     * Specifies caching behavior along the request/reply chain.
+     * <p>Specifies caching behavior along the request/reply chain.</p>
      */
     inline CopyObjectRequest& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
 
     /**
-     * Specifies caching behavior along the request/reply chain.
+     * <p>Specifies caching behavior along the request/reply chain.</p>
      */
     inline CopyObjectRequest& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
 
 
     /**
-     * Specifies presentational information for the object.
+     * <p>Specifies presentational information for the object.</p>
      */
     inline const Aws::String& GetContentDisposition() const{ return m_contentDisposition; }
 
     /**
-     * Specifies presentational information for the object.
+     * <p>Specifies presentational information for the object.</p>
      */
     inline void SetContentDisposition(const Aws::String& value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = value; }
 
     /**
-     * Specifies presentational information for the object.
+     * <p>Specifies presentational information for the object.</p>
      */
     inline void SetContentDisposition(Aws::String&& value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = std::move(value); }
 
     /**
-     * Specifies presentational information for the object.
+     * <p>Specifies presentational information for the object.</p>
      */
     inline void SetContentDisposition(const char* value) { m_contentDispositionHasBeenSet = true; m_contentDisposition.assign(value); }
 
     /**
-     * Specifies presentational information for the object.
+     * <p>Specifies presentational information for the object.</p>
      */
     inline CopyObjectRequest& WithContentDisposition(const Aws::String& value) { SetContentDisposition(value); return *this;}
 
     /**
-     * Specifies presentational information for the object.
+     * <p>Specifies presentational information for the object.</p>
      */
     inline CopyObjectRequest& WithContentDisposition(Aws::String&& value) { SetContentDisposition(std::move(value)); return *this;}
 
     /**
-     * Specifies presentational information for the object.
+     * <p>Specifies presentational information for the object.</p>
      */
     inline CopyObjectRequest& WithContentDisposition(const char* value) { SetContentDisposition(value); return *this;}
 
 
     /**
-     * Specifies what content encodings have been applied to the object and thus what
-     * decoding mechanisms must be applied to obtain the media-type referenced by the
-     * Content-Type header field.
+     * <p>Specifies what content encodings have been applied to the object and thus
+     * what decoding mechanisms must be applied to obtain the media-type referenced by
+     * the Content-Type header field.</p>
      */
     inline const Aws::String& GetContentEncoding() const{ return m_contentEncoding; }
 
     /**
-     * Specifies what content encodings have been applied to the object and thus what
-     * decoding mechanisms must be applied to obtain the media-type referenced by the
-     * Content-Type header field.
+     * <p>Specifies what content encodings have been applied to the object and thus
+     * what decoding mechanisms must be applied to obtain the media-type referenced by
+     * the Content-Type header field.</p>
      */
     inline void SetContentEncoding(const Aws::String& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = value; }
 
     /**
-     * Specifies what content encodings have been applied to the object and thus what
-     * decoding mechanisms must be applied to obtain the media-type referenced by the
-     * Content-Type header field.
+     * <p>Specifies what content encodings have been applied to the object and thus
+     * what decoding mechanisms must be applied to obtain the media-type referenced by
+     * the Content-Type header field.</p>
      */
     inline void SetContentEncoding(Aws::String&& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = std::move(value); }
 
     /**
-     * Specifies what content encodings have been applied to the object and thus what
-     * decoding mechanisms must be applied to obtain the media-type referenced by the
-     * Content-Type header field.
+     * <p>Specifies what content encodings have been applied to the object and thus
+     * what decoding mechanisms must be applied to obtain the media-type referenced by
+     * the Content-Type header field.</p>
      */
     inline void SetContentEncoding(const char* value) { m_contentEncodingHasBeenSet = true; m_contentEncoding.assign(value); }
 
     /**
-     * Specifies what content encodings have been applied to the object and thus what
-     * decoding mechanisms must be applied to obtain the media-type referenced by the
-     * Content-Type header field.
+     * <p>Specifies what content encodings have been applied to the object and thus
+     * what decoding mechanisms must be applied to obtain the media-type referenced by
+     * the Content-Type header field.</p>
      */
     inline CopyObjectRequest& WithContentEncoding(const Aws::String& value) { SetContentEncoding(value); return *this;}
 
     /**
-     * Specifies what content encodings have been applied to the object and thus what
-     * decoding mechanisms must be applied to obtain the media-type referenced by the
-     * Content-Type header field.
+     * <p>Specifies what content encodings have been applied to the object and thus
+     * what decoding mechanisms must be applied to obtain the media-type referenced by
+     * the Content-Type header field.</p>
      */
     inline CopyObjectRequest& WithContentEncoding(Aws::String&& value) { SetContentEncoding(std::move(value)); return *this;}
 
     /**
-     * Specifies what content encodings have been applied to the object and thus what
-     * decoding mechanisms must be applied to obtain the media-type referenced by the
-     * Content-Type header field.
+     * <p>Specifies what content encodings have been applied to the object and thus
+     * what decoding mechanisms must be applied to obtain the media-type referenced by
+     * the Content-Type header field.</p>
      */
     inline CopyObjectRequest& WithContentEncoding(const char* value) { SetContentEncoding(value); return *this;}
 
 
     /**
-     * The language the content is in.
+     * <p>The language the content is in.</p>
      */
     inline const Aws::String& GetContentLanguage() const{ return m_contentLanguage; }
 
     /**
-     * The language the content is in.
+     * <p>The language the content is in.</p>
      */
     inline void SetContentLanguage(const Aws::String& value) { m_contentLanguageHasBeenSet = true; m_contentLanguage = value; }
 
     /**
-     * The language the content is in.
+     * <p>The language the content is in.</p>
      */
     inline void SetContentLanguage(Aws::String&& value) { m_contentLanguageHasBeenSet = true; m_contentLanguage = std::move(value); }
 
     /**
-     * The language the content is in.
+     * <p>The language the content is in.</p>
      */
     inline void SetContentLanguage(const char* value) { m_contentLanguageHasBeenSet = true; m_contentLanguage.assign(value); }
 
     /**
-     * The language the content is in.
+     * <p>The language the content is in.</p>
      */
     inline CopyObjectRequest& WithContentLanguage(const Aws::String& value) { SetContentLanguage(value); return *this;}
 
     /**
-     * The language the content is in.
+     * <p>The language the content is in.</p>
      */
     inline CopyObjectRequest& WithContentLanguage(Aws::String&& value) { SetContentLanguage(std::move(value)); return *this;}
 
     /**
-     * The language the content is in.
+     * <p>The language the content is in.</p>
      */
     inline CopyObjectRequest& WithContentLanguage(const char* value) { SetContentLanguage(value); return *this;}
 
 
     /**
-     * A standard MIME type describing the format of the object data.
+     * <p>A standard MIME type describing the format of the object data.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
     /**
-     * A standard MIME type describing the format of the object data.
+     * <p>A standard MIME type describing the format of the object data.</p>
      */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
     /**
-     * A standard MIME type describing the format of the object data.
+     * <p>A standard MIME type describing the format of the object data.</p>
      */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
 
     /**
-     * A standard MIME type describing the format of the object data.
+     * <p>A standard MIME type describing the format of the object data.</p>
      */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
 
     /**
-     * A standard MIME type describing the format of the object data.
+     * <p>A standard MIME type describing the format of the object data.</p>
      */
     inline CopyObjectRequest& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
     /**
-     * A standard MIME type describing the format of the object data.
+     * <p>A standard MIME type describing the format of the object data.</p>
      */
     inline CopyObjectRequest& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
-     * A standard MIME type describing the format of the object data.
+     * <p>A standard MIME type describing the format of the object data.</p>
      */
     inline CopyObjectRequest& WithContentType(const char* value) { SetContentType(value); return *this;}
 
 
     /**
-     * The name of the source bucket and key name of the source object, separated by a
-     * slash (/). Must be URL-encoded.
+     * <p>The name of the source bucket and key name of the source object, separated by
+     * a slash (/). Must be URL-encoded.</p>
      */
     inline const Aws::String& GetCopySource() const{ return m_copySource; }
 
     /**
-     * The name of the source bucket and key name of the source object, separated by a
-     * slash (/). Must be URL-encoded.
+     * <p>The name of the source bucket and key name of the source object, separated by
+     * a slash (/). Must be URL-encoded.</p>
      */
     inline void SetCopySource(const Aws::String& value) { m_copySourceHasBeenSet = true; m_copySource = value; }
 
     /**
-     * The name of the source bucket and key name of the source object, separated by a
-     * slash (/). Must be URL-encoded.
+     * <p>The name of the source bucket and key name of the source object, separated by
+     * a slash (/). Must be URL-encoded.</p>
      */
     inline void SetCopySource(Aws::String&& value) { m_copySourceHasBeenSet = true; m_copySource = std::move(value); }
 
     /**
-     * The name of the source bucket and key name of the source object, separated by a
-     * slash (/). Must be URL-encoded.
+     * <p>The name of the source bucket and key name of the source object, separated by
+     * a slash (/). Must be URL-encoded.</p>
      */
     inline void SetCopySource(const char* value) { m_copySourceHasBeenSet = true; m_copySource.assign(value); }
 
     /**
-     * The name of the source bucket and key name of the source object, separated by a
-     * slash (/). Must be URL-encoded.
+     * <p>The name of the source bucket and key name of the source object, separated by
+     * a slash (/). Must be URL-encoded.</p>
      */
     inline CopyObjectRequest& WithCopySource(const Aws::String& value) { SetCopySource(value); return *this;}
 
     /**
-     * The name of the source bucket and key name of the source object, separated by a
-     * slash (/). Must be URL-encoded.
+     * <p>The name of the source bucket and key name of the source object, separated by
+     * a slash (/). Must be URL-encoded.</p>
      */
     inline CopyObjectRequest& WithCopySource(Aws::String&& value) { SetCopySource(std::move(value)); return *this;}
 
     /**
-     * The name of the source bucket and key name of the source object, separated by a
-     * slash (/). Must be URL-encoded.
+     * <p>The name of the source bucket and key name of the source object, separated by
+     * a slash (/). Must be URL-encoded.</p>
      */
     inline CopyObjectRequest& WithCopySource(const char* value) { SetCopySource(value); return *this;}
 
 
     /**
-     * Copies the object if its entity tag (ETag) matches the specified tag.
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
      */
     inline const Aws::String& GetCopySourceIfMatch() const{ return m_copySourceIfMatch; }
 
     /**
-     * Copies the object if its entity tag (ETag) matches the specified tag.
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
      */
     inline void SetCopySourceIfMatch(const Aws::String& value) { m_copySourceIfMatchHasBeenSet = true; m_copySourceIfMatch = value; }
 
     /**
-     * Copies the object if its entity tag (ETag) matches the specified tag.
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
      */
     inline void SetCopySourceIfMatch(Aws::String&& value) { m_copySourceIfMatchHasBeenSet = true; m_copySourceIfMatch = std::move(value); }
 
     /**
-     * Copies the object if its entity tag (ETag) matches the specified tag.
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
      */
     inline void SetCopySourceIfMatch(const char* value) { m_copySourceIfMatchHasBeenSet = true; m_copySourceIfMatch.assign(value); }
 
     /**
-     * Copies the object if its entity tag (ETag) matches the specified tag.
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
      */
     inline CopyObjectRequest& WithCopySourceIfMatch(const Aws::String& value) { SetCopySourceIfMatch(value); return *this;}
 
     /**
-     * Copies the object if its entity tag (ETag) matches the specified tag.
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
      */
     inline CopyObjectRequest& WithCopySourceIfMatch(Aws::String&& value) { SetCopySourceIfMatch(std::move(value)); return *this;}
 
     /**
-     * Copies the object if its entity tag (ETag) matches the specified tag.
+     * <p>Copies the object if its entity tag (ETag) matches the specified tag.</p>
      */
     inline CopyObjectRequest& WithCopySourceIfMatch(const char* value) { SetCopySourceIfMatch(value); return *this;}
 
 
     /**
-     * Copies the object if it has been modified since the specified time.
+     * <p>Copies the object if it has been modified since the specified time.</p>
      */
     inline const Aws::Utils::DateTime& GetCopySourceIfModifiedSince() const{ return m_copySourceIfModifiedSince; }
 
     /**
-     * Copies the object if it has been modified since the specified time.
+     * <p>Copies the object if it has been modified since the specified time.</p>
      */
     inline void SetCopySourceIfModifiedSince(const Aws::Utils::DateTime& value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = value; }
 
     /**
-     * Copies the object if it has been modified since the specified time.
+     * <p>Copies the object if it has been modified since the specified time.</p>
      */
     inline void SetCopySourceIfModifiedSince(Aws::Utils::DateTime&& value) { m_copySourceIfModifiedSinceHasBeenSet = true; m_copySourceIfModifiedSince = std::move(value); }
 
     /**
-     * Copies the object if it has been modified since the specified time.
+     * <p>Copies the object if it has been modified since the specified time.</p>
      */
     inline CopyObjectRequest& WithCopySourceIfModifiedSince(const Aws::Utils::DateTime& value) { SetCopySourceIfModifiedSince(value); return *this;}
 
     /**
-     * Copies the object if it has been modified since the specified time.
+     * <p>Copies the object if it has been modified since the specified time.</p>
      */
     inline CopyObjectRequest& WithCopySourceIfModifiedSince(Aws::Utils::DateTime&& value) { SetCopySourceIfModifiedSince(std::move(value)); return *this;}
 
 
     /**
-     * Copies the object if its entity tag (ETag) is different than the specified ETag.
+     * <p>Copies the object if its entity tag (ETag) is different than the specified
+     * ETag.</p>
      */
     inline const Aws::String& GetCopySourceIfNoneMatch() const{ return m_copySourceIfNoneMatch; }
 
     /**
-     * Copies the object if its entity tag (ETag) is different than the specified ETag.
+     * <p>Copies the object if its entity tag (ETag) is different than the specified
+     * ETag.</p>
      */
     inline void SetCopySourceIfNoneMatch(const Aws::String& value) { m_copySourceIfNoneMatchHasBeenSet = true; m_copySourceIfNoneMatch = value; }
 
     /**
-     * Copies the object if its entity tag (ETag) is different than the specified ETag.
+     * <p>Copies the object if its entity tag (ETag) is different than the specified
+     * ETag.</p>
      */
     inline void SetCopySourceIfNoneMatch(Aws::String&& value) { m_copySourceIfNoneMatchHasBeenSet = true; m_copySourceIfNoneMatch = std::move(value); }
 
     /**
-     * Copies the object if its entity tag (ETag) is different than the specified ETag.
+     * <p>Copies the object if its entity tag (ETag) is different than the specified
+     * ETag.</p>
      */
     inline void SetCopySourceIfNoneMatch(const char* value) { m_copySourceIfNoneMatchHasBeenSet = true; m_copySourceIfNoneMatch.assign(value); }
 
     /**
-     * Copies the object if its entity tag (ETag) is different than the specified ETag.
+     * <p>Copies the object if its entity tag (ETag) is different than the specified
+     * ETag.</p>
      */
     inline CopyObjectRequest& WithCopySourceIfNoneMatch(const Aws::String& value) { SetCopySourceIfNoneMatch(value); return *this;}
 
     /**
-     * Copies the object if its entity tag (ETag) is different than the specified ETag.
+     * <p>Copies the object if its entity tag (ETag) is different than the specified
+     * ETag.</p>
      */
     inline CopyObjectRequest& WithCopySourceIfNoneMatch(Aws::String&& value) { SetCopySourceIfNoneMatch(std::move(value)); return *this;}
 
     /**
-     * Copies the object if its entity tag (ETag) is different than the specified ETag.
+     * <p>Copies the object if its entity tag (ETag) is different than the specified
+     * ETag.</p>
      */
     inline CopyObjectRequest& WithCopySourceIfNoneMatch(const char* value) { SetCopySourceIfNoneMatch(value); return *this;}
 
 
     /**
-     * Copies the object if it hasn't been modified since the specified time.
+     * <p>Copies the object if it hasn't been modified since the specified time.</p>
      */
     inline const Aws::Utils::DateTime& GetCopySourceIfUnmodifiedSince() const{ return m_copySourceIfUnmodifiedSince; }
 
     /**
-     * Copies the object if it hasn't been modified since the specified time.
+     * <p>Copies the object if it hasn't been modified since the specified time.</p>
      */
     inline void SetCopySourceIfUnmodifiedSince(const Aws::Utils::DateTime& value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = value; }
 
     /**
-     * Copies the object if it hasn't been modified since the specified time.
+     * <p>Copies the object if it hasn't been modified since the specified time.</p>
      */
     inline void SetCopySourceIfUnmodifiedSince(Aws::Utils::DateTime&& value) { m_copySourceIfUnmodifiedSinceHasBeenSet = true; m_copySourceIfUnmodifiedSince = std::move(value); }
 
     /**
-     * Copies the object if it hasn't been modified since the specified time.
+     * <p>Copies the object if it hasn't been modified since the specified time.</p>
      */
     inline CopyObjectRequest& WithCopySourceIfUnmodifiedSince(const Aws::Utils::DateTime& value) { SetCopySourceIfUnmodifiedSince(value); return *this;}
 
     /**
-     * Copies the object if it hasn't been modified since the specified time.
+     * <p>Copies the object if it hasn't been modified since the specified time.</p>
      */
     inline CopyObjectRequest& WithCopySourceIfUnmodifiedSince(Aws::Utils::DateTime&& value) { SetCopySourceIfUnmodifiedSince(std::move(value)); return *this;}
 
 
     /**
-     * The date and time at which the object is no longer cacheable.
+     * <p>The date and time at which the object is no longer cacheable.</p>
      */
     inline const Aws::Utils::DateTime& GetExpires() const{ return m_expires; }
 
     /**
-     * The date and time at which the object is no longer cacheable.
+     * <p>The date and time at which the object is no longer cacheable.</p>
      */
     inline void SetExpires(const Aws::Utils::DateTime& value) { m_expiresHasBeenSet = true; m_expires = value; }
 
     /**
-     * The date and time at which the object is no longer cacheable.
+     * <p>The date and time at which the object is no longer cacheable.</p>
      */
     inline void SetExpires(Aws::Utils::DateTime&& value) { m_expiresHasBeenSet = true; m_expires = std::move(value); }
 
     /**
-     * The date and time at which the object is no longer cacheable.
+     * <p>The date and time at which the object is no longer cacheable.</p>
      */
     inline CopyObjectRequest& WithExpires(const Aws::Utils::DateTime& value) { SetExpires(value); return *this;}
 
     /**
-     * The date and time at which the object is no longer cacheable.
+     * <p>The date and time at which the object is no longer cacheable.</p>
      */
     inline CopyObjectRequest& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
 
 
     /**
-     * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
+     * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
+     * object.</p>
      */
     inline const Aws::String& GetGrantFullControl() const{ return m_grantFullControl; }
 
     /**
-     * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
+     * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
+     * object.</p>
      */
     inline void SetGrantFullControl(const Aws::String& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = value; }
 
     /**
-     * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
+     * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
+     * object.</p>
      */
     inline void SetGrantFullControl(Aws::String&& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = std::move(value); }
 
     /**
-     * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
+     * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
+     * object.</p>
      */
     inline void SetGrantFullControl(const char* value) { m_grantFullControlHasBeenSet = true; m_grantFullControl.assign(value); }
 
     /**
-     * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
+     * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
+     * object.</p>
      */
     inline CopyObjectRequest& WithGrantFullControl(const Aws::String& value) { SetGrantFullControl(value); return *this;}
 
     /**
-     * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
+     * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
+     * object.</p>
      */
     inline CopyObjectRequest& WithGrantFullControl(Aws::String&& value) { SetGrantFullControl(std::move(value)); return *this;}
 
     /**
-     * Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the object.
+     * <p>Gives the grantee READ, READ_ACP, and WRITE_ACP permissions on the
+     * object.</p>
      */
     inline CopyObjectRequest& WithGrantFullControl(const char* value) { SetGrantFullControl(value); return *this;}
 
 
     /**
-     * Allows grantee to read the object data and its metadata.
+     * <p>Allows grantee to read the object data and its metadata.</p>
      */
     inline const Aws::String& GetGrantRead() const{ return m_grantRead; }
 
     /**
-     * Allows grantee to read the object data and its metadata.
+     * <p>Allows grantee to read the object data and its metadata.</p>
      */
     inline void SetGrantRead(const Aws::String& value) { m_grantReadHasBeenSet = true; m_grantRead = value; }
 
     /**
-     * Allows grantee to read the object data and its metadata.
+     * <p>Allows grantee to read the object data and its metadata.</p>
      */
     inline void SetGrantRead(Aws::String&& value) { m_grantReadHasBeenSet = true; m_grantRead = std::move(value); }
 
     /**
-     * Allows grantee to read the object data and its metadata.
+     * <p>Allows grantee to read the object data and its metadata.</p>
      */
     inline void SetGrantRead(const char* value) { m_grantReadHasBeenSet = true; m_grantRead.assign(value); }
 
     /**
-     * Allows grantee to read the object data and its metadata.
+     * <p>Allows grantee to read the object data and its metadata.</p>
      */
     inline CopyObjectRequest& WithGrantRead(const Aws::String& value) { SetGrantRead(value); return *this;}
 
     /**
-     * Allows grantee to read the object data and its metadata.
+     * <p>Allows grantee to read the object data and its metadata.</p>
      */
     inline CopyObjectRequest& WithGrantRead(Aws::String&& value) { SetGrantRead(std::move(value)); return *this;}
 
     /**
-     * Allows grantee to read the object data and its metadata.
+     * <p>Allows grantee to read the object data and its metadata.</p>
      */
     inline CopyObjectRequest& WithGrantRead(const char* value) { SetGrantRead(value); return *this;}
 
 
     /**
-     * Allows grantee to read the object ACL.
+     * <p>Allows grantee to read the object ACL.</p>
      */
     inline const Aws::String& GetGrantReadACP() const{ return m_grantReadACP; }
 
     /**
-     * Allows grantee to read the object ACL.
+     * <p>Allows grantee to read the object ACL.</p>
      */
     inline void SetGrantReadACP(const Aws::String& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = value; }
 
     /**
-     * Allows grantee to read the object ACL.
+     * <p>Allows grantee to read the object ACL.</p>
      */
     inline void SetGrantReadACP(Aws::String&& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = std::move(value); }
 
     /**
-     * Allows grantee to read the object ACL.
+     * <p>Allows grantee to read the object ACL.</p>
      */
     inline void SetGrantReadACP(const char* value) { m_grantReadACPHasBeenSet = true; m_grantReadACP.assign(value); }
 
     /**
-     * Allows grantee to read the object ACL.
+     * <p>Allows grantee to read the object ACL.</p>
      */
     inline CopyObjectRequest& WithGrantReadACP(const Aws::String& value) { SetGrantReadACP(value); return *this;}
 
     /**
-     * Allows grantee to read the object ACL.
+     * <p>Allows grantee to read the object ACL.</p>
      */
     inline CopyObjectRequest& WithGrantReadACP(Aws::String&& value) { SetGrantReadACP(std::move(value)); return *this;}
 
     /**
-     * Allows grantee to read the object ACL.
+     * <p>Allows grantee to read the object ACL.</p>
      */
     inline CopyObjectRequest& WithGrantReadACP(const char* value) { SetGrantReadACP(value); return *this;}
 
 
     /**
-     * Allows grantee to write the ACL for the applicable object.
+     * <p>Allows grantee to write the ACL for the applicable object.</p>
      */
     inline const Aws::String& GetGrantWriteACP() const{ return m_grantWriteACP; }
 
     /**
-     * Allows grantee to write the ACL for the applicable object.
+     * <p>Allows grantee to write the ACL for the applicable object.</p>
      */
     inline void SetGrantWriteACP(const Aws::String& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = value; }
 
     /**
-     * Allows grantee to write the ACL for the applicable object.
+     * <p>Allows grantee to write the ACL for the applicable object.</p>
      */
     inline void SetGrantWriteACP(Aws::String&& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = std::move(value); }
 
     /**
-     * Allows grantee to write the ACL for the applicable object.
+     * <p>Allows grantee to write the ACL for the applicable object.</p>
      */
     inline void SetGrantWriteACP(const char* value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP.assign(value); }
 
     /**
-     * Allows grantee to write the ACL for the applicable object.
+     * <p>Allows grantee to write the ACL for the applicable object.</p>
      */
     inline CopyObjectRequest& WithGrantWriteACP(const Aws::String& value) { SetGrantWriteACP(value); return *this;}
 
     /**
-     * Allows grantee to write the ACL for the applicable object.
+     * <p>Allows grantee to write the ACL for the applicable object.</p>
      */
     inline CopyObjectRequest& WithGrantWriteACP(Aws::String&& value) { SetGrantWriteACP(std::move(value)); return *this;}
 
     /**
-     * Allows grantee to write the ACL for the applicable object.
+     * <p>Allows grantee to write the ACL for the applicable object.</p>
      */
     inline CopyObjectRequest& WithGrantWriteACP(const char* value) { SetGrantWriteACP(value); return *this;}
 
@@ -654,581 +674,595 @@ namespace Model
 
 
     /**
-     * A map of metadata to store with the object in S3.
+     * <p>A map of metadata to store with the object in S3.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
 
     /**
-     * A map of metadata to store with the object in S3.
+     * <p>A map of metadata to store with the object in S3.</p>
      */
     inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
-     * A map of metadata to store with the object in S3.
+     * <p>A map of metadata to store with the object in S3.</p>
      */
     inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
     /**
-     * A map of metadata to store with the object in S3.
+     * <p>A map of metadata to store with the object in S3.</p>
      */
     inline CopyObjectRequest& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
 
     /**
-     * A map of metadata to store with the object in S3.
+     * <p>A map of metadata to store with the object in S3.</p>
      */
     inline CopyObjectRequest& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
-     * A map of metadata to store with the object in S3.
+     * <p>A map of metadata to store with the object in S3.</p>
      */
     inline CopyObjectRequest& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
     /**
-     * A map of metadata to store with the object in S3.
+     * <p>A map of metadata to store with the object in S3.</p>
      */
     inline CopyObjectRequest& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * A map of metadata to store with the object in S3.
+     * <p>A map of metadata to store with the object in S3.</p>
      */
     inline CopyObjectRequest& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * A map of metadata to store with the object in S3.
+     * <p>A map of metadata to store with the object in S3.</p>
      */
     inline CopyObjectRequest& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * A map of metadata to store with the object in S3.
+     * <p>A map of metadata to store with the object in S3.</p>
      */
     inline CopyObjectRequest& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * A map of metadata to store with the object in S3.
+     * <p>A map of metadata to store with the object in S3.</p>
      */
     inline CopyObjectRequest& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * A map of metadata to store with the object in S3.
+     * <p>A map of metadata to store with the object in S3.</p>
      */
     inline CopyObjectRequest& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
 
 
     /**
-     * Specifies whether the metadata is copied from the source object or replaced with
-     * metadata provided in the request.
+     * <p>Specifies whether the metadata is copied from the source object or replaced
+     * with metadata provided in the request.</p>
      */
     inline const MetadataDirective& GetMetadataDirective() const{ return m_metadataDirective; }
 
     /**
-     * Specifies whether the metadata is copied from the source object or replaced with
-     * metadata provided in the request.
+     * <p>Specifies whether the metadata is copied from the source object or replaced
+     * with metadata provided in the request.</p>
      */
     inline void SetMetadataDirective(const MetadataDirective& value) { m_metadataDirectiveHasBeenSet = true; m_metadataDirective = value; }
 
     /**
-     * Specifies whether the metadata is copied from the source object or replaced with
-     * metadata provided in the request.
+     * <p>Specifies whether the metadata is copied from the source object or replaced
+     * with metadata provided in the request.</p>
      */
     inline void SetMetadataDirective(MetadataDirective&& value) { m_metadataDirectiveHasBeenSet = true; m_metadataDirective = std::move(value); }
 
     /**
-     * Specifies whether the metadata is copied from the source object or replaced with
-     * metadata provided in the request.
+     * <p>Specifies whether the metadata is copied from the source object or replaced
+     * with metadata provided in the request.</p>
      */
     inline CopyObjectRequest& WithMetadataDirective(const MetadataDirective& value) { SetMetadataDirective(value); return *this;}
 
     /**
-     * Specifies whether the metadata is copied from the source object or replaced with
-     * metadata provided in the request.
+     * <p>Specifies whether the metadata is copied from the source object or replaced
+     * with metadata provided in the request.</p>
      */
     inline CopyObjectRequest& WithMetadataDirective(MetadataDirective&& value) { SetMetadataDirective(std::move(value)); return *this;}
 
 
     /**
-     * Specifies whether the object tag-set are copied from the source object or
-     * replaced with tag-set provided in the request.
+     * <p>Specifies whether the object tag-set are copied from the source object or
+     * replaced with tag-set provided in the request.</p>
      */
     inline const TaggingDirective& GetTaggingDirective() const{ return m_taggingDirective; }
 
     /**
-     * Specifies whether the object tag-set are copied from the source object or
-     * replaced with tag-set provided in the request.
+     * <p>Specifies whether the object tag-set are copied from the source object or
+     * replaced with tag-set provided in the request.</p>
      */
     inline void SetTaggingDirective(const TaggingDirective& value) { m_taggingDirectiveHasBeenSet = true; m_taggingDirective = value; }
 
     /**
-     * Specifies whether the object tag-set are copied from the source object or
-     * replaced with tag-set provided in the request.
+     * <p>Specifies whether the object tag-set are copied from the source object or
+     * replaced with tag-set provided in the request.</p>
      */
     inline void SetTaggingDirective(TaggingDirective&& value) { m_taggingDirectiveHasBeenSet = true; m_taggingDirective = std::move(value); }
 
     /**
-     * Specifies whether the object tag-set are copied from the source object or
-     * replaced with tag-set provided in the request.
+     * <p>Specifies whether the object tag-set are copied from the source object or
+     * replaced with tag-set provided in the request.</p>
      */
     inline CopyObjectRequest& WithTaggingDirective(const TaggingDirective& value) { SetTaggingDirective(value); return *this;}
 
     /**
-     * Specifies whether the object tag-set are copied from the source object or
-     * replaced with tag-set provided in the request.
+     * <p>Specifies whether the object tag-set are copied from the source object or
+     * replaced with tag-set provided in the request.</p>
      */
     inline CopyObjectRequest& WithTaggingDirective(TaggingDirective&& value) { SetTaggingDirective(std::move(value)); return *this;}
 
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline CopyObjectRequest& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
-     * The Server-side encryption algorithm used when storing this object in S3 (e.g.,
-     * AES256, aws:kms).
+     * <p>The Server-side encryption algorithm used when storing this object in S3
+     * (e.g., AES256, aws:kms).</p>
      */
     inline CopyObjectRequest& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
 
     /**
-     * The type of storage to use for the object. Defaults to 'STANDARD'.
+     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * The type of storage to use for the object. Defaults to 'STANDARD'.
+     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * The type of storage to use for the object. Defaults to 'STANDARD'.
+     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * The type of storage to use for the object. Defaults to 'STANDARD'.
+     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
      */
     inline CopyObjectRequest& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * The type of storage to use for the object. Defaults to 'STANDARD'.
+     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
      */
     inline CopyObjectRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
 
     /**
-     * If the bucket is configured as a website, redirects requests for this object to
-     * another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.
+     * <p>If the bucket is configured as a website, redirects requests for this object
+     * to another object in the same bucket or to an external URL. Amazon S3 stores the
+     * value of this header in the object metadata.</p>
      */
     inline const Aws::String& GetWebsiteRedirectLocation() const{ return m_websiteRedirectLocation; }
 
     /**
-     * If the bucket is configured as a website, redirects requests for this object to
-     * another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.
+     * <p>If the bucket is configured as a website, redirects requests for this object
+     * to another object in the same bucket or to an external URL. Amazon S3 stores the
+     * value of this header in the object metadata.</p>
      */
     inline void SetWebsiteRedirectLocation(const Aws::String& value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation = value; }
 
     /**
-     * If the bucket is configured as a website, redirects requests for this object to
-     * another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.
+     * <p>If the bucket is configured as a website, redirects requests for this object
+     * to another object in the same bucket or to an external URL. Amazon S3 stores the
+     * value of this header in the object metadata.</p>
      */
     inline void SetWebsiteRedirectLocation(Aws::String&& value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation = std::move(value); }
 
     /**
-     * If the bucket is configured as a website, redirects requests for this object to
-     * another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.
+     * <p>If the bucket is configured as a website, redirects requests for this object
+     * to another object in the same bucket or to an external URL. Amazon S3 stores the
+     * value of this header in the object metadata.</p>
      */
     inline void SetWebsiteRedirectLocation(const char* value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation.assign(value); }
 
     /**
-     * If the bucket is configured as a website, redirects requests for this object to
-     * another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.
+     * <p>If the bucket is configured as a website, redirects requests for this object
+     * to another object in the same bucket or to an external URL. Amazon S3 stores the
+     * value of this header in the object metadata.</p>
      */
     inline CopyObjectRequest& WithWebsiteRedirectLocation(const Aws::String& value) { SetWebsiteRedirectLocation(value); return *this;}
 
     /**
-     * If the bucket is configured as a website, redirects requests for this object to
-     * another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.
+     * <p>If the bucket is configured as a website, redirects requests for this object
+     * to another object in the same bucket or to an external URL. Amazon S3 stores the
+     * value of this header in the object metadata.</p>
      */
     inline CopyObjectRequest& WithWebsiteRedirectLocation(Aws::String&& value) { SetWebsiteRedirectLocation(std::move(value)); return *this;}
 
     /**
-     * If the bucket is configured as a website, redirects requests for this object to
-     * another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.
+     * <p>If the bucket is configured as a website, redirects requests for this object
+     * to another object in the same bucket or to an external URL. Amazon S3 stores the
+     * value of this header in the object metadata.</p>
      */
     inline CopyObjectRequest& WithWebsiteRedirectLocation(const char* value) { SetWebsiteRedirectLocation(value); return *this;}
 
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline CopyObjectRequest& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline CopyObjectRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline CopyObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
 
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline CopyObjectRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline CopyObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline CopyObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5.assign(value); }
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline CopyObjectRequest& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline CopyObjectRequest& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline CopyObjectRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
 
     /**
-     * Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
+     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. Documentation on configuring any of the officially supported AWS
      * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
+     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. Documentation on configuring any of the officially supported AWS
      * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
-     * Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
+     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. Documentation on configuring any of the officially supported AWS
      * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
+     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. Documentation on configuring any of the officially supported AWS
      * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
-     * Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
+     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. Documentation on configuring any of the officially supported AWS
      * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
      */
     inline CopyObjectRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
+     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. Documentation on configuring any of the officially supported AWS
      * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
      */
     inline CopyObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
+     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. Documentation on configuring any of the officially supported AWS
      * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
      */
     inline CopyObjectRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
 
     /**
-     * Specifies the algorithm to use when decrypting the source object (e.g., AES256).
+     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
+     * AES256).</p>
      */
     inline const Aws::String& GetCopySourceSSECustomerAlgorithm() const{ return m_copySourceSSECustomerAlgorithm; }
 
     /**
-     * Specifies the algorithm to use when decrypting the source object (e.g., AES256).
+     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
+     * AES256).</p>
      */
     inline void SetCopySourceSSECustomerAlgorithm(const Aws::String& value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm = value; }
 
     /**
-     * Specifies the algorithm to use when decrypting the source object (e.g., AES256).
+     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
+     * AES256).</p>
      */
     inline void SetCopySourceSSECustomerAlgorithm(Aws::String&& value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm = std::move(value); }
 
     /**
-     * Specifies the algorithm to use when decrypting the source object (e.g., AES256).
+     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
+     * AES256).</p>
      */
     inline void SetCopySourceSSECustomerAlgorithm(const char* value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm.assign(value); }
 
     /**
-     * Specifies the algorithm to use when decrypting the source object (e.g., AES256).
+     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
+     * AES256).</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerAlgorithm(const Aws::String& value) { SetCopySourceSSECustomerAlgorithm(value); return *this;}
 
     /**
-     * Specifies the algorithm to use when decrypting the source object (e.g., AES256).
+     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
+     * AES256).</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerAlgorithm(Aws::String&& value) { SetCopySourceSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
-     * Specifies the algorithm to use when decrypting the source object (e.g., AES256).
+     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
+     * AES256).</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerAlgorithm(const char* value) { SetCopySourceSSECustomerAlgorithm(value); return *this;}
 
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use to decrypt
-     * the source object. The encryption key provided in this header must be one that
-     * was used when the source object was created.
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
+     * decrypt the source object. The encryption key provided in this header must be
+     * one that was used when the source object was created.</p>
      */
     inline const Aws::String& GetCopySourceSSECustomerKey() const{ return m_copySourceSSECustomerKey; }
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use to decrypt
-     * the source object. The encryption key provided in this header must be one that
-     * was used when the source object was created.
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
+     * decrypt the source object. The encryption key provided in this header must be
+     * one that was used when the source object was created.</p>
      */
     inline void SetCopySourceSSECustomerKey(const Aws::String& value) { m_copySourceSSECustomerKeyHasBeenSet = true; m_copySourceSSECustomerKey = value; }
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use to decrypt
-     * the source object. The encryption key provided in this header must be one that
-     * was used when the source object was created.
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
+     * decrypt the source object. The encryption key provided in this header must be
+     * one that was used when the source object was created.</p>
      */
     inline void SetCopySourceSSECustomerKey(Aws::String&& value) { m_copySourceSSECustomerKeyHasBeenSet = true; m_copySourceSSECustomerKey = std::move(value); }
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use to decrypt
-     * the source object. The encryption key provided in this header must be one that
-     * was used when the source object was created.
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
+     * decrypt the source object. The encryption key provided in this header must be
+     * one that was used when the source object was created.</p>
      */
     inline void SetCopySourceSSECustomerKey(const char* value) { m_copySourceSSECustomerKeyHasBeenSet = true; m_copySourceSSECustomerKey.assign(value); }
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use to decrypt
-     * the source object. The encryption key provided in this header must be one that
-     * was used when the source object was created.
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
+     * decrypt the source object. The encryption key provided in this header must be
+     * one that was used when the source object was created.</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKey(const Aws::String& value) { SetCopySourceSSECustomerKey(value); return *this;}
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use to decrypt
-     * the source object. The encryption key provided in this header must be one that
-     * was used when the source object was created.
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
+     * decrypt the source object. The encryption key provided in this header must be
+     * one that was used when the source object was created.</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKey(Aws::String&& value) { SetCopySourceSSECustomerKey(std::move(value)); return *this;}
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use to decrypt
-     * the source object. The encryption key provided in this header must be one that
-     * was used when the source object was created.
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use to
+     * decrypt the source object. The encryption key provided in this header must be
+     * one that was used when the source object was created.</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKey(const char* value) { SetCopySourceSSECustomerKey(value); return *this;}
 
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline const Aws::String& GetCopySourceSSECustomerKeyMD5() const{ return m_copySourceSSECustomerKeyMD5; }
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline void SetCopySourceSSECustomerKeyMD5(const Aws::String& value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5 = value; }
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline void SetCopySourceSSECustomerKeyMD5(Aws::String&& value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5 = std::move(value); }
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline void SetCopySourceSSECustomerKeyMD5(const char* value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5.assign(value); }
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKeyMD5(const Aws::String& value) { SetCopySourceSSECustomerKeyMD5(value); return *this;}
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKeyMD5(Aws::String&& value) { SetCopySourceSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKeyMD5(const char* value) { SetCopySourceSSECustomerKeyMD5(value); return *this;}
 
@@ -1250,53 +1284,90 @@ namespace Model
 
 
     /**
-     * The tag-set for the object destination object this value must be used in
+     * <p>The tag-set for the object destination object this value must be used in
      * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters
+     * parameters</p>
      */
     inline const Aws::String& GetTagging() const{ return m_tagging; }
 
     /**
-     * The tag-set for the object destination object this value must be used in
+     * <p>The tag-set for the object destination object this value must be used in
      * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters
+     * parameters</p>
      */
     inline void SetTagging(const Aws::String& value) { m_taggingHasBeenSet = true; m_tagging = value; }
 
     /**
-     * The tag-set for the object destination object this value must be used in
+     * <p>The tag-set for the object destination object this value must be used in
      * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters
+     * parameters</p>
      */
     inline void SetTagging(Aws::String&& value) { m_taggingHasBeenSet = true; m_tagging = std::move(value); }
 
     /**
-     * The tag-set for the object destination object this value must be used in
+     * <p>The tag-set for the object destination object this value must be used in
      * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters
+     * parameters</p>
      */
     inline void SetTagging(const char* value) { m_taggingHasBeenSet = true; m_tagging.assign(value); }
 
     /**
-     * The tag-set for the object destination object this value must be used in
+     * <p>The tag-set for the object destination object this value must be used in
      * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters
+     * parameters</p>
      */
     inline CopyObjectRequest& WithTagging(const Aws::String& value) { SetTagging(value); return *this;}
 
     /**
-     * The tag-set for the object destination object this value must be used in
+     * <p>The tag-set for the object destination object this value must be used in
      * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters
+     * parameters</p>
      */
     inline CopyObjectRequest& WithTagging(Aws::String&& value) { SetTagging(std::move(value)); return *this;}
 
     /**
-     * The tag-set for the object destination object this value must be used in
+     * <p>The tag-set for the object destination object this value must be used in
      * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters
+     * parameters</p>
      */
     inline CopyObjectRequest& WithTagging(const char* value) { SetTagging(value); return *this;}
+
+
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
+
+    
+    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
+
+    
+    inline CopyObjectRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
+
+    
+    inline CopyObjectRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
+
+    
+    inline CopyObjectRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+
+    
+    inline CopyObjectRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline CopyObjectRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline CopyObjectRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline CopyObjectRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline CopyObjectRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline CopyObjectRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
 
   private:
 
@@ -1398,6 +1469,9 @@ namespace Model
 
     Aws::String m_tagging;
     bool m_taggingHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+    bool m_customizedAccessLogTagHasBeenSet;
   };
 
 } // namespace Model

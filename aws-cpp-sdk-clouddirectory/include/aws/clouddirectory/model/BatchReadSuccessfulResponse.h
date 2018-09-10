@@ -18,6 +18,7 @@
 #include <aws/clouddirectory/model/BatchListObjectAttributesResponse.h>
 #include <aws/clouddirectory/model/BatchListObjectChildrenResponse.h>
 #include <aws/clouddirectory/model/BatchGetObjectInformationResponse.h>
+#include <aws/clouddirectory/model/BatchGetObjectAttributesResponse.h>
 #include <aws/clouddirectory/model/BatchListAttachedIndicesResponse.h>
 #include <aws/clouddirectory/model/BatchListObjectParentPathsResponse.h>
 #include <aws/clouddirectory/model/BatchListObjectPoliciesResponse.h>
@@ -26,6 +27,7 @@
 #include <aws/clouddirectory/model/BatchListIndexResponse.h>
 #include <aws/clouddirectory/model/BatchListOutgoingTypedLinksResponse.h>
 #include <aws/clouddirectory/model/BatchListIncomingTypedLinksResponse.h>
+#include <aws/clouddirectory/model/BatchGetLinkAttributesResponse.h>
 #include <utility>
 
 namespace Aws
@@ -35,6 +37,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -45,15 +48,15 @@ namespace Model
   /**
    * <p>Represents the output of a <code>BatchRead</code> success response
    * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchReadSuccessfulResponse">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchReadSuccessfulResponse">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchReadSuccessfulResponse
   {
   public:
     BatchReadSuccessfulResponse();
-    BatchReadSuccessfulResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchReadSuccessfulResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchReadSuccessfulResponse(Aws::Utils::Json::JsonView jsonValue);
+    BatchReadSuccessfulResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -138,6 +141,32 @@ namespace Model
      * <p>Retrieves metadata about an object.</p>
      */
     inline BatchReadSuccessfulResponse& WithGetObjectInformation(BatchGetObjectInformationResponse&& value) { SetGetObjectInformation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline const BatchGetObjectAttributesResponse& GetGetObjectAttributes() const{ return m_getObjectAttributes; }
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline void SetGetObjectAttributes(const BatchGetObjectAttributesResponse& value) { m_getObjectAttributesHasBeenSet = true; m_getObjectAttributes = value; }
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline void SetGetObjectAttributes(BatchGetObjectAttributesResponse&& value) { m_getObjectAttributesHasBeenSet = true; m_getObjectAttributes = std::move(value); }
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline BatchReadSuccessfulResponse& WithGetObjectAttributes(const BatchGetObjectAttributesResponse& value) { SetGetObjectAttributes(value); return *this;}
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline BatchReadSuccessfulResponse& WithGetObjectAttributes(BatchGetObjectAttributesResponse&& value) { SetGetObjectAttributes(std::move(value)); return *this;}
 
 
     /**
@@ -447,6 +476,32 @@ namespace Model
      */
     inline BatchReadSuccessfulResponse& WithListIncomingTypedLinks(BatchListIncomingTypedLinksResponse&& value) { SetListIncomingTypedLinks(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The list of attributes to retrieve from the typed link.</p>
+     */
+    inline const BatchGetLinkAttributesResponse& GetGetLinkAttributes() const{ return m_getLinkAttributes; }
+
+    /**
+     * <p>The list of attributes to retrieve from the typed link.</p>
+     */
+    inline void SetGetLinkAttributes(const BatchGetLinkAttributesResponse& value) { m_getLinkAttributesHasBeenSet = true; m_getLinkAttributes = value; }
+
+    /**
+     * <p>The list of attributes to retrieve from the typed link.</p>
+     */
+    inline void SetGetLinkAttributes(BatchGetLinkAttributesResponse&& value) { m_getLinkAttributesHasBeenSet = true; m_getLinkAttributes = std::move(value); }
+
+    /**
+     * <p>The list of attributes to retrieve from the typed link.</p>
+     */
+    inline BatchReadSuccessfulResponse& WithGetLinkAttributes(const BatchGetLinkAttributesResponse& value) { SetGetLinkAttributes(value); return *this;}
+
+    /**
+     * <p>The list of attributes to retrieve from the typed link.</p>
+     */
+    inline BatchReadSuccessfulResponse& WithGetLinkAttributes(BatchGetLinkAttributesResponse&& value) { SetGetLinkAttributes(std::move(value)); return *this;}
+
   private:
 
     BatchListObjectAttributesResponse m_listObjectAttributes;
@@ -457,6 +512,9 @@ namespace Model
 
     BatchGetObjectInformationResponse m_getObjectInformation;
     bool m_getObjectInformationHasBeenSet;
+
+    BatchGetObjectAttributesResponse m_getObjectAttributes;
+    bool m_getObjectAttributesHasBeenSet;
 
     BatchListAttachedIndicesResponse m_listAttachedIndices;
     bool m_listAttachedIndicesHasBeenSet;
@@ -481,6 +539,9 @@ namespace Model
 
     BatchListIncomingTypedLinksResponse m_listIncomingTypedLinks;
     bool m_listIncomingTypedLinksHasBeenSet;
+
+    BatchGetLinkAttributesResponse m_getLinkAttributes;
+    bool m_getLinkAttributesHasBeenSet;
   };
 
 } // namespace Model

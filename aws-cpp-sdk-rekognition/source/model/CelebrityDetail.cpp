@@ -39,7 +39,7 @@ CelebrityDetail::CelebrityDetail() :
 {
 }
 
-CelebrityDetail::CelebrityDetail(const JsonValue& jsonValue) : 
+CelebrityDetail::CelebrityDetail(JsonView jsonValue) : 
     m_urlsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -51,11 +51,11 @@ CelebrityDetail::CelebrityDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CelebrityDetail& CelebrityDetail::operator =(const JsonValue& jsonValue)
+CelebrityDetail& CelebrityDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Urls"))
   {
-    Array<JsonValue> urlsJsonList = jsonValue.GetArray("Urls");
+    Array<JsonView> urlsJsonList = jsonValue.GetArray("Urls");
     for(unsigned urlsIndex = 0; urlsIndex < urlsJsonList.GetLength(); ++urlsIndex)
     {
       m_urls.push_back(urlsJsonList[urlsIndex].AsString());

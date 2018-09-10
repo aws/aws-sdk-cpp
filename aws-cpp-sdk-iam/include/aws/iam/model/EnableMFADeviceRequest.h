@@ -51,7 +51,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
@@ -60,7 +60,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
@@ -69,7 +69,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
@@ -78,7 +78,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
@@ -87,7 +87,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline EnableMFADeviceRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
@@ -96,7 +96,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline EnableMFADeviceRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
@@ -105,7 +105,7 @@ namespace Model
      * <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline EnableMFADeviceRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -176,7 +176,7 @@ namespace Model
 
     /**
      * <p>An authentication code emitted by the device. </p> <p>The format for this
-     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens
@@ -189,7 +189,7 @@ namespace Model
 
     /**
      * <p>An authentication code emitted by the device. </p> <p>The format for this
-     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens
@@ -202,7 +202,7 @@ namespace Model
 
     /**
      * <p>An authentication code emitted by the device. </p> <p>The format for this
-     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens
@@ -215,7 +215,7 @@ namespace Model
 
     /**
      * <p>An authentication code emitted by the device. </p> <p>The format for this
-     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens
@@ -228,7 +228,7 @@ namespace Model
 
     /**
      * <p>An authentication code emitted by the device. </p> <p>The format for this
-     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens
@@ -241,7 +241,7 @@ namespace Model
 
     /**
      * <p>An authentication code emitted by the device. </p> <p>The format for this
-     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens
@@ -254,7 +254,7 @@ namespace Model
 
     /**
      * <p>An authentication code emitted by the device. </p> <p>The format for this
-     * parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens
@@ -268,7 +268,7 @@ namespace Model
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * this parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens
@@ -281,7 +281,7 @@ namespace Model
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * this parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens
@@ -294,7 +294,7 @@ namespace Model
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * this parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens
@@ -307,7 +307,7 @@ namespace Model
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * this parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens
@@ -320,7 +320,7 @@ namespace Model
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * this parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens
@@ -333,7 +333,7 @@ namespace Model
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * this parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens
@@ -346,7 +346,7 @@ namespace Model
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
-     * this parameter is a string of 6 digits.</p> <important> <p>Submit your request
+     * this parameter is a string of six digits.</p> <important> <p>Submit your request
      * immediately after generating the authentication codes. If you generate the codes
      * and then wait too long to submit the request, the MFA device successfully
      * associates with the user but the MFA device becomes out of sync. This happens

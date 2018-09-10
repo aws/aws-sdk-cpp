@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -41,50 +42,57 @@ namespace Model
   {
   public:
     DataSource();
-    DataSource(const Aws::Utils::Json::JsonValue& jsonValue);
-    DataSource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DataSource(Aws::Utils::Json::JsonView jsonValue);
+    DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-     * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
+     * <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or
+     * <code>None</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
      * <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-     * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
+     * <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or
+     * <code>None</code>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-     * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
+     * <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or
+     * <code>None</code>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-     * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
+     * <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or
+     * <code>None</code>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
      * <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-     * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
+     * <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or
+     * <code>None</code>.</p>
      */
     inline DataSource& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
      * <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-     * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
+     * <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or
+     * <code>None</code>.</p>
      */
     inline DataSource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>,
-     * <code>OpsworksMysqlInstance</code>, or <code>RdsDbInstance</code>.</p>
+     * <code>OpsworksMysqlInstance</code>, <code>RdsDbInstance</code>, or
+     * <code>None</code>.</p>
      */
     inline DataSource& WithType(const char* value) { SetType(value); return *this;}
 

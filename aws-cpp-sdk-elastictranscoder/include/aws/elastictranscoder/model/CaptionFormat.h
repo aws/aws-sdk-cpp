@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticTranscoder
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     CaptionFormat();
-    CaptionFormat(const Aws::Utils::Json::JsonValue& jsonValue);
-    CaptionFormat& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CaptionFormat(Aws::Utils::Json::JsonView jsonValue);
+    CaptionFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

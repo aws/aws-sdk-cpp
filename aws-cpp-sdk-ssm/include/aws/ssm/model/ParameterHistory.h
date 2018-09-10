@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/ParameterType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -27,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -43,8 +45,8 @@ namespace Model
   {
   public:
     ParameterHistory();
-    ParameterHistory(const Aws::Utils::Json::JsonValue& jsonValue);
-    ParameterHistory& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ParameterHistory(Aws::Utils::Json::JsonView jsonValue);
+    ParameterHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -345,6 +347,47 @@ namespace Model
      */
     inline ParameterHistory& WithVersion(long long value) { SetVersion(value); return *this;}
 
+
+    /**
+     * <p>Labels assigned to the parameter version.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+
+    /**
+     * <p>Labels assigned to the parameter version.</p>
+     */
+    inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
+
+    /**
+     * <p>Labels assigned to the parameter version.</p>
+     */
+    inline void SetLabels(Aws::Vector<Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
+
+    /**
+     * <p>Labels assigned to the parameter version.</p>
+     */
+    inline ParameterHistory& WithLabels(const Aws::Vector<Aws::String>& value) { SetLabels(value); return *this;}
+
+    /**
+     * <p>Labels assigned to the parameter version.</p>
+     */
+    inline ParameterHistory& WithLabels(Aws::Vector<Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
+
+    /**
+     * <p>Labels assigned to the parameter version.</p>
+     */
+    inline ParameterHistory& AddLabels(const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
+
+    /**
+     * <p>Labels assigned to the parameter version.</p>
+     */
+    inline ParameterHistory& AddLabels(Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Labels assigned to the parameter version.</p>
+     */
+    inline ParameterHistory& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -373,6 +416,9 @@ namespace Model
 
     long long m_version;
     bool m_versionHasBeenSet;
+
+    Aws::Vector<Aws::String> m_labels;
+    bool m_labelsHasBeenSet;
   };
 
 } // namespace Model

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -33,8 +34,14 @@ namespace Model
 {
 
   /**
-   * <p>Details on a load balancer that is used with a service.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Details on a load balancer that is used with a service.</p> <p>Services with
+   * tasks that use the <code>awsvpc</code> network mode (for example, those with the
+   * Fargate launch type) only support Application Load Balancers and Network Load
+   * Balancers; Classic Load Balancers are not supported. Also, when you create any
+   * target groups for these services, you must choose <code>ip</code> as the target
+   * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
+   * network mode are associated with an elastic network interface, not an Amazon EC2
+   * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/LoadBalancer">AWS
    * API Reference</a></p>
    */
@@ -42,50 +49,85 @@ namespace Model
   {
   public:
     LoadBalancer();
-    LoadBalancer(const Aws::Utils::Json::JsonValue& jsonValue);
-    LoadBalancer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LoadBalancer(Aws::Utils::Json::JsonView jsonValue);
+    LoadBalancer& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
-     * group associated with a service.</p>
+     * group associated with a service.</p> <important> <p>If your service's task
+     * definition uses the <code>awsvpc</code> network mode (which is required for the
+     * Fargate launch type), you must choose <code>ip</code> as the target type, not
+     * <code>instance</code>, because tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p> </important>
      */
     inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
 
     /**
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
-     * group associated with a service.</p>
+     * group associated with a service.</p> <important> <p>If your service's task
+     * definition uses the <code>awsvpc</code> network mode (which is required for the
+     * Fargate launch type), you must choose <code>ip</code> as the target type, not
+     * <code>instance</code>, because tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p> </important>
      */
     inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
 
     /**
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
-     * group associated with a service.</p>
+     * group associated with a service.</p> <important> <p>If your service's task
+     * definition uses the <code>awsvpc</code> network mode (which is required for the
+     * Fargate launch type), you must choose <code>ip</code> as the target type, not
+     * <code>instance</code>, because tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p> </important>
      */
     inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
 
     /**
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
-     * group associated with a service.</p>
+     * group associated with a service.</p> <important> <p>If your service's task
+     * definition uses the <code>awsvpc</code> network mode (which is required for the
+     * Fargate launch type), you must choose <code>ip</code> as the target type, not
+     * <code>instance</code>, because tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p> </important>
      */
     inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
 
     /**
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
-     * group associated with a service.</p>
+     * group associated with a service.</p> <important> <p>If your service's task
+     * definition uses the <code>awsvpc</code> network mode (which is required for the
+     * Fargate launch type), you must choose <code>ip</code> as the target type, not
+     * <code>instance</code>, because tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p> </important>
      */
     inline LoadBalancer& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
 
     /**
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
-     * group associated with a service.</p>
+     * group associated with a service.</p> <important> <p>If your service's task
+     * definition uses the <code>awsvpc</code> network mode (which is required for the
+     * Fargate launch type), you must choose <code>ip</code> as the target type, not
+     * <code>instance</code>, because tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p> </important>
      */
     inline LoadBalancer& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target
-     * group associated with a service.</p>
+     * group associated with a service.</p> <important> <p>If your service's task
+     * definition uses the <code>awsvpc</code> network mode (which is required for the
+     * Fargate launch type), you must choose <code>ip</code> as the target type, not
+     * <code>instance</code>, because tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p> </important>
      */
     inline LoadBalancer& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
 

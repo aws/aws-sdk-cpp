@@ -43,80 +43,80 @@ namespace Model
 
 
     /**
-     * If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.
+     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.</p>
      */
     inline const Aws::String& GetID() const{ return m_iD; }
 
     /**
-     * If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.
+     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.</p>
      */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
 
     /**
-     * If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.
+     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.</p>
      */
     inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
 
     /**
-     * If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.
+     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.</p>
      */
     inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
 
     /**
-     * If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.
+     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.</p>
      */
     inline Initiator& WithID(const Aws::String& value) { SetID(value); return *this;}
 
     /**
-     * If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.
+     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.</p>
      */
     inline Initiator& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
 
     /**
-     * If the principal is an AWS account, it provides the Canonical User ID. If the
-     * principal is an IAM User, it provides a user ARN value.
+     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.</p>
      */
     inline Initiator& WithID(const char* value) { SetID(value); return *this;}
 
 
     /**
-     * Name of the Principal.
+     * <p>Name of the Principal.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * Name of the Principal.
+     * <p>Name of the Principal.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * Name of the Principal.
+     * <p>Name of the Principal.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * Name of the Principal.
+     * <p>Name of the Principal.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * Name of the Principal.
+     * <p>Name of the Principal.</p>
      */
     inline Initiator& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * Name of the Principal.
+     * <p>Name of the Principal.</p>
      */
     inline Initiator& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * Name of the Principal.
+     * <p>Name of the Principal.</p>
      */
     inline Initiator& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 

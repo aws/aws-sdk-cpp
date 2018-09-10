@@ -33,17 +33,17 @@ SubscriptionDefinitionVersion::SubscriptionDefinitionVersion() :
 {
 }
 
-SubscriptionDefinitionVersion::SubscriptionDefinitionVersion(const JsonValue& jsonValue) : 
+SubscriptionDefinitionVersion::SubscriptionDefinitionVersion(JsonView jsonValue) : 
     m_subscriptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SubscriptionDefinitionVersion& SubscriptionDefinitionVersion::operator =(const JsonValue& jsonValue)
+SubscriptionDefinitionVersion& SubscriptionDefinitionVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Subscriptions"))
   {
-    Array<JsonValue> subscriptionsJsonList = jsonValue.GetArray("Subscriptions");
+    Array<JsonView> subscriptionsJsonList = jsonValue.GetArray("Subscriptions");
     for(unsigned subscriptionsIndex = 0; subscriptionsIndex < subscriptionsJsonList.GetLength(); ++subscriptionsIndex)
     {
       m_subscriptions.push_back(subscriptionsJsonList[subscriptionsIndex].AsObject());

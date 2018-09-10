@@ -37,7 +37,7 @@ ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo() :
 {
 }
 
-ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo(const JsonValue& jsonValue) : 
+ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo(JsonView jsonValue) : 
     m_lastStatus(DeliveryStatus::NOT_SET),
     m_lastStatusHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
@@ -47,7 +47,7 @@ ConfigStreamDeliveryInfo::ConfigStreamDeliveryInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ConfigStreamDeliveryInfo& ConfigStreamDeliveryInfo::operator =(const JsonValue& jsonValue)
+ConfigStreamDeliveryInfo& ConfigStreamDeliveryInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("lastStatus"))
   {

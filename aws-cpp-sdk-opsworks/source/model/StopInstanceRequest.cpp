@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StopInstanceRequest::StopInstanceRequest() : 
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_force(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -37,7 +39,13 @@ Aws::String StopInstanceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_forceHasBeenSet)
+  {
+   payload.WithBool("Force", m_force);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopInstanceRequest::GetRequestSpecificHeaders() const

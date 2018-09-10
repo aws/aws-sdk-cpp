@@ -40,7 +40,7 @@ VolumeiSCSIAttributes::VolumeiSCSIAttributes() :
 {
 }
 
-VolumeiSCSIAttributes::VolumeiSCSIAttributes(const JsonValue& jsonValue) : 
+VolumeiSCSIAttributes::VolumeiSCSIAttributes(JsonView jsonValue) : 
     m_targetARNHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_networkInterfacePort(0),
@@ -53,7 +53,7 @@ VolumeiSCSIAttributes::VolumeiSCSIAttributes(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VolumeiSCSIAttributes& VolumeiSCSIAttributes::operator =(const JsonValue& jsonValue)
+VolumeiSCSIAttributes& VolumeiSCSIAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TargetARN"))
   {

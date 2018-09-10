@@ -31,7 +31,10 @@ namespace Aws
       {
 
         static const int Starting_HASH = HashingUtils::HashString("Starting");
+        static const int LaunchingMLInstances_HASH = HashingUtils::HashString("LaunchingMLInstances");
+        static const int PreparingTrainingStack_HASH = HashingUtils::HashString("PreparingTrainingStack");
         static const int Downloading_HASH = HashingUtils::HashString("Downloading");
+        static const int DownloadingTrainingImage_HASH = HashingUtils::HashString("DownloadingTrainingImage");
         static const int Training_HASH = HashingUtils::HashString("Training");
         static const int Uploading_HASH = HashingUtils::HashString("Uploading");
         static const int Stopping_HASH = HashingUtils::HashString("Stopping");
@@ -48,9 +51,21 @@ namespace Aws
           {
             return SecondaryStatus::Starting;
           }
+          else if (hashCode == LaunchingMLInstances_HASH)
+          {
+            return SecondaryStatus::LaunchingMLInstances;
+          }
+          else if (hashCode == PreparingTrainingStack_HASH)
+          {
+            return SecondaryStatus::PreparingTrainingStack;
+          }
           else if (hashCode == Downloading_HASH)
           {
             return SecondaryStatus::Downloading;
+          }
+          else if (hashCode == DownloadingTrainingImage_HASH)
+          {
+            return SecondaryStatus::DownloadingTrainingImage;
           }
           else if (hashCode == Training_HASH)
           {
@@ -96,8 +111,14 @@ namespace Aws
           {
           case SecondaryStatus::Starting:
             return "Starting";
+          case SecondaryStatus::LaunchingMLInstances:
+            return "LaunchingMLInstances";
+          case SecondaryStatus::PreparingTrainingStack:
+            return "PreparingTrainingStack";
           case SecondaryStatus::Downloading:
             return "Downloading";
+          case SecondaryStatus::DownloadingTrainingImage:
+            return "DownloadingTrainingImage";
           case SecondaryStatus::Training:
             return "Training";
           case SecondaryStatus::Uploading:

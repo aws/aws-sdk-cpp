@@ -41,7 +41,7 @@ UpdateOriginEndpointResult::UpdateOriginEndpointResult(const Aws::AmazonWebServi
 
 UpdateOriginEndpointResult& UpdateOriginEndpointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -51,6 +51,12 @@ UpdateOriginEndpointResult& UpdateOriginEndpointResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("channelId"))
   {
     m_channelId = jsonValue.GetString("channelId");
+
+  }
+
+  if(jsonValue.ValueExists("cmafPackage"))
+  {
+    m_cmafPackage = jsonValue.GetObject("cmafPackage");
 
   }
 
@@ -110,7 +116,7 @@ UpdateOriginEndpointResult& UpdateOriginEndpointResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("whitelist"))
   {
-    Array<JsonValue> whitelistJsonList = jsonValue.GetArray("whitelist");
+    Array<JsonView> whitelistJsonList = jsonValue.GetArray("whitelist");
     for(unsigned whitelistIndex = 0; whitelistIndex < whitelistJsonList.GetLength(); ++whitelistIndex)
     {
       m_whitelist.push_back(whitelistJsonList[whitelistIndex].AsString());

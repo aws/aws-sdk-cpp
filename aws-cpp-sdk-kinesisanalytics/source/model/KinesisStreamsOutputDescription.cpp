@@ -34,14 +34,14 @@ KinesisStreamsOutputDescription::KinesisStreamsOutputDescription() :
 {
 }
 
-KinesisStreamsOutputDescription::KinesisStreamsOutputDescription(const JsonValue& jsonValue) : 
+KinesisStreamsOutputDescription::KinesisStreamsOutputDescription(JsonView jsonValue) : 
     m_resourceARNHasBeenSet(false),
     m_roleARNHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-KinesisStreamsOutputDescription& KinesisStreamsOutputDescription::operator =(const JsonValue& jsonValue)
+KinesisStreamsOutputDescription& KinesisStreamsOutputDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceARN"))
   {

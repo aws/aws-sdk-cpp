@@ -41,7 +41,10 @@ Host::Host() :
     m_hostReservationIdHasBeenSet(false),
     m_instancesHasBeenSet(false),
     m_state(AllocationState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_allocationTimeHasBeenSet(false),
+    m_releaseTimeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -56,7 +59,10 @@ Host::Host(const XmlNode& xmlNode) :
     m_hostReservationIdHasBeenSet(false),
     m_instancesHasBeenSet(false),
     m_state(AllocationState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_allocationTimeHasBeenSet(false),
+    m_releaseTimeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -127,6 +133,30 @@ Host& Host::operator =(const XmlNode& xmlNode)
       m_state = AllocationStateMapper::GetAllocationStateForName(StringUtils::Trim(stateNode.GetText().c_str()).c_str());
       m_stateHasBeenSet = true;
     }
+    XmlNode allocationTimeNode = resultNode.FirstChild("allocationTime");
+    if(!allocationTimeNode.IsNull())
+    {
+      m_allocationTime = DateTime(StringUtils::Trim(allocationTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_allocationTimeHasBeenSet = true;
+    }
+    XmlNode releaseTimeNode = resultNode.FirstChild("releaseTime");
+    if(!releaseTimeNode.IsNull())
+    {
+      m_releaseTime = DateTime(StringUtils::Trim(releaseTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_releaseTimeHasBeenSet = true;
+    }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -189,6 +219,27 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".State=" << AllocationStateMapper::GetNameForAllocationState(m_state) << "&";
   }
 
+  if(m_allocationTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AllocationTime=" << StringUtils::URLEncode(m_allocationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_releaseTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReleaseTime=" << StringUtils::URLEncode(m_releaseTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -238,6 +289,24 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_stateHasBeenSet)
   {
       oStream << location << ".State=" << AllocationStateMapper::GetNameForAllocationState(m_state) << "&";
+  }
+  if(m_allocationTimeHasBeenSet)
+  {
+      oStream << location << ".AllocationTime=" << StringUtils::URLEncode(m_allocationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_releaseTimeHasBeenSet)
+  {
+      oStream << location << ".ReleaseTime=" << StringUtils::URLEncode(m_releaseTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

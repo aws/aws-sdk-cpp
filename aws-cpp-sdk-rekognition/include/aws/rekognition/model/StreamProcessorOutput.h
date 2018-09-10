@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -33,9 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Information about the Amazon Kinesis Data Streams stream to which a
+   * <p>Information about the Amazon Kinesis Data Streams stream to which a Amazon
    * Rekognition Video stream processor streams the results of a video analysis. For
-   * more information, see .</p><p><h3>See Also:</h3>   <a
+   * more information, see CreateStreamProcessor in the Amazon Rekognition Developer
+   * Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StreamProcessorOutput">AWS
    * API Reference</a></p>
    */
@@ -43,8 +45,8 @@ namespace Model
   {
   public:
     StreamProcessorOutput();
-    StreamProcessorOutput(const Aws::Utils::Json::JsonValue& jsonValue);
-    StreamProcessorOutput& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StreamProcessorOutput(Aws::Utils::Json::JsonView jsonValue);
+    StreamProcessorOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

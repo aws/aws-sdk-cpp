@@ -44,7 +44,7 @@ Aws::String GetActivityTaskRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetActivityTaskRequest::GetRequestSpecificHeaders() const

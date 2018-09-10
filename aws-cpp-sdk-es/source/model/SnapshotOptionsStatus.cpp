@@ -34,14 +34,14 @@ SnapshotOptionsStatus::SnapshotOptionsStatus() :
 {
 }
 
-SnapshotOptionsStatus::SnapshotOptionsStatus(const JsonValue& jsonValue) : 
+SnapshotOptionsStatus::SnapshotOptionsStatus(JsonView jsonValue) : 
     m_optionsHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SnapshotOptionsStatus& SnapshotOptionsStatus::operator =(const JsonValue& jsonValue)
+SnapshotOptionsStatus& SnapshotOptionsStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Options"))
   {

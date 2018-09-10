@@ -49,11 +49,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -157,7 +152,7 @@ namespace Model
 
         virtual ~HealthClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "health"; }
+        inline virtual const char* GetServiceClientName() const override { return "Health"; }
 
 
         /**

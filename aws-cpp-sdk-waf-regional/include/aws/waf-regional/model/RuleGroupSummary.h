@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAFRegional
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     RuleGroupSummary();
-    RuleGroupSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    RuleGroupSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RuleGroupSummary(Aws::Utils::Json::JsonView jsonValue);
+    RuleGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

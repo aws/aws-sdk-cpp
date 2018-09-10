@@ -37,7 +37,7 @@ GetOnPremisesInstanceResult::GetOnPremisesInstanceResult(const Aws::AmazonWebSer
 
 GetOnPremisesInstanceResult& GetOnPremisesInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("instanceInfo"))
   {
     m_instanceInfo = jsonValue.GetObject("instanceInfo");

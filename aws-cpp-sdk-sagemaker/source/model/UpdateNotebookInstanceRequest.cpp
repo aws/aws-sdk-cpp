@@ -26,7 +26,10 @@ UpdateNotebookInstanceRequest::UpdateNotebookInstanceRequest() :
     m_notebookInstanceNameHasBeenSet(false),
     m_instanceType(InstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_lifecycleConfigNameHasBeenSet(false),
+    m_disassociateLifecycleConfig(false),
+    m_disassociateLifecycleConfigHasBeenSet(false)
 {
 }
 
@@ -51,7 +54,19 @@ Aws::String UpdateNotebookInstanceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_lifecycleConfigNameHasBeenSet)
+  {
+   payload.WithString("LifecycleConfigName", m_lifecycleConfigName);
+
+  }
+
+  if(m_disassociateLifecycleConfigHasBeenSet)
+  {
+   payload.WithBool("DisassociateLifecycleConfig", m_disassociateLifecycleConfig);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateNotebookInstanceRequest::GetRequestSpecificHeaders() const

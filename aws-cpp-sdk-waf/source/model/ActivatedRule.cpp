@@ -39,7 +39,7 @@ ActivatedRule::ActivatedRule() :
 {
 }
 
-ActivatedRule::ActivatedRule(const JsonValue& jsonValue) : 
+ActivatedRule::ActivatedRule(JsonView jsonValue) : 
     m_priority(0),
     m_priorityHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
@@ -51,7 +51,7 @@ ActivatedRule::ActivatedRule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ActivatedRule& ActivatedRule::operator =(const JsonValue& jsonValue)
+ActivatedRule& ActivatedRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Priority"))
   {

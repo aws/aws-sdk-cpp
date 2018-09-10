@@ -23,12 +23,27 @@
 
 #pragma warning( disable : 4996)
 
+using namespace Aws::Utils;
 namespace Aws
 {
 namespace FileSystem
 {
 
 static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystem";
+
+/**
+ * See
+ * https://msdn.microsoft.com/en-us/library/windows/desktop/aa365247(v=vs.85).aspx
+ * to understand how could we pass long path (over 260 chars) to WinAPI
+ */
+static inline Aws::WString ToLongPath(const Aws::WString& path)
+{
+    if (path.size() > MAX_PATH - 12/*8.3 file name*/)
+    {
+        return L"\\\\?\\" + path;
+    }
+    return path;
+}
 
 class User32Directory : public Directory
 {
@@ -38,13 +53,13 @@ public:
         WIN32_FIND_DATAW ffd;
         AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Entering directory " << m_directoryEntry.path);
 
-        m_find = FindFirstFileW(Aws::Utils::StringUtils::ToWString(m_directoryEntry.path.c_str()).c_str(), &ffd);
+        m_find = FindFirstFileW(ToLongPath(Aws::Utils::StringUtils::ToWString(m_directoryEntry.path.c_str())).c_str(), &ffd);
         if (m_find != INVALID_HANDLE_VALUE)
         {
             m_directoryEntry = ParseFileInfo(ffd, false);
             FindClose(m_find);
             auto seachPath = Join(m_directoryEntry.path, "*");
-            m_find = FindFirstFileW(Aws::Utils::StringUtils::ToWString(seachPath.c_str()).c_str(), &m_ffd);
+            m_find = FindFirstFileW(ToLongPath(Aws::Utils::StringUtils::ToWString(seachPath.c_str())).c_str(), &m_ffd);
         }
         else
         {
@@ -60,7 +75,7 @@ public:
         }
     }
 
-	operator bool() const override { return m_directoryEntry.operator bool() && m_find != INVALID_HANDLE_VALUE; }
+    operator bool() const override { return m_directoryEntry.operator bool() && m_find != INVALID_HANDLE_VALUE; }
 
     DirectoryEntry Next() override
     {
@@ -195,28 +210,48 @@ Aws::String GetExecutableDirectory()
     return "";
 }
 
-bool CreateDirectoryIfNotExists(const char* path)
+bool CreateDirectoryIfNotExists(const char* path, bool createParentDirs)
 {
-    AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Creating directory " << path);
+    Aws::String directoryName = path;
+    AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Creating directory " << directoryName);
 
-    if (CreateDirectoryW(Aws::Utils::StringUtils::ToWString(path).c_str(), nullptr))
+    // Create intermediate directories or create the target directory once.
+    for (size_t i = createParentDirs ? 0 : directoryName.size() - 1; i < directoryName.size(); i++)
     {
-        AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Creation of directory " << path << " succeeded.")
-        return true;
+        // Create the intermediate directory if we find a delimiter and the delimiter is not the first char, or if this is the target directory.
+        if (i != 0 && (directoryName[i] == FileSystem::PATH_DELIM || i == directoryName.size() - 1))
+        {
+            // the last delimeter can be removed safely.
+            if (directoryName[i] == FileSystem::PATH_DELIM) 
+            {
+                directoryName[i] = '\0';
+            }
+            if (CreateDirectoryW(ToLongPath(StringUtils::ToWString(directoryName.c_str())).c_str(), nullptr))
+            {
+                AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Creation of directory " << directoryName.c_str() << " succeeded.");
+            }
+            else
+            {
+                DWORD errorCode = GetLastError();
+                if (errorCode != ERROR_ALREADY_EXISTS && errorCode != NO_ERROR) // in vs2013 the errorCode is NO_ERROR
+                {
+                    AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, " Creation of directory " << directoryName.c_str() << " returned code: " << errorCode);
+                    return false;
+                }
+                AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, " Creation of directory " << directoryName.c_str() << " returned code: " << errorCode);
+            }
+            // Restore the path. We are good even if we didn't change that char to '\0', because we are ready to return.
+            directoryName[i] = FileSystem::PATH_DELIM;
+        }
     }
-    else
-    {
-        DWORD errorCode = GetLastError();
-        AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, " Creation of directory " << path << " returned code: " << errorCode);
-        return errorCode == ERROR_ALREADY_EXISTS;
-    }
+    return true;
 }
 
 bool RemoveFileIfExists(const char* path)
 {
     AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Deleting file: " << path);
 
-    if (DeleteFileW(Aws::Utils::StringUtils::ToWString(path).c_str()))
+    if (DeleteFileW(ToLongPath(Aws::Utils::StringUtils::ToWString(path)).c_str()))
     {
         AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Successfully deleted file: " << path);
         return true;
@@ -233,7 +268,7 @@ bool RelocateFileOrDirectory(const char* from, const char* to)
 {
     AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Moving file at " << from << " to " << to);
 
-    if(MoveFileW(Aws::Utils::StringUtils::ToWString(from).c_str(), Aws::Utils::StringUtils::ToWString(to).c_str()))
+    if(MoveFileW(ToLongPath(Aws::Utils::StringUtils::ToWString(from)).c_str(), Aws::Utils::StringUtils::ToWString(to).c_str()))
     {
         AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG,  "The moving operation of file at " << from << " to " << to << " Succeeded.");
         return true;
@@ -250,7 +285,7 @@ bool RemoveDirectoryIfExists(const char* path)
 {
     AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Removing directory at " << path);
 
-    if(RemoveDirectoryW(Aws::Utils::StringUtils::ToWString(path).c_str()))
+    if(RemoveDirectoryW(ToLongPath(Aws::Utils::StringUtils::ToWString(path)).c_str()))
     {
         AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG,  "The remove operation of file at " << path << " Succeeded.");
         return true;
@@ -302,9 +337,9 @@ Aws::String CreateTempFilePath()
     return s_tempName;
 }
 
-std::shared_ptr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
+Aws::UniquePtr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
 {
-    return Aws::MakeShared<User32Directory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
+    return Aws::MakeUnique<User32Directory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
 }
 
 } // namespace FileSystem

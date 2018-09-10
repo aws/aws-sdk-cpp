@@ -37,13 +37,13 @@ ListUniqueProblemsResult::ListUniqueProblemsResult(const Aws::AmazonWebServiceRe
 
 ListUniqueProblemsResult& ListUniqueProblemsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("uniqueProblems"))
   {
-    Aws::Map<Aws::String, JsonValue> uniqueProblemsJsonMap = jsonValue.GetObject("uniqueProblems").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> uniqueProblemsJsonMap = jsonValue.GetObject("uniqueProblems").GetAllObjects();
     for(auto& uniqueProblemsItem : uniqueProblemsJsonMap)
     {
-      Array<JsonValue> uniqueProblemsJsonList = uniqueProblemsItem.second.AsArray();
+      Array<JsonView> uniqueProblemsJsonList = uniqueProblemsItem.second.AsArray();
       Aws::Vector<UniqueProblem> uniqueProblemsList;
       uniqueProblemsList.reserve((size_t)uniqueProblemsJsonList.GetLength());
       for(unsigned uniqueProblemsIndex = 0; uniqueProblemsIndex < uniqueProblemsJsonList.GetLength(); ++uniqueProblemsIndex)

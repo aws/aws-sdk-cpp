@@ -108,46 +108,143 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline UpdateNotebookInstanceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline UpdateNotebookInstanceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) of the IAM role to associate with the
-     * instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
+     * assume to access the notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline UpdateNotebookInstanceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline const Aws::String& GetLifecycleConfigName() const{ return m_lifecycleConfigName; }
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetLifecycleConfigName(const Aws::String& value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName = value; }
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetLifecycleConfigName(Aws::String&& value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName = std::move(value); }
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetLifecycleConfigName(const char* value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName.assign(value); }
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithLifecycleConfigName(const Aws::String& value) { SetLifecycleConfigName(value); return *this;}
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithLifecycleConfigName(Aws::String&& value) { SetLifecycleConfigName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithLifecycleConfigName(const char* value) { SetLifecycleConfigName(value); return *this;}
+
+
+    /**
+     * <p>Set to <code>true</code> to remove the notebook instance lifecycle
+     * configuration currently associated with the notebook instance.</p>
+     */
+    inline bool GetDisassociateLifecycleConfig() const{ return m_disassociateLifecycleConfig; }
+
+    /**
+     * <p>Set to <code>true</code> to remove the notebook instance lifecycle
+     * configuration currently associated with the notebook instance.</p>
+     */
+    inline void SetDisassociateLifecycleConfig(bool value) { m_disassociateLifecycleConfigHasBeenSet = true; m_disassociateLifecycleConfig = value; }
+
+    /**
+     * <p>Set to <code>true</code> to remove the notebook instance lifecycle
+     * configuration currently associated with the notebook instance.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithDisassociateLifecycleConfig(bool value) { SetDisassociateLifecycleConfig(value); return *this;}
 
   private:
 
@@ -159,6 +256,12 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::String m_lifecycleConfigName;
+    bool m_lifecycleConfigNameHasBeenSet;
+
+    bool m_disassociateLifecycleConfig;
+    bool m_disassociateLifecycleConfigHasBeenSet;
   };
 
 } // namespace Model

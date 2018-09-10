@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     AvailBlanking();
-    AvailBlanking(const Aws::Utils::Json::JsonValue& jsonValue);
-    AvailBlanking& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AvailBlanking(Aws::Utils::Json::JsonView jsonValue);
+    AvailBlanking& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

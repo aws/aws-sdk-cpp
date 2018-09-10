@@ -58,7 +58,7 @@ Aws::String CreateBuildRequest::SerializePayload() const
    payload.WithString("OperatingSystem", OperatingSystemMapper::GetNameForOperatingSystem(m_operatingSystem));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateBuildRequest::GetRequestSpecificHeaders() const

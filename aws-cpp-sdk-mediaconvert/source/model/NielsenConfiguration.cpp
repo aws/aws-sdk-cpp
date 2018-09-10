@@ -35,7 +35,7 @@ NielsenConfiguration::NielsenConfiguration() :
 {
 }
 
-NielsenConfiguration::NielsenConfiguration(const JsonValue& jsonValue) : 
+NielsenConfiguration::NielsenConfiguration(JsonView jsonValue) : 
     m_breakoutCode(0),
     m_breakoutCodeHasBeenSet(false),
     m_distributorIdHasBeenSet(false)
@@ -43,7 +43,7 @@ NielsenConfiguration::NielsenConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NielsenConfiguration& NielsenConfiguration::operator =(const JsonValue& jsonValue)
+NielsenConfiguration& NielsenConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("breakoutCode"))
   {

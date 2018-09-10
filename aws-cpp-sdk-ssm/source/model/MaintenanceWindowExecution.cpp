@@ -39,7 +39,7 @@ MaintenanceWindowExecution::MaintenanceWindowExecution() :
 {
 }
 
-MaintenanceWindowExecution::MaintenanceWindowExecution(const JsonValue& jsonValue) : 
+MaintenanceWindowExecution::MaintenanceWindowExecution(JsonView jsonValue) : 
     m_windowIdHasBeenSet(false),
     m_windowExecutionIdHasBeenSet(false),
     m_status(MaintenanceWindowExecutionStatus::NOT_SET),
@@ -51,7 +51,7 @@ MaintenanceWindowExecution::MaintenanceWindowExecution(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-MaintenanceWindowExecution& MaintenanceWindowExecution::operator =(const JsonValue& jsonValue)
+MaintenanceWindowExecution& MaintenanceWindowExecution::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WindowId"))
   {

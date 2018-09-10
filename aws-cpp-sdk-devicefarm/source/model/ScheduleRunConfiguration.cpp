@@ -33,6 +33,7 @@ ScheduleRunConfiguration::ScheduleRunConfiguration() :
     m_networkProfileArnHasBeenSet(false),
     m_localeHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_vpceConfigurationArnsHasBeenSet(false),
     m_customerArtifactPathsHasBeenSet(false),
     m_radiosHasBeenSet(false),
     m_auxiliaryAppsHasBeenSet(false),
@@ -41,11 +42,12 @@ ScheduleRunConfiguration::ScheduleRunConfiguration() :
 {
 }
 
-ScheduleRunConfiguration::ScheduleRunConfiguration(const JsonValue& jsonValue) : 
+ScheduleRunConfiguration::ScheduleRunConfiguration(JsonView jsonValue) : 
     m_extraDataPackageArnHasBeenSet(false),
     m_networkProfileArnHasBeenSet(false),
     m_localeHasBeenSet(false),
     m_locationHasBeenSet(false),
+    m_vpceConfigurationArnsHasBeenSet(false),
     m_customerArtifactPathsHasBeenSet(false),
     m_radiosHasBeenSet(false),
     m_auxiliaryAppsHasBeenSet(false),
@@ -55,7 +57,7 @@ ScheduleRunConfiguration::ScheduleRunConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ScheduleRunConfiguration& ScheduleRunConfiguration::operator =(const JsonValue& jsonValue)
+ScheduleRunConfiguration& ScheduleRunConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("extraDataPackageArn"))
   {
@@ -85,6 +87,16 @@ ScheduleRunConfiguration& ScheduleRunConfiguration::operator =(const JsonValue& 
     m_locationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpceConfigurationArns"))
+  {
+    Array<JsonView> vpceConfigurationArnsJsonList = jsonValue.GetArray("vpceConfigurationArns");
+    for(unsigned vpceConfigurationArnsIndex = 0; vpceConfigurationArnsIndex < vpceConfigurationArnsJsonList.GetLength(); ++vpceConfigurationArnsIndex)
+    {
+      m_vpceConfigurationArns.push_back(vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString());
+    }
+    m_vpceConfigurationArnsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("customerArtifactPaths"))
   {
     m_customerArtifactPaths = jsonValue.GetObject("customerArtifactPaths");
@@ -101,7 +113,7 @@ ScheduleRunConfiguration& ScheduleRunConfiguration::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("auxiliaryApps"))
   {
-    Array<JsonValue> auxiliaryAppsJsonList = jsonValue.GetArray("auxiliaryApps");
+    Array<JsonView> auxiliaryAppsJsonList = jsonValue.GetArray("auxiliaryApps");
     for(unsigned auxiliaryAppsIndex = 0; auxiliaryAppsIndex < auxiliaryAppsJsonList.GetLength(); ++auxiliaryAppsIndex)
     {
       m_auxiliaryApps.push_back(auxiliaryAppsJsonList[auxiliaryAppsIndex].AsString());
@@ -144,6 +156,17 @@ JsonValue ScheduleRunConfiguration::Jsonize() const
   if(m_locationHasBeenSet)
   {
    payload.WithObject("location", m_location.Jsonize());
+
+  }
+
+  if(m_vpceConfigurationArnsHasBeenSet)
+  {
+   Array<JsonValue> vpceConfigurationArnsJsonList(m_vpceConfigurationArns.size());
+   for(unsigned vpceConfigurationArnsIndex = 0; vpceConfigurationArnsIndex < vpceConfigurationArnsJsonList.GetLength(); ++vpceConfigurationArnsIndex)
+   {
+     vpceConfigurationArnsJsonList[vpceConfigurationArnsIndex].AsString(m_vpceConfigurationArns[vpceConfigurationArnsIndex]);
+   }
+   payload.WithArray("vpceConfigurationArns", std::move(vpceConfigurationArnsJsonList));
 
   }
 

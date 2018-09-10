@@ -35,7 +35,7 @@ Group::Group() :
 {
 }
 
-Group::Group(const JsonValue& jsonValue) : 
+Group::Group(JsonView jsonValue) : 
     m_groupArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false)
@@ -43,7 +43,7 @@ Group::Group(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Group& Group::operator =(const JsonValue& jsonValue)
+Group& Group::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GroupArn"))
   {

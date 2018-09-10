@@ -139,43 +139,62 @@ namespace Model
 
 
     /**
-     * The invitation message that you want to send to the accounts that you're
+     * A boolean value that specifies whether you want to disable email notification to
+     * the accounts that you’re inviting to GuardDuty as members.
+     */
+    inline bool GetDisableEmailNotification() const{ return m_disableEmailNotification; }
+
+    /**
+     * A boolean value that specifies whether you want to disable email notification to
+     * the accounts that you’re inviting to GuardDuty as members.
+     */
+    inline void SetDisableEmailNotification(bool value) { m_disableEmailNotificationHasBeenSet = true; m_disableEmailNotification = value; }
+
+    /**
+     * A boolean value that specifies whether you want to disable email notification to
+     * the accounts that you’re inviting to GuardDuty as members.
+     */
+    inline InviteMembersRequest& WithDisableEmailNotification(bool value) { SetDisableEmailNotification(value); return *this;}
+
+
+    /**
+     * The invitation message that you want to send to the accounts that you’re
      * inviting to GuardDuty as members.
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * The invitation message that you want to send to the accounts that you're
+     * The invitation message that you want to send to the accounts that you’re
      * inviting to GuardDuty as members.
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * The invitation message that you want to send to the accounts that you're
+     * The invitation message that you want to send to the accounts that you’re
      * inviting to GuardDuty as members.
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * The invitation message that you want to send to the accounts that you're
+     * The invitation message that you want to send to the accounts that you’re
      * inviting to GuardDuty as members.
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * The invitation message that you want to send to the accounts that you're
+     * The invitation message that you want to send to the accounts that you’re
      * inviting to GuardDuty as members.
      */
     inline InviteMembersRequest& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * The invitation message that you want to send to the accounts that you're
+     * The invitation message that you want to send to the accounts that you’re
      * inviting to GuardDuty as members.
      */
     inline InviteMembersRequest& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * The invitation message that you want to send to the accounts that you're
+     * The invitation message that you want to send to the accounts that you’re
      * inviting to GuardDuty as members.
      */
     inline InviteMembersRequest& WithMessage(const char* value) { SetMessage(value); return *this;}
@@ -187,6 +206,9 @@ namespace Model
 
     Aws::String m_detectorId;
     bool m_detectorIdHasBeenSet;
+
+    bool m_disableEmailNotification;
+    bool m_disableEmailNotificationHasBeenSet;
 
     Aws::String m_message;
     bool m_messageHasBeenSet;

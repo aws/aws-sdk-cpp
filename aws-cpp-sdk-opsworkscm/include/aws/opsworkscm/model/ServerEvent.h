@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorksCM
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ServerEvent();
-    ServerEvent(const Aws::Utils::Json::JsonValue& jsonValue);
-    ServerEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ServerEvent(Aws::Utils::Json::JsonView jsonValue);
+    ServerEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

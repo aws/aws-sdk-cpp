@@ -35,7 +35,7 @@ Condition::Condition() :
 {
 }
 
-Condition::Condition(const JsonValue& jsonValue) : 
+Condition::Condition(JsonView jsonValue) : 
     m_attributeValueListHasBeenSet(false),
     m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false)
@@ -43,11 +43,11 @@ Condition::Condition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Condition& Condition::operator =(const JsonValue& jsonValue)
+Condition& Condition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttributeValueList"))
   {
-    Array<JsonValue> attributeValueListJsonList = jsonValue.GetArray("AttributeValueList");
+    Array<JsonView> attributeValueListJsonList = jsonValue.GetArray("AttributeValueList");
     for(unsigned attributeValueListIndex = 0; attributeValueListIndex < attributeValueListJsonList.GetLength(); ++attributeValueListIndex)
     {
       m_attributeValueList.push_back(attributeValueListJsonList[attributeValueListIndex].AsObject());

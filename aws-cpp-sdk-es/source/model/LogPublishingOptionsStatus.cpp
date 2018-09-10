@@ -34,18 +34,18 @@ LogPublishingOptionsStatus::LogPublishingOptionsStatus() :
 {
 }
 
-LogPublishingOptionsStatus::LogPublishingOptionsStatus(const JsonValue& jsonValue) : 
+LogPublishingOptionsStatus::LogPublishingOptionsStatus(JsonView jsonValue) : 
     m_optionsHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LogPublishingOptionsStatus& LogPublishingOptionsStatus::operator =(const JsonValue& jsonValue)
+LogPublishingOptionsStatus& LogPublishingOptionsStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Options"))
   {
-    Aws::Map<Aws::String, JsonValue> optionsJsonMap = jsonValue.GetObject("Options").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> optionsJsonMap = jsonValue.GetObject("Options").GetAllObjects();
     for(auto& optionsItem : optionsJsonMap)
     {
       m_options[LogTypeMapper::GetLogTypeForName(optionsItem.first)] = optionsItem.second.AsObject();

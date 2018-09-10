@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -36,15 +37,15 @@ namespace Model
   /**
    * <p>A structure that contains information used to update an
    * attribute.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/FacetAttributeUpdate">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/FacetAttributeUpdate">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API FacetAttributeUpdate
   {
   public:
     FacetAttributeUpdate();
-    FacetAttributeUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    FacetAttributeUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FacetAttributeUpdate(Aws::Utils::Json::JsonView jsonValue);
+    FacetAttributeUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

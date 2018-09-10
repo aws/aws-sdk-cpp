@@ -37,7 +37,7 @@ CreateApplicationResult::CreateApplicationResult(const Aws::AmazonWebServiceResu
 
 CreateApplicationResult& CreateApplicationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
@@ -62,9 +62,15 @@ CreateApplicationResult& CreateApplicationResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("homePageUrl"))
+  {
+    m_homePageUrl = jsonValue.GetString("homePageUrl");
+
+  }
+
   if(jsonValue.ValueExists("labels"))
   {
-    Array<JsonValue> labelsJsonList = jsonValue.GetArray("labels");
+    Array<JsonView> labelsJsonList = jsonValue.GetArray("labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsString());

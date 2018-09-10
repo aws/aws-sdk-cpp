@@ -51,7 +51,7 @@ Aws::String SetUserMFAPreferenceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SetUserMFAPreferenceRequest::GetRequestSpecificHeaders() const

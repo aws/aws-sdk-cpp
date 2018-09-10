@@ -1254,7 +1254,7 @@ DescribeMyUserProfileOutcome OpsWorksClient::DescribeMyUserProfile() const
   Aws::StringStream ss;
   ss << m_uri << "/";
 
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "{operation.name}");
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeMyUserProfile");
   if(outcome.IsSuccess())
   {
     return DescribeMyUserProfileOutcome(DescribeMyUserProfileResult(outcome.GetResult()));
@@ -1281,6 +1281,40 @@ void OpsWorksClient::DescribeMyUserProfileAsync(const DescribeMyUserProfileRespo
 void OpsWorksClient::DescribeMyUserProfileAsyncHelper(const DescribeMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, DescribeMyUserProfile(), context);
+}
+
+DescribeOperatingSystemsOutcome OpsWorksClient::DescribeOperatingSystems() const
+{
+  Aws::StringStream ss;
+  ss << m_uri << "/";
+
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeOperatingSystems");
+  if(outcome.IsSuccess())
+  {
+    return DescribeOperatingSystemsOutcome(DescribeOperatingSystemsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeOperatingSystemsOutcome(outcome.GetError());
+  }
+}
+
+DescribeOperatingSystemsOutcomeCallable OpsWorksClient::DescribeOperatingSystemsCallable() const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeOperatingSystemsOutcome() > >(ALLOCATION_TAG, [this](){ return this->DescribeOperatingSystems(); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpsWorksClient::DescribeOperatingSystemsAsync(const DescribeOperatingSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, handler, context](){ this->DescribeOperatingSystemsAsyncHelper( handler, context ); } );
+}
+
+void OpsWorksClient::DescribeOperatingSystemsAsyncHelper(const DescribeOperatingSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, DescribeOperatingSystems(), context);
 }
 
 DescribePermissionsOutcome OpsWorksClient::DescribePermissions(const DescribePermissionsRequest& request) const

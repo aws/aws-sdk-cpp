@@ -54,7 +54,8 @@ RequestLaunchTemplateData::RequestLaunchTemplateData() :
     m_securityGroupIdsHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_instanceMarketOptionsHasBeenSet(false),
-    m_creditSpecificationHasBeenSet(false)
+    m_creditSpecificationHasBeenSet(false),
+    m_cpuOptionsHasBeenSet(false)
 {
 }
 
@@ -82,7 +83,8 @@ RequestLaunchTemplateData::RequestLaunchTemplateData(const XmlNode& xmlNode) :
     m_securityGroupIdsHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_instanceMarketOptionsHasBeenSet(false),
-    m_creditSpecificationHasBeenSet(false)
+    m_creditSpecificationHasBeenSet(false),
+    m_cpuOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -249,6 +251,12 @@ RequestLaunchTemplateData& RequestLaunchTemplateData::operator =(const XmlNode& 
       m_creditSpecification = creditSpecificationNode;
       m_creditSpecificationHasBeenSet = true;
     }
+    XmlNode cpuOptionsNode = resultNode.FirstChild("CpuOptions");
+    if(!cpuOptionsNode.IsNull())
+    {
+      m_cpuOptions = cpuOptionsNode;
+      m_cpuOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -398,6 +406,13 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       m_creditSpecification.OutputToStream(oStream, creditSpecificationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_cpuOptionsHasBeenSet)
+  {
+      Aws::StringStream cpuOptionsLocationAndMemberSs;
+      cpuOptionsLocationAndMemberSs << location << index << locationValue << ".CpuOptions";
+      m_cpuOptions.OutputToStream(oStream, cpuOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -523,6 +538,12 @@ void RequestLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char
       Aws::String creditSpecificationLocationAndMember(location);
       creditSpecificationLocationAndMember += ".CreditSpecification";
       m_creditSpecification.OutputToStream(oStream, creditSpecificationLocationAndMember.c_str());
+  }
+  if(m_cpuOptionsHasBeenSet)
+  {
+      Aws::String cpuOptionsLocationAndMember(location);
+      cpuOptionsLocationAndMember += ".CpuOptions";
+      m_cpuOptions.OutputToStream(oStream, cpuOptionsLocationAndMember.c_str());
   }
 }
 

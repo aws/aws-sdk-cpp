@@ -42,7 +42,7 @@ MaintenanceWindowExecutionTaskIdentity::MaintenanceWindowExecutionTaskIdentity()
 {
 }
 
-MaintenanceWindowExecutionTaskIdentity::MaintenanceWindowExecutionTaskIdentity(const JsonValue& jsonValue) : 
+MaintenanceWindowExecutionTaskIdentity::MaintenanceWindowExecutionTaskIdentity(JsonView jsonValue) : 
     m_windowExecutionIdHasBeenSet(false),
     m_taskExecutionIdHasBeenSet(false),
     m_status(MaintenanceWindowExecutionStatus::NOT_SET),
@@ -57,7 +57,7 @@ MaintenanceWindowExecutionTaskIdentity::MaintenanceWindowExecutionTaskIdentity(c
   *this = jsonValue;
 }
 
-MaintenanceWindowExecutionTaskIdentity& MaintenanceWindowExecutionTaskIdentity::operator =(const JsonValue& jsonValue)
+MaintenanceWindowExecutionTaskIdentity& MaintenanceWindowExecutionTaskIdentity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WindowExecutionId"))
   {

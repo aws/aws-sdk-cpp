@@ -37,10 +37,16 @@ DescribeConfigurationRevisionResult::DescribeConfigurationRevisionResult(const A
 
 DescribeConfigurationRevisionResult& DescribeConfigurationRevisionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("configurationId"))
   {
     m_configurationId = jsonValue.GetString("configurationId");
+
+  }
+
+  if(jsonValue.ValueExists("created"))
+  {
+    m_created = jsonValue.GetString("created");
 
   }
 

@@ -34,14 +34,14 @@ LifecyclePolicyRuleAction::LifecyclePolicyRuleAction() :
 {
 }
 
-LifecyclePolicyRuleAction::LifecyclePolicyRuleAction(const JsonValue& jsonValue) : 
+LifecyclePolicyRuleAction::LifecyclePolicyRuleAction(JsonView jsonValue) : 
     m_type(ImageActionType::NOT_SET),
     m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LifecyclePolicyRuleAction& LifecyclePolicyRuleAction::operator =(const JsonValue& jsonValue)
+LifecyclePolicyRuleAction& LifecyclePolicyRuleAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

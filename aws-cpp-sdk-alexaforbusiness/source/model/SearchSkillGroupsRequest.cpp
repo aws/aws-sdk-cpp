@@ -69,7 +69,7 @@ Aws::String SearchSkillGroupsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SearchSkillGroupsRequest::GetRequestSpecificHeaders() const

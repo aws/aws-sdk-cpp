@@ -33,13 +33,13 @@ EventTriggerDefinition::EventTriggerDefinition() :
 {
 }
 
-EventTriggerDefinition::EventTriggerDefinition(const JsonValue& jsonValue) : 
+EventTriggerDefinition::EventTriggerDefinition(JsonView jsonValue) : 
     m_eventResourceARNHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EventTriggerDefinition& EventTriggerDefinition::operator =(const JsonValue& jsonValue)
+EventTriggerDefinition& EventTriggerDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EventResourceARN"))
   {

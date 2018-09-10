@@ -31,6 +31,10 @@ namespace Model
 FleetAttributes::FleetAttributes() : 
     m_fleetIdHasBeenSet(false),
     m_fleetArnHasBeenSet(false),
+    m_fleetType(FleetType::NOT_SET),
+    m_fleetTypeHasBeenSet(false),
+    m_instanceType(EC2InstanceType::NOT_SET),
+    m_instanceTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -46,13 +50,18 @@ FleetAttributes::FleetAttributes() :
     m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
     m_resourceCreationLimitPolicyHasBeenSet(false),
-    m_metricGroupsHasBeenSet(false)
+    m_metricGroupsHasBeenSet(false),
+    m_stoppedActionsHasBeenSet(false)
 {
 }
 
-FleetAttributes::FleetAttributes(const JsonValue& jsonValue) : 
+FleetAttributes::FleetAttributes(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
     m_fleetArnHasBeenSet(false),
+    m_fleetType(FleetType::NOT_SET),
+    m_fleetTypeHasBeenSet(false),
+    m_instanceType(EC2InstanceType::NOT_SET),
+    m_instanceTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -68,12 +77,13 @@ FleetAttributes::FleetAttributes(const JsonValue& jsonValue) :
     m_operatingSystem(OperatingSystem::NOT_SET),
     m_operatingSystemHasBeenSet(false),
     m_resourceCreationLimitPolicyHasBeenSet(false),
-    m_metricGroupsHasBeenSet(false)
+    m_metricGroupsHasBeenSet(false),
+    m_stoppedActionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
+FleetAttributes& FleetAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FleetId"))
   {
@@ -87,6 +97,20 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
     m_fleetArn = jsonValue.GetString("FleetArn");
 
     m_fleetArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FleetType"))
+  {
+    m_fleetType = FleetTypeMapper::GetFleetTypeForName(jsonValue.GetString("FleetType"));
+
+    m_fleetTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InstanceType"))
+  {
+    m_instanceType = EC2InstanceTypeMapper::GetEC2InstanceTypeForName(jsonValue.GetString("InstanceType"));
+
+    m_instanceTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -147,7 +171,7 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("LogPaths"))
   {
-    Array<JsonValue> logPathsJsonList = jsonValue.GetArray("LogPaths");
+    Array<JsonView> logPathsJsonList = jsonValue.GetArray("LogPaths");
     for(unsigned logPathsIndex = 0; logPathsIndex < logPathsJsonList.GetLength(); ++logPathsIndex)
     {
       m_logPaths.push_back(logPathsJsonList[logPathsIndex].AsString());
@@ -178,12 +202,22 @@ FleetAttributes& FleetAttributes::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("MetricGroups"))
   {
-    Array<JsonValue> metricGroupsJsonList = jsonValue.GetArray("MetricGroups");
+    Array<JsonView> metricGroupsJsonList = jsonValue.GetArray("MetricGroups");
     for(unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex)
     {
       m_metricGroups.push_back(metricGroupsJsonList[metricGroupsIndex].AsString());
     }
     m_metricGroupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StoppedActions"))
+  {
+    Array<JsonView> stoppedActionsJsonList = jsonValue.GetArray("StoppedActions");
+    for(unsigned stoppedActionsIndex = 0; stoppedActionsIndex < stoppedActionsJsonList.GetLength(); ++stoppedActionsIndex)
+    {
+      m_stoppedActions.push_back(FleetActionMapper::GetFleetActionForName(stoppedActionsJsonList[stoppedActionsIndex].AsString()));
+    }
+    m_stoppedActionsHasBeenSet = true;
   }
 
   return *this;
@@ -203,6 +237,16 @@ JsonValue FleetAttributes::Jsonize() const
   {
    payload.WithString("FleetArn", m_fleetArn);
 
+  }
+
+  if(m_fleetTypeHasBeenSet)
+  {
+   payload.WithString("FleetType", FleetTypeMapper::GetNameForFleetType(m_fleetType));
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("InstanceType", EC2InstanceTypeMapper::GetNameForEC2InstanceType(m_instanceType));
   }
 
   if(m_descriptionHasBeenSet)
@@ -285,6 +329,17 @@ JsonValue FleetAttributes::Jsonize() const
      metricGroupsJsonList[metricGroupsIndex].AsString(m_metricGroups[metricGroupsIndex]);
    }
    payload.WithArray("MetricGroups", std::move(metricGroupsJsonList));
+
+  }
+
+  if(m_stoppedActionsHasBeenSet)
+  {
+   Array<JsonValue> stoppedActionsJsonList(m_stoppedActions.size());
+   for(unsigned stoppedActionsIndex = 0; stoppedActionsIndex < stoppedActionsJsonList.GetLength(); ++stoppedActionsIndex)
+   {
+     stoppedActionsJsonList[stoppedActionsIndex].AsString(FleetActionMapper::GetNameForFleetAction(m_stoppedActions[stoppedActionsIndex]));
+   }
+   payload.WithArray("StoppedActions", std::move(stoppedActionsJsonList));
 
   }
 

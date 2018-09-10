@@ -35,7 +35,7 @@ TaskDefinitionPlacementConstraint::TaskDefinitionPlacementConstraint() :
 {
 }
 
-TaskDefinitionPlacementConstraint::TaskDefinitionPlacementConstraint(const JsonValue& jsonValue) : 
+TaskDefinitionPlacementConstraint::TaskDefinitionPlacementConstraint(JsonView jsonValue) : 
     m_type(TaskDefinitionPlacementConstraintType::NOT_SET),
     m_typeHasBeenSet(false),
     m_expressionHasBeenSet(false)
@@ -43,7 +43,7 @@ TaskDefinitionPlacementConstraint::TaskDefinitionPlacementConstraint(const JsonV
   *this = jsonValue;
 }
 
-TaskDefinitionPlacementConstraint& TaskDefinitionPlacementConstraint::operator =(const JsonValue& jsonValue)
+TaskDefinitionPlacementConstraint& TaskDefinitionPlacementConstraint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

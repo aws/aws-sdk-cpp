@@ -37,7 +37,7 @@ Aws::String EnableDomainTransferLockRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection EnableDomainTransferLockRequest::GetRequestSpecificHeaders() const

@@ -37,7 +37,7 @@ DescribeTapeRecoveryPointsResult::DescribeTapeRecoveryPointsResult(const Aws::Am
 
 DescribeTapeRecoveryPointsResult& DescribeTapeRecoveryPointsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
@@ -46,7 +46,7 @@ DescribeTapeRecoveryPointsResult& DescribeTapeRecoveryPointsResult::operator =(c
 
   if(jsonValue.ValueExists("TapeRecoveryPointInfos"))
   {
-    Array<JsonValue> tapeRecoveryPointInfosJsonList = jsonValue.GetArray("TapeRecoveryPointInfos");
+    Array<JsonView> tapeRecoveryPointInfosJsonList = jsonValue.GetArray("TapeRecoveryPointInfos");
     for(unsigned tapeRecoveryPointInfosIndex = 0; tapeRecoveryPointInfosIndex < tapeRecoveryPointInfosJsonList.GetLength(); ++tapeRecoveryPointInfosIndex)
     {
       m_tapeRecoveryPointInfos.push_back(tapeRecoveryPointInfosJsonList[tapeRecoveryPointInfosIndex].AsObject());

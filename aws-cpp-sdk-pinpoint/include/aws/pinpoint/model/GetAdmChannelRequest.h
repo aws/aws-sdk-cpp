@@ -42,25 +42,39 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline GetAdmChannelRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline GetAdmChannelRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline GetAdmChannelRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
   private:

@@ -36,7 +36,7 @@ UpdateGrokClassifierRequest::UpdateGrokClassifierRequest() :
 {
 }
 
-UpdateGrokClassifierRequest::UpdateGrokClassifierRequest(const JsonValue& jsonValue) : 
+UpdateGrokClassifierRequest::UpdateGrokClassifierRequest(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_classificationHasBeenSet(false),
     m_grokPatternHasBeenSet(false),
@@ -45,7 +45,7 @@ UpdateGrokClassifierRequest::UpdateGrokClassifierRequest(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-UpdateGrokClassifierRequest& UpdateGrokClassifierRequest::operator =(const JsonValue& jsonValue)
+UpdateGrokClassifierRequest& UpdateGrokClassifierRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

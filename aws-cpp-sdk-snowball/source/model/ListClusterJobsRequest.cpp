@@ -52,7 +52,7 @@ Aws::String ListClusterJobsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListClusterJobsRequest::GetRequestSpecificHeaders() const

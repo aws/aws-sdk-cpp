@@ -35,7 +35,7 @@ EventDetails::EventDetails() :
 {
 }
 
-EventDetails::EventDetails(const JsonValue& jsonValue) : 
+EventDetails::EventDetails(JsonView jsonValue) : 
     m_eventHasBeenSet(false),
     m_eventDescriptionHasBeenSet(false),
     m_eventMetadataHasBeenSet(false)
@@ -43,7 +43,7 @@ EventDetails::EventDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EventDetails& EventDetails::operator =(const JsonValue& jsonValue)
+EventDetails& EventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("event"))
   {
@@ -61,7 +61,7 @@ EventDetails& EventDetails::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("eventMetadata"))
   {
-    Aws::Map<Aws::String, JsonValue> eventMetadataJsonMap = jsonValue.GetObject("eventMetadata").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> eventMetadataJsonMap = jsonValue.GetObject("eventMetadata").GetAllObjects();
     for(auto& eventMetadataItem : eventMetadataJsonMap)
     {
       m_eventMetadata[eventMetadataItem.first] = eventMetadataItem.second.AsString();

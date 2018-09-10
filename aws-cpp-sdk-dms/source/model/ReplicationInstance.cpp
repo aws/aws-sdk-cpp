@@ -51,11 +51,12 @@ ReplicationInstance::ReplicationInstance() :
     m_replicationInstancePrivateIpAddressesHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
-    m_secondaryAvailabilityZoneHasBeenSet(false)
+    m_secondaryAvailabilityZoneHasBeenSet(false),
+    m_freeUntilHasBeenSet(false)
 {
 }
 
-ReplicationInstance::ReplicationInstance(const JsonValue& jsonValue) : 
+ReplicationInstance::ReplicationInstance(JsonView jsonValue) : 
     m_replicationInstanceIdentifierHasBeenSet(false),
     m_replicationInstanceClassHasBeenSet(false),
     m_replicationInstanceStatusHasBeenSet(false),
@@ -78,12 +79,13 @@ ReplicationInstance::ReplicationInstance(const JsonValue& jsonValue) :
     m_replicationInstancePrivateIpAddressesHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
-    m_secondaryAvailabilityZoneHasBeenSet(false)
+    m_secondaryAvailabilityZoneHasBeenSet(false),
+    m_freeUntilHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ReplicationInstance& ReplicationInstance::operator =(const JsonValue& jsonValue)
+ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReplicationInstanceIdentifier"))
   {
@@ -122,7 +124,7 @@ ReplicationInstance& ReplicationInstance::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("VpcSecurityGroups"))
   {
-    Array<JsonValue> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
+    Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
     for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
     {
       m_vpcSecurityGroups.push_back(vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject());
@@ -195,7 +197,7 @@ ReplicationInstance& ReplicationInstance::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ReplicationInstancePublicIpAddresses"))
   {
-    Array<JsonValue> replicationInstancePublicIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePublicIpAddresses");
+    Array<JsonView> replicationInstancePublicIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePublicIpAddresses");
     for(unsigned replicationInstancePublicIpAddressesIndex = 0; replicationInstancePublicIpAddressesIndex < replicationInstancePublicIpAddressesJsonList.GetLength(); ++replicationInstancePublicIpAddressesIndex)
     {
       m_replicationInstancePublicIpAddresses.push_back(replicationInstancePublicIpAddressesJsonList[replicationInstancePublicIpAddressesIndex].AsString());
@@ -205,7 +207,7 @@ ReplicationInstance& ReplicationInstance::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ReplicationInstancePrivateIpAddresses"))
   {
-    Array<JsonValue> replicationInstancePrivateIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePrivateIpAddresses");
+    Array<JsonView> replicationInstancePrivateIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePrivateIpAddresses");
     for(unsigned replicationInstancePrivateIpAddressesIndex = 0; replicationInstancePrivateIpAddressesIndex < replicationInstancePrivateIpAddressesJsonList.GetLength(); ++replicationInstancePrivateIpAddressesIndex)
     {
       m_replicationInstancePrivateIpAddresses.push_back(replicationInstancePrivateIpAddressesJsonList[replicationInstancePrivateIpAddressesIndex].AsString());
@@ -225,6 +227,13 @@ ReplicationInstance& ReplicationInstance::operator =(const JsonValue& jsonValue)
     m_secondaryAvailabilityZone = jsonValue.GetString("SecondaryAvailabilityZone");
 
     m_secondaryAvailabilityZoneHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FreeUntil"))
+  {
+    m_freeUntil = jsonValue.GetDouble("FreeUntil");
+
+    m_freeUntilHasBeenSet = true;
   }
 
   return *this;
@@ -360,6 +369,11 @@ JsonValue ReplicationInstance::Jsonize() const
   {
    payload.WithString("SecondaryAvailabilityZone", m_secondaryAvailabilityZone);
 
+  }
+
+  if(m_freeUntilHasBeenSet)
+  {
+   payload.WithDouble("FreeUntil", m_freeUntil.SecondsWithMSPrecision());
   }
 
   return payload;

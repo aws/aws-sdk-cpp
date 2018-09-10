@@ -64,11 +64,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -212,7 +207,7 @@ namespace Model
 
         virtual ~DAXClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "dax"; }
+        inline virtual const char* GetServiceClientName() const override { return "DAX"; }
 
 
         /**

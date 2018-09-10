@@ -38,7 +38,7 @@ DeviceiSCSIAttributes::DeviceiSCSIAttributes() :
 {
 }
 
-DeviceiSCSIAttributes::DeviceiSCSIAttributes(const JsonValue& jsonValue) : 
+DeviceiSCSIAttributes::DeviceiSCSIAttributes(JsonView jsonValue) : 
     m_targetARNHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_networkInterfacePort(0),
@@ -49,7 +49,7 @@ DeviceiSCSIAttributes::DeviceiSCSIAttributes(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeviceiSCSIAttributes& DeviceiSCSIAttributes::operator =(const JsonValue& jsonValue)
+DeviceiSCSIAttributes& DeviceiSCSIAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TargetARN"))
   {

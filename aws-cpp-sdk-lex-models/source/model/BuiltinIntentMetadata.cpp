@@ -34,14 +34,14 @@ BuiltinIntentMetadata::BuiltinIntentMetadata() :
 {
 }
 
-BuiltinIntentMetadata::BuiltinIntentMetadata(const JsonValue& jsonValue) : 
+BuiltinIntentMetadata::BuiltinIntentMetadata(JsonView jsonValue) : 
     m_signatureHasBeenSet(false),
     m_supportedLocalesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BuiltinIntentMetadata& BuiltinIntentMetadata::operator =(const JsonValue& jsonValue)
+BuiltinIntentMetadata& BuiltinIntentMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("signature"))
   {
@@ -52,7 +52,7 @@ BuiltinIntentMetadata& BuiltinIntentMetadata::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("supportedLocales"))
   {
-    Array<JsonValue> supportedLocalesJsonList = jsonValue.GetArray("supportedLocales");
+    Array<JsonView> supportedLocalesJsonList = jsonValue.GetArray("supportedLocales");
     for(unsigned supportedLocalesIndex = 0; supportedLocalesIndex < supportedLocalesJsonList.GetLength(); ++supportedLocalesIndex)
     {
       m_supportedLocales.push_back(LocaleMapper::GetLocaleForName(supportedLocalesJsonList[supportedLocalesIndex].AsString()));

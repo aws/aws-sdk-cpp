@@ -40,7 +40,7 @@ GroupType::GroupType() :
 {
 }
 
-GroupType::GroupType(const JsonValue& jsonValue) : 
+GroupType::GroupType(JsonView jsonValue) : 
     m_groupNameHasBeenSet(false),
     m_userPoolIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -53,7 +53,7 @@ GroupType::GroupType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GroupType& GroupType::operator =(const JsonValue& jsonValue)
+GroupType& GroupType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GroupName"))
   {

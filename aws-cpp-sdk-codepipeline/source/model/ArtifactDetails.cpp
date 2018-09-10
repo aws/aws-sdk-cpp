@@ -36,7 +36,7 @@ ArtifactDetails::ArtifactDetails() :
 {
 }
 
-ArtifactDetails::ArtifactDetails(const JsonValue& jsonValue) : 
+ArtifactDetails::ArtifactDetails(JsonView jsonValue) : 
     m_minimumCount(0),
     m_minimumCountHasBeenSet(false),
     m_maximumCount(0),
@@ -45,7 +45,7 @@ ArtifactDetails::ArtifactDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ArtifactDetails& ArtifactDetails::operator =(const JsonValue& jsonValue)
+ArtifactDetails& ArtifactDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("minimumCount"))
   {

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     InstanceIdentity();
-    InstanceIdentity(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstanceIdentity& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstanceIdentity(Aws::Utils::Json::JsonView jsonValue);
+    InstanceIdentity& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

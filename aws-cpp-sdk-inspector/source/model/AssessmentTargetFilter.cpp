@@ -33,13 +33,13 @@ AssessmentTargetFilter::AssessmentTargetFilter() :
 {
 }
 
-AssessmentTargetFilter::AssessmentTargetFilter(const JsonValue& jsonValue) : 
+AssessmentTargetFilter::AssessmentTargetFilter(JsonView jsonValue) : 
     m_assessmentTargetNamePatternHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AssessmentTargetFilter& AssessmentTargetFilter::operator =(const JsonValue& jsonValue)
+AssessmentTargetFilter& AssessmentTargetFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("assessmentTargetNamePattern"))
   {

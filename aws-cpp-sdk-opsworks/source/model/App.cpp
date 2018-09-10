@@ -48,7 +48,7 @@ App::App() :
 {
 }
 
-App::App(const JsonValue& jsonValue) : 
+App::App(JsonView jsonValue) : 
     m_appIdHasBeenSet(false),
     m_stackIdHasBeenSet(false),
     m_shortnameHasBeenSet(false),
@@ -69,7 +69,7 @@ App::App(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-App& App::operator =(const JsonValue& jsonValue)
+App& App::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AppId"))
   {
@@ -108,7 +108,7 @@ App& App::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("DataSources"))
   {
-    Array<JsonValue> dataSourcesJsonList = jsonValue.GetArray("DataSources");
+    Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("DataSources");
     for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
     {
       m_dataSources.push_back(dataSourcesJsonList[dataSourcesIndex].AsObject());
@@ -132,7 +132,7 @@ App& App::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Domains"))
   {
-    Array<JsonValue> domainsJsonList = jsonValue.GetArray("Domains");
+    Array<JsonView> domainsJsonList = jsonValue.GetArray("Domains");
     for(unsigned domainsIndex = 0; domainsIndex < domainsJsonList.GetLength(); ++domainsIndex)
     {
       m_domains.push_back(domainsJsonList[domainsIndex].AsString());
@@ -156,7 +156,7 @@ App& App::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[AppAttributesKeysMapper::GetAppAttributesKeysForName(attributesItem.first)] = attributesItem.second.AsString();
@@ -173,7 +173,7 @@ App& App::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Environment"))
   {
-    Array<JsonValue> environmentJsonList = jsonValue.GetArray("Environment");
+    Array<JsonView> environmentJsonList = jsonValue.GetArray("Environment");
     for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
     {
       m_environment.push_back(environmentJsonList[environmentIndex].AsObject());

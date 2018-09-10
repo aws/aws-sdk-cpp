@@ -38,7 +38,7 @@ OutputUpdate::OutputUpdate() :
 {
 }
 
-OutputUpdate::OutputUpdate(const JsonValue& jsonValue) : 
+OutputUpdate::OutputUpdate(JsonView jsonValue) : 
     m_outputIdHasBeenSet(false),
     m_nameUpdateHasBeenSet(false),
     m_kinesisStreamsOutputUpdateHasBeenSet(false),
@@ -49,7 +49,7 @@ OutputUpdate::OutputUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OutputUpdate& OutputUpdate::operator =(const JsonValue& jsonValue)
+OutputUpdate& OutputUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OutputId"))
   {

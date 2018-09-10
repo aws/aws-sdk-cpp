@@ -41,7 +41,7 @@ DescribeLimitsResult::DescribeLimitsResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeLimitsResult& DescribeLimitsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ShardLimit"))
   {
     m_shardLimit = jsonValue.GetInteger("ShardLimit");

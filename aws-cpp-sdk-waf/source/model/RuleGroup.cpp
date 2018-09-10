@@ -35,7 +35,7 @@ RuleGroup::RuleGroup() :
 {
 }
 
-RuleGroup::RuleGroup(const JsonValue& jsonValue) : 
+RuleGroup::RuleGroup(JsonView jsonValue) : 
     m_ruleGroupIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_metricNameHasBeenSet(false)
@@ -43,7 +43,7 @@ RuleGroup::RuleGroup(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RuleGroup& RuleGroup::operator =(const JsonValue& jsonValue)
+RuleGroup& RuleGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RuleGroupId"))
   {

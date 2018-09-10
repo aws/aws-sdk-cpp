@@ -73,7 +73,7 @@ Aws::String NotifyMigrationTaskStateRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection NotifyMigrationTaskStateRequest::GetRequestSpecificHeaders() const

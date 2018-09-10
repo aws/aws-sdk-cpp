@@ -38,7 +38,7 @@ Layer::Layer() :
 {
 }
 
-Layer::Layer(const JsonValue& jsonValue) : 
+Layer::Layer(JsonView jsonValue) : 
     m_layerDigestHasBeenSet(false),
     m_layerAvailability(LayerAvailability::NOT_SET),
     m_layerAvailabilityHasBeenSet(false),
@@ -49,7 +49,7 @@ Layer::Layer(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Layer& Layer::operator =(const JsonValue& jsonValue)
+Layer& Layer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("layerDigest"))
   {

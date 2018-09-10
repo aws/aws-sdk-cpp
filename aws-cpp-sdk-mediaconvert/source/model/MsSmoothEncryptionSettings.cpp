@@ -33,13 +33,13 @@ MsSmoothEncryptionSettings::MsSmoothEncryptionSettings() :
 {
 }
 
-MsSmoothEncryptionSettings::MsSmoothEncryptionSettings(const JsonValue& jsonValue) : 
+MsSmoothEncryptionSettings::MsSmoothEncryptionSettings(JsonView jsonValue) : 
     m_spekeKeyProviderHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MsSmoothEncryptionSettings& MsSmoothEncryptionSettings::operator =(const JsonValue& jsonValue)
+MsSmoothEncryptionSettings& MsSmoothEncryptionSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("spekeKeyProvider"))
   {

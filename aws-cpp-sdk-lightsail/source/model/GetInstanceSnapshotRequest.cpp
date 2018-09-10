@@ -37,7 +37,7 @@ Aws::String GetInstanceSnapshotRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetInstanceSnapshotRequest::GetRequestSpecificHeaders() const

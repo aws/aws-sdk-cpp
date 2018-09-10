@@ -79,7 +79,7 @@ Aws::String ListDiscoveredResourcesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListDiscoveredResourcesRequest::GetRequestSpecificHeaders() const

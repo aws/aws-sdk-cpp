@@ -54,7 +54,7 @@ ProresSettings::ProresSettings() :
 {
 }
 
-ProresSettings::ProresSettings(const JsonValue& jsonValue) : 
+ProresSettings::ProresSettings(JsonView jsonValue) : 
     m_codecProfile(ProresCodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
     m_framerateControl(ProresFramerateControl::NOT_SET),
@@ -81,7 +81,7 @@ ProresSettings::ProresSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProresSettings& ProresSettings::operator =(const JsonValue& jsonValue)
+ProresSettings& ProresSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("codecProfile"))
   {

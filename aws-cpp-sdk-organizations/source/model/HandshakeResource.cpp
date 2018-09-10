@@ -36,7 +36,7 @@ HandshakeResource::HandshakeResource() :
 {
 }
 
-HandshakeResource::HandshakeResource(const JsonValue& jsonValue) : 
+HandshakeResource::HandshakeResource(JsonView jsonValue) : 
     m_valueHasBeenSet(false),
     m_type(HandshakeResourceType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -45,7 +45,7 @@ HandshakeResource::HandshakeResource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HandshakeResource& HandshakeResource::operator =(const JsonValue& jsonValue)
+HandshakeResource& HandshakeResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {
@@ -63,7 +63,7 @@ HandshakeResource& HandshakeResource::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Resources"))
   {
-    Array<JsonValue> resourcesJsonList = jsonValue.GetArray("Resources");
+    Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());

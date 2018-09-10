@@ -42,6 +42,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -59,8 +60,8 @@ namespace Model
   {
   public:
     UserPoolType();
-    UserPoolType(const Aws::Utils::Json::JsonValue& jsonValue);
-    UserPoolType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    UserPoolType(Aws::Utils::Json::JsonView jsonValue);
+    UserPoolType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -163,27 +164,27 @@ namespace Model
 
 
     /**
-     * <p>The AWS Lambda triggers associated with tue user pool.</p>
+     * <p>The AWS Lambda triggers associated with the user pool.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>The AWS Lambda triggers associated with tue user pool.</p>
+     * <p>The AWS Lambda triggers associated with the user pool.</p>
      */
     inline void SetLambdaConfig(const LambdaConfigType& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>The AWS Lambda triggers associated with tue user pool.</p>
+     * <p>The AWS Lambda triggers associated with the user pool.</p>
      */
     inline void SetLambdaConfig(LambdaConfigType&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>The AWS Lambda triggers associated with tue user pool.</p>
+     * <p>The AWS Lambda triggers associated with the user pool.</p>
      */
     inline UserPoolType& WithLambdaConfig(const LambdaConfigType& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>The AWS Lambda triggers associated with tue user pool.</p>
+     * <p>The AWS Lambda triggers associated with the user pool.</p>
      */
     inline UserPoolType& WithLambdaConfig(LambdaConfigType&& value) { SetLambdaConfig(std::move(value)); return *this;}
 
@@ -939,6 +940,28 @@ namespace Model
     inline UserPoolType& WithDomain(const char* value) { SetDomain(value); return *this;}
 
 
+    
+    inline const Aws::String& GetCustomDomain() const{ return m_customDomain; }
+
+    
+    inline void SetCustomDomain(const Aws::String& value) { m_customDomainHasBeenSet = true; m_customDomain = value; }
+
+    
+    inline void SetCustomDomain(Aws::String&& value) { m_customDomainHasBeenSet = true; m_customDomain = std::move(value); }
+
+    
+    inline void SetCustomDomain(const char* value) { m_customDomainHasBeenSet = true; m_customDomain.assign(value); }
+
+    
+    inline UserPoolType& WithCustomDomain(const Aws::String& value) { SetCustomDomain(value); return *this;}
+
+    
+    inline UserPoolType& WithCustomDomain(Aws::String&& value) { SetCustomDomain(std::move(value)); return *this;}
+
+    
+    inline UserPoolType& WithCustomDomain(const char* value) { SetCustomDomain(value); return *this;}
+
+
     /**
      * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
@@ -989,6 +1012,42 @@ namespace Model
      * <p>The user pool add-ons.</p>
      */
     inline UserPoolType& WithUserPoolAddOns(UserPoolAddOnsType&& value) { SetUserPoolAddOns(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline UserPoolType& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline UserPoolType& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline UserPoolType& WithArn(const char* value) { SetArn(value); return *this;}
 
   private:
 
@@ -1067,11 +1126,17 @@ namespace Model
     Aws::String m_domain;
     bool m_domainHasBeenSet;
 
+    Aws::String m_customDomain;
+    bool m_customDomainHasBeenSet;
+
     AdminCreateUserConfigType m_adminCreateUserConfig;
     bool m_adminCreateUserConfigHasBeenSet;
 
     UserPoolAddOnsType m_userPoolAddOns;
     bool m_userPoolAddOnsHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
   };
 
 } // namespace Model

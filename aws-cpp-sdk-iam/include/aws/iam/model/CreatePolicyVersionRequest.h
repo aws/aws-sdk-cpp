@@ -114,11 +114,12 @@ namespace Model
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
@@ -126,11 +127,12 @@ namespace Model
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
@@ -138,11 +140,12 @@ namespace Model
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
 
@@ -150,11 +153,12 @@ namespace Model
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
@@ -162,11 +166,12 @@ namespace Model
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline CreatePolicyVersionRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
@@ -174,11 +179,12 @@ namespace Model
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline CreatePolicyVersionRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
@@ -186,11 +192,12 @@ namespace Model
      * <p>The JSON policy document that you want to use as the content for this new
      * version of the policy.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline CreatePolicyVersionRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
@@ -198,9 +205,9 @@ namespace Model
     /**
      * <p>Specifies whether to set this version as the policy's default version.</p>
      * <p>When this parameter is <code>true</code>, the new policy version becomes the
-     * operative version; that is, the version that is in effect for the IAM users,
-     * groups, and roles that the policy is attached to.</p> <p>For more information
-     * about managed policy versions, see <a
+     * operative version. That is, it becomes the version that is in effect for the IAM
+     * users, groups, and roles that the policy is attached to.</p> <p>For more
+     * information about managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -209,9 +216,9 @@ namespace Model
     /**
      * <p>Specifies whether to set this version as the policy's default version.</p>
      * <p>When this parameter is <code>true</code>, the new policy version becomes the
-     * operative version; that is, the version that is in effect for the IAM users,
-     * groups, and roles that the policy is attached to.</p> <p>For more information
-     * about managed policy versions, see <a
+     * operative version. That is, it becomes the version that is in effect for the IAM
+     * users, groups, and roles that the policy is attached to.</p> <p>For more
+     * information about managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -220,9 +227,9 @@ namespace Model
     /**
      * <p>Specifies whether to set this version as the policy's default version.</p>
      * <p>When this parameter is <code>true</code>, the new policy version becomes the
-     * operative version; that is, the version that is in effect for the IAM users,
-     * groups, and roles that the policy is attached to.</p> <p>For more information
-     * about managed policy versions, see <a
+     * operative version. That is, it becomes the version that is in effect for the IAM
+     * users, groups, and roles that the policy is attached to.</p> <p>For more
+     * information about managed policy versions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
      * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
      */

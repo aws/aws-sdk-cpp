@@ -34,14 +34,14 @@ SeverityLevel::SeverityLevel() :
 {
 }
 
-SeverityLevel::SeverityLevel(const JsonValue& jsonValue) : 
+SeverityLevel::SeverityLevel(JsonView jsonValue) : 
     m_codeHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SeverityLevel& SeverityLevel::operator =(const JsonValue& jsonValue)
+SeverityLevel& SeverityLevel::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("code"))
   {

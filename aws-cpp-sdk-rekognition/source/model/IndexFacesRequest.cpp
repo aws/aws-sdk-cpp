@@ -63,7 +63,7 @@ Aws::String IndexFacesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection IndexFacesRequest::GetRequestSpecificHeaders() const

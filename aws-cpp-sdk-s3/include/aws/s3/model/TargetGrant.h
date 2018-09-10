@@ -60,27 +60,27 @@ namespace Model
 
 
     /**
-     * Logging permissions assigned to the Grantee for the bucket.
+     * <p>Logging permissions assigned to the Grantee for the bucket.</p>
      */
     inline const BucketLogsPermission& GetPermission() const{ return m_permission; }
 
     /**
-     * Logging permissions assigned to the Grantee for the bucket.
+     * <p>Logging permissions assigned to the Grantee for the bucket.</p>
      */
     inline void SetPermission(const BucketLogsPermission& value) { m_permissionHasBeenSet = true; m_permission = value; }
 
     /**
-     * Logging permissions assigned to the Grantee for the bucket.
+     * <p>Logging permissions assigned to the Grantee for the bucket.</p>
      */
     inline void SetPermission(BucketLogsPermission&& value) { m_permissionHasBeenSet = true; m_permission = std::move(value); }
 
     /**
-     * Logging permissions assigned to the Grantee for the bucket.
+     * <p>Logging permissions assigned to the Grantee for the bucket.</p>
      */
     inline TargetGrant& WithPermission(const BucketLogsPermission& value) { SetPermission(value); return *this;}
 
     /**
-     * Logging permissions assigned to the Grantee for the bucket.
+     * <p>Logging permissions assigned to the Grantee for the bucket.</p>
      */
     inline TargetGrant& WithPermission(BucketLogsPermission&& value) { SetPermission(std::move(value)); return *this;}
 

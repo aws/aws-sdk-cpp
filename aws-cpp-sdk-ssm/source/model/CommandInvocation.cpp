@@ -34,6 +34,7 @@ CommandInvocation::CommandInvocation() :
     m_instanceNameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_documentNameHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
     m_requestedDateTimeHasBeenSet(false),
     m_status(CommandInvocationStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -43,16 +44,18 @@ CommandInvocation::CommandInvocation() :
     m_standardErrorUrlHasBeenSet(false),
     m_commandPluginsHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false)
+    m_notificationConfigHasBeenSet(false),
+    m_cloudWatchOutputConfigHasBeenSet(false)
 {
 }
 
-CommandInvocation::CommandInvocation(const JsonValue& jsonValue) : 
+CommandInvocation::CommandInvocation(JsonView jsonValue) : 
     m_commandIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_documentNameHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
     m_requestedDateTimeHasBeenSet(false),
     m_status(CommandInvocationStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -62,12 +65,13 @@ CommandInvocation::CommandInvocation(const JsonValue& jsonValue) :
     m_standardErrorUrlHasBeenSet(false),
     m_commandPluginsHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false)
+    m_notificationConfigHasBeenSet(false),
+    m_cloudWatchOutputConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CommandInvocation& CommandInvocation::operator =(const JsonValue& jsonValue)
+CommandInvocation& CommandInvocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CommandId"))
   {
@@ -102,6 +106,13 @@ CommandInvocation& CommandInvocation::operator =(const JsonValue& jsonValue)
     m_documentName = jsonValue.GetString("DocumentName");
 
     m_documentNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DocumentVersion"))
+  {
+    m_documentVersion = jsonValue.GetString("DocumentVersion");
+
+    m_documentVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RequestedDateTime"))
@@ -148,7 +159,7 @@ CommandInvocation& CommandInvocation::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("CommandPlugins"))
   {
-    Array<JsonValue> commandPluginsJsonList = jsonValue.GetArray("CommandPlugins");
+    Array<JsonView> commandPluginsJsonList = jsonValue.GetArray("CommandPlugins");
     for(unsigned commandPluginsIndex = 0; commandPluginsIndex < commandPluginsJsonList.GetLength(); ++commandPluginsIndex)
     {
       m_commandPlugins.push_back(commandPluginsJsonList[commandPluginsIndex].AsObject());
@@ -168,6 +179,13 @@ CommandInvocation& CommandInvocation::operator =(const JsonValue& jsonValue)
     m_notificationConfig = jsonValue.GetObject("NotificationConfig");
 
     m_notificationConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CloudWatchOutputConfig"))
+  {
+    m_cloudWatchOutputConfig = jsonValue.GetObject("CloudWatchOutputConfig");
+
+    m_cloudWatchOutputConfigHasBeenSet = true;
   }
 
   return *this;
@@ -204,6 +222,12 @@ JsonValue CommandInvocation::Jsonize() const
   if(m_documentNameHasBeenSet)
   {
    payload.WithString("DocumentName", m_documentName);
+
+  }
+
+  if(m_documentVersionHasBeenSet)
+  {
+   payload.WithString("DocumentVersion", m_documentVersion);
 
   }
 
@@ -261,6 +285,12 @@ JsonValue CommandInvocation::Jsonize() const
   if(m_notificationConfigHasBeenSet)
   {
    payload.WithObject("NotificationConfig", m_notificationConfig.Jsonize());
+
+  }
+
+  if(m_cloudWatchOutputConfigHasBeenSet)
+  {
+   payload.WithObject("CloudWatchOutputConfig", m_cloudWatchOutputConfig.Jsonize());
 
   }
 

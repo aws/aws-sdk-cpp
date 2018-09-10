@@ -33,13 +33,13 @@ ActionContext::ActionContext() :
 {
 }
 
-ActionContext::ActionContext(const JsonValue& jsonValue) : 
+ActionContext::ActionContext(JsonView jsonValue) : 
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ActionContext& ActionContext::operator =(const JsonValue& jsonValue)
+ActionContext& ActionContext::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     AddressConfiguration();
-    AddressConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    AddressConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AddressConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AddressConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -88,35 +89,40 @@ namespace Model
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline const ChannelType& GetChannelType() const{ return m_channelType; }
 
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline void SetChannelType(const ChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
 
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline void SetChannelType(ChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
 
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline AddressConfiguration& WithChannelType(const ChannelType& value) { SetChannelType(value); return *this;}
 
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline AddressConfiguration& WithChannelType(ChannelType&& value) { SetChannelType(std::move(value)); return *this;}
 

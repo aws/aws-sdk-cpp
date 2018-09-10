@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage/model/CmafPackage.h>
 #include <aws/mediapackage/model/DashPackage.h>
 #include <aws/mediapackage/model/HlsPackage.h>
 #include <aws/mediapackage/model/MssPackage.h>
@@ -29,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaPackage
@@ -45,8 +47,8 @@ namespace Model
   {
   public:
     OriginEndpoint();
-    OriginEndpoint(const Aws::Utils::Json::JsonValue& jsonValue);
-    OriginEndpoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OriginEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    OriginEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -120,6 +122,22 @@ namespace Model
      * The ID of the Channel the OriginEndpoint is associated with.
      */
     inline OriginEndpoint& WithChannelId(const char* value) { SetChannelId(value); return *this;}
+
+
+    
+    inline const CmafPackage& GetCmafPackage() const{ return m_cmafPackage; }
+
+    
+    inline void SetCmafPackage(const CmafPackage& value) { m_cmafPackageHasBeenSet = true; m_cmafPackage = value; }
+
+    
+    inline void SetCmafPackage(CmafPackage&& value) { m_cmafPackageHasBeenSet = true; m_cmafPackage = std::move(value); }
+
+    
+    inline OriginEndpoint& WithCmafPackage(const CmafPackage& value) { SetCmafPackage(value); return *this;}
+
+    
+    inline OriginEndpoint& WithCmafPackage(CmafPackage&& value) { SetCmafPackage(std::move(value)); return *this;}
 
 
     
@@ -419,6 +437,9 @@ If not
 
     Aws::String m_channelId;
     bool m_channelIdHasBeenSet;
+
+    CmafPackage m_cmafPackage;
+    bool m_cmafPackageHasBeenSet;
 
     DashPackage m_dashPackage;
     bool m_dashPackageHasBeenSet;

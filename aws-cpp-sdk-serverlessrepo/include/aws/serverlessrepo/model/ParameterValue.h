@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServerlessApplicationRepository
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Parameter value of the application.<p><h3>See Also:</h3>   <a
+   * <p>Parameter value of the application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ParameterValue">AWS
    * API Reference</a></p>
    */
@@ -41,93 +42,100 @@ namespace Model
   {
   public:
     ParameterValue();
-    ParameterValue(const Aws::Utils::Json::JsonValue& jsonValue);
-    ParameterValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ParameterValue(Aws::Utils::Json::JsonView jsonValue);
+    ParameterValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * The key associated with the parameter. If you don't specify a key and value for
-     * a particular parameter, AWS CloudFormation\n uses the default value that is
-     * specified in your template.
+     * <p>The key associated with the parameter. If you don't specify a key and value
+     * for a particular parameter, AWS CloudFormation
+ uses the default value that is
+     * specified in your template.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * The key associated with the parameter. If you don't specify a key and value for
-     * a particular parameter, AWS CloudFormation\n uses the default value that is
-     * specified in your template.
+     * <p>The key associated with the parameter. If you don't specify a key and value
+     * for a particular parameter, AWS CloudFormation
+ uses the default value that is
+     * specified in your template.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * The key associated with the parameter. If you don't specify a key and value for
-     * a particular parameter, AWS CloudFormation\n uses the default value that is
-     * specified in your template.
+     * <p>The key associated with the parameter. If you don't specify a key and value
+     * for a particular parameter, AWS CloudFormation
+ uses the default value that is
+     * specified in your template.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * The key associated with the parameter. If you don't specify a key and value for
-     * a particular parameter, AWS CloudFormation\n uses the default value that is
-     * specified in your template.
+     * <p>The key associated with the parameter. If you don't specify a key and value
+     * for a particular parameter, AWS CloudFormation
+ uses the default value that is
+     * specified in your template.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * The key associated with the parameter. If you don't specify a key and value for
-     * a particular parameter, AWS CloudFormation\n uses the default value that is
-     * specified in your template.
+     * <p>The key associated with the parameter. If you don't specify a key and value
+     * for a particular parameter, AWS CloudFormation
+ uses the default value that is
+     * specified in your template.</p>
      */
     inline ParameterValue& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * The key associated with the parameter. If you don't specify a key and value for
-     * a particular parameter, AWS CloudFormation\n uses the default value that is
-     * specified in your template.
+     * <p>The key associated with the parameter. If you don't specify a key and value
+     * for a particular parameter, AWS CloudFormation
+ uses the default value that is
+     * specified in your template.</p>
      */
     inline ParameterValue& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * The key associated with the parameter. If you don't specify a key and value for
-     * a particular parameter, AWS CloudFormation\n uses the default value that is
-     * specified in your template.
+     * <p>The key associated with the parameter. If you don't specify a key and value
+     * for a particular parameter, AWS CloudFormation
+ uses the default value that is
+     * specified in your template.</p>
      */
     inline ParameterValue& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * The input value associated with the parameter.
+     * <p>The input value associated with the parameter.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * The input value associated with the parameter.
+     * <p>The input value associated with the parameter.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * The input value associated with the parameter.
+     * <p>The input value associated with the parameter.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * The input value associated with the parameter.
+     * <p>The input value associated with the parameter.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * The input value associated with the parameter.
+     * <p>The input value associated with the parameter.</p>
      */
     inline ParameterValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * The input value associated with the parameter.
+     * <p>The input value associated with the parameter.</p>
      */
     inline ParameterValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * The input value associated with the parameter.
+     * <p>The input value associated with the parameter.</p>
      */
     inline ParameterValue& WithValue(const char* value) { SetValue(value); return *this;}
 

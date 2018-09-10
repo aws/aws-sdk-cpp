@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * The Filter is used to identify objects that a Lifecycle Rule applies to. A
-   * Filter must have exactly one of Prefix, Tag, or And specified.<p><h3>See
+   * <p>The Filter is used to identify objects that a Lifecycle Rule applies to. A
+   * Filter must have exactly one of Prefix, Tag, or And specified.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LifecycleRuleFilter">AWS
    * API Reference</a></p>
@@ -52,63 +52,68 @@ namespace Model
 
 
     /**
-     * Prefix identifying one or more objects to which the rule applies.
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * Prefix identifying one or more objects to which the rule applies.
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * Prefix identifying one or more objects to which the rule applies.
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * Prefix identifying one or more objects to which the rule applies.
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * Prefix identifying one or more objects to which the rule applies.
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline LifecycleRuleFilter& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * Prefix identifying one or more objects to which the rule applies.
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline LifecycleRuleFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * Prefix identifying one or more objects to which the rule applies.
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline LifecycleRuleFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
     /**
-     * This tag must exist in the object's tag set in order for the rule to apply.
+     * <p>This tag must exist in the object's tag set in order for the rule to
+     * apply.</p>
      */
     inline const Tag& GetTag() const{ return m_tag; }
 
     /**
-     * This tag must exist in the object's tag set in order for the rule to apply.
+     * <p>This tag must exist in the object's tag set in order for the rule to
+     * apply.</p>
      */
     inline void SetTag(const Tag& value) { m_tagHasBeenSet = true; m_tag = value; }
 
     /**
-     * This tag must exist in the object's tag set in order for the rule to apply.
+     * <p>This tag must exist in the object's tag set in order for the rule to
+     * apply.</p>
      */
     inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
 
     /**
-     * This tag must exist in the object's tag set in order for the rule to apply.
+     * <p>This tag must exist in the object's tag set in order for the rule to
+     * apply.</p>
      */
     inline LifecycleRuleFilter& WithTag(const Tag& value) { SetTag(value); return *this;}
 
     /**
-     * This tag must exist in the object's tag set in order for the rule to apply.
+     * <p>This tag must exist in the object's tag set in order for the rule to
+     * apply.</p>
      */
     inline LifecycleRuleFilter& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
 

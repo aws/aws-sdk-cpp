@@ -35,7 +35,7 @@ HlsOutputSettings::HlsOutputSettings() :
 {
 }
 
-HlsOutputSettings::HlsOutputSettings(const JsonValue& jsonValue) : 
+HlsOutputSettings::HlsOutputSettings(JsonView jsonValue) : 
     m_hlsSettingsHasBeenSet(false),
     m_nameModifierHasBeenSet(false),
     m_segmentModifierHasBeenSet(false)
@@ -43,7 +43,7 @@ HlsOutputSettings::HlsOutputSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HlsOutputSettings& HlsOutputSettings::operator =(const JsonValue& jsonValue)
+HlsOutputSettings& HlsOutputSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("hlsSettings"))
   {

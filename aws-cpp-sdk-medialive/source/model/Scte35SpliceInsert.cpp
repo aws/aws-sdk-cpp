@@ -38,7 +38,7 @@ Scte35SpliceInsert::Scte35SpliceInsert() :
 {
 }
 
-Scte35SpliceInsert::Scte35SpliceInsert(const JsonValue& jsonValue) : 
+Scte35SpliceInsert::Scte35SpliceInsert(JsonView jsonValue) : 
     m_adAvailOffset(0),
     m_adAvailOffsetHasBeenSet(false),
     m_noRegionalBlackoutFlag(Scte35SpliceInsertNoRegionalBlackoutBehavior::NOT_SET),
@@ -49,7 +49,7 @@ Scte35SpliceInsert::Scte35SpliceInsert(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Scte35SpliceInsert& Scte35SpliceInsert::operator =(const JsonValue& jsonValue)
+Scte35SpliceInsert& Scte35SpliceInsert::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adAvailOffset"))
   {

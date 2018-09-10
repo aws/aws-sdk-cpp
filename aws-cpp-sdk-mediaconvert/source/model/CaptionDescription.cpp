@@ -30,6 +30,7 @@ namespace Model
 
 CaptionDescription::CaptionDescription() : 
     m_captionSelectorNameHasBeenSet(false),
+    m_customLanguageCodeHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
@@ -37,8 +38,9 @@ CaptionDescription::CaptionDescription() :
 {
 }
 
-CaptionDescription::CaptionDescription(const JsonValue& jsonValue) : 
+CaptionDescription::CaptionDescription(JsonView jsonValue) : 
     m_captionSelectorNameHasBeenSet(false),
+    m_customLanguageCodeHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
@@ -47,13 +49,20 @@ CaptionDescription::CaptionDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CaptionDescription& CaptionDescription::operator =(const JsonValue& jsonValue)
+CaptionDescription& CaptionDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("captionSelectorName"))
   {
     m_captionSelectorName = jsonValue.GetString("captionSelectorName");
 
     m_captionSelectorNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customLanguageCode"))
+  {
+    m_customLanguageCode = jsonValue.GetString("customLanguageCode");
+
+    m_customLanguageCodeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("destinationSettings"))
@@ -87,6 +96,12 @@ JsonValue CaptionDescription::Jsonize() const
   if(m_captionSelectorNameHasBeenSet)
   {
    payload.WithString("captionSelectorName", m_captionSelectorName);
+
+  }
+
+  if(m_customLanguageCodeHasBeenSet)
+  {
+   payload.WithString("customLanguageCode", m_customLanguageCode);
 
   }
 

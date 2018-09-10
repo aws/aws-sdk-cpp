@@ -42,6 +42,8 @@ EmailChannelResponse::EmailChannelResponse() :
     m_isArchivedHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
+    m_messagesPerSecond(0),
+    m_messagesPerSecondHasBeenSet(false),
     m_platformHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_version(0),
@@ -49,7 +51,7 @@ EmailChannelResponse::EmailChannelResponse() :
 {
 }
 
-EmailChannelResponse::EmailChannelResponse(const JsonValue& jsonValue) : 
+EmailChannelResponse::EmailChannelResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_enabled(false),
@@ -63,6 +65,8 @@ EmailChannelResponse::EmailChannelResponse(const JsonValue& jsonValue) :
     m_isArchivedHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
+    m_messagesPerSecond(0),
+    m_messagesPerSecondHasBeenSet(false),
     m_platformHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_version(0),
@@ -71,7 +75,7 @@ EmailChannelResponse::EmailChannelResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EmailChannelResponse& EmailChannelResponse::operator =(const JsonValue& jsonValue)
+EmailChannelResponse& EmailChannelResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {
@@ -141,6 +145,13 @@ EmailChannelResponse& EmailChannelResponse::operator =(const JsonValue& jsonValu
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
 
     m_lastModifiedDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MessagesPerSecond"))
+  {
+    m_messagesPerSecond = jsonValue.GetInteger("MessagesPerSecond");
+
+    m_messagesPerSecondHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Platform"))
@@ -228,6 +239,12 @@ JsonValue EmailChannelResponse::Jsonize() const
   if(m_lastModifiedDateHasBeenSet)
   {
    payload.WithString("LastModifiedDate", m_lastModifiedDate);
+
+  }
+
+  if(m_messagesPerSecondHasBeenSet)
+  {
+   payload.WithInteger("MessagesPerSecond", m_messagesPerSecond);
 
   }
 

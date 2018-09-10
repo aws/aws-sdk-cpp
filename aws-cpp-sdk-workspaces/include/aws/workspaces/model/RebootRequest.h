@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WorkSpaces
@@ -41,43 +42,43 @@ namespace Model
   {
   public:
     RebootRequest();
-    RebootRequest(const Aws::Utils::Json::JsonValue& jsonValue);
-    RebootRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RebootRequest(Aws::Utils::Json::JsonView jsonValue);
+    RebootRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The identifier of the WorkSpace.</p>
+     * <p>The ID of the WorkSpace.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
 
     /**
-     * <p>The identifier of the WorkSpace.</p>
+     * <p>The ID of the WorkSpace.</p>
      */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
 
     /**
-     * <p>The identifier of the WorkSpace.</p>
+     * <p>The ID of the WorkSpace.</p>
      */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
 
     /**
-     * <p>The identifier of the WorkSpace.</p>
+     * <p>The ID of the WorkSpace.</p>
      */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
 
     /**
-     * <p>The identifier of the WorkSpace.</p>
+     * <p>The ID of the WorkSpace.</p>
      */
     inline RebootRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
 
     /**
-     * <p>The identifier of the WorkSpace.</p>
+     * <p>The ID of the WorkSpace.</p>
      */
     inline RebootRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the WorkSpace.</p>
+     * <p>The ID of the WorkSpace.</p>
      */
     inline RebootRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 

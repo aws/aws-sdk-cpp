@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -37,8 +38,8 @@ namespace Model
 
   /**
    * <p>The details of an AWS Config evaluation. Provides the AWS resource that was
-   * evaluated, the compliance of the resource, related timestamps, and supplementary
-   * information.</p><p><h3>See Also:</h3>   <a
+   * evaluated, the compliance of the resource, related time stamps, and
+   * supplementary information.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/EvaluationResult">AWS
    * API Reference</a></p>
    */
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     EvaluationResult();
-    EvaluationResult(const Aws::Utils::Json::JsonValue& jsonValue);
-    EvaluationResult& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EvaluationResult(Aws::Utils::Json::JsonView jsonValue);
+    EvaluationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

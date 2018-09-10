@@ -45,7 +45,7 @@ MetricDatapoint::MetricDatapoint() :
 {
 }
 
-MetricDatapoint::MetricDatapoint(const JsonValue& jsonValue) : 
+MetricDatapoint::MetricDatapoint(JsonView jsonValue) : 
     m_average(0.0),
     m_averageHasBeenSet(false),
     m_maximum(0.0),
@@ -63,7 +63,7 @@ MetricDatapoint::MetricDatapoint(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MetricDatapoint& MetricDatapoint::operator =(const JsonValue& jsonValue)
+MetricDatapoint& MetricDatapoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("average"))
   {

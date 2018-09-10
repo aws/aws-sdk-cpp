@@ -35,7 +35,7 @@ ArtifactLocation::ArtifactLocation() :
 {
 }
 
-ArtifactLocation::ArtifactLocation(const JsonValue& jsonValue) : 
+ArtifactLocation::ArtifactLocation(JsonView jsonValue) : 
     m_type(ArtifactLocationType::NOT_SET),
     m_typeHasBeenSet(false),
     m_s3LocationHasBeenSet(false)
@@ -43,7 +43,7 @@ ArtifactLocation::ArtifactLocation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ArtifactLocation& ArtifactLocation::operator =(const JsonValue& jsonValue)
+ArtifactLocation& ArtifactLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

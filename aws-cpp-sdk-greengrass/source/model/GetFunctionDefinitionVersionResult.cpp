@@ -37,7 +37,7 @@ GetFunctionDefinitionVersionResult::GetFunctionDefinitionVersionResult(const Aws
 
 GetFunctionDefinitionVersionResult& GetFunctionDefinitionVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");

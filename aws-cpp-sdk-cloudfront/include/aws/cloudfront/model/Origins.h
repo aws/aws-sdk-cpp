@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A complex type that contains information about origins for this distribution.
    * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/Origins">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/Origins">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Origins

@@ -40,7 +40,7 @@ KeyPair::KeyPair() :
 {
 }
 
-KeyPair::KeyPair(const JsonValue& jsonValue) : 
+KeyPair::KeyPair(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_supportCodeHasBeenSet(false),
@@ -53,7 +53,7 @@ KeyPair::KeyPair(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-KeyPair& KeyPair::operator =(const JsonValue& jsonValue)
+KeyPair& KeyPair::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

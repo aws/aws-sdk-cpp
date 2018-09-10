@@ -33,13 +33,13 @@ SegmentBehaviors::SegmentBehaviors() :
 {
 }
 
-SegmentBehaviors::SegmentBehaviors(const JsonValue& jsonValue) : 
+SegmentBehaviors::SegmentBehaviors(JsonView jsonValue) : 
     m_recencyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SegmentBehaviors& SegmentBehaviors::operator =(const JsonValue& jsonValue)
+SegmentBehaviors& SegmentBehaviors::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Recency"))
   {

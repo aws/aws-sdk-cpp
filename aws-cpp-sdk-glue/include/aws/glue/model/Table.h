@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     Table();
-    Table(const Aws::Utils::Json::JsonValue& jsonValue);
-    Table& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Table(Aws::Utils::Json::JsonView jsonValue);
+    Table& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -539,62 +540,62 @@ namespace Model
 
 
     /**
-     * <p>Properties associated with this table, as a list of key-value pairs.</p>
+     * <p>These key-value pairs define properties associated with the table.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>Properties associated with this table, as a list of key-value pairs.</p>
+     * <p>These key-value pairs define properties associated with the table.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>Properties associated with this table, as a list of key-value pairs.</p>
+     * <p>These key-value pairs define properties associated with the table.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>Properties associated with this table, as a list of key-value pairs.</p>
+     * <p>These key-value pairs define properties associated with the table.</p>
      */
     inline Table& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>Properties associated with this table, as a list of key-value pairs.</p>
+     * <p>These key-value pairs define properties associated with the table.</p>
      */
     inline Table& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Properties associated with this table, as a list of key-value pairs.</p>
+     * <p>These key-value pairs define properties associated with the table.</p>
      */
     inline Table& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Properties associated with this table, as a list of key-value pairs.</p>
+     * <p>These key-value pairs define properties associated with the table.</p>
      */
     inline Table& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Properties associated with this table, as a list of key-value pairs.</p>
+     * <p>These key-value pairs define properties associated with the table.</p>
      */
     inline Table& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Properties associated with this table, as a list of key-value pairs.</p>
+     * <p>These key-value pairs define properties associated with the table.</p>
      */
     inline Table& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Properties associated with this table, as a list of key-value pairs.</p>
+     * <p>These key-value pairs define properties associated with the table.</p>
      */
     inline Table& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Properties associated with this table, as a list of key-value pairs.</p>
+     * <p>These key-value pairs define properties associated with the table.</p>
      */
     inline Table& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Properties associated with this table, as a list of key-value pairs.</p>
+     * <p>These key-value pairs define properties associated with the table.</p>
      */
     inline Table& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

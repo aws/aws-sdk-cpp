@@ -35,7 +35,7 @@ ByteMatchSet::ByteMatchSet() :
 {
 }
 
-ByteMatchSet::ByteMatchSet(const JsonValue& jsonValue) : 
+ByteMatchSet::ByteMatchSet(JsonView jsonValue) : 
     m_byteMatchSetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_byteMatchTuplesHasBeenSet(false)
@@ -43,7 +43,7 @@ ByteMatchSet::ByteMatchSet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ByteMatchSet& ByteMatchSet::operator =(const JsonValue& jsonValue)
+ByteMatchSet& ByteMatchSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ByteMatchSetId"))
   {
@@ -61,7 +61,7 @@ ByteMatchSet& ByteMatchSet::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ByteMatchTuples"))
   {
-    Array<JsonValue> byteMatchTuplesJsonList = jsonValue.GetArray("ByteMatchTuples");
+    Array<JsonView> byteMatchTuplesJsonList = jsonValue.GetArray("ByteMatchTuples");
     for(unsigned byteMatchTuplesIndex = 0; byteMatchTuplesIndex < byteMatchTuplesJsonList.GetLength(); ++byteMatchTuplesIndex)
     {
       m_byteMatchTuples.push_back(byteMatchTuplesJsonList[byteMatchTuplesIndex].AsObject());

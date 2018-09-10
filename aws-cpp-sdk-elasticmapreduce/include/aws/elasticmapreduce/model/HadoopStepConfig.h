@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     HadoopStepConfig();
-    HadoopStepConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    HadoopStepConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HadoopStepConfig(Aws::Utils::Json::JsonView jsonValue);
+    HadoopStepConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

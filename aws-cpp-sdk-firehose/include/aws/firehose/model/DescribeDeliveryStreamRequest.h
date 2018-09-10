@@ -81,63 +81,63 @@ namespace Model
 
 
     /**
-     * <p>The limit on the number of destinations to return. Currently, you can have
-     * one destination per delivery stream.</p>
+     * <p>The limit on the number of destinations to return. You can have one
+     * destination per delivery stream.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The limit on the number of destinations to return. Currently, you can have
-     * one destination per delivery stream.</p>
+     * <p>The limit on the number of destinations to return. You can have one
+     * destination per delivery stream.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The limit on the number of destinations to return. Currently, you can have
-     * one destination per delivery stream.</p>
+     * <p>The limit on the number of destinations to return. You can have one
+     * destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Currently, Kinesis Firehose supports one destination per delivery stream.</p>
+     * Kinesis Data Firehose supports one destination per delivery stream.</p>
      */
     inline const Aws::String& GetExclusiveStartDestinationId() const{ return m_exclusiveStartDestinationId; }
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Currently, Kinesis Firehose supports one destination per delivery stream.</p>
+     * Kinesis Data Firehose supports one destination per delivery stream.</p>
      */
     inline void SetExclusiveStartDestinationId(const Aws::String& value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId = value; }
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Currently, Kinesis Firehose supports one destination per delivery stream.</p>
+     * Kinesis Data Firehose supports one destination per delivery stream.</p>
      */
     inline void SetExclusiveStartDestinationId(Aws::String&& value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId = std::move(value); }
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Currently, Kinesis Firehose supports one destination per delivery stream.</p>
+     * Kinesis Data Firehose supports one destination per delivery stream.</p>
      */
     inline void SetExclusiveStartDestinationId(const char* value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId.assign(value); }
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Currently, Kinesis Firehose supports one destination per delivery stream.</p>
+     * Kinesis Data Firehose supports one destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(const Aws::String& value) { SetExclusiveStartDestinationId(value); return *this;}
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Currently, Kinesis Firehose supports one destination per delivery stream.</p>
+     * Kinesis Data Firehose supports one destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(Aws::String&& value) { SetExclusiveStartDestinationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Currently, Kinesis Firehose supports one destination per delivery stream.</p>
+     * Kinesis Data Firehose supports one destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(const char* value) { SetExclusiveStartDestinationId(value); return *this;}
 

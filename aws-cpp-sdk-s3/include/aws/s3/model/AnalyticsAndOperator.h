@@ -45,73 +45,73 @@ namespace Model
 
 
     /**
-     * The prefix to use when evaluating an AND predicate.
+     * <p>The prefix to use when evaluating an AND predicate.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * The prefix to use when evaluating an AND predicate.
+     * <p>The prefix to use when evaluating an AND predicate.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * The prefix to use when evaluating an AND predicate.
+     * <p>The prefix to use when evaluating an AND predicate.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * The prefix to use when evaluating an AND predicate.
+     * <p>The prefix to use when evaluating an AND predicate.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * The prefix to use when evaluating an AND predicate.
+     * <p>The prefix to use when evaluating an AND predicate.</p>
      */
     inline AnalyticsAndOperator& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * The prefix to use when evaluating an AND predicate.
+     * <p>The prefix to use when evaluating an AND predicate.</p>
      */
     inline AnalyticsAndOperator& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * The prefix to use when evaluating an AND predicate.
+     * <p>The prefix to use when evaluating an AND predicate.</p>
      */
     inline AnalyticsAndOperator& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
     /**
-     * The list of tags to use when evaluating an AND predicate.
+     * <p>The list of tags to use when evaluating an AND predicate.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * The list of tags to use when evaluating an AND predicate.
+     * <p>The list of tags to use when evaluating an AND predicate.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * The list of tags to use when evaluating an AND predicate.
+     * <p>The list of tags to use when evaluating an AND predicate.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * The list of tags to use when evaluating an AND predicate.
+     * <p>The list of tags to use when evaluating an AND predicate.</p>
      */
     inline AnalyticsAndOperator& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * The list of tags to use when evaluating an AND predicate.
+     * <p>The list of tags to use when evaluating an AND predicate.</p>
      */
     inline AnalyticsAndOperator& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * The list of tags to use when evaluating an AND predicate.
+     * <p>The list of tags to use when evaluating an AND predicate.</p>
      */
     inline AnalyticsAndOperator& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * The list of tags to use when evaluating an AND predicate.
+     * <p>The list of tags to use when evaluating an AND predicate.</p>
      */
     inline AnalyticsAndOperator& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

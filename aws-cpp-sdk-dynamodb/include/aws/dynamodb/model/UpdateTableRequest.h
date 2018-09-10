@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
+#include <aws/dynamodb/model/SSESpecification.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexUpdate.h>
 #include <utility>
@@ -304,6 +305,32 @@ namespace Model
      */
     inline UpdateTableRequest& WithStreamSpecification(StreamSpecification&& value) { SetStreamSpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The new server-side encryption settings for the specified table.</p>
+     */
+    inline const SSESpecification& GetSSESpecification() const{ return m_sSESpecification; }
+
+    /**
+     * <p>The new server-side encryption settings for the specified table.</p>
+     */
+    inline void SetSSESpecification(const SSESpecification& value) { m_sSESpecificationHasBeenSet = true; m_sSESpecification = value; }
+
+    /**
+     * <p>The new server-side encryption settings for the specified table.</p>
+     */
+    inline void SetSSESpecification(SSESpecification&& value) { m_sSESpecificationHasBeenSet = true; m_sSESpecification = std::move(value); }
+
+    /**
+     * <p>The new server-side encryption settings for the specified table.</p>
+     */
+    inline UpdateTableRequest& WithSSESpecification(const SSESpecification& value) { SetSSESpecification(value); return *this;}
+
+    /**
+     * <p>The new server-side encryption settings for the specified table.</p>
+     */
+    inline UpdateTableRequest& WithSSESpecification(SSESpecification&& value) { SetSSESpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -320,6 +347,9 @@ namespace Model
 
     StreamSpecification m_streamSpecification;
     bool m_streamSpecificationHasBeenSet;
+
+    SSESpecification m_sSESpecification;
+    bool m_sSESpecificationHasBeenSet;
   };
 
 } // namespace Model

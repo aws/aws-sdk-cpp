@@ -285,23 +285,23 @@ namespace Model
     /**
      * <p>The stack's operating system, which must be set to one of the following:</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p>
-     * </li> <li> <p>A supported Windows operating system, such as <code>Microsoft
-     * Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with
-     * SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows operating
+     * system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+     * <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want
+     * to use when you create instances. For more information about how to use custom
+     * AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the stack's current
-     * operating system. For more information on the supported operating systems, see
-     * <a
+     * operating system. For more information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
      */
@@ -310,23 +310,23 @@ namespace Model
     /**
      * <p>The stack's operating system, which must be set to one of the following:</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p>
-     * </li> <li> <p>A supported Windows operating system, such as <code>Microsoft
-     * Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with
-     * SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows operating
+     * system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+     * <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want
+     * to use when you create instances. For more information about how to use custom
+     * AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the stack's current
-     * operating system. For more information on the supported operating systems, see
-     * <a
+     * operating system. For more information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
      */
@@ -335,23 +335,23 @@ namespace Model
     /**
      * <p>The stack's operating system, which must be set to one of the following:</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p>
-     * </li> <li> <p>A supported Windows operating system, such as <code>Microsoft
-     * Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with
-     * SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows operating
+     * system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+     * <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want
+     * to use when you create instances. For more information about how to use custom
+     * AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the stack's current
-     * operating system. For more information on the supported operating systems, see
-     * <a
+     * operating system. For more information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
      */
@@ -360,23 +360,23 @@ namespace Model
     /**
      * <p>The stack's operating system, which must be set to one of the following:</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p>
-     * </li> <li> <p>A supported Windows operating system, such as <code>Microsoft
-     * Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with
-     * SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows operating
+     * system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+     * <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want
+     * to use when you create instances. For more information about how to use custom
+     * AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the stack's current
-     * operating system. For more information on the supported operating systems, see
-     * <a
+     * operating system. For more information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
      */
@@ -385,23 +385,23 @@ namespace Model
     /**
      * <p>The stack's operating system, which must be set to one of the following:</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p>
-     * </li> <li> <p>A supported Windows operating system, such as <code>Microsoft
-     * Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with
-     * SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows operating
+     * system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+     * <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want
+     * to use when you create instances. For more information about how to use custom
+     * AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the stack's current
-     * operating system. For more information on the supported operating systems, see
-     * <a
+     * operating system. For more information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
      */
@@ -410,23 +410,23 @@ namespace Model
     /**
      * <p>The stack's operating system, which must be set to one of the following:</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p>
-     * </li> <li> <p>A supported Windows operating system, such as <code>Microsoft
-     * Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with
-     * SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows operating
+     * system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+     * <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want
+     * to use when you create instances. For more information about how to use custom
+     * AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the stack's current
-     * operating system. For more information on the supported operating systems, see
-     * <a
+     * operating system. For more information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
      */
@@ -435,23 +435,23 @@ namespace Model
     /**
      * <p>The stack's operating system, which must be set to one of the following:</p>
      * <ul> <li> <p>A supported Linux operating system: An Amazon Linux version, such
-     * as <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>,
-     * <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu
-     * operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04
-     * LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS
-     * Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise Linux 7</code> </p>
-     * </li> <li> <p>A supported Windows operating system, such as <code>Microsoft
-     * Windows Server 2012 R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with
-     * SQL Server Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL
-     * Server Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You
-     * specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * as <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
+     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p>
+     * </li> <li> <p>A supported Ubuntu operating system, such as <code>Ubuntu 16.04
+     * LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p>
+     * </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat
+     * Enterprise Linux 7</code> </p> </li> <li> <p>A supported Windows operating
+     * system, such as <code>Microsoft Windows Server 2012 R2 Base</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or
+     * <code>Microsoft Windows Server 2012 R2 with SQL Server Web</code>.</p> </li>
+     * <li> <p>A custom AMI: <code>Custom</code>. You specify the custom AMI you want
+     * to use when you create instances. For more information about how to use custom
+     * AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
      * Custom AMIs</a>.</p> </li> </ul> <p>The default option is the stack's current
-     * operating system. For more information on the supported operating systems, see
-     * <a
+     * operating system. For more information about supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
      */
@@ -731,7 +731,7 @@ namespace Model
      * <p>A string that contains user-defined, custom JSON. It can be used to override
      * the corresponding default stack configuration JSON values or to pass data to
      * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
-     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information about
      * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
@@ -742,7 +742,7 @@ namespace Model
      * <p>A string that contains user-defined, custom JSON. It can be used to override
      * the corresponding default stack configuration JSON values or to pass data to
      * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
-     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information about
      * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
@@ -753,7 +753,7 @@ namespace Model
      * <p>A string that contains user-defined, custom JSON. It can be used to override
      * the corresponding default stack configuration JSON values or to pass data to
      * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
-     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information about
      * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
@@ -764,7 +764,7 @@ namespace Model
      * <p>A string that contains user-defined, custom JSON. It can be used to override
      * the corresponding default stack configuration JSON values or to pass data to
      * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
-     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information about
      * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
@@ -775,7 +775,7 @@ namespace Model
      * <p>A string that contains user-defined, custom JSON. It can be used to override
      * the corresponding default stack configuration JSON values or to pass data to
      * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
-     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information about
      * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
@@ -786,7 +786,7 @@ namespace Model
      * <p>A string that contains user-defined, custom JSON. It can be used to override
      * the corresponding default stack configuration JSON values or to pass data to
      * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
-     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information about
      * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
@@ -797,7 +797,7 @@ namespace Model
      * <p>A string that contains user-defined, custom JSON. It can be used to override
      * the corresponding default stack configuration JSON values or to pass data to
      * recipes. The string should be in the following format:</p> <p> <code>"{\"key1\":
-     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information on
+     * \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more information about
      * custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
@@ -809,7 +809,7 @@ namespace Model
      * <p>The configuration manager. When you update a stack, we recommend that you use
      * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
-     * currently 11.4.</p>
+     * currently 12.</p>
      */
     inline const StackConfigurationManager& GetConfigurationManager() const{ return m_configurationManager; }
 
@@ -817,7 +817,7 @@ namespace Model
      * <p>The configuration manager. When you update a stack, we recommend that you use
      * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
-     * currently 11.4.</p>
+     * currently 12.</p>
      */
     inline void SetConfigurationManager(const StackConfigurationManager& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
 
@@ -825,7 +825,7 @@ namespace Model
      * <p>The configuration manager. When you update a stack, we recommend that you use
      * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
-     * currently 11.4.</p>
+     * currently 12.</p>
      */
     inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = std::move(value); }
 
@@ -833,7 +833,7 @@ namespace Model
      * <p>The configuration manager. When you update a stack, we recommend that you use
      * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
-     * currently 11.4.</p>
+     * currently 12.</p>
      */
     inline UpdateStackRequest& WithConfigurationManager(const StackConfigurationManager& value) { SetConfigurationManager(value); return *this;}
 
@@ -841,7 +841,7 @@ namespace Model
      * <p>The configuration manager. When you update a stack, we recommend that you use
      * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
-     * currently 11.4.</p>
+     * currently 12.</p>
      */
     inline UpdateStackRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
 

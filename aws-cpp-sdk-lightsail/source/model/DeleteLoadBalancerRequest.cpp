@@ -37,7 +37,7 @@ Aws::String DeleteLoadBalancerRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteLoadBalancerRequest::GetRequestSpecificHeaders() const

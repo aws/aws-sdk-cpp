@@ -30,13 +30,18 @@ namespace Aws
       namespace EnvironmentTypeMapper
       {
 
+        static const int WINDOWS_CONTAINER_HASH = HashingUtils::HashString("WINDOWS_CONTAINER");
         static const int LINUX_CONTAINER_HASH = HashingUtils::HashString("LINUX_CONTAINER");
 
 
         EnvironmentType GetEnvironmentTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == LINUX_CONTAINER_HASH)
+          if (hashCode == WINDOWS_CONTAINER_HASH)
+          {
+            return EnvironmentType::WINDOWS_CONTAINER;
+          }
+          else if (hashCode == LINUX_CONTAINER_HASH)
           {
             return EnvironmentType::LINUX_CONTAINER;
           }
@@ -54,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentType::WINDOWS_CONTAINER:
+            return "WINDOWS_CONTAINER";
           case EnvironmentType::LINUX_CONTAINER:
             return "LINUX_CONTAINER";
           default:

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MTurk
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     BonusPayment();
-    BonusPayment(const Aws::Utils::Json::JsonValue& jsonValue);
-    BonusPayment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BonusPayment(Aws::Utils::Json::JsonView jsonValue);
+    BonusPayment& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

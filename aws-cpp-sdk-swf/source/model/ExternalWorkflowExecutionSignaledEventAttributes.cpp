@@ -35,7 +35,7 @@ ExternalWorkflowExecutionSignaledEventAttributes::ExternalWorkflowExecutionSigna
 {
 }
 
-ExternalWorkflowExecutionSignaledEventAttributes::ExternalWorkflowExecutionSignaledEventAttributes(const JsonValue& jsonValue) : 
+ExternalWorkflowExecutionSignaledEventAttributes::ExternalWorkflowExecutionSignaledEventAttributes(JsonView jsonValue) : 
     m_workflowExecutionHasBeenSet(false),
     m_initiatedEventId(0),
     m_initiatedEventIdHasBeenSet(false)
@@ -43,7 +43,7 @@ ExternalWorkflowExecutionSignaledEventAttributes::ExternalWorkflowExecutionSigna
   *this = jsonValue;
 }
 
-ExternalWorkflowExecutionSignaledEventAttributes& ExternalWorkflowExecutionSignaledEventAttributes::operator =(const JsonValue& jsonValue)
+ExternalWorkflowExecutionSignaledEventAttributes& ExternalWorkflowExecutionSignaledEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowExecution"))
   {

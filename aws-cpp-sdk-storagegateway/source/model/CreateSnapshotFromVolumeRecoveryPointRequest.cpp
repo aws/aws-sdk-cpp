@@ -44,7 +44,7 @@ Aws::String CreateSnapshotFromVolumeRecoveryPointRequest::SerializePayload() con
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateSnapshotFromVolumeRecoveryPointRequest::GetRequestSpecificHeaders() const

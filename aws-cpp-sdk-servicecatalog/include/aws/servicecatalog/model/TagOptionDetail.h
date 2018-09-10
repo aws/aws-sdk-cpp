@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceCatalog
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     TagOptionDetail();
-    TagOptionDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    TagOptionDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TagOptionDetail(Aws::Utils::Json::JsonView jsonValue);
+    TagOptionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

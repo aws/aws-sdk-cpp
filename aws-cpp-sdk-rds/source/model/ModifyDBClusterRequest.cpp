@@ -36,7 +36,12 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_preferredBackupWindowHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_enableIAMDatabaseAuthentication(false),
-    m_enableIAMDatabaseAuthenticationHasBeenSet(false)
+    m_enableIAMDatabaseAuthenticationHasBeenSet(false),
+    m_backtrackWindow(0),
+    m_backtrackWindowHasBeenSet(false),
+    m_cloudwatchLogsExportConfigurationHasBeenSet(false),
+    m_engineVersionHasBeenSet(false),
+    m_scalingConfigurationHasBeenSet(false)
 {
 }
 
@@ -108,6 +113,26 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_enableIAMDatabaseAuthenticationHasBeenSet)
   {
     ss << "EnableIAMDatabaseAuthentication=" << std::boolalpha << m_enableIAMDatabaseAuthentication << "&";
+  }
+
+  if(m_backtrackWindowHasBeenSet)
+  {
+    ss << "BacktrackWindow=" << m_backtrackWindow << "&";
+  }
+
+  if(m_cloudwatchLogsExportConfigurationHasBeenSet)
+  {
+    m_cloudwatchLogsExportConfiguration.OutputToStream(ss, "CloudwatchLogsExportConfiguration");
+  }
+
+  if(m_engineVersionHasBeenSet)
+  {
+    ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
+  }
+
+  if(m_scalingConfigurationHasBeenSet)
+  {
+    m_scalingConfiguration.OutputToStream(ss, "ScalingConfiguration");
   }
 
   ss << "Version=2014-10-31";

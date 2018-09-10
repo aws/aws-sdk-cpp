@@ -37,7 +37,7 @@ CreateDocumentResult::CreateDocumentResult(const Aws::AmazonWebServiceResult<Jso
 
 CreateDocumentResult& CreateDocumentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DocumentDescription"))
   {
     m_documentDescription = jsonValue.GetObject("DocumentDescription");

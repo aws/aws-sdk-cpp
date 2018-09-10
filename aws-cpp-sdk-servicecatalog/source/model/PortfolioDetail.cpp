@@ -38,7 +38,7 @@ PortfolioDetail::PortfolioDetail() :
 {
 }
 
-PortfolioDetail::PortfolioDetail(const JsonValue& jsonValue) : 
+PortfolioDetail::PortfolioDetail(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_aRNHasBeenSet(false),
     m_displayNameHasBeenSet(false),
@@ -49,7 +49,7 @@ PortfolioDetail::PortfolioDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PortfolioDetail& PortfolioDetail::operator =(const JsonValue& jsonValue)
+PortfolioDetail& PortfolioDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

@@ -54,7 +54,7 @@ Aws::String AddAttributesToFindingsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AddAttributesToFindingsRequest::GetRequestSpecificHeaders() const

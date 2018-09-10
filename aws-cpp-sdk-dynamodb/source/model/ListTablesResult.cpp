@@ -37,10 +37,10 @@ ListTablesResult::ListTablesResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 ListTablesResult& ListTablesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TableNames"))
   {
-    Array<JsonValue> tableNamesJsonList = jsonValue.GetArray("TableNames");
+    Array<JsonView> tableNamesJsonList = jsonValue.GetArray("TableNames");
     for(unsigned tableNamesIndex = 0; tableNamesIndex < tableNamesJsonList.GetLength(); ++tableNamesIndex)
     {
       m_tableNames.push_back(tableNamesJsonList[tableNamesIndex].AsString());

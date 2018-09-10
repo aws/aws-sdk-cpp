@@ -11,10 +11,17 @@
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
 #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
 #if($memberName == $shape.payload)##member is the whole payload (not wrapped)
+#if($member.shape.structure)
     $memberVarName = resultNode;
 #break
 #end
+#set($memberIsWholePayload = true)
+#end
 #if($member.shape.list)##member is list
+#if($memberIsWholePayload)
+#set($listVarName = $CppViewHelper.computeVariableName($memberName) + "Member")
+    XmlNode ${listVarName} = resultNode;
+#else
 #if($member.shape.flattened || $member.flattened)##list member uses flattened serialization
 #if($member.locationName)
 #set($listVarName = $CppViewHelper.computeVariableName($member.locationName) + "Member")
@@ -43,13 +50,18 @@
     XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${memberName}");
 #end##
 #end##list member uses flattened serialization
+#end##member is whole payload
 #elseif($member.shape.map)##member is a map
 #if($member.locationName)##member uses location for serialization
 #set($mapVarName = $CppViewHelper.computeVariableName($member.locationName) + "Entry")
     XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${member.locationName}");
 #else##no location specified
 #set($mapVarName = $CppViewHelper.computeVariableName($memberName) + "Entry")
+#if($memberIsWholePayload)##member is whole payload
+    XmlNode ${lowerCaseVarName}Node = resultNode;
+#else
     XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${memberName}");
+#end##member is whole payload
 
 #end##member uses location for serialization
 #else##this is not a map or a list
@@ -62,7 +74,7 @@
 #set($spaces = '  ')
     if(!${lowerCaseVarName}Node.IsNull())
     {
-#if($listVarName)
+#if($listVarName && !$memberIsWholePayload)
 #if($member.shape.flattened || $member.flattened)
     ${spaces}XmlNode ${listVarName} = ${lowerCaseVarName}Node;
 #else
@@ -120,7 +132,7 @@
 #elseif($member.shape.listMember.shape.string)
     ${spaces}  ${memberVarName}.push_back(StringUtils::Trim(${listVarName}.GetText().c_str()));
 #elseif($member.shape.listMember.shape.timeStamp)
-    ${spaces}  ${memberVarName}.push_back(DateTime(StringUtils::Trim(${listVarName}.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+    ${spaces}  ${memberVarName}.push_back(DateTime(StringUtils::Trim(${listVarName}.GetText().c_str()).c_str(), DateFormat::ISO_8601));
 #elseif($member.shape.listMember.shape.primitive)
     ${spaces}   ${memberVarName}.push_back(${CppViewHelper.computeXmlConversionMethodName($member.shape.listMember.shape)}(StringUtils::Trim(${listVarName}.GetText().c_str()).c_str()));
 #end

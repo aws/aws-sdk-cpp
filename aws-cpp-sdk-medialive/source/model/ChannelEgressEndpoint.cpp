@@ -33,13 +33,13 @@ ChannelEgressEndpoint::ChannelEgressEndpoint() :
 {
 }
 
-ChannelEgressEndpoint::ChannelEgressEndpoint(const JsonValue& jsonValue) : 
+ChannelEgressEndpoint::ChannelEgressEndpoint(JsonView jsonValue) : 
     m_sourceIpHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ChannelEgressEndpoint& ChannelEgressEndpoint::operator =(const JsonValue& jsonValue)
+ChannelEgressEndpoint& ChannelEgressEndpoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("sourceIp"))
   {

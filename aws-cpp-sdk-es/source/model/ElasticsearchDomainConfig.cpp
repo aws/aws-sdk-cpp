@@ -35,19 +35,21 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig() :
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
+    m_cognitoOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
 {
 }
 
-ElasticsearchDomainConfig::ElasticsearchDomainConfig(const JsonValue& jsonValue) : 
+ElasticsearchDomainConfig::ElasticsearchDomainConfig(JsonView jsonValue) : 
     m_elasticsearchVersionHasBeenSet(false),
     m_elasticsearchClusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
+    m_cognitoOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
@@ -55,7 +57,7 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-ElasticsearchDomainConfig& ElasticsearchDomainConfig::operator =(const JsonValue& jsonValue)
+ElasticsearchDomainConfig& ElasticsearchDomainConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ElasticsearchVersion"))
   {
@@ -97,6 +99,13 @@ ElasticsearchDomainConfig& ElasticsearchDomainConfig::operator =(const JsonValue
     m_vPCOptions = jsonValue.GetObject("VPCOptions");
 
     m_vPCOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CognitoOptions"))
+  {
+    m_cognitoOptions = jsonValue.GetObject("CognitoOptions");
+
+    m_cognitoOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EncryptionAtRestOptions"))
@@ -160,6 +169,12 @@ JsonValue ElasticsearchDomainConfig::Jsonize() const
   if(m_vPCOptionsHasBeenSet)
   {
    payload.WithObject("VPCOptions", m_vPCOptions.Jsonize());
+
+  }
+
+  if(m_cognitoOptionsHasBeenSet)
+  {
+   payload.WithObject("CognitoOptions", m_cognitoOptions.Jsonize());
 
   }
 

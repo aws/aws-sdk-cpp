@@ -35,7 +35,7 @@ AuthInfo::AuthInfo() :
 {
 }
 
-AuthInfo::AuthInfo(const JsonValue& jsonValue) : 
+AuthInfo::AuthInfo(JsonView jsonValue) : 
     m_actionType(ActionType::NOT_SET),
     m_actionTypeHasBeenSet(false),
     m_resourcesHasBeenSet(false)
@@ -43,7 +43,7 @@ AuthInfo::AuthInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AuthInfo& AuthInfo::operator =(const JsonValue& jsonValue)
+AuthInfo& AuthInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("actionType"))
   {
@@ -54,7 +54,7 @@ AuthInfo& AuthInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("resources"))
   {
-    Array<JsonValue> resourcesJsonList = jsonValue.GetArray("resources");
+    Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsString());

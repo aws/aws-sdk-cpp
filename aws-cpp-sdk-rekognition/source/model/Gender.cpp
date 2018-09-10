@@ -36,7 +36,7 @@ Gender::Gender() :
 {
 }
 
-Gender::Gender(const JsonValue& jsonValue) : 
+Gender::Gender(JsonView jsonValue) : 
     m_value(GenderType::NOT_SET),
     m_valueHasBeenSet(false),
     m_confidence(0.0),
@@ -45,7 +45,7 @@ Gender::Gender(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Gender& Gender::operator =(const JsonValue& jsonValue)
+Gender& Gender::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {

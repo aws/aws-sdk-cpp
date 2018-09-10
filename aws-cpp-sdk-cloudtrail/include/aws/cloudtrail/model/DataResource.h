@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudTrail
@@ -55,8 +56,8 @@ namespace Model
   {
   public:
     DataResource();
-    DataResource(const Aws::Utils::Json::JsonValue& jsonValue);
-    DataResource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DataResource(Aws::Utils::Json::JsonView jsonValue);
+    DataResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

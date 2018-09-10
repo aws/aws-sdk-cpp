@@ -37,7 +37,7 @@ ListVolumeRecoveryPointsResult::ListVolumeRecoveryPointsResult(const Aws::Amazon
 
 ListVolumeRecoveryPointsResult& ListVolumeRecoveryPointsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
@@ -46,7 +46,7 @@ ListVolumeRecoveryPointsResult& ListVolumeRecoveryPointsResult::operator =(const
 
   if(jsonValue.ValueExists("VolumeRecoveryPointInfos"))
   {
-    Array<JsonValue> volumeRecoveryPointInfosJsonList = jsonValue.GetArray("VolumeRecoveryPointInfos");
+    Array<JsonView> volumeRecoveryPointInfosJsonList = jsonValue.GetArray("VolumeRecoveryPointInfos");
     for(unsigned volumeRecoveryPointInfosIndex = 0; volumeRecoveryPointInfosIndex < volumeRecoveryPointInfosJsonList.GetLength(); ++volumeRecoveryPointInfosIndex)
     {
       m_volumeRecoveryPointInfos.push_back(volumeRecoveryPointInfosJsonList[volumeRecoveryPointInfosIndex].AsObject());

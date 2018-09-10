@@ -49,7 +49,7 @@ namespace Model
 
     /**
      * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
-     * to list. If you do not specify an <code>AssignmentStatus</code>, the action
+     * to list. If you do not specify an <code>AssignmentStatus</code>, the operation
      * defaults to <code>Any</code> which lists both assigned and unassigned virtual
      * MFA devices.</p>
      */
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
-     * to list. If you do not specify an <code>AssignmentStatus</code>, the action
+     * to list. If you do not specify an <code>AssignmentStatus</code>, the operation
      * defaults to <code>Any</code> which lists both assigned and unassigned virtual
      * MFA devices.</p>
      */
@@ -65,7 +65,7 @@ namespace Model
 
     /**
      * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
-     * to list. If you do not specify an <code>AssignmentStatus</code>, the action
+     * to list. If you do not specify an <code>AssignmentStatus</code>, the operation
      * defaults to <code>Any</code> which lists both assigned and unassigned virtual
      * MFA devices.</p>
      */
@@ -73,7 +73,7 @@ namespace Model
 
     /**
      * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
-     * to list. If you do not specify an <code>AssignmentStatus</code>, the action
+     * to list. If you do not specify an <code>AssignmentStatus</code>, the operation
      * defaults to <code>Any</code> which lists both assigned and unassigned virtual
      * MFA devices.</p>
      */
@@ -81,7 +81,7 @@ namespace Model
 
     /**
      * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
-     * to list. If you do not specify an <code>AssignmentStatus</code>, the action
+     * to list. If you do not specify an <code>AssignmentStatus</code>, the operation
      * defaults to <code>Any</code> which lists both assigned and unassigned virtual
      * MFA devices.</p>
      */

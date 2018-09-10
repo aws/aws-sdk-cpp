@@ -37,7 +37,7 @@ GetPartitionResult::GetPartitionResult(const Aws::AmazonWebServiceResult<JsonVal
 
 GetPartitionResult& GetPartitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Partition"))
   {
     m_partition = jsonValue.GetObject("Partition");

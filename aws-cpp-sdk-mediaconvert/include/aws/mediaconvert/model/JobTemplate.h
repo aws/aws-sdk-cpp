@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     JobTemplate();
-    JobTemplate(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobTemplate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobTemplate(Aws::Utils::Json::JsonView jsonValue);
+    JobTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -314,31 +315,31 @@ namespace Model
 
     /**
      * A job template can be of two types: system or custom. System or built-in job
-     * templates can’t be modified or deleted by the user.
+     * templates can't be modified or deleted by the user.
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
      * A job template can be of two types: system or custom. System or built-in job
-     * templates can’t be modified or deleted by the user.
+     * templates can't be modified or deleted by the user.
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * A job template can be of two types: system or custom. System or built-in job
-     * templates can’t be modified or deleted by the user.
+     * templates can't be modified or deleted by the user.
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * A job template can be of two types: system or custom. System or built-in job
-     * templates can’t be modified or deleted by the user.
+     * templates can't be modified or deleted by the user.
      */
     inline JobTemplate& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
      * A job template can be of two types: system or custom. System or built-in job
-     * templates can’t be modified or deleted by the user.
+     * templates can't be modified or deleted by the user.
      */
     inline JobTemplate& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 

@@ -34,7 +34,9 @@ PutIntentRequest::PutIntentRequest() :
     m_dialogCodeHookHasBeenSet(false),
     m_fulfillmentActivityHasBeenSet(false),
     m_parentIntentSignatureHasBeenSet(false),
-    m_checksumHasBeenSet(false)
+    m_checksumHasBeenSet(false),
+    m_createVersion(false),
+    m_createVersionHasBeenSet(false)
 {
 }
 
@@ -118,7 +120,13 @@ Aws::String PutIntentRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_createVersionHasBeenSet)
+  {
+   payload.WithBool("createVersion", m_createVersion);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

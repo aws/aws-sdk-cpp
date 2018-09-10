@@ -43,32 +43,32 @@ namespace Model
 
 
     /**
-     * <p> <code>ContinuousBackupsDescription</code> can be one of the following :
-     * ENABLED, DISABLED. </p>
+     * <p>Represents the continuous backups and point in time recovery settings on the
+     * table.</p>
      */
     inline const ContinuousBackupsDescription& GetContinuousBackupsDescription() const{ return m_continuousBackupsDescription; }
 
     /**
-     * <p> <code>ContinuousBackupsDescription</code> can be one of the following :
-     * ENABLED, DISABLED. </p>
+     * <p>Represents the continuous backups and point in time recovery settings on the
+     * table.</p>
      */
     inline void SetContinuousBackupsDescription(const ContinuousBackupsDescription& value) { m_continuousBackupsDescription = value; }
 
     /**
-     * <p> <code>ContinuousBackupsDescription</code> can be one of the following :
-     * ENABLED, DISABLED. </p>
+     * <p>Represents the continuous backups and point in time recovery settings on the
+     * table.</p>
      */
     inline void SetContinuousBackupsDescription(ContinuousBackupsDescription&& value) { m_continuousBackupsDescription = std::move(value); }
 
     /**
-     * <p> <code>ContinuousBackupsDescription</code> can be one of the following :
-     * ENABLED, DISABLED. </p>
+     * <p>Represents the continuous backups and point in time recovery settings on the
+     * table.</p>
      */
     inline DescribeContinuousBackupsResult& WithContinuousBackupsDescription(const ContinuousBackupsDescription& value) { SetContinuousBackupsDescription(value); return *this;}
 
     /**
-     * <p> <code>ContinuousBackupsDescription</code> can be one of the following :
-     * ENABLED, DISABLED. </p>
+     * <p>Represents the continuous backups and point in time recovery settings on the
+     * table.</p>
      */
     inline DescribeContinuousBackupsResult& WithContinuousBackupsDescription(ContinuousBackupsDescription&& value) { SetContinuousBackupsDescription(std::move(value)); return *this;}
 

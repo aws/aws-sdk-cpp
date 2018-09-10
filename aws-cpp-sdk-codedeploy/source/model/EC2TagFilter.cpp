@@ -36,7 +36,7 @@ EC2TagFilter::EC2TagFilter() :
 {
 }
 
-EC2TagFilter::EC2TagFilter(const JsonValue& jsonValue) : 
+EC2TagFilter::EC2TagFilter(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_type(EC2TagFilterType::NOT_SET),
@@ -45,7 +45,7 @@ EC2TagFilter::EC2TagFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EC2TagFilter& EC2TagFilter::operator =(const JsonValue& jsonValue)
+EC2TagFilter& EC2TagFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

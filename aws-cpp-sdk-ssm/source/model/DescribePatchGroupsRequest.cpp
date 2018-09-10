@@ -57,7 +57,7 @@ Aws::String DescribePatchGroupsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribePatchGroupsRequest::GetRequestSpecificHeaders() const

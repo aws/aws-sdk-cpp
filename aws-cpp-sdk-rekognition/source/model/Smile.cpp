@@ -36,7 +36,7 @@ Smile::Smile() :
 {
 }
 
-Smile::Smile(const JsonValue& jsonValue) : 
+Smile::Smile(JsonView jsonValue) : 
     m_value(false),
     m_valueHasBeenSet(false),
     m_confidence(0.0),
@@ -45,7 +45,7 @@ Smile::Smile(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Smile& Smile::operator =(const JsonValue& jsonValue)
+Smile& Smile::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {

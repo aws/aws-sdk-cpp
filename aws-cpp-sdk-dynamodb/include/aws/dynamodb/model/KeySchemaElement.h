@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -51,8 +52,8 @@ namespace Model
   {
   public:
     KeySchemaElement();
-    KeySchemaElement(const Aws::Utils::Json::JsonValue& jsonValue);
-    KeySchemaElement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    KeySchemaElement(Aws::Utils::Json::JsonView jsonValue);
+    KeySchemaElement& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

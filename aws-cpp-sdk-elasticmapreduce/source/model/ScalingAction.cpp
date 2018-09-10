@@ -35,7 +35,7 @@ ScalingAction::ScalingAction() :
 {
 }
 
-ScalingAction::ScalingAction(const JsonValue& jsonValue) : 
+ScalingAction::ScalingAction(JsonView jsonValue) : 
     m_market(MarketType::NOT_SET),
     m_marketHasBeenSet(false),
     m_simpleScalingPolicyConfigurationHasBeenSet(false)
@@ -43,7 +43,7 @@ ScalingAction::ScalingAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ScalingAction& ScalingAction::operator =(const JsonValue& jsonValue)
+ScalingAction& ScalingAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Market"))
   {

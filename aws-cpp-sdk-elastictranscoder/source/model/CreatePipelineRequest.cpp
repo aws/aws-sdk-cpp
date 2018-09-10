@@ -86,7 +86,7 @@ Aws::String CreatePipelineRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

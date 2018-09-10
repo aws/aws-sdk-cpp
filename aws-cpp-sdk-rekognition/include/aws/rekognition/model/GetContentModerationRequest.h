@@ -89,20 +89,23 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of content moderation labels to return. The default is
-     * 1000.</p>
+     * <p>Maximum number of results to return per paginated call. The largest value you
+     * can specify is 1000. If you specify a value greater than 1000, a maximum of 1000
+     * results is returned. The default value is 1000.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of content moderation labels to return. The default is
-     * 1000.</p>
+     * <p>Maximum number of results to return per paginated call. The largest value you
+     * can specify is 1000. If you specify a value greater than 1000, a maximum of 1000
+     * results is returned. The default value is 1000.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of content moderation labels to return. The default is
-     * 1000.</p>
+     * <p>Maximum number of results to return per paginated call. The largest value you
+     * can specify is 1000. If you specify a value greater than 1000, a maximum of 1000
+     * results is returned. The default value is 1000.</p>
      */
     inline GetContentModerationRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

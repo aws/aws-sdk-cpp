@@ -29,7 +29,7 @@
 #include <aws/mediapackage/model/DescribeOriginEndpointResult.h>
 #include <aws/mediapackage/model/ListChannelsResult.h>
 #include <aws/mediapackage/model/ListOriginEndpointsResult.h>
-#include <aws/mediapackage/model/RotateChannelCredentialsResult.h>
+#include <aws/mediapackage/model/RotateIngestEndpointCredentialsResult.h>
 #include <aws/mediapackage/model/UpdateChannelResult.h>
 #include <aws/mediapackage/model/UpdateOriginEndpointResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -54,11 +54,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -85,7 +80,7 @@ namespace Model
         class DescribeOriginEndpointRequest;
         class ListChannelsRequest;
         class ListOriginEndpointsRequest;
-        class RotateChannelCredentialsRequest;
+        class RotateIngestEndpointCredentialsRequest;
         class UpdateChannelRequest;
         class UpdateOriginEndpointRequest;
 
@@ -97,7 +92,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeOriginEndpointResult, Aws::Client::AWSError<MediaPackageErrors>> DescribeOriginEndpointOutcome;
         typedef Aws::Utils::Outcome<ListChannelsResult, Aws::Client::AWSError<MediaPackageErrors>> ListChannelsOutcome;
         typedef Aws::Utils::Outcome<ListOriginEndpointsResult, Aws::Client::AWSError<MediaPackageErrors>> ListOriginEndpointsOutcome;
-        typedef Aws::Utils::Outcome<RotateChannelCredentialsResult, Aws::Client::AWSError<MediaPackageErrors>> RotateChannelCredentialsOutcome;
+        typedef Aws::Utils::Outcome<RotateIngestEndpointCredentialsResult, Aws::Client::AWSError<MediaPackageErrors>> RotateIngestEndpointCredentialsOutcome;
         typedef Aws::Utils::Outcome<UpdateChannelResult, Aws::Client::AWSError<MediaPackageErrors>> UpdateChannelOutcome;
         typedef Aws::Utils::Outcome<UpdateOriginEndpointResult, Aws::Client::AWSError<MediaPackageErrors>> UpdateOriginEndpointOutcome;
 
@@ -109,7 +104,7 @@ namespace Model
         typedef std::future<DescribeOriginEndpointOutcome> DescribeOriginEndpointOutcomeCallable;
         typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
         typedef std::future<ListOriginEndpointsOutcome> ListOriginEndpointsOutcomeCallable;
-        typedef std::future<RotateChannelCredentialsOutcome> RotateChannelCredentialsOutcomeCallable;
+        typedef std::future<RotateIngestEndpointCredentialsOutcome> RotateIngestEndpointCredentialsOutcomeCallable;
         typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
         typedef std::future<UpdateOriginEndpointOutcome> UpdateOriginEndpointOutcomeCallable;
 } // namespace Model
@@ -124,7 +119,7 @@ namespace Model
     typedef std::function<void(const MediaPackageClient*, const Model::DescribeOriginEndpointRequest&, const Model::DescribeOriginEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOriginEndpointResponseReceivedHandler;
     typedef std::function<void(const MediaPackageClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
     typedef std::function<void(const MediaPackageClient*, const Model::ListOriginEndpointsRequest&, const Model::ListOriginEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOriginEndpointsResponseReceivedHandler;
-    typedef std::function<void(const MediaPackageClient*, const Model::RotateChannelCredentialsRequest&, const Model::RotateChannelCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RotateChannelCredentialsResponseReceivedHandler;
+    typedef std::function<void(const MediaPackageClient*, const Model::RotateIngestEndpointCredentialsRequest&, const Model::RotateIngestEndpointCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RotateIngestEndpointCredentialsResponseReceivedHandler;
     typedef std::function<void(const MediaPackageClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
     typedef std::function<void(const MediaPackageClient*, const Model::UpdateOriginEndpointRequest&, const Model::UpdateOriginEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOriginEndpointResponseReceivedHandler;
 
@@ -157,7 +152,7 @@ namespace Model
 
         virtual ~MediaPackageClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mediapackage"; }
+        inline virtual const char* GetServiceClientName() const override { return "MediaPackage"; }
 
 
         /**
@@ -361,29 +356,32 @@ namespace Model
         virtual void ListOriginEndpointsAsync(const Model::ListOriginEndpointsRequest& request, const ListOriginEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Changes the Channel ingest username and password.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">AWS
+         * Rotate the IngestEndpoint's username and password, as specified by the
+         * IngestEndpoint's id.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateIngestEndpointCredentials">AWS
          * API Reference</a></p>
          */
-        virtual Model::RotateChannelCredentialsOutcome RotateChannelCredentials(const Model::RotateChannelCredentialsRequest& request) const;
+        virtual Model::RotateIngestEndpointCredentialsOutcome RotateIngestEndpointCredentials(const Model::RotateIngestEndpointCredentialsRequest& request) const;
 
         /**
-         * Changes the Channel ingest username and password.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">AWS
+         * Rotate the IngestEndpoint's username and password, as specified by the
+         * IngestEndpoint's id.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateIngestEndpointCredentials">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::RotateChannelCredentialsOutcomeCallable RotateChannelCredentialsCallable(const Model::RotateChannelCredentialsRequest& request) const;
+        virtual Model::RotateIngestEndpointCredentialsOutcomeCallable RotateIngestEndpointCredentialsCallable(const Model::RotateIngestEndpointCredentialsRequest& request) const;
 
         /**
-         * Changes the Channel ingest username and password.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateChannelCredentials">AWS
+         * Rotate the IngestEndpoint's username and password, as specified by the
+         * IngestEndpoint's id.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateIngestEndpointCredentials">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void RotateChannelCredentialsAsync(const Model::RotateChannelCredentialsRequest& request, const RotateChannelCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void RotateIngestEndpointCredentialsAsync(const Model::RotateIngestEndpointCredentialsRequest& request, const RotateIngestEndpointCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Updates an existing Channel.<p><h3>See Also:</h3>   <a
@@ -448,7 +446,7 @@ namespace Model
         void DescribeOriginEndpointAsyncHelper(const Model::DescribeOriginEndpointRequest& request, const DescribeOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOriginEndpointsAsyncHelper(const Model::ListOriginEndpointsRequest& request, const ListOriginEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RotateChannelCredentialsAsyncHelper(const Model::RotateChannelCredentialsRequest& request, const RotateChannelCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RotateIngestEndpointCredentialsAsyncHelper(const Model::RotateIngestEndpointCredentialsRequest& request, const RotateIngestEndpointCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateChannelAsyncHelper(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateOriginEndpointAsyncHelper(const Model::UpdateOriginEndpointRequest& request, const UpdateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

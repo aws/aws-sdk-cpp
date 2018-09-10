@@ -33,17 +33,17 @@ EnhancedMetrics::EnhancedMetrics() :
 {
 }
 
-EnhancedMetrics::EnhancedMetrics(const JsonValue& jsonValue) : 
+EnhancedMetrics::EnhancedMetrics(JsonView jsonValue) : 
     m_shardLevelMetricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EnhancedMetrics& EnhancedMetrics::operator =(const JsonValue& jsonValue)
+EnhancedMetrics& EnhancedMetrics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ShardLevelMetrics"))
   {
-    Array<JsonValue> shardLevelMetricsJsonList = jsonValue.GetArray("ShardLevelMetrics");
+    Array<JsonView> shardLevelMetricsJsonList = jsonValue.GetArray("ShardLevelMetrics");
     for(unsigned shardLevelMetricsIndex = 0; shardLevelMetricsIndex < shardLevelMetricsJsonList.GetLength(); ++shardLevelMetricsIndex)
     {
       m_shardLevelMetrics.push_back(MetricsNameMapper::GetMetricsNameForName(shardLevelMetricsJsonList[shardLevelMetricsIndex].AsString()));

@@ -37,10 +37,10 @@ ListActivitiesResult::ListActivitiesResult(const Aws::AmazonWebServiceResult<Jso
 
 ListActivitiesResult& ListActivitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("activities"))
   {
-    Array<JsonValue> activitiesJsonList = jsonValue.GetArray("activities");
+    Array<JsonView> activitiesJsonList = jsonValue.GetArray("activities");
     for(unsigned activitiesIndex = 0; activitiesIndex < activitiesJsonList.GetLength(); ++activitiesIndex)
     {
       m_activities.push_back(activitiesJsonList[activitiesIndex].AsObject());

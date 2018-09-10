@@ -45,7 +45,7 @@ Aws::String GrantAccessRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GrantAccessRequest::GetRequestSpecificHeaders() const

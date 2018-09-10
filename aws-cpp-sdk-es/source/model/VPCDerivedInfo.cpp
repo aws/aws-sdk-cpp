@@ -36,7 +36,7 @@ VPCDerivedInfo::VPCDerivedInfo() :
 {
 }
 
-VPCDerivedInfo::VPCDerivedInfo(const JsonValue& jsonValue) : 
+VPCDerivedInfo::VPCDerivedInfo(JsonView jsonValue) : 
     m_vPCIdHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
@@ -45,7 +45,7 @@ VPCDerivedInfo::VPCDerivedInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VPCDerivedInfo& VPCDerivedInfo::operator =(const JsonValue& jsonValue)
+VPCDerivedInfo& VPCDerivedInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VPCId"))
   {
@@ -56,7 +56,7 @@ VPCDerivedInfo& VPCDerivedInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonValue> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -66,7 +66,7 @@ VPCDerivedInfo& VPCDerivedInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
-    Array<JsonValue> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
@@ -76,7 +76,7 @@ VPCDerivedInfo& VPCDerivedInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
-    Array<JsonValue> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());

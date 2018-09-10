@@ -32,20 +32,22 @@ Action::Action() :
     m_actionTypeHasBeenSet(false),
     m_awsApiCallActionHasBeenSet(false),
     m_dnsRequestActionHasBeenSet(false),
-    m_networkConnectionActionHasBeenSet(false)
+    m_networkConnectionActionHasBeenSet(false),
+    m_portProbeActionHasBeenSet(false)
 {
 }
 
-Action::Action(const JsonValue& jsonValue) : 
+Action::Action(JsonView jsonValue) : 
     m_actionTypeHasBeenSet(false),
     m_awsApiCallActionHasBeenSet(false),
     m_dnsRequestActionHasBeenSet(false),
-    m_networkConnectionActionHasBeenSet(false)
+    m_networkConnectionActionHasBeenSet(false),
+    m_portProbeActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Action& Action::operator =(const JsonValue& jsonValue)
+Action& Action::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("actionType"))
   {
@@ -73,6 +75,13 @@ Action& Action::operator =(const JsonValue& jsonValue)
     m_networkConnectionAction = jsonValue.GetObject("networkConnectionAction");
 
     m_networkConnectionActionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("portProbeAction"))
+  {
+    m_portProbeAction = jsonValue.GetObject("portProbeAction");
+
+    m_portProbeActionHasBeenSet = true;
   }
 
   return *this;
@@ -103,6 +112,12 @@ JsonValue Action::Jsonize() const
   if(m_networkConnectionActionHasBeenSet)
   {
    payload.WithObject("networkConnectionAction", m_networkConnectionAction.Jsonize());
+
+  }
+
+  if(m_portProbeActionHasBeenSet)
+  {
+   payload.WithObject("portProbeAction", m_portProbeAction.Jsonize());
 
   }
 

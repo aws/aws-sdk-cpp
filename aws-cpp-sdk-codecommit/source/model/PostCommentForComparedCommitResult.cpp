@@ -37,7 +37,7 @@ PostCommentForComparedCommitResult::PostCommentForComparedCommitResult(const Aws
 
 PostCommentForComparedCommitResult& PostCommentForComparedCommitResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");

@@ -41,7 +41,7 @@ UploadDocumentsResult::UploadDocumentsResult(const Aws::AmazonWebServiceResult<J
 
 UploadDocumentsResult& UploadDocumentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
@@ -62,7 +62,7 @@ UploadDocumentsResult& UploadDocumentsResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("warnings"))
   {
-    Array<JsonValue> warningsJsonList = jsonValue.GetArray("warnings");
+    Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());

@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DeviceFarm
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     ExecutionConfiguration();
-    ExecutionConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    ExecutionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ExecutionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    ExecutionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -98,6 +99,53 @@ namespace Model
      */
     inline ExecutionConfiguration& WithAppPackagesCleanup(bool value) { SetAppPackagesCleanup(value); return *this;}
 
+
+    /**
+     * <p>Set to true to enable video capture; otherwise, set to false. The default is
+     * true.</p>
+     */
+    inline bool GetVideoCapture() const{ return m_videoCapture; }
+
+    /**
+     * <p>Set to true to enable video capture; otherwise, set to false. The default is
+     * true.</p>
+     */
+    inline void SetVideoCapture(bool value) { m_videoCaptureHasBeenSet = true; m_videoCapture = value; }
+
+    /**
+     * <p>Set to true to enable video capture; otherwise, set to false. The default is
+     * true.</p>
+     */
+    inline ExecutionConfiguration& WithVideoCapture(bool value) { SetVideoCapture(value); return *this;}
+
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline bool GetSkipAppResign() const{ return m_skipAppResign; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline void SetSkipAppResign(bool value) { m_skipAppResignHasBeenSet = true; m_skipAppResign = value; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline ExecutionConfiguration& WithSkipAppResign(bool value) { SetSkipAppResign(value); return *this;}
+
   private:
 
     int m_jobTimeoutMinutes;
@@ -108,6 +156,12 @@ namespace Model
 
     bool m_appPackagesCleanup;
     bool m_appPackagesCleanupHasBeenSet;
+
+    bool m_videoCapture;
+    bool m_videoCaptureHasBeenSet;
+
+    bool m_skipAppResign;
+    bool m_skipAppResignHasBeenSet;
   };
 
 } // namespace Model

@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CostandUsageReportService
@@ -50,8 +51,8 @@ namespace Model
   {
   public:
     ReportDefinition();
-    ReportDefinition(const Aws::Utils::Json::JsonValue& jsonValue);
-    ReportDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ReportDefinition(Aws::Utils::Json::JsonView jsonValue);
+    ReportDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

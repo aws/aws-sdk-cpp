@@ -201,25 +201,22 @@ namespace Model
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For Application Load Balancers, the range is 5 to 300
-     * seconds. For Network Load Balancers, the supported values are 10 or 30
-     * seconds.</p>
+     * individual target. For Application Load Balancers, the range is 5–300 seconds.
+     * For Network Load Balancers, the supported values are 10 or 30 seconds.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For Application Load Balancers, the range is 5 to 300
-     * seconds. For Network Load Balancers, the supported values are 10 or 30
-     * seconds.</p>
+     * individual target. For Application Load Balancers, the range is 5–300 seconds.
+     * For Network Load Balancers, the supported values are 10 or 30 seconds.</p>
      */
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
-     * individual target. For Application Load Balancers, the range is 5 to 300
-     * seconds. For Network Load Balancers, the supported values are 10 or 30
-     * seconds.</p>
+     * individual target. For Application Load Balancers, the range is 5–300 seconds.
+     * For Network Load Balancers, the supported values are 10 or 30 seconds.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
 

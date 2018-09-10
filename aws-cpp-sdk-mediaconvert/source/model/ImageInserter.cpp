@@ -33,17 +33,17 @@ ImageInserter::ImageInserter() :
 {
 }
 
-ImageInserter::ImageInserter(const JsonValue& jsonValue) : 
+ImageInserter::ImageInserter(JsonView jsonValue) : 
     m_insertableImagesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ImageInserter& ImageInserter::operator =(const JsonValue& jsonValue)
+ImageInserter& ImageInserter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("insertableImages"))
   {
-    Array<JsonValue> insertableImagesJsonList = jsonValue.GetArray("insertableImages");
+    Array<JsonView> insertableImagesJsonList = jsonValue.GetArray("insertableImages");
     for(unsigned insertableImagesIndex = 0; insertableImagesIndex < insertableImagesJsonList.GetLength(); ++insertableImagesIndex)
     {
       m_insertableImages.push_back(insertableImagesJsonList[insertableImagesIndex].AsObject());

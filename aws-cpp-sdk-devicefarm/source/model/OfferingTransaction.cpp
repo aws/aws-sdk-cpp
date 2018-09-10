@@ -37,7 +37,7 @@ OfferingTransaction::OfferingTransaction() :
 {
 }
 
-OfferingTransaction::OfferingTransaction(const JsonValue& jsonValue) : 
+OfferingTransaction::OfferingTransaction(JsonView jsonValue) : 
     m_offeringStatusHasBeenSet(false),
     m_transactionIdHasBeenSet(false),
     m_offeringPromotionIdHasBeenSet(false),
@@ -47,7 +47,7 @@ OfferingTransaction::OfferingTransaction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OfferingTransaction& OfferingTransaction::operator =(const JsonValue& jsonValue)
+OfferingTransaction& OfferingTransaction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("offeringStatus"))
   {

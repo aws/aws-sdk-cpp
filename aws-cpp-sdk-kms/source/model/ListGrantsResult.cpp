@@ -39,10 +39,10 @@ ListGrantsResult::ListGrantsResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 ListGrantsResult& ListGrantsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Grants"))
   {
-    Array<JsonValue> grantsJsonList = jsonValue.GetArray("Grants");
+    Array<JsonView> grantsJsonList = jsonValue.GetArray("Grants");
     for(unsigned grantsIndex = 0; grantsIndex < grantsJsonList.GetLength(); ++grantsIndex)
     {
       m_grants.push_back(grantsJsonList[grantsIndex].AsObject());

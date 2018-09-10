@@ -38,7 +38,7 @@ ResourceDataSyncS3Destination::ResourceDataSyncS3Destination() :
 {
 }
 
-ResourceDataSyncS3Destination::ResourceDataSyncS3Destination(const JsonValue& jsonValue) : 
+ResourceDataSyncS3Destination::ResourceDataSyncS3Destination(JsonView jsonValue) : 
     m_bucketNameHasBeenSet(false),
     m_prefixHasBeenSet(false),
     m_syncFormat(ResourceDataSyncS3Format::NOT_SET),
@@ -49,7 +49,7 @@ ResourceDataSyncS3Destination::ResourceDataSyncS3Destination(const JsonValue& js
   *this = jsonValue;
 }
 
-ResourceDataSyncS3Destination& ResourceDataSyncS3Destination::operator =(const JsonValue& jsonValue)
+ResourceDataSyncS3Destination& ResourceDataSyncS3Destination::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BucketName"))
   {

@@ -209,169 +209,218 @@ namespace Model
 
 
     /**
-     * <p>The message you want to send to the topic.</p> <p>If you want to send the
-     * same message to all transport protocols, include the text of the message as a
-     * String value.</p> <p>If you want to send different messages for each transport
-     * protocol, set the value of the <code>MessageStructure</code> parameter to
-     * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
-     * </p> <p>Constraints: Messages must be UTF-8 encoded strings at most 256 KB in
-     * size (262144 bytes, not 262144 characters).</p> <p>JSON-specific
-     * constraints:</p> <ul> <li> <p>Keys in the JSON object that correspond to
-     * supported transport protocols must have simple JSON string values.</p> </li>
-     * <li> <p>The values will be parsed (unescaped) before they are used in outgoing
-     * messages.</p> </li> <li> <p>Outbound notifications are JSON encoded (meaning
-     * that the characters will be reescaped for sending).</p> </li> <li> <p>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</p> </li> <li>
-     * <p>Values have a maximum length bounded by the overall message size (so,
-     * including multiple protocols may limit message sizes).</p> </li> <li>
-     * <p>Non-string values will cause the key to be ignored.</p> </li> <li> <p>Keys
-     * that do not correspond to supported transport protocols are ignored.</p> </li>
-     * <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse or
-     * validate any key or value in the message will cause the <code>Publish</code>
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
+     * transport protocol, set the value of the <code>MessageStructure</code> parameter
+     * to <code>json</code> and use a JSON object for the <code>Message</code>
+     * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
+     * messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes,
+     * not 262144 characters).</p> </li> <li> <p>For SMS, each message can contain up
+     * to 140 bytes, and the character limit depends on the encoding scheme. For
+     * example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or
+     * 70 UCS-2 characters. If you publish a message that exceeds the size limit,
+     * Amazon SNS sends it as multiple messages, each fitting within the size limit.
+     * Messages are not cut off in the middle of a word but on whole-word boundaries.
+     * The total size limit for a single SMS publish action is 1600 bytes.</p> </li>
+     * </ul> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in the JSON object
+     * that correspond to supported transport protocols must have simple JSON string
+     * values.</p> </li> <li> <p>The values will be parsed (unescaped) before they are
+     * used in outgoing messages.</p> </li> <li> <p>Outbound notifications are JSON
+     * encoded (meaning that the characters will be reescaped for sending).</p> </li>
+     * <li> <p>Values have a minimum length of 0 (the empty string, "", is
+     * allowed).</p> </li> <li> <p>Values have a maximum length bounded by the overall
+     * message size (so, including multiple protocols may limit message sizes).</p>
+     * </li> <li> <p>Non-string values will cause the key to be ignored.</p> </li> <li>
+     * <p>Keys that do not correspond to supported transport protocols are ignored.</p>
+     * </li> <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse
+     * or validate any key or value in the message will cause the <code>Publish</code>
      * call to return an error (no partial delivery).</p> </li> </ul>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>The message you want to send to the topic.</p> <p>If you want to send the
-     * same message to all transport protocols, include the text of the message as a
-     * String value.</p> <p>If you want to send different messages for each transport
-     * protocol, set the value of the <code>MessageStructure</code> parameter to
-     * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
-     * </p> <p>Constraints: Messages must be UTF-8 encoded strings at most 256 KB in
-     * size (262144 bytes, not 262144 characters).</p> <p>JSON-specific
-     * constraints:</p> <ul> <li> <p>Keys in the JSON object that correspond to
-     * supported transport protocols must have simple JSON string values.</p> </li>
-     * <li> <p>The values will be parsed (unescaped) before they are used in outgoing
-     * messages.</p> </li> <li> <p>Outbound notifications are JSON encoded (meaning
-     * that the characters will be reescaped for sending).</p> </li> <li> <p>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</p> </li> <li>
-     * <p>Values have a maximum length bounded by the overall message size (so,
-     * including multiple protocols may limit message sizes).</p> </li> <li>
-     * <p>Non-string values will cause the key to be ignored.</p> </li> <li> <p>Keys
-     * that do not correspond to supported transport protocols are ignored.</p> </li>
-     * <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse or
-     * validate any key or value in the message will cause the <code>Publish</code>
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
+     * transport protocol, set the value of the <code>MessageStructure</code> parameter
+     * to <code>json</code> and use a JSON object for the <code>Message</code>
+     * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
+     * messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes,
+     * not 262144 characters).</p> </li> <li> <p>For SMS, each message can contain up
+     * to 140 bytes, and the character limit depends on the encoding scheme. For
+     * example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or
+     * 70 UCS-2 characters. If you publish a message that exceeds the size limit,
+     * Amazon SNS sends it as multiple messages, each fitting within the size limit.
+     * Messages are not cut off in the middle of a word but on whole-word boundaries.
+     * The total size limit for a single SMS publish action is 1600 bytes.</p> </li>
+     * </ul> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in the JSON object
+     * that correspond to supported transport protocols must have simple JSON string
+     * values.</p> </li> <li> <p>The values will be parsed (unescaped) before they are
+     * used in outgoing messages.</p> </li> <li> <p>Outbound notifications are JSON
+     * encoded (meaning that the characters will be reescaped for sending).</p> </li>
+     * <li> <p>Values have a minimum length of 0 (the empty string, "", is
+     * allowed).</p> </li> <li> <p>Values have a maximum length bounded by the overall
+     * message size (so, including multiple protocols may limit message sizes).</p>
+     * </li> <li> <p>Non-string values will cause the key to be ignored.</p> </li> <li>
+     * <p>Keys that do not correspond to supported transport protocols are ignored.</p>
+     * </li> <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse
+     * or validate any key or value in the message will cause the <code>Publish</code>
      * call to return an error (no partial delivery).</p> </li> </ul>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>The message you want to send to the topic.</p> <p>If you want to send the
-     * same message to all transport protocols, include the text of the message as a
-     * String value.</p> <p>If you want to send different messages for each transport
-     * protocol, set the value of the <code>MessageStructure</code> parameter to
-     * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
-     * </p> <p>Constraints: Messages must be UTF-8 encoded strings at most 256 KB in
-     * size (262144 bytes, not 262144 characters).</p> <p>JSON-specific
-     * constraints:</p> <ul> <li> <p>Keys in the JSON object that correspond to
-     * supported transport protocols must have simple JSON string values.</p> </li>
-     * <li> <p>The values will be parsed (unescaped) before they are used in outgoing
-     * messages.</p> </li> <li> <p>Outbound notifications are JSON encoded (meaning
-     * that the characters will be reescaped for sending).</p> </li> <li> <p>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</p> </li> <li>
-     * <p>Values have a maximum length bounded by the overall message size (so,
-     * including multiple protocols may limit message sizes).</p> </li> <li>
-     * <p>Non-string values will cause the key to be ignored.</p> </li> <li> <p>Keys
-     * that do not correspond to supported transport protocols are ignored.</p> </li>
-     * <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse or
-     * validate any key or value in the message will cause the <code>Publish</code>
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
+     * transport protocol, set the value of the <code>MessageStructure</code> parameter
+     * to <code>json</code> and use a JSON object for the <code>Message</code>
+     * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
+     * messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes,
+     * not 262144 characters).</p> </li> <li> <p>For SMS, each message can contain up
+     * to 140 bytes, and the character limit depends on the encoding scheme. For
+     * example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or
+     * 70 UCS-2 characters. If you publish a message that exceeds the size limit,
+     * Amazon SNS sends it as multiple messages, each fitting within the size limit.
+     * Messages are not cut off in the middle of a word but on whole-word boundaries.
+     * The total size limit for a single SMS publish action is 1600 bytes.</p> </li>
+     * </ul> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in the JSON object
+     * that correspond to supported transport protocols must have simple JSON string
+     * values.</p> </li> <li> <p>The values will be parsed (unescaped) before they are
+     * used in outgoing messages.</p> </li> <li> <p>Outbound notifications are JSON
+     * encoded (meaning that the characters will be reescaped for sending).</p> </li>
+     * <li> <p>Values have a minimum length of 0 (the empty string, "", is
+     * allowed).</p> </li> <li> <p>Values have a maximum length bounded by the overall
+     * message size (so, including multiple protocols may limit message sizes).</p>
+     * </li> <li> <p>Non-string values will cause the key to be ignored.</p> </li> <li>
+     * <p>Keys that do not correspond to supported transport protocols are ignored.</p>
+     * </li> <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse
+     * or validate any key or value in the message will cause the <code>Publish</code>
      * call to return an error (no partial delivery).</p> </li> </ul>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>The message you want to send to the topic.</p> <p>If you want to send the
-     * same message to all transport protocols, include the text of the message as a
-     * String value.</p> <p>If you want to send different messages for each transport
-     * protocol, set the value of the <code>MessageStructure</code> parameter to
-     * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
-     * </p> <p>Constraints: Messages must be UTF-8 encoded strings at most 256 KB in
-     * size (262144 bytes, not 262144 characters).</p> <p>JSON-specific
-     * constraints:</p> <ul> <li> <p>Keys in the JSON object that correspond to
-     * supported transport protocols must have simple JSON string values.</p> </li>
-     * <li> <p>The values will be parsed (unescaped) before they are used in outgoing
-     * messages.</p> </li> <li> <p>Outbound notifications are JSON encoded (meaning
-     * that the characters will be reescaped for sending).</p> </li> <li> <p>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</p> </li> <li>
-     * <p>Values have a maximum length bounded by the overall message size (so,
-     * including multiple protocols may limit message sizes).</p> </li> <li>
-     * <p>Non-string values will cause the key to be ignored.</p> </li> <li> <p>Keys
-     * that do not correspond to supported transport protocols are ignored.</p> </li>
-     * <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse or
-     * validate any key or value in the message will cause the <code>Publish</code>
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
+     * transport protocol, set the value of the <code>MessageStructure</code> parameter
+     * to <code>json</code> and use a JSON object for the <code>Message</code>
+     * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
+     * messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes,
+     * not 262144 characters).</p> </li> <li> <p>For SMS, each message can contain up
+     * to 140 bytes, and the character limit depends on the encoding scheme. For
+     * example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or
+     * 70 UCS-2 characters. If you publish a message that exceeds the size limit,
+     * Amazon SNS sends it as multiple messages, each fitting within the size limit.
+     * Messages are not cut off in the middle of a word but on whole-word boundaries.
+     * The total size limit for a single SMS publish action is 1600 bytes.</p> </li>
+     * </ul> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in the JSON object
+     * that correspond to supported transport protocols must have simple JSON string
+     * values.</p> </li> <li> <p>The values will be parsed (unescaped) before they are
+     * used in outgoing messages.</p> </li> <li> <p>Outbound notifications are JSON
+     * encoded (meaning that the characters will be reescaped for sending).</p> </li>
+     * <li> <p>Values have a minimum length of 0 (the empty string, "", is
+     * allowed).</p> </li> <li> <p>Values have a maximum length bounded by the overall
+     * message size (so, including multiple protocols may limit message sizes).</p>
+     * </li> <li> <p>Non-string values will cause the key to be ignored.</p> </li> <li>
+     * <p>Keys that do not correspond to supported transport protocols are ignored.</p>
+     * </li> <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse
+     * or validate any key or value in the message will cause the <code>Publish</code>
      * call to return an error (no partial delivery).</p> </li> </ul>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>The message you want to send to the topic.</p> <p>If you want to send the
-     * same message to all transport protocols, include the text of the message as a
-     * String value.</p> <p>If you want to send different messages for each transport
-     * protocol, set the value of the <code>MessageStructure</code> parameter to
-     * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
-     * </p> <p>Constraints: Messages must be UTF-8 encoded strings at most 256 KB in
-     * size (262144 bytes, not 262144 characters).</p> <p>JSON-specific
-     * constraints:</p> <ul> <li> <p>Keys in the JSON object that correspond to
-     * supported transport protocols must have simple JSON string values.</p> </li>
-     * <li> <p>The values will be parsed (unescaped) before they are used in outgoing
-     * messages.</p> </li> <li> <p>Outbound notifications are JSON encoded (meaning
-     * that the characters will be reescaped for sending).</p> </li> <li> <p>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</p> </li> <li>
-     * <p>Values have a maximum length bounded by the overall message size (so,
-     * including multiple protocols may limit message sizes).</p> </li> <li>
-     * <p>Non-string values will cause the key to be ignored.</p> </li> <li> <p>Keys
-     * that do not correspond to supported transport protocols are ignored.</p> </li>
-     * <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse or
-     * validate any key or value in the message will cause the <code>Publish</code>
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
+     * transport protocol, set the value of the <code>MessageStructure</code> parameter
+     * to <code>json</code> and use a JSON object for the <code>Message</code>
+     * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
+     * messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes,
+     * not 262144 characters).</p> </li> <li> <p>For SMS, each message can contain up
+     * to 140 bytes, and the character limit depends on the encoding scheme. For
+     * example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or
+     * 70 UCS-2 characters. If you publish a message that exceeds the size limit,
+     * Amazon SNS sends it as multiple messages, each fitting within the size limit.
+     * Messages are not cut off in the middle of a word but on whole-word boundaries.
+     * The total size limit for a single SMS publish action is 1600 bytes.</p> </li>
+     * </ul> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in the JSON object
+     * that correspond to supported transport protocols must have simple JSON string
+     * values.</p> </li> <li> <p>The values will be parsed (unescaped) before they are
+     * used in outgoing messages.</p> </li> <li> <p>Outbound notifications are JSON
+     * encoded (meaning that the characters will be reescaped for sending).</p> </li>
+     * <li> <p>Values have a minimum length of 0 (the empty string, "", is
+     * allowed).</p> </li> <li> <p>Values have a maximum length bounded by the overall
+     * message size (so, including multiple protocols may limit message sizes).</p>
+     * </li> <li> <p>Non-string values will cause the key to be ignored.</p> </li> <li>
+     * <p>Keys that do not correspond to supported transport protocols are ignored.</p>
+     * </li> <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse
+     * or validate any key or value in the message will cause the <code>Publish</code>
      * call to return an error (no partial delivery).</p> </li> </ul>
      */
     inline PublishRequest& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The message you want to send to the topic.</p> <p>If you want to send the
-     * same message to all transport protocols, include the text of the message as a
-     * String value.</p> <p>If you want to send different messages for each transport
-     * protocol, set the value of the <code>MessageStructure</code> parameter to
-     * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
-     * </p> <p>Constraints: Messages must be UTF-8 encoded strings at most 256 KB in
-     * size (262144 bytes, not 262144 characters).</p> <p>JSON-specific
-     * constraints:</p> <ul> <li> <p>Keys in the JSON object that correspond to
-     * supported transport protocols must have simple JSON string values.</p> </li>
-     * <li> <p>The values will be parsed (unescaped) before they are used in outgoing
-     * messages.</p> </li> <li> <p>Outbound notifications are JSON encoded (meaning
-     * that the characters will be reescaped for sending).</p> </li> <li> <p>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</p> </li> <li>
-     * <p>Values have a maximum length bounded by the overall message size (so,
-     * including multiple protocols may limit message sizes).</p> </li> <li>
-     * <p>Non-string values will cause the key to be ignored.</p> </li> <li> <p>Keys
-     * that do not correspond to supported transport protocols are ignored.</p> </li>
-     * <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse or
-     * validate any key or value in the message will cause the <code>Publish</code>
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
+     * transport protocol, set the value of the <code>MessageStructure</code> parameter
+     * to <code>json</code> and use a JSON object for the <code>Message</code>
+     * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
+     * messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes,
+     * not 262144 characters).</p> </li> <li> <p>For SMS, each message can contain up
+     * to 140 bytes, and the character limit depends on the encoding scheme. For
+     * example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or
+     * 70 UCS-2 characters. If you publish a message that exceeds the size limit,
+     * Amazon SNS sends it as multiple messages, each fitting within the size limit.
+     * Messages are not cut off in the middle of a word but on whole-word boundaries.
+     * The total size limit for a single SMS publish action is 1600 bytes.</p> </li>
+     * </ul> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in the JSON object
+     * that correspond to supported transport protocols must have simple JSON string
+     * values.</p> </li> <li> <p>The values will be parsed (unescaped) before they are
+     * used in outgoing messages.</p> </li> <li> <p>Outbound notifications are JSON
+     * encoded (meaning that the characters will be reescaped for sending).</p> </li>
+     * <li> <p>Values have a minimum length of 0 (the empty string, "", is
+     * allowed).</p> </li> <li> <p>Values have a maximum length bounded by the overall
+     * message size (so, including multiple protocols may limit message sizes).</p>
+     * </li> <li> <p>Non-string values will cause the key to be ignored.</p> </li> <li>
+     * <p>Keys that do not correspond to supported transport protocols are ignored.</p>
+     * </li> <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse
+     * or validate any key or value in the message will cause the <code>Publish</code>
      * call to return an error (no partial delivery).</p> </li> </ul>
      */
     inline PublishRequest& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The message you want to send to the topic.</p> <p>If you want to send the
-     * same message to all transport protocols, include the text of the message as a
-     * String value.</p> <p>If you want to send different messages for each transport
-     * protocol, set the value of the <code>MessageStructure</code> parameter to
-     * <code>json</code> and use a JSON object for the <code>Message</code> parameter.
-     * </p> <p>Constraints: Messages must be UTF-8 encoded strings at most 256 KB in
-     * size (262144 bytes, not 262144 characters).</p> <p>JSON-specific
-     * constraints:</p> <ul> <li> <p>Keys in the JSON object that correspond to
-     * supported transport protocols must have simple JSON string values.</p> </li>
-     * <li> <p>The values will be parsed (unescaped) before they are used in outgoing
-     * messages.</p> </li> <li> <p>Outbound notifications are JSON encoded (meaning
-     * that the characters will be reescaped for sending).</p> </li> <li> <p>Values
-     * have a minimum length of 0 (the empty string, "", is allowed).</p> </li> <li>
-     * <p>Values have a maximum length bounded by the overall message size (so,
-     * including multiple protocols may limit message sizes).</p> </li> <li>
-     * <p>Non-string values will cause the key to be ignored.</p> </li> <li> <p>Keys
-     * that do not correspond to supported transport protocols are ignored.</p> </li>
-     * <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse or
-     * validate any key or value in the message will cause the <code>Publish</code>
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
+     * transport protocol, set the value of the <code>MessageStructure</code> parameter
+     * to <code>json</code> and use a JSON object for the <code>Message</code>
+     * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
+     * messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes,
+     * not 262144 characters).</p> </li> <li> <p>For SMS, each message can contain up
+     * to 140 bytes, and the character limit depends on the encoding scheme. For
+     * example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or
+     * 70 UCS-2 characters. If you publish a message that exceeds the size limit,
+     * Amazon SNS sends it as multiple messages, each fitting within the size limit.
+     * Messages are not cut off in the middle of a word but on whole-word boundaries.
+     * The total size limit for a single SMS publish action is 1600 bytes.</p> </li>
+     * </ul> <p>JSON-specific constraints:</p> <ul> <li> <p>Keys in the JSON object
+     * that correspond to supported transport protocols must have simple JSON string
+     * values.</p> </li> <li> <p>The values will be parsed (unescaped) before they are
+     * used in outgoing messages.</p> </li> <li> <p>Outbound notifications are JSON
+     * encoded (meaning that the characters will be reescaped for sending).</p> </li>
+     * <li> <p>Values have a minimum length of 0 (the empty string, "", is
+     * allowed).</p> </li> <li> <p>Values have a maximum length bounded by the overall
+     * message size (so, including multiple protocols may limit message sizes).</p>
+     * </li> <li> <p>Non-string values will cause the key to be ignored.</p> </li> <li>
+     * <p>Keys that do not correspond to supported transport protocols are ignored.</p>
+     * </li> <li> <p>Duplicate keys are not allowed.</p> </li> <li> <p>Failure to parse
+     * or validate any key or value in the message will cause the <code>Publish</code>
      * call to return an error (no partial delivery).</p> </li> </ul>
      */
     inline PublishRequest& WithMessage(const char* value) { SetMessage(value); return *this;}

@@ -45,7 +45,7 @@ Instance::Instance() :
 {
 }
 
-Instance::Instance(const JsonValue& jsonValue) : 
+Instance::Instance(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
     m_publicDnsNameHasBeenSet(false),
@@ -63,7 +63,7 @@ Instance::Instance(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Instance& Instance::operator =(const JsonValue& jsonValue)
+Instance& Instance::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -144,7 +144,7 @@ Instance& Instance::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("EbsVolumes"))
   {
-    Array<JsonValue> ebsVolumesJsonList = jsonValue.GetArray("EbsVolumes");
+    Array<JsonView> ebsVolumesJsonList = jsonValue.GetArray("EbsVolumes");
     for(unsigned ebsVolumesIndex = 0; ebsVolumesIndex < ebsVolumesJsonList.GetLength(); ++ebsVolumesIndex)
     {
       m_ebsVolumes.push_back(ebsVolumesJsonList[ebsVolumesIndex].AsObject());

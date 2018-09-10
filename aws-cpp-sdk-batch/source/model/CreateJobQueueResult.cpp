@@ -37,7 +37,7 @@ CreateJobQueueResult::CreateJobQueueResult(const Aws::AmazonWebServiceResult<Jso
 
 CreateJobQueueResult& CreateJobQueueResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("jobQueueName"))
   {
     m_jobQueueName = jsonValue.GetString("jobQueueName");

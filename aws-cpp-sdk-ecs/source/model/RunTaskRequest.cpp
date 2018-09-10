@@ -118,7 +118,7 @@ Aws::String RunTaskRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RunTaskRequest::GetRequestSpecificHeaders() const

@@ -40,7 +40,7 @@ Organization::Organization() :
 {
 }
 
-Organization::Organization(const JsonValue& jsonValue) : 
+Organization::Organization(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_featureSet(OrganizationFeatureSet::NOT_SET),
@@ -53,7 +53,7 @@ Organization::Organization(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Organization& Organization::operator =(const JsonValue& jsonValue)
+Organization& Organization::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -99,7 +99,7 @@ Organization& Organization::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AvailablePolicyTypes"))
   {
-    Array<JsonValue> availablePolicyTypesJsonList = jsonValue.GetArray("AvailablePolicyTypes");
+    Array<JsonView> availablePolicyTypesJsonList = jsonValue.GetArray("AvailablePolicyTypes");
     for(unsigned availablePolicyTypesIndex = 0; availablePolicyTypesIndex < availablePolicyTypesJsonList.GetLength(); ++availablePolicyTypesIndex)
     {
       m_availablePolicyTypes.push_back(availablePolicyTypesJsonList[availablePolicyTypesIndex].AsObject());

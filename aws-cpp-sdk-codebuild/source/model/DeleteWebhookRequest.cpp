@@ -37,7 +37,7 @@ Aws::String DeleteWebhookRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteWebhookRequest::GetRequestSpecificHeaders() const

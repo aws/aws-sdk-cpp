@@ -50,12 +50,12 @@ namespace Model
     /**
      * <p>The ARN of a user, group, or role whose policies contain the context keys
      * that you want listed. If you specify a user, the list includes context keys that
-     * are found in all policies attached to the user as well as to all groups that the
-     * user is a member of. If you pick a group or a role, then it includes only those
-     * context keys that are found in policies attached to that entity. Note that all
-     * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p> <p>For more information
-     * about ARNs, see <a
+     * are found in all policies that are attached to the user. The list also includes
+     * all groups that the user is a member of. If you pick a group or a role, then it
+     * includes only those context keys that are found in policies attached to that
+     * entity. Note that all parameters are shown in unencoded form here for clarity,
+     * but must be URL encoded to be included as a part of a real HTML request.</p>
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -65,12 +65,12 @@ namespace Model
     /**
      * <p>The ARN of a user, group, or role whose policies contain the context keys
      * that you want listed. If you specify a user, the list includes context keys that
-     * are found in all policies attached to the user as well as to all groups that the
-     * user is a member of. If you pick a group or a role, then it includes only those
-     * context keys that are found in policies attached to that entity. Note that all
-     * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p> <p>For more information
-     * about ARNs, see <a
+     * are found in all policies that are attached to the user. The list also includes
+     * all groups that the user is a member of. If you pick a group or a role, then it
+     * includes only those context keys that are found in policies attached to that
+     * entity. Note that all parameters are shown in unencoded form here for clarity,
+     * but must be URL encoded to be included as a part of a real HTML request.</p>
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -80,12 +80,12 @@ namespace Model
     /**
      * <p>The ARN of a user, group, or role whose policies contain the context keys
      * that you want listed. If you specify a user, the list includes context keys that
-     * are found in all policies attached to the user as well as to all groups that the
-     * user is a member of. If you pick a group or a role, then it includes only those
-     * context keys that are found in policies attached to that entity. Note that all
-     * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p> <p>For more information
-     * about ARNs, see <a
+     * are found in all policies that are attached to the user. The list also includes
+     * all groups that the user is a member of. If you pick a group or a role, then it
+     * includes only those context keys that are found in policies attached to that
+     * entity. Note that all parameters are shown in unencoded form here for clarity,
+     * but must be URL encoded to be included as a part of a real HTML request.</p>
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -95,12 +95,12 @@ namespace Model
     /**
      * <p>The ARN of a user, group, or role whose policies contain the context keys
      * that you want listed. If you specify a user, the list includes context keys that
-     * are found in all policies attached to the user as well as to all groups that the
-     * user is a member of. If you pick a group or a role, then it includes only those
-     * context keys that are found in policies attached to that entity. Note that all
-     * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p> <p>For more information
-     * about ARNs, see <a
+     * are found in all policies that are attached to the user. The list also includes
+     * all groups that the user is a member of. If you pick a group or a role, then it
+     * includes only those context keys that are found in policies attached to that
+     * entity. Note that all parameters are shown in unencoded form here for clarity,
+     * but must be URL encoded to be included as a part of a real HTML request.</p>
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -110,12 +110,12 @@ namespace Model
     /**
      * <p>The ARN of a user, group, or role whose policies contain the context keys
      * that you want listed. If you specify a user, the list includes context keys that
-     * are found in all policies attached to the user as well as to all groups that the
-     * user is a member of. If you pick a group or a role, then it includes only those
-     * context keys that are found in policies attached to that entity. Note that all
-     * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p> <p>For more information
-     * about ARNs, see <a
+     * are found in all policies that are attached to the user. The list also includes
+     * all groups that the user is a member of. If you pick a group or a role, then it
+     * includes only those context keys that are found in policies attached to that
+     * entity. Note that all parameters are shown in unencoded form here for clarity,
+     * but must be URL encoded to be included as a part of a real HTML request.</p>
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -125,12 +125,12 @@ namespace Model
     /**
      * <p>The ARN of a user, group, or role whose policies contain the context keys
      * that you want listed. If you specify a user, the list includes context keys that
-     * are found in all policies attached to the user as well as to all groups that the
-     * user is a member of. If you pick a group or a role, then it includes only those
-     * context keys that are found in policies attached to that entity. Note that all
-     * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p> <p>For more information
-     * about ARNs, see <a
+     * are found in all policies that are attached to the user. The list also includes
+     * all groups that the user is a member of. If you pick a group or a role, then it
+     * includes only those context keys that are found in policies attached to that
+     * entity. Note that all parameters are shown in unencoded form here for clarity,
+     * but must be URL encoded to be included as a part of a real HTML request.</p>
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -140,12 +140,12 @@ namespace Model
     /**
      * <p>The ARN of a user, group, or role whose policies contain the context keys
      * that you want listed. If you specify a user, the list includes context keys that
-     * are found in all policies attached to the user as well as to all groups that the
-     * user is a member of. If you pick a group or a role, then it includes only those
-     * context keys that are found in policies attached to that entity. Note that all
-     * parameters are shown in unencoded form here for clarity, but must be URL encoded
-     * to be included as a part of a real HTML request.</p> <p>For more information
-     * about ARNs, see <a
+     * are found in all policies that are attached to the user. The list also includes
+     * all groups that the user is a member of. If you pick a group or a role, then it
+     * includes only those context keys that are found in policies attached to that
+     * entity. Note that all parameters are shown in unencoded form here for clarity,
+     * but must be URL encoded to be included as a part of a real HTML request.</p>
+     * <p>For more information about ARNs, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
@@ -157,11 +157,12 @@ namespace Model
      * <p>An optional list of additional policies for which you want the list of
      * context keys that are referenced.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyInputList() const{ return m_policyInputList; }
 
@@ -169,11 +170,12 @@ namespace Model
      * <p>An optional list of additional policies for which you want the list of
      * context keys that are referenced.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetPolicyInputList(const Aws::Vector<Aws::String>& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
 
@@ -181,11 +183,12 @@ namespace Model
      * <p>An optional list of additional policies for which you want the list of
      * context keys that are referenced.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = std::move(value); }
 
@@ -193,11 +196,12 @@ namespace Model
      * <p>An optional list of additional policies for which you want the list of
      * context keys that are referenced.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline GetContextKeysForPrincipalPolicyRequest& WithPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPolicyInputList(value); return *this;}
 
@@ -205,11 +209,12 @@ namespace Model
      * <p>An optional list of additional policies for which you want the list of
      * context keys that are referenced.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline GetContextKeysForPrincipalPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(std::move(value)); return *this;}
 
@@ -217,11 +222,12 @@ namespace Model
      * <p>An optional list of additional policies for which you want the list of
      * context keys that are referenced.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline GetContextKeysForPrincipalPolicyRequest& AddPolicyInputList(const Aws::String& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
@@ -229,11 +235,12 @@ namespace Model
      * <p>An optional list of additional policies for which you want the list of
      * context keys that are referenced.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline GetContextKeysForPrincipalPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(std::move(value)); return *this; }
 
@@ -241,11 +248,12 @@ namespace Model
      * <p>An optional list of additional policies for which you want the list of
      * context keys that are referenced.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline GetContextKeysForPrincipalPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 

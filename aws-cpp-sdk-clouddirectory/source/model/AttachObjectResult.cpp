@@ -37,7 +37,7 @@ AttachObjectResult::AttachObjectResult(const Aws::AmazonWebServiceResult<JsonVal
 
 AttachObjectResult& AttachObjectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AttachedObjectIdentifier"))
   {
     m_attachedObjectIdentifier = jsonValue.GetString("AttachedObjectIdentifier");

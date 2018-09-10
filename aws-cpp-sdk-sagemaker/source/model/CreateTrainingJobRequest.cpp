@@ -30,6 +30,7 @@ CreateTrainingJobRequest::CreateTrainingJobRequest() :
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
     m_stoppingConditionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -91,6 +92,12 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
 
   }
 
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
   if(m_stoppingConditionHasBeenSet)
   {
    payload.WithObject("StoppingCondition", m_stoppingCondition.Jsonize());
@@ -108,7 +115,7 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateTrainingJobRequest::GetRequestSpecificHeaders() const

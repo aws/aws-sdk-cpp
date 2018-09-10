@@ -57,7 +57,7 @@ Aws::String DescribeReplicationSubnetGroupsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeReplicationSubnetGroupsRequest::GetRequestSpecificHeaders() const

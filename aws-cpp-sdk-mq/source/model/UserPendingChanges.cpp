@@ -37,7 +37,7 @@ UserPendingChanges::UserPendingChanges() :
 {
 }
 
-UserPendingChanges::UserPendingChanges(const JsonValue& jsonValue) : 
+UserPendingChanges::UserPendingChanges(JsonView jsonValue) : 
     m_consoleAccess(false),
     m_consoleAccessHasBeenSet(false),
     m_groupsHasBeenSet(false),
@@ -47,7 +47,7 @@ UserPendingChanges::UserPendingChanges(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserPendingChanges& UserPendingChanges::operator =(const JsonValue& jsonValue)
+UserPendingChanges& UserPendingChanges::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("consoleAccess"))
   {
@@ -58,7 +58,7 @@ UserPendingChanges& UserPendingChanges::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("groups"))
   {
-    Array<JsonValue> groupsJsonList = jsonValue.GetArray("groups");
+    Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsString());

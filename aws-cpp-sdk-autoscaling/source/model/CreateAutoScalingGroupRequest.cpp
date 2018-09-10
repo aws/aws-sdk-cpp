@@ -45,7 +45,8 @@ CreateAutoScalingGroupRequest::CreateAutoScalingGroupRequest() :
     m_newInstancesProtectedFromScaleIn(false),
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
     m_lifecycleHookSpecificationListHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_serviceLinkedRoleARNHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,11 @@ Aws::String CreateAutoScalingGroupRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_serviceLinkedRoleARNHasBeenSet)
+  {
+    ss << "ServiceLinkedRoleARN=" << StringUtils::URLEncode(m_serviceLinkedRoleARN.c_str()) << "&";
   }
 
   ss << "Version=2011-01-01";

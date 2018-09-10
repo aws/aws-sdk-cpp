@@ -37,7 +37,7 @@ Aws::String DescribeChapCredentialsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeChapCredentialsRequest::GetRequestSpecificHeaders() const

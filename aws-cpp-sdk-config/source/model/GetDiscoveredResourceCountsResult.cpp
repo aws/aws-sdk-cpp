@@ -39,7 +39,7 @@ GetDiscoveredResourceCountsResult::GetDiscoveredResourceCountsResult(const Aws::
 
 GetDiscoveredResourceCountsResult& GetDiscoveredResourceCountsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("totalDiscoveredResources"))
   {
     m_totalDiscoveredResources = jsonValue.GetInt64("totalDiscoveredResources");
@@ -48,7 +48,7 @@ GetDiscoveredResourceCountsResult& GetDiscoveredResourceCountsResult::operator =
 
   if(jsonValue.ValueExists("resourceCounts"))
   {
-    Array<JsonValue> resourceCountsJsonList = jsonValue.GetArray("resourceCounts");
+    Array<JsonView> resourceCountsJsonList = jsonValue.GetArray("resourceCounts");
     for(unsigned resourceCountsIndex = 0; resourceCountsIndex < resourceCountsJsonList.GetLength(); ++resourceCountsIndex)
     {
       m_resourceCounts.push_back(resourceCountsJsonList[resourceCountsIndex].AsObject());

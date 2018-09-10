@@ -40,7 +40,7 @@ TreatmentResource::TreatmentResource() :
 {
 }
 
-TreatmentResource::TreatmentResource(const JsonValue& jsonValue) : 
+TreatmentResource::TreatmentResource(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_messageConfigurationHasBeenSet(false),
     m_scheduleHasBeenSet(false),
@@ -53,7 +53,7 @@ TreatmentResource::TreatmentResource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TreatmentResource& TreatmentResource::operator =(const JsonValue& jsonValue)
+TreatmentResource& TreatmentResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

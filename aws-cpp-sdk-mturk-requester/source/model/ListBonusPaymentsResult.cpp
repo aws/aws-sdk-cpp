@@ -39,7 +39,7 @@ ListBonusPaymentsResult::ListBonusPaymentsResult(const Aws::AmazonWebServiceResu
 
 ListBonusPaymentsResult& ListBonusPaymentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NumResults"))
   {
     m_numResults = jsonValue.GetInteger("NumResults");
@@ -54,7 +54,7 @@ ListBonusPaymentsResult& ListBonusPaymentsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("BonusPayments"))
   {
-    Array<JsonValue> bonusPaymentsJsonList = jsonValue.GetArray("BonusPayments");
+    Array<JsonView> bonusPaymentsJsonList = jsonValue.GetArray("BonusPayments");
     for(unsigned bonusPaymentsIndex = 0; bonusPaymentsIndex < bonusPaymentsJsonList.GetLength(); ++bonusPaymentsIndex)
     {
       m_bonusPayments.push_back(bonusPaymentsJsonList[bonusPaymentsIndex].AsObject());

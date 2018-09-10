@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/model/AttachedPermissionsBoundary.h>
 #include <aws/iam/model/InstanceProfile.h>
 #include <aws/iam/model/PolicyDetail.h>
 #include <aws/iam/model/AttachedPolicy.h>
@@ -41,7 +42,7 @@ namespace Model
   /**
    * <p>Contains information about an IAM role, including all of the role's
    * policies.</p> <p>This data type is used as a response element in the
-   * <a>GetAccountAuthorizationDetails</a> action.</p><p><h3>See Also:</h3>   <a
+   * <a>GetAccountAuthorizationDetails</a> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RoleDetail">AWS API
    * Reference</a></p>
    */
@@ -409,6 +410,47 @@ namespace Model
      */
     inline RoleDetail& AddAttachedManagedPolicies(AttachedPolicy&& value) { m_attachedManagedPoliciesHasBeenSet = true; m_attachedManagedPolicies.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline const AttachedPermissionsBoundary& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetPermissionsBoundary(const AttachedPermissionsBoundary& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetPermissionsBoundary(AttachedPermissionsBoundary&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::move(value); }
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline RoleDetail& WithPermissionsBoundary(const AttachedPermissionsBoundary& value) { SetPermissionsBoundary(value); return *this;}
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline RoleDetail& WithPermissionsBoundary(AttachedPermissionsBoundary&& value) { SetPermissionsBoundary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_path;
@@ -437,6 +479,9 @@ namespace Model
 
     Aws::Vector<AttachedPolicy> m_attachedManagedPolicies;
     bool m_attachedManagedPoliciesHasBeenSet;
+
+    AttachedPermissionsBoundary m_permissionsBoundary;
+    bool m_permissionsBoundaryHasBeenSet;
   };
 
 } // namespace Model

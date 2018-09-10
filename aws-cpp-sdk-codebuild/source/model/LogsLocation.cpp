@@ -35,7 +35,7 @@ LogsLocation::LogsLocation() :
 {
 }
 
-LogsLocation::LogsLocation(const JsonValue& jsonValue) : 
+LogsLocation::LogsLocation(JsonView jsonValue) : 
     m_groupNameHasBeenSet(false),
     m_streamNameHasBeenSet(false),
     m_deepLinkHasBeenSet(false)
@@ -43,7 +43,7 @@ LogsLocation::LogsLocation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LogsLocation& LogsLocation::operator =(const JsonValue& jsonValue)
+LogsLocation& LogsLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("groupName"))
   {

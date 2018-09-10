@@ -70,7 +70,12 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_enablePerformanceInsights(false),
     m_enablePerformanceInsightsHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_cloudwatchLogsExportConfigurationHasBeenSet(false)
+    m_performanceInsightsRetentionPeriod(0),
+    m_performanceInsightsRetentionPeriodHasBeenSet(false),
+    m_cloudwatchLogsExportConfigurationHasBeenSet(false),
+    m_processorFeaturesHasBeenSet(false),
+    m_useDefaultProcessorFeatures(false),
+    m_useDefaultProcessorFeaturesHasBeenSet(false)
 {
 }
 
@@ -265,9 +270,29 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
     ss << "PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
   }
 
+  if(m_performanceInsightsRetentionPeriodHasBeenSet)
+  {
+    ss << "PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
+  }
+
   if(m_cloudwatchLogsExportConfigurationHasBeenSet)
   {
     m_cloudwatchLogsExportConfiguration.OutputToStream(ss, "CloudwatchLogsExportConfiguration");
+  }
+
+  if(m_processorFeaturesHasBeenSet)
+  {
+    unsigned processorFeaturesCount = 1;
+    for(auto& item : m_processorFeatures)
+    {
+      item.OutputToStream(ss, "ProcessorFeatures.member.", processorFeaturesCount, "");
+      processorFeaturesCount++;
+    }
+  }
+
+  if(m_useDefaultProcessorFeaturesHasBeenSet)
+  {
+    ss << "UseDefaultProcessorFeatures=" << std::boolalpha << m_useDefaultProcessorFeatures << "&";
   }
 
   ss << "Version=2014-10-31";

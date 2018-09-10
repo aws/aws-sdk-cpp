@@ -35,7 +35,7 @@ UnprocessedQueryExecutionId::UnprocessedQueryExecutionId() :
 {
 }
 
-UnprocessedQueryExecutionId::UnprocessedQueryExecutionId(const JsonValue& jsonValue) : 
+UnprocessedQueryExecutionId::UnprocessedQueryExecutionId(JsonView jsonValue) : 
     m_queryExecutionIdHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false)
@@ -43,7 +43,7 @@ UnprocessedQueryExecutionId::UnprocessedQueryExecutionId(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-UnprocessedQueryExecutionId& UnprocessedQueryExecutionId::operator =(const JsonValue& jsonValue)
+UnprocessedQueryExecutionId& UnprocessedQueryExecutionId::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("QueryExecutionId"))
   {

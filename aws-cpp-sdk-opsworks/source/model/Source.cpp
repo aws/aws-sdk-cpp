@@ -39,7 +39,7 @@ Source::Source() :
 {
 }
 
-Source::Source(const JsonValue& jsonValue) : 
+Source::Source(JsonView jsonValue) : 
     m_type(SourceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_urlHasBeenSet(false),
@@ -51,7 +51,7 @@ Source::Source(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Source& Source::operator =(const JsonValue& jsonValue)
+Source& Source::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

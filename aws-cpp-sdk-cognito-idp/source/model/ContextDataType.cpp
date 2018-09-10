@@ -37,7 +37,7 @@ ContextDataType::ContextDataType() :
 {
 }
 
-ContextDataType::ContextDataType(const JsonValue& jsonValue) : 
+ContextDataType::ContextDataType(JsonView jsonValue) : 
     m_ipAddressHasBeenSet(false),
     m_serverNameHasBeenSet(false),
     m_serverPathHasBeenSet(false),
@@ -47,7 +47,7 @@ ContextDataType::ContextDataType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ContextDataType& ContextDataType::operator =(const JsonValue& jsonValue)
+ContextDataType& ContextDataType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IpAddress"))
   {
@@ -72,7 +72,7 @@ ContextDataType& ContextDataType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("HttpHeaders"))
   {
-    Array<JsonValue> httpHeadersJsonList = jsonValue.GetArray("HttpHeaders");
+    Array<JsonView> httpHeadersJsonList = jsonValue.GetArray("HttpHeaders");
     for(unsigned httpHeadersIndex = 0; httpHeadersIndex < httpHeadersJsonList.GetLength(); ++httpHeadersIndex)
     {
       m_httpHeaders.push_back(httpHeadersJsonList[httpHeadersIndex].AsObject());

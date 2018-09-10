@@ -44,7 +44,7 @@ namespace Model
 
   /**
    * <p>A distribution configuration.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DistributionConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DistributionConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DistributionConfig
@@ -611,9 +611,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
-     * price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
-     * Pricing</a>.</p>
+     * price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * For price class information, scroll down to see the table at the bottom of the
+     * page.</p>
      */
     inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
 
@@ -629,9 +630,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
-     * price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
-     * Pricing</a>.</p>
+     * price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * For price class information, scroll down to see the table at the bottom of the
+     * page.</p>
      */
     inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
 
@@ -647,9 +649,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
-     * price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
-     * Pricing</a>.</p>
+     * price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * For price class information, scroll down to see the table at the bottom of the
+     * page.</p>
      */
     inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
 
@@ -665,9 +668,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
-     * price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
-     * Pricing</a>.</p>
+     * price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * For price class information, scroll down to see the table at the bottom of the
+     * page.</p>
      */
     inline DistributionConfig& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
 
@@ -683,34 +687,26 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing
      * the Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront
      * Developer Guide</i>. For information about CloudFront pricing, including how
-     * price classes map to CloudFront regions, see <a
-     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
-     * Pricing</a>.</p>
+     * price classes (such as Price Class 100) map to CloudFront regions, see <a
+     * href="https://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
+     * For price class information, scroll down to see the table at the bottom of the
+     * page.</p>
      */
     inline DistributionConfig& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
 
     /**
      * <p>From this field, you can enable or disable the selected distribution.</p>
-     * <p>If you specify <code>false</code> for <code>Enabled</code> but you specify
-     * values for <code>Bucket</code> and <code>Prefix</code>, the values are
-     * automatically deleted.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
      * <p>From this field, you can enable or disable the selected distribution.</p>
-     * <p>If you specify <code>false</code> for <code>Enabled</code> but you specify
-     * values for <code>Bucket</code> and <code>Prefix</code>, the values are
-     * automatically deleted.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
      * <p>From this field, you can enable or disable the selected distribution.</p>
-     * <p>If you specify <code>false</code> for <code>Enabled</code> but you specify
-     * values for <code>Bucket</code> and <code>Prefix</code>, the values are
-     * automatically deleted.</p>
      */
     inline DistributionConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

@@ -30,18 +30,22 @@ namespace Model
 
 ResourceDataContainer::ResourceDataContainer() : 
     m_localDeviceResourceDataHasBeenSet(false),
-    m_localVolumeResourceDataHasBeenSet(false)
+    m_localVolumeResourceDataHasBeenSet(false),
+    m_s3MachineLearningModelResourceDataHasBeenSet(false),
+    m_sageMakerMachineLearningModelResourceDataHasBeenSet(false)
 {
 }
 
-ResourceDataContainer::ResourceDataContainer(const JsonValue& jsonValue) : 
+ResourceDataContainer::ResourceDataContainer(JsonView jsonValue) : 
     m_localDeviceResourceDataHasBeenSet(false),
-    m_localVolumeResourceDataHasBeenSet(false)
+    m_localVolumeResourceDataHasBeenSet(false),
+    m_s3MachineLearningModelResourceDataHasBeenSet(false),
+    m_sageMakerMachineLearningModelResourceDataHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResourceDataContainer& ResourceDataContainer::operator =(const JsonValue& jsonValue)
+ResourceDataContainer& ResourceDataContainer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LocalDeviceResourceData"))
   {
@@ -55,6 +59,20 @@ ResourceDataContainer& ResourceDataContainer::operator =(const JsonValue& jsonVa
     m_localVolumeResourceData = jsonValue.GetObject("LocalVolumeResourceData");
 
     m_localVolumeResourceDataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("S3MachineLearningModelResourceData"))
+  {
+    m_s3MachineLearningModelResourceData = jsonValue.GetObject("S3MachineLearningModelResourceData");
+
+    m_s3MachineLearningModelResourceDataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SageMakerMachineLearningModelResourceData"))
+  {
+    m_sageMakerMachineLearningModelResourceData = jsonValue.GetObject("SageMakerMachineLearningModelResourceData");
+
+    m_sageMakerMachineLearningModelResourceDataHasBeenSet = true;
   }
 
   return *this;
@@ -73,6 +91,18 @@ JsonValue ResourceDataContainer::Jsonize() const
   if(m_localVolumeResourceDataHasBeenSet)
   {
    payload.WithObject("LocalVolumeResourceData", m_localVolumeResourceData.Jsonize());
+
+  }
+
+  if(m_s3MachineLearningModelResourceDataHasBeenSet)
+  {
+   payload.WithObject("S3MachineLearningModelResourceData", m_s3MachineLearningModelResourceData.Jsonize());
+
+  }
+
+  if(m_sageMakerMachineLearningModelResourceDataHasBeenSet)
+  {
+   payload.WithObject("SageMakerMachineLearningModelResourceData", m_sageMakerMachineLearningModelResourceData.Jsonize());
 
   }
 

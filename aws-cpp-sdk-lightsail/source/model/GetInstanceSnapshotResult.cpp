@@ -37,7 +37,7 @@ GetInstanceSnapshotResult::GetInstanceSnapshotResult(const Aws::AmazonWebService
 
 GetInstanceSnapshotResult& GetInstanceSnapshotResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("instanceSnapshot"))
   {
     m_instanceSnapshot = jsonValue.GetObject("instanceSnapshot");

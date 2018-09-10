@@ -37,7 +37,7 @@ DescribeReplicationInstancesResult::DescribeReplicationInstancesResult(const Aws
 
 DescribeReplicationInstancesResult& DescribeReplicationInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
@@ -46,7 +46,7 @@ DescribeReplicationInstancesResult& DescribeReplicationInstancesResult::operator
 
   if(jsonValue.ValueExists("ReplicationInstances"))
   {
-    Array<JsonValue> replicationInstancesJsonList = jsonValue.GetArray("ReplicationInstances");
+    Array<JsonView> replicationInstancesJsonList = jsonValue.GetArray("ReplicationInstances");
     for(unsigned replicationInstancesIndex = 0; replicationInstancesIndex < replicationInstancesJsonList.GetLength(); ++replicationInstancesIndex)
     {
       m_replicationInstances.push_back(replicationInstancesJsonList[replicationInstancesIndex].AsObject());

@@ -78,42 +78,42 @@ namespace Model
 
 
     /**
-     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
+     * <p>The IDs of the Dedicated Hosts to modify.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostIds() const{ return m_hostIds; }
 
     /**
-     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
+     * <p>The IDs of the Dedicated Hosts to modify.</p>
      */
     inline void SetHostIds(const Aws::Vector<Aws::String>& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
 
     /**
-     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
+     * <p>The IDs of the Dedicated Hosts to modify.</p>
      */
     inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = std::move(value); }
 
     /**
-     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
+     * <p>The IDs of the Dedicated Hosts to modify.</p>
      */
     inline ModifyHostsRequest& WithHostIds(const Aws::Vector<Aws::String>& value) { SetHostIds(value); return *this;}
 
     /**
-     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
+     * <p>The IDs of the Dedicated Hosts to modify.</p>
      */
     inline ModifyHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(std::move(value)); return *this;}
 
     /**
-     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
+     * <p>The IDs of the Dedicated Hosts to modify.</p>
      */
     inline ModifyHostsRequest& AddHostIds(const Aws::String& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 
     /**
-     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
+     * <p>The IDs of the Dedicated Hosts to modify.</p>
      */
     inline ModifyHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The host IDs of the Dedicated Hosts you want to modify.</p>
+     * <p>The IDs of the Dedicated Hosts to modify.</p>
      */
     inline ModifyHostsRequest& AddHostIds(const char* value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
 

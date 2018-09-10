@@ -42,7 +42,7 @@ ScheduleActivityTaskDecisionAttributes::ScheduleActivityTaskDecisionAttributes()
 {
 }
 
-ScheduleActivityTaskDecisionAttributes::ScheduleActivityTaskDecisionAttributes(const JsonValue& jsonValue) : 
+ScheduleActivityTaskDecisionAttributes::ScheduleActivityTaskDecisionAttributes(JsonView jsonValue) : 
     m_activityTypeHasBeenSet(false),
     m_activityIdHasBeenSet(false),
     m_controlHasBeenSet(false),
@@ -57,7 +57,7 @@ ScheduleActivityTaskDecisionAttributes::ScheduleActivityTaskDecisionAttributes(c
   *this = jsonValue;
 }
 
-ScheduleActivityTaskDecisionAttributes& ScheduleActivityTaskDecisionAttributes::operator =(const JsonValue& jsonValue)
+ScheduleActivityTaskDecisionAttributes& ScheduleActivityTaskDecisionAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("activityType"))
   {

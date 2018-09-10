@@ -37,7 +37,7 @@ DescribeDefaultAuthorizerResult::DescribeDefaultAuthorizerResult(const Aws::Amaz
 
 DescribeDefaultAuthorizerResult& DescribeDefaultAuthorizerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("authorizerDescription"))
   {
     m_authorizerDescription = jsonValue.GetObject("authorizerDescription");

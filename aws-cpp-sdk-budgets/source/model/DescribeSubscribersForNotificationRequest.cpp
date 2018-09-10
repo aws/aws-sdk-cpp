@@ -66,7 +66,7 @@ Aws::String DescribeSubscribersForNotificationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeSubscribersForNotificationRequest::GetRequestSpecificHeaders() const

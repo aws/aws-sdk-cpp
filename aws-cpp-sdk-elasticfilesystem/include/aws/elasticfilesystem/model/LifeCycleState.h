@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     creating,
     available,
+    updating,
     deleting,
     deleted
   };

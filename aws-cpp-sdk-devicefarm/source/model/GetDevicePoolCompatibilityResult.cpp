@@ -37,10 +37,10 @@ GetDevicePoolCompatibilityResult::GetDevicePoolCompatibilityResult(const Aws::Am
 
 GetDevicePoolCompatibilityResult& GetDevicePoolCompatibilityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("compatibleDevices"))
   {
-    Array<JsonValue> compatibleDevicesJsonList = jsonValue.GetArray("compatibleDevices");
+    Array<JsonView> compatibleDevicesJsonList = jsonValue.GetArray("compatibleDevices");
     for(unsigned compatibleDevicesIndex = 0; compatibleDevicesIndex < compatibleDevicesJsonList.GetLength(); ++compatibleDevicesIndex)
     {
       m_compatibleDevices.push_back(compatibleDevicesJsonList[compatibleDevicesIndex].AsObject());
@@ -49,7 +49,7 @@ GetDevicePoolCompatibilityResult& GetDevicePoolCompatibilityResult::operator =(c
 
   if(jsonValue.ValueExists("incompatibleDevices"))
   {
-    Array<JsonValue> incompatibleDevicesJsonList = jsonValue.GetArray("incompatibleDevices");
+    Array<JsonView> incompatibleDevicesJsonList = jsonValue.GetArray("incompatibleDevices");
     for(unsigned incompatibleDevicesIndex = 0; incompatibleDevicesIndex < incompatibleDevicesJsonList.GetLength(); ++incompatibleDevicesIndex)
     {
       m_incompatibleDevices.push_back(incompatibleDevicesJsonList[incompatibleDevicesIndex].AsObject());

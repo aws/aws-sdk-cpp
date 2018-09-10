@@ -60,7 +60,7 @@ Aws::String CreateThreatIntelSetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

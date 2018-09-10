@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GuardDuty
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     PrivateIpAddressDetails();
-    PrivateIpAddressDetails(const Aws::Utils::Json::JsonValue& jsonValue);
-    PrivateIpAddressDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PrivateIpAddressDetails(Aws::Utils::Json::JsonView jsonValue);
+    PrivateIpAddressDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

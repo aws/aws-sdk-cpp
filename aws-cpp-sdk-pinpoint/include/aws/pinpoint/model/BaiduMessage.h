@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     BaiduMessage();
-    BaiduMessage(const Aws::Utils::Json::JsonValue& jsonValue);
-    BaiduMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BaiduMessage(Aws::Utils::Json::JsonView jsonValue);
+    BaiduMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -106,37 +107,37 @@ namespace Model
 
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline BaiduMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline BaiduMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline BaiduMessage& WithBody(const char* value) { SetBody(value); return *this;}
 
@@ -559,6 +560,28 @@ namespace Model
 
 
     /**
+     * This parameter specifies how long (in seconds) the message should be kept in
+     * Baidu storage if the device is offline. The and the default value and the
+     * maximum time to live supported is 7 days (604800 seconds)
+     */
+    inline int GetTimeToLive() const{ return m_timeToLive; }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept in
+     * Baidu storage if the device is offline. The and the default value and the
+     * maximum time to live supported is 7 days (604800 seconds)
+     */
+    inline void SetTimeToLive(int value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept in
+     * Baidu storage if the device is offline. The and the default value and the
+     * maximum time to live supported is 7 days (604800 seconds)
+     */
+    inline BaiduMessage& WithTimeToLive(int value) { SetTimeToLive(value); return *this;}
+
+
+    /**
      * The message title that displays above the message on the user's device.
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
@@ -670,6 +693,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_substitutions;
     bool m_substitutionsHasBeenSet;
+
+    int m_timeToLive;
+    bool m_timeToLiveHasBeenSet;
 
     Aws::String m_title;
     bool m_titleHasBeenSet;

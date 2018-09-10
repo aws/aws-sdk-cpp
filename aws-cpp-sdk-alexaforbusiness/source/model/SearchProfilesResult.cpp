@@ -39,10 +39,10 @@ SearchProfilesResult::SearchProfilesResult(const Aws::AmazonWebServiceResult<Jso
 
 SearchProfilesResult& SearchProfilesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Profiles"))
   {
-    Array<JsonValue> profilesJsonList = jsonValue.GetArray("Profiles");
+    Array<JsonView> profilesJsonList = jsonValue.GetArray("Profiles");
     for(unsigned profilesIndex = 0; profilesIndex < profilesJsonList.GetLength(); ++profilesIndex)
     {
       m_profiles.push_back(profilesJsonList[profilesIndex].AsObject());

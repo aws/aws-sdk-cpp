@@ -37,7 +37,7 @@ SetIdentityPoolConfigurationResult::SetIdentityPoolConfigurationResult(const Aws
 
 SetIdentityPoolConfigurationResult& SetIdentityPoolConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityPoolId"))
   {
     m_identityPoolId = jsonValue.GetString("IdentityPoolId");

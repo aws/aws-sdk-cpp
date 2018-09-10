@@ -34,14 +34,14 @@ StoppingCondition::StoppingCondition() :
 {
 }
 
-StoppingCondition::StoppingCondition(const JsonValue& jsonValue) : 
+StoppingCondition::StoppingCondition(JsonView jsonValue) : 
     m_maxRuntimeInSeconds(0),
     m_maxRuntimeInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StoppingCondition& StoppingCondition::operator =(const JsonValue& jsonValue)
+StoppingCondition& StoppingCondition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MaxRuntimeInSeconds"))
   {

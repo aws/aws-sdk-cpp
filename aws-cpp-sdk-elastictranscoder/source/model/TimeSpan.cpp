@@ -34,14 +34,14 @@ TimeSpan::TimeSpan() :
 {
 }
 
-TimeSpan::TimeSpan(const JsonValue& jsonValue) : 
+TimeSpan::TimeSpan(JsonView jsonValue) : 
     m_startTimeHasBeenSet(false),
     m_durationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TimeSpan& TimeSpan::operator =(const JsonValue& jsonValue)
+TimeSpan& TimeSpan::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StartTime"))
   {

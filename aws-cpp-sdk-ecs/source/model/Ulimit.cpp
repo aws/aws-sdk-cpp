@@ -38,7 +38,7 @@ Ulimit::Ulimit() :
 {
 }
 
-Ulimit::Ulimit(const JsonValue& jsonValue) : 
+Ulimit::Ulimit(JsonView jsonValue) : 
     m_name(UlimitName::NOT_SET),
     m_nameHasBeenSet(false),
     m_softLimit(0),
@@ -49,7 +49,7 @@ Ulimit::Ulimit(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Ulimit& Ulimit::operator =(const JsonValue& jsonValue)
+Ulimit& Ulimit::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

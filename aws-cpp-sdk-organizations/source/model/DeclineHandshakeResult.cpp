@@ -37,7 +37,7 @@ DeclineHandshakeResult::DeclineHandshakeResult(const Aws::AmazonWebServiceResult
 
 DeclineHandshakeResult& DeclineHandshakeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Handshake"))
   {
     m_handshake = jsonValue.GetObject("Handshake");

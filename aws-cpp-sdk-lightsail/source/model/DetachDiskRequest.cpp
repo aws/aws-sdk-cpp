@@ -37,7 +37,7 @@ Aws::String DetachDiskRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DetachDiskRequest::GetRequestSpecificHeaders() const

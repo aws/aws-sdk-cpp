@@ -35,7 +35,7 @@ ByteMatchSetUpdate::ByteMatchSetUpdate() :
 {
 }
 
-ByteMatchSetUpdate::ByteMatchSetUpdate(const JsonValue& jsonValue) : 
+ByteMatchSetUpdate::ByteMatchSetUpdate(JsonView jsonValue) : 
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_byteMatchTupleHasBeenSet(false)
@@ -43,7 +43,7 @@ ByteMatchSetUpdate::ByteMatchSetUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ByteMatchSetUpdate& ByteMatchSetUpdate::operator =(const JsonValue& jsonValue)
+ByteMatchSetUpdate& ByteMatchSetUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {

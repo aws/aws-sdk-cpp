@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace StorageGateway
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     TapeRecoveryPointInfo();
-    TapeRecoveryPointInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    TapeRecoveryPointInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TapeRecoveryPointInfo(Aws::Utils::Json::JsonView jsonValue);
+    TapeRecoveryPointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -85,36 +86,36 @@ namespace Model
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
-     * later recovery.</p> <p>The string format of the tape recovery point time is in
-     * the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     * later recovery.</p> <p>The default time stamp format of the tape recovery point
+     * time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
     inline const Aws::Utils::DateTime& GetTapeRecoveryPointTime() const{ return m_tapeRecoveryPointTime; }
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
-     * later recovery.</p> <p>The string format of the tape recovery point time is in
-     * the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     * later recovery.</p> <p>The default time stamp format of the tape recovery point
+     * time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
     inline void SetTapeRecoveryPointTime(const Aws::Utils::DateTime& value) { m_tapeRecoveryPointTimeHasBeenSet = true; m_tapeRecoveryPointTime = value; }
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
-     * later recovery.</p> <p>The string format of the tape recovery point time is in
-     * the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     * later recovery.</p> <p>The default time stamp format of the tape recovery point
+     * time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
     inline void SetTapeRecoveryPointTime(Aws::Utils::DateTime&& value) { m_tapeRecoveryPointTimeHasBeenSet = true; m_tapeRecoveryPointTime = std::move(value); }
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
-     * later recovery.</p> <p>The string format of the tape recovery point time is in
-     * the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     * later recovery.</p> <p>The default time stamp format of the tape recovery point
+     * time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
     inline TapeRecoveryPointInfo& WithTapeRecoveryPointTime(const Aws::Utils::DateTime& value) { SetTapeRecoveryPointTime(value); return *this;}
 
     /**
      * <p>The time when the point-in-time view of the virtual tape was replicated for
-     * later recovery.</p> <p>The string format of the tape recovery point time is in
-     * the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
+     * later recovery.</p> <p>The default time stamp format of the tape recovery point
+     * time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.</p>
      */
     inline TapeRecoveryPointInfo& WithTapeRecoveryPointTime(Aws::Utils::DateTime&& value) { SetTapeRecoveryPointTime(std::move(value)); return *this;}
 

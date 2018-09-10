@@ -37,7 +37,7 @@ GetTestResult::GetTestResult(const Aws::AmazonWebServiceResult<JsonValue>& resul
 
 GetTestResult& GetTestResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("test"))
   {
     m_test = jsonValue.GetObject("test");

@@ -31,19 +31,29 @@ namespace Model
 BuildArtifacts::BuildArtifacts() : 
     m_locationHasBeenSet(false),
     m_sha256sumHasBeenSet(false),
-    m_md5sumHasBeenSet(false)
+    m_md5sumHasBeenSet(false),
+    m_overrideArtifactName(false),
+    m_overrideArtifactNameHasBeenSet(false),
+    m_encryptionDisabled(false),
+    m_encryptionDisabledHasBeenSet(false),
+    m_artifactIdentifierHasBeenSet(false)
 {
 }
 
-BuildArtifacts::BuildArtifacts(const JsonValue& jsonValue) : 
+BuildArtifacts::BuildArtifacts(JsonView jsonValue) : 
     m_locationHasBeenSet(false),
     m_sha256sumHasBeenSet(false),
-    m_md5sumHasBeenSet(false)
+    m_md5sumHasBeenSet(false),
+    m_overrideArtifactName(false),
+    m_overrideArtifactNameHasBeenSet(false),
+    m_encryptionDisabled(false),
+    m_encryptionDisabledHasBeenSet(false),
+    m_artifactIdentifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BuildArtifacts& BuildArtifacts::operator =(const JsonValue& jsonValue)
+BuildArtifacts& BuildArtifacts::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("location"))
   {
@@ -64,6 +74,27 @@ BuildArtifacts& BuildArtifacts::operator =(const JsonValue& jsonValue)
     m_md5sum = jsonValue.GetString("md5sum");
 
     m_md5sumHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("overrideArtifactName"))
+  {
+    m_overrideArtifactName = jsonValue.GetBool("overrideArtifactName");
+
+    m_overrideArtifactNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("encryptionDisabled"))
+  {
+    m_encryptionDisabled = jsonValue.GetBool("encryptionDisabled");
+
+    m_encryptionDisabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("artifactIdentifier"))
+  {
+    m_artifactIdentifier = jsonValue.GetString("artifactIdentifier");
+
+    m_artifactIdentifierHasBeenSet = true;
   }
 
   return *this;
@@ -88,6 +119,24 @@ JsonValue BuildArtifacts::Jsonize() const
   if(m_md5sumHasBeenSet)
   {
    payload.WithString("md5sum", m_md5sum);
+
+  }
+
+  if(m_overrideArtifactNameHasBeenSet)
+  {
+   payload.WithBool("overrideArtifactName", m_overrideArtifactName);
+
+  }
+
+  if(m_encryptionDisabledHasBeenSet)
+  {
+   payload.WithBool("encryptionDisabled", m_encryptionDisabled);
+
+  }
+
+  if(m_artifactIdentifierHasBeenSet)
+  {
+   payload.WithString("artifactIdentifier", m_artifactIdentifier);
 
   }
 

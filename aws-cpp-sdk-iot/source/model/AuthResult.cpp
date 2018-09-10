@@ -38,7 +38,7 @@ AuthResult::AuthResult() :
 {
 }
 
-AuthResult::AuthResult(const JsonValue& jsonValue) : 
+AuthResult::AuthResult(JsonView jsonValue) : 
     m_authInfoHasBeenSet(false),
     m_allowedHasBeenSet(false),
     m_deniedHasBeenSet(false),
@@ -49,7 +49,7 @@ AuthResult::AuthResult(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AuthResult& AuthResult::operator =(const JsonValue& jsonValue)
+AuthResult& AuthResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("authInfo"))
   {
@@ -81,7 +81,7 @@ AuthResult& AuthResult::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("missingContextValues"))
   {
-    Array<JsonValue> missingContextValuesJsonList = jsonValue.GetArray("missingContextValues");
+    Array<JsonView> missingContextValuesJsonList = jsonValue.GetArray("missingContextValues");
     for(unsigned missingContextValuesIndex = 0; missingContextValuesIndex < missingContextValuesJsonList.GetLength(); ++missingContextValuesIndex)
     {
       m_missingContextValues.push_back(missingContextValuesJsonList[missingContextValuesIndex].AsString());

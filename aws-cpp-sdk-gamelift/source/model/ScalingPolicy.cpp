@@ -44,11 +44,14 @@ ScalingPolicy::ScalingPolicy() :
     m_evaluationPeriods(0),
     m_evaluationPeriodsHasBeenSet(false),
     m_metricName(MetricName::NOT_SET),
-    m_metricNameHasBeenSet(false)
+    m_metricNameHasBeenSet(false),
+    m_policyType(PolicyType::NOT_SET),
+    m_policyTypeHasBeenSet(false),
+    m_targetConfigurationHasBeenSet(false)
 {
 }
 
-ScalingPolicy::ScalingPolicy(const JsonValue& jsonValue) : 
+ScalingPolicy::ScalingPolicy(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(ScalingStatusType::NOT_SET),
@@ -64,12 +67,15 @@ ScalingPolicy::ScalingPolicy(const JsonValue& jsonValue) :
     m_evaluationPeriods(0),
     m_evaluationPeriodsHasBeenSet(false),
     m_metricName(MetricName::NOT_SET),
-    m_metricNameHasBeenSet(false)
+    m_metricNameHasBeenSet(false),
+    m_policyType(PolicyType::NOT_SET),
+    m_policyTypeHasBeenSet(false),
+    m_targetConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ScalingPolicy& ScalingPolicy::operator =(const JsonValue& jsonValue)
+ScalingPolicy& ScalingPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FleetId"))
   {
@@ -134,6 +140,20 @@ ScalingPolicy& ScalingPolicy::operator =(const JsonValue& jsonValue)
     m_metricNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PolicyType"))
+  {
+    m_policyType = PolicyTypeMapper::GetPolicyTypeForName(jsonValue.GetString("PolicyType"));
+
+    m_policyTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TargetConfiguration"))
+  {
+    m_targetConfiguration = jsonValue.GetObject("TargetConfiguration");
+
+    m_targetConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -189,6 +209,17 @@ JsonValue ScalingPolicy::Jsonize() const
   if(m_metricNameHasBeenSet)
   {
    payload.WithString("MetricName", MetricNameMapper::GetNameForMetricName(m_metricName));
+  }
+
+  if(m_policyTypeHasBeenSet)
+  {
+   payload.WithString("PolicyType", PolicyTypeMapper::GetNameForPolicyType(m_policyType));
+  }
+
+  if(m_targetConfigurationHasBeenSet)
+  {
+   payload.WithObject("TargetConfiguration", m_targetConfiguration.Jsonize());
+
   }
 
   return payload;

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/s3/model/RequestPayer.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -75,149 +76,149 @@ namespace Model
 
 
     /**
-     * Return the object only if its entity tag (ETag) is the same as the one
-     * specified, otherwise return a 412 (precondition failed).
+     * <p>Return the object only if its entity tag (ETag) is the same as the one
+     * specified, otherwise return a 412 (precondition failed).</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
 
     /**
-     * Return the object only if its entity tag (ETag) is the same as the one
-     * specified, otherwise return a 412 (precondition failed).
+     * <p>Return the object only if its entity tag (ETag) is the same as the one
+     * specified, otherwise return a 412 (precondition failed).</p>
      */
     inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
 
     /**
-     * Return the object only if its entity tag (ETag) is the same as the one
-     * specified, otherwise return a 412 (precondition failed).
+     * <p>Return the object only if its entity tag (ETag) is the same as the one
+     * specified, otherwise return a 412 (precondition failed).</p>
      */
     inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
 
     /**
-     * Return the object only if its entity tag (ETag) is the same as the one
-     * specified, otherwise return a 412 (precondition failed).
+     * <p>Return the object only if its entity tag (ETag) is the same as the one
+     * specified, otherwise return a 412 (precondition failed).</p>
      */
     inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
 
     /**
-     * Return the object only if its entity tag (ETag) is the same as the one
-     * specified, otherwise return a 412 (precondition failed).
+     * <p>Return the object only if its entity tag (ETag) is the same as the one
+     * specified, otherwise return a 412 (precondition failed).</p>
      */
     inline HeadObjectRequest& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
 
     /**
-     * Return the object only if its entity tag (ETag) is the same as the one
-     * specified, otherwise return a 412 (precondition failed).
+     * <p>Return the object only if its entity tag (ETag) is the same as the one
+     * specified, otherwise return a 412 (precondition failed).</p>
      */
     inline HeadObjectRequest& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
 
     /**
-     * Return the object only if its entity tag (ETag) is the same as the one
-     * specified, otherwise return a 412 (precondition failed).
+     * <p>Return the object only if its entity tag (ETag) is the same as the one
+     * specified, otherwise return a 412 (precondition failed).</p>
      */
     inline HeadObjectRequest& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
 
 
     /**
-     * Return the object only if it has been modified since the specified time,
-     * otherwise return a 304 (not modified).
+     * <p>Return the object only if it has been modified since the specified time,
+     * otherwise return a 304 (not modified).</p>
      */
     inline const Aws::Utils::DateTime& GetIfModifiedSince() const{ return m_ifModifiedSince; }
 
     /**
-     * Return the object only if it has been modified since the specified time,
-     * otherwise return a 304 (not modified).
+     * <p>Return the object only if it has been modified since the specified time,
+     * otherwise return a 304 (not modified).</p>
      */
     inline void SetIfModifiedSince(const Aws::Utils::DateTime& value) { m_ifModifiedSinceHasBeenSet = true; m_ifModifiedSince = value; }
 
     /**
-     * Return the object only if it has been modified since the specified time,
-     * otherwise return a 304 (not modified).
+     * <p>Return the object only if it has been modified since the specified time,
+     * otherwise return a 304 (not modified).</p>
      */
     inline void SetIfModifiedSince(Aws::Utils::DateTime&& value) { m_ifModifiedSinceHasBeenSet = true; m_ifModifiedSince = std::move(value); }
 
     /**
-     * Return the object only if it has been modified since the specified time,
-     * otherwise return a 304 (not modified).
+     * <p>Return the object only if it has been modified since the specified time,
+     * otherwise return a 304 (not modified).</p>
      */
     inline HeadObjectRequest& WithIfModifiedSince(const Aws::Utils::DateTime& value) { SetIfModifiedSince(value); return *this;}
 
     /**
-     * Return the object only if it has been modified since the specified time,
-     * otherwise return a 304 (not modified).
+     * <p>Return the object only if it has been modified since the specified time,
+     * otherwise return a 304 (not modified).</p>
      */
     inline HeadObjectRequest& WithIfModifiedSince(Aws::Utils::DateTime&& value) { SetIfModifiedSince(std::move(value)); return *this;}
 
 
     /**
-     * Return the object only if its entity tag (ETag) is different from the one
-     * specified, otherwise return a 304 (not modified).
+     * <p>Return the object only if its entity tag (ETag) is different from the one
+     * specified, otherwise return a 304 (not modified).</p>
      */
     inline const Aws::String& GetIfNoneMatch() const{ return m_ifNoneMatch; }
 
     /**
-     * Return the object only if its entity tag (ETag) is different from the one
-     * specified, otherwise return a 304 (not modified).
+     * <p>Return the object only if its entity tag (ETag) is different from the one
+     * specified, otherwise return a 304 (not modified).</p>
      */
     inline void SetIfNoneMatch(const Aws::String& value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch = value; }
 
     /**
-     * Return the object only if its entity tag (ETag) is different from the one
-     * specified, otherwise return a 304 (not modified).
+     * <p>Return the object only if its entity tag (ETag) is different from the one
+     * specified, otherwise return a 304 (not modified).</p>
      */
     inline void SetIfNoneMatch(Aws::String&& value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch = std::move(value); }
 
     /**
-     * Return the object only if its entity tag (ETag) is different from the one
-     * specified, otherwise return a 304 (not modified).
+     * <p>Return the object only if its entity tag (ETag) is different from the one
+     * specified, otherwise return a 304 (not modified).</p>
      */
     inline void SetIfNoneMatch(const char* value) { m_ifNoneMatchHasBeenSet = true; m_ifNoneMatch.assign(value); }
 
     /**
-     * Return the object only if its entity tag (ETag) is different from the one
-     * specified, otherwise return a 304 (not modified).
+     * <p>Return the object only if its entity tag (ETag) is different from the one
+     * specified, otherwise return a 304 (not modified).</p>
      */
     inline HeadObjectRequest& WithIfNoneMatch(const Aws::String& value) { SetIfNoneMatch(value); return *this;}
 
     /**
-     * Return the object only if its entity tag (ETag) is different from the one
-     * specified, otherwise return a 304 (not modified).
+     * <p>Return the object only if its entity tag (ETag) is different from the one
+     * specified, otherwise return a 304 (not modified).</p>
      */
     inline HeadObjectRequest& WithIfNoneMatch(Aws::String&& value) { SetIfNoneMatch(std::move(value)); return *this;}
 
     /**
-     * Return the object only if its entity tag (ETag) is different from the one
-     * specified, otherwise return a 304 (not modified).
+     * <p>Return the object only if its entity tag (ETag) is different from the one
+     * specified, otherwise return a 304 (not modified).</p>
      */
     inline HeadObjectRequest& WithIfNoneMatch(const char* value) { SetIfNoneMatch(value); return *this;}
 
 
     /**
-     * Return the object only if it has not been modified since the specified time,
-     * otherwise return a 412 (precondition failed).
+     * <p>Return the object only if it has not been modified since the specified time,
+     * otherwise return a 412 (precondition failed).</p>
      */
     inline const Aws::Utils::DateTime& GetIfUnmodifiedSince() const{ return m_ifUnmodifiedSince; }
 
     /**
-     * Return the object only if it has not been modified since the specified time,
-     * otherwise return a 412 (precondition failed).
+     * <p>Return the object only if it has not been modified since the specified time,
+     * otherwise return a 412 (precondition failed).</p>
      */
     inline void SetIfUnmodifiedSince(const Aws::Utils::DateTime& value) { m_ifUnmodifiedSinceHasBeenSet = true; m_ifUnmodifiedSince = value; }
 
     /**
-     * Return the object only if it has not been modified since the specified time,
-     * otherwise return a 412 (precondition failed).
+     * <p>Return the object only if it has not been modified since the specified time,
+     * otherwise return a 412 (precondition failed).</p>
      */
     inline void SetIfUnmodifiedSince(Aws::Utils::DateTime&& value) { m_ifUnmodifiedSinceHasBeenSet = true; m_ifUnmodifiedSince = std::move(value); }
 
     /**
-     * Return the object only if it has not been modified since the specified time,
-     * otherwise return a 412 (precondition failed).
+     * <p>Return the object only if it has not been modified since the specified time,
+     * otherwise return a 412 (precondition failed).</p>
      */
     inline HeadObjectRequest& WithIfUnmodifiedSince(const Aws::Utils::DateTime& value) { SetIfUnmodifiedSince(value); return *this;}
 
     /**
-     * Return the object only if it has not been modified since the specified time,
-     * otherwise return a 412 (precondition failed).
+     * <p>Return the object only if it has not been modified since the specified time,
+     * otherwise return a 412 (precondition failed).</p>
      */
     inline HeadObjectRequest& WithIfUnmodifiedSince(Aws::Utils::DateTime&& value) { SetIfUnmodifiedSince(std::move(value)); return *this;}
 
@@ -245,237 +246,244 @@ namespace Model
 
 
     /**
-     * Downloads the specified range bytes of an object. For more information about the
-     * HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.
+     * <p>Downloads the specified range bytes of an object. For more information about
+     * the HTTP Range header, go to
+     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
      */
     inline const Aws::String& GetRange() const{ return m_range; }
 
     /**
-     * Downloads the specified range bytes of an object. For more information about the
-     * HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.
+     * <p>Downloads the specified range bytes of an object. For more information about
+     * the HTTP Range header, go to
+     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
      */
     inline void SetRange(const Aws::String& value) { m_rangeHasBeenSet = true; m_range = value; }
 
     /**
-     * Downloads the specified range bytes of an object. For more information about the
-     * HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.
+     * <p>Downloads the specified range bytes of an object. For more information about
+     * the HTTP Range header, go to
+     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
      */
     inline void SetRange(Aws::String&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
 
     /**
-     * Downloads the specified range bytes of an object. For more information about the
-     * HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.
+     * <p>Downloads the specified range bytes of an object. For more information about
+     * the HTTP Range header, go to
+     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
      */
     inline void SetRange(const char* value) { m_rangeHasBeenSet = true; m_range.assign(value); }
 
     /**
-     * Downloads the specified range bytes of an object. For more information about the
-     * HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.
+     * <p>Downloads the specified range bytes of an object. For more information about
+     * the HTTP Range header, go to
+     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
      */
     inline HeadObjectRequest& WithRange(const Aws::String& value) { SetRange(value); return *this;}
 
     /**
-     * Downloads the specified range bytes of an object. For more information about the
-     * HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.
+     * <p>Downloads the specified range bytes of an object. For more information about
+     * the HTTP Range header, go to
+     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
      */
     inline HeadObjectRequest& WithRange(Aws::String&& value) { SetRange(std::move(value)); return *this;}
 
     /**
-     * Downloads the specified range bytes of an object. For more information about the
-     * HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.
+     * <p>Downloads the specified range bytes of an object. For more information about
+     * the HTTP Range header, go to
+     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
      */
     inline HeadObjectRequest& WithRange(const char* value) { SetRange(value); return *this;}
 
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline HeadObjectRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline HeadObjectRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * VersionId used to reference a specific version of the object.
+     * <p>VersionId used to reference a specific version of the object.</p>
      */
     inline HeadObjectRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline HeadObjectRequest& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline HeadObjectRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
-     * Specifies the algorithm to use to when encrypting the object (e.g., AES256).
+     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * AES256).</p>
      */
     inline HeadObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
 
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
     /**
-     * Specifies the customer-provided encryption key for Amazon S3 to use in
+     * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
      * discarded; Amazon does not store the encryption key. The key must be appropriate
      * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.
+     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5.assign(value); }
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
-     * Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
+     * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
      * Amazon S3 uses this header for a message integrity check to ensure the
-     * encryption key was transmitted without error.
+     * encryption key was transmitted without error.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
@@ -497,28 +505,65 @@ namespace Model
 
 
     /**
-     * Part number of the object being read. This is a positive integer between 1 and
-     * 10,000. Effectively performs a 'ranged' HEAD request for the part specified.
+     * <p>Part number of the object being read. This is a positive integer between 1
+     * and 10,000. Effectively performs a 'ranged' HEAD request for the part specified.
      * Useful querying about the size of the part and the number of parts in this
-     * object.
+     * object.</p>
      */
     inline int GetPartNumber() const{ return m_partNumber; }
 
     /**
-     * Part number of the object being read. This is a positive integer between 1 and
-     * 10,000. Effectively performs a 'ranged' HEAD request for the part specified.
+     * <p>Part number of the object being read. This is a positive integer between 1
+     * and 10,000. Effectively performs a 'ranged' HEAD request for the part specified.
      * Useful querying about the size of the part and the number of parts in this
-     * object.
+     * object.</p>
      */
     inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
 
     /**
-     * Part number of the object being read. This is a positive integer between 1 and
-     * 10,000. Effectively performs a 'ranged' HEAD request for the part specified.
+     * <p>Part number of the object being read. This is a positive integer between 1
+     * and 10,000. Effectively performs a 'ranged' HEAD request for the part specified.
      * Useful querying about the size of the part and the number of parts in this
-     * object.
+     * object.</p>
      */
     inline HeadObjectRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
+
+
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
+
+    
+    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
+
+    
+    inline HeadObjectRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
+
+    
+    inline HeadObjectRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
+
+    
+    inline HeadObjectRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+
+    
+    inline HeadObjectRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline HeadObjectRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline HeadObjectRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline HeadObjectRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline HeadObjectRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline HeadObjectRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
 
   private:
 
@@ -560,6 +605,9 @@ namespace Model
 
     int m_partNumber;
     bool m_partNumberHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+    bool m_customizedAccessLogTagHasBeenSet;
   };
 
 } // namespace Model

@@ -34,14 +34,14 @@ KinesisStreamsInputUpdate::KinesisStreamsInputUpdate() :
 {
 }
 
-KinesisStreamsInputUpdate::KinesisStreamsInputUpdate(const JsonValue& jsonValue) : 
+KinesisStreamsInputUpdate::KinesisStreamsInputUpdate(JsonView jsonValue) : 
     m_resourceARNUpdateHasBeenSet(false),
     m_roleARNUpdateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-KinesisStreamsInputUpdate& KinesisStreamsInputUpdate::operator =(const JsonValue& jsonValue)
+KinesisStreamsInputUpdate& KinesisStreamsInputUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceARNUpdate"))
   {

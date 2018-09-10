@@ -37,11 +37,13 @@ Target::Target() :
     m_inputTransformerHasBeenSet(false),
     m_kinesisParametersHasBeenSet(false),
     m_runCommandParametersHasBeenSet(false),
-    m_ecsParametersHasBeenSet(false)
+    m_ecsParametersHasBeenSet(false),
+    m_batchParametersHasBeenSet(false),
+    m_sqsParametersHasBeenSet(false)
 {
 }
 
-Target::Target(const JsonValue& jsonValue) : 
+Target::Target(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -50,12 +52,14 @@ Target::Target(const JsonValue& jsonValue) :
     m_inputTransformerHasBeenSet(false),
     m_kinesisParametersHasBeenSet(false),
     m_runCommandParametersHasBeenSet(false),
-    m_ecsParametersHasBeenSet(false)
+    m_ecsParametersHasBeenSet(false),
+    m_batchParametersHasBeenSet(false),
+    m_sqsParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Target& Target::operator =(const JsonValue& jsonValue)
+Target& Target::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -120,6 +124,20 @@ Target& Target::operator =(const JsonValue& jsonValue)
     m_ecsParametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BatchParameters"))
+  {
+    m_batchParameters = jsonValue.GetObject("BatchParameters");
+
+    m_batchParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SqsParameters"))
+  {
+    m_sqsParameters = jsonValue.GetObject("SqsParameters");
+
+    m_sqsParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +196,18 @@ JsonValue Target::Jsonize() const
   if(m_ecsParametersHasBeenSet)
   {
    payload.WithObject("EcsParameters", m_ecsParameters.Jsonize());
+
+  }
+
+  if(m_batchParametersHasBeenSet)
+  {
+   payload.WithObject("BatchParameters", m_batchParameters.Jsonize());
+
+  }
+
+  if(m_sqsParametersHasBeenSet)
+  {
+   payload.WithObject("SqsParameters", m_sqsParameters.Jsonize());
 
   }
 

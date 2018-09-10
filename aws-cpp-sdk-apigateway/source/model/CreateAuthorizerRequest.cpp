@@ -100,7 +100,7 @@ Aws::String CreateAuthorizerRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

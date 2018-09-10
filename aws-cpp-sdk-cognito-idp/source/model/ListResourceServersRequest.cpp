@@ -52,7 +52,7 @@ Aws::String ListResourceServersRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListResourceServersRequest::GetRequestSpecificHeaders() const

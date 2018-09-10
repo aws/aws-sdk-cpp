@@ -39,7 +39,7 @@ UpdateProvisioningArtifactResult::UpdateProvisioningArtifactResult(const Aws::Am
 
 UpdateProvisioningArtifactResult& UpdateProvisioningArtifactResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisioningArtifactDetail"))
   {
     m_provisioningArtifactDetail = jsonValue.GetObject("ProvisioningArtifactDetail");
@@ -48,7 +48,7 @@ UpdateProvisioningArtifactResult& UpdateProvisioningArtifactResult::operator =(c
 
   if(jsonValue.ValueExists("Info"))
   {
-    Aws::Map<Aws::String, JsonValue> infoJsonMap = jsonValue.GetObject("Info").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> infoJsonMap = jsonValue.GetObject("Info").GetAllObjects();
     for(auto& infoItem : infoJsonMap)
     {
       m_info[infoItem.first] = infoItem.second.AsString();

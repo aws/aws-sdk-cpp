@@ -37,7 +37,7 @@ Aws::String DescribeRefreshSchemasStatusRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeRefreshSchemasStatusRequest::GetRequestSpecificHeaders() const

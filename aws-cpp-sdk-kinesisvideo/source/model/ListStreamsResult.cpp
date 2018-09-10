@@ -37,10 +37,10 @@ ListStreamsResult::ListStreamsResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ListStreamsResult& ListStreamsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StreamInfoList"))
   {
-    Array<JsonValue> streamInfoListJsonList = jsonValue.GetArray("StreamInfoList");
+    Array<JsonView> streamInfoListJsonList = jsonValue.GetArray("StreamInfoList");
     for(unsigned streamInfoListIndex = 0; streamInfoListIndex < streamInfoListJsonList.GetLength(); ++streamInfoListIndex)
     {
       m_streamInfoList.push_back(streamInfoListJsonList[streamInfoListIndex].AsObject());

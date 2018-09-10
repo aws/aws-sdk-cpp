@@ -33,23 +33,25 @@ PullRequestTarget::PullRequestTarget() :
     m_sourceReferenceHasBeenSet(false),
     m_destinationReferenceHasBeenSet(false),
     m_destinationCommitHasBeenSet(false),
+    m_mergeBaseHasBeenSet(false),
     m_sourceCommitHasBeenSet(false),
     m_mergeMetadataHasBeenSet(false)
 {
 }
 
-PullRequestTarget::PullRequestTarget(const JsonValue& jsonValue) : 
+PullRequestTarget::PullRequestTarget(JsonView jsonValue) : 
     m_repositoryNameHasBeenSet(false),
     m_sourceReferenceHasBeenSet(false),
     m_destinationReferenceHasBeenSet(false),
     m_destinationCommitHasBeenSet(false),
+    m_mergeBaseHasBeenSet(false),
     m_sourceCommitHasBeenSet(false),
     m_mergeMetadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PullRequestTarget& PullRequestTarget::operator =(const JsonValue& jsonValue)
+PullRequestTarget& PullRequestTarget::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("repositoryName"))
   {
@@ -77,6 +79,13 @@ PullRequestTarget& PullRequestTarget::operator =(const JsonValue& jsonValue)
     m_destinationCommit = jsonValue.GetString("destinationCommit");
 
     m_destinationCommitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mergeBase"))
+  {
+    m_mergeBase = jsonValue.GetString("mergeBase");
+
+    m_mergeBaseHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceCommit"))
@@ -121,6 +130,12 @@ JsonValue PullRequestTarget::Jsonize() const
   if(m_destinationCommitHasBeenSet)
   {
    payload.WithString("destinationCommit", m_destinationCommit);
+
+  }
+
+  if(m_mergeBaseHasBeenSet)
+  {
+   payload.WithString("mergeBase", m_mergeBase);
 
   }
 

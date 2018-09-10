@@ -43,7 +43,7 @@ DomainController::DomainController() :
 {
 }
 
-DomainController::DomainController(const JsonValue& jsonValue) : 
+DomainController::DomainController(JsonView jsonValue) : 
     m_directoryIdHasBeenSet(false),
     m_domainControllerIdHasBeenSet(false),
     m_dnsIpAddrHasBeenSet(false),
@@ -59,7 +59,7 @@ DomainController::DomainController(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DomainController& DomainController::operator =(const JsonValue& jsonValue)
+DomainController& DomainController::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DirectoryId"))
   {

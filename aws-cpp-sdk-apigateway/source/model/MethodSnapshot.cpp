@@ -35,7 +35,7 @@ MethodSnapshot::MethodSnapshot() :
 {
 }
 
-MethodSnapshot::MethodSnapshot(const JsonValue& jsonValue) : 
+MethodSnapshot::MethodSnapshot(JsonView jsonValue) : 
     m_authorizationTypeHasBeenSet(false),
     m_apiKeyRequired(false),
     m_apiKeyRequiredHasBeenSet(false)
@@ -43,7 +43,7 @@ MethodSnapshot::MethodSnapshot(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MethodSnapshot& MethodSnapshot::operator =(const JsonValue& jsonValue)
+MethodSnapshot& MethodSnapshot::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("authorizationType"))
   {

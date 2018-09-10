@@ -40,12 +40,14 @@ Message::Message() :
     m_rawContentHasBeenSet(false),
     m_silentPush(false),
     m_silentPushHasBeenSet(false),
+    m_timeToLive(0),
+    m_timeToLiveHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
 }
 
-Message::Message(const JsonValue& jsonValue) : 
+Message::Message(JsonView jsonValue) : 
     m_action(Action::NOT_SET),
     m_actionHasBeenSet(false),
     m_bodyHasBeenSet(false),
@@ -57,13 +59,15 @@ Message::Message(const JsonValue& jsonValue) :
     m_rawContentHasBeenSet(false),
     m_silentPush(false),
     m_silentPushHasBeenSet(false),
+    m_timeToLive(0),
+    m_timeToLiveHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Message& Message::operator =(const JsonValue& jsonValue)
+Message& Message::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {
@@ -126,6 +130,13 @@ Message& Message::operator =(const JsonValue& jsonValue)
     m_silentPush = jsonValue.GetBool("SilentPush");
 
     m_silentPushHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TimeToLive"))
+  {
+    m_timeToLive = jsonValue.GetInteger("TimeToLive");
+
+    m_timeToLiveHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Title"))
@@ -199,6 +210,12 @@ JsonValue Message::Jsonize() const
   if(m_silentPushHasBeenSet)
   {
    payload.WithBool("SilentPush", m_silentPush);
+
+  }
+
+  if(m_timeToLiveHasBeenSet)
+  {
+   payload.WithInteger("TimeToLive", m_timeToLive);
 
   }
 

@@ -37,7 +37,7 @@ DescribeIdentityUsageResult::DescribeIdentityUsageResult(const Aws::AmazonWebSer
 
 DescribeIdentityUsageResult& DescribeIdentityUsageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityUsage"))
   {
     m_identityUsage = jsonValue.GetObject("IdentityUsage");

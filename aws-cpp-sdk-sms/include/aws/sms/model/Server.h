@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SMS
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Server();
-    Server(const Aws::Utils::Json::JsonValue& jsonValue);
-    Server& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Server(Aws::Utils::Json::JsonView jsonValue);
+    Server& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

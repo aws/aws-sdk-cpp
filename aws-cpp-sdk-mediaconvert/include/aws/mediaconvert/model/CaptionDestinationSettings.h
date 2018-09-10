@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     CaptionDestinationSettings();
-    CaptionDestinationSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    CaptionDestinationSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CaptionDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    CaptionDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -69,34 +70,19 @@ namespace Model
     inline CaptionDestinationSettings& WithBurninDestinationSettings(BurninDestinationSettings&& value) { SetBurninDestinationSettings(std::move(value)); return *this;}
 
 
-    /**
-     * Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT,
-     * DVB-Sub, Teletext.
-     */
+    
     inline const CaptionDestinationType& GetDestinationType() const{ return m_destinationType; }
 
-    /**
-     * Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT,
-     * DVB-Sub, Teletext.
-     */
+    
     inline void SetDestinationType(const CaptionDestinationType& value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
 
-    /**
-     * Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT,
-     * DVB-Sub, Teletext.
-     */
+    
     inline void SetDestinationType(CaptionDestinationType&& value) { m_destinationTypeHasBeenSet = true; m_destinationType = std::move(value); }
 
-    /**
-     * Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT,
-     * DVB-Sub, Teletext.
-     */
+    
     inline CaptionDestinationSettings& WithDestinationType(const CaptionDestinationType& value) { SetDestinationType(value); return *this;}
 
-    /**
-     * Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT,
-     * DVB-Sub, Teletext.
-     */
+    
     inline CaptionDestinationSettings& WithDestinationType(CaptionDestinationType&& value) { SetDestinationType(std::move(value)); return *this;}
 
 
@@ -148,34 +134,19 @@ namespace Model
     inline CaptionDestinationSettings& WithTeletextDestinationSettings(TeletextDestinationSettings&& value) { SetTeletextDestinationSettings(std::move(value)); return *this;}
 
 
-    /**
-     * Settings specific to TTML caption outputs, including Pass style information
-     * (TtmlStylePassthrough).
-     */
+    
     inline const TtmlDestinationSettings& GetTtmlDestinationSettings() const{ return m_ttmlDestinationSettings; }
 
-    /**
-     * Settings specific to TTML caption outputs, including Pass style information
-     * (TtmlStylePassthrough).
-     */
+    
     inline void SetTtmlDestinationSettings(const TtmlDestinationSettings& value) { m_ttmlDestinationSettingsHasBeenSet = true; m_ttmlDestinationSettings = value; }
 
-    /**
-     * Settings specific to TTML caption outputs, including Pass style information
-     * (TtmlStylePassthrough).
-     */
+    
     inline void SetTtmlDestinationSettings(TtmlDestinationSettings&& value) { m_ttmlDestinationSettingsHasBeenSet = true; m_ttmlDestinationSettings = std::move(value); }
 
-    /**
-     * Settings specific to TTML caption outputs, including Pass style information
-     * (TtmlStylePassthrough).
-     */
+    
     inline CaptionDestinationSettings& WithTtmlDestinationSettings(const TtmlDestinationSettings& value) { SetTtmlDestinationSettings(value); return *this;}
 
-    /**
-     * Settings specific to TTML caption outputs, including Pass style information
-     * (TtmlStylePassthrough).
-     */
+    
     inline CaptionDestinationSettings& WithTtmlDestinationSettings(TtmlDestinationSettings&& value) { SetTtmlDestinationSettings(std::move(value)); return *this;}
 
   private:

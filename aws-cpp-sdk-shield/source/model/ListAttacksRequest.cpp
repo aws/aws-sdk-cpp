@@ -71,7 +71,7 @@ Aws::String ListAttacksRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListAttacksRequest::GetRequestSpecificHeaders() const

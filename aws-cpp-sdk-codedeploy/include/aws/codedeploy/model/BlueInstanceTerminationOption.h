@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     BlueInstanceTerminationOption();
-    BlueInstanceTerminationOption(const Aws::Utils::Json::JsonValue& jsonValue);
-    BlueInstanceTerminationOption& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BlueInstanceTerminationOption(Aws::Utils::Json::JsonView jsonValue);
+    BlueInstanceTerminationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -96,19 +97,22 @@ namespace Model
 
     /**
      * <p>The number of minutes to wait after a successful blue/green deployment before
-     * terminating instances from the original environment.</p>
+     * terminating instances from the original environment. The maximum setting is 2880
+     * minutes (2 days).</p>
      */
     inline int GetTerminationWaitTimeInMinutes() const{ return m_terminationWaitTimeInMinutes; }
 
     /**
      * <p>The number of minutes to wait after a successful blue/green deployment before
-     * terminating instances from the original environment.</p>
+     * terminating instances from the original environment. The maximum setting is 2880
+     * minutes (2 days).</p>
      */
     inline void SetTerminationWaitTimeInMinutes(int value) { m_terminationWaitTimeInMinutesHasBeenSet = true; m_terminationWaitTimeInMinutes = value; }
 
     /**
      * <p>The number of minutes to wait after a successful blue/green deployment before
-     * terminating instances from the original environment.</p>
+     * terminating instances from the original environment. The maximum setting is 2880
+     * minutes (2 days).</p>
      */
     inline BlueInstanceTerminationOption& WithTerminationWaitTimeInMinutes(int value) { SetTerminationWaitTimeInMinutes(value); return *this;}
 

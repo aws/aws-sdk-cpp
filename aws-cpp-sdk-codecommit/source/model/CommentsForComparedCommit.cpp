@@ -39,7 +39,7 @@ CommentsForComparedCommit::CommentsForComparedCommit() :
 {
 }
 
-CommentsForComparedCommit::CommentsForComparedCommit(const JsonValue& jsonValue) : 
+CommentsForComparedCommit::CommentsForComparedCommit(JsonView jsonValue) : 
     m_repositoryNameHasBeenSet(false),
     m_beforeCommitIdHasBeenSet(false),
     m_afterCommitIdHasBeenSet(false),
@@ -51,7 +51,7 @@ CommentsForComparedCommit::CommentsForComparedCommit(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-CommentsForComparedCommit& CommentsForComparedCommit::operator =(const JsonValue& jsonValue)
+CommentsForComparedCommit& CommentsForComparedCommit::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("repositoryName"))
   {
@@ -97,7 +97,7 @@ CommentsForComparedCommit& CommentsForComparedCommit::operator =(const JsonValue
 
   if(jsonValue.ValueExists("comments"))
   {
-    Array<JsonValue> commentsJsonList = jsonValue.GetArray("comments");
+    Array<JsonView> commentsJsonList = jsonValue.GetArray("comments");
     for(unsigned commentsIndex = 0; commentsIndex < commentsJsonList.GetLength(); ++commentsIndex)
     {
       m_comments.push_back(commentsJsonList[commentsIndex].AsObject());

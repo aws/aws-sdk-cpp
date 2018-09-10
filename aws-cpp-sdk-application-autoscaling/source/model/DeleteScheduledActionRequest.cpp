@@ -58,7 +58,7 @@ Aws::String DeleteScheduledActionRequest::SerializePayload() const
    payload.WithString("ScalableDimension", ScalableDimensionMapper::GetNameForScalableDimension(m_scalableDimension));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteScheduledActionRequest::GetRequestSpecificHeaders() const

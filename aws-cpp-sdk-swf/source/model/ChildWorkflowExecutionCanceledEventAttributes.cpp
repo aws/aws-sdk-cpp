@@ -39,7 +39,7 @@ ChildWorkflowExecutionCanceledEventAttributes::ChildWorkflowExecutionCanceledEve
 {
 }
 
-ChildWorkflowExecutionCanceledEventAttributes::ChildWorkflowExecutionCanceledEventAttributes(const JsonValue& jsonValue) : 
+ChildWorkflowExecutionCanceledEventAttributes::ChildWorkflowExecutionCanceledEventAttributes(JsonView jsonValue) : 
     m_workflowExecutionHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
     m_detailsHasBeenSet(false),
@@ -51,7 +51,7 @@ ChildWorkflowExecutionCanceledEventAttributes::ChildWorkflowExecutionCanceledEve
   *this = jsonValue;
 }
 
-ChildWorkflowExecutionCanceledEventAttributes& ChildWorkflowExecutionCanceledEventAttributes::operator =(const JsonValue& jsonValue)
+ChildWorkflowExecutionCanceledEventAttributes& ChildWorkflowExecutionCanceledEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowExecution"))
   {

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GuardDuty
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     RemotePortDetails();
-    RemotePortDetails(const Aws::Utils::Json::JsonValue& jsonValue);
-    RemotePortDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RemotePortDetails(Aws::Utils::Json::JsonView jsonValue);
+    RemotePortDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline const Aws::String& GetCoreDefinitionId() const{ return m_coreDefinitionId; }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline void SetCoreDefinitionId(const Aws::String& value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId = value; }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline void SetCoreDefinitionId(Aws::String&& value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId = std::move(value); }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline void SetCoreDefinitionId(const char* value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId.assign(value); }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline GetCoreDefinitionVersionRequest& WithCoreDefinitionId(const Aws::String& value) { SetCoreDefinitionId(value); return *this;}
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline GetCoreDefinitionVersionRequest& WithCoreDefinitionId(Aws::String&& value) { SetCoreDefinitionId(std::move(value)); return *this;}
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline GetCoreDefinitionVersionRequest& WithCoreDefinitionId(const char* value) { SetCoreDefinitionId(value); return *this;}
 
 
     /**
-     * core definition version Id
+     * The ID of the core definition version.
      */
     inline const Aws::String& GetCoreDefinitionVersionId() const{ return m_coreDefinitionVersionId; }
 
     /**
-     * core definition version Id
+     * The ID of the core definition version.
      */
     inline void SetCoreDefinitionVersionId(const Aws::String& value) { m_coreDefinitionVersionIdHasBeenSet = true; m_coreDefinitionVersionId = value; }
 
     /**
-     * core definition version Id
+     * The ID of the core definition version.
      */
     inline void SetCoreDefinitionVersionId(Aws::String&& value) { m_coreDefinitionVersionIdHasBeenSet = true; m_coreDefinitionVersionId = std::move(value); }
 
     /**
-     * core definition version Id
+     * The ID of the core definition version.
      */
     inline void SetCoreDefinitionVersionId(const char* value) { m_coreDefinitionVersionIdHasBeenSet = true; m_coreDefinitionVersionId.assign(value); }
 
     /**
-     * core definition version Id
+     * The ID of the core definition version.
      */
     inline GetCoreDefinitionVersionRequest& WithCoreDefinitionVersionId(const Aws::String& value) { SetCoreDefinitionVersionId(value); return *this;}
 
     /**
-     * core definition version Id
+     * The ID of the core definition version.
      */
     inline GetCoreDefinitionVersionRequest& WithCoreDefinitionVersionId(Aws::String&& value) { SetCoreDefinitionVersionId(std::move(value)); return *this;}
 
     /**
-     * core definition version Id
+     * The ID of the core definition version.
      */
     inline GetCoreDefinitionVersionRequest& WithCoreDefinitionVersionId(const char* value) { SetCoreDefinitionVersionId(value); return *this;}
 

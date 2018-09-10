@@ -41,7 +41,7 @@ PollForDecisionTaskResult::PollForDecisionTaskResult(const Aws::AmazonWebService
 
 PollForDecisionTaskResult& PollForDecisionTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("taskToken"))
   {
     m_taskToken = jsonValue.GetString("taskToken");
@@ -68,7 +68,7 @@ PollForDecisionTaskResult& PollForDecisionTaskResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("events"))
   {
-    Array<JsonValue> eventsJsonList = jsonValue.GetArray("events");
+    Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());

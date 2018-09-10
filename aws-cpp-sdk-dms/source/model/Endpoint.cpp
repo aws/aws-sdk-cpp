@@ -33,6 +33,7 @@ Endpoint::Endpoint() :
     m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false),
     m_engineNameHasBeenSet(false),
+    m_engineDisplayNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_serverNameHasBeenSet(false),
     m_port(0),
@@ -45,18 +46,22 @@ Endpoint::Endpoint() :
     m_certificateArnHasBeenSet(false),
     m_sslMode(DmsSslModeValue::NOT_SET),
     m_sslModeHasBeenSet(false),
+    m_serviceAccessRoleArnHasBeenSet(false),
+    m_externalTableDefinitionHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_dynamoDbSettingsHasBeenSet(false),
     m_s3SettingsHasBeenSet(false),
+    m_dmsTransferSettingsHasBeenSet(false),
     m_mongoDbSettingsHasBeenSet(false)
 {
 }
 
-Endpoint::Endpoint(const JsonValue& jsonValue) : 
+Endpoint::Endpoint(JsonView jsonValue) : 
     m_endpointIdentifierHasBeenSet(false),
     m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false),
     m_engineNameHasBeenSet(false),
+    m_engineDisplayNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_serverNameHasBeenSet(false),
     m_port(0),
@@ -69,15 +74,18 @@ Endpoint::Endpoint(const JsonValue& jsonValue) :
     m_certificateArnHasBeenSet(false),
     m_sslMode(DmsSslModeValue::NOT_SET),
     m_sslModeHasBeenSet(false),
+    m_serviceAccessRoleArnHasBeenSet(false),
+    m_externalTableDefinitionHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_dynamoDbSettingsHasBeenSet(false),
     m_s3SettingsHasBeenSet(false),
+    m_dmsTransferSettingsHasBeenSet(false),
     m_mongoDbSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Endpoint& Endpoint::operator =(const JsonValue& jsonValue)
+Endpoint& Endpoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EndpointIdentifier"))
   {
@@ -98,6 +106,13 @@ Endpoint& Endpoint::operator =(const JsonValue& jsonValue)
     m_engineName = jsonValue.GetString("EngineName");
 
     m_engineNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EngineDisplayName"))
+  {
+    m_engineDisplayName = jsonValue.GetString("EngineDisplayName");
+
+    m_engineDisplayNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Username"))
@@ -170,6 +185,20 @@ Endpoint& Endpoint::operator =(const JsonValue& jsonValue)
     m_sslModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServiceAccessRoleArn"))
+  {
+    m_serviceAccessRoleArn = jsonValue.GetString("ServiceAccessRoleArn");
+
+    m_serviceAccessRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExternalTableDefinition"))
+  {
+    m_externalTableDefinition = jsonValue.GetString("ExternalTableDefinition");
+
+    m_externalTableDefinitionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ExternalId"))
   {
     m_externalId = jsonValue.GetString("ExternalId");
@@ -189,6 +218,13 @@ Endpoint& Endpoint::operator =(const JsonValue& jsonValue)
     m_s3Settings = jsonValue.GetObject("S3Settings");
 
     m_s3SettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DmsTransferSettings"))
+  {
+    m_dmsTransferSettings = jsonValue.GetObject("DmsTransferSettings");
+
+    m_dmsTransferSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MongoDbSettings"))
@@ -219,6 +255,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_engineNameHasBeenSet)
   {
    payload.WithString("EngineName", m_engineName);
+
+  }
+
+  if(m_engineDisplayNameHasBeenSet)
+  {
+   payload.WithString("EngineDisplayName", m_engineDisplayName);
 
   }
 
@@ -281,6 +323,18 @@ JsonValue Endpoint::Jsonize() const
    payload.WithString("SslMode", DmsSslModeValueMapper::GetNameForDmsSslModeValue(m_sslMode));
   }
 
+  if(m_serviceAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("ServiceAccessRoleArn", m_serviceAccessRoleArn);
+
+  }
+
+  if(m_externalTableDefinitionHasBeenSet)
+  {
+   payload.WithString("ExternalTableDefinition", m_externalTableDefinition);
+
+  }
+
   if(m_externalIdHasBeenSet)
   {
    payload.WithString("ExternalId", m_externalId);
@@ -296,6 +350,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_s3SettingsHasBeenSet)
   {
    payload.WithObject("S3Settings", m_s3Settings.Jsonize());
+
+  }
+
+  if(m_dmsTransferSettingsHasBeenSet)
+  {
+   payload.WithObject("DmsTransferSettings", m_dmsTransferSettings.Jsonize());
 
   }
 

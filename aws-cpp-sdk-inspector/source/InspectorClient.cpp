@@ -30,6 +30,7 @@
 #include <aws/inspector/model/AddAttributesToFindingsRequest.h>
 #include <aws/inspector/model/CreateAssessmentTargetRequest.h>
 #include <aws/inspector/model/CreateAssessmentTemplateRequest.h>
+#include <aws/inspector/model/CreateExclusionsPreviewRequest.h>
 #include <aws/inspector/model/CreateResourceGroupRequest.h>
 #include <aws/inspector/model/DeleteAssessmentRunRequest.h>
 #include <aws/inspector/model/DeleteAssessmentTargetRequest.h>
@@ -37,16 +38,19 @@
 #include <aws/inspector/model/DescribeAssessmentRunsRequest.h>
 #include <aws/inspector/model/DescribeAssessmentTargetsRequest.h>
 #include <aws/inspector/model/DescribeAssessmentTemplatesRequest.h>
+#include <aws/inspector/model/DescribeExclusionsRequest.h>
 #include <aws/inspector/model/DescribeFindingsRequest.h>
 #include <aws/inspector/model/DescribeResourceGroupsRequest.h>
 #include <aws/inspector/model/DescribeRulesPackagesRequest.h>
 #include <aws/inspector/model/GetAssessmentReportRequest.h>
+#include <aws/inspector/model/GetExclusionsPreviewRequest.h>
 #include <aws/inspector/model/GetTelemetryMetadataRequest.h>
 #include <aws/inspector/model/ListAssessmentRunAgentsRequest.h>
 #include <aws/inspector/model/ListAssessmentRunsRequest.h>
 #include <aws/inspector/model/ListAssessmentTargetsRequest.h>
 #include <aws/inspector/model/ListAssessmentTemplatesRequest.h>
 #include <aws/inspector/model/ListEventSubscriptionsRequest.h>
+#include <aws/inspector/model/ListExclusionsRequest.h>
 #include <aws/inspector/model/ListFindingsRequest.h>
 #include <aws/inspector/model/ListRulesPackagesRequest.h>
 #include <aws/inspector/model/ListTagsForResourceRequest.h>
@@ -227,6 +231,41 @@ void InspectorClient::CreateAssessmentTemplateAsync(const CreateAssessmentTempla
 void InspectorClient::CreateAssessmentTemplateAsyncHelper(const CreateAssessmentTemplateRequest& request, const CreateAssessmentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateAssessmentTemplate(request), context);
+}
+
+CreateExclusionsPreviewOutcome InspectorClient::CreateExclusionsPreview(const CreateExclusionsPreviewRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateExclusionsPreviewOutcome(CreateExclusionsPreviewResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateExclusionsPreviewOutcome(outcome.GetError());
+  }
+}
+
+CreateExclusionsPreviewOutcomeCallable InspectorClient::CreateExclusionsPreviewCallable(const CreateExclusionsPreviewRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateExclusionsPreviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExclusionsPreview(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void InspectorClient::CreateExclusionsPreviewAsync(const CreateExclusionsPreviewRequest& request, const CreateExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateExclusionsPreviewAsyncHelper( request, handler, context ); } );
+}
+
+void InspectorClient::CreateExclusionsPreviewAsyncHelper(const CreateExclusionsPreviewRequest& request, const CreateExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateExclusionsPreview(request), context);
 }
 
 CreateResourceGroupOutcome InspectorClient::CreateResourceGroup(const CreateResourceGroupRequest& request) const
@@ -479,7 +518,7 @@ DescribeCrossAccountAccessRoleOutcome InspectorClient::DescribeCrossAccountAcces
   Aws::StringStream ss;
   ss << m_uri << "/";
 
-  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "{operation.name}");
+  JsonOutcome outcome = MakeRequest(ss.str(), HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeCrossAccountAccessRole");
   if(outcome.IsSuccess())
   {
     return DescribeCrossAccountAccessRoleOutcome(DescribeCrossAccountAccessRoleResult(outcome.GetResult()));
@@ -506,6 +545,41 @@ void InspectorClient::DescribeCrossAccountAccessRoleAsync(const DescribeCrossAcc
 void InspectorClient::DescribeCrossAccountAccessRoleAsyncHelper(const DescribeCrossAccountAccessRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, DescribeCrossAccountAccessRole(), context);
+}
+
+DescribeExclusionsOutcome InspectorClient::DescribeExclusions(const DescribeExclusionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeExclusionsOutcome(DescribeExclusionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeExclusionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeExclusionsOutcomeCallable InspectorClient::DescribeExclusionsCallable(const DescribeExclusionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeExclusionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExclusions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void InspectorClient::DescribeExclusionsAsync(const DescribeExclusionsRequest& request, const DescribeExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeExclusionsAsyncHelper( request, handler, context ); } );
+}
+
+void InspectorClient::DescribeExclusionsAsyncHelper(const DescribeExclusionsRequest& request, const DescribeExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeExclusions(request), context);
 }
 
 DescribeFindingsOutcome InspectorClient::DescribeFindings(const DescribeFindingsRequest& request) const
@@ -646,6 +720,41 @@ void InspectorClient::GetAssessmentReportAsync(const GetAssessmentReportRequest&
 void InspectorClient::GetAssessmentReportAsyncHelper(const GetAssessmentReportRequest& request, const GetAssessmentReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetAssessmentReport(request), context);
+}
+
+GetExclusionsPreviewOutcome InspectorClient::GetExclusionsPreview(const GetExclusionsPreviewRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetExclusionsPreviewOutcome(GetExclusionsPreviewResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetExclusionsPreviewOutcome(outcome.GetError());
+  }
+}
+
+GetExclusionsPreviewOutcomeCallable InspectorClient::GetExclusionsPreviewCallable(const GetExclusionsPreviewRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetExclusionsPreviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExclusionsPreview(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void InspectorClient::GetExclusionsPreviewAsync(const GetExclusionsPreviewRequest& request, const GetExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetExclusionsPreviewAsyncHelper( request, handler, context ); } );
+}
+
+void InspectorClient::GetExclusionsPreviewAsyncHelper(const GetExclusionsPreviewRequest& request, const GetExclusionsPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetExclusionsPreview(request), context);
 }
 
 GetTelemetryMetadataOutcome InspectorClient::GetTelemetryMetadata(const GetTelemetryMetadataRequest& request) const
@@ -856,6 +965,41 @@ void InspectorClient::ListEventSubscriptionsAsync(const ListEventSubscriptionsRe
 void InspectorClient::ListEventSubscriptionsAsyncHelper(const ListEventSubscriptionsRequest& request, const ListEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListEventSubscriptions(request), context);
+}
+
+ListExclusionsOutcome InspectorClient::ListExclusions(const ListExclusionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListExclusionsOutcome(ListExclusionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListExclusionsOutcome(outcome.GetError());
+  }
+}
+
+ListExclusionsOutcomeCallable InspectorClient::ListExclusionsCallable(const ListExclusionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExclusionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExclusions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void InspectorClient::ListExclusionsAsync(const ListExclusionsRequest& request, const ListExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListExclusionsAsyncHelper( request, handler, context ); } );
+}
+
+void InspectorClient::ListExclusionsAsyncHelper(const ListExclusionsRequest& request, const ListExclusionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListExclusions(request), context);
 }
 
 ListFindingsOutcome InspectorClient::ListFindings(const ListFindingsRequest& request) const

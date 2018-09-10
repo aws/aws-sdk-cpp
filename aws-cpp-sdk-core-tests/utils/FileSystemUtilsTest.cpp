@@ -17,9 +17,9 @@
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/external/gtest.h>
-
 #include <fstream>
 
+using namespace Aws;
 using namespace Aws::Utils;
 
 
@@ -139,16 +139,16 @@ TEST_F(DirectoryTreeTest, TestManualDirectoryTraversal)
     ASSERT_EQ(Aws::FileSystem::FileType::Directory, dir2Entry.fileType);
     ASSERT_STREQ(dir2.c_str(), dir2Entry.path.c_str());
 
-    auto& nextDir = dir->Descend(dir2Entry);
-    ASSERT_STREQ(dir2.c_str(), nextDir.GetPath().c_str());
+    auto nextDir = dir->Descend(dir2Entry);
+    ASSERT_STREQ(dir2.c_str(), nextDir->GetPath().c_str());
 
-    entry = nextDir.Next();
+    entry = nextDir->Next();
     ASSERT_EQ(Aws::FileSystem::FileType::File, entry.fileType);
     ASSERT_STREQ(file2.c_str(), entry.path.c_str());
     ASSERT_EQ(static_cast<int64_t>(file2Size), entry.fileSize);
     ASSERT_TRUE(entry.operator bool());
 
-    entry = nextDir.Next();
+    entry = nextDir->Next();
     ASSERT_FALSE(entry.operator bool());
 
     ASSERT_EQ(Aws::FileSystem::FileType::File, file1Entry.fileType);
@@ -177,7 +177,7 @@ TEST_F(DirectoryTreeTest, TestDirectoryTreeEqualityOperator)
 {
     Aws::FileSystem::DirectoryTree tree(dir1);
 
-	ASSERT_TRUE(tree);
+    ASSERT_TRUE(tree);
 
     Aws::String comparisonDirectory = Aws::FileSystem::Join(Aws::FileSystem::GetHomeDirectory(), "compDir");
     ASSERT_TRUE(Aws::FileSystem::DeepCopyDirectory(dir1.c_str(), comparisonDirectory.c_str()));
@@ -223,7 +223,7 @@ TEST_F(DirectoryTreeTest, TestDirectoryTreeBreadthFirstTraversal)
 {
     Aws::FileSystem::DirectoryTree tree(dir1);
 
-	ASSERT_TRUE(tree);
+    ASSERT_TRUE(tree);
 
     Aws::Set<Aws::String> paths({ dir2, file1, file2 });
 
@@ -266,4 +266,14 @@ TEST_F(DirectoryTreeTest, TestPathUtilsGetFileNameWithoutExt)
     ASSERT_STREQ(Aws::Utils::PathUtils::GetFileNameFromPathWithoutExt(Aws::FileSystem::Join(Aws::FileSystem::Join("path", "to"), "file.dll.so")).c_str(), "file.dll");
     ASSERT_STREQ(Aws::Utils::PathUtils::GetFileNameFromPathWithoutExt(Aws::FileSystem::Join(Aws::FileSystem::Join("path", "to.so"), "file.dll.so")).c_str(), "file.dll");
     ASSERT_STREQ(Aws::Utils::PathUtils::GetFileNameFromPathWithoutExt(Aws::FileSystem::Join(Aws::FileSystem::Join(Aws::FileSystem::Join("path", "to"), "file.dll"), "")).c_str(), "");
+}
+
+TEST_F(DirectoryTreeTest, CreateDirectoryIfNotExistedTest)
+{
+    // Path compoments on Windows can't exceed 255(_MAX_FNAME) chars.
+    // To cover the Windows case where the path with length over 260(MAX_PATH) chars,
+    // set one path part to be 255 characters, so dir1/dir2/dir3/[longDirName] is over 260 chars.
+    Aws::String longDirName(255, 'a');
+    // The directory is created under root directory "dir1", "dir1" will be deleted during TearDown().
+    ASSERT_TRUE(FileSystem::CreateDirectoryIfNotExists(FileSystem::Join(FileSystem::Join(dir2, "dir3"), longDirName).c_str(), true/*create all intermediate directories on the path*/));
 }

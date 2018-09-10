@@ -39,7 +39,7 @@ SizeConstraint::SizeConstraint() :
 {
 }
 
-SizeConstraint::SizeConstraint(const JsonValue& jsonValue) : 
+SizeConstraint::SizeConstraint(JsonView jsonValue) : 
     m_fieldToMatchHasBeenSet(false),
     m_textTransformation(TextTransformation::NOT_SET),
     m_textTransformationHasBeenSet(false),
@@ -51,7 +51,7 @@ SizeConstraint::SizeConstraint(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SizeConstraint& SizeConstraint::operator =(const JsonValue& jsonValue)
+SizeConstraint& SizeConstraint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FieldToMatch"))
   {

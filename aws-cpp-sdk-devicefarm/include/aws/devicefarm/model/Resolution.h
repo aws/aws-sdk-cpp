@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DeviceFarm
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     Resolution();
-    Resolution(const Aws::Utils::Json::JsonValue& jsonValue);
-    Resolution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Resolution(Aws::Utils::Json::JsonView jsonValue);
+    Resolution& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

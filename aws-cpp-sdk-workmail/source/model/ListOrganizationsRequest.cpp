@@ -45,7 +45,7 @@ Aws::String ListOrganizationsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListOrganizationsRequest::GetRequestSpecificHeaders() const

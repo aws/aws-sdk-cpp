@@ -56,8 +56,10 @@ enum class ApplicationDiscoveryServiceErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   AUTHORIZATION_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT_ERROR,
   INVALID_PARAMETER,
   OPERATION_NOT_PERMITTED,
+  RESOURCE_IN_USE,
   SERVER_INTERNAL_ERROR
 };
 namespace ApplicationDiscoveryServiceErrorMapper

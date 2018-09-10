@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -34,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Information on subscription definition version<p><h3>See Also:</h3>   <a
+   * Information about a subscription definition version.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/SubscriptionDefinitionVersion">AWS
    * API Reference</a></p>
    */
@@ -42,43 +43,43 @@ namespace Model
   {
   public:
     SubscriptionDefinitionVersion();
-    SubscriptionDefinitionVersion(const Aws::Utils::Json::JsonValue& jsonValue);
-    SubscriptionDefinitionVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SubscriptionDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
+    SubscriptionDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      */
     inline const Aws::Vector<Subscription>& GetSubscriptions() const{ return m_subscriptions; }
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      */
     inline void SetSubscriptions(const Aws::Vector<Subscription>& value) { m_subscriptionsHasBeenSet = true; m_subscriptions = value; }
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      */
     inline void SetSubscriptions(Aws::Vector<Subscription>&& value) { m_subscriptionsHasBeenSet = true; m_subscriptions = std::move(value); }
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      */
     inline SubscriptionDefinitionVersion& WithSubscriptions(const Aws::Vector<Subscription>& value) { SetSubscriptions(value); return *this;}
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      */
     inline SubscriptionDefinitionVersion& WithSubscriptions(Aws::Vector<Subscription>&& value) { SetSubscriptions(std::move(value)); return *this;}
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      */
     inline SubscriptionDefinitionVersion& AddSubscriptions(const Subscription& value) { m_subscriptionsHasBeenSet = true; m_subscriptions.push_back(value); return *this; }
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      */
     inline SubscriptionDefinitionVersion& AddSubscriptions(Subscription&& value) { m_subscriptionsHasBeenSet = true; m_subscriptions.push_back(std::move(value)); return *this; }
 

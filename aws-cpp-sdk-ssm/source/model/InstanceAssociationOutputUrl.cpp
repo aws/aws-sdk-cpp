@@ -33,13 +33,13 @@ InstanceAssociationOutputUrl::InstanceAssociationOutputUrl() :
 {
 }
 
-InstanceAssociationOutputUrl::InstanceAssociationOutputUrl(const JsonValue& jsonValue) : 
+InstanceAssociationOutputUrl::InstanceAssociationOutputUrl(JsonView jsonValue) : 
     m_s3OutputUrlHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InstanceAssociationOutputUrl& InstanceAssociationOutputUrl::operator =(const JsonValue& jsonValue)
+InstanceAssociationOutputUrl& InstanceAssociationOutputUrl::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3OutputUrl"))
   {

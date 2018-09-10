@@ -37,7 +37,7 @@ Aws::String DescribeInterconnectsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeInterconnectsRequest::GetRequestSpecificHeaders() const

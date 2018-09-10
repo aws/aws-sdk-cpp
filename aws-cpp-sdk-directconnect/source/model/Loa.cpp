@@ -36,7 +36,7 @@ Loa::Loa() :
 {
 }
 
-Loa::Loa(const JsonValue& jsonValue) : 
+Loa::Loa(JsonView jsonValue) : 
     m_loaContentHasBeenSet(false),
     m_loaContentType(LoaContentType::NOT_SET),
     m_loaContentTypeHasBeenSet(false)
@@ -44,7 +44,7 @@ Loa::Loa(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Loa& Loa::operator =(const JsonValue& jsonValue)
+Loa& Loa::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("loaContent"))
   {

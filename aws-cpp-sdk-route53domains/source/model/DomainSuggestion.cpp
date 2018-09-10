@@ -34,14 +34,14 @@ DomainSuggestion::DomainSuggestion() :
 {
 }
 
-DomainSuggestion::DomainSuggestion(const JsonValue& jsonValue) : 
+DomainSuggestion::DomainSuggestion(JsonView jsonValue) : 
     m_domainNameHasBeenSet(false),
     m_availabilityHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DomainSuggestion& DomainSuggestion::operator =(const JsonValue& jsonValue)
+DomainSuggestion& DomainSuggestion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DomainName"))
   {

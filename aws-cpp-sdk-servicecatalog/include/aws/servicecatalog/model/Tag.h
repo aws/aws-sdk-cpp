@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceCatalog
@@ -33,9 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about a tag. A tag is a key-value pair. Tags are entirely
-   * discretionary and are propagated to the resources created when provisioning a
-   * product.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a tag. A tag is a key-value pair. Tags are propagated to
+   * the resources created when provisioning a product.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/Tag">AWS
    * API Reference</a></p>
    */
@@ -43,8 +43,8 @@ namespace Model
   {
   public:
     Tag();
-    Tag(const Aws::Utils::Json::JsonValue& jsonValue);
-    Tag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Tag(Aws::Utils::Json::JsonView jsonValue);
+    Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

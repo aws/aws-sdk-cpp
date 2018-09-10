@@ -33,13 +33,13 @@ CancelTimerDecisionAttributes::CancelTimerDecisionAttributes() :
 {
 }
 
-CancelTimerDecisionAttributes::CancelTimerDecisionAttributes(const JsonValue& jsonValue) : 
+CancelTimerDecisionAttributes::CancelTimerDecisionAttributes(JsonView jsonValue) : 
     m_timerIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CancelTimerDecisionAttributes& CancelTimerDecisionAttributes::operator =(const JsonValue& jsonValue)
+CancelTimerDecisionAttributes& CancelTimerDecisionAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("timerId"))
   {

@@ -37,10 +37,10 @@ DescribePatchGroupsResult::DescribePatchGroupsResult(const Aws::AmazonWebService
 
 DescribePatchGroupsResult& DescribePatchGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Mappings"))
   {
-    Array<JsonValue> mappingsJsonList = jsonValue.GetArray("Mappings");
+    Array<JsonView> mappingsJsonList = jsonValue.GetArray("Mappings");
     for(unsigned mappingsIndex = 0; mappingsIndex < mappingsJsonList.GetLength(); ++mappingsIndex)
     {
       m_mappings.push_back(mappingsJsonList[mappingsIndex].AsObject());

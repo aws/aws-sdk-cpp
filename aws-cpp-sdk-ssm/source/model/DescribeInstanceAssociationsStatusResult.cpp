@@ -37,10 +37,10 @@ DescribeInstanceAssociationsStatusResult::DescribeInstanceAssociationsStatusResu
 
 DescribeInstanceAssociationsStatusResult& DescribeInstanceAssociationsStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InstanceAssociationStatusInfos"))
   {
-    Array<JsonValue> instanceAssociationStatusInfosJsonList = jsonValue.GetArray("InstanceAssociationStatusInfos");
+    Array<JsonView> instanceAssociationStatusInfosJsonList = jsonValue.GetArray("InstanceAssociationStatusInfos");
     for(unsigned instanceAssociationStatusInfosIndex = 0; instanceAssociationStatusInfosIndex < instanceAssociationStatusInfosJsonList.GetLength(); ++instanceAssociationStatusInfosIndex)
     {
       m_instanceAssociationStatusInfos.push_back(instanceAssociationStatusInfosJsonList[instanceAssociationStatusInfosIndex].AsObject());

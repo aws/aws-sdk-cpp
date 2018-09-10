@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     InstanceInformation();
-    InstanceInformation(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstanceInformation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstanceInformation(Aws::Utils::Json::JsonView jsonValue);
+    InstanceInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -89,27 +90,27 @@ namespace Model
 
 
     /**
-     * <p>Connection status of the SSM Agent. </p>
+     * <p>Connection status of SSM Agent. </p>
      */
     inline const PingStatus& GetPingStatus() const{ return m_pingStatus; }
 
     /**
-     * <p>Connection status of the SSM Agent. </p>
+     * <p>Connection status of SSM Agent. </p>
      */
     inline void SetPingStatus(const PingStatus& value) { m_pingStatusHasBeenSet = true; m_pingStatus = value; }
 
     /**
-     * <p>Connection status of the SSM Agent. </p>
+     * <p>Connection status of SSM Agent. </p>
      */
     inline void SetPingStatus(PingStatus&& value) { m_pingStatusHasBeenSet = true; m_pingStatus = std::move(value); }
 
     /**
-     * <p>Connection status of the SSM Agent. </p>
+     * <p>Connection status of SSM Agent. </p>
      */
     inline InstanceInformation& WithPingStatus(const PingStatus& value) { SetPingStatus(value); return *this;}
 
     /**
-     * <p>Connection status of the SSM Agent. </p>
+     * <p>Connection status of SSM Agent. </p>
      */
     inline InstanceInformation& WithPingStatus(PingStatus&& value) { SetPingStatus(std::move(value)); return *this;}
 
@@ -141,56 +142,62 @@ namespace Model
 
 
     /**
-     * <p>The version of the SSM Agent running on your Linux instance. </p>
+     * <p>The version of SSM Agent running on your Linux instance. </p>
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
 
     /**
-     * <p>The version of the SSM Agent running on your Linux instance. </p>
+     * <p>The version of SSM Agent running on your Linux instance. </p>
      */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /**
-     * <p>The version of the SSM Agent running on your Linux instance. </p>
+     * <p>The version of SSM Agent running on your Linux instance. </p>
      */
     inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
 
     /**
-     * <p>The version of the SSM Agent running on your Linux instance. </p>
+     * <p>The version of SSM Agent running on your Linux instance. </p>
      */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
 
     /**
-     * <p>The version of the SSM Agent running on your Linux instance. </p>
+     * <p>The version of SSM Agent running on your Linux instance. </p>
      */
     inline InstanceInformation& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
 
     /**
-     * <p>The version of the SSM Agent running on your Linux instance. </p>
+     * <p>The version of SSM Agent running on your Linux instance. </p>
      */
     inline InstanceInformation& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the SSM Agent running on your Linux instance. </p>
+     * <p>The version of SSM Agent running on your Linux instance. </p>
      */
     inline InstanceInformation& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
 
     /**
-     * <p>Indicates whether latest version of the SSM Agent is running on your
-     * instance. </p>
+     * <p>Indicates whether latest version of SSM Agent is running on your instance.
+     * Some older versions of Windows Server use the EC2Config service to process SSM
+     * requests. For this reason, this field does not indicate whether or not the
+     * latest version is installed on Windows managed instances.</p>
      */
     inline bool GetIsLatestVersion() const{ return m_isLatestVersion; }
 
     /**
-     * <p>Indicates whether latest version of the SSM Agent is running on your
-     * instance. </p>
+     * <p>Indicates whether latest version of SSM Agent is running on your instance.
+     * Some older versions of Windows Server use the EC2Config service to process SSM
+     * requests. For this reason, this field does not indicate whether or not the
+     * latest version is installed on Windows managed instances.</p>
      */
     inline void SetIsLatestVersion(bool value) { m_isLatestVersionHasBeenSet = true; m_isLatestVersion = value; }
 
     /**
-     * <p>Indicates whether latest version of the SSM Agent is running on your
-     * instance. </p>
+     * <p>Indicates whether latest version of SSM Agent is running on your instance.
+     * Some older versions of Windows Server use the EC2Config service to process SSM
+     * requests. For this reason, this field does not indicate whether or not the
+     * latest version is installed on Windows managed instances.</p>
      */
     inline InstanceInformation& WithIsLatestVersion(bool value) { SetIsLatestVersion(value); return *this;}
 
@@ -337,44 +344,51 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
-     * instances or managed instances. </p>
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
+     * on-premises Systems Manager managed instances. This call does not return the IAM
+     * role for Amazon EC2 instances. </p>
      */
     inline const Aws::String& GetIamRole() const{ return m_iamRole; }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
-     * instances or managed instances. </p>
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
+     * on-premises Systems Manager managed instances. This call does not return the IAM
+     * role for Amazon EC2 instances. </p>
      */
     inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
-     * instances or managed instances. </p>
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
+     * on-premises Systems Manager managed instances. This call does not return the IAM
+     * role for Amazon EC2 instances. </p>
      */
     inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
-     * instances or managed instances. </p>
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
+     * on-premises Systems Manager managed instances. This call does not return the IAM
+     * role for Amazon EC2 instances. </p>
      */
     inline void SetIamRole(const char* value) { m_iamRoleHasBeenSet = true; m_iamRole.assign(value); }
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
-     * instances or managed instances. </p>
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
+     * on-premises Systems Manager managed instances. This call does not return the IAM
+     * role for Amazon EC2 instances. </p>
      */
     inline InstanceInformation& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
-     * instances or managed instances. </p>
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
+     * on-premises Systems Manager managed instances. This call does not return the IAM
+     * role for Amazon EC2 instances. </p>
      */
     inline InstanceInformation& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Identity and Access Management (IAM) role assigned to EC2
-     * instances or managed instances. </p>
+     * <p>The Amazon Identity and Access Management (IAM) role assigned to the
+     * on-premises Systems Manager managed instances. This call does not return the IAM
+     * role for Amazon EC2 instances. </p>
      */
     inline InstanceInformation& WithIamRole(const char* value) { SetIamRole(value); return *this;}
 

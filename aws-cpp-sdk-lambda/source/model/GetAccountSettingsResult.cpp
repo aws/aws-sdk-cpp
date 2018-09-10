@@ -37,7 +37,7 @@ GetAccountSettingsResult::GetAccountSettingsResult(const Aws::AmazonWebServiceRe
 
 GetAccountSettingsResult& GetAccountSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AccountLimit"))
   {
     m_accountLimit = jsonValue.GetObject("AccountLimit");

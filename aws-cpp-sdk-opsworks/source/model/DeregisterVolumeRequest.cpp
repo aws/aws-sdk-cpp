@@ -37,7 +37,7 @@ Aws::String DeregisterVolumeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeregisterVolumeRequest::GetRequestSpecificHeaders() const

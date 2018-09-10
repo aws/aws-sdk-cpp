@@ -41,7 +41,7 @@ Logger::Logger() :
 {
 }
 
-Logger::Logger(const JsonValue& jsonValue) : 
+Logger::Logger(JsonView jsonValue) : 
     m_component(LoggerComponent::NOT_SET),
     m_componentHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -55,7 +55,7 @@ Logger::Logger(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Logger& Logger::operator =(const JsonValue& jsonValue)
+Logger& Logger::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Component"))
   {

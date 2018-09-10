@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * A metadata key-value pair to store with an object.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MetadataEntry">AWS
+   * <p>A metadata key-value pair to store with an object.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MetadataEntry">AWS
    * API Reference</a></p>
    */
   class AWS_S3_API MetadataEntry

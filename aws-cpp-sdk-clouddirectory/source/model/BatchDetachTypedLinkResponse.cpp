@@ -32,12 +32,12 @@ BatchDetachTypedLinkResponse::BatchDetachTypedLinkResponse()
 {
 }
 
-BatchDetachTypedLinkResponse::BatchDetachTypedLinkResponse(const JsonValue& jsonValue)
+BatchDetachTypedLinkResponse::BatchDetachTypedLinkResponse(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-BatchDetachTypedLinkResponse& BatchDetachTypedLinkResponse::operator =(const JsonValue& jsonValue)
+BatchDetachTypedLinkResponse& BatchDetachTypedLinkResponse::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

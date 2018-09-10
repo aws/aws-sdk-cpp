@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     StepExecution();
-    StepExecution(const Aws::Utils::Json::JsonValue& jsonValue);
-    StepExecution& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StepExecution(Aws::Utils::Json::JsonView jsonValue);
+    StepExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -637,6 +638,153 @@ namespace Model
      */
     inline StepExecution& AddOverriddenParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The flag which can be used to end automation no matter whether the step
+     * succeeds or fails.</p>
+     */
+    inline bool GetIsEnd() const{ return m_isEnd; }
+
+    /**
+     * <p>The flag which can be used to end automation no matter whether the step
+     * succeeds or fails.</p>
+     */
+    inline void SetIsEnd(bool value) { m_isEndHasBeenSet = true; m_isEnd = value; }
+
+    /**
+     * <p>The flag which can be used to end automation no matter whether the step
+     * succeeds or fails.</p>
+     */
+    inline StepExecution& WithIsEnd(bool value) { SetIsEnd(value); return *this;}
+
+
+    /**
+     * <p>The next step after the step succeeds.</p>
+     */
+    inline const Aws::String& GetNextStep() const{ return m_nextStep; }
+
+    /**
+     * <p>The next step after the step succeeds.</p>
+     */
+    inline void SetNextStep(const Aws::String& value) { m_nextStepHasBeenSet = true; m_nextStep = value; }
+
+    /**
+     * <p>The next step after the step succeeds.</p>
+     */
+    inline void SetNextStep(Aws::String&& value) { m_nextStepHasBeenSet = true; m_nextStep = std::move(value); }
+
+    /**
+     * <p>The next step after the step succeeds.</p>
+     */
+    inline void SetNextStep(const char* value) { m_nextStepHasBeenSet = true; m_nextStep.assign(value); }
+
+    /**
+     * <p>The next step after the step succeeds.</p>
+     */
+    inline StepExecution& WithNextStep(const Aws::String& value) { SetNextStep(value); return *this;}
+
+    /**
+     * <p>The next step after the step succeeds.</p>
+     */
+    inline StepExecution& WithNextStep(Aws::String&& value) { SetNextStep(std::move(value)); return *this;}
+
+    /**
+     * <p>The next step after the step succeeds.</p>
+     */
+    inline StepExecution& WithNextStep(const char* value) { SetNextStep(value); return *this;}
+
+
+    /**
+     * <p>The flag which can be used to help decide whether the failure of current step
+     * leads to the Automation failure.</p>
+     */
+    inline bool GetIsCritical() const{ return m_isCritical; }
+
+    /**
+     * <p>The flag which can be used to help decide whether the failure of current step
+     * leads to the Automation failure.</p>
+     */
+    inline void SetIsCritical(bool value) { m_isCriticalHasBeenSet = true; m_isCritical = value; }
+
+    /**
+     * <p>The flag which can be used to help decide whether the failure of current step
+     * leads to the Automation failure.</p>
+     */
+    inline StepExecution& WithIsCritical(bool value) { SetIsCritical(value); return *this;}
+
+
+    /**
+     * <p>Strategies used when step fails, we support Continue and Abort. Abort will
+     * fail the automation when the step fails. Continue will ignore the failure of
+     * current step and allow automation to execute the next step. With conditional
+     * branching, we add step:stepName to support the automation to go to another
+     * specific step.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetValidNextSteps() const{ return m_validNextSteps; }
+
+    /**
+     * <p>Strategies used when step fails, we support Continue and Abort. Abort will
+     * fail the automation when the step fails. Continue will ignore the failure of
+     * current step and allow automation to execute the next step. With conditional
+     * branching, we add step:stepName to support the automation to go to another
+     * specific step.</p>
+     */
+    inline void SetValidNextSteps(const Aws::Vector<Aws::String>& value) { m_validNextStepsHasBeenSet = true; m_validNextSteps = value; }
+
+    /**
+     * <p>Strategies used when step fails, we support Continue and Abort. Abort will
+     * fail the automation when the step fails. Continue will ignore the failure of
+     * current step and allow automation to execute the next step. With conditional
+     * branching, we add step:stepName to support the automation to go to another
+     * specific step.</p>
+     */
+    inline void SetValidNextSteps(Aws::Vector<Aws::String>&& value) { m_validNextStepsHasBeenSet = true; m_validNextSteps = std::move(value); }
+
+    /**
+     * <p>Strategies used when step fails, we support Continue and Abort. Abort will
+     * fail the automation when the step fails. Continue will ignore the failure of
+     * current step and allow automation to execute the next step. With conditional
+     * branching, we add step:stepName to support the automation to go to another
+     * specific step.</p>
+     */
+    inline StepExecution& WithValidNextSteps(const Aws::Vector<Aws::String>& value) { SetValidNextSteps(value); return *this;}
+
+    /**
+     * <p>Strategies used when step fails, we support Continue and Abort. Abort will
+     * fail the automation when the step fails. Continue will ignore the failure of
+     * current step and allow automation to execute the next step. With conditional
+     * branching, we add step:stepName to support the automation to go to another
+     * specific step.</p>
+     */
+    inline StepExecution& WithValidNextSteps(Aws::Vector<Aws::String>&& value) { SetValidNextSteps(std::move(value)); return *this;}
+
+    /**
+     * <p>Strategies used when step fails, we support Continue and Abort. Abort will
+     * fail the automation when the step fails. Continue will ignore the failure of
+     * current step and allow automation to execute the next step. With conditional
+     * branching, we add step:stepName to support the automation to go to another
+     * specific step.</p>
+     */
+    inline StepExecution& AddValidNextSteps(const Aws::String& value) { m_validNextStepsHasBeenSet = true; m_validNextSteps.push_back(value); return *this; }
+
+    /**
+     * <p>Strategies used when step fails, we support Continue and Abort. Abort will
+     * fail the automation when the step fails. Continue will ignore the failure of
+     * current step and allow automation to execute the next step. With conditional
+     * branching, we add step:stepName to support the automation to go to another
+     * specific step.</p>
+     */
+    inline StepExecution& AddValidNextSteps(Aws::String&& value) { m_validNextStepsHasBeenSet = true; m_validNextSteps.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Strategies used when step fails, we support Continue and Abort. Abort will
+     * fail the automation when the step fails. Continue will ignore the failure of
+     * current step and allow automation to execute the next step. With conditional
+     * branching, we add step:stepName to support the automation to go to another
+     * specific step.</p>
+     */
+    inline StepExecution& AddValidNextSteps(const char* value) { m_validNextStepsHasBeenSet = true; m_validNextSteps.push_back(value); return *this; }
+
   private:
 
     Aws::String m_stepName;
@@ -686,6 +834,18 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_overriddenParameters;
     bool m_overriddenParametersHasBeenSet;
+
+    bool m_isEnd;
+    bool m_isEndHasBeenSet;
+
+    Aws::String m_nextStep;
+    bool m_nextStepHasBeenSet;
+
+    bool m_isCritical;
+    bool m_isCriticalHasBeenSet;
+
+    Aws::Vector<Aws::String> m_validNextSteps;
+    bool m_validNextStepsHasBeenSet;
   };
 
 } // namespace Model

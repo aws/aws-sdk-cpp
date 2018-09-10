@@ -43,7 +43,7 @@ ColorCorrector::ColorCorrector() :
 {
 }
 
-ColorCorrector::ColorCorrector(const JsonValue& jsonValue) : 
+ColorCorrector::ColorCorrector(JsonView jsonValue) : 
     m_brightness(0),
     m_brightnessHasBeenSet(false),
     m_colorSpaceConversion(ColorSpaceConversion::NOT_SET),
@@ -59,7 +59,7 @@ ColorCorrector::ColorCorrector(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ColorCorrector& ColorCorrector::operator =(const JsonValue& jsonValue)
+ColorCorrector& ColorCorrector::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("brightness"))
   {

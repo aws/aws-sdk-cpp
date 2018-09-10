@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Endpoint demographic data<p><h3>See Also:</h3>   <a
+   * Demographic information about the endpoint.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointDemographic">AWS
    * API Reference</a></p>
    */
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     EndpointDemographic();
-    EndpointDemographic(const Aws::Utils::Json::JsonValue& jsonValue);
-    EndpointDemographic& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EndpointDemographic(Aws::Utils::Json::JsonView jsonValue);
+    EndpointDemographic& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -133,181 +134,181 @@ namespace Model
 
 
     /**
-     * The endpoint make, such as such as Apple or Samsung.
+     * The manufacturer of the endpoint device, such as Apple or Samsung.
      */
     inline const Aws::String& GetMake() const{ return m_make; }
 
     /**
-     * The endpoint make, such as such as Apple or Samsung.
+     * The manufacturer of the endpoint device, such as Apple or Samsung.
      */
     inline void SetMake(const Aws::String& value) { m_makeHasBeenSet = true; m_make = value; }
 
     /**
-     * The endpoint make, such as such as Apple or Samsung.
+     * The manufacturer of the endpoint device, such as Apple or Samsung.
      */
     inline void SetMake(Aws::String&& value) { m_makeHasBeenSet = true; m_make = std::move(value); }
 
     /**
-     * The endpoint make, such as such as Apple or Samsung.
+     * The manufacturer of the endpoint device, such as Apple or Samsung.
      */
     inline void SetMake(const char* value) { m_makeHasBeenSet = true; m_make.assign(value); }
 
     /**
-     * The endpoint make, such as such as Apple or Samsung.
+     * The manufacturer of the endpoint device, such as Apple or Samsung.
      */
     inline EndpointDemographic& WithMake(const Aws::String& value) { SetMake(value); return *this;}
 
     /**
-     * The endpoint make, such as such as Apple or Samsung.
+     * The manufacturer of the endpoint device, such as Apple or Samsung.
      */
     inline EndpointDemographic& WithMake(Aws::String&& value) { SetMake(std::move(value)); return *this;}
 
     /**
-     * The endpoint make, such as such as Apple or Samsung.
+     * The manufacturer of the endpoint device, such as Apple or Samsung.
      */
     inline EndpointDemographic& WithMake(const char* value) { SetMake(value); return *this;}
 
 
     /**
-     * The endpoint model, such as iPhone.
+     * The model name or number of the endpoint device, such as iPhone.
      */
     inline const Aws::String& GetModel() const{ return m_model; }
 
     /**
-     * The endpoint model, such as iPhone.
+     * The model name or number of the endpoint device, such as iPhone.
      */
     inline void SetModel(const Aws::String& value) { m_modelHasBeenSet = true; m_model = value; }
 
     /**
-     * The endpoint model, such as iPhone.
+     * The model name or number of the endpoint device, such as iPhone.
      */
     inline void SetModel(Aws::String&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
 
     /**
-     * The endpoint model, such as iPhone.
+     * The model name or number of the endpoint device, such as iPhone.
      */
     inline void SetModel(const char* value) { m_modelHasBeenSet = true; m_model.assign(value); }
 
     /**
-     * The endpoint model, such as iPhone.
+     * The model name or number of the endpoint device, such as iPhone.
      */
     inline EndpointDemographic& WithModel(const Aws::String& value) { SetModel(value); return *this;}
 
     /**
-     * The endpoint model, such as iPhone.
+     * The model name or number of the endpoint device, such as iPhone.
      */
     inline EndpointDemographic& WithModel(Aws::String&& value) { SetModel(std::move(value)); return *this;}
 
     /**
-     * The endpoint model, such as iPhone.
+     * The model name or number of the endpoint device, such as iPhone.
      */
     inline EndpointDemographic& WithModel(const char* value) { SetModel(value); return *this;}
 
 
     /**
-     * The endpoint model version.
+     * The model version of the endpoint device.
      */
     inline const Aws::String& GetModelVersion() const{ return m_modelVersion; }
 
     /**
-     * The endpoint model version.
+     * The model version of the endpoint device.
      */
     inline void SetModelVersion(const Aws::String& value) { m_modelVersionHasBeenSet = true; m_modelVersion = value; }
 
     /**
-     * The endpoint model version.
+     * The model version of the endpoint device.
      */
     inline void SetModelVersion(Aws::String&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::move(value); }
 
     /**
-     * The endpoint model version.
+     * The model version of the endpoint device.
      */
     inline void SetModelVersion(const char* value) { m_modelVersionHasBeenSet = true; m_modelVersion.assign(value); }
 
     /**
-     * The endpoint model version.
+     * The model version of the endpoint device.
      */
     inline EndpointDemographic& WithModelVersion(const Aws::String& value) { SetModelVersion(value); return *this;}
 
     /**
-     * The endpoint model version.
+     * The model version of the endpoint device.
      */
     inline EndpointDemographic& WithModelVersion(Aws::String&& value) { SetModelVersion(std::move(value)); return *this;}
 
     /**
-     * The endpoint model version.
+     * The model version of the endpoint device.
      */
     inline EndpointDemographic& WithModelVersion(const char* value) { SetModelVersion(value); return *this;}
 
 
     /**
-     * The endpoint platform, such as ios or android.
+     * The platform of the endpoint device, such as iOS or Android.
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
-     * The endpoint platform, such as ios or android.
+     * The platform of the endpoint device, such as iOS or Android.
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * The endpoint platform, such as ios or android.
+     * The platform of the endpoint device, such as iOS or Android.
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * The endpoint platform, such as ios or android.
+     * The platform of the endpoint device, such as iOS or Android.
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
-     * The endpoint platform, such as ios or android.
+     * The platform of the endpoint device, such as iOS or Android.
      */
     inline EndpointDemographic& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
-     * The endpoint platform, such as ios or android.
+     * The platform of the endpoint device, such as iOS or Android.
      */
     inline EndpointDemographic& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
-     * The endpoint platform, such as ios or android.
+     * The platform of the endpoint device, such as iOS or Android.
      */
     inline EndpointDemographic& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
 
     /**
-     * The endpoint platform version.
+     * The platform version of the endpoint device.
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * The endpoint platform version.
+     * The platform version of the endpoint device.
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * The endpoint platform version.
+     * The platform version of the endpoint device.
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * The endpoint platform version.
+     * The platform version of the endpoint device.
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * The endpoint platform version.
+     * The platform version of the endpoint device.
      */
     inline EndpointDemographic& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * The endpoint platform version.
+     * The platform version of the endpoint device.
      */
     inline EndpointDemographic& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * The endpoint platform version.
+     * The platform version of the endpoint device.
      */
     inline EndpointDemographic& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 

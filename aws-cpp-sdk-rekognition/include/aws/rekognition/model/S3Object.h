@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -37,7 +38,8 @@ namespace Model
    * bucket containing the S3 object must match the region you use for Amazon
    * Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object,
    * the user must have permission to access the S3 object. For more information, see
-   * <a>manage-access-resource-policies</a>. </p><p><h3>See Also:</h3>   <a
+   * Resource Based Policies in the Amazon Rekognition Developer Guide.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/S3Object">AWS
    * API Reference</a></p>
    */
@@ -45,8 +47,8 @@ namespace Model
   {
   public:
     S3Object();
-    S3Object(const Aws::Utils::Json::JsonValue& jsonValue);
-    S3Object& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    S3Object(Aws::Utils::Json::JsonView jsonValue);
+    S3Object& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

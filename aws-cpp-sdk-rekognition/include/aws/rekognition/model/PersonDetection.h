@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -36,7 +37,8 @@ namespace Model
    * <p>Details and tracking information for a single time a person is tracked in a
    * video. Amazon Rekognition operations that track persons return an array of
    * <code>PersonDetection</code> objects with elements for each time a person is
-   * tracked in a video. For more information, see . </p><p><h3>See Also:</h3>   <a
+   * tracked in a video. </p> <p>For more information, see API_GetPersonTracking in
+   * the Amazon Rekognition Developer Guide. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PersonDetection">AWS
    * API Reference</a></p>
    */
@@ -44,8 +46,8 @@ namespace Model
   {
   public:
     PersonDetection();
-    PersonDetection(const Aws::Utils::Json::JsonValue& jsonValue);
-    PersonDetection& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PersonDetection(Aws::Utils::Json::JsonView jsonValue);
+    PersonDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

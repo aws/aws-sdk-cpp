@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     RestoreSummary();
-    RestoreSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    RestoreSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RestoreSummary(Aws::Utils::Json::JsonView jsonValue);
+    RestoreSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

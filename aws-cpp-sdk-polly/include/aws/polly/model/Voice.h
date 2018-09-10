@@ -19,6 +19,7 @@
 #include <aws/polly/model/VoiceId.h>
 #include <aws/polly/model/LanguageCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -28,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Polly
@@ -44,8 +46,8 @@ namespace Model
   {
   public:
     Voice();
-    Voice(const Aws::Utils::Json::JsonValue& jsonValue);
-    Voice& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Voice(Aws::Utils::Json::JsonView jsonValue);
+    Voice& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -210,6 +212,70 @@ namespace Model
      */
     inline Voice& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>Additional codes for languages available for the specified voice in addition
+     * to its default language. </p> <p>For example, the default language for Aditi is
+     * Indian English (en-IN) because it was first used for that language. Since Aditi
+     * is bilingual and fluent in both Indian English and Hindi, this parameter would
+     * show the code <code>hi-IN</code>.</p>
+     */
+    inline const Aws::Vector<LanguageCode>& GetAdditionalLanguageCodes() const{ return m_additionalLanguageCodes; }
+
+    /**
+     * <p>Additional codes for languages available for the specified voice in addition
+     * to its default language. </p> <p>For example, the default language for Aditi is
+     * Indian English (en-IN) because it was first used for that language. Since Aditi
+     * is bilingual and fluent in both Indian English and Hindi, this parameter would
+     * show the code <code>hi-IN</code>.</p>
+     */
+    inline void SetAdditionalLanguageCodes(const Aws::Vector<LanguageCode>& value) { m_additionalLanguageCodesHasBeenSet = true; m_additionalLanguageCodes = value; }
+
+    /**
+     * <p>Additional codes for languages available for the specified voice in addition
+     * to its default language. </p> <p>For example, the default language for Aditi is
+     * Indian English (en-IN) because it was first used for that language. Since Aditi
+     * is bilingual and fluent in both Indian English and Hindi, this parameter would
+     * show the code <code>hi-IN</code>.</p>
+     */
+    inline void SetAdditionalLanguageCodes(Aws::Vector<LanguageCode>&& value) { m_additionalLanguageCodesHasBeenSet = true; m_additionalLanguageCodes = std::move(value); }
+
+    /**
+     * <p>Additional codes for languages available for the specified voice in addition
+     * to its default language. </p> <p>For example, the default language for Aditi is
+     * Indian English (en-IN) because it was first used for that language. Since Aditi
+     * is bilingual and fluent in both Indian English and Hindi, this parameter would
+     * show the code <code>hi-IN</code>.</p>
+     */
+    inline Voice& WithAdditionalLanguageCodes(const Aws::Vector<LanguageCode>& value) { SetAdditionalLanguageCodes(value); return *this;}
+
+    /**
+     * <p>Additional codes for languages available for the specified voice in addition
+     * to its default language. </p> <p>For example, the default language for Aditi is
+     * Indian English (en-IN) because it was first used for that language. Since Aditi
+     * is bilingual and fluent in both Indian English and Hindi, this parameter would
+     * show the code <code>hi-IN</code>.</p>
+     */
+    inline Voice& WithAdditionalLanguageCodes(Aws::Vector<LanguageCode>&& value) { SetAdditionalLanguageCodes(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional codes for languages available for the specified voice in addition
+     * to its default language. </p> <p>For example, the default language for Aditi is
+     * Indian English (en-IN) because it was first used for that language. Since Aditi
+     * is bilingual and fluent in both Indian English and Hindi, this parameter would
+     * show the code <code>hi-IN</code>.</p>
+     */
+    inline Voice& AddAdditionalLanguageCodes(const LanguageCode& value) { m_additionalLanguageCodesHasBeenSet = true; m_additionalLanguageCodes.push_back(value); return *this; }
+
+    /**
+     * <p>Additional codes for languages available for the specified voice in addition
+     * to its default language. </p> <p>For example, the default language for Aditi is
+     * Indian English (en-IN) because it was first used for that language. Since Aditi
+     * is bilingual and fluent in both Indian English and Hindi, this parameter would
+     * show the code <code>hi-IN</code>.</p>
+     */
+    inline Voice& AddAdditionalLanguageCodes(LanguageCode&& value) { m_additionalLanguageCodesHasBeenSet = true; m_additionalLanguageCodes.push_back(std::move(value)); return *this; }
+
   private:
 
     Gender m_gender;
@@ -226,6 +292,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::Vector<LanguageCode> m_additionalLanguageCodes;
+    bool m_additionalLanguageCodesHasBeenSet;
   };
 
 } // namespace Model

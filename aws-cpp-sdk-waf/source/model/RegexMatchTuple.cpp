@@ -36,7 +36,7 @@ RegexMatchTuple::RegexMatchTuple() :
 {
 }
 
-RegexMatchTuple::RegexMatchTuple(const JsonValue& jsonValue) : 
+RegexMatchTuple::RegexMatchTuple(JsonView jsonValue) : 
     m_fieldToMatchHasBeenSet(false),
     m_textTransformation(TextTransformation::NOT_SET),
     m_textTransformationHasBeenSet(false),
@@ -45,7 +45,7 @@ RegexMatchTuple::RegexMatchTuple(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RegexMatchTuple& RegexMatchTuple::operator =(const JsonValue& jsonValue)
+RegexMatchTuple& RegexMatchTuple::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FieldToMatch"))
   {

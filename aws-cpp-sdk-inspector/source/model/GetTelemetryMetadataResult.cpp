@@ -37,10 +37,10 @@ GetTelemetryMetadataResult::GetTelemetryMetadataResult(const Aws::AmazonWebServi
 
 GetTelemetryMetadataResult& GetTelemetryMetadataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("telemetryMetadata"))
   {
-    Array<JsonValue> telemetryMetadataJsonList = jsonValue.GetArray("telemetryMetadata");
+    Array<JsonView> telemetryMetadataJsonList = jsonValue.GetArray("telemetryMetadata");
     for(unsigned telemetryMetadataIndex = 0; telemetryMetadataIndex < telemetryMetadataJsonList.GetLength(); ++telemetryMetadataIndex)
     {
       m_telemetryMetadata.push_back(telemetryMetadataJsonList[telemetryMetadataIndex].AsObject());

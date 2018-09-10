@@ -38,7 +38,7 @@ EventTopic::EventTopic() :
 {
 }
 
-EventTopic::EventTopic(const JsonValue& jsonValue) : 
+EventTopic::EventTopic(JsonView jsonValue) : 
     m_directoryIdHasBeenSet(false),
     m_topicNameHasBeenSet(false),
     m_topicArnHasBeenSet(false),
@@ -49,7 +49,7 @@ EventTopic::EventTopic(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EventTopic& EventTopic::operator =(const JsonValue& jsonValue)
+EventTopic& EventTopic::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DirectoryId"))
   {

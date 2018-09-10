@@ -96,27 +96,37 @@ namespace Model
 
 
     /**
-     * <p>The Spot Instance request type.</p>
+     * <p>The Spot Instance request type. For <a>RunInstances</a>, persistent Spot
+     * Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is
+     * set to either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline const SpotInstanceType& GetSpotInstanceType() const{ return m_spotInstanceType; }
 
     /**
-     * <p>The Spot Instance request type.</p>
+     * <p>The Spot Instance request type. For <a>RunInstances</a>, persistent Spot
+     * Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is
+     * set to either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline void SetSpotInstanceType(const SpotInstanceType& value) { m_spotInstanceTypeHasBeenSet = true; m_spotInstanceType = value; }
 
     /**
-     * <p>The Spot Instance request type.</p>
+     * <p>The Spot Instance request type. For <a>RunInstances</a>, persistent Spot
+     * Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is
+     * set to either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline void SetSpotInstanceType(SpotInstanceType&& value) { m_spotInstanceTypeHasBeenSet = true; m_spotInstanceType = std::move(value); }
 
     /**
-     * <p>The Spot Instance request type.</p>
+     * <p>The Spot Instance request type. For <a>RunInstances</a>, persistent Spot
+     * Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is
+     * set to either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline SpotMarketOptions& WithSpotInstanceType(const SpotInstanceType& value) { SetSpotInstanceType(value); return *this;}
 
     /**
-     * <p>The Spot Instance request type.</p>
+     * <p>The Spot Instance request type. For <a>RunInstances</a>, persistent Spot
+     * Instance requests are only supported when <b>InstanceInterruptionBehavior</b> is
+     * set to either <code>hibernate</code> or <code>stop</code>.</p>
      */
     inline SpotMarketOptions& WithSpotInstanceType(SpotInstanceType&& value) { SetSpotInstanceType(std::move(value)); return *this;}
 

@@ -34,14 +34,14 @@ MatchedPlayerSession::MatchedPlayerSession() :
 {
 }
 
-MatchedPlayerSession::MatchedPlayerSession(const JsonValue& jsonValue) : 
+MatchedPlayerSession::MatchedPlayerSession(JsonView jsonValue) : 
     m_playerIdHasBeenSet(false),
     m_playerSessionIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MatchedPlayerSession& MatchedPlayerSession::operator =(const JsonValue& jsonValue)
+MatchedPlayerSession& MatchedPlayerSession::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PlayerId"))
   {

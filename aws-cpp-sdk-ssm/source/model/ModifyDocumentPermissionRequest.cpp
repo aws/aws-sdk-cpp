@@ -68,7 +68,7 @@ Aws::String ModifyDocumentPermissionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ModifyDocumentPermissionRequest::GetRequestSpecificHeaders() const

@@ -37,10 +37,10 @@ DescribeEventsResult::DescribeEventsResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeEventsResult& DescribeEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ServerEvents"))
   {
-    Array<JsonValue> serverEventsJsonList = jsonValue.GetArray("ServerEvents");
+    Array<JsonView> serverEventsJsonList = jsonValue.GetArray("ServerEvents");
     for(unsigned serverEventsIndex = 0; serverEventsIndex < serverEventsJsonList.GetLength(); ++serverEventsIndex)
     {
       m_serverEvents.push_back(serverEventsJsonList[serverEventsIndex].AsObject());

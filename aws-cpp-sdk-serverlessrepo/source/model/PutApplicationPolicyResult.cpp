@@ -37,10 +37,10 @@ PutApplicationPolicyResult::PutApplicationPolicyResult(const Aws::AmazonWebServi
 
 PutApplicationPolicyResult& PutApplicationPolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("statements"))
   {
-    Array<JsonValue> statementsJsonList = jsonValue.GetArray("statements");
+    Array<JsonView> statementsJsonList = jsonValue.GetArray("statements");
     for(unsigned statementsIndex = 0; statementsIndex < statementsJsonList.GetLength(); ++statementsIndex)
     {
       m_statements.push_back(statementsJsonList[statementsIndex].AsObject());

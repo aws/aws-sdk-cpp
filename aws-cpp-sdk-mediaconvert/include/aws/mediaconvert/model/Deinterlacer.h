@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Deinterlacer();
-    Deinterlacer(const Aws::Utils::Json::JsonValue& jsonValue);
-    Deinterlacer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Deinterlacer(Aws::Utils::Json::JsonView jsonValue);
+    Deinterlacer& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

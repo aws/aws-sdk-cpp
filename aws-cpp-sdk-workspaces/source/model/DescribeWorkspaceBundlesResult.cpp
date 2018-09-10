@@ -37,10 +37,10 @@ DescribeWorkspaceBundlesResult::DescribeWorkspaceBundlesResult(const Aws::Amazon
 
 DescribeWorkspaceBundlesResult& DescribeWorkspaceBundlesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Bundles"))
   {
-    Array<JsonValue> bundlesJsonList = jsonValue.GetArray("Bundles");
+    Array<JsonView> bundlesJsonList = jsonValue.GetArray("Bundles");
     for(unsigned bundlesIndex = 0; bundlesIndex < bundlesJsonList.GetLength(); ++bundlesIndex)
     {
       m_bundles.push_back(bundlesJsonList[bundlesIndex].AsObject());

@@ -99,70 +99,84 @@ namespace Model
     /**
      * <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into
      * or delete from a <a>RuleGroup</a>.</p> <p>You can only insert
-     * <code>REGULAR</code> rules into a rule group.</p> <p>The <code>Action</code>
-     * data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not
-     * applicable and therefore not available for <code>UpdateRuleGroup</code>.</p>
+     * <code>REGULAR</code> rules into a rule group.</p> <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline const Aws::Vector<RuleGroupUpdate>& GetUpdates() const{ return m_updates; }
 
     /**
      * <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into
      * or delete from a <a>RuleGroup</a>.</p> <p>You can only insert
-     * <code>REGULAR</code> rules into a rule group.</p> <p>The <code>Action</code>
-     * data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not
-     * applicable and therefore not available for <code>UpdateRuleGroup</code>.</p>
+     * <code>REGULAR</code> rules into a rule group.</p> <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline void SetUpdates(const Aws::Vector<RuleGroupUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
 
     /**
      * <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into
      * or delete from a <a>RuleGroup</a>.</p> <p>You can only insert
-     * <code>REGULAR</code> rules into a rule group.</p> <p>The <code>Action</code>
-     * data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not
-     * applicable and therefore not available for <code>UpdateRuleGroup</code>.</p>
+     * <code>REGULAR</code> rules into a rule group.</p> <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline void SetUpdates(Aws::Vector<RuleGroupUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
 
     /**
      * <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into
      * or delete from a <a>RuleGroup</a>.</p> <p>You can only insert
-     * <code>REGULAR</code> rules into a rule group.</p> <p>The <code>Action</code>
-     * data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not
-     * applicable and therefore not available for <code>UpdateRuleGroup</code>.</p>
+     * <code>REGULAR</code> rules into a rule group.</p> <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline UpdateRuleGroupRequest& WithUpdates(const Aws::Vector<RuleGroupUpdate>& value) { SetUpdates(value); return *this;}
 
     /**
      * <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into
      * or delete from a <a>RuleGroup</a>.</p> <p>You can only insert
-     * <code>REGULAR</code> rules into a rule group.</p> <p>The <code>Action</code>
-     * data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not
-     * applicable and therefore not available for <code>UpdateRuleGroup</code>.</p>
+     * <code>REGULAR</code> rules into a rule group.</p> <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline UpdateRuleGroupRequest& WithUpdates(Aws::Vector<RuleGroupUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into
      * or delete from a <a>RuleGroup</a>.</p> <p>You can only insert
-     * <code>REGULAR</code> rules into a rule group.</p> <p>The <code>Action</code>
-     * data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not
-     * applicable and therefore not available for <code>UpdateRuleGroup</code>.</p>
+     * <code>REGULAR</code> rules into a rule group.</p> <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline UpdateRuleGroupRequest& AddUpdates(const RuleGroupUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
 
     /**
      * <p>An array of <code>RuleGroupUpdate</code> objects that you want to insert into
      * or delete from a <a>RuleGroup</a>.</p> <p>You can only insert
-     * <code>REGULAR</code> rules into a rule group.</p> <p>The <code>Action</code>
-     * data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not
-     * applicable and therefore not available for <code>UpdateRuleGroup</code>.</p>
+     * <code>REGULAR</code> rules into a rule group.</p> <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline UpdateRuleGroupRequest& AddUpdates(RuleGroupUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
 

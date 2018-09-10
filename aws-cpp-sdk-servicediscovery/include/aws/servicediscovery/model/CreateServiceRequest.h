@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicediscovery/model/DnsConfig.h>
 #include <aws/servicediscovery/model/HealthCheckConfig.h>
+#include <aws/servicediscovery/model/HealthCheckCustomConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -84,51 +85,58 @@ namespace Model
 
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreateService</code> requests to be retried without the risk of executing
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
+     * example, a date/time stamp.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreateService</code> requests to be retried without the risk of executing
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
+     * example, a date/time stamp.</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreateService</code> requests to be retried without the risk of executing
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
+     * example, a date/time stamp.</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreateService</code> requests to be retried without the risk of executing
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
+     * example, a date/time stamp.</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreateService</code> requests to be retried without the risk of executing
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
+     * example, a date/time stamp.</p>
      */
     inline CreateServiceRequest& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreateService</code> requests to be retried without the risk of executing
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
+     * example, a date/time stamp.</p>
      */
     inline CreateServiceRequest& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreateService</code> requests to be retried without the risk of executing
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
+     * example, a date/time stamp.</p>
      */
     inline CreateServiceRequest& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 
@@ -170,125 +178,101 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance. </p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance. </p>
      */
     inline const DnsConfig& GetDnsConfig() const{ return m_dnsConfig; }
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance. </p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance. </p>
      */
     inline void SetDnsConfig(const DnsConfig& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance. </p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance. </p>
      */
     inline void SetDnsConfig(DnsConfig&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance. </p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance. </p>
      */
     inline CreateServiceRequest& WithDnsConfig(const DnsConfig& value) { SetDnsConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance. </p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance. </p>
      */
     inline CreateServiceRequest& WithDnsConfig(DnsConfig&& value) { SetDnsConfig(std::move(value)); return *this;}
 
 
     /**
      * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, Amazon
-     * Route 53 associates the health check with all the resource record sets that you
-     * specify in <code>DnsConfig</code>.</p> <note> <p>The health check uses 30
-     * seconds as the request interval. This is the number of seconds between the time
-     * that each Amazon Route 53 health checker gets a response from your endpoint and
-     * the time that it sends the next health check request. A health checker in each
-     * data center around the world sends your endpoint a health check request every 30
-     * seconds. On average, your endpoint receives a health check request about every
-     * two seconds. Health checkers in different data centers don't coordinate with one
-     * another, so you'll sometimes see several requests per second followed by a few
-     * seconds with no health checks at all.</p> </note> <p>For information about the
-     * charges for health checks, see <a
-     * href="http://aws.amazon.com/route53/pricing">Amazon Route 53 Pricing</a>.</p>
+     * an optional health check. If you specify settings for a health check, Route 53
+     * associates the health check with all the records that you specify in
+     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
+     * Pricing</a>.</p>
      */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
 
     /**
      * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, Amazon
-     * Route 53 associates the health check with all the resource record sets that you
-     * specify in <code>DnsConfig</code>.</p> <note> <p>The health check uses 30
-     * seconds as the request interval. This is the number of seconds between the time
-     * that each Amazon Route 53 health checker gets a response from your endpoint and
-     * the time that it sends the next health check request. A health checker in each
-     * data center around the world sends your endpoint a health check request every 30
-     * seconds. On average, your endpoint receives a health check request about every
-     * two seconds. Health checkers in different data centers don't coordinate with one
-     * another, so you'll sometimes see several requests per second followed by a few
-     * seconds with no health checks at all.</p> </note> <p>For information about the
-     * charges for health checks, see <a
-     * href="http://aws.amazon.com/route53/pricing">Amazon Route 53 Pricing</a>.</p>
+     * an optional health check. If you specify settings for a health check, Route 53
+     * associates the health check with all the records that you specify in
+     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
+     * Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
     /**
      * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, Amazon
-     * Route 53 associates the health check with all the resource record sets that you
-     * specify in <code>DnsConfig</code>.</p> <note> <p>The health check uses 30
-     * seconds as the request interval. This is the number of seconds between the time
-     * that each Amazon Route 53 health checker gets a response from your endpoint and
-     * the time that it sends the next health check request. A health checker in each
-     * data center around the world sends your endpoint a health check request every 30
-     * seconds. On average, your endpoint receives a health check request about every
-     * two seconds. Health checkers in different data centers don't coordinate with one
-     * another, so you'll sometimes see several requests per second followed by a few
-     * seconds with no health checks at all.</p> </note> <p>For information about the
-     * charges for health checks, see <a
-     * href="http://aws.amazon.com/route53/pricing">Amazon Route 53 Pricing</a>.</p>
+     * an optional health check. If you specify settings for a health check, Route 53
+     * associates the health check with all the records that you specify in
+     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
+     * Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
 
     /**
      * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, Amazon
-     * Route 53 associates the health check with all the resource record sets that you
-     * specify in <code>DnsConfig</code>.</p> <note> <p>The health check uses 30
-     * seconds as the request interval. This is the number of seconds between the time
-     * that each Amazon Route 53 health checker gets a response from your endpoint and
-     * the time that it sends the next health check request. A health checker in each
-     * data center around the world sends your endpoint a health check request every 30
-     * seconds. On average, your endpoint receives a health check request about every
-     * two seconds. Health checkers in different data centers don't coordinate with one
-     * another, so you'll sometimes see several requests per second followed by a few
-     * seconds with no health checks at all.</p> </note> <p>For information about the
-     * charges for health checks, see <a
-     * href="http://aws.amazon.com/route53/pricing">Amazon Route 53 Pricing</a>.</p>
+     * an optional health check. If you specify settings for a health check, Route 53
+     * associates the health check with all the records that you specify in
+     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
+     * Pricing</a>.</p>
      */
     inline CreateServiceRequest& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
 
     /**
      * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, Amazon
-     * Route 53 associates the health check with all the resource record sets that you
-     * specify in <code>DnsConfig</code>.</p> <note> <p>The health check uses 30
-     * seconds as the request interval. This is the number of seconds between the time
-     * that each Amazon Route 53 health checker gets a response from your endpoint and
-     * the time that it sends the next health check request. A health checker in each
-     * data center around the world sends your endpoint a health check request every 30
-     * seconds. On average, your endpoint receives a health check request about every
-     * two seconds. Health checkers in different data centers don't coordinate with one
-     * another, so you'll sometimes see several requests per second followed by a few
-     * seconds with no health checks at all.</p> </note> <p>For information about the
-     * charges for health checks, see <a
-     * href="http://aws.amazon.com/route53/pricing">Amazon Route 53 Pricing</a>.</p>
+     * an optional health check. If you specify settings for a health check, Route 53
+     * associates the health check with all the records that you specify in
+     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
+     * Pricing</a>.</p>
      */
     inline CreateServiceRequest& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
+
+
+    
+    inline const HealthCheckCustomConfig& GetHealthCheckCustomConfig() const{ return m_healthCheckCustomConfig; }
+
+    
+    inline void SetHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = value; }
+
+    
+    inline void SetHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = std::move(value); }
+
+    
+    inline CreateServiceRequest& WithHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { SetHealthCheckCustomConfig(value); return *this;}
+
+    
+    inline CreateServiceRequest& WithHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { SetHealthCheckCustomConfig(std::move(value)); return *this;}
 
   private:
 
@@ -306,6 +290,9 @@ namespace Model
 
     HealthCheckConfig m_healthCheckConfig;
     bool m_healthCheckConfigHasBeenSet;
+
+    HealthCheckCustomConfig m_healthCheckCustomConfig;
+    bool m_healthCheckCustomConfigHasBeenSet;
   };
 
 } // namespace Model

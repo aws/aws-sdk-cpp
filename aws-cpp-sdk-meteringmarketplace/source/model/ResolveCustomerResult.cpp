@@ -37,7 +37,7 @@ ResolveCustomerResult::ResolveCustomerResult(const Aws::AmazonWebServiceResult<J
 
 ResolveCustomerResult& ResolveCustomerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CustomerIdentifier"))
   {
     m_customerIdentifier = jsonValue.GetString("CustomerIdentifier");

@@ -37,7 +37,7 @@ DescribeMigrationTaskResult::DescribeMigrationTaskResult(const Aws::AmazonWebSer
 
 DescribeMigrationTaskResult& DescribeMigrationTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MigrationTask"))
   {
     m_migrationTask = jsonValue.GetObject("MigrationTask");

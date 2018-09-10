@@ -34,14 +34,14 @@ DirectoryVpcSettings::DirectoryVpcSettings() :
 {
 }
 
-DirectoryVpcSettings::DirectoryVpcSettings(const JsonValue& jsonValue) : 
+DirectoryVpcSettings::DirectoryVpcSettings(JsonView jsonValue) : 
     m_vpcIdHasBeenSet(false),
     m_subnetIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DirectoryVpcSettings& DirectoryVpcSettings::operator =(const JsonValue& jsonValue)
+DirectoryVpcSettings& DirectoryVpcSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VpcId"))
   {
@@ -52,7 +52,7 @@ DirectoryVpcSettings& DirectoryVpcSettings::operator =(const JsonValue& jsonValu
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonValue> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());

@@ -33,13 +33,13 @@ UserPoolPolicyType::UserPoolPolicyType() :
 {
 }
 
-UserPoolPolicyType::UserPoolPolicyType(const JsonValue& jsonValue) : 
+UserPoolPolicyType::UserPoolPolicyType(JsonView jsonValue) : 
     m_passwordPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UserPoolPolicyType& UserPoolPolicyType::operator =(const JsonValue& jsonValue)
+UserPoolPolicyType& UserPoolPolicyType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PasswordPolicy"))
   {

@@ -30,14 +30,16 @@ namespace Model
 
 ApplicationSettingsResource::ApplicationSettingsResource() : 
     m_applicationIdHasBeenSet(false),
+    m_campaignHookHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_quietTimeHasBeenSet(false)
 {
 }
 
-ApplicationSettingsResource::ApplicationSettingsResource(const JsonValue& jsonValue) : 
+ApplicationSettingsResource::ApplicationSettingsResource(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
+    m_campaignHookHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_quietTimeHasBeenSet(false)
@@ -45,13 +47,20 @@ ApplicationSettingsResource::ApplicationSettingsResource(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-ApplicationSettingsResource& ApplicationSettingsResource::operator =(const JsonValue& jsonValue)
+ApplicationSettingsResource& ApplicationSettingsResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
 
     m_applicationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CampaignHook"))
+  {
+    m_campaignHook = jsonValue.GetObject("CampaignHook");
+
+    m_campaignHookHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastModifiedDate"))
@@ -85,6 +94,12 @@ JsonValue ApplicationSettingsResource::Jsonize() const
   if(m_applicationIdHasBeenSet)
   {
    payload.WithString("ApplicationId", m_applicationId);
+
+  }
+
+  if(m_campaignHookHasBeenSet)
+  {
+   payload.WithObject("CampaignHook", m_campaignHook.Jsonize());
 
   }
 

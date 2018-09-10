@@ -71,7 +71,7 @@ Aws::String DescribeEnvironmentMembershipsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeEnvironmentMembershipsRequest::GetRequestSpecificHeaders() const

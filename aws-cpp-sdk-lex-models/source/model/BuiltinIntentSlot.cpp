@@ -33,13 +33,13 @@ BuiltinIntentSlot::BuiltinIntentSlot() :
 {
 }
 
-BuiltinIntentSlot::BuiltinIntentSlot(const JsonValue& jsonValue) : 
+BuiltinIntentSlot::BuiltinIntentSlot(JsonView jsonValue) : 
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BuiltinIntentSlot& BuiltinIntentSlot::operator =(const JsonValue& jsonValue)
+BuiltinIntentSlot& BuiltinIntentSlot::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

@@ -37,7 +37,7 @@ Aws::String StopReplicationTaskRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopReplicationTaskRequest::GetRequestSpecificHeaders() const

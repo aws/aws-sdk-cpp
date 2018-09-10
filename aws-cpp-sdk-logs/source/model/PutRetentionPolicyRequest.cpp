@@ -45,7 +45,7 @@ Aws::String PutRetentionPolicyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutRetentionPolicyRequest::GetRequestSpecificHeaders() const

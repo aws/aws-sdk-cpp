@@ -49,7 +49,7 @@ Aws::String DisassociateConfigurationItemsFromApplicationRequest::SerializePaylo
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DisassociateConfigurationItemsFromApplicationRequest::GetRequestSpecificHeaders() const

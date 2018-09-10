@@ -46,7 +46,7 @@ StreamDescription::StreamDescription() :
 {
 }
 
-StreamDescription::StreamDescription(const JsonValue& jsonValue) : 
+StreamDescription::StreamDescription(JsonView jsonValue) : 
     m_streamNameHasBeenSet(false),
     m_streamARNHasBeenSet(false),
     m_streamStatus(StreamStatus::NOT_SET),
@@ -65,7 +65,7 @@ StreamDescription::StreamDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StreamDescription& StreamDescription::operator =(const JsonValue& jsonValue)
+StreamDescription& StreamDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StreamName"))
   {
@@ -90,7 +90,7 @@ StreamDescription& StreamDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Shards"))
   {
-    Array<JsonValue> shardsJsonList = jsonValue.GetArray("Shards");
+    Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
     for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
     {
       m_shards.push_back(shardsJsonList[shardsIndex].AsObject());
@@ -121,7 +121,7 @@ StreamDescription& StreamDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("EnhancedMonitoring"))
   {
-    Array<JsonValue> enhancedMonitoringJsonList = jsonValue.GetArray("EnhancedMonitoring");
+    Array<JsonView> enhancedMonitoringJsonList = jsonValue.GetArray("EnhancedMonitoring");
     for(unsigned enhancedMonitoringIndex = 0; enhancedMonitoringIndex < enhancedMonitoringJsonList.GetLength(); ++enhancedMonitoringIndex)
     {
       m_enhancedMonitoring.push_back(enhancedMonitoringJsonList[enhancedMonitoringIndex].AsObject());

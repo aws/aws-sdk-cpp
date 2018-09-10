@@ -76,21 +76,15 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the ACL's set of entries.</p> </li> <li> <p>
      * <code>network-acl-id</code> - The ID of the network ACL.</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the
-     * network ACL.</p> </li> </ul>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC for the network ACL.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -118,21 +112,15 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the ACL's set of entries.</p> </li> <li> <p>
      * <code>network-acl-id</code> - The ID of the network ACL.</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the
-     * network ACL.</p> </li> </ul>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC for the network ACL.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -160,21 +148,15 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the ACL's set of entries.</p> </li> <li> <p>
      * <code>network-acl-id</code> - The ID of the network ACL.</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the
-     * network ACL.</p> </li> </ul>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC for the network ACL.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -202,21 +184,15 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the ACL's set of entries.</p> </li> <li> <p>
      * <code>network-acl-id</code> - The ID of the network ACL.</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the
-     * network ACL.</p> </li> </ul>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC for the network ACL.</p> </li> </ul>
      */
     inline DescribeNetworkAclsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -244,21 +220,15 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the ACL's set of entries.</p> </li> <li> <p>
      * <code>network-acl-id</code> - The ID of the network ACL.</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the
-     * network ACL.</p> </li> </ul>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC for the network ACL.</p> </li> </ul>
      */
     inline DescribeNetworkAclsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -286,21 +256,15 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the ACL's set of entries.</p> </li> <li> <p>
      * <code>network-acl-id</code> - The ID of the network ACL.</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the
-     * network ACL.</p> </li> </ul>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC for the network ACL.</p> </li> </ul>
      */
     inline DescribeNetworkAclsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -328,21 +292,15 @@ namespace Model
      * <p> <code>entry.rule-number</code> - The number of an entry (in other words,
      * rule) in the ACL's set of entries.</p> </li> <li> <p>
      * <code>network-acl-id</code> - The ID of the network ACL.</p> </li> <li> <p>
-     * <code>tag</code>:<i>key</i>=<i>value</i> - The key/value combination of a tag
-     * assigned to the resource. Specify the key of the tag in the filter name and the
-     * value of the tag in the filter value. For example, for the tag Purpose=X,
-     * specify <code>tag:Purpose</code> for the filter name and <code>X</code> for the
-     * filter value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag
-     * assigned to the resource. This filter is independent of the
-     * <code>tag-value</code> filter. For example, if you use both the filter
-     * "tag-key=Purpose" and the filter "tag-value=X", you get any resources assigned
-     * both the tag key Purpose (regardless of what the tag's value is), and the tag
-     * value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC for the
-     * network ACL.</p> </li> </ul>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-id</code> - The ID of the VPC for the network ACL.</p> </li> </ul>
      */
     inline DescribeNetworkAclsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

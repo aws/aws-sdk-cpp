@@ -32,7 +32,8 @@ CreateCrawlerRequest::CreateCrawlerRequest() :
     m_classifiersHasBeenSet(false),
     m_tablePrefixHasBeenSet(false),
     m_schemaChangePolicyHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_crawlerSecurityConfigurationHasBeenSet(false)
 {
 }
 
@@ -105,7 +106,13 @@ Aws::String CreateCrawlerRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_crawlerSecurityConfigurationHasBeenSet)
+  {
+   payload.WithString("CrawlerSecurityConfiguration", m_crawlerSecurityConfiguration);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateCrawlerRequest::GetRequestSpecificHeaders() const

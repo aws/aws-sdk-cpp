@@ -37,7 +37,7 @@ NotificationSpecification::NotificationSpecification() :
 {
 }
 
-NotificationSpecification::NotificationSpecification(const JsonValue& jsonValue) : 
+NotificationSpecification::NotificationSpecification(JsonView jsonValue) : 
     m_destinationHasBeenSet(false),
     m_transport(NotificationTransport::NOT_SET),
     m_transportHasBeenSet(false),
@@ -47,7 +47,7 @@ NotificationSpecification::NotificationSpecification(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-NotificationSpecification& NotificationSpecification::operator =(const JsonValue& jsonValue)
+NotificationSpecification& NotificationSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Destination"))
   {
@@ -72,7 +72,7 @@ NotificationSpecification& NotificationSpecification::operator =(const JsonValue
 
   if(jsonValue.ValueExists("EventTypes"))
   {
-    Array<JsonValue> eventTypesJsonList = jsonValue.GetArray("EventTypes");
+    Array<JsonView> eventTypesJsonList = jsonValue.GetArray("EventTypes");
     for(unsigned eventTypesIndex = 0; eventTypesIndex < eventTypesJsonList.GetLength(); ++eventTypesIndex)
     {
       m_eventTypes.push_back(EventTypeMapper::GetEventTypeForName(eventTypesJsonList[eventTypesIndex].AsString()));

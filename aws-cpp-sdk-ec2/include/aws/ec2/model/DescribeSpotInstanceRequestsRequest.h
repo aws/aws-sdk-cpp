@@ -74,16 +74,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -108,24 +110,19 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
-     * The key/value combination of a tag assigned to the resource. Specify the key of
-     * the tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
+     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>type</code> - The type of Spot Instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
@@ -154,16 +151,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -188,24 +187,19 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
-     * The key/value combination of a tag assigned to the resource. Specify the key of
-     * the tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
+     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>type</code> - The type of Spot Instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
@@ -234,16 +228,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -268,24 +264,19 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
-     * The key/value combination of a tag assigned to the resource. Specify the key of
-     * the tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
+     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>type</code> - The type of Spot Instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
@@ -314,16 +305,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -348,24 +341,19 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
-     * The key/value combination of a tag assigned to the resource. Specify the key of
-     * the tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
+     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>type</code> - The type of Spot Instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
@@ -394,16 +382,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -428,24 +418,19 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
-     * The key/value combination of a tag assigned to the resource. Specify the key of
-     * the tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
+     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>type</code> - The type of Spot Instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
@@ -474,16 +459,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -508,24 +495,19 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
-     * The key/value combination of a tag assigned to the resource. Specify the key of
-     * the tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
+     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>type</code> - The type of Spot Instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>
@@ -554,16 +536,18 @@ namespace Model
      * <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned IOPS
      * SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>for Cold
      * HDD, or <code>standard</code> for Magnetic.</p> </li> <li> <p>
-     * <code>launch.group-id</code> - The security group for the instance.</p> </li>
-     * <li> <p> <code>launch.image-id</code> - The ID of the AMI.</p> </li> <li> <p>
-     * <code>launch.instance-type</code> - The type of instance (for example,
-     * <code>m3.medium</code>).</p> </li> <li> <p> <code>launch.kernel-id</code> - The
-     * kernel ID.</p> </li> <li> <p> <code>launch.key-name</code> - The name of the key
-     * pair the instance launched with.</p> </li> <li> <p>
-     * <code>launch.monitoring-enabled</code> - Whether detailed monitoring is enabled
-     * for the Spot Instance.</p> </li> <li> <p> <code>launch.ramdisk-id</code> - The
-     * RAM disk ID.</p> </li> <li> <p> <code>launched-availability-zone</code> - The
-     * Availability Zone in which the request is launched.</p> </li> <li> <p>
+     * <code>launch.group-id</code> - The ID of the security group for the
+     * instance.</p> </li> <li> <p> <code>launch.group-name</code> - The name of the
+     * security group for the instance.</p> </li> <li> <p> <code>launch.image-id</code>
+     * - The ID of the AMI.</p> </li> <li> <p> <code>launch.instance-type</code> - The
+     * type of instance (for example, <code>m3.medium</code>).</p> </li> <li> <p>
+     * <code>launch.kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>launch.key-name</code> - The name of the key pair the instance launched
+     * with.</p> </li> <li> <p> <code>launch.monitoring-enabled</code> - Whether
+     * detailed monitoring is enabled for the Spot Instance.</p> </li> <li> <p>
+     * <code>launch.ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * <code>launched-availability-zone</code> - The Availability Zone in which the
+     * request is launched.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Indicates whether the IP
      * address is the primary private IP address.</p> </li> <li> <p>
      * <code>network-interface.delete-on-termination</code> - Indicates whether the
@@ -588,24 +572,19 @@ namespace Model
      * can help you track your Amazon EC2 Spot Instance requests. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
-     * Request Status</a> in the Amazon Elastic Compute Cloud User Guide.</p> </li>
-     * <li> <p> <code>status-code</code> - The short code describing the most recent
-     * evaluation of your Spot Instance request.</p> </li> <li> <p>
+     * Request Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * </li> <li> <p> <code>status-code</code> - The short code describing the most
+     * recent evaluation of your Spot Instance request.</p> </li> <li> <p>
      * <code>status-message</code> - The message explaining the status of the Spot
-     * Instance request.</p> </li> <li> <p> <code>tag</code>:<i>key</i>=<i>value</i> -
-     * The key/value combination of a tag assigned to the resource. Specify the key of
-     * the tag in the filter name and the value of the tag in the filter value. For
-     * example, for the tag Purpose=X, specify <code>tag:Purpose</code> for the filter
-     * name and <code>X</code> for the filter value.</p> </li> <li> <p>
-     * <code>tag-key</code> - The key of a tag assigned to the resource. This filter is
-     * independent of the <code>tag-value</code> filter. For example, if you use both
-     * the filter "tag-key=Purpose" and the filter "tag-value=X", you get any resources
-     * assigned both the tag key Purpose (regardless of what the tag's value is), and
-     * the tag value X (regardless of what the tag's key is). If you want to list only
-     * resources where Purpose is X, see the <code>tag</code>:<i>key</i>=<i>value</i>
-     * filter.</p> </li> <li> <p> <code>tag-value</code> - The value of a tag assigned
-     * to the resource. This filter is independent of the <code>tag-key</code>
-     * filter.</p> </li> <li> <p> <code>type</code> - The type of Spot Instance request
+     * Instance request.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> <li> <p> <code>type</code> - The type of Spot Instance request
      * (<code>one-time</code> | <code>persistent</code>).</p> </li> <li> <p>
      * <code>valid-from</code> - The start date of the request.</p> </li> <li> <p>
      * <code>valid-until</code> - The end date of the request.</p> </li> </ul>

@@ -61,118 +61,118 @@ namespace Model
 
 
     /**
-     * The object key.
+     * <p>The object key.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * The object key.
+     * <p>The object key.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * The object key.
+     * <p>The object key.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * The object key.
+     * <p>The object key.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * The object key.
+     * <p>The object key.</p>
      */
     inline DeleteMarkerEntry& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * The object key.
+     * <p>The object key.</p>
      */
     inline DeleteMarkerEntry& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * The object key.
+     * <p>The object key.</p>
      */
     inline DeleteMarkerEntry& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * Version ID of an object.
+     * <p>Version ID of an object.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * Version ID of an object.
+     * <p>Version ID of an object.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * Version ID of an object.
+     * <p>Version ID of an object.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
-     * Version ID of an object.
+     * <p>Version ID of an object.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * Version ID of an object.
+     * <p>Version ID of an object.</p>
      */
     inline DeleteMarkerEntry& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * Version ID of an object.
+     * <p>Version ID of an object.</p>
      */
     inline DeleteMarkerEntry& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * Version ID of an object.
+     * <p>Version ID of an object.</p>
      */
     inline DeleteMarkerEntry& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
 
     /**
-     * Specifies whether the object is (true) or is not (false) the latest version of
-     * an object.
+     * <p>Specifies whether the object is (true) or is not (false) the latest version
+     * of an object.</p>
      */
     inline bool GetIsLatest() const{ return m_isLatest; }
 
     /**
-     * Specifies whether the object is (true) or is not (false) the latest version of
-     * an object.
+     * <p>Specifies whether the object is (true) or is not (false) the latest version
+     * of an object.</p>
      */
     inline void SetIsLatest(bool value) { m_isLatestHasBeenSet = true; m_isLatest = value; }
 
     /**
-     * Specifies whether the object is (true) or is not (false) the latest version of
-     * an object.
+     * <p>Specifies whether the object is (true) or is not (false) the latest version
+     * of an object.</p>
      */
     inline DeleteMarkerEntry& WithIsLatest(bool value) { SetIsLatest(value); return *this;}
 
 
     /**
-     * Date and time the object was last modified.
+     * <p>Date and time the object was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * Date and time the object was last modified.
+     * <p>Date and time the object was last modified.</p>
      */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
-     * Date and time the object was last modified.
+     * <p>Date and time the object was last modified.</p>
      */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
 
     /**
-     * Date and time the object was last modified.
+     * <p>Date and time the object was last modified.</p>
      */
     inline DeleteMarkerEntry& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
 
     /**
-     * Date and time the object was last modified.
+     * <p>Date and time the object was last modified.</p>
      */
     inline DeleteMarkerEntry& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 

@@ -37,7 +37,7 @@ CreateTableResult::CreateTableResult(const Aws::AmazonWebServiceResult<JsonValue
 
 CreateTableResult& CreateTableResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TableDescription"))
   {
     m_tableDescription = jsonValue.GetObject("TableDescription");

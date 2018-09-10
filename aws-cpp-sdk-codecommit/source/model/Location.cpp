@@ -37,7 +37,7 @@ Location::Location() :
 {
 }
 
-Location::Location(const JsonValue& jsonValue) : 
+Location::Location(JsonView jsonValue) : 
     m_filePathHasBeenSet(false),
     m_filePosition(0),
     m_filePositionHasBeenSet(false),
@@ -47,7 +47,7 @@ Location::Location(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Location& Location::operator =(const JsonValue& jsonValue)
+Location& Location::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("filePath"))
   {

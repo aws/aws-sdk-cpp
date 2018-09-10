@@ -35,7 +35,7 @@ BatchAddFacetToObject::BatchAddFacetToObject() :
 {
 }
 
-BatchAddFacetToObject::BatchAddFacetToObject(const JsonValue& jsonValue) : 
+BatchAddFacetToObject::BatchAddFacetToObject(JsonView jsonValue) : 
     m_schemaFacetHasBeenSet(false),
     m_objectAttributeListHasBeenSet(false),
     m_objectReferenceHasBeenSet(false)
@@ -43,7 +43,7 @@ BatchAddFacetToObject::BatchAddFacetToObject(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchAddFacetToObject& BatchAddFacetToObject::operator =(const JsonValue& jsonValue)
+BatchAddFacetToObject& BatchAddFacetToObject::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SchemaFacet"))
   {
@@ -54,7 +54,7 @@ BatchAddFacetToObject& BatchAddFacetToObject::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("ObjectAttributeList"))
   {
-    Array<JsonValue> objectAttributeListJsonList = jsonValue.GetArray("ObjectAttributeList");
+    Array<JsonView> objectAttributeListJsonList = jsonValue.GetArray("ObjectAttributeList");
     for(unsigned objectAttributeListIndex = 0; objectAttributeListIndex < objectAttributeListJsonList.GetLength(); ++objectAttributeListIndex)
     {
       m_objectAttributeList.push_back(objectAttributeListJsonList[objectAttributeListIndex].AsObject());

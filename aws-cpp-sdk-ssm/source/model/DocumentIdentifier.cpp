@@ -43,7 +43,7 @@ DocumentIdentifier::DocumentIdentifier() :
 {
 }
 
-DocumentIdentifier::DocumentIdentifier(const JsonValue& jsonValue) : 
+DocumentIdentifier::DocumentIdentifier(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_platformTypesHasBeenSet(false),
@@ -59,7 +59,7 @@ DocumentIdentifier::DocumentIdentifier(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DocumentIdentifier& DocumentIdentifier::operator =(const JsonValue& jsonValue)
+DocumentIdentifier& DocumentIdentifier::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -77,7 +77,7 @@ DocumentIdentifier& DocumentIdentifier::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("PlatformTypes"))
   {
-    Array<JsonValue> platformTypesJsonList = jsonValue.GetArray("PlatformTypes");
+    Array<JsonView> platformTypesJsonList = jsonValue.GetArray("PlatformTypes");
     for(unsigned platformTypesIndex = 0; platformTypesIndex < platformTypesJsonList.GetLength(); ++platformTypesIndex)
     {
       m_platformTypes.push_back(PlatformTypeMapper::GetPlatformTypeForName(platformTypesJsonList[platformTypesIndex].AsString()));
@@ -122,7 +122,7 @@ DocumentIdentifier& DocumentIdentifier::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

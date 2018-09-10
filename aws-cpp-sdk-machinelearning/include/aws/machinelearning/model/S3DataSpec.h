@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MachineLearning
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     S3DataSpec();
-    S3DataSpec(const Aws::Utils::Json::JsonValue& jsonValue);
-    S3DataSpec& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    S3DataSpec(Aws::Utils::Json::JsonView jsonValue);
+    S3DataSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

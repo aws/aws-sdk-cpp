@@ -24,12 +24,14 @@
 #include <aws/guardduty/model/AcceptInvitationResult.h>
 #include <aws/guardduty/model/ArchiveFindingsResult.h>
 #include <aws/guardduty/model/CreateDetectorResult.h>
+#include <aws/guardduty/model/CreateFilterResult.h>
 #include <aws/guardduty/model/CreateIPSetResult.h>
 #include <aws/guardduty/model/CreateMembersResult.h>
 #include <aws/guardduty/model/CreateSampleFindingsResult.h>
 #include <aws/guardduty/model/CreateThreatIntelSetResult.h>
 #include <aws/guardduty/model/DeclineInvitationsResult.h>
 #include <aws/guardduty/model/DeleteDetectorResult.h>
+#include <aws/guardduty/model/DeleteFilterResult.h>
 #include <aws/guardduty/model/DeleteIPSetResult.h>
 #include <aws/guardduty/model/DeleteInvitationsResult.h>
 #include <aws/guardduty/model/DeleteMembersResult.h>
@@ -37,6 +39,7 @@
 #include <aws/guardduty/model/DisassociateFromMasterAccountResult.h>
 #include <aws/guardduty/model/DisassociateMembersResult.h>
 #include <aws/guardduty/model/GetDetectorResult.h>
+#include <aws/guardduty/model/GetFilterResult.h>
 #include <aws/guardduty/model/GetFindingsResult.h>
 #include <aws/guardduty/model/GetFindingsStatisticsResult.h>
 #include <aws/guardduty/model/GetIPSetResult.h>
@@ -46,6 +49,7 @@
 #include <aws/guardduty/model/GetThreatIntelSetResult.h>
 #include <aws/guardduty/model/InviteMembersResult.h>
 #include <aws/guardduty/model/ListDetectorsResult.h>
+#include <aws/guardduty/model/ListFiltersResult.h>
 #include <aws/guardduty/model/ListFindingsResult.h>
 #include <aws/guardduty/model/ListIPSetsResult.h>
 #include <aws/guardduty/model/ListInvitationsResult.h>
@@ -55,6 +59,7 @@
 #include <aws/guardduty/model/StopMonitoringMembersResult.h>
 #include <aws/guardduty/model/UnarchiveFindingsResult.h>
 #include <aws/guardduty/model/UpdateDetectorResult.h>
+#include <aws/guardduty/model/UpdateFilterResult.h>
 #include <aws/guardduty/model/UpdateFindingsFeedbackResult.h>
 #include <aws/guardduty/model/UpdateIPSetResult.h>
 #include <aws/guardduty/model/UpdateThreatIntelSetResult.h>
@@ -80,11 +85,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -106,12 +106,14 @@ namespace Model
         class AcceptInvitationRequest;
         class ArchiveFindingsRequest;
         class CreateDetectorRequest;
+        class CreateFilterRequest;
         class CreateIPSetRequest;
         class CreateMembersRequest;
         class CreateSampleFindingsRequest;
         class CreateThreatIntelSetRequest;
         class DeclineInvitationsRequest;
         class DeleteDetectorRequest;
+        class DeleteFilterRequest;
         class DeleteIPSetRequest;
         class DeleteInvitationsRequest;
         class DeleteMembersRequest;
@@ -119,6 +121,7 @@ namespace Model
         class DisassociateFromMasterAccountRequest;
         class DisassociateMembersRequest;
         class GetDetectorRequest;
+        class GetFilterRequest;
         class GetFindingsRequest;
         class GetFindingsStatisticsRequest;
         class GetIPSetRequest;
@@ -128,6 +131,7 @@ namespace Model
         class GetThreatIntelSetRequest;
         class InviteMembersRequest;
         class ListDetectorsRequest;
+        class ListFiltersRequest;
         class ListFindingsRequest;
         class ListIPSetsRequest;
         class ListInvitationsRequest;
@@ -137,6 +141,7 @@ namespace Model
         class StopMonitoringMembersRequest;
         class UnarchiveFindingsRequest;
         class UpdateDetectorRequest;
+        class UpdateFilterRequest;
         class UpdateFindingsFeedbackRequest;
         class UpdateIPSetRequest;
         class UpdateThreatIntelSetRequest;
@@ -144,12 +149,14 @@ namespace Model
         typedef Aws::Utils::Outcome<AcceptInvitationResult, Aws::Client::AWSError<GuardDutyErrors>> AcceptInvitationOutcome;
         typedef Aws::Utils::Outcome<ArchiveFindingsResult, Aws::Client::AWSError<GuardDutyErrors>> ArchiveFindingsOutcome;
         typedef Aws::Utils::Outcome<CreateDetectorResult, Aws::Client::AWSError<GuardDutyErrors>> CreateDetectorOutcome;
+        typedef Aws::Utils::Outcome<CreateFilterResult, Aws::Client::AWSError<GuardDutyErrors>> CreateFilterOutcome;
         typedef Aws::Utils::Outcome<CreateIPSetResult, Aws::Client::AWSError<GuardDutyErrors>> CreateIPSetOutcome;
         typedef Aws::Utils::Outcome<CreateMembersResult, Aws::Client::AWSError<GuardDutyErrors>> CreateMembersOutcome;
         typedef Aws::Utils::Outcome<CreateSampleFindingsResult, Aws::Client::AWSError<GuardDutyErrors>> CreateSampleFindingsOutcome;
         typedef Aws::Utils::Outcome<CreateThreatIntelSetResult, Aws::Client::AWSError<GuardDutyErrors>> CreateThreatIntelSetOutcome;
         typedef Aws::Utils::Outcome<DeclineInvitationsResult, Aws::Client::AWSError<GuardDutyErrors>> DeclineInvitationsOutcome;
         typedef Aws::Utils::Outcome<DeleteDetectorResult, Aws::Client::AWSError<GuardDutyErrors>> DeleteDetectorOutcome;
+        typedef Aws::Utils::Outcome<DeleteFilterResult, Aws::Client::AWSError<GuardDutyErrors>> DeleteFilterOutcome;
         typedef Aws::Utils::Outcome<DeleteIPSetResult, Aws::Client::AWSError<GuardDutyErrors>> DeleteIPSetOutcome;
         typedef Aws::Utils::Outcome<DeleteInvitationsResult, Aws::Client::AWSError<GuardDutyErrors>> DeleteInvitationsOutcome;
         typedef Aws::Utils::Outcome<DeleteMembersResult, Aws::Client::AWSError<GuardDutyErrors>> DeleteMembersOutcome;
@@ -157,6 +164,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateFromMasterAccountResult, Aws::Client::AWSError<GuardDutyErrors>> DisassociateFromMasterAccountOutcome;
         typedef Aws::Utils::Outcome<DisassociateMembersResult, Aws::Client::AWSError<GuardDutyErrors>> DisassociateMembersOutcome;
         typedef Aws::Utils::Outcome<GetDetectorResult, Aws::Client::AWSError<GuardDutyErrors>> GetDetectorOutcome;
+        typedef Aws::Utils::Outcome<GetFilterResult, Aws::Client::AWSError<GuardDutyErrors>> GetFilterOutcome;
         typedef Aws::Utils::Outcome<GetFindingsResult, Aws::Client::AWSError<GuardDutyErrors>> GetFindingsOutcome;
         typedef Aws::Utils::Outcome<GetFindingsStatisticsResult, Aws::Client::AWSError<GuardDutyErrors>> GetFindingsStatisticsOutcome;
         typedef Aws::Utils::Outcome<GetIPSetResult, Aws::Client::AWSError<GuardDutyErrors>> GetIPSetOutcome;
@@ -166,6 +174,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetThreatIntelSetResult, Aws::Client::AWSError<GuardDutyErrors>> GetThreatIntelSetOutcome;
         typedef Aws::Utils::Outcome<InviteMembersResult, Aws::Client::AWSError<GuardDutyErrors>> InviteMembersOutcome;
         typedef Aws::Utils::Outcome<ListDetectorsResult, Aws::Client::AWSError<GuardDutyErrors>> ListDetectorsOutcome;
+        typedef Aws::Utils::Outcome<ListFiltersResult, Aws::Client::AWSError<GuardDutyErrors>> ListFiltersOutcome;
         typedef Aws::Utils::Outcome<ListFindingsResult, Aws::Client::AWSError<GuardDutyErrors>> ListFindingsOutcome;
         typedef Aws::Utils::Outcome<ListIPSetsResult, Aws::Client::AWSError<GuardDutyErrors>> ListIPSetsOutcome;
         typedef Aws::Utils::Outcome<ListInvitationsResult, Aws::Client::AWSError<GuardDutyErrors>> ListInvitationsOutcome;
@@ -175,6 +184,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StopMonitoringMembersResult, Aws::Client::AWSError<GuardDutyErrors>> StopMonitoringMembersOutcome;
         typedef Aws::Utils::Outcome<UnarchiveFindingsResult, Aws::Client::AWSError<GuardDutyErrors>> UnarchiveFindingsOutcome;
         typedef Aws::Utils::Outcome<UpdateDetectorResult, Aws::Client::AWSError<GuardDutyErrors>> UpdateDetectorOutcome;
+        typedef Aws::Utils::Outcome<UpdateFilterResult, Aws::Client::AWSError<GuardDutyErrors>> UpdateFilterOutcome;
         typedef Aws::Utils::Outcome<UpdateFindingsFeedbackResult, Aws::Client::AWSError<GuardDutyErrors>> UpdateFindingsFeedbackOutcome;
         typedef Aws::Utils::Outcome<UpdateIPSetResult, Aws::Client::AWSError<GuardDutyErrors>> UpdateIPSetOutcome;
         typedef Aws::Utils::Outcome<UpdateThreatIntelSetResult, Aws::Client::AWSError<GuardDutyErrors>> UpdateThreatIntelSetOutcome;
@@ -182,12 +192,14 @@ namespace Model
         typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
         typedef std::future<ArchiveFindingsOutcome> ArchiveFindingsOutcomeCallable;
         typedef std::future<CreateDetectorOutcome> CreateDetectorOutcomeCallable;
+        typedef std::future<CreateFilterOutcome> CreateFilterOutcomeCallable;
         typedef std::future<CreateIPSetOutcome> CreateIPSetOutcomeCallable;
         typedef std::future<CreateMembersOutcome> CreateMembersOutcomeCallable;
         typedef std::future<CreateSampleFindingsOutcome> CreateSampleFindingsOutcomeCallable;
         typedef std::future<CreateThreatIntelSetOutcome> CreateThreatIntelSetOutcomeCallable;
         typedef std::future<DeclineInvitationsOutcome> DeclineInvitationsOutcomeCallable;
         typedef std::future<DeleteDetectorOutcome> DeleteDetectorOutcomeCallable;
+        typedef std::future<DeleteFilterOutcome> DeleteFilterOutcomeCallable;
         typedef std::future<DeleteIPSetOutcome> DeleteIPSetOutcomeCallable;
         typedef std::future<DeleteInvitationsOutcome> DeleteInvitationsOutcomeCallable;
         typedef std::future<DeleteMembersOutcome> DeleteMembersOutcomeCallable;
@@ -195,6 +207,7 @@ namespace Model
         typedef std::future<DisassociateFromMasterAccountOutcome> DisassociateFromMasterAccountOutcomeCallable;
         typedef std::future<DisassociateMembersOutcome> DisassociateMembersOutcomeCallable;
         typedef std::future<GetDetectorOutcome> GetDetectorOutcomeCallable;
+        typedef std::future<GetFilterOutcome> GetFilterOutcomeCallable;
         typedef std::future<GetFindingsOutcome> GetFindingsOutcomeCallable;
         typedef std::future<GetFindingsStatisticsOutcome> GetFindingsStatisticsOutcomeCallable;
         typedef std::future<GetIPSetOutcome> GetIPSetOutcomeCallable;
@@ -204,6 +217,7 @@ namespace Model
         typedef std::future<GetThreatIntelSetOutcome> GetThreatIntelSetOutcomeCallable;
         typedef std::future<InviteMembersOutcome> InviteMembersOutcomeCallable;
         typedef std::future<ListDetectorsOutcome> ListDetectorsOutcomeCallable;
+        typedef std::future<ListFiltersOutcome> ListFiltersOutcomeCallable;
         typedef std::future<ListFindingsOutcome> ListFindingsOutcomeCallable;
         typedef std::future<ListIPSetsOutcome> ListIPSetsOutcomeCallable;
         typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
@@ -213,6 +227,7 @@ namespace Model
         typedef std::future<StopMonitoringMembersOutcome> StopMonitoringMembersOutcomeCallable;
         typedef std::future<UnarchiveFindingsOutcome> UnarchiveFindingsOutcomeCallable;
         typedef std::future<UpdateDetectorOutcome> UpdateDetectorOutcomeCallable;
+        typedef std::future<UpdateFilterOutcome> UpdateFilterOutcomeCallable;
         typedef std::future<UpdateFindingsFeedbackOutcome> UpdateFindingsFeedbackOutcomeCallable;
         typedef std::future<UpdateIPSetOutcome> UpdateIPSetOutcomeCallable;
         typedef std::future<UpdateThreatIntelSetOutcome> UpdateThreatIntelSetOutcomeCallable;
@@ -223,12 +238,14 @@ namespace Model
     typedef std::function<void(const GuardDutyClient*, const Model::AcceptInvitationRequest&, const Model::AcceptInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptInvitationResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ArchiveFindingsRequest&, const Model::ArchiveFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ArchiveFindingsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::CreateDetectorRequest&, const Model::CreateDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDetectorResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::CreateFilterRequest&, const Model::CreateFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFilterResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::CreateIPSetRequest&, const Model::CreateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIPSetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::CreateMembersRequest&, const Model::CreateMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::CreateSampleFindingsRequest&, const Model::CreateSampleFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSampleFindingsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::CreateThreatIntelSetRequest&, const Model::CreateThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThreatIntelSetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeclineInvitationsRequest&, const Model::DeclineInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeclineInvitationsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteDetectorRequest&, const Model::DeleteDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDetectorResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::DeleteFilterRequest&, const Model::DeleteFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFilterResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteIPSetRequest&, const Model::DeleteIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIPSetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteInvitationsRequest&, const Model::DeleteInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInvitationsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteMembersRequest&, const Model::DeleteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMembersResponseReceivedHandler;
@@ -236,6 +253,7 @@ namespace Model
     typedef std::function<void(const GuardDutyClient*, const Model::DisassociateFromMasterAccountRequest&, const Model::DisassociateFromMasterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFromMasterAccountResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DisassociateMembersRequest&, const Model::DisassociateMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetDetectorRequest&, const Model::GetDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDetectorResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::GetFilterRequest&, const Model::GetFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFilterResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetFindingsRequest&, const Model::GetFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetFindingsStatisticsRequest&, const Model::GetFindingsStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsStatisticsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetIPSetRequest&, const Model::GetIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIPSetResponseReceivedHandler;
@@ -245,6 +263,7 @@ namespace Model
     typedef std::function<void(const GuardDutyClient*, const Model::GetThreatIntelSetRequest&, const Model::GetThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThreatIntelSetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::InviteMembersRequest&, const Model::InviteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InviteMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListDetectorsRequest&, const Model::ListDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDetectorsResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::ListFiltersRequest&, const Model::ListFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFiltersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListFindingsRequest&, const Model::ListFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListIPSetsRequest&, const Model::ListIPSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIPSetsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;
@@ -254,6 +273,7 @@ namespace Model
     typedef std::function<void(const GuardDutyClient*, const Model::StopMonitoringMembersRequest&, const Model::StopMonitoringMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMonitoringMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UnarchiveFindingsRequest&, const Model::UnarchiveFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnarchiveFindingsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateDetectorRequest&, const Model::UpdateDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDetectorResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::UpdateFilterRequest&, const Model::UpdateFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFilterResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateFindingsFeedbackRequest&, const Model::UpdateFindingsFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsFeedbackResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateIPSetRequest&, const Model::UpdateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIPSetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateThreatIntelSetRequest&, const Model::UpdateThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThreatIntelSetResponseReceivedHandler;
@@ -288,7 +308,7 @@ namespace Model
 
         virtual ~GuardDutyClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "guardduty"; }
+        inline virtual const char* GetServiceClientName() const override { return "GuardDuty"; }
 
 
         /**
@@ -377,6 +397,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDetectorAsync(const Model::CreateDetectorRequest& request, const CreateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Creates a filter using the specified finding criteria.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFilterOutcome CreateFilter(const Model::CreateFilterRequest& request) const;
+
+        /**
+         * Creates a filter using the specified finding criteria.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFilterOutcomeCallable CreateFilterCallable(const Model::CreateFilterRequest& request) const;
+
+        /**
+         * Creates a filter using the specified finding criteria.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFilterAsync(const Model::CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Creates a new IPSet - a list of trusted IP addresses that have been whitelisted
@@ -557,6 +602,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDetectorAsync(const Model::DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Deletes the filter specified by the filter name.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFilterOutcome DeleteFilter(const Model::DeleteFilterRequest& request) const;
+
+        /**
+         * Deletes the filter specified by the filter name.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFilterOutcomeCallable DeleteFilterCallable(const Model::DeleteFilterRequest& request) const;
+
+        /**
+         * Deletes the filter specified by the filter name.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFilterAsync(const Model::DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Deletes the IPSet specified by the IPSet ID.<p><h3>See Also:</h3>   <a
@@ -750,6 +820,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDetectorAsync(const Model::GetDetectorRequest& request, const GetDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Returns the details of the filter specified by the filter name.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFilterOutcome GetFilter(const Model::GetFilterRequest& request) const;
+
+        /**
+         * Returns the details of the filter specified by the filter name.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetFilterOutcomeCallable GetFilterCallable(const Model::GetFilterRequest& request) const;
+
+        /**
+         * Returns the details of the filter specified by the filter name.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetFilterAsync(const Model::GetFilterRequest& request, const GetFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Describes Amazon GuardDuty findings specified by finding IDs.<p><h3>See
@@ -1010,6 +1108,31 @@ namespace Model
         virtual void ListDetectorsAsync(const Model::ListDetectorsRequest& request, const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Returns a paginated list of the current filters.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFiltersOutcome ListFilters(const Model::ListFiltersRequest& request) const;
+
+        /**
+         * Returns a paginated list of the current filters.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFiltersOutcomeCallable ListFiltersCallable(const Model::ListFiltersRequest& request) const;
+
+        /**
+         * Returns a paginated list of the current filters.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFiltersAsync(const Model::ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Lists Amazon GuardDuty findings for the specified detector ID.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFindings">AWS
@@ -1186,7 +1309,7 @@ namespace Model
         /**
          * Disables GuardDuty from monitoring findings of the member accounts specified by
          * the account IDs. After running this command, a master GuardDuty account can run
-         * StartMonitoringMembers to re-enable GuardDuty to monitor these members'
+         * StartMonitoringMembers to re-enable GuardDuty to monitor these members’
          * findings.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">AWS
          * API Reference</a></p>
@@ -1196,7 +1319,7 @@ namespace Model
         /**
          * Disables GuardDuty from monitoring findings of the member accounts specified by
          * the account IDs. After running this command, a master GuardDuty account can run
-         * StartMonitoringMembers to re-enable GuardDuty to monitor these members'
+         * StartMonitoringMembers to re-enable GuardDuty to monitor these members’
          * findings.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">AWS
          * API Reference</a></p>
@@ -1208,7 +1331,7 @@ namespace Model
         /**
          * Disables GuardDuty from monitoring findings of the member accounts specified by
          * the account IDs. After running this command, a master GuardDuty account can run
-         * StartMonitoringMembers to re-enable GuardDuty to monitor these members'
+         * StartMonitoringMembers to re-enable GuardDuty to monitor these members’
          * findings.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">AWS
          * API Reference</a></p>
@@ -1272,6 +1395,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateDetectorAsync(const Model::UpdateDetectorRequest& request, const UpdateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Updates the filter specified by the filter name.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFilterOutcome UpdateFilter(const Model::UpdateFilterRequest& request) const;
+
+        /**
+         * Updates the filter specified by the filter name.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFilterOutcomeCallable UpdateFilterCallable(const Model::UpdateFilterRequest& request) const;
+
+        /**
+         * Updates the filter specified by the filter name.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFilterAsync(const Model::UpdateFilterRequest& request, const UpdateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Marks specified Amazon GuardDuty findings as useful or not useful.<p><h3>See
@@ -1362,12 +1510,14 @@ namespace Model
         void AcceptInvitationAsyncHelper(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ArchiveFindingsAsyncHelper(const Model::ArchiveFindingsRequest& request, const ArchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDetectorAsyncHelper(const Model::CreateDetectorRequest& request, const CreateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFilterAsyncHelper(const Model::CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateIPSetAsyncHelper(const Model::CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMembersAsyncHelper(const Model::CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSampleFindingsAsyncHelper(const Model::CreateSampleFindingsRequest& request, const CreateSampleFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateThreatIntelSetAsyncHelper(const Model::CreateThreatIntelSetRequest& request, const CreateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeclineInvitationsAsyncHelper(const Model::DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDetectorAsyncHelper(const Model::DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFilterAsyncHelper(const Model::DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIPSetAsyncHelper(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInvitationsAsyncHelper(const Model::DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMembersAsyncHelper(const Model::DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1375,6 +1525,7 @@ namespace Model
         void DisassociateFromMasterAccountAsyncHelper(const Model::DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateMembersAsyncHelper(const Model::DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDetectorAsyncHelper(const Model::GetDetectorRequest& request, const GetDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFilterAsyncHelper(const Model::GetFilterRequest& request, const GetFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFindingsAsyncHelper(const Model::GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFindingsStatisticsAsyncHelper(const Model::GetFindingsStatisticsRequest& request, const GetFindingsStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIPSetAsyncHelper(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1384,6 +1535,7 @@ namespace Model
         void GetThreatIntelSetAsyncHelper(const Model::GetThreatIntelSetRequest& request, const GetThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InviteMembersAsyncHelper(const Model::InviteMembersRequest& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDetectorsAsyncHelper(const Model::ListDetectorsRequest& request, const ListDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFiltersAsyncHelper(const Model::ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFindingsAsyncHelper(const Model::ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIPSetsAsyncHelper(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInvitationsAsyncHelper(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1393,6 +1545,7 @@ namespace Model
         void StopMonitoringMembersAsyncHelper(const Model::StopMonitoringMembersRequest& request, const StopMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnarchiveFindingsAsyncHelper(const Model::UnarchiveFindingsRequest& request, const UnarchiveFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDetectorAsyncHelper(const Model::UpdateDetectorRequest& request, const UpdateDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFilterAsyncHelper(const Model::UpdateFilterRequest& request, const UpdateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFindingsFeedbackAsyncHelper(const Model::UpdateFindingsFeedbackRequest& request, const UpdateFindingsFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIPSetAsyncHelper(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateThreatIntelSetAsyncHelper(const Model::UpdateThreatIntelSetRequest& request, const UpdateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/AvailabilityZone.h>
+#include <aws/rds/model/AvailableProcessorFeature.h>
 #include <utility>
 
 namespace Aws
@@ -495,6 +496,90 @@ namespace Model
      */
     inline OrderableDBInstanceOption& WithMaxIopsPerGib(double value) { SetMaxIopsPerGib(value); return *this;}
 
+
+    /**
+     * <p>A list of the available processor features for the DB instance class of a DB
+     * instance.</p>
+     */
+    inline const Aws::Vector<AvailableProcessorFeature>& GetAvailableProcessorFeatures() const{ return m_availableProcessorFeatures; }
+
+    /**
+     * <p>A list of the available processor features for the DB instance class of a DB
+     * instance.</p>
+     */
+    inline void SetAvailableProcessorFeatures(const Aws::Vector<AvailableProcessorFeature>& value) { m_availableProcessorFeaturesHasBeenSet = true; m_availableProcessorFeatures = value; }
+
+    /**
+     * <p>A list of the available processor features for the DB instance class of a DB
+     * instance.</p>
+     */
+    inline void SetAvailableProcessorFeatures(Aws::Vector<AvailableProcessorFeature>&& value) { m_availableProcessorFeaturesHasBeenSet = true; m_availableProcessorFeatures = std::move(value); }
+
+    /**
+     * <p>A list of the available processor features for the DB instance class of a DB
+     * instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithAvailableProcessorFeatures(const Aws::Vector<AvailableProcessorFeature>& value) { SetAvailableProcessorFeatures(value); return *this;}
+
+    /**
+     * <p>A list of the available processor features for the DB instance class of a DB
+     * instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithAvailableProcessorFeatures(Aws::Vector<AvailableProcessorFeature>&& value) { SetAvailableProcessorFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the available processor features for the DB instance class of a DB
+     * instance.</p>
+     */
+    inline OrderableDBInstanceOption& AddAvailableProcessorFeatures(const AvailableProcessorFeature& value) { m_availableProcessorFeaturesHasBeenSet = true; m_availableProcessorFeatures.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the available processor features for the DB instance class of a DB
+     * instance.</p>
+     */
+    inline OrderableDBInstanceOption& AddAvailableProcessorFeatures(AvailableProcessorFeature&& value) { m_availableProcessorFeaturesHasBeenSet = true; m_availableProcessorFeatures.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedEngineModes() const{ return m_supportedEngineModes; }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline void SetSupportedEngineModes(const Aws::Vector<Aws::String>& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = value; }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline void SetSupportedEngineModes(Aws::Vector<Aws::String>&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = std::move(value); }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportedEngineModes(const Aws::Vector<Aws::String>& value) { SetSupportedEngineModes(value); return *this;}
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportedEngineModes(Aws::Vector<Aws::String>&& value) { SetSupportedEngineModes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedEngineModes(const Aws::String& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedEngineModes(Aws::String&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedEngineModes(const char* value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_engine;
@@ -556,6 +641,12 @@ namespace Model
 
     double m_maxIopsPerGib;
     bool m_maxIopsPerGibHasBeenSet;
+
+    Aws::Vector<AvailableProcessorFeature> m_availableProcessorFeatures;
+    bool m_availableProcessorFeaturesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedEngineModes;
+    bool m_supportedEngineModesHasBeenSet;
   };
 
 } // namespace Model

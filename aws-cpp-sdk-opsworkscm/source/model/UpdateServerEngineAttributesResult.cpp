@@ -37,7 +37,7 @@ UpdateServerEngineAttributesResult::UpdateServerEngineAttributesResult(const Aws
 
 UpdateServerEngineAttributesResult& UpdateServerEngineAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Server"))
   {
     m_server = jsonValue.GetObject("Server");

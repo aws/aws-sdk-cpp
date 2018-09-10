@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WorkSpaces
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     ComputeType();
-    ComputeType(const Aws::Utils::Json::JsonValue& jsonValue);
-    ComputeType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ComputeType(Aws::Utils::Json::JsonView jsonValue);
+    ComputeType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

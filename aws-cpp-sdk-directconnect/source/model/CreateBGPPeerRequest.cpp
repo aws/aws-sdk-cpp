@@ -44,7 +44,7 @@ Aws::String CreateBGPPeerRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateBGPPeerRequest::GetRequestSpecificHeaders() const

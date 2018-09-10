@@ -44,7 +44,7 @@ ActivityTaskScheduledEventAttributes::ActivityTaskScheduledEventAttributes() :
 {
 }
 
-ActivityTaskScheduledEventAttributes::ActivityTaskScheduledEventAttributes(const JsonValue& jsonValue) : 
+ActivityTaskScheduledEventAttributes::ActivityTaskScheduledEventAttributes(JsonView jsonValue) : 
     m_activityTypeHasBeenSet(false),
     m_activityIdHasBeenSet(false),
     m_inputHasBeenSet(false),
@@ -61,7 +61,7 @@ ActivityTaskScheduledEventAttributes::ActivityTaskScheduledEventAttributes(const
   *this = jsonValue;
 }
 
-ActivityTaskScheduledEventAttributes& ActivityTaskScheduledEventAttributes::operator =(const JsonValue& jsonValue)
+ActivityTaskScheduledEventAttributes& ActivityTaskScheduledEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("activityType"))
   {

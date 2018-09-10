@@ -37,7 +37,7 @@ StartLabelDetectionResult::StartLabelDetectionResult(const Aws::AmazonWebService
 
 StartLabelDetectionResult& StartLabelDetectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");

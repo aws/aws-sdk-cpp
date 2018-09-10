@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     GlobalTable();
-    GlobalTable(const Aws::Utils::Json::JsonValue& jsonValue);
-    GlobalTable& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GlobalTable(Aws::Utils::Json::JsonView jsonValue);
+    GlobalTable& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

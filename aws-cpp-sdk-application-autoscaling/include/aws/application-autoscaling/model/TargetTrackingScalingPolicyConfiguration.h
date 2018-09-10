@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ApplicationAutoScaling
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     TargetTrackingScalingPolicyConfiguration();
-    TargetTrackingScalingPolicyConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    TargetTrackingScalingPolicyConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TargetTrackingScalingPolicyConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    TargetTrackingScalingPolicyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -94,27 +95,27 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A customized metric.</p>
      */
     inline const CustomizedMetricSpecification& GetCustomizedMetricSpecification() const{ return m_customizedMetricSpecification; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A customized metric.</p>
      */
     inline void SetCustomizedMetricSpecification(const CustomizedMetricSpecification& value) { m_customizedMetricSpecificationHasBeenSet = true; m_customizedMetricSpecification = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A customized metric.</p>
      */
     inline void SetCustomizedMetricSpecification(CustomizedMetricSpecification&& value) { m_customizedMetricSpecificationHasBeenSet = true; m_customizedMetricSpecification = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A customized metric.</p>
      */
     inline TargetTrackingScalingPolicyConfiguration& WithCustomizedMetricSpecification(const CustomizedMetricSpecification& value) { SetCustomizedMetricSpecification(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A customized metric.</p>
      */
     inline TargetTrackingScalingPolicyConfiguration& WithCustomizedMetricSpecification(CustomizedMetricSpecification&& value) { SetCustomizedMetricSpecification(std::move(value)); return *this;}
 

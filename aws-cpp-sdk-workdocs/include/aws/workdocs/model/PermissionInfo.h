@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WorkDocs
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     PermissionInfo();
-    PermissionInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    PermissionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PermissionInfo(Aws::Utils::Json::JsonView jsonValue);
+    PermissionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

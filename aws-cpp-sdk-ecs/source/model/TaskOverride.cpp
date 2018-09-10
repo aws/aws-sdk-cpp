@@ -35,7 +35,7 @@ TaskOverride::TaskOverride() :
 {
 }
 
-TaskOverride::TaskOverride(const JsonValue& jsonValue) : 
+TaskOverride::TaskOverride(JsonView jsonValue) : 
     m_containerOverridesHasBeenSet(false),
     m_taskRoleArnHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false)
@@ -43,11 +43,11 @@ TaskOverride::TaskOverride(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TaskOverride& TaskOverride::operator =(const JsonValue& jsonValue)
+TaskOverride& TaskOverride::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("containerOverrides"))
   {
-    Array<JsonValue> containerOverridesJsonList = jsonValue.GetArray("containerOverrides");
+    Array<JsonView> containerOverridesJsonList = jsonValue.GetArray("containerOverrides");
     for(unsigned containerOverridesIndex = 0; containerOverridesIndex < containerOverridesJsonList.GetLength(); ++containerOverridesIndex)
     {
       m_containerOverrides.push_back(containerOverridesJsonList[containerOverridesIndex].AsObject());

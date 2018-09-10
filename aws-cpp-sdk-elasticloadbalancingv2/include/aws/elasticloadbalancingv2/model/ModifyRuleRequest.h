@@ -86,73 +86,206 @@ namespace Model
 
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
+     * <p>If the field name is <code>host-header</code>, you can specify a single host
+     * name (for example, my.example.com). A host name is case insensitive, can be up
+     * to 128 characters in length, and can contain any of the following characters.
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<RuleCondition>& GetConditions() const{ return m_conditions; }
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
+     * <p>If the field name is <code>host-header</code>, you can specify a single host
+     * name (for example, my.example.com). A host name is case insensitive, can be up
+     * to 128 characters in length, and can contain any of the following characters.
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline void SetConditions(const Aws::Vector<RuleCondition>& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
+     * <p>If the field name is <code>host-header</code>, you can specify a single host
+     * name (for example, my.example.com). A host name is case insensitive, can be up
+     * to 128 characters in length, and can contain any of the following characters.
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
+     * <p>If the field name is <code>host-header</code>, you can specify a single host
+     * name (for example, my.example.com). A host name is case insensitive, can be up
+     * to 128 characters in length, and can contain any of the following characters.
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline ModifyRuleRequest& WithConditions(const Aws::Vector<RuleCondition>& value) { SetConditions(value); return *this;}
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
+     * <p>If the field name is <code>host-header</code>, you can specify a single host
+     * name (for example, my.example.com). A host name is case insensitive, can be up
+     * to 128 characters in length, and can contain any of the following characters.
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline ModifyRuleRequest& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(std::move(value)); return *this;}
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
+     * <p>If the field name is <code>host-header</code>, you can specify a single host
+     * name (for example, my.example.com). A host name is case insensitive, can be up
+     * to 128 characters in length, and can contain any of the following characters.
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline ModifyRuleRequest& AddConditions(const RuleCondition& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
 
     /**
-     * <p>The conditions.</p>
+     * <p>The conditions. Each condition specifies a field name and a single value.</p>
+     * <p>If the field name is <code>host-header</code>, you can specify a single host
+     * name (for example, my.example.com). A host name is case insensitive, can be up
+     * to 128 characters in length, and can contain any of the following characters.
+     * You can include up to three wildcard characters.</p> <ul> <li> <p>A-Z, a-z,
+     * 0-9</p> </li> <li> <p>- .</p> </li> <li> <p>* (matches 0 or more characters)</p>
+     * </li> <li> <p>? (matches exactly 1 character)</p> </li> </ul> <p>If the field
+     * name is <code>path-pattern</code>, you can specify a single path pattern. A path
+     * pattern is case-sensitive, can be up to 128 characters in length, and can
+     * contain any of the following characters. You can include up to three wildcard
+     * characters.</p> <ul> <li> <p>A-Z, a-z, 0-9</p> </li> <li> <p>_ - . $ / ~ " ' @ :
+     * +</p> </li> <li> <p>&amp; (using &amp;amp;)</p> </li> <li> <p>* (matches 0 or
+     * more characters)</p> </li> <li> <p>? (matches exactly 1 character)</p> </li>
+     * </ul>
      */
     inline ModifyRuleRequest& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
+     * <p>The actions.</p> <p>If the action type is <code>forward</code>, you can
+     * specify a single target group.</p> <p>If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>If the action type is <code>authenticate-cognito</code>, you
+     * can use Amazon Cognito to authenticate users as they access your
+     * application.</p>
      */
     inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
+     * <p>The actions.</p> <p>If the action type is <code>forward</code>, you can
+     * specify a single target group.</p> <p>If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>If the action type is <code>authenticate-cognito</code>, you
+     * can use Amazon Cognito to authenticate users as they access your
+     * application.</p>
      */
     inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
+     * <p>The actions.</p> <p>If the action type is <code>forward</code>, you can
+     * specify a single target group.</p> <p>If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>If the action type is <code>authenticate-cognito</code>, you
+     * can use Amazon Cognito to authenticate users as they access your
+     * application.</p>
      */
     inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
+     * <p>The actions.</p> <p>If the action type is <code>forward</code>, you can
+     * specify a single target group.</p> <p>If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>If the action type is <code>authenticate-cognito</code>, you
+     * can use Amazon Cognito to authenticate users as they access your
+     * application.</p>
      */
     inline ModifyRuleRequest& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
+     * <p>The actions.</p> <p>If the action type is <code>forward</code>, you can
+     * specify a single target group.</p> <p>If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>If the action type is <code>authenticate-cognito</code>, you
+     * can use Amazon Cognito to authenticate users as they access your
+     * application.</p>
      */
     inline ModifyRuleRequest& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
+     * <p>The actions.</p> <p>If the action type is <code>forward</code>, you can
+     * specify a single target group.</p> <p>If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>If the action type is <code>authenticate-cognito</code>, you
+     * can use Amazon Cognito to authenticate users as they access your
+     * application.</p>
      */
     inline ModifyRuleRequest& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>The actions. The target group must use the HTTP or HTTPS protocol.</p>
+     * <p>The actions.</p> <p>If the action type is <code>forward</code>, you can
+     * specify a single target group.</p> <p>If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>If the action type is <code>authenticate-cognito</code>, you
+     * can use Amazon Cognito to authenticate users as they access your
+     * application.</p>
      */
     inline ModifyRuleRequest& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 

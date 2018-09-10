@@ -37,7 +37,9 @@ PutBotRequest::PutBotRequest() :
     m_locale(Locale::NOT_SET),
     m_localeHasBeenSet(false),
     m_childDirected(false),
-    m_childDirectedHasBeenSet(false)
+    m_childDirectedHasBeenSet(false),
+    m_createVersion(false),
+    m_createVersionHasBeenSet(false)
 {
 }
 
@@ -108,7 +110,13 @@ Aws::String PutBotRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_createVersionHasBeenSet)
+  {
+   payload.WithBool("createVersion", m_createVersion);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

@@ -43,6 +43,7 @@
 #include <aws/servicediscovery/model/ListOperationsRequest.h>
 #include <aws/servicediscovery/model/ListServicesRequest.h>
 #include <aws/servicediscovery/model/RegisterInstanceRequest.h>
+#include <aws/servicediscovery/model/UpdateInstanceCustomHealthStatusRequest.h>
 #include <aws/servicediscovery/model/UpdateServiceRequest.h>
 
 using namespace Aws;
@@ -667,6 +668,41 @@ void ServiceDiscoveryClient::RegisterInstanceAsync(const RegisterInstanceRequest
 void ServiceDiscoveryClient::RegisterInstanceAsyncHelper(const RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RegisterInstance(request), context);
+}
+
+UpdateInstanceCustomHealthStatusOutcome ServiceDiscoveryClient::UpdateInstanceCustomHealthStatus(const UpdateInstanceCustomHealthStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateInstanceCustomHealthStatusOutcome(NoResult());
+  }
+  else
+  {
+    return UpdateInstanceCustomHealthStatusOutcome(outcome.GetError());
+  }
+}
+
+UpdateInstanceCustomHealthStatusOutcomeCallable ServiceDiscoveryClient::UpdateInstanceCustomHealthStatusCallable(const UpdateInstanceCustomHealthStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateInstanceCustomHealthStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInstanceCustomHealthStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceDiscoveryClient::UpdateInstanceCustomHealthStatusAsync(const UpdateInstanceCustomHealthStatusRequest& request, const UpdateInstanceCustomHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateInstanceCustomHealthStatusAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceDiscoveryClient::UpdateInstanceCustomHealthStatusAsyncHelper(const UpdateInstanceCustomHealthStatusRequest& request, const UpdateInstanceCustomHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateInstanceCustomHealthStatus(request), context);
 }
 
 UpdateServiceOutcome ServiceDiscoveryClient::UpdateService(const UpdateServiceRequest& request) const

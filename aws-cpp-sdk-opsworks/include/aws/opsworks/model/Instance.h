@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     Instance();
-    Instance(const Aws::Utils::Json::JsonValue& jsonValue);
-    Instance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Instance(Aws::Utils::Json::JsonView jsonValue);
+    Instance& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -186,25 +187,39 @@ namespace Model
     inline Instance& WithArchitecture(Architecture&& value) { SetArchitecture(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The instance's Amazon Resource Number (ARN).</p>
+     */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
-    
+    /**
+     * <p>The instance's Amazon Resource Number (ARN).</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
-    
+    /**
+     * <p>The instance's Amazon Resource Number (ARN).</p>
+     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
-    
+    /**
+     * <p>The instance's Amazon Resource Number (ARN).</p>
+     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
-    
+    /**
+     * <p>The instance's Amazon Resource Number (ARN).</p>
+     */
     inline Instance& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
-    
+    /**
+     * <p>The instance's Amazon Resource Number (ARN).</p>
+     */
     inline Instance& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The instance's Amazon Resource Number (ARN).</p>
+     */
     inline Instance& WithArn(const char* value) { SetArn(value); return *this;}
 
 

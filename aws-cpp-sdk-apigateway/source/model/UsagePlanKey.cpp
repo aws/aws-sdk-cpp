@@ -36,7 +36,7 @@ UsagePlanKey::UsagePlanKey() :
 {
 }
 
-UsagePlanKey::UsagePlanKey(const JsonValue& jsonValue) : 
+UsagePlanKey::UsagePlanKey(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_valueHasBeenSet(false),
@@ -45,7 +45,7 @@ UsagePlanKey::UsagePlanKey(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UsagePlanKey& UsagePlanKey::operator =(const JsonValue& jsonValue)
+UsagePlanKey& UsagePlanKey::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

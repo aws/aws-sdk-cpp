@@ -36,7 +36,7 @@ InstanceStatus::InstanceStatus() :
 {
 }
 
-InstanceStatus::InstanceStatus(const JsonValue& jsonValue) : 
+InstanceStatus::InstanceStatus(JsonView jsonValue) : 
     m_state(InstanceState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
@@ -45,7 +45,7 @@ InstanceStatus::InstanceStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceStatus& InstanceStatus::operator =(const JsonValue& jsonValue)
+InstanceStatus& InstanceStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("State"))
   {

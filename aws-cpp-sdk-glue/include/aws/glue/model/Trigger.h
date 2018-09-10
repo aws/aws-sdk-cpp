@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     Trigger();
-    Trigger(const Aws::Utils::Json::JsonValue& jsonValue);
-    Trigger& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Trigger(Aws::Utils::Json::JsonView jsonValue);
+    Trigger& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

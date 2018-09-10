@@ -35,7 +35,7 @@ AttributeKey::AttributeKey() :
 {
 }
 
-AttributeKey::AttributeKey(const JsonValue& jsonValue) : 
+AttributeKey::AttributeKey(JsonView jsonValue) : 
     m_schemaArnHasBeenSet(false),
     m_facetNameHasBeenSet(false),
     m_nameHasBeenSet(false)
@@ -43,7 +43,7 @@ AttributeKey::AttributeKey(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AttributeKey& AttributeKey::operator =(const JsonValue& jsonValue)
+AttributeKey& AttributeKey::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SchemaArn"))
   {

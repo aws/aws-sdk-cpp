@@ -76,7 +76,18 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.add(generateServiceRequestHeader(serviceModel));
         fileList.add(generateExportHeader(serviceModel));
         fileList.add(generateCmakeFile(serviceModel));
-        fileList.add(generateNugetFile(serviceModel));
+ 
+        // Currently ec2 Nuget package is over 250MB, which is the hard limit set by Nuget (https://github.com/NuGet/NuGetGallery/issues/6144)
+        // So we split ec2 Nuget package to three packages, one for entry, one for Win32 one for x64.
+        // Win32 and x64 packages can be set to dependencies to the entry package, so as to keep users experience the same.
+        // Arrays.asList("ec2", "s3", "glacier") for additional services.
+        if (Arrays.asList("ec2").contains(serviceModel.getMetadata().getProjectName()))
+        {
+            fileList.addAll(generateNugetFileForLargePackage(serviceModel));
+        } else {
+            fileList.add(generateNugetFile(serviceModel));
+        }
+
         SdkFileEntry[] retArray = new SdkFileEntry[fileList.size()];
         return fileList.toArray(retArray);
     }
@@ -239,6 +250,28 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         return makeFile(template, context, fileName, true);
     }
+
+    protected List<SdkFileEntry> generateNugetFileForLargePackage(ServiceModel serviceModel) throws Exception {
+
+        Template entryTemplate = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/packaging/LargePackageEntryNuget.vm", StandardCharsets.UTF_8.name());
+        Template win32Template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/packaging/LargePackageWin32Nuget.vm", StandardCharsets.UTF_8.name());
+        Template x64Template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/packaging/LargePackageX64Nuget.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("nl", "\n");
+
+        String entryFileName = String.format("nuget/aws-cpp-sdk-%s.autopkg", serviceModel.getMetadata().getProjectName());
+        String win32FileName = String.format("nuget/aws-cpp-sdk-%s.win32.autopkg", serviceModel.getMetadata().getProjectName());
+        String x64FileName = String.format("nuget/aws-cpp-sdk-%s.x64.autopkg", serviceModel.getMetadata().getProjectName());
+
+        List<SdkFileEntry> fileList = new ArrayList<>();
+        fileList.add(makeFile(entryTemplate, context, entryFileName, true));
+        fileList.add(makeFile(win32Template, context, win32FileName, true));
+        fileList.add(makeFile(x64Template, context, x64FileName, true));
+
+        return fileList;
+    }
+
 
     private SdkFileEntry generateServiceRequestHeader(final ServiceModel serviceModel) throws Exception {
 

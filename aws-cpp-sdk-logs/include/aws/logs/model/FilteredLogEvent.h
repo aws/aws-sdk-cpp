@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudWatchLogs
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     FilteredLogEvent();
-    FilteredLogEvent(const Aws::Utils::Json::JsonValue& jsonValue);
-    FilteredLogEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FilteredLogEvent(Aws::Utils::Json::JsonView jsonValue);
+    FilteredLogEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

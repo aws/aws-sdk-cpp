@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     ConfigurationItem();
-    ConfigurationItem(const Aws::Utils::Json::JsonValue& jsonValue);
-    ConfigurationItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ConfigurationItem(Aws::Utils::Json::JsonView jsonValue);
+    ConfigurationItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -90,37 +91,37 @@ namespace Model
 
 
     /**
-     * <p>The 12 digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit AWS account ID associated with the resource.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The 12 digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit AWS account ID associated with the resource.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The 12 digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit AWS account ID associated with the resource.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The 12 digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit AWS account ID associated with the resource.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The 12 digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit AWS account ID associated with the resource.</p>
      */
     inline ConfigurationItem& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The 12 digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit AWS account ID associated with the resource.</p>
      */
     inline ConfigurationItem& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The 12 digit AWS account ID associated with the resource.</p>
+     * <p>The 12-digit AWS account ID associated with the resource.</p>
      */
     inline ConfigurationItem& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -333,37 +334,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline ConfigurationItem& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline ConfigurationItem& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline ConfigurationItem& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -568,7 +569,7 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * is AWS CloudTrail?</a>.</p> <p>An empty field indicates that the current
+     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRelatedEvents() const{ return m_relatedEvents; }
@@ -578,7 +579,7 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * is AWS CloudTrail?</a>.</p> <p>An empty field indicates that the current
+     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event.</p>
      */
     inline void SetRelatedEvents(const Aws::Vector<Aws::String>& value) { m_relatedEventsHasBeenSet = true; m_relatedEvents = value; }
@@ -588,7 +589,7 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * is AWS CloudTrail?</a>.</p> <p>An empty field indicates that the current
+     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event.</p>
      */
     inline void SetRelatedEvents(Aws::Vector<Aws::String>&& value) { m_relatedEventsHasBeenSet = true; m_relatedEvents = std::move(value); }
@@ -598,7 +599,7 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * is AWS CloudTrail?</a>.</p> <p>An empty field indicates that the current
+     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event.</p>
      */
     inline ConfigurationItem& WithRelatedEvents(const Aws::Vector<Aws::String>& value) { SetRelatedEvents(value); return *this;}
@@ -608,7 +609,7 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * is AWS CloudTrail?</a>.</p> <p>An empty field indicates that the current
+     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event.</p>
      */
     inline ConfigurationItem& WithRelatedEvents(Aws::Vector<Aws::String>&& value) { SetRelatedEvents(std::move(value)); return *this;}
@@ -618,7 +619,7 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * is AWS CloudTrail?</a>.</p> <p>An empty field indicates that the current
+     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event.</p>
      */
     inline ConfigurationItem& AddRelatedEvents(const Aws::String& value) { m_relatedEventsHasBeenSet = true; m_relatedEvents.push_back(value); return *this; }
@@ -628,7 +629,7 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * is AWS CloudTrail?</a>.</p> <p>An empty field indicates that the current
+     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event.</p>
      */
     inline ConfigurationItem& AddRelatedEvents(Aws::String&& value) { m_relatedEventsHasBeenSet = true; m_relatedEvents.push_back(std::move(value)); return *this; }
@@ -638,7 +639,7 @@ namespace Model
      * current configuration was initiated by the events recorded in the CloudTrail
      * log. For more information about CloudTrail, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
-     * is AWS CloudTrail?</a>.</p> <p>An empty field indicates that the current
+     * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
      * configuration was not initiated by any event.</p>
      */
     inline ConfigurationItem& AddRelatedEvents(const char* value) { m_relatedEventsHasBeenSet = true; m_relatedEvents.push_back(value); return *this; }

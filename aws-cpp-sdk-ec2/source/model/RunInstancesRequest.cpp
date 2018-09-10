@@ -58,7 +58,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_tagSpecificationsHasBeenSet(false),
     m_launchTemplateHasBeenSet(false),
     m_instanceMarketOptionsHasBeenSet(false),
-    m_creditSpecificationHasBeenSet(false)
+    m_creditSpecificationHasBeenSet(false),
+    m_cpuOptionsHasBeenSet(false)
 {
 }
 
@@ -251,6 +252,11 @@ Aws::String RunInstancesRequest::SerializePayload() const
   if(m_creditSpecificationHasBeenSet)
   {
     m_creditSpecification.OutputToStream(ss, "CreditSpecification");
+  }
+
+  if(m_cpuOptionsHasBeenSet)
+  {
+    m_cpuOptions.OutputToStream(ss, "CpuOptions");
   }
 
   ss << "Version=2016-11-15";

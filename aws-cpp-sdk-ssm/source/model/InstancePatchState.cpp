@@ -51,7 +51,7 @@ InstancePatchState::InstancePatchState() :
 {
 }
 
-InstancePatchState::InstancePatchState(const JsonValue& jsonValue) : 
+InstancePatchState::InstancePatchState(JsonView jsonValue) : 
     m_instanceIdHasBeenSet(false),
     m_patchGroupHasBeenSet(false),
     m_baselineIdHasBeenSet(false),
@@ -75,7 +75,7 @@ InstancePatchState::InstancePatchState(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstancePatchState& InstancePatchState::operator =(const JsonValue& jsonValue)
+InstancePatchState& InstancePatchState::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceId"))
   {

@@ -53,7 +53,7 @@ NetworkProfile::NetworkProfile() :
 {
 }
 
-NetworkProfile::NetworkProfile(const JsonValue& jsonValue) : 
+NetworkProfile::NetworkProfile(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -79,7 +79,7 @@ NetworkProfile::NetworkProfile(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NetworkProfile& NetworkProfile::operator =(const JsonValue& jsonValue)
+NetworkProfile& NetworkProfile::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

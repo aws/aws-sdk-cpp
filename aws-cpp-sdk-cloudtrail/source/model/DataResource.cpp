@@ -34,14 +34,14 @@ DataResource::DataResource() :
 {
 }
 
-DataResource::DataResource(const JsonValue& jsonValue) : 
+DataResource::DataResource(JsonView jsonValue) : 
     m_typeHasBeenSet(false),
     m_valuesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DataResource& DataResource::operator =(const JsonValue& jsonValue)
+DataResource& DataResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {
@@ -52,7 +52,7 @@ DataResource& DataResource::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());

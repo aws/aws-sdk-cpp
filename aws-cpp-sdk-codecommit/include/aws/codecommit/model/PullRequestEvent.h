@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/codecommit/model/PullRequestEventType.h>
+#include <aws/codecommit/model/PullRequestCreatedEventMetadata.h>
 #include <aws/codecommit/model/PullRequestStatusChangedEventMetadata.h>
 #include <aws/codecommit/model/PullRequestSourceReferenceUpdatedEventMetadata.h>
 #include <aws/codecommit/model/PullRequestMergedStateChangedEventMetadata.h>
@@ -30,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeCommit
@@ -46,8 +48,8 @@ namespace Model
   {
   public:
     PullRequestEvent();
-    PullRequestEvent(const Aws::Utils::Json::JsonValue& jsonValue);
-    PullRequestEvent& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PullRequestEvent(Aws::Utils::Json::JsonView jsonValue);
+    PullRequestEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -200,6 +202,37 @@ namespace Model
 
 
     /**
+     * <p>Information about the source and destination branches for the pull
+     * request.</p>
+     */
+    inline const PullRequestCreatedEventMetadata& GetPullRequestCreatedEventMetadata() const{ return m_pullRequestCreatedEventMetadata; }
+
+    /**
+     * <p>Information about the source and destination branches for the pull
+     * request.</p>
+     */
+    inline void SetPullRequestCreatedEventMetadata(const PullRequestCreatedEventMetadata& value) { m_pullRequestCreatedEventMetadataHasBeenSet = true; m_pullRequestCreatedEventMetadata = value; }
+
+    /**
+     * <p>Information about the source and destination branches for the pull
+     * request.</p>
+     */
+    inline void SetPullRequestCreatedEventMetadata(PullRequestCreatedEventMetadata&& value) { m_pullRequestCreatedEventMetadataHasBeenSet = true; m_pullRequestCreatedEventMetadata = std::move(value); }
+
+    /**
+     * <p>Information about the source and destination branches for the pull
+     * request.</p>
+     */
+    inline PullRequestEvent& WithPullRequestCreatedEventMetadata(const PullRequestCreatedEventMetadata& value) { SetPullRequestCreatedEventMetadata(value); return *this;}
+
+    /**
+     * <p>Information about the source and destination branches for the pull
+     * request.</p>
+     */
+    inline PullRequestEvent& WithPullRequestCreatedEventMetadata(PullRequestCreatedEventMetadata&& value) { SetPullRequestCreatedEventMetadata(std::move(value)); return *this;}
+
+
+    /**
      * <p>Information about the change in status for the pull request event.</p>
      */
     inline const PullRequestStatusChangedEventMetadata& GetPullRequestStatusChangedEventMetadata() const{ return m_pullRequestStatusChangedEventMetadata; }
@@ -294,6 +327,9 @@ namespace Model
 
     Aws::String m_actorArn;
     bool m_actorArnHasBeenSet;
+
+    PullRequestCreatedEventMetadata m_pullRequestCreatedEventMetadata;
+    bool m_pullRequestCreatedEventMetadataHasBeenSet;
 
     PullRequestStatusChangedEventMetadata m_pullRequestStatusChangedEventMetadata;
     bool m_pullRequestStatusChangedEventMetadataHasBeenSet;

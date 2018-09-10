@@ -212,7 +212,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -222,12 +225,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
 
@@ -252,7 +256,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -262,12 +269,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
 
@@ -292,7 +300,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -302,12 +313,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
 
@@ -332,7 +344,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -342,12 +357,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
 
@@ -372,7 +388,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -382,12 +401,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline CacheCluster& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
 
@@ -412,7 +432,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -422,12 +445,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline CacheCluster& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
 
@@ -452,7 +476,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -462,12 +489,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline CacheCluster& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
@@ -1177,7 +1205,9 @@ namespace Model
      * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
      * the cluster is created. To enable in-transit encryption on a cluster you must
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>Default: <code>false</code> </p>
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
 
@@ -1186,7 +1216,9 @@ namespace Model
      * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
      * the cluster is created. To enable in-transit encryption on a cluster you must
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>Default: <code>false</code> </p>
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetTransitEncryptionEnabled(bool value) { m_transitEncryptionEnabledHasBeenSet = true; m_transitEncryptionEnabled = value; }
 
@@ -1195,7 +1227,9 @@ namespace Model
      * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
      * the cluster is created. To enable in-transit encryption on a cluster you must
      * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>Default: <code>false</code> </p>
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline CacheCluster& WithTransitEncryptionEnabled(bool value) { SetTransitEncryptionEnabled(value); return *this;}
 
@@ -1205,7 +1239,9 @@ namespace Model
      * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
      * cluster is created. To enable at-rest encryption on a cluster you must set
      * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>Default: <code>false</code> </p>
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
 
@@ -1214,7 +1250,9 @@ namespace Model
      * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
      * cluster is created. To enable at-rest encryption on a cluster you must set
      * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>Default: <code>false</code> </p>
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline void SetAtRestEncryptionEnabled(bool value) { m_atRestEncryptionEnabledHasBeenSet = true; m_atRestEncryptionEnabled = value; }
 
@@ -1223,7 +1261,9 @@ namespace Model
      * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
      * cluster is created. To enable at-rest encryption on a cluster you must set
      * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
-     * cluster.</p> <p>Default: <code>false</code> </p>
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline CacheCluster& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}
 

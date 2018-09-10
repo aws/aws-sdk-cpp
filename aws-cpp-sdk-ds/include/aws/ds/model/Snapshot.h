@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectoryService
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Snapshot();
-    Snapshot(const Aws::Utils::Json::JsonValue& jsonValue);
-    Snapshot& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Snapshot(Aws::Utils::Json::JsonView jsonValue);
+    Snapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

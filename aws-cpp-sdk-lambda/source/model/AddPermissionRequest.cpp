@@ -33,7 +33,8 @@ AddPermissionRequest::AddPermissionRequest() :
     m_sourceArnHasBeenSet(false),
     m_sourceAccountHasBeenSet(false),
     m_eventSourceTokenHasBeenSet(false),
-    m_qualifierHasBeenSet(false)
+    m_qualifierHasBeenSet(false),
+    m_revisionIdHasBeenSet(false)
 {
 }
 
@@ -77,7 +78,13 @@ Aws::String AddPermissionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_revisionIdHasBeenSet)
+  {
+   payload.WithString("RevisionId", m_revisionId);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 void AddPermissionRequest::AddQueryStringParameters(URI& uri) const

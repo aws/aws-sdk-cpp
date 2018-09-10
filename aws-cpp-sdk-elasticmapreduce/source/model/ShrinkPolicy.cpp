@@ -35,7 +35,7 @@ ShrinkPolicy::ShrinkPolicy() :
 {
 }
 
-ShrinkPolicy::ShrinkPolicy(const JsonValue& jsonValue) : 
+ShrinkPolicy::ShrinkPolicy(JsonView jsonValue) : 
     m_decommissionTimeout(0),
     m_decommissionTimeoutHasBeenSet(false),
     m_instanceResizePolicyHasBeenSet(false)
@@ -43,7 +43,7 @@ ShrinkPolicy::ShrinkPolicy(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ShrinkPolicy& ShrinkPolicy::operator =(const JsonValue& jsonValue)
+ShrinkPolicy& ShrinkPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DecommissionTimeout"))
   {

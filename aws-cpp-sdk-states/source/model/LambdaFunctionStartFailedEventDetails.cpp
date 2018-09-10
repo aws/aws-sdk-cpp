@@ -34,14 +34,14 @@ LambdaFunctionStartFailedEventDetails::LambdaFunctionStartFailedEventDetails() :
 {
 }
 
-LambdaFunctionStartFailedEventDetails::LambdaFunctionStartFailedEventDetails(const JsonValue& jsonValue) : 
+LambdaFunctionStartFailedEventDetails::LambdaFunctionStartFailedEventDetails(JsonView jsonValue) : 
     m_errorHasBeenSet(false),
     m_causeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LambdaFunctionStartFailedEventDetails& LambdaFunctionStartFailedEventDetails::operator =(const JsonValue& jsonValue)
+LambdaFunctionStartFailedEventDetails& LambdaFunctionStartFailedEventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("error"))
   {

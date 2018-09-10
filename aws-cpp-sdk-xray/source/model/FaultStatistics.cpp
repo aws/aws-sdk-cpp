@@ -36,7 +36,7 @@ FaultStatistics::FaultStatistics() :
 {
 }
 
-FaultStatistics::FaultStatistics(const JsonValue& jsonValue) : 
+FaultStatistics::FaultStatistics(JsonView jsonValue) : 
     m_otherCount(0),
     m_otherCountHasBeenSet(false),
     m_totalCount(0),
@@ -45,7 +45,7 @@ FaultStatistics::FaultStatistics(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FaultStatistics& FaultStatistics::operator =(const JsonValue& jsonValue)
+FaultStatistics& FaultStatistics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OtherCount"))
   {

@@ -29,13 +29,15 @@ namespace Model
 {
 
 CaptionSelector::CaptionSelector() : 
+    m_customLanguageCodeHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_sourceSettingsHasBeenSet(false)
 {
 }
 
-CaptionSelector::CaptionSelector(const JsonValue& jsonValue) : 
+CaptionSelector::CaptionSelector(JsonView jsonValue) : 
+    m_customLanguageCodeHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_sourceSettingsHasBeenSet(false)
@@ -43,8 +45,15 @@ CaptionSelector::CaptionSelector(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CaptionSelector& CaptionSelector::operator =(const JsonValue& jsonValue)
+CaptionSelector& CaptionSelector::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("customLanguageCode"))
+  {
+    m_customLanguageCode = jsonValue.GetString("customLanguageCode");
+
+    m_customLanguageCodeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("languageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("languageCode"));
@@ -65,6 +74,12 @@ CaptionSelector& CaptionSelector::operator =(const JsonValue& jsonValue)
 JsonValue CaptionSelector::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_customLanguageCodeHasBeenSet)
+  {
+   payload.WithString("customLanguageCode", m_customLanguageCode);
+
+  }
 
   if(m_languageCodeHasBeenSet)
   {

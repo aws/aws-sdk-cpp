@@ -32,24 +32,26 @@ SourceTableFeatureDetails::SourceTableFeatureDetails() :
     m_localSecondaryIndexesHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false),
     m_streamDescriptionHasBeenSet(false),
-    m_timeToLiveDescriptionHasBeenSet(false)
+    m_timeToLiveDescriptionHasBeenSet(false),
+    m_sSEDescriptionHasBeenSet(false)
 {
 }
 
-SourceTableFeatureDetails::SourceTableFeatureDetails(const JsonValue& jsonValue) : 
+SourceTableFeatureDetails::SourceTableFeatureDetails(JsonView jsonValue) : 
     m_localSecondaryIndexesHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false),
     m_streamDescriptionHasBeenSet(false),
-    m_timeToLiveDescriptionHasBeenSet(false)
+    m_timeToLiveDescriptionHasBeenSet(false),
+    m_sSEDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SourceTableFeatureDetails& SourceTableFeatureDetails::operator =(const JsonValue& jsonValue)
+SourceTableFeatureDetails& SourceTableFeatureDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LocalSecondaryIndexes"))
   {
-    Array<JsonValue> localSecondaryIndexesJsonList = jsonValue.GetArray("LocalSecondaryIndexes");
+    Array<JsonView> localSecondaryIndexesJsonList = jsonValue.GetArray("LocalSecondaryIndexes");
     for(unsigned localSecondaryIndexesIndex = 0; localSecondaryIndexesIndex < localSecondaryIndexesJsonList.GetLength(); ++localSecondaryIndexesIndex)
     {
       m_localSecondaryIndexes.push_back(localSecondaryIndexesJsonList[localSecondaryIndexesIndex].AsObject());
@@ -59,7 +61,7 @@ SourceTableFeatureDetails& SourceTableFeatureDetails::operator =(const JsonValue
 
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
   {
-    Array<JsonValue> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
+    Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
     for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
     {
       m_globalSecondaryIndexes.push_back(globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject());
@@ -79,6 +81,13 @@ SourceTableFeatureDetails& SourceTableFeatureDetails::operator =(const JsonValue
     m_timeToLiveDescription = jsonValue.GetObject("TimeToLiveDescription");
 
     m_timeToLiveDescriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SSEDescription"))
+  {
+    m_sSEDescription = jsonValue.GetObject("SSEDescription");
+
+    m_sSEDescriptionHasBeenSet = true;
   }
 
   return *this;
@@ -119,6 +128,12 @@ JsonValue SourceTableFeatureDetails::Jsonize() const
   if(m_timeToLiveDescriptionHasBeenSet)
   {
    payload.WithObject("TimeToLiveDescription", m_timeToLiveDescription.Jsonize());
+
+  }
+
+  if(m_sSEDescriptionHasBeenSet)
+  {
+   payload.WithObject("SSEDescription", m_sSEDescription.Jsonize());
 
   }
 

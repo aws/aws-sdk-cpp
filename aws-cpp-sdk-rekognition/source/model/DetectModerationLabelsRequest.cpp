@@ -45,7 +45,7 @@ Aws::String DetectModerationLabelsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DetectModerationLabelsRequest::GetRequestSpecificHeaders() const

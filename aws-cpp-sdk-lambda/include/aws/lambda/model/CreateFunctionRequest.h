@@ -128,12 +128,14 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6". To use the Python
      * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
      * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
-     * "nodejs4.3".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You
-     * must migrate existing functions to the newer Node.js runtime versions available
-     * on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
-     * will result in an invalid parmaeter error being returned. Note that you will
-     * have to follow this procedure for each region that contains functions written in
-     * the Node v0.10.42 runtime.</p> </note>
+     * "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
+     * "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to
+     * "dotnetcore2.0".</p> <note> <p>Node v0.10.42 is currently marked as deprecated.
+     * You must migrate existing functions to the newer Node.js runtime versions
+     * available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure
+     * to do so will result in an invalid parameter error being returned. Note that you
+     * will have to follow this procedure for each region that contains functions
+     * written in the Node v0.10.42 runtime.</p> </note>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
@@ -142,12 +144,14 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6". To use the Python
      * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
      * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
-     * "nodejs4.3".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You
-     * must migrate existing functions to the newer Node.js runtime versions available
-     * on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
-     * will result in an invalid parmaeter error being returned. Note that you will
-     * have to follow this procedure for each region that contains functions written in
-     * the Node v0.10.42 runtime.</p> </note>
+     * "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
+     * "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to
+     * "dotnetcore2.0".</p> <note> <p>Node v0.10.42 is currently marked as deprecated.
+     * You must migrate existing functions to the newer Node.js runtime versions
+     * available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure
+     * to do so will result in an invalid parameter error being returned. Note that you
+     * will have to follow this procedure for each region that contains functions
+     * written in the Node v0.10.42 runtime.</p> </note>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
@@ -156,12 +160,14 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6". To use the Python
      * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
      * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
-     * "nodejs4.3".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You
-     * must migrate existing functions to the newer Node.js runtime versions available
-     * on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
-     * will result in an invalid parmaeter error being returned. Note that you will
-     * have to follow this procedure for each region that contains functions written in
-     * the Node v0.10.42 runtime.</p> </note>
+     * "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
+     * "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to
+     * "dotnetcore2.0".</p> <note> <p>Node v0.10.42 is currently marked as deprecated.
+     * You must migrate existing functions to the newer Node.js runtime versions
+     * available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure
+     * to do so will result in an invalid parameter error being returned. Note that you
+     * will have to follow this procedure for each region that contains functions
+     * written in the Node v0.10.42 runtime.</p> </note>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
@@ -170,12 +176,14 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6". To use the Python
      * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
      * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
-     * "nodejs4.3".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You
-     * must migrate existing functions to the newer Node.js runtime versions available
-     * on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
-     * will result in an invalid parmaeter error being returned. Note that you will
-     * have to follow this procedure for each region that contains functions written in
-     * the Node v0.10.42 runtime.</p> </note>
+     * "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
+     * "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to
+     * "dotnetcore2.0".</p> <note> <p>Node v0.10.42 is currently marked as deprecated.
+     * You must migrate existing functions to the newer Node.js runtime versions
+     * available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure
+     * to do so will result in an invalid parameter error being returned. Note that you
+     * will have to follow this procedure for each region that contains functions
+     * written in the Node v0.10.42 runtime.</p> </note>
      */
     inline CreateFunctionRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
@@ -184,12 +192,14 @@ namespace Model
      * use the Python runtime v3.6, set the value to "python3.6". To use the Python
      * runtime v2.7, set the value to "python2.7". To use the Node.js runtime v6.10,
      * set the value to "nodejs6.10". To use the Node.js runtime v4.3, set the value to
-     * "nodejs4.3".</p> <note> <p>Node v0.10.42 is currently marked as deprecated. You
-     * must migrate existing functions to the newer Node.js runtime versions available
-     * on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure to do so
-     * will result in an invalid parmaeter error being returned. Note that you will
-     * have to follow this procedure for each region that contains functions written in
-     * the Node v0.10.42 runtime.</p> </note>
+     * "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
+     * "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to
+     * "dotnetcore2.0".</p> <note> <p>Node v0.10.42 is currently marked as deprecated.
+     * You must migrate existing functions to the newer Node.js runtime versions
+     * available on AWS Lambda (nodejs4.3 or nodejs6.10) as soon as possible. Failure
+     * to do so will result in an invalid parameter error being returned. Note that you
+     * will have to follow this procedure for each region that contains functions
+     * written in the Node v0.10.42 runtime.</p> </note>
      */
     inline CreateFunctionRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
@@ -513,31 +523,31 @@ namespace Model
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic. </p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic. </p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic. </p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::move(value); }
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic. </p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline CreateFunctionRequest& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
 
     /**
      * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic. </p>
+     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
      */
     inline CreateFunctionRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
 
@@ -635,62 +645,98 @@ namespace Model
 
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     * <p>The list of tags (key-value pairs) assigned to the new function. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     * <p>The list of tags (key-value pairs) assigned to the new function. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     * <p>The list of tags (key-value pairs) assigned to the new function. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     * <p>The list of tags (key-value pairs) assigned to the new function. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
      */
     inline CreateFunctionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     * <p>The list of tags (key-value pairs) assigned to the new function. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
      */
     inline CreateFunctionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     * <p>The list of tags (key-value pairs) assigned to the new function. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
      */
     inline CreateFunctionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     * <p>The list of tags (key-value pairs) assigned to the new function. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
      */
     inline CreateFunctionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     * <p>The list of tags (key-value pairs) assigned to the new function. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
      */
     inline CreateFunctionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     * <p>The list of tags (key-value pairs) assigned to the new function. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
      */
     inline CreateFunctionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     * <p>The list of tags (key-value pairs) assigned to the new function. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
      */
     inline CreateFunctionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     * <p>The list of tags (key-value pairs) assigned to the new function. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
      */
     inline CreateFunctionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function.</p>
+     * <p>The list of tags (key-value pairs) assigned to the new function. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
      */
     inline CreateFunctionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

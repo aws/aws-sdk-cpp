@@ -35,7 +35,7 @@ ResolvedTargets::ResolvedTargets() :
 {
 }
 
-ResolvedTargets::ResolvedTargets(const JsonValue& jsonValue) : 
+ResolvedTargets::ResolvedTargets(JsonView jsonValue) : 
     m_parameterValuesHasBeenSet(false),
     m_truncated(false),
     m_truncatedHasBeenSet(false)
@@ -43,11 +43,11 @@ ResolvedTargets::ResolvedTargets(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResolvedTargets& ResolvedTargets::operator =(const JsonValue& jsonValue)
+ResolvedTargets& ResolvedTargets::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ParameterValues"))
   {
-    Array<JsonValue> parameterValuesJsonList = jsonValue.GetArray("ParameterValues");
+    Array<JsonView> parameterValuesJsonList = jsonValue.GetArray("ParameterValues");
     for(unsigned parameterValuesIndex = 0; parameterValuesIndex < parameterValuesJsonList.GetLength(); ++parameterValuesIndex)
     {
       m_parameterValues.push_back(parameterValuesJsonList[parameterValuesIndex].AsString());

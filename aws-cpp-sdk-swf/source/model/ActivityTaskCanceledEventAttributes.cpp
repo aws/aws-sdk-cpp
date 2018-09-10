@@ -39,7 +39,7 @@ ActivityTaskCanceledEventAttributes::ActivityTaskCanceledEventAttributes() :
 {
 }
 
-ActivityTaskCanceledEventAttributes::ActivityTaskCanceledEventAttributes(const JsonValue& jsonValue) : 
+ActivityTaskCanceledEventAttributes::ActivityTaskCanceledEventAttributes(JsonView jsonValue) : 
     m_detailsHasBeenSet(false),
     m_scheduledEventId(0),
     m_scheduledEventIdHasBeenSet(false),
@@ -51,7 +51,7 @@ ActivityTaskCanceledEventAttributes::ActivityTaskCanceledEventAttributes(const J
   *this = jsonValue;
 }
 
-ActivityTaskCanceledEventAttributes& ActivityTaskCanceledEventAttributes::operator =(const JsonValue& jsonValue)
+ActivityTaskCanceledEventAttributes& ActivityTaskCanceledEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("details"))
   {

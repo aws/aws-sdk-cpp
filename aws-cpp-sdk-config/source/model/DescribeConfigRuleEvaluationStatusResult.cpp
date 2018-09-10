@@ -37,10 +37,10 @@ DescribeConfigRuleEvaluationStatusResult::DescribeConfigRuleEvaluationStatusResu
 
 DescribeConfigRuleEvaluationStatusResult& DescribeConfigRuleEvaluationStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConfigRulesEvaluationStatus"))
   {
-    Array<JsonValue> configRulesEvaluationStatusJsonList = jsonValue.GetArray("ConfigRulesEvaluationStatus");
+    Array<JsonView> configRulesEvaluationStatusJsonList = jsonValue.GetArray("ConfigRulesEvaluationStatus");
     for(unsigned configRulesEvaluationStatusIndex = 0; configRulesEvaluationStatusIndex < configRulesEvaluationStatusJsonList.GetLength(); ++configRulesEvaluationStatusIndex)
     {
       m_configRulesEvaluationStatus.push_back(configRulesEvaluationStatusJsonList[configRulesEvaluationStatusIndex].AsObject());

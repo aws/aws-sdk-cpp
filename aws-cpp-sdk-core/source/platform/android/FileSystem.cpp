@@ -158,13 +158,30 @@ Aws::String GetHomeDirectory()
     return Aws::Platform::GetCacheDirectory();
 }
 
-bool CreateDirectoryIfNotExists(const char* path)
+bool CreateDirectoryIfNotExists(const char* path, bool createParentDirs)
 {
-    AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Creating directory " << path);
+    Aws::String directoryName = path;
+    AWS_LOGSTREAM_INFO(FILE_SYSTEM_UTILS_LOG_TAG, "Creating directory " << directoryName);
 
-    int errorCode = mkdir(path, S_IRWXU | S_IRWXG | S_IRWXO);
-    AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Creation of directory " << path << " returned code: " << errno);
-    return errorCode == 0 || errno == EEXIST;
+    for (size_t i = createParentDirs ? 0 : directoryName.size() - 1; i < directoryName.size(); i++)
+    {
+        if (i != 0 && (directoryName[i] == FileSystem::PATH_DELIM || i == directoryName.size() - 1))
+        {
+            if (directoryName[i] == FileSystem::PATH_DELIM)
+            {
+                directoryName[i] = '\0';
+            }
+	    int errorCode = mkdir(directoryName.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
+	    if (errorCode != 0 && errno != EEXIST)
+	    {
+                AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, "Creation of directory " << directoryName.c_str() << " returned code: " << errno);
+                return false;
+	    }
+            AWS_LOGSTREAM_DEBUG(FILE_SYSTEM_UTILS_LOG_TAG, "Creation of directory " << directoryName.c_str() << " returned code: " << errno);
+            directoryName[i] = FileSystem::PATH_DELIM;
+        }
+    }
+    return true;
 }
 
 bool RemoveFileIfExists(const char* path)
@@ -213,26 +230,26 @@ Aws::String CreateTempFilePath()
 
 Aws::String GetExecutableDirectory()
 {
-	char dest[PATH_MAX];
-	size_t destSize = sizeof(dest);
-	memset(dest, 0, destSize);
+    char dest[PATH_MAX];
+    size_t destSize = sizeof(dest);
+    memset(dest, 0, destSize);
 
-	if (readlink("/proc/self/exe", dest, destSize))
-	{
-		Aws::String executablePath(dest);
-		auto lastSlash = executablePath.find_last_of('/');
-		if (lastSlash != std::string::npos)
-		{
-			return executablePath.substr(0, lastSlash);
-		}
-	}
+    if (readlink("/proc/self/exe", dest, destSize))
+    {
+        Aws::String executablePath(dest);
+        auto lastSlash = executablePath.find_last_of('/');
+        if (lastSlash != std::string::npos)
+        {
+            return executablePath.substr(0, lastSlash);
+        }
+    }
 
-	return "./";
+    return "./";
 }
 
-std::shared_ptr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
+Aws::UniquePtr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath)
 {
-    return Aws::MakeShared<AndroidDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
+    return Aws::MakeUnique<AndroidDirectory>(FILE_SYSTEM_UTILS_LOG_TAG, path, relativePath);
 }
 
 } // namespace FileSystem

@@ -22,6 +22,7 @@
 #include <aws/gamelift/model/ProtectionPolicy.h>
 #include <aws/gamelift/model/RuntimeConfiguration.h>
 #include <aws/gamelift/model/ResourceCreationLimitPolicy.h>
+#include <aws/gamelift/model/FleetType.h>
 #include <aws/gamelift/model/IpPermission.h>
 #include <utility>
 
@@ -502,10 +503,10 @@ namespace Model
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
      * this parameter is not set, instances in this fleet default to no protection. You
-     * can change a fleet's protection policy using UpdateFleetAttributes, but this
-     * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * can change a fleet's protection policy using <a>UpdateFleetAttributes</a>, but
+     * this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
      * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
      * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
      * scale-down event.</p> </li> </ul>
@@ -515,10 +516,10 @@ namespace Model
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
      * this parameter is not set, instances in this fleet default to no protection. You
-     * can change a fleet's protection policy using UpdateFleetAttributes, but this
-     * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * can change a fleet's protection policy using <a>UpdateFleetAttributes</a>, but
+     * this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
      * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
      * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
      * scale-down event.</p> </li> </ul>
@@ -528,10 +529,10 @@ namespace Model
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
      * this parameter is not set, instances in this fleet default to no protection. You
-     * can change a fleet's protection policy using UpdateFleetAttributes, but this
-     * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * can change a fleet's protection policy using <a>UpdateFleetAttributes</a>, but
+     * this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
      * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
      * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
      * scale-down event.</p> </li> </ul>
@@ -541,10 +542,10 @@ namespace Model
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
      * this parameter is not set, instances in this fleet default to no protection. You
-     * can change a fleet's protection policy using UpdateFleetAttributes, but this
-     * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * can change a fleet's protection policy using <a>UpdateFleetAttributes</a>, but
+     * this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
      * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
      * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
      * scale-down event.</p> </li> </ul>
@@ -554,10 +555,10 @@ namespace Model
     /**
      * <p>Game session protection policy to apply to all instances in this fleet. If
      * this parameter is not set, instances in this fleet default to no protection. You
-     * can change a fleet's protection policy using UpdateFleetAttributes, but this
-     * change will only affect sessions created after the policy change. You can also
-     * set protection for individual instances using <a>UpdateGameSession</a>.</p> <ul>
-     * <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
+     * can change a fleet's protection policy using <a>UpdateFleetAttributes</a>, but
+     * this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     * <ul> <li> <p> <b>NoProtection</b> -- The game session can be terminated during a
      * scale-down event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game
      * session is in an <code>ACTIVE</code> status, it cannot be terminated during a
      * scale-down event.</p> </li> </ul>
@@ -673,58 +674,66 @@ namespace Model
 
 
     /**
-     * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group. Or use a new name to create a new metric
-     * group. A fleet can only be included in one metric group at a time.</p>
+     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
+     * across all fleets in the group. Use an existing metric group name to add this
+     * fleet to the group, or use a new name to create a new metric group. A fleet can
+     * only be included in one metric group at a time.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
 
     /**
-     * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group. Or use a new name to create a new metric
-     * group. A fleet can only be included in one metric group at a time.</p>
+     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
+     * across all fleets in the group. Use an existing metric group name to add this
+     * fleet to the group, or use a new name to create a new metric group. A fleet can
+     * only be included in one metric group at a time.</p>
      */
     inline void SetMetricGroups(const Aws::Vector<Aws::String>& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = value; }
 
     /**
-     * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group. Or use a new name to create a new metric
-     * group. A fleet can only be included in one metric group at a time.</p>
+     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
+     * across all fleets in the group. Use an existing metric group name to add this
+     * fleet to the group, or use a new name to create a new metric group. A fleet can
+     * only be included in one metric group at a time.</p>
      */
     inline void SetMetricGroups(Aws::Vector<Aws::String>&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = std::move(value); }
 
     /**
-     * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group. Or use a new name to create a new metric
-     * group. A fleet can only be included in one metric group at a time.</p>
+     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
+     * across all fleets in the group. Use an existing metric group name to add this
+     * fleet to the group, or use a new name to create a new metric group. A fleet can
+     * only be included in one metric group at a time.</p>
      */
     inline CreateFleetRequest& WithMetricGroups(const Aws::Vector<Aws::String>& value) { SetMetricGroups(value); return *this;}
 
     /**
-     * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group. Or use a new name to create a new metric
-     * group. A fleet can only be included in one metric group at a time.</p>
+     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
+     * across all fleets in the group. Use an existing metric group name to add this
+     * fleet to the group, or use a new name to create a new metric group. A fleet can
+     * only be included in one metric group at a time.</p>
      */
     inline CreateFleetRequest& WithMetricGroups(Aws::Vector<Aws::String>&& value) { SetMetricGroups(std::move(value)); return *this;}
 
     /**
-     * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group. Or use a new name to create a new metric
-     * group. A fleet can only be included in one metric group at a time.</p>
+     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
+     * across all fleets in the group. Use an existing metric group name to add this
+     * fleet to the group, or use a new name to create a new metric group. A fleet can
+     * only be included in one metric group at a time.</p>
      */
     inline CreateFleetRequest& AddMetricGroups(const Aws::String& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 
     /**
-     * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group. Or use a new name to create a new metric
-     * group. A fleet can only be included in one metric group at a time.</p>
+     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
+     * across all fleets in the group. Use an existing metric group name to add this
+     * fleet to the group, or use a new name to create a new metric group. A fleet can
+     * only be included in one metric group at a time.</p>
      */
     inline CreateFleetRequest& AddMetricGroups(Aws::String&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Names of metric groups to add this fleet to. Use an existing metric group
-     * name to add this fleet to the group. Or use a new name to create a new metric
-     * group. A fleet can only be included in one metric group at a time.</p>
+     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
+     * across all fleets in the group. Use an existing metric group name to add this
+     * fleet to the group, or use a new name to create a new metric group. A fleet can
+     * only be included in one metric group at a time.</p>
      */
     inline CreateFleetRequest& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 
@@ -835,6 +844,77 @@ namespace Model
      */
     inline CreateFleetRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether to use on-demand instances or spot instances for this
+     * fleet. If empty, the default is ON_DEMAND. Both categories of instances use
+     * identical hardware and configurations, based on the instance type selected for
+     * this fleet. You can acquire on-demand instances at any time for a fixed price
+     * and keep them as long as you need them. Spot instances have lower prices, but
+     * spot pricing is variable, and while in use they can be interrupted (with a
+     * two-minute notification). Learn more about Amazon GameLift spot instances with
+     * at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
+     * Choose Computing Resources</a>. </p>
+     */
+    inline const FleetType& GetFleetType() const{ return m_fleetType; }
+
+    /**
+     * <p>Indicates whether to use on-demand instances or spot instances for this
+     * fleet. If empty, the default is ON_DEMAND. Both categories of instances use
+     * identical hardware and configurations, based on the instance type selected for
+     * this fleet. You can acquire on-demand instances at any time for a fixed price
+     * and keep them as long as you need them. Spot instances have lower prices, but
+     * spot pricing is variable, and while in use they can be interrupted (with a
+     * two-minute notification). Learn more about Amazon GameLift spot instances with
+     * at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
+     * Choose Computing Resources</a>. </p>
+     */
+    inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
+
+    /**
+     * <p>Indicates whether to use on-demand instances or spot instances for this
+     * fleet. If empty, the default is ON_DEMAND. Both categories of instances use
+     * identical hardware and configurations, based on the instance type selected for
+     * this fleet. You can acquire on-demand instances at any time for a fixed price
+     * and keep them as long as you need them. Spot instances have lower prices, but
+     * spot pricing is variable, and while in use they can be interrupted (with a
+     * two-minute notification). Learn more about Amazon GameLift spot instances with
+     * at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
+     * Choose Computing Resources</a>. </p>
+     */
+    inline void SetFleetType(FleetType&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
+
+    /**
+     * <p>Indicates whether to use on-demand instances or spot instances for this
+     * fleet. If empty, the default is ON_DEMAND. Both categories of instances use
+     * identical hardware and configurations, based on the instance type selected for
+     * this fleet. You can acquire on-demand instances at any time for a fixed price
+     * and keep them as long as you need them. Spot instances have lower prices, but
+     * spot pricing is variable, and while in use they can be interrupted (with a
+     * two-minute notification). Learn more about Amazon GameLift spot instances with
+     * at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
+     * Choose Computing Resources</a>. </p>
+     */
+    inline CreateFleetRequest& WithFleetType(const FleetType& value) { SetFleetType(value); return *this;}
+
+    /**
+     * <p>Indicates whether to use on-demand instances or spot instances for this
+     * fleet. If empty, the default is ON_DEMAND. Both categories of instances use
+     * identical hardware and configurations, based on the instance type selected for
+     * this fleet. You can acquire on-demand instances at any time for a fixed price
+     * and keep them as long as you need them. Spot instances have lower prices, but
+     * spot pricing is variable, and while in use they can be interrupted (with a
+     * two-minute notification). Learn more about Amazon GameLift spot instances with
+     * at <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
+     * Choose Computing Resources</a>. </p>
+     */
+    inline CreateFleetRequest& WithFleetType(FleetType&& value) { SetFleetType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -878,6 +958,9 @@ namespace Model
 
     Aws::String m_peerVpcId;
     bool m_peerVpcIdHasBeenSet;
+
+    FleetType m_fleetType;
+    bool m_fleetTypeHasBeenSet;
   };
 
 } // namespace Model

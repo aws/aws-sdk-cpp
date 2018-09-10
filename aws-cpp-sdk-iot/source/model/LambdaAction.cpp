@@ -33,13 +33,13 @@ LambdaAction::LambdaAction() :
 {
 }
 
-LambdaAction::LambdaAction(const JsonValue& jsonValue) : 
+LambdaAction::LambdaAction(JsonView jsonValue) : 
     m_functionArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LambdaAction& LambdaAction::operator =(const JsonValue& jsonValue)
+LambdaAction& LambdaAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("functionArn"))
   {

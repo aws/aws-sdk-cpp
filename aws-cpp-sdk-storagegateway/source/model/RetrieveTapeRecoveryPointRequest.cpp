@@ -44,7 +44,7 @@ Aws::String RetrieveTapeRecoveryPointRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RetrieveTapeRecoveryPointRequest::GetRequestSpecificHeaders() const

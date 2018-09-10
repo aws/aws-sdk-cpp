@@ -39,6 +39,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -47,8 +48,23 @@ namespace Model
 {
 
   /**
-   * <p>Structure containing attributes of the face that the algorithm
-   * detected.</p><p><h3>See Also:</h3>   <a
+   * <p>Structure containing attributes of the face that the algorithm detected.</p>
+   * <p>A <code>FaceDetail</code> object contains either the default facial
+   * attributes or all facial attributes. The default attributes are
+   * <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
+   * <code>Pose</code>, and <code>Quality</code>.</p> <p> is the only Amazon
+   * Rekognition Video stored video operation that can return a
+   * <code>FaceDetail</code> object with all attributes. To specify which attributes
+   * to return, use the <code>FaceAttributes</code> input parameter for . The
+   * following Amazon Rekognition Video operations return only the default
+   * attributes. The corresponding Start operations don't have a
+   * <code>FaceAttributes</code> input parameter.</p> <ul> <li>
+   * <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li>
+   * <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image and operations
+   * can return all facial attributes. To specify which attributes to return, use the
+   * <code>Attributes</code> input parameter for <code>DetectFaces</code>. For
+   * <code>IndexFaces</code>, use the <code>DetectAttributes</code> input
+   * parameter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/FaceDetail">AWS
    * API Reference</a></p>
    */
@@ -56,33 +72,33 @@ namespace Model
   {
   public:
     FaceDetail();
-    FaceDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    FaceDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FaceDetail(Aws::Utils::Json::JsonView jsonValue);
+    FaceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Bounding box of the face.</p>
+     * <p>Bounding box of the face. Default attribute.</p>
      */
     inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
 
     /**
-     * <p>Bounding box of the face.</p>
+     * <p>Bounding box of the face. Default attribute.</p>
      */
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
 
     /**
-     * <p>Bounding box of the face.</p>
+     * <p>Bounding box of the face. Default attribute.</p>
      */
     inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
 
     /**
-     * <p>Bounding box of the face.</p>
+     * <p>Bounding box of the face. Default attribute.</p>
      */
     inline FaceDetail& WithBoundingBox(const BoundingBox& value) { SetBoundingBox(value); return *this;}
 
     /**
-     * <p>Bounding box of the face.</p>
+     * <p>Bounding box of the face. Default attribute.</p>
      */
     inline FaceDetail& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
 
@@ -405,108 +421,113 @@ namespace Model
 
 
     /**
-     * <p>Indicates the location of landmarks on the face.</p>
+     * <p>Indicates the location of landmarks on the face. Default attribute.</p>
      */
     inline const Aws::Vector<Landmark>& GetLandmarks() const{ return m_landmarks; }
 
     /**
-     * <p>Indicates the location of landmarks on the face.</p>
+     * <p>Indicates the location of landmarks on the face. Default attribute.</p>
      */
     inline void SetLandmarks(const Aws::Vector<Landmark>& value) { m_landmarksHasBeenSet = true; m_landmarks = value; }
 
     /**
-     * <p>Indicates the location of landmarks on the face.</p>
+     * <p>Indicates the location of landmarks on the face. Default attribute.</p>
      */
     inline void SetLandmarks(Aws::Vector<Landmark>&& value) { m_landmarksHasBeenSet = true; m_landmarks = std::move(value); }
 
     /**
-     * <p>Indicates the location of landmarks on the face.</p>
+     * <p>Indicates the location of landmarks on the face. Default attribute.</p>
      */
     inline FaceDetail& WithLandmarks(const Aws::Vector<Landmark>& value) { SetLandmarks(value); return *this;}
 
     /**
-     * <p>Indicates the location of landmarks on the face.</p>
+     * <p>Indicates the location of landmarks on the face. Default attribute.</p>
      */
     inline FaceDetail& WithLandmarks(Aws::Vector<Landmark>&& value) { SetLandmarks(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates the location of landmarks on the face.</p>
+     * <p>Indicates the location of landmarks on the face. Default attribute.</p>
      */
     inline FaceDetail& AddLandmarks(const Landmark& value) { m_landmarksHasBeenSet = true; m_landmarks.push_back(value); return *this; }
 
     /**
-     * <p>Indicates the location of landmarks on the face.</p>
+     * <p>Indicates the location of landmarks on the face. Default attribute.</p>
      */
     inline FaceDetail& AddLandmarks(Landmark&& value) { m_landmarksHasBeenSet = true; m_landmarks.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.
+     * Default attribute.</p>
      */
     inline const Pose& GetPose() const{ return m_pose; }
 
     /**
-     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.
+     * Default attribute.</p>
      */
     inline void SetPose(const Pose& value) { m_poseHasBeenSet = true; m_pose = value; }
 
     /**
-     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.
+     * Default attribute.</p>
      */
     inline void SetPose(Pose&& value) { m_poseHasBeenSet = true; m_pose = std::move(value); }
 
     /**
-     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.
+     * Default attribute.</p>
      */
     inline FaceDetail& WithPose(const Pose& value) { SetPose(value); return *this;}
 
     /**
-     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.
+     * Default attribute.</p>
      */
     inline FaceDetail& WithPose(Pose&& value) { SetPose(std::move(value)); return *this;}
 
 
     /**
-     * <p>Identifies image brightness and sharpness.</p>
+     * <p>Identifies image brightness and sharpness. Default attribute.</p>
      */
     inline const ImageQuality& GetQuality() const{ return m_quality; }
 
     /**
-     * <p>Identifies image brightness and sharpness.</p>
+     * <p>Identifies image brightness and sharpness. Default attribute.</p>
      */
     inline void SetQuality(const ImageQuality& value) { m_qualityHasBeenSet = true; m_quality = value; }
 
     /**
-     * <p>Identifies image brightness and sharpness.</p>
+     * <p>Identifies image brightness and sharpness. Default attribute.</p>
      */
     inline void SetQuality(ImageQuality&& value) { m_qualityHasBeenSet = true; m_quality = std::move(value); }
 
     /**
-     * <p>Identifies image brightness and sharpness.</p>
+     * <p>Identifies image brightness and sharpness. Default attribute.</p>
      */
     inline FaceDetail& WithQuality(const ImageQuality& value) { SetQuality(value); return *this;}
 
     /**
-     * <p>Identifies image brightness and sharpness.</p>
+     * <p>Identifies image brightness and sharpness. Default attribute.</p>
      */
     inline FaceDetail& WithQuality(ImageQuality&& value) { SetQuality(std::move(value)); return *this;}
 
 
     /**
      * <p>Confidence level that the bounding box contains a face (and not a different
-     * object such as a tree).</p>
+     * object such as a tree). Default attribute.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
 
     /**
      * <p>Confidence level that the bounding box contains a face (and not a different
-     * object such as a tree).</p>
+     * object such as a tree). Default attribute.</p>
      */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
 
     /**
      * <p>Confidence level that the bounding box contains a face (and not a different
-     * object such as a tree).</p>
+     * object such as a tree). Default attribute.</p>
      */
     inline FaceDetail& WithConfidence(double value) { SetConfidence(value); return *this;}
 

@@ -59,7 +59,7 @@ Aws::String AssociateCreatedArtifactRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AssociateCreatedArtifactRequest::GetRequestSpecificHeaders() const

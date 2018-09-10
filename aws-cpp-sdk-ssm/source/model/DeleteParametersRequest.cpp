@@ -42,7 +42,7 @@ Aws::String DeleteParametersRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteParametersRequest::GetRequestSpecificHeaders() const

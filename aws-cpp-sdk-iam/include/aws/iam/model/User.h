@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iam/model/AttachedPermissionsBoundary.h>
 #include <utility>
 
 namespace Aws
@@ -36,7 +37,7 @@ namespace Model
 
   /**
    * <p>Contains information about an IAM user entity.</p> <p>This data type is used
-   * as a response element in the following actions:</p> <ul> <li> <p>
+   * as a response element in the following operations:</p> <ul> <li> <p>
    * <a>CreateUser</a> </p> </li> <li> <p> <a>GetUser</a> </p> </li> <li> <p>
    * <a>ListUsers</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/User">AWS API
@@ -299,7 +300,7 @@ namespace Model
      * null does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
-     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions. </p>
+     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
     inline const Aws::Utils::DateTime& GetPasswordLastUsed() const{ return m_passwordLastUsed; }
 
@@ -318,7 +319,7 @@ namespace Model
      * null does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
-     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions. </p>
+     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
     inline void SetPasswordLastUsed(const Aws::Utils::DateTime& value) { m_passwordLastUsedHasBeenSet = true; m_passwordLastUsed = value; }
 
@@ -337,7 +338,7 @@ namespace Model
      * null does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
-     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions. </p>
+     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
     inline void SetPasswordLastUsed(Aws::Utils::DateTime&& value) { m_passwordLastUsedHasBeenSet = true; m_passwordLastUsed = std::move(value); }
 
@@ -356,7 +357,7 @@ namespace Model
      * null does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
-     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions. </p>
+     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
     inline User& WithPasswordLastUsed(const Aws::Utils::DateTime& value) { SetPasswordLastUsed(value); return *this;}
 
@@ -375,9 +376,50 @@ namespace Model
      * null does not mean that the user <i>never</i> had a password. Also, if the user
      * does not currently have a password, but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
-     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions. </p>
+     * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
     inline User& WithPasswordLastUsed(Aws::Utils::DateTime&& value) { SetPasswordLastUsed(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline const AttachedPermissionsBoundary& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetPermissionsBoundary(const AttachedPermissionsBoundary& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetPermissionsBoundary(AttachedPermissionsBoundary&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::move(value); }
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline User& WithPermissionsBoundary(const AttachedPermissionsBoundary& value) { SetPermissionsBoundary(value); return *this;}
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline User& WithPermissionsBoundary(AttachedPermissionsBoundary&& value) { SetPermissionsBoundary(std::move(value)); return *this;}
 
   private:
 
@@ -398,6 +440,9 @@ namespace Model
 
     Aws::Utils::DateTime m_passwordLastUsed;
     bool m_passwordLastUsedHasBeenSet;
+
+    AttachedPermissionsBoundary m_permissionsBoundary;
+    bool m_permissionsBoundaryHasBeenSet;
   };
 
 } // namespace Model

@@ -52,7 +52,7 @@ Aws::String DescribeStreamRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeStreamRequest::GetRequestSpecificHeaders() const

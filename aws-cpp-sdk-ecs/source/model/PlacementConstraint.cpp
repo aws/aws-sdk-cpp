@@ -35,7 +35,7 @@ PlacementConstraint::PlacementConstraint() :
 {
 }
 
-PlacementConstraint::PlacementConstraint(const JsonValue& jsonValue) : 
+PlacementConstraint::PlacementConstraint(JsonView jsonValue) : 
     m_type(PlacementConstraintType::NOT_SET),
     m_typeHasBeenSet(false),
     m_expressionHasBeenSet(false)
@@ -43,7 +43,7 @@ PlacementConstraint::PlacementConstraint(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PlacementConstraint& PlacementConstraint::operator =(const JsonValue& jsonValue)
+PlacementConstraint& PlacementConstraint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

@@ -37,7 +37,7 @@ DescribeDefaultParametersResult::DescribeDefaultParametersResult(const Aws::Amaz
 
 DescribeDefaultParametersResult& DescribeDefaultParametersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ DescribeDefaultParametersResult& DescribeDefaultParametersResult::operator =(con
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Array<JsonValue> parametersJsonList = jsonValue.GetArray("Parameters");
+    Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
     for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());

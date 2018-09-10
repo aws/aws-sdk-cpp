@@ -36,7 +36,7 @@ Mustache::Mustache() :
 {
 }
 
-Mustache::Mustache(const JsonValue& jsonValue) : 
+Mustache::Mustache(JsonView jsonValue) : 
     m_value(false),
     m_valueHasBeenSet(false),
     m_confidence(0.0),
@@ -45,7 +45,7 @@ Mustache::Mustache(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Mustache& Mustache::operator =(const JsonValue& jsonValue)
+Mustache& Mustache::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {

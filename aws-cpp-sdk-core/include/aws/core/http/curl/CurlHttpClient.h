@@ -27,7 +27,10 @@ namespace Aws
 {
 namespace Http
 {
-
+namespace Standard
+{
+    class StandardHttpResponse;
+}
 
 //Curl implementation of an http client. Right now it is only synchronous.
 class AWS_CORE_API CurlHttpClient: public HttpClient
@@ -39,8 +42,13 @@ public:
     //Creates client, initializes curl handle if it hasn't been created already.
     CurlHttpClient(const Aws::Client::ClientConfiguration& clientConfig);
     //Makes request and receives response synchronously
+    AWS_DEPRECATED("This funciton in base class has been deprecated")
     std::shared_ptr<HttpResponse> MakeRequest(HttpRequest& request, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
-            Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const;
+            Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
+
+    //Makes request with shared_ptr typed request and receives response synchronously
+    std::shared_ptr<HttpResponse> MakeRequest(const std::shared_ptr<HttpRequest>& request, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
+            Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
 
     static void InitGlobalState();
     static void CleanupGlobalState();
@@ -56,12 +64,18 @@ private:
     bool m_verifySSL;
     Aws::String m_caPath;
     Aws::String m_caFile;
+    bool m_disableExpectHeader;
     bool m_allowRedirects;
-
     static std::atomic<bool> isInit;
+
+    void MakeRequestInternal(HttpRequest& request, std::shared_ptr<Standard::StandardHttpResponse>& response,
+        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter, 
+        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const;
 
     //Callback to read the content from the content body of the request
     static size_t ReadBody(char* ptr, size_t size, size_t nmemb, void* userdata);
+    //Callback to seek the content from the content body of the request
+    static size_t SeekBody(void* userdata, curl_off_t offset, int origin);
     //callback to write the content from the response to the response object
     static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata);
     //callback to write the headers from the response to the response

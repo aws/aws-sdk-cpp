@@ -35,7 +35,7 @@ VpcConfig::VpcConfig() :
 {
 }
 
-VpcConfig::VpcConfig(const JsonValue& jsonValue) : 
+VpcConfig::VpcConfig(JsonView jsonValue) : 
     m_vpcIdHasBeenSet(false),
     m_subnetsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false)
@@ -43,7 +43,7 @@ VpcConfig::VpcConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VpcConfig& VpcConfig::operator =(const JsonValue& jsonValue)
+VpcConfig& VpcConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("vpcId"))
   {
@@ -54,7 +54,7 @@ VpcConfig& VpcConfig::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("subnets"))
   {
-    Array<JsonValue> subnetsJsonList = jsonValue.GetArray("subnets");
+    Array<JsonView> subnetsJsonList = jsonValue.GetArray("subnets");
     for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
     {
       m_subnets.push_back(subnetsJsonList[subnetsIndex].AsString());
@@ -64,7 +64,7 @@ VpcConfig& VpcConfig::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("securityGroupIds"))
   {
-    Array<JsonValue> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());

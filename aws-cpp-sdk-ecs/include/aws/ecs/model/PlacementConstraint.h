@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     PlacementConstraint();
-    PlacementConstraint(const Aws::Utils::Json::JsonValue& jsonValue);
-    PlacementConstraint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PlacementConstraint(Aws::Utils::Json::JsonView jsonValue);
+    PlacementConstraint& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -98,9 +99,9 @@ namespace Model
 
 
     /**
-     * <p>A cluster query language expression to apply to the constraint. Note you
-     * cannot specify an expression if the constraint type is
-     * <code>distinctInstance</code>. For more information, see <a
+     * <p>A cluster query language expression to apply to the constraint. You cannot
+     * specify an expression if the constraint type is <code>distinctInstance</code>.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -108,9 +109,9 @@ namespace Model
     inline const Aws::String& GetExpression() const{ return m_expression; }
 
     /**
-     * <p>A cluster query language expression to apply to the constraint. Note you
-     * cannot specify an expression if the constraint type is
-     * <code>distinctInstance</code>. For more information, see <a
+     * <p>A cluster query language expression to apply to the constraint. You cannot
+     * specify an expression if the constraint type is <code>distinctInstance</code>.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -118,9 +119,9 @@ namespace Model
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
     /**
-     * <p>A cluster query language expression to apply to the constraint. Note you
-     * cannot specify an expression if the constraint type is
-     * <code>distinctInstance</code>. For more information, see <a
+     * <p>A cluster query language expression to apply to the constraint. You cannot
+     * specify an expression if the constraint type is <code>distinctInstance</code>.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -128,9 +129,9 @@ namespace Model
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
 
     /**
-     * <p>A cluster query language expression to apply to the constraint. Note you
-     * cannot specify an expression if the constraint type is
-     * <code>distinctInstance</code>. For more information, see <a
+     * <p>A cluster query language expression to apply to the constraint. You cannot
+     * specify an expression if the constraint type is <code>distinctInstance</code>.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -138,9 +139,9 @@ namespace Model
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
 
     /**
-     * <p>A cluster query language expression to apply to the constraint. Note you
-     * cannot specify an expression if the constraint type is
-     * <code>distinctInstance</code>. For more information, see <a
+     * <p>A cluster query language expression to apply to the constraint. You cannot
+     * specify an expression if the constraint type is <code>distinctInstance</code>.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -148,9 +149,9 @@ namespace Model
     inline PlacementConstraint& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
 
     /**
-     * <p>A cluster query language expression to apply to the constraint. Note you
-     * cannot specify an expression if the constraint type is
-     * <code>distinctInstance</code>. For more information, see <a
+     * <p>A cluster query language expression to apply to the constraint. You cannot
+     * specify an expression if the constraint type is <code>distinctInstance</code>.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
@@ -158,9 +159,9 @@ namespace Model
     inline PlacementConstraint& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
 
     /**
-     * <p>A cluster query language expression to apply to the constraint. Note you
-     * cannot specify an expression if the constraint type is
-     * <code>distinctInstance</code>. For more information, see <a
+     * <p>A cluster query language expression to apply to the constraint. You cannot
+     * specify an expression if the constraint type is <code>distinctInstance</code>.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>

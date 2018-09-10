@@ -52,6 +52,7 @@ namespace Model
     Penelope,
     Chantal,
     Celine,
+    Lea,
     Mathieu,
     Dora,
     Karl,

@@ -37,10 +37,10 @@ DescribeScalableTargetsResult::DescribeScalableTargetsResult(const Aws::AmazonWe
 
 DescribeScalableTargetsResult& DescribeScalableTargetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ScalableTargets"))
   {
-    Array<JsonValue> scalableTargetsJsonList = jsonValue.GetArray("ScalableTargets");
+    Array<JsonView> scalableTargetsJsonList = jsonValue.GetArray("ScalableTargets");
     for(unsigned scalableTargetsIndex = 0; scalableTargetsIndex < scalableTargetsJsonList.GetLength(); ++scalableTargetsIndex)
     {
       m_scalableTargets.push_back(scalableTargetsJsonList[scalableTargetsIndex].AsObject());

@@ -41,7 +41,7 @@ GetSnowballUsageResult::GetSnowballUsageResult(const Aws::AmazonWebServiceResult
 
 GetSnowballUsageResult& GetSnowballUsageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SnowballLimit"))
   {
     m_snowballLimit = jsonValue.GetInteger("SnowballLimit");

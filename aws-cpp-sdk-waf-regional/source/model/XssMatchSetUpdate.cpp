@@ -35,7 +35,7 @@ XssMatchSetUpdate::XssMatchSetUpdate() :
 {
 }
 
-XssMatchSetUpdate::XssMatchSetUpdate(const JsonValue& jsonValue) : 
+XssMatchSetUpdate::XssMatchSetUpdate(JsonView jsonValue) : 
     m_action(ChangeAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_xssMatchTupleHasBeenSet(false)
@@ -43,7 +43,7 @@ XssMatchSetUpdate::XssMatchSetUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-XssMatchSetUpdate& XssMatchSetUpdate::operator =(const JsonValue& jsonValue)
+XssMatchSetUpdate& XssMatchSetUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {

@@ -36,7 +36,8 @@ ListObjectsRequest::ListObjectsRequest() :
     m_maxKeysHasBeenSet(false),
     m_prefixHasBeenSet(false),
     m_requestPayer(RequestPayer::NOT_SET),
-    m_requestPayerHasBeenSet(false)
+    m_requestPayerHasBeenSet(false),
+    m_customizedAccessLogTagHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,23 @@ void ListObjectsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(!m_customizedAccessLogTag.empty())
+    {
+        // only accept customized LogTag which starts with "x-"
+        Aws::Map<Aws::String, Aws::String> collectedLogTags;
+        for(const auto& entry: m_customizedAccessLogTag)
+        {
+            if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-")
+            {
+                collectedLogTags.emplace(entry.first, entry.second);
+            }
+        }
+
+        if (!collectedLogTags.empty())
+        {
+            uri.AddQueryStringParameter(collectedLogTags);
+        }
+    }
 }
 
 Aws::Http::HeaderValueCollection ListObjectsRequest::GetRequestSpecificHeaders() const
@@ -91,7 +109,7 @@ Aws::Http::HeaderValueCollection ListObjectsRequest::GetRequestSpecificHeaders()
   Aws::StringStream ss;
   if(m_requestPayerHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+    headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
 
   return headers;

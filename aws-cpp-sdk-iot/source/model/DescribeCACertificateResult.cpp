@@ -37,7 +37,7 @@ DescribeCACertificateResult::DescribeCACertificateResult(const Aws::AmazonWebSer
 
 DescribeCACertificateResult& DescribeCACertificateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("certificateDescription"))
   {
     m_certificateDescription = jsonValue.GetObject("certificateDescription");

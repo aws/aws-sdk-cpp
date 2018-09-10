@@ -34,14 +34,14 @@ Locale::Locale() :
 {
 }
 
-Locale::Locale(const JsonValue& jsonValue) : 
+Locale::Locale(JsonView jsonValue) : 
     m_countryHasBeenSet(false),
     m_subdivisionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Locale& Locale::operator =(const JsonValue& jsonValue)
+Locale& Locale::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Country"))
   {

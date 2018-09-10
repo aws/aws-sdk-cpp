@@ -26,7 +26,8 @@ namespace Model
   enum class ExportType
   {
     NOT_SET,
-    ALEXA_SKILLS_KIT
+    ALEXA_SKILLS_KIT,
+    LEX
   };
 
 namespace ExportTypeMapper

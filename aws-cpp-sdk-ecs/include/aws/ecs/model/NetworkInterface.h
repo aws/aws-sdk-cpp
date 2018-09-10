@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the Elastic Network Interface for tasks that use the
+   * <p>An object representing the elastic network interface for tasks that use the
    * <code>awsvpc</code> network mode.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/NetworkInterface">AWS
    * API Reference</a></p>
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     NetworkInterface();
-    NetworkInterface(const Aws::Utils::Json::JsonValue& jsonValue);
-    NetworkInterface& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NetworkInterface(Aws::Utils::Json::JsonView jsonValue);
+    NetworkInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

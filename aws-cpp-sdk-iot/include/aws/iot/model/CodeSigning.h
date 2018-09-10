@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/model/StartSigningJobParameter.h>
 #include <aws/iot/model/CustomCodeSigning.h>
 #include <utility>
 
@@ -26,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -43,8 +45,8 @@ namespace Model
   {
   public:
     CodeSigning();
-    CodeSigning(const Aws::Utils::Json::JsonValue& jsonValue);
-    CodeSigning& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CodeSigning(Aws::Utils::Json::JsonView jsonValue);
+    CodeSigning& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -85,6 +87,32 @@ namespace Model
 
 
     /**
+     * <p>Describes the code-signing job.</p>
+     */
+    inline const StartSigningJobParameter& GetStartSigningJobParameter() const{ return m_startSigningJobParameter; }
+
+    /**
+     * <p>Describes the code-signing job.</p>
+     */
+    inline void SetStartSigningJobParameter(const StartSigningJobParameter& value) { m_startSigningJobParameterHasBeenSet = true; m_startSigningJobParameter = value; }
+
+    /**
+     * <p>Describes the code-signing job.</p>
+     */
+    inline void SetStartSigningJobParameter(StartSigningJobParameter&& value) { m_startSigningJobParameterHasBeenSet = true; m_startSigningJobParameter = std::move(value); }
+
+    /**
+     * <p>Describes the code-signing job.</p>
+     */
+    inline CodeSigning& WithStartSigningJobParameter(const StartSigningJobParameter& value) { SetStartSigningJobParameter(value); return *this;}
+
+    /**
+     * <p>Describes the code-signing job.</p>
+     */
+    inline CodeSigning& WithStartSigningJobParameter(StartSigningJobParameter&& value) { SetStartSigningJobParameter(std::move(value)); return *this;}
+
+
+    /**
      * <p>A custom method for code signing a file.</p>
      */
     inline const CustomCodeSigning& GetCustomCodeSigning() const{ return m_customCodeSigning; }
@@ -113,6 +141,9 @@ namespace Model
 
     Aws::String m_awsSignerJobId;
     bool m_awsSignerJobIdHasBeenSet;
+
+    StartSigningJobParameter m_startSigningJobParameter;
+    bool m_startSigningJobParameterHasBeenSet;
 
     CustomCodeSigning m_customCodeSigning;
     bool m_customCodeSigningHasBeenSet;

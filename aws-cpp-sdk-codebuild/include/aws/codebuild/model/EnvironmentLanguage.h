@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeBuild
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     EnvironmentLanguage();
-    EnvironmentLanguage(const Aws::Utils::Json::JsonValue& jsonValue);
-    EnvironmentLanguage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EnvironmentLanguage(Aws::Utils::Json::JsonView jsonValue);
+    EnvironmentLanguage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

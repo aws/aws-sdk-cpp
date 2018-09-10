@@ -71,7 +71,7 @@ Aws::String ListUsersRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListUsersRequest::GetRequestSpecificHeaders() const

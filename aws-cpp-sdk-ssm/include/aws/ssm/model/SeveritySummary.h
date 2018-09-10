@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     SeveritySummary();
-    SeveritySummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    SeveritySummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SeveritySummary(Aws::Utils::Json::JsonView jsonValue);
+    SeveritySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

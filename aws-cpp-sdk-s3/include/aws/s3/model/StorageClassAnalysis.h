@@ -43,32 +43,32 @@ namespace Model
 
 
     /**
-     * A container used to describe how data related to the storage class analysis
-     * should be exported.
+     * <p>A container used to describe how data related to the storage class analysis
+     * should be exported.</p>
      */
     inline const StorageClassAnalysisDataExport& GetDataExport() const{ return m_dataExport; }
 
     /**
-     * A container used to describe how data related to the storage class analysis
-     * should be exported.
+     * <p>A container used to describe how data related to the storage class analysis
+     * should be exported.</p>
      */
     inline void SetDataExport(const StorageClassAnalysisDataExport& value) { m_dataExportHasBeenSet = true; m_dataExport = value; }
 
     /**
-     * A container used to describe how data related to the storage class analysis
-     * should be exported.
+     * <p>A container used to describe how data related to the storage class analysis
+     * should be exported.</p>
      */
     inline void SetDataExport(StorageClassAnalysisDataExport&& value) { m_dataExportHasBeenSet = true; m_dataExport = std::move(value); }
 
     /**
-     * A container used to describe how data related to the storage class analysis
-     * should be exported.
+     * <p>A container used to describe how data related to the storage class analysis
+     * should be exported.</p>
      */
     inline StorageClassAnalysis& WithDataExport(const StorageClassAnalysisDataExport& value) { SetDataExport(value); return *this;}
 
     /**
-     * A container used to describe how data related to the storage class analysis
-     * should be exported.
+     * <p>A container used to describe how data related to the storage class analysis
+     * should be exported.</p>
      */
     inline StorageClassAnalysis& WithDataExport(StorageClassAnalysisDataExport&& value) { SetDataExport(std::move(value)); return *this;}
 

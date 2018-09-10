@@ -37,10 +37,10 @@ ListStepsResult::ListStepsResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 ListStepsResult& ListStepsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Steps"))
   {
-    Array<JsonValue> stepsJsonList = jsonValue.GetArray("Steps");
+    Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
     for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
     {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());

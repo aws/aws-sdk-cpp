@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -36,15 +37,15 @@ namespace Model
    * <p>Retrieves metadata about an object inside a <a>BatchRead</a> operation. For
    * more information, see <a>GetObjectInformation</a> and
    * <a>BatchReadRequest$Operations</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchGetObjectInformation">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchGetObjectInformation">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchGetObjectInformation
   {
   public:
     BatchGetObjectInformation();
-    BatchGetObjectInformation(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchGetObjectInformation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchGetObjectInformation(Aws::Utils::Json::JsonView jsonValue);
+    BatchGetObjectInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

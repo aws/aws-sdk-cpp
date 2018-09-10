@@ -44,7 +44,7 @@ DynamoDBAction::DynamoDBAction() :
 {
 }
 
-DynamoDBAction::DynamoDBAction(const JsonValue& jsonValue) : 
+DynamoDBAction::DynamoDBAction(JsonView jsonValue) : 
     m_tableNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_operationHasBeenSet(false),
@@ -61,7 +61,7 @@ DynamoDBAction::DynamoDBAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DynamoDBAction& DynamoDBAction::operator =(const JsonValue& jsonValue)
+DynamoDBAction& DynamoDBAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("tableName"))
   {

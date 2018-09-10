@@ -34,18 +34,18 @@ Statement::Statement() :
 {
 }
 
-Statement::Statement(const JsonValue& jsonValue) : 
+Statement::Statement(JsonView jsonValue) : 
     m_messagesHasBeenSet(false),
     m_responseCardHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Statement& Statement::operator =(const JsonValue& jsonValue)
+Statement& Statement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("messages"))
   {
-    Array<JsonValue> messagesJsonList = jsonValue.GetArray("messages");
+    Array<JsonView> messagesJsonList = jsonValue.GetArray("messages");
     for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
     {
       m_messages.push_back(messagesJsonList[messagesIndex].AsObject());

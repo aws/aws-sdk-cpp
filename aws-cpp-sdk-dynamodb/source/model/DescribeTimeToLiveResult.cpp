@@ -37,7 +37,7 @@ DescribeTimeToLiveResult::DescribeTimeToLiveResult(const Aws::AmazonWebServiceRe
 
 DescribeTimeToLiveResult& DescribeTimeToLiveResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TimeToLiveDescription"))
   {
     m_timeToLiveDescription = jsonValue.GetObject("TimeToLiveDescription");

@@ -51,7 +51,7 @@ Aws::String DisassociateProductFromPortfolioRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DisassociateProductFromPortfolioRequest::GetRequestSpecificHeaders() const

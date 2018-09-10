@@ -55,7 +55,8 @@ enum class TranslateErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DETECTED_LANGUAGE_LOW_CONFIDENCE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER,
   INVALID_REQUEST,
   TEXT_SIZE_LIMIT_EXCEEDED,
   TOO_MANY_REQUESTS,

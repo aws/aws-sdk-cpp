@@ -42,7 +42,7 @@ Association::Association() :
 {
 }
 
-Association::Association(const JsonValue& jsonValue) : 
+Association::Association(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_associationIdHasBeenSet(false),
@@ -57,7 +57,7 @@ Association::Association(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Association& Association::operator =(const JsonValue& jsonValue)
+Association& Association::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -96,7 +96,7 @@ Association& Association::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonValue> targetsJsonList = jsonValue.GetArray("Targets");
+    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());

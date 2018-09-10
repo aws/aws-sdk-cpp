@@ -38,7 +38,7 @@ Step::Step() :
 {
 }
 
-Step::Step(const JsonValue& jsonValue) : 
+Step::Step(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_configHasBeenSet(false),
@@ -49,7 +49,7 @@ Step::Step(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Step& Step::operator =(const JsonValue& jsonValue)
+Step& Step::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

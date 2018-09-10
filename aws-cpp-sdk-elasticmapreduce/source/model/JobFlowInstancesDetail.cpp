@@ -49,7 +49,7 @@ JobFlowInstancesDetail::JobFlowInstancesDetail() :
 {
 }
 
-JobFlowInstancesDetail::JobFlowInstancesDetail(const JsonValue& jsonValue) : 
+JobFlowInstancesDetail::JobFlowInstancesDetail(JsonView jsonValue) : 
     m_masterInstanceTypeHasBeenSet(false),
     m_masterPublicDnsNameHasBeenSet(false),
     m_masterInstanceIdHasBeenSet(false),
@@ -71,7 +71,7 @@ JobFlowInstancesDetail::JobFlowInstancesDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobFlowInstancesDetail& JobFlowInstancesDetail::operator =(const JsonValue& jsonValue)
+JobFlowInstancesDetail& JobFlowInstancesDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MasterInstanceType"))
   {
@@ -110,7 +110,7 @@ JobFlowInstancesDetail& JobFlowInstancesDetail::operator =(const JsonValue& json
 
   if(jsonValue.ValueExists("InstanceGroups"))
   {
-    Array<JsonValue> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
+    Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
     for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
     {
       m_instanceGroups.push_back(instanceGroupsJsonList[instanceGroupsIndex].AsObject());

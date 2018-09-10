@@ -34,14 +34,14 @@ Tag::Tag() :
 {
 }
 
-Tag::Tag(const JsonValue& jsonValue) : 
+Tag::Tag(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Tag& Tag::operator =(const JsonValue& jsonValue)
+Tag& Tag::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

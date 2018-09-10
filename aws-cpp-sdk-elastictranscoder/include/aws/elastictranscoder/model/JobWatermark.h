@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticTranscoder
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     JobWatermark();
-    JobWatermark(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobWatermark& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobWatermark(Aws::Utils::Json::JsonView jsonValue);
+    JobWatermark& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 DeleteServiceRequest::DeleteServiceRequest() : 
     m_clusterHasBeenSet(false),
-    m_serviceHasBeenSet(false)
+    m_serviceHasBeenSet(false),
+    m_force(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,13 @@ Aws::String DeleteServiceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_forceHasBeenSet)
+  {
+   payload.WithBool("force", m_force);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteServiceRequest::GetRequestSpecificHeaders() const

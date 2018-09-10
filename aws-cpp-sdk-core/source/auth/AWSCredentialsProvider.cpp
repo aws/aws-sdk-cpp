@@ -34,37 +34,44 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 using namespace Aws::Auth;
 using namespace Aws::Internal;
+using Aws::Utils::Threading::ReaderLockGuard;
+using Aws::Utils::Threading::WriterLockGuard;
 
+static const char ACCESS_KEY_ENV_VAR[] = "AWS_ACCESS_KEY_ID";
+static const char SECRET_KEY_ENV_VAR[] = "AWS_SECRET_ACCESS_KEY";
+static const char SESSION_TOKEN_ENV_VAR[] = "AWS_SESSION_TOKEN";
+static const char DEFAULT_PROFILE[] = "default";
+static const char AWS_PROFILE_ENV_VAR[] = "AWS_PROFILE";
+static const char AWS_PROFILE_DEFAULT_ENV_VAR[] = "AWS_DEFAULT_PROFILE";
 
-static const char* ACCESS_KEY_ENV_VARIABLE = "AWS_ACCESS_KEY_ID";
-static const char* SECRET_KEY_ENV_VAR = "AWS_SECRET_ACCESS_KEY";
-static const char* SESSION_TOKEN_ENV_VARIABLE = "AWS_SESSION_TOKEN";
-static const char* DEFAULT_PROFILE = "default";
-static const char* AWS_PROFILE_ENVIRONMENT_VARIABLE = "AWS_DEFAULT_PROFILE";
+static const char AWS_CREDENTIAL_PROFILES_FILE[] = "AWS_SHARED_CREDENTIALS_FILE";
 
-static const char* AWS_CREDENTIAL_PROFILES_FILE = "AWS_SHARED_CREDENTIALS_FILE";
-
-static const char* PROFILE_DEFAULT_FILENAME = "credentials";
-static const char* CONFIG_FILENAME = "config";
+static const char PROFILE_DEFAULT_FILENAME[] = "credentials";
+static const char CONFIG_FILENAME[] = "config";
 
 #ifndef _WIN32
-static const char* PROFILE_DIRECTORY = "/.aws";
-static const char* DIRECTORY_JOIN = "/";
+static const char PROFILE_DIRECTORY[] = "/.aws";
+static const char DIRECTORY_JOIN[] = "/";
 
 #else
-    static const char* PROFILE_DIRECTORY = "\\.aws";
-    static const char* DIRECTORY_JOIN = "\\";
+    static const char PROFILE_DIRECTORY[] = "\\.aws";
+    static const char DIRECTORY_JOIN[] = "\\";
 #endif // _WIN32
 
+
+static const int EXPIRATION_GRACE_PERIOD = 5 * 1000;
+
+void AWSCredentialsProvider::Reload()
+{
+    m_lastLoadedMs = DateTime::Now().Millis();
+}
 
 bool AWSCredentialsProvider::IsTimeToRefresh(long reloadFrequency)
 {
     if (DateTime::Now().Millis() - m_lastLoadedMs > reloadFrequency)
     {
-        m_lastLoadedMs = DateTime::Now().Millis();
         return true;
     }
-
     return false;
 }
 
@@ -74,7 +81,7 @@ static const char* ENVIRONMENT_LOG_TAG = "EnvironmentAWSCredentialsProvider";
 
 AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
 {
-    auto accessKey = Aws::Environment::GetEnv(ACCESS_KEY_ENV_VARIABLE);
+    auto accessKey = Aws::Environment::GetEnv(ACCESS_KEY_ENV_VAR);
     AWSCredentials credentials("", "", "");
 
     if (!accessKey.empty())
@@ -90,7 +97,7 @@ AWSCredentials EnvironmentAWSCredentialsProvider::GetAWSCredentials()
             AWS_LOGSTREAM_INFO(ENVIRONMENT_LOG_TAG, "Found secret key");
         }
 
-        auto sessionToken = Aws::Environment::GetEnv(SESSION_TOKEN_ENV_VARIABLE);
+        auto sessionToken = Aws::Environment::GetEnv(SESSION_TOKEN_ENV_VAR);
 
         if(!sessionToken.empty())
         {
@@ -148,7 +155,12 @@ ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider
         m_credentialsFileLoader(Aws::MakeShared<Aws::Config::AWSConfigFileProfileConfigLoader>(PROFILE_LOG_TAG, GetCredentialsProfileFilename())),
         m_loadFrequencyMs(refreshRateMs)
 {
-    auto profileFromVar = Aws::Environment::GetEnv(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+    auto profileFromVar = Aws::Environment::GetEnv(AWS_PROFILE_DEFAULT_ENV_VAR);
+    if (profileFromVar.empty())
+    {
+        profileFromVar = Aws::Environment::GetEnv(AWS_PROFILE_ENV_VAR);
+    }
+
     if (!profileFromVar.empty())
     {
         m_profileToUse = profileFromVar;
@@ -177,6 +189,7 @@ ProfileConfigFileAWSCredentialsProvider::ProfileConfigFileAWSCredentialsProvider
 AWSCredentials ProfileConfigFileAWSCredentialsProvider::GetAWSCredentials()
 {
     RefreshIfExpired();
+    ReaderLockGuard guard(m_reloadLock);
     auto credsFileProfileIter = m_credentialsFileLoader->GetProfiles().find(m_profileToUse);
 
     if(credsFileProfileIter != m_credentialsFileLoader->GetProfiles().end())
@@ -194,18 +207,31 @@ AWSCredentials ProfileConfigFileAWSCredentialsProvider::GetAWSCredentials()
 }
 
 
+void ProfileConfigFileAWSCredentialsProvider::Reload()
+{
+    if (!m_credentialsFileLoader->Load())
+    {
+        m_configFileLoader->Load();
+    }
+    AWSCredentialsProvider::Reload();
+}
+
 void ProfileConfigFileAWSCredentialsProvider::RefreshIfExpired()
 {
-    std::lock_guard<std::mutex> locker(m_reloadMutex);
-
-    if (IsTimeToRefresh(m_loadFrequencyMs))
+    ReaderLockGuard guard(m_reloadLock);
+    if (!IsTimeToRefresh(m_loadFrequencyMs))
     {
-        //fall-back to config file.
-        if(!m_credentialsFileLoader->Load())
-        {
-            m_configFileLoader->Load();
-        }
+       return;
     }
+
+    //fall-back to config file.
+    guard.UpgradeToWriterLock();
+    if (!IsTimeToRefresh(m_loadFrequencyMs)) // double-checked lock to avoid refreshing twice
+    {
+        return;
+    }
+
+    Reload();
 }
 
 static const char* INSTANCE_LOG_TAG = "InstanceProfileCredentialsProvider";
@@ -230,6 +256,7 @@ InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std
 AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
 {
     RefreshIfExpired();
+    ReaderLockGuard guard(m_reloadLock);
     auto profileIter = m_ec2MetadataConfigLoader->GetProfiles().find(Aws::Config::INSTANCE_PROFILE_KEY);
 
     if(profileIter != m_ec2MetadataConfigLoader->GetProfiles().end())
@@ -240,23 +267,44 @@ AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
     return AWSCredentials();
 }
 
+void InstanceProfileCredentialsProvider::Reload()
+{
+    AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Credentials have expired attempting to repull from EC2 Metadata Service.");
+    m_ec2MetadataConfigLoader->Load();
+    AWSCredentialsProvider::Reload();
+}
 
 void InstanceProfileCredentialsProvider::RefreshIfExpired()
 {
     AWS_LOGSTREAM_DEBUG(INSTANCE_LOG_TAG, "Checking if latest credential pull has expired.");
-
-    std::lock_guard<std::mutex> locker(m_reloadMutex);
-    if (IsTimeToRefresh(m_loadFrequencyMs))
+    ReaderLockGuard guard(m_reloadLock);
+    if (!IsTimeToRefresh(m_loadFrequencyMs))
     {
-        AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Credentials have expired attempting to repull from EC2 Metadata Service.");
-        m_ec2MetadataConfigLoader->Load();
+        return;
     }
+
+    guard.UpgradeToWriterLock();
+    if (!IsTimeToRefresh(m_loadFrequencyMs)) // double-checked lock to avoid refreshing twice
+    {
+        return; 
+    }
+    Reload();
 }
 
-static const char* TASK_ROLE_LOG_TAG = "TaskRoleCredentialsProvider";
+static const char TASK_ROLE_LOG_TAG[] = "TaskRoleCredentialsProvider";
 
 TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(const char* URI, long refreshRateMs) :
     m_ecsCredentialsClient(Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(TASK_ROLE_LOG_TAG, URI)),
+    m_loadFrequencyMs(refreshRateMs),
+    m_expirationDate(DateTime::Now()),
+    m_credentials(Aws::Auth::AWSCredentials())
+{
+    AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Creating TaskRole with default ECSCredentialsClient and refresh rate " << refreshRateMs);
+}
+
+TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(const char* endpoint, const char* token, long refreshRateMs) :
+    m_ecsCredentialsClient(Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(TASK_ROLE_LOG_TAG, ""/*resourcePath*/,
+                endpoint, token)),
     m_loadFrequencyMs(refreshRateMs),
     m_expirationDate(DateTime::Now()),
     m_credentials(Aws::Auth::AWSCredentials())
@@ -277,17 +325,17 @@ TaskRoleCredentialsProvider::TaskRoleCredentialsProvider(
 AWSCredentials TaskRoleCredentialsProvider::GetAWSCredentials()
 {
     RefreshIfExpired();
+    ReaderLockGuard guard(m_reloadLock);
     return m_credentials;
 }
 
-
-void TaskRoleCredentialsProvider::RefreshIfExpired()
+bool TaskRoleCredentialsProvider::ExpiresSoon() const
 {
-    AWS_LOGSTREAM_DEBUG(TASK_ROLE_LOG_TAG, "Checking if latest credential pull has expired.");
+    return (m_expirationDate.Millis() - Aws::Utils::DateTime::Now().Millis() < EXPIRATION_GRACE_PERIOD);
+}
 
-    std::lock_guard<std::mutex> locker(m_reloadMutex);
-    if (!IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon()) return;
-    
+void TaskRoleCredentialsProvider::Reload()
+{
     AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Credentials have expired or will expire, attempting to repull from ECS IAM Service.");
 
     auto credentialsStr = m_ecsCredentialsClient->GetECSCredentials();
@@ -301,13 +349,34 @@ void TaskRoleCredentialsProvider::RefreshIfExpired()
     }
 
     Aws::String accessKey, secretKey, token;
-    accessKey = credentialsDoc.GetString("AccessKeyId");
-    secretKey = credentialsDoc.GetString("SecretAccessKey");
-    token = credentialsDoc.GetString("Token");
+    Utils::Json::JsonView credentialsView(credentialsDoc);
+    accessKey = credentialsView.GetString("AccessKeyId");
+    secretKey = credentialsView.GetString("SecretAccessKey");
+    token = credentialsView.GetString("Token");
     AWS_LOGSTREAM_DEBUG(TASK_ROLE_LOG_TAG, "Successfully pulled credentials from metadata service with access key " << accessKey);
 
     m_credentials.SetAWSAccessKeyId(accessKey);
     m_credentials.SetAWSSecretKey(secretKey);
     m_credentials.SetSessionToken(token);
-    m_expirationDate = Aws::Utils::DateTime(credentialsDoc.GetString("Expiration"), DateFormat::ISO_8601);
+    m_expirationDate = Aws::Utils::DateTime(credentialsView.GetString("Expiration"), DateFormat::ISO_8601);
+    AWSCredentialsProvider::Reload();
+}
+
+void TaskRoleCredentialsProvider::RefreshIfExpired()
+{
+    AWS_LOGSTREAM_DEBUG(TASK_ROLE_LOG_TAG, "Checking if latest credential pull has expired.");
+    ReaderLockGuard guard(m_reloadLock);
+    if (!IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
+    {
+        return;
+    }
+
+    guard.UpgradeToWriterLock();
+
+    if (!IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
+    {
+        return;
+    }
+
+    Reload();
 }

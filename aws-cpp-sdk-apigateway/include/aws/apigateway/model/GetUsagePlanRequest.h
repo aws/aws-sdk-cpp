@@ -47,37 +47,44 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
+     * <p>[Required] The identifier of the <a>UsagePlan</a> resource to be
+     * retrieved.</p>
      */
     inline const Aws::String& GetUsagePlanId() const{ return m_usagePlanId; }
 
     /**
-     * <p>The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
+     * <p>[Required] The identifier of the <a>UsagePlan</a> resource to be
+     * retrieved.</p>
      */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**
-     * <p>The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
+     * <p>[Required] The identifier of the <a>UsagePlan</a> resource to be
+     * retrieved.</p>
      */
     inline void SetUsagePlanId(Aws::String&& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = std::move(value); }
 
     /**
-     * <p>The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
+     * <p>[Required] The identifier of the <a>UsagePlan</a> resource to be
+     * retrieved.</p>
      */
     inline void SetUsagePlanId(const char* value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId.assign(value); }
 
     /**
-     * <p>The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
+     * <p>[Required] The identifier of the <a>UsagePlan</a> resource to be
+     * retrieved.</p>
      */
     inline GetUsagePlanRequest& WithUsagePlanId(const Aws::String& value) { SetUsagePlanId(value); return *this;}
 
     /**
-     * <p>The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
+     * <p>[Required] The identifier of the <a>UsagePlan</a> resource to be
+     * retrieved.</p>
      */
     inline GetUsagePlanRequest& WithUsagePlanId(Aws::String&& value) { SetUsagePlanId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
+     * <p>[Required] The identifier of the <a>UsagePlan</a> resource to be
+     * retrieved.</p>
      */
     inline GetUsagePlanRequest& WithUsagePlanId(const char* value) { SetUsagePlanId(value); return *this;}
 

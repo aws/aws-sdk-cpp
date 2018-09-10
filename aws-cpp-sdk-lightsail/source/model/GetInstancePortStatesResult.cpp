@@ -37,10 +37,10 @@ GetInstancePortStatesResult::GetInstancePortStatesResult(const Aws::AmazonWebSer
 
 GetInstancePortStatesResult& GetInstancePortStatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("portStates"))
   {
-    Array<JsonValue> portStatesJsonList = jsonValue.GetArray("portStates");
+    Array<JsonView> portStatesJsonList = jsonValue.GetArray("portStates");
     for(unsigned portStatesIndex = 0; portStatesIndex < portStatesJsonList.GetLength(); ++portStatesIndex)
     {
       m_portStates.push_back(portStatesJsonList[portStatesIndex].AsObject());

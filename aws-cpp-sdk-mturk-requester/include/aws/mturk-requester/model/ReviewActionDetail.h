@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MTurk
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     ReviewActionDetail();
-    ReviewActionDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    ReviewActionDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ReviewActionDetail(Aws::Utils::Json::JsonView jsonValue);
+    ReviewActionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

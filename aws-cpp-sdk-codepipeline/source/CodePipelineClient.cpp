@@ -33,6 +33,8 @@
 #include <aws/codepipeline/model/CreatePipelineRequest.h>
 #include <aws/codepipeline/model/DeleteCustomActionTypeRequest.h>
 #include <aws/codepipeline/model/DeletePipelineRequest.h>
+#include <aws/codepipeline/model/DeleteWebhookRequest.h>
+#include <aws/codepipeline/model/DeregisterWebhookWithThirdPartyRequest.h>
 #include <aws/codepipeline/model/DisableStageTransitionRequest.h>
 #include <aws/codepipeline/model/EnableStageTransitionRequest.h>
 #include <aws/codepipeline/model/GetJobDetailsRequest.h>
@@ -43,6 +45,7 @@
 #include <aws/codepipeline/model/ListActionTypesRequest.h>
 #include <aws/codepipeline/model/ListPipelineExecutionsRequest.h>
 #include <aws/codepipeline/model/ListPipelinesRequest.h>
+#include <aws/codepipeline/model/ListWebhooksRequest.h>
 #include <aws/codepipeline/model/PollForJobsRequest.h>
 #include <aws/codepipeline/model/PollForThirdPartyJobsRequest.h>
 #include <aws/codepipeline/model/PutActionRevisionRequest.h>
@@ -51,6 +54,8 @@
 #include <aws/codepipeline/model/PutJobSuccessResultRequest.h>
 #include <aws/codepipeline/model/PutThirdPartyJobFailureResultRequest.h>
 #include <aws/codepipeline/model/PutThirdPartyJobSuccessResultRequest.h>
+#include <aws/codepipeline/model/PutWebhookRequest.h>
+#include <aws/codepipeline/model/RegisterWebhookWithThirdPartyRequest.h>
 #include <aws/codepipeline/model/RetryStageExecutionRequest.h>
 #include <aws/codepipeline/model/StartPipelineExecutionRequest.h>
 #include <aws/codepipeline/model/UpdatePipelineRequest.h>
@@ -327,6 +332,76 @@ void CodePipelineClient::DeletePipelineAsync(const DeletePipelineRequest& reques
 void CodePipelineClient::DeletePipelineAsyncHelper(const DeletePipelineRequest& request, const DeletePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePipeline(request), context);
+}
+
+DeleteWebhookOutcome CodePipelineClient::DeleteWebhook(const DeleteWebhookRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteWebhookOutcome(DeleteWebhookResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteWebhookOutcome(outcome.GetError());
+  }
+}
+
+DeleteWebhookOutcomeCallable CodePipelineClient::DeleteWebhookCallable(const DeleteWebhookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteWebhookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteWebhook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodePipelineClient::DeleteWebhookAsync(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteWebhookAsyncHelper( request, handler, context ); } );
+}
+
+void CodePipelineClient::DeleteWebhookAsyncHelper(const DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteWebhook(request), context);
+}
+
+DeregisterWebhookWithThirdPartyOutcome CodePipelineClient::DeregisterWebhookWithThirdParty(const DeregisterWebhookWithThirdPartyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeregisterWebhookWithThirdPartyOutcome(DeregisterWebhookWithThirdPartyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeregisterWebhookWithThirdPartyOutcome(outcome.GetError());
+  }
+}
+
+DeregisterWebhookWithThirdPartyOutcomeCallable CodePipelineClient::DeregisterWebhookWithThirdPartyCallable(const DeregisterWebhookWithThirdPartyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterWebhookWithThirdPartyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterWebhookWithThirdParty(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodePipelineClient::DeregisterWebhookWithThirdPartyAsync(const DeregisterWebhookWithThirdPartyRequest& request, const DeregisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeregisterWebhookWithThirdPartyAsyncHelper( request, handler, context ); } );
+}
+
+void CodePipelineClient::DeregisterWebhookWithThirdPartyAsyncHelper(const DeregisterWebhookWithThirdPartyRequest& request, const DeregisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeregisterWebhookWithThirdParty(request), context);
 }
 
 DisableStageTransitionOutcome CodePipelineClient::DisableStageTransition(const DisableStageTransitionRequest& request) const
@@ -679,6 +754,41 @@ void CodePipelineClient::ListPipelinesAsyncHelper(const ListPipelinesRequest& re
   handler(this, request, ListPipelines(request), context);
 }
 
+ListWebhooksOutcome CodePipelineClient::ListWebhooks(const ListWebhooksRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListWebhooksOutcome(ListWebhooksResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListWebhooksOutcome(outcome.GetError());
+  }
+}
+
+ListWebhooksOutcomeCallable CodePipelineClient::ListWebhooksCallable(const ListWebhooksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListWebhooksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListWebhooks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodePipelineClient::ListWebhooksAsync(const ListWebhooksRequest& request, const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListWebhooksAsyncHelper( request, handler, context ); } );
+}
+
+void CodePipelineClient::ListWebhooksAsyncHelper(const ListWebhooksRequest& request, const ListWebhooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListWebhooks(request), context);
+}
+
 PollForJobsOutcome CodePipelineClient::PollForJobs(const PollForJobsRequest& request) const
 {
   Aws::StringStream ss;
@@ -957,6 +1067,76 @@ void CodePipelineClient::PutThirdPartyJobSuccessResultAsync(const PutThirdPartyJ
 void CodePipelineClient::PutThirdPartyJobSuccessResultAsyncHelper(const PutThirdPartyJobSuccessResultRequest& request, const PutThirdPartyJobSuccessResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutThirdPartyJobSuccessResult(request), context);
+}
+
+PutWebhookOutcome CodePipelineClient::PutWebhook(const PutWebhookRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutWebhookOutcome(PutWebhookResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutWebhookOutcome(outcome.GetError());
+  }
+}
+
+PutWebhookOutcomeCallable CodePipelineClient::PutWebhookCallable(const PutWebhookRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutWebhookOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutWebhook(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodePipelineClient::PutWebhookAsync(const PutWebhookRequest& request, const PutWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutWebhookAsyncHelper( request, handler, context ); } );
+}
+
+void CodePipelineClient::PutWebhookAsyncHelper(const PutWebhookRequest& request, const PutWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutWebhook(request), context);
+}
+
+RegisterWebhookWithThirdPartyOutcome CodePipelineClient::RegisterWebhookWithThirdParty(const RegisterWebhookWithThirdPartyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RegisterWebhookWithThirdPartyOutcome(RegisterWebhookWithThirdPartyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RegisterWebhookWithThirdPartyOutcome(outcome.GetError());
+  }
+}
+
+RegisterWebhookWithThirdPartyOutcomeCallable CodePipelineClient::RegisterWebhookWithThirdPartyCallable(const RegisterWebhookWithThirdPartyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterWebhookWithThirdPartyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterWebhookWithThirdParty(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodePipelineClient::RegisterWebhookWithThirdPartyAsync(const RegisterWebhookWithThirdPartyRequest& request, const RegisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterWebhookWithThirdPartyAsyncHelper( request, handler, context ); } );
+}
+
+void CodePipelineClient::RegisterWebhookWithThirdPartyAsyncHelper(const RegisterWebhookWithThirdPartyRequest& request, const RegisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterWebhookWithThirdParty(request), context);
 }
 
 RetryStageExecutionOutcome CodePipelineClient::RetryStageExecution(const RetryStageExecutionRequest& request) const

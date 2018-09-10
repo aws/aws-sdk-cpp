@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -36,15 +37,15 @@ namespace Model
    * <p>The facet attribute reference that specifies the attribute definition that
    * contains the attribute facet name and attribute name.</p><p><h3>See Also:</h3>  
    * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/FacetAttributeReference">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/FacetAttributeReference">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API FacetAttributeReference
   {
   public:
     FacetAttributeReference();
-    FacetAttributeReference(const Aws::Utils::Json::JsonValue& jsonValue);
-    FacetAttributeReference& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FacetAttributeReference(Aws::Utils::Json::JsonView jsonValue);
+    FacetAttributeReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

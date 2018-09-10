@@ -55,32 +55,32 @@ namespace Model
   public:
 
     /**
-     * <p>The snapshot attribute to modify.</p> <note> <p>Only volume creation
-     * permissions may be modified at the customer level.</p> </note>
+     * <p>The snapshot attribute to modify. Only volume creation permissions can be
+     * modified.</p>
      */
     inline const SnapshotAttributeName& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>The snapshot attribute to modify.</p> <note> <p>Only volume creation
-     * permissions may be modified at the customer level.</p> </note>
+     * <p>The snapshot attribute to modify. Only volume creation permissions can be
+     * modified.</p>
      */
     inline void SetAttribute(const SnapshotAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The snapshot attribute to modify.</p> <note> <p>Only volume creation
-     * permissions may be modified at the customer level.</p> </note>
+     * <p>The snapshot attribute to modify. Only volume creation permissions can be
+     * modified.</p>
      */
     inline void SetAttribute(SnapshotAttributeName&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
-     * <p>The snapshot attribute to modify.</p> <note> <p>Only volume creation
-     * permissions may be modified at the customer level.</p> </note>
+     * <p>The snapshot attribute to modify. Only volume creation permissions can be
+     * modified.</p>
      */
     inline ModifySnapshotAttributeRequest& WithAttribute(const SnapshotAttributeName& value) { SetAttribute(value); return *this;}
 
     /**
-     * <p>The snapshot attribute to modify.</p> <note> <p>Only volume creation
-     * permissions may be modified at the customer level.</p> </note>
+     * <p>The snapshot attribute to modify. Only volume creation permissions can be
+     * modified.</p>
      */
     inline ModifySnapshotAttributeRequest& WithAttribute(SnapshotAttributeName&& value) { SetAttribute(std::move(value)); return *this;}
 

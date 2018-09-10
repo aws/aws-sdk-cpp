@@ -39,7 +39,7 @@ InputUpdate::InputUpdate() :
 {
 }
 
-InputUpdate::InputUpdate(const JsonValue& jsonValue) : 
+InputUpdate::InputUpdate(JsonView jsonValue) : 
     m_inputIdHasBeenSet(false),
     m_namePrefixUpdateHasBeenSet(false),
     m_inputProcessingConfigurationUpdateHasBeenSet(false),
@@ -51,7 +51,7 @@ InputUpdate::InputUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InputUpdate& InputUpdate::operator =(const JsonValue& jsonValue)
+InputUpdate& InputUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InputId"))
   {

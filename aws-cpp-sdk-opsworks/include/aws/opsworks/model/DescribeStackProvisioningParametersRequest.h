@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The stack ID</p>
+     * <p>The stack ID.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
 
     /**
-     * <p>The stack ID</p>
+     * <p>The stack ID.</p>
      */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
-     * <p>The stack ID</p>
+     * <p>The stack ID.</p>
      */
     inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
 
     /**
-     * <p>The stack ID</p>
+     * <p>The stack ID.</p>
      */
     inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
 
     /**
-     * <p>The stack ID</p>
+     * <p>The stack ID.</p>
      */
     inline DescribeStackProvisioningParametersRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
 
     /**
-     * <p>The stack ID</p>
+     * <p>The stack ID.</p>
      */
     inline DescribeStackProvisioningParametersRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
 
     /**
-     * <p>The stack ID</p>
+     * <p>The stack ID.</p>
      */
     inline DescribeStackProvisioningParametersRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
 

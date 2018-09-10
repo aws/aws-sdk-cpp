@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     Certificate();
-    Certificate(const Aws::Utils::Json::JsonValue& jsonValue);
-    Certificate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Certificate(Aws::Utils::Json::JsonView jsonValue);
+    Certificate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -85,37 +86,44 @@ namespace Model
 
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline Certificate& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline Certificate& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the certificate.</p>
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
      */
     inline Certificate& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 

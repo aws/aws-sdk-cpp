@@ -34,14 +34,14 @@ StageKey::StageKey() :
 {
 }
 
-StageKey::StageKey(const JsonValue& jsonValue) : 
+StageKey::StageKey(JsonView jsonValue) : 
     m_restApiIdHasBeenSet(false),
     m_stageNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StageKey& StageKey::operator =(const JsonValue& jsonValue)
+StageKey& StageKey::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("restApiId"))
   {

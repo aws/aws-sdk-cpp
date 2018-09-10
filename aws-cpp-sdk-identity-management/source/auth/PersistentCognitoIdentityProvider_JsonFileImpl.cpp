@@ -74,13 +74,13 @@ void PersistentCognitoIdentityProvider_JsonFileImpl::PersistIdentityId(const Aws
         m_identityId = identityId;
         auto jsonDoc = LoadJsonDocFromFile();
         JsonValue identityNode;
-        if (jsonDoc.ValueExists(m_identityPoolId))
+        if (jsonDoc.View().ValueExists(m_identityPoolId))
         {
-            identityNode = jsonDoc.GetObject(m_identityPoolId);
+            identityNode = jsonDoc.View().GetObject(m_identityPoolId).Materialize();
         }
 
         identityNode.WithString(IDENTITY_ID, m_identityId);
-        jsonDoc.WithObject(m_identityPoolId, identityNode);
+        jsonDoc.WithObject(m_identityPoolId, std::move(identityNode));
         PersistChangesToFile(jsonDoc);
     }
 
@@ -98,9 +98,9 @@ void PersistentCognitoIdentityProvider_JsonFileImpl::PersistLogins(const Aws::Ma
 
         auto jsonDoc = LoadJsonDocFromFile();
         JsonValue identityNode;
-        if (jsonDoc.ValueExists(m_identityPoolId))
+        if (jsonDoc.View().ValueExists(m_identityPoolId))
         {
-            identityNode = jsonDoc.GetObject(m_identityPoolId);
+            identityNode = jsonDoc.View().GetObject(m_identityPoolId).Materialize();
         }
 
         JsonValue loginsNode;
@@ -115,7 +115,7 @@ void PersistentCognitoIdentityProvider_JsonFileImpl::PersistLogins(const Aws::Ma
         }
 
         identityNode.WithObject(LOGINS, loginsNode);
-        jsonDoc.WithObject(m_identityPoolId, identityNode);
+        jsonDoc.WithObject(m_identityPoolId, std::move(identityNode));
         PersistChangesToFile(jsonDoc);
     }
 
@@ -148,7 +148,7 @@ void PersistentCognitoIdentityProvider_JsonFileImpl::PersistChangesToFile(const 
 
     if (outfile.is_open() && outfile.good())
     {
-        outfile << jsonValue.WriteReadable();
+        outfile << jsonValue.View().WriteReadable();
         outfile.flush();
         outfile.close();
     }
@@ -161,10 +161,11 @@ void PersistentCognitoIdentityProvider_JsonFileImpl::PersistChangesToFile(const 
 void PersistentCognitoIdentityProvider_JsonFileImpl::LoadAndParseDoc()
 {
     auto jsonDoc = LoadJsonDocFromFile();
+    auto docView = jsonDoc.View();
 
-    if (jsonDoc.ValueExists(m_identityPoolId))
+    if (docView.ValueExists(m_identityPoolId))
     {
-        auto identityNode = jsonDoc.GetObject(m_identityPoolId);
+        auto identityNode = docView.GetObject(m_identityPoolId);
         m_identityId = identityNode.GetString(IDENTITY_ID);
 
         if (identityNode.ValueExists(LOGINS))
@@ -172,7 +173,7 @@ void PersistentCognitoIdentityProvider_JsonFileImpl::LoadAndParseDoc()
             auto logins = identityNode.GetObject(LOGINS).GetAllObjects();
             BuildLoginsMap(logins, m_logins);
         }
-    }    
+    }
 }
 
 bool PersistentCognitoIdentityProvider_JsonFileImpl::HasIdentityId() const 
@@ -180,9 +181,10 @@ bool PersistentCognitoIdentityProvider_JsonFileImpl::HasIdentityId() const
     if(m_disableCaching)
     {
         auto jsonDoc = LoadJsonDocFromFile();
-        if (jsonDoc.ValueExists(m_identityPoolId))
+        auto docView = jsonDoc.View();
+        if (docView.ValueExists(m_identityPoolId))
         {
-            auto identityNode = jsonDoc.GetObject(m_identityPoolId);
+            auto identityNode = docView.GetObject(m_identityPoolId);
             return !identityNode.GetString(IDENTITY_ID).empty();
         }
 
@@ -199,9 +201,10 @@ bool PersistentCognitoIdentityProvider_JsonFileImpl::HasLogins() const
     if(m_disableCaching)
     {
         auto jsonDoc = LoadJsonDocFromFile();
-        if (jsonDoc.ValueExists(m_identityPoolId))
+        auto docView = jsonDoc.View();
+        if (docView.ValueExists(m_identityPoolId))
         {
-            auto identityNode = jsonDoc.GetObject(m_identityPoolId);
+            auto identityNode = docView.GetObject(m_identityPoolId);
             if (identityNode.ValueExists(LOGINS))
             {
                 auto logins = identityNode.GetObject(LOGINS).GetAllObjects();
@@ -222,9 +225,10 @@ Aws::String PersistentCognitoIdentityProvider_JsonFileImpl::GetIdentityId() cons
     if(m_disableCaching)
     {
         auto jsonDoc = LoadJsonDocFromFile();
-        if (jsonDoc.ValueExists(m_identityPoolId))
+        auto docView = jsonDoc.View();
+        if (docView.ValueExists(m_identityPoolId))
         {
-            auto identityNode = jsonDoc.GetObject(m_identityPoolId);
+            auto identityNode = docView.GetObject(m_identityPoolId);
             return identityNode.GetString(IDENTITY_ID);
         }
 
@@ -243,9 +247,10 @@ Aws::Map<Aws::String, LoginAccessTokens> PersistentCognitoIdentityProvider_JsonF
         Aws::Map<Aws::String, LoginAccessTokens> logins;
 
         auto jsonDoc = LoadJsonDocFromFile();
-        if (jsonDoc.ValueExists(m_identityPoolId))
+        auto docView = jsonDoc.View();
+        if (docView.ValueExists(m_identityPoolId))
         {
-            auto identityNode = jsonDoc.GetObject(m_identityPoolId);
+            auto identityNode = docView.GetObject(m_identityPoolId);
             if (identityNode.ValueExists(LOGINS))
             {
                 auto loginsJsonMap = identityNode.GetObject(LOGINS).GetAllObjects();
@@ -261,7 +266,7 @@ Aws::Map<Aws::String, LoginAccessTokens> PersistentCognitoIdentityProvider_JsonF
     }
 }
 
-void PersistentCognitoIdentityProvider_JsonFileImpl::BuildLoginsMap(Aws::Map<Aws::String, Aws::Utils::Json::JsonValue> loginJsonMap, Aws::Map<Aws::String, LoginAccessTokens>& logins)
+void PersistentCognitoIdentityProvider_JsonFileImpl::BuildLoginsMap(Aws::Map<Aws::String, Aws::Utils::Json::JsonView> loginJsonMap, Aws::Map<Aws::String, LoginAccessTokens>& logins)
 {
     for (auto& login : loginJsonMap)
     {

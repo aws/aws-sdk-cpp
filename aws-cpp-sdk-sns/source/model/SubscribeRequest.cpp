@@ -23,7 +23,10 @@ using namespace Aws::Utils;
 SubscribeRequest::SubscribeRequest() : 
     m_topicArnHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_endpointHasBeenSet(false)
+    m_endpointHasBeenSet(false),
+    m_attributesHasBeenSet(false),
+    m_returnSubscriptionArn(false),
+    m_returnSubscriptionArnHasBeenSet(false)
 {
 }
 
@@ -44,6 +47,24 @@ Aws::String SubscribeRequest::SerializePayload() const
   if(m_endpointHasBeenSet)
   {
     ss << "Endpoint=" << StringUtils::URLEncode(m_endpoint.c_str()) << "&";
+  }
+
+  if(m_attributesHasBeenSet)
+  {
+    unsigned attributesCount = 1;
+    for(auto& item : m_attributes)
+    {
+      ss << "Attributes.entry." << attributesCount << ".key="
+          << StringUtils::URLEncode(item.first.c_str()) << "&";
+      ss << "Attributes.entry." << attributesCount << ".value="
+          << StringUtils::URLEncode(item.second.c_str()) << "&";
+      attributesCount++;
+    }
+  }
+
+  if(m_returnSubscriptionArnHasBeenSet)
+  {
+    ss << "ReturnSubscriptionArn=" << std::boolalpha << m_returnSubscriptionArn << "&";
   }
 
   ss << "Version=2010-03-31";

@@ -44,11 +44,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -79,7 +74,7 @@ namespace Model
     typedef std::function<void(const SageMakerRuntimeClient*, const Model::InvokeEndpointRequest&, const Model::InvokeEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeEndpointResponseReceivedHandler;
 
   /**
-   * <p> Amazon SageMaker runtime API. </p>
+   * <p> The Amazon SageMaker runtime API. </p>
    */
   class AWS_SAGEMAKERRUNTIME_API SageMakerRuntimeClient : public Aws::Client::AWSJsonClient
   {
@@ -107,7 +102,7 @@ namespace Model
 
         virtual ~SageMakerRuntimeClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "sagemaker"; }
+        inline virtual const char* GetServiceClientName() const override { return "SageMaker Runtime"; }
 
 
         /**
@@ -116,10 +111,17 @@ namespace Model
          * hosted at the specified endpoint. </p> <p>For an overview of Amazon SageMaker,
          * see <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
-         * Works</a> </p> <p> Amazon SageMaker strips all POST headers except those
+         * Works</a>. </p> <p>Amazon SageMaker strips all POST headers except those
          * supported by the API. Amazon SageMaker might add additional headers. You should
          * not rely on the behavior of headers outside those enumerated in the request
-         * syntax. </p><p><h3>See Also:</h3>   <a
+         * syntax. </p> <p>Cals to <code>InvokeEndpoint</code> are authenticated by using
+         * AWS Signature Version 4. For information, see <a
+         * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+         * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+         * Reference</i>.</p> <note> <p>Endpoints are scoped to an individual account, and
+         * are not public. The URL does not contain the account ID, but Amazon SageMaker
+         * determines the account ID from the authentication token that is supplied by the
+         * caller.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">AWS
          * API Reference</a></p>
          */
@@ -131,10 +133,17 @@ namespace Model
          * hosted at the specified endpoint. </p> <p>For an overview of Amazon SageMaker,
          * see <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
-         * Works</a> </p> <p> Amazon SageMaker strips all POST headers except those
+         * Works</a>. </p> <p>Amazon SageMaker strips all POST headers except those
          * supported by the API. Amazon SageMaker might add additional headers. You should
          * not rely on the behavior of headers outside those enumerated in the request
-         * syntax. </p><p><h3>See Also:</h3>   <a
+         * syntax. </p> <p>Cals to <code>InvokeEndpoint</code> are authenticated by using
+         * AWS Signature Version 4. For information, see <a
+         * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+         * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+         * Reference</i>.</p> <note> <p>Endpoints are scoped to an individual account, and
+         * are not public. The URL does not contain the account ID, but Amazon SageMaker
+         * determines the account ID from the authentication token that is supplied by the
+         * caller.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">AWS
          * API Reference</a></p>
          *
@@ -148,10 +157,17 @@ namespace Model
          * hosted at the specified endpoint. </p> <p>For an overview of Amazon SageMaker,
          * see <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
-         * Works</a> </p> <p> Amazon SageMaker strips all POST headers except those
+         * Works</a>. </p> <p>Amazon SageMaker strips all POST headers except those
          * supported by the API. Amazon SageMaker might add additional headers. You should
          * not rely on the behavior of headers outside those enumerated in the request
-         * syntax. </p><p><h3>See Also:</h3>   <a
+         * syntax. </p> <p>Cals to <code>InvokeEndpoint</code> are authenticated by using
+         * AWS Signature Version 4. For information, see <a
+         * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+         * Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+         * Reference</i>.</p> <note> <p>Endpoints are scoped to an individual account, and
+         * are not public. The URL does not contain the account ID, but Amazon SageMaker
+         * determines the account ID from the authentication token that is supplied by the
+         * caller.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint">AWS
          * API Reference</a></p>
          *

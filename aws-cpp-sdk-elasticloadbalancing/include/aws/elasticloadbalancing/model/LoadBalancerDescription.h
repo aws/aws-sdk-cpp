@@ -132,49 +132,49 @@ namespace Model
     /**
      * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
-     * a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline const Aws::String& GetCanonicalHostedZoneName() const{ return m_canonicalHostedZoneName; }
 
     /**
      * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
-     * a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline void SetCanonicalHostedZoneName(const Aws::String& value) { m_canonicalHostedZoneNameHasBeenSet = true; m_canonicalHostedZoneName = value; }
 
     /**
      * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
-     * a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline void SetCanonicalHostedZoneName(Aws::String&& value) { m_canonicalHostedZoneNameHasBeenSet = true; m_canonicalHostedZoneName = std::move(value); }
 
     /**
      * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
-     * a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline void SetCanonicalHostedZoneName(const char* value) { m_canonicalHostedZoneNameHasBeenSet = true; m_canonicalHostedZoneName.assign(value); }
 
     /**
      * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
-     * a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline LoadBalancerDescription& WithCanonicalHostedZoneName(const Aws::String& value) { SetCanonicalHostedZoneName(value); return *this;}
 
     /**
      * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
-     * a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline LoadBalancerDescription& WithCanonicalHostedZoneName(Aws::String&& value) { SetCanonicalHostedZoneName(std::move(value)); return *this;}
 
     /**
      * <p>The DNS name of the load balancer.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
-     * a Custom Domain Name</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline LoadBalancerDescription& WithCanonicalHostedZoneName(const char* value) { SetCanonicalHostedZoneName(value); return *this;}
 

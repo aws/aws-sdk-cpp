@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DatabaseMigrationService
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     TableToReload();
-    TableToReload(const Aws::Utils::Json::JsonValue& jsonValue);
-    TableToReload& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TableToReload(Aws::Utils::Json::JsonView jsonValue);
+    TableToReload& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

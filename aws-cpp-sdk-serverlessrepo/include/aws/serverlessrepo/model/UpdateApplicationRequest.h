@@ -44,251 +44,316 @@ namespace Model
 
 
     /**
-     * The id of the application to update
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The id of the application to update
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The id of the application to update
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The id of the application to update
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The id of the application to update
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline UpdateApplicationRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The id of the application to update
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline UpdateApplicationRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The id of the application to update
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline UpdateApplicationRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * The name of the author publishing the app.\nMin Length=1. Max
-     * Length=127.\nPattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline const Aws::String& GetAuthor() const{ return m_author; }
 
     /**
-     * The name of the author publishing the app.\nMin Length=1. Max
-     * Length=127.\nPattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline void SetAuthor(const Aws::String& value) { m_authorHasBeenSet = true; m_author = value; }
 
     /**
-     * The name of the author publishing the app.\nMin Length=1. Max
-     * Length=127.\nPattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline void SetAuthor(Aws::String&& value) { m_authorHasBeenSet = true; m_author = std::move(value); }
 
     /**
-     * The name of the author publishing the app.\nMin Length=1. Max
-     * Length=127.\nPattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline void SetAuthor(const char* value) { m_authorHasBeenSet = true; m_author.assign(value); }
 
     /**
-     * The name of the author publishing the app.\nMin Length=1. Max
-     * Length=127.\nPattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline UpdateApplicationRequest& WithAuthor(const Aws::String& value) { SetAuthor(value); return *this;}
 
     /**
-     * The name of the author publishing the app.\nMin Length=1. Max
-     * Length=127.\nPattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline UpdateApplicationRequest& WithAuthor(Aws::String&& value) { SetAuthor(std::move(value)); return *this;}
 
     /**
-     * The name of the author publishing the app.\nMin Length=1. Max
-     * Length=127.\nPattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline UpdateApplicationRequest& WithAuthor(const char* value) { SetAuthor(value); return *this;}
 
 
     /**
-     * The description of the application.\nMin Length=1. Max Length=256
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * The description of the application.\nMin Length=1. Max Length=256
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * The description of the application.\nMin Length=1. Max Length=256
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * The description of the application.\nMin Length=1. Max Length=256
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * The description of the application.\nMin Length=1. Max Length=256
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline UpdateApplicationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * The description of the application.\nMin Length=1. Max Length=256
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline UpdateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * The description of the application.\nMin Length=1. Max Length=256
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
      */
     inline UpdateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * Labels to improve discovery of apps in search results.\nMin Length=1. Max
-     * Length=127. Maximum number of labels: 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * <p>A URL with more information about the application, for example
+ the location
+     * of your GitHub repository for the application.</p>
+     */
+    inline const Aws::String& GetHomePageUrl() const{ return m_homePageUrl; }
+
+    /**
+     * <p>A URL with more information about the application, for example
+ the location
+     * of your GitHub repository for the application.</p>
+     */
+    inline void SetHomePageUrl(const Aws::String& value) { m_homePageUrlHasBeenSet = true; m_homePageUrl = value; }
+
+    /**
+     * <p>A URL with more information about the application, for example
+ the location
+     * of your GitHub repository for the application.</p>
+     */
+    inline void SetHomePageUrl(Aws::String&& value) { m_homePageUrlHasBeenSet = true; m_homePageUrl = std::move(value); }
+
+    /**
+     * <p>A URL with more information about the application, for example
+ the location
+     * of your GitHub repository for the application.</p>
+     */
+    inline void SetHomePageUrl(const char* value) { m_homePageUrlHasBeenSet = true; m_homePageUrl.assign(value); }
+
+    /**
+     * <p>A URL with more information about the application, for example
+ the location
+     * of your GitHub repository for the application.</p>
+     */
+    inline UpdateApplicationRequest& WithHomePageUrl(const Aws::String& value) { SetHomePageUrl(value); return *this;}
+
+    /**
+     * <p>A URL with more information about the application, for example
+ the location
+     * of your GitHub repository for the application.</p>
+     */
+    inline UpdateApplicationRequest& WithHomePageUrl(Aws::String&& value) { SetHomePageUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>A URL with more information about the application, for example
+ the location
+     * of your GitHub repository for the application.</p>
+     */
+    inline UpdateApplicationRequest& WithHomePageUrl(const char* value) { SetHomePageUrl(value); return *this;}
+
+
+    /**
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
+     * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
 
     /**
-     * Labels to improve discovery of apps in search results.\nMin Length=1. Max
-     * Length=127. Maximum number of labels: 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
+     * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
 
     /**
-     * Labels to improve discovery of apps in search results.\nMin Length=1. Max
-     * Length=127. Maximum number of labels: 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
+     * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline void SetLabels(Aws::Vector<Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
 
     /**
-     * Labels to improve discovery of apps in search results.\nMin Length=1. Max
-     * Length=127. Maximum number of labels: 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
+     * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline UpdateApplicationRequest& WithLabels(const Aws::Vector<Aws::String>& value) { SetLabels(value); return *this;}
 
     /**
-     * Labels to improve discovery of apps in search results.\nMin Length=1. Max
-     * Length=127. Maximum number of labels: 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
+     * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline UpdateApplicationRequest& WithLabels(Aws::Vector<Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
 
     /**
-     * Labels to improve discovery of apps in search results.\nMin Length=1. Max
-     * Length=127. Maximum number of labels: 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
+     * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline UpdateApplicationRequest& AddLabels(const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
 
     /**
-     * Labels to improve discovery of apps in search results.\nMin Length=1. Max
-     * Length=127. Maximum number of labels: 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
+     * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline UpdateApplicationRequest& AddLabels(Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
 
     /**
-     * Labels to improve discovery of apps in search results.\nMin Length=1. Max
-     * Length=127. Maximum number of labels: 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
+     * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline UpdateApplicationRequest& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
 
 
     /**
-     * A raw text Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A text readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline const Aws::String& GetReadmeBody() const{ return m_readmeBody; }
 
     /**
-     * A raw text Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A text readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline void SetReadmeBody(const Aws::String& value) { m_readmeBodyHasBeenSet = true; m_readmeBody = value; }
 
     /**
-     * A raw text Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A text readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline void SetReadmeBody(Aws::String&& value) { m_readmeBodyHasBeenSet = true; m_readmeBody = std::move(value); }
 
     /**
-     * A raw text Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A text readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline void SetReadmeBody(const char* value) { m_readmeBodyHasBeenSet = true; m_readmeBody.assign(value); }
 
     /**
-     * A raw text Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A text readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline UpdateApplicationRequest& WithReadmeBody(const Aws::String& value) { SetReadmeBody(value); return *this;}
 
     /**
-     * A raw text Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A text readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline UpdateApplicationRequest& WithReadmeBody(Aws::String&& value) { SetReadmeBody(std::move(value)); return *this;}
 
     /**
-     * A raw text Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A text readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline UpdateApplicationRequest& WithReadmeBody(const char* value) { SetReadmeBody(value); return *this;}
 
 
     /**
-     * A link to the Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A link to the readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline const Aws::String& GetReadmeUrl() const{ return m_readmeUrl; }
 
     /**
-     * A link to the Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A link to the readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline void SetReadmeUrl(const Aws::String& value) { m_readmeUrlHasBeenSet = true; m_readmeUrl = value; }
 
     /**
-     * A link to the Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A link to the readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline void SetReadmeUrl(Aws::String&& value) { m_readmeUrlHasBeenSet = true; m_readmeUrl = std::move(value); }
 
     /**
-     * A link to the Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A link to the readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline void SetReadmeUrl(const char* value) { m_readmeUrlHasBeenSet = true; m_readmeUrl.assign(value); }
 
     /**
-     * A link to the Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A link to the readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline UpdateApplicationRequest& WithReadmeUrl(const Aws::String& value) { SetReadmeUrl(value); return *this;}
 
     /**
-     * A link to the Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A link to the readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline UpdateApplicationRequest& WithReadmeUrl(Aws::String&& value) { SetReadmeUrl(std::move(value)); return *this;}
 
     /**
-     * A link to the Readme file that contains a more detailed description of the
-     * application and how it works in markdown language.\nMax size 5 MB
+     * <p>A link to the readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline UpdateApplicationRequest& WithReadmeUrl(const char* value) { SetReadmeUrl(value); return *this;}
 
@@ -302,6 +367,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    Aws::String m_homePageUrl;
+    bool m_homePageUrlHasBeenSet;
 
     Aws::Vector<Aws::String> m_labels;
     bool m_labelsHasBeenSet;

@@ -40,7 +40,7 @@ Item::Item() :
 {
 }
 
-Item::Item(const JsonValue& jsonValue) : 
+Item::Item(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_type(ItemType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -53,7 +53,7 @@ Item::Item(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Item& Item::operator =(const JsonValue& jsonValue)
+Item& Item::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

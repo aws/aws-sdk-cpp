@@ -35,7 +35,7 @@ Column::Column() :
 {
 }
 
-Column::Column(const JsonValue& jsonValue) : 
+Column::Column(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_commentHasBeenSet(false)
@@ -43,7 +43,7 @@ Column::Column(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Column& Column::operator =(const JsonValue& jsonValue)
+Column& Column::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

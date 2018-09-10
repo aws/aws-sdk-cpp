@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudWatchEvents
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     RemoveTargetsResultEntry();
-    RemoveTargetsResultEntry(const Aws::Utils::Json::JsonValue& jsonValue);
-    RemoveTargetsResultEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RemoveTargetsResultEntry(Aws::Utils::Json::JsonView jsonValue);
+    RemoveTargetsResultEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

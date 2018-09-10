@@ -35,7 +35,7 @@ DashEncryption::DashEncryption() :
 {
 }
 
-DashEncryption::DashEncryption(const JsonValue& jsonValue) : 
+DashEncryption::DashEncryption(JsonView jsonValue) : 
     m_keyRotationIntervalSeconds(0),
     m_keyRotationIntervalSecondsHasBeenSet(false),
     m_spekeKeyProviderHasBeenSet(false)
@@ -43,7 +43,7 @@ DashEncryption::DashEncryption(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DashEncryption& DashEncryption::operator =(const JsonValue& jsonValue)
+DashEncryption& DashEncryption::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("keyRotationIntervalSeconds"))
   {

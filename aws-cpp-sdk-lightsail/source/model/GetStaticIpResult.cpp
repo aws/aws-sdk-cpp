@@ -37,7 +37,7 @@ GetStaticIpResult::GetStaticIpResult(const Aws::AmazonWebServiceResult<JsonValue
 
 GetStaticIpResult& GetStaticIpResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("staticIp"))
   {
     m_staticIp = jsonValue.GetObject("staticIp");

@@ -33,17 +33,17 @@ Row::Row() :
 {
 }
 
-Row::Row(const JsonValue& jsonValue) : 
+Row::Row(JsonView jsonValue) : 
     m_dataHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Row& Row::operator =(const JsonValue& jsonValue)
+Row& Row::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Data"))
   {
-    Array<JsonValue> dataJsonList = jsonValue.GetArray("Data");
+    Array<JsonView> dataJsonList = jsonValue.GetArray("Data");
     for(unsigned dataIndex = 0; dataIndex < dataJsonList.GetLength(); ++dataIndex)
     {
       m_data.push_back(dataJsonList[dataIndex].AsObject());

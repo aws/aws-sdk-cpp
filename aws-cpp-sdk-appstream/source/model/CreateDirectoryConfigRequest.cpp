@@ -56,7 +56,7 @@ Aws::String CreateDirectoryConfigRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateDirectoryConfigRequest::GetRequestSpecificHeaders() const

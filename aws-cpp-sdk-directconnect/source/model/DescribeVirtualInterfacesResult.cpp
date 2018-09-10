@@ -37,10 +37,10 @@ DescribeVirtualInterfacesResult::DescribeVirtualInterfacesResult(const Aws::Amaz
 
 DescribeVirtualInterfacesResult& DescribeVirtualInterfacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("virtualInterfaces"))
   {
-    Array<JsonValue> virtualInterfacesJsonList = jsonValue.GetArray("virtualInterfaces");
+    Array<JsonView> virtualInterfacesJsonList = jsonValue.GetArray("virtualInterfaces");
     for(unsigned virtualInterfacesIndex = 0; virtualInterfacesIndex < virtualInterfacesJsonList.GetLength(); ++virtualInterfacesIndex)
     {
       m_virtualInterfaces.push_back(virtualInterfacesJsonList[virtualInterfacesIndex].AsObject());

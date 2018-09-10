@@ -36,6 +36,7 @@ DashPackage::DashPackage() :
     m_minBufferTimeSecondsHasBeenSet(false),
     m_minUpdatePeriodSeconds(0),
     m_minUpdatePeriodSecondsHasBeenSet(false),
+    m_periodTriggersHasBeenSet(false),
     m_profile(Profile::NOT_SET),
     m_profileHasBeenSet(false),
     m_segmentDurationSeconds(0),
@@ -46,7 +47,7 @@ DashPackage::DashPackage() :
 {
 }
 
-DashPackage::DashPackage(const JsonValue& jsonValue) : 
+DashPackage::DashPackage(JsonView jsonValue) : 
     m_encryptionHasBeenSet(false),
     m_manifestWindowSeconds(0),
     m_manifestWindowSecondsHasBeenSet(false),
@@ -54,6 +55,7 @@ DashPackage::DashPackage(const JsonValue& jsonValue) :
     m_minBufferTimeSecondsHasBeenSet(false),
     m_minUpdatePeriodSeconds(0),
     m_minUpdatePeriodSecondsHasBeenSet(false),
+    m_periodTriggersHasBeenSet(false),
     m_profile(Profile::NOT_SET),
     m_profileHasBeenSet(false),
     m_segmentDurationSeconds(0),
@@ -65,7 +67,7 @@ DashPackage::DashPackage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DashPackage& DashPackage::operator =(const JsonValue& jsonValue)
+DashPackage& DashPackage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("encryption"))
   {
@@ -93,6 +95,16 @@ DashPackage& DashPackage::operator =(const JsonValue& jsonValue)
     m_minUpdatePeriodSeconds = jsonValue.GetInteger("minUpdatePeriodSeconds");
 
     m_minUpdatePeriodSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("periodTriggers"))
+  {
+    Array<JsonView> periodTriggersJsonList = jsonValue.GetArray("periodTriggers");
+    for(unsigned periodTriggersIndex = 0; periodTriggersIndex < periodTriggersJsonList.GetLength(); ++periodTriggersIndex)
+    {
+      m_periodTriggers.push_back(__PeriodTriggersElementMapper::Get__PeriodTriggersElementForName(periodTriggersJsonList[periodTriggersIndex].AsString()));
+    }
+    m_periodTriggersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("profile"))
@@ -151,6 +163,17 @@ JsonValue DashPackage::Jsonize() const
   if(m_minUpdatePeriodSecondsHasBeenSet)
   {
    payload.WithInteger("minUpdatePeriodSeconds", m_minUpdatePeriodSeconds);
+
+  }
+
+  if(m_periodTriggersHasBeenSet)
+  {
+   Array<JsonValue> periodTriggersJsonList(m_periodTriggers.size());
+   for(unsigned periodTriggersIndex = 0; periodTriggersIndex < periodTriggersJsonList.GetLength(); ++periodTriggersIndex)
+   {
+     periodTriggersJsonList[periodTriggersIndex].AsString(__PeriodTriggersElementMapper::GetNameFor__PeriodTriggersElement(m_periodTriggers[periodTriggersIndex]));
+   }
+   payload.WithArray("periodTriggers", std::move(periodTriggersJsonList));
 
   }
 

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -34,8 +35,8 @@ namespace Model
 {
 
   /**
-   * Contains settings used to acquire and adjust timecode information from
-   * inputs.<p><h3>See Also:</h3>   <a
+   * These settings control how the service handles timecodes throughout the job.
+   * These settings don't affect input clipping.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TimecodeConfig">AWS
    * API Reference</a></p>
    */
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     TimecodeConfig();
-    TimecodeConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    TimecodeConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TimecodeConfig(Aws::Utils::Json::JsonView jsonValue);
+    TimecodeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -53,14 +54,13 @@ namespace Model
      * Timecode (Anchor) to specify a timecode that will match the input video frame to
      * the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF). This setting ignores framerate conversion. System behavior for
-     * Anchor Timecode varies depending on your setting for Timecode source
-     * (TimecodeSource). * If Timecode source (TimecodeSource) is set to Specified
-     * Start (specifiedstart), the first input frame is the specified value in Start
-     * Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used
-     * calculate output timecode. * If Timecode source (TimecodeSource) is set to Start
-     * at 0 (zerobased)  the  first frame is 00:00:00:00. * If Timecode source
-     * (TimecodeSource) is set to Embedded (embedded), the  first frame is the timecode
-     * value on the first input frame of the input.
+     * Anchor Timecode varies depending on your setting for Source (TimecodeSource). *
+     * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first
+     * input frame is the specified value in Start Timecode (Start). Anchor Timecode
+     * (Anchor) and Start Timecode (Start) are used calculate output timecode. * If
+     * Source (TimecodeSource) is set to Start at 0 (ZEROBASED)  the  first frame is
+     * 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the 
+     * first frame is the timecode value on the first input frame of the input.
      */
     inline const Aws::String& GetAnchor() const{ return m_anchor; }
 
@@ -69,14 +69,13 @@ namespace Model
      * Timecode (Anchor) to specify a timecode that will match the input video frame to
      * the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF). This setting ignores framerate conversion. System behavior for
-     * Anchor Timecode varies depending on your setting for Timecode source
-     * (TimecodeSource). * If Timecode source (TimecodeSource) is set to Specified
-     * Start (specifiedstart), the first input frame is the specified value in Start
-     * Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used
-     * calculate output timecode. * If Timecode source (TimecodeSource) is set to Start
-     * at 0 (zerobased)  the  first frame is 00:00:00:00. * If Timecode source
-     * (TimecodeSource) is set to Embedded (embedded), the  first frame is the timecode
-     * value on the first input frame of the input.
+     * Anchor Timecode varies depending on your setting for Source (TimecodeSource). *
+     * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first
+     * input frame is the specified value in Start Timecode (Start). Anchor Timecode
+     * (Anchor) and Start Timecode (Start) are used calculate output timecode. * If
+     * Source (TimecodeSource) is set to Start at 0 (ZEROBASED)  the  first frame is
+     * 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the 
+     * first frame is the timecode value on the first input frame of the input.
      */
     inline void SetAnchor(const Aws::String& value) { m_anchorHasBeenSet = true; m_anchor = value; }
 
@@ -85,14 +84,13 @@ namespace Model
      * Timecode (Anchor) to specify a timecode that will match the input video frame to
      * the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF). This setting ignores framerate conversion. System behavior for
-     * Anchor Timecode varies depending on your setting for Timecode source
-     * (TimecodeSource). * If Timecode source (TimecodeSource) is set to Specified
-     * Start (specifiedstart), the first input frame is the specified value in Start
-     * Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used
-     * calculate output timecode. * If Timecode source (TimecodeSource) is set to Start
-     * at 0 (zerobased)  the  first frame is 00:00:00:00. * If Timecode source
-     * (TimecodeSource) is set to Embedded (embedded), the  first frame is the timecode
-     * value on the first input frame of the input.
+     * Anchor Timecode varies depending on your setting for Source (TimecodeSource). *
+     * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first
+     * input frame is the specified value in Start Timecode (Start). Anchor Timecode
+     * (Anchor) and Start Timecode (Start) are used calculate output timecode. * If
+     * Source (TimecodeSource) is set to Start at 0 (ZEROBASED)  the  first frame is
+     * 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the 
+     * first frame is the timecode value on the first input frame of the input.
      */
     inline void SetAnchor(Aws::String&& value) { m_anchorHasBeenSet = true; m_anchor = std::move(value); }
 
@@ -101,14 +99,13 @@ namespace Model
      * Timecode (Anchor) to specify a timecode that will match the input video frame to
      * the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF). This setting ignores framerate conversion. System behavior for
-     * Anchor Timecode varies depending on your setting for Timecode source
-     * (TimecodeSource). * If Timecode source (TimecodeSource) is set to Specified
-     * Start (specifiedstart), the first input frame is the specified value in Start
-     * Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used
-     * calculate output timecode. * If Timecode source (TimecodeSource) is set to Start
-     * at 0 (zerobased)  the  first frame is 00:00:00:00. * If Timecode source
-     * (TimecodeSource) is set to Embedded (embedded), the  first frame is the timecode
-     * value on the first input frame of the input.
+     * Anchor Timecode varies depending on your setting for Source (TimecodeSource). *
+     * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first
+     * input frame is the specified value in Start Timecode (Start). Anchor Timecode
+     * (Anchor) and Start Timecode (Start) are used calculate output timecode. * If
+     * Source (TimecodeSource) is set to Start at 0 (ZEROBASED)  the  first frame is
+     * 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the 
+     * first frame is the timecode value on the first input frame of the input.
      */
     inline void SetAnchor(const char* value) { m_anchorHasBeenSet = true; m_anchor.assign(value); }
 
@@ -117,14 +114,13 @@ namespace Model
      * Timecode (Anchor) to specify a timecode that will match the input video frame to
      * the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF). This setting ignores framerate conversion. System behavior for
-     * Anchor Timecode varies depending on your setting for Timecode source
-     * (TimecodeSource). * If Timecode source (TimecodeSource) is set to Specified
-     * Start (specifiedstart), the first input frame is the specified value in Start
-     * Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used
-     * calculate output timecode. * If Timecode source (TimecodeSource) is set to Start
-     * at 0 (zerobased)  the  first frame is 00:00:00:00. * If Timecode source
-     * (TimecodeSource) is set to Embedded (embedded), the  first frame is the timecode
-     * value on the first input frame of the input.
+     * Anchor Timecode varies depending on your setting for Source (TimecodeSource). *
+     * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first
+     * input frame is the specified value in Start Timecode (Start). Anchor Timecode
+     * (Anchor) and Start Timecode (Start) are used calculate output timecode. * If
+     * Source (TimecodeSource) is set to Start at 0 (ZEROBASED)  the  first frame is
+     * 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the 
+     * first frame is the timecode value on the first input frame of the input.
      */
     inline TimecodeConfig& WithAnchor(const Aws::String& value) { SetAnchor(value); return *this;}
 
@@ -133,14 +129,13 @@ namespace Model
      * Timecode (Anchor) to specify a timecode that will match the input video frame to
      * the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF). This setting ignores framerate conversion. System behavior for
-     * Anchor Timecode varies depending on your setting for Timecode source
-     * (TimecodeSource). * If Timecode source (TimecodeSource) is set to Specified
-     * Start (specifiedstart), the first input frame is the specified value in Start
-     * Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used
-     * calculate output timecode. * If Timecode source (TimecodeSource) is set to Start
-     * at 0 (zerobased)  the  first frame is 00:00:00:00. * If Timecode source
-     * (TimecodeSource) is set to Embedded (embedded), the  first frame is the timecode
-     * value on the first input frame of the input.
+     * Anchor Timecode varies depending on your setting for Source (TimecodeSource). *
+     * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first
+     * input frame is the specified value in Start Timecode (Start). Anchor Timecode
+     * (Anchor) and Start Timecode (Start) are used calculate output timecode. * If
+     * Source (TimecodeSource) is set to Start at 0 (ZEROBASED)  the  first frame is
+     * 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the 
+     * first frame is the timecode value on the first input frame of the input.
      */
     inline TimecodeConfig& WithAnchor(Aws::String&& value) { SetAnchor(std::move(value)); return *this;}
 
@@ -149,14 +144,13 @@ namespace Model
      * Timecode (Anchor) to specify a timecode that will match the input video frame to
      * the output video frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF). This setting ignores framerate conversion. System behavior for
-     * Anchor Timecode varies depending on your setting for Timecode source
-     * (TimecodeSource). * If Timecode source (TimecodeSource) is set to Specified
-     * Start (specifiedstart), the first input frame is the specified value in Start
-     * Timecode (Start). Anchor Timecode (Anchor) and Start Timecode (Start) are used
-     * calculate output timecode. * If Timecode source (TimecodeSource) is set to Start
-     * at 0 (zerobased)  the  first frame is 00:00:00:00. * If Timecode source
-     * (TimecodeSource) is set to Embedded (embedded), the  first frame is the timecode
-     * value on the first input frame of the input.
+     * Anchor Timecode varies depending on your setting for Source (TimecodeSource). *
+     * If Source (TimecodeSource) is set to Specified Start (SPECIFIEDSTART), the first
+     * input frame is the specified value in Start Timecode (Start). Anchor Timecode
+     * (Anchor) and Start Timecode (Start) are used calculate output timecode. * If
+     * Source (TimecodeSource) is set to Start at 0 (ZEROBASED)  the  first frame is
+     * 00:00:00:00. * If Source (TimecodeSource) is set to Embedded (EMBEDDED), the 
+     * first frame is the timecode value on the first input frame of the input.
      */
     inline TimecodeConfig& WithAnchor(const char* value) { SetAnchor(value); return *this;}
 
@@ -178,7 +172,7 @@ namespace Model
 
 
     /**
-     * Only use when you set Timecode Source (TimecodeSource) to Specified Start
+     * Only use when you set Source (TimecodeSource) to Specified start
      * (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode for the
      * initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF).
@@ -186,7 +180,7 @@ namespace Model
     inline const Aws::String& GetStart() const{ return m_start; }
 
     /**
-     * Only use when you set Timecode Source (TimecodeSource) to Specified Start
+     * Only use when you set Source (TimecodeSource) to Specified start
      * (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode for the
      * initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF).
@@ -194,7 +188,7 @@ namespace Model
     inline void SetStart(const Aws::String& value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
-     * Only use when you set Timecode Source (TimecodeSource) to Specified Start
+     * Only use when you set Source (TimecodeSource) to Specified start
      * (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode for the
      * initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF).
@@ -202,7 +196,7 @@ namespace Model
     inline void SetStart(Aws::String&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
 
     /**
-     * Only use when you set Timecode Source (TimecodeSource) to Specified Start
+     * Only use when you set Source (TimecodeSource) to Specified start
      * (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode for the
      * initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF).
@@ -210,7 +204,7 @@ namespace Model
     inline void SetStart(const char* value) { m_startHasBeenSet = true; m_start.assign(value); }
 
     /**
-     * Only use when you set Timecode Source (TimecodeSource) to Specified Start
+     * Only use when you set Source (TimecodeSource) to Specified start
      * (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode for the
      * initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF).
@@ -218,7 +212,7 @@ namespace Model
     inline TimecodeConfig& WithStart(const Aws::String& value) { SetStart(value); return *this;}
 
     /**
-     * Only use when you set Timecode Source (TimecodeSource) to Specified Start
+     * Only use when you set Source (TimecodeSource) to Specified start
      * (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode for the
      * initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF).
@@ -226,7 +220,7 @@ namespace Model
     inline TimecodeConfig& WithStart(Aws::String&& value) { SetStart(std::move(value)); return *this;}
 
     /**
-     * Only use when you set Timecode Source (TimecodeSource) to Specified Start
+     * Only use when you set Source (TimecodeSource) to Specified start
      * (SPECIFIEDSTART). Use Start timecode (Start) to specify the timecode for the
      * initial frame. Use 24-hour format with frame number, (HH:MM:SS:FF) or
      * (HH:MM:SS;FF).
@@ -235,65 +229,79 @@ namespace Model
 
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Timestamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
-     * program-date-time (InsertProgramDateTime) in the output settings.
+     * program-date-time (InsertProgramDateTime) in the output settings. For example,
+     * if the date part of your timecodes is 2002-1-25 and you want to change it to one
+     * year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
      */
     inline const Aws::String& GetTimestampOffset() const{ return m_timestampOffset; }
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Timestamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
-     * program-date-time (InsertProgramDateTime) in the output settings.
+     * program-date-time (InsertProgramDateTime) in the output settings. For example,
+     * if the date part of your timecodes is 2002-1-25 and you want to change it to one
+     * year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
      */
     inline void SetTimestampOffset(const Aws::String& value) { m_timestampOffsetHasBeenSet = true; m_timestampOffset = value; }
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Timestamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
-     * program-date-time (InsertProgramDateTime) in the output settings.
+     * program-date-time (InsertProgramDateTime) in the output settings. For example,
+     * if the date part of your timecodes is 2002-1-25 and you want to change it to one
+     * year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
      */
     inline void SetTimestampOffset(Aws::String&& value) { m_timestampOffsetHasBeenSet = true; m_timestampOffset = std::move(value); }
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Timestamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
-     * program-date-time (InsertProgramDateTime) in the output settings.
+     * program-date-time (InsertProgramDateTime) in the output settings. For example,
+     * if the date part of your timecodes is 2002-1-25 and you want to change it to one
+     * year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
      */
     inline void SetTimestampOffset(const char* value) { m_timestampOffsetHasBeenSet = true; m_timestampOffset.assign(value); }
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Timestamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
-     * program-date-time (InsertProgramDateTime) in the output settings.
+     * program-date-time (InsertProgramDateTime) in the output settings. For example,
+     * if the date part of your timecodes is 2002-1-25 and you want to change it to one
+     * year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
      */
     inline TimecodeConfig& WithTimestampOffset(const Aws::String& value) { SetTimestampOffset(value); return *this;}
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Timestamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
-     * program-date-time (InsertProgramDateTime) in the output settings.
+     * program-date-time (InsertProgramDateTime) in the output settings. For example,
+     * if the date part of your timecodes is 2002-1-25 and you want to change it to one
+     * year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
      */
     inline TimecodeConfig& WithTimestampOffset(Aws::String&& value) { SetTimestampOffset(std::move(value)); return *this;}
 
     /**
-     * Only applies to outputs that support program-date-time stamp. Use Time  stamp
+     * Only applies to outputs that support program-date-time stamp. Use Timestamp
      * offset (TimestampOffset) to overwrite the timecode date without affecting the
      * time and frame number. Provide the new date as a string in the format
      * "yyyy-mm-dd".  To use Time stamp offset, you must also enable Insert
-     * program-date-time (InsertProgramDateTime) in the output settings.
+     * program-date-time (InsertProgramDateTime) in the output settings. For example,
+     * if the date part of your timecodes is 2002-1-25 and you want to change it to one
+     * year later, set Timestamp offset (TimestampOffset) to 2003-1-25.
      */
     inline TimecodeConfig& WithTimestampOffset(const char* value) { SetTimestampOffset(value); return *this;}
 

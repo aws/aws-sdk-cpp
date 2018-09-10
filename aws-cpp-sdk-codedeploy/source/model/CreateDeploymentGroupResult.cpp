@@ -37,7 +37,7 @@ CreateDeploymentGroupResult::CreateDeploymentGroupResult(const Aws::AmazonWebSer
 
 CreateDeploymentGroupResult& CreateDeploymentGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deploymentGroupId"))
   {
     m_deploymentGroupId = jsonValue.GetString("deploymentGroupId");

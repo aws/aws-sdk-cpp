@@ -29,6 +29,7 @@ namespace Model
 {
 
 CaptionDescriptionPreset::CaptionDescriptionPreset() : 
+    m_customLanguageCodeHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
@@ -36,7 +37,8 @@ CaptionDescriptionPreset::CaptionDescriptionPreset() :
 {
 }
 
-CaptionDescriptionPreset::CaptionDescriptionPreset(const JsonValue& jsonValue) : 
+CaptionDescriptionPreset::CaptionDescriptionPreset(JsonView jsonValue) : 
+    m_customLanguageCodeHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
@@ -45,8 +47,15 @@ CaptionDescriptionPreset::CaptionDescriptionPreset(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CaptionDescriptionPreset& CaptionDescriptionPreset::operator =(const JsonValue& jsonValue)
+CaptionDescriptionPreset& CaptionDescriptionPreset::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("customLanguageCode"))
+  {
+    m_customLanguageCode = jsonValue.GetString("customLanguageCode");
+
+    m_customLanguageCodeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("destinationSettings"))
   {
     m_destinationSettings = jsonValue.GetObject("destinationSettings");
@@ -74,6 +83,12 @@ CaptionDescriptionPreset& CaptionDescriptionPreset::operator =(const JsonValue& 
 JsonValue CaptionDescriptionPreset::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_customLanguageCodeHasBeenSet)
+  {
+   payload.WithString("customLanguageCode", m_customLanguageCode);
+
+  }
 
   if(m_destinationSettingsHasBeenSet)
   {

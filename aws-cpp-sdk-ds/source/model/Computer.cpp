@@ -35,7 +35,7 @@ Computer::Computer() :
 {
 }
 
-Computer::Computer(const JsonValue& jsonValue) : 
+Computer::Computer(JsonView jsonValue) : 
     m_computerIdHasBeenSet(false),
     m_computerNameHasBeenSet(false),
     m_computerAttributesHasBeenSet(false)
@@ -43,7 +43,7 @@ Computer::Computer(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Computer& Computer::operator =(const JsonValue& jsonValue)
+Computer& Computer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ComputerId"))
   {
@@ -61,7 +61,7 @@ Computer& Computer::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ComputerAttributes"))
   {
-    Array<JsonValue> computerAttributesJsonList = jsonValue.GetArray("ComputerAttributes");
+    Array<JsonView> computerAttributesJsonList = jsonValue.GetArray("ComputerAttributes");
     for(unsigned computerAttributesIndex = 0; computerAttributesIndex < computerAttributesJsonList.GetLength(); ++computerAttributesIndex)
     {
       m_computerAttributes.push_back(computerAttributesJsonList[computerAttributesIndex].AsObject());

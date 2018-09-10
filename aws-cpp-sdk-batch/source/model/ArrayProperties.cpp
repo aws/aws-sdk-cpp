@@ -34,14 +34,14 @@ ArrayProperties::ArrayProperties() :
 {
 }
 
-ArrayProperties::ArrayProperties(const JsonValue& jsonValue) : 
+ArrayProperties::ArrayProperties(JsonView jsonValue) : 
     m_size(0),
     m_sizeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ArrayProperties& ArrayProperties::operator =(const JsonValue& jsonValue)
+ArrayProperties& ArrayProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("size"))
   {

@@ -39,11 +39,13 @@ Upload::Upload() :
     m_urlHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_category(UploadCategory::NOT_SET),
+    m_categoryHasBeenSet(false)
 {
 }
 
-Upload::Upload(const JsonValue& jsonValue) : 
+Upload::Upload(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_createdHasBeenSet(false),
@@ -54,12 +56,14 @@ Upload::Upload(const JsonValue& jsonValue) :
     m_urlHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_category(UploadCategory::NOT_SET),
+    m_categoryHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Upload& Upload::operator =(const JsonValue& jsonValue)
+Upload& Upload::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -124,6 +128,13 @@ Upload& Upload::operator =(const JsonValue& jsonValue)
     m_messageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("category"))
+  {
+    m_category = UploadCategoryMapper::GetUploadCategoryForName(jsonValue.GetString("category"));
+
+    m_categoryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -180,6 +191,11 @@ JsonValue Upload::Jsonize() const
   {
    payload.WithString("message", m_message);
 
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   payload.WithString("category", UploadCategoryMapper::GetNameForUploadCategory(m_category));
   }
 
   return payload;

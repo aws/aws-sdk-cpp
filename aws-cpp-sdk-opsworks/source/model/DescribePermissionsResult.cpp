@@ -37,10 +37,10 @@ DescribePermissionsResult::DescribePermissionsResult(const Aws::AmazonWebService
 
 DescribePermissionsResult& DescribePermissionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Permissions"))
   {
-    Array<JsonValue> permissionsJsonList = jsonValue.GetArray("Permissions");
+    Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
     for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
     {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsObject());

@@ -539,62 +539,93 @@ namespace Model
 
 
     /**
-     * <p>A collection of Tags associated with a given resource.</p>
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
+    inline bool GetTracingEnabled() const{ return m_tracingEnabled; }
+
+    /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
+    inline void SetTracingEnabled(bool value) { m_tracingEnabled = value; }
+
+    /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
+    inline GetStageResult& WithTracingEnabled(bool value) { SetTracingEnabled(value); return *this;}
+
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A collection of Tags associated with a given resource.</p>
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>A collection of Tags associated with a given resource.</p>
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>A collection of Tags associated with a given resource.</p>
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
      */
     inline GetStageResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A collection of Tags associated with a given resource.</p>
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
      */
     inline GetStageResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of Tags associated with a given resource.</p>
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
      */
     inline GetStageResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A collection of Tags associated with a given resource.</p>
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
      */
     inline GetStageResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of Tags associated with a given resource.</p>
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
      */
     inline GetStageResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of Tags associated with a given resource.</p>
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
      */
     inline GetStageResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A collection of Tags associated with a given resource.</p>
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
      */
     inline GetStageResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A collection of Tags associated with a given resource.</p>
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
      */
     inline GetStageResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A collection of Tags associated with a given resource.</p>
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
      */
     inline GetStageResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
@@ -675,6 +706,8 @@ namespace Model
     AccessLogSettings m_accessLogSettings;
 
     CanarySettings m_canarySettings;
+
+    bool m_tracingEnabled;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 

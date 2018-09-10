@@ -36,7 +36,7 @@ LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails() :
 {
 }
 
-LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails(const JsonValue& jsonValue) : 
+LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails(JsonView jsonValue) : 
     m_resourceHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_timeoutInSeconds(0),
@@ -45,7 +45,7 @@ LambdaFunctionScheduledEventDetails::LambdaFunctionScheduledEventDetails(const J
   *this = jsonValue;
 }
 
-LambdaFunctionScheduledEventDetails& LambdaFunctionScheduledEventDetails::operator =(const JsonValue& jsonValue)
+LambdaFunctionScheduledEventDetails& LambdaFunctionScheduledEventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("resource"))
   {

@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Batch
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     ContainerProperties();
-    ContainerProperties(const Aws::Utils::Json::JsonValue& jsonValue);
-    ContainerProperties& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ContainerProperties(Aws::Utils::Json::JsonView jsonValue);
+    ContainerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -274,7 +275,11 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p>
+     * specify at least 4 MiB of memory for a job.</p> <note> <p>If you are trying to
+     * maximize your resource utilization by providing your jobs as much memory as
+     * possible for a particular instance type, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
+     * Management</a> in the <i>AWS Batch User Guide</i>.</p> </note>
      */
     inline int GetMemory() const{ return m_memory; }
 
@@ -287,7 +292,11 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p>
+     * specify at least 4 MiB of memory for a job.</p> <note> <p>If you are trying to
+     * maximize your resource utilization by providing your jobs as much memory as
+     * possible for a particular instance type, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
+     * Management</a> in the <i>AWS Batch User Guide</i>.</p> </note>
      */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
@@ -300,7 +309,11 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
      * Remote API</a> and the <code>--memory</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
-     * specify at least 4 MiB of memory for a job.</p>
+     * specify at least 4 MiB of memory for a job.</p> <note> <p>If you are trying to
+     * maximize your resource utilization by providing your jobs as much memory as
+     * possible for a particular instance type, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
+     * Management</a> in the <i>AWS Batch User Guide</i>.</p> </note>
      */
     inline ContainerProperties& WithMemory(int value) { SetMemory(value); return *this;}
 

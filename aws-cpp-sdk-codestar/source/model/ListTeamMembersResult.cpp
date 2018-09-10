@@ -37,10 +37,10 @@ ListTeamMembersResult::ListTeamMembersResult(const Aws::AmazonWebServiceResult<J
 
 ListTeamMembersResult& ListTeamMembersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("teamMembers"))
   {
-    Array<JsonValue> teamMembersJsonList = jsonValue.GetArray("teamMembers");
+    Array<JsonView> teamMembersJsonList = jsonValue.GetArray("teamMembers");
     for(unsigned teamMembersIndex = 0; teamMembersIndex < teamMembersJsonList.GetLength(); ++teamMembersIndex)
     {
       m_teamMembers.push_back(teamMembersJsonList[teamMembersIndex].AsObject());

@@ -39,7 +39,7 @@ ConfirmConnectionResult::ConfirmConnectionResult(const Aws::AmazonWebServiceResu
 
 ConfirmConnectionResult& ConfirmConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("connectionState"))
   {
     m_connectionState = ConnectionStateMapper::GetConnectionStateForName(jsonValue.GetString("connectionState"));

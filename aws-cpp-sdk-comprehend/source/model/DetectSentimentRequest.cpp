@@ -44,7 +44,7 @@ Aws::String DetectSentimentRequest::SerializePayload() const
    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DetectSentimentRequest::GetRequestSpecificHeaders() const

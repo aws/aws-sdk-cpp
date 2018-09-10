@@ -51,7 +51,7 @@ Aws::String AllocatePrivateVirtualInterfaceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AllocatePrivateVirtualInterfaceRequest::GetRequestSpecificHeaders() const

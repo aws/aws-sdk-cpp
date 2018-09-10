@@ -36,7 +36,7 @@ RoutingStrategy::RoutingStrategy() :
 {
 }
 
-RoutingStrategy::RoutingStrategy(const JsonValue& jsonValue) : 
+RoutingStrategy::RoutingStrategy(JsonView jsonValue) : 
     m_type(RoutingStrategyType::NOT_SET),
     m_typeHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
@@ -45,7 +45,7 @@ RoutingStrategy::RoutingStrategy(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RoutingStrategy& RoutingStrategy::operator =(const JsonValue& jsonValue)
+RoutingStrategy& RoutingStrategy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

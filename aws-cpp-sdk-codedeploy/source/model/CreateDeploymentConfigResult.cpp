@@ -37,7 +37,7 @@ CreateDeploymentConfigResult::CreateDeploymentConfigResult(const Aws::AmazonWebS
 
 CreateDeploymentConfigResult& CreateDeploymentConfigResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deploymentConfigId"))
   {
     m_deploymentConfigId = jsonValue.GetString("deploymentConfigId");

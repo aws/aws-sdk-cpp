@@ -37,7 +37,7 @@ TimecodeBurnin::TimecodeBurnin() :
 {
 }
 
-TimecodeBurnin::TimecodeBurnin(const JsonValue& jsonValue) : 
+TimecodeBurnin::TimecodeBurnin(JsonView jsonValue) : 
     m_fontSize(0),
     m_fontSizeHasBeenSet(false),
     m_position(TimecodeBurninPosition::NOT_SET),
@@ -47,7 +47,7 @@ TimecodeBurnin::TimecodeBurnin(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TimecodeBurnin& TimecodeBurnin::operator =(const JsonValue& jsonValue)
+TimecodeBurnin& TimecodeBurnin::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("fontSize"))
   {

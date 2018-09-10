@@ -60,6 +60,7 @@
 #include <aws/iam/model/DeletePolicyRequest.h>
 #include <aws/iam/model/DeletePolicyVersionRequest.h>
 #include <aws/iam/model/DeleteRoleRequest.h>
+#include <aws/iam/model/DeleteRolePermissionsBoundaryRequest.h>
 #include <aws/iam/model/DeleteRolePolicyRequest.h>
 #include <aws/iam/model/DeleteSAMLProviderRequest.h>
 #include <aws/iam/model/DeleteSSHPublicKeyRequest.h>
@@ -68,6 +69,7 @@
 #include <aws/iam/model/DeleteServiceSpecificCredentialRequest.h>
 #include <aws/iam/model/DeleteSigningCertificateRequest.h>
 #include <aws/iam/model/DeleteUserRequest.h>
+#include <aws/iam/model/DeleteUserPermissionsBoundaryRequest.h>
 #include <aws/iam/model/DeleteUserPolicyRequest.h>
 #include <aws/iam/model/DeleteVirtualMFADeviceRequest.h>
 #include <aws/iam/model/DetachGroupPolicyRequest.h>
@@ -123,7 +125,9 @@
 #include <aws/iam/model/ListUsersRequest.h>
 #include <aws/iam/model/ListVirtualMFADevicesRequest.h>
 #include <aws/iam/model/PutGroupPolicyRequest.h>
+#include <aws/iam/model/PutRolePermissionsBoundaryRequest.h>
 #include <aws/iam/model/PutRolePolicyRequest.h>
+#include <aws/iam/model/PutUserPermissionsBoundaryRequest.h>
 #include <aws/iam/model/PutUserPolicyRequest.h>
 #include <aws/iam/model/RemoveClientIDFromOpenIDConnectProviderRequest.h>
 #include <aws/iam/model/RemoveRoleFromInstanceProfileRequest.h>
@@ -139,6 +143,7 @@
 #include <aws/iam/model/UpdateGroupRequest.h>
 #include <aws/iam/model/UpdateLoginProfileRequest.h>
 #include <aws/iam/model/UpdateOpenIDConnectProviderThumbprintRequest.h>
+#include <aws/iam/model/UpdateRoleRequest.h>
 #include <aws/iam/model/UpdateRoleDescriptionRequest.h>
 #include <aws/iam/model/UpdateSAMLProviderRequest.h>
 #include <aws/iam/model/UpdateSSHPublicKeyRequest.h>
@@ -1380,6 +1385,41 @@ void IAMClient::DeleteRoleAsyncHelper(const DeleteRoleRequest& request, const De
   handler(this, request, DeleteRole(request), context);
 }
 
+DeleteRolePermissionsBoundaryOutcome IAMClient::DeleteRolePermissionsBoundary(const DeleteRolePermissionsBoundaryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRolePermissionsBoundaryOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteRolePermissionsBoundaryOutcome(outcome.GetError());
+  }
+}
+
+DeleteRolePermissionsBoundaryOutcomeCallable IAMClient::DeleteRolePermissionsBoundaryCallable(const DeleteRolePermissionsBoundaryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRolePermissionsBoundaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRolePermissionsBoundary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::DeleteRolePermissionsBoundaryAsync(const DeleteRolePermissionsBoundaryRequest& request, const DeleteRolePermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRolePermissionsBoundaryAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::DeleteRolePermissionsBoundaryAsyncHelper(const DeleteRolePermissionsBoundaryRequest& request, const DeleteRolePermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRolePermissionsBoundary(request), context);
+}
+
 DeleteRolePolicyOutcome IAMClient::DeleteRolePolicy(const DeleteRolePolicyRequest& request) const
 {
   Aws::StringStream ss;
@@ -1658,6 +1698,41 @@ void IAMClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUs
 void IAMClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteUser(request), context);
+}
+
+DeleteUserPermissionsBoundaryOutcome IAMClient::DeleteUserPermissionsBoundary(const DeleteUserPermissionsBoundaryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteUserPermissionsBoundaryOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteUserPermissionsBoundaryOutcome(outcome.GetError());
+  }
+}
+
+DeleteUserPermissionsBoundaryOutcomeCallable IAMClient::DeleteUserPermissionsBoundaryCallable(const DeleteUserPermissionsBoundaryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUserPermissionsBoundaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserPermissionsBoundary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::DeleteUserPermissionsBoundaryAsync(const DeleteUserPermissionsBoundaryRequest& request, const DeleteUserPermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserPermissionsBoundaryAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::DeleteUserPermissionsBoundaryAsyncHelper(const DeleteUserPermissionsBoundaryRequest& request, const DeleteUserPermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteUserPermissionsBoundary(request), context);
 }
 
 DeleteUserPolicyOutcome IAMClient::DeleteUserPolicy(const DeleteUserPolicyRequest& request) const
@@ -3585,6 +3660,41 @@ void IAMClient::PutGroupPolicyAsyncHelper(const PutGroupPolicyRequest& request, 
   handler(this, request, PutGroupPolicy(request), context);
 }
 
+PutRolePermissionsBoundaryOutcome IAMClient::PutRolePermissionsBoundary(const PutRolePermissionsBoundaryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutRolePermissionsBoundaryOutcome(NoResult());
+  }
+  else
+  {
+    return PutRolePermissionsBoundaryOutcome(outcome.GetError());
+  }
+}
+
+PutRolePermissionsBoundaryOutcomeCallable IAMClient::PutRolePermissionsBoundaryCallable(const PutRolePermissionsBoundaryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutRolePermissionsBoundaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRolePermissionsBoundary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::PutRolePermissionsBoundaryAsync(const PutRolePermissionsBoundaryRequest& request, const PutRolePermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutRolePermissionsBoundaryAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::PutRolePermissionsBoundaryAsyncHelper(const PutRolePermissionsBoundaryRequest& request, const PutRolePermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutRolePermissionsBoundary(request), context);
+}
+
 PutRolePolicyOutcome IAMClient::PutRolePolicy(const PutRolePolicyRequest& request) const
 {
   Aws::StringStream ss;
@@ -3618,6 +3728,41 @@ void IAMClient::PutRolePolicyAsync(const PutRolePolicyRequest& request, const Pu
 void IAMClient::PutRolePolicyAsyncHelper(const PutRolePolicyRequest& request, const PutRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutRolePolicy(request), context);
+}
+
+PutUserPermissionsBoundaryOutcome IAMClient::PutUserPermissionsBoundary(const PutUserPermissionsBoundaryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutUserPermissionsBoundaryOutcome(NoResult());
+  }
+  else
+  {
+    return PutUserPermissionsBoundaryOutcome(outcome.GetError());
+  }
+}
+
+PutUserPermissionsBoundaryOutcomeCallable IAMClient::PutUserPermissionsBoundaryCallable(const PutUserPermissionsBoundaryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutUserPermissionsBoundaryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutUserPermissionsBoundary(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::PutUserPermissionsBoundaryAsync(const PutUserPermissionsBoundaryRequest& request, const PutUserPermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutUserPermissionsBoundaryAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::PutUserPermissionsBoundaryAsyncHelper(const PutUserPermissionsBoundaryRequest& request, const PutUserPermissionsBoundaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutUserPermissionsBoundary(request), context);
 }
 
 PutUserPolicyOutcome IAMClient::PutUserPolicy(const PutUserPolicyRequest& request) const
@@ -4143,6 +4288,41 @@ void IAMClient::UpdateOpenIDConnectProviderThumbprintAsync(const UpdateOpenIDCon
 void IAMClient::UpdateOpenIDConnectProviderThumbprintAsyncHelper(const UpdateOpenIDConnectProviderThumbprintRequest& request, const UpdateOpenIDConnectProviderThumbprintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateOpenIDConnectProviderThumbprint(request), context);
+}
+
+UpdateRoleOutcome IAMClient::UpdateRole(const UpdateRoleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UpdateRoleOutcome(UpdateRoleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateRoleOutcome(outcome.GetError());
+  }
+}
+
+UpdateRoleOutcomeCallable IAMClient::UpdateRoleCallable(const UpdateRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::UpdateRoleAsync(const UpdateRoleRequest& request, const UpdateRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRoleAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::UpdateRoleAsyncHelper(const UpdateRoleRequest& request, const UpdateRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRole(request), context);
 }
 
 UpdateRoleDescriptionOutcome IAMClient::UpdateRoleDescription(const UpdateRoleDescriptionRequest& request) const

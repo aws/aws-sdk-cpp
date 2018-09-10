@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>A complex type that specifies how CloudFront handles query strings and
    * cookies.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ForwardedValues">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ForwardedValues">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ForwardedValues

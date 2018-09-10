@@ -40,7 +40,7 @@ SentimentScore::SentimentScore() :
 {
 }
 
-SentimentScore::SentimentScore(const JsonValue& jsonValue) : 
+SentimentScore::SentimentScore(JsonView jsonValue) : 
     m_positive(0.0),
     m_positiveHasBeenSet(false),
     m_negative(0.0),
@@ -53,7 +53,7 @@ SentimentScore::SentimentScore(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SentimentScore& SentimentScore::operator =(const JsonValue& jsonValue)
+SentimentScore& SentimentScore::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Positive"))
   {

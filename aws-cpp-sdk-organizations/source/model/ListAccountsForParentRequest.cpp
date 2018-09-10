@@ -52,7 +52,7 @@ Aws::String ListAccountsForParentRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListAccountsForParentRequest::GetRequestSpecificHeaders() const

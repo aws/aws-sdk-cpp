@@ -37,7 +37,7 @@ ActivityTaskCompletedEventAttributes::ActivityTaskCompletedEventAttributes() :
 {
 }
 
-ActivityTaskCompletedEventAttributes::ActivityTaskCompletedEventAttributes(const JsonValue& jsonValue) : 
+ActivityTaskCompletedEventAttributes::ActivityTaskCompletedEventAttributes(JsonView jsonValue) : 
     m_resultHasBeenSet(false),
     m_scheduledEventId(0),
     m_scheduledEventIdHasBeenSet(false),
@@ -47,7 +47,7 @@ ActivityTaskCompletedEventAttributes::ActivityTaskCompletedEventAttributes(const
   *this = jsonValue;
 }
 
-ActivityTaskCompletedEventAttributes& ActivityTaskCompletedEventAttributes::operator =(const JsonValue& jsonValue)
+ActivityTaskCompletedEventAttributes& ActivityTaskCompletedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("result"))
   {

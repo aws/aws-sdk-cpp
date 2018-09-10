@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -34,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Information on the deployment<p><h3>See Also:</h3>   <a
+   * Information about a deployment.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Deployment">AWS
    * API Reference</a></p>
    */
@@ -42,177 +43,177 @@ namespace Model
   {
   public:
     Deployment();
-    Deployment(const Aws::Utils::Json::JsonValue& jsonValue);
-    Deployment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Deployment(Aws::Utils::Json::JsonView jsonValue);
+    Deployment& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Timestamp when the deployment was created.
+     * The time, in milliseconds since the epoch, when the deployment was created.
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * Timestamp when the deployment was created.
+     * The time, in milliseconds since the epoch, when the deployment was created.
      */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * Timestamp when the deployment was created.
+     * The time, in milliseconds since the epoch, when the deployment was created.
      */
     inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * Timestamp when the deployment was created.
+     * The time, in milliseconds since the epoch, when the deployment was created.
      */
     inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
 
     /**
-     * Timestamp when the deployment was created.
+     * The time, in milliseconds since the epoch, when the deployment was created.
      */
     inline Deployment& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * Timestamp when the deployment was created.
+     * The time, in milliseconds since the epoch, when the deployment was created.
      */
     inline Deployment& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
-     * Timestamp when the deployment was created.
+     * The time, in milliseconds since the epoch, when the deployment was created.
      */
     inline Deployment& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
 
 
     /**
-     * Arn of the deployment.
+     * The ARN of the deployment.
      */
     inline const Aws::String& GetDeploymentArn() const{ return m_deploymentArn; }
 
     /**
-     * Arn of the deployment.
+     * The ARN of the deployment.
      */
     inline void SetDeploymentArn(const Aws::String& value) { m_deploymentArnHasBeenSet = true; m_deploymentArn = value; }
 
     /**
-     * Arn of the deployment.
+     * The ARN of the deployment.
      */
     inline void SetDeploymentArn(Aws::String&& value) { m_deploymentArnHasBeenSet = true; m_deploymentArn = std::move(value); }
 
     /**
-     * Arn of the deployment.
+     * The ARN of the deployment.
      */
     inline void SetDeploymentArn(const char* value) { m_deploymentArnHasBeenSet = true; m_deploymentArn.assign(value); }
 
     /**
-     * Arn of the deployment.
+     * The ARN of the deployment.
      */
     inline Deployment& WithDeploymentArn(const Aws::String& value) { SetDeploymentArn(value); return *this;}
 
     /**
-     * Arn of the deployment.
+     * The ARN of the deployment.
      */
     inline Deployment& WithDeploymentArn(Aws::String&& value) { SetDeploymentArn(std::move(value)); return *this;}
 
     /**
-     * Arn of the deployment.
+     * The ARN of the deployment.
      */
     inline Deployment& WithDeploymentArn(const char* value) { SetDeploymentArn(value); return *this;}
 
 
     /**
-     * Id of the deployment.
+     * The ID of the deployment.
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * Id of the deployment.
+     * The ID of the deployment.
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * Id of the deployment.
+     * The ID of the deployment.
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
-     * Id of the deployment.
+     * The ID of the deployment.
      */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
     /**
-     * Id of the deployment.
+     * The ID of the deployment.
      */
     inline Deployment& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * Id of the deployment.
+     * The ID of the deployment.
      */
     inline Deployment& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * Id of the deployment.
+     * The ID of the deployment.
      */
     inline Deployment& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
 
     /**
-     * The type of deployment.
+     * The type of the deployment.
      */
     inline const DeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * The type of deployment.
+     * The type of the deployment.
      */
     inline void SetDeploymentType(const DeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * The type of deployment.
+     * The type of the deployment.
      */
     inline void SetDeploymentType(DeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * The type of deployment.
+     * The type of the deployment.
      */
     inline Deployment& WithDeploymentType(const DeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * The type of deployment.
+     * The type of the deployment.
      */
     inline Deployment& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 
 
     /**
-     * Arn of the group for this deployment.
+     * The ARN of the group for this deployment.
      */
     inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
 
     /**
-     * Arn of the group for this deployment.
+     * The ARN of the group for this deployment.
      */
     inline void SetGroupArn(const Aws::String& value) { m_groupArnHasBeenSet = true; m_groupArn = value; }
 
     /**
-     * Arn of the group for this deployment.
+     * The ARN of the group for this deployment.
      */
     inline void SetGroupArn(Aws::String&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::move(value); }
 
     /**
-     * Arn of the group for this deployment.
+     * The ARN of the group for this deployment.
      */
     inline void SetGroupArn(const char* value) { m_groupArnHasBeenSet = true; m_groupArn.assign(value); }
 
     /**
-     * Arn of the group for this deployment.
+     * The ARN of the group for this deployment.
      */
     inline Deployment& WithGroupArn(const Aws::String& value) { SetGroupArn(value); return *this;}
 
     /**
-     * Arn of the group for this deployment.
+     * The ARN of the group for this deployment.
      */
     inline Deployment& WithGroupArn(Aws::String&& value) { SetGroupArn(std::move(value)); return *this;}
 
     /**
-     * Arn of the group for this deployment.
+     * The ARN of the group for this deployment.
      */
     inline Deployment& WithGroupArn(const char* value) { SetGroupArn(value); return *this;}
 

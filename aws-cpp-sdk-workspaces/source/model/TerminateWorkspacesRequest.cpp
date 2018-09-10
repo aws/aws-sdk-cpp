@@ -42,7 +42,7 @@ Aws::String TerminateWorkspacesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection TerminateWorkspacesRequest::GetRequestSpecificHeaders() const

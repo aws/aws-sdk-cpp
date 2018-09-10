@@ -37,7 +37,7 @@ DescribeWorkflowExecutionResult::DescribeWorkflowExecutionResult(const Aws::Amaz
 
 DescribeWorkflowExecutionResult& DescribeWorkflowExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("executionInfo"))
   {
     m_executionInfo = jsonValue.GetObject("executionInfo");

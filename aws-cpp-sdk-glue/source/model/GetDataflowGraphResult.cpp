@@ -37,10 +37,10 @@ GetDataflowGraphResult::GetDataflowGraphResult(const Aws::AmazonWebServiceResult
 
 GetDataflowGraphResult& GetDataflowGraphResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DagNodes"))
   {
-    Array<JsonValue> dagNodesJsonList = jsonValue.GetArray("DagNodes");
+    Array<JsonView> dagNodesJsonList = jsonValue.GetArray("DagNodes");
     for(unsigned dagNodesIndex = 0; dagNodesIndex < dagNodesJsonList.GetLength(); ++dagNodesIndex)
     {
       m_dagNodes.push_back(dagNodesJsonList[dagNodesIndex].AsObject());
@@ -49,7 +49,7 @@ GetDataflowGraphResult& GetDataflowGraphResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("DagEdges"))
   {
-    Array<JsonValue> dagEdgesJsonList = jsonValue.GetArray("DagEdges");
+    Array<JsonView> dagEdgesJsonList = jsonValue.GetArray("DagEdges");
     for(unsigned dagEdgesIndex = 0; dagEdgesIndex < dagEdgesJsonList.GetLength(); ++dagEdgesIndex)
     {
       m_dagEdges.push_back(dagEdgesJsonList[dagEdgesIndex].AsObject());

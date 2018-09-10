@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -38,15 +39,15 @@ namespace Model
    * <p>Represents the data for a typed attribute. You can set one, and only one, of
    * the elements. Each attribute in an item is a name-value pair. Attributes have a
    * single value.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TypedAttributeValue">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedAttributeValue">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API TypedAttributeValue
   {
   public:
     TypedAttributeValue();
-    TypedAttributeValue(const Aws::Utils::Json::JsonValue& jsonValue);
-    TypedAttributeValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TypedAttributeValue(Aws::Utils::Json::JsonView jsonValue);
+    TypedAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

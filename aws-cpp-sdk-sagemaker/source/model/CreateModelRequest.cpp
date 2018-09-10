@@ -26,7 +26,8 @@ CreateModelRequest::CreateModelRequest() :
     m_modelNameHasBeenSet(false),
     m_primaryContainerHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -63,7 +64,13 @@ Aws::String CreateModelRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateModelRequest::GetRequestSpecificHeaders() const

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticsearchService
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     EncryptionAtRestOptionsStatus();
-    EncryptionAtRestOptionsStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    EncryptionAtRestOptionsStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EncryptionAtRestOptionsStatus(Aws::Utils::Json::JsonView jsonValue);
+    EncryptionAtRestOptionsStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

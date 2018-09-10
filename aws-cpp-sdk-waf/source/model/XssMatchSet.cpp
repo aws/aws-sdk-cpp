@@ -35,7 +35,7 @@ XssMatchSet::XssMatchSet() :
 {
 }
 
-XssMatchSet::XssMatchSet(const JsonValue& jsonValue) : 
+XssMatchSet::XssMatchSet(JsonView jsonValue) : 
     m_xssMatchSetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_xssMatchTuplesHasBeenSet(false)
@@ -43,7 +43,7 @@ XssMatchSet::XssMatchSet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-XssMatchSet& XssMatchSet::operator =(const JsonValue& jsonValue)
+XssMatchSet& XssMatchSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("XssMatchSetId"))
   {
@@ -61,7 +61,7 @@ XssMatchSet& XssMatchSet::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("XssMatchTuples"))
   {
-    Array<JsonValue> xssMatchTuplesJsonList = jsonValue.GetArray("XssMatchTuples");
+    Array<JsonView> xssMatchTuplesJsonList = jsonValue.GetArray("XssMatchTuples");
     for(unsigned xssMatchTuplesIndex = 0; xssMatchTuplesIndex < xssMatchTuplesJsonList.GetLength(); ++xssMatchTuplesIndex)
     {
       m_xssMatchTuples.push_back(xssMatchTuplesJsonList[xssMatchTuplesIndex].AsObject());

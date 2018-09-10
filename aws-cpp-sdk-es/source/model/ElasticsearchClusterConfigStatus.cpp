@@ -34,14 +34,14 @@ ElasticsearchClusterConfigStatus::ElasticsearchClusterConfigStatus() :
 {
 }
 
-ElasticsearchClusterConfigStatus::ElasticsearchClusterConfigStatus(const JsonValue& jsonValue) : 
+ElasticsearchClusterConfigStatus::ElasticsearchClusterConfigStatus(JsonView jsonValue) : 
     m_optionsHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ElasticsearchClusterConfigStatus& ElasticsearchClusterConfigStatus::operator =(const JsonValue& jsonValue)
+ElasticsearchClusterConfigStatus& ElasticsearchClusterConfigStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Options"))
   {

@@ -34,14 +34,14 @@ PolicyToPath::PolicyToPath() :
 {
 }
 
-PolicyToPath::PolicyToPath(const JsonValue& jsonValue) : 
+PolicyToPath::PolicyToPath(JsonView jsonValue) : 
     m_pathHasBeenSet(false),
     m_policiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PolicyToPath& PolicyToPath::operator =(const JsonValue& jsonValue)
+PolicyToPath& PolicyToPath::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Path"))
   {
@@ -52,7 +52,7 @@ PolicyToPath& PolicyToPath::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Policies"))
   {
-    Array<JsonValue> policiesJsonList = jsonValue.GetArray("Policies");
+    Array<JsonView> policiesJsonList = jsonValue.GetArray("Policies");
     for(unsigned policiesIndex = 0; policiesIndex < policiesJsonList.GetLength(); ++policiesIndex)
     {
       m_policies.push_back(policiesJsonList[policiesIndex].AsObject());

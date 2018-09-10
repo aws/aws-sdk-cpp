@@ -42,7 +42,7 @@ TextDetection::TextDetection() :
 {
 }
 
-TextDetection::TextDetection(const JsonValue& jsonValue) : 
+TextDetection::TextDetection(JsonView jsonValue) : 
     m_detectedTextHasBeenSet(false),
     m_type(TextTypes::NOT_SET),
     m_typeHasBeenSet(false),
@@ -57,7 +57,7 @@ TextDetection::TextDetection(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TextDetection& TextDetection::operator =(const JsonValue& jsonValue)
+TextDetection& TextDetection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DetectedText"))
   {

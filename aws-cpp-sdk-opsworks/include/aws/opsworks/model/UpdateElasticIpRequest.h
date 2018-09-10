@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The address.</p>
+     * <p>The IP address for which you want to update the name.</p>
      */
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
 
     /**
-     * <p>The address.</p>
+     * <p>The IP address for which you want to update the name.</p>
      */
     inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
 
     /**
-     * <p>The address.</p>
+     * <p>The IP address for which you want to update the name.</p>
      */
     inline void SetElasticIp(Aws::String&& value) { m_elasticIpHasBeenSet = true; m_elasticIp = std::move(value); }
 
     /**
-     * <p>The address.</p>
+     * <p>The IP address for which you want to update the name.</p>
      */
     inline void SetElasticIp(const char* value) { m_elasticIpHasBeenSet = true; m_elasticIp.assign(value); }
 
     /**
-     * <p>The address.</p>
+     * <p>The IP address for which you want to update the name.</p>
      */
     inline UpdateElasticIpRequest& WithElasticIp(const Aws::String& value) { SetElasticIp(value); return *this;}
 
     /**
-     * <p>The address.</p>
+     * <p>The IP address for which you want to update the name.</p>
      */
     inline UpdateElasticIpRequest& WithElasticIp(Aws::String&& value) { SetElasticIp(std::move(value)); return *this;}
 
     /**
-     * <p>The address.</p>
+     * <p>The IP address for which you want to update the name.</p>
      */
     inline UpdateElasticIpRequest& WithElasticIp(const char* value) { SetElasticIp(value); return *this;}
 

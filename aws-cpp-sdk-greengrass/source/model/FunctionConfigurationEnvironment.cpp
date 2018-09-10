@@ -36,7 +36,7 @@ FunctionConfigurationEnvironment::FunctionConfigurationEnvironment() :
 {
 }
 
-FunctionConfigurationEnvironment::FunctionConfigurationEnvironment(const JsonValue& jsonValue) : 
+FunctionConfigurationEnvironment::FunctionConfigurationEnvironment(JsonView jsonValue) : 
     m_accessSysfs(false),
     m_accessSysfsHasBeenSet(false),
     m_resourceAccessPoliciesHasBeenSet(false),
@@ -45,7 +45,7 @@ FunctionConfigurationEnvironment::FunctionConfigurationEnvironment(const JsonVal
   *this = jsonValue;
 }
 
-FunctionConfigurationEnvironment& FunctionConfigurationEnvironment::operator =(const JsonValue& jsonValue)
+FunctionConfigurationEnvironment& FunctionConfigurationEnvironment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AccessSysfs"))
   {
@@ -56,7 +56,7 @@ FunctionConfigurationEnvironment& FunctionConfigurationEnvironment::operator =(c
 
   if(jsonValue.ValueExists("ResourceAccessPolicies"))
   {
-    Array<JsonValue> resourceAccessPoliciesJsonList = jsonValue.GetArray("ResourceAccessPolicies");
+    Array<JsonView> resourceAccessPoliciesJsonList = jsonValue.GetArray("ResourceAccessPolicies");
     for(unsigned resourceAccessPoliciesIndex = 0; resourceAccessPoliciesIndex < resourceAccessPoliciesJsonList.GetLength(); ++resourceAccessPoliciesIndex)
     {
       m_resourceAccessPolicies.push_back(resourceAccessPoliciesJsonList[resourceAccessPoliciesIndex].AsObject());
@@ -66,7 +66,7 @@ FunctionConfigurationEnvironment& FunctionConfigurationEnvironment::operator =(c
 
   if(jsonValue.ValueExists("Variables"))
   {
-    Aws::Map<Aws::String, JsonValue> variablesJsonMap = jsonValue.GetObject("Variables").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> variablesJsonMap = jsonValue.GetObject("Variables").GetAllObjects();
     for(auto& variablesItem : variablesJsonMap)
     {
       m_variables[variablesItem.first] = variablesItem.second.AsString();

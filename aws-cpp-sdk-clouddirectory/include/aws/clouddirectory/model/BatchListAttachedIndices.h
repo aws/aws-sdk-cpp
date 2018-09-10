@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -37,15 +38,15 @@ namespace Model
    * <p>Lists indices attached to an object inside a <a>BatchRead</a> operation. For
    * more information, see <a>ListAttachedIndices</a> and
    * <a>BatchReadRequest$Operations</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchListAttachedIndices">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListAttachedIndices">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchListAttachedIndices
   {
   public:
     BatchListAttachedIndices();
-    BatchListAttachedIndices(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchListAttachedIndices& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchListAttachedIndices(Aws::Utils::Json::JsonView jsonValue);
+    BatchListAttachedIndices& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

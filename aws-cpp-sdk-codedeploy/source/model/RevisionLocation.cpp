@@ -37,7 +37,7 @@ RevisionLocation::RevisionLocation() :
 {
 }
 
-RevisionLocation::RevisionLocation(const JsonValue& jsonValue) : 
+RevisionLocation::RevisionLocation(JsonView jsonValue) : 
     m_revisionType(RevisionLocationType::NOT_SET),
     m_revisionTypeHasBeenSet(false),
     m_s3LocationHasBeenSet(false),
@@ -47,7 +47,7 @@ RevisionLocation::RevisionLocation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RevisionLocation& RevisionLocation::operator =(const JsonValue& jsonValue)
+RevisionLocation& RevisionLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("revisionType"))
   {

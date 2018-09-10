@@ -37,7 +37,7 @@ BatchListObjectAttributes::BatchListObjectAttributes() :
 {
 }
 
-BatchListObjectAttributes::BatchListObjectAttributes(const JsonValue& jsonValue) : 
+BatchListObjectAttributes::BatchListObjectAttributes(JsonView jsonValue) : 
     m_objectReferenceHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
@@ -47,7 +47,7 @@ BatchListObjectAttributes::BatchListObjectAttributes(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-BatchListObjectAttributes& BatchListObjectAttributes::operator =(const JsonValue& jsonValue)
+BatchListObjectAttributes& BatchListObjectAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ObjectReference"))
   {

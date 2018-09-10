@@ -35,7 +35,7 @@ ProjectCache::ProjectCache() :
 {
 }
 
-ProjectCache::ProjectCache(const JsonValue& jsonValue) : 
+ProjectCache::ProjectCache(JsonView jsonValue) : 
     m_type(CacheType::NOT_SET),
     m_typeHasBeenSet(false),
     m_locationHasBeenSet(false)
@@ -43,7 +43,7 @@ ProjectCache::ProjectCache(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProjectCache& ProjectCache::operator =(const JsonValue& jsonValue)
+ProjectCache& ProjectCache::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

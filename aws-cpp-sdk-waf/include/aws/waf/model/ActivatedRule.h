@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAF
@@ -51,8 +52,8 @@ namespace Model
   {
   public:
     ActivatedRule();
-    ActivatedRule(const Aws::Utils::Json::JsonValue& jsonValue);
-    ActivatedRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ActivatedRule(Aws::Utils::Json::JsonView jsonValue);
+    ActivatedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -170,11 +171,12 @@ namespace Model
      * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
      * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
      * requests that match the conditions in the rule and then continues to inspect the
-     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>The
-     * <code>Action</code> data type within <code>ActivatedRule</code> is used only
-     * when submitting an <code>UpdateWebACL</code> request.
-     * <code>ActivatedRule|Action</code> is not applicable and therefore not available
-     * for <code>UpdateRuleGroup</code>.</p>
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline const WafAction& GetAction() const{ return m_action; }
 
@@ -186,11 +188,12 @@ namespace Model
      * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
      * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
      * requests that match the conditions in the rule and then continues to inspect the
-     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>The
-     * <code>Action</code> data type within <code>ActivatedRule</code> is used only
-     * when submitting an <code>UpdateWebACL</code> request.
-     * <code>ActivatedRule|Action</code> is not applicable and therefore not available
-     * for <code>UpdateRuleGroup</code>.</p>
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline void SetAction(const WafAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
@@ -202,11 +205,12 @@ namespace Model
      * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
      * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
      * requests that match the conditions in the rule and then continues to inspect the
-     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>The
-     * <code>Action</code> data type within <code>ActivatedRule</code> is used only
-     * when submitting an <code>UpdateWebACL</code> request.
-     * <code>ActivatedRule|Action</code> is not applicable and therefore not available
-     * for <code>UpdateRuleGroup</code>.</p>
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline void SetAction(WafAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
@@ -218,11 +222,12 @@ namespace Model
      * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
      * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
      * requests that match the conditions in the rule and then continues to inspect the
-     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>The
-     * <code>Action</code> data type within <code>ActivatedRule</code> is used only
-     * when submitting an <code>UpdateWebACL</code> request.
-     * <code>ActivatedRule|Action</code> is not applicable and therefore not available
-     * for <code>UpdateRuleGroup</code>.</p>
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline ActivatedRule& WithAction(const WafAction& value) { SetAction(value); return *this;}
 
@@ -234,11 +239,12 @@ namespace Model
      * <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status
      * code.</p> </li> <li> <p> <code>COUNT</code>: AWS WAF increments a counter of
      * requests that match the conditions in the rule and then continues to inspect the
-     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>The
-     * <code>Action</code> data type within <code>ActivatedRule</code> is used only
-     * when submitting an <code>UpdateWebACL</code> request.
-     * <code>ActivatedRule|Action</code> is not applicable and therefore not available
-     * for <code>UpdateRuleGroup</code>.</p>
+     * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline ActivatedRule& WithAction(WafAction&& value) { SetAction(std::move(value)); return *this;}
 
@@ -254,10 +260,12 @@ namespace Model
      * will then override any block action specified by individual rules contained
      * within the group. Instead of blocking matching requests, those requests will be
      * counted. You can view a record of counted requests using
-     * <a>GetSampledRequests</a>. </p> <p>The <code>OverrideAction</code> data type
-     * within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code>
-     * is not applicable and therefore not available for <code>UpdateWebACL</code>.</p>
+     * <a>GetSampledRequests</a>. </p> <p> <code>ActivatedRule|OverrideAction</code>
+     * applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline const WafOverrideAction& GetOverrideAction() const{ return m_overrideAction; }
 
@@ -272,10 +280,12 @@ namespace Model
      * will then override any block action specified by individual rules contained
      * within the group. Instead of blocking matching requests, those requests will be
      * counted. You can view a record of counted requests using
-     * <a>GetSampledRequests</a>. </p> <p>The <code>OverrideAction</code> data type
-     * within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code>
-     * is not applicable and therefore not available for <code>UpdateWebACL</code>.</p>
+     * <a>GetSampledRequests</a>. </p> <p> <code>ActivatedRule|OverrideAction</code>
+     * applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline void SetOverrideAction(const WafOverrideAction& value) { m_overrideActionHasBeenSet = true; m_overrideAction = value; }
 
@@ -290,10 +300,12 @@ namespace Model
      * will then override any block action specified by individual rules contained
      * within the group. Instead of blocking matching requests, those requests will be
      * counted. You can view a record of counted requests using
-     * <a>GetSampledRequests</a>. </p> <p>The <code>OverrideAction</code> data type
-     * within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code>
-     * is not applicable and therefore not available for <code>UpdateWebACL</code>.</p>
+     * <a>GetSampledRequests</a>. </p> <p> <code>ActivatedRule|OverrideAction</code>
+     * applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline void SetOverrideAction(WafOverrideAction&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::move(value); }
 
@@ -308,10 +320,12 @@ namespace Model
      * will then override any block action specified by individual rules contained
      * within the group. Instead of blocking matching requests, those requests will be
      * counted. You can view a record of counted requests using
-     * <a>GetSampledRequests</a>. </p> <p>The <code>OverrideAction</code> data type
-     * within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code>
-     * is not applicable and therefore not available for <code>UpdateWebACL</code>.</p>
+     * <a>GetSampledRequests</a>. </p> <p> <code>ActivatedRule|OverrideAction</code>
+     * applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline ActivatedRule& WithOverrideAction(const WafOverrideAction& value) { SetOverrideAction(value); return *this;}
 
@@ -326,10 +340,12 @@ namespace Model
      * will then override any block action specified by individual rules contained
      * within the group. Instead of blocking matching requests, those requests will be
      * counted. You can view a record of counted requests using
-     * <a>GetSampledRequests</a>. </p> <p>The <code>OverrideAction</code> data type
-     * within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code>
-     * is not applicable and therefore not available for <code>UpdateWebACL</code>.</p>
+     * <a>GetSampledRequests</a>. </p> <p> <code>ActivatedRule|OverrideAction</code>
+     * applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use
+     * <code>ActivatedRule|Action</code>. For all other update requests,
+     * <code>ActivatedRule|Action</code> is used instead of
+     * <code>ActivatedRule|OverrideAction</code>.</p>
      */
     inline ActivatedRule& WithOverrideAction(WafOverrideAction&& value) { SetOverrideAction(std::move(value)); return *this;}
 

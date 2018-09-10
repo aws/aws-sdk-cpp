@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * ErrorDetail<p><h3>See Also:</h3>   <a
+   * Details about the error.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ErrorDetail">AWS
    * API Reference</a></p>
    */
@@ -41,79 +42,79 @@ namespace Model
   {
   public:
     ErrorDetail();
-    ErrorDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    ErrorDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ErrorDetail(Aws::Utils::Json::JsonView jsonValue);
+    ErrorDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Detailed Error Code
+     * A detailed error code.
      */
     inline const Aws::String& GetDetailedErrorCode() const{ return m_detailedErrorCode; }
 
     /**
-     * Detailed Error Code
+     * A detailed error code.
      */
     inline void SetDetailedErrorCode(const Aws::String& value) { m_detailedErrorCodeHasBeenSet = true; m_detailedErrorCode = value; }
 
     /**
-     * Detailed Error Code
+     * A detailed error code.
      */
     inline void SetDetailedErrorCode(Aws::String&& value) { m_detailedErrorCodeHasBeenSet = true; m_detailedErrorCode = std::move(value); }
 
     /**
-     * Detailed Error Code
+     * A detailed error code.
      */
     inline void SetDetailedErrorCode(const char* value) { m_detailedErrorCodeHasBeenSet = true; m_detailedErrorCode.assign(value); }
 
     /**
-     * Detailed Error Code
+     * A detailed error code.
      */
     inline ErrorDetail& WithDetailedErrorCode(const Aws::String& value) { SetDetailedErrorCode(value); return *this;}
 
     /**
-     * Detailed Error Code
+     * A detailed error code.
      */
     inline ErrorDetail& WithDetailedErrorCode(Aws::String&& value) { SetDetailedErrorCode(std::move(value)); return *this;}
 
     /**
-     * Detailed Error Code
+     * A detailed error code.
      */
     inline ErrorDetail& WithDetailedErrorCode(const char* value) { SetDetailedErrorCode(value); return *this;}
 
 
     /**
-     * Detailed Error Message
+     * A detailed error message.
      */
     inline const Aws::String& GetDetailedErrorMessage() const{ return m_detailedErrorMessage; }
 
     /**
-     * Detailed Error Message
+     * A detailed error message.
      */
     inline void SetDetailedErrorMessage(const Aws::String& value) { m_detailedErrorMessageHasBeenSet = true; m_detailedErrorMessage = value; }
 
     /**
-     * Detailed Error Message
+     * A detailed error message.
      */
     inline void SetDetailedErrorMessage(Aws::String&& value) { m_detailedErrorMessageHasBeenSet = true; m_detailedErrorMessage = std::move(value); }
 
     /**
-     * Detailed Error Message
+     * A detailed error message.
      */
     inline void SetDetailedErrorMessage(const char* value) { m_detailedErrorMessageHasBeenSet = true; m_detailedErrorMessage.assign(value); }
 
     /**
-     * Detailed Error Message
+     * A detailed error message.
      */
     inline ErrorDetail& WithDetailedErrorMessage(const Aws::String& value) { SetDetailedErrorMessage(value); return *this;}
 
     /**
-     * Detailed Error Message
+     * A detailed error message.
      */
     inline ErrorDetail& WithDetailedErrorMessage(Aws::String&& value) { SetDetailedErrorMessage(std::move(value)); return *this;}
 
     /**
-     * Detailed Error Message
+     * A detailed error message.
      */
     inline ErrorDetail& WithDetailedErrorMessage(const char* value) { SetDetailedErrorMessage(value); return *this;}
 

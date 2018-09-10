@@ -37,7 +37,7 @@ UpdateQualificationTypeResult::UpdateQualificationTypeResult(const Aws::AmazonWe
 
 UpdateQualificationTypeResult& UpdateQualificationTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("QualificationType"))
   {
     m_qualificationType = jsonValue.GetObject("QualificationType");

@@ -37,7 +37,7 @@ GetSmsChannelResult::GetSmsChannelResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetSmsChannelResult& GetSmsChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_sMSChannelResponse = jsonValue;
 
 

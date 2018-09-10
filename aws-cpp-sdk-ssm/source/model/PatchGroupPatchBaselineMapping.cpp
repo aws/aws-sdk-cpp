@@ -34,14 +34,14 @@ PatchGroupPatchBaselineMapping::PatchGroupPatchBaselineMapping() :
 {
 }
 
-PatchGroupPatchBaselineMapping::PatchGroupPatchBaselineMapping(const JsonValue& jsonValue) : 
+PatchGroupPatchBaselineMapping::PatchGroupPatchBaselineMapping(JsonView jsonValue) : 
     m_patchGroupHasBeenSet(false),
     m_baselineIdentityHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PatchGroupPatchBaselineMapping& PatchGroupPatchBaselineMapping::operator =(const JsonValue& jsonValue)
+PatchGroupPatchBaselineMapping& PatchGroupPatchBaselineMapping::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PatchGroup"))
   {

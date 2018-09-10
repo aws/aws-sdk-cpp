@@ -41,7 +41,7 @@ DescribeInputResult::DescribeInputResult(const Aws::AmazonWebServiceResult<JsonV
 
 DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -50,7 +50,7 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("attachedChannels"))
   {
-    Array<JsonValue> attachedChannelsJsonList = jsonValue.GetArray("attachedChannels");
+    Array<JsonView> attachedChannelsJsonList = jsonValue.GetArray("attachedChannels");
     for(unsigned attachedChannelsIndex = 0; attachedChannelsIndex < attachedChannelsJsonList.GetLength(); ++attachedChannelsIndex)
     {
       m_attachedChannels.push_back(attachedChannelsJsonList[attachedChannelsIndex].AsString());
@@ -59,7 +59,7 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("destinations"))
   {
-    Array<JsonValue> destinationsJsonList = jsonValue.GetArray("destinations");
+    Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
@@ -80,7 +80,7 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("securityGroups"))
   {
-    Array<JsonValue> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
+    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
@@ -89,7 +89,7 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("sources"))
   {
-    Array<JsonValue> sourcesJsonList = jsonValue.GetArray("sources");
+    Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
     for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());

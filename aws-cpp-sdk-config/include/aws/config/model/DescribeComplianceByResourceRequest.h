@@ -50,56 +50,56 @@ namespace Model
 
 
     /**
-     * <p>The types of AWS resources for which you want compliance information; for
-     * example, <code>AWS::EC2::Instance</code>. For this action, you can specify that
+     * <p>The types of AWS resources for which you want compliance information (for
+     * example, <code>AWS::EC2::Instance</code>). For this action, you can specify that
      * the resource type is an AWS account by specifying
      * <code>AWS::::Account</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The types of AWS resources for which you want compliance information; for
-     * example, <code>AWS::EC2::Instance</code>. For this action, you can specify that
+     * <p>The types of AWS resources for which you want compliance information (for
+     * example, <code>AWS::EC2::Instance</code>). For this action, you can specify that
      * the resource type is an AWS account by specifying
      * <code>AWS::::Account</code>.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The types of AWS resources for which you want compliance information; for
-     * example, <code>AWS::EC2::Instance</code>. For this action, you can specify that
+     * <p>The types of AWS resources for which you want compliance information (for
+     * example, <code>AWS::EC2::Instance</code>). For this action, you can specify that
      * the resource type is an AWS account by specifying
      * <code>AWS::::Account</code>.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The types of AWS resources for which you want compliance information; for
-     * example, <code>AWS::EC2::Instance</code>. For this action, you can specify that
+     * <p>The types of AWS resources for which you want compliance information (for
+     * example, <code>AWS::EC2::Instance</code>). For this action, you can specify that
      * the resource type is an AWS account by specifying
      * <code>AWS::::Account</code>.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The types of AWS resources for which you want compliance information; for
-     * example, <code>AWS::EC2::Instance</code>. For this action, you can specify that
+     * <p>The types of AWS resources for which you want compliance information (for
+     * example, <code>AWS::EC2::Instance</code>). For this action, you can specify that
      * the resource type is an AWS account by specifying
      * <code>AWS::::Account</code>.</p>
      */
     inline DescribeComplianceByResourceRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The types of AWS resources for which you want compliance information; for
-     * example, <code>AWS::EC2::Instance</code>. For this action, you can specify that
+     * <p>The types of AWS resources for which you want compliance information (for
+     * example, <code>AWS::EC2::Instance</code>). For this action, you can specify that
      * the resource type is an AWS account by specifying
      * <code>AWS::::Account</code>.</p>
      */
     inline DescribeComplianceByResourceRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The types of AWS resources for which you want compliance information; for
-     * example, <code>AWS::EC2::Instance</code>. For this action, you can specify that
+     * <p>The types of AWS resources for which you want compliance information (for
+     * example, <code>AWS::EC2::Instance</code>). For this action, you can specify that
      * the resource type is an AWS account by specifying
      * <code>AWS::::Account</code>.</p>
      */
@@ -158,114 +158,107 @@ namespace Model
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
     inline const Aws::Vector<ComplianceType>& GetComplianceTypes() const{ return m_complianceTypes; }
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetComplianceTypes(const Aws::Vector<ComplianceType>& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes = value; }
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetComplianceTypes(Aws::Vector<ComplianceType>&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes = std::move(value); }
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
     inline DescribeComplianceByResourceRequest& WithComplianceTypes(const Aws::Vector<ComplianceType>& value) { SetComplianceTypes(value); return *this;}
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
     inline DescribeComplianceByResourceRequest& WithComplianceTypes(Aws::Vector<ComplianceType>&& value) { SetComplianceTypes(std::move(value)); return *this;}
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
     inline DescribeComplianceByResourceRequest& AddComplianceTypes(const ComplianceType& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(value); return *this; }
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
-     * <code>INSUFFICIENT_DATA</code>.</p>
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
     inline DescribeComplianceByResourceRequest& AddComplianceTypes(ComplianceType&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
-     * is 10. You cannot specify a limit greater than 100. If you specify 0, AWS Config
-     * uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
+     * Config uses the default.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
-     * is 10. You cannot specify a limit greater than 100. If you specify 0, AWS Config
-     * uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
+     * Config uses the default.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of evaluation results returned on each page. The default
-     * is 10. You cannot specify a limit greater than 100. If you specify 0, AWS Config
-     * uses the default.</p>
+     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
+     * Config uses the default.</p>
      */
     inline DescribeComplianceByResourceRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
 
     /**
-     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
     inline DescribeComplianceByResourceRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
     inline DescribeComplianceByResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> string returned on a previous page that you use to
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
     inline DescribeComplianceByResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

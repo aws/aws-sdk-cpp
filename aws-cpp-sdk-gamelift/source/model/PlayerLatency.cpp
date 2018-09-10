@@ -36,7 +36,7 @@ PlayerLatency::PlayerLatency() :
 {
 }
 
-PlayerLatency::PlayerLatency(const JsonValue& jsonValue) : 
+PlayerLatency::PlayerLatency(JsonView jsonValue) : 
     m_playerIdHasBeenSet(false),
     m_regionIdentifierHasBeenSet(false),
     m_latencyInMilliseconds(0.0),
@@ -45,7 +45,7 @@ PlayerLatency::PlayerLatency(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PlayerLatency& PlayerLatency::operator =(const JsonValue& jsonValue)
+PlayerLatency& PlayerLatency::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PlayerId"))
   {

@@ -44,7 +44,7 @@ Aws::String DeleteIPSetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteIPSetRequest::GetRequestSpecificHeaders() const

@@ -30,24 +30,28 @@ namespace Model
 
 SMSMessage::SMSMessage() : 
     m_bodyHasBeenSet(false),
+    m_keywordHasBeenSet(false),
     m_messageType(MessageType::NOT_SET),
     m_messageTypeHasBeenSet(false),
+    m_originationNumberHasBeenSet(false),
     m_senderIdHasBeenSet(false),
     m_substitutionsHasBeenSet(false)
 {
 }
 
-SMSMessage::SMSMessage(const JsonValue& jsonValue) : 
+SMSMessage::SMSMessage(JsonView jsonValue) : 
     m_bodyHasBeenSet(false),
+    m_keywordHasBeenSet(false),
     m_messageType(MessageType::NOT_SET),
     m_messageTypeHasBeenSet(false),
+    m_originationNumberHasBeenSet(false),
     m_senderIdHasBeenSet(false),
     m_substitutionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SMSMessage& SMSMessage::operator =(const JsonValue& jsonValue)
+SMSMessage& SMSMessage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Body"))
   {
@@ -56,11 +60,25 @@ SMSMessage& SMSMessage::operator =(const JsonValue& jsonValue)
     m_bodyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Keyword"))
+  {
+    m_keyword = jsonValue.GetString("Keyword");
+
+    m_keywordHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("MessageType"))
   {
     m_messageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("MessageType"));
 
     m_messageTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OriginationNumber"))
+  {
+    m_originationNumber = jsonValue.GetString("OriginationNumber");
+
+    m_originationNumberHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SenderId"))
@@ -72,10 +90,10 @@ SMSMessage& SMSMessage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Substitutions"))
   {
-    Aws::Map<Aws::String, JsonValue> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
     for(auto& substitutionsItem : substitutionsJsonMap)
     {
-      Array<JsonValue> listOf__stringJsonList = substitutionsItem.second.AsArray();
+      Array<JsonView> listOf__stringJsonList = substitutionsItem.second.AsArray();
       Aws::Vector<Aws::String> listOf__stringList;
       listOf__stringList.reserve((size_t)listOf__stringJsonList.GetLength());
       for(unsigned listOf__stringIndex = 0; listOf__stringIndex < listOf__stringJsonList.GetLength(); ++listOf__stringIndex)
@@ -100,9 +118,21 @@ JsonValue SMSMessage::Jsonize() const
 
   }
 
+  if(m_keywordHasBeenSet)
+  {
+   payload.WithString("Keyword", m_keyword);
+
+  }
+
   if(m_messageTypeHasBeenSet)
   {
    payload.WithString("MessageType", MessageTypeMapper::GetNameForMessageType(m_messageType));
+  }
+
+  if(m_originationNumberHasBeenSet)
+  {
+   payload.WithString("OriginationNumber", m_originationNumber);
+
   }
 
   if(m_senderIdHasBeenSet)

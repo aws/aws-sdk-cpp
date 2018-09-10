@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     AdminCreateUserConfigType();
-    AdminCreateUserConfigType(const Aws::Utils::Json::JsonValue& jsonValue);
-    AdminCreateUserConfigType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AdminCreateUserConfigType(Aws::Utils::Json::JsonView jsonValue);
+    AdminCreateUserConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

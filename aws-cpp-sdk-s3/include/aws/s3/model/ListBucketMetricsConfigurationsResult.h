@@ -45,159 +45,159 @@ namespace Model
 
 
     /**
-     * Indicates whether the returned list of metrics configurations is complete. A
+     * <p>Indicates whether the returned list of metrics configurations is complete. A
      * value of true indicates that the list is not complete and the
-     * NextContinuationToken will be provided for a subsequent request.
+     * NextContinuationToken will be provided for a subsequent request.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
-     * Indicates whether the returned list of metrics configurations is complete. A
+     * <p>Indicates whether the returned list of metrics configurations is complete. A
      * value of true indicates that the list is not complete and the
-     * NextContinuationToken will be provided for a subsequent request.
+     * NextContinuationToken will be provided for a subsequent request.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
-     * Indicates whether the returned list of metrics configurations is complete. A
+     * <p>Indicates whether the returned list of metrics configurations is complete. A
      * value of true indicates that the list is not complete and the
-     * NextContinuationToken will be provided for a subsequent request.
+     * NextContinuationToken will be provided for a subsequent request.</p>
      */
     inline ListBucketMetricsConfigurationsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
 
     /**
-     * The marker that is used as a starting point for this metrics configuration list
-     * response. This value is present if it was sent in the request.
+     * <p>The marker that is used as a starting point for this metrics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
-     * The marker that is used as a starting point for this metrics configuration list
-     * response. This value is present if it was sent in the request.
+     * <p>The marker that is used as a starting point for this metrics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationToken = value; }
 
     /**
-     * The marker that is used as a starting point for this metrics configuration list
-     * response. This value is present if it was sent in the request.
+     * <p>The marker that is used as a starting point for this metrics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
 
     /**
-     * The marker that is used as a starting point for this metrics configuration list
-     * response. This value is present if it was sent in the request.
+     * <p>The marker that is used as a starting point for this metrics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationToken.assign(value); }
 
     /**
-     * The marker that is used as a starting point for this metrics configuration list
-     * response. This value is present if it was sent in the request.
+     * <p>The marker that is used as a starting point for this metrics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline ListBucketMetricsConfigurationsResult& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
-     * The marker that is used as a starting point for this metrics configuration list
-     * response. This value is present if it was sent in the request.
+     * <p>The marker that is used as a starting point for this metrics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline ListBucketMetricsConfigurationsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
-     * The marker that is used as a starting point for this metrics configuration list
-     * response. This value is present if it was sent in the request.
+     * <p>The marker that is used as a starting point for this metrics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline ListBucketMetricsConfigurationsResult& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
 
     /**
-     * The marker used to continue a metrics configuration listing that has been
+     * <p>The marker used to continue a metrics configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline const Aws::String& GetNextContinuationToken() const{ return m_nextContinuationToken; }
 
     /**
-     * The marker used to continue a metrics configuration listing that has been
+     * <p>The marker used to continue a metrics configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline void SetNextContinuationToken(const Aws::String& value) { m_nextContinuationToken = value; }
 
     /**
-     * The marker used to continue a metrics configuration listing that has been
+     * <p>The marker used to continue a metrics configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline void SetNextContinuationToken(Aws::String&& value) { m_nextContinuationToken = std::move(value); }
 
     /**
-     * The marker used to continue a metrics configuration listing that has been
+     * <p>The marker used to continue a metrics configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline void SetNextContinuationToken(const char* value) { m_nextContinuationToken.assign(value); }
 
     /**
-     * The marker used to continue a metrics configuration listing that has been
+     * <p>The marker used to continue a metrics configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline ListBucketMetricsConfigurationsResult& WithNextContinuationToken(const Aws::String& value) { SetNextContinuationToken(value); return *this;}
 
     /**
-     * The marker used to continue a metrics configuration listing that has been
+     * <p>The marker used to continue a metrics configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline ListBucketMetricsConfigurationsResult& WithNextContinuationToken(Aws::String&& value) { SetNextContinuationToken(std::move(value)); return *this;}
 
     /**
-     * The marker used to continue a metrics configuration listing that has been
+     * <p>The marker used to continue a metrics configuration listing that has been
      * truncated. Use the NextContinuationToken from a previously truncated list
      * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.
+     * Amazon S3 understands.</p>
      */
     inline ListBucketMetricsConfigurationsResult& WithNextContinuationToken(const char* value) { SetNextContinuationToken(value); return *this;}
 
 
     /**
-     * The list of metrics configurations for a bucket.
+     * <p>The list of metrics configurations for a bucket.</p>
      */
     inline const Aws::Vector<MetricsConfiguration>& GetMetricsConfigurationList() const{ return m_metricsConfigurationList; }
 
     /**
-     * The list of metrics configurations for a bucket.
+     * <p>The list of metrics configurations for a bucket.</p>
      */
     inline void SetMetricsConfigurationList(const Aws::Vector<MetricsConfiguration>& value) { m_metricsConfigurationList = value; }
 
     /**
-     * The list of metrics configurations for a bucket.
+     * <p>The list of metrics configurations for a bucket.</p>
      */
     inline void SetMetricsConfigurationList(Aws::Vector<MetricsConfiguration>&& value) { m_metricsConfigurationList = std::move(value); }
 
     /**
-     * The list of metrics configurations for a bucket.
+     * <p>The list of metrics configurations for a bucket.</p>
      */
     inline ListBucketMetricsConfigurationsResult& WithMetricsConfigurationList(const Aws::Vector<MetricsConfiguration>& value) { SetMetricsConfigurationList(value); return *this;}
 
     /**
-     * The list of metrics configurations for a bucket.
+     * <p>The list of metrics configurations for a bucket.</p>
      */
     inline ListBucketMetricsConfigurationsResult& WithMetricsConfigurationList(Aws::Vector<MetricsConfiguration>&& value) { SetMetricsConfigurationList(std::move(value)); return *this;}
 
     /**
-     * The list of metrics configurations for a bucket.
+     * <p>The list of metrics configurations for a bucket.</p>
      */
     inline ListBucketMetricsConfigurationsResult& AddMetricsConfigurationList(const MetricsConfiguration& value) { m_metricsConfigurationList.push_back(value); return *this; }
 
     /**
-     * The list of metrics configurations for a bucket.
+     * <p>The list of metrics configurations for a bucket.</p>
      */
     inline ListBucketMetricsConfigurationsResult& AddMetricsConfigurationList(MetricsConfiguration&& value) { m_metricsConfigurationList.push_back(std::move(value)); return *this; }
 

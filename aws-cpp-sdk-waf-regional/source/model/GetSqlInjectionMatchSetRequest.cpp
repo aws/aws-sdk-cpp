@@ -37,7 +37,7 @@ Aws::String GetSqlInjectionMatchSetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetSqlInjectionMatchSetRequest::GetRequestSpecificHeaders() const

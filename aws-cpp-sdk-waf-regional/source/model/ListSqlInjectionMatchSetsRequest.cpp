@@ -45,7 +45,7 @@ Aws::String ListSqlInjectionMatchSetsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListSqlInjectionMatchSetsRequest::GetRequestSpecificHeaders() const

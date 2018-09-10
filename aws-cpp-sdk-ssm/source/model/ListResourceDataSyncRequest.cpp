@@ -45,7 +45,7 @@ Aws::String ListResourceDataSyncRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListResourceDataSyncRequest::GetRequestSpecificHeaders() const

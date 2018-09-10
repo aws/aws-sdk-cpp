@@ -39,7 +39,7 @@ DescribeUserResult::DescribeUserResult(const Aws::AmazonWebServiceResult<JsonVal
 
 DescribeUserResult& DescribeUserResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("brokerId"))
   {
     m_brokerId = jsonValue.GetString("brokerId");
@@ -54,7 +54,7 @@ DescribeUserResult& DescribeUserResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("groups"))
   {
-    Array<JsonValue> groupsJsonList = jsonValue.GetArray("groups");
+    Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsString());

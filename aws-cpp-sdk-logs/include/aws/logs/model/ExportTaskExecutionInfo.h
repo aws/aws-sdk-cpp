@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudWatchLogs
@@ -39,8 +40,8 @@ namespace Model
   {
   public:
     ExportTaskExecutionInfo();
-    ExportTaskExecutionInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    ExportTaskExecutionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ExportTaskExecutionInfo(Aws::Utils::Json::JsonView jsonValue);
+    ExportTaskExecutionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

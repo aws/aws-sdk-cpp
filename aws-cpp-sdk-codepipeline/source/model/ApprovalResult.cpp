@@ -35,7 +35,7 @@ ApprovalResult::ApprovalResult() :
 {
 }
 
-ApprovalResult::ApprovalResult(const JsonValue& jsonValue) : 
+ApprovalResult::ApprovalResult(JsonView jsonValue) : 
     m_summaryHasBeenSet(false),
     m_status(ApprovalStatus::NOT_SET),
     m_statusHasBeenSet(false)
@@ -43,7 +43,7 @@ ApprovalResult::ApprovalResult(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ApprovalResult& ApprovalResult::operator =(const JsonValue& jsonValue)
+ApprovalResult& ApprovalResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("summary"))
   {

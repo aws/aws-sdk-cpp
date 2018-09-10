@@ -37,7 +37,7 @@ StopTaskResult::StopTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 
 StopTaskResult& StopTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("task"))
   {
     m_task = jsonValue.GetObject("task");

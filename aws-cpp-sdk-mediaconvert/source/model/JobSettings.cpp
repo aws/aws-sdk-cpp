@@ -40,7 +40,7 @@ JobSettings::JobSettings() :
 {
 }
 
-JobSettings::JobSettings(const JsonValue& jsonValue) : 
+JobSettings::JobSettings(JsonView jsonValue) : 
     m_adAvailOffset(0),
     m_adAvailOffsetHasBeenSet(false),
     m_availBlankingHasBeenSet(false),
@@ -53,7 +53,7 @@ JobSettings::JobSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobSettings& JobSettings::operator =(const JsonValue& jsonValue)
+JobSettings& JobSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adAvailOffset"))
   {
@@ -71,7 +71,7 @@ JobSettings& JobSettings::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("inputs"))
   {
-    Array<JsonValue> inputsJsonList = jsonValue.GetArray("inputs");
+    Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsObject());
@@ -88,7 +88,7 @@ JobSettings& JobSettings::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("outputGroups"))
   {
-    Array<JsonValue> outputGroupsJsonList = jsonValue.GetArray("outputGroups");
+    Array<JsonView> outputGroupsJsonList = jsonValue.GetArray("outputGroups");
     for(unsigned outputGroupsIndex = 0; outputGroupsIndex < outputGroupsJsonList.GetLength(); ++outputGroupsIndex)
     {
       m_outputGroups.push_back(outputGroupsJsonList[outputGroupsIndex].AsObject());

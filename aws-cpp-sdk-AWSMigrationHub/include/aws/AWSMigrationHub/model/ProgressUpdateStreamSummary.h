@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MigrationHub
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ProgressUpdateStreamSummary();
-    ProgressUpdateStreamSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    ProgressUpdateStreamSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ProgressUpdateStreamSummary(Aws::Utils::Json::JsonView jsonValue);
+    ProgressUpdateStreamSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

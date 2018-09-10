@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies code that executes a job.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies code executed when a job is run.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JobCommand">AWS API
    * Reference</a></p>
    */
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     JobCommand();
-    JobCommand(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobCommand& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobCommand(Aws::Utils::Json::JsonView jsonValue);
+    JobCommand& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

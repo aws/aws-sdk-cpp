@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lambda
@@ -34,8 +35,8 @@ namespace Model
   {
   public:
     Concurrency();
-    Concurrency(const Aws::Utils::Json::JsonValue& jsonValue);
-    Concurrency& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Concurrency(Aws::Utils::Json::JsonView jsonValue);
+    Concurrency& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

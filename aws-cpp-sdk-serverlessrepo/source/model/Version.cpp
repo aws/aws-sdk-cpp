@@ -38,7 +38,7 @@ Version::Version() :
 {
 }
 
-Version::Version(const JsonValue& jsonValue) : 
+Version::Version(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_parameterDefinitionsHasBeenSet(false),
@@ -49,7 +49,7 @@ Version::Version(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Version& Version::operator =(const JsonValue& jsonValue)
+Version& Version::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("applicationId"))
   {
@@ -67,7 +67,7 @@ Version& Version::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("parameterDefinitions"))
   {
-    Array<JsonValue> parameterDefinitionsJsonList = jsonValue.GetArray("parameterDefinitions");
+    Array<JsonView> parameterDefinitionsJsonList = jsonValue.GetArray("parameterDefinitions");
     for(unsigned parameterDefinitionsIndex = 0; parameterDefinitionsIndex < parameterDefinitionsJsonList.GetLength(); ++parameterDefinitionsIndex)
     {
       m_parameterDefinitions.push_back(parameterDefinitionsJsonList[parameterDefinitionsIndex].AsObject());

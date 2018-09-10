@@ -80,7 +80,8 @@ Instance::Instance() :
     m_stateReasonHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false)
+    m_virtualizationTypeHasBeenSet(false),
+    m_cpuOptionsHasBeenSet(false)
 {
 }
 
@@ -134,7 +135,8 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_stateReasonHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false)
+    m_virtualizationTypeHasBeenSet(false),
+    m_cpuOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -415,6 +417,12 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(virtualizationTypeNode.GetText().c_str()).c_str());
       m_virtualizationTypeHasBeenSet = true;
     }
+    XmlNode cpuOptionsNode = resultNode.FirstChild("cpuOptions");
+    if(!cpuOptionsNode.IsNull())
+    {
+      m_cpuOptions = cpuOptionsNode;
+      m_cpuOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -663,6 +671,13 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".VirtualizationType=" << VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType) << "&";
   }
 
+  if(m_cpuOptionsHasBeenSet)
+  {
+      Aws::StringStream cpuOptionsLocationAndMemberSs;
+      cpuOptionsLocationAndMemberSs << location << index << locationValue << ".CpuOptions";
+      m_cpuOptions.OutputToStream(oStream, cpuOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -868,6 +883,12 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_virtualizationTypeHasBeenSet)
   {
       oStream << location << ".VirtualizationType=" << VirtualizationTypeMapper::GetNameForVirtualizationType(m_virtualizationType) << "&";
+  }
+  if(m_cpuOptionsHasBeenSet)
+  {
+      Aws::String cpuOptionsLocationAndMember(location);
+      cpuOptionsLocationAndMember += ".CpuOptions";
+      m_cpuOptions.OutputToStream(oStream, cpuOptionsLocationAndMember.c_str());
   }
 }
 

@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Inspector
@@ -50,8 +51,8 @@ namespace Model
   {
   public:
     Finding();
-    Finding(const Aws::Utils::Json::JsonValue& jsonValue);
-    Finding& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Finding(Aws::Utils::Json::JsonView jsonValue);
+    Finding& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

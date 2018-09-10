@@ -38,7 +38,7 @@ Deinterlacer::Deinterlacer() :
 {
 }
 
-Deinterlacer::Deinterlacer(const JsonValue& jsonValue) : 
+Deinterlacer::Deinterlacer(JsonView jsonValue) : 
     m_algorithm(DeinterlaceAlgorithm::NOT_SET),
     m_algorithmHasBeenSet(false),
     m_control(DeinterlacerControl::NOT_SET),
@@ -49,7 +49,7 @@ Deinterlacer::Deinterlacer(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Deinterlacer& Deinterlacer::operator =(const JsonValue& jsonValue)
+Deinterlacer& Deinterlacer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("algorithm"))
   {

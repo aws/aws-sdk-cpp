@@ -37,7 +37,7 @@ CreateComputerResult::CreateComputerResult(const Aws::AmazonWebServiceResult<Jso
 
 CreateComputerResult& CreateComputerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Computer"))
   {
     m_computer = jsonValue.GetObject("Computer");

@@ -56,6 +56,7 @@ enum class AppSyncErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   API_KEY_LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  API_KEY_VALIDITY_OUT_OF_BOUNDS,
   API_LIMIT_EXCEEDED,
   BAD_REQUEST,
   CONCURRENT_MODIFICATION,

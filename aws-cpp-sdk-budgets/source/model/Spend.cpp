@@ -34,14 +34,14 @@ Spend::Spend() :
 {
 }
 
-Spend::Spend(const JsonValue& jsonValue) : 
+Spend::Spend(JsonView jsonValue) : 
     m_amountHasBeenSet(false),
     m_unitHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Spend& Spend::operator =(const JsonValue& jsonValue)
+Spend& Spend::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Amount"))
   {

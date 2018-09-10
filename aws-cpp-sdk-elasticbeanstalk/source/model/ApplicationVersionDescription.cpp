@@ -31,6 +31,7 @@ namespace Model
 {
 
 ApplicationVersionDescription::ApplicationVersionDescription() : 
+    m_applicationVersionArnHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_versionLabelHasBeenSet(false),
@@ -45,6 +46,7 @@ ApplicationVersionDescription::ApplicationVersionDescription() :
 }
 
 ApplicationVersionDescription::ApplicationVersionDescription(const XmlNode& xmlNode) : 
+    m_applicationVersionArnHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_versionLabelHasBeenSet(false),
@@ -65,6 +67,12 @@ ApplicationVersionDescription& ApplicationVersionDescription::operator =(const X
 
   if(!resultNode.IsNull())
   {
+    XmlNode applicationVersionArnNode = resultNode.FirstChild("ApplicationVersionArn");
+    if(!applicationVersionArnNode.IsNull())
+    {
+      m_applicationVersionArn = StringUtils::Trim(applicationVersionArnNode.GetText().c_str());
+      m_applicationVersionArnHasBeenSet = true;
+    }
     XmlNode applicationNameNode = resultNode.FirstChild("ApplicationName");
     if(!applicationNameNode.IsNull())
     {
@@ -126,6 +134,11 @@ ApplicationVersionDescription& ApplicationVersionDescription::operator =(const X
 
 void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_applicationVersionArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ApplicationVersionArn=" << StringUtils::URLEncode(m_applicationVersionArn.c_str()) << "&";
+  }
+
   if(m_applicationNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";
@@ -179,6 +192,10 @@ void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const 
 
 void ApplicationVersionDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_applicationVersionArnHasBeenSet)
+  {
+      oStream << location << ".ApplicationVersionArn=" << StringUtils::URLEncode(m_applicationVersionArn.c_str()) << "&";
+  }
   if(m_applicationNameHasBeenSet)
   {
       oStream << location << ".ApplicationName=" << StringUtils::URLEncode(m_applicationName.c_str()) << "&";

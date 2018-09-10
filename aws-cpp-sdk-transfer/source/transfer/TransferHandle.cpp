@@ -14,6 +14,7 @@
 */
 
 #include <aws/transfer/TransferHandle.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <cassert>
 
@@ -59,6 +60,8 @@ namespace Aws
             {
                 transferHandle->UpdateBytesTransferred(m_currentProgressInBytes - m_bestProgressInBytes);
                 m_bestProgressInBytes = m_currentProgressInBytes;
+                AWS_LOGSTREAM_TRACE(CLASS_TAG, "Transfer handle ID [" << transferHandle->GetId() << "] "
+                        << m_bestProgressInBytes << " bytes transferred for part [" << m_partId << "].");
             }
         }
 
@@ -80,6 +83,7 @@ namespace Aws
             m_versionId(""),
             m_status(TransferStatus::NOT_STARTED), 
             m_cancel(false),
+            m_handleId(Utils::UUID::RandomUUID()),
             m_createDownloadStreamFn(), 
             m_downloadStream(nullptr)
         {}
@@ -96,6 +100,7 @@ namespace Aws
             m_versionId(""),
             m_status(TransferStatus::NOT_STARTED), 
             m_cancel(false),
+            m_handleId(Utils::UUID::RandomUUID()),
             m_createDownloadStreamFn(), 
             m_downloadStream(nullptr)
         {}
@@ -112,6 +117,7 @@ namespace Aws
             m_versionId(""),
             m_status(TransferStatus::NOT_STARTED), 
             m_cancel(false),
+            m_handleId(Utils::UUID::RandomUUID()),
             m_createDownloadStreamFn(createDownloadStreamFn), 
             m_downloadStream(nullptr)
         {}
@@ -124,17 +130,20 @@ namespace Aws
         void TransferHandle::ChangePartToCompleted(const PartPointer& partState, const Aws::String &eTag)
         {
             std::lock_guard<std::mutex> locker(m_partsLock);
-            if (!m_pendingParts.erase(partState->GetPartId()))
-            {                   
-                m_failedParts.erase(partState->GetPartId());
+            const auto partId = partState->GetPartId();
+            if (!m_pendingParts.erase(partId))
+            {
+                m_failedParts.erase(partId);
             }
-            
+
             partState->SetETag(eTag);
             if (partState->IsLastPart()) 
             {
                 AddMetadataEntry("ETag", eTag);
             }
-            m_completedParts[partState->GetPartId()] = partState;
+            m_completedParts[partId] = partState;
+            AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle ID [" << GetId() << "] Setting part [" << partId
+                    << "] to [" << TransferStatus::COMPLETED << "].");
         }
 
         PartStateMap TransferHandle::GetQueuedParts() const
@@ -197,6 +206,8 @@ namespace Aws
             m_pendingParts.erase(partId);
             m_queuedParts.erase(partId);
             m_failedParts[partId] = partState;
+            AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle ID [" << GetId() << "] Setting part [" << partId
+                    << "] to [" << TransferStatus::FAILED << "].");
         }
 
         void TransferHandle::GetAllPartsTransactional(PartStateMap& queuedParts, PartStateMap& pendingParts,
@@ -232,7 +243,13 @@ namespace Aws
 
         static bool IsTransitionAllowed(TransferStatus currentValue, TransferStatus nextState)
         {
-            //we can only change from a final state to a final state if moving from canceled to aborted
+            // If current state is the same as next state, the transition is allowed.
+            // otherwise, we can only change from a final state to a final state if moving from canceled to aborted
+            if (currentValue == nextState)
+            {
+                return true;
+            }
+
             if (IsFinishedStatus(currentValue) && IsFinishedStatus(nextState))
             {
                 return currentValue == TransferStatus::CANCELED && nextState == TransferStatus::ABORTED;
@@ -241,11 +258,45 @@ namespace Aws
             return true;
         }
 
+        static Aws::String GetNameForStatus(TransferStatus value)
+        {
+            switch (value)
+            {
+                case TransferStatus::EXACT_OBJECT_ALREADY_EXISTS:
+                    return "EXACT_OBJECT_ALREADY_EXISTS";
+                case TransferStatus::NOT_STARTED:
+                    return "NOT_STARTED";
+                case TransferStatus::IN_PROGRESS:
+                    return "IN_PROGRESS";
+                case TransferStatus::CANCELED:
+                    return "CANCELED";
+                case TransferStatus::FAILED:
+                    return "FAILED";
+                case TransferStatus::COMPLETED:
+                    return "COMPLETED";
+                case TransferStatus::ABORTED:
+                    return "ABORTED";
+                default:
+                    return "UNKNOWN";
+            }
+        }
+
+        Aws::OStream& operator << (Aws::OStream& s, TransferStatus status)
+        {
+            s << GetNameForStatus(status);
+            return s;
+        }
+
         void TransferHandle::UpdateStatus(TransferStatus value)
-        {            
+        {
             std::unique_lock<std::mutex> semaphoreLock(m_statusLock);
+
+
             if(IsTransitionAllowed(m_status, value))
             {
+                AWS_LOGSTREAM_INFO(CLASS_TAG, "Transfer handle ID [" << GetId() << "] Updated handle status from ["
+                    << m_status << "] to [" << value << "].");
+
                 m_status = value;
 
                 if (IsFinishedStatus(value))
@@ -258,6 +309,12 @@ namespace Aws
                     semaphoreLock.unlock();
                     m_waitUntilFinishedSignal.notify_all();
                 }
+            }
+            else
+            {
+                AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle ID [" << GetId()
+                        << "]  Failed to update handle status from [" << m_status << "] to [" << value
+                        << "]. Transition is not allowed.");
             }
         }
 
@@ -272,11 +329,13 @@ namespace Aws
 
         void TransferHandle::Cancel()
         {
+            AWS_LOGSTREAM_TRACE(CLASS_TAG, "Transfer handle ID [" << GetId() << "] Cancelling transfer.");
             m_cancel.store(true);
         }
 
         void TransferHandle::Restart()
         {
+            AWS_LOGSTREAM_TRACE(CLASS_TAG, "Transfer handle ID [" << GetId() << "] Restarting transfer.");
             m_cancel.store(false);
             m_lastPart.store(false);
         }
@@ -309,6 +368,7 @@ namespace Aws
 
         void TransferHandle::CleanupDownloadStream()
         {
+            std::lock_guard<std::mutex> locker(m_downloadStreamLock);
             if(m_downloadStream)
             {
                 m_downloadStream->flush();
@@ -321,6 +381,11 @@ namespace Aws
         {
             std::lock_guard<std::mutex> lock(m_statusLock);
             return m_status;
+        }
+
+        Aws::String TransferHandle::GetId() const
+        {
+            return m_handleId;
         }
     }
 }

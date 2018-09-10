@@ -39,7 +39,7 @@ UpdateVpcLinkResult::UpdateVpcLinkResult(const Aws::AmazonWebServiceResult<JsonV
 
 UpdateVpcLinkResult& UpdateVpcLinkResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -60,7 +60,7 @@ UpdateVpcLinkResult& UpdateVpcLinkResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("targetArns"))
   {
-    Array<JsonValue> targetArnsJsonList = jsonValue.GetArray("targetArns");
+    Array<JsonView> targetArnsJsonList = jsonValue.GetArray("targetArns");
     for(unsigned targetArnsIndex = 0; targetArnsIndex < targetArnsJsonList.GetLength(); ++targetArnsIndex)
     {
       m_targetArns.push_back(targetArnsJsonList[targetArnsIndex].AsString());

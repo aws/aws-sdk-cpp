@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 UpdateFleetRequest::UpdateFleetRequest() : 
     m_imageNameHasBeenSet(false),
+    m_imageArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_computeCapacityHasBeenSet(false),
@@ -48,6 +49,12 @@ Aws::String UpdateFleetRequest::SerializePayload() const
   if(m_imageNameHasBeenSet)
   {
    payload.WithString("ImageName", m_imageName);
+
+  }
+
+  if(m_imageArnHasBeenSet)
+  {
+   payload.WithString("ImageArn", m_imageArn);
 
   }
 
@@ -122,7 +129,7 @@ Aws::String UpdateFleetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateFleetRequest::GetRequestSpecificHeaders() const

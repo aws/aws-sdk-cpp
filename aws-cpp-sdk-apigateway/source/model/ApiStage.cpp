@@ -30,18 +30,20 @@ namespace Model
 
 ApiStage::ApiStage() : 
     m_apiIdHasBeenSet(false),
-    m_stageHasBeenSet(false)
+    m_stageHasBeenSet(false),
+    m_throttleHasBeenSet(false)
 {
 }
 
-ApiStage::ApiStage(const JsonValue& jsonValue) : 
+ApiStage::ApiStage(JsonView jsonValue) : 
     m_apiIdHasBeenSet(false),
-    m_stageHasBeenSet(false)
+    m_stageHasBeenSet(false),
+    m_throttleHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ApiStage& ApiStage::operator =(const JsonValue& jsonValue)
+ApiStage& ApiStage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("apiId"))
   {
@@ -55,6 +57,16 @@ ApiStage& ApiStage::operator =(const JsonValue& jsonValue)
     m_stage = jsonValue.GetString("stage");
 
     m_stageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("throttle"))
+  {
+    Aws::Map<Aws::String, JsonView> throttleJsonMap = jsonValue.GetObject("throttle").GetAllObjects();
+    for(auto& throttleItem : throttleJsonMap)
+    {
+      m_throttle[throttleItem.first] = throttleItem.second.AsObject();
+    }
+    m_throttleHasBeenSet = true;
   }
 
   return *this;
@@ -73,6 +85,17 @@ JsonValue ApiStage::Jsonize() const
   if(m_stageHasBeenSet)
   {
    payload.WithString("stage", m_stage);
+
+  }
+
+  if(m_throttleHasBeenSet)
+  {
+   JsonValue throttleJsonMap;
+   for(auto& throttleItem : m_throttle)
+   {
+     throttleJsonMap.WithObject(throttleItem.first, throttleItem.second.Jsonize());
+   }
+   payload.WithObject("throttle", std::move(throttleJsonMap));
 
   }
 

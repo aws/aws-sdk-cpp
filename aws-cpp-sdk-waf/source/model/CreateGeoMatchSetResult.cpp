@@ -37,7 +37,7 @@ CreateGeoMatchSetResult::CreateGeoMatchSetResult(const Aws::AmazonWebServiceResu
 
 CreateGeoMatchSetResult& CreateGeoMatchSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GeoMatchSet"))
   {
     m_geoMatchSet = jsonValue.GetObject("GeoMatchSet");

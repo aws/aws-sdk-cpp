@@ -24,6 +24,8 @@ using namespace Aws::Utils;
 
 ListUploadsRequest::ListUploadsRequest() : 
     m_arnHasBeenSet(false),
+    m_type(UploadType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -38,13 +40,18 @@ Aws::String ListUploadsRequest::SerializePayload() const
 
   }
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", UploadTypeMapper::GetNameForUploadType(m_type));
+  }
+
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListUploadsRequest::GetRequestSpecificHeaders() const

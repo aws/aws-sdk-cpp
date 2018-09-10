@@ -33,13 +33,13 @@ StreamProcessorInput::StreamProcessorInput() :
 {
 }
 
-StreamProcessorInput::StreamProcessorInput(const JsonValue& jsonValue) : 
+StreamProcessorInput::StreamProcessorInput(JsonView jsonValue) : 
     m_kinesisVideoStreamHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StreamProcessorInput& StreamProcessorInput::operator =(const JsonValue& jsonValue)
+StreamProcessorInput& StreamProcessorInput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("KinesisVideoStream"))
   {

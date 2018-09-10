@@ -37,7 +37,7 @@ SubResourceSummary::SubResourceSummary() :
 {
 }
 
-SubResourceSummary::SubResourceSummary(const JsonValue& jsonValue) : 
+SubResourceSummary::SubResourceSummary(JsonView jsonValue) : 
     m_type(SubResourceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -47,7 +47,7 @@ SubResourceSummary::SubResourceSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SubResourceSummary& SubResourceSummary::operator =(const JsonValue& jsonValue)
+SubResourceSummary& SubResourceSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {
@@ -65,7 +65,7 @@ SubResourceSummary& SubResourceSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AttackVectors"))
   {
-    Array<JsonValue> attackVectorsJsonList = jsonValue.GetArray("AttackVectors");
+    Array<JsonView> attackVectorsJsonList = jsonValue.GetArray("AttackVectors");
     for(unsigned attackVectorsIndex = 0; attackVectorsIndex < attackVectorsJsonList.GetLength(); ++attackVectorsIndex)
     {
       m_attackVectors.push_back(attackVectorsJsonList[attackVectorsIndex].AsObject());
@@ -75,7 +75,7 @@ SubResourceSummary& SubResourceSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Counters"))
   {
-    Array<JsonValue> countersJsonList = jsonValue.GetArray("Counters");
+    Array<JsonView> countersJsonList = jsonValue.GetArray("Counters");
     for(unsigned countersIndex = 0; countersIndex < countersJsonList.GetLength(); ++countersIndex)
     {
       m_counters.push_back(countersJsonList[countersIndex].AsObject());

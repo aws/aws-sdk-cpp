@@ -17,13 +17,47 @@
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3-encryption/modules/CryptoModuleFactory.h>
-#include <aws/s3-encryption/modules/CryptoModule.h>
+#include <aws/core/client/AWSError.h>
 
 namespace Aws
 {
     namespace S3Encryption
     {
-        class AWS_S3ENCRYPTION_API S3EncryptionClient : public Aws::S3::S3Client
+        using namespace Aws::S3;
+        using namespace Aws::Client;
+        using namespace Aws::Utils;
+        using namespace Aws::Utils::Crypto;
+
+        struct AWS_S3ENCRYPTION_API S3EncryptionErrors
+        {
+            S3EncryptionErrors() = default;
+            S3EncryptionErrors(const CryptoErrors& error) :cryptoError(error), m_isS3Error(false) {}
+            S3EncryptionErrors(const S3Errors& error) :s3Error(error), m_isS3Error(true) {}
+
+            inline bool IsS3Error() const { return m_isS3Error; }
+            inline bool IsCryptoError() const { return !m_isS3Error; }
+
+            union {
+                CryptoErrors cryptoError;
+                S3Errors s3Error;
+            };
+        private:
+            bool m_isS3Error;
+        };
+
+        template<typename ERROR_TYPE>
+        AWSError<S3EncryptionErrors> BuildS3EncryptionError(const AWSError<ERROR_TYPE>& error)
+        {
+            AWSError<S3EncryptionErrors> s3EncryptionError = AWSError<S3EncryptionErrors>(error.GetErrorType(), error.GetExceptionName(), error.GetMessage(), error.ShouldRetry());
+            s3EncryptionError.SetResponseCode(error.GetResponseCode());
+            s3EncryptionError.SetResponseHeaders(error.GetResponseHeaders());
+            return s3EncryptionError;
+        }
+
+        typedef Aws::Utils::Outcome<Aws::S3::Model::PutObjectResult, AWSError<S3EncryptionErrors>> S3EncryptionPutObjectOutcome;
+        typedef Aws::Utils::Outcome<Aws::S3::Model::GetObjectResult, AWSError<S3EncryptionErrors>> S3EncryptionGetObjectOutcome;
+
+        class AWS_S3ENCRYPTION_API S3EncryptionClient
         {
         public:
             /*
@@ -53,14 +87,14 @@ namespace Aws
             /*
             * Function to put an object encrypted to S3.
             */
-            Aws::S3::Model::PutObjectOutcome PutObject(const Aws::S3::Model::PutObjectRequest& request) const override;
+            S3EncryptionPutObjectOutcome PutObject(const Aws::S3::Model::PutObjectRequest& request) const;
 
             /*
             * Function to get an object decrypted from S3.
             */
-            Aws::S3::Model::GetObjectOutcome GetObject(const Aws::S3::Model::GetObjectRequest& request) const override;
+            S3EncryptionGetObjectOutcome GetObject(const Aws::S3::Model::GetObjectRequest& request) const;
 
-            bool MultipartUploadSupported() const override;
+            inline bool MultipartUploadSupported() const { return false; }
 
         private:
             /*
@@ -68,6 +102,7 @@ namespace Aws
             */
             Aws::S3::Model::GetObjectOutcome GetInstructionFileObject(const Aws::S3::Model::GetObjectRequest& originalGetRequest) const;
 
+            Aws::UniquePtr<S3Client> m_s3Client;
             Aws::S3Encryption::Modules::CryptoModuleFactory m_cryptoModuleFactory;
             std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials> m_encryptionMaterials;
             const Aws::S3Encryption::CryptoConfiguration m_cryptoConfig;

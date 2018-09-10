@@ -36,7 +36,7 @@ CloudwatchAlarmAction::CloudwatchAlarmAction() :
 {
 }
 
-CloudwatchAlarmAction::CloudwatchAlarmAction(const JsonValue& jsonValue) : 
+CloudwatchAlarmAction::CloudwatchAlarmAction(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_alarmNameHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
@@ -45,7 +45,7 @@ CloudwatchAlarmAction::CloudwatchAlarmAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CloudwatchAlarmAction& CloudwatchAlarmAction::operator =(const JsonValue& jsonValue)
+CloudwatchAlarmAction& CloudwatchAlarmAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("roleArn"))
   {

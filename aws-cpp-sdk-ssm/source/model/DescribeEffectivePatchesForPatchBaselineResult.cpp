@@ -37,10 +37,10 @@ DescribeEffectivePatchesForPatchBaselineResult::DescribeEffectivePatchesForPatch
 
 DescribeEffectivePatchesForPatchBaselineResult& DescribeEffectivePatchesForPatchBaselineResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EffectivePatches"))
   {
-    Array<JsonValue> effectivePatchesJsonList = jsonValue.GetArray("EffectivePatches");
+    Array<JsonView> effectivePatchesJsonList = jsonValue.GetArray("EffectivePatches");
     for(unsigned effectivePatchesIndex = 0; effectivePatchesIndex < effectivePatchesJsonList.GetLength(); ++effectivePatchesIndex)
     {
       m_effectivePatches.push_back(effectivePatchesJsonList[effectivePatchesIndex].AsObject());

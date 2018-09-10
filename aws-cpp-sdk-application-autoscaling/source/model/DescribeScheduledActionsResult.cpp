@@ -37,10 +37,10 @@ DescribeScheduledActionsResult::DescribeScheduledActionsResult(const Aws::Amazon
 
 DescribeScheduledActionsResult& DescribeScheduledActionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ScheduledActions"))
   {
-    Array<JsonValue> scheduledActionsJsonList = jsonValue.GetArray("ScheduledActions");
+    Array<JsonView> scheduledActionsJsonList = jsonValue.GetArray("ScheduledActions");
     for(unsigned scheduledActionsIndex = 0; scheduledActionsIndex < scheduledActionsJsonList.GetLength(); ++scheduledActionsIndex)
     {
       m_scheduledActions.push_back(scheduledActionsJsonList[scheduledActionsIndex].AsObject());

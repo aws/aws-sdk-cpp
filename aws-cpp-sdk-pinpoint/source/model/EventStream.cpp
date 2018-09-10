@@ -38,7 +38,7 @@ EventStream::EventStream() :
 {
 }
 
-EventStream::EventStream(const JsonValue& jsonValue) : 
+EventStream::EventStream(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
     m_destinationStreamArnHasBeenSet(false),
     m_externalIdHasBeenSet(false),
@@ -49,7 +49,7 @@ EventStream::EventStream(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EventStream& EventStream::operator =(const JsonValue& jsonValue)
+EventStream& EventStream::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationId"))
   {

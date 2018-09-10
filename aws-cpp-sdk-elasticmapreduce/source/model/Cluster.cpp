@@ -65,7 +65,7 @@ Cluster::Cluster() :
 {
 }
 
-Cluster::Cluster(const JsonValue& jsonValue) : 
+Cluster::Cluster(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -103,7 +103,7 @@ Cluster::Cluster(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Cluster& Cluster::operator =(const JsonValue& jsonValue)
+Cluster& Cluster::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -191,7 +191,7 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Applications"))
   {
-    Array<JsonValue> applicationsJsonList = jsonValue.GetArray("Applications");
+    Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
     for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
     {
       m_applications.push_back(applicationsJsonList[applicationsIndex].AsObject());
@@ -201,7 +201,7 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -232,7 +232,7 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Configurations"))
   {
-    Array<JsonValue> configurationsJsonList = jsonValue.GetArray("Configurations");
+    Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());

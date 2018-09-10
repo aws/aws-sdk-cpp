@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     AuthenticationResultType();
-    AuthenticationResultType(const Aws::Utils::Json::JsonValue& jsonValue);
-    AuthenticationResultType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AuthenticationResultType(Aws::Utils::Json::JsonView jsonValue);
+    AuthenticationResultType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -84,17 +85,17 @@ namespace Model
 
 
     /**
-     * <p>The expiration period of the authentication result.</p>
+     * <p>The expiration period of the authentication result in seconds.</p>
      */
     inline int GetExpiresIn() const{ return m_expiresIn; }
 
     /**
-     * <p>The expiration period of the authentication result.</p>
+     * <p>The expiration period of the authentication result in seconds.</p>
      */
     inline void SetExpiresIn(int value) { m_expiresInHasBeenSet = true; m_expiresIn = value; }
 
     /**
-     * <p>The expiration period of the authentication result.</p>
+     * <p>The expiration period of the authentication result in seconds.</p>
      */
     inline AuthenticationResultType& WithExpiresIn(int value) { SetExpiresIn(value); return *this;}
 

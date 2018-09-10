@@ -36,7 +36,7 @@ DatabaseInput::DatabaseInput() :
 {
 }
 
-DatabaseInput::DatabaseInput(const JsonValue& jsonValue) : 
+DatabaseInput::DatabaseInput(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_locationUriHasBeenSet(false),
@@ -45,7 +45,7 @@ DatabaseInput::DatabaseInput(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DatabaseInput& DatabaseInput::operator =(const JsonValue& jsonValue)
+DatabaseInput& DatabaseInput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -70,7 +70,7 @@ DatabaseInput& DatabaseInput::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();

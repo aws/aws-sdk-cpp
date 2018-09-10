@@ -52,50 +52,57 @@ namespace Model
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. If the delivery streams are in different accounts or different
-     * regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. If the delivery streams are in different accounts or different
-     * regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. If the delivery streams are in different accounts or different
-     * regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline void SetDeliveryStreamName(Aws::String&& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = std::move(value); }
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. If the delivery streams are in different accounts or different
-     * regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline void SetDeliveryStreamName(const char* value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName.assign(value); }
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. If the delivery streams are in different accounts or different
-     * regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(const Aws::String& value) { SetDeliveryStreamName(value); return *this;}
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. If the delivery streams are in different accounts or different
-     * regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(Aws::String&& value) { SetDeliveryStreamName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the delivery stream. This name must be unique per AWS account in
-     * the same region. If the delivery streams are in different accounts or different
-     * regions, you can have multiple delivery streams with the same name.</p>
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
 
@@ -104,8 +111,8 @@ namespace Model
      * <p>The delivery stream type. This parameter can be one of the following
      * values:</p> <ul> <li> <p> <code>DirectPut</code>: Provider applications access
      * the delivery stream directly.</p> </li> <li> <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
-     * a source.</p> </li> </ul>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
+     * stream as a source.</p> </li> </ul>
      */
     inline const DeliveryStreamType& GetDeliveryStreamType() const{ return m_deliveryStreamType; }
 
@@ -113,8 +120,8 @@ namespace Model
      * <p>The delivery stream type. This parameter can be one of the following
      * values:</p> <ul> <li> <p> <code>DirectPut</code>: Provider applications access
      * the delivery stream directly.</p> </li> <li> <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
-     * a source.</p> </li> </ul>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
+     * stream as a source.</p> </li> </ul>
      */
     inline void SetDeliveryStreamType(const DeliveryStreamType& value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = value; }
 
@@ -122,8 +129,8 @@ namespace Model
      * <p>The delivery stream type. This parameter can be one of the following
      * values:</p> <ul> <li> <p> <code>DirectPut</code>: Provider applications access
      * the delivery stream directly.</p> </li> <li> <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
-     * a source.</p> </li> </ul>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
+     * stream as a source.</p> </li> </ul>
      */
     inline void SetDeliveryStreamType(DeliveryStreamType&& value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = std::move(value); }
 
@@ -131,8 +138,8 @@ namespace Model
      * <p>The delivery stream type. This parameter can be one of the following
      * values:</p> <ul> <li> <p> <code>DirectPut</code>: Provider applications access
      * the delivery stream directly.</p> </li> <li> <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
-     * a source.</p> </li> </ul>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
+     * stream as a source.</p> </li> </ul>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamType(const DeliveryStreamType& value) { SetDeliveryStreamType(value); return *this;}
 
@@ -140,44 +147,44 @@ namespace Model
      * <p>The delivery stream type. This parameter can be one of the following
      * values:</p> <ul> <li> <p> <code>DirectPut</code>: Provider applications access
      * the delivery stream directly.</p> </li> <li> <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as
-     * a source.</p> </li> </ul>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
+     * stream as a source.</p> </li> </ul>
      */
     inline CreateDeliveryStreamRequest& WithDeliveryStreamType(DeliveryStreamType&& value) { SetDeliveryStreamType(std::move(value)); return *this;}
 
 
     /**
-     * <p>When a Kinesis stream is used as the source for the delivery stream, a
-     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and
-     * the role ARN for the source stream.</p>
+     * <p>When a Kinesis data stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream
+     * Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
      */
     inline const KinesisStreamSourceConfiguration& GetKinesisStreamSourceConfiguration() const{ return m_kinesisStreamSourceConfiguration; }
 
     /**
-     * <p>When a Kinesis stream is used as the source for the delivery stream, a
-     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and
-     * the role ARN for the source stream.</p>
+     * <p>When a Kinesis data stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream
+     * Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
      */
     inline void SetKinesisStreamSourceConfiguration(const KinesisStreamSourceConfiguration& value) { m_kinesisStreamSourceConfigurationHasBeenSet = true; m_kinesisStreamSourceConfiguration = value; }
 
     /**
-     * <p>When a Kinesis stream is used as the source for the delivery stream, a
-     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and
-     * the role ARN for the source stream.</p>
+     * <p>When a Kinesis data stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream
+     * Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
      */
     inline void SetKinesisStreamSourceConfiguration(KinesisStreamSourceConfiguration&& value) { m_kinesisStreamSourceConfigurationHasBeenSet = true; m_kinesisStreamSourceConfiguration = std::move(value); }
 
     /**
-     * <p>When a Kinesis stream is used as the source for the delivery stream, a
-     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and
-     * the role ARN for the source stream.</p>
+     * <p>When a Kinesis data stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream
+     * Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
      */
     inline CreateDeliveryStreamRequest& WithKinesisStreamSourceConfiguration(const KinesisStreamSourceConfiguration& value) { SetKinesisStreamSourceConfiguration(value); return *this;}
 
     /**
-     * <p>When a Kinesis stream is used as the source for the delivery stream, a
-     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and
-     * the role ARN for the source stream.</p>
+     * <p>When a Kinesis data stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream
+     * Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
      */
     inline CreateDeliveryStreamRequest& WithKinesisStreamSourceConfiguration(KinesisStreamSourceConfiguration&& value) { SetKinesisStreamSourceConfiguration(std::move(value)); return *this;}
 

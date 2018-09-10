@@ -35,7 +35,7 @@ Stream::Stream() :
 {
 }
 
-Stream::Stream(const JsonValue& jsonValue) : 
+Stream::Stream(JsonView jsonValue) : 
     m_streamArnHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_streamLabelHasBeenSet(false)
@@ -43,7 +43,7 @@ Stream::Stream(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Stream& Stream::operator =(const JsonValue& jsonValue)
+Stream& Stream::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StreamArn"))
   {

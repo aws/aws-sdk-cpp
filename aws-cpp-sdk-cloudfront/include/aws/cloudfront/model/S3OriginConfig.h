@@ -36,7 +36,7 @@ namespace Model
    * <p>A complex type that contains information about the Amazon S3 origin. If the
    * origin is a custom origin, use the <code>CustomOriginConfig</code> element
    * instead.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/S3OriginConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/S3OriginConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API S3OriginConfig

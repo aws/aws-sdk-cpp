@@ -41,7 +41,7 @@ FleetUtilization::FleetUtilization() :
 {
 }
 
-FleetUtilization::FleetUtilization(const JsonValue& jsonValue) : 
+FleetUtilization::FleetUtilization(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
     m_activeServerProcessCount(0),
     m_activeServerProcessCountHasBeenSet(false),
@@ -55,7 +55,7 @@ FleetUtilization::FleetUtilization(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FleetUtilization& FleetUtilization::operator =(const JsonValue& jsonValue)
+FleetUtilization& FleetUtilization::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FleetId"))
   {

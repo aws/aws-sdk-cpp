@@ -34,14 +34,14 @@ RecordError::RecordError() :
 {
 }
 
-RecordError::RecordError(const JsonValue& jsonValue) : 
+RecordError::RecordError(JsonView jsonValue) : 
     m_codeHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RecordError& RecordError::operator =(const JsonValue& jsonValue)
+RecordError& RecordError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Code"))
   {

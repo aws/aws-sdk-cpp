@@ -56,7 +56,7 @@ Aws::String BatchCheckLayerAvailabilityRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchCheckLayerAvailabilityRequest::GetRequestSpecificHeaders() const

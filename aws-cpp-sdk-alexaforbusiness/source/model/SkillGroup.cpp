@@ -35,7 +35,7 @@ SkillGroup::SkillGroup() :
 {
 }
 
-SkillGroup::SkillGroup(const JsonValue& jsonValue) : 
+SkillGroup::SkillGroup(JsonView jsonValue) : 
     m_skillGroupArnHasBeenSet(false),
     m_skillGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false)
@@ -43,7 +43,7 @@ SkillGroup::SkillGroup(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SkillGroup& SkillGroup::operator =(const JsonValue& jsonValue)
+SkillGroup& SkillGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SkillGroupArn"))
   {

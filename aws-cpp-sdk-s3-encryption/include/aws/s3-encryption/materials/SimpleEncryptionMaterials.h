@@ -16,6 +16,8 @@
 #include <aws/core/utils/crypto/EncryptionMaterials.h>
 #include <aws/s3-encryption/s3Encryption_EXPORTS.h>
 
+using namespace Aws::Utils::Crypto;
+
 namespace Aws
 {
     namespace S3Encryption
@@ -39,13 +41,13 @@ namespace Aws
                 * This will encrypt the cek within the Content Crypto material and KeyWrapAlgorithm within the Content Crypto Material.
                 * This will occur in place and will directly manipulate the content crypto material passed to it.
                 */
-                void EncryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
+                CryptoOutcome EncryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
 
                 /*
                 * This will decrypt the cek with the symmetric master key.
                 * This will occur in place and will directly manipulate the content crypto material passed to it.
                 */
-                void DecryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
+                CryptoOutcome DecryptCEK(Aws::Utils::Crypto::ContentCryptoMaterial& contentCryptoMaterial) override;
 
             private:
                 Aws::Utils::CryptoBuffer m_symmetricMasterKey;

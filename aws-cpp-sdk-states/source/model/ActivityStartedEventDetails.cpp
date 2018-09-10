@@ -33,13 +33,13 @@ ActivityStartedEventDetails::ActivityStartedEventDetails() :
 {
 }
 
-ActivityStartedEventDetails::ActivityStartedEventDetails(const JsonValue& jsonValue) : 
+ActivityStartedEventDetails::ActivityStartedEventDetails(JsonView jsonValue) : 
     m_workerNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ActivityStartedEventDetails& ActivityStartedEventDetails::operator =(const JsonValue& jsonValue)
+ActivityStartedEventDetails& ActivityStartedEventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workerName"))
   {

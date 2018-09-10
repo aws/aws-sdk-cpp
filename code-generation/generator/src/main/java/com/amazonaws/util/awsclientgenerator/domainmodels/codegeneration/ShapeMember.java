@@ -29,6 +29,7 @@ public class ShapeMember {
     String queryName;
     String xmlnsUri;
     boolean isFlattened;
+    boolean isCustomizedQuery;
 
     public boolean isUsedForHeader() {
         return "header".equals(location) || "headers".equals(location);
@@ -48,5 +49,9 @@ public class ShapeMember {
 
     public boolean isUsedForPayload() {
         return !isUsedForHeader() && !isUsedForUri() && !isUsedForHttpStatusCode() && !isUsedForQueryString() && !streaming;
+    }
+
+    public boolean requiresHeaderEncoding() {
+        return isUsedForHeader() && "x-amz-copy-source".equals(locationName);
     }
 }

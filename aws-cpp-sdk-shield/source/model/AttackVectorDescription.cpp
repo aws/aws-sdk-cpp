@@ -33,13 +33,13 @@ AttackVectorDescription::AttackVectorDescription() :
 {
 }
 
-AttackVectorDescription::AttackVectorDescription(const JsonValue& jsonValue) : 
+AttackVectorDescription::AttackVectorDescription(JsonView jsonValue) : 
     m_vectorTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AttackVectorDescription& AttackVectorDescription::operator =(const JsonValue& jsonValue)
+AttackVectorDescription& AttackVectorDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VectorType"))
   {

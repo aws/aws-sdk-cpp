@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -47,117 +48,226 @@ namespace Model
   {
   public:
     EndpointBatchItem();
-    EndpointBatchItem(const Aws::Utils::Json::JsonValue& jsonValue);
-    EndpointBatchItem& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EndpointBatchItem(Aws::Utils::Json::JsonView jsonValue);
+    EndpointBatchItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +12065550100. For the email channel, use an email address.
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +12065550100. For the email channel, use an email address.
      */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +12065550100. For the email channel, use an email address.
      */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +12065550100. For the email channel, use an email address.
      */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +12065550100. For the email channel, use an email address.
      */
     inline EndpointBatchItem& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +12065550100. For the email channel, use an email address.
      */
     inline EndpointBatchItem& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The destination for messages that you send to this endpoint. The address varies
+     * by channel. For mobile push channels, use the token provided by the push
+     * notification service, such as the APNs device token or the FCM registration
+     * token. For the SMS channel, use a phone number in E.164 format, such as
+     * +12065550100. For the email channel, use an email address.
      */
     inline EndpointBatchItem& WithAddress(const char* value) { SetAddress(value); return *this;}
 
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the values
+     * ["science", "politics", "travel"]. You can use these attributes as selection
+     * criteria when you create a segment of users to engage with a messaging
+     * campaign.
+
+The following characters are not recommended in attribute names: # :
+     * ? \ /. The Amazon Pinpoint console does not display attributes that include
+     * these characters in the name. This limitation does not apply to attribute
+     * values.
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the values
+     * ["science", "politics", "travel"]. You can use these attributes as selection
+     * criteria when you create a segment of users to engage with a messaging
+     * campaign.
+
+The following characters are not recommended in attribute names: # :
+     * ? \ /. The Amazon Pinpoint console does not display attributes that include
+     * these characters in the name. This limitation does not apply to attribute
+     * values.
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the values
+     * ["science", "politics", "travel"]. You can use these attributes as selection
+     * criteria when you create a segment of users to engage with a messaging
+     * campaign.
+
+The following characters are not recommended in attribute names: # :
+     * ? \ /. The Amazon Pinpoint console does not display attributes that include
+     * these characters in the name. This limitation does not apply to attribute
+     * values.
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the values
+     * ["science", "politics", "travel"]. You can use these attributes as selection
+     * criteria when you create a segment of users to engage with a messaging
+     * campaign.
+
+The following characters are not recommended in attribute names: # :
+     * ? \ /. The Amazon Pinpoint console does not display attributes that include
+     * these characters in the name. This limitation does not apply to attribute
+     * values.
      */
     inline EndpointBatchItem& WithAttributes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetAttributes(value); return *this;}
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the values
+     * ["science", "politics", "travel"]. You can use these attributes as selection
+     * criteria when you create a segment of users to engage with a messaging
+     * campaign.
+
+The following characters are not recommended in attribute names: # :
+     * ? \ /. The Amazon Pinpoint console does not display attributes that include
+     * these characters in the name. This limitation does not apply to attribute
+     * values.
      */
     inline EndpointBatchItem& WithAttributes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the values
+     * ["science", "politics", "travel"]. You can use these attributes as selection
+     * criteria when you create a segment of users to engage with a messaging
+     * campaign.
+
+The following characters are not recommended in attribute names: # :
+     * ? \ /. The Amazon Pinpoint console does not display attributes that include
+     * these characters in the name. This limitation does not apply to attribute
+     * values.
      */
     inline EndpointBatchItem& AddAttributes(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the values
+     * ["science", "politics", "travel"]. You can use these attributes as selection
+     * criteria when you create a segment of users to engage with a messaging
+     * campaign.
+
+The following characters are not recommended in attribute names: # :
+     * ? \ /. The Amazon Pinpoint console does not display attributes that include
+     * these characters in the name. This limitation does not apply to attribute
+     * values.
      */
     inline EndpointBatchItem& AddAttributes(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the values
+     * ["science", "politics", "travel"]. You can use these attributes as selection
+     * criteria when you create a segment of users to engage with a messaging
+     * campaign.
+
+The following characters are not recommended in attribute names: # :
+     * ? \ /. The Amazon Pinpoint console does not display attributes that include
+     * these characters in the name. This limitation does not apply to attribute
+     * values.
      */
     inline EndpointBatchItem& AddAttributes(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the values
+     * ["science", "politics", "travel"]. You can use these attributes as selection
+     * criteria when you create a segment of users to engage with a messaging
+     * campaign.
+
+The following characters are not recommended in attribute names: # :
+     * ? \ /. The Amazon Pinpoint console does not display attributes that include
+     * these characters in the name. This limitation does not apply to attribute
+     * values.
      */
     inline EndpointBatchItem& AddAttributes(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the values
+     * ["science", "politics", "travel"]. You can use these attributes as selection
+     * criteria when you create a segment of users to engage with a messaging
+     * campaign.
+
+The following characters are not recommended in attribute names: # :
+     * ? \ /. The Amazon Pinpoint console does not display attributes that include
+     * these characters in the name. This limitation does not apply to attribute
+     * values.
      */
     inline EndpointBatchItem& AddAttributes(const char* key, Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the values
+     * ["science", "politics", "travel"]. You can use these attributes as selection
+     * criteria when you create a segment of users to engage with a messaging
+     * campaign.
+
+The following characters are not recommended in attribute names: # :
+     * ? \ /. The Amazon Pinpoint console does not display attributes that include
+     * these characters in the name. This limitation does not apply to attribute
+     * values.
      */
     inline EndpointBatchItem& AddAttributes(const char* key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -165,35 +275,40 @@ namespace Model
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline const ChannelType& GetChannelType() const{ return m_channelType; }
 
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline void SetChannelType(const ChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
 
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline void SetChannelType(ChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
 
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline EndpointBatchItem& WithChannelType(const ChannelType& value) { SetChannelType(value); return *this;}
 
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline EndpointBatchItem& WithChannelType(ChannelType&& value) { SetChannelType(std::move(value)); return *this;}
 
@@ -261,44 +376,37 @@ Valid values: GCM | APNS | SMS | EMAIL
 
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline const Aws::String& GetEndpointStatus() const{ return m_endpointStatus; }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline void SetEndpointStatus(const Aws::String& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline void SetEndpointStatus(Aws::String&& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = std::move(value); }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline void SetEndpointStatus(const char* value) { m_endpointStatusHasBeenSet = true; m_endpointStatus.assign(value); }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline EndpointBatchItem& WithEndpointStatus(const Aws::String& value) { SetEndpointStatus(value); return *this;}
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline EndpointBatchItem& WithEndpointStatus(Aws::String&& value) { SetEndpointStatus(std::move(value)); return *this;}
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline EndpointBatchItem& WithEndpointStatus(const char* value) { SetEndpointStatus(value); return *this;}
 

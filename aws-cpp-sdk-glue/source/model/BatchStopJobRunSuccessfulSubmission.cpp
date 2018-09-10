@@ -34,14 +34,14 @@ BatchStopJobRunSuccessfulSubmission::BatchStopJobRunSuccessfulSubmission() :
 {
 }
 
-BatchStopJobRunSuccessfulSubmission::BatchStopJobRunSuccessfulSubmission(const JsonValue& jsonValue) : 
+BatchStopJobRunSuccessfulSubmission::BatchStopJobRunSuccessfulSubmission(JsonView jsonValue) : 
     m_jobNameHasBeenSet(false),
     m_jobRunIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchStopJobRunSuccessfulSubmission& BatchStopJobRunSuccessfulSubmission::operator =(const JsonValue& jsonValue)
+BatchStopJobRunSuccessfulSubmission& BatchStopJobRunSuccessfulSubmission::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobName"))
   {

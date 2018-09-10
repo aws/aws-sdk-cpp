@@ -39,7 +39,7 @@ PutFunctionConcurrencyResult::PutFunctionConcurrencyResult(const Aws::AmazonWebS
 
 PutFunctionConcurrencyResult& PutFunctionConcurrencyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReservedConcurrentExecutions"))
   {
     m_reservedConcurrentExecutions = jsonValue.GetInteger("ReservedConcurrentExecutions");

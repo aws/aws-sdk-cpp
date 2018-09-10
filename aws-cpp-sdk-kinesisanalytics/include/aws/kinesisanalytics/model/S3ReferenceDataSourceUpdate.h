@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KinesisAnalytics
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     S3ReferenceDataSourceUpdate();
-    S3ReferenceDataSourceUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    S3ReferenceDataSourceUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    S3ReferenceDataSourceUpdate(Aws::Utils::Json::JsonView jsonValue);
+    S3ReferenceDataSourceUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

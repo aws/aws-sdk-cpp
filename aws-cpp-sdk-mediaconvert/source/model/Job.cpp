@@ -30,6 +30,8 @@ namespace Model
 
 Job::Job() : 
     m_arnHasBeenSet(false),
+    m_billingTagsSource(BillingTagsSource::NOT_SET),
+    m_billingTagsSourceHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_errorCode(0),
     m_errorCodeHasBeenSet(false),
@@ -47,8 +49,10 @@ Job::Job() :
 {
 }
 
-Job::Job(const JsonValue& jsonValue) : 
+Job::Job(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_billingTagsSource(BillingTagsSource::NOT_SET),
+    m_billingTagsSourceHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_errorCode(0),
     m_errorCodeHasBeenSet(false),
@@ -67,13 +71,20 @@ Job::Job(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Job& Job::operator =(const JsonValue& jsonValue)
+Job& Job::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("billingTagsSource"))
+  {
+    m_billingTagsSource = BillingTagsSourceMapper::GetBillingTagsSourceForName(jsonValue.GetString("billingTagsSource"));
+
+    m_billingTagsSourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -113,7 +124,7 @@ Job& Job::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("outputGroupDetails"))
   {
-    Array<JsonValue> outputGroupDetailsJsonList = jsonValue.GetArray("outputGroupDetails");
+    Array<JsonView> outputGroupDetailsJsonList = jsonValue.GetArray("outputGroupDetails");
     for(unsigned outputGroupDetailsIndex = 0; outputGroupDetailsIndex < outputGroupDetailsJsonList.GetLength(); ++outputGroupDetailsIndex)
     {
       m_outputGroupDetails.push_back(outputGroupDetailsJsonList[outputGroupDetailsIndex].AsObject());
@@ -158,7 +169,7 @@ Job& Job::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("userMetadata"))
   {
-    Aws::Map<Aws::String, JsonValue> userMetadataJsonMap = jsonValue.GetObject("userMetadata").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> userMetadataJsonMap = jsonValue.GetObject("userMetadata").GetAllObjects();
     for(auto& userMetadataItem : userMetadataJsonMap)
     {
       m_userMetadata[userMetadataItem.first] = userMetadataItem.second.AsString();
@@ -177,6 +188,11 @@ JsonValue Job::Jsonize() const
   {
    payload.WithString("arn", m_arn);
 
+  }
+
+  if(m_billingTagsSourceHasBeenSet)
+  {
+   payload.WithString("billingTagsSource", BillingTagsSourceMapper::GetNameForBillingTagsSource(m_billingTagsSource));
   }
 
   if(m_createdAtHasBeenSet)

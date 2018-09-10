@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the specific resource for which to list tags. Required.</p>
+     * <p>The ARN of the specified resource for which to list tags.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the specific resource for which to list tags. Required.</p>
+     * <p>The ARN of the specified resource for which to list tags.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN of the specific resource for which to list tags. Required.</p>
+     * <p>The ARN of the specified resource for which to list tags.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the specific resource for which to list tags. Required.</p>
+     * <p>The ARN of the specified resource for which to list tags.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the specific resource for which to list tags. Required.</p>
+     * <p>The ARN of the specified resource for which to list tags.</p>
      */
     inline ListTagsRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the specific resource for which to list tags. Required.</p>
+     * <p>The ARN of the specified resource for which to list tags.</p>
      */
     inline ListTagsRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the specific resource for which to list tags. Required.</p>
+     * <p>The ARN of the specified resource for which to list tags.</p>
      */
     inline ListTagsRequest& WithArn(const char* value) { SetArn(value); return *this;}
 

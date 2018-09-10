@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     NetworkInputSettings();
-    NetworkInputSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    NetworkInputSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NetworkInputSettings(Aws::Utils::Json::JsonView jsonValue);
+    NetworkInputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

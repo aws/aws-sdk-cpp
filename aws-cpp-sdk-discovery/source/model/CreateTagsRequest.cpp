@@ -54,7 +54,7 @@ Aws::String CreateTagsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateTagsRequest::GetRequestSpecificHeaders() const

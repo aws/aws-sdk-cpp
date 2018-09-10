@@ -18,6 +18,8 @@
 #include <aws/medialive/MediaLiveRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
+#include <aws/medialive/model/InputSpecification.h>
+#include <aws/medialive/model/LogLevel.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/InputAttachment.h>
@@ -125,6 +127,58 @@ namespace Model
 
 
     /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline const InputSpecification& GetInputSpecification() const{ return m_inputSpecification; }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline void SetInputSpecification(const InputSpecification& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = value; }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline void SetInputSpecification(InputSpecification&& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = std::move(value); }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline CreateChannelRequest& WithInputSpecification(const InputSpecification& value) { SetInputSpecification(value); return *this;}
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+    inline CreateChannelRequest& WithInputSpecification(InputSpecification&& value) { SetInputSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline CreateChannelRequest& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
+    inline CreateChannelRequest& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+
+
+    /**
      * Name of channel.
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -218,42 +272,6 @@ creating multiple resources.
 
 
     /**
-     * Reserved for future use.
-     */
-    inline const Aws::String& GetReserved() const{ return m_reserved; }
-
-    /**
-     * Reserved for future use.
-     */
-    inline void SetReserved(const Aws::String& value) { m_reservedHasBeenSet = true; m_reserved = value; }
-
-    /**
-     * Reserved for future use.
-     */
-    inline void SetReserved(Aws::String&& value) { m_reservedHasBeenSet = true; m_reserved = std::move(value); }
-
-    /**
-     * Reserved for future use.
-     */
-    inline void SetReserved(const char* value) { m_reservedHasBeenSet = true; m_reserved.assign(value); }
-
-    /**
-     * Reserved for future use.
-     */
-    inline CreateChannelRequest& WithReserved(const Aws::String& value) { SetReserved(value); return *this;}
-
-    /**
-     * Reserved for future use.
-     */
-    inline CreateChannelRequest& WithReserved(Aws::String&& value) { SetReserved(std::move(value)); return *this;}
-
-    /**
-     * Reserved for future use.
-     */
-    inline CreateChannelRequest& WithReserved(const char* value) { SetReserved(value); return *this;}
-
-
-    /**
      * An optional Amazon Resource Name (ARN) of the role to assume when running the
      * Channel.
      */
@@ -306,14 +324,17 @@ creating multiple resources.
     Aws::Vector<InputAttachment> m_inputAttachments;
     bool m_inputAttachmentsHasBeenSet;
 
+    InputSpecification m_inputSpecification;
+    bool m_inputSpecificationHasBeenSet;
+
+    LogLevel m_logLevel;
+    bool m_logLevelHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
-
-    Aws::String m_reserved;
-    bool m_reservedHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

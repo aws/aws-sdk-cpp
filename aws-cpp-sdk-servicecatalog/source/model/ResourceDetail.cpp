@@ -37,7 +37,7 @@ ResourceDetail::ResourceDetail() :
 {
 }
 
-ResourceDetail::ResourceDetail(const JsonValue& jsonValue) : 
+ResourceDetail::ResourceDetail(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_aRNHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -47,7 +47,7 @@ ResourceDetail::ResourceDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceDetail& ResourceDetail::operator =(const JsonValue& jsonValue)
+ResourceDetail& ResourceDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

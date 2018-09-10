@@ -39,7 +39,7 @@ GetKeyRotationStatusResult::GetKeyRotationStatusResult(const Aws::AmazonWebServi
 
 GetKeyRotationStatusResult& GetKeyRotationStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("KeyRotationEnabled"))
   {
     m_keyRotationEnabled = jsonValue.GetBool("KeyRotationEnabled");

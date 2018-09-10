@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceCatalog
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ProvisioningParameter();
-    ProvisioningParameter(const Aws::Utils::Json::JsonValue& jsonValue);
-    ProvisioningParameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ProvisioningParameter(Aws::Utils::Json::JsonView jsonValue);
+    ProvisioningParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

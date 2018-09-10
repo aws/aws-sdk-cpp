@@ -17,6 +17,7 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-idp/model/DomainStatusType.h>
+#include <aws/cognito-idp/model/CustomDomainConfigType.h>
 #include <utility>
 
 namespace Aws
@@ -26,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -42,8 +44,8 @@ namespace Model
   {
   public:
     DomainDescriptionType();
-    DomainDescriptionType(const Aws::Utils::Json::JsonValue& jsonValue);
-    DomainDescriptionType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DomainDescriptionType(Aws::Utils::Json::JsonView jsonValue);
+    DomainDescriptionType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -288,6 +290,22 @@ namespace Model
      */
     inline DomainDescriptionType& WithStatus(DomainStatusType&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    
+    inline const CustomDomainConfigType& GetCustomDomainConfig() const{ return m_customDomainConfig; }
+
+    
+    inline void SetCustomDomainConfig(const CustomDomainConfigType& value) { m_customDomainConfigHasBeenSet = true; m_customDomainConfig = value; }
+
+    
+    inline void SetCustomDomainConfig(CustomDomainConfigType&& value) { m_customDomainConfigHasBeenSet = true; m_customDomainConfig = std::move(value); }
+
+    
+    inline DomainDescriptionType& WithCustomDomainConfig(const CustomDomainConfigType& value) { SetCustomDomainConfig(value); return *this;}
+
+    
+    inline DomainDescriptionType& WithCustomDomainConfig(CustomDomainConfigType&& value) { SetCustomDomainConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_userPoolId;
@@ -310,6 +328,9 @@ namespace Model
 
     DomainStatusType m_status;
     bool m_statusHasBeenSet;
+
+    CustomDomainConfigType m_customDomainConfig;
+    bool m_customDomainConfigHasBeenSet;
   };
 
 } // namespace Model

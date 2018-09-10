@@ -17,7 +17,6 @@
 
 #include <aws/core/Core_EXPORTS.h>
 
-#include <aws/core/utils/memory/stl/AWSFunction.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpTypes.h>
@@ -83,7 +82,7 @@ namespace Aws
         /**
          * Set the response stream factory.
          */
-        void SetResponseStreamFactory(const Aws::IOStreamFactory& factory) { m_responseStreamFactory = AWS_BUILD_FUNCTION(factory); }
+        void SetResponseStreamFactory(const Aws::IOStreamFactory& factory) { m_responseStreamFactory = factory; }
         /**
          * Register closure for data recieved event.
          */

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     S3Target();
-    S3Target(const Aws::Utils::Json::JsonValue& jsonValue);
-    S3Target& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    S3Target(Aws::Utils::Json::JsonView jsonValue);
+    S3Target& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

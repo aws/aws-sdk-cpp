@@ -35,7 +35,7 @@ ExtraParam::ExtraParam() :
 {
 }
 
-ExtraParam::ExtraParam(const JsonValue& jsonValue) : 
+ExtraParam::ExtraParam(JsonView jsonValue) : 
     m_name(ExtraParamName::NOT_SET),
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false)
@@ -43,7 +43,7 @@ ExtraParam::ExtraParam(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ExtraParam& ExtraParam::operator =(const JsonValue& jsonValue)
+ExtraParam& ExtraParam::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

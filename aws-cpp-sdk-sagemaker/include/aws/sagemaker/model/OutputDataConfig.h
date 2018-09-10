@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -42,17 +43,16 @@ namespace Model
   {
   public:
     OutputDataConfig();
-    OutputDataConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    OutputDataConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    OutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt the model artifacts at rest using Amazon S3 server-side encryption. </p>
-     * <note> <p>If the configuration of the output S3 bucket requires server-side
-     * encryption for objects, and you don't provide the KMS key ID, Amazon SageMaker
-     * uses the default service key. For more information, see <a
+     * <note> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in Amazon Simple Storage Service developer guide.</p>
      * </note> <note> <p> The KMS key policy must grant permission to the IAM role you
@@ -66,9 +66,8 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt the model artifacts at rest using Amazon S3 server-side encryption. </p>
-     * <note> <p>If the configuration of the output S3 bucket requires server-side
-     * encryption for objects, and you don't provide the KMS key ID, Amazon SageMaker
-     * uses the default service key. For more information, see <a
+     * <note> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in Amazon Simple Storage Service developer guide.</p>
      * </note> <note> <p> The KMS key policy must grant permission to the IAM role you
@@ -82,9 +81,8 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt the model artifacts at rest using Amazon S3 server-side encryption. </p>
-     * <note> <p>If the configuration of the output S3 bucket requires server-side
-     * encryption for objects, and you don't provide the KMS key ID, Amazon SageMaker
-     * uses the default service key. For more information, see <a
+     * <note> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in Amazon Simple Storage Service developer guide.</p>
      * </note> <note> <p> The KMS key policy must grant permission to the IAM role you
@@ -98,9 +96,8 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt the model artifacts at rest using Amazon S3 server-side encryption. </p>
-     * <note> <p>If the configuration of the output S3 bucket requires server-side
-     * encryption for objects, and you don't provide the KMS key ID, Amazon SageMaker
-     * uses the default service key. For more information, see <a
+     * <note> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in Amazon Simple Storage Service developer guide.</p>
      * </note> <note> <p> The KMS key policy must grant permission to the IAM role you
@@ -114,9 +111,8 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt the model artifacts at rest using Amazon S3 server-side encryption. </p>
-     * <note> <p>If the configuration of the output S3 bucket requires server-side
-     * encryption for objects, and you don't provide the KMS key ID, Amazon SageMaker
-     * uses the default service key. For more information, see <a
+     * <note> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in Amazon Simple Storage Service developer guide.</p>
      * </note> <note> <p> The KMS key policy must grant permission to the IAM role you
@@ -130,9 +126,8 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt the model artifacts at rest using Amazon S3 server-side encryption. </p>
-     * <note> <p>If the configuration of the output S3 bucket requires server-side
-     * encryption for objects, and you don't provide the KMS key ID, Amazon SageMaker
-     * uses the default service key. For more information, see <a
+     * <note> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in Amazon Simple Storage Service developer guide.</p>
      * </note> <note> <p> The KMS key policy must grant permission to the IAM role you
@@ -146,9 +141,8 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt the model artifacts at rest using Amazon S3 server-side encryption. </p>
-     * <note> <p>If the configuration of the output S3 bucket requires server-side
-     * encryption for objects, and you don't provide the KMS key ID, Amazon SageMaker
-     * uses the default service key. For more information, see <a
+     * <note> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in Amazon Simple Storage Service developer guide.</p>
      * </note> <note> <p> The KMS key policy must grant permission to the IAM role you

@@ -28,6 +28,7 @@ CreateOTAUpdateRequest::CreateOTAUpdateRequest() :
     m_targetsHasBeenSet(false),
     m_targetSelection(TargetSelection::NOT_SET),
     m_targetSelectionHasBeenSet(false),
+    m_awsJobExecutionsRolloutConfigHasBeenSet(false),
     m_filesHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_additionalParametersHasBeenSet(false)
@@ -60,6 +61,12 @@ Aws::String CreateOTAUpdateRequest::SerializePayload() const
    payload.WithString("targetSelection", TargetSelectionMapper::GetNameForTargetSelection(m_targetSelection));
   }
 
+  if(m_awsJobExecutionsRolloutConfigHasBeenSet)
+  {
+   payload.WithObject("awsJobExecutionsRolloutConfig", m_awsJobExecutionsRolloutConfig.Jsonize());
+
+  }
+
   if(m_filesHasBeenSet)
   {
    Array<JsonValue> filesJsonList(m_files.size());
@@ -88,7 +95,7 @@ Aws::String CreateOTAUpdateRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

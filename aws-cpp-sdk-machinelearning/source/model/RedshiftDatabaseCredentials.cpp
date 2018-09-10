@@ -34,14 +34,14 @@ RedshiftDatabaseCredentials::RedshiftDatabaseCredentials() :
 {
 }
 
-RedshiftDatabaseCredentials::RedshiftDatabaseCredentials(const JsonValue& jsonValue) : 
+RedshiftDatabaseCredentials::RedshiftDatabaseCredentials(JsonView jsonValue) : 
     m_usernameHasBeenSet(false),
     m_passwordHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RedshiftDatabaseCredentials& RedshiftDatabaseCredentials::operator =(const JsonValue& jsonValue)
+RedshiftDatabaseCredentials& RedshiftDatabaseCredentials::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Username"))
   {

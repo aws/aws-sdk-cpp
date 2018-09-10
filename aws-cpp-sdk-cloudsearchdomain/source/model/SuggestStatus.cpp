@@ -35,7 +35,7 @@ SuggestStatus::SuggestStatus() :
 {
 }
 
-SuggestStatus::SuggestStatus(const JsonValue& jsonValue) : 
+SuggestStatus::SuggestStatus(JsonView jsonValue) : 
     m_timems(0),
     m_timemsHasBeenSet(false),
     m_ridHasBeenSet(false)
@@ -43,7 +43,7 @@ SuggestStatus::SuggestStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SuggestStatus& SuggestStatus::operator =(const JsonValue& jsonValue)
+SuggestStatus& SuggestStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("timems"))
   {

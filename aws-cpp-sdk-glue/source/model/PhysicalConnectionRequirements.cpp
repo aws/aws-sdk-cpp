@@ -35,7 +35,7 @@ PhysicalConnectionRequirements::PhysicalConnectionRequirements() :
 {
 }
 
-PhysicalConnectionRequirements::PhysicalConnectionRequirements(const JsonValue& jsonValue) : 
+PhysicalConnectionRequirements::PhysicalConnectionRequirements(JsonView jsonValue) : 
     m_subnetIdHasBeenSet(false),
     m_securityGroupIdListHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false)
@@ -43,7 +43,7 @@ PhysicalConnectionRequirements::PhysicalConnectionRequirements(const JsonValue& 
   *this = jsonValue;
 }
 
-PhysicalConnectionRequirements& PhysicalConnectionRequirements::operator =(const JsonValue& jsonValue)
+PhysicalConnectionRequirements& PhysicalConnectionRequirements::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SubnetId"))
   {
@@ -54,7 +54,7 @@ PhysicalConnectionRequirements& PhysicalConnectionRequirements::operator =(const
 
   if(jsonValue.ValueExists("SecurityGroupIdList"))
   {
-    Array<JsonValue> securityGroupIdListJsonList = jsonValue.GetArray("SecurityGroupIdList");
+    Array<JsonView> securityGroupIdListJsonList = jsonValue.GetArray("SecurityGroupIdList");
     for(unsigned securityGroupIdListIndex = 0; securityGroupIdListIndex < securityGroupIdListJsonList.GetLength(); ++securityGroupIdListIndex)
     {
       m_securityGroupIdList.push_back(securityGroupIdListJsonList[securityGroupIdListIndex].AsString());

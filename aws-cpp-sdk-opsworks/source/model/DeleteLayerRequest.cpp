@@ -37,7 +37,7 @@ Aws::String DeleteLayerRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteLayerRequest::GetRequestSpecificHeaders() const

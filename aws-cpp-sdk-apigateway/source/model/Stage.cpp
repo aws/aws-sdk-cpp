@@ -44,13 +44,15 @@ Stage::Stage() :
     m_documentationVersionHasBeenSet(false),
     m_accessLogSettingsHasBeenSet(false),
     m_canarySettingsHasBeenSet(false),
+    m_tracingEnabled(false),
+    m_tracingEnabledHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false)
 {
 }
 
-Stage::Stage(const JsonValue& jsonValue) : 
+Stage::Stage(JsonView jsonValue) : 
     m_deploymentIdHasBeenSet(false),
     m_clientCertificateIdHasBeenSet(false),
     m_stageNameHasBeenSet(false),
@@ -66,6 +68,8 @@ Stage::Stage(const JsonValue& jsonValue) :
     m_documentationVersionHasBeenSet(false),
     m_accessLogSettingsHasBeenSet(false),
     m_canarySettingsHasBeenSet(false),
+    m_tracingEnabled(false),
+    m_tracingEnabledHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false)
@@ -73,7 +77,7 @@ Stage::Stage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Stage& Stage::operator =(const JsonValue& jsonValue)
+Stage& Stage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("deploymentId"))
   {
@@ -126,7 +130,7 @@ Stage& Stage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("methodSettings"))
   {
-    Aws::Map<Aws::String, JsonValue> methodSettingsJsonMap = jsonValue.GetObject("methodSettings").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> methodSettingsJsonMap = jsonValue.GetObject("methodSettings").GetAllObjects();
     for(auto& methodSettingsItem : methodSettingsJsonMap)
     {
       m_methodSettings[methodSettingsItem.first] = methodSettingsItem.second.AsObject();
@@ -136,7 +140,7 @@ Stage& Stage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("variables"))
   {
-    Aws::Map<Aws::String, JsonValue> variablesJsonMap = jsonValue.GetObject("variables").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> variablesJsonMap = jsonValue.GetObject("variables").GetAllObjects();
     for(auto& variablesItem : variablesJsonMap)
     {
       m_variables[variablesItem.first] = variablesItem.second.AsString();
@@ -165,9 +169,16 @@ Stage& Stage::operator =(const JsonValue& jsonValue)
     m_canarySettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tracingEnabled"))
+  {
+    m_tracingEnabled = jsonValue.GetBool("tracingEnabled");
+
+    m_tracingEnabledHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
-    Aws::Map<Aws::String, JsonValue> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for(auto& tagsItem : tagsJsonMap)
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
@@ -273,6 +284,12 @@ JsonValue Stage::Jsonize() const
   if(m_canarySettingsHasBeenSet)
   {
    payload.WithObject("canarySettings", m_canarySettings.Jsonize());
+
+  }
+
+  if(m_tracingEnabledHasBeenSet)
+  {
+   payload.WithBool("tracingEnabled", m_tracingEnabled);
 
   }
 

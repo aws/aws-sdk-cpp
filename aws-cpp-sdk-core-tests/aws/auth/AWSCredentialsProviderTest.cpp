@@ -26,7 +26,7 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
-
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <stdlib.h>
 #include <thread>
 #include <fstream>
@@ -38,9 +38,16 @@ using namespace Aws::Utils;
 
 TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
 {
-    
+    struct ReloadableProfileConfigProvider : ProfileConfigFileAWSCredentialsProvider
+    {
+        void ReloadNow() 
+        {
+            Reload();
+        }
+    };
+
     auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
- 
+
     Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
 
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename();
@@ -68,12 +75,12 @@ TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
     configFile.close();
 
 
-    ProfileConfigFileAWSCredentialsProvider provider(10);
+    ReloadableProfileConfigProvider provider;
     EXPECT_STREQ("DefaultAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("DefaultSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
     Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    provider.ReloadNow();
 
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
@@ -99,8 +106,11 @@ public:
     {
         SaveVariable("AWS_SHARED_CREDENTIALS_FILE");  
         SaveVariable("AWS_DEFAULT_PROFILE");
+        SaveVariable("AWS_PROFILE");
         SaveVariable("AWS_ACCESS_KEY_ID");
         SaveVariable("AWS_SECRET_ACCESS_KEY");
+        SaveVariable("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI");
+        SaveVariable("AWS_EC2_METADATA_DISABLED");
     }
 
     void TearDown()
@@ -126,13 +136,58 @@ public:
     Aws::Map<Aws::String, Aws::String> m_environment;
 };
 
+TEST_F(EnvironmentModifyingTest, TestOrderOfAwsDefaultProfileAndAwsProfile)
+{
+    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
+    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
+
+
+    configFile << "[default_profile]" << std::endl;
+    configFile << " aws_access_key_id = DefaultProfileAccessKey " << std::endl;
+    configFile << "aws_secret_access_key= DefaultProfileSecretKey" << std::endl;
+    configFile << std::endl;
+
+    configFile << "[default]" << std::endl;
+    configFile << " aws_access_key_id = DefaultAccessKey " << std::endl;
+    configFile << "aws_secret_access_key= DefaultSecretKey" << std::endl;
+    configFile << std::endl;
+
+    configFile << "[profile]" << std::endl;
+    configFile << " aws_access_key_id = ProfileAccessKey " << std::endl;
+    configFile << "aws_secret_access_key =ProfileSecretKey" << std::endl;
+    configFile << std::endl;
+
+    configFile.flush();
+    configFile.close();
+
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "default_profile", 1/*override*/);
+    Aws::Environment::SetEnv("AWS_PROFILE", "profile", 1/*override*/);
+
+    ProfileConfigFileAWSCredentialsProvider providerDefaultProfile(10);
+    EXPECT_STREQ("DefaultProfileAccessKey", providerDefaultProfile.GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("DefaultProfileSecretKey", providerDefaultProfile.GetAWSCredentials().GetAWSSecretKey().c_str());
+
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "", 1/*override*/);
+    Aws::Environment::SetEnv("AWS_PROFILE", "profile", 1/*override*/);
+    ProfileConfigFileAWSCredentialsProvider providerProfile(10);
+    EXPECT_STREQ("ProfileAccessKey", providerProfile.GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("ProfileSecretKey", providerProfile.GetAWSCredentials().GetAWSSecretKey().c_str());
+
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "", 1/*override*/);
+    Aws::Environment::SetEnv("AWS_PROFILE", "", 1/*override*/);
+    ProfileConfigFileAWSCredentialsProvider providerDefault(10);
+    EXPECT_STREQ("DefaultAccessKey", providerDefault.GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("DefaultSecretKey", providerDefault.GetAWSCredentials().GetAWSSecretKey().c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+}
+
 TEST_F(EnvironmentModifyingTest, ProfileConfigTestWithEnvVars)
 {
     Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename() + "_blah";
   
-    Aws::String oldValue = Aws::Environment::GetEnv("AWS_SHARED_CREDENTIALS_FILE");
     Aws::Environment::SetEnv("AWS_SHARED_CREDENTIALS_FILE", configFileName.c_str(), 1);
-    Aws::String oldProfileValue = Aws::Environment::GetEnv("AWS_DEFAULT_PROFILE");
     const char* profile = "someProfile";
     Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", profile, 1);
     Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
@@ -225,6 +280,23 @@ TEST_F(EnvironmentModifyingTest, TestEnvironmentVariablesDoNotExist)
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
+TEST_F(EnvironmentModifyingTest, TestProvidersNumberInCredentialsProvidersChain)
+{
+    Aws::Environment::UnSetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI");
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_DISABLED");
+
+    DefaultAWSCredentialsProviderChain providersChainWith3ProvidersEC2;
+    ASSERT_EQ(3u, providersChainWith3ProvidersEC2.GetProviders().size()); //With EC2 instance metadata, without ECS task role.
+
+    Aws::Environment::SetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI", "TestVar", 1);
+    DefaultAWSCredentialsProviderChain providersChainWith3ProvidersECS;
+    ASSERT_EQ(3u, providersChainWith3ProvidersECS.GetProviders().size()); //With ECS task role, without ec2
+
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "TruE", 1);
+    Aws::Environment::UnSetEnv("AWS_CONTAINER_CREDENTIALS_RELATIVE_URI"); //Without ECS task role, without ec2
+    DefaultAWSCredentialsProviderChain providersChainWith2Providers;
+    ASSERT_EQ(2u, providersChainWith2Providers.GetProviders().size());
+}
 
 
 TEST(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodData)

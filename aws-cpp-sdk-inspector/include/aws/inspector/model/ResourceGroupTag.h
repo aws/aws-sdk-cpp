@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Inspector
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ResourceGroupTag();
-    ResourceGroupTag(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceGroupTag& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceGroupTag(Aws::Utils::Json::JsonView jsonValue);
+    ResourceGroupTag& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

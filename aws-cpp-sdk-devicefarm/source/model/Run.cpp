@@ -55,11 +55,26 @@ Run::Run() :
     m_parsingResultUrlHasBeenSet(false),
     m_resultCode(ExecutionResultCode::NOT_SET),
     m_resultCodeHasBeenSet(false),
-    m_customerArtifactPathsHasBeenSet(false)
+    m_seed(0),
+    m_seedHasBeenSet(false),
+    m_appUploadHasBeenSet(false),
+    m_eventCount(0),
+    m_eventCountHasBeenSet(false),
+    m_jobTimeoutMinutes(0),
+    m_jobTimeoutMinutesHasBeenSet(false),
+    m_devicePoolArnHasBeenSet(false),
+    m_localeHasBeenSet(false),
+    m_radiosHasBeenSet(false),
+    m_locationHasBeenSet(false),
+    m_customerArtifactPathsHasBeenSet(false),
+    m_webUrlHasBeenSet(false),
+    m_skipAppResign(false),
+    m_skipAppResignHasBeenSet(false),
+    m_testSpecArnHasBeenSet(false)
 {
 }
 
-Run::Run(const JsonValue& jsonValue) : 
+Run::Run(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_type(TestType::NOT_SET),
@@ -86,12 +101,27 @@ Run::Run(const JsonValue& jsonValue) :
     m_parsingResultUrlHasBeenSet(false),
     m_resultCode(ExecutionResultCode::NOT_SET),
     m_resultCodeHasBeenSet(false),
-    m_customerArtifactPathsHasBeenSet(false)
+    m_seed(0),
+    m_seedHasBeenSet(false),
+    m_appUploadHasBeenSet(false),
+    m_eventCount(0),
+    m_eventCountHasBeenSet(false),
+    m_jobTimeoutMinutes(0),
+    m_jobTimeoutMinutesHasBeenSet(false),
+    m_devicePoolArnHasBeenSet(false),
+    m_localeHasBeenSet(false),
+    m_radiosHasBeenSet(false),
+    m_locationHasBeenSet(false),
+    m_customerArtifactPathsHasBeenSet(false),
+    m_webUrlHasBeenSet(false),
+    m_skipAppResign(false),
+    m_skipAppResignHasBeenSet(false),
+    m_testSpecArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Run& Run::operator =(const JsonValue& jsonValue)
+Run& Run::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -219,11 +249,88 @@ Run& Run::operator =(const JsonValue& jsonValue)
     m_resultCodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("seed"))
+  {
+    m_seed = jsonValue.GetInteger("seed");
+
+    m_seedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("appUpload"))
+  {
+    m_appUpload = jsonValue.GetString("appUpload");
+
+    m_appUploadHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eventCount"))
+  {
+    m_eventCount = jsonValue.GetInteger("eventCount");
+
+    m_eventCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("jobTimeoutMinutes"))
+  {
+    m_jobTimeoutMinutes = jsonValue.GetInteger("jobTimeoutMinutes");
+
+    m_jobTimeoutMinutesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("devicePoolArn"))
+  {
+    m_devicePoolArn = jsonValue.GetString("devicePoolArn");
+
+    m_devicePoolArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("locale"))
+  {
+    m_locale = jsonValue.GetString("locale");
+
+    m_localeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("radios"))
+  {
+    m_radios = jsonValue.GetObject("radios");
+
+    m_radiosHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("location"))
+  {
+    m_location = jsonValue.GetObject("location");
+
+    m_locationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("customerArtifactPaths"))
   {
     m_customerArtifactPaths = jsonValue.GetObject("customerArtifactPaths");
 
     m_customerArtifactPathsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("webUrl"))
+  {
+    m_webUrl = jsonValue.GetString("webUrl");
+
+    m_webUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("skipAppResign"))
+  {
+    m_skipAppResign = jsonValue.GetBool("skipAppResign");
+
+    m_skipAppResignHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("testSpecArn"))
+  {
+    m_testSpecArn = jsonValue.GetString("testSpecArn");
+
+    m_testSpecArnHasBeenSet = true;
   }
 
   return *this;
@@ -332,9 +439,75 @@ JsonValue Run::Jsonize() const
    payload.WithString("resultCode", ExecutionResultCodeMapper::GetNameForExecutionResultCode(m_resultCode));
   }
 
+  if(m_seedHasBeenSet)
+  {
+   payload.WithInteger("seed", m_seed);
+
+  }
+
+  if(m_appUploadHasBeenSet)
+  {
+   payload.WithString("appUpload", m_appUpload);
+
+  }
+
+  if(m_eventCountHasBeenSet)
+  {
+   payload.WithInteger("eventCount", m_eventCount);
+
+  }
+
+  if(m_jobTimeoutMinutesHasBeenSet)
+  {
+   payload.WithInteger("jobTimeoutMinutes", m_jobTimeoutMinutes);
+
+  }
+
+  if(m_devicePoolArnHasBeenSet)
+  {
+   payload.WithString("devicePoolArn", m_devicePoolArn);
+
+  }
+
+  if(m_localeHasBeenSet)
+  {
+   payload.WithString("locale", m_locale);
+
+  }
+
+  if(m_radiosHasBeenSet)
+  {
+   payload.WithObject("radios", m_radios.Jsonize());
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithObject("location", m_location.Jsonize());
+
+  }
+
   if(m_customerArtifactPathsHasBeenSet)
   {
    payload.WithObject("customerArtifactPaths", m_customerArtifactPaths.Jsonize());
+
+  }
+
+  if(m_webUrlHasBeenSet)
+  {
+   payload.WithString("webUrl", m_webUrl);
+
+  }
+
+  if(m_skipAppResignHasBeenSet)
+  {
+   payload.WithBool("skipAppResign", m_skipAppResign);
+
+  }
+
+  if(m_testSpecArnHasBeenSet)
+  {
+   payload.WithString("testSpecArn", m_testSpecArn);
 
   }
 

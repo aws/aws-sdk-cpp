@@ -45,10 +45,11 @@ namespace FileSystem
     AWS_CORE_API Aws::String GetExecutableDirectory();
 
     /**
-    * Creates directory if it doesn't exist. Returns true if the directory was created
-    * or already exists. False for failure.
-    */
-    AWS_CORE_API bool CreateDirectoryIfNotExists(const char* path);
+     * @brief Creates directory if it doesn't exist. Returns true if the directory was created or already exists. False for failure.
+     * @param path, the absolute path of the directory.
+     * @param createParentDirs, if true, then this function will create missing directories on the path like linux command: mkdir -p
+     */
+    AWS_CORE_API bool CreateDirectoryIfNotExists(const char* path, bool createParentDirs = false);
 
     /**
     * Creates directory if it doesn't exist. Returns true if the directory was created
@@ -84,7 +85,7 @@ namespace FileSystem
     /**
      * Opens a directory for traversal.
      */
-    AWS_CORE_API std::shared_ptr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath = "");
+    AWS_CORE_API Aws::UniquePtr<Directory> OpenDirectory(const Aws::String& path, const Aws::String& relativePath = "");
 
     /**
      * Joins the leftSegment and rightSegment of a path together using platform specific delimiter.
@@ -92,11 +93,11 @@ namespace FileSystem
      */
     AWS_CORE_API Aws::String Join(const Aws::String& leftSegment, const Aws::String& rightSegment);
 
-	/**
-	* Joins the leftSegment and rightSegment of a path together using the specified delimiter.
-	* e.g. with delimiter & C:\users\name\ and .aws becomes C:\users\name&.aws
-	*/
-	AWS_CORE_API Aws::String Join(char delimiter, const Aws::String& leftSegment, const Aws::String& rightSegment);
+    /**
+    * Joins the leftSegment and rightSegment of a path together using the specified delimiter.
+    * e.g. with delimiter & C:\users\name\ and .aws becomes C:\users\name&.aws
+    */
+    AWS_CORE_API Aws::String Join(char delimiter, const Aws::String& leftSegment, const Aws::String& rightSegment);
 
     /**
      * Type of directory entry encountered.
@@ -128,6 +129,8 @@ namespace FileSystem
     class AWS_CORE_API Directory
     {
     public:
+        virtual ~Directory() = default;
+
         /**
          * Initialize a directory with it's absolute path. If the path is invalid, the bool operator will return false.
          */
@@ -154,10 +157,10 @@ namespace FileSystem
         virtual DirectoryEntry Next() = 0;
 
         /**
-         * Descend into a directory if it is a directory. Returns a reference to a Directory object which you can then call Next() and Descend on.
+         * Descend into a directory if it is a directory. Returns a shared pointer to a Directory object which you can then call Next() and Descend on.
          * The original Directory object you use is responsible for the memory this method allocates, so do not attempt to delete the return value.
          */
-        Directory& Descend(const DirectoryEntry& directoryEntry);
+        Aws::UniquePtr<Directory> Descend(const DirectoryEntry& directoryEntry);
 
         /**
          * Recursively search directories with path as root directory, return all normal(non directory and non symlink) files' paths.
@@ -166,9 +169,6 @@ namespace FileSystem
 
     protected:
         DirectoryEntry m_directoryEntry;
-
-    private:
-        Aws::Vector<std::shared_ptr<Directory>> m_openDirectories;
     };
 
     class DirectoryTree;
@@ -229,7 +229,7 @@ namespace FileSystem
         bool TraverseDepthFirst(Directory& dir, const DirectoryEntryVisitor& visitor, bool postOrder = false);
         void TraverseBreadthFirst(Directory& dir, const DirectoryEntryVisitor& visitor);
 
-        std::shared_ptr<Directory> m_dir;
+        Aws::UniquePtr<Directory> m_dir;
     };
 
 } // namespace FileSystem

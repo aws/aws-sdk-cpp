@@ -35,7 +35,7 @@ BatchStopJobRunError::BatchStopJobRunError() :
 {
 }
 
-BatchStopJobRunError::BatchStopJobRunError(const JsonValue& jsonValue) : 
+BatchStopJobRunError::BatchStopJobRunError(JsonView jsonValue) : 
     m_jobNameHasBeenSet(false),
     m_jobRunIdHasBeenSet(false),
     m_errorDetailHasBeenSet(false)
@@ -43,7 +43,7 @@ BatchStopJobRunError::BatchStopJobRunError(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchStopJobRunError& BatchStopJobRunError::operator =(const JsonValue& jsonValue)
+BatchStopJobRunError& BatchStopJobRunError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobName"))
   {

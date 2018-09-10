@@ -47,7 +47,7 @@ CloudWatchAlarmDefinition::CloudWatchAlarmDefinition() :
 {
 }
 
-CloudWatchAlarmDefinition::CloudWatchAlarmDefinition(const JsonValue& jsonValue) : 
+CloudWatchAlarmDefinition::CloudWatchAlarmDefinition(JsonView jsonValue) : 
     m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_evaluationPeriods(0),
@@ -67,7 +67,7 @@ CloudWatchAlarmDefinition::CloudWatchAlarmDefinition(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-CloudWatchAlarmDefinition& CloudWatchAlarmDefinition::operator =(const JsonValue& jsonValue)
+CloudWatchAlarmDefinition& CloudWatchAlarmDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
@@ -127,7 +127,7 @@ CloudWatchAlarmDefinition& CloudWatchAlarmDefinition::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Dimensions"))
   {
-    Array<JsonValue> dimensionsJsonList = jsonValue.GetArray("Dimensions");
+    Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
     for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
     {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());

@@ -37,7 +37,7 @@ Aws::String UpdateBaiduChannelRequest::SerializePayload() const
    payload = m_baiduChannelRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

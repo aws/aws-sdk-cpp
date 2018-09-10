@@ -34,14 +34,14 @@ VPCDerivedInfoStatus::VPCDerivedInfoStatus() :
 {
 }
 
-VPCDerivedInfoStatus::VPCDerivedInfoStatus(const JsonValue& jsonValue) : 
+VPCDerivedInfoStatus::VPCDerivedInfoStatus(JsonView jsonValue) : 
     m_optionsHasBeenSet(false),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-VPCDerivedInfoStatus& VPCDerivedInfoStatus::operator =(const JsonValue& jsonValue)
+VPCDerivedInfoStatus& VPCDerivedInfoStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Options"))
   {

@@ -32,6 +32,7 @@ namespace Model
     InTransitToCustomer,
     WithCustomer,
     InTransitToAWS,
+    WithAWSSortingFacility,
     WithAWS,
     InProgress,
     Complete,

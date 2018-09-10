@@ -37,7 +37,7 @@ DescribeProtectionResult::DescribeProtectionResult(const Aws::AmazonWebServiceRe
 
 DescribeProtectionResult& DescribeProtectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Protection"))
   {
     m_protection = jsonValue.GetObject("Protection");

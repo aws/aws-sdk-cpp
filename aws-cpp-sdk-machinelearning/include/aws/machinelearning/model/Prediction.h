@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MachineLearning
@@ -52,8 +53,8 @@ namespace Model
   {
   public:
     Prediction();
-    Prediction(const Aws::Utils::Json::JsonValue& jsonValue);
-    Prediction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Prediction(Aws::Utils::Json::JsonView jsonValue);
+    Prediction& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

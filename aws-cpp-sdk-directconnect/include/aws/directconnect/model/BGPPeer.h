@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectConnect
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     BGPPeer();
-    BGPPeer(const Aws::Utils::Json::JsonValue& jsonValue);
-    BGPPeer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BGPPeer(Aws::Utils::Json::JsonView jsonValue);
+    BGPPeer& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -173,6 +174,42 @@ namespace Model
     
     inline BGPPeer& WithBgpStatus(BGPStatus&& value) { SetBgpStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     */
+    inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
+
+    /**
+     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     */
+    inline void SetAwsDeviceV2(const Aws::String& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = value; }
+
+    /**
+     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     */
+    inline void SetAwsDeviceV2(Aws::String&& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = std::move(value); }
+
+    /**
+     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     */
+    inline void SetAwsDeviceV2(const char* value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2.assign(value); }
+
+    /**
+     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     */
+    inline BGPPeer& WithAwsDeviceV2(const Aws::String& value) { SetAwsDeviceV2(value); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     */
+    inline BGPPeer& WithAwsDeviceV2(Aws::String&& value) { SetAwsDeviceV2(std::move(value)); return *this;}
+
+    /**
+     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     */
+    inline BGPPeer& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
+
   private:
 
     int m_asn;
@@ -195,6 +232,9 @@ namespace Model
 
     BGPStatus m_bgpStatus;
     bool m_bgpStatusHasBeenSet;
+
+    Aws::String m_awsDeviceV2;
+    bool m_awsDeviceV2HasBeenSet;
   };
 
 } // namespace Model

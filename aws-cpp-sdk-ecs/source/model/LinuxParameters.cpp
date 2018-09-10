@@ -32,20 +32,26 @@ LinuxParameters::LinuxParameters() :
     m_capabilitiesHasBeenSet(false),
     m_devicesHasBeenSet(false),
     m_initProcessEnabled(false),
-    m_initProcessEnabledHasBeenSet(false)
+    m_initProcessEnabledHasBeenSet(false),
+    m_sharedMemorySize(0),
+    m_sharedMemorySizeHasBeenSet(false),
+    m_tmpfsHasBeenSet(false)
 {
 }
 
-LinuxParameters::LinuxParameters(const JsonValue& jsonValue) : 
+LinuxParameters::LinuxParameters(JsonView jsonValue) : 
     m_capabilitiesHasBeenSet(false),
     m_devicesHasBeenSet(false),
     m_initProcessEnabled(false),
-    m_initProcessEnabledHasBeenSet(false)
+    m_initProcessEnabledHasBeenSet(false),
+    m_sharedMemorySize(0),
+    m_sharedMemorySizeHasBeenSet(false),
+    m_tmpfsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LinuxParameters& LinuxParameters::operator =(const JsonValue& jsonValue)
+LinuxParameters& LinuxParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("capabilities"))
   {
@@ -56,7 +62,7 @@ LinuxParameters& LinuxParameters::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("devices"))
   {
-    Array<JsonValue> devicesJsonList = jsonValue.GetArray("devices");
+    Array<JsonView> devicesJsonList = jsonValue.GetArray("devices");
     for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
     {
       m_devices.push_back(devicesJsonList[devicesIndex].AsObject());
@@ -69,6 +75,23 @@ LinuxParameters& LinuxParameters::operator =(const JsonValue& jsonValue)
     m_initProcessEnabled = jsonValue.GetBool("initProcessEnabled");
 
     m_initProcessEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sharedMemorySize"))
+  {
+    m_sharedMemorySize = jsonValue.GetInteger("sharedMemorySize");
+
+    m_sharedMemorySizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tmpfs"))
+  {
+    Array<JsonView> tmpfsJsonList = jsonValue.GetArray("tmpfs");
+    for(unsigned tmpfsIndex = 0; tmpfsIndex < tmpfsJsonList.GetLength(); ++tmpfsIndex)
+    {
+      m_tmpfs.push_back(tmpfsJsonList[tmpfsIndex].AsObject());
+    }
+    m_tmpfsHasBeenSet = true;
   }
 
   return *this;
@@ -98,6 +121,23 @@ JsonValue LinuxParameters::Jsonize() const
   if(m_initProcessEnabledHasBeenSet)
   {
    payload.WithBool("initProcessEnabled", m_initProcessEnabled);
+
+  }
+
+  if(m_sharedMemorySizeHasBeenSet)
+  {
+   payload.WithInteger("sharedMemorySize", m_sharedMemorySize);
+
+  }
+
+  if(m_tmpfsHasBeenSet)
+  {
+   Array<JsonValue> tmpfsJsonList(m_tmpfs.size());
+   for(unsigned tmpfsIndex = 0; tmpfsIndex < tmpfsJsonList.GetLength(); ++tmpfsIndex)
+   {
+     tmpfsJsonList[tmpfsIndex].AsObject(m_tmpfs[tmpfsIndex].Jsonize());
+   }
+   payload.WithArray("tmpfs", std::move(tmpfsJsonList));
 
   }
 

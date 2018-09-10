@@ -37,7 +37,7 @@ RenewOfferingResult::RenewOfferingResult(const Aws::AmazonWebServiceResult<JsonV
 
 RenewOfferingResult& RenewOfferingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("offeringTransaction"))
   {
     m_offeringTransaction = jsonValue.GetObject("offeringTransaction");

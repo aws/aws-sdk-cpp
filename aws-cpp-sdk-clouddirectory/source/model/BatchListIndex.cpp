@@ -37,7 +37,7 @@ BatchListIndex::BatchListIndex() :
 {
 }
 
-BatchListIndex::BatchListIndex(const JsonValue& jsonValue) : 
+BatchListIndex::BatchListIndex(JsonView jsonValue) : 
     m_rangesOnIndexedValuesHasBeenSet(false),
     m_indexReferenceHasBeenSet(false),
     m_maxResults(0),
@@ -47,11 +47,11 @@ BatchListIndex::BatchListIndex(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BatchListIndex& BatchListIndex::operator =(const JsonValue& jsonValue)
+BatchListIndex& BatchListIndex::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RangesOnIndexedValues"))
   {
-    Array<JsonValue> rangesOnIndexedValuesJsonList = jsonValue.GetArray("RangesOnIndexedValues");
+    Array<JsonView> rangesOnIndexedValuesJsonList = jsonValue.GetArray("RangesOnIndexedValues");
     for(unsigned rangesOnIndexedValuesIndex = 0; rangesOnIndexedValuesIndex < rangesOnIndexedValuesJsonList.GetLength(); ++rangesOnIndexedValuesIndex)
     {
       m_rangesOnIndexedValues.push_back(rangesOnIndexedValuesJsonList[rangesOnIndexedValuesIndex].AsObject());

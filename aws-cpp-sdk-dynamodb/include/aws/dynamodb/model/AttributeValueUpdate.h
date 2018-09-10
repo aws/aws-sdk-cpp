@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -50,8 +51,8 @@ namespace Model
   {
   public:
     AttributeValueUpdate();
-    AttributeValueUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    AttributeValueUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AttributeValueUpdate(Aws::Utils::Json::JsonView jsonValue);
+    AttributeValueUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -60,7 +61,7 @@ namespace Model
      * described as a name-value pair. The name is the data type, and the value is the
      * data itself.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
-     * TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+     * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
     inline const AttributeValue& GetValue() const{ return m_value; }
 
@@ -69,7 +70,7 @@ namespace Model
      * described as a name-value pair. The name is the data type, and the value is the
      * data itself.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
-     * TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+     * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
     inline void SetValue(const AttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -78,7 +79,7 @@ namespace Model
      * described as a name-value pair. The name is the data type, and the value is the
      * data itself.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
-     * TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+     * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
     inline void SetValue(AttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
@@ -87,7 +88,7 @@ namespace Model
      * described as a name-value pair. The name is the data type, and the value is the
      * data itself.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
-     * TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+     * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
     inline AttributeValueUpdate& WithValue(const AttributeValue& value) { SetValue(value); return *this;}
 
@@ -96,7 +97,7 @@ namespace Model
      * described as a name-value pair. The name is the data type, and the value is the
      * data itself.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data
-     * TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
+     * Types</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>
      */
     inline AttributeValueUpdate& WithValue(AttributeValue&& value) { SetValue(std::move(value)); return *this;}
 

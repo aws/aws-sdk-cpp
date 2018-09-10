@@ -57,7 +57,7 @@ Aws::String DescribeFleetCapacityRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeFleetCapacityRequest::GetRequestSpecificHeaders() const

@@ -37,7 +37,7 @@ DisableDomainTransferLockResult::DisableDomainTransferLockResult(const Aws::Amaz
 
 DisableDomainTransferLockResult& DisableDomainTransferLockResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OperationId"))
   {
     m_operationId = jsonValue.GetString("OperationId");

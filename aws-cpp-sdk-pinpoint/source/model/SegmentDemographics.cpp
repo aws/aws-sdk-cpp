@@ -38,7 +38,7 @@ SegmentDemographics::SegmentDemographics() :
 {
 }
 
-SegmentDemographics::SegmentDemographics(const JsonValue& jsonValue) : 
+SegmentDemographics::SegmentDemographics(JsonView jsonValue) : 
     m_appVersionHasBeenSet(false),
     m_channelHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
@@ -49,7 +49,7 @@ SegmentDemographics::SegmentDemographics(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SegmentDemographics& SegmentDemographics::operator =(const JsonValue& jsonValue)
+SegmentDemographics& SegmentDemographics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AppVersion"))
   {

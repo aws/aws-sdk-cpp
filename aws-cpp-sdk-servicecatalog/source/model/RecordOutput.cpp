@@ -35,7 +35,7 @@ RecordOutput::RecordOutput() :
 {
 }
 
-RecordOutput::RecordOutput(const JsonValue& jsonValue) : 
+RecordOutput::RecordOutput(JsonView jsonValue) : 
     m_outputKeyHasBeenSet(false),
     m_outputValueHasBeenSet(false),
     m_descriptionHasBeenSet(false)
@@ -43,7 +43,7 @@ RecordOutput::RecordOutput(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RecordOutput& RecordOutput::operator =(const JsonValue& jsonValue)
+RecordOutput& RecordOutput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OutputKey"))
   {

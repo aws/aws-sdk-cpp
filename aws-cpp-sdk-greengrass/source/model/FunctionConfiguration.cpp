@@ -29,6 +29,8 @@ namespace Model
 {
 
 FunctionConfiguration::FunctionConfiguration() : 
+    m_encodingType(EncodingType::NOT_SET),
+    m_encodingTypeHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_execArgsHasBeenSet(false),
     m_executableHasBeenSet(false),
@@ -41,7 +43,9 @@ FunctionConfiguration::FunctionConfiguration() :
 {
 }
 
-FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) : 
+FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) : 
+    m_encodingType(EncodingType::NOT_SET),
+    m_encodingTypeHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_execArgsHasBeenSet(false),
     m_executableHasBeenSet(false),
@@ -55,8 +59,15 @@ FunctionConfiguration::FunctionConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FunctionConfiguration& FunctionConfiguration::operator =(const JsonValue& jsonValue)
+FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("EncodingType"))
+  {
+    m_encodingType = EncodingTypeMapper::GetEncodingTypeForName(jsonValue.GetString("EncodingType"));
+
+    m_encodingTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Environment"))
   {
     m_environment = jsonValue.GetObject("Environment");
@@ -105,6 +116,11 @@ FunctionConfiguration& FunctionConfiguration::operator =(const JsonValue& jsonVa
 JsonValue FunctionConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_encodingTypeHasBeenSet)
+  {
+   payload.WithString("EncodingType", EncodingTypeMapper::GetNameForEncodingType(m_encodingType));
+  }
 
   if(m_environmentHasBeenSet)
   {

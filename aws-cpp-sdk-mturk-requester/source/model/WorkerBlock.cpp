@@ -34,14 +34,14 @@ WorkerBlock::WorkerBlock() :
 {
 }
 
-WorkerBlock::WorkerBlock(const JsonValue& jsonValue) : 
+WorkerBlock::WorkerBlock(JsonView jsonValue) : 
     m_workerIdHasBeenSet(false),
     m_reasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WorkerBlock& WorkerBlock::operator =(const JsonValue& jsonValue)
+WorkerBlock& WorkerBlock::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("WorkerId"))
   {

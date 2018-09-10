@@ -37,7 +37,7 @@ ApplySchemaResult::ApplySchemaResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ApplySchemaResult& ApplySchemaResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AppliedSchemaArn"))
   {
     m_appliedSchemaArn = jsonValue.GetString("AppliedSchemaArn");

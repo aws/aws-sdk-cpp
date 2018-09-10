@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * The arn of the reset deployment.
+     * The ARN of the deployment.
      */
     inline const Aws::String& GetDeploymentArn() const{ return m_deploymentArn; }
 
     /**
-     * The arn of the reset deployment.
+     * The ARN of the deployment.
      */
     inline void SetDeploymentArn(const Aws::String& value) { m_deploymentArn = value; }
 
     /**
-     * The arn of the reset deployment.
+     * The ARN of the deployment.
      */
     inline void SetDeploymentArn(Aws::String&& value) { m_deploymentArn = std::move(value); }
 
     /**
-     * The arn of the reset deployment.
+     * The ARN of the deployment.
      */
     inline void SetDeploymentArn(const char* value) { m_deploymentArn.assign(value); }
 
     /**
-     * The arn of the reset deployment.
+     * The ARN of the deployment.
      */
     inline ResetDeploymentsResult& WithDeploymentArn(const Aws::String& value) { SetDeploymentArn(value); return *this;}
 
     /**
-     * The arn of the reset deployment.
+     * The ARN of the deployment.
      */
     inline ResetDeploymentsResult& WithDeploymentArn(Aws::String&& value) { SetDeploymentArn(std::move(value)); return *this;}
 
     /**
-     * The arn of the reset deployment.
+     * The ARN of the deployment.
      */
     inline ResetDeploymentsResult& WithDeploymentArn(const char* value) { SetDeploymentArn(value); return *this;}
 
 
     /**
-     * The id of the reset deployment.
+     * The ID of the deployment.
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * The id of the reset deployment.
+     * The ID of the deployment.
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentId = value; }
 
     /**
-     * The id of the reset deployment.
+     * The ID of the deployment.
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentId = std::move(value); }
 
     /**
-     * The id of the reset deployment.
+     * The ID of the deployment.
      */
     inline void SetDeploymentId(const char* value) { m_deploymentId.assign(value); }
 
     /**
-     * The id of the reset deployment.
+     * The ID of the deployment.
      */
     inline ResetDeploymentsResult& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * The id of the reset deployment.
+     * The ID of the deployment.
      */
     inline ResetDeploymentsResult& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * The id of the reset deployment.
+     * The ID of the deployment.
      */
     inline ResetDeploymentsResult& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 

@@ -36,7 +36,7 @@ QueryExecutionStatistics::QueryExecutionStatistics() :
 {
 }
 
-QueryExecutionStatistics::QueryExecutionStatistics(const JsonValue& jsonValue) : 
+QueryExecutionStatistics::QueryExecutionStatistics(JsonView jsonValue) : 
     m_engineExecutionTimeInMillis(0),
     m_engineExecutionTimeInMillisHasBeenSet(false),
     m_dataScannedInBytes(0),
@@ -45,7 +45,7 @@ QueryExecutionStatistics::QueryExecutionStatistics(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-QueryExecutionStatistics& QueryExecutionStatistics::operator =(const JsonValue& jsonValue)
+QueryExecutionStatistics& QueryExecutionStatistics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EngineExecutionTimeInMillis"))
   {

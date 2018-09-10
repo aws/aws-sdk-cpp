@@ -320,7 +320,7 @@ namespace Model
 
         virtual ~CloudFormationClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "cloudformation"; }
+        inline virtual const char* GetServiceClientName() const override { return "CloudFormation"; }
 
 
        /**
@@ -1784,22 +1784,24 @@ namespace Model
         virtual void UpdateStackInstancesAsync(const Model::UpdateStackInstancesRequest& request, const UpdateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the stack set and <i>all</i> associated stack instances.</p> <p>Even
-         * if the stack set operation created by updating the stack set fails (completely
-         * or partially, below or above a specified failure tolerance), the stack set is
-         * updated with your changes. Subsequent <a>CreateStackInstances</a> calls on the
-         * specified stack set use the updated stack set.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the stack set, and associated stack instances in the specified
+         * accounts and regions.</p> <p>Even if the stack set operation created by updating
+         * the stack set fails (completely or partially, below or above a specified failure
+         * tolerance), the stack set is updated with your changes. Subsequent
+         * <a>CreateStackInstances</a> calls on the specified stack set use the updated
+         * stack set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateStackSetOutcome UpdateStackSet(const Model::UpdateStackSetRequest& request) const;
 
         /**
-         * <p>Updates the stack set and <i>all</i> associated stack instances.</p> <p>Even
-         * if the stack set operation created by updating the stack set fails (completely
-         * or partially, below or above a specified failure tolerance), the stack set is
-         * updated with your changes. Subsequent <a>CreateStackInstances</a> calls on the
-         * specified stack set use the updated stack set.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the stack set, and associated stack instances in the specified
+         * accounts and regions.</p> <p>Even if the stack set operation created by updating
+         * the stack set fails (completely or partially, below or above a specified failure
+         * tolerance), the stack set is updated with your changes. Subsequent
+         * <a>CreateStackInstances</a> calls on the specified stack set use the updated
+         * stack set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">AWS
          * API Reference</a></p>
          *
@@ -1808,11 +1810,12 @@ namespace Model
         virtual Model::UpdateStackSetOutcomeCallable UpdateStackSetCallable(const Model::UpdateStackSetRequest& request) const;
 
         /**
-         * <p>Updates the stack set and <i>all</i> associated stack instances.</p> <p>Even
-         * if the stack set operation created by updating the stack set fails (completely
-         * or partially, below or above a specified failure tolerance), the stack set is
-         * updated with your changes. Subsequent <a>CreateStackInstances</a> calls on the
-         * specified stack set use the updated stack set.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the stack set, and associated stack instances in the specified
+         * accounts and regions.</p> <p>Even if the stack set operation created by updating
+         * the stack set fails (completely or partially, below or above a specified failure
+         * tolerance), the stack set is updated with your changes. Subsequent
+         * <a>CreateStackInstances</a> calls on the specified stack set use the updated
+         * stack set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet">AWS
          * API Reference</a></p>
          *

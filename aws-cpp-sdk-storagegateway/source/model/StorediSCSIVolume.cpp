@@ -44,11 +44,12 @@ StorediSCSIVolume::StorediSCSIVolume() :
     m_volumeiSCSIAttributesHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_volumeUsedInBytes(0),
-    m_volumeUsedInBytesHasBeenSet(false)
+    m_volumeUsedInBytesHasBeenSet(false),
+    m_kMSKeyHasBeenSet(false)
 {
 }
 
-StorediSCSIVolume::StorediSCSIVolume(const JsonValue& jsonValue) : 
+StorediSCSIVolume::StorediSCSIVolume(JsonView jsonValue) : 
     m_volumeARNHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_volumeTypeHasBeenSet(false),
@@ -64,12 +65,13 @@ StorediSCSIVolume::StorediSCSIVolume(const JsonValue& jsonValue) :
     m_volumeiSCSIAttributesHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_volumeUsedInBytes(0),
-    m_volumeUsedInBytesHasBeenSet(false)
+    m_volumeUsedInBytesHasBeenSet(false),
+    m_kMSKeyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StorediSCSIVolume& StorediSCSIVolume::operator =(const JsonValue& jsonValue)
+StorediSCSIVolume& StorediSCSIVolume::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VolumeARN"))
   {
@@ -155,6 +157,13 @@ StorediSCSIVolume& StorediSCSIVolume::operator =(const JsonValue& jsonValue)
     m_volumeUsedInBytesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KMSKey"))
+  {
+    m_kMSKey = jsonValue.GetString("KMSKey");
+
+    m_kMSKeyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -230,6 +239,12 @@ JsonValue StorediSCSIVolume::Jsonize() const
   if(m_volumeUsedInBytesHasBeenSet)
   {
    payload.WithInt64("VolumeUsedInBytes", m_volumeUsedInBytes);
+
+  }
+
+  if(m_kMSKeyHasBeenSet)
+  {
+   payload.WithString("KMSKey", m_kMSKey);
 
   }
 

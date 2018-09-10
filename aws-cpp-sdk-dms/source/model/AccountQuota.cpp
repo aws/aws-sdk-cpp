@@ -37,7 +37,7 @@ AccountQuota::AccountQuota() :
 {
 }
 
-AccountQuota::AccountQuota(const JsonValue& jsonValue) : 
+AccountQuota::AccountQuota(JsonView jsonValue) : 
     m_accountQuotaNameHasBeenSet(false),
     m_used(0),
     m_usedHasBeenSet(false),
@@ -47,7 +47,7 @@ AccountQuota::AccountQuota(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AccountQuota& AccountQuota::operator =(const JsonValue& jsonValue)
+AccountQuota& AccountQuota::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AccountQuotaName"))
   {

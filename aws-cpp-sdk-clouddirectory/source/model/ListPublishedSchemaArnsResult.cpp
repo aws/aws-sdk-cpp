@@ -37,10 +37,10 @@ ListPublishedSchemaArnsResult::ListPublishedSchemaArnsResult(const Aws::AmazonWe
 
 ListPublishedSchemaArnsResult& ListPublishedSchemaArnsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SchemaArns"))
   {
-    Array<JsonValue> schemaArnsJsonList = jsonValue.GetArray("SchemaArns");
+    Array<JsonView> schemaArnsJsonList = jsonValue.GetArray("SchemaArns");
     for(unsigned schemaArnsIndex = 0; schemaArnsIndex < schemaArnsJsonList.GetLength(); ++schemaArnsIndex)
     {
       m_schemaArns.push_back(schemaArnsJsonList[schemaArnsIndex].AsString());

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -41,287 +42,294 @@ namespace Model
   {
   public:
     ADMChannelResponse();
-    ADMChannelResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    ADMChannelResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ADMChannelResponse(Aws::Utils::Json::JsonView jsonValue);
+    ADMChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline ADMChannelResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline ADMChannelResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      */
     inline ADMChannelResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline ADMChannelResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline ADMChannelResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline ADMChannelResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
 
     /**
-     * If the channel is enabled for sending messages.
+     * Indicates whether or not the channel is enabled for sending messages.
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * Indicates whether or not the channel is enabled for sending messages.
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * If the channel is enabled for sending messages.
+     * Indicates whether or not the channel is enabled for sending messages.
      */
     inline ADMChannelResponse& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline ADMChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline ADMChannelResponse& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline ADMChannelResponse& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Channel ID. Not used, only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline ADMChannelResponse& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Is this channel archived
+     * Indicates whether or not the channel is archived.
      */
     inline bool GetIsArchived() const{ return m_isArchived; }
 
     /**
-     * Is this channel archived
+     * Indicates whether or not the channel is archived.
      */
     inline void SetIsArchived(bool value) { m_isArchivedHasBeenSet = true; m_isArchived = value; }
 
     /**
-     * Is this channel archived
+     * Indicates whether or not the channel is archived.
      */
     inline ADMChannelResponse& WithIsArchived(bool value) { SetIsArchived(value); return *this;}
 
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline ADMChannelResponse& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline ADMChannelResponse& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline ADMChannelResponse& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline void SetLastModifiedDate(Aws::String&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline ADMChannelResponse& WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline ADMChannelResponse& WithLastModifiedDate(Aws::String&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline ADMChannelResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
 
 
     /**
-     * Platform type. Will be "ADM"
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
-     * Platform type. Will be "ADM"
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * Platform type. Will be "ADM"
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * Platform type. Will be "ADM"
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
-     * Platform type. Will be "ADM"
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline ADMChannelResponse& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
-     * Platform type. Will be "ADM"
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline ADMChannelResponse& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
-     * Platform type. Will be "ADM"
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline ADMChannelResponse& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
 
     /**
-     * Version of channel
+     * The channel version.
      */
     inline int GetVersion() const{ return m_version; }
 
     /**
-     * Version of channel
+     * The channel version.
      */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * Version of channel
+     * The channel version.
      */
     inline ADMChannelResponse& WithVersion(int value) { SetVersion(value); return *this;}
 

@@ -37,7 +37,7 @@ DescribePortfolioResult::DescribePortfolioResult(const Aws::AmazonWebServiceResu
 
 DescribePortfolioResult& DescribePortfolioResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PortfolioDetail"))
   {
     m_portfolioDetail = jsonValue.GetObject("PortfolioDetail");
@@ -46,7 +46,7 @@ DescribePortfolioResult& DescribePortfolioResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -55,7 +55,7 @@ DescribePortfolioResult& DescribePortfolioResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("TagOptions"))
   {
-    Array<JsonValue> tagOptionsJsonList = jsonValue.GetArray("TagOptions");
+    Array<JsonView> tagOptionsJsonList = jsonValue.GetArray("TagOptions");
     for(unsigned tagOptionsIndex = 0; tagOptionsIndex < tagOptionsJsonList.GetLength(); ++tagOptionsIndex)
     {
       m_tagOptions.push_back(tagOptionsJsonList[tagOptionsIndex].AsObject());

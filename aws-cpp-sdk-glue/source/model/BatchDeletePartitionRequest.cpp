@@ -63,7 +63,7 @@ Aws::String BatchDeletePartitionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchDeletePartitionRequest::GetRequestSpecificHeaders() const

@@ -48,20 +48,25 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         opsThatDoNotSupportVirtualAddressing.add("CreateBucket");
         opsThatDoNotSupportVirtualAddressing.add("ListBuckets");
 
+        bucketLocationConstraints.add("us-east-1");
         bucketLocationConstraints.add("us-east-2");
         bucketLocationConstraints.add("us-west-1");
         bucketLocationConstraints.add("us-west-2");
-        bucketLocationConstraints.add("ca-central-1");
-        bucketLocationConstraints.add("ap-south-1");
-        bucketLocationConstraints.add("ap-northeast-1");
-        bucketLocationConstraints.add("ap-northeast-2");
-        bucketLocationConstraints.add("ap-southeast-1");
-        bucketLocationConstraints.add("ap-southeast-2");
-        bucketLocationConstraints.add("eu-central-1");
-        bucketLocationConstraints.add("EU");
         bucketLocationConstraints.add("eu-west-1");
         bucketLocationConstraints.add("eu-west-2");
+        bucketLocationConstraints.add("eu-west-3");
+        bucketLocationConstraints.add("eu-central-1");
+        bucketLocationConstraints.add("ap-southeast-1");
+        bucketLocationConstraints.add("ap-southeast-2");
+        bucketLocationConstraints.add("ap-northeast-1");
+        bucketLocationConstraints.add("ap-northeast-2");
+        bucketLocationConstraints.add("ap-south-1");
         bucketLocationConstraints.add("sa-east-1");
+        bucketLocationConstraints.add("cn-north-1");
+        bucketLocationConstraints.add("cn-northwest-1");
+        bucketLocationConstraints.add("ca-central-1");
+        bucketLocationConstraints.add("us-gov-west-1");
+        bucketLocationConstraints.add("EU");
     }
 
     public S3RestXmlCppClientGenerator() throws Exception {
@@ -96,11 +101,62 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
         Shape locationConstraints = serviceModel.getShapes().get("BucketLocationConstraint");
 
-        if(locationConstraints != null) {
+        if (locationConstraints != null) {
             bucketLocationConstraints.stream()
                     .filter(enumEntry -> !locationConstraints.getEnumValues().contains(enumEntry))
                     .forEach(enumEntry -> locationConstraints.getEnumValues().add(enumEntry));
         }
+
+        // Fix the typo of enum: "COMPLETE" for ReplicationStatus in API description, and "COMPLETED" is expected defined by S3 service.
+        // https://github.com/aws/aws-sdk-cpp/issues/859
+        Shape replicationStatus = serviceModel.getShapes().get("ReplicationStatus");
+        int indexOfComplete = replicationStatus.getEnumValues().indexOf("COMPLETE");
+        if (indexOfComplete != -1) {
+            replicationStatus.getEnumValues().set(indexOfComplete, "COMPLETED");
+        }
+
+        // Customized Log Information
+        Shape logTagKeyShape = new Shape();
+        logTagKeyShape.setName("customizedAccessLogTagKey");
+        logTagKeyShape.setType("string");
+        logTagKeyShape.setReferenced(true);
+        HashSet<String> keyReferencedBy = new HashSet<String>();
+        logTagKeyShape.setReferencedBy(keyReferencedBy);
+        ShapeMember shapeMemberKey = new ShapeMember();
+        shapeMemberKey.setShape(logTagKeyShape);
+
+        Shape logTagValShape = new Shape();
+        logTagValShape.setName("customizedAccessLogTagVal");
+        logTagValShape.setType("string");
+        logTagValShape.setReferenced(true);
+        HashSet<String> valReferencedBy = new HashSet<String>();
+        logTagValShape.setReferencedBy(valReferencedBy);
+        ShapeMember shapeMemberVal = new ShapeMember();
+        shapeMemberVal.setShape(logTagValShape);
+
+        Shape logTagShape = new Shape();
+        logTagShape.setName("customizedAccessLogTag");
+        logTagShape.setType("map");
+        logTagShape.setReferenced(true);
+        HashSet<String> tagReferencedBy = new HashSet<String>();
+        logTagShape.setReferencedBy(tagReferencedBy);
+        logTagKeyShape.getReferencedBy().add(logTagShape.getName());
+        logTagValShape.getReferencedBy().add(logTagShape.getName());
+        logTagShape.setMapKey(shapeMemberKey);
+        logTagShape.setMapValue(shapeMemberVal);
+
+        ShapeMember shapeMemberTag = new ShapeMember();
+        shapeMemberTag.setLocation("querystring");
+        shapeMemberTag.setCustomizedQuery(true);
+        shapeMemberTag.setShape(logTagShape);
+
+        serviceModel.getOperations().values().forEach(operationEntry -> {
+            if (operationEntry.getRequest() != null) {
+                operationEntry.getRequest().getShape().getMembers().put(logTagShape.getName(), shapeMemberTag);
+                operationEntry.getRequest().getShape().setCustomizedQuery(shapeMemberTag);
+                logTagShape.getReferencedBy().add(operationEntry.getRequest().getShape().getName());
+            }
+        });
 
         return super.generateSourceFiles(serviceModel);
     }

@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline const Aws::String& GetAssociatedAt() const{ return m_associatedAt; }
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline void SetAssociatedAt(const Aws::String& value) { m_associatedAt = value; }
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline void SetAssociatedAt(Aws::String&& value) { m_associatedAt = std::move(value); }
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline void SetAssociatedAt(const char* value) { m_associatedAt.assign(value); }
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline AssociateServiceRoleToAccountResult& WithAssociatedAt(const Aws::String& value) { SetAssociatedAt(value); return *this;}
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline AssociateServiceRoleToAccountResult& WithAssociatedAt(Aws::String&& value) { SetAssociatedAt(std::move(value)); return *this;}
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      */
     inline AssociateServiceRoleToAccountResult& WithAssociatedAt(const char* value) { SetAssociatedAt(value); return *this;}
 

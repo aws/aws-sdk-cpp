@@ -37,7 +37,7 @@ GetSnapshotLimitsResult::GetSnapshotLimitsResult(const Aws::AmazonWebServiceResu
 
 GetSnapshotLimitsResult& GetSnapshotLimitsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SnapshotLimits"))
   {
     m_snapshotLimits = jsonValue.GetObject("SnapshotLimits");

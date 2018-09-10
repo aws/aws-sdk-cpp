@@ -46,7 +46,7 @@ Aws::String CreateFunctionDefinitionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateFunctionDefinitionRequest::GetRequestSpecificHeaders() const
@@ -56,7 +56,7 @@ Aws::Http::HeaderValueCollection CreateFunctionDefinitionRequest::GetRequestSpec
   if(m_amznClientTokenHasBeenSet)
   {
     ss << m_amznClientToken;
-    headers.insert(Aws::Http::HeaderValuePair("x-amzn-client-token", ss.str()));
+    headers.emplace("x-amzn-client-token",  ss.str());
     ss.str("");
   }
 

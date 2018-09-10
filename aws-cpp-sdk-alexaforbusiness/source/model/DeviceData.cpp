@@ -38,11 +38,12 @@ DeviceData::DeviceData() :
     m_deviceStatus(DeviceStatus::NOT_SET),
     m_deviceStatusHasBeenSet(false),
     m_roomArnHasBeenSet(false),
-    m_roomNameHasBeenSet(false)
+    m_roomNameHasBeenSet(false),
+    m_deviceStatusInfoHasBeenSet(false)
 {
 }
 
-DeviceData::DeviceData(const JsonValue& jsonValue) : 
+DeviceData::DeviceData(JsonView jsonValue) : 
     m_deviceArnHasBeenSet(false),
     m_deviceSerialNumberHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
@@ -52,12 +53,13 @@ DeviceData::DeviceData(const JsonValue& jsonValue) :
     m_deviceStatus(DeviceStatus::NOT_SET),
     m_deviceStatusHasBeenSet(false),
     m_roomArnHasBeenSet(false),
-    m_roomNameHasBeenSet(false)
+    m_roomNameHasBeenSet(false),
+    m_deviceStatusInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DeviceData& DeviceData::operator =(const JsonValue& jsonValue)
+DeviceData& DeviceData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeviceArn"))
   {
@@ -122,6 +124,13 @@ DeviceData& DeviceData::operator =(const JsonValue& jsonValue)
     m_roomNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeviceStatusInfo"))
+  {
+    m_deviceStatusInfo = jsonValue.GetObject("DeviceStatusInfo");
+
+    m_deviceStatusInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -179,6 +188,12 @@ JsonValue DeviceData::Jsonize() const
   if(m_roomNameHasBeenSet)
   {
    payload.WithString("RoomName", m_roomName);
+
+  }
+
+  if(m_deviceStatusInfoHasBeenSet)
+  {
+   payload.WithObject("DeviceStatusInfo", m_deviceStatusInfo.Jsonize());
 
   }
 

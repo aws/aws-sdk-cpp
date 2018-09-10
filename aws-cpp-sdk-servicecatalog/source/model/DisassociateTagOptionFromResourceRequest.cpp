@@ -44,7 +44,7 @@ Aws::String DisassociateTagOptionFromResourceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DisassociateTagOptionFromResourceRequest::GetRequestSpecificHeaders() const

@@ -39,11 +39,12 @@ Tape::Tape() :
     m_progress(0.0),
     m_progressHasBeenSet(false),
     m_tapeUsedInBytes(0),
-    m_tapeUsedInBytesHasBeenSet(false)
+    m_tapeUsedInBytesHasBeenSet(false),
+    m_kMSKeyHasBeenSet(false)
 {
 }
 
-Tape::Tape(const JsonValue& jsonValue) : 
+Tape::Tape(JsonView jsonValue) : 
     m_tapeARNHasBeenSet(false),
     m_tapeBarcodeHasBeenSet(false),
     m_tapeCreatedDateHasBeenSet(false),
@@ -54,12 +55,13 @@ Tape::Tape(const JsonValue& jsonValue) :
     m_progress(0.0),
     m_progressHasBeenSet(false),
     m_tapeUsedInBytes(0),
-    m_tapeUsedInBytesHasBeenSet(false)
+    m_tapeUsedInBytesHasBeenSet(false),
+    m_kMSKeyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Tape& Tape::operator =(const JsonValue& jsonValue)
+Tape& Tape::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TapeARN"))
   {
@@ -117,6 +119,13 @@ Tape& Tape::operator =(const JsonValue& jsonValue)
     m_tapeUsedInBytesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KMSKey"))
+  {
+    m_kMSKey = jsonValue.GetString("KMSKey");
+
+    m_kMSKeyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +177,12 @@ JsonValue Tape::Jsonize() const
   if(m_tapeUsedInBytesHasBeenSet)
   {
    payload.WithInt64("TapeUsedInBytes", m_tapeUsedInBytes);
+
+  }
+
+  if(m_kMSKeyHasBeenSet)
+  {
+   payload.WithString("KMSKey", m_kMSKey);
 
   }
 

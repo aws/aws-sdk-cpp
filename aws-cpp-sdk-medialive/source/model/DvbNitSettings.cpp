@@ -37,7 +37,7 @@ DvbNitSettings::DvbNitSettings() :
 {
 }
 
-DvbNitSettings::DvbNitSettings(const JsonValue& jsonValue) : 
+DvbNitSettings::DvbNitSettings(JsonView jsonValue) : 
     m_networkId(0),
     m_networkIdHasBeenSet(false),
     m_networkNameHasBeenSet(false),
@@ -47,7 +47,7 @@ DvbNitSettings::DvbNitSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DvbNitSettings& DvbNitSettings::operator =(const JsonValue& jsonValue)
+DvbNitSettings& DvbNitSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("networkId"))
   {

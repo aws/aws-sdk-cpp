@@ -41,7 +41,7 @@ APNSSandboxChannelRequest::APNSSandboxChannelRequest() :
 {
 }
 
-APNSSandboxChannelRequest::APNSSandboxChannelRequest(const JsonValue& jsonValue) : 
+APNSSandboxChannelRequest::APNSSandboxChannelRequest(JsonView jsonValue) : 
     m_bundleIdHasBeenSet(false),
     m_certificateHasBeenSet(false),
     m_defaultAuthenticationMethodHasBeenSet(false),
@@ -55,7 +55,7 @@ APNSSandboxChannelRequest::APNSSandboxChannelRequest(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-APNSSandboxChannelRequest& APNSSandboxChannelRequest::operator =(const JsonValue& jsonValue)
+APNSSandboxChannelRequest& APNSSandboxChannelRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BundleId"))
   {

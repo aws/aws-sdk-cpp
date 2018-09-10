@@ -51,7 +51,7 @@ Aws::String DeleteAliasRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteAliasRequest::GetRequestSpecificHeaders() const

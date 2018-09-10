@@ -34,21 +34,21 @@ EndpointUser::EndpointUser() :
 {
 }
 
-EndpointUser::EndpointUser(const JsonValue& jsonValue) : 
+EndpointUser::EndpointUser(JsonView jsonValue) : 
     m_userAttributesHasBeenSet(false),
     m_userIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EndpointUser& EndpointUser::operator =(const JsonValue& jsonValue)
+EndpointUser& EndpointUser::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UserAttributes"))
   {
-    Aws::Map<Aws::String, JsonValue> userAttributesJsonMap = jsonValue.GetObject("UserAttributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> userAttributesJsonMap = jsonValue.GetObject("UserAttributes").GetAllObjects();
     for(auto& userAttributesItem : userAttributesJsonMap)
     {
-      Array<JsonValue> listOf__stringJsonList = userAttributesItem.second.AsArray();
+      Array<JsonView> listOf__stringJsonList = userAttributesItem.second.AsArray();
       Aws::Vector<Aws::String> listOf__stringList;
       listOf__stringList.reserve((size_t)listOf__stringJsonList.GetLength());
       for(unsigned listOf__stringIndex = 0; listOf__stringIndex < listOf__stringJsonList.GetLength(); ++listOf__stringIndex)

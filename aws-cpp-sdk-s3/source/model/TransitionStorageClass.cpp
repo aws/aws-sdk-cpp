@@ -32,6 +32,7 @@ namespace Aws
 
         static const int GLACIER_HASH = HashingUtils::HashString("GLACIER");
         static const int STANDARD_IA_HASH = HashingUtils::HashString("STANDARD_IA");
+        static const int ONEZONE_IA_HASH = HashingUtils::HashString("ONEZONE_IA");
 
 
         TransitionStorageClass GetTransitionStorageClassForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == STANDARD_IA_HASH)
           {
             return TransitionStorageClass::STANDARD_IA;
+          }
+          else if (hashCode == ONEZONE_IA_HASH)
+          {
+            return TransitionStorageClass::ONEZONE_IA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "GLACIER";
           case TransitionStorageClass::STANDARD_IA:
             return "STANDARD_IA";
+          case TransitionStorageClass::ONEZONE_IA:
+            return "ONEZONE_IA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

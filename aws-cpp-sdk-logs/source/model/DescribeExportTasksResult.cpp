@@ -37,10 +37,10 @@ DescribeExportTasksResult::DescribeExportTasksResult(const Aws::AmazonWebService
 
 DescribeExportTasksResult& DescribeExportTasksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("exportTasks"))
   {
-    Array<JsonValue> exportTasksJsonList = jsonValue.GetArray("exportTasks");
+    Array<JsonView> exportTasksJsonList = jsonValue.GetArray("exportTasks");
     for(unsigned exportTasksIndex = 0; exportTasksIndex < exportTasksJsonList.GetLength(); ++exportTasksIndex)
     {
       m_exportTasks.push_back(exportTasksJsonList[exportTasksIndex].AsObject());

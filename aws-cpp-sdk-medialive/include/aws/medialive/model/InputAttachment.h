@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     InputAttachment();
-    InputAttachment(const Aws::Utils::Json::JsonValue& jsonValue);
-    InputAttachment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InputAttachment(Aws::Utils::Json::JsonView jsonValue);
+    InputAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

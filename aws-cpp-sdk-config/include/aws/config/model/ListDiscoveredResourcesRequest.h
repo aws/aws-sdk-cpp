@@ -184,21 +184,21 @@ namespace Model
 
     /**
      * <p>The maximum number of resource identifiers returned on each page. The default
-     * is 100. You cannot specify a limit greater than 100. If you specify 0, AWS
+     * is 100. You cannot specify a number greater than 100. If you specify 0, AWS
      * Config uses the default.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of resource identifiers returned on each page. The default
-     * is 100. You cannot specify a limit greater than 100. If you specify 0, AWS
+     * is 100. You cannot specify a number greater than 100. If you specify 0, AWS
      * Config uses the default.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of resource identifiers returned on each page. The default
-     * is 100. You cannot specify a limit greater than 100. If you specify 0, AWS
+     * is 100. You cannot specify a number greater than 100. If you specify 0, AWS
      * Config uses the default.</p>
      */
     inline ListDiscoveredResourcesRequest& WithLimit(int value) { SetLimit(value); return *this;}

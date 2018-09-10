@@ -119,6 +119,42 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline const Aws::String& GetImageArn() const{ return m_imageArn; }
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline void SetImageArn(const Aws::String& value) { m_imageArnHasBeenSet = true; m_imageArn = value; }
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline void SetImageArn(Aws::String&& value) { m_imageArnHasBeenSet = true; m_imageArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline void SetImageArn(const char* value) { m_imageArnHasBeenSet = true; m_imageArn.assign(value); }
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline CreateImageBuilderRequest& WithImageArn(const Aws::String& value) { SetImageArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline CreateImageBuilderRequest& WithImageArn(Aws::String&& value) { SetImageArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the public, private, or shared image to use.</p>
+     */
+    inline CreateImageBuilderRequest& WithImageArn(const char* value) { SetImageArn(value); return *this;}
+
+
+    /**
      * <p>The instance type to use when launching the image builder.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
@@ -348,6 +384,9 @@ namespace Model
 
     Aws::String m_imageName;
     bool m_imageNameHasBeenSet;
+
+    Aws::String m_imageArn;
+    bool m_imageArnHasBeenSet;
 
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;

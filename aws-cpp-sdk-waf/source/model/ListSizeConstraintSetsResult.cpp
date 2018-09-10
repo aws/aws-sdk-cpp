@@ -37,7 +37,7 @@ ListSizeConstraintSetsResult::ListSizeConstraintSetsResult(const Aws::AmazonWebS
 
 ListSizeConstraintSetsResult& ListSizeConstraintSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListSizeConstraintSetsResult& ListSizeConstraintSetsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("SizeConstraintSets"))
   {
-    Array<JsonValue> sizeConstraintSetsJsonList = jsonValue.GetArray("SizeConstraintSets");
+    Array<JsonView> sizeConstraintSetsJsonList = jsonValue.GetArray("SizeConstraintSets");
     for(unsigned sizeConstraintSetsIndex = 0; sizeConstraintSetsIndex < sizeConstraintSetsJsonList.GetLength(); ++sizeConstraintSetsIndex)
     {
       m_sizeConstraintSets.push_back(sizeConstraintSetsJsonList[sizeConstraintSetsIndex].AsObject());

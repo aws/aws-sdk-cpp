@@ -33,13 +33,13 @@ DomainInfo::DomainInfo() :
 {
 }
 
-DomainInfo::DomainInfo(const JsonValue& jsonValue) : 
+DomainInfo::DomainInfo(JsonView jsonValue) : 
     m_domainNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DomainInfo& DomainInfo::operator =(const JsonValue& jsonValue)
+DomainInfo& DomainInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DomainName"))
   {

@@ -99,55 +99,55 @@ namespace Model
     /**
      * <p>Indicates whether the DNS resolution is supported for the VPC. If enabled,
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
-     * the reserved IP address at the base of the VPC network range "plus two" will
-     * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled.</p> <p>You cannot modify
-     * the DNS resolution and DNS hostnames attributes in the same request. Use
-     * separate requests for each attribute.</p>
+     * the reserved IP address at the base of the VPC network range "plus two" succeed.
+     * If disabled, the Amazon provided DNS service in the VPC that resolves public DNS
+     * hostnames to IP addresses is not enabled.</p> <p>You cannot modify the DNS
+     * resolution and DNS hostnames attributes in the same request. Use separate
+     * requests for each attribute.</p>
      */
     inline const AttributeBooleanValue& GetEnableDnsSupport() const{ return m_enableDnsSupport; }
 
     /**
      * <p>Indicates whether the DNS resolution is supported for the VPC. If enabled,
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
-     * the reserved IP address at the base of the VPC network range "plus two" will
-     * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled.</p> <p>You cannot modify
-     * the DNS resolution and DNS hostnames attributes in the same request. Use
-     * separate requests for each attribute.</p>
+     * the reserved IP address at the base of the VPC network range "plus two" succeed.
+     * If disabled, the Amazon provided DNS service in the VPC that resolves public DNS
+     * hostnames to IP addresses is not enabled.</p> <p>You cannot modify the DNS
+     * resolution and DNS hostnames attributes in the same request. Use separate
+     * requests for each attribute.</p>
      */
     inline void SetEnableDnsSupport(const AttributeBooleanValue& value) { m_enableDnsSupportHasBeenSet = true; m_enableDnsSupport = value; }
 
     /**
      * <p>Indicates whether the DNS resolution is supported for the VPC. If enabled,
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
-     * the reserved IP address at the base of the VPC network range "plus two" will
-     * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled.</p> <p>You cannot modify
-     * the DNS resolution and DNS hostnames attributes in the same request. Use
-     * separate requests for each attribute.</p>
+     * the reserved IP address at the base of the VPC network range "plus two" succeed.
+     * If disabled, the Amazon provided DNS service in the VPC that resolves public DNS
+     * hostnames to IP addresses is not enabled.</p> <p>You cannot modify the DNS
+     * resolution and DNS hostnames attributes in the same request. Use separate
+     * requests for each attribute.</p>
      */
     inline void SetEnableDnsSupport(AttributeBooleanValue&& value) { m_enableDnsSupportHasBeenSet = true; m_enableDnsSupport = std::move(value); }
 
     /**
      * <p>Indicates whether the DNS resolution is supported for the VPC. If enabled,
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
-     * the reserved IP address at the base of the VPC network range "plus two" will
-     * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled.</p> <p>You cannot modify
-     * the DNS resolution and DNS hostnames attributes in the same request. Use
-     * separate requests for each attribute.</p>
+     * the reserved IP address at the base of the VPC network range "plus two" succeed.
+     * If disabled, the Amazon provided DNS service in the VPC that resolves public DNS
+     * hostnames to IP addresses is not enabled.</p> <p>You cannot modify the DNS
+     * resolution and DNS hostnames attributes in the same request. Use separate
+     * requests for each attribute.</p>
      */
     inline ModifyVpcAttributeRequest& WithEnableDnsSupport(const AttributeBooleanValue& value) { SetEnableDnsSupport(value); return *this;}
 
     /**
      * <p>Indicates whether the DNS resolution is supported for the VPC. If enabled,
      * queries to the Amazon provided DNS server at the 169.254.169.253 IP address, or
-     * the reserved IP address at the base of the VPC network range "plus two" will
-     * succeed. If disabled, the Amazon provided DNS service in the VPC that resolves
-     * public DNS hostnames to IP addresses is not enabled.</p> <p>You cannot modify
-     * the DNS resolution and DNS hostnames attributes in the same request. Use
-     * separate requests for each attribute.</p>
+     * the reserved IP address at the base of the VPC network range "plus two" succeed.
+     * If disabled, the Amazon provided DNS service in the VPC that resolves public DNS
+     * hostnames to IP addresses is not enabled.</p> <p>You cannot modify the DNS
+     * resolution and DNS hostnames attributes in the same request. Use separate
+     * requests for each attribute.</p>
      */
     inline ModifyVpcAttributeRequest& WithEnableDnsSupport(AttributeBooleanValue&& value) { SetEnableDnsSupport(std::move(value)); return *this;}
 

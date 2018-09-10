@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * Arn of the group certificate authority.
+     * The ARN of the group certificate authority.
      */
     inline const Aws::String& GetGroupCertificateAuthorityArn() const{ return m_groupCertificateAuthorityArn; }
 
     /**
-     * Arn of the group certificate authority.
+     * The ARN of the group certificate authority.
      */
     inline void SetGroupCertificateAuthorityArn(const Aws::String& value) { m_groupCertificateAuthorityArn = value; }
 
     /**
-     * Arn of the group certificate authority.
+     * The ARN of the group certificate authority.
      */
     inline void SetGroupCertificateAuthorityArn(Aws::String&& value) { m_groupCertificateAuthorityArn = std::move(value); }
 
     /**
-     * Arn of the group certificate authority.
+     * The ARN of the group certificate authority.
      */
     inline void SetGroupCertificateAuthorityArn(const char* value) { m_groupCertificateAuthorityArn.assign(value); }
 
     /**
-     * Arn of the group certificate authority.
+     * The ARN of the group certificate authority.
      */
     inline CreateGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(const Aws::String& value) { SetGroupCertificateAuthorityArn(value); return *this;}
 
     /**
-     * Arn of the group certificate authority.
+     * The ARN of the group certificate authority.
      */
     inline CreateGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(Aws::String&& value) { SetGroupCertificateAuthorityArn(std::move(value)); return *this;}
 
     /**
-     * Arn of the group certificate authority.
+     * The ARN of the group certificate authority.
      */
     inline CreateGroupCertificateAuthorityResult& WithGroupCertificateAuthorityArn(const char* value) { SetGroupCertificateAuthorityArn(value); return *this;}
 

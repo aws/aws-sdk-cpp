@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -43,15 +44,15 @@ namespace Model
    * the <a>ListIncomingTypedLinks</a> and <a>ListOutgoingTypedLinks</a> API
    * operations provide typed link specifiers as output. You can also construct a
    * typed link specifier from scratch.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TypedLinkSpecifier">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedLinkSpecifier">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API TypedLinkSpecifier
   {
   public:
     TypedLinkSpecifier();
-    TypedLinkSpecifier(const Aws::Utils::Json::JsonValue& jsonValue);
-    TypedLinkSpecifier& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TypedLinkSpecifier(Aws::Utils::Json::JsonView jsonValue);
+    TypedLinkSpecifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

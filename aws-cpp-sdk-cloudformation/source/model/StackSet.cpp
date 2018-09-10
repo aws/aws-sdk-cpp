@@ -39,7 +39,10 @@ StackSet::StackSet() :
     m_templateBodyHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_stackSetARNHasBeenSet(false),
+    m_administrationRoleARNHasBeenSet(false),
+    m_executionRoleNameHasBeenSet(false)
 {
 }
 
@@ -52,7 +55,10 @@ StackSet::StackSet(const XmlNode& xmlNode) :
     m_templateBodyHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_stackSetARNHasBeenSet(false),
+    m_administrationRoleARNHasBeenSet(false),
+    m_executionRoleNameHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -129,6 +135,24 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode stackSetARNNode = resultNode.FirstChild("StackSetARN");
+    if(!stackSetARNNode.IsNull())
+    {
+      m_stackSetARN = StringUtils::Trim(stackSetARNNode.GetText().c_str());
+      m_stackSetARNHasBeenSet = true;
+    }
+    XmlNode administrationRoleARNNode = resultNode.FirstChild("AdministrationRoleARN");
+    if(!administrationRoleARNNode.IsNull())
+    {
+      m_administrationRoleARN = StringUtils::Trim(administrationRoleARNNode.GetText().c_str());
+      m_administrationRoleARNHasBeenSet = true;
+    }
+    XmlNode executionRoleNameNode = resultNode.FirstChild("ExecutionRoleName");
+    if(!executionRoleNameNode.IsNull())
+    {
+      m_executionRoleName = StringUtils::Trim(executionRoleNameNode.GetText().c_str());
+      m_executionRoleNameHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -192,6 +216,21 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       }
   }
 
+  if(m_stackSetARNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StackSetARN=" << StringUtils::URLEncode(m_stackSetARN.c_str()) << "&";
+  }
+
+  if(m_administrationRoleARNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AdministrationRoleARN=" << StringUtils::URLEncode(m_administrationRoleARN.c_str()) << "&";
+  }
+
+  if(m_executionRoleNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ExecutionRoleName=" << StringUtils::URLEncode(m_executionRoleName.c_str()) << "&";
+  }
+
 }
 
 void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -243,6 +282,18 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
         tagsSs << location <<  ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_stackSetARNHasBeenSet)
+  {
+      oStream << location << ".StackSetARN=" << StringUtils::URLEncode(m_stackSetARN.c_str()) << "&";
+  }
+  if(m_administrationRoleARNHasBeenSet)
+  {
+      oStream << location << ".AdministrationRoleARN=" << StringUtils::URLEncode(m_administrationRoleARN.c_str()) << "&";
+  }
+  if(m_executionRoleNameHasBeenSet)
+  {
+      oStream << location << ".ExecutionRoleName=" << StringUtils::URLEncode(m_executionRoleName.c_str()) << "&";
   }
 }
 

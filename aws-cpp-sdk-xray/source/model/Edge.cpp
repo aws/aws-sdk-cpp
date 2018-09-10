@@ -39,7 +39,7 @@ Edge::Edge() :
 {
 }
 
-Edge::Edge(const JsonValue& jsonValue) : 
+Edge::Edge(JsonView jsonValue) : 
     m_referenceId(0),
     m_referenceIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -51,7 +51,7 @@ Edge::Edge(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Edge& Edge::operator =(const JsonValue& jsonValue)
+Edge& Edge::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReferenceId"))
   {
@@ -83,7 +83,7 @@ Edge& Edge::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ResponseTimeHistogram"))
   {
-    Array<JsonValue> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
+    Array<JsonView> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
     for(unsigned responseTimeHistogramIndex = 0; responseTimeHistogramIndex < responseTimeHistogramJsonList.GetLength(); ++responseTimeHistogramIndex)
     {
       m_responseTimeHistogram.push_back(responseTimeHistogramJsonList[responseTimeHistogramIndex].AsObject());
@@ -93,7 +93,7 @@ Edge& Edge::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Aliases"))
   {
-    Array<JsonValue> aliasesJsonList = jsonValue.GetArray("Aliases");
+    Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
     for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
     {
       m_aliases.push_back(aliasesJsonList[aliasesIndex].AsObject());

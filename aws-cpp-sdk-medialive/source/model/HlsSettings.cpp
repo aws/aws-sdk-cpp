@@ -34,14 +34,14 @@ HlsSettings::HlsSettings() :
 {
 }
 
-HlsSettings::HlsSettings(const JsonValue& jsonValue) : 
+HlsSettings::HlsSettings(JsonView jsonValue) : 
     m_audioOnlyHlsSettingsHasBeenSet(false),
     m_standardHlsSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HlsSettings& HlsSettings::operator =(const JsonValue& jsonValue)
+HlsSettings& HlsSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioOnlyHlsSettings"))
   {

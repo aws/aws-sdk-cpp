@@ -83,7 +83,7 @@ Aws::String GetInstanceMetricDataRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetInstanceMetricDataRequest::GetRequestSpecificHeaders() const

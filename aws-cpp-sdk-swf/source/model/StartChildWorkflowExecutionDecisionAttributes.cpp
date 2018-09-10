@@ -44,7 +44,7 @@ StartChildWorkflowExecutionDecisionAttributes::StartChildWorkflowExecutionDecisi
 {
 }
 
-StartChildWorkflowExecutionDecisionAttributes::StartChildWorkflowExecutionDecisionAttributes(const JsonValue& jsonValue) : 
+StartChildWorkflowExecutionDecisionAttributes::StartChildWorkflowExecutionDecisionAttributes(JsonView jsonValue) : 
     m_workflowTypeHasBeenSet(false),
     m_workflowIdHasBeenSet(false),
     m_controlHasBeenSet(false),
@@ -61,7 +61,7 @@ StartChildWorkflowExecutionDecisionAttributes::StartChildWorkflowExecutionDecisi
   *this = jsonValue;
 }
 
-StartChildWorkflowExecutionDecisionAttributes& StartChildWorkflowExecutionDecisionAttributes::operator =(const JsonValue& jsonValue)
+StartChildWorkflowExecutionDecisionAttributes& StartChildWorkflowExecutionDecisionAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowType"))
   {
@@ -128,7 +128,7 @@ StartChildWorkflowExecutionDecisionAttributes& StartChildWorkflowExecutionDecisi
 
   if(jsonValue.ValueExists("tagList"))
   {
-    Array<JsonValue> tagListJsonList = jsonValue.GetArray("tagList");
+    Array<JsonView> tagListJsonList = jsonValue.GetArray("tagList");
     for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
     {
       m_tagList.push_back(tagListJsonList[tagListIndex].AsString());

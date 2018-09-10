@@ -37,10 +37,10 @@ DescribeDomainControllersResult::DescribeDomainControllersResult(const Aws::Amaz
 
 DescribeDomainControllersResult& DescribeDomainControllersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DomainControllers"))
   {
-    Array<JsonValue> domainControllersJsonList = jsonValue.GetArray("DomainControllers");
+    Array<JsonView> domainControllersJsonList = jsonValue.GetArray("DomainControllers");
     for(unsigned domainControllersIndex = 0; domainControllersIndex < domainControllersJsonList.GetLength(); ++domainControllersIndex)
     {
       m_domainControllers.push_back(domainControllersJsonList[domainControllersIndex].AsObject());

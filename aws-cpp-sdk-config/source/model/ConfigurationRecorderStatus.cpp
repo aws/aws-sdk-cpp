@@ -42,7 +42,7 @@ ConfigurationRecorderStatus::ConfigurationRecorderStatus() :
 {
 }
 
-ConfigurationRecorderStatus::ConfigurationRecorderStatus(const JsonValue& jsonValue) : 
+ConfigurationRecorderStatus::ConfigurationRecorderStatus(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_lastStartTimeHasBeenSet(false),
     m_lastStopTimeHasBeenSet(false),
@@ -57,7 +57,7 @@ ConfigurationRecorderStatus::ConfigurationRecorderStatus(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-ConfigurationRecorderStatus& ConfigurationRecorderStatus::operator =(const JsonValue& jsonValue)
+ConfigurationRecorderStatus& ConfigurationRecorderStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

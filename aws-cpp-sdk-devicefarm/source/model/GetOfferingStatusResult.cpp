@@ -37,10 +37,10 @@ GetOfferingStatusResult::GetOfferingStatusResult(const Aws::AmazonWebServiceResu
 
 GetOfferingStatusResult& GetOfferingStatusResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("current"))
   {
-    Aws::Map<Aws::String, JsonValue> currentJsonMap = jsonValue.GetObject("current").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> currentJsonMap = jsonValue.GetObject("current").GetAllObjects();
     for(auto& currentItem : currentJsonMap)
     {
       m_current[currentItem.first] = currentItem.second.AsObject();
@@ -49,7 +49,7 @@ GetOfferingStatusResult& GetOfferingStatusResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("nextPeriod"))
   {
-    Aws::Map<Aws::String, JsonValue> nextPeriodJsonMap = jsonValue.GetObject("nextPeriod").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> nextPeriodJsonMap = jsonValue.GetObject("nextPeriod").GetAllObjects();
     for(auto& nextPeriodItem : nextPeriodJsonMap)
     {
       m_nextPeriod[nextPeriodItem.first] = nextPeriodItem.second.AsObject();

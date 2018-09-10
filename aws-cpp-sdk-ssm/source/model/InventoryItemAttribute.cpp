@@ -35,7 +35,7 @@ InventoryItemAttribute::InventoryItemAttribute() :
 {
 }
 
-InventoryItemAttribute::InventoryItemAttribute(const JsonValue& jsonValue) : 
+InventoryItemAttribute::InventoryItemAttribute(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_dataType(InventoryAttributeDataType::NOT_SET),
     m_dataTypeHasBeenSet(false)
@@ -43,7 +43,7 @@ InventoryItemAttribute::InventoryItemAttribute(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InventoryItemAttribute& InventoryItemAttribute::operator =(const JsonValue& jsonValue)
+InventoryItemAttribute& InventoryItemAttribute::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

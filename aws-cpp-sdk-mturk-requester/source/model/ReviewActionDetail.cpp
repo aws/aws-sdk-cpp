@@ -41,7 +41,7 @@ ReviewActionDetail::ReviewActionDetail() :
 {
 }
 
-ReviewActionDetail::ReviewActionDetail(const JsonValue& jsonValue) : 
+ReviewActionDetail::ReviewActionDetail(JsonView jsonValue) : 
     m_actionIdHasBeenSet(false),
     m_actionNameHasBeenSet(false),
     m_targetIdHasBeenSet(false),
@@ -55,7 +55,7 @@ ReviewActionDetail::ReviewActionDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ReviewActionDetail& ReviewActionDetail::operator =(const JsonValue& jsonValue)
+ReviewActionDetail& ReviewActionDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ActionId"))
   {

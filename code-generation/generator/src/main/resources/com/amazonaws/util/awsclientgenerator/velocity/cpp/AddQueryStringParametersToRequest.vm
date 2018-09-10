@@ -2,7 +2,7 @@ void ${typeInfo.className}::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
 #foreach($memberEntry in $shape.members.entrySet())
-#if($memberEntry.value.usedForQueryString)
+#if($memberEntry.value.usedForQueryString && !$memberEntry.value.customizedQuery)
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($memberEntry.key))
 #set($spaces = '')
 #if(!$memberEntry.value.required)
@@ -28,7 +28,11 @@ void ${typeInfo.className}::AddQueryStringParameters(URI& uri) const
 #elseif($memberEntry.value.shape.list)
     ${spaces}for(const auto& item : $memberVarName)
     ${spaces}{
+#if($memberEntry.value.shape.listMember.shape.enum)
+    ${spaces}  ss << ${memberEntry.value.shape.listMember.shape.name}Mapper::GetNameFor${memberEntry.value.shape.listMember.shape.name}(item);
+#else
     ${spaces}  ss << item;
+#end
     ${spaces}  uri.AddQueryStringParameter("${memberEntry.value.locationName}", ss.str());
     ${spaces}  ss.str("");
     ${spaces}}
@@ -42,5 +46,24 @@ void ${typeInfo.className}::AddQueryStringParameters(URI& uri) const
 
 #end
 #end
+#end
+#if($shape.customizedQuery)
+    if(!${CppViewHelper.computeMemberVariableName($shape.customizedQuery.shape.name)}.empty())
+    {
+        // only accept customized LogTag which starts with "x-"
+        Aws::Map<Aws::String, Aws::String> collectedLogTags;
+        for(const auto& entry: $CppViewHelper.computeMemberVariableName($shape.customizedQuery.shape.name))
+        {
+            if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-")
+            {
+                collectedLogTags.emplace(entry.first, entry.second);
+            }
+        }
+
+        if (!collectedLogTags.empty())
+        {
+            uri.AddQueryStringParameter(collectedLogTags);
+        }
+    }
 #end
 }

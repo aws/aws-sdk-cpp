@@ -37,7 +37,7 @@ Aws::String GetOfferingStatusRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetOfferingStatusRequest::GetRequestSpecificHeaders() const

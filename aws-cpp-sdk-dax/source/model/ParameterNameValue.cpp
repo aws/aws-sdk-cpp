@@ -34,14 +34,14 @@ ParameterNameValue::ParameterNameValue() :
 {
 }
 
-ParameterNameValue::ParameterNameValue(const JsonValue& jsonValue) : 
+ParameterNameValue::ParameterNameValue(JsonView jsonValue) : 
     m_parameterNameHasBeenSet(false),
     m_parameterValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ParameterNameValue& ParameterNameValue::operator =(const JsonValue& jsonValue)
+ParameterNameValue& ParameterNameValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ParameterName"))
   {

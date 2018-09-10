@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DatabaseMigrationService
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     TableStatistics();
-    TableStatistics(const Aws::Utils::Json::JsonValue& jsonValue);
-    TableStatistics& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TableStatistics(Aws::Utils::Json::JsonView jsonValue);
+    TableStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -476,6 +477,42 @@ namespace Model
      */
     inline TableStatistics& WithValidationState(const char* value) { SetValidationState(value); return *this;}
 
+
+    /**
+     * <p>Additional details about the state of validation.</p>
+     */
+    inline const Aws::String& GetValidationStateDetails() const{ return m_validationStateDetails; }
+
+    /**
+     * <p>Additional details about the state of validation.</p>
+     */
+    inline void SetValidationStateDetails(const Aws::String& value) { m_validationStateDetailsHasBeenSet = true; m_validationStateDetails = value; }
+
+    /**
+     * <p>Additional details about the state of validation.</p>
+     */
+    inline void SetValidationStateDetails(Aws::String&& value) { m_validationStateDetailsHasBeenSet = true; m_validationStateDetails = std::move(value); }
+
+    /**
+     * <p>Additional details about the state of validation.</p>
+     */
+    inline void SetValidationStateDetails(const char* value) { m_validationStateDetailsHasBeenSet = true; m_validationStateDetails.assign(value); }
+
+    /**
+     * <p>Additional details about the state of validation.</p>
+     */
+    inline TableStatistics& WithValidationStateDetails(const Aws::String& value) { SetValidationStateDetails(value); return *this;}
+
+    /**
+     * <p>Additional details about the state of validation.</p>
+     */
+    inline TableStatistics& WithValidationStateDetails(Aws::String&& value) { SetValidationStateDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional details about the state of validation.</p>
+     */
+    inline TableStatistics& WithValidationStateDetails(const char* value) { SetValidationStateDetails(value); return *this;}
+
   private:
 
     Aws::String m_schemaName;
@@ -522,6 +559,9 @@ namespace Model
 
     Aws::String m_validationState;
     bool m_validationStateHasBeenSet;
+
+    Aws::String m_validationStateDetails;
+    bool m_validationStateDetailsHasBeenSet;
   };
 
 } // namespace Model

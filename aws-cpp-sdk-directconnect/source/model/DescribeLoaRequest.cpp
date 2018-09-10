@@ -51,7 +51,7 @@ Aws::String DescribeLoaRequest::SerializePayload() const
    payload.WithString("loaContentType", LoaContentTypeMapper::GetNameForLoaContentType(m_loaContentType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeLoaRequest::GetRequestSpecificHeaders() const

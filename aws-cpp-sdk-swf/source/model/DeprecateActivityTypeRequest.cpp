@@ -44,7 +44,7 @@ Aws::String DeprecateActivityTypeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeprecateActivityTypeRequest::GetRequestSpecificHeaders() const

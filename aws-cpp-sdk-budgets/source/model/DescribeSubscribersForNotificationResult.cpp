@@ -37,10 +37,10 @@ DescribeSubscribersForNotificationResult::DescribeSubscribersForNotificationResu
 
 DescribeSubscribersForNotificationResult& DescribeSubscribersForNotificationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Subscribers"))
   {
-    Array<JsonValue> subscribersJsonList = jsonValue.GetArray("Subscribers");
+    Array<JsonView> subscribersJsonList = jsonValue.GetArray("Subscribers");
     for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
     {
       m_subscribers.push_back(subscribersJsonList[subscribersIndex].AsObject());

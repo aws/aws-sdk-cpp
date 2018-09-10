@@ -34,14 +34,14 @@ FollowUpPrompt::FollowUpPrompt() :
 {
 }
 
-FollowUpPrompt::FollowUpPrompt(const JsonValue& jsonValue) : 
+FollowUpPrompt::FollowUpPrompt(JsonView jsonValue) : 
     m_promptHasBeenSet(false),
     m_rejectionStatementHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-FollowUpPrompt& FollowUpPrompt::operator =(const JsonValue& jsonValue)
+FollowUpPrompt& FollowUpPrompt::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("prompt"))
   {

@@ -37,10 +37,10 @@ DeleteDeploymentGroupResult::DeleteDeploymentGroupResult(const Aws::AmazonWebSer
 
 DeleteDeploymentGroupResult& DeleteDeploymentGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("hooksNotCleanedUp"))
   {
-    Array<JsonValue> hooksNotCleanedUpJsonList = jsonValue.GetArray("hooksNotCleanedUp");
+    Array<JsonView> hooksNotCleanedUpJsonList = jsonValue.GetArray("hooksNotCleanedUp");
     for(unsigned hooksNotCleanedUpIndex = 0; hooksNotCleanedUpIndex < hooksNotCleanedUpJsonList.GetLength(); ++hooksNotCleanedUpIndex)
     {
       m_hooksNotCleanedUp.push_back(hooksNotCleanedUpJsonList[hooksNotCleanedUpIndex].AsObject());

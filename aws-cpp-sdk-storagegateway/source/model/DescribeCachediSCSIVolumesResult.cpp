@@ -37,10 +37,10 @@ DescribeCachediSCSIVolumesResult::DescribeCachediSCSIVolumesResult(const Aws::Am
 
 DescribeCachediSCSIVolumesResult& DescribeCachediSCSIVolumesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CachediSCSIVolumes"))
   {
-    Array<JsonValue> cachediSCSIVolumesJsonList = jsonValue.GetArray("CachediSCSIVolumes");
+    Array<JsonView> cachediSCSIVolumesJsonList = jsonValue.GetArray("CachediSCSIVolumes");
     for(unsigned cachediSCSIVolumesIndex = 0; cachediSCSIVolumesIndex < cachediSCSIVolumesJsonList.GetLength(); ++cachediSCSIVolumesIndex)
     {
       m_cachediSCSIVolumes.push_back(cachediSCSIVolumesJsonList[cachediSCSIVolumesIndex].AsObject());

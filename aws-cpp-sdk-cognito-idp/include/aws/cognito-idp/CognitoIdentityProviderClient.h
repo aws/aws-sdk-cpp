@@ -69,6 +69,7 @@
 #include <aws/cognito-idp/model/GetDeviceResult.h>
 #include <aws/cognito-idp/model/GetGroupResult.h>
 #include <aws/cognito-idp/model/GetIdentityProviderByIdentifierResult.h>
+#include <aws/cognito-idp/model/GetSigningCertificateResult.h>
 #include <aws/cognito-idp/model/GetUICustomizationResult.h>
 #include <aws/cognito-idp/model/GetUserResult.h>
 #include <aws/cognito-idp/model/GetUserAttributeVerificationCodeResult.h>
@@ -127,11 +128,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -209,6 +205,7 @@ namespace Model
         class GetDeviceRequest;
         class GetGroupRequest;
         class GetIdentityProviderByIdentifierRequest;
+        class GetSigningCertificateRequest;
         class GetUICustomizationRequest;
         class GetUserRequest;
         class GetUserAttributeVerificationCodeRequest;
@@ -304,6 +301,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDeviceResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetDeviceOutcome;
         typedef Aws::Utils::Outcome<GetGroupResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetGroupOutcome;
         typedef Aws::Utils::Outcome<GetIdentityProviderByIdentifierResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetIdentityProviderByIdentifierOutcome;
+        typedef Aws::Utils::Outcome<GetSigningCertificateResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetSigningCertificateOutcome;
         typedef Aws::Utils::Outcome<GetUICustomizationResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUICustomizationOutcome;
         typedef Aws::Utils::Outcome<GetUserResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUserOutcome;
         typedef Aws::Utils::Outcome<GetUserAttributeVerificationCodeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> GetUserAttributeVerificationCodeOutcome;
@@ -399,6 +397,7 @@ namespace Model
         typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
         typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
         typedef std::future<GetIdentityProviderByIdentifierOutcome> GetIdentityProviderByIdentifierOutcomeCallable;
+        typedef std::future<GetSigningCertificateOutcome> GetSigningCertificateOutcomeCallable;
         typedef std::future<GetUICustomizationOutcome> GetUICustomizationOutcomeCallable;
         typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
         typedef std::future<GetUserAttributeVerificationCodeOutcome> GetUserAttributeVerificationCodeOutcomeCallable;
@@ -497,6 +496,7 @@ namespace Model
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetDeviceRequest&, const Model::GetDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetIdentityProviderByIdentifierRequest&, const Model::GetIdentityProviderByIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityProviderByIdentifierResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetSigningCertificateRequest&, const Model::GetSigningCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSigningCertificateResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUICustomizationRequest&, const Model::GetUICustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUICustomizationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::GetUserAttributeVerificationCodeRequest&, const Model::GetUserAttributeVerificationCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserAttributeVerificationCodeResponseReceivedHandler;
@@ -566,7 +566,7 @@ namespace Model
 
         virtual ~CognitoIdentityProviderClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "cognito-idp"; }
+        inline virtual const char* GetServiceClientName() const override { return "Cognito Identity Provider"; }
 
 
         /**
@@ -2152,7 +2152,7 @@ namespace Model
 
         /**
          * <p>Client method for returning the configuration information and metadata of the
-         * specified user pool client.</p><p><h3>See Also:</h3>   <a
+         * specified user pool app client.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient">AWS
          * API Reference</a></p>
          */
@@ -2160,7 +2160,7 @@ namespace Model
 
         /**
          * <p>Client method for returning the configuration information and metadata of the
-         * specified user pool client.</p><p><h3>See Also:</h3>   <a
+         * specified user pool app client.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient">AWS
          * API Reference</a></p>
          *
@@ -2170,7 +2170,7 @@ namespace Model
 
         /**
          * <p>Client method for returning the configuration information and metadata of the
-         * specified user pool client.</p><p><h3>See Also:</h3>   <a
+         * specified user pool app client.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPoolClient">AWS
          * API Reference</a></p>
          *
@@ -2382,6 +2382,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetIdentityProviderByIdentifierAsync(const Model::GetIdentityProviderByIdentifierRequest& request, const GetIdentityProviderByIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This method takes a user pool ID, and returns the signing
+         * certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSigningCertificateOutcome GetSigningCertificate(const Model::GetSigningCertificateRequest& request) const;
+
+        /**
+         * <p>This method takes a user pool ID, and returns the signing
+         * certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSigningCertificateOutcomeCallable GetSigningCertificateCallable(const Model::GetSigningCertificateRequest& request) const;
+
+        /**
+         * <p>This method takes a user pool ID, and returns the signing
+         * certificate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSigningCertificateAsync(const Model::GetSigningCertificateRequest& request, const GetSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the UI Customization information for a particular app client's app UI,
@@ -3276,16 +3304,20 @@ namespace Model
         virtual void UpdateUserAttributesAsync(const Model::UpdateUserAttributesRequest& request, const UpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified user pool with the specified attributes.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the specified user pool with the specified attributes. If you don't
+         * provide a value for an attribute, it will be set to the default value. You can
+         * get a list of the current user pool settings with .</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateUserPoolOutcome UpdateUserPool(const Model::UpdateUserPoolRequest& request) const;
 
         /**
-         * <p>Updates the specified user pool with the specified attributes.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the specified user pool with the specified attributes. If you don't
+         * provide a value for an attribute, it will be set to the default value. You can
+         * get a list of the current user pool settings with .</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
          * API Reference</a></p>
          *
@@ -3294,8 +3326,10 @@ namespace Model
         virtual Model::UpdateUserPoolOutcomeCallable UpdateUserPoolCallable(const Model::UpdateUserPoolRequest& request) const;
 
         /**
-         * <p>Updates the specified user pool with the specified attributes.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the specified user pool with the specified attributes. If you don't
+         * provide a value for an attribute, it will be set to the default value. You can
+         * get a list of the current user pool settings with .</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPool">AWS
          * API Reference</a></p>
          *
@@ -3304,16 +3338,20 @@ namespace Model
         virtual void UpdateUserPoolAsync(const Model::UpdateUserPoolRequest& request, const UpdateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows the developer to update the specified user pool client and password
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified user pool app client with the specified attributes. If
+         * you don't provide a value for an attribute, it will be set to the default value.
+         * You can get a list of the current user pool app client settings with
+         * .</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateUserPoolClientOutcome UpdateUserPoolClient(const Model::UpdateUserPoolClientRequest& request) const;
 
         /**
-         * <p>Allows the developer to update the specified user pool client and password
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified user pool app client with the specified attributes. If
+         * you don't provide a value for an attribute, it will be set to the default value.
+         * You can get a list of the current user pool app client settings with
+         * .</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          *
@@ -3322,8 +3360,10 @@ namespace Model
         virtual Model::UpdateUserPoolClientOutcomeCallable UpdateUserPoolClientCallable(const Model::UpdateUserPoolClientRequest& request) const;
 
         /**
-         * <p>Allows the developer to update the specified user pool client and password
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified user pool app client with the specified attributes. If
+         * you don't provide a value for an attribute, it will be set to the default value.
+         * You can get a list of the current user pool app client settings with
+         * .</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          *
@@ -3333,8 +3373,8 @@ namespace Model
 
         /**
          * <p>Use this API to register a user's entered TOTP code and mark the user's
-         * software token MFA status as "verified" if successful,</p><p><h3>See Also:</h3> 
-         * <a
+         * software token MFA status as "verified" if successful. The request takes an
+         * access token or a session string, but not both.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken">AWS
          * API Reference</a></p>
          */
@@ -3342,8 +3382,8 @@ namespace Model
 
         /**
          * <p>Use this API to register a user's entered TOTP code and mark the user's
-         * software token MFA status as "verified" if successful,</p><p><h3>See Also:</h3> 
-         * <a
+         * software token MFA status as "verified" if successful. The request takes an
+         * access token or a session string, but not both.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken">AWS
          * API Reference</a></p>
          *
@@ -3353,8 +3393,8 @@ namespace Model
 
         /**
          * <p>Use this API to register a user's entered TOTP code and mark the user's
-         * software token MFA status as "verified" if successful,</p><p><h3>See Also:</h3> 
-         * <a
+         * software token MFA status as "verified" if successful. The request takes an
+         * access token or a session string, but not both.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken">AWS
          * API Reference</a></p>
          *
@@ -3454,6 +3494,7 @@ namespace Model
         void GetDeviceAsyncHelper(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGroupAsyncHelper(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIdentityProviderByIdentifierAsyncHelper(const Model::GetIdentityProviderByIdentifierRequest& request, const GetIdentityProviderByIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSigningCertificateAsyncHelper(const Model::GetSigningCertificateRequest& request, const GetSigningCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUICustomizationAsyncHelper(const Model::GetUICustomizationRequest& request, const GetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAsyncHelper(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAttributeVerificationCodeAsyncHelper(const Model::GetUserAttributeVerificationCodeRequest& request, const GetUserAttributeVerificationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

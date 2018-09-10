@@ -39,7 +39,7 @@ UICustomizationType::UICustomizationType() :
 {
 }
 
-UICustomizationType::UICustomizationType(const JsonValue& jsonValue) : 
+UICustomizationType::UICustomizationType(JsonView jsonValue) : 
     m_userPoolIdHasBeenSet(false),
     m_clientIdHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
@@ -51,7 +51,7 @@ UICustomizationType::UICustomizationType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UICustomizationType& UICustomizationType::operator =(const JsonValue& jsonValue)
+UICustomizationType& UICustomizationType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UserPoolId"))
   {

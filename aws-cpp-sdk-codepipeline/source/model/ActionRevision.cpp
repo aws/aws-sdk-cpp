@@ -35,7 +35,7 @@ ActionRevision::ActionRevision() :
 {
 }
 
-ActionRevision::ActionRevision(const JsonValue& jsonValue) : 
+ActionRevision::ActionRevision(JsonView jsonValue) : 
     m_revisionIdHasBeenSet(false),
     m_revisionChangeIdHasBeenSet(false),
     m_createdHasBeenSet(false)
@@ -43,7 +43,7 @@ ActionRevision::ActionRevision(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ActionRevision& ActionRevision::operator =(const JsonValue& jsonValue)
+ActionRevision& ActionRevision::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("revisionId"))
   {

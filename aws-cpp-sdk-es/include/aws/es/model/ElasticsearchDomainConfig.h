@@ -21,6 +21,7 @@
 #include <aws/es/model/AccessPoliciesStatus.h>
 #include <aws/es/model/SnapshotOptionsStatus.h>
 #include <aws/es/model/VPCDerivedInfoStatus.h>
+#include <aws/es/model/CognitoOptionsStatus.h>
 #include <aws/es/model/EncryptionAtRestOptionsStatus.h>
 #include <aws/es/model/AdvancedOptionsStatus.h>
 #include <aws/es/model/LogPublishingOptionsStatus.h>
@@ -33,6 +34,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticsearchService
@@ -49,8 +51,8 @@ namespace Model
   {
   public:
     ElasticsearchDomainConfig();
-    ElasticsearchDomainConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    ElasticsearchDomainConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ElasticsearchDomainConfig(Aws::Utils::Json::JsonView jsonValue);
+    ElasticsearchDomainConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -231,6 +233,47 @@ namespace Model
 
 
     /**
+     * <p>The <code>CognitoOptions</code> for the specified domain. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+     */
+    inline const CognitoOptionsStatus& GetCognitoOptions() const{ return m_cognitoOptions; }
+
+    /**
+     * <p>The <code>CognitoOptions</code> for the specified domain. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+     */
+    inline void SetCognitoOptions(const CognitoOptionsStatus& value) { m_cognitoOptionsHasBeenSet = true; m_cognitoOptions = value; }
+
+    /**
+     * <p>The <code>CognitoOptions</code> for the specified domain. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+     */
+    inline void SetCognitoOptions(CognitoOptionsStatus&& value) { m_cognitoOptionsHasBeenSet = true; m_cognitoOptions = std::move(value); }
+
+    /**
+     * <p>The <code>CognitoOptions</code> for the specified domain. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+     */
+    inline ElasticsearchDomainConfig& WithCognitoOptions(const CognitoOptionsStatus& value) { SetCognitoOptions(value); return *this;}
+
+    /**
+     * <p>The <code>CognitoOptions</code> for the specified domain. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
+     */
+    inline ElasticsearchDomainConfig& WithCognitoOptions(CognitoOptionsStatus&& value) { SetCognitoOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch
      * domain.</p>
      */
@@ -341,6 +384,9 @@ namespace Model
 
     VPCDerivedInfoStatus m_vPCOptions;
     bool m_vPCOptionsHasBeenSet;
+
+    CognitoOptionsStatus m_cognitoOptions;
+    bool m_cognitoOptionsHasBeenSet;
 
     EncryptionAtRestOptionsStatus m_encryptionAtRestOptions;
     bool m_encryptionAtRestOptionsHasBeenSet;

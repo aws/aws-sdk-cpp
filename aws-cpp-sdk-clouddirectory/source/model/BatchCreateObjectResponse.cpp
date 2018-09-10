@@ -33,13 +33,13 @@ BatchCreateObjectResponse::BatchCreateObjectResponse() :
 {
 }
 
-BatchCreateObjectResponse::BatchCreateObjectResponse(const JsonValue& jsonValue) : 
+BatchCreateObjectResponse::BatchCreateObjectResponse(JsonView jsonValue) : 
     m_objectIdentifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchCreateObjectResponse& BatchCreateObjectResponse::operator =(const JsonValue& jsonValue)
+BatchCreateObjectResponse& BatchCreateObjectResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ObjectIdentifier"))
   {

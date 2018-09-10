@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServerlessApplicationRepository
@@ -34,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Policy statement applied to the application.<p><h3>See Also:</h3>   <a
+   * <p>Policy statement applied to the application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ApplicationPolicyStatement">AWS
    * API Reference</a></p>
    */
@@ -42,149 +43,141 @@ namespace Model
   {
   public:
     ApplicationPolicyStatement();
-    ApplicationPolicyStatement(const Aws::Utils::Json::JsonValue& jsonValue);
-    ApplicationPolicyStatement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ApplicationPolicyStatement(Aws::Utils::Json::JsonView jsonValue);
+    ApplicationPolicyStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * A list of supported actions:\n\n GetApplication \n \n\n
-     * CreateCloudFormationChangeSet \n \n\n ListApplicationVersions \n \n\n
-     * SearchApplications \n \n\n Deploy (Note: This action enables all other actions
-     * above.)
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
 
     /**
-     * A list of supported actions:\n\n GetApplication \n \n\n
-     * CreateCloudFormationChangeSet \n \n\n ListApplicationVersions \n \n\n
-     * SearchApplications \n \n\n Deploy (Note: This action enables all other actions
-     * above.)
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * A list of supported actions:\n\n GetApplication \n \n\n
-     * CreateCloudFormationChangeSet \n \n\n ListApplicationVersions \n \n\n
-     * SearchApplications \n \n\n Deploy (Note: This action enables all other actions
-     * above.)
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * A list of supported actions:\n\n GetApplication \n \n\n
-     * CreateCloudFormationChangeSet \n \n\n ListApplicationVersions \n \n\n
-     * SearchApplications \n \n\n Deploy (Note: This action enables all other actions
-     * above.)
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline ApplicationPolicyStatement& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
 
     /**
-     * A list of supported actions:\n\n GetApplication \n \n\n
-     * CreateCloudFormationChangeSet \n \n\n ListApplicationVersions \n \n\n
-     * SearchApplications \n \n\n Deploy (Note: This action enables all other actions
-     * above.)
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline ApplicationPolicyStatement& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * A list of supported actions:\n\n GetApplication \n \n\n
-     * CreateCloudFormationChangeSet \n \n\n ListApplicationVersions \n \n\n
-     * SearchApplications \n \n\n Deploy (Note: This action enables all other actions
-     * above.)
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline ApplicationPolicyStatement& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * A list of supported actions:\n\n GetApplication \n \n\n
-     * CreateCloudFormationChangeSet \n \n\n ListApplicationVersions \n \n\n
-     * SearchApplications \n \n\n Deploy (Note: This action enables all other actions
-     * above.)
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline ApplicationPolicyStatement& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
     /**
-     * A list of supported actions:\n\n GetApplication \n \n\n
-     * CreateCloudFormationChangeSet \n \n\n ListApplicationVersions \n \n\n
-     * SearchApplications \n \n\n Deploy (Note: This action enables all other actions
-     * above.)
+     * <p>See <a
+     * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
+     * Permissions</a> for the list of supported actions.</p>
      */
     inline ApplicationPolicyStatement& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
 
     /**
-     * An AWS account ID, or * to make the application public.
+     * <p>An AWS account ID, or * to make the application public.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
 
     /**
-     * An AWS account ID, or * to make the application public.
+     * <p>An AWS account ID, or * to make the application public.</p>
      */
     inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
 
     /**
-     * An AWS account ID, or * to make the application public.
+     * <p>An AWS account ID, or * to make the application public.</p>
      */
     inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
 
     /**
-     * An AWS account ID, or * to make the application public.
+     * <p>An AWS account ID, or * to make the application public.</p>
      */
     inline ApplicationPolicyStatement& WithPrincipals(const Aws::Vector<Aws::String>& value) { SetPrincipals(value); return *this;}
 
     /**
-     * An AWS account ID, or * to make the application public.
+     * <p>An AWS account ID, or * to make the application public.</p>
      */
     inline ApplicationPolicyStatement& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
 
     /**
-     * An AWS account ID, or * to make the application public.
+     * <p>An AWS account ID, or * to make the application public.</p>
      */
     inline ApplicationPolicyStatement& AddPrincipals(const Aws::String& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 
     /**
-     * An AWS account ID, or * to make the application public.
+     * <p>An AWS account ID, or * to make the application public.</p>
      */
     inline ApplicationPolicyStatement& AddPrincipals(Aws::String&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
 
     /**
-     * An AWS account ID, or * to make the application public.
+     * <p>An AWS account ID, or * to make the application public.</p>
      */
     inline ApplicationPolicyStatement& AddPrincipals(const char* value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 
 
     /**
-     * A unique ID for the statement.
+     * <p>A unique ID for the statement.</p>
      */
     inline const Aws::String& GetStatementId() const{ return m_statementId; }
 
     /**
-     * A unique ID for the statement.
+     * <p>A unique ID for the statement.</p>
      */
     inline void SetStatementId(const Aws::String& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
 
     /**
-     * A unique ID for the statement.
+     * <p>A unique ID for the statement.</p>
      */
     inline void SetStatementId(Aws::String&& value) { m_statementIdHasBeenSet = true; m_statementId = std::move(value); }
 
     /**
-     * A unique ID for the statement.
+     * <p>A unique ID for the statement.</p>
      */
     inline void SetStatementId(const char* value) { m_statementIdHasBeenSet = true; m_statementId.assign(value); }
 
     /**
-     * A unique ID for the statement.
+     * <p>A unique ID for the statement.</p>
      */
     inline ApplicationPolicyStatement& WithStatementId(const Aws::String& value) { SetStatementId(value); return *this;}
 
     /**
-     * A unique ID for the statement.
+     * <p>A unique ID for the statement.</p>
      */
     inline ApplicationPolicyStatement& WithStatementId(Aws::String&& value) { SetStatementId(std::move(value)); return *this;}
 
     /**
-     * A unique ID for the statement.
+     * <p>A unique ID for the statement.</p>
      */
     inline ApplicationPolicyStatement& WithStatementId(const char* value) { SetStatementId(value); return *this;}
 

@@ -17,7 +17,9 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appsync/model/AuthenticationType.h>
+#include <aws/appsync/model/LogConfig.h>
 #include <aws/appsync/model/UserPoolConfig.h>
+#include <aws/appsync/model/OpenIDConnectConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -28,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppSync
@@ -44,8 +47,8 @@ namespace Model
   {
   public:
     GraphqlApi();
-    GraphqlApi(const Aws::Utils::Json::JsonValue& jsonValue);
-    GraphqlApi& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GraphqlApi(Aws::Utils::Json::JsonView jsonValue);
+    GraphqlApi& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -148,6 +151,32 @@ namespace Model
 
 
     /**
+     * <p>The Amazon CloudWatch Logs configuration.</p>
+     */
+    inline const LogConfig& GetLogConfig() const{ return m_logConfig; }
+
+    /**
+     * <p>The Amazon CloudWatch Logs configuration.</p>
+     */
+    inline void SetLogConfig(const LogConfig& value) { m_logConfigHasBeenSet = true; m_logConfig = value; }
+
+    /**
+     * <p>The Amazon CloudWatch Logs configuration.</p>
+     */
+    inline void SetLogConfig(LogConfig&& value) { m_logConfigHasBeenSet = true; m_logConfig = std::move(value); }
+
+    /**
+     * <p>The Amazon CloudWatch Logs configuration.</p>
+     */
+    inline GraphqlApi& WithLogConfig(const LogConfig& value) { SetLogConfig(value); return *this;}
+
+    /**
+     * <p>The Amazon CloudWatch Logs configuration.</p>
+     */
+    inline GraphqlApi& WithLogConfig(LogConfig&& value) { SetLogConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon Cognito User Pool configuration.</p>
      */
     inline const UserPoolConfig& GetUserPoolConfig() const{ return m_userPoolConfig; }
@@ -171,6 +200,32 @@ namespace Model
      * <p>The Amazon Cognito User Pool configuration.</p>
      */
     inline GraphqlApi& WithUserPoolConfig(UserPoolConfig&& value) { SetUserPoolConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Open Id Connect configuration.</p>
+     */
+    inline const OpenIDConnectConfig& GetOpenIDConnectConfig() const{ return m_openIDConnectConfig; }
+
+    /**
+     * <p>The Open Id Connect configuration.</p>
+     */
+    inline void SetOpenIDConnectConfig(const OpenIDConnectConfig& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = value; }
+
+    /**
+     * <p>The Open Id Connect configuration.</p>
+     */
+    inline void SetOpenIDConnectConfig(OpenIDConnectConfig&& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = std::move(value); }
+
+    /**
+     * <p>The Open Id Connect configuration.</p>
+     */
+    inline GraphqlApi& WithOpenIDConnectConfig(const OpenIDConnectConfig& value) { SetOpenIDConnectConfig(value); return *this;}
+
+    /**
+     * <p>The Open Id Connect configuration.</p>
+     */
+    inline GraphqlApi& WithOpenIDConnectConfig(OpenIDConnectConfig&& value) { SetOpenIDConnectConfig(std::move(value)); return *this;}
 
 
     /**
@@ -280,8 +335,14 @@ namespace Model
     AuthenticationType m_authenticationType;
     bool m_authenticationTypeHasBeenSet;
 
+    LogConfig m_logConfig;
+    bool m_logConfigHasBeenSet;
+
     UserPoolConfig m_userPoolConfig;
     bool m_userPoolConfigHasBeenSet;
+
+    OpenIDConnectConfig m_openIDConnectConfig;
+    bool m_openIDConnectConfigHasBeenSet;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;

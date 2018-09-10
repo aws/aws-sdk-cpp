@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KinesisVideo
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     StreamInfo();
-    StreamInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    StreamInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StreamInfo(Aws::Utils::Json::JsonView jsonValue);
+    StreamInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

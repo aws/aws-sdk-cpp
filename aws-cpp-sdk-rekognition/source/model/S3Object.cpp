@@ -35,7 +35,7 @@ S3Object::S3Object() :
 {
 }
 
-S3Object::S3Object(const JsonValue& jsonValue) : 
+S3Object::S3Object(JsonView jsonValue) : 
     m_bucketHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false)
@@ -43,7 +43,7 @@ S3Object::S3Object(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-S3Object& S3Object::operator =(const JsonValue& jsonValue)
+S3Object& S3Object::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Bucket"))
   {

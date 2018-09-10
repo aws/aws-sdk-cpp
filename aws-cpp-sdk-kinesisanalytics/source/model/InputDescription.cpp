@@ -41,7 +41,7 @@ InputDescription::InputDescription() :
 {
 }
 
-InputDescription::InputDescription(const JsonValue& jsonValue) : 
+InputDescription::InputDescription(JsonView jsonValue) : 
     m_inputIdHasBeenSet(false),
     m_namePrefixHasBeenSet(false),
     m_inAppStreamNamesHasBeenSet(false),
@@ -55,7 +55,7 @@ InputDescription::InputDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InputDescription& InputDescription::operator =(const JsonValue& jsonValue)
+InputDescription& InputDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InputId"))
   {
@@ -73,7 +73,7 @@ InputDescription& InputDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("InAppStreamNames"))
   {
-    Array<JsonValue> inAppStreamNamesJsonList = jsonValue.GetArray("InAppStreamNames");
+    Array<JsonView> inAppStreamNamesJsonList = jsonValue.GetArray("InAppStreamNames");
     for(unsigned inAppStreamNamesIndex = 0; inAppStreamNamesIndex < inAppStreamNamesJsonList.GetLength(); ++inAppStreamNamesIndex)
     {
       m_inAppStreamNames.push_back(inAppStreamNamesJsonList[inAppStreamNamesIndex].AsString());

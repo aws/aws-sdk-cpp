@@ -41,7 +41,7 @@ Account::Account() :
 {
 }
 
-Account::Account(const JsonValue& jsonValue) : 
+Account::Account(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_emailHasBeenSet(false),
@@ -55,7 +55,7 @@ Account::Account(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Account& Account::operator =(const JsonValue& jsonValue)
+Account& Account::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

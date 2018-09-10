@@ -37,7 +37,7 @@ GetDeploymentGroupResult::GetDeploymentGroupResult(const Aws::AmazonWebServiceRe
 
 GetDeploymentGroupResult& GetDeploymentGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deploymentGroupInfo"))
   {
     m_deploymentGroupInfo = jsonValue.GetObject("deploymentGroupInfo");

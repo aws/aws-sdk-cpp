@@ -124,7 +124,7 @@ Aws::String TransferDomainRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection TransferDomainRequest::GetRequestSpecificHeaders() const

@@ -35,7 +35,7 @@ StateMachineListItem::StateMachineListItem() :
 {
 }
 
-StateMachineListItem::StateMachineListItem(const JsonValue& jsonValue) : 
+StateMachineListItem::StateMachineListItem(JsonView jsonValue) : 
     m_stateMachineArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_creationDateHasBeenSet(false)
@@ -43,7 +43,7 @@ StateMachineListItem::StateMachineListItem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StateMachineListItem& StateMachineListItem::operator =(const JsonValue& jsonValue)
+StateMachineListItem& StateMachineListItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("stateMachineArn"))
   {

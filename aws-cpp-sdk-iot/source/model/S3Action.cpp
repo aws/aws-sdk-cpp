@@ -37,7 +37,7 @@ S3Action::S3Action() :
 {
 }
 
-S3Action::S3Action(const JsonValue& jsonValue) : 
+S3Action::S3Action(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
     m_keyHasBeenSet(false),
@@ -47,7 +47,7 @@ S3Action::S3Action(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-S3Action& S3Action::operator =(const JsonValue& jsonValue)
+S3Action& S3Action::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("roleArn"))
   {

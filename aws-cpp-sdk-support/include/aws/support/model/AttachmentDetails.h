@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Support
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     AttachmentDetails();
-    AttachmentDetails(const Aws::Utils::Json::JsonValue& jsonValue);
-    AttachmentDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AttachmentDetails(Aws::Utils::Json::JsonView jsonValue);
+    AttachmentDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -32,6 +32,7 @@ namespace Aws
 
         static const int REGIONAL_HASH = HashingUtils::HashString("REGIONAL");
         static const int EDGE_HASH = HashingUtils::HashString("EDGE");
+        static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
 
 
         EndpointType GetEndpointTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == EDGE_HASH)
           {
             return EndpointType::EDGE;
+          }
+          else if (hashCode == PRIVATE__HASH)
+          {
+            return EndpointType::PRIVATE_;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "REGIONAL";
           case EndpointType::EDGE:
             return "EDGE";
+          case EndpointType::PRIVATE_:
+            return "PRIVATE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

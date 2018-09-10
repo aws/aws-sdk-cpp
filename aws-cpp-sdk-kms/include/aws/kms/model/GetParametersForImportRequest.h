@@ -132,8 +132,8 @@ namespace Model
 
 
     /**
-     * <p>The algorithm you will use to encrypt the key material before importing it
-     * with <a>ImportKeyMaterial</a>. For more information, see <a
+     * <p>The algorithm you use to encrypt the key material before importing it with
+     * <a>ImportKeyMaterial</a>. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
      * the Key Material</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -141,8 +141,8 @@ namespace Model
     inline const AlgorithmSpec& GetWrappingAlgorithm() const{ return m_wrappingAlgorithm; }
 
     /**
-     * <p>The algorithm you will use to encrypt the key material before importing it
-     * with <a>ImportKeyMaterial</a>. For more information, see <a
+     * <p>The algorithm you use to encrypt the key material before importing it with
+     * <a>ImportKeyMaterial</a>. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
      * the Key Material</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -150,8 +150,8 @@ namespace Model
     inline void SetWrappingAlgorithm(const AlgorithmSpec& value) { m_wrappingAlgorithmHasBeenSet = true; m_wrappingAlgorithm = value; }
 
     /**
-     * <p>The algorithm you will use to encrypt the key material before importing it
-     * with <a>ImportKeyMaterial</a>. For more information, see <a
+     * <p>The algorithm you use to encrypt the key material before importing it with
+     * <a>ImportKeyMaterial</a>. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
      * the Key Material</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -159,8 +159,8 @@ namespace Model
     inline void SetWrappingAlgorithm(AlgorithmSpec&& value) { m_wrappingAlgorithmHasBeenSet = true; m_wrappingAlgorithm = std::move(value); }
 
     /**
-     * <p>The algorithm you will use to encrypt the key material before importing it
-     * with <a>ImportKeyMaterial</a>. For more information, see <a
+     * <p>The algorithm you use to encrypt the key material before importing it with
+     * <a>ImportKeyMaterial</a>. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
      * the Key Material</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -168,8 +168,8 @@ namespace Model
     inline GetParametersForImportRequest& WithWrappingAlgorithm(const AlgorithmSpec& value) { SetWrappingAlgorithm(value); return *this;}
 
     /**
-     * <p>The algorithm you will use to encrypt the key material before importing it
-     * with <a>ImportKeyMaterial</a>. For more information, see <a
+     * <p>The algorithm you use to encrypt the key material before importing it with
+     * <a>ImportKeyMaterial</a>. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
      * the Key Material</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>

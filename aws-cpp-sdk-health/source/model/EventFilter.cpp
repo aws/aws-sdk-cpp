@@ -45,7 +45,7 @@ EventFilter::EventFilter() :
 {
 }
 
-EventFilter::EventFilter(const JsonValue& jsonValue) : 
+EventFilter::EventFilter(JsonView jsonValue) : 
     m_eventArnsHasBeenSet(false),
     m_eventTypeCodesHasBeenSet(false),
     m_servicesHasBeenSet(false),
@@ -63,11 +63,11 @@ EventFilter::EventFilter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EventFilter& EventFilter::operator =(const JsonValue& jsonValue)
+EventFilter& EventFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("eventArns"))
   {
-    Array<JsonValue> eventArnsJsonList = jsonValue.GetArray("eventArns");
+    Array<JsonView> eventArnsJsonList = jsonValue.GetArray("eventArns");
     for(unsigned eventArnsIndex = 0; eventArnsIndex < eventArnsJsonList.GetLength(); ++eventArnsIndex)
     {
       m_eventArns.push_back(eventArnsJsonList[eventArnsIndex].AsString());
@@ -77,7 +77,7 @@ EventFilter& EventFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("eventTypeCodes"))
   {
-    Array<JsonValue> eventTypeCodesJsonList = jsonValue.GetArray("eventTypeCodes");
+    Array<JsonView> eventTypeCodesJsonList = jsonValue.GetArray("eventTypeCodes");
     for(unsigned eventTypeCodesIndex = 0; eventTypeCodesIndex < eventTypeCodesJsonList.GetLength(); ++eventTypeCodesIndex)
     {
       m_eventTypeCodes.push_back(eventTypeCodesJsonList[eventTypeCodesIndex].AsString());
@@ -87,7 +87,7 @@ EventFilter& EventFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("services"))
   {
-    Array<JsonValue> servicesJsonList = jsonValue.GetArray("services");
+    Array<JsonView> servicesJsonList = jsonValue.GetArray("services");
     for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
     {
       m_services.push_back(servicesJsonList[servicesIndex].AsString());
@@ -97,7 +97,7 @@ EventFilter& EventFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("regions"))
   {
-    Array<JsonValue> regionsJsonList = jsonValue.GetArray("regions");
+    Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
     for(unsigned regionsIndex = 0; regionsIndex < regionsJsonList.GetLength(); ++regionsIndex)
     {
       m_regions.push_back(regionsJsonList[regionsIndex].AsString());
@@ -107,7 +107,7 @@ EventFilter& EventFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("availabilityZones"))
   {
-    Array<JsonValue> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
+    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
@@ -117,7 +117,7 @@ EventFilter& EventFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("startTimes"))
   {
-    Array<JsonValue> startTimesJsonList = jsonValue.GetArray("startTimes");
+    Array<JsonView> startTimesJsonList = jsonValue.GetArray("startTimes");
     for(unsigned startTimesIndex = 0; startTimesIndex < startTimesJsonList.GetLength(); ++startTimesIndex)
     {
       m_startTimes.push_back(startTimesJsonList[startTimesIndex].AsObject());
@@ -127,7 +127,7 @@ EventFilter& EventFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("endTimes"))
   {
-    Array<JsonValue> endTimesJsonList = jsonValue.GetArray("endTimes");
+    Array<JsonView> endTimesJsonList = jsonValue.GetArray("endTimes");
     for(unsigned endTimesIndex = 0; endTimesIndex < endTimesJsonList.GetLength(); ++endTimesIndex)
     {
       m_endTimes.push_back(endTimesJsonList[endTimesIndex].AsObject());
@@ -137,7 +137,7 @@ EventFilter& EventFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("lastUpdatedTimes"))
   {
-    Array<JsonValue> lastUpdatedTimesJsonList = jsonValue.GetArray("lastUpdatedTimes");
+    Array<JsonView> lastUpdatedTimesJsonList = jsonValue.GetArray("lastUpdatedTimes");
     for(unsigned lastUpdatedTimesIndex = 0; lastUpdatedTimesIndex < lastUpdatedTimesJsonList.GetLength(); ++lastUpdatedTimesIndex)
     {
       m_lastUpdatedTimes.push_back(lastUpdatedTimesJsonList[lastUpdatedTimesIndex].AsObject());
@@ -147,7 +147,7 @@ EventFilter& EventFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("entityArns"))
   {
-    Array<JsonValue> entityArnsJsonList = jsonValue.GetArray("entityArns");
+    Array<JsonView> entityArnsJsonList = jsonValue.GetArray("entityArns");
     for(unsigned entityArnsIndex = 0; entityArnsIndex < entityArnsJsonList.GetLength(); ++entityArnsIndex)
     {
       m_entityArns.push_back(entityArnsJsonList[entityArnsIndex].AsString());
@@ -157,7 +157,7 @@ EventFilter& EventFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("entityValues"))
   {
-    Array<JsonValue> entityValuesJsonList = jsonValue.GetArray("entityValues");
+    Array<JsonView> entityValuesJsonList = jsonValue.GetArray("entityValues");
     for(unsigned entityValuesIndex = 0; entityValuesIndex < entityValuesJsonList.GetLength(); ++entityValuesIndex)
     {
       m_entityValues.push_back(entityValuesJsonList[entityValuesIndex].AsString());
@@ -167,7 +167,7 @@ EventFilter& EventFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("eventTypeCategories"))
   {
-    Array<JsonValue> eventTypeCategoriesJsonList = jsonValue.GetArray("eventTypeCategories");
+    Array<JsonView> eventTypeCategoriesJsonList = jsonValue.GetArray("eventTypeCategories");
     for(unsigned eventTypeCategoriesIndex = 0; eventTypeCategoriesIndex < eventTypeCategoriesJsonList.GetLength(); ++eventTypeCategoriesIndex)
     {
       m_eventTypeCategories.push_back(EventTypeCategoryMapper::GetEventTypeCategoryForName(eventTypeCategoriesJsonList[eventTypeCategoriesIndex].AsString()));
@@ -177,10 +177,10 @@ EventFilter& EventFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
-      Aws::Map<Aws::String, JsonValue> tagSetJsonMap = tagsJsonList[tagsIndex].GetAllObjects();
+      Aws::Map<Aws::String, JsonView> tagSetJsonMap = tagsJsonList[tagsIndex].GetAllObjects();
       Aws::Map<Aws::String, Aws::String> tagSetMap;
       for(auto& tagSetItem : tagSetJsonMap)
       {
@@ -193,7 +193,7 @@ EventFilter& EventFilter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("eventStatusCodes"))
   {
-    Array<JsonValue> eventStatusCodesJsonList = jsonValue.GetArray("eventStatusCodes");
+    Array<JsonView> eventStatusCodesJsonList = jsonValue.GetArray("eventStatusCodes");
     for(unsigned eventStatusCodesIndex = 0; eventStatusCodesIndex < eventStatusCodesJsonList.GetLength(); ++eventStatusCodesIndex)
     {
       m_eventStatusCodes.push_back(EventStatusCodeMapper::GetEventStatusCodeForName(eventStatusCodesJsonList[eventStatusCodesIndex].AsString()));

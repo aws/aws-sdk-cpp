@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -37,15 +38,15 @@ namespace Model
   /**
    * <p>Directory structure that includes the directory name and directory
    * ARN.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/Directory">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/Directory">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API Directory
   {
   public:
     Directory();
-    Directory(const Aws::Utils::Json::JsonValue& jsonValue);
-    Directory& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Directory(Aws::Utils::Json::JsonView jsonValue);
+    Directory& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

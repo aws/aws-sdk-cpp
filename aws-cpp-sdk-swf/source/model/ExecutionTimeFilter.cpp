@@ -34,14 +34,14 @@ ExecutionTimeFilter::ExecutionTimeFilter() :
 {
 }
 
-ExecutionTimeFilter::ExecutionTimeFilter(const JsonValue& jsonValue) : 
+ExecutionTimeFilter::ExecutionTimeFilter(JsonView jsonValue) : 
     m_oldestDateHasBeenSet(false),
     m_latestDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ExecutionTimeFilter& ExecutionTimeFilter::operator =(const JsonValue& jsonValue)
+ExecutionTimeFilter& ExecutionTimeFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("oldestDate"))
   {

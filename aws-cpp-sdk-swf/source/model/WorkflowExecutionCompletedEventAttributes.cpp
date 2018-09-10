@@ -35,7 +35,7 @@ WorkflowExecutionCompletedEventAttributes::WorkflowExecutionCompletedEventAttrib
 {
 }
 
-WorkflowExecutionCompletedEventAttributes::WorkflowExecutionCompletedEventAttributes(const JsonValue& jsonValue) : 
+WorkflowExecutionCompletedEventAttributes::WorkflowExecutionCompletedEventAttributes(JsonView jsonValue) : 
     m_resultHasBeenSet(false),
     m_decisionTaskCompletedEventId(0),
     m_decisionTaskCompletedEventIdHasBeenSet(false)
@@ -43,7 +43,7 @@ WorkflowExecutionCompletedEventAttributes::WorkflowExecutionCompletedEventAttrib
   *this = jsonValue;
 }
 
-WorkflowExecutionCompletedEventAttributes& WorkflowExecutionCompletedEventAttributes::operator =(const JsonValue& jsonValue)
+WorkflowExecutionCompletedEventAttributes& WorkflowExecutionCompletedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("result"))
   {

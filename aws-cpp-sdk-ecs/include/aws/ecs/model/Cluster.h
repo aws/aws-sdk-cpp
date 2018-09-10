@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -46,14 +47,14 @@ namespace Model
   {
   public:
     Cluster();
-    Cluster(const Aws::Utils::Json::JsonValue& jsonValue);
-    Cluster& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Cluster(Aws::Utils::Json::JsonView jsonValue);
+    Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the cluster,
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
      * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i>
@@ -63,7 +64,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the cluster,
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
      * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i>
@@ -73,7 +74,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the cluster,
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
      * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i>
@@ -83,7 +84,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the cluster,
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
      * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i>
@@ -93,7 +94,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the cluster,
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
      * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i>
@@ -103,7 +104,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the cluster,
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
      * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i>
@@ -113,7 +114,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the cluster,
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
      * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
      * then the cluster name. For example,
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i>
@@ -216,17 +217,23 @@ namespace Model
 
 
     /**
-     * <p>The number of container instances registered into the cluster.</p>
+     * <p>The number of container instances registered into the cluster. This includes
+     * container instances in both <code>ACTIVE</code> and <code>DRAINING</code>
+     * status.</p>
      */
     inline int GetRegisteredContainerInstancesCount() const{ return m_registeredContainerInstancesCount; }
 
     /**
-     * <p>The number of container instances registered into the cluster.</p>
+     * <p>The number of container instances registered into the cluster. This includes
+     * container instances in both <code>ACTIVE</code> and <code>DRAINING</code>
+     * status.</p>
      */
     inline void SetRegisteredContainerInstancesCount(int value) { m_registeredContainerInstancesCountHasBeenSet = true; m_registeredContainerInstancesCount = value; }
 
     /**
-     * <p>The number of container instances registered into the cluster.</p>
+     * <p>The number of container instances registered into the cluster. This includes
+     * container instances in both <code>ACTIVE</code> and <code>DRAINING</code>
+     * status.</p>
      */
     inline Cluster& WithRegisteredContainerInstancesCount(int value) { SetRegisteredContainerInstancesCount(value); return *this;}
 

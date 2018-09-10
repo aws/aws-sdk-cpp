@@ -36,7 +36,7 @@ S3DataSpec::S3DataSpec() :
 {
 }
 
-S3DataSpec::S3DataSpec(const JsonValue& jsonValue) : 
+S3DataSpec::S3DataSpec(JsonView jsonValue) : 
     m_dataLocationS3HasBeenSet(false),
     m_dataRearrangementHasBeenSet(false),
     m_dataSchemaHasBeenSet(false),
@@ -45,7 +45,7 @@ S3DataSpec::S3DataSpec(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-S3DataSpec& S3DataSpec::operator =(const JsonValue& jsonValue)
+S3DataSpec& S3DataSpec::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DataLocationS3"))
   {

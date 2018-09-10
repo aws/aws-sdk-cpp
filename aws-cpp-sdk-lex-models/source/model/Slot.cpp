@@ -43,7 +43,7 @@ Slot::Slot() :
 {
 }
 
-Slot::Slot(const JsonValue& jsonValue) : 
+Slot::Slot(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_slotConstraint(SlotConstraint::NOT_SET),
@@ -59,7 +59,7 @@ Slot::Slot(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Slot& Slot::operator =(const JsonValue& jsonValue)
+Slot& Slot::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -112,7 +112,7 @@ Slot& Slot::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("sampleUtterances"))
   {
-    Array<JsonValue> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
+    Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
     for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
     {
       m_sampleUtterances.push_back(sampleUtterancesJsonList[sampleUtterancesIndex].AsString());

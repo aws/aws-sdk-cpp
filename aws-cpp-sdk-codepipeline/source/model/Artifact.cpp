@@ -35,7 +35,7 @@ Artifact::Artifact() :
 {
 }
 
-Artifact::Artifact(const JsonValue& jsonValue) : 
+Artifact::Artifact(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_revisionHasBeenSet(false),
     m_locationHasBeenSet(false)
@@ -43,7 +43,7 @@ Artifact::Artifact(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Artifact& Artifact::operator =(const JsonValue& jsonValue)
+Artifact& Artifact::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

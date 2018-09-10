@@ -187,58 +187,58 @@ namespace Model
 
 
     /**
-     * <p>The mapping template to be used for requests.</p> <p>A resolver use a request
-     * mapping template to convert a GraphQL expression into a format that a data
-     * source can understand. Mapping templates are written in Apache Velocity Template
-     * Language (VTL).</p>
+     * <p>The mapping template to be used for requests.</p> <p>A resolver uses a
+     * request mapping template to convert a GraphQL expression into a format that a
+     * data source can understand. Mapping templates are written in Apache Velocity
+     * Template Language (VTL).</p>
      */
     inline const Aws::String& GetRequestMappingTemplate() const{ return m_requestMappingTemplate; }
 
     /**
-     * <p>The mapping template to be used for requests.</p> <p>A resolver use a request
-     * mapping template to convert a GraphQL expression into a format that a data
-     * source can understand. Mapping templates are written in Apache Velocity Template
-     * Language (VTL).</p>
+     * <p>The mapping template to be used for requests.</p> <p>A resolver uses a
+     * request mapping template to convert a GraphQL expression into a format that a
+     * data source can understand. Mapping templates are written in Apache Velocity
+     * Template Language (VTL).</p>
      */
     inline void SetRequestMappingTemplate(const Aws::String& value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate = value; }
 
     /**
-     * <p>The mapping template to be used for requests.</p> <p>A resolver use a request
-     * mapping template to convert a GraphQL expression into a format that a data
-     * source can understand. Mapping templates are written in Apache Velocity Template
-     * Language (VTL).</p>
+     * <p>The mapping template to be used for requests.</p> <p>A resolver uses a
+     * request mapping template to convert a GraphQL expression into a format that a
+     * data source can understand. Mapping templates are written in Apache Velocity
+     * Template Language (VTL).</p>
      */
     inline void SetRequestMappingTemplate(Aws::String&& value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate = std::move(value); }
 
     /**
-     * <p>The mapping template to be used for requests.</p> <p>A resolver use a request
-     * mapping template to convert a GraphQL expression into a format that a data
-     * source can understand. Mapping templates are written in Apache Velocity Template
-     * Language (VTL).</p>
+     * <p>The mapping template to be used for requests.</p> <p>A resolver uses a
+     * request mapping template to convert a GraphQL expression into a format that a
+     * data source can understand. Mapping templates are written in Apache Velocity
+     * Template Language (VTL).</p>
      */
     inline void SetRequestMappingTemplate(const char* value) { m_requestMappingTemplateHasBeenSet = true; m_requestMappingTemplate.assign(value); }
 
     /**
-     * <p>The mapping template to be used for requests.</p> <p>A resolver use a request
-     * mapping template to convert a GraphQL expression into a format that a data
-     * source can understand. Mapping templates are written in Apache Velocity Template
-     * Language (VTL).</p>
+     * <p>The mapping template to be used for requests.</p> <p>A resolver uses a
+     * request mapping template to convert a GraphQL expression into a format that a
+     * data source can understand. Mapping templates are written in Apache Velocity
+     * Template Language (VTL).</p>
      */
     inline CreateResolverRequest& WithRequestMappingTemplate(const Aws::String& value) { SetRequestMappingTemplate(value); return *this;}
 
     /**
-     * <p>The mapping template to be used for requests.</p> <p>A resolver use a request
-     * mapping template to convert a GraphQL expression into a format that a data
-     * source can understand. Mapping templates are written in Apache Velocity Template
-     * Language (VTL).</p>
+     * <p>The mapping template to be used for requests.</p> <p>A resolver uses a
+     * request mapping template to convert a GraphQL expression into a format that a
+     * data source can understand. Mapping templates are written in Apache Velocity
+     * Template Language (VTL).</p>
      */
     inline CreateResolverRequest& WithRequestMappingTemplate(Aws::String&& value) { SetRequestMappingTemplate(std::move(value)); return *this;}
 
     /**
-     * <p>The mapping template to be used for requests.</p> <p>A resolver use a request
-     * mapping template to convert a GraphQL expression into a format that a data
-     * source can understand. Mapping templates are written in Apache Velocity Template
-     * Language (VTL).</p>
+     * <p>The mapping template to be used for requests.</p> <p>A resolver uses a
+     * request mapping template to convert a GraphQL expression into a format that a
+     * data source can understand. Mapping templates are written in Apache Velocity
+     * Template Language (VTL).</p>
      */
     inline CreateResolverRequest& WithRequestMappingTemplate(const char* value) { SetRequestMappingTemplate(value); return *this;}
 

@@ -44,7 +44,7 @@ Aws::String ListInstanceGroupsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListInstanceGroupsRequest::GetRequestSpecificHeaders() const

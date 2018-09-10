@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -36,15 +37,15 @@ namespace Model
    * <p>Detaches a typed link from a specified source and target object inside a
    * <a>BatchRead</a> operation. For more information, see <a>DetachTypedLink</a> and
    * <a>BatchReadRequest$Operations</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchDetachTypedLink">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchDetachTypedLink">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchDetachTypedLink
   {
   public:
     BatchDetachTypedLink();
-    BatchDetachTypedLink(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchDetachTypedLink& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchDetachTypedLink(Aws::Utils::Json::JsonView jsonValue);
+    BatchDetachTypedLink& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

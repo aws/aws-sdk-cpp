@@ -34,14 +34,14 @@ SccDestinationSettings::SccDestinationSettings() :
 {
 }
 
-SccDestinationSettings::SccDestinationSettings(const JsonValue& jsonValue) : 
+SccDestinationSettings::SccDestinationSettings(JsonView jsonValue) : 
     m_framerate(SccDestinationFramerate::NOT_SET),
     m_framerateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SccDestinationSettings& SccDestinationSettings::operator =(const JsonValue& jsonValue)
+SccDestinationSettings& SccDestinationSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("framerate"))
   {

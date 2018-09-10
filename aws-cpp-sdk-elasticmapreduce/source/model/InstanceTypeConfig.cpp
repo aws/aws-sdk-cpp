@@ -40,7 +40,7 @@ InstanceTypeConfig::InstanceTypeConfig() :
 {
 }
 
-InstanceTypeConfig::InstanceTypeConfig(const JsonValue& jsonValue) : 
+InstanceTypeConfig::InstanceTypeConfig(JsonView jsonValue) : 
     m_instanceTypeHasBeenSet(false),
     m_weightedCapacity(0),
     m_weightedCapacityHasBeenSet(false),
@@ -53,7 +53,7 @@ InstanceTypeConfig::InstanceTypeConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceTypeConfig& InstanceTypeConfig::operator =(const JsonValue& jsonValue)
+InstanceTypeConfig& InstanceTypeConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceType"))
   {
@@ -92,7 +92,7 @@ InstanceTypeConfig& InstanceTypeConfig::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Configurations"))
   {
-    Array<JsonValue> configurationsJsonList = jsonValue.GetArray("Configurations");
+    Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());

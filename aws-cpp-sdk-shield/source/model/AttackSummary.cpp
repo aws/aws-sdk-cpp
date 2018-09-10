@@ -37,7 +37,7 @@ AttackSummary::AttackSummary() :
 {
 }
 
-AttackSummary::AttackSummary(const JsonValue& jsonValue) : 
+AttackSummary::AttackSummary(JsonView jsonValue) : 
     m_attackIdHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -47,7 +47,7 @@ AttackSummary::AttackSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AttackSummary& AttackSummary::operator =(const JsonValue& jsonValue)
+AttackSummary& AttackSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttackId"))
   {
@@ -79,7 +79,7 @@ AttackSummary& AttackSummary::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AttackVectors"))
   {
-    Array<JsonValue> attackVectorsJsonList = jsonValue.GetArray("AttackVectors");
+    Array<JsonView> attackVectorsJsonList = jsonValue.GetArray("AttackVectors");
     for(unsigned attackVectorsIndex = 0; attackVectorsIndex < attackVectorsJsonList.GetLength(); ++attackVectorsIndex)
     {
       m_attackVectors.push_back(attackVectorsJsonList[attackVectorsIndex].AsObject());

@@ -51,7 +51,7 @@ Aws::String GetParametersForImportRequest::SerializePayload() const
    payload.WithString("WrappingKeySpec", WrappingKeySpecMapper::GetNameForWrappingKeySpec(m_wrappingKeySpec));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetParametersForImportRequest::GetRequestSpecificHeaders() const

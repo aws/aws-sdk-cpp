@@ -34,14 +34,14 @@ IPSetSummary::IPSetSummary() :
 {
 }
 
-IPSetSummary::IPSetSummary(const JsonValue& jsonValue) : 
+IPSetSummary::IPSetSummary(JsonView jsonValue) : 
     m_iPSetIdHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-IPSetSummary& IPSetSummary::operator =(const JsonValue& jsonValue)
+IPSetSummary& IPSetSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IPSetId"))
   {

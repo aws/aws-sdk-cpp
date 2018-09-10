@@ -37,10 +37,10 @@ GetApiKeysResult::GetApiKeysResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 GetApiKeysResult& GetApiKeysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("warnings"))
   {
-    Array<JsonValue> warningsJsonList = jsonValue.GetArray("warnings");
+    Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
@@ -55,7 +55,7 @@ GetApiKeysResult& GetApiKeysResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("item"))
   {
-    Array<JsonValue> itemJsonList = jsonValue.GetArray("item");
+    Array<JsonView> itemJsonList = jsonValue.GetArray("item");
     for(unsigned itemIndex = 0; itemIndex < itemJsonList.GetLength(); ++itemIndex)
     {
       m_items.push_back(itemJsonList[itemIndex].AsObject());

@@ -35,7 +35,7 @@ GlobalSecondaryIndexUpdate::GlobalSecondaryIndexUpdate() :
 {
 }
 
-GlobalSecondaryIndexUpdate::GlobalSecondaryIndexUpdate(const JsonValue& jsonValue) : 
+GlobalSecondaryIndexUpdate::GlobalSecondaryIndexUpdate(JsonView jsonValue) : 
     m_updateHasBeenSet(false),
     m_createHasBeenSet(false),
     m_deleteHasBeenSet(false)
@@ -43,7 +43,7 @@ GlobalSecondaryIndexUpdate::GlobalSecondaryIndexUpdate(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-GlobalSecondaryIndexUpdate& GlobalSecondaryIndexUpdate::operator =(const JsonValue& jsonValue)
+GlobalSecondaryIndexUpdate& GlobalSecondaryIndexUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Update"))
   {

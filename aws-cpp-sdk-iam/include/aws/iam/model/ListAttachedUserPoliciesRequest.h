@@ -51,7 +51,7 @@ namespace Model
      * for.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
@@ -60,7 +60,7 @@ namespace Model
      * for.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
@@ -69,7 +69,7 @@ namespace Model
      * for.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
@@ -78,7 +78,7 @@ namespace Model
      * for.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
@@ -87,7 +87,7 @@ namespace Model
      * for.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListAttachedUserPoliciesRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
@@ -96,7 +96,7 @@ namespace Model
      * for.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListAttachedUserPoliciesRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
@@ -105,7 +105,7 @@ namespace Model
      * for.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-</p>
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline ListAttachedUserPoliciesRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -113,77 +113,84 @@ namespace Model
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline const Aws::String& GetPathPrefix() const{ return m_pathPrefix; }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline void SetPathPrefix(const Aws::String& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = std::move(value); }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline void SetPathPrefix(const char* value) { m_pathPrefixHasBeenSet = true; m_pathPrefix.assign(value); }
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline ListAttachedUserPoliciesRequest& WithPathPrefix(const Aws::String& value) { SetPathPrefix(value); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline ListAttachedUserPoliciesRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(std::move(value)); return *this;}
 
     /**
      * <p>The path prefix for filtering the results. This parameter is optional. If it
      * is not included, it defaults to a slash (/), listing all policies.</p> <p>This
-     * paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
-     * itself or a string that must begin and end with forward slashes, containing any
-     * ASCII character from the ! (\u0021) thru the DEL character (\u007F), including
-     * most punctuation characters, digits, and upper and lowercased letters.</p>
+     * itself or a string that must begin and end with forward slashes. In addition, it
+     * can contain any ASCII character from the ! (\u0021) through the DEL character
+     * (\u007F), including most punctuation characters, digits, and upper and
+     * lowercased letters.</p>
      */
     inline ListAttachedUserPoliciesRequest& WithPathPrefix(const char* value) { SetPathPrefix(value); return *this;}
 

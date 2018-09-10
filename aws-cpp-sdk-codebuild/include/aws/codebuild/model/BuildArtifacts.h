@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeBuild
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     BuildArtifacts();
-    BuildArtifacts(const Aws::Utils::Json::JsonValue& jsonValue);
-    BuildArtifacts& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BuildArtifacts(Aws::Utils::Json::JsonView jsonValue);
+    BuildArtifacts& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -195,6 +196,86 @@ namespace Model
      */
     inline BuildArtifacts& WithMd5sum(const char* value) { SetMd5sum(value); return *this;}
 
+
+    /**
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
+    inline bool GetOverrideArtifactName() const{ return m_overrideArtifactName; }
+
+    /**
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
+    inline void SetOverrideArtifactName(bool value) { m_overrideArtifactNameHasBeenSet = true; m_overrideArtifactName = value; }
+
+    /**
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
+    inline BuildArtifacts& WithOverrideArtifactName(bool value) { SetOverrideArtifactName(value); return *this;}
+
+
+    /**
+     * <p> Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     */
+    inline bool GetEncryptionDisabled() const{ return m_encryptionDisabled; }
+
+    /**
+     * <p> Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     */
+    inline void SetEncryptionDisabled(bool value) { m_encryptionDisabledHasBeenSet = true; m_encryptionDisabled = value; }
+
+    /**
+     * <p> Information that tells you if encryption for build artifacts is disabled.
+     * </p>
+     */
+    inline BuildArtifacts& WithEncryptionDisabled(bool value) { SetEncryptionDisabled(value); return *this;}
+
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline const Aws::String& GetArtifactIdentifier() const{ return m_artifactIdentifier; }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline void SetArtifactIdentifier(const Aws::String& value) { m_artifactIdentifierHasBeenSet = true; m_artifactIdentifier = value; }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline void SetArtifactIdentifier(Aws::String&& value) { m_artifactIdentifierHasBeenSet = true; m_artifactIdentifier = std::move(value); }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline void SetArtifactIdentifier(const char* value) { m_artifactIdentifierHasBeenSet = true; m_artifactIdentifier.assign(value); }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline BuildArtifacts& WithArtifactIdentifier(const Aws::String& value) { SetArtifactIdentifier(value); return *this;}
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline BuildArtifacts& WithArtifactIdentifier(Aws::String&& value) { SetArtifactIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline BuildArtifacts& WithArtifactIdentifier(const char* value) { SetArtifactIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_location;
@@ -205,6 +286,15 @@ namespace Model
 
     Aws::String m_md5sum;
     bool m_md5sumHasBeenSet;
+
+    bool m_overrideArtifactName;
+    bool m_overrideArtifactNameHasBeenSet;
+
+    bool m_encryptionDisabled;
+    bool m_encryptionDisabledHasBeenSet;
+
+    Aws::String m_artifactIdentifier;
+    bool m_artifactIdentifierHasBeenSet;
   };
 
 } // namespace Model

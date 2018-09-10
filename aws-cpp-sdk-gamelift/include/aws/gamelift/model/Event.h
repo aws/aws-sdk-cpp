@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     Event();
-    Event(const Aws::Utils::Json::JsonValue& jsonValue);
-    Event& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Event(Aws::Utils::Json::JsonView jsonValue);
+    Event& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -125,14 +126,13 @@ namespace Model
 
     /**
      * <p>Type of event being logged. The following events are currently in use:</p>
-     * <p> <b>General events:</b> </p> <ul> <li> <p> GENERIC_EVENT -- An unspecified
-     * event has occurred.</p> </li> </ul> <p> <b>Fleet creation events:</b> </p> <ul>
-     * <li> <p>FLEET_CREATED -- A fleet record was successfully created with a status
-     * of <code>NEW</code>. Event messaging includes the fleet ID.</p> </li> <li>
-     * <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to
-     * <code>DOWNLOADING</code>. The compressed build has started downloading to a
-     * fleet instance for installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED
-     * -- The build failed to download to the fleet instance.</p> </li> <li>
+     * <p> <b>Fleet creation events:</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet
+     * record was successfully created with a status of <code>NEW</code>. Event
+     * messaging includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING --
+     * Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The
+     * compressed build has started downloading to a fleet instance for
+     * installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build
+     * failed to download to the fleet instance.</p> </li> <li>
      * <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully
      * downloaded to an instance, and the build files are now being extracted from the
      * uploaded build and saved to an instance. Failure at this stage prevents a fleet
@@ -181,27 +181,29 @@ namespace Model
      * account. For more information on VPC peering failures, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
-     * been successfully deleted.</p> </li> </ul> <p> <b>Other fleet events:</b> </p>
-     * <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's capacity
-     * settings (desired instances, minimum/maximum scaling limits). Event messaging
-     * includes the new capacity settings.</p> </li> <li>
+     * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
+     * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
+     * with a two-minute notification.</p> </li> </ul> <p> <b>Other fleet events:</b>
+     * </p> <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's
+     * capacity settings (desired instances, minimum/maximum scaling limits). Event
+     * messaging includes the new capacity settings.</p> </li> <li>
      * <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED -- A change was made to the
      * fleet's game session protection policy setting. Event messaging includes both
      * the old and new policy setting. </p> </li> <li> <p>FLEET_DELETED -- A request to
-     * delete a fleet was initiated.</p> </li> </ul>
+     * delete a fleet was initiated.</p> </li> <li> <p> GENERIC_EVENT -- An unspecified
+     * event has occurred.</p> </li> </ul>
      */
     inline const EventCode& GetEventCode() const{ return m_eventCode; }
 
     /**
      * <p>Type of event being logged. The following events are currently in use:</p>
-     * <p> <b>General events:</b> </p> <ul> <li> <p> GENERIC_EVENT -- An unspecified
-     * event has occurred.</p> </li> </ul> <p> <b>Fleet creation events:</b> </p> <ul>
-     * <li> <p>FLEET_CREATED -- A fleet record was successfully created with a status
-     * of <code>NEW</code>. Event messaging includes the fleet ID.</p> </li> <li>
-     * <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to
-     * <code>DOWNLOADING</code>. The compressed build has started downloading to a
-     * fleet instance for installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED
-     * -- The build failed to download to the fleet instance.</p> </li> <li>
+     * <p> <b>Fleet creation events:</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet
+     * record was successfully created with a status of <code>NEW</code>. Event
+     * messaging includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING --
+     * Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The
+     * compressed build has started downloading to a fleet instance for
+     * installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build
+     * failed to download to the fleet instance.</p> </li> <li>
      * <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully
      * downloaded to an instance, and the build files are now being extracted from the
      * uploaded build and saved to an instance. Failure at this stage prevents a fleet
@@ -250,27 +252,29 @@ namespace Model
      * account. For more information on VPC peering failures, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
-     * been successfully deleted.</p> </li> </ul> <p> <b>Other fleet events:</b> </p>
-     * <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's capacity
-     * settings (desired instances, minimum/maximum scaling limits). Event messaging
-     * includes the new capacity settings.</p> </li> <li>
+     * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
+     * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
+     * with a two-minute notification.</p> </li> </ul> <p> <b>Other fleet events:</b>
+     * </p> <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's
+     * capacity settings (desired instances, minimum/maximum scaling limits). Event
+     * messaging includes the new capacity settings.</p> </li> <li>
      * <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED -- A change was made to the
      * fleet's game session protection policy setting. Event messaging includes both
      * the old and new policy setting. </p> </li> <li> <p>FLEET_DELETED -- A request to
-     * delete a fleet was initiated.</p> </li> </ul>
+     * delete a fleet was initiated.</p> </li> <li> <p> GENERIC_EVENT -- An unspecified
+     * event has occurred.</p> </li> </ul>
      */
     inline void SetEventCode(const EventCode& value) { m_eventCodeHasBeenSet = true; m_eventCode = value; }
 
     /**
      * <p>Type of event being logged. The following events are currently in use:</p>
-     * <p> <b>General events:</b> </p> <ul> <li> <p> GENERIC_EVENT -- An unspecified
-     * event has occurred.</p> </li> </ul> <p> <b>Fleet creation events:</b> </p> <ul>
-     * <li> <p>FLEET_CREATED -- A fleet record was successfully created with a status
-     * of <code>NEW</code>. Event messaging includes the fleet ID.</p> </li> <li>
-     * <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to
-     * <code>DOWNLOADING</code>. The compressed build has started downloading to a
-     * fleet instance for installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED
-     * -- The build failed to download to the fleet instance.</p> </li> <li>
+     * <p> <b>Fleet creation events:</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet
+     * record was successfully created with a status of <code>NEW</code>. Event
+     * messaging includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING --
+     * Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The
+     * compressed build has started downloading to a fleet instance for
+     * installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build
+     * failed to download to the fleet instance.</p> </li> <li>
      * <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully
      * downloaded to an instance, and the build files are now being extracted from the
      * uploaded build and saved to an instance. Failure at this stage prevents a fleet
@@ -319,27 +323,29 @@ namespace Model
      * account. For more information on VPC peering failures, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
-     * been successfully deleted.</p> </li> </ul> <p> <b>Other fleet events:</b> </p>
-     * <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's capacity
-     * settings (desired instances, minimum/maximum scaling limits). Event messaging
-     * includes the new capacity settings.</p> </li> <li>
+     * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
+     * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
+     * with a two-minute notification.</p> </li> </ul> <p> <b>Other fleet events:</b>
+     * </p> <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's
+     * capacity settings (desired instances, minimum/maximum scaling limits). Event
+     * messaging includes the new capacity settings.</p> </li> <li>
      * <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED -- A change was made to the
      * fleet's game session protection policy setting. Event messaging includes both
      * the old and new policy setting. </p> </li> <li> <p>FLEET_DELETED -- A request to
-     * delete a fleet was initiated.</p> </li> </ul>
+     * delete a fleet was initiated.</p> </li> <li> <p> GENERIC_EVENT -- An unspecified
+     * event has occurred.</p> </li> </ul>
      */
     inline void SetEventCode(EventCode&& value) { m_eventCodeHasBeenSet = true; m_eventCode = std::move(value); }
 
     /**
      * <p>Type of event being logged. The following events are currently in use:</p>
-     * <p> <b>General events:</b> </p> <ul> <li> <p> GENERIC_EVENT -- An unspecified
-     * event has occurred.</p> </li> </ul> <p> <b>Fleet creation events:</b> </p> <ul>
-     * <li> <p>FLEET_CREATED -- A fleet record was successfully created with a status
-     * of <code>NEW</code>. Event messaging includes the fleet ID.</p> </li> <li>
-     * <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to
-     * <code>DOWNLOADING</code>. The compressed build has started downloading to a
-     * fleet instance for installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED
-     * -- The build failed to download to the fleet instance.</p> </li> <li>
+     * <p> <b>Fleet creation events:</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet
+     * record was successfully created with a status of <code>NEW</code>. Event
+     * messaging includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING --
+     * Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The
+     * compressed build has started downloading to a fleet instance for
+     * installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build
+     * failed to download to the fleet instance.</p> </li> <li>
      * <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully
      * downloaded to an instance, and the build files are now being extracted from the
      * uploaded build and saved to an instance. Failure at this stage prevents a fleet
@@ -388,27 +394,29 @@ namespace Model
      * account. For more information on VPC peering failures, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
-     * been successfully deleted.</p> </li> </ul> <p> <b>Other fleet events:</b> </p>
-     * <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's capacity
-     * settings (desired instances, minimum/maximum scaling limits). Event messaging
-     * includes the new capacity settings.</p> </li> <li>
+     * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
+     * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
+     * with a two-minute notification.</p> </li> </ul> <p> <b>Other fleet events:</b>
+     * </p> <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's
+     * capacity settings (desired instances, minimum/maximum scaling limits). Event
+     * messaging includes the new capacity settings.</p> </li> <li>
      * <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED -- A change was made to the
      * fleet's game session protection policy setting. Event messaging includes both
      * the old and new policy setting. </p> </li> <li> <p>FLEET_DELETED -- A request to
-     * delete a fleet was initiated.</p> </li> </ul>
+     * delete a fleet was initiated.</p> </li> <li> <p> GENERIC_EVENT -- An unspecified
+     * event has occurred.</p> </li> </ul>
      */
     inline Event& WithEventCode(const EventCode& value) { SetEventCode(value); return *this;}
 
     /**
      * <p>Type of event being logged. The following events are currently in use:</p>
-     * <p> <b>General events:</b> </p> <ul> <li> <p> GENERIC_EVENT -- An unspecified
-     * event has occurred.</p> </li> </ul> <p> <b>Fleet creation events:</b> </p> <ul>
-     * <li> <p>FLEET_CREATED -- A fleet record was successfully created with a status
-     * of <code>NEW</code>. Event messaging includes the fleet ID.</p> </li> <li>
-     * <p>FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to
-     * <code>DOWNLOADING</code>. The compressed build has started downloading to a
-     * fleet instance for installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED
-     * -- The build failed to download to the fleet instance.</p> </li> <li>
+     * <p> <b>Fleet creation events:</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet
+     * record was successfully created with a status of <code>NEW</code>. Event
+     * messaging includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING --
+     * Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The
+     * compressed build has started downloading to a fleet instance for
+     * installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build
+     * failed to download to the fleet instance.</p> </li> <li>
      * <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully
      * downloaded to an instance, and the build files are now being extracted from the
      * uploaded build and saved to an instance. Failure at this stage prevents a fleet
@@ -457,14 +465,17 @@ namespace Model
      * account. For more information on VPC peering failures, see <a
      * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
-     * been successfully deleted.</p> </li> </ul> <p> <b>Other fleet events:</b> </p>
-     * <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's capacity
-     * settings (desired instances, minimum/maximum scaling limits). Event messaging
-     * includes the new capacity settings.</p> </li> <li>
+     * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
+     * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
+     * with a two-minute notification.</p> </li> </ul> <p> <b>Other fleet events:</b>
+     * </p> <ul> <li> <p>FLEET_SCALING_EVENT -- A change was made to the fleet's
+     * capacity settings (desired instances, minimum/maximum scaling limits). Event
+     * messaging includes the new capacity settings.</p> </li> <li>
      * <p>FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED -- A change was made to the
      * fleet's game session protection policy setting. Event messaging includes both
      * the old and new policy setting. </p> </li> <li> <p>FLEET_DELETED -- A request to
-     * delete a fleet was initiated.</p> </li> </ul>
+     * delete a fleet was initiated.</p> </li> <li> <p> GENERIC_EVENT -- An unspecified
+     * event has occurred.</p> </li> </ul>
      */
     inline Event& WithEventCode(EventCode&& value) { SetEventCode(std::move(value)); return *this;}
 

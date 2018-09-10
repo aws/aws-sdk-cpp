@@ -37,7 +37,7 @@ ModifyLunaClientResult::ModifyLunaClientResult(const Aws::AmazonWebServiceResult
 
 ModifyLunaClientResult& ModifyLunaClientResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ClientArn"))
   {
     m_clientArn = jsonValue.GetString("ClientArn");

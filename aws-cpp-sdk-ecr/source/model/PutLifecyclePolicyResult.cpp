@@ -37,7 +37,7 @@ PutLifecyclePolicyResult::PutLifecyclePolicyResult(const Aws::AmazonWebServiceRe
 
 PutLifecyclePolicyResult& PutLifecyclePolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");

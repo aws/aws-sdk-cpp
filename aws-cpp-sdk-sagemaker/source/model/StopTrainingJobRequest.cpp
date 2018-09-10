@@ -37,7 +37,7 @@ Aws::String StopTrainingJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StopTrainingJobRequest::GetRequestSpecificHeaders() const

@@ -37,10 +37,10 @@ GetTriggersResult::GetTriggersResult(const Aws::AmazonWebServiceResult<JsonValue
 
 GetTriggersResult& GetTriggersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Triggers"))
   {
-    Array<JsonValue> triggersJsonList = jsonValue.GetArray("Triggers");
+    Array<JsonView> triggersJsonList = jsonValue.GetArray("Triggers");
     for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
     {
       m_triggers.push_back(triggersJsonList[triggersIndex].AsObject());

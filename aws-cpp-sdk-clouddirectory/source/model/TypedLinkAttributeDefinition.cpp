@@ -41,7 +41,7 @@ TypedLinkAttributeDefinition::TypedLinkAttributeDefinition() :
 {
 }
 
-TypedLinkAttributeDefinition::TypedLinkAttributeDefinition(const JsonValue& jsonValue) : 
+TypedLinkAttributeDefinition::TypedLinkAttributeDefinition(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_type(FacetAttributeType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -55,7 +55,7 @@ TypedLinkAttributeDefinition::TypedLinkAttributeDefinition(const JsonValue& json
   *this = jsonValue;
 }
 
-TypedLinkAttributeDefinition& TypedLinkAttributeDefinition::operator =(const JsonValue& jsonValue)
+TypedLinkAttributeDefinition& TypedLinkAttributeDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -87,7 +87,7 @@ TypedLinkAttributeDefinition& TypedLinkAttributeDefinition::operator =(const Jso
 
   if(jsonValue.ValueExists("Rules"))
   {
-    Aws::Map<Aws::String, JsonValue> rulesJsonMap = jsonValue.GetObject("Rules").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> rulesJsonMap = jsonValue.GetObject("Rules").GetAllObjects();
     for(auto& rulesItem : rulesJsonMap)
     {
       m_rules[rulesItem.first] = rulesItem.second.AsObject();

@@ -41,7 +41,7 @@ Comment::Comment() :
 {
 }
 
-Comment::Comment(const JsonValue& jsonValue) : 
+Comment::Comment(JsonView jsonValue) : 
     m_commentIdHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_inReplyToHasBeenSet(false),
@@ -55,7 +55,7 @@ Comment::Comment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Comment& Comment::operator =(const JsonValue& jsonValue)
+Comment& Comment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("commentId"))
   {

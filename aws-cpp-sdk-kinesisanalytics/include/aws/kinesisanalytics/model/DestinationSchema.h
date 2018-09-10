@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KinesisAnalytics
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     DestinationSchema();
-    DestinationSchema(const Aws::Utils::Json::JsonValue& jsonValue);
-    DestinationSchema& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DestinationSchema(Aws::Utils::Json::JsonView jsonValue);
+    DestinationSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

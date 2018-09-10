@@ -33,6 +33,7 @@ static const int THROTTLED_HASH = HashingUtils::HashString("Throttled");
 static const int SUBSCRIPTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SubscriptionLimitExceeded");
 static const int ENDPOINT_DISABLED_HASH = HashingUtils::HashString("EndpointDisabled");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFound");
+static const int FILTER_POLICY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("FilterPolicyLimitExceeded");
 static const int PLATFORM_APPLICATION_DISABLED_HASH = HashingUtils::HashString("PlatformApplicationDisabled");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalError");
 static const int TOPIC_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TopicLimitExceeded");
@@ -62,6 +63,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::NOT_FOUND), false);
+  }
+  else if (hashCode == FILTER_POLICY_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::FILTER_POLICY_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == PLATFORM_APPLICATION_DISABLED_HASH)
   {

@@ -49,7 +49,7 @@ Trail::Trail() :
 {
 }
 
-Trail::Trail(const JsonValue& jsonValue) : 
+Trail::Trail(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_s3BucketNameHasBeenSet(false),
     m_s3KeyPrefixHasBeenSet(false),
@@ -71,7 +71,7 @@ Trail::Trail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Trail& Trail::operator =(const JsonValue& jsonValue)
+Trail& Trail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

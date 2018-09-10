@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     JobTemplateSettings();
-    JobTemplateSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobTemplateSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobTemplateSettings(Aws::Utils::Json::JsonView jsonValue);
+    JobTemplateSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -170,93 +171,100 @@ namespace Model
 
 
     /**
-     * **!!**(OutputGroups) contains one group of settings for each set of outputs that
-     * share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime,
-     * MXF, and no container) are grouped in a single output group as well. Required in
+     * (OutputGroups) contains one group of settings for each set of outputs that share
+     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
+     * and no container) are grouped in a single output group as well. Required in
      * (OutputGroups) is a group of settings that apply to the whole group. This
      * required object depends on the value you set for (Type) under
      * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
      * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
      * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings
+     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
+     * CmafGroupSettings
      */
     inline const Aws::Vector<OutputGroup>& GetOutputGroups() const{ return m_outputGroups; }
 
     /**
-     * **!!**(OutputGroups) contains one group of settings for each set of outputs that
-     * share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime,
-     * MXF, and no container) are grouped in a single output group as well. Required in
+     * (OutputGroups) contains one group of settings for each set of outputs that share
+     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
+     * and no container) are grouped in a single output group as well. Required in
      * (OutputGroups) is a group of settings that apply to the whole group. This
      * required object depends on the value you set for (Type) under
      * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
      * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
      * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings
+     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
+     * CmafGroupSettings
      */
     inline void SetOutputGroups(const Aws::Vector<OutputGroup>& value) { m_outputGroupsHasBeenSet = true; m_outputGroups = value; }
 
     /**
-     * **!!**(OutputGroups) contains one group of settings for each set of outputs that
-     * share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime,
-     * MXF, and no container) are grouped in a single output group as well. Required in
+     * (OutputGroups) contains one group of settings for each set of outputs that share
+     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
+     * and no container) are grouped in a single output group as well. Required in
      * (OutputGroups) is a group of settings that apply to the whole group. This
      * required object depends on the value you set for (Type) under
      * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
      * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
      * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings
+     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
+     * CmafGroupSettings
      */
     inline void SetOutputGroups(Aws::Vector<OutputGroup>&& value) { m_outputGroupsHasBeenSet = true; m_outputGroups = std::move(value); }
 
     /**
-     * **!!**(OutputGroups) contains one group of settings for each set of outputs that
-     * share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime,
-     * MXF, and no container) are grouped in a single output group as well. Required in
+     * (OutputGroups) contains one group of settings for each set of outputs that share
+     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
+     * and no container) are grouped in a single output group as well. Required in
      * (OutputGroups) is a group of settings that apply to the whole group. This
      * required object depends on the value you set for (Type) under
      * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
      * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
      * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings
+     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
+     * CmafGroupSettings
      */
     inline JobTemplateSettings& WithOutputGroups(const Aws::Vector<OutputGroup>& value) { SetOutputGroups(value); return *this;}
 
     /**
-     * **!!**(OutputGroups) contains one group of settings for each set of outputs that
-     * share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime,
-     * MXF, and no container) are grouped in a single output group as well. Required in
+     * (OutputGroups) contains one group of settings for each set of outputs that share
+     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
+     * and no container) are grouped in a single output group as well. Required in
      * (OutputGroups) is a group of settings that apply to the whole group. This
      * required object depends on the value you set for (Type) under
      * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
      * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
      * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings
+     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
+     * CmafGroupSettings
      */
     inline JobTemplateSettings& WithOutputGroups(Aws::Vector<OutputGroup>&& value) { SetOutputGroups(std::move(value)); return *this;}
 
     /**
-     * **!!**(OutputGroups) contains one group of settings for each set of outputs that
-     * share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime,
-     * MXF, and no container) are grouped in a single output group as well. Required in
+     * (OutputGroups) contains one group of settings for each set of outputs that share
+     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
+     * and no container) are grouped in a single output group as well. Required in
      * (OutputGroups) is a group of settings that apply to the whole group. This
      * required object depends on the value you set for (Type) under
      * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
      * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
      * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings
+     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
+     * CmafGroupSettings
      */
     inline JobTemplateSettings& AddOutputGroups(const OutputGroup& value) { m_outputGroupsHasBeenSet = true; m_outputGroups.push_back(value); return *this; }
 
     /**
-     * **!!**(OutputGroups) contains one group of settings for each set of outputs that
-     * share a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime,
-     * MXF, and no container) are grouped in a single output group as well. Required in
+     * (OutputGroups) contains one group of settings for each set of outputs that share
+     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
+     * and no container) are grouped in a single output group as well. Required in
      * (OutputGroups) is a group of settings that apply to the whole group. This
      * required object depends on the value you set for (Type) under
      * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
      * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
      * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
-     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings
+     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
+     * CmafGroupSettings
      */
     inline JobTemplateSettings& AddOutputGroups(OutputGroup&& value) { m_outputGroupsHasBeenSet = true; m_outputGroups.push_back(std::move(value)); return *this; }
 

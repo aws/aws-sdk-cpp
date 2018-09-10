@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace APIGateway
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     SdkConfigurationProperty();
-    SdkConfigurationProperty(const Aws::Utils::Json::JsonValue& jsonValue);
-    SdkConfigurationProperty& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SdkConfigurationProperty(Aws::Utils::Json::JsonView jsonValue);
+    SdkConfigurationProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

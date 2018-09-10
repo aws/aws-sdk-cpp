@@ -28,7 +28,8 @@ RegisterJobDefinitionRequest::RegisterJobDefinitionRequest() :
     m_typeHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_containerPropertiesHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false)
+    m_retryStrategyHasBeenSet(false),
+    m_timeoutHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,13 @@ Aws::String RegisterJobDefinitionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_timeoutHasBeenSet)
+  {
+   payload.WithObject("timeout", m_timeout.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

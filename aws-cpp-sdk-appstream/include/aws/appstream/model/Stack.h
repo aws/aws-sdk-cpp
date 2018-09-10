@@ -18,8 +18,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appstream/model/ApplicationSettingsResponse.h>
 #include <aws/appstream/model/StorageConnector.h>
 #include <aws/appstream/model/StackError.h>
+#include <aws/appstream/model/UserSetting.h>
 #include <utility>
 
 namespace Aws
@@ -29,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppStream
@@ -45,8 +48,8 @@ namespace Model
   {
   public:
     Stack();
-    Stack(const Aws::Utils::Json::JsonValue& jsonValue);
-    Stack& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Stack(Aws::Utils::Json::JsonView jsonValue);
+    Stack& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -257,6 +260,85 @@ namespace Model
 
 
     /**
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
+     */
+    inline const Aws::String& GetRedirectURL() const{ return m_redirectURL; }
+
+    /**
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
+     */
+    inline void SetRedirectURL(const Aws::String& value) { m_redirectURLHasBeenSet = true; m_redirectURL = value; }
+
+    /**
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
+     */
+    inline void SetRedirectURL(Aws::String&& value) { m_redirectURLHasBeenSet = true; m_redirectURL = std::move(value); }
+
+    /**
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
+     */
+    inline void SetRedirectURL(const char* value) { m_redirectURLHasBeenSet = true; m_redirectURL.assign(value); }
+
+    /**
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
+     */
+    inline Stack& WithRedirectURL(const Aws::String& value) { SetRedirectURL(value); return *this;}
+
+    /**
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
+     */
+    inline Stack& WithRedirectURL(Aws::String&& value) { SetRedirectURL(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL that users are redirected to after their streaming session ends.</p>
+     */
+    inline Stack& WithRedirectURL(const char* value) { SetRedirectURL(value); return *this;}
+
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline const Aws::String& GetFeedbackURL() const{ return m_feedbackURL; }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline void SetFeedbackURL(const Aws::String& value) { m_feedbackURLHasBeenSet = true; m_feedbackURL = value; }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline void SetFeedbackURL(Aws::String&& value) { m_feedbackURLHasBeenSet = true; m_feedbackURL = std::move(value); }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline void SetFeedbackURL(const char* value) { m_feedbackURLHasBeenSet = true; m_feedbackURL.assign(value); }
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline Stack& WithFeedbackURL(const Aws::String& value) { SetFeedbackURL(value); return *this;}
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline Stack& WithFeedbackURL(Aws::String&& value) { SetFeedbackURL(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL that users are redirected to after they click the Send Feedback link.
+     * If no URL is specified, no Send Feedback link is displayed.</p>
+     */
+    inline Stack& WithFeedbackURL(const char* value) { SetFeedbackURL(value); return *this;}
+
+
+    /**
      * <p>The errors for the stack.</p>
      */
     inline const Aws::Vector<StackError>& GetStackErrors() const{ return m_stackErrors; }
@@ -291,6 +373,75 @@ namespace Model
      */
     inline Stack& AddStackErrors(StackError&& value) { m_stackErrorsHasBeenSet = true; m_stackErrors.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline const Aws::Vector<UserSetting>& GetUserSettings() const{ return m_userSettings; }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline void SetUserSettings(const Aws::Vector<UserSetting>& value) { m_userSettingsHasBeenSet = true; m_userSettings = value; }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline void SetUserSettings(Aws::Vector<UserSetting>&& value) { m_userSettingsHasBeenSet = true; m_userSettings = std::move(value); }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline Stack& WithUserSettings(const Aws::Vector<UserSetting>& value) { SetUserSettings(value); return *this;}
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline Stack& WithUserSettings(Aws::Vector<UserSetting>&& value) { SetUserSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline Stack& AddUserSettings(const UserSetting& value) { m_userSettingsHasBeenSet = true; m_userSettings.push_back(value); return *this; }
+
+    /**
+     * <p>The actions that are enabled or disabled for users during their streaming
+     * sessions. By default these actions are enabled.</p>
+     */
+    inline Stack& AddUserSettings(UserSetting&& value) { m_userSettingsHasBeenSet = true; m_userSettings.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The persistent application settings for users of the stack.</p>
+     */
+    inline const ApplicationSettingsResponse& GetApplicationSettings() const{ return m_applicationSettings; }
+
+    /**
+     * <p>The persistent application settings for users of the stack.</p>
+     */
+    inline void SetApplicationSettings(const ApplicationSettingsResponse& value) { m_applicationSettingsHasBeenSet = true; m_applicationSettings = value; }
+
+    /**
+     * <p>The persistent application settings for users of the stack.</p>
+     */
+    inline void SetApplicationSettings(ApplicationSettingsResponse&& value) { m_applicationSettingsHasBeenSet = true; m_applicationSettings = std::move(value); }
+
+    /**
+     * <p>The persistent application settings for users of the stack.</p>
+     */
+    inline Stack& WithApplicationSettings(const ApplicationSettingsResponse& value) { SetApplicationSettings(value); return *this;}
+
+    /**
+     * <p>The persistent application settings for users of the stack.</p>
+     */
+    inline Stack& WithApplicationSettings(ApplicationSettingsResponse&& value) { SetApplicationSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -311,8 +462,20 @@ namespace Model
     Aws::Vector<StorageConnector> m_storageConnectors;
     bool m_storageConnectorsHasBeenSet;
 
+    Aws::String m_redirectURL;
+    bool m_redirectURLHasBeenSet;
+
+    Aws::String m_feedbackURL;
+    bool m_feedbackURLHasBeenSet;
+
     Aws::Vector<StackError> m_stackErrors;
     bool m_stackErrorsHasBeenSet;
+
+    Aws::Vector<UserSetting> m_userSettings;
+    bool m_userSettingsHasBeenSet;
+
+    ApplicationSettingsResponse m_applicationSettings;
+    bool m_applicationSettingsHasBeenSet;
   };
 
 } // namespace Model

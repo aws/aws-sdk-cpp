@@ -37,7 +37,7 @@ Aws::String PutEventStreamRequest::SerializePayload() const
    payload = m_writeEventStream.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

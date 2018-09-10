@@ -46,7 +46,7 @@ Ac3Settings::Ac3Settings() :
 {
 }
 
-Ac3Settings::Ac3Settings(const JsonValue& jsonValue) : 
+Ac3Settings::Ac3Settings(JsonView jsonValue) : 
     m_bitrate(0.0),
     m_bitrateHasBeenSet(false),
     m_bitstreamMode(Ac3BitstreamMode::NOT_SET),
@@ -65,7 +65,7 @@ Ac3Settings::Ac3Settings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Ac3Settings& Ac3Settings::operator =(const JsonValue& jsonValue)
+Ac3Settings& Ac3Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bitrate"))
   {

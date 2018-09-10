@@ -37,10 +37,10 @@ DescribeOrderableReplicationInstancesResult::DescribeOrderableReplicationInstanc
 
 DescribeOrderableReplicationInstancesResult& DescribeOrderableReplicationInstancesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OrderableReplicationInstances"))
   {
-    Array<JsonValue> orderableReplicationInstancesJsonList = jsonValue.GetArray("OrderableReplicationInstances");
+    Array<JsonView> orderableReplicationInstancesJsonList = jsonValue.GetArray("OrderableReplicationInstances");
     for(unsigned orderableReplicationInstancesIndex = 0; orderableReplicationInstancesIndex < orderableReplicationInstancesJsonList.GetLength(); ++orderableReplicationInstancesIndex)
     {
       m_orderableReplicationInstances.push_back(orderableReplicationInstancesJsonList[orderableReplicationInstancesIndex].AsObject());

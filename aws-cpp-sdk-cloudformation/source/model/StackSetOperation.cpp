@@ -40,6 +40,8 @@ StackSetOperation::StackSetOperation() :
     m_operationPreferencesHasBeenSet(false),
     m_retainStacks(false),
     m_retainStacksHasBeenSet(false),
+    m_administrationRoleARNHasBeenSet(false),
+    m_executionRoleNameHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_endTimestampHasBeenSet(false)
 {
@@ -55,6 +57,8 @@ StackSetOperation::StackSetOperation(const XmlNode& xmlNode) :
     m_operationPreferencesHasBeenSet(false),
     m_retainStacks(false),
     m_retainStacksHasBeenSet(false),
+    m_administrationRoleARNHasBeenSet(false),
+    m_executionRoleNameHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_endTimestampHasBeenSet(false)
 {
@@ -102,6 +106,18 @@ StackSetOperation& StackSetOperation::operator =(const XmlNode& xmlNode)
     {
       m_retainStacks = StringUtils::ConvertToBool(StringUtils::Trim(retainStacksNode.GetText().c_str()).c_str());
       m_retainStacksHasBeenSet = true;
+    }
+    XmlNode administrationRoleARNNode = resultNode.FirstChild("AdministrationRoleARN");
+    if(!administrationRoleARNNode.IsNull())
+    {
+      m_administrationRoleARN = StringUtils::Trim(administrationRoleARNNode.GetText().c_str());
+      m_administrationRoleARNHasBeenSet = true;
+    }
+    XmlNode executionRoleNameNode = resultNode.FirstChild("ExecutionRoleName");
+    if(!executionRoleNameNode.IsNull())
+    {
+      m_executionRoleName = StringUtils::Trim(executionRoleNameNode.GetText().c_str());
+      m_executionRoleNameHasBeenSet = true;
     }
     XmlNode creationTimestampNode = resultNode.FirstChild("CreationTimestamp");
     if(!creationTimestampNode.IsNull())
@@ -154,6 +170,16 @@ void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".RetainStacks=" << std::boolalpha << m_retainStacks << "&";
   }
 
+  if(m_administrationRoleARNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AdministrationRoleARN=" << StringUtils::URLEncode(m_administrationRoleARN.c_str()) << "&";
+  }
+
+  if(m_executionRoleNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ExecutionRoleName=" << StringUtils::URLEncode(m_executionRoleName.c_str()) << "&";
+  }
+
   if(m_creationTimestampHasBeenSet)
   {
       oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
@@ -193,6 +219,14 @@ void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_retainStacksHasBeenSet)
   {
       oStream << location << ".RetainStacks=" << std::boolalpha << m_retainStacks << "&";
+  }
+  if(m_administrationRoleARNHasBeenSet)
+  {
+      oStream << location << ".AdministrationRoleARN=" << StringUtils::URLEncode(m_administrationRoleARN.c_str()) << "&";
+  }
+  if(m_executionRoleNameHasBeenSet)
+  {
+      oStream << location << ".ExecutionRoleName=" << StringUtils::URLEncode(m_executionRoleName.c_str()) << "&";
   }
   if(m_creationTimestampHasBeenSet)
   {

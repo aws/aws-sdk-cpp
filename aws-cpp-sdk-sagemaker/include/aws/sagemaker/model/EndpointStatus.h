@@ -29,6 +29,7 @@ namespace Model
     OutOfService,
     Creating,
     Updating,
+    SystemUpdating,
     RollingBack,
     InService,
     Deleting,

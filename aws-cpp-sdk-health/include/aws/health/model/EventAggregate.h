@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Health
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     EventAggregate();
-    EventAggregate(const Aws::Utils::Json::JsonValue& jsonValue);
-    EventAggregate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EventAggregate(Aws::Utils::Json::JsonView jsonValue);
+    EventAggregate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

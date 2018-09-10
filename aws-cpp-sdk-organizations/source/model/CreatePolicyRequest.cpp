@@ -58,7 +58,7 @@ Aws::String CreatePolicyRequest::SerializePayload() const
    payload.WithString("Type", PolicyTypeMapper::GetNameForPolicyType(m_type));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreatePolicyRequest::GetRequestSpecificHeaders() const

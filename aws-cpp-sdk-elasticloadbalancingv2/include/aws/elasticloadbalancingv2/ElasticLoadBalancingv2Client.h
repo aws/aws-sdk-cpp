@@ -307,7 +307,7 @@ namespace Model
 
         virtual ~ElasticLoadBalancingv2Client();
 
-        inline virtual const char* GetServiceClientName() const override { return "elasticloadbalancing"; }
+        inline virtual const char* GetServiceClientName() const override { return "Elastic Load Balancing v2"; }
 
 
        /**
@@ -398,11 +398,13 @@ namespace Model
 
         /**
          * <p>Creates a listener for the specified Application Load Balancer or Network
-         * Load Balancer.</p> <p>You can create up to 10 listeners per load balancer.</p>
-         * <p>To update a listener, use <a>ModifyListener</a>. When you are finished with a
-         * listener, you can delete it using <a>DeleteListener</a>. If you are finished
-         * with both the listener and the load balancer, you can delete them both using
-         * <a>DeleteLoadBalancer</a>.</p> <p>For more information, see <a
+         * Load Balancer.</p> <p>To update a listener, use <a>ModifyListener</a>. When you
+         * are finished with a listener, you can delete it using <a>DeleteListener</a>. If
+         * you are finished with both the listener and the load balancer, you can delete
+         * them both using <a>DeleteLoadBalancer</a>.</p> <p>This operation is idempotent,
+         * which means that it completes at most one time. If you attempt to create
+         * multiple listeners with the same settings, each call succeeds.</p> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for Your Application Load Balancers</a> in the <i>Application Load Balancers
          * Guide</i> and <a
@@ -416,11 +418,13 @@ namespace Model
 
         /**
          * <p>Creates a listener for the specified Application Load Balancer or Network
-         * Load Balancer.</p> <p>You can create up to 10 listeners per load balancer.</p>
-         * <p>To update a listener, use <a>ModifyListener</a>. When you are finished with a
-         * listener, you can delete it using <a>DeleteListener</a>. If you are finished
-         * with both the listener and the load balancer, you can delete them both using
-         * <a>DeleteLoadBalancer</a>.</p> <p>For more information, see <a
+         * Load Balancer.</p> <p>To update a listener, use <a>ModifyListener</a>. When you
+         * are finished with a listener, you can delete it using <a>DeleteListener</a>. If
+         * you are finished with both the listener and the load balancer, you can delete
+         * them both using <a>DeleteLoadBalancer</a>.</p> <p>This operation is idempotent,
+         * which means that it completes at most one time. If you attempt to create
+         * multiple listeners with the same settings, each call succeeds.</p> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for Your Application Load Balancers</a> in the <i>Application Load Balancers
          * Guide</i> and <a
@@ -436,11 +440,13 @@ namespace Model
 
         /**
          * <p>Creates a listener for the specified Application Load Balancer or Network
-         * Load Balancer.</p> <p>You can create up to 10 listeners per load balancer.</p>
-         * <p>To update a listener, use <a>ModifyListener</a>. When you are finished with a
-         * listener, you can delete it using <a>DeleteListener</a>. If you are finished
-         * with both the listener and the load balancer, you can delete them both using
-         * <a>DeleteLoadBalancer</a>.</p> <p>For more information, see <a
+         * Load Balancer.</p> <p>To update a listener, use <a>ModifyListener</a>. When you
+         * are finished with a listener, you can delete it using <a>DeleteListener</a>. If
+         * you are finished with both the listener and the load balancer, you can delete
+         * them both using <a>DeleteLoadBalancer</a>.</p> <p>This operation is idempotent,
+         * which means that it completes at most one time. If you attempt to create
+         * multiple listeners with the same settings, each call succeeds.</p> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for Your Application Load Balancers</a> in the <i>Application Load Balancers
          * Guide</i> and <a
@@ -456,21 +462,22 @@ namespace Model
 
         /**
          * <p>Creates an Application Load Balancer or a Network Load Balancer.</p> <p>When
-         * you create a load balancer, you can specify security groups, subnets, IP address
-         * type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>,
-         * <a>SetSubnets</a>, <a>SetIpAddressType</a>, and <a>AddTags</a>.</p> <p>To create
-         * listeners for your load balancer, use <a>CreateListener</a>. To describe your
-         * current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished
-         * with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p>
-         * <p>You can create up to 20 load balancers per region per account. You can
-         * request an increase for the number of load balancers for your account. For more
-         * information, see <a
+         * you create a load balancer, you can specify security groups, public subnets, IP
+         * address type, and tags. Otherwise, you could do so later using
+         * <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
+         * <a>AddTags</a>.</p> <p>To create listeners for your load balancer, use
+         * <a>CreateListener</a>. To describe your current load balancers, see
+         * <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you
+         * can delete it using <a>DeleteLoadBalancer</a>.</p> <p>For limit information, see
+         * <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
          * Guide</i> and <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
          * for Your Network Load Balancer</a> in the <i>Network Load Balancers
-         * Guide</i>.</p> <p>For more information, see <a
+         * Guide</i>.</p> <p>This operation is idempotent, which means that it completes at
+         * most one time. If you attempt to create multiple load balancers with the same
+         * settings, each call succeeds.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
          * Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
@@ -483,21 +490,22 @@ namespace Model
 
         /**
          * <p>Creates an Application Load Balancer or a Network Load Balancer.</p> <p>When
-         * you create a load balancer, you can specify security groups, subnets, IP address
-         * type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>,
-         * <a>SetSubnets</a>, <a>SetIpAddressType</a>, and <a>AddTags</a>.</p> <p>To create
-         * listeners for your load balancer, use <a>CreateListener</a>. To describe your
-         * current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished
-         * with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p>
-         * <p>You can create up to 20 load balancers per region per account. You can
-         * request an increase for the number of load balancers for your account. For more
-         * information, see <a
+         * you create a load balancer, you can specify security groups, public subnets, IP
+         * address type, and tags. Otherwise, you could do so later using
+         * <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
+         * <a>AddTags</a>.</p> <p>To create listeners for your load balancer, use
+         * <a>CreateListener</a>. To describe your current load balancers, see
+         * <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you
+         * can delete it using <a>DeleteLoadBalancer</a>.</p> <p>For limit information, see
+         * <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
          * Guide</i> and <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
          * for Your Network Load Balancer</a> in the <i>Network Load Balancers
-         * Guide</i>.</p> <p>For more information, see <a
+         * Guide</i>.</p> <p>This operation is idempotent, which means that it completes at
+         * most one time. If you attempt to create multiple load balancers with the same
+         * settings, each call succeeds.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
          * Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
@@ -512,21 +520,22 @@ namespace Model
 
         /**
          * <p>Creates an Application Load Balancer or a Network Load Balancer.</p> <p>When
-         * you create a load balancer, you can specify security groups, subnets, IP address
-         * type, and tags. Otherwise, you could do so later using <a>SetSecurityGroups</a>,
-         * <a>SetSubnets</a>, <a>SetIpAddressType</a>, and <a>AddTags</a>.</p> <p>To create
-         * listeners for your load balancer, use <a>CreateListener</a>. To describe your
-         * current load balancers, see <a>DescribeLoadBalancers</a>. When you are finished
-         * with a load balancer, you can delete it using <a>DeleteLoadBalancer</a>.</p>
-         * <p>You can create up to 20 load balancers per region per account. You can
-         * request an increase for the number of load balancers for your account. For more
-         * information, see <a
+         * you create a load balancer, you can specify security groups, public subnets, IP
+         * address type, and tags. Otherwise, you could do so later using
+         * <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
+         * <a>AddTags</a>.</p> <p>To create listeners for your load balancer, use
+         * <a>CreateListener</a>. To describe your current load balancers, see
+         * <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you
+         * can delete it using <a>DeleteLoadBalancer</a>.</p> <p>For limit information, see
+         * <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
          * Guide</i> and <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
          * for Your Network Load Balancer</a> in the <i>Network Load Balancers
-         * Guide</i>.</p> <p>For more information, see <a
+         * Guide</i>.</p> <p>This operation is idempotent, which means that it completes at
+         * most one time. If you attempt to create multiple load balancers with the same
+         * settings, each call succeeds.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
          * Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
@@ -542,9 +551,9 @@ namespace Model
         /**
          * <p>Creates a rule for the specified listener. The listener must be associated
          * with an Application Load Balancer.</p> <p>Rules are evaluated in priority order,
-         * from the lowest value to the highest value. When the condition for a rule is
-         * met, the specified action is taken. If no conditions are met, the action for the
-         * default rule is taken. For more information, see <a
+         * from the lowest value to the highest value. When the conditions for a rule are
+         * met, its actions are performed. If the conditions for no rules are met, the
+         * actions for the default rule are performed. For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
          * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
          * current rules, use <a>DescribeRules</a>. To update a rule, use
@@ -559,9 +568,9 @@ namespace Model
         /**
          * <p>Creates a rule for the specified listener. The listener must be associated
          * with an Application Load Balancer.</p> <p>Rules are evaluated in priority order,
-         * from the lowest value to the highest value. When the condition for a rule is
-         * met, the specified action is taken. If no conditions are met, the action for the
-         * default rule is taken. For more information, see <a
+         * from the lowest value to the highest value. When the conditions for a rule are
+         * met, its actions are performed. If the conditions for no rules are met, the
+         * actions for the default rule are performed. For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
          * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
          * current rules, use <a>DescribeRules</a>. To update a rule, use
@@ -578,9 +587,9 @@ namespace Model
         /**
          * <p>Creates a rule for the specified listener. The listener must be associated
          * with an Application Load Balancer.</p> <p>Rules are evaluated in priority order,
-         * from the lowest value to the highest value. When the condition for a rule is
-         * met, the specified action is taken. If no conditions are met, the action for the
-         * default rule is taken. For more information, see <a
+         * from the lowest value to the highest value. When the conditions for a rule are
+         * met, its actions are performed. If the conditions for no rules are met, the
+         * actions for the default rule are performed. For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
          * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
          * current rules, use <a>DescribeRules</a>. To update a rule, use
@@ -601,7 +610,9 @@ namespace Model
          * target group, use <a>DescribeTargetHealth</a>.</p> <p>To route traffic to the
          * targets in a target group, specify the target group in an action using
          * <a>CreateListener</a> or <a>CreateRule</a>.</p> <p>To delete a target group, use
-         * <a>DeleteTargetGroup</a>.</p> <p>For more information, see <a
+         * <a>DeleteTargetGroup</a>.</p> <p>This operation is idempotent, which means that
+         * it completes at most one time. If you attempt to create multiple target groups
+         * with the same settings, each call succeeds.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
          * Groups for Your Application Load Balancers</a> in the <i>Application Load
          * Balancers Guide</i> or <a
@@ -620,7 +631,9 @@ namespace Model
          * target group, use <a>DescribeTargetHealth</a>.</p> <p>To route traffic to the
          * targets in a target group, specify the target group in an action using
          * <a>CreateListener</a> or <a>CreateRule</a>.</p> <p>To delete a target group, use
-         * <a>DeleteTargetGroup</a>.</p> <p>For more information, see <a
+         * <a>DeleteTargetGroup</a>.</p> <p>This operation is idempotent, which means that
+         * it completes at most one time. If you attempt to create multiple target groups
+         * with the same settings, each call succeeds.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
          * Groups for Your Application Load Balancers</a> in the <i>Application Load
          * Balancers Guide</i> or <a
@@ -641,7 +654,9 @@ namespace Model
          * target group, use <a>DescribeTargetHealth</a>.</p> <p>To route traffic to the
          * targets in a target group, specify the target group in an action using
          * <a>CreateListener</a> or <a>CreateRule</a>.</p> <p>To delete a target group, use
-         * <a>DeleteTargetGroup</a>.</p> <p>For more information, see <a
+         * <a>DeleteTargetGroup</a>.</p> <p>This operation is idempotent, which means that
+         * it completes at most one time. If you attempt to create multiple target groups
+         * with the same settings, each call succeeds.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
          * Groups for Your Application Load Balancers</a> in the <i>Application Load
          * Balancers Guide</i> or <a
@@ -657,7 +672,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified listener.</p> <p>Alternatively, your listener is
-         * deleted when you delete the load balancer it is attached to using
+         * deleted when you delete the load balancer to which it is attached, using
          * <a>DeleteLoadBalancer</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">AWS
          * API Reference</a></p>
@@ -666,7 +681,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified listener.</p> <p>Alternatively, your listener is
-         * deleted when you delete the load balancer it is attached to using
+         * deleted when you delete the load balancer to which it is attached, using
          * <a>DeleteLoadBalancer</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">AWS
          * API Reference</a></p>
@@ -677,7 +692,7 @@ namespace Model
 
         /**
          * <p>Deletes the specified listener.</p> <p>Alternatively, your listener is
-         * deleted when you delete the load balancer it is attached to using
+         * deleted when you delete the load balancer to which it is attached, using
          * <a>DeleteLoadBalancer</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteListener">AWS
          * API Reference</a></p>
@@ -923,7 +938,12 @@ namespace Model
 
         /**
          * <p>Describes the attributes for the specified Application Load Balancer or
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * Network Load Balancer.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+         * Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+         * Balancer Attributes</a> in the <i>Network Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">AWS
          * API Reference</a></p>
          */
@@ -931,7 +951,12 @@ namespace Model
 
         /**
          * <p>Describes the attributes for the specified Application Load Balancer or
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * Network Load Balancer.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+         * Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+         * Balancer Attributes</a> in the <i>Network Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">AWS
          * API Reference</a></p>
          *
@@ -941,7 +966,12 @@ namespace Model
 
         /**
          * <p>Describes the attributes for the specified Application Load Balancer or
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * Network Load Balancer.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+         * Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+         * Balancer Attributes</a> in the <i>Network Load Balancers
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">AWS
          * API Reference</a></p>
          *
@@ -1083,7 +1113,12 @@ namespace Model
         virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the attributes for the specified target group.</p><p><h3>See
+         * <p>Describes the attributes for the specified target group.</p> <p>For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
+         * Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
+         * Group Attributes</a> in the <i>Network Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">AWS
          * API Reference</a></p>
@@ -1091,7 +1126,12 @@ namespace Model
         virtual Model::DescribeTargetGroupAttributesOutcome DescribeTargetGroupAttributes(const Model::DescribeTargetGroupAttributesRequest& request) const;
 
         /**
-         * <p>Describes the attributes for the specified target group.</p><p><h3>See
+         * <p>Describes the attributes for the specified target group.</p> <p>For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
+         * Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
+         * Group Attributes</a> in the <i>Network Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">AWS
          * API Reference</a></p>
@@ -1101,7 +1141,12 @@ namespace Model
         virtual Model::DescribeTargetGroupAttributesOutcomeCallable DescribeTargetGroupAttributesCallable(const Model::DescribeTargetGroupAttributesRequest& request) const;
 
         /**
-         * <p>Describes the attributes for the specified target group.</p><p><h3>See
+         * <p>Describes the attributes for the specified target group.</p> <p>For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
+         * Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
+         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
+         * Group Attributes</a> in the <i>Network Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">AWS
          * API Reference</a></p>
@@ -1254,8 +1299,8 @@ namespace Model
 
         /**
          * <p>Modifies the specified rule.</p> <p>Any existing properties that you do not
-         * modify retain their current values.</p> <p>To modify the default action, use
-         * <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
+         * modify retain their current values.</p> <p>To modify the actions for the default
+         * rule, use <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">AWS
          * API Reference</a></p>
          */
@@ -1263,8 +1308,8 @@ namespace Model
 
         /**
          * <p>Modifies the specified rule.</p> <p>Any existing properties that you do not
-         * modify retain their current values.</p> <p>To modify the default action, use
-         * <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
+         * modify retain their current values.</p> <p>To modify the actions for the default
+         * rule, use <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">AWS
          * API Reference</a></p>
          *
@@ -1274,8 +1319,8 @@ namespace Model
 
         /**
          * <p>Modifies the specified rule.</p> <p>Any existing properties that you do not
-         * modify retain their current values.</p> <p>To modify the default action, use
-         * <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
+         * modify retain their current values.</p> <p>To modify the actions for the default
+         * rule, use <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">AWS
          * API Reference</a></p>
          *
@@ -1470,8 +1515,8 @@ namespace Model
 
         /**
          * <p>Sets the type of IP addresses used by the subnets of the specified
-         * Application Load Balancer or Network Load Balancer.</p> <p>Note that Network
-         * Load Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
+         * Application Load Balancer or Network Load Balancer.</p> <p>Network Load
+         * Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
          * API Reference</a></p>
          */
@@ -1479,8 +1524,8 @@ namespace Model
 
         /**
          * <p>Sets the type of IP addresses used by the subnets of the specified
-         * Application Load Balancer or Network Load Balancer.</p> <p>Note that Network
-         * Load Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
+         * Application Load Balancer or Network Load Balancer.</p> <p>Network Load
+         * Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
          * API Reference</a></p>
          *
@@ -1490,8 +1535,8 @@ namespace Model
 
         /**
          * <p>Sets the type of IP addresses used by the subnets of the specified
-         * Application Load Balancer or Network Load Balancer.</p> <p>Note that Network
-         * Load Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
+         * Application Load Balancer or Network Load Balancer.</p> <p>Network Load
+         * Balancers must use <code>ipv4</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetIpAddressType">AWS
          * API Reference</a></p>
          *
@@ -1536,8 +1581,8 @@ namespace Model
         /**
          * <p>Associates the specified security groups with the specified Application Load
          * Balancer. The specified security groups override the previously associated
-         * security groups.</p> <p>Note that you can't specify a security group for a
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * security groups.</p> <p>You can't specify a security group for a Network Load
+         * Balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">AWS
          * API Reference</a></p>
          */
@@ -1546,8 +1591,8 @@ namespace Model
         /**
          * <p>Associates the specified security groups with the specified Application Load
          * Balancer. The specified security groups override the previously associated
-         * security groups.</p> <p>Note that you can't specify a security group for a
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * security groups.</p> <p>You can't specify a security group for a Network Load
+         * Balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">AWS
          * API Reference</a></p>
          *
@@ -1558,8 +1603,8 @@ namespace Model
         /**
          * <p>Associates the specified security groups with the specified Application Load
          * Balancer. The specified security groups override the previously associated
-         * security groups.</p> <p>Note that you can't specify a security group for a
-         * Network Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * security groups.</p> <p>You can't specify a security group for a Network Load
+         * Balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSecurityGroups">AWS
          * API Reference</a></p>
          *
@@ -1568,20 +1613,20 @@ namespace Model
         virtual void SetSecurityGroupsAsync(const Model::SetSecurityGroupsRequest& request, const SetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables the Availability Zone for the specified subnets for the specified
-         * Application Load Balancer. The specified subnets replace the previously enabled
-         * subnets.</p> <p>Note that you can't change the subnets for a Network Load
-         * Balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the Availability Zone for the specified public subnets for the
+         * specified Application Load Balancer. The specified subnets replace the
+         * previously enabled subnets.</p> <p>You can't change the subnets for a Network
+         * Load Balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">AWS
          * API Reference</a></p>
          */
         virtual Model::SetSubnetsOutcome SetSubnets(const Model::SetSubnetsRequest& request) const;
 
         /**
-         * <p>Enables the Availability Zone for the specified subnets for the specified
-         * Application Load Balancer. The specified subnets replace the previously enabled
-         * subnets.</p> <p>Note that you can't change the subnets for a Network Load
-         * Balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the Availability Zone for the specified public subnets for the
+         * specified Application Load Balancer. The specified subnets replace the
+         * previously enabled subnets.</p> <p>You can't change the subnets for a Network
+         * Load Balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">AWS
          * API Reference</a></p>
          *
@@ -1590,10 +1635,10 @@ namespace Model
         virtual Model::SetSubnetsOutcomeCallable SetSubnetsCallable(const Model::SetSubnetsRequest& request) const;
 
         /**
-         * <p>Enables the Availability Zone for the specified subnets for the specified
-         * Application Load Balancer. The specified subnets replace the previously enabled
-         * subnets.</p> <p>Note that you can't change the subnets for a Network Load
-         * Balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the Availability Zone for the specified public subnets for the
+         * specified Application Load Balancer. The specified subnets replace the
+         * previously enabled subnets.</p> <p>You can't change the subnets for a Network
+         * Load Balancer.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">AWS
          * API Reference</a></p>
          *

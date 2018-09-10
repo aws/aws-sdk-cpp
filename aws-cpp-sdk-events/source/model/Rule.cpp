@@ -40,7 +40,7 @@ Rule::Rule() :
 {
 }
 
-Rule::Rule(const JsonValue& jsonValue) : 
+Rule::Rule(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_eventPatternHasBeenSet(false),
@@ -53,7 +53,7 @@ Rule::Rule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Rule& Rule::operator =(const JsonValue& jsonValue)
+Rule& Rule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

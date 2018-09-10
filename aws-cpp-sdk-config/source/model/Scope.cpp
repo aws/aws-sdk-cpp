@@ -36,7 +36,7 @@ Scope::Scope() :
 {
 }
 
-Scope::Scope(const JsonValue& jsonValue) : 
+Scope::Scope(JsonView jsonValue) : 
     m_complianceResourceTypesHasBeenSet(false),
     m_tagKeyHasBeenSet(false),
     m_tagValueHasBeenSet(false),
@@ -45,11 +45,11 @@ Scope::Scope(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Scope& Scope::operator =(const JsonValue& jsonValue)
+Scope& Scope::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ComplianceResourceTypes"))
   {
-    Array<JsonValue> complianceResourceTypesJsonList = jsonValue.GetArray("ComplianceResourceTypes");
+    Array<JsonView> complianceResourceTypesJsonList = jsonValue.GetArray("ComplianceResourceTypes");
     for(unsigned complianceResourceTypesIndex = 0; complianceResourceTypesIndex < complianceResourceTypesJsonList.GetLength(); ++complianceResourceTypesIndex)
     {
       m_complianceResourceTypes.push_back(complianceResourceTypesJsonList[complianceResourceTypesIndex].AsString());

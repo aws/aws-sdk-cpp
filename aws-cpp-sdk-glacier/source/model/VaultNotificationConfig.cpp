@@ -34,14 +34,14 @@ VaultNotificationConfig::VaultNotificationConfig() :
 {
 }
 
-VaultNotificationConfig::VaultNotificationConfig(const JsonValue& jsonValue) : 
+VaultNotificationConfig::VaultNotificationConfig(JsonView jsonValue) : 
     m_sNSTopicHasBeenSet(false),
     m_eventsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-VaultNotificationConfig& VaultNotificationConfig::operator =(const JsonValue& jsonValue)
+VaultNotificationConfig& VaultNotificationConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SNSTopic"))
   {
@@ -52,7 +52,7 @@ VaultNotificationConfig& VaultNotificationConfig::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("Events"))
   {
-    Array<JsonValue> eventsJsonList = jsonValue.GetArray("Events");
+    Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsString());

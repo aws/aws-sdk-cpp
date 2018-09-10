@@ -37,7 +37,7 @@ User::User() :
 {
 }
 
-User::User(const JsonValue& jsonValue) : 
+User::User(JsonView jsonValue) : 
     m_consoleAccess(false),
     m_consoleAccessHasBeenSet(false),
     m_groupsHasBeenSet(false),
@@ -47,7 +47,7 @@ User::User(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-User& User::operator =(const JsonValue& jsonValue)
+User& User::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("consoleAccess"))
   {
@@ -58,7 +58,7 @@ User& User::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("groups"))
   {
-    Array<JsonValue> groupsJsonList = jsonValue.GetArray("groups");
+    Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsString());

@@ -37,7 +37,7 @@ Aws::String DeleteAssessmentTemplateRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteAssessmentTemplateRequest::GetRequestSpecificHeaders() const

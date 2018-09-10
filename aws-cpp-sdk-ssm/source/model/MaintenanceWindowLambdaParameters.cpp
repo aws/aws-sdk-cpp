@@ -36,7 +36,7 @@ MaintenanceWindowLambdaParameters::MaintenanceWindowLambdaParameters() :
 {
 }
 
-MaintenanceWindowLambdaParameters::MaintenanceWindowLambdaParameters(const JsonValue& jsonValue) : 
+MaintenanceWindowLambdaParameters::MaintenanceWindowLambdaParameters(JsonView jsonValue) : 
     m_clientContextHasBeenSet(false),
     m_qualifierHasBeenSet(false),
     m_payloadHasBeenSet(false)
@@ -44,7 +44,7 @@ MaintenanceWindowLambdaParameters::MaintenanceWindowLambdaParameters(const JsonV
   *this = jsonValue;
 }
 
-MaintenanceWindowLambdaParameters& MaintenanceWindowLambdaParameters::operator =(const JsonValue& jsonValue)
+MaintenanceWindowLambdaParameters& MaintenanceWindowLambdaParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ClientContext"))
   {

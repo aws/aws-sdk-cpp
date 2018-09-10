@@ -32,12 +32,12 @@ AribSourceSettings::AribSourceSettings()
 {
 }
 
-AribSourceSettings::AribSourceSettings(const JsonValue& jsonValue)
+AribSourceSettings::AribSourceSettings(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-AribSourceSettings& AribSourceSettings::operator =(const JsonValue& jsonValue)
+AribSourceSettings& AribSourceSettings::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

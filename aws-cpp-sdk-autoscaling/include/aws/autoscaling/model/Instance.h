@@ -157,49 +157,56 @@ namespace Model
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
+     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
+     * it.</p>
      */
     inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
+     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
+     * it.</p>
      */
     inline void SetHealthStatus(const Aws::String& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
+     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
+     * it.</p>
      */
     inline void SetHealthStatus(Aws::String&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
+     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
+     * it.</p>
      */
     inline void SetHealthStatus(const char* value) { m_healthStatusHasBeenSet = true; m_healthStatus.assign(value); }
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
+     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
+     * it.</p>
      */
     inline Instance& WithHealthStatus(const Aws::String& value) { SetHealthStatus(value); return *this;}
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
+     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
+     * it.</p>
      */
     inline Instance& WithHealthStatus(Aws::String&& value) { SetHealthStatus(std::move(value)); return *this;}
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Auto Scaling should terminate and replace it.</p>
+     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
+     * it.</p>
      */
     inline Instance& WithHealthStatus(const char* value) { SetHealthStatus(value); return *this;}
 
@@ -267,20 +274,20 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the instance is protected from termination by Auto Scaling
-     * when scaling in.</p>
+     * <p>Indicates whether the instance is protected from termination by Amazon EC2
+     * Auto Scaling when scaling in.</p>
      */
     inline bool GetProtectedFromScaleIn() const{ return m_protectedFromScaleIn; }
 
     /**
-     * <p>Indicates whether the instance is protected from termination by Auto Scaling
-     * when scaling in.</p>
+     * <p>Indicates whether the instance is protected from termination by Amazon EC2
+     * Auto Scaling when scaling in.</p>
      */
     inline void SetProtectedFromScaleIn(bool value) { m_protectedFromScaleInHasBeenSet = true; m_protectedFromScaleIn = value; }
 
     /**
-     * <p>Indicates whether the instance is protected from termination by Auto Scaling
-     * when scaling in.</p>
+     * <p>Indicates whether the instance is protected from termination by Amazon EC2
+     * Auto Scaling when scaling in.</p>
      */
     inline Instance& WithProtectedFromScaleIn(bool value) { SetProtectedFromScaleIn(value); return *this;}
 

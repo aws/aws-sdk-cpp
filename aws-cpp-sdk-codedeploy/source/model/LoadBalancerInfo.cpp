@@ -34,18 +34,18 @@ LoadBalancerInfo::LoadBalancerInfo() :
 {
 }
 
-LoadBalancerInfo::LoadBalancerInfo(const JsonValue& jsonValue) : 
+LoadBalancerInfo::LoadBalancerInfo(JsonView jsonValue) : 
     m_elbInfoListHasBeenSet(false),
     m_targetGroupInfoListHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LoadBalancerInfo& LoadBalancerInfo::operator =(const JsonValue& jsonValue)
+LoadBalancerInfo& LoadBalancerInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("elbInfoList"))
   {
-    Array<JsonValue> elbInfoListJsonList = jsonValue.GetArray("elbInfoList");
+    Array<JsonView> elbInfoListJsonList = jsonValue.GetArray("elbInfoList");
     for(unsigned elbInfoListIndex = 0; elbInfoListIndex < elbInfoListJsonList.GetLength(); ++elbInfoListIndex)
     {
       m_elbInfoList.push_back(elbInfoListJsonList[elbInfoListIndex].AsObject());
@@ -55,7 +55,7 @@ LoadBalancerInfo& LoadBalancerInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("targetGroupInfoList"))
   {
-    Array<JsonValue> targetGroupInfoListJsonList = jsonValue.GetArray("targetGroupInfoList");
+    Array<JsonView> targetGroupInfoListJsonList = jsonValue.GetArray("targetGroupInfoList");
     for(unsigned targetGroupInfoListIndex = 0; targetGroupInfoListIndex < targetGroupInfoListJsonList.GetLength(); ++targetGroupInfoListIndex)
     {
       m_targetGroupInfoList.push_back(targetGroupInfoListJsonList[targetGroupInfoListIndex].AsObject());

@@ -9,6 +9,7 @@ file(GLOB AWS_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/*.cpp")
 file(GLOB AWS_AUTH_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/auth/*.cpp")
 file(GLOB AWS_CONFIG_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/config/*.cpp")
 file(GLOB AWS_CLIENT_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/client/*.cpp")
+file(GLOB AWS_NET_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/net/*.cpp")
 file(GLOB HTTP_SRC "${CMAKE_CURRENT_SOURCE_DIR}/http/*.cpp")
 file(GLOB UTILS_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/*.cpp")
 file(GLOB UTILS_CRYPTO_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/crypto/*.cpp")
@@ -17,21 +18,28 @@ file(GLOB UTILS_STREAM_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/stream/*.cpp")
 file(GLOB UTILS_LOGGING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/logging/*.cpp")
 file(GLOB UTILS_RATE_LIMITER_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/ratelimiter/*.cpp")
 file(GLOB UTILS_XML_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/xml/*.cpp")
-file(GLOB UTILS_XML_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/threading/*.cpp")
-file(GLOB UTILS_XML_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/memory/*.cpp")
+file(GLOB UTILS_THREADING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/threading/*.cpp")
+file(GLOB UTILS_MEMORY_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/memory/*.cpp")
+file(GLOB MONITORING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/monitoring/*.cpp")
+
 
 file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
   "${CMAKE_CURRENT_SOURCE_DIR}/RunTests.cpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/VersionTests.cpp"
   ${AWS_SRC}
   ${AWS_AUTH_SRC}
   ${AWS_CONFIG_SRC}
+  ${MONITORING_SRC}
   ${AWS_CLIENT_SRC}
+  ${AWS_NET_SRC}
   ${HTTP_SRC}
   ${UTILS_SRC}
   ${UTILS_CRYPTO_SRC}
   ${UTILS_JSON_SRC}
   ${UTILS_STREAM_SRC}
   ${UTILS_XML_SRC}
+  ${UTILS_THREADING_SRC}
+  ${UTILS_MEMORY_SRC}
   ${UTILS_LOGGING_SRC}
   ${UTILS_RATE_LIMITER_SRC}
 )
@@ -42,7 +50,9 @@ if(PLATFORM_WINDOWS)
     source_group("Source Files\\aws\\auth" FILES ${AWS_AUTH_SRC})
     source_group("Source Files\\aws\\config" FILES ${AWS_CONFIG_SRC})
     source_group("Source Files\\aws\\client" FILES ${AWS_CLIENT_SRC})
+    source_group("Source Files\\aws\\net" FILES ${AWS_NET_SRC})
     source_group("Source Files\\http" FILES  ${HTTP_SRC})
+    source_group("Source Files\\monitoring" FILES ${MONITORING_SRC})
     source_group("Source Files\\utils" FILES ${UTILS_SRC})
     source_group("Source Files\\utils\\crypto" FILES ${UTILS_CRYPTO_SRC})
     source_group("Source Files\\utils\\json" FILES ${UTILS_JSON_SRC})
@@ -50,6 +60,8 @@ if(PLATFORM_WINDOWS)
     source_group("Source Files\\utils\\xml" FILES ${UTILS_XML_SRC})
     source_group("Source Files\\utils\\logging" FILES ${UTILS_LOGGING_SRC})
     source_group("Source Files\\utils\\ratelimiter" FILES ${UTILS_RATE_LIMITER_SRC})
+    source_group("Source Files\\utils\\memory" FILES ${UTILS_MEMORY_SRC})
+    source_group("Source Files\\utils\\threading" FILES ${UTILS_THREADING_SRC})
   endif()
 endif()
 

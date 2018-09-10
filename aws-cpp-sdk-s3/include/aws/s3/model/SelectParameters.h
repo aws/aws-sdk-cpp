@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * Describes the parameters for Select job types.<p><h3>See Also:</h3>   <a
+   * <p>Describes the parameters for Select job types.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectParameters">AWS
    * API Reference</a></p>
    */
@@ -51,115 +51,115 @@ namespace Model
 
 
     /**
-     * Describes the serialization format of the object.
+     * <p>Describes the serialization format of the object.</p>
      */
     inline const InputSerialization& GetInputSerialization() const{ return m_inputSerialization; }
 
     /**
-     * Describes the serialization format of the object.
+     * <p>Describes the serialization format of the object.</p>
      */
     inline void SetInputSerialization(const InputSerialization& value) { m_inputSerializationHasBeenSet = true; m_inputSerialization = value; }
 
     /**
-     * Describes the serialization format of the object.
+     * <p>Describes the serialization format of the object.</p>
      */
     inline void SetInputSerialization(InputSerialization&& value) { m_inputSerializationHasBeenSet = true; m_inputSerialization = std::move(value); }
 
     /**
-     * Describes the serialization format of the object.
+     * <p>Describes the serialization format of the object.</p>
      */
     inline SelectParameters& WithInputSerialization(const InputSerialization& value) { SetInputSerialization(value); return *this;}
 
     /**
-     * Describes the serialization format of the object.
+     * <p>Describes the serialization format of the object.</p>
      */
     inline SelectParameters& WithInputSerialization(InputSerialization&& value) { SetInputSerialization(std::move(value)); return *this;}
 
 
     /**
-     * The type of the provided expression (e.g., SQL).
+     * <p>The type of the provided expression (e.g., SQL).</p>
      */
     inline const ExpressionType& GetExpressionType() const{ return m_expressionType; }
 
     /**
-     * The type of the provided expression (e.g., SQL).
+     * <p>The type of the provided expression (e.g., SQL).</p>
      */
     inline void SetExpressionType(const ExpressionType& value) { m_expressionTypeHasBeenSet = true; m_expressionType = value; }
 
     /**
-     * The type of the provided expression (e.g., SQL).
+     * <p>The type of the provided expression (e.g., SQL).</p>
      */
     inline void SetExpressionType(ExpressionType&& value) { m_expressionTypeHasBeenSet = true; m_expressionType = std::move(value); }
 
     /**
-     * The type of the provided expression (e.g., SQL).
+     * <p>The type of the provided expression (e.g., SQL).</p>
      */
     inline SelectParameters& WithExpressionType(const ExpressionType& value) { SetExpressionType(value); return *this;}
 
     /**
-     * The type of the provided expression (e.g., SQL).
+     * <p>The type of the provided expression (e.g., SQL).</p>
      */
     inline SelectParameters& WithExpressionType(ExpressionType&& value) { SetExpressionType(std::move(value)); return *this;}
 
 
     /**
-     * The expression that is used to query the object.
+     * <p>The expression that is used to query the object.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
 
     /**
-     * The expression that is used to query the object.
+     * <p>The expression that is used to query the object.</p>
      */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
     /**
-     * The expression that is used to query the object.
+     * <p>The expression that is used to query the object.</p>
      */
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
 
     /**
-     * The expression that is used to query the object.
+     * <p>The expression that is used to query the object.</p>
      */
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
 
     /**
-     * The expression that is used to query the object.
+     * <p>The expression that is used to query the object.</p>
      */
     inline SelectParameters& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
 
     /**
-     * The expression that is used to query the object.
+     * <p>The expression that is used to query the object.</p>
      */
     inline SelectParameters& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
 
     /**
-     * The expression that is used to query the object.
+     * <p>The expression that is used to query the object.</p>
      */
     inline SelectParameters& WithExpression(const char* value) { SetExpression(value); return *this;}
 
 
     /**
-     * Describes how the results of the Select job are serialized.
+     * <p>Describes how the results of the Select job are serialized.</p>
      */
     inline const OutputSerialization& GetOutputSerialization() const{ return m_outputSerialization; }
 
     /**
-     * Describes how the results of the Select job are serialized.
+     * <p>Describes how the results of the Select job are serialized.</p>
      */
     inline void SetOutputSerialization(const OutputSerialization& value) { m_outputSerializationHasBeenSet = true; m_outputSerialization = value; }
 
     /**
-     * Describes how the results of the Select job are serialized.
+     * <p>Describes how the results of the Select job are serialized.</p>
      */
     inline void SetOutputSerialization(OutputSerialization&& value) { m_outputSerializationHasBeenSet = true; m_outputSerialization = std::move(value); }
 
     /**
-     * Describes how the results of the Select job are serialized.
+     * <p>Describes how the results of the Select job are serialized.</p>
      */
     inline SelectParameters& WithOutputSerialization(const OutputSerialization& value) { SetOutputSerialization(value); return *this;}
 
     /**
-     * Describes how the results of the Select job are serialized.
+     * <p>Describes how the results of the Select job are serialized.</p>
      */
     inline SelectParameters& WithOutputSerialization(OutputSerialization&& value) { SetOutputSerialization(std::move(value)); return *this;}
 

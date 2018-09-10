@@ -26,6 +26,7 @@ SendCommandRequest::SendCommandRequest() :
     m_instanceIdsHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_documentNameHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
     m_documentHashHasBeenSet(false),
     m_documentHashType(DocumentHashType::NOT_SET),
     m_documentHashTypeHasBeenSet(false),
@@ -39,7 +40,8 @@ SendCommandRequest::SendCommandRequest() :
     m_maxConcurrencyHasBeenSet(false),
     m_maxErrorsHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false)
+    m_notificationConfigHasBeenSet(false),
+    m_cloudWatchOutputConfigHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,12 @@ Aws::String SendCommandRequest::SerializePayload() const
   if(m_documentNameHasBeenSet)
   {
    payload.WithString("DocumentName", m_documentName);
+
+  }
+
+  if(m_documentVersionHasBeenSet)
+  {
+   payload.WithString("DocumentVersion", m_documentVersion);
 
   }
 
@@ -156,7 +164,13 @@ Aws::String SendCommandRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_cloudWatchOutputConfigHasBeenSet)
+  {
+   payload.WithObject("CloudWatchOutputConfig", m_cloudWatchOutputConfig.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SendCommandRequest::GetRequestSpecificHeaders() const

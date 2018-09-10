@@ -16,6 +16,7 @@
 #include <aws/s3/model/CreateMultipartUploadRequest.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -23,6 +24,7 @@
 using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
 CreateMultipartUploadRequest::CreateMultipartUploadRequest() : 
     m_aCL(ObjectCannedACL::NOT_SET),
@@ -51,7 +53,8 @@ CreateMultipartUploadRequest::CreateMultipartUploadRequest() :
     m_sSEKMSKeyIdHasBeenSet(false),
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
-    m_taggingHasBeenSet(false)
+    m_taggingHasBeenSet(false),
+    m_customizedAccessLogTagHasBeenSet(false)
 {
 }
 
@@ -60,6 +63,27 @@ Aws::String CreateMultipartUploadRequest::SerializePayload() const
   return "";
 }
 
+void CreateMultipartUploadRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(!m_customizedAccessLogTag.empty())
+    {
+        // only accept customized LogTag which starts with "x-"
+        Aws::Map<Aws::String, Aws::String> collectedLogTags;
+        for(const auto& entry: m_customizedAccessLogTag)
+        {
+            if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-")
+            {
+                collectedLogTags.emplace(entry.first, entry.second);
+            }
+        }
+
+        if (!collectedLogTags.empty())
+        {
+            uri.AddQueryStringParameter(collectedLogTags);
+        }
+    }
+}
 
 Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecificHeaders() const
 {
@@ -67,74 +91,74 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
   Aws::StringStream ss;
   if(m_aCLHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-acl", ObjectCannedACLMapper::GetNameForObjectCannedACL(m_aCL)));
+    headers.emplace("x-amz-acl", ObjectCannedACLMapper::GetNameForObjectCannedACL(m_aCL));
   }
 
   if(m_cacheControlHasBeenSet)
   {
     ss << m_cacheControl;
-    headers.insert(Aws::Http::HeaderValuePair("cache-control", ss.str()));
+    headers.emplace("cache-control",  ss.str());
     ss.str("");
   }
 
   if(m_contentDispositionHasBeenSet)
   {
     ss << m_contentDisposition;
-    headers.insert(Aws::Http::HeaderValuePair("content-disposition", ss.str()));
+    headers.emplace("content-disposition",  ss.str());
     ss.str("");
   }
 
   if(m_contentEncodingHasBeenSet)
   {
     ss << m_contentEncoding;
-    headers.insert(Aws::Http::HeaderValuePair("content-encoding", ss.str()));
+    headers.emplace("content-encoding",  ss.str());
     ss.str("");
   }
 
   if(m_contentLanguageHasBeenSet)
   {
     ss << m_contentLanguage;
-    headers.insert(Aws::Http::HeaderValuePair("content-language", ss.str()));
+    headers.emplace("content-language",  ss.str());
     ss.str("");
   }
 
   if(m_contentTypeHasBeenSet)
   {
     ss << m_contentType;
-    headers.insert(Aws::Http::HeaderValuePair("content-type", ss.str()));
+    headers.emplace("content-type",  ss.str());
     ss.str("");
   }
 
   if(m_expiresHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("expires", m_expires.ToGmtString(DateFormat::RFC822)));
+    headers.emplace("expires", m_expires.ToGmtString(DateFormat::RFC822));
   }
 
   if(m_grantFullControlHasBeenSet)
   {
     ss << m_grantFullControl;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-full-control", ss.str()));
+    headers.emplace("x-amz-grant-full-control",  ss.str());
     ss.str("");
   }
 
   if(m_grantReadHasBeenSet)
   {
     ss << m_grantRead;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-read", ss.str()));
+    headers.emplace("x-amz-grant-read",  ss.str());
     ss.str("");
   }
 
   if(m_grantReadACPHasBeenSet)
   {
     ss << m_grantReadACP;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-read-acp", ss.str()));
+    headers.emplace("x-amz-grant-read-acp",  ss.str());
     ss.str("");
   }
 
   if(m_grantWriteACPHasBeenSet)
   {
     ss << m_grantWriteACP;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-write-acp", ss.str()));
+    headers.emplace("x-amz-grant-write-acp",  ss.str());
     ss.str("");
   }
 
@@ -143,65 +167,65 @@ Aws::Http::HeaderValueCollection CreateMultipartUploadRequest::GetRequestSpecifi
     for(const auto& item : m_metadata)
     {
       ss << "x-amz-meta-" << item.first;
-      headers.insert(Aws::Http::HeaderValuePair(ss.str(), item.second));
+      headers.emplace(ss.str(), item.second);
       ss.str("");
     }
   }
 
   if(m_serverSideEncryptionHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption", ServerSideEncryptionMapper::GetNameForServerSideEncryption(m_serverSideEncryption)));
+    headers.emplace("x-amz-server-side-encryption", ServerSideEncryptionMapper::GetNameForServerSideEncryption(m_serverSideEncryption));
   }
 
   if(m_storageClassHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-storage-class", StorageClassMapper::GetNameForStorageClass(m_storageClass)));
+    headers.emplace("x-amz-storage-class", StorageClassMapper::GetNameForStorageClass(m_storageClass));
   }
 
   if(m_websiteRedirectLocationHasBeenSet)
   {
     ss << m_websiteRedirectLocation;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-website-redirect-location", ss.str()));
+    headers.emplace("x-amz-website-redirect-location",  ss.str());
     ss.str("");
   }
 
   if(m_sSECustomerAlgorithmHasBeenSet)
   {
     ss << m_sSECustomerAlgorithm;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-algorithm", ss.str()));
+    headers.emplace("x-amz-server-side-encryption-customer-algorithm",  ss.str());
     ss.str("");
   }
 
   if(m_sSECustomerKeyHasBeenSet)
   {
     ss << m_sSECustomerKey;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key", ss.str()));
+    headers.emplace("x-amz-server-side-encryption-customer-key",  ss.str());
     ss.str("");
   }
 
   if(m_sSECustomerKeyMD5HasBeenSet)
   {
     ss << m_sSECustomerKeyMD5;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key-md5", ss.str()));
+    headers.emplace("x-amz-server-side-encryption-customer-key-md5",  ss.str());
     ss.str("");
   }
 
   if(m_sSEKMSKeyIdHasBeenSet)
   {
     ss << m_sSEKMSKeyId;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-aws-kms-key-id", ss.str()));
+    headers.emplace("x-amz-server-side-encryption-aws-kms-key-id",  ss.str());
     ss.str("");
   }
 
   if(m_requestPayerHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+    headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
 
   if(m_taggingHasBeenSet)
   {
     ss << m_tagging;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-tagging", ss.str()));
+    headers.emplace("x-amz-tagging",  ss.str());
     ss.str("");
   }
 

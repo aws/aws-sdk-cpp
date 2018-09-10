@@ -44,7 +44,7 @@ ElasticsearchClusterConfig::ElasticsearchClusterConfig() :
 {
 }
 
-ElasticsearchClusterConfig::ElasticsearchClusterConfig(const JsonValue& jsonValue) : 
+ElasticsearchClusterConfig::ElasticsearchClusterConfig(JsonView jsonValue) : 
     m_instanceType(ESPartitionInstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false),
     m_instanceCount(0),
@@ -61,7 +61,7 @@ ElasticsearchClusterConfig::ElasticsearchClusterConfig(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-ElasticsearchClusterConfig& ElasticsearchClusterConfig::operator =(const JsonValue& jsonValue)
+ElasticsearchClusterConfig& ElasticsearchClusterConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceType"))
   {

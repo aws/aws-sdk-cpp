@@ -34,14 +34,14 @@ Predecessor::Predecessor() :
 {
 }
 
-Predecessor::Predecessor(const JsonValue& jsonValue) : 
+Predecessor::Predecessor(JsonView jsonValue) : 
     m_jobNameHasBeenSet(false),
     m_runIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Predecessor& Predecessor::operator =(const JsonValue& jsonValue)
+Predecessor& Predecessor::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobName"))
   {

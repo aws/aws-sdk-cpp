@@ -17,6 +17,8 @@
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/resource-groups/ResourceGroupsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/resource-groups/model/ResourceFilter.h>
 #include <utility>
 
 namespace Aws
@@ -82,6 +84,70 @@ namespace Model
      * <p>The name of the resource group.</p>
      */
     inline ListGroupResourcesRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
+
+    /**
+     * <p>Filters, formatted as ResourceFilter objects, that you want to apply to a
+     * ListGroupResources operation.</p> <ul> <li> <p> <code>resource-type</code> -
+     * Filter resources by their type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline const Aws::Vector<ResourceFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Filters, formatted as ResourceFilter objects, that you want to apply to a
+     * ListGroupResources operation.</p> <ul> <li> <p> <code>resource-type</code> -
+     * Filter resources by their type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline void SetFilters(const Aws::Vector<ResourceFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>Filters, formatted as ResourceFilter objects, that you want to apply to a
+     * ListGroupResources operation.</p> <ul> <li> <p> <code>resource-type</code> -
+     * Filter resources by their type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline void SetFilters(Aws::Vector<ResourceFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>Filters, formatted as ResourceFilter objects, that you want to apply to a
+     * ListGroupResources operation.</p> <ul> <li> <p> <code>resource-type</code> -
+     * Filter resources by their type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline ListGroupResourcesRequest& WithFilters(const Aws::Vector<ResourceFilter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>Filters, formatted as ResourceFilter objects, that you want to apply to a
+     * ListGroupResources operation.</p> <ul> <li> <p> <code>resource-type</code> -
+     * Filter resources by their type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline ListGroupResourcesRequest& WithFilters(Aws::Vector<ResourceFilter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters, formatted as ResourceFilter objects, that you want to apply to a
+     * ListGroupResources operation.</p> <ul> <li> <p> <code>resource-type</code> -
+     * Filter resources by their type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline ListGroupResourcesRequest& AddFilters(const ResourceFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>Filters, formatted as ResourceFilter objects, that you want to apply to a
+     * ListGroupResources operation.</p> <ul> <li> <p> <code>resource-type</code> -
+     * Filter resources by their type. Specify up to five resource types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline ListGroupResourcesRequest& AddFilters(ResourceFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -156,6 +222,9 @@ namespace Model
 
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
+    Aws::Vector<ResourceFilter> m_filters;
+    bool m_filtersHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

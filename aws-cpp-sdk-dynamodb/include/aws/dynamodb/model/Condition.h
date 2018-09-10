@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -53,8 +54,8 @@ namespace Model
   {
   public:
     Condition();
-    Condition(const Aws::Utils::Json::JsonValue& jsonValue);
-    Condition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Condition(Aws::Utils::Json::JsonView jsonValue);
+    Condition& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

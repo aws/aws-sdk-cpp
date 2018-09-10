@@ -34,18 +34,18 @@ CompromisedCredentialsRiskConfigurationType::CompromisedCredentialsRiskConfigura
 {
 }
 
-CompromisedCredentialsRiskConfigurationType::CompromisedCredentialsRiskConfigurationType(const JsonValue& jsonValue) : 
+CompromisedCredentialsRiskConfigurationType::CompromisedCredentialsRiskConfigurationType(JsonView jsonValue) : 
     m_eventFilterHasBeenSet(false),
     m_actionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CompromisedCredentialsRiskConfigurationType& CompromisedCredentialsRiskConfigurationType::operator =(const JsonValue& jsonValue)
+CompromisedCredentialsRiskConfigurationType& CompromisedCredentialsRiskConfigurationType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EventFilter"))
   {
-    Array<JsonValue> eventFilterJsonList = jsonValue.GetArray("EventFilter");
+    Array<JsonView> eventFilterJsonList = jsonValue.GetArray("EventFilter");
     for(unsigned eventFilterIndex = 0; eventFilterIndex < eventFilterJsonList.GetLength(); ++eventFilterIndex)
     {
       m_eventFilter.push_back(EventFilterTypeMapper::GetEventFilterTypeForName(eventFilterJsonList[eventFilterIndex].AsString()));

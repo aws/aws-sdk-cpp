@@ -79,7 +79,7 @@ Aws::String CreateSoftwareUpdateJobRequest::SerializePayload() const
    payload.WithString("UpdateTargetsOperatingSystem", UpdateTargetsOperatingSystemMapper::GetNameForUpdateTargetsOperatingSystem(m_updateTargetsOperatingSystem));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateSoftwareUpdateJobRequest::GetRequestSpecificHeaders() const
@@ -89,7 +89,7 @@ Aws::Http::HeaderValueCollection CreateSoftwareUpdateJobRequest::GetRequestSpeci
   if(m_amznClientTokenHasBeenSet)
   {
     ss << m_amznClientToken;
-    headers.insert(Aws::Http::HeaderValuePair("x-amzn-client-token", ss.str()));
+    headers.emplace("x-amzn-client-token",  ss.str());
     ss.str("");
   }
 

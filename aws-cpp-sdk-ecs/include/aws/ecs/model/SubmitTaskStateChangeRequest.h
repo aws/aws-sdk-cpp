@@ -324,27 +324,27 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the task execution stopped.</p>
+     * <p>The Unix time stamp for when the task execution stopped.</p>
      */
     inline const Aws::Utils::DateTime& GetExecutionStoppedAt() const{ return m_executionStoppedAt; }
 
     /**
-     * <p>The Unix timestamp for when the task execution stopped.</p>
+     * <p>The Unix time stamp for when the task execution stopped.</p>
      */
     inline void SetExecutionStoppedAt(const Aws::Utils::DateTime& value) { m_executionStoppedAtHasBeenSet = true; m_executionStoppedAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the task execution stopped.</p>
+     * <p>The Unix time stamp for when the task execution stopped.</p>
      */
     inline void SetExecutionStoppedAt(Aws::Utils::DateTime&& value) { m_executionStoppedAtHasBeenSet = true; m_executionStoppedAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the task execution stopped.</p>
+     * <p>The Unix time stamp for when the task execution stopped.</p>
      */
     inline SubmitTaskStateChangeRequest& WithExecutionStoppedAt(const Aws::Utils::DateTime& value) { SetExecutionStoppedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the task execution stopped.</p>
+     * <p>The Unix time stamp for when the task execution stopped.</p>
      */
     inline SubmitTaskStateChangeRequest& WithExecutionStoppedAt(Aws::Utils::DateTime&& value) { SetExecutionStoppedAt(std::move(value)); return *this;}
 

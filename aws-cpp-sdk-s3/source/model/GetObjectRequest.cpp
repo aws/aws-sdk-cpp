@@ -47,7 +47,8 @@ GetObjectRequest::GetObjectRequest() :
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
     m_partNumber(0),
-    m_partNumberHasBeenSet(false)
+    m_partNumberHasBeenSet(false),
+    m_customizedAccessLogTagHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,23 @@ void GetObjectRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(!m_customizedAccessLogTag.empty())
+    {
+        // only accept customized LogTag which starts with "x-"
+        Aws::Map<Aws::String, Aws::String> collectedLogTags;
+        for(const auto& entry: m_customizedAccessLogTag)
+        {
+            if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-")
+            {
+                collectedLogTags.emplace(entry.first, entry.second);
+            }
+        }
+
+        if (!collectedLogTags.empty())
+        {
+            uri.AddQueryStringParameter(collectedLogTags);
+        }
+    }
 }
 
 Aws::Http::HeaderValueCollection GetObjectRequest::GetRequestSpecificHeaders() const
@@ -124,58 +142,58 @@ Aws::Http::HeaderValueCollection GetObjectRequest::GetRequestSpecificHeaders() c
   if(m_ifMatchHasBeenSet)
   {
     ss << m_ifMatch;
-    headers.insert(Aws::Http::HeaderValuePair("if-match", ss.str()));
+    headers.emplace("if-match",  ss.str());
     ss.str("");
   }
 
   if(m_ifModifiedSinceHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("if-modified-since", m_ifModifiedSince.ToGmtString(DateFormat::RFC822)));
+    headers.emplace("if-modified-since", m_ifModifiedSince.ToGmtString(DateFormat::RFC822));
   }
 
   if(m_ifNoneMatchHasBeenSet)
   {
     ss << m_ifNoneMatch;
-    headers.insert(Aws::Http::HeaderValuePair("if-none-match", ss.str()));
+    headers.emplace("if-none-match",  ss.str());
     ss.str("");
   }
 
   if(m_ifUnmodifiedSinceHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("if-unmodified-since", m_ifUnmodifiedSince.ToGmtString(DateFormat::RFC822)));
+    headers.emplace("if-unmodified-since", m_ifUnmodifiedSince.ToGmtString(DateFormat::RFC822));
   }
 
   if(m_rangeHasBeenSet)
   {
     ss << m_range;
-    headers.insert(Aws::Http::HeaderValuePair("range", ss.str()));
+    headers.emplace("range",  ss.str());
     ss.str("");
   }
 
   if(m_sSECustomerAlgorithmHasBeenSet)
   {
     ss << m_sSECustomerAlgorithm;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-algorithm", ss.str()));
+    headers.emplace("x-amz-server-side-encryption-customer-algorithm",  ss.str());
     ss.str("");
   }
 
   if(m_sSECustomerKeyHasBeenSet)
   {
     ss << m_sSECustomerKey;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key", ss.str()));
+    headers.emplace("x-amz-server-side-encryption-customer-key",  ss.str());
     ss.str("");
   }
 
   if(m_sSECustomerKeyMD5HasBeenSet)
   {
     ss << m_sSECustomerKeyMD5;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-server-side-encryption-customer-key-md5", ss.str()));
+    headers.emplace("x-amz-server-side-encryption-customer-key-md5",  ss.str());
     ss.str("");
   }
 
   if(m_requestPayerHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+    headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
 
   return headers;

@@ -53,7 +53,7 @@ DeploymentGroupInfo::DeploymentGroupInfo() :
 {
 }
 
-DeploymentGroupInfo::DeploymentGroupInfo(const JsonValue& jsonValue) : 
+DeploymentGroupInfo::DeploymentGroupInfo(JsonView jsonValue) : 
     m_applicationNameHasBeenSet(false),
     m_deploymentGroupIdHasBeenSet(false),
     m_deploymentGroupNameHasBeenSet(false),
@@ -79,7 +79,7 @@ DeploymentGroupInfo::DeploymentGroupInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeploymentGroupInfo& DeploymentGroupInfo::operator =(const JsonValue& jsonValue)
+DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("applicationName"))
   {
@@ -111,7 +111,7 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ec2TagFilters"))
   {
-    Array<JsonValue> ec2TagFiltersJsonList = jsonValue.GetArray("ec2TagFilters");
+    Array<JsonView> ec2TagFiltersJsonList = jsonValue.GetArray("ec2TagFilters");
     for(unsigned ec2TagFiltersIndex = 0; ec2TagFiltersIndex < ec2TagFiltersJsonList.GetLength(); ++ec2TagFiltersIndex)
     {
       m_ec2TagFilters.push_back(ec2TagFiltersJsonList[ec2TagFiltersIndex].AsObject());
@@ -121,7 +121,7 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("onPremisesInstanceTagFilters"))
   {
-    Array<JsonValue> onPremisesInstanceTagFiltersJsonList = jsonValue.GetArray("onPremisesInstanceTagFilters");
+    Array<JsonView> onPremisesInstanceTagFiltersJsonList = jsonValue.GetArray("onPremisesInstanceTagFilters");
     for(unsigned onPremisesInstanceTagFiltersIndex = 0; onPremisesInstanceTagFiltersIndex < onPremisesInstanceTagFiltersJsonList.GetLength(); ++onPremisesInstanceTagFiltersIndex)
     {
       m_onPremisesInstanceTagFilters.push_back(onPremisesInstanceTagFiltersJsonList[onPremisesInstanceTagFiltersIndex].AsObject());
@@ -131,7 +131,7 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("autoScalingGroups"))
   {
-    Array<JsonValue> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
+    Array<JsonView> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
     for(unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex)
     {
       m_autoScalingGroups.push_back(autoScalingGroupsJsonList[autoScalingGroupsIndex].AsObject());
@@ -155,7 +155,7 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("triggerConfigurations"))
   {
-    Array<JsonValue> triggerConfigurationsJsonList = jsonValue.GetArray("triggerConfigurations");
+    Array<JsonView> triggerConfigurationsJsonList = jsonValue.GetArray("triggerConfigurations");
     for(unsigned triggerConfigurationsIndex = 0; triggerConfigurationsIndex < triggerConfigurationsJsonList.GetLength(); ++triggerConfigurationsIndex)
     {
       m_triggerConfigurations.push_back(triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject());

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     GCMMessage();
-    GCMMessage(const Aws::Utils::Json::JsonValue& jsonValue);
-    GCMMessage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GCMMessage(Aws::Utils::Json::JsonView jsonValue);
+    GCMMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -106,37 +107,37 @@ namespace Model
 
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline const Aws::String& GetBody() const{ return m_body; }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline GCMMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline GCMMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
 
     /**
-     * The message body of the notification, the email body or the text message.
+     * The message body of the notification.
      */
     inline GCMMessage& WithBody(const char* value) { SetBody(value); return *this;}
 
@@ -387,37 +388,142 @@ namespace Model
 
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
+     * priority parameter when it sends the message. Accepts the following
+     * values:
+
+"Normal" - Messages might be delayed. Delivery is optimized for battery
+     * usage on the receiving device. Use normal priority unless immediate delivery is
+     * required.
+
+"High" - Messages are sent immediately and might wake a sleeping
+     * device.
+
+The equivalent values for APNs messages are "5" and "10". Amazon
+     * Pinpoint accepts these values here and converts them.
+
+For more information, see
+     * About FCM Messages in the Firebase documentation.
      */
     inline const Aws::String& GetPriority() const{ return m_priority; }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
+     * priority parameter when it sends the message. Accepts the following
+     * values:
+
+"Normal" - Messages might be delayed. Delivery is optimized for battery
+     * usage on the receiving device. Use normal priority unless immediate delivery is
+     * required.
+
+"High" - Messages are sent immediately and might wake a sleeping
+     * device.
+
+The equivalent values for APNs messages are "5" and "10". Amazon
+     * Pinpoint accepts these values here and converts them.
+
+For more information, see
+     * About FCM Messages in the Firebase documentation.
      */
     inline void SetPriority(const Aws::String& value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
+     * priority parameter when it sends the message. Accepts the following
+     * values:
+
+"Normal" - Messages might be delayed. Delivery is optimized for battery
+     * usage on the receiving device. Use normal priority unless immediate delivery is
+     * required.
+
+"High" - Messages are sent immediately and might wake a sleeping
+     * device.
+
+The equivalent values for APNs messages are "5" and "10". Amazon
+     * Pinpoint accepts these values here and converts them.
+
+For more information, see
+     * About FCM Messages in the Firebase documentation.
      */
     inline void SetPriority(Aws::String&& value) { m_priorityHasBeenSet = true; m_priority = std::move(value); }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
+     * priority parameter when it sends the message. Accepts the following
+     * values:
+
+"Normal" - Messages might be delayed. Delivery is optimized for battery
+     * usage on the receiving device. Use normal priority unless immediate delivery is
+     * required.
+
+"High" - Messages are sent immediately and might wake a sleeping
+     * device.
+
+The equivalent values for APNs messages are "5" and "10". Amazon
+     * Pinpoint accepts these values here and converts them.
+
+For more information, see
+     * About FCM Messages in the Firebase documentation.
      */
     inline void SetPriority(const char* value) { m_priorityHasBeenSet = true; m_priority.assign(value); }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
+     * priority parameter when it sends the message. Accepts the following
+     * values:
+
+"Normal" - Messages might be delayed. Delivery is optimized for battery
+     * usage on the receiving device. Use normal priority unless immediate delivery is
+     * required.
+
+"High" - Messages are sent immediately and might wake a sleeping
+     * device.
+
+The equivalent values for APNs messages are "5" and "10". Amazon
+     * Pinpoint accepts these values here and converts them.
+
+For more information, see
+     * About FCM Messages in the Firebase documentation.
      */
     inline GCMMessage& WithPriority(const Aws::String& value) { SetPriority(value); return *this;}
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
+     * priority parameter when it sends the message. Accepts the following
+     * values:
+
+"Normal" - Messages might be delayed. Delivery is optimized for battery
+     * usage on the receiving device. Use normal priority unless immediate delivery is
+     * required.
+
+"High" - Messages are sent immediately and might wake a sleeping
+     * device.
+
+The equivalent values for APNs messages are "5" and "10". Amazon
+     * Pinpoint accepts these values here and converts them.
+
+For more information, see
+     * About FCM Messages in the Firebase documentation.
      */
     inline GCMMessage& WithPriority(Aws::String&& value) { SetPriority(std::move(value)); return *this;}
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the FCM or GCM
+     * priority parameter when it sends the message. Accepts the following
+     * values:
+
+"Normal" - Messages might be delayed. Delivery is optimized for battery
+     * usage on the receiving device. Use normal priority unless immediate delivery is
+     * required.
+
+"High" - Messages are sent immediately and might wake a sleeping
+     * device.
+
+The equivalent values for APNs messages are "5" and "10". Amazon
+     * Pinpoint accepts these values here and converts them.
+
+For more information, see
+     * About FCM Messages in the Firebase documentation.
      */
     inline GCMMessage& WithPriority(const char* value) { SetPriority(value); return *this;}
 
@@ -695,23 +801,26 @@ namespace Model
 
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept in GCM
-     * storage if the device is offline. The maximum time to live supported is 4 weeks,
-     * and the default value is 4 weeks.
+     * The length of time (in seconds) that FCM or GCM stores and attempts to deliver
+     * the message. If unspecified, the value defaults to the maximum, which is
+     * 2,419,200 seconds (28 days). Amazon Pinpoint uses this value to set the FCM or
+     * GCM time_to_live parameter.
      */
     inline int GetTimeToLive() const{ return m_timeToLive; }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept in GCM
-     * storage if the device is offline. The maximum time to live supported is 4 weeks,
-     * and the default value is 4 weeks.
+     * The length of time (in seconds) that FCM or GCM stores and attempts to deliver
+     * the message. If unspecified, the value defaults to the maximum, which is
+     * 2,419,200 seconds (28 days). Amazon Pinpoint uses this value to set the FCM or
+     * GCM time_to_live parameter.
      */
     inline void SetTimeToLive(int value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept in GCM
-     * storage if the device is offline. The maximum time to live supported is 4 weeks,
-     * and the default value is 4 weeks.
+     * The length of time (in seconds) that FCM or GCM stores and attempts to deliver
+     * the message. If unspecified, the value defaults to the maximum, which is
+     * 2,419,200 seconds (28 days). Amazon Pinpoint uses this value to set the FCM or
+     * GCM time_to_live parameter.
      */
     inline GCMMessage& WithTimeToLive(int value) { SetTimeToLive(value); return *this;}
 

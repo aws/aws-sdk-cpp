@@ -35,7 +35,7 @@ SubscribedRuleGroupSummary::SubscribedRuleGroupSummary() :
 {
 }
 
-SubscribedRuleGroupSummary::SubscribedRuleGroupSummary(const JsonValue& jsonValue) : 
+SubscribedRuleGroupSummary::SubscribedRuleGroupSummary(JsonView jsonValue) : 
     m_ruleGroupIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_metricNameHasBeenSet(false)
@@ -43,7 +43,7 @@ SubscribedRuleGroupSummary::SubscribedRuleGroupSummary(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-SubscribedRuleGroupSummary& SubscribedRuleGroupSummary::operator =(const JsonValue& jsonValue)
+SubscribedRuleGroupSummary& SubscribedRuleGroupSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RuleGroupId"))
   {

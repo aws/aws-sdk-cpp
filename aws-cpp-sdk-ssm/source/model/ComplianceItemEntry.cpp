@@ -39,7 +39,7 @@ ComplianceItemEntry::ComplianceItemEntry() :
 {
 }
 
-ComplianceItemEntry::ComplianceItemEntry(const JsonValue& jsonValue) : 
+ComplianceItemEntry::ComplianceItemEntry(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_severity(ComplianceSeverity::NOT_SET),
@@ -51,7 +51,7 @@ ComplianceItemEntry::ComplianceItemEntry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComplianceItemEntry& ComplianceItemEntry::operator =(const JsonValue& jsonValue)
+ComplianceItemEntry& ComplianceItemEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -83,7 +83,7 @@ ComplianceItemEntry& ComplianceItemEntry::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Details"))
   {
-    Aws::Map<Aws::String, JsonValue> detailsJsonMap = jsonValue.GetObject("Details").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> detailsJsonMap = jsonValue.GetObject("Details").GetAllObjects();
     for(auto& detailsItem : detailsJsonMap)
     {
       m_details[detailsItem.first] = detailsItem.second.AsString();

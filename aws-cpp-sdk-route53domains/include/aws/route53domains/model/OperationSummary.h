@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Route53Domains
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     OperationSummary();
-    OperationSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    OperationSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OperationSummary(Aws::Utils::Json::JsonView jsonValue);
+    OperationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

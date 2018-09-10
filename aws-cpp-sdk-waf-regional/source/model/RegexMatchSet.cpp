@@ -35,7 +35,7 @@ RegexMatchSet::RegexMatchSet() :
 {
 }
 
-RegexMatchSet::RegexMatchSet(const JsonValue& jsonValue) : 
+RegexMatchSet::RegexMatchSet(JsonView jsonValue) : 
     m_regexMatchSetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_regexMatchTuplesHasBeenSet(false)
@@ -43,7 +43,7 @@ RegexMatchSet::RegexMatchSet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RegexMatchSet& RegexMatchSet::operator =(const JsonValue& jsonValue)
+RegexMatchSet& RegexMatchSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RegexMatchSetId"))
   {
@@ -61,7 +61,7 @@ RegexMatchSet& RegexMatchSet::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("RegexMatchTuples"))
   {
-    Array<JsonValue> regexMatchTuplesJsonList = jsonValue.GetArray("RegexMatchTuples");
+    Array<JsonView> regexMatchTuplesJsonList = jsonValue.GetArray("RegexMatchTuples");
     for(unsigned regexMatchTuplesIndex = 0; regexMatchTuplesIndex < regexMatchTuplesJsonList.GetLength(); ++regexMatchTuplesIndex)
     {
       m_regexMatchTuples.push_back(regexMatchTuplesJsonList[regexMatchTuplesIndex].AsObject());

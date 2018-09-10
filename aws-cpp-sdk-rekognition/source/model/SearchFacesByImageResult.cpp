@@ -39,7 +39,7 @@ SearchFacesByImageResult::SearchFacesByImageResult(const Aws::AmazonWebServiceRe
 
 SearchFacesByImageResult& SearchFacesByImageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SearchedFaceBoundingBox"))
   {
     m_searchedFaceBoundingBox = jsonValue.GetObject("SearchedFaceBoundingBox");
@@ -54,7 +54,7 @@ SearchFacesByImageResult& SearchFacesByImageResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("FaceMatches"))
   {
-    Array<JsonValue> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
+    Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
     for(unsigned faceMatchesIndex = 0; faceMatchesIndex < faceMatchesJsonList.GetLength(); ++faceMatchesIndex)
     {
       m_faceMatches.push_back(faceMatchesJsonList[faceMatchesIndex].AsObject());

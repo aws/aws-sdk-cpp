@@ -46,7 +46,7 @@ ColumnInfo::ColumnInfo() :
 {
 }
 
-ColumnInfo::ColumnInfo(const JsonValue& jsonValue) : 
+ColumnInfo::ColumnInfo(JsonView jsonValue) : 
     m_catalogNameHasBeenSet(false),
     m_schemaNameHasBeenSet(false),
     m_tableNameHasBeenSet(false),
@@ -65,7 +65,7 @@ ColumnInfo::ColumnInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ColumnInfo& ColumnInfo::operator =(const JsonValue& jsonValue)
+ColumnInfo& ColumnInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CatalogName"))
   {

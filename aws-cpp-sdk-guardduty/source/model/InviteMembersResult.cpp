@@ -37,10 +37,10 @@ InviteMembersResult::InviteMembersResult(const Aws::AmazonWebServiceResult<JsonV
 
 InviteMembersResult& InviteMembersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("unprocessedAccounts"))
   {
-    Array<JsonValue> unprocessedAccountsJsonList = jsonValue.GetArray("unprocessedAccounts");
+    Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("unprocessedAccounts");
     for(unsigned unprocessedAccountsIndex = 0; unprocessedAccountsIndex < unprocessedAccountsJsonList.GetLength(); ++unprocessedAccountsIndex)
     {
       m_unprocessedAccounts.push_back(unprocessedAccountsJsonList[unprocessedAccountsIndex].AsObject());

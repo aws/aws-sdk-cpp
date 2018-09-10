@@ -37,10 +37,10 @@ ListFacetNamesResult::ListFacetNamesResult(const Aws::AmazonWebServiceResult<Jso
 
 ListFacetNamesResult& ListFacetNamesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FacetNames"))
   {
-    Array<JsonValue> facetNamesJsonList = jsonValue.GetArray("FacetNames");
+    Array<JsonView> facetNamesJsonList = jsonValue.GetArray("FacetNames");
     for(unsigned facetNamesIndex = 0; facetNamesIndex < facetNamesJsonList.GetLength(); ++facetNamesIndex)
     {
       m_facetNames.push_back(facetNamesJsonList[facetNamesIndex].AsString());

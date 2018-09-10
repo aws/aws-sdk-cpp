@@ -39,7 +39,7 @@ ListQualificationRequestsResult::ListQualificationRequestsResult(const Aws::Amaz
 
 ListQualificationRequestsResult& ListQualificationRequestsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NumResults"))
   {
     m_numResults = jsonValue.GetInteger("NumResults");
@@ -54,7 +54,7 @@ ListQualificationRequestsResult& ListQualificationRequestsResult::operator =(con
 
   if(jsonValue.ValueExists("QualificationRequests"))
   {
-    Array<JsonValue> qualificationRequestsJsonList = jsonValue.GetArray("QualificationRequests");
+    Array<JsonView> qualificationRequestsJsonList = jsonValue.GetArray("QualificationRequests");
     for(unsigned qualificationRequestsIndex = 0; qualificationRequestsIndex < qualificationRequestsJsonList.GetLength(); ++qualificationRequestsIndex)
     {
       m_qualificationRequests.push_back(qualificationRequestsJsonList[qualificationRequestsIndex].AsObject());

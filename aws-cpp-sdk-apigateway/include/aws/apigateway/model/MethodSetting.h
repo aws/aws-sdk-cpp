@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace APIGateway
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     MethodSetting();
-    MethodSetting(const Aws::Utils::Json::JsonValue& jsonValue);
-    MethodSetting& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MethodSetting(Aws::Utils::Json::JsonView jsonValue);
+    MethodSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -73,7 +74,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies the logging level for this method, which effects the log entries
+     * <p>Specifies the logging level for this method, which affects the log entries
      * pushed to Amazon CloudWatch Logs. The PATCH path for this setting is
      * <code>/{method_setting_key}/logging/loglevel</code>, and the available levels
      * are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.</p>
@@ -81,7 +82,7 @@ namespace Model
     inline const Aws::String& GetLoggingLevel() const{ return m_loggingLevel; }
 
     /**
-     * <p>Specifies the logging level for this method, which effects the log entries
+     * <p>Specifies the logging level for this method, which affects the log entries
      * pushed to Amazon CloudWatch Logs. The PATCH path for this setting is
      * <code>/{method_setting_key}/logging/loglevel</code>, and the available levels
      * are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.</p>
@@ -89,7 +90,7 @@ namespace Model
     inline void SetLoggingLevel(const Aws::String& value) { m_loggingLevelHasBeenSet = true; m_loggingLevel = value; }
 
     /**
-     * <p>Specifies the logging level for this method, which effects the log entries
+     * <p>Specifies the logging level for this method, which affects the log entries
      * pushed to Amazon CloudWatch Logs. The PATCH path for this setting is
      * <code>/{method_setting_key}/logging/loglevel</code>, and the available levels
      * are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.</p>
@@ -97,7 +98,7 @@ namespace Model
     inline void SetLoggingLevel(Aws::String&& value) { m_loggingLevelHasBeenSet = true; m_loggingLevel = std::move(value); }
 
     /**
-     * <p>Specifies the logging level for this method, which effects the log entries
+     * <p>Specifies the logging level for this method, which affects the log entries
      * pushed to Amazon CloudWatch Logs. The PATCH path for this setting is
      * <code>/{method_setting_key}/logging/loglevel</code>, and the available levels
      * are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.</p>
@@ -105,7 +106,7 @@ namespace Model
     inline void SetLoggingLevel(const char* value) { m_loggingLevelHasBeenSet = true; m_loggingLevel.assign(value); }
 
     /**
-     * <p>Specifies the logging level for this method, which effects the log entries
+     * <p>Specifies the logging level for this method, which affects the log entries
      * pushed to Amazon CloudWatch Logs. The PATCH path for this setting is
      * <code>/{method_setting_key}/logging/loglevel</code>, and the available levels
      * are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.</p>
@@ -113,7 +114,7 @@ namespace Model
     inline MethodSetting& WithLoggingLevel(const Aws::String& value) { SetLoggingLevel(value); return *this;}
 
     /**
-     * <p>Specifies the logging level for this method, which effects the log entries
+     * <p>Specifies the logging level for this method, which affects the log entries
      * pushed to Amazon CloudWatch Logs. The PATCH path for this setting is
      * <code>/{method_setting_key}/logging/loglevel</code>, and the available levels
      * are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.</p>
@@ -121,7 +122,7 @@ namespace Model
     inline MethodSetting& WithLoggingLevel(Aws::String&& value) { SetLoggingLevel(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the logging level for this method, which effects the log entries
+     * <p>Specifies the logging level for this method, which affects the log entries
      * pushed to Amazon CloudWatch Logs. The PATCH path for this setting is
      * <code>/{method_setting_key}/logging/loglevel</code>, and the available levels
      * are <code>OFF</code>, <code>ERROR</code>, and <code>INFO</code>.</p>
@@ -131,7 +132,7 @@ namespace Model
 
     /**
      * <p>Specifies whether data trace logging is enabled for this method, which
-     * effects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
+     * affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
      * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.</p>
      */
@@ -139,7 +140,7 @@ namespace Model
 
     /**
      * <p>Specifies whether data trace logging is enabled for this method, which
-     * effects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
+     * affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
      * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.</p>
      */
@@ -147,7 +148,7 @@ namespace Model
 
     /**
      * <p>Specifies whether data trace logging is enabled for this method, which
-     * effects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
+     * affects the log entries pushed to Amazon CloudWatch Logs. The PATCH path for
      * this setting is <code>/{method_setting_key}/logging/dataTrace</code>, and the
      * value is a Boolean.</p>
      */

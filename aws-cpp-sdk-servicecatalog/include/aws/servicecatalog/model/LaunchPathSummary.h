@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceCatalog
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     LaunchPathSummary();
-    LaunchPathSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    LaunchPathSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LaunchPathSummary(Aws::Utils::Json::JsonView jsonValue);
+    LaunchPathSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

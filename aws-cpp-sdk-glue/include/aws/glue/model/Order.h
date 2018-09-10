@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     Order();
-    Order(const Aws::Utils::Json::JsonValue& jsonValue);
-    Order& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Order(Aws::Utils::Json::JsonView jsonValue);
+    Order& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -34,14 +34,14 @@ NodeTypeSpecificValue::NodeTypeSpecificValue() :
 {
 }
 
-NodeTypeSpecificValue::NodeTypeSpecificValue(const JsonValue& jsonValue) : 
+NodeTypeSpecificValue::NodeTypeSpecificValue(JsonView jsonValue) : 
     m_nodeTypeHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NodeTypeSpecificValue& NodeTypeSpecificValue::operator =(const JsonValue& jsonValue)
+NodeTypeSpecificValue& NodeTypeSpecificValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NodeType"))
   {

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -34,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Details about a Kinesis stream used as the source for a Kinesis Firehose
-   * delivery stream.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about a Kinesis data stream used as the source for a Kinesis Data
+   * Firehose delivery stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/KinesisStreamSourceDescription">AWS
    * API Reference</a></p>
    */
@@ -43,110 +44,152 @@ namespace Model
   {
   public:
     KinesisStreamSourceDescription();
-    KinesisStreamSourceDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    KinesisStreamSourceDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    KinesisStreamSourceDescription(Aws::Utils::Json::JsonView jsonValue);
+    KinesisStreamSourceDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
+     * Kinesis Data Streams ARN Format</a>.</p>
      */
     inline const Aws::String& GetKinesisStreamARN() const{ return m_kinesisStreamARN; }
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
+     * Kinesis Data Streams ARN Format</a>.</p>
      */
     inline void SetKinesisStreamARN(const Aws::String& value) { m_kinesisStreamARNHasBeenSet = true; m_kinesisStreamARN = value; }
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
+     * Kinesis Data Streams ARN Format</a>.</p>
      */
     inline void SetKinesisStreamARN(Aws::String&& value) { m_kinesisStreamARNHasBeenSet = true; m_kinesisStreamARN = std::move(value); }
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
+     * Kinesis Data Streams ARN Format</a>.</p>
      */
     inline void SetKinesisStreamARN(const char* value) { m_kinesisStreamARNHasBeenSet = true; m_kinesisStreamARN.assign(value); }
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
+     * Kinesis Data Streams ARN Format</a>.</p>
      */
     inline KinesisStreamSourceDescription& WithKinesisStreamARN(const Aws::String& value) { SetKinesisStreamARN(value); return *this;}
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
+     * Kinesis Data Streams ARN Format</a>.</p>
      */
     inline KinesisStreamSourceDescription& WithKinesisStreamARN(Aws::String&& value) { SetKinesisStreamARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the source Kinesis stream.</p>
+     * <p>The Amazon Resource Name (ARN) of the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon
+     * Kinesis Data Streams ARN Format</a>.</p>
      */
     inline KinesisStreamSourceDescription& WithKinesisStreamARN(const char* value) { SetKinesisStreamARN(value); return *this;}
 
 
     /**
-     * <p>The ARN of the role used by the source Kinesis stream.</p>
+     * <p>The ARN of the role used by the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The ARN of the role used by the source Kinesis stream.</p>
+     * <p>The ARN of the role used by the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The ARN of the role used by the source Kinesis stream.</p>
+     * <p>The ARN of the role used by the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The ARN of the role used by the source Kinesis stream.</p>
+     * <p>The ARN of the role used by the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The ARN of the role used by the source Kinesis stream.</p>
+     * <p>The ARN of the role used by the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline KinesisStreamSourceDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The ARN of the role used by the source Kinesis stream.</p>
+     * <p>The ARN of the role used by the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline KinesisStreamSourceDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the role used by the source Kinesis stream.</p>
+     * <p>The ARN of the role used by the source Kinesis data stream. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     * Identity and Access Management (IAM) ARN Format</a>.</p>
      */
     inline KinesisStreamSourceDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
 
     /**
-     * <p>Kinesis Firehose starts retrieving records from the Kinesis stream starting
-     * with this time stamp.</p>
+     * <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream
+     * starting with this time stamp.</p>
      */
     inline const Aws::Utils::DateTime& GetDeliveryStartTimestamp() const{ return m_deliveryStartTimestamp; }
 
     /**
-     * <p>Kinesis Firehose starts retrieving records from the Kinesis stream starting
-     * with this time stamp.</p>
+     * <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream
+     * starting with this time stamp.</p>
      */
     inline void SetDeliveryStartTimestamp(const Aws::Utils::DateTime& value) { m_deliveryStartTimestampHasBeenSet = true; m_deliveryStartTimestamp = value; }
 
     /**
-     * <p>Kinesis Firehose starts retrieving records from the Kinesis stream starting
-     * with this time stamp.</p>
+     * <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream
+     * starting with this time stamp.</p>
      */
     inline void SetDeliveryStartTimestamp(Aws::Utils::DateTime&& value) { m_deliveryStartTimestampHasBeenSet = true; m_deliveryStartTimestamp = std::move(value); }
 
     /**
-     * <p>Kinesis Firehose starts retrieving records from the Kinesis stream starting
-     * with this time stamp.</p>
+     * <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream
+     * starting with this time stamp.</p>
      */
     inline KinesisStreamSourceDescription& WithDeliveryStartTimestamp(const Aws::Utils::DateTime& value) { SetDeliveryStartTimestamp(value); return *this;}
 
     /**
-     * <p>Kinesis Firehose starts retrieving records from the Kinesis stream starting
-     * with this time stamp.</p>
+     * <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream
+     * starting with this time stamp.</p>
      */
     inline KinesisStreamSourceDescription& WithDeliveryStartTimestamp(Aws::Utils::DateTime&& value) { SetDeliveryStartTimestamp(std::move(value)); return *this;}
 

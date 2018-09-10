@@ -45,7 +45,7 @@ Aws::String GetPipelineRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetPipelineRequest::GetRequestSpecificHeaders() const

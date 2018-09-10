@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -36,15 +37,15 @@ namespace Model
    * <p>Attaches a policy object to a regular object inside a <a>BatchRead</a>
    * operation. For more information, see <a>AttachPolicy</a> and
    * <a>BatchReadRequest$Operations</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchAttachPolicy">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchAttachPolicy">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchAttachPolicy
   {
   public:
     BatchAttachPolicy();
-    BatchAttachPolicy(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchAttachPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchAttachPolicy(Aws::Utils::Json::JsonView jsonValue);
+    BatchAttachPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

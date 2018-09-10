@@ -37,7 +37,7 @@ RecordMarkerFailedEventAttributes::RecordMarkerFailedEventAttributes() :
 {
 }
 
-RecordMarkerFailedEventAttributes::RecordMarkerFailedEventAttributes(const JsonValue& jsonValue) : 
+RecordMarkerFailedEventAttributes::RecordMarkerFailedEventAttributes(JsonView jsonValue) : 
     m_markerNameHasBeenSet(false),
     m_cause(RecordMarkerFailedCause::NOT_SET),
     m_causeHasBeenSet(false),
@@ -47,7 +47,7 @@ RecordMarkerFailedEventAttributes::RecordMarkerFailedEventAttributes(const JsonV
   *this = jsonValue;
 }
 
-RecordMarkerFailedEventAttributes& RecordMarkerFailedEventAttributes::operator =(const JsonValue& jsonValue)
+RecordMarkerFailedEventAttributes& RecordMarkerFailedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("markerName"))
   {

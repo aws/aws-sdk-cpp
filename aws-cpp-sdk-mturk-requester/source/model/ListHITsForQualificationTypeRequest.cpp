@@ -52,7 +52,7 @@ Aws::String ListHITsForQualificationTypeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListHITsForQualificationTypeRequest::GetRequestSpecificHeaders() const

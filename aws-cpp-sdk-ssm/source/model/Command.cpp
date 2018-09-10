@@ -31,6 +31,7 @@ namespace Model
 Command::Command() : 
     m_commandIdHasBeenSet(false),
     m_documentNameHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_expiresAfterHasBeenSet(false),
     m_parametersHasBeenSet(false),
@@ -51,14 +52,18 @@ Command::Command() :
     m_completedCountHasBeenSet(false),
     m_errorCount(0),
     m_errorCountHasBeenSet(false),
+    m_deliveryTimedOutCount(0),
+    m_deliveryTimedOutCountHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false)
+    m_notificationConfigHasBeenSet(false),
+    m_cloudWatchOutputConfigHasBeenSet(false)
 {
 }
 
-Command::Command(const JsonValue& jsonValue) : 
+Command::Command(JsonView jsonValue) : 
     m_commandIdHasBeenSet(false),
     m_documentNameHasBeenSet(false),
+    m_documentVersionHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_expiresAfterHasBeenSet(false),
     m_parametersHasBeenSet(false),
@@ -79,13 +84,16 @@ Command::Command(const JsonValue& jsonValue) :
     m_completedCountHasBeenSet(false),
     m_errorCount(0),
     m_errorCountHasBeenSet(false),
+    m_deliveryTimedOutCount(0),
+    m_deliveryTimedOutCountHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false)
+    m_notificationConfigHasBeenSet(false),
+    m_cloudWatchOutputConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Command& Command::operator =(const JsonValue& jsonValue)
+Command& Command::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CommandId"))
   {
@@ -99,6 +107,13 @@ Command& Command::operator =(const JsonValue& jsonValue)
     m_documentName = jsonValue.GetString("DocumentName");
 
     m_documentNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DocumentVersion"))
+  {
+    m_documentVersion = jsonValue.GetString("DocumentVersion");
+
+    m_documentVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Comment"))
@@ -117,10 +132,10 @@ Command& Command::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
-      Array<JsonValue> parameterValueListJsonList = parametersItem.second.AsArray();
+      Array<JsonView> parameterValueListJsonList = parametersItem.second.AsArray();
       Aws::Vector<Aws::String> parameterValueListList;
       parameterValueListList.reserve((size_t)parameterValueListJsonList.GetLength());
       for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
@@ -134,7 +149,7 @@ Command& Command::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("InstanceIds"))
   {
-    Array<JsonValue> instanceIdsJsonList = jsonValue.GetArray("InstanceIds");
+    Array<JsonView> instanceIdsJsonList = jsonValue.GetArray("InstanceIds");
     for(unsigned instanceIdsIndex = 0; instanceIdsIndex < instanceIdsJsonList.GetLength(); ++instanceIdsIndex)
     {
       m_instanceIds.push_back(instanceIdsJsonList[instanceIdsIndex].AsString());
@@ -144,7 +159,7 @@ Command& Command::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonValue> targetsJsonList = jsonValue.GetArray("Targets");
+    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());
@@ -229,6 +244,13 @@ Command& Command::operator =(const JsonValue& jsonValue)
     m_errorCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeliveryTimedOutCount"))
+  {
+    m_deliveryTimedOutCount = jsonValue.GetInteger("DeliveryTimedOutCount");
+
+    m_deliveryTimedOutCountHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ServiceRole"))
   {
     m_serviceRole = jsonValue.GetString("ServiceRole");
@@ -241,6 +263,13 @@ Command& Command::operator =(const JsonValue& jsonValue)
     m_notificationConfig = jsonValue.GetObject("NotificationConfig");
 
     m_notificationConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CloudWatchOutputConfig"))
+  {
+    m_cloudWatchOutputConfig = jsonValue.GetObject("CloudWatchOutputConfig");
+
+    m_cloudWatchOutputConfigHasBeenSet = true;
   }
 
   return *this;
@@ -259,6 +288,12 @@ JsonValue Command::Jsonize() const
   if(m_documentNameHasBeenSet)
   {
    payload.WithString("DocumentName", m_documentName);
+
+  }
+
+  if(m_documentVersionHasBeenSet)
+  {
+   payload.WithString("DocumentVersion", m_documentVersion);
 
   }
 
@@ -375,6 +410,12 @@ JsonValue Command::Jsonize() const
 
   }
 
+  if(m_deliveryTimedOutCountHasBeenSet)
+  {
+   payload.WithInteger("DeliveryTimedOutCount", m_deliveryTimedOutCount);
+
+  }
+
   if(m_serviceRoleHasBeenSet)
   {
    payload.WithString("ServiceRole", m_serviceRole);
@@ -384,6 +425,12 @@ JsonValue Command::Jsonize() const
   if(m_notificationConfigHasBeenSet)
   {
    payload.WithObject("NotificationConfig", m_notificationConfig.Jsonize());
+
+  }
+
+  if(m_cloudWatchOutputConfigHasBeenSet)
+  {
+   payload.WithObject("CloudWatchOutputConfig", m_cloudWatchOutputConfig.Jsonize());
 
   }
 

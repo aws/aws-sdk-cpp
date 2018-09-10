@@ -37,7 +37,7 @@ CreateGroupResult::CreateGroupResult(const Aws::AmazonWebServiceResult<JsonValue
 
 CreateGroupResult& CreateGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Group"))
   {
     m_group = jsonValue.GetObject("Group");
@@ -52,7 +52,7 @@ CreateGroupResult& CreateGroupResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Aws::Map<Aws::String, JsonValue> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
     for(auto& tagsItem : tagsJsonMap)
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();

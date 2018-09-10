@@ -37,7 +37,7 @@ DescribeEndpointsResult::DescribeEndpointsResult(const Aws::AmazonWebServiceResu
 
 DescribeEndpointsResult& DescribeEndpointsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
@@ -46,7 +46,7 @@ DescribeEndpointsResult& DescribeEndpointsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("Endpoints"))
   {
-    Array<JsonValue> endpointsJsonList = jsonValue.GetArray("Endpoints");
+    Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
     for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
     {
       m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsObject());

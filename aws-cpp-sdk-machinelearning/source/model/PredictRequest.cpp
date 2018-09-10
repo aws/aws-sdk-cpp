@@ -56,7 +56,7 @@ Aws::String PredictRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PredictRequest::GetRequestSpecificHeaders() const

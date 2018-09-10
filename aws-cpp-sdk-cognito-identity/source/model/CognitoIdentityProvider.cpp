@@ -36,7 +36,7 @@ CognitoIdentityProvider::CognitoIdentityProvider() :
 {
 }
 
-CognitoIdentityProvider::CognitoIdentityProvider(const JsonValue& jsonValue) : 
+CognitoIdentityProvider::CognitoIdentityProvider(JsonView jsonValue) : 
     m_providerNameHasBeenSet(false),
     m_clientIdHasBeenSet(false),
     m_serverSideTokenCheck(false),
@@ -45,7 +45,7 @@ CognitoIdentityProvider::CognitoIdentityProvider(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CognitoIdentityProvider& CognitoIdentityProvider::operator =(const JsonValue& jsonValue)
+CognitoIdentityProvider& CognitoIdentityProvider::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ProviderName"))
   {

@@ -37,7 +37,7 @@ LoadBalancer::LoadBalancer() :
 {
 }
 
-LoadBalancer::LoadBalancer(const JsonValue& jsonValue) : 
+LoadBalancer::LoadBalancer(JsonView jsonValue) : 
     m_targetGroupArnHasBeenSet(false),
     m_loadBalancerNameHasBeenSet(false),
     m_containerNameHasBeenSet(false),
@@ -47,7 +47,7 @@ LoadBalancer::LoadBalancer(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LoadBalancer& LoadBalancer::operator =(const JsonValue& jsonValue)
+LoadBalancer& LoadBalancer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("targetGroupArn"))
   {

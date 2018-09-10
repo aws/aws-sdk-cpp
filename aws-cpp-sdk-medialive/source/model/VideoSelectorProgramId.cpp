@@ -34,14 +34,14 @@ VideoSelectorProgramId::VideoSelectorProgramId() :
 {
 }
 
-VideoSelectorProgramId::VideoSelectorProgramId(const JsonValue& jsonValue) : 
+VideoSelectorProgramId::VideoSelectorProgramId(JsonView jsonValue) : 
     m_programId(0),
     m_programIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-VideoSelectorProgramId& VideoSelectorProgramId::operator =(const JsonValue& jsonValue)
+VideoSelectorProgramId& VideoSelectorProgramId::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("programId"))
   {

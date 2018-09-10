@@ -38,7 +38,7 @@ WorkflowTypeInfo::WorkflowTypeInfo() :
 {
 }
 
-WorkflowTypeInfo::WorkflowTypeInfo(const JsonValue& jsonValue) : 
+WorkflowTypeInfo::WorkflowTypeInfo(JsonView jsonValue) : 
     m_workflowTypeHasBeenSet(false),
     m_status(RegistrationStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -49,7 +49,7 @@ WorkflowTypeInfo::WorkflowTypeInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WorkflowTypeInfo& WorkflowTypeInfo::operator =(const JsonValue& jsonValue)
+WorkflowTypeInfo& WorkflowTypeInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowType"))
   {

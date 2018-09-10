@@ -37,6 +37,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -53,8 +54,8 @@ namespace Model
   {
   public:
     Input();
-    Input(const Aws::Utils::Json::JsonValue& jsonValue);
-    Input& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Input(Aws::Utils::Json::JsonView jsonValue);
+    Input& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -38,8 +38,11 @@ ModifyEndpointRequest::ModifyEndpointRequest() :
     m_certificateArnHasBeenSet(false),
     m_sslMode(DmsSslModeValue::NOT_SET),
     m_sslModeHasBeenSet(false),
+    m_serviceAccessRoleArnHasBeenSet(false),
+    m_externalTableDefinitionHasBeenSet(false),
     m_dynamoDbSettingsHasBeenSet(false),
     m_s3SettingsHasBeenSet(false),
+    m_dmsTransferSettingsHasBeenSet(false),
     m_mongoDbSettingsHasBeenSet(false)
 {
 }
@@ -118,6 +121,18 @@ Aws::String ModifyEndpointRequest::SerializePayload() const
    payload.WithString("SslMode", DmsSslModeValueMapper::GetNameForDmsSslModeValue(m_sslMode));
   }
 
+  if(m_serviceAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("ServiceAccessRoleArn", m_serviceAccessRoleArn);
+
+  }
+
+  if(m_externalTableDefinitionHasBeenSet)
+  {
+   payload.WithString("ExternalTableDefinition", m_externalTableDefinition);
+
+  }
+
   if(m_dynamoDbSettingsHasBeenSet)
   {
    payload.WithObject("DynamoDbSettings", m_dynamoDbSettings.Jsonize());
@@ -130,13 +145,19 @@ Aws::String ModifyEndpointRequest::SerializePayload() const
 
   }
 
+  if(m_dmsTransferSettingsHasBeenSet)
+  {
+   payload.WithObject("DmsTransferSettings", m_dmsTransferSettings.Jsonize());
+
+  }
+
   if(m_mongoDbSettingsHasBeenSet)
   {
    payload.WithObject("MongoDbSettings", m_mongoDbSettings.Jsonize());
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ModifyEndpointRequest::GetRequestSpecificHeaders() const

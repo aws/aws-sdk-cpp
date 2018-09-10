@@ -36,7 +36,7 @@ GeoMatchConstraint::GeoMatchConstraint() :
 {
 }
 
-GeoMatchConstraint::GeoMatchConstraint(const JsonValue& jsonValue) : 
+GeoMatchConstraint::GeoMatchConstraint(JsonView jsonValue) : 
     m_type(GeoMatchConstraintType::NOT_SET),
     m_typeHasBeenSet(false),
     m_value(GeoMatchConstraintValue::NOT_SET),
@@ -45,7 +45,7 @@ GeoMatchConstraint::GeoMatchConstraint(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GeoMatchConstraint& GeoMatchConstraint::operator =(const JsonValue& jsonValue)
+GeoMatchConstraint& GeoMatchConstraint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

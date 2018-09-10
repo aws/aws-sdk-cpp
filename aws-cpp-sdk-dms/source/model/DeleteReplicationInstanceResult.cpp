@@ -37,7 +37,7 @@ DeleteReplicationInstanceResult::DeleteReplicationInstanceResult(const Aws::Amaz
 
 DeleteReplicationInstanceResult& DeleteReplicationInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ReplicationInstance"))
   {
     m_replicationInstance = jsonValue.GetObject("ReplicationInstance");

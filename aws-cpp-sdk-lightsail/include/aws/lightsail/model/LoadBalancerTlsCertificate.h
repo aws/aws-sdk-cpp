@@ -34,6 +34,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lightsail
@@ -42,7 +43,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a load balancer TLS/SSL certificate.</p> <p>TLS is just an updated,
+   * <p>Describes a load balancer SSL/TLS certificate.</p> <p>TLS is just an updated,
    * more secure version of Secure Socket Layer (SSL).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsCertificate">AWS
    * API Reference</a></p>
@@ -51,155 +52,155 @@ namespace Model
   {
   public:
     LoadBalancerTlsCertificate();
-    LoadBalancerTlsCertificate(const Aws::Utils::Json::JsonValue& jsonValue);
-    LoadBalancerTlsCertificate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LoadBalancerTlsCertificate(Aws::Utils::Json::JsonView jsonValue);
+    LoadBalancerTlsCertificate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
      */
     inline LoadBalancerTlsCertificate& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
      */
     inline LoadBalancerTlsCertificate& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).</p>
      */
     inline LoadBalancerTlsCertificate& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the TLS/SSL certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the SSL/TLS certificate.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the TLS/SSL certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the SSL/TLS certificate.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the TLS/SSL certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the SSL/TLS certificate.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the TLS/SSL certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the SSL/TLS certificate.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the TLS/SSL certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the SSL/TLS certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the TLS/SSL certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the SSL/TLS certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the TLS/SSL certificate.</p>
+     * <p>The Amazon Resource Name (ARN) of the SSL/TLS certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
      * <p>The support code. Include this code in your email to support when you have
-     * questions about your Lightsail load balancer or TLS/SSL certificate. This code
+     * questions about your Lightsail load balancer or SSL/TLS certificate. This code
      * enables our support team to look up your Lightsail information more easily.</p>
      */
     inline const Aws::String& GetSupportCode() const{ return m_supportCode; }
 
     /**
      * <p>The support code. Include this code in your email to support when you have
-     * questions about your Lightsail load balancer or TLS/SSL certificate. This code
+     * questions about your Lightsail load balancer or SSL/TLS certificate. This code
      * enables our support team to look up your Lightsail information more easily.</p>
      */
     inline void SetSupportCode(const Aws::String& value) { m_supportCodeHasBeenSet = true; m_supportCode = value; }
 
     /**
      * <p>The support code. Include this code in your email to support when you have
-     * questions about your Lightsail load balancer or TLS/SSL certificate. This code
+     * questions about your Lightsail load balancer or SSL/TLS certificate. This code
      * enables our support team to look up your Lightsail information more easily.</p>
      */
     inline void SetSupportCode(Aws::String&& value) { m_supportCodeHasBeenSet = true; m_supportCode = std::move(value); }
 
     /**
      * <p>The support code. Include this code in your email to support when you have
-     * questions about your Lightsail load balancer or TLS/SSL certificate. This code
+     * questions about your Lightsail load balancer or SSL/TLS certificate. This code
      * enables our support team to look up your Lightsail information more easily.</p>
      */
     inline void SetSupportCode(const char* value) { m_supportCodeHasBeenSet = true; m_supportCode.assign(value); }
 
     /**
      * <p>The support code. Include this code in your email to support when you have
-     * questions about your Lightsail load balancer or TLS/SSL certificate. This code
+     * questions about your Lightsail load balancer or SSL/TLS certificate. This code
      * enables our support team to look up your Lightsail information more easily.</p>
      */
     inline LoadBalancerTlsCertificate& WithSupportCode(const Aws::String& value) { SetSupportCode(value); return *this;}
 
     /**
      * <p>The support code. Include this code in your email to support when you have
-     * questions about your Lightsail load balancer or TLS/SSL certificate. This code
+     * questions about your Lightsail load balancer or SSL/TLS certificate. This code
      * enables our support team to look up your Lightsail information more easily.</p>
      */
     inline LoadBalancerTlsCertificate& WithSupportCode(Aws::String&& value) { SetSupportCode(std::move(value)); return *this;}
 
     /**
      * <p>The support code. Include this code in your email to support when you have
-     * questions about your Lightsail load balancer or TLS/SSL certificate. This code
+     * questions about your Lightsail load balancer or SSL/TLS certificate. This code
      * enables our support team to look up your Lightsail information more easily.</p>
      */
     inline LoadBalancerTlsCertificate& WithSupportCode(const char* value) { SetSupportCode(value); return *this;}
 
 
     /**
-     * <p>The time when you created your TLS/SSL certificate.</p>
+     * <p>The time when you created your SSL/TLS certificate.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The time when you created your TLS/SSL certificate.</p>
+     * <p>The time when you created your SSL/TLS certificate.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The time when you created your TLS/SSL certificate.</p>
+     * <p>The time when you created your SSL/TLS certificate.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The time when you created your TLS/SSL certificate.</p>
+     * <p>The time when you created your SSL/TLS certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The time when you created your TLS/SSL certificate.</p>
+     * <p>The time when you created your SSL/TLS certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -231,144 +232,204 @@ namespace Model
 
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.</p>
+     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p> <ul>
+     * <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual
+     * private server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
+     * address</p> </li> <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to
+     * connect to a Lightsail instance</p> </li> <li> <p> <b>
+     * <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
+     * <li> <p> <b> <code>Domain</code> </b> - A DNS zone</p> </li> <li> <p> <b>
+     * <code>PeeredVpc</code> </b> - A peered VPC</p> </li> <li> <p> <b>
+     * <code>LoadBalancer</code> </b> - A Lightsail load balancer</p> </li> <li> <p>
+     * <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate
+     * associated with a Lightsail load balancer</p> </li> <li> <p> <b>
+     * <code>Disk</code> </b> - A Lightsail block storage disk</p> </li> <li> <p> <b>
+     * <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p> </li> </ul>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.</p>
+     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p> <ul>
+     * <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual
+     * private server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
+     * address</p> </li> <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to
+     * connect to a Lightsail instance</p> </li> <li> <p> <b>
+     * <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
+     * <li> <p> <b> <code>Domain</code> </b> - A DNS zone</p> </li> <li> <p> <b>
+     * <code>PeeredVpc</code> </b> - A peered VPC</p> </li> <li> <p> <b>
+     * <code>LoadBalancer</code> </b> - A Lightsail load balancer</p> </li> <li> <p>
+     * <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate
+     * associated with a Lightsail load balancer</p> </li> <li> <p> <b>
+     * <code>Disk</code> </b> - A Lightsail block storage disk</p> </li> <li> <p> <b>
+     * <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p> </li> </ul>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.</p>
+     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p> <ul>
+     * <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual
+     * private server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
+     * address</p> </li> <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to
+     * connect to a Lightsail instance</p> </li> <li> <p> <b>
+     * <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
+     * <li> <p> <b> <code>Domain</code> </b> - A DNS zone</p> </li> <li> <p> <b>
+     * <code>PeeredVpc</code> </b> - A peered VPC</p> </li> <li> <p> <b>
+     * <code>LoadBalancer</code> </b> - A Lightsail load balancer</p> </li> <li> <p>
+     * <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate
+     * associated with a Lightsail load balancer</p> </li> <li> <p> <b>
+     * <code>Disk</code> </b> - A Lightsail block storage disk</p> </li> <li> <p> <b>
+     * <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p> </li> </ul>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.</p>
+     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p> <ul>
+     * <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual
+     * private server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
+     * address</p> </li> <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to
+     * connect to a Lightsail instance</p> </li> <li> <p> <b>
+     * <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
+     * <li> <p> <b> <code>Domain</code> </b> - A DNS zone</p> </li> <li> <p> <b>
+     * <code>PeeredVpc</code> </b> - A peered VPC</p> </li> <li> <p> <b>
+     * <code>LoadBalancer</code> </b> - A Lightsail load balancer</p> </li> <li> <p>
+     * <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate
+     * associated with a Lightsail load balancer</p> </li> <li> <p> <b>
+     * <code>Disk</code> </b> - A Lightsail block storage disk</p> </li> <li> <p> <b>
+     * <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p> </li> </ul>
      */
     inline LoadBalancerTlsCertificate& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.</p>
+     * <p>The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p> <ul>
+     * <li> <p> <b> <code>Instance</code> </b> - A Lightsail instance (a virtual
+     * private server)</p> </li> <li> <p> <b> <code>StaticIp</code> </b> - A static IP
+     * address</p> </li> <li> <p> <b> <code>KeyPair</code> </b> - The key pair used to
+     * connect to a Lightsail instance</p> </li> <li> <p> <b>
+     * <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot</p> </li>
+     * <li> <p> <b> <code>Domain</code> </b> - A DNS zone</p> </li> <li> <p> <b>
+     * <code>PeeredVpc</code> </b> - A peered VPC</p> </li> <li> <p> <b>
+     * <code>LoadBalancer</code> </b> - A Lightsail load balancer</p> </li> <li> <p>
+     * <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate
+     * associated with a Lightsail load balancer</p> </li> <li> <p> <b>
+     * <code>Disk</code> </b> - A Lightsail block storage disk</p> </li> <li> <p> <b>
+     * <code>DiskSnapshot</code> </b> - A block storage disk snapshot</p> </li> </ul>
      */
     inline LoadBalancerTlsCertificate& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The load balancer name where your TLS/SSL certificate is attached.</p>
+     * <p>The load balancer name where your SSL/TLS certificate is attached.</p>
      */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
 
     /**
-     * <p>The load balancer name where your TLS/SSL certificate is attached.</p>
+     * <p>The load balancer name where your SSL/TLS certificate is attached.</p>
      */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
-     * <p>The load balancer name where your TLS/SSL certificate is attached.</p>
+     * <p>The load balancer name where your SSL/TLS certificate is attached.</p>
      */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
 
     /**
-     * <p>The load balancer name where your TLS/SSL certificate is attached.</p>
+     * <p>The load balancer name where your SSL/TLS certificate is attached.</p>
      */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
 
     /**
-     * <p>The load balancer name where your TLS/SSL certificate is attached.</p>
+     * <p>The load balancer name where your SSL/TLS certificate is attached.</p>
      */
     inline LoadBalancerTlsCertificate& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
 
     /**
-     * <p>The load balancer name where your TLS/SSL certificate is attached.</p>
+     * <p>The load balancer name where your SSL/TLS certificate is attached.</p>
      */
     inline LoadBalancerTlsCertificate& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
 
     /**
-     * <p>The load balancer name where your TLS/SSL certificate is attached.</p>
+     * <p>The load balancer name where your SSL/TLS certificate is attached.</p>
      */
     inline LoadBalancerTlsCertificate& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
 
 
     /**
-     * <p>When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail
+     * <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail
      * load balancer.</p>
      */
     inline bool GetIsAttached() const{ return m_isAttached; }
 
     /**
-     * <p>When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail
+     * <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail
      * load balancer.</p>
      */
     inline void SetIsAttached(bool value) { m_isAttachedHasBeenSet = true; m_isAttached = value; }
 
     /**
-     * <p>When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail
+     * <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail
      * load balancer.</p>
      */
     inline LoadBalancerTlsCertificate& WithIsAttached(bool value) { SetIsAttached(value); return *this;}
 
 
     /**
-     * <p>The status of the TLS/SSL certificate. Valid values are below.</p>
+     * <p>The status of the SSL/TLS certificate. Valid values are below.</p>
      */
     inline const LoadBalancerTlsCertificateStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the TLS/SSL certificate. Valid values are below.</p>
+     * <p>The status of the SSL/TLS certificate. Valid values are below.</p>
      */
     inline void SetStatus(const LoadBalancerTlsCertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the TLS/SSL certificate. Valid values are below.</p>
+     * <p>The status of the SSL/TLS certificate. Valid values are below.</p>
      */
     inline void SetStatus(LoadBalancerTlsCertificateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the TLS/SSL certificate. Valid values are below.</p>
+     * <p>The status of the SSL/TLS certificate. Valid values are below.</p>
      */
     inline LoadBalancerTlsCertificate& WithStatus(const LoadBalancerTlsCertificateStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the TLS/SSL certificate. Valid values are below.</p>
+     * <p>The status of the SSL/TLS certificate. Valid values are below.</p>
      */
     inline LoadBalancerTlsCertificate& WithStatus(LoadBalancerTlsCertificateStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The domain name for your TLS/SSL certificate.</p>
+     * <p>The domain name for your SSL/TLS certificate.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The domain name for your TLS/SSL certificate.</p>
+     * <p>The domain name for your SSL/TLS certificate.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p>The domain name for your TLS/SSL certificate.</p>
+     * <p>The domain name for your SSL/TLS certificate.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p>The domain name for your TLS/SSL certificate.</p>
+     * <p>The domain name for your SSL/TLS certificate.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p>The domain name for your TLS/SSL certificate.</p>
+     * <p>The domain name for your SSL/TLS certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The domain name for your TLS/SSL certificate.</p>
+     * <p>The domain name for your SSL/TLS certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The domain name for your TLS/SSL certificate.</p>
+     * <p>The domain name for your SSL/TLS certificate.</p>
      */
     inline LoadBalancerTlsCertificate& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
@@ -417,53 +478,53 @@ namespace Model
 
 
     /**
-     * <p>The reason for the TLS/SSL certificate validation failure.</p>
+     * <p>The reason for the SSL/TLS certificate validation failure.</p>
      */
     inline const LoadBalancerTlsCertificateFailureReason& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>The reason for the TLS/SSL certificate validation failure.</p>
+     * <p>The reason for the SSL/TLS certificate validation failure.</p>
      */
     inline void SetFailureReason(const LoadBalancerTlsCertificateFailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
-     * <p>The reason for the TLS/SSL certificate validation failure.</p>
+     * <p>The reason for the SSL/TLS certificate validation failure.</p>
      */
     inline void SetFailureReason(LoadBalancerTlsCertificateFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
-     * <p>The reason for the TLS/SSL certificate validation failure.</p>
+     * <p>The reason for the SSL/TLS certificate validation failure.</p>
      */
     inline LoadBalancerTlsCertificate& WithFailureReason(const LoadBalancerTlsCertificateFailureReason& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>The reason for the TLS/SSL certificate validation failure.</p>
+     * <p>The reason for the SSL/TLS certificate validation failure.</p>
      */
     inline LoadBalancerTlsCertificate& WithFailureReason(LoadBalancerTlsCertificateFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time when the TLS/SSL certificate was issued.</p>
+     * <p>The time when the SSL/TLS certificate was issued.</p>
      */
     inline const Aws::Utils::DateTime& GetIssuedAt() const{ return m_issuedAt; }
 
     /**
-     * <p>The time when the TLS/SSL certificate was issued.</p>
+     * <p>The time when the SSL/TLS certificate was issued.</p>
      */
     inline void SetIssuedAt(const Aws::Utils::DateTime& value) { m_issuedAtHasBeenSet = true; m_issuedAt = value; }
 
     /**
-     * <p>The time when the TLS/SSL certificate was issued.</p>
+     * <p>The time when the SSL/TLS certificate was issued.</p>
      */
     inline void SetIssuedAt(Aws::Utils::DateTime&& value) { m_issuedAtHasBeenSet = true; m_issuedAt = std::move(value); }
 
     /**
-     * <p>The time when the TLS/SSL certificate was issued.</p>
+     * <p>The time when the SSL/TLS certificate was issued.</p>
      */
     inline LoadBalancerTlsCertificate& WithIssuedAt(const Aws::Utils::DateTime& value) { SetIssuedAt(value); return *this;}
 
     /**
-     * <p>The time when the TLS/SSL certificate was issued.</p>
+     * <p>The time when the SSL/TLS certificate was issued.</p>
      */
     inline LoadBalancerTlsCertificate& WithIssuedAt(Aws::Utils::DateTime&& value) { SetIssuedAt(std::move(value)); return *this;}
 
@@ -548,53 +609,53 @@ namespace Model
 
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate expires.</p>
+     * <p>The timestamp when the SSL/TLS certificate expires.</p>
      */
     inline const Aws::Utils::DateTime& GetNotAfter() const{ return m_notAfter; }
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate expires.</p>
+     * <p>The timestamp when the SSL/TLS certificate expires.</p>
      */
     inline void SetNotAfter(const Aws::Utils::DateTime& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate expires.</p>
+     * <p>The timestamp when the SSL/TLS certificate expires.</p>
      */
     inline void SetNotAfter(Aws::Utils::DateTime&& value) { m_notAfterHasBeenSet = true; m_notAfter = std::move(value); }
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate expires.</p>
+     * <p>The timestamp when the SSL/TLS certificate expires.</p>
      */
     inline LoadBalancerTlsCertificate& WithNotAfter(const Aws::Utils::DateTime& value) { SetNotAfter(value); return *this;}
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate expires.</p>
+     * <p>The timestamp when the SSL/TLS certificate expires.</p>
      */
     inline LoadBalancerTlsCertificate& WithNotAfter(Aws::Utils::DateTime&& value) { SetNotAfter(std::move(value)); return *this;}
 
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate is first valid.</p>
+     * <p>The timestamp when the SSL/TLS certificate is first valid.</p>
      */
     inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate is first valid.</p>
+     * <p>The timestamp when the SSL/TLS certificate is first valid.</p>
      */
     inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate is first valid.</p>
+     * <p>The timestamp when the SSL/TLS certificate is first valid.</p>
      */
     inline void SetNotBefore(Aws::Utils::DateTime&& value) { m_notBeforeHasBeenSet = true; m_notBefore = std::move(value); }
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate is first valid.</p>
+     * <p>The timestamp when the SSL/TLS certificate is first valid.</p>
      */
     inline LoadBalancerTlsCertificate& WithNotBefore(const Aws::Utils::DateTime& value) { SetNotBefore(value); return *this;}
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate is first valid.</p>
+     * <p>The timestamp when the SSL/TLS certificate is first valid.</p>
      */
     inline LoadBalancerTlsCertificate& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(std::move(value)); return *this;}
 
@@ -657,27 +718,27 @@ namespace Model
 
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate was revoked.</p>
+     * <p>The timestamp when the SSL/TLS certificate was revoked.</p>
      */
     inline const Aws::Utils::DateTime& GetRevokedAt() const{ return m_revokedAt; }
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate was revoked.</p>
+     * <p>The timestamp when the SSL/TLS certificate was revoked.</p>
      */
     inline void SetRevokedAt(const Aws::Utils::DateTime& value) { m_revokedAtHasBeenSet = true; m_revokedAt = value; }
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate was revoked.</p>
+     * <p>The timestamp when the SSL/TLS certificate was revoked.</p>
      */
     inline void SetRevokedAt(Aws::Utils::DateTime&& value) { m_revokedAtHasBeenSet = true; m_revokedAt = std::move(value); }
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate was revoked.</p>
+     * <p>The timestamp when the SSL/TLS certificate was revoked.</p>
      */
     inline LoadBalancerTlsCertificate& WithRevokedAt(const Aws::Utils::DateTime& value) { SetRevokedAt(value); return *this;}
 
     /**
-     * <p>The timestamp when the TLS/SSL certificate was revoked.</p>
+     * <p>The timestamp when the SSL/TLS certificate was revoked.</p>
      */
     inline LoadBalancerTlsCertificate& WithRevokedAt(Aws::Utils::DateTime&& value) { SetRevokedAt(std::move(value)); return *this;}
 
@@ -798,74 +859,82 @@ namespace Model
 
 
     /**
-     * <p>One or more domain names (subject alternative names) included in the
-     * certificate. This list contains the domain names that are bound to the public
-     * key that is contained in the certificate. The subject alternative names include
-     * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * <p>One or more domains or subdomains included in the certificate. This list
+     * contains the domain names that are bound to the public key that is contained in
+     * the certificate. The subject alternative names include the canonical domain name
+     * (CNAME) of the certificate and additional domain names that can be used to
+     * connect to the website, such as <code>example.com</code>,
+     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubjectAlternativeNames() const{ return m_subjectAlternativeNames; }
 
     /**
-     * <p>One or more domain names (subject alternative names) included in the
-     * certificate. This list contains the domain names that are bound to the public
-     * key that is contained in the certificate. The subject alternative names include
-     * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * <p>One or more domains or subdomains included in the certificate. This list
+     * contains the domain names that are bound to the public key that is contained in
+     * the certificate. The subject alternative names include the canonical domain name
+     * (CNAME) of the certificate and additional domain names that can be used to
+     * connect to the website, such as <code>example.com</code>,
+     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
      */
     inline void SetSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = value; }
 
     /**
-     * <p>One or more domain names (subject alternative names) included in the
-     * certificate. This list contains the domain names that are bound to the public
-     * key that is contained in the certificate. The subject alternative names include
-     * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * <p>One or more domains or subdomains included in the certificate. This list
+     * contains the domain names that are bound to the public key that is contained in
+     * the certificate. The subject alternative names include the canonical domain name
+     * (CNAME) of the certificate and additional domain names that can be used to
+     * connect to the website, such as <code>example.com</code>,
+     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
      */
     inline void SetSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = std::move(value); }
 
     /**
-     * <p>One or more domain names (subject alternative names) included in the
-     * certificate. This list contains the domain names that are bound to the public
-     * key that is contained in the certificate. The subject alternative names include
-     * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * <p>One or more domains or subdomains included in the certificate. This list
+     * contains the domain names that are bound to the public key that is contained in
+     * the certificate. The subject alternative names include the canonical domain name
+     * (CNAME) of the certificate and additional domain names that can be used to
+     * connect to the website, such as <code>example.com</code>,
+     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
      */
     inline LoadBalancerTlsCertificate& WithSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { SetSubjectAlternativeNames(value); return *this;}
 
     /**
-     * <p>One or more domain names (subject alternative names) included in the
-     * certificate. This list contains the domain names that are bound to the public
-     * key that is contained in the certificate. The subject alternative names include
-     * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * <p>One or more domains or subdomains included in the certificate. This list
+     * contains the domain names that are bound to the public key that is contained in
+     * the certificate. The subject alternative names include the canonical domain name
+     * (CNAME) of the certificate and additional domain names that can be used to
+     * connect to the website, such as <code>example.com</code>,
+     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
      */
     inline LoadBalancerTlsCertificate& WithSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { SetSubjectAlternativeNames(std::move(value)); return *this;}
 
     /**
-     * <p>One or more domain names (subject alternative names) included in the
-     * certificate. This list contains the domain names that are bound to the public
-     * key that is contained in the certificate. The subject alternative names include
-     * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * <p>One or more domains or subdomains included in the certificate. This list
+     * contains the domain names that are bound to the public key that is contained in
+     * the certificate. The subject alternative names include the canonical domain name
+     * (CNAME) of the certificate and additional domain names that can be used to
+     * connect to the website, such as <code>example.com</code>,
+     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
      */
     inline LoadBalancerTlsCertificate& AddSubjectAlternativeNames(const Aws::String& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 
     /**
-     * <p>One or more domain names (subject alternative names) included in the
-     * certificate. This list contains the domain names that are bound to the public
-     * key that is contained in the certificate. The subject alternative names include
-     * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * <p>One or more domains or subdomains included in the certificate. This list
+     * contains the domain names that are bound to the public key that is contained in
+     * the certificate. The subject alternative names include the canonical domain name
+     * (CNAME) of the certificate and additional domain names that can be used to
+     * connect to the website, such as <code>example.com</code>,
+     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
      */
     inline LoadBalancerTlsCertificate& AddSubjectAlternativeNames(Aws::String&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more domain names (subject alternative names) included in the
-     * certificate. This list contains the domain names that are bound to the public
-     * key that is contained in the certificate. The subject alternative names include
-     * the canonical domain name (CN) of the certificate and additional domain names
-     * that can be used to connect to the website.</p>
+     * <p>One or more domains or subdomains included in the certificate. This list
+     * contains the domain names that are bound to the public key that is contained in
+     * the certificate. The subject alternative names include the canonical domain name
+     * (CNAME) of the certificate and additional domain names that can be used to
+     * connect to the website, such as <code>example.com</code>,
+     * <code>www.example.com</code>, or <code>m.example.com</code>.</p>
      */
     inline LoadBalancerTlsCertificate& AddSubjectAlternativeNames(const char* value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 

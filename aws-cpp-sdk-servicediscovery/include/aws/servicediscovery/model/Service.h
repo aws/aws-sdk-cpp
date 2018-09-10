@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicediscovery/model/DnsConfig.h>
 #include <aws/servicediscovery/model/HealthCheckConfig.h>
+#include <aws/servicediscovery/model/HealthCheckCustomConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -28,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceDiscovery
@@ -45,86 +47,86 @@ namespace Model
   {
   public:
     Service();
-    Service(const Aws::Utils::Json::JsonValue& jsonValue);
-    Service& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Service(Aws::Utils::Json::JsonView jsonValue);
+    Service& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline Service& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline Service& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID that Amazon Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that Route 53 assigned to the service when you created it.</p>
      */
     inline Service& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline Service& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline Service& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service
-     * when you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
+     * create it.</p>
      */
     inline Service& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -224,204 +226,197 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline const DnsConfig& GetDnsConfig() const{ return m_dnsConfig; }
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline void SetDnsConfig(const DnsConfig& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline void SetDnsConfig(DnsConfig&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline Service& WithDnsConfig(const DnsConfig& value) { SetDnsConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the resource record sets that
-     * you want Amazon Route 53 to create when you register an instance.</p>
+     * <p>A complex type that contains information about the records that you want
+     * Route 53 to create when you register an instance.</p>
      */
     inline Service& WithDnsConfig(DnsConfig&& value) { SetDnsConfig(std::move(value)); return *this;}
 
 
     /**
      * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, Amazon
-     * Route 53 associates the health check with all the resource record sets that you
-     * specify in <code>DnsConfig</code>.</p> <note> <p>The health check uses 30
-     * seconds as the request interval. This is the number of seconds between the time
-     * that each Amazon Route 53 health checker gets a response from your endpoint and
-     * the time that it sends the next health check request. A health checker in each
-     * data center around the world sends your endpoint a health check request every 30
-     * seconds. On average, your endpoint receives a health check request about every
-     * two seconds. Health checkers in different data centers don't coordinate with one
-     * another, so you'll sometimes see several requests per second followed by a few
-     * seconds with no health checks at all.</p> </note> <p>For information about the
-     * charges for health checks, see <a
-     * href="http://aws.amazon.com/route53/pricing">Amazon Route 53 Pricing</a>.</p>
+     * an optional health check. If you specify settings for a health check, Route 53
+     * associates the health check with all the records that you specify in
+     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
+     * Pricing</a>.</p>
      */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
 
     /**
      * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, Amazon
-     * Route 53 associates the health check with all the resource record sets that you
-     * specify in <code>DnsConfig</code>.</p> <note> <p>The health check uses 30
-     * seconds as the request interval. This is the number of seconds between the time
-     * that each Amazon Route 53 health checker gets a response from your endpoint and
-     * the time that it sends the next health check request. A health checker in each
-     * data center around the world sends your endpoint a health check request every 30
-     * seconds. On average, your endpoint receives a health check request about every
-     * two seconds. Health checkers in different data centers don't coordinate with one
-     * another, so you'll sometimes see several requests per second followed by a few
-     * seconds with no health checks at all.</p> </note> <p>For information about the
-     * charges for health checks, see <a
-     * href="http://aws.amazon.com/route53/pricing">Amazon Route 53 Pricing</a>.</p>
+     * an optional health check. If you specify settings for a health check, Route 53
+     * associates the health check with all the records that you specify in
+     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
+     * Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
     /**
      * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, Amazon
-     * Route 53 associates the health check with all the resource record sets that you
-     * specify in <code>DnsConfig</code>.</p> <note> <p>The health check uses 30
-     * seconds as the request interval. This is the number of seconds between the time
-     * that each Amazon Route 53 health checker gets a response from your endpoint and
-     * the time that it sends the next health check request. A health checker in each
-     * data center around the world sends your endpoint a health check request every 30
-     * seconds. On average, your endpoint receives a health check request about every
-     * two seconds. Health checkers in different data centers don't coordinate with one
-     * another, so you'll sometimes see several requests per second followed by a few
-     * seconds with no health checks at all.</p> </note> <p>For information about the
-     * charges for health checks, see <a
-     * href="http://aws.amazon.com/route53/pricing">Amazon Route 53 Pricing</a>.</p>
+     * an optional health check. If you specify settings for a health check, Route 53
+     * associates the health check with all the records that you specify in
+     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
+     * Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
 
     /**
      * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, Amazon
-     * Route 53 associates the health check with all the resource record sets that you
-     * specify in <code>DnsConfig</code>.</p> <note> <p>The health check uses 30
-     * seconds as the request interval. This is the number of seconds between the time
-     * that each Amazon Route 53 health checker gets a response from your endpoint and
-     * the time that it sends the next health check request. A health checker in each
-     * data center around the world sends your endpoint a health check request every 30
-     * seconds. On average, your endpoint receives a health check request about every
-     * two seconds. Health checkers in different data centers don't coordinate with one
-     * another, so you'll sometimes see several requests per second followed by a few
-     * seconds with no health checks at all.</p> </note> <p>For information about the
-     * charges for health checks, see <a
-     * href="http://aws.amazon.com/route53/pricing">Amazon Route 53 Pricing</a>.</p>
+     * an optional health check. If you specify settings for a health check, Route 53
+     * associates the health check with all the records that you specify in
+     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
+     * Pricing</a>.</p>
      */
     inline Service& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
 
     /**
      * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, Amazon
-     * Route 53 associates the health check with all the resource record sets that you
-     * specify in <code>DnsConfig</code>.</p> <note> <p>The health check uses 30
-     * seconds as the request interval. This is the number of seconds between the time
-     * that each Amazon Route 53 health checker gets a response from your endpoint and
-     * the time that it sends the next health check request. A health checker in each
-     * data center around the world sends your endpoint a health check request every 30
-     * seconds. On average, your endpoint receives a health check request about every
-     * two seconds. Health checkers in different data centers don't coordinate with one
-     * another, so you'll sometimes see several requests per second followed by a few
-     * seconds with no health checks at all.</p> </note> <p>For information about the
-     * charges for health checks, see <a
-     * href="http://aws.amazon.com/route53/pricing">Amazon Route 53 Pricing</a>.</p>
+     * an optional health check. If you specify settings for a health check, Route 53
+     * associates the health check with all the records that you specify in
+     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
+     * checks, see <a href="http://aws.amazon.com/route53/pricing">Route 53
+     * Pricing</a>.</p>
      */
     inline Service& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
 
 
+    
+    inline const HealthCheckCustomConfig& GetHealthCheckCustomConfig() const{ return m_healthCheckCustomConfig; }
+
+    
+    inline void SetHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = value; }
+
+    
+    inline void SetHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = std::move(value); }
+
+    
+    inline Service& WithHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { SetHealthCheckCustomConfig(value); return *this;}
+
+    
+    inline Service& WithHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { SetHealthCheckCustomConfig(std::move(value)); return *this;}
+
+
     /**
      * <p>The date and time that the service was created, in Unix format and
-     * Coordinated Universal Time (UTC).</p>
+     * Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
      * <p>The date and time that the service was created, in Unix format and
-     * Coordinated Universal Time (UTC).</p>
+     * Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
      * <p>The date and time that the service was created, in Unix format and
-     * Coordinated Universal Time (UTC).</p>
+     * Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
      * <p>The date and time that the service was created, in Unix format and
-     * Coordinated Universal Time (UTC).</p>
+     * Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline Service& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
 
     /**
      * <p>The date and time that the service was created, in Unix format and
-     * Coordinated Universal Time (UTC).</p>
+     * Coordinated Universal Time (UTC). The value of <code>CreateDate</code> is
+     * accurate to milliseconds. For example, the value <code>1516925490.087</code>
+     * represents Friday, January 26, 2018 12:11:30.087 AM.</p>
      */
     inline Service& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing the operation twice.
+     * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing the operation twice.
+     * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing the operation twice.
+     * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing the operation twice.
+     * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing the operation twice.
+     * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline Service& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing the operation twice.
+     * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline Service& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>An optional parameter that you can use to resolve concurrent creation
-     * requests. <code>CreatorRequestId</code> helps to determine if a specific client
-     * owns the namespace.</p>
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing the operation twice.
+     * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * stamp.</p>
      */
     inline Service& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 
@@ -447,6 +442,9 @@ namespace Model
 
     HealthCheckConfig m_healthCheckConfig;
     bool m_healthCheckConfigHasBeenSet;
+
+    HealthCheckCustomConfig m_healthCheckCustomConfig;
+    bool m_healthCheckCustomConfigHasBeenSet;
 
     Aws::Utils::DateTime m_createDate;
     bool m_createDateHasBeenSet;

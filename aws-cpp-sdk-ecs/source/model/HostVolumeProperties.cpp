@@ -33,13 +33,13 @@ HostVolumeProperties::HostVolumeProperties() :
 {
 }
 
-HostVolumeProperties::HostVolumeProperties(const JsonValue& jsonValue) : 
+HostVolumeProperties::HostVolumeProperties(JsonView jsonValue) : 
     m_sourcePathHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HostVolumeProperties& HostVolumeProperties::operator =(const JsonValue& jsonValue)
+HostVolumeProperties& HostVolumeProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("sourcePath"))
   {

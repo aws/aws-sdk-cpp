@@ -33,17 +33,17 @@ DeleteRequest::DeleteRequest() :
 {
 }
 
-DeleteRequest::DeleteRequest(const JsonValue& jsonValue) : 
+DeleteRequest::DeleteRequest(JsonView jsonValue) : 
     m_keyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DeleteRequest& DeleteRequest::operator =(const JsonValue& jsonValue)
+DeleteRequest& DeleteRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
-    Aws::Map<Aws::String, JsonValue> keyJsonMap = jsonValue.GetObject("Key").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> keyJsonMap = jsonValue.GetObject("Key").GetAllObjects();
     for(auto& keyItem : keyJsonMap)
     {
       m_key[keyItem.first] = keyItem.second.AsObject();

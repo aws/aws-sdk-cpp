@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     CodeDeliveryDetailsType();
-    CodeDeliveryDetailsType(const Aws::Utils::Json::JsonValue& jsonValue);
-    CodeDeliveryDetailsType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CodeDeliveryDetailsType(Aws::Utils::Json::JsonView jsonValue);
+    CodeDeliveryDetailsType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

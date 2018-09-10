@@ -38,7 +38,7 @@ AttemptDetail::AttemptDetail() :
 {
 }
 
-AttemptDetail::AttemptDetail(const JsonValue& jsonValue) : 
+AttemptDetail::AttemptDetail(JsonView jsonValue) : 
     m_containerHasBeenSet(false),
     m_startedAt(0),
     m_startedAtHasBeenSet(false),
@@ -49,7 +49,7 @@ AttemptDetail::AttemptDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AttemptDetail& AttemptDetail::operator =(const JsonValue& jsonValue)
+AttemptDetail& AttemptDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("container"))
   {

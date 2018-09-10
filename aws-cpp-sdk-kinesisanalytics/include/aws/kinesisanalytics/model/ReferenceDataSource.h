@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KinesisAnalytics
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     ReferenceDataSource();
-    ReferenceDataSource(const Aws::Utils::Json::JsonValue& jsonValue);
-    ReferenceDataSource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ReferenceDataSource(Aws::Utils::Json::JsonView jsonValue);
+    ReferenceDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

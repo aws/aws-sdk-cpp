@@ -37,7 +37,7 @@ Aws::String CreateCampaignRequest::SerializePayload() const
    payload = m_writeCampaignRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

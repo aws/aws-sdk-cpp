@@ -34,14 +34,14 @@ AvailSettings::AvailSettings() :
 {
 }
 
-AvailSettings::AvailSettings(const JsonValue& jsonValue) : 
+AvailSettings::AvailSettings(JsonView jsonValue) : 
     m_scte35SpliceInsertHasBeenSet(false),
     m_scte35TimeSignalAposHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AvailSettings& AvailSettings::operator =(const JsonValue& jsonValue)
+AvailSettings& AvailSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("scte35SpliceInsert"))
   {

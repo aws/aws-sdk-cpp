@@ -29,20 +29,40 @@ namespace Model
 {
 
 WriteApplicationSettingsRequest::WriteApplicationSettingsRequest() : 
+    m_campaignHookHasBeenSet(false),
+    m_cloudWatchMetricsEnabled(false),
+    m_cloudWatchMetricsEnabledHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_quietTimeHasBeenSet(false)
 {
 }
 
-WriteApplicationSettingsRequest::WriteApplicationSettingsRequest(const JsonValue& jsonValue) : 
+WriteApplicationSettingsRequest::WriteApplicationSettingsRequest(JsonView jsonValue) : 
+    m_campaignHookHasBeenSet(false),
+    m_cloudWatchMetricsEnabled(false),
+    m_cloudWatchMetricsEnabledHasBeenSet(false),
     m_limitsHasBeenSet(false),
     m_quietTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WriteApplicationSettingsRequest& WriteApplicationSettingsRequest::operator =(const JsonValue& jsonValue)
+WriteApplicationSettingsRequest& WriteApplicationSettingsRequest::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("CampaignHook"))
+  {
+    m_campaignHook = jsonValue.GetObject("CampaignHook");
+
+    m_campaignHookHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CloudWatchMetricsEnabled"))
+  {
+    m_cloudWatchMetricsEnabled = jsonValue.GetBool("CloudWatchMetricsEnabled");
+
+    m_cloudWatchMetricsEnabledHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Limits"))
   {
     m_limits = jsonValue.GetObject("Limits");
@@ -63,6 +83,18 @@ WriteApplicationSettingsRequest& WriteApplicationSettingsRequest::operator =(con
 JsonValue WriteApplicationSettingsRequest::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_campaignHookHasBeenSet)
+  {
+   payload.WithObject("CampaignHook", m_campaignHook.Jsonize());
+
+  }
+
+  if(m_cloudWatchMetricsEnabledHasBeenSet)
+  {
+   payload.WithBool("CloudWatchMetricsEnabled", m_cloudWatchMetricsEnabled);
+
+  }
 
   if(m_limitsHasBeenSet)
   {

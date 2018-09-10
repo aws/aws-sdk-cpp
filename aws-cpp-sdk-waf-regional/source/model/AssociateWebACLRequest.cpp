@@ -44,7 +44,7 @@ Aws::String AssociateWebACLRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AssociateWebACLRequest::GetRequestSpecificHeaders() const

@@ -36,7 +36,7 @@ ExportTaskExecutionInfo::ExportTaskExecutionInfo() :
 {
 }
 
-ExportTaskExecutionInfo::ExportTaskExecutionInfo(const JsonValue& jsonValue) : 
+ExportTaskExecutionInfo::ExportTaskExecutionInfo(JsonView jsonValue) : 
     m_creationTime(0),
     m_creationTimeHasBeenSet(false),
     m_completionTime(0),
@@ -45,7 +45,7 @@ ExportTaskExecutionInfo::ExportTaskExecutionInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ExportTaskExecutionInfo& ExportTaskExecutionInfo::operator =(const JsonValue& jsonValue)
+ExportTaskExecutionInfo& ExportTaskExecutionInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("creationTime"))
   {

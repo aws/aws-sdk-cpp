@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     AgentVersion();
-    AgentVersion(const Aws::Utils::Json::JsonValue& jsonValue);
-    AgentVersion& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AgentVersion(Aws::Utils::Json::JsonView jsonValue);
+    AgentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

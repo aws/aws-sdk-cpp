@@ -33,17 +33,17 @@ AudioSelectorGroup::AudioSelectorGroup() :
 {
 }
 
-AudioSelectorGroup::AudioSelectorGroup(const JsonValue& jsonValue) : 
+AudioSelectorGroup::AudioSelectorGroup(JsonView jsonValue) : 
     m_audioSelectorNamesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AudioSelectorGroup& AudioSelectorGroup::operator =(const JsonValue& jsonValue)
+AudioSelectorGroup& AudioSelectorGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioSelectorNames"))
   {
-    Array<JsonValue> audioSelectorNamesJsonList = jsonValue.GetArray("audioSelectorNames");
+    Array<JsonView> audioSelectorNamesJsonList = jsonValue.GetArray("audioSelectorNames");
     for(unsigned audioSelectorNamesIndex = 0; audioSelectorNamesIndex < audioSelectorNamesJsonList.GetLength(); ++audioSelectorNamesIndex)
     {
       m_audioSelectorNames.push_back(audioSelectorNamesJsonList[audioSelectorNamesIndex].AsString());

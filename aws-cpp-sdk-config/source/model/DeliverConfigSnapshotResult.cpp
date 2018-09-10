@@ -37,7 +37,7 @@ DeliverConfigSnapshotResult::DeliverConfigSnapshotResult(const Aws::AmazonWebSer
 
 DeliverConfigSnapshotResult& DeliverConfigSnapshotResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("configSnapshotId"))
   {
     m_configSnapshotId = jsonValue.GetString("configSnapshotId");

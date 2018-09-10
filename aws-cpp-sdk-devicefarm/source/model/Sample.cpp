@@ -36,7 +36,7 @@ Sample::Sample() :
 {
 }
 
-Sample::Sample(const JsonValue& jsonValue) : 
+Sample::Sample(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_type(SampleType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -45,7 +45,7 @@ Sample::Sample(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Sample& Sample::operator =(const JsonValue& jsonValue)
+Sample& Sample::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {

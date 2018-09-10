@@ -37,7 +37,10 @@ Role::Role() :
     m_arnHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_assumeRolePolicyDocumentHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_maxSessionDuration(0),
+    m_maxSessionDurationHasBeenSet(false),
+    m_permissionsBoundaryHasBeenSet(false)
 {
 }
 
@@ -48,7 +51,10 @@ Role::Role(const XmlNode& xmlNode) :
     m_arnHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_assumeRolePolicyDocumentHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_maxSessionDuration(0),
+    m_maxSessionDurationHasBeenSet(false),
+    m_permissionsBoundaryHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -101,6 +107,18 @@ Role& Role::operator =(const XmlNode& xmlNode)
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
+    XmlNode maxSessionDurationNode = resultNode.FirstChild("MaxSessionDuration");
+    if(!maxSessionDurationNode.IsNull())
+    {
+      m_maxSessionDuration = StringUtils::ConvertToInt32(StringUtils::Trim(maxSessionDurationNode.GetText().c_str()).c_str());
+      m_maxSessionDurationHasBeenSet = true;
+    }
+    XmlNode permissionsBoundaryNode = resultNode.FirstChild("PermissionsBoundary");
+    if(!permissionsBoundaryNode.IsNull())
+    {
+      m_permissionsBoundary = permissionsBoundaryNode;
+      m_permissionsBoundaryHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -143,6 +161,18 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_maxSessionDurationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaxSessionDuration=" << m_maxSessionDuration << "&";
+  }
+
+  if(m_permissionsBoundaryHasBeenSet)
+  {
+      Aws::StringStream permissionsBoundaryLocationAndMemberSs;
+      permissionsBoundaryLocationAndMemberSs << location << index << locationValue << ".PermissionsBoundary";
+      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Role::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -174,6 +204,16 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_maxSessionDurationHasBeenSet)
+  {
+      oStream << location << ".MaxSessionDuration=" << m_maxSessionDuration << "&";
+  }
+  if(m_permissionsBoundaryHasBeenSet)
+  {
+      Aws::String permissionsBoundaryLocationAndMember(location);
+      permissionsBoundaryLocationAndMember += ".PermissionsBoundary";
+      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMember.c_str());
   }
 }
 

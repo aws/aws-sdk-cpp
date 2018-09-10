@@ -34,14 +34,14 @@ Service::Service() :
 {
 }
 
-Service::Service(const JsonValue& jsonValue) : 
+Service::Service(JsonView jsonValue) : 
     m_serviceCodeHasBeenSet(false),
     m_attributeNamesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Service& Service::operator =(const JsonValue& jsonValue)
+Service& Service::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ServiceCode"))
   {
@@ -52,7 +52,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AttributeNames"))
   {
-    Array<JsonValue> attributeNamesJsonList = jsonValue.GetArray("AttributeNames");
+    Array<JsonView> attributeNamesJsonList = jsonValue.GetArray("AttributeNames");
     for(unsigned attributeNamesIndex = 0; attributeNamesIndex < attributeNamesJsonList.GetLength(); ++attributeNamesIndex)
     {
       m_attributeNames.push_back(attributeNamesJsonList[attributeNamesIndex].AsString());

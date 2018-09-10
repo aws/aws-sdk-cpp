@@ -36,7 +36,7 @@ DeploymentConfiguration::DeploymentConfiguration() :
 {
 }
 
-DeploymentConfiguration::DeploymentConfiguration(const JsonValue& jsonValue) : 
+DeploymentConfiguration::DeploymentConfiguration(JsonView jsonValue) : 
     m_maximumPercent(0),
     m_maximumPercentHasBeenSet(false),
     m_minimumHealthyPercent(0),
@@ -45,7 +45,7 @@ DeploymentConfiguration::DeploymentConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeploymentConfiguration& DeploymentConfiguration::operator =(const JsonValue& jsonValue)
+DeploymentConfiguration& DeploymentConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("maximumPercent"))
   {

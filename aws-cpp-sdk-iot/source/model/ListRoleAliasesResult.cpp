@@ -37,10 +37,10 @@ ListRoleAliasesResult::ListRoleAliasesResult(const Aws::AmazonWebServiceResult<J
 
 ListRoleAliasesResult& ListRoleAliasesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("roleAliases"))
   {
-    Array<JsonValue> roleAliasesJsonList = jsonValue.GetArray("roleAliases");
+    Array<JsonView> roleAliasesJsonList = jsonValue.GetArray("roleAliases");
     for(unsigned roleAliasesIndex = 0; roleAliasesIndex < roleAliasesJsonList.GetLength(); ++roleAliasesIndex)
     {
       m_roleAliases.push_back(roleAliasesJsonList[roleAliasesIndex].AsString());

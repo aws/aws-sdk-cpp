@@ -56,7 +56,7 @@ Finding::Finding() :
 {
 }
 
-Finding::Finding(const JsonValue& jsonValue) : 
+Finding::Finding(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_schemaVersion(0),
     m_schemaVersionHasBeenSet(false),
@@ -85,7 +85,7 @@ Finding::Finding(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Finding& Finding::operator =(const JsonValue& jsonValue)
+Finding& Finding::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -187,7 +187,7 @@ Finding& Finding::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Array<JsonValue> attributesJsonList = jsonValue.GetArray("attributes");
+    Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -197,7 +197,7 @@ Finding& Finding::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("userAttributes"))
   {
-    Array<JsonValue> userAttributesJsonList = jsonValue.GetArray("userAttributes");
+    Array<JsonView> userAttributesJsonList = jsonValue.GetArray("userAttributes");
     for(unsigned userAttributesIndex = 0; userAttributesIndex < userAttributesJsonList.GetLength(); ++userAttributesIndex)
     {
       m_userAttributes.push_back(userAttributesJsonList[userAttributesIndex].AsObject());

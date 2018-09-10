@@ -37,10 +37,10 @@ TestRepositoryTriggersResult::TestRepositoryTriggersResult(const Aws::AmazonWebS
 
 TestRepositoryTriggersResult& TestRepositoryTriggersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("successfulExecutions"))
   {
-    Array<JsonValue> successfulExecutionsJsonList = jsonValue.GetArray("successfulExecutions");
+    Array<JsonView> successfulExecutionsJsonList = jsonValue.GetArray("successfulExecutions");
     for(unsigned successfulExecutionsIndex = 0; successfulExecutionsIndex < successfulExecutionsJsonList.GetLength(); ++successfulExecutionsIndex)
     {
       m_successfulExecutions.push_back(successfulExecutionsJsonList[successfulExecutionsIndex].AsString());
@@ -49,7 +49,7 @@ TestRepositoryTriggersResult& TestRepositoryTriggersResult::operator =(const Aws
 
   if(jsonValue.ValueExists("failedExecutions"))
   {
-    Array<JsonValue> failedExecutionsJsonList = jsonValue.GetArray("failedExecutions");
+    Array<JsonView> failedExecutionsJsonList = jsonValue.GetArray("failedExecutions");
     for(unsigned failedExecutionsIndex = 0; failedExecutionsIndex < failedExecutionsJsonList.GetLength(); ++failedExecutionsIndex)
     {
       m_failedExecutions.push_back(failedExecutionsJsonList[failedExecutionsIndex].AsObject());

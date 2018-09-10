@@ -36,7 +36,7 @@ DeliveryChannelStatus::DeliveryChannelStatus() :
 {
 }
 
-DeliveryChannelStatus::DeliveryChannelStatus(const JsonValue& jsonValue) : 
+DeliveryChannelStatus::DeliveryChannelStatus(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_configSnapshotDeliveryInfoHasBeenSet(false),
     m_configHistoryDeliveryInfoHasBeenSet(false),
@@ -45,7 +45,7 @@ DeliveryChannelStatus::DeliveryChannelStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeliveryChannelStatus& DeliveryChannelStatus::operator =(const JsonValue& jsonValue)
+DeliveryChannelStatus& DeliveryChannelStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

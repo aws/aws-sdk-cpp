@@ -37,7 +37,7 @@ NamespaceSummary::NamespaceSummary() :
 {
 }
 
-NamespaceSummary::NamespaceSummary(const JsonValue& jsonValue) : 
+NamespaceSummary::NamespaceSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -47,7 +47,7 @@ NamespaceSummary::NamespaceSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NamespaceSummary& NamespaceSummary::operator =(const JsonValue& jsonValue)
+NamespaceSummary& NamespaceSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

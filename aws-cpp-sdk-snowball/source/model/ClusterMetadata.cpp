@@ -49,7 +49,7 @@ ClusterMetadata::ClusterMetadata() :
 {
 }
 
-ClusterMetadata::ClusterMetadata(const JsonValue& jsonValue) : 
+ClusterMetadata::ClusterMetadata(JsonView jsonValue) : 
     m_clusterIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_kmsKeyARNHasBeenSet(false),
@@ -71,7 +71,7 @@ ClusterMetadata::ClusterMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ClusterMetadata& ClusterMetadata::operator =(const JsonValue& jsonValue)
+ClusterMetadata& ClusterMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ClusterId"))
   {

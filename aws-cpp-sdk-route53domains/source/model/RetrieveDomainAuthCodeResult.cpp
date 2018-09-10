@@ -37,7 +37,7 @@ RetrieveDomainAuthCodeResult::RetrieveDomainAuthCodeResult(const Aws::AmazonWebS
 
 RetrieveDomainAuthCodeResult& RetrieveDomainAuthCodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AuthCode"))
   {
     m_authCode = jsonValue.GetString("AuthCode");

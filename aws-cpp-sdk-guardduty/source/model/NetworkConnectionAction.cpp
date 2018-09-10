@@ -39,7 +39,7 @@ NetworkConnectionAction::NetworkConnectionAction() :
 {
 }
 
-NetworkConnectionAction::NetworkConnectionAction(const JsonValue& jsonValue) : 
+NetworkConnectionAction::NetworkConnectionAction(JsonView jsonValue) : 
     m_blocked(false),
     m_blockedHasBeenSet(false),
     m_connectionDirectionHasBeenSet(false),
@@ -51,7 +51,7 @@ NetworkConnectionAction::NetworkConnectionAction(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NetworkConnectionAction& NetworkConnectionAction::operator =(const JsonValue& jsonValue)
+NetworkConnectionAction& NetworkConnectionAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("blocked"))
   {

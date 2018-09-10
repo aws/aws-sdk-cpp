@@ -37,7 +37,7 @@ DesiredWeightAndCapacity::DesiredWeightAndCapacity() :
 {
 }
 
-DesiredWeightAndCapacity::DesiredWeightAndCapacity(const JsonValue& jsonValue) : 
+DesiredWeightAndCapacity::DesiredWeightAndCapacity(JsonView jsonValue) : 
     m_variantNameHasBeenSet(false),
     m_desiredWeight(0.0),
     m_desiredWeightHasBeenSet(false),
@@ -47,7 +47,7 @@ DesiredWeightAndCapacity::DesiredWeightAndCapacity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DesiredWeightAndCapacity& DesiredWeightAndCapacity::operator =(const JsonValue& jsonValue)
+DesiredWeightAndCapacity& DesiredWeightAndCapacity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VariantName"))
   {

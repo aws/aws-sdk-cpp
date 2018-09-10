@@ -31,7 +31,7 @@ namespace Aws
         static const unsigned char VARIANT = 0x80u;
         static const unsigned char VARIANT_MASK = 0x3Fu;
 
-        void WriteRangeOutToStream(Aws::StringStream& ss, unsigned char* toWrite, size_t min, size_t max)
+        static void WriteRangeOutToStream(Aws::StringStream& ss, const unsigned char* toWrite, size_t min, size_t max)
         {
             for (size_t i = min; i < max; ++i)
             {
@@ -57,7 +57,7 @@ namespace Aws
             memcpy(m_uuid, toCopy, sizeof(m_uuid));
         }
 
-        UUID::operator Aws::String()
+        UUID::operator Aws::String() const
         {
             Aws::StringStream ss;
             WriteRangeOutToStream(ss, m_uuid, 0, 4);
@@ -73,10 +73,10 @@ namespace Aws
             ss << "-";
 
             WriteRangeOutToStream(ss, m_uuid, 10, 16);
-            
+
             return ss.str();
-        } 
-        
+        }
+
         UUID UUID::RandomUUID()
         {
             auto secureRandom = Crypto::CreateSecureRandomBytesImplementation();

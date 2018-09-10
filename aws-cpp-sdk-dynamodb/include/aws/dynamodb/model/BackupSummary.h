@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/dynamodb/model/BackupStatus.h>
+#include <aws/dynamodb/model/BackupType.h>
 #include <utility>
 
 namespace Aws
@@ -27,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDB
@@ -43,8 +45,8 @@ namespace Model
   {
   public:
     BackupSummary();
-    BackupSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    BackupSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BackupSummary(Aws::Utils::Json::JsonView jsonValue);
+    BackupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -255,6 +257,42 @@ namespace Model
 
 
     /**
+     * <p>Time at which the automatic on-demand backup created by DynamoDB will expire.
+     * This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+     * its creation.</p>
+     */
+    inline const Aws::Utils::DateTime& GetBackupExpiryDateTime() const{ return m_backupExpiryDateTime; }
+
+    /**
+     * <p>Time at which the automatic on-demand backup created by DynamoDB will expire.
+     * This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+     * its creation.</p>
+     */
+    inline void SetBackupExpiryDateTime(const Aws::Utils::DateTime& value) { m_backupExpiryDateTimeHasBeenSet = true; m_backupExpiryDateTime = value; }
+
+    /**
+     * <p>Time at which the automatic on-demand backup created by DynamoDB will expire.
+     * This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+     * its creation.</p>
+     */
+    inline void SetBackupExpiryDateTime(Aws::Utils::DateTime&& value) { m_backupExpiryDateTimeHasBeenSet = true; m_backupExpiryDateTime = std::move(value); }
+
+    /**
+     * <p>Time at which the automatic on-demand backup created by DynamoDB will expire.
+     * This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+     * its creation.</p>
+     */
+    inline BackupSummary& WithBackupExpiryDateTime(const Aws::Utils::DateTime& value) { SetBackupExpiryDateTime(value); return *this;}
+
+    /**
+     * <p>Time at which the automatic on-demand backup created by DynamoDB will expire.
+     * This <code>SYSTEM</code> on-demand backup expires automatically 35 days after
+     * its creation.</p>
+     */
+    inline BackupSummary& WithBackupExpiryDateTime(Aws::Utils::DateTime&& value) { SetBackupExpiryDateTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED.</p>
      */
     inline const BackupStatus& GetBackupStatus() const{ return m_backupStatus; }
@@ -278,6 +316,42 @@ namespace Model
      * <p>Backup can be in one of the following states: CREATING, ACTIVE, DELETED.</p>
      */
     inline BackupSummary& WithBackupStatus(BackupStatus&& value) { SetBackupStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>BackupType:</p> <ul> <li> <p> <code>USER</code> - On-demand backup created by
+     * you.</p> </li> <li> <p> <code>SYSTEM</code> - On-demand backup automatically
+     * created by DynamoDB.</p> </li> </ul>
+     */
+    inline const BackupType& GetBackupType() const{ return m_backupType; }
+
+    /**
+     * <p>BackupType:</p> <ul> <li> <p> <code>USER</code> - On-demand backup created by
+     * you.</p> </li> <li> <p> <code>SYSTEM</code> - On-demand backup automatically
+     * created by DynamoDB.</p> </li> </ul>
+     */
+    inline void SetBackupType(const BackupType& value) { m_backupTypeHasBeenSet = true; m_backupType = value; }
+
+    /**
+     * <p>BackupType:</p> <ul> <li> <p> <code>USER</code> - On-demand backup created by
+     * you.</p> </li> <li> <p> <code>SYSTEM</code> - On-demand backup automatically
+     * created by DynamoDB.</p> </li> </ul>
+     */
+    inline void SetBackupType(BackupType&& value) { m_backupTypeHasBeenSet = true; m_backupType = std::move(value); }
+
+    /**
+     * <p>BackupType:</p> <ul> <li> <p> <code>USER</code> - On-demand backup created by
+     * you.</p> </li> <li> <p> <code>SYSTEM</code> - On-demand backup automatically
+     * created by DynamoDB.</p> </li> </ul>
+     */
+    inline BackupSummary& WithBackupType(const BackupType& value) { SetBackupType(value); return *this;}
+
+    /**
+     * <p>BackupType:</p> <ul> <li> <p> <code>USER</code> - On-demand backup created by
+     * you.</p> </li> <li> <p> <code>SYSTEM</code> - On-demand backup automatically
+     * created by DynamoDB.</p> </li> </ul>
+     */
+    inline BackupSummary& WithBackupType(BackupType&& value) { SetBackupType(std::move(value)); return *this;}
 
 
     /**
@@ -315,8 +389,14 @@ namespace Model
     Aws::Utils::DateTime m_backupCreationDateTime;
     bool m_backupCreationDateTimeHasBeenSet;
 
+    Aws::Utils::DateTime m_backupExpiryDateTime;
+    bool m_backupExpiryDateTimeHasBeenSet;
+
     BackupStatus m_backupStatus;
     bool m_backupStatusHasBeenSet;
+
+    BackupType m_backupType;
+    bool m_backupTypeHasBeenSet;
 
     long long m_backupSizeBytes;
     bool m_backupSizeBytesHasBeenSet;

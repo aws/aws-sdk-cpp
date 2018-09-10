@@ -37,7 +37,7 @@ GetJobUnlockCodeResult::GetJobUnlockCodeResult(const Aws::AmazonWebServiceResult
 
 GetJobUnlockCodeResult& GetJobUnlockCodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UnlockCode"))
   {
     m_unlockCode = jsonValue.GetString("UnlockCode");

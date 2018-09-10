@@ -38,7 +38,7 @@ RefreshSchemasStatus::RefreshSchemasStatus() :
 {
 }
 
-RefreshSchemasStatus::RefreshSchemasStatus(const JsonValue& jsonValue) : 
+RefreshSchemasStatus::RefreshSchemasStatus(JsonView jsonValue) : 
     m_endpointArnHasBeenSet(false),
     m_replicationInstanceArnHasBeenSet(false),
     m_status(RefreshSchemasStatusTypeValue::NOT_SET),
@@ -49,7 +49,7 @@ RefreshSchemasStatus::RefreshSchemasStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RefreshSchemasStatus& RefreshSchemasStatus::operator =(const JsonValue& jsonValue)
+RefreshSchemasStatus& RefreshSchemasStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EndpointArn"))
   {

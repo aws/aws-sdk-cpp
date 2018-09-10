@@ -43,7 +43,7 @@ OrderableReplicationInstance::OrderableReplicationInstance() :
 {
 }
 
-OrderableReplicationInstance::OrderableReplicationInstance(const JsonValue& jsonValue) : 
+OrderableReplicationInstance::OrderableReplicationInstance(JsonView jsonValue) : 
     m_engineVersionHasBeenSet(false),
     m_replicationInstanceClassHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
@@ -59,7 +59,7 @@ OrderableReplicationInstance::OrderableReplicationInstance(const JsonValue& json
   *this = jsonValue;
 }
 
-OrderableReplicationInstance& OrderableReplicationInstance::operator =(const JsonValue& jsonValue)
+OrderableReplicationInstance& OrderableReplicationInstance::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EngineVersion"))
   {

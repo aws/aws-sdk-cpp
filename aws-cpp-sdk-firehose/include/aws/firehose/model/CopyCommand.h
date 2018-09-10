@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     CopyCommand();
-    CopyCommand(const Aws::Utils::Json::JsonValue& jsonValue);
-    CopyCommand& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CopyCommand(Aws::Utils::Json::JsonView jsonValue);
+    CopyCommand& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -130,12 +131,12 @@ namespace Model
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Firehose
-     * are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are delimited
-     * with "\t" (TAB character) and compressed using lzop.</p> <p> <code>delimiter
-     * '|'</code> - fields are delimited with "|" (this is the default delimiter).</p>
-     * <p> <code>delimiter '|' escape</code> - the delimiter should be escaped.</p> <p>
-     * <code>fixedwidth
+     * COPY command</a>. Some possible examples that would apply to Kinesis Data
+     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
+     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
+     * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
+     * escaped.</p> <p> <code>fixedwidth
      * 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</code> - fields
      * are fixed width in the source, with each width specified after every column in
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
@@ -150,12 +151,12 @@ namespace Model
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Firehose
-     * are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are delimited
-     * with "\t" (TAB character) and compressed using lzop.</p> <p> <code>delimiter
-     * '|'</code> - fields are delimited with "|" (this is the default delimiter).</p>
-     * <p> <code>delimiter '|' escape</code> - the delimiter should be escaped.</p> <p>
-     * <code>fixedwidth
+     * COPY command</a>. Some possible examples that would apply to Kinesis Data
+     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
+     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
+     * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
+     * escaped.</p> <p> <code>fixedwidth
      * 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</code> - fields
      * are fixed width in the source, with each width specified after every column in
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
@@ -170,12 +171,12 @@ namespace Model
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Firehose
-     * are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are delimited
-     * with "\t" (TAB character) and compressed using lzop.</p> <p> <code>delimiter
-     * '|'</code> - fields are delimited with "|" (this is the default delimiter).</p>
-     * <p> <code>delimiter '|' escape</code> - the delimiter should be escaped.</p> <p>
-     * <code>fixedwidth
+     * COPY command</a>. Some possible examples that would apply to Kinesis Data
+     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
+     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
+     * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
+     * escaped.</p> <p> <code>fixedwidth
      * 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</code> - fields
      * are fixed width in the source, with each width specified after every column in
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
@@ -190,12 +191,12 @@ namespace Model
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Firehose
-     * are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are delimited
-     * with "\t" (TAB character) and compressed using lzop.</p> <p> <code>delimiter
-     * '|'</code> - fields are delimited with "|" (this is the default delimiter).</p>
-     * <p> <code>delimiter '|' escape</code> - the delimiter should be escaped.</p> <p>
-     * <code>fixedwidth
+     * COPY command</a>. Some possible examples that would apply to Kinesis Data
+     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
+     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
+     * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
+     * escaped.</p> <p> <code>fixedwidth
      * 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</code> - fields
      * are fixed width in the source, with each width specified after every column in
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
@@ -210,12 +211,12 @@ namespace Model
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Firehose
-     * are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are delimited
-     * with "\t" (TAB character) and compressed using lzop.</p> <p> <code>delimiter
-     * '|'</code> - fields are delimited with "|" (this is the default delimiter).</p>
-     * <p> <code>delimiter '|' escape</code> - the delimiter should be escaped.</p> <p>
-     * <code>fixedwidth
+     * COPY command</a>. Some possible examples that would apply to Kinesis Data
+     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
+     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
+     * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
+     * escaped.</p> <p> <code>fixedwidth
      * 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</code> - fields
      * are fixed width in the source, with each width specified after every column in
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
@@ -230,12 +231,12 @@ namespace Model
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Firehose
-     * are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are delimited
-     * with "\t" (TAB character) and compressed using lzop.</p> <p> <code>delimiter
-     * '|'</code> - fields are delimited with "|" (this is the default delimiter).</p>
-     * <p> <code>delimiter '|' escape</code> - the delimiter should be escaped.</p> <p>
-     * <code>fixedwidth
+     * COPY command</a>. Some possible examples that would apply to Kinesis Data
+     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
+     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
+     * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
+     * escaped.</p> <p> <code>fixedwidth
      * 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</code> - fields
      * are fixed width in the source, with each width specified after every column in
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in
@@ -250,12 +251,12 @@ namespace Model
      * <p>Optional parameters to use with the Amazon Redshift <code>COPY</code>
      * command. For more information, see the "Optional Parameters" section of <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon Redshift
-     * COPY command</a>. Some possible examples that would apply to Kinesis Firehose
-     * are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are delimited
-     * with "\t" (TAB character) and compressed using lzop.</p> <p> <code>delimiter
-     * '|'</code> - fields are delimited with "|" (this is the default delimiter).</p>
-     * <p> <code>delimiter '|' escape</code> - the delimiter should be escaped.</p> <p>
-     * <code>fixedwidth
+     * COPY command</a>. Some possible examples that would apply to Kinesis Data
+     * Firehose are as follows:</p> <p> <code>delimiter '\t' lzop;</code> - fields are
+     * delimited with "\t" (TAB character) and compressed using lzop.</p> <p>
+     * <code>delimiter '|'</code> - fields are delimited with "|" (this is the default
+     * delimiter).</p> <p> <code>delimiter '|' escape</code> - the delimiter should be
+     * escaped.</p> <p> <code>fixedwidth
      * 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</code> - fields
      * are fixed width in the source, with each width specified after every column in
      * the table.</p> <p> <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in

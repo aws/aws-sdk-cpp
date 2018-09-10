@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -42,48 +43,64 @@ namespace Model
   {
   public:
     JobProcessDetails();
-    JobProcessDetails(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobProcessDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobProcessDetails(Aws::Utils::Json::JsonView jsonValue);
+    JobProcessDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The devices on which the job is executing.</p>
+     * <p>The target devices to which the job execution is being rolled out. This value
+     * will be null after the job execution has finished rolling out to all the target
+     * devices.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProcessingTargets() const{ return m_processingTargets; }
 
     /**
-     * <p>The devices on which the job is executing.</p>
+     * <p>The target devices to which the job execution is being rolled out. This value
+     * will be null after the job execution has finished rolling out to all the target
+     * devices.</p>
      */
     inline void SetProcessingTargets(const Aws::Vector<Aws::String>& value) { m_processingTargetsHasBeenSet = true; m_processingTargets = value; }
 
     /**
-     * <p>The devices on which the job is executing.</p>
+     * <p>The target devices to which the job execution is being rolled out. This value
+     * will be null after the job execution has finished rolling out to all the target
+     * devices.</p>
      */
     inline void SetProcessingTargets(Aws::Vector<Aws::String>&& value) { m_processingTargetsHasBeenSet = true; m_processingTargets = std::move(value); }
 
     /**
-     * <p>The devices on which the job is executing.</p>
+     * <p>The target devices to which the job execution is being rolled out. This value
+     * will be null after the job execution has finished rolling out to all the target
+     * devices.</p>
      */
     inline JobProcessDetails& WithProcessingTargets(const Aws::Vector<Aws::String>& value) { SetProcessingTargets(value); return *this;}
 
     /**
-     * <p>The devices on which the job is executing.</p>
+     * <p>The target devices to which the job execution is being rolled out. This value
+     * will be null after the job execution has finished rolling out to all the target
+     * devices.</p>
      */
     inline JobProcessDetails& WithProcessingTargets(Aws::Vector<Aws::String>&& value) { SetProcessingTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The devices on which the job is executing.</p>
+     * <p>The target devices to which the job execution is being rolled out. This value
+     * will be null after the job execution has finished rolling out to all the target
+     * devices.</p>
      */
     inline JobProcessDetails& AddProcessingTargets(const Aws::String& value) { m_processingTargetsHasBeenSet = true; m_processingTargets.push_back(value); return *this; }
 
     /**
-     * <p>The devices on which the job is executing.</p>
+     * <p>The target devices to which the job execution is being rolled out. This value
+     * will be null after the job execution has finished rolling out to all the target
+     * devices.</p>
      */
     inline JobProcessDetails& AddProcessingTargets(Aws::String&& value) { m_processingTargetsHasBeenSet = true; m_processingTargets.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The devices on which the job is executing.</p>
+     * <p>The target devices to which the job execution is being rolled out. This value
+     * will be null after the job execution has finished rolling out to all the target
+     * devices.</p>
      */
     inline JobProcessDetails& AddProcessingTargets(const char* value) { m_processingTargetsHasBeenSet = true; m_processingTargets.push_back(value); return *this; }
 

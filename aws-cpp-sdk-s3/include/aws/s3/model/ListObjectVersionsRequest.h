@@ -18,6 +18,7 @@
 #include <aws/s3/S3Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/EncodingType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -72,37 +73,37 @@ namespace Model
 
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline ListObjectVersionsRequest& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline ListObjectVersionsRequest& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
-     * A delimiter is a character you use to group keys.
+     * <p>A delimiter is a character you use to group keys.</p>
      */
     inline ListObjectVersionsRequest& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
@@ -124,130 +125,167 @@ namespace Model
 
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline const Aws::String& GetKeyMarker() const{ return m_keyMarker; }
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline void SetKeyMarker(const Aws::String& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = value; }
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline void SetKeyMarker(Aws::String&& value) { m_keyMarkerHasBeenSet = true; m_keyMarker = std::move(value); }
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline void SetKeyMarker(const char* value) { m_keyMarkerHasBeenSet = true; m_keyMarker.assign(value); }
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline ListObjectVersionsRequest& WithKeyMarker(const Aws::String& value) { SetKeyMarker(value); return *this;}
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline ListObjectVersionsRequest& WithKeyMarker(Aws::String&& value) { SetKeyMarker(std::move(value)); return *this;}
 
     /**
-     * Specifies the key to start with when listing objects in a bucket.
+     * <p>Specifies the key to start with when listing objects in a bucket.</p>
      */
     inline ListObjectVersionsRequest& WithKeyMarker(const char* value) { SetKeyMarker(value); return *this;}
 
 
     /**
-     * Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.
+     * <p>Sets the maximum number of keys returned in the response. The response might
+     * contain fewer keys but will never contain more.</p>
      */
     inline int GetMaxKeys() const{ return m_maxKeys; }
 
     /**
-     * Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.
+     * <p>Sets the maximum number of keys returned in the response. The response might
+     * contain fewer keys but will never contain more.</p>
      */
     inline void SetMaxKeys(int value) { m_maxKeysHasBeenSet = true; m_maxKeys = value; }
 
     /**
-     * Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.
+     * <p>Sets the maximum number of keys returned in the response. The response might
+     * contain fewer keys but will never contain more.</p>
      */
     inline ListObjectVersionsRequest& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
 
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline ListObjectVersionsRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline ListObjectVersionsRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * Limits the response to keys that begin with the specified prefix.
+     * <p>Limits the response to keys that begin with the specified prefix.</p>
      */
     inline ListObjectVersionsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
     /**
-     * Specifies the object version you want to start listing from.
+     * <p>Specifies the object version you want to start listing from.</p>
      */
     inline const Aws::String& GetVersionIdMarker() const{ return m_versionIdMarker; }
 
     /**
-     * Specifies the object version you want to start listing from.
+     * <p>Specifies the object version you want to start listing from.</p>
      */
     inline void SetVersionIdMarker(const Aws::String& value) { m_versionIdMarkerHasBeenSet = true; m_versionIdMarker = value; }
 
     /**
-     * Specifies the object version you want to start listing from.
+     * <p>Specifies the object version you want to start listing from.</p>
      */
     inline void SetVersionIdMarker(Aws::String&& value) { m_versionIdMarkerHasBeenSet = true; m_versionIdMarker = std::move(value); }
 
     /**
-     * Specifies the object version you want to start listing from.
+     * <p>Specifies the object version you want to start listing from.</p>
      */
     inline void SetVersionIdMarker(const char* value) { m_versionIdMarkerHasBeenSet = true; m_versionIdMarker.assign(value); }
 
     /**
-     * Specifies the object version you want to start listing from.
+     * <p>Specifies the object version you want to start listing from.</p>
      */
     inline ListObjectVersionsRequest& WithVersionIdMarker(const Aws::String& value) { SetVersionIdMarker(value); return *this;}
 
     /**
-     * Specifies the object version you want to start listing from.
+     * <p>Specifies the object version you want to start listing from.</p>
      */
     inline ListObjectVersionsRequest& WithVersionIdMarker(Aws::String&& value) { SetVersionIdMarker(std::move(value)); return *this;}
 
     /**
-     * Specifies the object version you want to start listing from.
+     * <p>Specifies the object version you want to start listing from.</p>
      */
     inline ListObjectVersionsRequest& WithVersionIdMarker(const char* value) { SetVersionIdMarker(value); return *this;}
+
+
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
+
+    
+    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
+
+    
+    inline ListObjectVersionsRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
+
+    
+    inline ListObjectVersionsRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
+
+    
+    inline ListObjectVersionsRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+
+    
+    inline ListObjectVersionsRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline ListObjectVersionsRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline ListObjectVersionsRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline ListObjectVersionsRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline ListObjectVersionsRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline ListObjectVersionsRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
 
   private:
 
@@ -271,6 +309,9 @@ namespace Model
 
     Aws::String m_versionIdMarker;
     bool m_versionIdMarkerHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+    bool m_customizedAccessLogTagHasBeenSet;
   };
 
 } // namespace Model

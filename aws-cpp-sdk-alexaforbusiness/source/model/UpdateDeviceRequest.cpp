@@ -44,7 +44,7 @@ Aws::String UpdateDeviceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateDeviceRequest::GetRequestSpecificHeaders() const

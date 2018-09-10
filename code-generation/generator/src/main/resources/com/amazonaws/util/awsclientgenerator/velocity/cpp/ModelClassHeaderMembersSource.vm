@@ -19,30 +19,30 @@
   {
 #end
 #if($member.shape.enum)
-  ${spaces}headers.insert(Aws::Http::HeaderValuePair("${locationName}", ${member.shape.name}Mapper::GetNameFor${member.shape.name}($memberVarName)));
+  ${spaces}headers.emplace("${locationName}", ${member.shape.name}Mapper::GetNameFor${member.shape.name}($memberVarName));
 #elseif($member.shape.blob)
   ${spaces}ss << HashingUtils::Base64Encode(m_${lowerCaseVarName});
-  ${spaces}headers.insert(Aws::Http::HeaderValuePair("${locationName}", ss.str()));
+  ${spaces}headers.emplace("${locationName}", ss.str());
   ${spaces}ss.str("");
 #elseif($member.shape.timeStamp)
-  ${spaces}headers.insert(Aws::Http::HeaderValuePair("${locationName}", m_${lowerCaseVarName}.ToGmtString(DateFormat::RFC822)));
+  ${spaces}headers.emplace("${locationName}", m_${lowerCaseVarName}.ToGmtString(DateFormat::RFC822));
 #elseif($member.shape.map)
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{
   ${spaces}  ss << "${locationName}" << item.first;
-  ${spaces}  headers.insert(Aws::Http::HeaderValuePair(ss.str(), item.second));
+  ${spaces}  headers.emplace(ss.str(), item.second);
   ${spaces}  ss.str("");
   ${spaces}}
 #elseif($member.shape.list)
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{
   ${spaces}  ss << item;
-  ${spaces}  headers.insert(Aws::Http::HeaderValuePair("${locationName}", ss.str()));
+  ${spaces}  headers.emplace("${locationName}", ss.str());
   ${spaces}  ss.str("");
   ${spaces}}
 #else
   ${spaces}ss << m_${lowerCaseVarName};
-  ${spaces}headers.insert(Aws::Http::HeaderValuePair("${locationName}", ss.str()));
+  ${spaces}headers.emplace("${locationName}", #if($member.requiresHeaderEncoding())URI::URLEncodePath(ss.str())#else ss.str()#end);
   ${spaces}ss.str("");
 #end
 #if(!$member.required && $useRequiredField)

@@ -38,7 +38,7 @@ Grantee::Grantee() :
 {
 }
 
-Grantee::Grantee(const JsonValue& jsonValue) : 
+Grantee::Grantee(JsonView jsonValue) : 
     m_type(Type::NOT_SET),
     m_typeHasBeenSet(false),
     m_displayNameHasBeenSet(false),
@@ -49,7 +49,7 @@ Grantee::Grantee(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Grantee& Grantee::operator =(const JsonValue& jsonValue)
+Grantee& Grantee::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

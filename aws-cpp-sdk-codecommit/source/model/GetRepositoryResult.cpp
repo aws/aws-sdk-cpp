@@ -37,7 +37,7 @@ GetRepositoryResult::GetRepositoryResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetRepositoryResult& GetRepositoryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("repositoryMetadata"))
   {
     m_repositoryMetadata = jsonValue.GetObject("repositoryMetadata");

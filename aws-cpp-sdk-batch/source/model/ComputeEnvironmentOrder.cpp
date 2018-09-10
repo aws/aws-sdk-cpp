@@ -35,7 +35,7 @@ ComputeEnvironmentOrder::ComputeEnvironmentOrder() :
 {
 }
 
-ComputeEnvironmentOrder::ComputeEnvironmentOrder(const JsonValue& jsonValue) : 
+ComputeEnvironmentOrder::ComputeEnvironmentOrder(JsonView jsonValue) : 
     m_order(0),
     m_orderHasBeenSet(false),
     m_computeEnvironmentHasBeenSet(false)
@@ -43,7 +43,7 @@ ComputeEnvironmentOrder::ComputeEnvironmentOrder(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComputeEnvironmentOrder& ComputeEnvironmentOrder::operator =(const JsonValue& jsonValue)
+ComputeEnvironmentOrder& ComputeEnvironmentOrder::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("order"))
   {

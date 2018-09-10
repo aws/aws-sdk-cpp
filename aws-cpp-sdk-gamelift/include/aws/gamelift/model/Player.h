@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     Player();
-    Player(const Aws::Utils::Json::JsonValue& jsonValue);
-    Player& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Player(Aws::Utils::Json::JsonView jsonValue);
+    Player& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -87,89 +88,89 @@ namespace Model
 
 
     /**
-     * <p>Collection of name:value pairs containing player information for use in
-     * matchmaking. Player attribute names need to match <i>playerAttributes</i> names
-     * in the rule set being used. Example: <code>"PlayerAttributes": {"skill": {"N":
+     * <p>Collection of key:value pairs containing player information for use in
+     * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
+     * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
      * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetPlayerAttributes() const{ return m_playerAttributes; }
 
     /**
-     * <p>Collection of name:value pairs containing player information for use in
-     * matchmaking. Player attribute names need to match <i>playerAttributes</i> names
-     * in the rule set being used. Example: <code>"PlayerAttributes": {"skill": {"N":
+     * <p>Collection of key:value pairs containing player information for use in
+     * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
+     * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
      * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
      */
     inline void SetPlayerAttributes(const Aws::Map<Aws::String, AttributeValue>& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes = value; }
 
     /**
-     * <p>Collection of name:value pairs containing player information for use in
-     * matchmaking. Player attribute names need to match <i>playerAttributes</i> names
-     * in the rule set being used. Example: <code>"PlayerAttributes": {"skill": {"N":
+     * <p>Collection of key:value pairs containing player information for use in
+     * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
+     * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
      * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
      */
     inline void SetPlayerAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes = std::move(value); }
 
     /**
-     * <p>Collection of name:value pairs containing player information for use in
-     * matchmaking. Player attribute names need to match <i>playerAttributes</i> names
-     * in the rule set being used. Example: <code>"PlayerAttributes": {"skill": {"N":
+     * <p>Collection of key:value pairs containing player information for use in
+     * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
+     * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
      * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
      */
     inline Player& WithPlayerAttributes(const Aws::Map<Aws::String, AttributeValue>& value) { SetPlayerAttributes(value); return *this;}
 
     /**
-     * <p>Collection of name:value pairs containing player information for use in
-     * matchmaking. Player attribute names need to match <i>playerAttributes</i> names
-     * in the rule set being used. Example: <code>"PlayerAttributes": {"skill": {"N":
+     * <p>Collection of key:value pairs containing player information for use in
+     * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
+     * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
      * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
      */
     inline Player& WithPlayerAttributes(Aws::Map<Aws::String, AttributeValue>&& value) { SetPlayerAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of name:value pairs containing player information for use in
-     * matchmaking. Player attribute names need to match <i>playerAttributes</i> names
-     * in the rule set being used. Example: <code>"PlayerAttributes": {"skill": {"N":
+     * <p>Collection of key:value pairs containing player information for use in
+     * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
+     * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
      * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
      */
     inline Player& AddPlayerAttributes(const Aws::String& key, const AttributeValue& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes.emplace(key, value); return *this; }
 
     /**
-     * <p>Collection of name:value pairs containing player information for use in
-     * matchmaking. Player attribute names need to match <i>playerAttributes</i> names
-     * in the rule set being used. Example: <code>"PlayerAttributes": {"skill": {"N":
+     * <p>Collection of key:value pairs containing player information for use in
+     * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
+     * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
      * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
      */
     inline Player& AddPlayerAttributes(Aws::String&& key, const AttributeValue& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Collection of name:value pairs containing player information for use in
-     * matchmaking. Player attribute names need to match <i>playerAttributes</i> names
-     * in the rule set being used. Example: <code>"PlayerAttributes": {"skill": {"N":
+     * <p>Collection of key:value pairs containing player information for use in
+     * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
+     * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
      * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
      */
     inline Player& AddPlayerAttributes(const Aws::String& key, AttributeValue&& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Collection of name:value pairs containing player information for use in
-     * matchmaking. Player attribute names need to match <i>playerAttributes</i> names
-     * in the rule set being used. Example: <code>"PlayerAttributes": {"skill": {"N":
+     * <p>Collection of key:value pairs containing player information for use in
+     * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
+     * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
      * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
      */
     inline Player& AddPlayerAttributes(Aws::String&& key, AttributeValue&& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Collection of name:value pairs containing player information for use in
-     * matchmaking. Player attribute names need to match <i>playerAttributes</i> names
-     * in the rule set being used. Example: <code>"PlayerAttributes": {"skill": {"N":
+     * <p>Collection of key:value pairs containing player information for use in
+     * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
+     * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
      * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
      */
     inline Player& AddPlayerAttributes(const char* key, AttributeValue&& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Collection of name:value pairs containing player information for use in
-     * matchmaking. Player attribute names need to match <i>playerAttributes</i> names
-     * in the rule set being used. Example: <code>"PlayerAttributes": {"skill": {"N":
+     * <p>Collection of key:value pairs containing player information for use in
+     * matchmaking. Player attribute keys must match the <i>playerAttributes</i> used
+     * in a matchmaking rule set. Example: <code>"PlayerAttributes": {"skill": {"N":
      * "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
      */
     inline Player& AddPlayerAttributes(const char* key, const AttributeValue& value) { m_playerAttributesHasBeenSet = true; m_playerAttributes.emplace(key, value); return *this; }

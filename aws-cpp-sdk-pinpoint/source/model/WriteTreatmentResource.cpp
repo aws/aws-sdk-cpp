@@ -38,7 +38,7 @@ WriteTreatmentResource::WriteTreatmentResource() :
 {
 }
 
-WriteTreatmentResource::WriteTreatmentResource(const JsonValue& jsonValue) : 
+WriteTreatmentResource::WriteTreatmentResource(JsonView jsonValue) : 
     m_messageConfigurationHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_sizePercent(0),
@@ -49,7 +49,7 @@ WriteTreatmentResource::WriteTreatmentResource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WriteTreatmentResource& WriteTreatmentResource::operator =(const JsonValue& jsonValue)
+WriteTreatmentResource& WriteTreatmentResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MessageConfiguration"))
   {

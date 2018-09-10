@@ -37,10 +37,10 @@ AddResourcePermissionsResult::AddResourcePermissionsResult(const Aws::AmazonWebS
 
 AddResourcePermissionsResult& AddResourcePermissionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ShareResults"))
   {
-    Array<JsonValue> shareResultsJsonList = jsonValue.GetArray("ShareResults");
+    Array<JsonView> shareResultsJsonList = jsonValue.GetArray("ShareResults");
     for(unsigned shareResultsIndex = 0; shareResultsIndex < shareResultsJsonList.GetLength(); ++shareResultsIndex)
     {
       m_shareResults.push_back(shareResultsJsonList[shareResultsIndex].AsObject());

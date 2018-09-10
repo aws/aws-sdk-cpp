@@ -37,10 +37,10 @@ ListBrokersResult::ListBrokersResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ListBrokersResult& ListBrokersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("brokerSummaries"))
   {
-    Array<JsonValue> brokerSummariesJsonList = jsonValue.GetArray("brokerSummaries");
+    Array<JsonView> brokerSummariesJsonList = jsonValue.GetArray("brokerSummaries");
     for(unsigned brokerSummariesIndex = 0; brokerSummariesIndex < brokerSummariesJsonList.GetLength(); ++brokerSummariesIndex)
     {
       m_brokerSummaries.push_back(brokerSummariesJsonList[brokerSummariesIndex].AsObject());

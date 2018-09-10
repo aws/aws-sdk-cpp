@@ -37,7 +37,7 @@ CreateReplicationJobResult::CreateReplicationJobResult(const Aws::AmazonWebServi
 
 CreateReplicationJobResult& CreateReplicationJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("replicationJobId"))
   {
     m_replicationJobId = jsonValue.GetString("replicationJobId");

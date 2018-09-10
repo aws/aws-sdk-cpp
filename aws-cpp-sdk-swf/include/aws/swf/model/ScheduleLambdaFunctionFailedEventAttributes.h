@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SWF
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ScheduleLambdaFunctionFailedEventAttributes();
-    ScheduleLambdaFunctionFailedEventAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    ScheduleLambdaFunctionFailedEventAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ScheduleLambdaFunctionFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
+    ScheduleLambdaFunctionFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

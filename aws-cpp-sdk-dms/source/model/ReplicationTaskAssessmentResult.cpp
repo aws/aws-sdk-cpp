@@ -39,7 +39,7 @@ ReplicationTaskAssessmentResult::ReplicationTaskAssessmentResult() :
 {
 }
 
-ReplicationTaskAssessmentResult::ReplicationTaskAssessmentResult(const JsonValue& jsonValue) : 
+ReplicationTaskAssessmentResult::ReplicationTaskAssessmentResult(JsonView jsonValue) : 
     m_replicationTaskIdentifierHasBeenSet(false),
     m_replicationTaskArnHasBeenSet(false),
     m_replicationTaskLastAssessmentDateHasBeenSet(false),
@@ -51,7 +51,7 @@ ReplicationTaskAssessmentResult::ReplicationTaskAssessmentResult(const JsonValue
   *this = jsonValue;
 }
 
-ReplicationTaskAssessmentResult& ReplicationTaskAssessmentResult::operator =(const JsonValue& jsonValue)
+ReplicationTaskAssessmentResult& ReplicationTaskAssessmentResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReplicationTaskIdentifier"))
   {

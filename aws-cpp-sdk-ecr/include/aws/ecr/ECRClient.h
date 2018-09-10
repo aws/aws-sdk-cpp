@@ -65,11 +65,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -184,7 +179,7 @@ namespace Model
     typedef std::function<void(const ECRClient*, const Model::UploadLayerPartRequest&, const Model::UploadLayerPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadLayerPartResponseReceivedHandler;
 
   /**
-   * <p>Amazon EC2 Container Registry (Amazon ECR) is a managed Docker registry
+   * <p>Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry
    * service. Customers can use the familiar Docker CLI to push, pull, and manage
    * images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
    * ECR supports private Docker repositories with resource-based permissions using
@@ -830,14 +825,20 @@ namespace Model
         virtual void PutImageAsync(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates a lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates a lifecycle policy. For information about lifecycle policy
+         * syntax, see <a
+         * href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
+         * Policy Template</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutLifecyclePolicyOutcome PutLifecyclePolicy(const Model::PutLifecyclePolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates a lifecycle policy. For information about lifecycle policy
+         * syntax, see <a
+         * href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
+         * Policy Template</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">AWS
          * API Reference</a></p>
          *
@@ -846,7 +847,10 @@ namespace Model
         virtual Model::PutLifecyclePolicyOutcomeCallable PutLifecyclePolicyCallable(const Model::PutLifecyclePolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates a lifecycle policy. For information about lifecycle policy
+         * syntax, see <a
+         * href="http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
+         * Policy Template</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">AWS
          * API Reference</a></p>
          *

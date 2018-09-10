@@ -37,7 +37,7 @@ Aws::String DeleteSubnetGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteSubnetGroupRequest::GetRequestSpecificHeaders() const

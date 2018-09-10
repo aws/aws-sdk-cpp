@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     Queue();
-    Queue(const Aws::Utils::Json::JsonValue& jsonValue);
-    Queue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Queue(Aws::Utils::Json::JsonView jsonValue);
+    Queue& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -211,6 +212,22 @@ namespace Model
     inline Queue& WithName(const char* value) { SetName(value); return *this;}
 
 
+    /**
+     * Estimated number of jobs in PROGRESSING status.
+     */
+    inline int GetProgressingJobsCount() const{ return m_progressingJobsCount; }
+
+    /**
+     * Estimated number of jobs in PROGRESSING status.
+     */
+    inline void SetProgressingJobsCount(int value) { m_progressingJobsCountHasBeenSet = true; m_progressingJobsCount = value; }
+
+    /**
+     * Estimated number of jobs in PROGRESSING status.
+     */
+    inline Queue& WithProgressingJobsCount(int value) { SetProgressingJobsCount(value); return *this;}
+
+
     
     inline const QueueStatus& GetStatus() const{ return m_status; }
 
@@ -228,31 +245,47 @@ namespace Model
 
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can’t
+     * Estimated number of jobs in SUBMITTED status.
+     */
+    inline int GetSubmittedJobsCount() const{ return m_submittedJobsCount; }
+
+    /**
+     * Estimated number of jobs in SUBMITTED status.
+     */
+    inline void SetSubmittedJobsCount(int value) { m_submittedJobsCountHasBeenSet = true; m_submittedJobsCount = value; }
+
+    /**
+     * Estimated number of jobs in SUBMITTED status.
+     */
+    inline Queue& WithSubmittedJobsCount(int value) { SetSubmittedJobsCount(value); return *this;}
+
+
+    /**
+     * A queue can be of two types: system or custom. System or built-in queues can't
      * be modified or deleted by the user.
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can’t
+     * A queue can be of two types: system or custom. System or built-in queues can't
      * be modified or deleted by the user.
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can’t
+     * A queue can be of two types: system or custom. System or built-in queues can't
      * be modified or deleted by the user.
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can’t
+     * A queue can be of two types: system or custom. System or built-in queues can't
      * be modified or deleted by the user.
      */
     inline Queue& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can’t
+     * A queue can be of two types: system or custom. System or built-in queues can't
      * be modified or deleted by the user.
      */
     inline Queue& WithType(Type&& value) { SetType(std::move(value)); return *this;}
@@ -274,8 +307,14 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
+    int m_progressingJobsCount;
+    bool m_progressingJobsCountHasBeenSet;
+
     QueueStatus m_status;
     bool m_statusHasBeenSet;
+
+    int m_submittedJobsCount;
+    bool m_submittedJobsCountHasBeenSet;
 
     Type m_type;
     bool m_typeHasBeenSet;

@@ -51,7 +51,7 @@ namespace Model
    * of the trusted signers that you want to include in the updated distribution.</p>
    * <p>For more information about updating the distribution configuration, see
    * <a>DistributionConfig</a> .</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TrustedSigners">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/TrustedSigners">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API TrustedSigners

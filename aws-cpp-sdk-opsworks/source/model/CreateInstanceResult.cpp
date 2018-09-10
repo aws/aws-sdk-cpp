@@ -37,7 +37,7 @@ CreateInstanceResult::CreateInstanceResult(const Aws::AmazonWebServiceResult<Jso
 
 CreateInstanceResult& CreateInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");

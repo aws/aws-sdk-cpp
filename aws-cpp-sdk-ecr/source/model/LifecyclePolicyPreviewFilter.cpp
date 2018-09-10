@@ -34,14 +34,14 @@ LifecyclePolicyPreviewFilter::LifecyclePolicyPreviewFilter() :
 {
 }
 
-LifecyclePolicyPreviewFilter::LifecyclePolicyPreviewFilter(const JsonValue& jsonValue) : 
+LifecyclePolicyPreviewFilter::LifecyclePolicyPreviewFilter(JsonView jsonValue) : 
     m_tagStatus(TagStatus::NOT_SET),
     m_tagStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LifecyclePolicyPreviewFilter& LifecyclePolicyPreviewFilter::operator =(const JsonValue& jsonValue)
+LifecyclePolicyPreviewFilter& LifecyclePolicyPreviewFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("tagStatus"))
   {

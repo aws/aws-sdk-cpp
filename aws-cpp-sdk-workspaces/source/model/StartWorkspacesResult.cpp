@@ -37,10 +37,10 @@ StartWorkspacesResult::StartWorkspacesResult(const Aws::AmazonWebServiceResult<J
 
 StartWorkspacesResult& StartWorkspacesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FailedRequests"))
   {
-    Array<JsonValue> failedRequestsJsonList = jsonValue.GetArray("FailedRequests");
+    Array<JsonView> failedRequestsJsonList = jsonValue.GetArray("FailedRequests");
     for(unsigned failedRequestsIndex = 0; failedRequestsIndex < failedRequestsJsonList.GetLength(); ++failedRequestsIndex)
     {
       m_failedRequests.push_back(failedRequestsJsonList[failedRequestsIndex].AsObject());

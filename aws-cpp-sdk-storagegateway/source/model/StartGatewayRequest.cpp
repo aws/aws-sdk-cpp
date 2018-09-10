@@ -37,7 +37,7 @@ Aws::String StartGatewayRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartGatewayRequest::GetRequestSpecificHeaders() const

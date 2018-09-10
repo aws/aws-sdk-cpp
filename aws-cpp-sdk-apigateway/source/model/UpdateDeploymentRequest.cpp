@@ -44,7 +44,7 @@ Aws::String UpdateDeploymentRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

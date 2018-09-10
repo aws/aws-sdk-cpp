@@ -108,7 +108,7 @@ Aws::String DescribeEvaluationsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeEvaluationsRequest::GetRequestSpecificHeaders() const

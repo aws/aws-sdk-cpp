@@ -35,7 +35,7 @@ BackupDescription::BackupDescription() :
 {
 }
 
-BackupDescription::BackupDescription(const JsonValue& jsonValue) : 
+BackupDescription::BackupDescription(JsonView jsonValue) : 
     m_backupDetailsHasBeenSet(false),
     m_sourceTableDetailsHasBeenSet(false),
     m_sourceTableFeatureDetailsHasBeenSet(false)
@@ -43,7 +43,7 @@ BackupDescription::BackupDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BackupDescription& BackupDescription::operator =(const JsonValue& jsonValue)
+BackupDescription& BackupDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BackupDetails"))
   {

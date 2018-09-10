@@ -58,7 +58,7 @@ Aws::String ConfirmDeviceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ConfirmDeviceRequest::GetRequestSpecificHeaders() const

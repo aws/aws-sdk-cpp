@@ -37,7 +37,7 @@ DeleteGitHubAccountTokenResult::DeleteGitHubAccountTokenResult(const Aws::Amazon
 
 DeleteGitHubAccountTokenResult& DeleteGitHubAccountTokenResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("tokenName"))
   {
     m_tokenName = jsonValue.GetString("tokenName");

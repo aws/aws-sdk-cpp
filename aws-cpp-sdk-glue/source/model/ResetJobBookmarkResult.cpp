@@ -37,7 +37,7 @@ ResetJobBookmarkResult::ResetJobBookmarkResult(const Aws::AmazonWebServiceResult
 
 ResetJobBookmarkResult& ResetJobBookmarkResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JobBookmarkEntry"))
   {
     m_jobBookmarkEntry = jsonValue.GetObject("JobBookmarkEntry");

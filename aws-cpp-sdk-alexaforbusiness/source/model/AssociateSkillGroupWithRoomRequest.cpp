@@ -44,7 +44,7 @@ Aws::String AssociateSkillGroupWithRoomRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AssociateSkillGroupWithRoomRequest::GetRequestSpecificHeaders() const

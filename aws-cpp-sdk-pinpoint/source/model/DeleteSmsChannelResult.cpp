@@ -37,7 +37,7 @@ DeleteSmsChannelResult::DeleteSmsChannelResult(const Aws::AmazonWebServiceResult
 
 DeleteSmsChannelResult& DeleteSmsChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_sMSChannelResponse = jsonValue;
 
 

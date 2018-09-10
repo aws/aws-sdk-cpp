@@ -82,10 +82,35 @@ namespace Model
      */
     inline DeleteStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
 
+
+    /**
+     * <p>If this parameter is unset (<code>null</code>) or if you set it to
+     * <code>false</code>, and the stream has registered consumers, the call to
+     * <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
+     */
+    inline bool GetEnforceConsumerDeletion() const{ return m_enforceConsumerDeletion; }
+
+    /**
+     * <p>If this parameter is unset (<code>null</code>) or if you set it to
+     * <code>false</code>, and the stream has registered consumers, the call to
+     * <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
+     */
+    inline void SetEnforceConsumerDeletion(bool value) { m_enforceConsumerDeletionHasBeenSet = true; m_enforceConsumerDeletion = value; }
+
+    /**
+     * <p>If this parameter is unset (<code>null</code>) or if you set it to
+     * <code>false</code>, and the stream has registered consumers, the call to
+     * <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>. </p>
+     */
+    inline DeleteStreamRequest& WithEnforceConsumerDeletion(bool value) { SetEnforceConsumerDeletion(value); return *this;}
+
   private:
 
     Aws::String m_streamName;
     bool m_streamNameHasBeenSet;
+
+    bool m_enforceConsumerDeletion;
+    bool m_enforceConsumerDeletionHasBeenSet;
   };
 
 } // namespace Model

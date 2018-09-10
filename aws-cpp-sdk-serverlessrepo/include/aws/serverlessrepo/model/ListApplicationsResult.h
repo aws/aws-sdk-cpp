@@ -45,73 +45,73 @@ namespace Model
 
 
     /**
-     * Array of application summaries.
+     * <p>An array of application summaries.</p>
      */
     inline const Aws::Vector<ApplicationSummary>& GetApplications() const{ return m_applications; }
 
     /**
-     * Array of application summaries.
+     * <p>An array of application summaries.</p>
      */
     inline void SetApplications(const Aws::Vector<ApplicationSummary>& value) { m_applications = value; }
 
     /**
-     * Array of application summaries.
+     * <p>An array of application summaries.</p>
      */
     inline void SetApplications(Aws::Vector<ApplicationSummary>&& value) { m_applications = std::move(value); }
 
     /**
-     * Array of application summaries.
+     * <p>An array of application summaries.</p>
      */
     inline ListApplicationsResult& WithApplications(const Aws::Vector<ApplicationSummary>& value) { SetApplications(value); return *this;}
 
     /**
-     * Array of application summaries.
+     * <p>An array of application summaries.</p>
      */
     inline ListApplicationsResult& WithApplications(Aws::Vector<ApplicationSummary>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
-     * Array of application summaries.
+     * <p>An array of application summaries.</p>
      */
     inline ListApplicationsResult& AddApplications(const ApplicationSummary& value) { m_applications.push_back(value); return *this; }
 
     /**
-     * Array of application summaries.
+     * <p>An array of application summaries.</p>
      */
     inline ListApplicationsResult& AddApplications(ApplicationSummary&& value) { m_applications.push_back(std::move(value)); return *this; }
 
 
     /**
-     * The token to request the next page of results.
+     * <p>The token to request the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * The token to request the next page of results.
+     * <p>The token to request the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * The token to request the next page of results.
+     * <p>The token to request the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * The token to request the next page of results.
+     * <p>The token to request the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * The token to request the next page of results.
+     * <p>The token to request the next page of results.</p>
      */
     inline ListApplicationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * The token to request the next page of results.
+     * <p>The token to request the next page of results.</p>
      */
     inline ListApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * The token to request the next page of results.
+     * <p>The token to request the next page of results.</p>
      */
     inline ListApplicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

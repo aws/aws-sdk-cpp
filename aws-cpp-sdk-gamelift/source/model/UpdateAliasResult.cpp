@@ -37,7 +37,7 @@ UpdateAliasResult::UpdateAliasResult(const Aws::AmazonWebServiceResult<JsonValue
 
 UpdateAliasResult& UpdateAliasResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Alias"))
   {
     m_alias = jsonValue.GetObject("Alias");

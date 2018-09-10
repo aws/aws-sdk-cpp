@@ -56,7 +56,7 @@ Aws::String UpdateByteMatchSetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateByteMatchSetRequest::GetRequestSpecificHeaders() const

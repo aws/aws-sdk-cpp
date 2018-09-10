@@ -492,44 +492,65 @@ namespace Model
 
 
     /**
-     * <p> A condition that a Worker's Qualifications must meet before the Worker is
-     * allowed to accept and complete the HIT. </p>
+     * <p> Conditions that a Worker's Qualifications must meet in order to accept the
+     * HIT. A HIT can have between zero and ten Qualification requirements. All
+     * requirements must be met in order for a Worker to accept the HIT. Additionally,
+     * other actions can be restricted using the <code>ActionsGuarded</code> field on
+     * each <code>QualificationRequirement</code> structure. </p>
      */
     inline const Aws::Vector<QualificationRequirement>& GetQualificationRequirements() const{ return m_qualificationRequirements; }
 
     /**
-     * <p> A condition that a Worker's Qualifications must meet before the Worker is
-     * allowed to accept and complete the HIT. </p>
+     * <p> Conditions that a Worker's Qualifications must meet in order to accept the
+     * HIT. A HIT can have between zero and ten Qualification requirements. All
+     * requirements must be met in order for a Worker to accept the HIT. Additionally,
+     * other actions can be restricted using the <code>ActionsGuarded</code> field on
+     * each <code>QualificationRequirement</code> structure. </p>
      */
     inline void SetQualificationRequirements(const Aws::Vector<QualificationRequirement>& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = value; }
 
     /**
-     * <p> A condition that a Worker's Qualifications must meet before the Worker is
-     * allowed to accept and complete the HIT. </p>
+     * <p> Conditions that a Worker's Qualifications must meet in order to accept the
+     * HIT. A HIT can have between zero and ten Qualification requirements. All
+     * requirements must be met in order for a Worker to accept the HIT. Additionally,
+     * other actions can be restricted using the <code>ActionsGuarded</code> field on
+     * each <code>QualificationRequirement</code> structure. </p>
      */
     inline void SetQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = std::move(value); }
 
     /**
-     * <p> A condition that a Worker's Qualifications must meet before the Worker is
-     * allowed to accept and complete the HIT. </p>
+     * <p> Conditions that a Worker's Qualifications must meet in order to accept the
+     * HIT. A HIT can have between zero and ten Qualification requirements. All
+     * requirements must be met in order for a Worker to accept the HIT. Additionally,
+     * other actions can be restricted using the <code>ActionsGuarded</code> field on
+     * each <code>QualificationRequirement</code> structure. </p>
      */
     inline CreateHITRequest& WithQualificationRequirements(const Aws::Vector<QualificationRequirement>& value) { SetQualificationRequirements(value); return *this;}
 
     /**
-     * <p> A condition that a Worker's Qualifications must meet before the Worker is
-     * allowed to accept and complete the HIT. </p>
+     * <p> Conditions that a Worker's Qualifications must meet in order to accept the
+     * HIT. A HIT can have between zero and ten Qualification requirements. All
+     * requirements must be met in order for a Worker to accept the HIT. Additionally,
+     * other actions can be restricted using the <code>ActionsGuarded</code> field on
+     * each <code>QualificationRequirement</code> structure. </p>
      */
     inline CreateHITRequest& WithQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { SetQualificationRequirements(std::move(value)); return *this;}
 
     /**
-     * <p> A condition that a Worker's Qualifications must meet before the Worker is
-     * allowed to accept and complete the HIT. </p>
+     * <p> Conditions that a Worker's Qualifications must meet in order to accept the
+     * HIT. A HIT can have between zero and ten Qualification requirements. All
+     * requirements must be met in order for a Worker to accept the HIT. Additionally,
+     * other actions can be restricted using the <code>ActionsGuarded</code> field on
+     * each <code>QualificationRequirement</code> structure. </p>
      */
     inline CreateHITRequest& AddQualificationRequirements(const QualificationRequirement& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(value); return *this; }
 
     /**
-     * <p> A condition that a Worker's Qualifications must meet before the Worker is
-     * allowed to accept and complete the HIT. </p>
+     * <p> Conditions that a Worker's Qualifications must meet in order to accept the
+     * HIT. A HIT can have between zero and ten Qualification requirements. All
+     * requirements must be met in order for a Worker to accept the HIT. Additionally,
+     * other actions can be restricted using the <code>ActionsGuarded</code> field on
+     * each <code>QualificationRequirement</code> structure. </p>
      */
     inline CreateHITRequest& AddQualificationRequirements(QualificationRequirement&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(std::move(value)); return *this; }
 

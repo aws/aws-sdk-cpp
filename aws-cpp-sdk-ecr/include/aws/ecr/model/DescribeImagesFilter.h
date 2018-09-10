@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECR
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     DescribeImagesFilter();
-    DescribeImagesFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    DescribeImagesFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DescribeImagesFilter(Aws::Utils::Json::JsonView jsonValue);
+    DescribeImagesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

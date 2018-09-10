@@ -20,6 +20,7 @@
 #include <aws/elasticfilesystem/model/LifeCycleState.h>
 #include <aws/elasticfilesystem/model/FileSystemSize.h>
 #include <aws/elasticfilesystem/model/PerformanceMode.h>
+#include <aws/elasticfilesystem/model/ThroughputMode.h>
 #include <utility>
 
 namespace Aws
@@ -29,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EFS
@@ -45,8 +47,8 @@ namespace Model
   {
   public:
     FileSystemDescription();
-    FileSystemDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    FileSystemDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FileSystemDescription(Aws::Utils::Json::JsonView jsonValue);
+    FileSystemDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -293,66 +295,71 @@ namespace Model
 
     /**
      * <p>Latest known metered size (in bytes) of data stored in the file system, in
-     * bytes, in its <code>Value</code> field, and the time at which that size was
-     * determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value
-     * is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value
-     * does not represent the size of a consistent snapshot of the file system, but it
-     * is eventually consistent when there are no writes to the file system. That is,
-     * the value will represent actual size only if the file system is not modified for
-     * a period longer than a couple of hours. Otherwise, the value is not the exact
-     * size the file system was at any instant in time. </p>
+     * its <code>Value</code> field, and the time at which that size was determined in
+     * its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
+     * integer number of seconds since 1970-01-01T00:00:00Z. The
+     * <code>SizeInBytes</code> value doesn't represent the size of a consistent
+     * snapshot of the file system, but it is eventually consistent when there are no
+     * writes to the file system. That is, <code>SizeInBytes</code> represents actual
+     * size only if the file system is not modified for a period longer than a couple
+     * of hours. Otherwise, the value is not the exact size that the file system was at
+     * any point in time. </p>
      */
     inline const FileSystemSize& GetSizeInBytes() const{ return m_sizeInBytes; }
 
     /**
      * <p>Latest known metered size (in bytes) of data stored in the file system, in
-     * bytes, in its <code>Value</code> field, and the time at which that size was
-     * determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value
-     * is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value
-     * does not represent the size of a consistent snapshot of the file system, but it
-     * is eventually consistent when there are no writes to the file system. That is,
-     * the value will represent actual size only if the file system is not modified for
-     * a period longer than a couple of hours. Otherwise, the value is not the exact
-     * size the file system was at any instant in time. </p>
+     * its <code>Value</code> field, and the time at which that size was determined in
+     * its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
+     * integer number of seconds since 1970-01-01T00:00:00Z. The
+     * <code>SizeInBytes</code> value doesn't represent the size of a consistent
+     * snapshot of the file system, but it is eventually consistent when there are no
+     * writes to the file system. That is, <code>SizeInBytes</code> represents actual
+     * size only if the file system is not modified for a period longer than a couple
+     * of hours. Otherwise, the value is not the exact size that the file system was at
+     * any point in time. </p>
      */
     inline void SetSizeInBytes(const FileSystemSize& value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
 
     /**
      * <p>Latest known metered size (in bytes) of data stored in the file system, in
-     * bytes, in its <code>Value</code> field, and the time at which that size was
-     * determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value
-     * is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value
-     * does not represent the size of a consistent snapshot of the file system, but it
-     * is eventually consistent when there are no writes to the file system. That is,
-     * the value will represent actual size only if the file system is not modified for
-     * a period longer than a couple of hours. Otherwise, the value is not the exact
-     * size the file system was at any instant in time. </p>
+     * its <code>Value</code> field, and the time at which that size was determined in
+     * its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
+     * integer number of seconds since 1970-01-01T00:00:00Z. The
+     * <code>SizeInBytes</code> value doesn't represent the size of a consistent
+     * snapshot of the file system, but it is eventually consistent when there are no
+     * writes to the file system. That is, <code>SizeInBytes</code> represents actual
+     * size only if the file system is not modified for a period longer than a couple
+     * of hours. Otherwise, the value is not the exact size that the file system was at
+     * any point in time. </p>
      */
     inline void SetSizeInBytes(FileSystemSize&& value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = std::move(value); }
 
     /**
      * <p>Latest known metered size (in bytes) of data stored in the file system, in
-     * bytes, in its <code>Value</code> field, and the time at which that size was
-     * determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value
-     * is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value
-     * does not represent the size of a consistent snapshot of the file system, but it
-     * is eventually consistent when there are no writes to the file system. That is,
-     * the value will represent actual size only if the file system is not modified for
-     * a period longer than a couple of hours. Otherwise, the value is not the exact
-     * size the file system was at any instant in time. </p>
+     * its <code>Value</code> field, and the time at which that size was determined in
+     * its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
+     * integer number of seconds since 1970-01-01T00:00:00Z. The
+     * <code>SizeInBytes</code> value doesn't represent the size of a consistent
+     * snapshot of the file system, but it is eventually consistent when there are no
+     * writes to the file system. That is, <code>SizeInBytes</code> represents actual
+     * size only if the file system is not modified for a period longer than a couple
+     * of hours. Otherwise, the value is not the exact size that the file system was at
+     * any point in time. </p>
      */
     inline FileSystemDescription& WithSizeInBytes(const FileSystemSize& value) { SetSizeInBytes(value); return *this;}
 
     /**
      * <p>Latest known metered size (in bytes) of data stored in the file system, in
-     * bytes, in its <code>Value</code> field, and the time at which that size was
-     * determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value
-     * is the integer number of seconds since 1970-01-01T00:00:00Z. Note that the value
-     * does not represent the size of a consistent snapshot of the file system, but it
-     * is eventually consistent when there are no writes to the file system. That is,
-     * the value will represent actual size only if the file system is not modified for
-     * a period longer than a couple of hours. Otherwise, the value is not the exact
-     * size the file system was at any instant in time. </p>
+     * its <code>Value</code> field, and the time at which that size was determined in
+     * its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
+     * integer number of seconds since 1970-01-01T00:00:00Z. The
+     * <code>SizeInBytes</code> value doesn't represent the size of a consistent
+     * snapshot of the file system, but it is eventually consistent when there are no
+     * writes to the file system. That is, <code>SizeInBytes</code> represents actual
+     * size only if the file system is not modified for a period longer than a couple
+     * of hours. Otherwise, the value is not the exact size that the file system was at
+     * any point in time. </p>
      */
     inline FileSystemDescription& WithSizeInBytes(FileSystemSize&& value) { SetSizeInBytes(std::move(value)); return *this;}
 
@@ -384,65 +391,139 @@ namespace Model
 
 
     /**
-     * <p>A boolean value that, if true, indicates that the file system is
+     * <p>A Boolean value that, if true, indicates that the file system is
      * encrypted.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>A boolean value that, if true, indicates that the file system is
+     * <p>A Boolean value that, if true, indicates that the file system is
      * encrypted.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>A boolean value that, if true, indicates that the file system is
+     * <p>A Boolean value that, if true, indicates that the file system is
      * encrypted.</p>
      */
     inline FileSystemDescription& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
 
     /**
-     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
      * that was used to protect the encrypted file system.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
      * that was used to protect the encrypted file system.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
      * that was used to protect the encrypted file system.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
      * that was used to protect the encrypted file system.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
      * that was used to protect the encrypted file system.</p>
      */
     inline FileSystemDescription& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
      * that was used to protect the encrypted file system.</p>
      */
     inline FileSystemDescription& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The id of an AWS Key Management Service (AWS KMS) customer master key (CMK)
+     * <p>The ID of an AWS Key Management Service (AWS KMS) customer master key (CMK)
      * that was used to protect the encrypted file system.</p>
      */
     inline FileSystemDescription& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The throughput mode for a file system. There are two throughput modes to
+     * choose from for your file system: bursting and provisioned. You can decrease
+     * your file system's throughput in Provisioned Throughput mode or change between
+     * the throughput modes as long as it’s been more than 24 hours since the last
+     * decrease or throughput mode change.</p>
+     */
+    inline const ThroughputMode& GetThroughputMode() const{ return m_throughputMode; }
+
+    /**
+     * <p>The throughput mode for a file system. There are two throughput modes to
+     * choose from for your file system: bursting and provisioned. You can decrease
+     * your file system's throughput in Provisioned Throughput mode or change between
+     * the throughput modes as long as it’s been more than 24 hours since the last
+     * decrease or throughput mode change.</p>
+     */
+    inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
+
+    /**
+     * <p>The throughput mode for a file system. There are two throughput modes to
+     * choose from for your file system: bursting and provisioned. You can decrease
+     * your file system's throughput in Provisioned Throughput mode or change between
+     * the throughput modes as long as it’s been more than 24 hours since the last
+     * decrease or throughput mode change.</p>
+     */
+    inline void SetThroughputMode(ThroughputMode&& value) { m_throughputModeHasBeenSet = true; m_throughputMode = std::move(value); }
+
+    /**
+     * <p>The throughput mode for a file system. There are two throughput modes to
+     * choose from for your file system: bursting and provisioned. You can decrease
+     * your file system's throughput in Provisioned Throughput mode or change between
+     * the throughput modes as long as it’s been more than 24 hours since the last
+     * decrease or throughput mode change.</p>
+     */
+    inline FileSystemDescription& WithThroughputMode(const ThroughputMode& value) { SetThroughputMode(value); return *this;}
+
+    /**
+     * <p>The throughput mode for a file system. There are two throughput modes to
+     * choose from for your file system: bursting and provisioned. You can decrease
+     * your file system's throughput in Provisioned Throughput mode or change between
+     * the throughput modes as long as it’s been more than 24 hours since the last
+     * decrease or throughput mode change.</p>
+     */
+    inline FileSystemDescription& WithThroughputMode(ThroughputMode&& value) { SetThroughputMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The throughput, measured in MiB/s, that you want to provision for a file
+     * system. The limit on throughput is 1024 MiB/s. You can get these limits
+     * increased by contacting AWS Support. For more information, see <a
+     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     */
+    inline double GetProvisionedThroughputInMibps() const{ return m_provisionedThroughputInMibps; }
+
+    /**
+     * <p>The throughput, measured in MiB/s, that you want to provision for a file
+     * system. The limit on throughput is 1024 MiB/s. You can get these limits
+     * increased by contacting AWS Support. For more information, see <a
+     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     */
+    inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibpsHasBeenSet = true; m_provisionedThroughputInMibps = value; }
+
+    /**
+     * <p>The throughput, measured in MiB/s, that you want to provision for a file
+     * system. The limit on throughput is 1024 MiB/s. You can get these limits
+     * increased by contacting AWS Support. For more information, see <a
+     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     */
+    inline FileSystemDescription& WithProvisionedThroughputInMibps(double value) { SetProvisionedThroughputInMibps(value); return *this;}
 
   private:
 
@@ -478,6 +559,12 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    ThroughputMode m_throughputMode;
+    bool m_throughputModeHasBeenSet;
+
+    double m_provisionedThroughputInMibps;
+    bool m_provisionedThroughputInMibpsHasBeenSet;
   };
 
 } // namespace Model

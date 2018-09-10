@@ -35,7 +35,7 @@ IPSetDescriptor::IPSetDescriptor() :
 {
 }
 
-IPSetDescriptor::IPSetDescriptor(const JsonValue& jsonValue) : 
+IPSetDescriptor::IPSetDescriptor(JsonView jsonValue) : 
     m_type(IPSetDescriptorType::NOT_SET),
     m_typeHasBeenSet(false),
     m_valueHasBeenSet(false)
@@ -43,7 +43,7 @@ IPSetDescriptor::IPSetDescriptor(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IPSetDescriptor& IPSetDescriptor::operator =(const JsonValue& jsonValue)
+IPSetDescriptor& IPSetDescriptor::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

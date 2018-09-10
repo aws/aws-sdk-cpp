@@ -36,7 +36,7 @@ InputChannelLevel::InputChannelLevel() :
 {
 }
 
-InputChannelLevel::InputChannelLevel(const JsonValue& jsonValue) : 
+InputChannelLevel::InputChannelLevel(JsonView jsonValue) : 
     m_gain(0),
     m_gainHasBeenSet(false),
     m_inputChannel(0),
@@ -45,7 +45,7 @@ InputChannelLevel::InputChannelLevel(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InputChannelLevel& InputChannelLevel::operator =(const JsonValue& jsonValue)
+InputChannelLevel& InputChannelLevel::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("gain"))
   {

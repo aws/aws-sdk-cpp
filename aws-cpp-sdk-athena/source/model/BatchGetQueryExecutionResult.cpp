@@ -37,10 +37,10 @@ BatchGetQueryExecutionResult::BatchGetQueryExecutionResult(const Aws::AmazonWebS
 
 BatchGetQueryExecutionResult& BatchGetQueryExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("QueryExecutions"))
   {
-    Array<JsonValue> queryExecutionsJsonList = jsonValue.GetArray("QueryExecutions");
+    Array<JsonView> queryExecutionsJsonList = jsonValue.GetArray("QueryExecutions");
     for(unsigned queryExecutionsIndex = 0; queryExecutionsIndex < queryExecutionsJsonList.GetLength(); ++queryExecutionsIndex)
     {
       m_queryExecutions.push_back(queryExecutionsJsonList[queryExecutionsIndex].AsObject());
@@ -49,7 +49,7 @@ BatchGetQueryExecutionResult& BatchGetQueryExecutionResult::operator =(const Aws
 
   if(jsonValue.ValueExists("UnprocessedQueryExecutionIds"))
   {
-    Array<JsonValue> unprocessedQueryExecutionIdsJsonList = jsonValue.GetArray("UnprocessedQueryExecutionIds");
+    Array<JsonView> unprocessedQueryExecutionIdsJsonList = jsonValue.GetArray("UnprocessedQueryExecutionIds");
     for(unsigned unprocessedQueryExecutionIdsIndex = 0; unprocessedQueryExecutionIdsIndex < unprocessedQueryExecutionIdsJsonList.GetLength(); ++unprocessedQueryExecutionIdsIndex)
     {
       m_unprocessedQueryExecutionIds.push_back(unprocessedQueryExecutionIdsJsonList[unprocessedQueryExecutionIdsIndex].AsObject());

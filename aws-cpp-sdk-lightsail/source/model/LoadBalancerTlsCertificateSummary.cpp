@@ -35,7 +35,7 @@ LoadBalancerTlsCertificateSummary::LoadBalancerTlsCertificateSummary() :
 {
 }
 
-LoadBalancerTlsCertificateSummary::LoadBalancerTlsCertificateSummary(const JsonValue& jsonValue) : 
+LoadBalancerTlsCertificateSummary::LoadBalancerTlsCertificateSummary(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_isAttached(false),
     m_isAttachedHasBeenSet(false)
@@ -43,7 +43,7 @@ LoadBalancerTlsCertificateSummary::LoadBalancerTlsCertificateSummary(const JsonV
   *this = jsonValue;
 }
 
-LoadBalancerTlsCertificateSummary& LoadBalancerTlsCertificateSummary::operator =(const JsonValue& jsonValue)
+LoadBalancerTlsCertificateSummary& LoadBalancerTlsCertificateSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

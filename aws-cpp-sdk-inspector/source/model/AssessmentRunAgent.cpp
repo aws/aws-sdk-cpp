@@ -41,7 +41,7 @@ AssessmentRunAgent::AssessmentRunAgent() :
 {
 }
 
-AssessmentRunAgent::AssessmentRunAgent(const JsonValue& jsonValue) : 
+AssessmentRunAgent::AssessmentRunAgent(JsonView jsonValue) : 
     m_agentIdHasBeenSet(false),
     m_assessmentRunArnHasBeenSet(false),
     m_agentHealth(AgentHealth::NOT_SET),
@@ -55,7 +55,7 @@ AssessmentRunAgent::AssessmentRunAgent(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AssessmentRunAgent& AssessmentRunAgent::operator =(const JsonValue& jsonValue)
+AssessmentRunAgent& AssessmentRunAgent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("agentId"))
   {
@@ -101,7 +101,7 @@ AssessmentRunAgent& AssessmentRunAgent::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("telemetryMetadata"))
   {
-    Array<JsonValue> telemetryMetadataJsonList = jsonValue.GetArray("telemetryMetadata");
+    Array<JsonView> telemetryMetadataJsonList = jsonValue.GetArray("telemetryMetadata");
     for(unsigned telemetryMetadataIndex = 0; telemetryMetadataIndex < telemetryMetadataJsonList.GetLength(); ++telemetryMetadataIndex)
     {
       m_telemetryMetadata.push_back(telemetryMetadataJsonList[telemetryMetadataIndex].AsObject());

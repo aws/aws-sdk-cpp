@@ -33,13 +33,13 @@ KinesisVideoStream::KinesisVideoStream() :
 {
 }
 
-KinesisVideoStream::KinesisVideoStream(const JsonValue& jsonValue) : 
+KinesisVideoStream::KinesisVideoStream(JsonView jsonValue) : 
     m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-KinesisVideoStream& KinesisVideoStream::operator =(const JsonValue& jsonValue)
+KinesisVideoStream& KinesisVideoStream::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Arn"))
   {

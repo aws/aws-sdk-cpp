@@ -37,7 +37,7 @@ CaptionDescription::CaptionDescription() :
 {
 }
 
-CaptionDescription::CaptionDescription(const JsonValue& jsonValue) : 
+CaptionDescription::CaptionDescription(JsonView jsonValue) : 
     m_captionSelectorNameHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
     m_languageCodeHasBeenSet(false),
@@ -47,7 +47,7 @@ CaptionDescription::CaptionDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CaptionDescription& CaptionDescription::operator =(const JsonValue& jsonValue)
+CaptionDescription& CaptionDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("captionSelectorName"))
   {

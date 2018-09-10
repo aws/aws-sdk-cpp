@@ -41,7 +41,7 @@ GrantListEntry::GrantListEntry() :
 {
 }
 
-GrantListEntry::GrantListEntry(const JsonValue& jsonValue) : 
+GrantListEntry::GrantListEntry(JsonView jsonValue) : 
     m_keyIdHasBeenSet(false),
     m_grantIdHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -55,7 +55,7 @@ GrantListEntry::GrantListEntry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GrantListEntry& GrantListEntry::operator =(const JsonValue& jsonValue)
+GrantListEntry& GrantListEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("KeyId"))
   {
@@ -108,7 +108,7 @@ GrantListEntry& GrantListEntry::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Operations"))
   {
-    Array<JsonValue> operationsJsonList = jsonValue.GetArray("Operations");
+    Array<JsonView> operationsJsonList = jsonValue.GetArray("Operations");
     for(unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex)
     {
       m_operations.push_back(GrantOperationMapper::GetGrantOperationForName(operationsJsonList[operationsIndex].AsString()));

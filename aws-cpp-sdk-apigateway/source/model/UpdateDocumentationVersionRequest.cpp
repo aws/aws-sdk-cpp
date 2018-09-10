@@ -44,7 +44,7 @@ Aws::String UpdateDocumentationVersionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

@@ -480,6 +480,63 @@ namespace Model
      */
     inline DBEngineVersion& WithSupportsLogExportsToCloudwatchLogs(bool value) { SetSupportsLogExportsToCloudwatchLogs(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the database engine version supports read replicas.</p>
+     */
+    inline bool GetSupportsReadReplica() const{ return m_supportsReadReplica; }
+
+    /**
+     * <p>Indicates whether the database engine version supports read replicas.</p>
+     */
+    inline void SetSupportsReadReplica(bool value) { m_supportsReadReplicaHasBeenSet = true; m_supportsReadReplica = value; }
+
+    /**
+     * <p>Indicates whether the database engine version supports read replicas.</p>
+     */
+    inline DBEngineVersion& WithSupportsReadReplica(bool value) { SetSupportsReadReplica(value); return *this;}
+
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedEngineModes() const{ return m_supportedEngineModes; }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline void SetSupportedEngineModes(const Aws::Vector<Aws::String>& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = value; }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline void SetSupportedEngineModes(Aws::Vector<Aws::String>&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = std::move(value); }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline DBEngineVersion& WithSupportedEngineModes(const Aws::Vector<Aws::String>& value) { SetSupportedEngineModes(value); return *this;}
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline DBEngineVersion& WithSupportedEngineModes(Aws::Vector<Aws::String>&& value) { SetSupportedEngineModes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline DBEngineVersion& AddSupportedEngineModes(const Aws::String& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline DBEngineVersion& AddSupportedEngineModes(Aws::String&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline DBEngineVersion& AddSupportedEngineModes(const char* value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_engine;
@@ -514,6 +571,12 @@ namespace Model
 
     bool m_supportsLogExportsToCloudwatchLogs;
     bool m_supportsLogExportsToCloudwatchLogsHasBeenSet;
+
+    bool m_supportsReadReplica;
+    bool m_supportsReadReplicaHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedEngineModes;
+    bool m_supportedEngineModesHasBeenSet;
   };
 
 } // namespace Model

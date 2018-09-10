@@ -35,7 +35,7 @@ EbsBlockDeviceConfig::EbsBlockDeviceConfig() :
 {
 }
 
-EbsBlockDeviceConfig::EbsBlockDeviceConfig(const JsonValue& jsonValue) : 
+EbsBlockDeviceConfig::EbsBlockDeviceConfig(JsonView jsonValue) : 
     m_volumeSpecificationHasBeenSet(false),
     m_volumesPerInstance(0),
     m_volumesPerInstanceHasBeenSet(false)
@@ -43,7 +43,7 @@ EbsBlockDeviceConfig::EbsBlockDeviceConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EbsBlockDeviceConfig& EbsBlockDeviceConfig::operator =(const JsonValue& jsonValue)
+EbsBlockDeviceConfig& EbsBlockDeviceConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VolumeSpecification"))
   {

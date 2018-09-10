@@ -44,7 +44,7 @@ Aws::String UpdateDefaultBranchRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateDefaultBranchRequest::GetRequestSpecificHeaders() const

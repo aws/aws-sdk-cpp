@@ -37,7 +37,7 @@ GetServiceRoleForAccountResult::GetServiceRoleForAccountResult(const Aws::Amazon
 
 GetServiceRoleForAccountResult& GetServiceRoleForAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AssociatedAt"))
   {
     m_associatedAt = jsonValue.GetString("AssociatedAt");

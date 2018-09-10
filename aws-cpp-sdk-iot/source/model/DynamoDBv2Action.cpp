@@ -34,14 +34,14 @@ DynamoDBv2Action::DynamoDBv2Action() :
 {
 }
 
-DynamoDBv2Action::DynamoDBv2Action(const JsonValue& jsonValue) : 
+DynamoDBv2Action::DynamoDBv2Action(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_putItemHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DynamoDBv2Action& DynamoDBv2Action::operator =(const JsonValue& jsonValue)
+DynamoDBv2Action& DynamoDBv2Action::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("roleArn"))
   {

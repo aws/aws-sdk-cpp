@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     FileSourceSettings();
-    FileSourceSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    FileSourceSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FileSourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    FileSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -65,50 +66,43 @@ namespace Model
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'. Auto-populated when Infer
-     * External Filename is checked.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'.
      */
     inline const Aws::String& GetSourceFile() const{ return m_sourceFile; }
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'. Auto-populated when Infer
-     * External Filename is checked.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'.
      */
     inline void SetSourceFile(const Aws::String& value) { m_sourceFileHasBeenSet = true; m_sourceFile = value; }
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'. Auto-populated when Infer
-     * External Filename is checked.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'.
      */
     inline void SetSourceFile(Aws::String&& value) { m_sourceFileHasBeenSet = true; m_sourceFile = std::move(value); }
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'. Auto-populated when Infer
-     * External Filename is checked.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'.
      */
     inline void SetSourceFile(const char* value) { m_sourceFileHasBeenSet = true; m_sourceFile.assign(value); }
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'. Auto-populated when Infer
-     * External Filename is checked.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'.
      */
     inline FileSourceSettings& WithSourceFile(const Aws::String& value) { SetSourceFile(value); return *this;}
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'. Auto-populated when Infer
-     * External Filename is checked.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'.
      */
     inline FileSourceSettings& WithSourceFile(Aws::String&& value) { SetSourceFile(std::move(value)); return *this;}
 
     /**
      * External caption file used for loading captions. Accepted file extensions are
-     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'. Auto-populated when Infer
-     * External Filename is checked.
+     * 'scc', 'ttml', 'dfxp', 'stl', 'srt', and 'smi'.
      */
     inline FileSourceSettings& WithSourceFile(const char* value) { SetSourceFile(value); return *this;}
 

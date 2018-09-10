@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Endpoint settings for a PUSH type input<p><h3>See Also:</h3>   <a
+   * Endpoint settings for a PUSH type input.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputDestinationRequest">AWS
    * API Reference</a></p>
    */
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     InputDestinationRequest();
-    InputDestinationRequest(const Aws::Utils::Json::JsonValue& jsonValue);
-    InputDestinationRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InputDestinationRequest(Aws::Utils::Json::JsonView jsonValue);
+    InputDestinationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

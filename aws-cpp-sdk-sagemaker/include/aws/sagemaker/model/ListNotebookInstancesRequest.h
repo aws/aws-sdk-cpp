@@ -189,43 +189,43 @@ namespace Model
 
     /**
      * <p>A string in the notebook instances' name. This filter returns only notebook
-     * instances whose name contains the specified string. </p>
+     * instances whose name contains the specified string.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
 
     /**
      * <p>A string in the notebook instances' name. This filter returns only notebook
-     * instances whose name contains the specified string. </p>
+     * instances whose name contains the specified string.</p>
      */
     inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
 
     /**
      * <p>A string in the notebook instances' name. This filter returns only notebook
-     * instances whose name contains the specified string. </p>
+     * instances whose name contains the specified string.</p>
      */
     inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
 
     /**
      * <p>A string in the notebook instances' name. This filter returns only notebook
-     * instances whose name contains the specified string. </p>
+     * instances whose name contains the specified string.</p>
      */
     inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
 
     /**
      * <p>A string in the notebook instances' name. This filter returns only notebook
-     * instances whose name contains the specified string. </p>
+     * instances whose name contains the specified string.</p>
      */
     inline ListNotebookInstancesRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
 
     /**
      * <p>A string in the notebook instances' name. This filter returns only notebook
-     * instances whose name contains the specified string. </p>
+     * instances whose name contains the specified string.</p>
      */
     inline ListNotebookInstancesRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
 
     /**
      * <p>A string in the notebook instances' name. This filter returns only notebook
-     * instances whose name contains the specified string. </p>
+     * instances whose name contains the specified string.</p>
      */
     inline ListNotebookInstancesRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
 
@@ -379,6 +379,63 @@ namespace Model
      */
     inline ListNotebookInstancesRequest& WithStatusEquals(NotebookInstanceStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A string in the name of a notebook instances lifecycle configuration
+     * associated with this notebook instance. This filter returns only notebook
+     * instances associated with a lifecycle configuration with a name that contains
+     * the specified string.</p>
+     */
+    inline const Aws::String& GetNotebookInstanceLifecycleConfigNameContains() const{ return m_notebookInstanceLifecycleConfigNameContains; }
+
+    /**
+     * <p>A string in the name of a notebook instances lifecycle configuration
+     * associated with this notebook instance. This filter returns only notebook
+     * instances associated with a lifecycle configuration with a name that contains
+     * the specified string.</p>
+     */
+    inline void SetNotebookInstanceLifecycleConfigNameContains(const Aws::String& value) { m_notebookInstanceLifecycleConfigNameContainsHasBeenSet = true; m_notebookInstanceLifecycleConfigNameContains = value; }
+
+    /**
+     * <p>A string in the name of a notebook instances lifecycle configuration
+     * associated with this notebook instance. This filter returns only notebook
+     * instances associated with a lifecycle configuration with a name that contains
+     * the specified string.</p>
+     */
+    inline void SetNotebookInstanceLifecycleConfigNameContains(Aws::String&& value) { m_notebookInstanceLifecycleConfigNameContainsHasBeenSet = true; m_notebookInstanceLifecycleConfigNameContains = std::move(value); }
+
+    /**
+     * <p>A string in the name of a notebook instances lifecycle configuration
+     * associated with this notebook instance. This filter returns only notebook
+     * instances associated with a lifecycle configuration with a name that contains
+     * the specified string.</p>
+     */
+    inline void SetNotebookInstanceLifecycleConfigNameContains(const char* value) { m_notebookInstanceLifecycleConfigNameContainsHasBeenSet = true; m_notebookInstanceLifecycleConfigNameContains.assign(value); }
+
+    /**
+     * <p>A string in the name of a notebook instances lifecycle configuration
+     * associated with this notebook instance. This filter returns only notebook
+     * instances associated with a lifecycle configuration with a name that contains
+     * the specified string.</p>
+     */
+    inline ListNotebookInstancesRequest& WithNotebookInstanceLifecycleConfigNameContains(const Aws::String& value) { SetNotebookInstanceLifecycleConfigNameContains(value); return *this;}
+
+    /**
+     * <p>A string in the name of a notebook instances lifecycle configuration
+     * associated with this notebook instance. This filter returns only notebook
+     * instances associated with a lifecycle configuration with a name that contains
+     * the specified string.</p>
+     */
+    inline ListNotebookInstancesRequest& WithNotebookInstanceLifecycleConfigNameContains(Aws::String&& value) { SetNotebookInstanceLifecycleConfigNameContains(std::move(value)); return *this;}
+
+    /**
+     * <p>A string in the name of a notebook instances lifecycle configuration
+     * associated with this notebook instance. This filter returns only notebook
+     * instances associated with a lifecycle configuration with a name that contains
+     * the specified string.</p>
+     */
+    inline ListNotebookInstancesRequest& WithNotebookInstanceLifecycleConfigNameContains(const char* value) { SetNotebookInstanceLifecycleConfigNameContains(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -410,6 +467,9 @@ namespace Model
 
     NotebookInstanceStatus m_statusEquals;
     bool m_statusEqualsHasBeenSet;
+
+    Aws::String m_notebookInstanceLifecycleConfigNameContains;
+    bool m_notebookInstanceLifecycleConfigNameContainsHasBeenSet;
   };
 
 } // namespace Model

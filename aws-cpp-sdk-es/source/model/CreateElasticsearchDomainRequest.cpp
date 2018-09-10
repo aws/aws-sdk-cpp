@@ -30,6 +30,7 @@ CreateElasticsearchDomainRequest::CreateElasticsearchDomainRequest() :
     m_accessPoliciesHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
+    m_cognitoOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
@@ -82,6 +83,12 @@ Aws::String CreateElasticsearchDomainRequest::SerializePayload() const
 
   }
 
+  if(m_cognitoOptionsHasBeenSet)
+  {
+   payload.WithObject("CognitoOptions", m_cognitoOptions.Jsonize());
+
+  }
+
   if(m_encryptionAtRestOptionsHasBeenSet)
   {
    payload.WithObject("EncryptionAtRestOptions", m_encryptionAtRestOptions.Jsonize());
@@ -110,7 +117,7 @@ Aws::String CreateElasticsearchDomainRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

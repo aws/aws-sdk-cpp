@@ -35,7 +35,7 @@ UnprocessedIdentityId::UnprocessedIdentityId() :
 {
 }
 
-UnprocessedIdentityId::UnprocessedIdentityId(const JsonValue& jsonValue) : 
+UnprocessedIdentityId::UnprocessedIdentityId(JsonView jsonValue) : 
     m_identityIdHasBeenSet(false),
     m_errorCode(ErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false)
@@ -43,7 +43,7 @@ UnprocessedIdentityId::UnprocessedIdentityId(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UnprocessedIdentityId& UnprocessedIdentityId::operator =(const JsonValue& jsonValue)
+UnprocessedIdentityId& UnprocessedIdentityId::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IdentityId"))
   {

@@ -50,7 +50,10 @@ RestoreDBInstanceFromDBSnapshotRequest::RestoreDBInstanceFromDBSnapshotRequest()
     m_domainIAMRoleNameHasBeenSet(false),
     m_enableIAMDatabaseAuthentication(false),
     m_enableIAMDatabaseAuthenticationHasBeenSet(false),
-    m_enableCloudwatchLogsExportsHasBeenSet(false)
+    m_enableCloudwatchLogsExportsHasBeenSet(false),
+    m_processorFeaturesHasBeenSet(false),
+    m_useDefaultProcessorFeatures(false),
+    m_useDefaultProcessorFeaturesHasBeenSet(false)
 {
 }
 
@@ -182,6 +185,21 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       enableCloudwatchLogsExportsCount++;
     }
+  }
+
+  if(m_processorFeaturesHasBeenSet)
+  {
+    unsigned processorFeaturesCount = 1;
+    for(auto& item : m_processorFeatures)
+    {
+      item.OutputToStream(ss, "ProcessorFeatures.member.", processorFeaturesCount, "");
+      processorFeaturesCount++;
+    }
+  }
+
+  if(m_useDefaultProcessorFeaturesHasBeenSet)
+  {
+    ss << "UseDefaultProcessorFeatures=" << std::boolalpha << m_useDefaultProcessorFeatures << "&";
   }
 
   ss << "Version=2014-10-31";

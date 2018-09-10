@@ -34,6 +34,7 @@ namespace Aws
         static const int DASH_ISO_GROUP_SETTINGS_HASH = HashingUtils::HashString("DASH_ISO_GROUP_SETTINGS");
         static const int FILE_GROUP_SETTINGS_HASH = HashingUtils::HashString("FILE_GROUP_SETTINGS");
         static const int MS_SMOOTH_GROUP_SETTINGS_HASH = HashingUtils::HashString("MS_SMOOTH_GROUP_SETTINGS");
+        static const int CMAF_GROUP_SETTINGS_HASH = HashingUtils::HashString("CMAF_GROUP_SETTINGS");
 
 
         OutputGroupType GetOutputGroupTypeForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == MS_SMOOTH_GROUP_SETTINGS_HASH)
           {
             return OutputGroupType::MS_SMOOTH_GROUP_SETTINGS;
+          }
+          else if (hashCode == CMAF_GROUP_SETTINGS_HASH)
+          {
+            return OutputGroupType::CMAF_GROUP_SETTINGS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "FILE_GROUP_SETTINGS";
           case OutputGroupType::MS_SMOOTH_GROUP_SETTINGS:
             return "MS_SMOOTH_GROUP_SETTINGS";
+          case OutputGroupType::CMAF_GROUP_SETTINGS:
+            return "CMAF_GROUP_SETTINGS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

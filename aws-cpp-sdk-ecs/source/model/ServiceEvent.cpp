@@ -35,7 +35,7 @@ ServiceEvent::ServiceEvent() :
 {
 }
 
-ServiceEvent::ServiceEvent(const JsonValue& jsonValue) : 
+ServiceEvent::ServiceEvent(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -43,7 +43,7 @@ ServiceEvent::ServiceEvent(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ServiceEvent& ServiceEvent::operator =(const JsonValue& jsonValue)
+ServiceEvent& ServiceEvent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

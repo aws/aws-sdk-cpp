@@ -37,10 +37,10 @@ PreviewAgentsResult::PreviewAgentsResult(const Aws::AmazonWebServiceResult<JsonV
 
 PreviewAgentsResult& PreviewAgentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("agentPreviews"))
   {
-    Array<JsonValue> agentPreviewsJsonList = jsonValue.GetArray("agentPreviews");
+    Array<JsonView> agentPreviewsJsonList = jsonValue.GetArray("agentPreviews");
     for(unsigned agentPreviewsIndex = 0; agentPreviewsIndex < agentPreviewsJsonList.GetLength(); ++agentPreviewsIndex)
     {
       m_agentPreviews.push_back(agentPreviewsJsonList[agentPreviewsIndex].AsObject());

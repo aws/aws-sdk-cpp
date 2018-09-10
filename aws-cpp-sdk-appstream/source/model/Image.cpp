@@ -46,11 +46,12 @@ Image::Image() :
     m_applicationsHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_publicBaseImageReleasedDateHasBeenSet(false),
-    m_appstreamAgentVersionHasBeenSet(false)
+    m_appstreamAgentVersionHasBeenSet(false),
+    m_imagePermissionsHasBeenSet(false)
 {
 }
 
-Image::Image(const JsonValue& jsonValue) : 
+Image::Image(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_baseImageArnHasBeenSet(false),
@@ -68,12 +69,13 @@ Image::Image(const JsonValue& jsonValue) :
     m_applicationsHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_publicBaseImageReleasedDateHasBeenSet(false),
-    m_appstreamAgentVersionHasBeenSet(false)
+    m_appstreamAgentVersionHasBeenSet(false),
+    m_imagePermissionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Image& Image::operator =(const JsonValue& jsonValue)
+Image& Image::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -147,7 +149,7 @@ Image& Image::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Applications"))
   {
-    Array<JsonValue> applicationsJsonList = jsonValue.GetArray("Applications");
+    Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
     for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
     {
       m_applications.push_back(applicationsJsonList[applicationsIndex].AsObject());
@@ -174,6 +176,13 @@ Image& Image::operator =(const JsonValue& jsonValue)
     m_appstreamAgentVersion = jsonValue.GetString("AppstreamAgentVersion");
 
     m_appstreamAgentVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ImagePermissions"))
+  {
+    m_imagePermissions = jsonValue.GetObject("ImagePermissions");
+
+    m_imagePermissionsHasBeenSet = true;
   }
 
   return *this;
@@ -264,6 +273,12 @@ JsonValue Image::Jsonize() const
   if(m_appstreamAgentVersionHasBeenSet)
   {
    payload.WithString("AppstreamAgentVersion", m_appstreamAgentVersion);
+
+  }
+
+  if(m_imagePermissionsHasBeenSet)
+  {
+   payload.WithObject("ImagePermissions", m_imagePermissions.Jsonize());
 
   }
 

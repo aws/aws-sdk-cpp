@@ -27,8 +27,11 @@ UpdateStackRequest::UpdateStackRequest() :
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_storageConnectorsHasBeenSet(false),
-    m_deleteStorageConnectors(false),
-    m_deleteStorageConnectorsHasBeenSet(false)
+    m_redirectURLHasBeenSet(false),
+    m_feedbackURLHasBeenSet(false),
+    m_attributesToDeleteHasBeenSet(false),
+    m_userSettingsHasBeenSet(false),
+    m_applicationSettingsHasBeenSet(false)
 {
 }
 
@@ -65,13 +68,47 @@ Aws::String UpdateStackRequest::SerializePayload() const
 
   }
 
-  if(m_deleteStorageConnectorsHasBeenSet)
+  if(m_redirectURLHasBeenSet)
   {
-   payload.WithBool("DeleteStorageConnectors", m_deleteStorageConnectors);
+   payload.WithString("RedirectURL", m_redirectURL);
 
   }
 
-  return payload.WriteReadable();
+  if(m_feedbackURLHasBeenSet)
+  {
+   payload.WithString("FeedbackURL", m_feedbackURL);
+
+  }
+
+  if(m_attributesToDeleteHasBeenSet)
+  {
+   Array<JsonValue> attributesToDeleteJsonList(m_attributesToDelete.size());
+   for(unsigned attributesToDeleteIndex = 0; attributesToDeleteIndex < attributesToDeleteJsonList.GetLength(); ++attributesToDeleteIndex)
+   {
+     attributesToDeleteJsonList[attributesToDeleteIndex].AsString(StackAttributeMapper::GetNameForStackAttribute(m_attributesToDelete[attributesToDeleteIndex]));
+   }
+   payload.WithArray("AttributesToDelete", std::move(attributesToDeleteJsonList));
+
+  }
+
+  if(m_userSettingsHasBeenSet)
+  {
+   Array<JsonValue> userSettingsJsonList(m_userSettings.size());
+   for(unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex)
+   {
+     userSettingsJsonList[userSettingsIndex].AsObject(m_userSettings[userSettingsIndex].Jsonize());
+   }
+   payload.WithArray("UserSettings", std::move(userSettingsJsonList));
+
+  }
+
+  if(m_applicationSettingsHasBeenSet)
+  {
+   payload.WithObject("ApplicationSettings", m_applicationSettings.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateStackRequest::GetRequestSpecificHeaders() const

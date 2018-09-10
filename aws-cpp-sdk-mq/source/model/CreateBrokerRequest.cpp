@@ -35,6 +35,7 @@ CreateBrokerRequest::CreateBrokerRequest() :
     m_engineTypeHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_hostInstanceTypeHasBeenSet(false),
+    m_logsHasBeenSet(false),
     m_maintenanceWindowStartTimeHasBeenSet(false),
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
@@ -94,6 +95,12 @@ Aws::String CreateBrokerRequest::SerializePayload() const
 
   }
 
+  if(m_logsHasBeenSet)
+  {
+   payload.WithObject("logs", m_logs.Jsonize());
+
+  }
+
   if(m_maintenanceWindowStartTimeHasBeenSet)
   {
    payload.WithObject("maintenanceWindowStartTime", m_maintenanceWindowStartTime.Jsonize());
@@ -139,7 +146,7 @@ Aws::String CreateBrokerRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

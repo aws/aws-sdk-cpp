@@ -39,7 +39,7 @@ GatewayResponse::GatewayResponse() :
 {
 }
 
-GatewayResponse::GatewayResponse(const JsonValue& jsonValue) : 
+GatewayResponse::GatewayResponse(JsonView jsonValue) : 
     m_responseType(GatewayResponseType::NOT_SET),
     m_responseTypeHasBeenSet(false),
     m_statusCodeHasBeenSet(false),
@@ -51,7 +51,7 @@ GatewayResponse::GatewayResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GatewayResponse& GatewayResponse::operator =(const JsonValue& jsonValue)
+GatewayResponse& GatewayResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("responseType"))
   {
@@ -69,7 +69,7 @@ GatewayResponse& GatewayResponse::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("responseParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
     for(auto& responseParametersItem : responseParametersJsonMap)
     {
       m_responseParameters[responseParametersItem.first] = responseParametersItem.second.AsString();
@@ -79,7 +79,7 @@ GatewayResponse& GatewayResponse::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("responseTemplates"))
   {
-    Aws::Map<Aws::String, JsonValue> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
     for(auto& responseTemplatesItem : responseTemplatesJsonMap)
     {
       m_responseTemplates[responseTemplatesItem.first] = responseTemplatesItem.second.AsString();

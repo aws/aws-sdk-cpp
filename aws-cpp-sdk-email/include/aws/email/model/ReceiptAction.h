@@ -129,31 +129,31 @@ namespace Model
 
     /**
      * <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon
-     * SNS.</p>
+     * Amazon SNS.</p>
      */
     inline const WorkmailAction& GetWorkmailAction() const{ return m_workmailAction; }
 
     /**
      * <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon
-     * SNS.</p>
+     * Amazon SNS.</p>
      */
     inline void SetWorkmailAction(const WorkmailAction& value) { m_workmailActionHasBeenSet = true; m_workmailAction = value; }
 
     /**
      * <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon
-     * SNS.</p>
+     * Amazon SNS.</p>
      */
     inline void SetWorkmailAction(WorkmailAction&& value) { m_workmailActionHasBeenSet = true; m_workmailAction = std::move(value); }
 
     /**
      * <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon
-     * SNS.</p>
+     * Amazon SNS.</p>
      */
     inline ReceiptAction& WithWorkmailAction(const WorkmailAction& value) { SetWorkmailAction(value); return *this;}
 
     /**
      * <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon
-     * SNS.</p>
+     * Amazon SNS.</p>
      */
     inline ReceiptAction& WithWorkmailAction(WorkmailAction&& value) { SetWorkmailAction(std::move(value)); return *this;}
 

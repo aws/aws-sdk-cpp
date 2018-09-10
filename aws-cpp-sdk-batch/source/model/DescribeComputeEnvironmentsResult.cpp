@@ -37,10 +37,10 @@ DescribeComputeEnvironmentsResult::DescribeComputeEnvironmentsResult(const Aws::
 
 DescribeComputeEnvironmentsResult& DescribeComputeEnvironmentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("computeEnvironments"))
   {
-    Array<JsonValue> computeEnvironmentsJsonList = jsonValue.GetArray("computeEnvironments");
+    Array<JsonView> computeEnvironmentsJsonList = jsonValue.GetArray("computeEnvironments");
     for(unsigned computeEnvironmentsIndex = 0; computeEnvironmentsIndex < computeEnvironmentsJsonList.GetLength(); ++computeEnvironmentsIndex)
     {
       m_computeEnvironments.push_back(computeEnvironmentsJsonList[computeEnvironmentsIndex].AsObject());

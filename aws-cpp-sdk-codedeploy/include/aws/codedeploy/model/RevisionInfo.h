@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     RevisionInfo();
-    RevisionInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    RevisionInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RevisionInfo(Aws::Utils::Json::JsonView jsonValue);
+    RevisionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

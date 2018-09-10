@@ -42,7 +42,7 @@ WorkflowExecutionOpenCounts::WorkflowExecutionOpenCounts() :
 {
 }
 
-WorkflowExecutionOpenCounts::WorkflowExecutionOpenCounts(const JsonValue& jsonValue) : 
+WorkflowExecutionOpenCounts::WorkflowExecutionOpenCounts(JsonView jsonValue) : 
     m_openActivityTasks(0),
     m_openActivityTasksHasBeenSet(false),
     m_openDecisionTasks(0),
@@ -57,7 +57,7 @@ WorkflowExecutionOpenCounts::WorkflowExecutionOpenCounts(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-WorkflowExecutionOpenCounts& WorkflowExecutionOpenCounts::operator =(const JsonValue& jsonValue)
+WorkflowExecutionOpenCounts& WorkflowExecutionOpenCounts::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("openActivityTasks"))
   {

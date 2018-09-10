@@ -80,7 +80,7 @@ Aws::String PutParameterRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutParameterRequest::GetRequestSpecificHeaders() const

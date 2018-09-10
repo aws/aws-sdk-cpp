@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WorkDocs
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     DocumentMetadata();
-    DocumentMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    DocumentMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DocumentMetadata(Aws::Utils::Json::JsonView jsonValue);
+    DocumentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -49,7 +49,7 @@ UserImportJobType::UserImportJobType() :
 {
 }
 
-UserImportJobType::UserImportJobType(const JsonValue& jsonValue) : 
+UserImportJobType::UserImportJobType(JsonView jsonValue) : 
     m_jobNameHasBeenSet(false),
     m_jobIdHasBeenSet(false),
     m_userPoolIdHasBeenSet(false),
@@ -71,7 +71,7 @@ UserImportJobType::UserImportJobType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserImportJobType& UserImportJobType::operator =(const JsonValue& jsonValue)
+UserImportJobType& UserImportJobType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JobName"))
   {

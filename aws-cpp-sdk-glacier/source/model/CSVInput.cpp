@@ -39,7 +39,7 @@ CSVInput::CSVInput() :
 {
 }
 
-CSVInput::CSVInput(const JsonValue& jsonValue) : 
+CSVInput::CSVInput(JsonView jsonValue) : 
     m_fileHeaderInfo(FileHeaderInfo::NOT_SET),
     m_fileHeaderInfoHasBeenSet(false),
     m_commentsHasBeenSet(false),
@@ -51,7 +51,7 @@ CSVInput::CSVInput(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CSVInput& CSVInput::operator =(const JsonValue& jsonValue)
+CSVInput& CSVInput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FileHeaderInfo"))
   {

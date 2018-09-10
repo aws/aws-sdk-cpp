@@ -36,7 +36,7 @@ PresetSettings::PresetSettings() :
 {
 }
 
-PresetSettings::PresetSettings(const JsonValue& jsonValue) : 
+PresetSettings::PresetSettings(JsonView jsonValue) : 
     m_audioDescriptionsHasBeenSet(false),
     m_captionDescriptionsHasBeenSet(false),
     m_containerSettingsHasBeenSet(false),
@@ -45,11 +45,11 @@ PresetSettings::PresetSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PresetSettings& PresetSettings::operator =(const JsonValue& jsonValue)
+PresetSettings& PresetSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioDescriptions"))
   {
-    Array<JsonValue> audioDescriptionsJsonList = jsonValue.GetArray("audioDescriptions");
+    Array<JsonView> audioDescriptionsJsonList = jsonValue.GetArray("audioDescriptions");
     for(unsigned audioDescriptionsIndex = 0; audioDescriptionsIndex < audioDescriptionsJsonList.GetLength(); ++audioDescriptionsIndex)
     {
       m_audioDescriptions.push_back(audioDescriptionsJsonList[audioDescriptionsIndex].AsObject());
@@ -59,7 +59,7 @@ PresetSettings& PresetSettings::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("captionDescriptions"))
   {
-    Array<JsonValue> captionDescriptionsJsonList = jsonValue.GetArray("captionDescriptions");
+    Array<JsonView> captionDescriptionsJsonList = jsonValue.GetArray("captionDescriptions");
     for(unsigned captionDescriptionsIndex = 0; captionDescriptionsIndex < captionDescriptionsJsonList.GetLength(); ++captionDescriptionsIndex)
     {
       m_captionDescriptions.push_back(captionDescriptionsJsonList[captionDescriptionsIndex].AsObject());

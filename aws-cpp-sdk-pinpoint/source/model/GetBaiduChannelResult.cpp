@@ -37,7 +37,7 @@ GetBaiduChannelResult::GetBaiduChannelResult(const Aws::AmazonWebServiceResult<J
 
 GetBaiduChannelResult& GetBaiduChannelResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_baiduChannelResponse = jsonValue;
 
 

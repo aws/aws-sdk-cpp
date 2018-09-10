@@ -28,9 +28,11 @@ namespace Redshift
 namespace RedshiftErrorMapper
 {
 
+static const int RESERVED_NODE_ALREADY_MIGRATED_FAULT_HASH = HashingUtils::HashString("ReservedNodeAlreadyMigrated");
 static const int HSM_CLIENT_CERTIFICATE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("HsmClientCertificateAlreadyExistsFault");
 static const int BUCKET_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("BucketNotFoundFault");
 static const int CLUSTER_SUBNET_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterSubnetQuotaExceededFault");
+static const int TABLE_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("TableLimitExceeded");
 static const int INSUFFICIENT_S3_BUCKET_POLICY_FAULT_HASH = HashingUtils::HashString("InsufficientS3BucketPolicyFault");
 static const int S_N_S_INVALID_TOPIC_FAULT_HASH = HashingUtils::HashString("SNSInvalidTopic");
 static const int HSM_CONFIGURATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("HsmConfigurationQuotaExceededFault");
@@ -74,8 +76,8 @@ static const int CLUSTER_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtil
 static const int SUBSCRIPTION_EVENT_ID_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionEventIdNotFound");
 static const int CLUSTER_SECURITY_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ClusterSecurityGroupNotFound");
 static const int TAG_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("TagLimitExceededFault");
-static const int INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSecurityGroupState");
 static const int RESERVED_NODE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedNodeNotFound");
+static const int INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSecurityGroupState");
 static const int INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = HashingUtils::HashString("InvalidVPCNetworkStateFault");
 static const int UNSUPPORTED_OPERATION_FAULT_HASH = HashingUtils::HashString("UnsupportedOperation");
 static const int AUTHORIZATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("AuthorizationQuotaExceeded");
@@ -108,17 +110,24 @@ static const int INVALID_SNAPSHOT_COPY_GRANT_STATE_FAULT_HASH = HashingUtils::Ha
 static const int SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH = HashingUtils::HashString("SubscriptionAlreadyExist");
 static const int INVALID_RESTORE_FAULT_HASH = HashingUtils::HashString("InvalidRestore");
 static const int UNSUPPORTED_OPTION_FAULT_HASH = HashingUtils::HashString("UnsupportedOptionFault");
+static const int CLUSTER_ON_LATEST_REVISION_FAULT_HASH = HashingUtils::HashString("ClusterOnLatestRevision");
+static const int INVALID_CLUSTER_TRACK_FAULT_HASH = HashingUtils::HashString("InvalidClusterTrack");
 static const int NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NumberOfNodesPerClusterLimitExceeded");
-static const int INVALID_ELASTIC_IP_FAULT_HASH = HashingUtils::HashString("InvalidElasticIpFault");
 static const int RESERVED_NODE_OFFERING_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedNodeOfferingNotFound");
+static const int INVALID_ELASTIC_IP_FAULT_HASH = HashingUtils::HashString("InvalidElasticIpFault");
 static const int TABLE_RESTORE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("TableRestoreNotFoundFault");
+static const int INVALID_RESERVED_NODE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidReservedNodeState");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == HSM_CLIENT_CERTIFICATE_ALREADY_EXISTS_FAULT_HASH)
+  if (hashCode == RESERVED_NODE_ALREADY_MIGRATED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_ALREADY_MIGRATED_FAULT), false);
+  }
+  else if (hashCode == HSM_CLIENT_CERTIFICATE_ALREADY_EXISTS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CLIENT_CERTIFICATE_ALREADY_EXISTS_FAULT), false);
   }
@@ -129,6 +138,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CLUSTER_SUBNET_QUOTA_EXCEEDED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_QUOTA_EXCEEDED_FAULT), false);
+  }
+  else if (hashCode == TABLE_LIMIT_EXCEEDED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::TABLE_LIMIT_EXCEEDED_FAULT), false);
   }
   else if (hashCode == INSUFFICIENT_S3_BUCKET_POLICY_FAULT_HASH)
   {
@@ -302,13 +315,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::TAG_LIMIT_EXCEEDED_FAULT), false);
   }
-  else if (hashCode == INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT), false);
-  }
   else if (hashCode == RESERVED_NODE_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_NOT_FOUND_FAULT), false);
+  }
+  else if (hashCode == INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_SECURITY_GROUP_STATE_FAULT), false);
   }
   else if (hashCode == INVALID_V_P_C_NETWORK_STATE_FAULT_HASH)
   {
@@ -438,21 +451,33 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::UNSUPPORTED_OPTION_FAULT), false);
   }
+  else if (hashCode == CLUSTER_ON_LATEST_REVISION_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_ON_LATEST_REVISION_FAULT), false);
+  }
+  else if (hashCode == INVALID_CLUSTER_TRACK_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_CLUSTER_TRACK_FAULT), false);
+  }
   else if (hashCode == NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::NUMBER_OF_NODES_PER_CLUSTER_LIMIT_EXCEEDED_FAULT), false);
-  }
-  else if (hashCode == INVALID_ELASTIC_IP_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_ELASTIC_IP_FAULT), false);
   }
   else if (hashCode == RESERVED_NODE_OFFERING_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_OFFERING_NOT_FOUND_FAULT), false);
   }
+  else if (hashCode == INVALID_ELASTIC_IP_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_ELASTIC_IP_FAULT), false);
+  }
   else if (hashCode == TABLE_RESTORE_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::TABLE_RESTORE_NOT_FOUND_FAULT), false);
+  }
+  else if (hashCode == INVALID_RESERVED_NODE_STATE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_RESERVED_NODE_STATE_FAULT), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

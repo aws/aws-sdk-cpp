@@ -49,7 +49,7 @@ Aws::String DescribeAppsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeAppsRequest::GetRequestSpecificHeaders() const

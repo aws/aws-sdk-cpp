@@ -34,14 +34,14 @@ SchemaFacet::SchemaFacet() :
 {
 }
 
-SchemaFacet::SchemaFacet(const JsonValue& jsonValue) : 
+SchemaFacet::SchemaFacet(JsonView jsonValue) : 
     m_schemaArnHasBeenSet(false),
     m_facetNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SchemaFacet& SchemaFacet::operator =(const JsonValue& jsonValue)
+SchemaFacet& SchemaFacet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SchemaArn"))
   {

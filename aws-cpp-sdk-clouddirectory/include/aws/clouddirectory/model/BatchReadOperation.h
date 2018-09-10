@@ -20,12 +20,14 @@
 #include <aws/clouddirectory/model/BatchListAttachedIndices.h>
 #include <aws/clouddirectory/model/BatchListObjectParentPaths.h>
 #include <aws/clouddirectory/model/BatchGetObjectInformation.h>
+#include <aws/clouddirectory/model/BatchGetObjectAttributes.h>
 #include <aws/clouddirectory/model/BatchListObjectPolicies.h>
 #include <aws/clouddirectory/model/BatchListPolicyAttachments.h>
 #include <aws/clouddirectory/model/BatchLookupPolicy.h>
 #include <aws/clouddirectory/model/BatchListIndex.h>
 #include <aws/clouddirectory/model/BatchListOutgoingTypedLinks.h>
 #include <aws/clouddirectory/model/BatchListIncomingTypedLinks.h>
+#include <aws/clouddirectory/model/BatchGetLinkAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -35,6 +37,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -45,15 +48,15 @@ namespace Model
   /**
    * <p>Represents the output of a <code>BatchRead</code> operation.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchReadOperation">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchReadOperation">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchReadOperation
   {
   public:
     BatchReadOperation();
-    BatchReadOperation(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchReadOperation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchReadOperation(Aws::Utils::Json::JsonView jsonValue);
+    BatchReadOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -210,6 +213,32 @@ namespace Model
      * <p>Retrieves metadata about an object.</p>
      */
     inline BatchReadOperation& WithGetObjectInformation(BatchGetObjectInformation&& value) { SetGetObjectInformation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline const BatchGetObjectAttributes& GetGetObjectAttributes() const{ return m_getObjectAttributes; }
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline void SetGetObjectAttributes(const BatchGetObjectAttributes& value) { m_getObjectAttributesHasBeenSet = true; m_getObjectAttributes = value; }
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline void SetGetObjectAttributes(BatchGetObjectAttributes&& value) { m_getObjectAttributesHasBeenSet = true; m_getObjectAttributes = std::move(value); }
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline BatchReadOperation& WithGetObjectAttributes(const BatchGetObjectAttributes& value) { SetGetObjectAttributes(value); return *this;}
+
+    /**
+     * <p>Retrieves attributes within a facet that are associated with an object.</p>
+     */
+    inline BatchReadOperation& WithGetObjectAttributes(BatchGetObjectAttributes&& value) { SetGetObjectAttributes(std::move(value)); return *this;}
 
 
     /**
@@ -447,6 +476,32 @@ namespace Model
      */
     inline BatchReadOperation& WithListIncomingTypedLinks(BatchListIncomingTypedLinks&& value) { SetListIncomingTypedLinks(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Retrieves attributes that are associated with a typed link.</p>
+     */
+    inline const BatchGetLinkAttributes& GetGetLinkAttributes() const{ return m_getLinkAttributes; }
+
+    /**
+     * <p>Retrieves attributes that are associated with a typed link.</p>
+     */
+    inline void SetGetLinkAttributes(const BatchGetLinkAttributes& value) { m_getLinkAttributesHasBeenSet = true; m_getLinkAttributes = value; }
+
+    /**
+     * <p>Retrieves attributes that are associated with a typed link.</p>
+     */
+    inline void SetGetLinkAttributes(BatchGetLinkAttributes&& value) { m_getLinkAttributesHasBeenSet = true; m_getLinkAttributes = std::move(value); }
+
+    /**
+     * <p>Retrieves attributes that are associated with a typed link.</p>
+     */
+    inline BatchReadOperation& WithGetLinkAttributes(const BatchGetLinkAttributes& value) { SetGetLinkAttributes(value); return *this;}
+
+    /**
+     * <p>Retrieves attributes that are associated with a typed link.</p>
+     */
+    inline BatchReadOperation& WithGetLinkAttributes(BatchGetLinkAttributes&& value) { SetGetLinkAttributes(std::move(value)); return *this;}
+
   private:
 
     BatchListObjectAttributes m_listObjectAttributes;
@@ -463,6 +518,9 @@ namespace Model
 
     BatchGetObjectInformation m_getObjectInformation;
     bool m_getObjectInformationHasBeenSet;
+
+    BatchGetObjectAttributes m_getObjectAttributes;
+    bool m_getObjectAttributesHasBeenSet;
 
     BatchListObjectPolicies m_listObjectPolicies;
     bool m_listObjectPoliciesHasBeenSet;
@@ -481,6 +539,9 @@ namespace Model
 
     BatchListIncomingTypedLinks m_listIncomingTypedLinks;
     bool m_listIncomingTypedLinksHasBeenSet;
+
+    BatchGetLinkAttributes m_getLinkAttributes;
+    bool m_getLinkAttributesHasBeenSet;
   };
 
 } // namespace Model

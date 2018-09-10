@@ -37,10 +37,10 @@ AddJobFlowStepsResult::AddJobFlowStepsResult(const Aws::AmazonWebServiceResult<J
 
 AddJobFlowStepsResult& AddJobFlowStepsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StepIds"))
   {
-    Array<JsonValue> stepIdsJsonList = jsonValue.GetArray("StepIds");
+    Array<JsonView> stepIdsJsonList = jsonValue.GetArray("StepIds");
     for(unsigned stepIdsIndex = 0; stepIdsIndex < stepIdsJsonList.GetLength(); ++stepIdsIndex)
     {
       m_stepIds.push_back(stepIdsJsonList[stepIdsIndex].AsString());

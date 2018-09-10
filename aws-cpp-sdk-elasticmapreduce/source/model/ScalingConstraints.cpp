@@ -36,7 +36,7 @@ ScalingConstraints::ScalingConstraints() :
 {
 }
 
-ScalingConstraints::ScalingConstraints(const JsonValue& jsonValue) : 
+ScalingConstraints::ScalingConstraints(JsonView jsonValue) : 
     m_minCapacity(0),
     m_minCapacityHasBeenSet(false),
     m_maxCapacity(0),
@@ -45,7 +45,7 @@ ScalingConstraints::ScalingConstraints(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ScalingConstraints& ScalingConstraints::operator =(const JsonValue& jsonValue)
+ScalingConstraints& ScalingConstraints::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MinCapacity"))
   {

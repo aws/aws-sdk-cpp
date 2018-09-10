@@ -37,7 +37,7 @@ Database::Database() :
 {
 }
 
-Database::Database(const JsonValue& jsonValue) : 
+Database::Database(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_locationUriHasBeenSet(false),
@@ -47,7 +47,7 @@ Database::Database(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Database& Database::operator =(const JsonValue& jsonValue)
+Database& Database::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -72,7 +72,7 @@ Database& Database::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();

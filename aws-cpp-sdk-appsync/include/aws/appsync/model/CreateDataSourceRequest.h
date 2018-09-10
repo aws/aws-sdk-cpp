@@ -21,6 +21,7 @@
 #include <aws/appsync/model/DynamodbDataSourceConfig.h>
 #include <aws/appsync/model/LambdaDataSourceConfig.h>
 #include <aws/appsync/model/ElasticsearchDataSourceConfig.h>
+#include <aws/appsync/model/HttpDataSourceConfig.h>
 #include <utility>
 
 namespace Aws
@@ -300,6 +301,32 @@ namespace Model
      */
     inline CreateDataSourceRequest& WithElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { SetElasticsearchConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Http endpoint settings.</p>
+     */
+    inline const HttpDataSourceConfig& GetHttpConfig() const{ return m_httpConfig; }
+
+    /**
+     * <p>Http endpoint settings.</p>
+     */
+    inline void SetHttpConfig(const HttpDataSourceConfig& value) { m_httpConfigHasBeenSet = true; m_httpConfig = value; }
+
+    /**
+     * <p>Http endpoint settings.</p>
+     */
+    inline void SetHttpConfig(HttpDataSourceConfig&& value) { m_httpConfigHasBeenSet = true; m_httpConfig = std::move(value); }
+
+    /**
+     * <p>Http endpoint settings.</p>
+     */
+    inline CreateDataSourceRequest& WithHttpConfig(const HttpDataSourceConfig& value) { SetHttpConfig(value); return *this;}
+
+    /**
+     * <p>Http endpoint settings.</p>
+     */
+    inline CreateDataSourceRequest& WithHttpConfig(HttpDataSourceConfig&& value) { SetHttpConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_apiId;
@@ -325,6 +352,9 @@ namespace Model
 
     ElasticsearchDataSourceConfig m_elasticsearchConfig;
     bool m_elasticsearchConfigHasBeenSet;
+
+    HttpDataSourceConfig m_httpConfig;
+    bool m_httpConfigHasBeenSet;
   };
 
 } // namespace Model

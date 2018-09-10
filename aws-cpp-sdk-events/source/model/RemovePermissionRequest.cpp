@@ -37,7 +37,7 @@ Aws::String RemovePermissionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RemovePermissionRequest::GetRequestSpecificHeaders() const

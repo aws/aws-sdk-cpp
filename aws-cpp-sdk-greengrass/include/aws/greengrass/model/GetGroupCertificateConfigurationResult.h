@@ -43,109 +43,116 @@ namespace Model
 
 
     /**
-     * Amount of time when the certificate authority expires in milliseconds.
+     * The amount of time remaining before the certificate authority expires, in
+     * milliseconds.
      */
     inline const Aws::String& GetCertificateAuthorityExpiryInMilliseconds() const{ return m_certificateAuthorityExpiryInMilliseconds; }
 
     /**
-     * Amount of time when the certificate authority expires in milliseconds.
+     * The amount of time remaining before the certificate authority expires, in
+     * milliseconds.
      */
     inline void SetCertificateAuthorityExpiryInMilliseconds(const Aws::String& value) { m_certificateAuthorityExpiryInMilliseconds = value; }
 
     /**
-     * Amount of time when the certificate authority expires in milliseconds.
+     * The amount of time remaining before the certificate authority expires, in
+     * milliseconds.
      */
     inline void SetCertificateAuthorityExpiryInMilliseconds(Aws::String&& value) { m_certificateAuthorityExpiryInMilliseconds = std::move(value); }
 
     /**
-     * Amount of time when the certificate authority expires in milliseconds.
+     * The amount of time remaining before the certificate authority expires, in
+     * milliseconds.
      */
     inline void SetCertificateAuthorityExpiryInMilliseconds(const char* value) { m_certificateAuthorityExpiryInMilliseconds.assign(value); }
 
     /**
-     * Amount of time when the certificate authority expires in milliseconds.
+     * The amount of time remaining before the certificate authority expires, in
+     * milliseconds.
      */
     inline GetGroupCertificateConfigurationResult& WithCertificateAuthorityExpiryInMilliseconds(const Aws::String& value) { SetCertificateAuthorityExpiryInMilliseconds(value); return *this;}
 
     /**
-     * Amount of time when the certificate authority expires in milliseconds.
+     * The amount of time remaining before the certificate authority expires, in
+     * milliseconds.
      */
     inline GetGroupCertificateConfigurationResult& WithCertificateAuthorityExpiryInMilliseconds(Aws::String&& value) { SetCertificateAuthorityExpiryInMilliseconds(std::move(value)); return *this;}
 
     /**
-     * Amount of time when the certificate authority expires in milliseconds.
+     * The amount of time remaining before the certificate authority expires, in
+     * milliseconds.
      */
     inline GetGroupCertificateConfigurationResult& WithCertificateAuthorityExpiryInMilliseconds(const char* value) { SetCertificateAuthorityExpiryInMilliseconds(value); return *this;}
 
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline const Aws::String& GetCertificateExpiryInMilliseconds() const{ return m_certificateExpiryInMilliseconds; }
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline void SetCertificateExpiryInMilliseconds(const Aws::String& value) { m_certificateExpiryInMilliseconds = value; }
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline void SetCertificateExpiryInMilliseconds(Aws::String&& value) { m_certificateExpiryInMilliseconds = std::move(value); }
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline void SetCertificateExpiryInMilliseconds(const char* value) { m_certificateExpiryInMilliseconds.assign(value); }
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline GetGroupCertificateConfigurationResult& WithCertificateExpiryInMilliseconds(const Aws::String& value) { SetCertificateExpiryInMilliseconds(value); return *this;}
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline GetGroupCertificateConfigurationResult& WithCertificateExpiryInMilliseconds(Aws::String&& value) { SetCertificateExpiryInMilliseconds(std::move(value)); return *this;}
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      */
     inline GetGroupCertificateConfigurationResult& WithCertificateExpiryInMilliseconds(const char* value) { SetCertificateExpiryInMilliseconds(value); return *this;}
 
 
     /**
-     * Id of the group the certificate configuration belongs to.
+     * The ID of the group certificate configuration.
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * Id of the group the certificate configuration belongs to.
+     * The ID of the group certificate configuration.
      */
     inline void SetGroupId(const Aws::String& value) { m_groupId = value; }
 
     /**
-     * Id of the group the certificate configuration belongs to.
+     * The ID of the group certificate configuration.
      */
     inline void SetGroupId(Aws::String&& value) { m_groupId = std::move(value); }
 
     /**
-     * Id of the group the certificate configuration belongs to.
+     * The ID of the group certificate configuration.
      */
     inline void SetGroupId(const char* value) { m_groupId.assign(value); }
 
     /**
-     * Id of the group the certificate configuration belongs to.
+     * The ID of the group certificate configuration.
      */
     inline GetGroupCertificateConfigurationResult& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * Id of the group the certificate configuration belongs to.
+     * The ID of the group certificate configuration.
      */
     inline GetGroupCertificateConfigurationResult& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * Id of the group the certificate configuration belongs to.
+     * The ID of the group certificate configuration.
      */
     inline GetGroupCertificateConfigurationResult& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 

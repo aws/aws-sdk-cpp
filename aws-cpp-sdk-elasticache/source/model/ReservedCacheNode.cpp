@@ -46,7 +46,8 @@ ReservedCacheNode::ReservedCacheNode() :
     m_productDescriptionHasBeenSet(false),
     m_offeringTypeHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
+    m_recurringChargesHasBeenSet(false),
+    m_reservationARNHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ ReservedCacheNode::ReservedCacheNode(const XmlNode& xmlNode) :
     m_productDescriptionHasBeenSet(false),
     m_offeringTypeHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
+    m_recurringChargesHasBeenSet(false),
+    m_reservationARNHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -155,6 +157,12 @@ ReservedCacheNode& ReservedCacheNode::operator =(const XmlNode& xmlNode)
 
       m_recurringChargesHasBeenSet = true;
     }
+    XmlNode reservationARNNode = resultNode.FirstChild("ReservationARN");
+    if(!reservationARNNode.IsNull())
+    {
+      m_reservationARN = StringUtils::Trim(reservationARNNode.GetText().c_str());
+      m_reservationARNHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -228,6 +236,11 @@ void ReservedCacheNode::OutputToStream(Aws::OStream& oStream, const char* locati
       }
   }
 
+  if(m_reservationARNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReservationARN=" << StringUtils::URLEncode(m_reservationARN.c_str()) << "&";
+  }
+
 }
 
 void ReservedCacheNode::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -285,6 +298,10 @@ void ReservedCacheNode::OutputToStream(Aws::OStream& oStream, const char* locati
         recurringChargesSs << location <<  ".RecurringCharge." << recurringChargesIdx++;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
+  }
+  if(m_reservationARNHasBeenSet)
+  {
+      oStream << location << ".ReservationARN=" << StringUtils::URLEncode(m_reservationARN.c_str()) << "&";
   }
 }
 

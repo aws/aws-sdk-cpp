@@ -40,7 +40,7 @@ CommentsForPullRequest::CommentsForPullRequest() :
 {
 }
 
-CommentsForPullRequest::CommentsForPullRequest(const JsonValue& jsonValue) : 
+CommentsForPullRequest::CommentsForPullRequest(JsonView jsonValue) : 
     m_pullRequestIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
     m_beforeCommitIdHasBeenSet(false),
@@ -53,7 +53,7 @@ CommentsForPullRequest::CommentsForPullRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CommentsForPullRequest& CommentsForPullRequest::operator =(const JsonValue& jsonValue)
+CommentsForPullRequest& CommentsForPullRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pullRequestId"))
   {
@@ -106,7 +106,7 @@ CommentsForPullRequest& CommentsForPullRequest::operator =(const JsonValue& json
 
   if(jsonValue.ValueExists("comments"))
   {
-    Array<JsonValue> commentsJsonList = jsonValue.GetArray("comments");
+    Array<JsonView> commentsJsonList = jsonValue.GetArray("comments");
     for(unsigned commentsIndex = 0; commentsIndex < commentsJsonList.GetLength(); ++commentsIndex)
     {
       m_comments.push_back(commentsJsonList[commentsIndex].AsObject());

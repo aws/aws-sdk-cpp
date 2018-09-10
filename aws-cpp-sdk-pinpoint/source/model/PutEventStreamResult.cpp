@@ -37,7 +37,7 @@ PutEventStreamResult::PutEventStreamResult(const Aws::AmazonWebServiceResult<Jso
 
 PutEventStreamResult& PutEventStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_eventStream = jsonValue;
 
 

@@ -45,7 +45,7 @@ GetDomainDetailResult::GetDomainDetailResult(const Aws::AmazonWebServiceResult<J
 
 GetDomainDetailResult& GetDomainDetailResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
@@ -54,7 +54,7 @@ GetDomainDetailResult& GetDomainDetailResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("Nameservers"))
   {
-    Array<JsonValue> nameserversJsonList = jsonValue.GetArray("Nameservers");
+    Array<JsonView> nameserversJsonList = jsonValue.GetArray("Nameservers");
     for(unsigned nameserversIndex = 0; nameserversIndex < nameserversJsonList.GetLength(); ++nameserversIndex)
     {
       m_nameservers.push_back(nameserversJsonList[nameserversIndex].AsObject());
@@ -171,7 +171,7 @@ GetDomainDetailResult& GetDomainDetailResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("StatusList"))
   {
-    Array<JsonValue> statusListJsonList = jsonValue.GetArray("StatusList");
+    Array<JsonView> statusListJsonList = jsonValue.GetArray("StatusList");
     for(unsigned statusListIndex = 0; statusListIndex < statusListJsonList.GetLength(); ++statusListIndex)
     {
       m_statusList.push_back(statusListJsonList[statusListIndex].AsString());

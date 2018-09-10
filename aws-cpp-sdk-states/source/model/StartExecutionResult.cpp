@@ -37,7 +37,7 @@ StartExecutionResult::StartExecutionResult(const Aws::AmazonWebServiceResult<Jso
 
 StartExecutionResult& StartExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("executionArn"))
   {
     m_executionArn = jsonValue.GetString("executionArn");

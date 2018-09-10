@@ -34,14 +34,14 @@ ReviewPolicy::ReviewPolicy() :
 {
 }
 
-ReviewPolicy::ReviewPolicy(const JsonValue& jsonValue) : 
+ReviewPolicy::ReviewPolicy(JsonView jsonValue) : 
     m_policyNameHasBeenSet(false),
     m_parametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ReviewPolicy& ReviewPolicy::operator =(const JsonValue& jsonValue)
+ReviewPolicy& ReviewPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PolicyName"))
   {
@@ -52,7 +52,7 @@ ReviewPolicy& ReviewPolicy::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Array<JsonValue> parametersJsonList = jsonValue.GetArray("Parameters");
+    Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
     for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());

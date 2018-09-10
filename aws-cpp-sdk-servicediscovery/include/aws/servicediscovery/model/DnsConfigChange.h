@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceDiscovery
@@ -34,9 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about changes to the resource record
-   * sets that Amazon Route 53 creates when you register an instance.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A complex type that contains information about changes to the records that
+   * Route 53 creates when you register an instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DnsConfigChange">AWS
    * API Reference</a></p>
    */
@@ -44,57 +44,50 @@ namespace Model
   {
   public:
     DnsConfigChange();
-    DnsConfigChange(const Aws::Utils::Json::JsonValue& jsonValue);
-    DnsConfigChange& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DnsConfigChange(Aws::Utils::Json::JsonView jsonValue);
+    DnsConfigChange& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each resource
-     * record set that you want Amazon Route 53 to create when you register an
-     * instance.</p>
+     * <p>An array that contains one <code>DnsRecord</code> object for each record that
+     * you want Route 53 to create when you register an instance.</p>
      */
     inline const Aws::Vector<DnsRecord>& GetDnsRecords() const{ return m_dnsRecords; }
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each resource
-     * record set that you want Amazon Route 53 to create when you register an
-     * instance.</p>
+     * <p>An array that contains one <code>DnsRecord</code> object for each record that
+     * you want Route 53 to create when you register an instance.</p>
      */
     inline void SetDnsRecords(const Aws::Vector<DnsRecord>& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords = value; }
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each resource
-     * record set that you want Amazon Route 53 to create when you register an
-     * instance.</p>
+     * <p>An array that contains one <code>DnsRecord</code> object for each record that
+     * you want Route 53 to create when you register an instance.</p>
      */
     inline void SetDnsRecords(Aws::Vector<DnsRecord>&& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords = std::move(value); }
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each resource
-     * record set that you want Amazon Route 53 to create when you register an
-     * instance.</p>
+     * <p>An array that contains one <code>DnsRecord</code> object for each record that
+     * you want Route 53 to create when you register an instance.</p>
      */
     inline DnsConfigChange& WithDnsRecords(const Aws::Vector<DnsRecord>& value) { SetDnsRecords(value); return *this;}
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each resource
-     * record set that you want Amazon Route 53 to create when you register an
-     * instance.</p>
+     * <p>An array that contains one <code>DnsRecord</code> object for each record that
+     * you want Route 53 to create when you register an instance.</p>
      */
     inline DnsConfigChange& WithDnsRecords(Aws::Vector<DnsRecord>&& value) { SetDnsRecords(std::move(value)); return *this;}
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each resource
-     * record set that you want Amazon Route 53 to create when you register an
-     * instance.</p>
+     * <p>An array that contains one <code>DnsRecord</code> object for each record that
+     * you want Route 53 to create when you register an instance.</p>
      */
     inline DnsConfigChange& AddDnsRecords(const DnsRecord& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords.push_back(value); return *this; }
 
     /**
-     * <p>An array that contains one <code>DnsRecord</code> object for each resource
-     * record set that you want Amazon Route 53 to create when you register an
-     * instance.</p>
+     * <p>An array that contains one <code>DnsRecord</code> object for each record that
+     * you want Route 53 to create when you register an instance.</p>
      */
     inline DnsConfigChange& AddDnsRecords(DnsRecord&& value) { m_dnsRecordsHasBeenSet = true; m_dnsRecords.push_back(std::move(value)); return *this; }
 

@@ -37,7 +37,7 @@ DescribeTopicsDetectionJobResult::DescribeTopicsDetectionJobResult(const Aws::Am
 
 DescribeTopicsDetectionJobResult& DescribeTopicsDetectionJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TopicsDetectionJobProperties"))
   {
     m_topicsDetectionJobProperties = jsonValue.GetObject("TopicsDetectionJobProperties");

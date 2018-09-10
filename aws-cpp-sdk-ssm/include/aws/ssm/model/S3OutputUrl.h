@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     S3OutputUrl();
-    S3OutputUrl(const Aws::Utils::Json::JsonValue& jsonValue);
-    S3OutputUrl& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    S3OutputUrl(Aws::Utils::Json::JsonView jsonValue);
+    S3OutputUrl& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

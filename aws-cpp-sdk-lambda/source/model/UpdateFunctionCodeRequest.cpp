@@ -32,7 +32,8 @@ UpdateFunctionCodeRequest::UpdateFunctionCodeRequest() :
     m_publish(false),
     m_publishHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_revisionIdHasBeenSet(false)
 {
 }
 
@@ -75,7 +76,13 @@ Aws::String UpdateFunctionCodeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_revisionIdHasBeenSet)
+  {
+   payload.WithString("RevisionId", m_revisionId);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

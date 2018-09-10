@@ -34,14 +34,14 @@ OfferingPromotion::OfferingPromotion() :
 {
 }
 
-OfferingPromotion::OfferingPromotion(const JsonValue& jsonValue) : 
+OfferingPromotion::OfferingPromotion(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OfferingPromotion& OfferingPromotion::operator =(const JsonValue& jsonValue)
+OfferingPromotion& OfferingPromotion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

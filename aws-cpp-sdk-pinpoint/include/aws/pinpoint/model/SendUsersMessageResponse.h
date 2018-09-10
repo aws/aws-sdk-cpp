@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -43,135 +44,168 @@ namespace Model
   {
   public:
     SendUsersMessageResponse();
-    SendUsersMessageResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    SendUsersMessageResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SendUsersMessageResponse(Aws::Utils::Json::JsonView jsonValue);
+    SendUsersMessageResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Application id of the message.
+     * The unique ID of the Amazon Pinpoint project used to send the message.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * Application id of the message.
+     * The unique ID of the Amazon Pinpoint project used to send the message.
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * Application id of the message.
+     * The unique ID of the Amazon Pinpoint project used to send the message.
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * Application id of the message.
+     * The unique ID of the Amazon Pinpoint project used to send the message.
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * Application id of the message.
+     * The unique ID of the Amazon Pinpoint project used to send the message.
      */
     inline SendUsersMessageResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * Application id of the message.
+     * The unique ID of the Amazon Pinpoint project used to send the message.
      */
     inline SendUsersMessageResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * Application id of the message.
+     * The unique ID of the Amazon Pinpoint project used to send the message.
      */
     inline SendUsersMessageResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * Original request Id for which this message was delivered.
+     * The unique ID assigned to the users-messages request.
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * Original request Id for which this message was delivered.
+     * The unique ID assigned to the users-messages request.
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
-     * Original request Id for which this message was delivered.
+     * The unique ID assigned to the users-messages request.
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
     /**
-     * Original request Id for which this message was delivered.
+     * The unique ID assigned to the users-messages request.
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
     /**
-     * Original request Id for which this message was delivered.
+     * The unique ID assigned to the users-messages request.
      */
     inline SendUsersMessageResponse& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * Original request Id for which this message was delivered.
+     * The unique ID assigned to the users-messages request.
      */
     inline SendUsersMessageResponse& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * Original request Id for which this message was delivered.
+     * The unique ID assigned to the users-messages request.
      */
     inline SendUsersMessageResponse& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
 
     /**
-     * A map containing of UserId to Map of EndpointId to Endpoint Message Result.
+     * An object that shows the endpoints that were messaged for each user. The object
+     * provides a list of user IDs. For each user ID, it provides the endpoint IDs that
+     * were messaged. For each endpoint ID, it provides an EndpointMessageResult
+     * object.
      */
     inline const Aws::Map<Aws::String, Aws::Map<Aws::String, EndpointMessageResult>>& GetResult() const{ return m_result; }
 
     /**
-     * A map containing of UserId to Map of EndpointId to Endpoint Message Result.
+     * An object that shows the endpoints that were messaged for each user. The object
+     * provides a list of user IDs. For each user ID, it provides the endpoint IDs that
+     * were messaged. For each endpoint ID, it provides an EndpointMessageResult
+     * object.
      */
     inline void SetResult(const Aws::Map<Aws::String, Aws::Map<Aws::String, EndpointMessageResult>>& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
-     * A map containing of UserId to Map of EndpointId to Endpoint Message Result.
+     * An object that shows the endpoints that were messaged for each user. The object
+     * provides a list of user IDs. For each user ID, it provides the endpoint IDs that
+     * were messaged. For each endpoint ID, it provides an EndpointMessageResult
+     * object.
      */
     inline void SetResult(Aws::Map<Aws::String, Aws::Map<Aws::String, EndpointMessageResult>>&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
-     * A map containing of UserId to Map of EndpointId to Endpoint Message Result.
+     * An object that shows the endpoints that were messaged for each user. The object
+     * provides a list of user IDs. For each user ID, it provides the endpoint IDs that
+     * were messaged. For each endpoint ID, it provides an EndpointMessageResult
+     * object.
      */
     inline SendUsersMessageResponse& WithResult(const Aws::Map<Aws::String, Aws::Map<Aws::String, EndpointMessageResult>>& value) { SetResult(value); return *this;}
 
     /**
-     * A map containing of UserId to Map of EndpointId to Endpoint Message Result.
+     * An object that shows the endpoints that were messaged for each user. The object
+     * provides a list of user IDs. For each user ID, it provides the endpoint IDs that
+     * were messaged. For each endpoint ID, it provides an EndpointMessageResult
+     * object.
      */
     inline SendUsersMessageResponse& WithResult(Aws::Map<Aws::String, Aws::Map<Aws::String, EndpointMessageResult>>&& value) { SetResult(std::move(value)); return *this;}
 
     /**
-     * A map containing of UserId to Map of EndpointId to Endpoint Message Result.
+     * An object that shows the endpoints that were messaged for each user. The object
+     * provides a list of user IDs. For each user ID, it provides the endpoint IDs that
+     * were messaged. For each endpoint ID, it provides an EndpointMessageResult
+     * object.
      */
     inline SendUsersMessageResponse& AddResult(const Aws::String& key, const Aws::Map<Aws::String, EndpointMessageResult>& value) { m_resultHasBeenSet = true; m_result.emplace(key, value); return *this; }
 
     /**
-     * A map containing of UserId to Map of EndpointId to Endpoint Message Result.
+     * An object that shows the endpoints that were messaged for each user. The object
+     * provides a list of user IDs. For each user ID, it provides the endpoint IDs that
+     * were messaged. For each endpoint ID, it provides an EndpointMessageResult
+     * object.
      */
     inline SendUsersMessageResponse& AddResult(Aws::String&& key, const Aws::Map<Aws::String, EndpointMessageResult>& value) { m_resultHasBeenSet = true; m_result.emplace(std::move(key), value); return *this; }
 
     /**
-     * A map containing of UserId to Map of EndpointId to Endpoint Message Result.
+     * An object that shows the endpoints that were messaged for each user. The object
+     * provides a list of user IDs. For each user ID, it provides the endpoint IDs that
+     * were messaged. For each endpoint ID, it provides an EndpointMessageResult
+     * object.
      */
     inline SendUsersMessageResponse& AddResult(const Aws::String& key, Aws::Map<Aws::String, EndpointMessageResult>&& value) { m_resultHasBeenSet = true; m_result.emplace(key, std::move(value)); return *this; }
 
     /**
-     * A map containing of UserId to Map of EndpointId to Endpoint Message Result.
+     * An object that shows the endpoints that were messaged for each user. The object
+     * provides a list of user IDs. For each user ID, it provides the endpoint IDs that
+     * were messaged. For each endpoint ID, it provides an EndpointMessageResult
+     * object.
      */
     inline SendUsersMessageResponse& AddResult(Aws::String&& key, Aws::Map<Aws::String, EndpointMessageResult>&& value) { m_resultHasBeenSet = true; m_result.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * A map containing of UserId to Map of EndpointId to Endpoint Message Result.
+     * An object that shows the endpoints that were messaged for each user. The object
+     * provides a list of user IDs. For each user ID, it provides the endpoint IDs that
+     * were messaged. For each endpoint ID, it provides an EndpointMessageResult
+     * object.
      */
     inline SendUsersMessageResponse& AddResult(const char* key, Aws::Map<Aws::String, EndpointMessageResult>&& value) { m_resultHasBeenSet = true; m_result.emplace(key, std::move(value)); return *this; }
 
     /**
-     * A map containing of UserId to Map of EndpointId to Endpoint Message Result.
+     * An object that shows the endpoints that were messaged for each user. The object
+     * provides a list of user IDs. For each user ID, it provides the endpoint IDs that
+     * were messaged. For each endpoint ID, it provides an EndpointMessageResult
+     * object.
      */
     inline SendUsersMessageResponse& AddResult(const char* key, const Aws::Map<Aws::String, EndpointMessageResult>& value) { m_resultHasBeenSet = true; m_result.emplace(key, value); return *this; }
 

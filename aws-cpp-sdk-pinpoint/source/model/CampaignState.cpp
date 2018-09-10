@@ -34,14 +34,14 @@ CampaignState::CampaignState() :
 {
 }
 
-CampaignState::CampaignState(const JsonValue& jsonValue) : 
+CampaignState::CampaignState(JsonView jsonValue) : 
     m_campaignStatus(CampaignStatus::NOT_SET),
     m_campaignStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CampaignState& CampaignState::operator =(const JsonValue& jsonValue)
+CampaignState& CampaignState::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CampaignStatus"))
   {

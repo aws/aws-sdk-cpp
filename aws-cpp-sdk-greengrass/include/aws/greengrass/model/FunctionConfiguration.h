@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/greengrass/Greengrass_EXPORTS.h>
+#include <aws/greengrass/model/EncodingType.h>
 #include <aws/greengrass/model/FunctionConfigurationEnvironment.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -26,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -34,7 +36,7 @@ namespace Model
 {
 
   /**
-   * Configuration of the function<p><h3>See Also:</h3>   <a
+   * The configuration of the Lambda function.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -42,163 +44,197 @@ namespace Model
   {
   public:
     FunctionConfiguration();
-    FunctionConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    FunctionConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FunctionConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    FunctionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Environment of the function configuration
+     * The expected encoding type of the input payload for the function. The default is
+     * ''json''.
+     */
+    inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
+
+    /**
+     * The expected encoding type of the input payload for the function. The default is
+     * ''json''.
+     */
+    inline void SetEncodingType(const EncodingType& value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
+
+    /**
+     * The expected encoding type of the input payload for the function. The default is
+     * ''json''.
+     */
+    inline void SetEncodingType(EncodingType&& value) { m_encodingTypeHasBeenSet = true; m_encodingType = std::move(value); }
+
+    /**
+     * The expected encoding type of the input payload for the function. The default is
+     * ''json''.
+     */
+    inline FunctionConfiguration& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
+
+    /**
+     * The expected encoding type of the input payload for the function. The default is
+     * ''json''.
+     */
+    inline FunctionConfiguration& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
+
+
+    /**
+     * The environment configuration of the function.
      */
     inline const FunctionConfigurationEnvironment& GetEnvironment() const{ return m_environment; }
 
     /**
-     * Environment of the function configuration
+     * The environment configuration of the function.
      */
     inline void SetEnvironment(const FunctionConfigurationEnvironment& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
-     * Environment of the function configuration
+     * The environment configuration of the function.
      */
     inline void SetEnvironment(FunctionConfigurationEnvironment&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
-     * Environment of the function configuration
+     * The environment configuration of the function.
      */
     inline FunctionConfiguration& WithEnvironment(const FunctionConfigurationEnvironment& value) { SetEnvironment(value); return *this;}
 
     /**
-     * Environment of the function configuration
+     * The environment configuration of the function.
      */
     inline FunctionConfiguration& WithEnvironment(FunctionConfigurationEnvironment&& value) { SetEnvironment(std::move(value)); return *this;}
 
 
     /**
-     * Execution Arguments
+     * The execution arguments.
      */
     inline const Aws::String& GetExecArgs() const{ return m_execArgs; }
 
     /**
-     * Execution Arguments
+     * The execution arguments.
      */
     inline void SetExecArgs(const Aws::String& value) { m_execArgsHasBeenSet = true; m_execArgs = value; }
 
     /**
-     * Execution Arguments
+     * The execution arguments.
      */
     inline void SetExecArgs(Aws::String&& value) { m_execArgsHasBeenSet = true; m_execArgs = std::move(value); }
 
     /**
-     * Execution Arguments
+     * The execution arguments.
      */
     inline void SetExecArgs(const char* value) { m_execArgsHasBeenSet = true; m_execArgs.assign(value); }
 
     /**
-     * Execution Arguments
+     * The execution arguments.
      */
     inline FunctionConfiguration& WithExecArgs(const Aws::String& value) { SetExecArgs(value); return *this;}
 
     /**
-     * Execution Arguments
+     * The execution arguments.
      */
     inline FunctionConfiguration& WithExecArgs(Aws::String&& value) { SetExecArgs(std::move(value)); return *this;}
 
     /**
-     * Execution Arguments
+     * The execution arguments.
      */
     inline FunctionConfiguration& WithExecArgs(const char* value) { SetExecArgs(value); return *this;}
 
 
     /**
-     * Executable
+     * The name of the function executable.
      */
     inline const Aws::String& GetExecutable() const{ return m_executable; }
 
     /**
-     * Executable
+     * The name of the function executable.
      */
     inline void SetExecutable(const Aws::String& value) { m_executableHasBeenSet = true; m_executable = value; }
 
     /**
-     * Executable
+     * The name of the function executable.
      */
     inline void SetExecutable(Aws::String&& value) { m_executableHasBeenSet = true; m_executable = std::move(value); }
 
     /**
-     * Executable
+     * The name of the function executable.
      */
     inline void SetExecutable(const char* value) { m_executableHasBeenSet = true; m_executable.assign(value); }
 
     /**
-     * Executable
+     * The name of the function executable.
      */
     inline FunctionConfiguration& WithExecutable(const Aws::String& value) { SetExecutable(value); return *this;}
 
     /**
-     * Executable
+     * The name of the function executable.
      */
     inline FunctionConfiguration& WithExecutable(Aws::String&& value) { SetExecutable(std::move(value)); return *this;}
 
     /**
-     * Executable
+     * The name of the function executable.
      */
     inline FunctionConfiguration& WithExecutable(const char* value) { SetExecutable(value); return *this;}
 
 
     /**
-     * The memory size, in KB, you configured for the function.
+     * The memory size, in KB, which the function requires.
      */
     inline int GetMemorySize() const{ return m_memorySize; }
 
     /**
-     * The memory size, in KB, you configured for the function.
+     * The memory size, in KB, which the function requires.
      */
     inline void SetMemorySize(int value) { m_memorySizeHasBeenSet = true; m_memorySize = value; }
 
     /**
-     * The memory size, in KB, you configured for the function.
+     * The memory size, in KB, which the function requires.
      */
     inline FunctionConfiguration& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
 
     /**
-     * Whether the function is pinned or not. Pinned means the function is long-lived
-     * and starts when the core starts.
+     * True if the function is pinned. Pinned means the function is long-lived and
+     * starts when the core starts.
      */
     inline bool GetPinned() const{ return m_pinned; }
 
     /**
-     * Whether the function is pinned or not. Pinned means the function is long-lived
-     * and starts when the core starts.
+     * True if the function is pinned. Pinned means the function is long-lived and
+     * starts when the core starts.
      */
     inline void SetPinned(bool value) { m_pinnedHasBeenSet = true; m_pinned = value; }
 
     /**
-     * Whether the function is pinned or not. Pinned means the function is long-lived
-     * and starts when the core starts.
+     * True if the function is pinned. Pinned means the function is long-lived and
+     * starts when the core starts.
      */
     inline FunctionConfiguration& WithPinned(bool value) { SetPinned(value); return *this;}
 
 
     /**
-     * The function execution time at which Lambda should terminate the function. This
-     * timeout still applies to pinned lambdas for each request.
+     * The allowed function execution time, after which Lambda should terminate the
+     * function. This timeout still applies to pinned lambdas for each request.
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
-     * The function execution time at which Lambda should terminate the function. This
-     * timeout still applies to pinned lambdas for each request.
+     * The allowed function execution time, after which Lambda should terminate the
+     * function. This timeout still applies to pinned lambdas for each request.
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * The function execution time at which Lambda should terminate the function. This
-     * timeout still applies to pinned lambdas for each request.
+     * The allowed function execution time, after which Lambda should terminate the
+     * function. This timeout still applies to pinned lambdas for each request.
      */
     inline FunctionConfiguration& WithTimeout(int value) { SetTimeout(value); return *this;}
 
   private:
+
+    EncodingType m_encodingType;
+    bool m_encodingTypeHasBeenSet;
 
     FunctionConfigurationEnvironment m_environment;
     bool m_environmentHasBeenSet;

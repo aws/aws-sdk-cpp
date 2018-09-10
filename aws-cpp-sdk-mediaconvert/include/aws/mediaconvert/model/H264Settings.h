@@ -18,6 +18,7 @@
 #include <aws/mediaconvert/model/H264AdaptiveQuantization.h>
 #include <aws/mediaconvert/model/H264CodecLevel.h>
 #include <aws/mediaconvert/model/H264CodecProfile.h>
+#include <aws/mediaconvert/model/H264DynamicSubGop.h>
 #include <aws/mediaconvert/model/H264EntropyEncoding.h>
 #include <aws/mediaconvert/model/H264FieldEncoding.h>
 #include <aws/mediaconvert/model/H264FlickerAdaptiveQuantization.h>
@@ -28,6 +29,7 @@
 #include <aws/mediaconvert/model/H264InterlaceMode.h>
 #include <aws/mediaconvert/model/H264ParControl.h>
 #include <aws/mediaconvert/model/H264QualityTuningLevel.h>
+#include <aws/mediaconvert/model/H264QvbrSettings.h>
 #include <aws/mediaconvert/model/H264RateControlMode.h>
 #include <aws/mediaconvert/model/H264RepeatPps.h>
 #include <aws/mediaconvert/model/H264SceneChangeDetect.h>
@@ -46,6 +48,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -63,8 +66,8 @@ namespace Model
   {
   public:
     H264Settings();
-    H264Settings(const Aws::Utils::Json::JsonValue& jsonValue);
-    H264Settings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    H264Settings(Aws::Utils::Json::JsonView jsonValue);
+    H264Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -85,26 +88,20 @@ namespace Model
 
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits
-     * can be entered as 5000000 or 5m. Five hundred kilobits can be entered as 500000
-     * or 0.5m. For MS Smooth outputs, bitrates must be unique when rounded down to the
-     * nearest multiple of 1000.
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
+     * bitrates must be unique when rounded down to the nearest multiple of 1000.
      */
     inline int GetBitrate() const{ return m_bitrate; }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits
-     * can be entered as 5000000 or 5m. Five hundred kilobits can be entered as 500000
-     * or 0.5m. For MS Smooth outputs, bitrates must be unique when rounded down to the
-     * nearest multiple of 1000.
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
+     * bitrates must be unique when rounded down to the nearest multiple of 1000.
      */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits
-     * can be entered as 5000000 or 5m. Five hundred kilobits can be entered as 500000
-     * or 0.5m. For MS Smooth outputs, bitrates must be unique when rounded down to the
-     * nearest multiple of 1000.
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs,
+     * bitrates must be unique when rounded down to the nearest multiple of 1000.
      */
     inline H264Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
 
@@ -139,6 +136,57 @@ namespace Model
 
     
     inline H264Settings& WithCodecProfile(H264CodecProfile&& value) { SetCodecProfile(std::move(value)); return *this;}
+
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline const H264DynamicSubGop& GetDynamicSubGop() const{ return m_dynamicSubGop; }
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline void SetDynamicSubGop(const H264DynamicSubGop& value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = value; }
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline void SetDynamicSubGop(H264DynamicSubGop&& value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = std::move(value); }
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline H264Settings& WithDynamicSubGop(const H264DynamicSubGop& value) { SetDynamicSubGop(value); return *this;}
+
+    /**
+     * Choose Adaptive to improve subjective video quality for high-motion content.
+     * This will cause the service to use fewer B-frames (which infer information based
+     * on other frames) for high-motion portions of the video and more B-frames for
+     * low-motion portions. The maximum number of B-frames is limited by the value you
+     * provide for the setting B frames between reference frames
+     * (numberBFramesBetweenReferenceFrames).
+     */
+    inline H264Settings& WithDynamicSubGop(H264DynamicSubGop&& value) { SetDynamicSubGop(std::move(value)); return *this;}
 
 
     
@@ -355,20 +403,20 @@ namespace Model
 
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or
-     * 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
+     * 5000000.
      */
     inline int GetHrdBufferSize() const{ return m_hrdBufferSize; }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or
-     * 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
+     * 5000000.
      */
     inline void SetHrdBufferSize(int value) { m_hrdBufferSizeHasBeenSet = true; m_hrdBufferSize = value; }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or
-     * 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
+     * 5000000.
      */
     inline H264Settings& WithHrdBufferSize(int value) { SetHrdBufferSize(value); return *this;}
 
@@ -390,20 +438,20 @@ namespace Model
 
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered
-     * as 5000000 or 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as
+     * 5000000. Required when Rate control mode is QVBR.
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered
-     * as 5000000 or 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as
+     * 5000000. Required when Rate control mode is QVBR.
      */
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered
-     * as 5000000 or 5m. Five hundred kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as
+     * 5000000. Required when Rate control mode is QVBR.
      */
     inline H264Settings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
 
@@ -539,6 +587,47 @@ namespace Model
 
     
     inline H264Settings& WithQualityTuningLevel(H264QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
+
+
+    /**
+     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
+     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
+     * control mode to a value other than QVBR, or when you don't define Rate control
+     * mode.
+     */
+    inline const H264QvbrSettings& GetQvbrSettings() const{ return m_qvbrSettings; }
+
+    /**
+     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
+     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
+     * control mode to a value other than QVBR, or when you don't define Rate control
+     * mode.
+     */
+    inline void SetQvbrSettings(const H264QvbrSettings& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = value; }
+
+    /**
+     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
+     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
+     * control mode to a value other than QVBR, or when you don't define Rate control
+     * mode.
+     */
+    inline void SetQvbrSettings(H264QvbrSettings&& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = std::move(value); }
+
+    /**
+     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
+     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
+     * control mode to a value other than QVBR, or when you don't define Rate control
+     * mode.
+     */
+    inline H264Settings& WithQvbrSettings(const H264QvbrSettings& value) { SetQvbrSettings(value); return *this;}
+
+    /**
+     * Settings for quality-defined variable bitrate encoding with the H.264 codec.
+     * Required when you set Rate control mode to QVBR. Not valid when you set Rate
+     * control mode to a value other than QVBR, or when you don't define Rate control
+     * mode.
+     */
+    inline H264Settings& WithQvbrSettings(H264QvbrSettings&& value) { SetQvbrSettings(std::move(value)); return *this;}
 
 
     
@@ -739,6 +828,9 @@ namespace Model
     H264CodecProfile m_codecProfile;
     bool m_codecProfileHasBeenSet;
 
+    H264DynamicSubGop m_dynamicSubGop;
+    bool m_dynamicSubGopHasBeenSet;
+
     H264EntropyEncoding m_entropyEncoding;
     bool m_entropyEncodingHasBeenSet;
 
@@ -804,6 +896,9 @@ namespace Model
 
     H264QualityTuningLevel m_qualityTuningLevel;
     bool m_qualityTuningLevelHasBeenSet;
+
+    H264QvbrSettings m_qvbrSettings;
+    bool m_qvbrSettingsHasBeenSet;
 
     H264RateControlMode m_rateControlMode;
     bool m_rateControlModeHasBeenSet;

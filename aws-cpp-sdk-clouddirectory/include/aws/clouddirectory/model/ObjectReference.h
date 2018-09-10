@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -34,15 +35,15 @@ namespace Model
 
   /**
    * <p>The reference that identifies an object.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ObjectReference">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ObjectReference">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API ObjectReference
   {
   public:
     ObjectReference();
-    ObjectReference(const Aws::Utils::Json::JsonValue& jsonValue);
-    ObjectReference& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ObjectReference(Aws::Utils::Json::JsonView jsonValue);
+    ObjectReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

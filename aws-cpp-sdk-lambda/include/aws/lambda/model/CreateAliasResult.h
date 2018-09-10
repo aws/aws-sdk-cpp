@@ -249,6 +249,42 @@ namespace Model
      */
     inline CreateAliasResult& WithRoutingConfig(AliasRoutingConfiguration&& value) { SetRoutingConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline void SetRevisionId(const Aws::String& value) { m_revisionId = value; }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline void SetRevisionId(Aws::String&& value) { m_revisionId = std::move(value); }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline void SetRevisionId(const char* value) { m_revisionId.assign(value); }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline CreateAliasResult& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline CreateAliasResult& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline CreateAliasResult& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+
   private:
 
     Aws::String m_aliasArn;
@@ -260,6 +296,8 @@ namespace Model
     Aws::String m_description;
 
     AliasRoutingConfiguration m_routingConfig;
+
+    Aws::String m_revisionId;
   };
 
 } // namespace Model

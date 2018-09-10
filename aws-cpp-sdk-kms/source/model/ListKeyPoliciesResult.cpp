@@ -39,10 +39,10 @@ ListKeyPoliciesResult::ListKeyPoliciesResult(const Aws::AmazonWebServiceResult<J
 
 ListKeyPoliciesResult& ListKeyPoliciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PolicyNames"))
   {
-    Array<JsonValue> policyNamesJsonList = jsonValue.GetArray("PolicyNames");
+    Array<JsonView> policyNamesJsonList = jsonValue.GetArray("PolicyNames");
     for(unsigned policyNamesIndex = 0; policyNamesIndex < policyNamesJsonList.GetLength(); ++policyNamesIndex)
     {
       m_policyNames.push_back(policyNamesJsonList[policyNamesIndex].AsString());

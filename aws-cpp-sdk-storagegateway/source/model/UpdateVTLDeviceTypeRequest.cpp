@@ -44,7 +44,7 @@ Aws::String UpdateVTLDeviceTypeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateVTLDeviceTypeRequest::GetRequestSpecificHeaders() const

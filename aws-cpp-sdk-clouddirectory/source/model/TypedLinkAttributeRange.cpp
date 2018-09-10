@@ -34,14 +34,14 @@ TypedLinkAttributeRange::TypedLinkAttributeRange() :
 {
 }
 
-TypedLinkAttributeRange::TypedLinkAttributeRange(const JsonValue& jsonValue) : 
+TypedLinkAttributeRange::TypedLinkAttributeRange(JsonView jsonValue) : 
     m_attributeNameHasBeenSet(false),
     m_rangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TypedLinkAttributeRange& TypedLinkAttributeRange::operator =(const JsonValue& jsonValue)
+TypedLinkAttributeRange& TypedLinkAttributeRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AttributeName"))
   {

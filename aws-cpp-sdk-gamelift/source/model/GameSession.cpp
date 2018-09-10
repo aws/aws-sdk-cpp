@@ -40,6 +40,8 @@ GameSession::GameSession() :
     m_maximumPlayerSessionCountHasBeenSet(false),
     m_status(GameSessionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusReason(GameSessionStatusReason::NOT_SET),
+    m_statusReasonHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_port(0),
@@ -47,11 +49,12 @@ GameSession::GameSession() :
     m_playerSessionCreationPolicy(PlayerSessionCreationPolicy::NOT_SET),
     m_playerSessionCreationPolicyHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false)
+    m_gameSessionDataHasBeenSet(false),
+    m_matchmakerDataHasBeenSet(false)
 {
 }
 
-GameSession::GameSession(const JsonValue& jsonValue) : 
+GameSession::GameSession(JsonView jsonValue) : 
     m_gameSessionIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
@@ -63,6 +66,8 @@ GameSession::GameSession(const JsonValue& jsonValue) :
     m_maximumPlayerSessionCountHasBeenSet(false),
     m_status(GameSessionStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusReason(GameSessionStatusReason::NOT_SET),
+    m_statusReasonHasBeenSet(false),
     m_gamePropertiesHasBeenSet(false),
     m_ipAddressHasBeenSet(false),
     m_port(0),
@@ -70,12 +75,13 @@ GameSession::GameSession(const JsonValue& jsonValue) :
     m_playerSessionCreationPolicy(PlayerSessionCreationPolicy::NOT_SET),
     m_playerSessionCreationPolicyHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false)
+    m_gameSessionDataHasBeenSet(false),
+    m_matchmakerDataHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GameSession& GameSession::operator =(const JsonValue& jsonValue)
+GameSession& GameSession::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GameSessionId"))
   {
@@ -133,9 +139,16 @@ GameSession& GameSession::operator =(const JsonValue& jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StatusReason"))
+  {
+    m_statusReason = GameSessionStatusReasonMapper::GetGameSessionStatusReasonForName(jsonValue.GetString("StatusReason"));
+
+    m_statusReasonHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("GameProperties"))
   {
-    Array<JsonValue> gamePropertiesJsonList = jsonValue.GetArray("GameProperties");
+    Array<JsonView> gamePropertiesJsonList = jsonValue.GetArray("GameProperties");
     for(unsigned gamePropertiesIndex = 0; gamePropertiesIndex < gamePropertiesJsonList.GetLength(); ++gamePropertiesIndex)
     {
       m_gameProperties.push_back(gamePropertiesJsonList[gamePropertiesIndex].AsObject());
@@ -176,6 +189,13 @@ GameSession& GameSession::operator =(const JsonValue& jsonValue)
     m_gameSessionData = jsonValue.GetString("GameSessionData");
 
     m_gameSessionDataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MatchmakerData"))
+  {
+    m_matchmakerData = jsonValue.GetString("MatchmakerData");
+
+    m_matchmakerDataHasBeenSet = true;
   }
 
   return *this;
@@ -230,6 +250,11 @@ JsonValue GameSession::Jsonize() const
    payload.WithString("Status", GameSessionStatusMapper::GetNameForGameSessionStatus(m_status));
   }
 
+  if(m_statusReasonHasBeenSet)
+  {
+   payload.WithString("StatusReason", GameSessionStatusReasonMapper::GetNameForGameSessionStatusReason(m_statusReason));
+  }
+
   if(m_gamePropertiesHasBeenSet)
   {
    Array<JsonValue> gamePropertiesJsonList(m_gameProperties.size());
@@ -267,6 +292,12 @@ JsonValue GameSession::Jsonize() const
   if(m_gameSessionDataHasBeenSet)
   {
    payload.WithString("GameSessionData", m_gameSessionData);
+
+  }
+
+  if(m_matchmakerDataHasBeenSet)
+  {
+   payload.WithString("MatchmakerData", m_matchmakerData);
 
   }
 

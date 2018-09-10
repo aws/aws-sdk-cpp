@@ -34,14 +34,14 @@ StringAttributeConstraintsType::StringAttributeConstraintsType() :
 {
 }
 
-StringAttributeConstraintsType::StringAttributeConstraintsType(const JsonValue& jsonValue) : 
+StringAttributeConstraintsType::StringAttributeConstraintsType(JsonView jsonValue) : 
     m_minLengthHasBeenSet(false),
     m_maxLengthHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StringAttributeConstraintsType& StringAttributeConstraintsType::operator =(const JsonValue& jsonValue)
+StringAttributeConstraintsType& StringAttributeConstraintsType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MinLength"))
   {

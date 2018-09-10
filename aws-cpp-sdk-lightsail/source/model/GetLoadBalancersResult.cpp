@@ -37,10 +37,10 @@ GetLoadBalancersResult::GetLoadBalancersResult(const Aws::AmazonWebServiceResult
 
 GetLoadBalancersResult& GetLoadBalancersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("loadBalancers"))
   {
-    Array<JsonValue> loadBalancersJsonList = jsonValue.GetArray("loadBalancers");
+    Array<JsonView> loadBalancersJsonList = jsonValue.GetArray("loadBalancers");
     for(unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex)
     {
       m_loadBalancers.push_back(loadBalancersJsonList[loadBalancersIndex].AsObject());

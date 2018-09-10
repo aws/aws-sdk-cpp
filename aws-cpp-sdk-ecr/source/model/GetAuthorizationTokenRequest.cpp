@@ -42,7 +42,7 @@ Aws::String GetAuthorizationTokenRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetAuthorizationTokenRequest::GetRequestSpecificHeaders() const

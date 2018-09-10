@@ -38,7 +38,7 @@ AttemptContainerDetail::AttemptContainerDetail() :
 {
 }
 
-AttemptContainerDetail::AttemptContainerDetail(const JsonValue& jsonValue) : 
+AttemptContainerDetail::AttemptContainerDetail(JsonView jsonValue) : 
     m_containerInstanceArnHasBeenSet(false),
     m_taskArnHasBeenSet(false),
     m_exitCode(0),
@@ -49,7 +49,7 @@ AttemptContainerDetail::AttemptContainerDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AttemptContainerDetail& AttemptContainerDetail::operator =(const JsonValue& jsonValue)
+AttemptContainerDetail& AttemptContainerDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("containerInstanceArn"))
   {

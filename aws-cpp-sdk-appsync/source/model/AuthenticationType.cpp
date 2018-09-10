@@ -33,6 +33,7 @@ namespace Aws
         static const int API_KEY_HASH = HashingUtils::HashString("API_KEY");
         static const int AWS_IAM_HASH = HashingUtils::HashString("AWS_IAM");
         static const int AMAZON_COGNITO_USER_POOLS_HASH = HashingUtils::HashString("AMAZON_COGNITO_USER_POOLS");
+        static const int OPENID_CONNECT_HASH = HashingUtils::HashString("OPENID_CONNECT");
 
 
         AuthenticationType GetAuthenticationTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == AMAZON_COGNITO_USER_POOLS_HASH)
           {
             return AuthenticationType::AMAZON_COGNITO_USER_POOLS;
+          }
+          else if (hashCode == OPENID_CONNECT_HASH)
+          {
+            return AuthenticationType::OPENID_CONNECT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "AWS_IAM";
           case AuthenticationType::AMAZON_COGNITO_USER_POOLS:
             return "AMAZON_COGNITO_USER_POOLS";
+          case AuthenticationType::OPENID_CONNECT:
+            return "OPENID_CONNECT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

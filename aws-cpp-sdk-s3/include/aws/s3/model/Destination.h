@@ -36,9 +36,9 @@ namespace Model
 {
 
   /**
-   * Container for replication destination information.<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Destination">AWS API
-   * Reference</a></p>
+   * <p>Container for replication destination information.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Destination">AWS
+   * API Reference</a></p>
    */
   class AWS_S3_API Destination
   {
@@ -51,165 +51,170 @@ namespace Model
 
 
     /**
-     * Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule.
+     * <p>Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
+     * replicas of the object identified by the rule.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule.
+     * <p>Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
+     * replicas of the object identified by the rule.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule.
+     * <p>Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
+     * replicas of the object identified by the rule.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule.
+     * <p>Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
+     * replicas of the object identified by the rule.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule.
+     * <p>Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
+     * replicas of the object identified by the rule.</p>
      */
     inline Destination& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule.
+     * <p>Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
+     * replicas of the object identified by the rule.</p>
      */
     inline Destination& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule.
+     * <p>Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
+     * replicas of the object identified by the rule.</p>
      */
     inline Destination& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * Account ID of the destination bucket. Currently this is only being verified if
-     * Access Control Translation is enabled
+     * <p>Account ID of the destination bucket. Currently this is only being verified
+     * if Access Control Translation is enabled</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * Account ID of the destination bucket. Currently this is only being verified if
-     * Access Control Translation is enabled
+     * <p>Account ID of the destination bucket. Currently this is only being verified
+     * if Access Control Translation is enabled</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * Account ID of the destination bucket. Currently this is only being verified if
-     * Access Control Translation is enabled
+     * <p>Account ID of the destination bucket. Currently this is only being verified
+     * if Access Control Translation is enabled</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * Account ID of the destination bucket. Currently this is only being verified if
-     * Access Control Translation is enabled
+     * <p>Account ID of the destination bucket. Currently this is only being verified
+     * if Access Control Translation is enabled</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
     /**
-     * Account ID of the destination bucket. Currently this is only being verified if
-     * Access Control Translation is enabled
+     * <p>Account ID of the destination bucket. Currently this is only being verified
+     * if Access Control Translation is enabled</p>
      */
     inline Destination& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * Account ID of the destination bucket. Currently this is only being verified if
-     * Access Control Translation is enabled
+     * <p>Account ID of the destination bucket. Currently this is only being verified
+     * if Access Control Translation is enabled</p>
      */
     inline Destination& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * Account ID of the destination bucket. Currently this is only being verified if
-     * Access Control Translation is enabled
+     * <p>Account ID of the destination bucket. Currently this is only being verified
+     * if Access Control Translation is enabled</p>
      */
     inline Destination& WithAccount(const char* value) { SetAccount(value); return *this;}
 
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline Destination& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * The class of storage used to store the object.
+     * <p>The class of storage used to store the object.</p>
      */
     inline Destination& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
 
     /**
-     * Container for information regarding the access control for replicas.
+     * <p>Container for information regarding the access control for replicas.</p>
      */
     inline const AccessControlTranslation& GetAccessControlTranslation() const{ return m_accessControlTranslation; }
 
     /**
-     * Container for information regarding the access control for replicas.
+     * <p>Container for information regarding the access control for replicas.</p>
      */
     inline void SetAccessControlTranslation(const AccessControlTranslation& value) { m_accessControlTranslationHasBeenSet = true; m_accessControlTranslation = value; }
 
     /**
-     * Container for information regarding the access control for replicas.
+     * <p>Container for information regarding the access control for replicas.</p>
      */
     inline void SetAccessControlTranslation(AccessControlTranslation&& value) { m_accessControlTranslationHasBeenSet = true; m_accessControlTranslation = std::move(value); }
 
     /**
-     * Container for information regarding the access control for replicas.
+     * <p>Container for information regarding the access control for replicas.</p>
      */
     inline Destination& WithAccessControlTranslation(const AccessControlTranslation& value) { SetAccessControlTranslation(value); return *this;}
 
     /**
-     * Container for information regarding the access control for replicas.
+     * <p>Container for information regarding the access control for replicas.</p>
      */
     inline Destination& WithAccessControlTranslation(AccessControlTranslation&& value) { SetAccessControlTranslation(std::move(value)); return *this;}
 
 
     /**
-     * Container for information regarding encryption based configuration for replicas.
+     * <p>Container for information regarding encryption based configuration for
+     * replicas.</p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
 
     /**
-     * Container for information regarding encryption based configuration for replicas.
+     * <p>Container for information regarding encryption based configuration for
+     * replicas.</p>
      */
     inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
 
     /**
-     * Container for information regarding encryption based configuration for replicas.
+     * <p>Container for information regarding encryption based configuration for
+     * replicas.</p>
      */
     inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
 
     /**
-     * Container for information regarding encryption based configuration for replicas.
+     * <p>Container for information regarding encryption based configuration for
+     * replicas.</p>
      */
     inline Destination& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
 
     /**
-     * Container for information regarding encryption based configuration for replicas.
+     * <p>Container for information regarding encryption based configuration for
+     * replicas.</p>
      */
     inline Destination& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 

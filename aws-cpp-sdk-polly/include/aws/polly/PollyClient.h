@@ -24,8 +24,11 @@
 #include <aws/polly/model/DeleteLexiconResult.h>
 #include <aws/polly/model/DescribeVoicesResult.h>
 #include <aws/polly/model/GetLexiconResult.h>
+#include <aws/polly/model/GetSpeechSynthesisTaskResult.h>
 #include <aws/polly/model/ListLexiconsResult.h>
+#include <aws/polly/model/ListSpeechSynthesisTasksResult.h>
 #include <aws/polly/model/PutLexiconResult.h>
+#include <aws/polly/model/StartSpeechSynthesisTaskResult.h>
 #include <aws/polly/model/SynthesizeSpeechResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -49,11 +52,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -75,22 +73,31 @@ namespace Model
         class DeleteLexiconRequest;
         class DescribeVoicesRequest;
         class GetLexiconRequest;
+        class GetSpeechSynthesisTaskRequest;
         class ListLexiconsRequest;
+        class ListSpeechSynthesisTasksRequest;
         class PutLexiconRequest;
+        class StartSpeechSynthesisTaskRequest;
         class SynthesizeSpeechRequest;
 
         typedef Aws::Utils::Outcome<DeleteLexiconResult, Aws::Client::AWSError<PollyErrors>> DeleteLexiconOutcome;
         typedef Aws::Utils::Outcome<DescribeVoicesResult, Aws::Client::AWSError<PollyErrors>> DescribeVoicesOutcome;
         typedef Aws::Utils::Outcome<GetLexiconResult, Aws::Client::AWSError<PollyErrors>> GetLexiconOutcome;
+        typedef Aws::Utils::Outcome<GetSpeechSynthesisTaskResult, Aws::Client::AWSError<PollyErrors>> GetSpeechSynthesisTaskOutcome;
         typedef Aws::Utils::Outcome<ListLexiconsResult, Aws::Client::AWSError<PollyErrors>> ListLexiconsOutcome;
+        typedef Aws::Utils::Outcome<ListSpeechSynthesisTasksResult, Aws::Client::AWSError<PollyErrors>> ListSpeechSynthesisTasksOutcome;
         typedef Aws::Utils::Outcome<PutLexiconResult, Aws::Client::AWSError<PollyErrors>> PutLexiconOutcome;
+        typedef Aws::Utils::Outcome<StartSpeechSynthesisTaskResult, Aws::Client::AWSError<PollyErrors>> StartSpeechSynthesisTaskOutcome;
         typedef Aws::Utils::Outcome<SynthesizeSpeechResult, Aws::Client::AWSError<PollyErrors>> SynthesizeSpeechOutcome;
 
         typedef std::future<DeleteLexiconOutcome> DeleteLexiconOutcomeCallable;
         typedef std::future<DescribeVoicesOutcome> DescribeVoicesOutcomeCallable;
         typedef std::future<GetLexiconOutcome> GetLexiconOutcomeCallable;
+        typedef std::future<GetSpeechSynthesisTaskOutcome> GetSpeechSynthesisTaskOutcomeCallable;
         typedef std::future<ListLexiconsOutcome> ListLexiconsOutcomeCallable;
+        typedef std::future<ListSpeechSynthesisTasksOutcome> ListSpeechSynthesisTasksOutcomeCallable;
         typedef std::future<PutLexiconOutcome> PutLexiconOutcomeCallable;
+        typedef std::future<StartSpeechSynthesisTaskOutcome> StartSpeechSynthesisTaskOutcomeCallable;
         typedef std::future<SynthesizeSpeechOutcome> SynthesizeSpeechOutcomeCallable;
 } // namespace Model
 
@@ -99,8 +106,11 @@ namespace Model
     typedef std::function<void(const PollyClient*, const Model::DeleteLexiconRequest&, const Model::DeleteLexiconOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLexiconResponseReceivedHandler;
     typedef std::function<void(const PollyClient*, const Model::DescribeVoicesRequest&, const Model::DescribeVoicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVoicesResponseReceivedHandler;
     typedef std::function<void(const PollyClient*, const Model::GetLexiconRequest&, const Model::GetLexiconOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLexiconResponseReceivedHandler;
+    typedef std::function<void(const PollyClient*, const Model::GetSpeechSynthesisTaskRequest&, const Model::GetSpeechSynthesisTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSpeechSynthesisTaskResponseReceivedHandler;
     typedef std::function<void(const PollyClient*, const Model::ListLexiconsRequest&, const Model::ListLexiconsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLexiconsResponseReceivedHandler;
+    typedef std::function<void(const PollyClient*, const Model::ListSpeechSynthesisTasksRequest&, const Model::ListSpeechSynthesisTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSpeechSynthesisTasksResponseReceivedHandler;
     typedef std::function<void(const PollyClient*, const Model::PutLexiconRequest&, const Model::PutLexiconOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLexiconResponseReceivedHandler;
+    typedef std::function<void(const PollyClient*, const Model::StartSpeechSynthesisTaskRequest&, const Model::StartSpeechSynthesisTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSpeechSynthesisTaskResponseReceivedHandler;
     typedef std::function<void(const PollyClient*, const Model::SynthesizeSpeechRequest&, const Model::SynthesizeSpeechOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SynthesizeSpeechResponseReceivedHandler;
 
   /**
@@ -136,7 +146,7 @@ namespace Model
 
         virtual ~PollyClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "polly"; }
+        inline virtual const char* GetServiceClientName() const override { return "Polly"; }
 
 
         /**
@@ -275,6 +285,40 @@ namespace Model
         virtual void GetLexiconAsync(const Model::GetLexiconRequest& request, const GetLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves a specific SpeechSynthesisTask object based on its TaskID. This
+         * object contains information about the given speech synthesis task, including the
+         * status of the task, and a link to the S3 bucket containing the output of the
+         * task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSpeechSynthesisTaskOutcome GetSpeechSynthesisTask(const Model::GetSpeechSynthesisTaskRequest& request) const;
+
+        /**
+         * <p>Retrieves a specific SpeechSynthesisTask object based on its TaskID. This
+         * object contains information about the given speech synthesis task, including the
+         * status of the task, and a link to the S3 bucket containing the output of the
+         * task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSpeechSynthesisTaskOutcomeCallable GetSpeechSynthesisTaskCallable(const Model::GetSpeechSynthesisTaskRequest& request) const;
+
+        /**
+         * <p>Retrieves a specific SpeechSynthesisTask object based on its TaskID. This
+         * object contains information about the given speech synthesis task, including the
+         * status of the task, and a link to the S3 bucket containing the output of the
+         * task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/GetSpeechSynthesisTask">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSpeechSynthesisTaskAsync(const Model::GetSpeechSynthesisTaskRequest& request, const GetSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of pronunciation lexicons stored in an AWS Region. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
@@ -307,6 +351,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListLexiconsAsync(const Model::ListLexiconsRequest& request, const ListLexiconsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of SpeechSynthesisTask objects ordered by their creation date.
+         * This operation can filter the tasks by their status, for example, allowing users
+         * to list only tasks that are completed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSpeechSynthesisTasksOutcome ListSpeechSynthesisTasks(const Model::ListSpeechSynthesisTasksRequest& request) const;
+
+        /**
+         * <p>Returns a list of SpeechSynthesisTask objects ordered by their creation date.
+         * This operation can filter the tasks by their status, for example, allowing users
+         * to list only tasks that are completed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSpeechSynthesisTasksOutcomeCallable ListSpeechSynthesisTasksCallable(const Model::ListSpeechSynthesisTasksRequest& request) const;
+
+        /**
+         * <p>Returns a list of SpeechSynthesisTask objects ordered by their creation date.
+         * This operation can filter the tasks by their status, for example, allowing users
+         * to list only tasks that are completed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListSpeechSynthesisTasks">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSpeechSynthesisTasksAsync(const Model::ListSpeechSynthesisTasksRequest& request, const ListSpeechSynthesisTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stores a pronunciation lexicon in an AWS Region. If a lexicon with the same
@@ -350,6 +425,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutLexiconAsync(const Model::PutLexiconRequest& request, const PutLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Allows the creation of an asynchronous synthesis task, by starting a new
+         * <code>SpeechSynthesisTask</code>. This operation requires all the standard
+         * information needed for speech synthesis, plus the name of an Amazon S3 bucket
+         * for the service to store the output of the synthesis task and two optional
+         * parameters (OutputS3KeyPrefix and SnsTopicArn). Once the synthesis task is
+         * created, this operation will return a SpeechSynthesisTask object, which will
+         * include an identifier of this task as well as the current status.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSpeechSynthesisTaskOutcome StartSpeechSynthesisTask(const Model::StartSpeechSynthesisTaskRequest& request) const;
+
+        /**
+         * <p>Allows the creation of an asynchronous synthesis task, by starting a new
+         * <code>SpeechSynthesisTask</code>. This operation requires all the standard
+         * information needed for speech synthesis, plus the name of an Amazon S3 bucket
+         * for the service to store the output of the synthesis task and two optional
+         * parameters (OutputS3KeyPrefix and SnsTopicArn). Once the synthesis task is
+         * created, this operation will return a SpeechSynthesisTask object, which will
+         * include an identifier of this task as well as the current status.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartSpeechSynthesisTaskOutcomeCallable StartSpeechSynthesisTaskCallable(const Model::StartSpeechSynthesisTaskRequest& request) const;
+
+        /**
+         * <p>Allows the creation of an asynchronous synthesis task, by starting a new
+         * <code>SpeechSynthesisTask</code>. This operation requires all the standard
+         * information needed for speech synthesis, plus the name of an Amazon S3 bucket
+         * for the service to store the output of the synthesis task and two optional
+         * parameters (OutputS3KeyPrefix and SnsTopicArn). Once the synthesis task is
+         * created, this operation will return a SpeechSynthesisTask object, which will
+         * include an identifier of this task as well as the current status.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartSpeechSynthesisTaskAsync(const Model::StartSpeechSynthesisTaskRequest& request, const StartSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input
@@ -399,8 +520,11 @@ namespace Model
         void DeleteLexiconAsyncHelper(const Model::DeleteLexiconRequest& request, const DeleteLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeVoicesAsyncHelper(const Model::DescribeVoicesRequest& request, const DescribeVoicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLexiconAsyncHelper(const Model::GetLexiconRequest& request, const GetLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSpeechSynthesisTaskAsyncHelper(const Model::GetSpeechSynthesisTaskRequest& request, const GetSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLexiconsAsyncHelper(const Model::ListLexiconsRequest& request, const ListLexiconsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSpeechSynthesisTasksAsyncHelper(const Model::ListSpeechSynthesisTasksRequest& request, const ListSpeechSynthesisTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLexiconAsyncHelper(const Model::PutLexiconRequest& request, const PutLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartSpeechSynthesisTaskAsyncHelper(const Model::StartSpeechSynthesisTaskRequest& request, const StartSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SynthesizeSpeechAsyncHelper(const Model::SynthesizeSpeechRequest& request, const SynthesizeSpeechResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

@@ -35,7 +35,7 @@ NetworkInterface::NetworkInterface() :
 {
 }
 
-NetworkInterface::NetworkInterface(const JsonValue& jsonValue) : 
+NetworkInterface::NetworkInterface(JsonView jsonValue) : 
     m_ipv4AddressHasBeenSet(false),
     m_macAddressHasBeenSet(false),
     m_ipv6AddressHasBeenSet(false)
@@ -43,7 +43,7 @@ NetworkInterface::NetworkInterface(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NetworkInterface& NetworkInterface::operator =(const JsonValue& jsonValue)
+NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Ipv4Address"))
   {

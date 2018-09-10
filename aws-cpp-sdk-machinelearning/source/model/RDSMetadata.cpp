@@ -38,7 +38,7 @@ RDSMetadata::RDSMetadata() :
 {
 }
 
-RDSMetadata::RDSMetadata(const JsonValue& jsonValue) : 
+RDSMetadata::RDSMetadata(JsonView jsonValue) : 
     m_databaseHasBeenSet(false),
     m_databaseUserNameHasBeenSet(false),
     m_selectSqlQueryHasBeenSet(false),
@@ -49,7 +49,7 @@ RDSMetadata::RDSMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RDSMetadata& RDSMetadata::operator =(const JsonValue& jsonValue)
+RDSMetadata& RDSMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Database"))
   {

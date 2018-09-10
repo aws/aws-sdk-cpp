@@ -37,7 +37,7 @@ InventoryRetrievalJobDescription::InventoryRetrievalJobDescription() :
 {
 }
 
-InventoryRetrievalJobDescription::InventoryRetrievalJobDescription(const JsonValue& jsonValue) : 
+InventoryRetrievalJobDescription::InventoryRetrievalJobDescription(JsonView jsonValue) : 
     m_formatHasBeenSet(false),
     m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),
@@ -47,7 +47,7 @@ InventoryRetrievalJobDescription::InventoryRetrievalJobDescription(const JsonVal
   *this = jsonValue;
 }
 
-InventoryRetrievalJobDescription& InventoryRetrievalJobDescription::operator =(const JsonValue& jsonValue)
+InventoryRetrievalJobDescription& InventoryRetrievalJobDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Format"))
   {

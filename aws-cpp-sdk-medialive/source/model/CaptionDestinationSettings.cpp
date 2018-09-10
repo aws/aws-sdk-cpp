@@ -34,6 +34,7 @@ CaptionDestinationSettings::CaptionDestinationSettings() :
     m_dvbSubDestinationSettingsHasBeenSet(false),
     m_embeddedDestinationSettingsHasBeenSet(false),
     m_embeddedPlusScte20DestinationSettingsHasBeenSet(false),
+    m_rtmpCaptionInfoDestinationSettingsHasBeenSet(false),
     m_scte20PlusEmbeddedDestinationSettingsHasBeenSet(false),
     m_scte27DestinationSettingsHasBeenSet(false),
     m_smpteTtDestinationSettingsHasBeenSet(false),
@@ -43,12 +44,13 @@ CaptionDestinationSettings::CaptionDestinationSettings() :
 {
 }
 
-CaptionDestinationSettings::CaptionDestinationSettings(const JsonValue& jsonValue) : 
+CaptionDestinationSettings::CaptionDestinationSettings(JsonView jsonValue) : 
     m_aribDestinationSettingsHasBeenSet(false),
     m_burnInDestinationSettingsHasBeenSet(false),
     m_dvbSubDestinationSettingsHasBeenSet(false),
     m_embeddedDestinationSettingsHasBeenSet(false),
     m_embeddedPlusScte20DestinationSettingsHasBeenSet(false),
+    m_rtmpCaptionInfoDestinationSettingsHasBeenSet(false),
     m_scte20PlusEmbeddedDestinationSettingsHasBeenSet(false),
     m_scte27DestinationSettingsHasBeenSet(false),
     m_smpteTtDestinationSettingsHasBeenSet(false),
@@ -59,7 +61,7 @@ CaptionDestinationSettings::CaptionDestinationSettings(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-CaptionDestinationSettings& CaptionDestinationSettings::operator =(const JsonValue& jsonValue)
+CaptionDestinationSettings& CaptionDestinationSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("aribDestinationSettings"))
   {
@@ -94,6 +96,13 @@ CaptionDestinationSettings& CaptionDestinationSettings::operator =(const JsonVal
     m_embeddedPlusScte20DestinationSettings = jsonValue.GetObject("embeddedPlusScte20DestinationSettings");
 
     m_embeddedPlusScte20DestinationSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("rtmpCaptionInfoDestinationSettings"))
+  {
+    m_rtmpCaptionInfoDestinationSettings = jsonValue.GetObject("rtmpCaptionInfoDestinationSettings");
+
+    m_rtmpCaptionInfoDestinationSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scte20PlusEmbeddedDestinationSettings"))
@@ -172,6 +181,12 @@ JsonValue CaptionDestinationSettings::Jsonize() const
   if(m_embeddedPlusScte20DestinationSettingsHasBeenSet)
   {
    payload.WithObject("embeddedPlusScte20DestinationSettings", m_embeddedPlusScte20DestinationSettings.Jsonize());
+
+  }
+
+  if(m_rtmpCaptionInfoDestinationSettingsHasBeenSet)
+  {
+   payload.WithObject("rtmpCaptionInfoDestinationSettings", m_rtmpCaptionInfoDestinationSettings.Jsonize());
 
   }
 

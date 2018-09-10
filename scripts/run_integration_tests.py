@@ -63,6 +63,9 @@ def Main():
 
     for testName in testList:
         testExe = arguments["buildDir"] + "/" + testName + "/" + configDir + "/" + testName + exeExtension
+        # when build with BUILD_ONLY, not all test binaries will be generated.
+        if not os.path.isfile(testExe):
+            continue
         prefix = "--aws_resource_prefix=" + platform.system().lower()
         print("testExe = " + testExe)
         print("prefix = " + prefix)

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     AudioLanguageSelection();
-    AudioLanguageSelection(const Aws::Utils::Json::JsonValue& jsonValue);
-    AudioLanguageSelection& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AudioLanguageSelection(Aws::Utils::Json::JsonView jsonValue);
+    AudioLanguageSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

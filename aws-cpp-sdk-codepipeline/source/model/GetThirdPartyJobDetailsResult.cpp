@@ -37,7 +37,7 @@ GetThirdPartyJobDetailsResult::GetThirdPartyJobDetailsResult(const Aws::AmazonWe
 
 GetThirdPartyJobDetailsResult& GetThirdPartyJobDetailsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("jobDetails"))
   {
     m_jobDetails = jsonValue.GetObject("jobDetails");

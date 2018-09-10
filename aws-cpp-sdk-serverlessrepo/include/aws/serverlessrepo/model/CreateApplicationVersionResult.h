@@ -45,217 +45,238 @@ namespace Model
 
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationId = value; }
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationId = std::move(value); }
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationId.assign(value); }
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline CreateApplicationVersionResult& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline CreateApplicationVersionResult& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The application Amazon Resource Name (ARN).
+     * <p>The application Amazon Resource Name (ARN).</p>
      */
     inline CreateApplicationVersionResult& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * The date/time this resource was created.
+     * <p>The date and time this resource was created.</p>
      */
     inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * The date/time this resource was created.
+     * <p>The date and time this resource was created.</p>
      */
     inline void SetCreationTime(const Aws::String& value) { m_creationTime = value; }
 
     /**
-     * The date/time this resource was created.
+     * <p>The date and time this resource was created.</p>
      */
     inline void SetCreationTime(Aws::String&& value) { m_creationTime = std::move(value); }
 
     /**
-     * The date/time this resource was created.
+     * <p>The date and time this resource was created.</p>
      */
     inline void SetCreationTime(const char* value) { m_creationTime.assign(value); }
 
     /**
-     * The date/time this resource was created.
+     * <p>The date and time this resource was created.</p>
      */
     inline CreateApplicationVersionResult& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
 
     /**
-     * The date/time this resource was created.
+     * <p>The date and time this resource was created.</p>
      */
     inline CreateApplicationVersionResult& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
 
     /**
-     * The date/time this resource was created.
+     * <p>The date and time this resource was created.</p>
      */
     inline CreateApplicationVersionResult& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
 
 
     /**
-     * Array of parameter types supported by the application.
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline const Aws::Vector<ParameterDefinition>& GetParameterDefinitions() const{ return m_parameterDefinitions; }
 
     /**
-     * Array of parameter types supported by the application.
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline void SetParameterDefinitions(const Aws::Vector<ParameterDefinition>& value) { m_parameterDefinitions = value; }
 
     /**
-     * Array of parameter types supported by the application.
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline void SetParameterDefinitions(Aws::Vector<ParameterDefinition>&& value) { m_parameterDefinitions = std::move(value); }
 
     /**
-     * Array of parameter types supported by the application.
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline CreateApplicationVersionResult& WithParameterDefinitions(const Aws::Vector<ParameterDefinition>& value) { SetParameterDefinitions(value); return *this;}
 
     /**
-     * Array of parameter types supported by the application.
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline CreateApplicationVersionResult& WithParameterDefinitions(Aws::Vector<ParameterDefinition>&& value) { SetParameterDefinitions(std::move(value)); return *this;}
 
     /**
-     * Array of parameter types supported by the application.
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline CreateApplicationVersionResult& AddParameterDefinitions(const ParameterDefinition& value) { m_parameterDefinitions.push_back(value); return *this; }
 
     /**
-     * Array of parameter types supported by the application.
+     * <p>An array of parameter types supported by the application.</p>
      */
     inline CreateApplicationVersionResult& AddParameterDefinitions(ParameterDefinition&& value) { m_parameterDefinitions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersion = value; }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersion = std::move(value); }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersion.assign(value); }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline CreateApplicationVersionResult& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline CreateApplicationVersionResult& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
      */
     inline CreateApplicationVersionResult& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
 
 
     /**
-     * A link to a public repository for the source code of your application.
+     * <p>A link to a public repository for the source code of your application.</p>
      */
     inline const Aws::String& GetSourceCodeUrl() const{ return m_sourceCodeUrl; }
 
     /**
-     * A link to a public repository for the source code of your application.
+     * <p>A link to a public repository for the source code of your application.</p>
      */
     inline void SetSourceCodeUrl(const Aws::String& value) { m_sourceCodeUrl = value; }
 
     /**
-     * A link to a public repository for the source code of your application.
+     * <p>A link to a public repository for the source code of your application.</p>
      */
     inline void SetSourceCodeUrl(Aws::String&& value) { m_sourceCodeUrl = std::move(value); }
 
     /**
-     * A link to a public repository for the source code of your application.
+     * <p>A link to a public repository for the source code of your application.</p>
      */
     inline void SetSourceCodeUrl(const char* value) { m_sourceCodeUrl.assign(value); }
 
     /**
-     * A link to a public repository for the source code of your application.
+     * <p>A link to a public repository for the source code of your application.</p>
      */
     inline CreateApplicationVersionResult& WithSourceCodeUrl(const Aws::String& value) { SetSourceCodeUrl(value); return *this;}
 
     /**
-     * A link to a public repository for the source code of your application.
+     * <p>A link to a public repository for the source code of your application.</p>
      */
     inline CreateApplicationVersionResult& WithSourceCodeUrl(Aws::String&& value) { SetSourceCodeUrl(std::move(value)); return *this;}
 
     /**
-     * A link to a public repository for the source code of your application.
+     * <p>A link to a public repository for the source code of your application.</p>
      */
     inline CreateApplicationVersionResult& WithSourceCodeUrl(const char* value) { SetSourceCodeUrl(value); return *this;}
 
 
     /**
-     * A link to the packaged SAM template of your application.
+     * <p>A link to the packaged AWS SAM template of your application.</p>
      */
     inline const Aws::String& GetTemplateUrl() const{ return m_templateUrl; }
 
     /**
-     * A link to the packaged SAM template of your application.
+     * <p>A link to the packaged AWS SAM template of your application.</p>
      */
     inline void SetTemplateUrl(const Aws::String& value) { m_templateUrl = value; }
 
     /**
-     * A link to the packaged SAM template of your application.
+     * <p>A link to the packaged AWS SAM template of your application.</p>
      */
     inline void SetTemplateUrl(Aws::String&& value) { m_templateUrl = std::move(value); }
 
     /**
-     * A link to the packaged SAM template of your application.
+     * <p>A link to the packaged AWS SAM template of your application.</p>
      */
     inline void SetTemplateUrl(const char* value) { m_templateUrl.assign(value); }
 
     /**
-     * A link to the packaged SAM template of your application.
+     * <p>A link to the packaged AWS SAM template of your application.</p>
      */
     inline CreateApplicationVersionResult& WithTemplateUrl(const Aws::String& value) { SetTemplateUrl(value); return *this;}
 
     /**
-     * A link to the packaged SAM template of your application.
+     * <p>A link to the packaged AWS SAM template of your application.</p>
      */
     inline CreateApplicationVersionResult& WithTemplateUrl(Aws::String&& value) { SetTemplateUrl(std::move(value)); return *this;}
 
     /**
-     * A link to the packaged SAM template of your application.
+     * <p>A link to the packaged AWS SAM template of your application.</p>
      */
     inline CreateApplicationVersionResult& WithTemplateUrl(const char* value) { SetTemplateUrl(value); return *this;}
 

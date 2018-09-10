@@ -82,11 +82,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -297,7 +292,7 @@ namespace Model
 
         virtual ~MTurkClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mturk-requester"; }
+        inline virtual const char* GetServiceClientName() const override { return "MTurk"; }
 
 
         /**
@@ -1015,7 +1010,11 @@ namespace Model
          * generated the instant the GetFileUploadURL operation is called, and is valid for
          * 60 seconds. You can get a temporary file upload URL any time until the HIT is
          * disposed. After the HIT is disposed, any uploaded files are deleted, and cannot
-         * be retrieved. </p><p><h3>See Also:</h3>   <a
+         * be retrieved. Pending Deprecation on December 12, 2017. The Answer Specification
+         * structure will no longer support the <code>FileUploadAnswer</code> element to be
+         * used for the QuestionForm data structure. Instead, we recommend that Requesters
+         * who want to create HITs asking Workers to upload files to use Amazon S3.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetFileUploadURL">AWS
          * API Reference</a></p>
          */
@@ -1028,7 +1027,11 @@ namespace Model
          * generated the instant the GetFileUploadURL operation is called, and is valid for
          * 60 seconds. You can get a temporary file upload URL any time until the HIT is
          * disposed. After the HIT is disposed, any uploaded files are deleted, and cannot
-         * be retrieved. </p><p><h3>See Also:</h3>   <a
+         * be retrieved. Pending Deprecation on December 12, 2017. The Answer Specification
+         * structure will no longer support the <code>FileUploadAnswer</code> element to be
+         * used for the QuestionForm data structure. Instead, we recommend that Requesters
+         * who want to create HITs asking Workers to upload files to use Amazon S3.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetFileUploadURL">AWS
          * API Reference</a></p>
          *
@@ -1043,7 +1046,11 @@ namespace Model
          * generated the instant the GetFileUploadURL operation is called, and is valid for
          * 60 seconds. You can get a temporary file upload URL any time until the HIT is
          * disposed. After the HIT is disposed, any uploaded files are deleted, and cannot
-         * be retrieved. </p><p><h3>See Also:</h3>   <a
+         * be retrieved. Pending Deprecation on December 12, 2017. The Answer Specification
+         * structure will no longer support the <code>FileUploadAnswer</code> element to be
+         * used for the QuestionForm data structure. Instead, we recommend that Requesters
+         * who want to create HITs asking Workers to upload files to use Amazon S3.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetFileUploadURL">AWS
          * API Reference</a></p>
          *
@@ -1357,22 +1364,18 @@ namespace Model
         virtual void ListQualificationRequestsAsync(const Model::ListQualificationRequestsRequest& request, const ListQualificationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> The <code>ListQualificationRequests</code> operation retrieves requests for
-         * Qualifications of a particular Qualification type. The owner of the
-         * Qualification type calls this operation to poll for pending requests, and
-         * accepts them using the AcceptQualification operation. </p><p><h3>See Also:</h3> 
-         * <a
+         * <p> The <code>ListQualificationTypes</code> operation returns a list of
+         * Qualification types, filtered by an optional search term. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationTypes">AWS
          * API Reference</a></p>
          */
         virtual Model::ListQualificationTypesOutcome ListQualificationTypes(const Model::ListQualificationTypesRequest& request) const;
 
         /**
-         * <p> The <code>ListQualificationRequests</code> operation retrieves requests for
-         * Qualifications of a particular Qualification type. The owner of the
-         * Qualification type calls this operation to poll for pending requests, and
-         * accepts them using the AcceptQualification operation. </p><p><h3>See Also:</h3> 
-         * <a
+         * <p> The <code>ListQualificationTypes</code> operation returns a list of
+         * Qualification types, filtered by an optional search term. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationTypes">AWS
          * API Reference</a></p>
          *
@@ -1381,11 +1384,9 @@ namespace Model
         virtual Model::ListQualificationTypesOutcomeCallable ListQualificationTypesCallable(const Model::ListQualificationTypesRequest& request) const;
 
         /**
-         * <p> The <code>ListQualificationRequests</code> operation retrieves requests for
-         * Qualifications of a particular Qualification type. The owner of the
-         * Qualification type calls this operation to poll for pending requests, and
-         * accepts them using the AcceptQualification operation. </p><p><h3>See Also:</h3> 
-         * <a
+         * <p> The <code>ListQualificationTypes</code> operation returns a list of
+         * Qualification types, filtered by an optional search term. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/ListQualificationTypes">AWS
          * API Reference</a></p>
          *

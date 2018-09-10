@@ -36,7 +36,10 @@ PutScalingPolicyRequest::PutScalingPolicyRequest() :
     m_evaluationPeriods(0),
     m_evaluationPeriodsHasBeenSet(false),
     m_metricName(MetricName::NOT_SET),
-    m_metricNameHasBeenSet(false)
+    m_metricNameHasBeenSet(false),
+    m_policyType(PolicyType::NOT_SET),
+    m_policyTypeHasBeenSet(false),
+    m_targetConfigurationHasBeenSet(false)
 {
 }
 
@@ -89,7 +92,18 @@ Aws::String PutScalingPolicyRequest::SerializePayload() const
    payload.WithString("MetricName", MetricNameMapper::GetNameForMetricName(m_metricName));
   }
 
-  return payload.WriteReadable();
+  if(m_policyTypeHasBeenSet)
+  {
+   payload.WithString("PolicyType", PolicyTypeMapper::GetNameForPolicyType(m_policyType));
+  }
+
+  if(m_targetConfigurationHasBeenSet)
+  {
+   payload.WithObject("TargetConfiguration", m_targetConfiguration.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutScalingPolicyRequest::GetRequestSpecificHeaders() const

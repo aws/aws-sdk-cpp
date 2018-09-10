@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ElasticLoadBalancer();
-    ElasticLoadBalancer(const Aws::Utils::Json::JsonValue& jsonValue);
-    ElasticLoadBalancer& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ElasticLoadBalancer(Aws::Utils::Json::JsonView jsonValue);
+    ElasticLoadBalancer& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

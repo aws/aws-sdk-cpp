@@ -35,7 +35,7 @@ CompareFacesMatch::CompareFacesMatch() :
 {
 }
 
-CompareFacesMatch::CompareFacesMatch(const JsonValue& jsonValue) : 
+CompareFacesMatch::CompareFacesMatch(JsonView jsonValue) : 
     m_similarity(0.0),
     m_similarityHasBeenSet(false),
     m_faceHasBeenSet(false)
@@ -43,7 +43,7 @@ CompareFacesMatch::CompareFacesMatch(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CompareFacesMatch& CompareFacesMatch::operator =(const JsonValue& jsonValue)
+CompareFacesMatch& CompareFacesMatch::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Similarity"))
   {

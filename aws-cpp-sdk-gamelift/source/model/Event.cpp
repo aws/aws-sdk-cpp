@@ -39,7 +39,7 @@ Event::Event() :
 {
 }
 
-Event::Event(const JsonValue& jsonValue) : 
+Event::Event(JsonView jsonValue) : 
     m_eventIdHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_eventCode(EventCode::NOT_SET),
@@ -51,7 +51,7 @@ Event::Event(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Event& Event::operator =(const JsonValue& jsonValue)
+Event& Event::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EventId"))
   {

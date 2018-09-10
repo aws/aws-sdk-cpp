@@ -35,7 +35,7 @@ PolicyParameter::PolicyParameter() :
 {
 }
 
-PolicyParameter::PolicyParameter(const JsonValue& jsonValue) : 
+PolicyParameter::PolicyParameter(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valuesHasBeenSet(false),
     m_mapEntriesHasBeenSet(false)
@@ -43,7 +43,7 @@ PolicyParameter::PolicyParameter(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PolicyParameter& PolicyParameter::operator =(const JsonValue& jsonValue)
+PolicyParameter& PolicyParameter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {
@@ -54,7 +54,7 @@ PolicyParameter& PolicyParameter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonValue> valuesJsonList = jsonValue.GetArray("Values");
+    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
@@ -64,7 +64,7 @@ PolicyParameter& PolicyParameter::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("MapEntries"))
   {
-    Array<JsonValue> mapEntriesJsonList = jsonValue.GetArray("MapEntries");
+    Array<JsonView> mapEntriesJsonList = jsonValue.GetArray("MapEntries");
     for(unsigned mapEntriesIndex = 0; mapEntriesIndex < mapEntriesJsonList.GetLength(); ++mapEntriesIndex)
     {
       m_mapEntries.push_back(mapEntriesJsonList[mapEntriesIndex].AsObject());

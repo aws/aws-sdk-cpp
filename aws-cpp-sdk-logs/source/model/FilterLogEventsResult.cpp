@@ -37,10 +37,10 @@ FilterLogEventsResult::FilterLogEventsResult(const Aws::AmazonWebServiceResult<J
 
 FilterLogEventsResult& FilterLogEventsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("events"))
   {
-    Array<JsonValue> eventsJsonList = jsonValue.GetArray("events");
+    Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
@@ -49,7 +49,7 @@ FilterLogEventsResult& FilterLogEventsResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("searchedLogStreams"))
   {
-    Array<JsonValue> searchedLogStreamsJsonList = jsonValue.GetArray("searchedLogStreams");
+    Array<JsonView> searchedLogStreamsJsonList = jsonValue.GetArray("searchedLogStreams");
     for(unsigned searchedLogStreamsIndex = 0; searchedLogStreamsIndex < searchedLogStreamsJsonList.GetLength(); ++searchedLogStreamsIndex)
     {
       m_searchedLogStreams.push_back(searchedLogStreamsJsonList[searchedLogStreamsIndex].AsObject());

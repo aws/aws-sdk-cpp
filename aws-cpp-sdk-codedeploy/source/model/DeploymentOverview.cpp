@@ -44,7 +44,7 @@ DeploymentOverview::DeploymentOverview() :
 {
 }
 
-DeploymentOverview::DeploymentOverview(const JsonValue& jsonValue) : 
+DeploymentOverview::DeploymentOverview(JsonView jsonValue) : 
     m_pending(0),
     m_pendingHasBeenSet(false),
     m_inProgress(0),
@@ -61,7 +61,7 @@ DeploymentOverview::DeploymentOverview(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeploymentOverview& DeploymentOverview::operator =(const JsonValue& jsonValue)
+DeploymentOverview& DeploymentOverview::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Pending"))
   {

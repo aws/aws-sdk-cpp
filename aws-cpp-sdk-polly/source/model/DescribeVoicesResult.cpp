@@ -37,10 +37,10 @@ DescribeVoicesResult::DescribeVoicesResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeVoicesResult& DescribeVoicesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Voices"))
   {
-    Array<JsonValue> voicesJsonList = jsonValue.GetArray("Voices");
+    Array<JsonView> voicesJsonList = jsonValue.GetArray("Voices");
     for(unsigned voicesIndex = 0; voicesIndex < voicesJsonList.GetLength(); ++voicesIndex)
     {
       m_voices.push_back(voicesJsonList[voicesIndex].AsObject());

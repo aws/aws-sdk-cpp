@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -32,9 +33,9 @@ namespace Model
 
   /**
    * <p>Describes hints for the buffering to perform before delivering data to the
-   * destination. Please note that these options are treated as hints, and therefore
-   * Kinesis Firehose may choose to use different values when it is
-   * optimal.</p><p><h3>See Also:</h3>   <a
+   * destination. These options are treated as hints, and therefore Kinesis Data
+   * Firehose might choose to use different values when it is optimal.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/BufferingHints">AWS
    * API Reference</a></p>
    */
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     BufferingHints();
-    BufferingHints(const Aws::Utils::Json::JsonValue& jsonValue);
-    BufferingHints& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BufferingHints(Aws::Utils::Json::JsonView jsonValue);
+    BufferingHints& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

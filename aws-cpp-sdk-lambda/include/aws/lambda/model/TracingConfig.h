@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lambda
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     TracingConfig();
-    TracingConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    TracingConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TracingConfig(Aws::Utils::Json::JsonView jsonValue);
+    TracingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -33,13 +33,13 @@ SourceDescription::SourceDescription() :
 {
 }
 
-SourceDescription::SourceDescription(const JsonValue& jsonValue) : 
+SourceDescription::SourceDescription(JsonView jsonValue) : 
     m_kinesisStreamSourceDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SourceDescription& SourceDescription::operator =(const JsonValue& jsonValue)
+SourceDescription& SourceDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("KinesisStreamSourceDescription"))
   {

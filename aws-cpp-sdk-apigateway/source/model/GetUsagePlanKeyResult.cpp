@@ -37,7 +37,7 @@ GetUsagePlanKeyResult::GetUsagePlanKeyResult(const Aws::AmazonWebServiceResult<J
 
 GetUsagePlanKeyResult& GetUsagePlanKeyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");

@@ -58,73 +58,73 @@ namespace Model
 
 
     /**
-     * <p>The name of the API action tested on the indicated resource.</p>
+     * <p>The name of the API operation tested on the indicated resource.</p>
      */
     inline const Aws::String& GetEvalActionName() const{ return m_evalActionName; }
 
     /**
-     * <p>The name of the API action tested on the indicated resource.</p>
+     * <p>The name of the API operation tested on the indicated resource.</p>
      */
     inline void SetEvalActionName(const Aws::String& value) { m_evalActionNameHasBeenSet = true; m_evalActionName = value; }
 
     /**
-     * <p>The name of the API action tested on the indicated resource.</p>
+     * <p>The name of the API operation tested on the indicated resource.</p>
      */
     inline void SetEvalActionName(Aws::String&& value) { m_evalActionNameHasBeenSet = true; m_evalActionName = std::move(value); }
 
     /**
-     * <p>The name of the API action tested on the indicated resource.</p>
+     * <p>The name of the API operation tested on the indicated resource.</p>
      */
     inline void SetEvalActionName(const char* value) { m_evalActionNameHasBeenSet = true; m_evalActionName.assign(value); }
 
     /**
-     * <p>The name of the API action tested on the indicated resource.</p>
+     * <p>The name of the API operation tested on the indicated resource.</p>
      */
     inline EvaluationResult& WithEvalActionName(const Aws::String& value) { SetEvalActionName(value); return *this;}
 
     /**
-     * <p>The name of the API action tested on the indicated resource.</p>
+     * <p>The name of the API operation tested on the indicated resource.</p>
      */
     inline EvaluationResult& WithEvalActionName(Aws::String&& value) { SetEvalActionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the API action tested on the indicated resource.</p>
+     * <p>The name of the API operation tested on the indicated resource.</p>
      */
     inline EvaluationResult& WithEvalActionName(const char* value) { SetEvalActionName(value); return *this;}
 
 
     /**
-     * <p>The ARN of the resource that the indicated API action was tested on.</p>
+     * <p>The ARN of the resource that the indicated API operation was tested on.</p>
      */
     inline const Aws::String& GetEvalResourceName() const{ return m_evalResourceName; }
 
     /**
-     * <p>The ARN of the resource that the indicated API action was tested on.</p>
+     * <p>The ARN of the resource that the indicated API operation was tested on.</p>
      */
     inline void SetEvalResourceName(const Aws::String& value) { m_evalResourceNameHasBeenSet = true; m_evalResourceName = value; }
 
     /**
-     * <p>The ARN of the resource that the indicated API action was tested on.</p>
+     * <p>The ARN of the resource that the indicated API operation was tested on.</p>
      */
     inline void SetEvalResourceName(Aws::String&& value) { m_evalResourceNameHasBeenSet = true; m_evalResourceName = std::move(value); }
 
     /**
-     * <p>The ARN of the resource that the indicated API action was tested on.</p>
+     * <p>The ARN of the resource that the indicated API operation was tested on.</p>
      */
     inline void SetEvalResourceName(const char* value) { m_evalResourceNameHasBeenSet = true; m_evalResourceName.assign(value); }
 
     /**
-     * <p>The ARN of the resource that the indicated API action was tested on.</p>
+     * <p>The ARN of the resource that the indicated API operation was tested on.</p>
      */
     inline EvaluationResult& WithEvalResourceName(const Aws::String& value) { SetEvalResourceName(value); return *this;}
 
     /**
-     * <p>The ARN of the resource that the indicated API action was tested on.</p>
+     * <p>The ARN of the resource that the indicated API operation was tested on.</p>
      */
     inline EvaluationResult& WithEvalResourceName(Aws::String&& value) { SetEvalResourceName(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the resource that the indicated API action was tested on.</p>
+     * <p>The ARN of the resource that the indicated API operation was tested on.</p>
      */
     inline EvaluationResult& WithEvalResourceName(const char* value) { SetEvalResourceName(value); return *this;}
 
@@ -157,64 +157,64 @@ namespace Model
 
     /**
      * <p>A list of the statements in the input policies that determine the result for
-     * this scenario. Remember that even if multiple statements allow the action on the
-     * resource, if only one statement denies that action, then the explicit deny
-     * overrides any allow, and the deny statement is the only entry included in the
-     * result.</p>
+     * this scenario. Remember that even if multiple statements allow the operation on
+     * the resource, if only one statement denies that operation, then the explicit
+     * deny overrides any allow, and the deny statement is the only entry included in
+     * the result.</p>
      */
     inline const Aws::Vector<Statement>& GetMatchedStatements() const{ return m_matchedStatements; }
 
     /**
      * <p>A list of the statements in the input policies that determine the result for
-     * this scenario. Remember that even if multiple statements allow the action on the
-     * resource, if only one statement denies that action, then the explicit deny
-     * overrides any allow, and the deny statement is the only entry included in the
-     * result.</p>
+     * this scenario. Remember that even if multiple statements allow the operation on
+     * the resource, if only one statement denies that operation, then the explicit
+     * deny overrides any allow, and the deny statement is the only entry included in
+     * the result.</p>
      */
     inline void SetMatchedStatements(const Aws::Vector<Statement>& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = value; }
 
     /**
      * <p>A list of the statements in the input policies that determine the result for
-     * this scenario. Remember that even if multiple statements allow the action on the
-     * resource, if only one statement denies that action, then the explicit deny
-     * overrides any allow, and the deny statement is the only entry included in the
-     * result.</p>
+     * this scenario. Remember that even if multiple statements allow the operation on
+     * the resource, if only one statement denies that operation, then the explicit
+     * deny overrides any allow, and the deny statement is the only entry included in
+     * the result.</p>
      */
     inline void SetMatchedStatements(Aws::Vector<Statement>&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = std::move(value); }
 
     /**
      * <p>A list of the statements in the input policies that determine the result for
-     * this scenario. Remember that even if multiple statements allow the action on the
-     * resource, if only one statement denies that action, then the explicit deny
-     * overrides any allow, and the deny statement is the only entry included in the
-     * result.</p>
+     * this scenario. Remember that even if multiple statements allow the operation on
+     * the resource, if only one statement denies that operation, then the explicit
+     * deny overrides any allow, and the deny statement is the only entry included in
+     * the result.</p>
      */
     inline EvaluationResult& WithMatchedStatements(const Aws::Vector<Statement>& value) { SetMatchedStatements(value); return *this;}
 
     /**
      * <p>A list of the statements in the input policies that determine the result for
-     * this scenario. Remember that even if multiple statements allow the action on the
-     * resource, if only one statement denies that action, then the explicit deny
-     * overrides any allow, and the deny statement is the only entry included in the
-     * result.</p>
+     * this scenario. Remember that even if multiple statements allow the operation on
+     * the resource, if only one statement denies that operation, then the explicit
+     * deny overrides any allow, and the deny statement is the only entry included in
+     * the result.</p>
      */
     inline EvaluationResult& WithMatchedStatements(Aws::Vector<Statement>&& value) { SetMatchedStatements(std::move(value)); return *this;}
 
     /**
      * <p>A list of the statements in the input policies that determine the result for
-     * this scenario. Remember that even if multiple statements allow the action on the
-     * resource, if only one statement denies that action, then the explicit deny
-     * overrides any allow, and the deny statement is the only entry included in the
-     * result.</p>
+     * this scenario. Remember that even if multiple statements allow the operation on
+     * the resource, if only one statement denies that operation, then the explicit
+     * deny overrides any allow, and the deny statement is the only entry included in
+     * the result.</p>
      */
     inline EvaluationResult& AddMatchedStatements(const Statement& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(value); return *this; }
 
     /**
      * <p>A list of the statements in the input policies that determine the result for
-     * this scenario. Remember that even if multiple statements allow the action on the
-     * resource, if only one statement denies that action, then the explicit deny
-     * overrides any allow, and the deny statement is the only entry included in the
-     * result.</p>
+     * this scenario. Remember that even if multiple statements allow the operation on
+     * the resource, if only one statement denies that operation, then the explicit
+     * deny overrides any allow, and the deny statement is the only entry included in
+     * the result.</p>
      */
     inline EvaluationResult& AddMatchedStatements(Statement&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(std::move(value)); return *this; }
 
@@ -475,43 +475,43 @@ namespace Model
 
 
     /**
-     * <p>The individual results of the simulation of the API action specified in
+     * <p>The individual results of the simulation of the API operation specified in
      * EvalActionName on each resource.</p>
      */
     inline const Aws::Vector<ResourceSpecificResult>& GetResourceSpecificResults() const{ return m_resourceSpecificResults; }
 
     /**
-     * <p>The individual results of the simulation of the API action specified in
+     * <p>The individual results of the simulation of the API operation specified in
      * EvalActionName on each resource.</p>
      */
     inline void SetResourceSpecificResults(const Aws::Vector<ResourceSpecificResult>& value) { m_resourceSpecificResultsHasBeenSet = true; m_resourceSpecificResults = value; }
 
     /**
-     * <p>The individual results of the simulation of the API action specified in
+     * <p>The individual results of the simulation of the API operation specified in
      * EvalActionName on each resource.</p>
      */
     inline void SetResourceSpecificResults(Aws::Vector<ResourceSpecificResult>&& value) { m_resourceSpecificResultsHasBeenSet = true; m_resourceSpecificResults = std::move(value); }
 
     /**
-     * <p>The individual results of the simulation of the API action specified in
+     * <p>The individual results of the simulation of the API operation specified in
      * EvalActionName on each resource.</p>
      */
     inline EvaluationResult& WithResourceSpecificResults(const Aws::Vector<ResourceSpecificResult>& value) { SetResourceSpecificResults(value); return *this;}
 
     /**
-     * <p>The individual results of the simulation of the API action specified in
+     * <p>The individual results of the simulation of the API operation specified in
      * EvalActionName on each resource.</p>
      */
     inline EvaluationResult& WithResourceSpecificResults(Aws::Vector<ResourceSpecificResult>&& value) { SetResourceSpecificResults(std::move(value)); return *this;}
 
     /**
-     * <p>The individual results of the simulation of the API action specified in
+     * <p>The individual results of the simulation of the API operation specified in
      * EvalActionName on each resource.</p>
      */
     inline EvaluationResult& AddResourceSpecificResults(const ResourceSpecificResult& value) { m_resourceSpecificResultsHasBeenSet = true; m_resourceSpecificResults.push_back(value); return *this; }
 
     /**
-     * <p>The individual results of the simulation of the API action specified in
+     * <p>The individual results of the simulation of the API operation specified in
      * EvalActionName on each resource.</p>
      */
     inline EvaluationResult& AddResourceSpecificResults(ResourceSpecificResult&& value) { m_resourceSpecificResultsHasBeenSet = true; m_resourceSpecificResults.push_back(std::move(value)); return *this; }

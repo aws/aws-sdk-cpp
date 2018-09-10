@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DAX
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     Parameter();
-    Parameter(const Aws::Utils::Json::JsonValue& jsonValue);
-    Parameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Parameter(Aws::Utils::Json::JsonView jsonValue);
+    Parameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

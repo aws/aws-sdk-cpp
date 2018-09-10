@@ -45,7 +45,7 @@ Patch::Patch() :
 {
 }
 
-Patch::Patch(const JsonValue& jsonValue) : 
+Patch::Patch(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_releaseDateHasBeenSet(false),
     m_titleHasBeenSet(false),
@@ -63,7 +63,7 @@ Patch::Patch(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Patch& Patch::operator =(const JsonValue& jsonValue)
+Patch& Patch::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

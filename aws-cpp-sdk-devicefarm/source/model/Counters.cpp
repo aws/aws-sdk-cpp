@@ -46,7 +46,7 @@ Counters::Counters() :
 {
 }
 
-Counters::Counters(const JsonValue& jsonValue) : 
+Counters::Counters(JsonView jsonValue) : 
     m_total(0),
     m_totalHasBeenSet(false),
     m_passed(0),
@@ -65,7 +65,7 @@ Counters::Counters(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Counters& Counters::operator =(const JsonValue& jsonValue)
+Counters& Counters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("total"))
   {

@@ -47,7 +47,7 @@ JobProcessDetails::JobProcessDetails() :
 {
 }
 
-JobProcessDetails::JobProcessDetails(const JsonValue& jsonValue) : 
+JobProcessDetails::JobProcessDetails(JsonView jsonValue) : 
     m_processingTargetsHasBeenSet(false),
     m_numberOfCanceledThings(0),
     m_numberOfCanceledThingsHasBeenSet(false),
@@ -67,11 +67,11 @@ JobProcessDetails::JobProcessDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobProcessDetails& JobProcessDetails::operator =(const JsonValue& jsonValue)
+JobProcessDetails& JobProcessDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("processingTargets"))
   {
-    Array<JsonValue> processingTargetsJsonList = jsonValue.GetArray("processingTargets");
+    Array<JsonView> processingTargetsJsonList = jsonValue.GetArray("processingTargets");
     for(unsigned processingTargetsIndex = 0; processingTargetsIndex < processingTargetsJsonList.GetLength(); ++processingTargetsIndex)
     {
       m_processingTargets.push_back(processingTargetsJsonList[processingTargetsIndex].AsString());

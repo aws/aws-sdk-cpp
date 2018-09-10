@@ -41,7 +41,7 @@ PutRestApiResult::PutRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 PutRestApiResult& PutRestApiResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -74,7 +74,7 @@ PutRestApiResult& PutRestApiResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("warnings"))
   {
-    Array<JsonValue> warningsJsonList = jsonValue.GetArray("warnings");
+    Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
@@ -83,7 +83,7 @@ PutRestApiResult& PutRestApiResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("binaryMediaTypes"))
   {
-    Array<JsonValue> binaryMediaTypesJsonList = jsonValue.GetArray("binaryMediaTypes");
+    Array<JsonView> binaryMediaTypesJsonList = jsonValue.GetArray("binaryMediaTypes");
     for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
     {
       m_binaryMediaTypes.push_back(binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString());
@@ -105,6 +105,12 @@ PutRestApiResult& PutRestApiResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("endpointConfiguration"))
   {
     m_endpointConfiguration = jsonValue.GetObject("endpointConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("policy"))
+  {
+    m_policy = jsonValue.GetString("policy");
 
   }
 

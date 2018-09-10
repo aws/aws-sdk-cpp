@@ -37,7 +37,7 @@ UpdateResourceResult::UpdateResourceResult(const Aws::AmazonWebServiceResult<Jso
 
 UpdateResourceResult& UpdateResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -64,7 +64,7 @@ UpdateResourceResult& UpdateResourceResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("resourceMethods"))
   {
-    Aws::Map<Aws::String, JsonValue> resourceMethodsJsonMap = jsonValue.GetObject("resourceMethods").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> resourceMethodsJsonMap = jsonValue.GetObject("resourceMethods").GetAllObjects();
     for(auto& resourceMethodsItem : resourceMethodsJsonMap)
     {
       m_resourceMethods[resourceMethodsItem.first] = resourceMethodsItem.second.AsObject();

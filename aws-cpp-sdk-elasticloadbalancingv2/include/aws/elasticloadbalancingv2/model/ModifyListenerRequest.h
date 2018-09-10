@@ -139,56 +139,56 @@ namespace Model
 
 
     /**
-     * <p>The security policy that defines which protocols and ciphers are supported.
-     * For more information, see <a
+     * <p>[HTTPS listeners] The security policy that defines which protocols and
+     * ciphers are supported. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline const Aws::String& GetSslPolicy() const{ return m_sslPolicy; }
 
     /**
-     * <p>The security policy that defines which protocols and ciphers are supported.
-     * For more information, see <a
+     * <p>[HTTPS listeners] The security policy that defines which protocols and
+     * ciphers are supported. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline void SetSslPolicy(const Aws::String& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = value; }
 
     /**
-     * <p>The security policy that defines which protocols and ciphers are supported.
-     * For more information, see <a
+     * <p>[HTTPS listeners] The security policy that defines which protocols and
+     * ciphers are supported. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline void SetSslPolicy(Aws::String&& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = std::move(value); }
 
     /**
-     * <p>The security policy that defines which protocols and ciphers are supported.
-     * For more information, see <a
+     * <p>[HTTPS listeners] The security policy that defines which protocols and
+     * ciphers are supported. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline void SetSslPolicy(const char* value) { m_sslPolicyHasBeenSet = true; m_sslPolicy.assign(value); }
 
     /**
-     * <p>The security policy that defines which protocols and ciphers are supported.
-     * For more information, see <a
+     * <p>[HTTPS listeners] The security policy that defines which protocols and
+     * ciphers are supported. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline ModifyListenerRequest& WithSslPolicy(const Aws::String& value) { SetSslPolicy(value); return *this;}
 
     /**
-     * <p>The security policy that defines which protocols and ciphers are supported.
-     * For more information, see <a
+     * <p>[HTTPS listeners] The security policy that defines which protocols and
+     * ciphers are supported. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline ModifyListenerRequest& WithSslPolicy(Aws::String&& value) { SetSslPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The security policy that defines which protocols and ciphers are supported.
-     * For more information, see <a
+     * <p>[HTTPS listeners] The security policy that defines which protocols and
+     * ciphers are supported. For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
@@ -196,87 +196,171 @@ namespace Model
 
 
     /**
-     * <p>The default SSL server certificate.</p>
+     * <p>[HTTPS listeners] The default SSL server certificate. You must provide
+     * exactly one default certificate. To create a certificate list, use
+     * <a>AddListenerCertificates</a>.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
 
     /**
-     * <p>The default SSL server certificate.</p>
+     * <p>[HTTPS listeners] The default SSL server certificate. You must provide
+     * exactly one default certificate. To create a certificate list, use
+     * <a>AddListenerCertificates</a>.</p>
      */
     inline void SetCertificates(const Aws::Vector<Certificate>& value) { m_certificatesHasBeenSet = true; m_certificates = value; }
 
     /**
-     * <p>The default SSL server certificate.</p>
+     * <p>[HTTPS listeners] The default SSL server certificate. You must provide
+     * exactly one default certificate. To create a certificate list, use
+     * <a>AddListenerCertificates</a>.</p>
      */
     inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificatesHasBeenSet = true; m_certificates = std::move(value); }
 
     /**
-     * <p>The default SSL server certificate.</p>
+     * <p>[HTTPS listeners] The default SSL server certificate. You must provide
+     * exactly one default certificate. To create a certificate list, use
+     * <a>AddListenerCertificates</a>.</p>
      */
     inline ModifyListenerRequest& WithCertificates(const Aws::Vector<Certificate>& value) { SetCertificates(value); return *this;}
 
     /**
-     * <p>The default SSL server certificate.</p>
+     * <p>[HTTPS listeners] The default SSL server certificate. You must provide
+     * exactly one default certificate. To create a certificate list, use
+     * <a>AddListenerCertificates</a>.</p>
      */
     inline ModifyListenerRequest& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
-     * <p>The default SSL server certificate.</p>
+     * <p>[HTTPS listeners] The default SSL server certificate. You must provide
+     * exactly one default certificate. To create a certificate list, use
+     * <a>AddListenerCertificates</a>.</p>
      */
     inline ModifyListenerRequest& AddCertificates(const Certificate& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(value); return *this; }
 
     /**
-     * <p>The default SSL server certificate.</p>
+     * <p>[HTTPS listeners] The default SSL server certificate. You must provide
+     * exactly one default certificate. To create a certificate list, use
+     * <a>AddListenerCertificates</a>.</p>
      */
     inline ModifyListenerRequest& AddCertificates(Certificate&& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The default action. For Application Load Balancers, the protocol of the
-     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
-     * protocol of the specified target group must be TCP.</p>
+     * <p>The actions for the default rule. The rule must include one forward action or
+     * one or more fixed-response actions.</p> <p>If the action type is
+     * <code>forward</code>, you can specify a single target group. The protocol of the
+     * target group must be HTTP or HTTPS for an Application Load Balancer or TCP for a
+     * Network Load Balancer.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline const Aws::Vector<Action>& GetDefaultActions() const{ return m_defaultActions; }
 
     /**
-     * <p>The default action. For Application Load Balancers, the protocol of the
-     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
-     * protocol of the specified target group must be TCP.</p>
+     * <p>The actions for the default rule. The rule must include one forward action or
+     * one or more fixed-response actions.</p> <p>If the action type is
+     * <code>forward</code>, you can specify a single target group. The protocol of the
+     * target group must be HTTP or HTTPS for an Application Load Balancer or TCP for a
+     * Network Load Balancer.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline void SetDefaultActions(const Aws::Vector<Action>& value) { m_defaultActionsHasBeenSet = true; m_defaultActions = value; }
 
     /**
-     * <p>The default action. For Application Load Balancers, the protocol of the
-     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
-     * protocol of the specified target group must be TCP.</p>
+     * <p>The actions for the default rule. The rule must include one forward action or
+     * one or more fixed-response actions.</p> <p>If the action type is
+     * <code>forward</code>, you can specify a single target group. The protocol of the
+     * target group must be HTTP or HTTPS for an Application Load Balancer or TCP for a
+     * Network Load Balancer.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline void SetDefaultActions(Aws::Vector<Action>&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions = std::move(value); }
 
     /**
-     * <p>The default action. For Application Load Balancers, the protocol of the
-     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
-     * protocol of the specified target group must be TCP.</p>
+     * <p>The actions for the default rule. The rule must include one forward action or
+     * one or more fixed-response actions.</p> <p>If the action type is
+     * <code>forward</code>, you can specify a single target group. The protocol of the
+     * target group must be HTTP or HTTPS for an Application Load Balancer or TCP for a
+     * Network Load Balancer.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline ModifyListenerRequest& WithDefaultActions(const Aws::Vector<Action>& value) { SetDefaultActions(value); return *this;}
 
     /**
-     * <p>The default action. For Application Load Balancers, the protocol of the
-     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
-     * protocol of the specified target group must be TCP.</p>
+     * <p>The actions for the default rule. The rule must include one forward action or
+     * one or more fixed-response actions.</p> <p>If the action type is
+     * <code>forward</code>, you can specify a single target group. The protocol of the
+     * target group must be HTTP or HTTPS for an Application Load Balancer or TCP for a
+     * Network Load Balancer.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline ModifyListenerRequest& WithDefaultActions(Aws::Vector<Action>&& value) { SetDefaultActions(std::move(value)); return *this;}
 
     /**
-     * <p>The default action. For Application Load Balancers, the protocol of the
-     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
-     * protocol of the specified target group must be TCP.</p>
+     * <p>The actions for the default rule. The rule must include one forward action or
+     * one or more fixed-response actions.</p> <p>If the action type is
+     * <code>forward</code>, you can specify a single target group. The protocol of the
+     * target group must be HTTP or HTTPS for an Application Load Balancer or TCP for a
+     * Network Load Balancer.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline ModifyListenerRequest& AddDefaultActions(const Action& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(value); return *this; }
 
     /**
-     * <p>The default action. For Application Load Balancers, the protocol of the
-     * specified target group must be HTTP or HTTPS. For Network Load Balancers, the
-     * protocol of the specified target group must be TCP.</p>
+     * <p>The actions for the default rule. The rule must include one forward action or
+     * one or more fixed-response actions.</p> <p>If the action type is
+     * <code>forward</code>, you can specify a single target group. The protocol of the
+     * target group must be HTTP or HTTPS for an Application Load Balancer or TCP for a
+     * Network Load Balancer.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-oidc</code>, you can use an identity provider that is OpenID
+     * Connect (OIDC) compliant to authenticate users as they access your
+     * application.</p> <p>[HTTPS listener] If the action type is
+     * <code>authenticate-cognito</code>, you can use Amazon Cognito to authenticate
+     * users as they access your application.</p> <p>[Application Load Balancer] If the
+     * action type is <code>redirect</code>, you can redirect HTTP and HTTPS
+     * requests.</p> <p>[Application Load Balancer] If the action type is
+     * <code>fixed-response</code>, you can return a custom HTTP response.</p>
      */
     inline ModifyListenerRequest& AddDefaultActions(Action&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(std::move(value)); return *this; }
 

@@ -144,9 +144,9 @@ namespace Model
 
 
     /**
-     * <p>ID for a user-managed CMK under which the EBS volume is encrypted.</p>
-     * <p>Note: This parameter is only supported on <code>BlockDeviceMapping</code>
-     * objects called by <a
+     * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
@@ -156,9 +156,9 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>ID for a user-managed CMK under which the EBS volume is encrypted.</p>
-     * <p>Note: This parameter is only supported on <code>BlockDeviceMapping</code>
-     * objects called by <a
+     * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
@@ -168,9 +168,9 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>ID for a user-managed CMK under which the EBS volume is encrypted.</p>
-     * <p>Note: This parameter is only supported on <code>BlockDeviceMapping</code>
-     * objects called by <a
+     * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
@@ -180,9 +180,9 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>ID for a user-managed CMK under which the EBS volume is encrypted.</p>
-     * <p>Note: This parameter is only supported on <code>BlockDeviceMapping</code>
-     * objects called by <a
+     * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
@@ -192,9 +192,9 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>ID for a user-managed CMK under which the EBS volume is encrypted.</p>
-     * <p>Note: This parameter is only supported on <code>BlockDeviceMapping</code>
-     * objects called by <a
+     * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
@@ -204,9 +204,9 @@ namespace Model
     inline EbsBlockDevice& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>ID for a user-managed CMK under which the EBS volume is encrypted.</p>
-     * <p>Note: This parameter is only supported on <code>BlockDeviceMapping</code>
-     * objects called by <a
+     * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
@@ -216,9 +216,9 @@ namespace Model
     inline EbsBlockDevice& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>ID for a user-managed CMK under which the EBS volume is encrypted.</p>
-     * <p>Note: This parameter is only supported on <code>BlockDeviceMapping</code>
-     * objects called by <a
+     * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace StorageGateway
@@ -41,49 +42,49 @@ namespace Model
   {
   public:
     DeviceiSCSIAttributes();
-    DeviceiSCSIAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    DeviceiSCSIAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DeviceiSCSIAttributes(Aws::Utils::Json::JsonView jsonValue);
+    DeviceiSCSIAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
+     * <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI
      * qualified name(iqn) of a tape drive or media changer target.</p>
      */
     inline const Aws::String& GetTargetARN() const{ return m_targetARN; }
 
     /**
-     * <p>Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
+     * <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI
      * qualified name(iqn) of a tape drive or media changer target.</p>
      */
     inline void SetTargetARN(const Aws::String& value) { m_targetARNHasBeenSet = true; m_targetARN = value; }
 
     /**
-     * <p>Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
+     * <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI
      * qualified name(iqn) of a tape drive or media changer target.</p>
      */
     inline void SetTargetARN(Aws::String&& value) { m_targetARNHasBeenSet = true; m_targetARN = std::move(value); }
 
     /**
-     * <p>Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
+     * <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI
      * qualified name(iqn) of a tape drive or media changer target.</p>
      */
     inline void SetTargetARN(const char* value) { m_targetARNHasBeenSet = true; m_targetARN.assign(value); }
 
     /**
-     * <p>Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
+     * <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI
      * qualified name(iqn) of a tape drive or media changer target.</p>
      */
     inline DeviceiSCSIAttributes& WithTargetARN(const Aws::String& value) { SetTargetARN(value); return *this;}
 
     /**
-     * <p>Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
+     * <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI
      * qualified name(iqn) of a tape drive or media changer target.</p>
      */
     inline DeviceiSCSIAttributes& WithTargetARN(Aws::String&& value) { SetTargetARN(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the unique Amazon Resource Name(ARN) that encodes the iSCSI
+     * <p>Specifies the unique Amazon Resource Name (ARN) that encodes the iSCSI
      * qualified name(iqn) of a tape drive or media changer target.</p>
      */
     inline DeviceiSCSIAttributes& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}

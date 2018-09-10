@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     Scte20PlusEmbeddedDestinationSettings();
-    Scte20PlusEmbeddedDestinationSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    Scte20PlusEmbeddedDestinationSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Scte20PlusEmbeddedDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    Scte20PlusEmbeddedDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
   };

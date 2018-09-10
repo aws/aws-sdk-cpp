@@ -37,10 +37,10 @@ DescribeLogGroupsResult::DescribeLogGroupsResult(const Aws::AmazonWebServiceResu
 
 DescribeLogGroupsResult& DescribeLogGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("logGroups"))
   {
-    Array<JsonValue> logGroupsJsonList = jsonValue.GetArray("logGroups");
+    Array<JsonView> logGroupsJsonList = jsonValue.GetArray("logGroups");
     for(unsigned logGroupsIndex = 0; logGroupsIndex < logGroupsJsonList.GetLength(); ++logGroupsIndex)
     {
       m_logGroups.push_back(logGroupsJsonList[logGroupsIndex].AsObject());

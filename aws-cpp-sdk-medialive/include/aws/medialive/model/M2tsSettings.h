@@ -46,6 +46,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -62,8 +63,8 @@ namespace Model
   {
   public:
     M2tsSettings();
-    M2tsSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    M2tsSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    M2tsSettings(Aws::Utils::Json::JsonView jsonValue);
+    M2tsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -791,51 +792,37 @@ namespace Model
 
 
     /**
-     * Packet Identifier (PID) for ECM in the transport stream. Only enabled when
-     * Simulcrypt is enabled. Can be entered as a decimal or hexadecimal value.  Valid
-     * values are 32 (or 0x20)..8182 (or 0x1ff6).
+     * This field is unused and deprecated.
      */
     inline const Aws::String& GetEcmPid() const{ return m_ecmPid; }
 
     /**
-     * Packet Identifier (PID) for ECM in the transport stream. Only enabled when
-     * Simulcrypt is enabled. Can be entered as a decimal or hexadecimal value.  Valid
-     * values are 32 (or 0x20)..8182 (or 0x1ff6).
+     * This field is unused and deprecated.
      */
     inline void SetEcmPid(const Aws::String& value) { m_ecmPidHasBeenSet = true; m_ecmPid = value; }
 
     /**
-     * Packet Identifier (PID) for ECM in the transport stream. Only enabled when
-     * Simulcrypt is enabled. Can be entered as a decimal or hexadecimal value.  Valid
-     * values are 32 (or 0x20)..8182 (or 0x1ff6).
+     * This field is unused and deprecated.
      */
     inline void SetEcmPid(Aws::String&& value) { m_ecmPidHasBeenSet = true; m_ecmPid = std::move(value); }
 
     /**
-     * Packet Identifier (PID) for ECM in the transport stream. Only enabled when
-     * Simulcrypt is enabled. Can be entered as a decimal or hexadecimal value.  Valid
-     * values are 32 (or 0x20)..8182 (or 0x1ff6).
+     * This field is unused and deprecated.
      */
     inline void SetEcmPid(const char* value) { m_ecmPidHasBeenSet = true; m_ecmPid.assign(value); }
 
     /**
-     * Packet Identifier (PID) for ECM in the transport stream. Only enabled when
-     * Simulcrypt is enabled. Can be entered as a decimal or hexadecimal value.  Valid
-     * values are 32 (or 0x20)..8182 (or 0x1ff6).
+     * This field is unused and deprecated.
      */
     inline M2tsSettings& WithEcmPid(const Aws::String& value) { SetEcmPid(value); return *this;}
 
     /**
-     * Packet Identifier (PID) for ECM in the transport stream. Only enabled when
-     * Simulcrypt is enabled. Can be entered as a decimal or hexadecimal value.  Valid
-     * values are 32 (or 0x20)..8182 (or 0x1ff6).
+     * This field is unused and deprecated.
      */
     inline M2tsSettings& WithEcmPid(Aws::String&& value) { SetEcmPid(std::move(value)); return *this;}
 
     /**
-     * Packet Identifier (PID) for ECM in the transport stream. Only enabled when
-     * Simulcrypt is enabled. Can be entered as a decimal or hexadecimal value.  Valid
-     * values are 32 (or 0x20)..8182 (or 0x1ff6).
+     * This field is unused and deprecated.
      */
     inline M2tsSettings& WithEcmPid(const char* value) { SetEcmPid(value); return *this;}
 

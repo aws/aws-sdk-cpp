@@ -39,7 +39,7 @@ DeploymentConfigInfo::DeploymentConfigInfo() :
 {
 }
 
-DeploymentConfigInfo::DeploymentConfigInfo(const JsonValue& jsonValue) : 
+DeploymentConfigInfo::DeploymentConfigInfo(JsonView jsonValue) : 
     m_deploymentConfigIdHasBeenSet(false),
     m_deploymentConfigNameHasBeenSet(false),
     m_minimumHealthyHostsHasBeenSet(false),
@@ -51,7 +51,7 @@ DeploymentConfigInfo::DeploymentConfigInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeploymentConfigInfo& DeploymentConfigInfo::operator =(const JsonValue& jsonValue)
+DeploymentConfigInfo& DeploymentConfigInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("deploymentConfigId"))
   {

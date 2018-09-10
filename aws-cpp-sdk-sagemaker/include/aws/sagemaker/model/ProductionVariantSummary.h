@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/DeployedImage.h>
 #include <utility>
 
 namespace Aws
@@ -25,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -34,9 +37,10 @@ namespace Model
 
   /**
    * <p>Describes weight and capacities for a production variant associated with an
-   * endpoint. If you sent a request to the <code>UpdateWeightAndCapacities</code>
-   * API and the endpoint status is <code>Updating</code>, you get different desired
-   * and current values. </p><p><h3>See Also:</h3>   <a
+   * endpoint. If you sent a request to the
+   * <code>UpdateEndpointWeightsAndCapacities</code> API and the endpoint status is
+   * <code>Updating</code>, you get different desired and current values.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariantSummary">AWS
    * API Reference</a></p>
    */
@@ -44,8 +48,8 @@ namespace Model
   {
   public:
     ProductionVariantSummary();
-    ProductionVariantSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    ProductionVariantSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ProductionVariantSummary(Aws::Utils::Json::JsonView jsonValue);
+    ProductionVariantSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -86,6 +90,56 @@ namespace Model
 
 
     /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline const Aws::Vector<DeployedImage>& GetDeployedImages() const{ return m_deployedImages; }
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline void SetDeployedImages(const Aws::Vector<DeployedImage>& value) { m_deployedImagesHasBeenSet = true; m_deployedImages = value; }
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline void SetDeployedImages(Aws::Vector<DeployedImage>&& value) { m_deployedImagesHasBeenSet = true; m_deployedImages = std::move(value); }
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline ProductionVariantSummary& WithDeployedImages(const Aws::Vector<DeployedImage>& value) { SetDeployedImages(value); return *this;}
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline ProductionVariantSummary& WithDeployedImages(Aws::Vector<DeployedImage>&& value) { SetDeployedImages(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline ProductionVariantSummary& AddDeployedImages(const DeployedImage& value) { m_deployedImagesHasBeenSet = true; m_deployedImages.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline ProductionVariantSummary& AddDeployedImages(DeployedImage&& value) { m_deployedImagesHasBeenSet = true; m_deployedImages.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The weight associated with the variant.</p>
      */
     inline double GetCurrentWeight() const{ return m_currentWeight; }
@@ -103,19 +157,19 @@ namespace Model
 
     /**
      * <p>The requested weight, as specified in the
-     * <code>UpdateWeightAndCapacities</code> request. </p>
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline double GetDesiredWeight() const{ return m_desiredWeight; }
 
     /**
      * <p>The requested weight, as specified in the
-     * <code>UpdateWeightAndCapacities</code> request. </p>
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline void SetDesiredWeight(double value) { m_desiredWeightHasBeenSet = true; m_desiredWeight = value; }
 
     /**
      * <p>The requested weight, as specified in the
-     * <code>UpdateWeightAndCapacities</code> request. </p>
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline ProductionVariantSummary& WithDesiredWeight(double value) { SetDesiredWeight(value); return *this;}
 
@@ -138,19 +192,19 @@ namespace Model
 
     /**
      * <p>The number of instances requested in the
-     * <code>UpdateWeightAndCapacities</code> request. </p>
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline int GetDesiredInstanceCount() const{ return m_desiredInstanceCount; }
 
     /**
      * <p>The number of instances requested in the
-     * <code>UpdateWeightAndCapacities</code> request. </p>
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline void SetDesiredInstanceCount(int value) { m_desiredInstanceCountHasBeenSet = true; m_desiredInstanceCount = value; }
 
     /**
      * <p>The number of instances requested in the
-     * <code>UpdateWeightAndCapacities</code> request. </p>
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline ProductionVariantSummary& WithDesiredInstanceCount(int value) { SetDesiredInstanceCount(value); return *this;}
 
@@ -158,6 +212,9 @@ namespace Model
 
     Aws::String m_variantName;
     bool m_variantNameHasBeenSet;
+
+    Aws::Vector<DeployedImage> m_deployedImages;
+    bool m_deployedImagesHasBeenSet;
 
     double m_currentWeight;
     bool m_currentWeightHasBeenSet;

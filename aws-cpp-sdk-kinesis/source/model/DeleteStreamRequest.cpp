@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteStreamRequest::DeleteStreamRequest() : 
-    m_streamNameHasBeenSet(false)
+    m_streamNameHasBeenSet(false),
+    m_enforceConsumerDeletion(false),
+    m_enforceConsumerDeletionHasBeenSet(false)
 {
 }
 
@@ -37,7 +39,13 @@ Aws::String DeleteStreamRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_enforceConsumerDeletionHasBeenSet)
+  {
+   payload.WithBool("EnforceConsumerDeletion", m_enforceConsumerDeletion);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteStreamRequest::GetRequestSpecificHeaders() const

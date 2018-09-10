@@ -35,7 +35,7 @@ SkewedInfo::SkewedInfo() :
 {
 }
 
-SkewedInfo::SkewedInfo(const JsonValue& jsonValue) : 
+SkewedInfo::SkewedInfo(JsonView jsonValue) : 
     m_skewedColumnNamesHasBeenSet(false),
     m_skewedColumnValuesHasBeenSet(false),
     m_skewedColumnValueLocationMapsHasBeenSet(false)
@@ -43,11 +43,11 @@ SkewedInfo::SkewedInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SkewedInfo& SkewedInfo::operator =(const JsonValue& jsonValue)
+SkewedInfo& SkewedInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SkewedColumnNames"))
   {
-    Array<JsonValue> skewedColumnNamesJsonList = jsonValue.GetArray("SkewedColumnNames");
+    Array<JsonView> skewedColumnNamesJsonList = jsonValue.GetArray("SkewedColumnNames");
     for(unsigned skewedColumnNamesIndex = 0; skewedColumnNamesIndex < skewedColumnNamesJsonList.GetLength(); ++skewedColumnNamesIndex)
     {
       m_skewedColumnNames.push_back(skewedColumnNamesJsonList[skewedColumnNamesIndex].AsString());
@@ -57,7 +57,7 @@ SkewedInfo& SkewedInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SkewedColumnValues"))
   {
-    Array<JsonValue> skewedColumnValuesJsonList = jsonValue.GetArray("SkewedColumnValues");
+    Array<JsonView> skewedColumnValuesJsonList = jsonValue.GetArray("SkewedColumnValues");
     for(unsigned skewedColumnValuesIndex = 0; skewedColumnValuesIndex < skewedColumnValuesJsonList.GetLength(); ++skewedColumnValuesIndex)
     {
       m_skewedColumnValues.push_back(skewedColumnValuesJsonList[skewedColumnValuesIndex].AsString());
@@ -67,7 +67,7 @@ SkewedInfo& SkewedInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SkewedColumnValueLocationMaps"))
   {
-    Aws::Map<Aws::String, JsonValue> skewedColumnValueLocationMapsJsonMap = jsonValue.GetObject("SkewedColumnValueLocationMaps").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> skewedColumnValueLocationMapsJsonMap = jsonValue.GetObject("SkewedColumnValueLocationMaps").GetAllObjects();
     for(auto& skewedColumnValueLocationMapsItem : skewedColumnValueLocationMapsJsonMap)
     {
       m_skewedColumnValueLocationMaps[skewedColumnValueLocationMapsItem.first] = skewedColumnValueLocationMapsItem.second.AsString();

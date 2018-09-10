@@ -31,11 +31,13 @@ namespace Model
 {
 
 ReshardingConfiguration::ReshardingConfiguration() : 
+    m_nodeGroupIdHasBeenSet(false),
     m_preferredAvailabilityZonesHasBeenSet(false)
 {
 }
 
 ReshardingConfiguration::ReshardingConfiguration(const XmlNode& xmlNode) : 
+    m_nodeGroupIdHasBeenSet(false),
     m_preferredAvailabilityZonesHasBeenSet(false)
 {
   *this = xmlNode;
@@ -47,6 +49,12 @@ ReshardingConfiguration& ReshardingConfiguration::operator =(const XmlNode& xmlN
 
   if(!resultNode.IsNull())
   {
+    XmlNode nodeGroupIdNode = resultNode.FirstChild("NodeGroupId");
+    if(!nodeGroupIdNode.IsNull())
+    {
+      m_nodeGroupId = StringUtils::Trim(nodeGroupIdNode.GetText().c_str());
+      m_nodeGroupIdHasBeenSet = true;
+    }
     XmlNode preferredAvailabilityZonesNode = resultNode.FirstChild("PreferredAvailabilityZones");
     if(!preferredAvailabilityZonesNode.IsNull())
     {
@@ -66,6 +74,11 @@ ReshardingConfiguration& ReshardingConfiguration::operator =(const XmlNode& xmlN
 
 void ReshardingConfiguration::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_nodeGroupIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NodeGroupId=" << StringUtils::URLEncode(m_nodeGroupId.c_str()) << "&";
+  }
+
   if(m_preferredAvailabilityZonesHasBeenSet)
   {
       unsigned preferredAvailabilityZonesIdx = 1;
@@ -79,6 +92,10 @@ void ReshardingConfiguration::OutputToStream(Aws::OStream& oStream, const char* 
 
 void ReshardingConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_nodeGroupIdHasBeenSet)
+  {
+      oStream << location << ".NodeGroupId=" << StringUtils::URLEncode(m_nodeGroupId.c_str()) << "&";
+  }
   if(m_preferredAvailabilityZonesHasBeenSet)
   {
       unsigned preferredAvailabilityZonesIdx = 1;

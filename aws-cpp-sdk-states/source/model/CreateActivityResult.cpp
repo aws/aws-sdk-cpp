@@ -37,7 +37,7 @@ CreateActivityResult::CreateActivityResult(const Aws::AmazonWebServiceResult<Jso
 
 CreateActivityResult& CreateActivityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("activityArn"))
   {
     m_activityArn = jsonValue.GetString("activityArn");

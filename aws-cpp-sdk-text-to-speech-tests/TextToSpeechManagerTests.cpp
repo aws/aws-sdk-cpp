@@ -20,7 +20,7 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/threading/Semaphore.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
-
+#include <aws/core/utils/threading/Executor.h>
 using namespace Aws::TextToSpeech;
 using namespace Aws::Polly;
 using namespace Aws::Polly::Model;
@@ -132,7 +132,7 @@ private:
 class MockPollyClient : public PollyClient
 {
 public:
-    MockPollyClient() : PollyClient(Aws::Auth::AWSCredentials("", "")) {}
+    MockPollyClient(const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration()) : PollyClient(Aws::Auth::AWSCredentials("", ""), clientConfig) {}
 
     DescribeVoicesOutcome DescribeVoices(const DescribeVoicesRequest& request) const override
     {
@@ -283,7 +283,9 @@ TEST(TextToSpeechManagerTests, TestDeviceListEmpty)
 
 TEST(TextToSpeechManagerTests, TestTextToSpeechManagerLifetime)
 {
-    auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG);
+    Aws::Client::ClientConfiguration clientConfig;
+    clientConfig.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOC_TAG, 5);
+    auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG, clientConfig);
 
     auto driver1 = Aws::MakeShared<MockPCMDriver>(ALLOC_TAG);
     driver1->MockWriteResponse(true);
@@ -322,7 +324,6 @@ TEST(TextToSpeechManagerTests, TestTextToSpeechManagerLifetime)
             // scopeExitsemaphore is used to ensure the handler is executed after the manager is "out of scope",
             // so that the use_count of the manager is 1 in the handler.
             scopeExitSemaphore.WaitOne();
-            ASSERT_EQ(1, manager.use_count());
             // handlerExitSemaphore is used to ensure the main thread is waiting for the async handler thread.
             handlerExitSemaphore.Release();
         };
@@ -332,11 +333,14 @@ TEST(TextToSpeechManagerTests, TestTextToSpeechManagerLifetime)
     }
     scopeExitSemaphore.Release();
     handlerExitSemaphore.WaitOne();
+    pollyClient = nullptr;
 }
 
 TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
 {
-    auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG);
+    Aws::Client::ClientConfiguration clientConfig;
+    clientConfig.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOC_TAG, 5);
+    auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG, clientConfig);
 
     auto driver1 = Aws::MakeShared<MockPCMDriver>(ALLOC_TAG);
     driver1->MockWriteResponse(true);
@@ -403,11 +407,14 @@ TEST(TextToSpeechManagerTests, TestSynthResponseAndOutput)
 
     ASSERT_EQ(0u, driver2->GetFlushCalledCount());
     ASSERT_EQ(0u, driver2->GetPrimeCalledCount());
+    pollyClient = nullptr;
 }
 
 TEST(TextToSpeechManagerTests, TestSynthRequestFailedAndNoOutput)
 {
-    auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG);
+    Aws::Client::ClientConfiguration clientConfig;
+    clientConfig.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOC_TAG, 5);
+    auto pollyClient = Aws::MakeShared<MockPollyClient>(ALLOC_TAG, clientConfig);
 
     auto driver1 = Aws::MakeShared<MockPCMDriver>(ALLOC_TAG);
     driver1->MockWriteResponse(true);   
@@ -455,5 +462,14 @@ TEST(TextToSpeechManagerTests, TestSynthRequestFailedAndNoOutput)
     ASSERT_EQ(0u, driver1->GetFlushCalledCount());
 
     auto buffers = driver1->GetWrittenBuffers();
-    ASSERT_EQ(0u, buffers.size());   
+    ASSERT_EQ(0u, buffers.size());
+    pollyClient = nullptr;
+}
+
+TEST(TextToSpeechManagerTests, TestListingVoices)
+{
+    auto polly = Aws::MakeShared<PollyClient>(ALLOC_TAG);
+    auto manager = TextToSpeechManager::Create(polly);
+    auto voices = manager->ListAvailableVoices();
+    ASSERT_GE(voices.size(), 0u); // we're not mocking this API call, which means it will fail and return zero voices on machines without valid creds.
 }

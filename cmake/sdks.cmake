@@ -1,5 +1,7 @@
 include(sdksCommon)
 
+set(SDK_DEPENDENCY_BUILD_LIST "")
+
 if(REGENERATE_CLIENTS)
     message(STATUS "Checking for SDK generation requirements")
     include(FindJava)
@@ -191,7 +193,10 @@ function(add_sdks)
     if(ENABLE_TESTING)
         add_subdirectory(testing-resources)
 
-        if(PLATFORM_ANDROID AND NOT BUILD_SHARED_LIBS)
+        # android-unified-tests includes all the tests in our code base, those tests related services may not be incldued in BUILD_ONLY,
+        # means, those services will not be built, but will be tried to linked against with test targets, which will cause link time error.
+        # See https://github.com/aws/aws-sdk-cpp/issues/786. We should only build android-unified-tests when doing a full build.
+        if(PLATFORM_ANDROID AND NOT BUILD_SHARED_LIBS AND NOT BUILD_ONLY)
             add_subdirectory(android-unified-tests)
         else()
             foreach(SDK IN LISTS SDK_BUILD_LIST)

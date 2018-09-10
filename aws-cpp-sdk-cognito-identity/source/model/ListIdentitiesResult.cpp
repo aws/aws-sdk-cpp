@@ -37,7 +37,7 @@ ListIdentitiesResult::ListIdentitiesResult(const Aws::AmazonWebServiceResult<Jso
 
 ListIdentitiesResult& ListIdentitiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityPoolId"))
   {
     m_identityPoolId = jsonValue.GetString("IdentityPoolId");
@@ -46,7 +46,7 @@ ListIdentitiesResult& ListIdentitiesResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Identities"))
   {
-    Array<JsonValue> identitiesJsonList = jsonValue.GetArray("Identities");
+    Array<JsonView> identitiesJsonList = jsonValue.GetArray("Identities");
     for(unsigned identitiesIndex = 0; identitiesIndex < identitiesJsonList.GetLength(); ++identitiesIndex)
     {
       m_identities.push_back(identitiesJsonList[identitiesIndex].AsObject());

@@ -39,7 +39,7 @@ ConfirmPrivateVirtualInterfaceResult::ConfirmPrivateVirtualInterfaceResult(const
 
 ConfirmPrivateVirtualInterfaceResult& ConfirmPrivateVirtualInterfaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("virtualInterfaceState"))
   {
     m_virtualInterfaceState = VirtualInterfaceStateMapper::GetVirtualInterfaceStateForName(jsonValue.GetString("virtualInterfaceState"));

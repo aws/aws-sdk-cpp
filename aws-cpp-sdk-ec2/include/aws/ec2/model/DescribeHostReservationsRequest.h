@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (e.g., <code>m4</code>).</p> </li> <li> <p>
+     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -61,7 +61,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (e.g., <code>m4</code>).</p> </li> <li> <p>
+     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -72,7 +72,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (e.g., <code>m4</code>).</p> </li> <li> <p>
+     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -83,7 +83,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (e.g., <code>m4</code>).</p> </li> <li> <p>
+     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -94,7 +94,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (e.g., <code>m4</code>).</p> </li> <li> <p>
+     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -105,7 +105,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (e.g., <code>m4</code>).</p> </li> <li> <p>
+     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -116,7 +116,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
-     * instance family (e.g., <code>m4</code>).</p> </li> <li> <p>
+     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
      * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
@@ -170,8 +170,8 @@ namespace Model
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
-     * <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an
+     * <code>nextToken</code> value. This value can be between 5 and 500.If
+     * <code>maxResults</code> is given a larger value than 500, you receive an
      * error.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -179,8 +179,8 @@ namespace Model
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
-     * <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an
+     * <code>nextToken</code> value. This value can be between 5 and 500.If
+     * <code>maxResults</code> is given a larger value than 500, you receive an
      * error.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
@@ -188,8 +188,8 @@ namespace Model
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
-     * <code>nextToken</code> value. This value can be between 5 and 500; if
-     * <code>maxResults</code> is given a larger value than 500, you will receive an
+     * <code>nextToken</code> value. This value can be between 5 and 500.If
+     * <code>maxResults</code> is given a larger value than 500, you receive an
      * error.</p>
      */
     inline DescribeHostReservationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

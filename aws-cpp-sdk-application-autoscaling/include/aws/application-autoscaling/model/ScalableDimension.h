@@ -34,7 +34,9 @@ namespace Model
     dynamodb_table_WriteCapacityUnits,
     dynamodb_index_ReadCapacityUnits,
     dynamodb_index_WriteCapacityUnits,
-    rds_cluster_ReadReplicaCount
+    rds_cluster_ReadReplicaCount,
+    sagemaker_variant_DesiredInstanceCount,
+    custom_resource_ResourceType_Property
   };
 
 namespace ScalableDimensionMapper

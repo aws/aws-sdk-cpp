@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ResourceGroups
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ResourceQuery();
-    ResourceQuery(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceQuery& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceQuery(Aws::Utils::Json::JsonView jsonValue);
+    ResourceQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

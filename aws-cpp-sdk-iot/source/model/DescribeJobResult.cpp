@@ -37,7 +37,7 @@ DescribeJobResult::DescribeJobResult(const Aws::AmazonWebServiceResult<JsonValue
 
 DescribeJobResult& DescribeJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("documentSource"))
   {
     m_documentSource = jsonValue.GetString("documentSource");

@@ -37,7 +37,7 @@ Aws::String DescribeNotebookInstanceRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeNotebookInstanceRequest::GetRequestSpecificHeaders() const

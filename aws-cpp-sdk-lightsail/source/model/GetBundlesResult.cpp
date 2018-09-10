@@ -37,10 +37,10 @@ GetBundlesResult::GetBundlesResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 GetBundlesResult& GetBundlesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("bundles"))
   {
-    Array<JsonValue> bundlesJsonList = jsonValue.GetArray("bundles");
+    Array<JsonView> bundlesJsonList = jsonValue.GetArray("bundles");
     for(unsigned bundlesIndex = 0; bundlesIndex < bundlesJsonList.GetLength(); ++bundlesIndex)
     {
       m_bundles.push_back(bundlesJsonList[bundlesIndex].AsObject());

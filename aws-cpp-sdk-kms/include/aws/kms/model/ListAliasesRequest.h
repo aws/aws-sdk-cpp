@@ -45,6 +45,70 @@ namespace Model
 
 
     /**
+     * <p>Lists only aliases that refer to the specified CMK. The value of this
+     * parameter can be the ID or Amazon Resource Name (ARN) of a CMK in the caller's
+     * account and region. You cannot use an alias name or alias ARN in this value.</p>
+     * <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns
+     * all aliases in the account and region.</p>
+     */
+    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
+    /**
+     * <p>Lists only aliases that refer to the specified CMK. The value of this
+     * parameter can be the ID or Amazon Resource Name (ARN) of a CMK in the caller's
+     * account and region. You cannot use an alias name or alias ARN in this value.</p>
+     * <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns
+     * all aliases in the account and region.</p>
+     */
+    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
+
+    /**
+     * <p>Lists only aliases that refer to the specified CMK. The value of this
+     * parameter can be the ID or Amazon Resource Name (ARN) of a CMK in the caller's
+     * account and region. You cannot use an alias name or alias ARN in this value.</p>
+     * <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns
+     * all aliases in the account and region.</p>
+     */
+    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
+
+    /**
+     * <p>Lists only aliases that refer to the specified CMK. The value of this
+     * parameter can be the ID or Amazon Resource Name (ARN) of a CMK in the caller's
+     * account and region. You cannot use an alias name or alias ARN in this value.</p>
+     * <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns
+     * all aliases in the account and region.</p>
+     */
+    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
+
+    /**
+     * <p>Lists only aliases that refer to the specified CMK. The value of this
+     * parameter can be the ID or Amazon Resource Name (ARN) of a CMK in the caller's
+     * account and region. You cannot use an alias name or alias ARN in this value.</p>
+     * <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns
+     * all aliases in the account and region.</p>
+     */
+    inline ListAliasesRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
+
+    /**
+     * <p>Lists only aliases that refer to the specified CMK. The value of this
+     * parameter can be the ID or Amazon Resource Name (ARN) of a CMK in the caller's
+     * account and region. You cannot use an alias name or alias ARN in this value.</p>
+     * <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns
+     * all aliases in the account and region.</p>
+     */
+    inline ListAliasesRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>Lists only aliases that refer to the specified CMK. The value of this
+     * parameter can be the ID or Amazon Resource Name (ARN) of a CMK in the caller's
+     * account and region. You cannot use an alias name or alias ARN in this value.</p>
+     * <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns
+     * all aliases in the account and region.</p>
+     */
+    inline ListAliasesRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+
+
+    /**
      * <p>Use this parameter to specify the maximum number of items to return. When
      * this value is present, AWS KMS does not return more than the specified number of
      * items, but it might return fewer.</p> <p>This value is optional. If you include
@@ -122,6 +186,9 @@ namespace Model
     inline ListAliasesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:
+
+    Aws::String m_keyId;
+    bool m_keyIdHasBeenSet;
 
     int m_limit;
     bool m_limitHasBeenSet;

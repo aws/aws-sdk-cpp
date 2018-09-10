@@ -35,7 +35,7 @@ EvaluationResultQualifier::EvaluationResultQualifier() :
 {
 }
 
-EvaluationResultQualifier::EvaluationResultQualifier(const JsonValue& jsonValue) : 
+EvaluationResultQualifier::EvaluationResultQualifier(JsonView jsonValue) : 
     m_configRuleNameHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false)
@@ -43,7 +43,7 @@ EvaluationResultQualifier::EvaluationResultQualifier(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-EvaluationResultQualifier& EvaluationResultQualifier::operator =(const JsonValue& jsonValue)
+EvaluationResultQualifier& EvaluationResultQualifier::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ConfigRuleName"))
   {

@@ -45,7 +45,7 @@ namespace Model
 
 
     /**
-     * <p>String that contains the ARN of the ACM Certificate to be deleted. This must
+     * <p>String that contains the ARN of the ACM certificate to be deleted. This must
      * be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p> <p>For more information about ARNs, see <a
@@ -55,7 +55,7 @@ namespace Model
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
     /**
-     * <p>String that contains the ARN of the ACM Certificate to be deleted. This must
+     * <p>String that contains the ARN of the ACM certificate to be deleted. This must
      * be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p> <p>For more information about ARNs, see <a
@@ -65,7 +65,7 @@ namespace Model
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
-     * <p>String that contains the ARN of the ACM Certificate to be deleted. This must
+     * <p>String that contains the ARN of the ACM certificate to be deleted. This must
      * be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p> <p>For more information about ARNs, see <a
@@ -75,7 +75,7 @@ namespace Model
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
-     * <p>String that contains the ARN of the ACM Certificate to be deleted. This must
+     * <p>String that contains the ARN of the ACM certificate to be deleted. This must
      * be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p> <p>For more information about ARNs, see <a
@@ -85,7 +85,7 @@ namespace Model
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
 
     /**
-     * <p>String that contains the ARN of the ACM Certificate to be deleted. This must
+     * <p>String that contains the ARN of the ACM certificate to be deleted. This must
      * be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p> <p>For more information about ARNs, see <a
@@ -95,7 +95,7 @@ namespace Model
     inline DeleteCertificateRequest& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
     /**
-     * <p>String that contains the ARN of the ACM Certificate to be deleted. This must
+     * <p>String that contains the ARN of the ACM certificate to be deleted. This must
      * be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p> <p>For more information about ARNs, see <a
@@ -105,7 +105,7 @@ namespace Model
     inline DeleteCertificateRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
-     * <p>String that contains the ARN of the ACM Certificate to be deleted. This must
+     * <p>String that contains the ARN of the ACM certificate to be deleted. This must
      * be of the form:</p> <p>
      * <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p> <p>For more information about ARNs, see <a

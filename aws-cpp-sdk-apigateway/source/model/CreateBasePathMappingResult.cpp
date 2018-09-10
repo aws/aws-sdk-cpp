@@ -37,7 +37,7 @@ CreateBasePathMappingResult::CreateBasePathMappingResult(const Aws::AmazonWebSer
 
 CreateBasePathMappingResult& CreateBasePathMappingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("basePath"))
   {
     m_basePath = jsonValue.GetString("basePath");

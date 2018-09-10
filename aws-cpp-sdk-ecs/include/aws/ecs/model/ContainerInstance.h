@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -49,14 +50,14 @@ namespace Model
   {
   public:
     ContainerInstance();
-    ContainerInstance(const Aws::Utils::Json::JsonValue& jsonValue);
-    ContainerInstance& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ContainerInstance(Aws::Utils::Json::JsonView jsonValue);
+    ContainerInstance& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -67,7 +68,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -78,7 +79,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -89,7 +90,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -100,7 +101,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -111,7 +112,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -122,7 +123,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains
-     * the <code>arn:aws:ecs</code> namespace, followed by the region of the container
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the container
      * instance, the AWS account ID of the container instance owner, the
      * <code>container-instance</code> namespace, and then the container instance ID.
      * For example,
@@ -234,122 +235,157 @@ namespace Model
 
 
     /**
-     * <p>For most resource types, this parameter describes the remaining resources of
-     * the container instance that are available for new tasks. For port resource
-     * types, this parameter describes the ports that are reserved by the Amazon ECS
-     * container agent and any containers that have reserved port mappings; any port
-     * that is not specified here is available for new tasks.</p>
+     * <p>For CPU and memory resource types, this parameter describes the remaining CPU
+     * and memory that has not already been allocated to tasks and is therefore
+     * available for new tasks. For port resource types, this parameter describes the
+     * ports that were reserved by the Amazon ECS container agent (at instance
+     * registration time) and any task containers that have reserved port mappings on
+     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
+     * port that is not specified here is available for new tasks.</p>
      */
     inline const Aws::Vector<Resource>& GetRemainingResources() const{ return m_remainingResources; }
 
     /**
-     * <p>For most resource types, this parameter describes the remaining resources of
-     * the container instance that are available for new tasks. For port resource
-     * types, this parameter describes the ports that are reserved by the Amazon ECS
-     * container agent and any containers that have reserved port mappings; any port
-     * that is not specified here is available for new tasks.</p>
+     * <p>For CPU and memory resource types, this parameter describes the remaining CPU
+     * and memory that has not already been allocated to tasks and is therefore
+     * available for new tasks. For port resource types, this parameter describes the
+     * ports that were reserved by the Amazon ECS container agent (at instance
+     * registration time) and any task containers that have reserved port mappings on
+     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
+     * port that is not specified here is available for new tasks.</p>
      */
     inline void SetRemainingResources(const Aws::Vector<Resource>& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources = value; }
 
     /**
-     * <p>For most resource types, this parameter describes the remaining resources of
-     * the container instance that are available for new tasks. For port resource
-     * types, this parameter describes the ports that are reserved by the Amazon ECS
-     * container agent and any containers that have reserved port mappings; any port
-     * that is not specified here is available for new tasks.</p>
+     * <p>For CPU and memory resource types, this parameter describes the remaining CPU
+     * and memory that has not already been allocated to tasks and is therefore
+     * available for new tasks. For port resource types, this parameter describes the
+     * ports that were reserved by the Amazon ECS container agent (at instance
+     * registration time) and any task containers that have reserved port mappings on
+     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
+     * port that is not specified here is available for new tasks.</p>
      */
     inline void SetRemainingResources(Aws::Vector<Resource>&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources = std::move(value); }
 
     /**
-     * <p>For most resource types, this parameter describes the remaining resources of
-     * the container instance that are available for new tasks. For port resource
-     * types, this parameter describes the ports that are reserved by the Amazon ECS
-     * container agent and any containers that have reserved port mappings; any port
-     * that is not specified here is available for new tasks.</p>
+     * <p>For CPU and memory resource types, this parameter describes the remaining CPU
+     * and memory that has not already been allocated to tasks and is therefore
+     * available for new tasks. For port resource types, this parameter describes the
+     * ports that were reserved by the Amazon ECS container agent (at instance
+     * registration time) and any task containers that have reserved port mappings on
+     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
+     * port that is not specified here is available for new tasks.</p>
      */
     inline ContainerInstance& WithRemainingResources(const Aws::Vector<Resource>& value) { SetRemainingResources(value); return *this;}
 
     /**
-     * <p>For most resource types, this parameter describes the remaining resources of
-     * the container instance that are available for new tasks. For port resource
-     * types, this parameter describes the ports that are reserved by the Amazon ECS
-     * container agent and any containers that have reserved port mappings; any port
-     * that is not specified here is available for new tasks.</p>
+     * <p>For CPU and memory resource types, this parameter describes the remaining CPU
+     * and memory that has not already been allocated to tasks and is therefore
+     * available for new tasks. For port resource types, this parameter describes the
+     * ports that were reserved by the Amazon ECS container agent (at instance
+     * registration time) and any task containers that have reserved port mappings on
+     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
+     * port that is not specified here is available for new tasks.</p>
      */
     inline ContainerInstance& WithRemainingResources(Aws::Vector<Resource>&& value) { SetRemainingResources(std::move(value)); return *this;}
 
     /**
-     * <p>For most resource types, this parameter describes the remaining resources of
-     * the container instance that are available for new tasks. For port resource
-     * types, this parameter describes the ports that are reserved by the Amazon ECS
-     * container agent and any containers that have reserved port mappings; any port
-     * that is not specified here is available for new tasks.</p>
+     * <p>For CPU and memory resource types, this parameter describes the remaining CPU
+     * and memory that has not already been allocated to tasks and is therefore
+     * available for new tasks. For port resource types, this parameter describes the
+     * ports that were reserved by the Amazon ECS container agent (at instance
+     * registration time) and any task containers that have reserved port mappings on
+     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
+     * port that is not specified here is available for new tasks.</p>
      */
     inline ContainerInstance& AddRemainingResources(const Resource& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources.push_back(value); return *this; }
 
     /**
-     * <p>For most resource types, this parameter describes the remaining resources of
-     * the container instance that are available for new tasks. For port resource
-     * types, this parameter describes the ports that are reserved by the Amazon ECS
-     * container agent and any containers that have reserved port mappings; any port
-     * that is not specified here is available for new tasks.</p>
+     * <p>For CPU and memory resource types, this parameter describes the remaining CPU
+     * and memory that has not already been allocated to tasks and is therefore
+     * available for new tasks. For port resource types, this parameter describes the
+     * ports that were reserved by the Amazon ECS container agent (at instance
+     * registration time) and any task containers that have reserved port mappings on
+     * the host (with the <code>host</code> or <code>bridge</code> network mode). Any
+     * port that is not specified here is available for new tasks.</p>
      */
     inline ContainerInstance& AddRemainingResources(Resource&& value) { m_remainingResourcesHasBeenSet = true; m_remainingResources.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>For most resource types, this parameter describes the registered resources on
-     * the container instance that are in use by current tasks. For port resource
-     * types, this parameter describes the ports that were reserved by the Amazon ECS
-     * container agent when it registered the container instance with Amazon ECS.</p>
+     * <p>For CPU and memory resource types, this parameter describes the amount of
+     * each resource that was available on the container instance when the container
+     * agent registered it with Amazon ECS; this value represents the total amount of
+     * CPU and memory that can be allocated on this container instance to tasks. For
+     * port resource types, this parameter describes the ports that were reserved by
+     * the Amazon ECS container agent when it registered the container instance with
+     * Amazon ECS.</p>
      */
     inline const Aws::Vector<Resource>& GetRegisteredResources() const{ return m_registeredResources; }
 
     /**
-     * <p>For most resource types, this parameter describes the registered resources on
-     * the container instance that are in use by current tasks. For port resource
-     * types, this parameter describes the ports that were reserved by the Amazon ECS
-     * container agent when it registered the container instance with Amazon ECS.</p>
+     * <p>For CPU and memory resource types, this parameter describes the amount of
+     * each resource that was available on the container instance when the container
+     * agent registered it with Amazon ECS; this value represents the total amount of
+     * CPU and memory that can be allocated on this container instance to tasks. For
+     * port resource types, this parameter describes the ports that were reserved by
+     * the Amazon ECS container agent when it registered the container instance with
+     * Amazon ECS.</p>
      */
     inline void SetRegisteredResources(const Aws::Vector<Resource>& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources = value; }
 
     /**
-     * <p>For most resource types, this parameter describes the registered resources on
-     * the container instance that are in use by current tasks. For port resource
-     * types, this parameter describes the ports that were reserved by the Amazon ECS
-     * container agent when it registered the container instance with Amazon ECS.</p>
+     * <p>For CPU and memory resource types, this parameter describes the amount of
+     * each resource that was available on the container instance when the container
+     * agent registered it with Amazon ECS; this value represents the total amount of
+     * CPU and memory that can be allocated on this container instance to tasks. For
+     * port resource types, this parameter describes the ports that were reserved by
+     * the Amazon ECS container agent when it registered the container instance with
+     * Amazon ECS.</p>
      */
     inline void SetRegisteredResources(Aws::Vector<Resource>&& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources = std::move(value); }
 
     /**
-     * <p>For most resource types, this parameter describes the registered resources on
-     * the container instance that are in use by current tasks. For port resource
-     * types, this parameter describes the ports that were reserved by the Amazon ECS
-     * container agent when it registered the container instance with Amazon ECS.</p>
+     * <p>For CPU and memory resource types, this parameter describes the amount of
+     * each resource that was available on the container instance when the container
+     * agent registered it with Amazon ECS; this value represents the total amount of
+     * CPU and memory that can be allocated on this container instance to tasks. For
+     * port resource types, this parameter describes the ports that were reserved by
+     * the Amazon ECS container agent when it registered the container instance with
+     * Amazon ECS.</p>
      */
     inline ContainerInstance& WithRegisteredResources(const Aws::Vector<Resource>& value) { SetRegisteredResources(value); return *this;}
 
     /**
-     * <p>For most resource types, this parameter describes the registered resources on
-     * the container instance that are in use by current tasks. For port resource
-     * types, this parameter describes the ports that were reserved by the Amazon ECS
-     * container agent when it registered the container instance with Amazon ECS.</p>
+     * <p>For CPU and memory resource types, this parameter describes the amount of
+     * each resource that was available on the container instance when the container
+     * agent registered it with Amazon ECS; this value represents the total amount of
+     * CPU and memory that can be allocated on this container instance to tasks. For
+     * port resource types, this parameter describes the ports that were reserved by
+     * the Amazon ECS container agent when it registered the container instance with
+     * Amazon ECS.</p>
      */
     inline ContainerInstance& WithRegisteredResources(Aws::Vector<Resource>&& value) { SetRegisteredResources(std::move(value)); return *this;}
 
     /**
-     * <p>For most resource types, this parameter describes the registered resources on
-     * the container instance that are in use by current tasks. For port resource
-     * types, this parameter describes the ports that were reserved by the Amazon ECS
-     * container agent when it registered the container instance with Amazon ECS.</p>
+     * <p>For CPU and memory resource types, this parameter describes the amount of
+     * each resource that was available on the container instance when the container
+     * agent registered it with Amazon ECS; this value represents the total amount of
+     * CPU and memory that can be allocated on this container instance to tasks. For
+     * port resource types, this parameter describes the ports that were reserved by
+     * the Amazon ECS container agent when it registered the container instance with
+     * Amazon ECS.</p>
      */
     inline ContainerInstance& AddRegisteredResources(const Resource& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources.push_back(value); return *this; }
 
     /**
-     * <p>For most resource types, this parameter describes the registered resources on
-     * the container instance that are in use by current tasks. For port resource
-     * types, this parameter describes the ports that were reserved by the Amazon ECS
-     * container agent when it registered the container instance with Amazon ECS.</p>
+     * <p>For CPU and memory resource types, this parameter describes the amount of
+     * each resource that was available on the container instance when the container
+     * agent registered it with Amazon ECS; this value represents the total amount of
+     * CPU and memory that can be allocated on this container instance to tasks. For
+     * port resource types, this parameter describes the ports that were reserved by
+     * the Amazon ECS container agent when it registered the container instance with
+     * Amazon ECS.</p>
      */
     inline ContainerInstance& AddRegisteredResources(Resource&& value) { m_registeredResourcesHasBeenSet = true; m_registeredResources.push_back(std::move(value)); return *this; }
 
@@ -449,7 +485,7 @@ namespace Model
     /**
      * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
      * ECS. Registered instances with an agent that may be unhealthy or stopped return
-     * <code>false</code>. Instances without a connected agent can't accept placement
+     * <code>false</code>. Only instances connected to an agent can accept placement
      * requests.</p>
      */
     inline bool GetAgentConnected() const{ return m_agentConnected; }
@@ -457,7 +493,7 @@ namespace Model
     /**
      * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
      * ECS. Registered instances with an agent that may be unhealthy or stopped return
-     * <code>false</code>. Instances without a connected agent can't accept placement
+     * <code>false</code>. Only instances connected to an agent can accept placement
      * requests.</p>
      */
     inline void SetAgentConnected(bool value) { m_agentConnectedHasBeenSet = true; m_agentConnected = value; }
@@ -465,7 +501,7 @@ namespace Model
     /**
      * <p>This parameter returns <code>true</code> if the agent is connected to Amazon
      * ECS. Registered instances with an agent that may be unhealthy or stopped return
-     * <code>false</code>. Instances without a connected agent can't accept placement
+     * <code>false</code>. Only instances connected to an agent can accept placement
      * requests.</p>
      */
     inline ContainerInstance& WithAgentConnected(bool value) { SetAgentConnected(value); return *this;}
@@ -617,37 +653,37 @@ namespace Model
 
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline ContainerInstance& WithAttachments(const Aws::Vector<Attachment>& value) { SetAttachments(value); return *this;}
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline ContainerInstance& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline ContainerInstance& AddAttachments(const Attachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
 
     /**
-     * <p>The Elastic Network Interfaces associated with the container instance.</p>
+     * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline ContainerInstance& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 

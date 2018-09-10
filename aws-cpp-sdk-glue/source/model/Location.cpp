@@ -30,22 +30,24 @@ namespace Model
 
 Location::Location() : 
     m_jdbcHasBeenSet(false),
-    m_s3HasBeenSet(false)
+    m_s3HasBeenSet(false),
+    m_dynamoDBHasBeenSet(false)
 {
 }
 
-Location::Location(const JsonValue& jsonValue) : 
+Location::Location(JsonView jsonValue) : 
     m_jdbcHasBeenSet(false),
-    m_s3HasBeenSet(false)
+    m_s3HasBeenSet(false),
+    m_dynamoDBHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Location& Location::operator =(const JsonValue& jsonValue)
+Location& Location::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Jdbc"))
   {
-    Array<JsonValue> jdbcJsonList = jsonValue.GetArray("Jdbc");
+    Array<JsonView> jdbcJsonList = jsonValue.GetArray("Jdbc");
     for(unsigned jdbcIndex = 0; jdbcIndex < jdbcJsonList.GetLength(); ++jdbcIndex)
     {
       m_jdbc.push_back(jdbcJsonList[jdbcIndex].AsObject());
@@ -55,12 +57,22 @@ Location& Location::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("S3"))
   {
-    Array<JsonValue> s3JsonList = jsonValue.GetArray("S3");
+    Array<JsonView> s3JsonList = jsonValue.GetArray("S3");
     for(unsigned s3Index = 0; s3Index < s3JsonList.GetLength(); ++s3Index)
     {
       m_s3.push_back(s3JsonList[s3Index].AsObject());
     }
     m_s3HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DynamoDB"))
+  {
+    Array<JsonView> dynamoDBJsonList = jsonValue.GetArray("DynamoDB");
+    for(unsigned dynamoDBIndex = 0; dynamoDBIndex < dynamoDBJsonList.GetLength(); ++dynamoDBIndex)
+    {
+      m_dynamoDB.push_back(dynamoDBJsonList[dynamoDBIndex].AsObject());
+    }
+    m_dynamoDBHasBeenSet = true;
   }
 
   return *this;
@@ -89,6 +101,17 @@ JsonValue Location::Jsonize() const
      s3JsonList[s3Index].AsObject(m_s3[s3Index].Jsonize());
    }
    payload.WithArray("S3", std::move(s3JsonList));
+
+  }
+
+  if(m_dynamoDBHasBeenSet)
+  {
+   Array<JsonValue> dynamoDBJsonList(m_dynamoDB.size());
+   for(unsigned dynamoDBIndex = 0; dynamoDBIndex < dynamoDBJsonList.GetLength(); ++dynamoDBIndex)
+   {
+     dynamoDBJsonList[dynamoDBIndex].AsObject(m_dynamoDB[dynamoDBIndex].Jsonize());
+   }
+   payload.WithArray("DynamoDB", std::move(dynamoDBJsonList));
 
   }
 

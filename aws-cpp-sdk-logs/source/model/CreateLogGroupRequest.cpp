@@ -56,7 +56,7 @@ Aws::String CreateLogGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateLogGroupRequest::GetRequestSpecificHeaders() const

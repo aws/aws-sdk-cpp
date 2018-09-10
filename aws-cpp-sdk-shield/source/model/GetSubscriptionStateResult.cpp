@@ -39,7 +39,7 @@ GetSubscriptionStateResult::GetSubscriptionStateResult(const Aws::AmazonWebServi
 
 GetSubscriptionStateResult& GetSubscriptionStateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SubscriptionState"))
   {
     m_subscriptionState = SubscriptionStateMapper::GetSubscriptionStateForName(jsonValue.GetString("SubscriptionState"));

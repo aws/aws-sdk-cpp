@@ -48,6 +48,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -64,8 +65,8 @@ namespace Model
   {
   public:
     HlsGroupSettings();
-    HlsGroupSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    HlsGroupSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    HlsGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    HlsGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -563,23 +564,23 @@ omit: Omit any CLOSED-CAPTIONS line
 
 
     /**
-     * Number of segments to keep in the playlist (.m3u8) file. mode must be "vod" for
-     * this setting to have an effect, and this number should be less than or equal to
-     * keepSegments.
+     * If mode is "live", the number of segments to retain in the manifest (.m3u8)
+     * file. This number must be less than or equal to keepSegments. If mode is "vod",
+     * this parameter has no effect.
      */
     inline int GetIndexNSegments() const{ return m_indexNSegments; }
 
     /**
-     * Number of segments to keep in the playlist (.m3u8) file. mode must be "vod" for
-     * this setting to have an effect, and this number should be less than or equal to
-     * keepSegments.
+     * If mode is "live", the number of segments to retain in the manifest (.m3u8)
+     * file. This number must be less than or equal to keepSegments. If mode is "vod",
+     * this parameter has no effect.
      */
     inline void SetIndexNSegments(int value) { m_indexNSegmentsHasBeenSet = true; m_indexNSegments = value; }
 
     /**
-     * Number of segments to keep in the playlist (.m3u8) file. mode must be "vod" for
-     * this setting to have an effect, and this number should be less than or equal to
-     * keepSegments.
+     * If mode is "live", the number of segments to retain in the manifest (.m3u8)
+     * file. This number must be less than or equal to keepSegments. If mode is "vod",
+     * this parameter has no effect.
      */
     inline HlsGroupSettings& WithIndexNSegments(int value) { SetIndexNSegments(value); return *this;}
 
@@ -693,20 +694,20 @@ omit: Omit any CLOSED-CAPTIONS line
 
 
     /**
-     * Number of segments to retain in the destination directory. mode must be "live"
-     * for this setting to have an effect.
+     * If mode is "live", the number of TS segments to retain in the destination
+     * directory. If mode is "vod", this parameter has no effect.
      */
     inline int GetKeepSegments() const{ return m_keepSegments; }
 
     /**
-     * Number of segments to retain in the destination directory. mode must be "live"
-     * for this setting to have an effect.
+     * If mode is "live", the number of TS segments to retain in the destination
+     * directory. If mode is "vod", this parameter has no effect.
      */
     inline void SetKeepSegments(int value) { m_keepSegmentsHasBeenSet = true; m_keepSegments = value; }
 
     /**
-     * Number of segments to retain in the destination directory. mode must be "live"
-     * for this setting to have an effect.
+     * If mode is "live", the number of TS segments to retain in the destination
+     * directory. If mode is "vod", this parameter has no effect.
      */
     inline HlsGroupSettings& WithKeepSegments(int value) { SetKeepSegments(value); return *this;}
 
@@ -907,37 +908,62 @@ omit: Omit any CLOSED-CAPTIONS line
 
 
     /**
-     * If set to "vod", keeps and indexes all segments starting with the first segment.
-     * If set to "live" segments will age out and only the last keepSegments number of
-     * segments will be retained.
+     * If "vod", all segments are indexed and kept permanently in the destination and
+     * manifest. If "live", only the number segments specified in keepSegments and
+     * indexNSegments are kept; newer segments replace older segments, which may
+     * prevent players from rewinding all the way to the beginning of the event.
+
+VOD
+     * mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running,
+     * converting it to a "VOD" type manifest on completion of the stream.
      */
     inline const HlsMode& GetMode() const{ return m_mode; }
 
     /**
-     * If set to "vod", keeps and indexes all segments starting with the first segment.
-     * If set to "live" segments will age out and only the last keepSegments number of
-     * segments will be retained.
+     * If "vod", all segments are indexed and kept permanently in the destination and
+     * manifest. If "live", only the number segments specified in keepSegments and
+     * indexNSegments are kept; newer segments replace older segments, which may
+     * prevent players from rewinding all the way to the beginning of the event.
+
+VOD
+     * mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running,
+     * converting it to a "VOD" type manifest on completion of the stream.
      */
     inline void SetMode(const HlsMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * If set to "vod", keeps and indexes all segments starting with the first segment.
-     * If set to "live" segments will age out and only the last keepSegments number of
-     * segments will be retained.
+     * If "vod", all segments are indexed and kept permanently in the destination and
+     * manifest. If "live", only the number segments specified in keepSegments and
+     * indexNSegments are kept; newer segments replace older segments, which may
+     * prevent players from rewinding all the way to the beginning of the event.
+
+VOD
+     * mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running,
+     * converting it to a "VOD" type manifest on completion of the stream.
      */
     inline void SetMode(HlsMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * If set to "vod", keeps and indexes all segments starting with the first segment.
-     * If set to "live" segments will age out and only the last keepSegments number of
-     * segments will be retained.
+     * If "vod", all segments are indexed and kept permanently in the destination and
+     * manifest. If "live", only the number segments specified in keepSegments and
+     * indexNSegments are kept; newer segments replace older segments, which may
+     * prevent players from rewinding all the way to the beginning of the event.
+
+VOD
+     * mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running,
+     * converting it to a "VOD" type manifest on completion of the stream.
      */
     inline HlsGroupSettings& WithMode(const HlsMode& value) { SetMode(value); return *this;}
 
     /**
-     * If set to "vod", keeps and indexes all segments starting with the first segment.
-     * If set to "live" segments will age out and only the last keepSegments number of
-     * segments will be retained.
+     * If "vod", all segments are indexed and kept permanently in the destination and
+     * manifest. If "live", only the number segments specified in keepSegments and
+     * indexNSegments are kept; newer segments replace older segments, which may
+     * prevent players from rewinding all the way to the beginning of the event.
+
+VOD
+     * mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running,
+     * converting it to a "VOD" type manifest on completion of the stream.
      */
     inline HlsGroupSettings& WithMode(HlsMode&& value) { SetMode(std::move(value)); return *this;}
 

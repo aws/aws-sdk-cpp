@@ -35,7 +35,7 @@ ImageBuilderStateChangeReason::ImageBuilderStateChangeReason() :
 {
 }
 
-ImageBuilderStateChangeReason::ImageBuilderStateChangeReason(const JsonValue& jsonValue) : 
+ImageBuilderStateChangeReason::ImageBuilderStateChangeReason(JsonView jsonValue) : 
     m_code(ImageBuilderStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -43,7 +43,7 @@ ImageBuilderStateChangeReason::ImageBuilderStateChangeReason(const JsonValue& js
   *this = jsonValue;
 }
 
-ImageBuilderStateChangeReason& ImageBuilderStateChangeReason::operator =(const JsonValue& jsonValue)
+ImageBuilderStateChangeReason& ImageBuilderStateChangeReason::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Code"))
   {

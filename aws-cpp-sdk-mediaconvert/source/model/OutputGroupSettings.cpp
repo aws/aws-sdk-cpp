@@ -29,6 +29,7 @@ namespace Model
 {
 
 OutputGroupSettings::OutputGroupSettings() : 
+    m_cmafGroupSettingsHasBeenSet(false),
     m_dashIsoGroupSettingsHasBeenSet(false),
     m_fileGroupSettingsHasBeenSet(false),
     m_hlsGroupSettingsHasBeenSet(false),
@@ -38,7 +39,8 @@ OutputGroupSettings::OutputGroupSettings() :
 {
 }
 
-OutputGroupSettings::OutputGroupSettings(const JsonValue& jsonValue) : 
+OutputGroupSettings::OutputGroupSettings(JsonView jsonValue) : 
+    m_cmafGroupSettingsHasBeenSet(false),
     m_dashIsoGroupSettingsHasBeenSet(false),
     m_fileGroupSettingsHasBeenSet(false),
     m_hlsGroupSettingsHasBeenSet(false),
@@ -49,8 +51,15 @@ OutputGroupSettings::OutputGroupSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OutputGroupSettings& OutputGroupSettings::operator =(const JsonValue& jsonValue)
+OutputGroupSettings& OutputGroupSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("cmafGroupSettings"))
+  {
+    m_cmafGroupSettings = jsonValue.GetObject("cmafGroupSettings");
+
+    m_cmafGroupSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("dashIsoGroupSettings"))
   {
     m_dashIsoGroupSettings = jsonValue.GetObject("dashIsoGroupSettings");
@@ -92,6 +101,12 @@ OutputGroupSettings& OutputGroupSettings::operator =(const JsonValue& jsonValue)
 JsonValue OutputGroupSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_cmafGroupSettingsHasBeenSet)
+  {
+   payload.WithObject("cmafGroupSettings", m_cmafGroupSettings.Jsonize());
+
+  }
 
   if(m_dashIsoGroupSettingsHasBeenSet)
   {

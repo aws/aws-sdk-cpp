@@ -35,7 +35,7 @@ IncompatibilityMessage::IncompatibilityMessage() :
 {
 }
 
-IncompatibilityMessage::IncompatibilityMessage(const JsonValue& jsonValue) : 
+IncompatibilityMessage::IncompatibilityMessage(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
     m_type(DeviceAttribute::NOT_SET),
     m_typeHasBeenSet(false)
@@ -43,7 +43,7 @@ IncompatibilityMessage::IncompatibilityMessage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IncompatibilityMessage& IncompatibilityMessage::operator =(const JsonValue& jsonValue)
+IncompatibilityMessage& IncompatibilityMessage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("message"))
   {

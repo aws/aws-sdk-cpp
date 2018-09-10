@@ -15,6 +15,8 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/WavFormat.h>
+#include <utility>
 
 namespace Aws
 {
@@ -23,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -40,8 +43,8 @@ namespace Model
   {
   public:
     WavSettings();
-    WavSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    WavSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    WavSettings(Aws::Utils::Json::JsonView jsonValue);
+    WavSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -86,6 +89,22 @@ namespace Model
     inline WavSettings& WithChannels(int value) { SetChannels(value); return *this;}
 
 
+    
+    inline const WavFormat& GetFormat() const{ return m_format; }
+
+    
+    inline void SetFormat(const WavFormat& value) { m_formatHasBeenSet = true; m_format = value; }
+
+    
+    inline void SetFormat(WavFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
+
+    
+    inline WavSettings& WithFormat(const WavFormat& value) { SetFormat(value); return *this;}
+
+    
+    inline WavSettings& WithFormat(WavFormat&& value) { SetFormat(std::move(value)); return *this;}
+
+
     /**
      * Sample rate in Hz.
      */
@@ -108,6 +127,9 @@ namespace Model
 
     int m_channels;
     bool m_channelsHasBeenSet;
+
+    WavFormat m_format;
+    bool m_formatHasBeenSet;
 
     int m_sampleRate;
     bool m_sampleRateHasBeenSet;

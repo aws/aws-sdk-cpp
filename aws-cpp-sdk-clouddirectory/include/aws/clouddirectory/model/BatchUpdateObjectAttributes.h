@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -37,15 +38,15 @@ namespace Model
   /**
    * <p>Represents the output of a <code>BatchUpdate</code> operation. </p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchUpdateObjectAttributes">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchUpdateObjectAttributes">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchUpdateObjectAttributes
   {
   public:
     BatchUpdateObjectAttributes();
-    BatchUpdateObjectAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchUpdateObjectAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchUpdateObjectAttributes(Aws::Utils::Json::JsonView jsonValue);
+    BatchUpdateObjectAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

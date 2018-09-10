@@ -39,7 +39,7 @@ Server::Server() :
 {
 }
 
-Server::Server(const JsonValue& jsonValue) : 
+Server::Server(JsonView jsonValue) : 
     m_serverIdHasBeenSet(false),
     m_serverType(ServerType::NOT_SET),
     m_serverTypeHasBeenSet(false),
@@ -51,7 +51,7 @@ Server::Server(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Server& Server::operator =(const JsonValue& jsonValue)
+Server& Server::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("serverId"))
   {

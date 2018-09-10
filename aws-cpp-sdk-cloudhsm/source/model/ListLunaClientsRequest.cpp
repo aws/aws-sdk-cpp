@@ -37,7 +37,7 @@ Aws::String ListLunaClientsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListLunaClientsRequest::GetRequestSpecificHeaders() const

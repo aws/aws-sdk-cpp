@@ -34,14 +34,14 @@ KinesisFirehoseInputUpdate::KinesisFirehoseInputUpdate() :
 {
 }
 
-KinesisFirehoseInputUpdate::KinesisFirehoseInputUpdate(const JsonValue& jsonValue) : 
+KinesisFirehoseInputUpdate::KinesisFirehoseInputUpdate(JsonView jsonValue) : 
     m_resourceARNUpdateHasBeenSet(false),
     m_roleARNUpdateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-KinesisFirehoseInputUpdate& KinesisFirehoseInputUpdate::operator =(const JsonValue& jsonValue)
+KinesisFirehoseInputUpdate& KinesisFirehoseInputUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceARNUpdate"))
   {

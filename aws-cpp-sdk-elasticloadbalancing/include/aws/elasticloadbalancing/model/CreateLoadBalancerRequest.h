@@ -112,7 +112,7 @@ namespace Model
     /**
      * <p>The listeners.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancer
+     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Listener>& GetListeners() const{ return m_listeners; }
@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>The listeners.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancer
+     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
     inline void SetListeners(const Aws::Vector<Listener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
@@ -128,7 +128,7 @@ namespace Model
     /**
      * <p>The listeners.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancer
+     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
     inline void SetListeners(Aws::Vector<Listener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
@@ -136,7 +136,7 @@ namespace Model
     /**
      * <p>The listeners.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancer
+     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
     inline CreateLoadBalancerRequest& WithListeners(const Aws::Vector<Listener>& value) { SetListeners(value); return *this;}
@@ -144,7 +144,7 @@ namespace Model
     /**
      * <p>The listeners.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancer
+     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
     inline CreateLoadBalancerRequest& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(std::move(value)); return *this;}
@@ -152,7 +152,7 @@ namespace Model
     /**
      * <p>The listeners.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancer
+     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
     inline CreateLoadBalancerRequest& AddListeners(const Listener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
@@ -160,7 +160,7 @@ namespace Model
     /**
      * <p>The listeners.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html">Listeners
-     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancer
+     * for Your Classic Load Balancer</a> in the <i>Classic Load Balancers
      * Guide</i>.</p>
      */
     inline CreateLoadBalancerRequest& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
@@ -418,7 +418,7 @@ namespace Model
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
-     * Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -426,7 +426,7 @@ namespace Model
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
-     * Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -434,7 +434,7 @@ namespace Model
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
-     * Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -442,7 +442,7 @@ namespace Model
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
-     * Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline CreateLoadBalancerRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -450,7 +450,7 @@ namespace Model
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
-     * Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline CreateLoadBalancerRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -458,7 +458,7 @@ namespace Model
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
-     * Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline CreateLoadBalancerRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -466,7 +466,7 @@ namespace Model
      * <p>A list of tags to assign to the load balancer.</p> <p>For more information
      * about tagging your load balancer, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html">Tag
-     * Your Classic Load Balancer</a> in the <i>Classic Load Balancer Guide</i>.</p>
+     * Your Classic Load Balancer</a> in the <i>Classic Load Balancers Guide</i>.</p>
      */
     inline CreateLoadBalancerRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

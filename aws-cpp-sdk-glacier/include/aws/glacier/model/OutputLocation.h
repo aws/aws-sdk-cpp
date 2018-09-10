@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glacier
@@ -42,37 +43,37 @@ namespace Model
   {
   public:
     OutputLocation();
-    OutputLocation(const Aws::Utils::Json::JsonValue& jsonValue);
-    OutputLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OutputLocation(Aws::Utils::Json::JsonView jsonValue);
+    OutputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Describes an S3 location that will receive the results of the restore
+     * <p>Describes an S3 location that will receive the results of the job
      * request.</p>
      */
     inline const S3Location& GetS3() const{ return m_s3; }
 
     /**
-     * <p>Describes an S3 location that will receive the results of the restore
+     * <p>Describes an S3 location that will receive the results of the job
      * request.</p>
      */
     inline void SetS3(const S3Location& value) { m_s3HasBeenSet = true; m_s3 = value; }
 
     /**
-     * <p>Describes an S3 location that will receive the results of the restore
+     * <p>Describes an S3 location that will receive the results of the job
      * request.</p>
      */
     inline void SetS3(S3Location&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
 
     /**
-     * <p>Describes an S3 location that will receive the results of the restore
+     * <p>Describes an S3 location that will receive the results of the job
      * request.</p>
      */
     inline OutputLocation& WithS3(const S3Location& value) { SetS3(value); return *this;}
 
     /**
-     * <p>Describes an S3 location that will receive the results of the restore
+     * <p>Describes an S3 location that will receive the results of the job
      * request.</p>
      */
     inline OutputLocation& WithS3(S3Location&& value) { SetS3(std::move(value)); return *this;}

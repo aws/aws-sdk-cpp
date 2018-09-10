@@ -37,10 +37,10 @@ DescribeServiceErrorsResult::DescribeServiceErrorsResult(const Aws::AmazonWebSer
 
 DescribeServiceErrorsResult& DescribeServiceErrorsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ServiceErrors"))
   {
-    Array<JsonValue> serviceErrorsJsonList = jsonValue.GetArray("ServiceErrors");
+    Array<JsonView> serviceErrorsJsonList = jsonValue.GetArray("ServiceErrors");
     for(unsigned serviceErrorsIndex = 0; serviceErrorsIndex < serviceErrorsJsonList.GetLength(); ++serviceErrorsIndex)
     {
       m_serviceErrors.push_back(serviceErrorsJsonList[serviceErrorsIndex].AsObject());

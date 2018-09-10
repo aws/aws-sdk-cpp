@@ -37,7 +37,7 @@ QueryExecutionStatus::QueryExecutionStatus() :
 {
 }
 
-QueryExecutionStatus::QueryExecutionStatus(const JsonValue& jsonValue) : 
+QueryExecutionStatus::QueryExecutionStatus(JsonView jsonValue) : 
     m_state(QueryExecutionState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
@@ -47,7 +47,7 @@ QueryExecutionStatus::QueryExecutionStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-QueryExecutionStatus& QueryExecutionStatus::operator =(const JsonValue& jsonValue)
+QueryExecutionStatus& QueryExecutionStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("State"))
   {

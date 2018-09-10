@@ -40,7 +40,7 @@ ServiceStatistics::ServiceStatistics() :
 {
 }
 
-ServiceStatistics::ServiceStatistics(const JsonValue& jsonValue) : 
+ServiceStatistics::ServiceStatistics(JsonView jsonValue) : 
     m_okCount(0),
     m_okCountHasBeenSet(false),
     m_errorStatisticsHasBeenSet(false),
@@ -53,7 +53,7 @@ ServiceStatistics::ServiceStatistics(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ServiceStatistics& ServiceStatistics::operator =(const JsonValue& jsonValue)
+ServiceStatistics& ServiceStatistics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OkCount"))
   {

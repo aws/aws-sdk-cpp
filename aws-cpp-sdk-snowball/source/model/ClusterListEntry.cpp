@@ -37,7 +37,7 @@ ClusterListEntry::ClusterListEntry() :
 {
 }
 
-ClusterListEntry::ClusterListEntry(const JsonValue& jsonValue) : 
+ClusterListEntry::ClusterListEntry(JsonView jsonValue) : 
     m_clusterIdHasBeenSet(false),
     m_clusterState(ClusterState::NOT_SET),
     m_clusterStateHasBeenSet(false),
@@ -47,7 +47,7 @@ ClusterListEntry::ClusterListEntry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ClusterListEntry& ClusterListEntry::operator =(const JsonValue& jsonValue)
+ClusterListEntry& ClusterListEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ClusterId"))
   {

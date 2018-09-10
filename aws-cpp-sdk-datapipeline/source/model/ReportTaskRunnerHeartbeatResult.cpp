@@ -39,7 +39,7 @@ ReportTaskRunnerHeartbeatResult::ReportTaskRunnerHeartbeatResult(const Aws::Amaz
 
 ReportTaskRunnerHeartbeatResult& ReportTaskRunnerHeartbeatResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("terminate"))
   {
     m_terminate = jsonValue.GetBool("terminate");

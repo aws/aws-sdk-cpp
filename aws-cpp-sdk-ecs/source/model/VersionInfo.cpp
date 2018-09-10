@@ -35,7 +35,7 @@ VersionInfo::VersionInfo() :
 {
 }
 
-VersionInfo::VersionInfo(const JsonValue& jsonValue) : 
+VersionInfo::VersionInfo(JsonView jsonValue) : 
     m_agentVersionHasBeenSet(false),
     m_agentHashHasBeenSet(false),
     m_dockerVersionHasBeenSet(false)
@@ -43,7 +43,7 @@ VersionInfo::VersionInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VersionInfo& VersionInfo::operator =(const JsonValue& jsonValue)
+VersionInfo& VersionInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("agentVersion"))
   {

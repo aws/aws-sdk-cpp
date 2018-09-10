@@ -36,7 +36,7 @@ ResourceCreationLimitPolicy::ResourceCreationLimitPolicy() :
 {
 }
 
-ResourceCreationLimitPolicy::ResourceCreationLimitPolicy(const JsonValue& jsonValue) : 
+ResourceCreationLimitPolicy::ResourceCreationLimitPolicy(JsonView jsonValue) : 
     m_newGameSessionsPerCreator(0),
     m_newGameSessionsPerCreatorHasBeenSet(false),
     m_policyPeriodInMinutes(0),
@@ -45,7 +45,7 @@ ResourceCreationLimitPolicy::ResourceCreationLimitPolicy(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-ResourceCreationLimitPolicy& ResourceCreationLimitPolicy::operator =(const JsonValue& jsonValue)
+ResourceCreationLimitPolicy& ResourceCreationLimitPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NewGameSessionsPerCreator"))
   {

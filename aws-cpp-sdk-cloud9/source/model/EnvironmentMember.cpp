@@ -38,7 +38,7 @@ EnvironmentMember::EnvironmentMember() :
 {
 }
 
-EnvironmentMember::EnvironmentMember(const JsonValue& jsonValue) : 
+EnvironmentMember::EnvironmentMember(JsonView jsonValue) : 
     m_permissions(Permissions::NOT_SET),
     m_permissionsHasBeenSet(false),
     m_userIdHasBeenSet(false),
@@ -49,7 +49,7 @@ EnvironmentMember::EnvironmentMember(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EnvironmentMember& EnvironmentMember::operator =(const JsonValue& jsonValue)
+EnvironmentMember& EnvironmentMember::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("permissions"))
   {

@@ -33,6 +33,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Budgets
@@ -41,7 +42,11 @@ namespace Model
 {
 
   /**
-   * AWS Budget model<p><h3>See Also:</h3>   <a
+   * <p>Represents the output of the <code>CreateBudget</code> operation. The content
+   * consists of the detailed metadata and data file information, and the current
+   * status of the <code>budget</code>.</p> <p>The ARN pattern for a budget is:
+   * <code>arn:aws:budgetservice::AccountId:budget/budgetName</code> </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/Budget">AWS API
    * Reference</a></p>
    */
@@ -49,160 +54,343 @@ namespace Model
   {
   public:
     Budget();
-    Budget(const Aws::Utils::Json::JsonValue& jsonValue);
-    Budget& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Budget(Aws::Utils::Json::JsonView jsonValue);
+    Budget& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The name of a budget. Unique within accounts. <code>:</code> and
+     * <code>\</code> characters are not allowed in the <code>BudgetName</code>.</p>
+     */
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
 
-    
+    /**
+     * <p>The name of a budget. Unique within accounts. <code>:</code> and
+     * <code>\</code> characters are not allowed in the <code>BudgetName</code>.</p>
+     */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
-    
+    /**
+     * <p>The name of a budget. Unique within accounts. <code>:</code> and
+     * <code>\</code> characters are not allowed in the <code>BudgetName</code>.</p>
+     */
     inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
 
-    
+    /**
+     * <p>The name of a budget. Unique within accounts. <code>:</code> and
+     * <code>\</code> characters are not allowed in the <code>BudgetName</code>.</p>
+     */
     inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
 
-    
+    /**
+     * <p>The name of a budget. Unique within accounts. <code>:</code> and
+     * <code>\</code> characters are not allowed in the <code>BudgetName</code>.</p>
+     */
     inline Budget& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
 
-    
+    /**
+     * <p>The name of a budget. Unique within accounts. <code>:</code> and
+     * <code>\</code> characters are not allowed in the <code>BudgetName</code>.</p>
+     */
     inline Budget& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of a budget. Unique within accounts. <code>:</code> and
+     * <code>\</code> characters are not allowed in the <code>BudgetName</code>.</p>
+     */
     inline Budget& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
 
 
-    
+    /**
+     * <p>The total amount of cost, usage, or RI utilization that you want to track
+     * with your budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage
+     * budgets, but optional for RI utilization budgets. RI utilization budgets default
+     * to the only valid value for RI utilization budgets, which is
+     * <code>100</code>.</p>
+     */
     inline const Spend& GetBudgetLimit() const{ return m_budgetLimit; }
 
-    
+    /**
+     * <p>The total amount of cost, usage, or RI utilization that you want to track
+     * with your budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage
+     * budgets, but optional for RI utilization budgets. RI utilization budgets default
+     * to the only valid value for RI utilization budgets, which is
+     * <code>100</code>.</p>
+     */
     inline void SetBudgetLimit(const Spend& value) { m_budgetLimitHasBeenSet = true; m_budgetLimit = value; }
 
-    
+    /**
+     * <p>The total amount of cost, usage, or RI utilization that you want to track
+     * with your budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage
+     * budgets, but optional for RI utilization budgets. RI utilization budgets default
+     * to the only valid value for RI utilization budgets, which is
+     * <code>100</code>.</p>
+     */
     inline void SetBudgetLimit(Spend&& value) { m_budgetLimitHasBeenSet = true; m_budgetLimit = std::move(value); }
 
-    
+    /**
+     * <p>The total amount of cost, usage, or RI utilization that you want to track
+     * with your budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage
+     * budgets, but optional for RI utilization budgets. RI utilization budgets default
+     * to the only valid value for RI utilization budgets, which is
+     * <code>100</code>.</p>
+     */
     inline Budget& WithBudgetLimit(const Spend& value) { SetBudgetLimit(value); return *this;}
 
-    
+    /**
+     * <p>The total amount of cost, usage, or RI utilization that you want to track
+     * with your budget.</p> <p> <code>BudgetLimit</code> is required for cost or usage
+     * budgets, but optional for RI utilization budgets. RI utilization budgets default
+     * to the only valid value for RI utilization budgets, which is
+     * <code>100</code>.</p>
+     */
     inline Budget& WithBudgetLimit(Spend&& value) { SetBudgetLimit(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The cost filters applied to a budget, such as service or region.</p>
+     */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetCostFilters() const{ return m_costFilters; }
 
-    
+    /**
+     * <p>The cost filters applied to a budget, such as service or region.</p>
+     */
     inline void SetCostFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_costFiltersHasBeenSet = true; m_costFilters = value; }
 
-    
+    /**
+     * <p>The cost filters applied to a budget, such as service or region.</p>
+     */
     inline void SetCostFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_costFiltersHasBeenSet = true; m_costFilters = std::move(value); }
 
-    
+    /**
+     * <p>The cost filters applied to a budget, such as service or region.</p>
+     */
     inline Budget& WithCostFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetCostFilters(value); return *this;}
 
-    
+    /**
+     * <p>The cost filters applied to a budget, such as service or region.</p>
+     */
     inline Budget& WithCostFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetCostFilters(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The cost filters applied to a budget, such as service or region.</p>
+     */
     inline Budget& AddCostFilters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, value); return *this; }
 
-    
+    /**
+     * <p>The cost filters applied to a budget, such as service or region.</p>
+     */
     inline Budget& AddCostFilters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::move(key), value); return *this; }
 
-    
+    /**
+     * <p>The cost filters applied to a budget, such as service or region.</p>
+     */
     inline Budget& AddCostFilters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The cost filters applied to a budget, such as service or region.</p>
+     */
     inline Budget& AddCostFilters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::move(key), std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The cost filters applied to a budget, such as service or region.</p>
+     */
     inline Budget& AddCostFilters(const char* key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The cost filters applied to a budget, such as service or region.</p>
+     */
     inline Budget& AddCostFilters(const char* key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, value); return *this; }
 
 
-    
+    /**
+     * <p>The types of costs included in this budget.</p>
+     */
     inline const CostTypes& GetCostTypes() const{ return m_costTypes; }
 
-    
+    /**
+     * <p>The types of costs included in this budget.</p>
+     */
     inline void SetCostTypes(const CostTypes& value) { m_costTypesHasBeenSet = true; m_costTypes = value; }
 
-    
+    /**
+     * <p>The types of costs included in this budget.</p>
+     */
     inline void SetCostTypes(CostTypes&& value) { m_costTypesHasBeenSet = true; m_costTypes = std::move(value); }
 
-    
+    /**
+     * <p>The types of costs included in this budget.</p>
+     */
     inline Budget& WithCostTypes(const CostTypes& value) { SetCostTypes(value); return *this;}
 
-    
+    /**
+     * <p>The types of costs included in this budget.</p>
+     */
     inline Budget& WithCostTypes(CostTypes&& value) { SetCostTypes(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The length of time until a budget resets the actual and forecasted spend.</p>
+     */
     inline const TimeUnit& GetTimeUnit() const{ return m_timeUnit; }
 
-    
+    /**
+     * <p>The length of time until a budget resets the actual and forecasted spend.</p>
+     */
     inline void SetTimeUnit(const TimeUnit& value) { m_timeUnitHasBeenSet = true; m_timeUnit = value; }
 
-    
+    /**
+     * <p>The length of time until a budget resets the actual and forecasted spend.</p>
+     */
     inline void SetTimeUnit(TimeUnit&& value) { m_timeUnitHasBeenSet = true; m_timeUnit = std::move(value); }
 
-    
+    /**
+     * <p>The length of time until a budget resets the actual and forecasted spend.</p>
+     */
     inline Budget& WithTimeUnit(const TimeUnit& value) { SetTimeUnit(value); return *this;}
 
-    
+    /**
+     * <p>The length of time until a budget resets the actual and forecasted spend.</p>
+     */
     inline Budget& WithTimeUnit(TimeUnit&& value) { SetTimeUnit(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The period of time covered by a budget. Has a start date and an end date. The
+     * start date must come before the end date. There are no restrictions on the end
+     * date. </p> <p>If you created your budget and didn't specify a start date, AWS
+     * defaults to the start of your chosen time period (i.e. DAILY, MONTHLY,
+     * QUARTERLY, ANNUALLY). For example, if you created your budget on January 24th
+     * 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start
+     * date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS
+     * set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an
+     * end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults
+     * are the same for the AWS Billing and Cost Management console and the API. </p>
+     * <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
+     * <p>After the end date, AWS deletes the budget and all associated notifications
+     * and subscribers.</p>
+     */
     inline const TimePeriod& GetTimePeriod() const{ return m_timePeriod; }
 
-    
+    /**
+     * <p>The period of time covered by a budget. Has a start date and an end date. The
+     * start date must come before the end date. There are no restrictions on the end
+     * date. </p> <p>If you created your budget and didn't specify a start date, AWS
+     * defaults to the start of your chosen time period (i.e. DAILY, MONTHLY,
+     * QUARTERLY, ANNUALLY). For example, if you created your budget on January 24th
+     * 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start
+     * date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS
+     * set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an
+     * end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults
+     * are the same for the AWS Billing and Cost Management console and the API. </p>
+     * <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
+     * <p>After the end date, AWS deletes the budget and all associated notifications
+     * and subscribers.</p>
+     */
     inline void SetTimePeriod(const TimePeriod& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
-    
+    /**
+     * <p>The period of time covered by a budget. Has a start date and an end date. The
+     * start date must come before the end date. There are no restrictions on the end
+     * date. </p> <p>If you created your budget and didn't specify a start date, AWS
+     * defaults to the start of your chosen time period (i.e. DAILY, MONTHLY,
+     * QUARTERLY, ANNUALLY). For example, if you created your budget on January 24th
+     * 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start
+     * date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS
+     * set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an
+     * end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults
+     * are the same for the AWS Billing and Cost Management console and the API. </p>
+     * <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
+     * <p>After the end date, AWS deletes the budget and all associated notifications
+     * and subscribers.</p>
+     */
     inline void SetTimePeriod(TimePeriod&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
-    
+    /**
+     * <p>The period of time covered by a budget. Has a start date and an end date. The
+     * start date must come before the end date. There are no restrictions on the end
+     * date. </p> <p>If you created your budget and didn't specify a start date, AWS
+     * defaults to the start of your chosen time period (i.e. DAILY, MONTHLY,
+     * QUARTERLY, ANNUALLY). For example, if you created your budget on January 24th
+     * 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start
+     * date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS
+     * set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an
+     * end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults
+     * are the same for the AWS Billing and Cost Management console and the API. </p>
+     * <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
+     * <p>After the end date, AWS deletes the budget and all associated notifications
+     * and subscribers.</p>
+     */
     inline Budget& WithTimePeriod(const TimePeriod& value) { SetTimePeriod(value); return *this;}
 
-    
+    /**
+     * <p>The period of time covered by a budget. Has a start date and an end date. The
+     * start date must come before the end date. There are no restrictions on the end
+     * date. </p> <p>If you created your budget and didn't specify a start date, AWS
+     * defaults to the start of your chosen time period (i.e. DAILY, MONTHLY,
+     * QUARTERLY, ANNUALLY). For example, if you created your budget on January 24th
+     * 2018, chose <code>DAILY</code>, and didn't set a start date, AWS set your start
+     * date to <code>01/24/18 00:00 UTC</code>. If you chose <code>MONTHLY</code>, AWS
+     * set your start date to <code>01/01/18 00:00 UTC</code>. If you didn't specify an
+     * end date, AWS set your end date to <code>06/15/87 00:00 UTC</code>. The defaults
+     * are the same for the AWS Billing and Cost Management console and the API. </p>
+     * <p>You can change either date with the <code>UpdateBudget</code> operation.</p>
+     * <p>After the end date, AWS deletes the budget and all associated notifications
+     * and subscribers.</p>
+     */
     inline Budget& WithTimePeriod(TimePeriod&& value) { SetTimePeriod(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The actual and forecasted cost or usage being tracked by a budget.</p>
+     */
     inline const CalculatedSpend& GetCalculatedSpend() const{ return m_calculatedSpend; }
 
-    
+    /**
+     * <p>The actual and forecasted cost or usage being tracked by a budget.</p>
+     */
     inline void SetCalculatedSpend(const CalculatedSpend& value) { m_calculatedSpendHasBeenSet = true; m_calculatedSpend = value; }
 
-    
+    /**
+     * <p>The actual and forecasted cost or usage being tracked by a budget.</p>
+     */
     inline void SetCalculatedSpend(CalculatedSpend&& value) { m_calculatedSpendHasBeenSet = true; m_calculatedSpend = std::move(value); }
 
-    
+    /**
+     * <p>The actual and forecasted cost or usage being tracked by a budget.</p>
+     */
     inline Budget& WithCalculatedSpend(const CalculatedSpend& value) { SetCalculatedSpend(value); return *this;}
 
-    
+    /**
+     * <p>The actual and forecasted cost or usage being tracked by a budget.</p>
+     */
     inline Budget& WithCalculatedSpend(CalculatedSpend&& value) { SetCalculatedSpend(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Whether this budget tracks monetary costs, usage, or RI utilization.</p>
+     */
     inline const BudgetType& GetBudgetType() const{ return m_budgetType; }
 
-    
+    /**
+     * <p>Whether this budget tracks monetary costs, usage, or RI utilization.</p>
+     */
     inline void SetBudgetType(const BudgetType& value) { m_budgetTypeHasBeenSet = true; m_budgetType = value; }
 
-    
+    /**
+     * <p>Whether this budget tracks monetary costs, usage, or RI utilization.</p>
+     */
     inline void SetBudgetType(BudgetType&& value) { m_budgetTypeHasBeenSet = true; m_budgetType = std::move(value); }
 
-    
+    /**
+     * <p>Whether this budget tracks monetary costs, usage, or RI utilization.</p>
+     */
     inline Budget& WithBudgetType(const BudgetType& value) { SetBudgetType(value); return *this;}
 
-    
+    /**
+     * <p>Whether this budget tracks monetary costs, usage, or RI utilization.</p>
+     */
     inline Budget& WithBudgetType(BudgetType&& value) { SetBudgetType(std::move(value)); return *this;}
 
   private:

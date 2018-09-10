@@ -35,7 +35,7 @@ Predicate::Predicate() :
 {
 }
 
-Predicate::Predicate(const JsonValue& jsonValue) : 
+Predicate::Predicate(JsonView jsonValue) : 
     m_logical(Logical::NOT_SET),
     m_logicalHasBeenSet(false),
     m_conditionsHasBeenSet(false)
@@ -43,7 +43,7 @@ Predicate::Predicate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Predicate& Predicate::operator =(const JsonValue& jsonValue)
+Predicate& Predicate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Logical"))
   {
@@ -54,7 +54,7 @@ Predicate& Predicate::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Conditions"))
   {
-    Array<JsonValue> conditionsJsonList = jsonValue.GetArray("Conditions");
+    Array<JsonView> conditionsJsonList = jsonValue.GetArray("Conditions");
     for(unsigned conditionsIndex = 0; conditionsIndex < conditionsJsonList.GetLength(); ++conditionsIndex)
     {
       m_conditions.push_back(conditionsJsonList[conditionsIndex].AsObject());

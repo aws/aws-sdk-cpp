@@ -34,14 +34,14 @@ AttributeKeyAndValue::AttributeKeyAndValue() :
 {
 }
 
-AttributeKeyAndValue::AttributeKeyAndValue(const JsonValue& jsonValue) : 
+AttributeKeyAndValue::AttributeKeyAndValue(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AttributeKeyAndValue& AttributeKeyAndValue::operator =(const JsonValue& jsonValue)
+AttributeKeyAndValue& AttributeKeyAndValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

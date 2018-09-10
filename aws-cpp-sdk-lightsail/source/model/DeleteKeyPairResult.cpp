@@ -37,7 +37,7 @@ DeleteKeyPairResult::DeleteKeyPairResult(const Aws::AmazonWebServiceResult<JsonV
 
 DeleteKeyPairResult& DeleteKeyPairResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetObject("operation");

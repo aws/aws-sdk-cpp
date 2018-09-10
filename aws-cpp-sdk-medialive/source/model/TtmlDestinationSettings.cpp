@@ -34,14 +34,14 @@ TtmlDestinationSettings::TtmlDestinationSettings() :
 {
 }
 
-TtmlDestinationSettings::TtmlDestinationSettings(const JsonValue& jsonValue) : 
+TtmlDestinationSettings::TtmlDestinationSettings(JsonView jsonValue) : 
     m_styleControl(TtmlDestinationStyleControl::NOT_SET),
     m_styleControlHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TtmlDestinationSettings& TtmlDestinationSettings::operator =(const JsonValue& jsonValue)
+TtmlDestinationSettings& TtmlDestinationSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("styleControl"))
   {

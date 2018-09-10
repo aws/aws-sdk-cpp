@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeDeploy
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     TargetInstances();
-    TargetInstances(const Aws::Utils::Json::JsonValue& jsonValue);
-    TargetInstances& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TargetInstances(Aws::Utils::Json::JsonView jsonValue);
+    TargetInstances& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

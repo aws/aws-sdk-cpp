@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     LambdaConfigType();
-    LambdaConfigType(const Aws::Utils::Json::JsonValue& jsonValue);
-    LambdaConfigType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LambdaConfigType(Aws::Utils::Json::JsonView jsonValue);
+    LambdaConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -370,6 +371,42 @@ namespace Model
      */
     inline LambdaConfigType& WithPreTokenGeneration(const char* value) { SetPreTokenGeneration(value); return *this;}
 
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline const Aws::String& GetUserMigration() const{ return m_userMigration; }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline void SetUserMigration(const Aws::String& value) { m_userMigrationHasBeenSet = true; m_userMigration = value; }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline void SetUserMigration(Aws::String&& value) { m_userMigrationHasBeenSet = true; m_userMigration = std::move(value); }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline void SetUserMigration(const char* value) { m_userMigrationHasBeenSet = true; m_userMigration.assign(value); }
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline LambdaConfigType& WithUserMigration(const Aws::String& value) { SetUserMigration(value); return *this;}
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline LambdaConfigType& WithUserMigration(Aws::String&& value) { SetUserMigration(std::move(value)); return *this;}
+
+    /**
+     * <p>The user migration Lambda config type.</p>
+     */
+    inline LambdaConfigType& WithUserMigration(const char* value) { SetUserMigration(value); return *this;}
+
   private:
 
     Aws::String m_preSignUp;
@@ -398,6 +435,9 @@ namespace Model
 
     Aws::String m_preTokenGeneration;
     bool m_preTokenGenerationHasBeenSet;
+
+    Aws::String m_userMigration;
+    bool m_userMigrationHasBeenSet;
   };
 
 } // namespace Model

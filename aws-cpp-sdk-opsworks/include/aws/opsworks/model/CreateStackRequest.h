@@ -87,58 +87,177 @@ namespace Model
 
 
     /**
-     * <p>The stack's AWS region, such as "ap-south-1". For more information about
-     * Amazon regions, see <a
+     * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
+     * about Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p>
+     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
+     * parameter and the AWS CLI common parameter <code>--region</code> are set to the
+     * same value, the stack uses a <i>regional</i> endpoint. If the
+     * <code>--stack-region</code> parameter is not set, but the AWS CLI
+     * <code>--region</code> parameter is, this also results in a stack with a
+     * <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set
+     * to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set
+     * to one of the following, then the stack uses a legacy or <i>classic</i> region:
+     * <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1,
+     * ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of
+     * the stack is in <code>us-east-1</code>. Only the preceding regions are supported
+     * as classic regions in the <code>us-east-1</code> API endpoint. Because it is a
+     * best practice to choose the regional endpoint that is closest to where you
+     * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
+     * CLI common <code>--region</code> parameter always specifies a regional API
+     * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+     * </note>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The stack's AWS region, such as "ap-south-1". For more information about
-     * Amazon regions, see <a
+     * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
+     * about Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p>
+     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
+     * parameter and the AWS CLI common parameter <code>--region</code> are set to the
+     * same value, the stack uses a <i>regional</i> endpoint. If the
+     * <code>--stack-region</code> parameter is not set, but the AWS CLI
+     * <code>--region</code> parameter is, this also results in a stack with a
+     * <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set
+     * to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set
+     * to one of the following, then the stack uses a legacy or <i>classic</i> region:
+     * <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1,
+     * ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of
+     * the stack is in <code>us-east-1</code>. Only the preceding regions are supported
+     * as classic regions in the <code>us-east-1</code> API endpoint. Because it is a
+     * best practice to choose the regional endpoint that is closest to where you
+     * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
+     * CLI common <code>--region</code> parameter always specifies a regional API
+     * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+     * </note>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The stack's AWS region, such as "ap-south-1". For more information about
-     * Amazon regions, see <a
+     * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
+     * about Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p>
+     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
+     * parameter and the AWS CLI common parameter <code>--region</code> are set to the
+     * same value, the stack uses a <i>regional</i> endpoint. If the
+     * <code>--stack-region</code> parameter is not set, but the AWS CLI
+     * <code>--region</code> parameter is, this also results in a stack with a
+     * <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set
+     * to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set
+     * to one of the following, then the stack uses a legacy or <i>classic</i> region:
+     * <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1,
+     * ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of
+     * the stack is in <code>us-east-1</code>. Only the preceding regions are supported
+     * as classic regions in the <code>us-east-1</code> API endpoint. Because it is a
+     * best practice to choose the regional endpoint that is closest to where you
+     * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
+     * CLI common <code>--region</code> parameter always specifies a regional API
+     * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+     * </note>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The stack's AWS region, such as "ap-south-1". For more information about
-     * Amazon regions, see <a
+     * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
+     * about Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p>
+     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
+     * parameter and the AWS CLI common parameter <code>--region</code> are set to the
+     * same value, the stack uses a <i>regional</i> endpoint. If the
+     * <code>--stack-region</code> parameter is not set, but the AWS CLI
+     * <code>--region</code> parameter is, this also results in a stack with a
+     * <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set
+     * to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set
+     * to one of the following, then the stack uses a legacy or <i>classic</i> region:
+     * <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1,
+     * ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of
+     * the stack is in <code>us-east-1</code>. Only the preceding regions are supported
+     * as classic regions in the <code>us-east-1</code> API endpoint. Because it is a
+     * best practice to choose the regional endpoint that is closest to where you
+     * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
+     * CLI common <code>--region</code> parameter always specifies a regional API
+     * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+     * </note>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The stack's AWS region, such as "ap-south-1". For more information about
-     * Amazon regions, see <a
+     * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
+     * about Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p>
+     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
+     * parameter and the AWS CLI common parameter <code>--region</code> are set to the
+     * same value, the stack uses a <i>regional</i> endpoint. If the
+     * <code>--stack-region</code> parameter is not set, but the AWS CLI
+     * <code>--region</code> parameter is, this also results in a stack with a
+     * <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set
+     * to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set
+     * to one of the following, then the stack uses a legacy or <i>classic</i> region:
+     * <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1,
+     * ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of
+     * the stack is in <code>us-east-1</code>. Only the preceding regions are supported
+     * as classic regions in the <code>us-east-1</code> API endpoint. Because it is a
+     * best practice to choose the regional endpoint that is closest to where you
+     * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
+     * CLI common <code>--region</code> parameter always specifies a regional API
+     * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+     * </note>
      */
     inline CreateStackRequest& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The stack's AWS region, such as "ap-south-1". For more information about
-     * Amazon regions, see <a
+     * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
+     * about Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p>
+     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
+     * parameter and the AWS CLI common parameter <code>--region</code> are set to the
+     * same value, the stack uses a <i>regional</i> endpoint. If the
+     * <code>--stack-region</code> parameter is not set, but the AWS CLI
+     * <code>--region</code> parameter is, this also results in a stack with a
+     * <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set
+     * to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set
+     * to one of the following, then the stack uses a legacy or <i>classic</i> region:
+     * <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1,
+     * ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of
+     * the stack is in <code>us-east-1</code>. Only the preceding regions are supported
+     * as classic regions in the <code>us-east-1</code> API endpoint. Because it is a
+     * best practice to choose the regional endpoint that is closest to where you
+     * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
+     * CLI common <code>--region</code> parameter always specifies a regional API
+     * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+     * </note>
      */
     inline CreateStackRequest& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The stack's AWS region, such as "ap-south-1". For more information about
-     * Amazon regions, see <a
+     * <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information
+     * about Amazon regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
-     * Endpoints</a>.</p>
+     * Endpoints</a>.</p> <note> <p>In the AWS CLI, this API maps to the
+     * <code>--stack-region</code> parameter. If the <code>--stack-region</code>
+     * parameter and the AWS CLI common parameter <code>--region</code> are set to the
+     * same value, the stack uses a <i>regional</i> endpoint. If the
+     * <code>--stack-region</code> parameter is not set, but the AWS CLI
+     * <code>--region</code> parameter is, this also results in a stack with a
+     * <i>regional</i> endpoint. However, if the <code>--region</code> parameter is set
+     * to <code>us-east-1</code>, and the <code>--stack-region</code> parameter is set
+     * to one of the following, then the stack uses a legacy or <i>classic</i> region:
+     * <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1,
+     * ap-southeast-1, ap-southeast-2</code>. In this case, the actual API endpoint of
+     * the stack is in <code>us-east-1</code>. Only the preceding regions are supported
+     * as classic regions in the <code>us-east-1</code> API endpoint. Because it is a
+     * best practice to choose the regional endpoint that is closest to where you
+     * manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
+     * CLI common <code>--region</code> parameter always specifies a regional API
+     * endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
+     * </note>
      */
     inline CreateStackRequest& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -158,11 +277,11 @@ namespace Model
      * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
      * must belong to a VPC in your account that is in the specified region.</p> </li>
      * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
-     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
-     * <a
+     * </ul> <p>For more information about how to use AWS OpsWorks Stacks with a VPC,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     * a Stack in a VPC</a>. For more information on default VPC and EC2-Classic, see
-     * <a
+     * a Stack in a VPC</a>. For more information about default VPC and EC2-Classic,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>. </p>
      */
@@ -183,11 +302,11 @@ namespace Model
      * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
      * must belong to a VPC in your account that is in the specified region.</p> </li>
      * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
-     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
-     * <a
+     * </ul> <p>For more information about how to use AWS OpsWorks Stacks with a VPC,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     * a Stack in a VPC</a>. For more information on default VPC and EC2-Classic, see
-     * <a
+     * a Stack in a VPC</a>. For more information about default VPC and EC2-Classic,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>. </p>
      */
@@ -208,11 +327,11 @@ namespace Model
      * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
      * must belong to a VPC in your account that is in the specified region.</p> </li>
      * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
-     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
-     * <a
+     * </ul> <p>For more information about how to use AWS OpsWorks Stacks with a VPC,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     * a Stack in a VPC</a>. For more information on default VPC and EC2-Classic, see
-     * <a
+     * a Stack in a VPC</a>. For more information about default VPC and EC2-Classic,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>. </p>
      */
@@ -233,11 +352,11 @@ namespace Model
      * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
      * must belong to a VPC in your account that is in the specified region.</p> </li>
      * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
-     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
-     * <a
+     * </ul> <p>For more information about how to use AWS OpsWorks Stacks with a VPC,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     * a Stack in a VPC</a>. For more information on default VPC and EC2-Classic, see
-     * <a
+     * a Stack in a VPC</a>. For more information about default VPC and EC2-Classic,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>. </p>
      */
@@ -258,11 +377,11 @@ namespace Model
      * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
      * must belong to a VPC in your account that is in the specified region.</p> </li>
      * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
-     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
-     * <a
+     * </ul> <p>For more information about how to use AWS OpsWorks Stacks with a VPC,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     * a Stack in a VPC</a>. For more information on default VPC and EC2-Classic, see
-     * <a
+     * a Stack in a VPC</a>. For more information about default VPC and EC2-Classic,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>. </p>
      */
@@ -283,11 +402,11 @@ namespace Model
      * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
      * must belong to a VPC in your account that is in the specified region.</p> </li>
      * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
-     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
-     * <a
+     * </ul> <p>For more information about how to use AWS OpsWorks Stacks with a VPC,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     * a Stack in a VPC</a>. For more information on default VPC and EC2-Classic, see
-     * <a
+     * a Stack in a VPC</a>. For more information about default VPC and EC2-Classic,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>. </p>
      */
@@ -308,11 +427,11 @@ namespace Model
      * <p>If you specify a nondefault VPC ID, note the following:</p> <ul> <li> <p>It
      * must belong to a VPC in your account that is in the specified region.</p> </li>
      * <li> <p>You must specify a value for <code>DefaultSubnetId</code>.</p> </li>
-     * </ul> <p>For more information on how to use AWS OpsWorks Stacks with a VPC, see
-     * <a
+     * </ul> <p>For more information about how to use AWS OpsWorks Stacks with a VPC,
+     * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running
-     * a Stack in a VPC</a>. For more information on default VPC and EC2-Classic, see
-     * <a
+     * a Stack in a VPC</a>. For more information about default VPC and EC2-Classic,
+     * see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>. </p>
      */
@@ -526,22 +645,22 @@ namespace Model
      * unless you specify a different operating system when you create the instance.
      * You can specify one of the following.</p> <ul> <li> <p>A supported Linux
      * operating system: An Amazon Linux version, such as <code>Amazon Linux
-     * 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information, see
-     * <a
+     * 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      * Using Custom AMIs</a>.</p> </li> </ul> <p>The default option is the current
-     * Amazon Linux version. For more information on the supported operating systems,
+     * Amazon Linux version. For more information about supported operating systems,
      * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
@@ -553,22 +672,22 @@ namespace Model
      * unless you specify a different operating system when you create the instance.
      * You can specify one of the following.</p> <ul> <li> <p>A supported Linux
      * operating system: An Amazon Linux version, such as <code>Amazon Linux
-     * 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information, see
-     * <a
+     * 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      * Using Custom AMIs</a>.</p> </li> </ul> <p>The default option is the current
-     * Amazon Linux version. For more information on the supported operating systems,
+     * Amazon Linux version. For more information about supported operating systems,
      * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
@@ -580,22 +699,22 @@ namespace Model
      * unless you specify a different operating system when you create the instance.
      * You can specify one of the following.</p> <ul> <li> <p>A supported Linux
      * operating system: An Amazon Linux version, such as <code>Amazon Linux
-     * 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information, see
-     * <a
+     * 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      * Using Custom AMIs</a>.</p> </li> </ul> <p>The default option is the current
-     * Amazon Linux version. For more information on the supported operating systems,
+     * Amazon Linux version. For more information about supported operating systems,
      * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
@@ -607,22 +726,22 @@ namespace Model
      * unless you specify a different operating system when you create the instance.
      * You can specify one of the following.</p> <ul> <li> <p>A supported Linux
      * operating system: An Amazon Linux version, such as <code>Amazon Linux
-     * 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information, see
-     * <a
+     * 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      * Using Custom AMIs</a>.</p> </li> </ul> <p>The default option is the current
-     * Amazon Linux version. For more information on the supported operating systems,
+     * Amazon Linux version. For more information about supported operating systems,
      * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
@@ -634,22 +753,22 @@ namespace Model
      * unless you specify a different operating system when you create the instance.
      * You can specify one of the following.</p> <ul> <li> <p>A supported Linux
      * operating system: An Amazon Linux version, such as <code>Amazon Linux
-     * 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information, see
-     * <a
+     * 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      * Using Custom AMIs</a>.</p> </li> </ul> <p>The default option is the current
-     * Amazon Linux version. For more information on the supported operating systems,
+     * Amazon Linux version. For more information about supported operating systems,
      * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
@@ -661,22 +780,22 @@ namespace Model
      * unless you specify a different operating system when you create the instance.
      * You can specify one of the following.</p> <ul> <li> <p>A supported Linux
      * operating system: An Amazon Linux version, such as <code>Amazon Linux
-     * 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information, see
-     * <a
+     * 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      * Using Custom AMIs</a>.</p> </li> </ul> <p>The default option is the current
-     * Amazon Linux version. For more information on the supported operating systems,
+     * Amazon Linux version. For more information about supported operating systems,
      * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
@@ -688,22 +807,22 @@ namespace Model
      * unless you specify a different operating system when you create the instance.
      * You can specify one of the following.</p> <ul> <li> <p>A supported Linux
      * operating system: An Amazon Linux version, such as <code>Amazon Linux
-     * 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux
-     * 2016.03</code>, <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux
-     * 2015.03</code>.</p> </li> <li> <p>A supported Ubuntu operating system, such as
-     * <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu
-     * 12.04 LTS</code>.</p> </li> <li> <p> <code>CentOS Linux 7</code> </p> </li> <li>
-     * <p> <code>Red Hat Enterprise Linux 7</code> </p> </li> <li> <p>A supported
-     * Windows operating system, such as <code>Microsoft Windows Server 2012 R2
-     * Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Express</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Standard</code>, or <code>Microsoft Windows Server 2012 R2 with SQL Server
-     * Web</code>.</p> </li> <li> <p>A custom AMI: <code>Custom</code>. You specify the
-     * custom AMI you want to use when you create instances. For more information, see
-     * <a
+     * 2017.09</code>, <code>Amazon Linux 2017.03</code>, <code>Amazon Linux
+     * 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux
+     * 2015.09</code>, or <code>Amazon Linux 2015.03</code>.</p> </li> <li> <p>A
+     * supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>,
+     * <code>Ubuntu 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.</p> </li> <li>
+     * <p> <code>CentOS Linux 7</code> </p> </li> <li> <p> <code>Red Hat Enterprise
+     * Linux 7</code> </p> </li> <li> <p>A supported Windows operating system, such as
+     * <code>Microsoft Windows Server 2012 R2 Base</code>, <code>Microsoft Windows
+     * Server 2012 R2 with SQL Server Express</code>, <code>Microsoft Windows Server
+     * 2012 R2 with SQL Server Standard</code>, or <code>Microsoft Windows Server 2012
+     * R2 with SQL Server Web</code>.</p> </li> <li> <p>A custom AMI:
+     * <code>Custom</code>. You specify the custom AMI you want to use when you create
+     * instances. For more information, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
      * Using Custom AMIs</a>.</p> </li> </ul> <p>The default option is the current
-     * Amazon Linux version. For more information on the supported operating systems,
+     * Amazon Linux version. For more information about supported operating systems,
      * see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      * OpsWorks Stacks Operating Systems</a>.</p>
@@ -985,7 +1104,7 @@ namespace Model
      * the corresponding default stack configuration attribute values or to pass data
      * to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
-     * information on custom JSON, see <a
+     * information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -996,7 +1115,7 @@ namespace Model
      * the corresponding default stack configuration attribute values or to pass data
      * to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
-     * information on custom JSON, see <a
+     * information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -1007,7 +1126,7 @@ namespace Model
      * the corresponding default stack configuration attribute values or to pass data
      * to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
-     * information on custom JSON, see <a
+     * information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -1018,7 +1137,7 @@ namespace Model
      * the corresponding default stack configuration attribute values or to pass data
      * to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
-     * information on custom JSON, see <a
+     * information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -1029,7 +1148,7 @@ namespace Model
      * the corresponding default stack configuration attribute values or to pass data
      * to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
-     * information on custom JSON, see <a
+     * information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -1040,7 +1159,7 @@ namespace Model
      * the corresponding default stack configuration attribute values or to pass data
      * to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
-     * information on custom JSON, see <a
+     * information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -1051,7 +1170,7 @@ namespace Model
      * the corresponding default stack configuration attribute values or to pass data
      * to recipes. The string should be in the following format:</p> <p>
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> </p> <p>For more
-     * information on custom JSON, see <a
+     * information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use
      * Custom JSON to Modify the Stack Configuration Attributes</a>.</p>
      */
@@ -1062,7 +1181,7 @@ namespace Model
      * <p>The configuration manager. When you create a stack we recommend that you use
      * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
-     * currently 11.4.</p>
+     * currently 12.</p>
      */
     inline const StackConfigurationManager& GetConfigurationManager() const{ return m_configurationManager; }
 
@@ -1070,7 +1189,7 @@ namespace Model
      * <p>The configuration manager. When you create a stack we recommend that you use
      * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
-     * currently 11.4.</p>
+     * currently 12.</p>
      */
     inline void SetConfigurationManager(const StackConfigurationManager& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = value; }
 
@@ -1078,7 +1197,7 @@ namespace Model
      * <p>The configuration manager. When you create a stack we recommend that you use
      * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
-     * currently 11.4.</p>
+     * currently 12.</p>
      */
     inline void SetConfigurationManager(StackConfigurationManager&& value) { m_configurationManagerHasBeenSet = true; m_configurationManager = std::move(value); }
 
@@ -1086,7 +1205,7 @@ namespace Model
      * <p>The configuration manager. When you create a stack we recommend that you use
      * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
-     * currently 11.4.</p>
+     * currently 12.</p>
      */
     inline CreateStackRequest& WithConfigurationManager(const StackConfigurationManager& value) { SetConfigurationManager(value); return *this;}
 
@@ -1094,7 +1213,7 @@ namespace Model
      * <p>The configuration manager. When you create a stack we recommend that you use
      * the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for
      * Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is
-     * currently 11.4.</p>
+     * currently 12.</p>
      */
     inline CreateStackRequest& WithConfigurationManager(StackConfigurationManager&& value) { SetConfigurationManager(std::move(value)); return *this;}
 

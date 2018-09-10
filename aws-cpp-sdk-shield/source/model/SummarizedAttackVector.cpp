@@ -34,14 +34,14 @@ SummarizedAttackVector::SummarizedAttackVector() :
 {
 }
 
-SummarizedAttackVector::SummarizedAttackVector(const JsonValue& jsonValue) : 
+SummarizedAttackVector::SummarizedAttackVector(JsonView jsonValue) : 
     m_vectorTypeHasBeenSet(false),
     m_vectorCountersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-SummarizedAttackVector& SummarizedAttackVector::operator =(const JsonValue& jsonValue)
+SummarizedAttackVector& SummarizedAttackVector::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VectorType"))
   {
@@ -52,7 +52,7 @@ SummarizedAttackVector& SummarizedAttackVector::operator =(const JsonValue& json
 
   if(jsonValue.ValueExists("VectorCounters"))
   {
-    Array<JsonValue> vectorCountersJsonList = jsonValue.GetArray("VectorCounters");
+    Array<JsonView> vectorCountersJsonList = jsonValue.GetArray("VectorCounters");
     for(unsigned vectorCountersIndex = 0; vectorCountersIndex < vectorCountersJsonList.GetLength(); ++vectorCountersIndex)
     {
       m_vectorCounters.push_back(vectorCountersJsonList[vectorCountersIndex].AsObject());

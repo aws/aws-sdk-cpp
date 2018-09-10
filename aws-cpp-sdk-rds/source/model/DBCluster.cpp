@@ -71,7 +71,17 @@ DBCluster::DBCluster() :
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_cloneGroupIdHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false)
+    m_clusterCreateTimeHasBeenSet(false),
+    m_earliestBacktrackTimeHasBeenSet(false),
+    m_backtrackWindow(0),
+    m_backtrackWindowHasBeenSet(false),
+    m_backtrackConsumedChangeRecords(0),
+    m_backtrackConsumedChangeRecordsHasBeenSet(false),
+    m_enabledCloudwatchLogsExportsHasBeenSet(false),
+    m_capacity(0),
+    m_capacityHasBeenSet(false),
+    m_engineModeHasBeenSet(false),
+    m_scalingConfigurationInfoHasBeenSet(false)
 {
 }
 
@@ -116,7 +126,17 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
     m_cloneGroupIdHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false)
+    m_clusterCreateTimeHasBeenSet(false),
+    m_earliestBacktrackTimeHasBeenSet(false),
+    m_backtrackWindow(0),
+    m_backtrackWindowHasBeenSet(false),
+    m_backtrackConsumedChangeRecords(0),
+    m_backtrackConsumedChangeRecordsHasBeenSet(false),
+    m_enabledCloudwatchLogsExportsHasBeenSet(false),
+    m_capacity(0),
+    m_capacityHasBeenSet(false),
+    m_engineModeHasBeenSet(false),
+    m_scalingConfigurationInfoHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -373,6 +393,54 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_clusterCreateTime = DateTime(StringUtils::Trim(clusterCreateTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_clusterCreateTimeHasBeenSet = true;
     }
+    XmlNode earliestBacktrackTimeNode = resultNode.FirstChild("EarliestBacktrackTime");
+    if(!earliestBacktrackTimeNode.IsNull())
+    {
+      m_earliestBacktrackTime = DateTime(StringUtils::Trim(earliestBacktrackTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_earliestBacktrackTimeHasBeenSet = true;
+    }
+    XmlNode backtrackWindowNode = resultNode.FirstChild("BacktrackWindow");
+    if(!backtrackWindowNode.IsNull())
+    {
+      m_backtrackWindow = StringUtils::ConvertToInt64(StringUtils::Trim(backtrackWindowNode.GetText().c_str()).c_str());
+      m_backtrackWindowHasBeenSet = true;
+    }
+    XmlNode backtrackConsumedChangeRecordsNode = resultNode.FirstChild("BacktrackConsumedChangeRecords");
+    if(!backtrackConsumedChangeRecordsNode.IsNull())
+    {
+      m_backtrackConsumedChangeRecords = StringUtils::ConvertToInt64(StringUtils::Trim(backtrackConsumedChangeRecordsNode.GetText().c_str()).c_str());
+      m_backtrackConsumedChangeRecordsHasBeenSet = true;
+    }
+    XmlNode enabledCloudwatchLogsExportsNode = resultNode.FirstChild("EnabledCloudwatchLogsExports");
+    if(!enabledCloudwatchLogsExportsNode.IsNull())
+    {
+      XmlNode enabledCloudwatchLogsExportsMember = enabledCloudwatchLogsExportsNode.FirstChild("member");
+      while(!enabledCloudwatchLogsExportsMember.IsNull())
+      {
+        m_enabledCloudwatchLogsExports.push_back(StringUtils::Trim(enabledCloudwatchLogsExportsMember.GetText().c_str()));
+        enabledCloudwatchLogsExportsMember = enabledCloudwatchLogsExportsMember.NextNode("member");
+      }
+
+      m_enabledCloudwatchLogsExportsHasBeenSet = true;
+    }
+    XmlNode capacityNode = resultNode.FirstChild("Capacity");
+    if(!capacityNode.IsNull())
+    {
+      m_capacity = StringUtils::ConvertToInt32(StringUtils::Trim(capacityNode.GetText().c_str()).c_str());
+      m_capacityHasBeenSet = true;
+    }
+    XmlNode engineModeNode = resultNode.FirstChild("EngineMode");
+    if(!engineModeNode.IsNull())
+    {
+      m_engineMode = StringUtils::Trim(engineModeNode.GetText().c_str());
+      m_engineModeHasBeenSet = true;
+    }
+    XmlNode scalingConfigurationInfoNode = resultNode.FirstChild("ScalingConfigurationInfo");
+    if(!scalingConfigurationInfoNode.IsNull())
+    {
+      m_scalingConfigurationInfo = scalingConfigurationInfoNode;
+      m_scalingConfigurationInfoHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -587,6 +655,47 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_earliestBacktrackTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EarliestBacktrackTime=" << StringUtils::URLEncode(m_earliestBacktrackTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if(m_backtrackWindowHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BacktrackWindow=" << m_backtrackWindow << "&";
+  }
+
+  if(m_backtrackConsumedChangeRecordsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".BacktrackConsumedChangeRecords=" << m_backtrackConsumedChangeRecords << "&";
+  }
+
+  if(m_enabledCloudwatchLogsExportsHasBeenSet)
+  {
+      unsigned enabledCloudwatchLogsExportsIdx = 1;
+      for(auto& item : m_enabledCloudwatchLogsExports)
+      {
+        oStream << location << index << locationValue << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
+  if(m_capacityHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Capacity=" << m_capacity << "&";
+  }
+
+  if(m_engineModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EngineMode=" << StringUtils::URLEncode(m_engineMode.c_str()) << "&";
+  }
+
+  if(m_scalingConfigurationInfoHasBeenSet)
+  {
+      Aws::StringStream scalingConfigurationInfoLocationAndMemberSs;
+      scalingConfigurationInfoLocationAndMemberSs << location << index << locationValue << ".ScalingConfigurationInfo";
+      m_scalingConfigurationInfo.OutputToStream(oStream, scalingConfigurationInfoLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -762,6 +871,40 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_clusterCreateTimeHasBeenSet)
   {
       oStream << location << ".ClusterCreateTime=" << StringUtils::URLEncode(m_clusterCreateTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_earliestBacktrackTimeHasBeenSet)
+  {
+      oStream << location << ".EarliestBacktrackTime=" << StringUtils::URLEncode(m_earliestBacktrackTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_backtrackWindowHasBeenSet)
+  {
+      oStream << location << ".BacktrackWindow=" << m_backtrackWindow << "&";
+  }
+  if(m_backtrackConsumedChangeRecordsHasBeenSet)
+  {
+      oStream << location << ".BacktrackConsumedChangeRecords=" << m_backtrackConsumedChangeRecords << "&";
+  }
+  if(m_enabledCloudwatchLogsExportsHasBeenSet)
+  {
+      unsigned enabledCloudwatchLogsExportsIdx = 1;
+      for(auto& item : m_enabledCloudwatchLogsExports)
+      {
+        oStream << location << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_capacityHasBeenSet)
+  {
+      oStream << location << ".Capacity=" << m_capacity << "&";
+  }
+  if(m_engineModeHasBeenSet)
+  {
+      oStream << location << ".EngineMode=" << StringUtils::URLEncode(m_engineMode.c_str()) << "&";
+  }
+  if(m_scalingConfigurationInfoHasBeenSet)
+  {
+      Aws::String scalingConfigurationInfoLocationAndMember(location);
+      scalingConfigurationInfoLocationAndMember += ".ScalingConfigurationInfo";
+      m_scalingConfigurationInfo.OutputToStream(oStream, scalingConfigurationInfoLocationAndMember.c_str());
   }
 }
 

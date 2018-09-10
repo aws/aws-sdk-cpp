@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -39,7 +40,8 @@ namespace Model
 {
 
   /**
-   * The message configuration.<p><h3>See Also:</h3>   <a
+   * Message definitions for the default message and any messages that are tailored
+   * for specific channels.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DirectMessageConfiguration">AWS
    * API Reference</a></p>
    */
@@ -47,8 +49,8 @@ namespace Model
   {
   public:
     DirectMessageConfiguration();
-    DirectMessageConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    DirectMessageConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DirectMessageConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    DirectMessageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

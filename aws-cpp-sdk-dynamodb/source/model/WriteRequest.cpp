@@ -34,14 +34,14 @@ WriteRequest::WriteRequest() :
 {
 }
 
-WriteRequest::WriteRequest(const JsonValue& jsonValue) : 
+WriteRequest::WriteRequest(JsonView jsonValue) : 
     m_putRequestHasBeenSet(false),
     m_deleteRequestHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WriteRequest& WriteRequest::operator =(const JsonValue& jsonValue)
+WriteRequest& WriteRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PutRequest"))
   {

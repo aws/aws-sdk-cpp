@@ -52,79 +52,125 @@ namespace Model
   public:
 
     /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline DescribeFlowLogsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+
+    /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>deliver-log-status</code> - The
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-     * </li> <li> <p> <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li>
-     * <p> <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
+     * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
+     * which the flow log publishes data. Possible destination types include
+     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
+     * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
      * </li> <li> <p> <code>traffic-type</code> - The type of traffic
-     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)</p> </li> </ul>
+     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilter() const{ return m_filter; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>deliver-log-status</code> - The
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-     * </li> <li> <p> <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li>
-     * <p> <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
+     * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
+     * which the flow log publishes data. Possible destination types include
+     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
+     * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
      * </li> <li> <p> <code>traffic-type</code> - The type of traffic
-     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)</p> </li> </ul>
+     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p> </li> </ul>
      */
     inline void SetFilter(const Aws::Vector<Filter>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>deliver-log-status</code> - The
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-     * </li> <li> <p> <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li>
-     * <p> <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
+     * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
+     * which the flow log publishes data. Possible destination types include
+     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
+     * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
      * </li> <li> <p> <code>traffic-type</code> - The type of traffic
-     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)</p> </li> </ul>
+     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p> </li> </ul>
      */
     inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>deliver-log-status</code> - The
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-     * </li> <li> <p> <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li>
-     * <p> <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
+     * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
+     * which the flow log publishes data. Possible destination types include
+     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
+     * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
      * </li> <li> <p> <code>traffic-type</code> - The type of traffic
-     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)</p> </li> </ul>
+     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p> </li> </ul>
      */
     inline DescribeFlowLogsRequest& WithFilter(const Aws::Vector<Filter>& value) { SetFilter(value); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>deliver-log-status</code> - The
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-     * </li> <li> <p> <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li>
-     * <p> <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
+     * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
+     * which the flow log publishes data. Possible destination types include
+     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
+     * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
      * </li> <li> <p> <code>traffic-type</code> - The type of traffic
-     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)</p> </li> </ul>
+     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p> </li> </ul>
      */
     inline DescribeFlowLogsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>deliver-log-status</code> - The
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-     * </li> <li> <p> <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li>
-     * <p> <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
+     * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
+     * which the flow log publishes data. Possible destination types include
+     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
+     * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
      * </li> <li> <p> <code>traffic-type</code> - The type of traffic
-     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)</p> </li> </ul>
+     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p> </li> </ul>
      */
     inline DescribeFlowLogsRequest& AddFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>deliver-log-status</code> - The
      * status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p>
-     * </li> <li> <p> <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li>
-     * <p> <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
+     * </li> <li> <p> <code>log-destination-type</code> - The type of destination to
+     * which the flow log publishes data. Possible destination types include
+     * <code>cloud-watch-logs</code> and <code>S3</code>.</p> </li> <li> <p>
+     * <code>flow-log-id</code> - The ID of the flow log.</p> </li> <li> <p>
+     * <code>log-group-name</code> - The name of the log group.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p>
      * </li> <li> <p> <code>traffic-type</code> - The type of traffic
-     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>)</p> </li> </ul>
+     * (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p> </li> </ul>
      */
     inline DescribeFlowLogsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
@@ -173,7 +219,7 @@ namespace Model
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>NextToken</code> value. This value can be between 5 and 1000. If
      * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
      * returned. You cannot specify this parameter and the flow log IDs parameter in
      * the same request.</p>
@@ -183,7 +229,7 @@ namespace Model
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>NextToken</code> value. This value can be between 5 and 1000. If
      * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
      * returned. You cannot specify this parameter and the flow log IDs parameter in
      * the same request.</p>
@@ -193,7 +239,7 @@ namespace Model
     /**
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000; if
+     * <code>NextToken</code> value. This value can be between 5 and 1000. If
      * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
      * returned. You cannot specify this parameter and the flow log IDs parameter in
      * the same request.</p>
@@ -237,6 +283,9 @@ namespace Model
     inline DescribeFlowLogsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
 
     Aws::Vector<Filter> m_filter;
     bool m_filterHasBeenSet;

@@ -18,7 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/Core_EXPORTS.h>
-#include <mutex>
+#include <aws/core/utils/threading/ReaderWriterLock.h>
 
 namespace Aws
 {
@@ -36,7 +36,7 @@ namespace Aws
             void StoreOverflow(int hashCode, const Aws::String& value);
 
         private:
-            mutable std::mutex m_overflowLock;
+            mutable Aws::Utils::Threading::ReaderWriterLock m_overflowLock;
             Aws::Map<int, Aws::String> m_overflowMap;
             Aws::String m_emptyString;
         };

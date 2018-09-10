@@ -37,7 +37,7 @@ UpdateDocumentDefaultVersionResult::UpdateDocumentDefaultVersionResult(const Aws
 
 UpdateDocumentDefaultVersionResult& UpdateDocumentDefaultVersionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetObject("Description");

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/BillingTagsSource.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/JobSettings.h>
@@ -32,6 +33,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -51,8 +53,8 @@ namespace Model
   {
   public:
     Job();
-    Job(const Aws::Utils::Json::JsonValue& jsonValue);
-    Job& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Job(Aws::Utils::Json::JsonView jsonValue);
+    Job& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -90,6 +92,22 @@ namespace Model
      * An identifier for this resource that is unique within all of AWS.
      */
     inline Job& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    
+    inline const BillingTagsSource& GetBillingTagsSource() const{ return m_billingTagsSource; }
+
+    
+    inline void SetBillingTagsSource(const BillingTagsSource& value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = value; }
+
+    
+    inline void SetBillingTagsSource(BillingTagsSource&& value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = std::move(value); }
+
+    
+    inline Job& WithBillingTagsSource(const BillingTagsSource& value) { SetBillingTagsSource(value); return *this;}
+
+    
+    inline Job& WithBillingTagsSource(BillingTagsSource&& value) { SetBillingTagsSource(std::move(value)); return *this;}
 
 
     /**
@@ -523,6 +541,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    BillingTagsSource m_billingTagsSource;
+    bool m_billingTagsSourceHasBeenSet;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;

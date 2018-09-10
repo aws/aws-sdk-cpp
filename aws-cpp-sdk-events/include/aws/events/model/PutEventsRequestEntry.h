@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudWatchEvents
@@ -43,79 +44,79 @@ namespace Model
   {
   public:
     PutEventsRequestEntry();
-    PutEventsRequestEntry(const Aws::Utils::Json::JsonValue& jsonValue);
-    PutEventsRequestEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PutEventsRequestEntry(Aws::Utils::Json::JsonView jsonValue);
+    PutEventsRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The timestamp of the event, per <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p>
+     * <p>The time stamp of the event, per <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp
+     * is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
      */
     inline const Aws::Utils::DateTime& GetTime() const{ return m_time; }
 
     /**
-     * <p>The timestamp of the event, per <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p>
+     * <p>The time stamp of the event, per <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp
+     * is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
      */
     inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
-     * <p>The timestamp of the event, per <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p>
+     * <p>The time stamp of the event, per <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp
+     * is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
      */
     inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
 
     /**
-     * <p>The timestamp of the event, per <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p>
+     * <p>The time stamp of the event, per <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp
+     * is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
      */
     inline PutEventsRequestEntry& WithTime(const Aws::Utils::DateTime& value) { SetTime(value); return *this;}
 
     /**
-     * <p>The timestamp of the event, per <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no timestamp
-     * is provided, the timestamp of the <a>PutEvents</a> call is used.</p>
+     * <p>The time stamp of the event, per <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp
+     * is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
      */
     inline PutEventsRequestEntry& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event. This field is required.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event. This field is required.</p>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event. This field is required.</p>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event. This field is required.</p>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event. This field is required.</p>
      */
     inline PutEventsRequestEntry& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event. This field is required.</p>
      */
     inline PutEventsRequestEntry& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>The source of the event.</p>
+     * <p>The source of the event. This field is required.</p>
      */
     inline PutEventsRequestEntry& WithSource(const char* value) { SetSource(value); return *this;}
 
@@ -213,44 +214,44 @@ namespace Model
 
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline const Aws::String& GetDetail() const{ return m_detail; }
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline void SetDetail(const Aws::String& value) { m_detailHasBeenSet = true; m_detail = value; }
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline void SetDetail(const char* value) { m_detailHasBeenSet = true; m_detail.assign(value); }
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline PutEventsRequestEntry& WithDetail(const Aws::String& value) { SetDetail(value); return *this;}
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline PutEventsRequestEntry& WithDetail(Aws::String&& value) { SetDetail(std::move(value)); return *this;}
 
     /**
-     * <p>In the JSON sense, an object containing fields, which may also contain nested
-     * subobjects. No constraints are imposed on its contents.</p>
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
+     * contain fields and nested subobjects.</p>
      */
     inline PutEventsRequestEntry& WithDetail(const char* value) { SetDetail(value); return *this;}
 

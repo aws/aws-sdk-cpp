@@ -40,7 +40,7 @@ Application::Application() :
 {
 }
 
-Application::Application(const JsonValue& jsonValue) : 
+Application::Application(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_displayNameHasBeenSet(false),
     m_iconURLHasBeenSet(false),
@@ -53,7 +53,7 @@ Application::Application(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Application& Application::operator =(const JsonValue& jsonValue)
+Application& Application::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -99,7 +99,7 @@ Application& Application::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Metadata"))
   {
-    Aws::Map<Aws::String, JsonValue> metadataJsonMap = jsonValue.GetObject("Metadata").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("Metadata").GetAllObjects();
     for(auto& metadataItem : metadataJsonMap)
     {
       m_metadata[metadataItem.first] = metadataItem.second.AsString();

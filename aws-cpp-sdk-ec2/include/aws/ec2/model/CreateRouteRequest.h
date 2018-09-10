@@ -161,79 +161,79 @@ namespace Model
 
 
     /**
-     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     * <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
      */
     inline const Aws::String& GetEgressOnlyInternetGatewayId() const{ return m_egressOnlyInternetGatewayId; }
 
     /**
-     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     * <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
      */
     inline void SetEgressOnlyInternetGatewayId(const Aws::String& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = value; }
 
     /**
-     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     * <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
      */
     inline void SetEgressOnlyInternetGatewayId(Aws::String&& value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId = std::move(value); }
 
     /**
-     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     * <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
      */
     inline void SetEgressOnlyInternetGatewayId(const char* value) { m_egressOnlyInternetGatewayIdHasBeenSet = true; m_egressOnlyInternetGatewayId.assign(value); }
 
     /**
-     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     * <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
      */
     inline CreateRouteRequest& WithEgressOnlyInternetGatewayId(const Aws::String& value) { SetEgressOnlyInternetGatewayId(value); return *this;}
 
     /**
-     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     * <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
      */
     inline CreateRouteRequest& WithEgressOnlyInternetGatewayId(Aws::String&& value) { SetEgressOnlyInternetGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>[IPv6 traffic only] The ID of an egress-only Internet gateway.</p>
+     * <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
      */
     inline CreateRouteRequest& WithEgressOnlyInternetGatewayId(const char* value) { SetEgressOnlyInternetGatewayId(value); return *this;}
 
 
     /**
-     * <p>The ID of an Internet gateway or virtual private gateway attached to your
+     * <p>The ID of an internet gateway or virtual private gateway attached to your
      * VPC.</p>
      */
     inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
 
     /**
-     * <p>The ID of an Internet gateway or virtual private gateway attached to your
+     * <p>The ID of an internet gateway or virtual private gateway attached to your
      * VPC.</p>
      */
     inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
 
     /**
-     * <p>The ID of an Internet gateway or virtual private gateway attached to your
+     * <p>The ID of an internet gateway or virtual private gateway attached to your
      * VPC.</p>
      */
     inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
 
     /**
-     * <p>The ID of an Internet gateway or virtual private gateway attached to your
+     * <p>The ID of an internet gateway or virtual private gateway attached to your
      * VPC.</p>
      */
     inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
 
     /**
-     * <p>The ID of an Internet gateway or virtual private gateway attached to your
+     * <p>The ID of an internet gateway or virtual private gateway attached to your
      * VPC.</p>
      */
     inline CreateRouteRequest& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of an Internet gateway or virtual private gateway attached to your
+     * <p>The ID of an internet gateway or virtual private gateway attached to your
      * VPC.</p>
      */
     inline CreateRouteRequest& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of an Internet gateway or virtual private gateway attached to your
+     * <p>The ID of an internet gateway or virtual private gateway attached to your
      * VPC.</p>
      */
     inline CreateRouteRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}

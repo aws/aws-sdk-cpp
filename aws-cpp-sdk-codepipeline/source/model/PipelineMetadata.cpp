@@ -35,7 +35,7 @@ PipelineMetadata::PipelineMetadata() :
 {
 }
 
-PipelineMetadata::PipelineMetadata(const JsonValue& jsonValue) : 
+PipelineMetadata::PipelineMetadata(JsonView jsonValue) : 
     m_pipelineArnHasBeenSet(false),
     m_createdHasBeenSet(false),
     m_updatedHasBeenSet(false)
@@ -43,7 +43,7 @@ PipelineMetadata::PipelineMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PipelineMetadata& PipelineMetadata::operator =(const JsonValue& jsonValue)
+PipelineMetadata& PipelineMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pipelineArn"))
   {

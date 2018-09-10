@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * Container for object key name prefix and suffix filtering rules.<p><h3>See
-   * Also:</h3>   <a
+   * <p>Container for object key name prefix and suffix filtering
+   * rules.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/S3KeyFilter">AWS API
    * Reference</a></p>
    */

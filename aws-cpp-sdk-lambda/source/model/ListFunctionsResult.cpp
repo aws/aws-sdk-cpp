@@ -37,7 +37,7 @@ ListFunctionsResult::ListFunctionsResult(const Aws::AmazonWebServiceResult<JsonV
 
 ListFunctionsResult& ListFunctionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListFunctionsResult& ListFunctionsResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("Functions"))
   {
-    Array<JsonValue> functionsJsonList = jsonValue.GetArray("Functions");
+    Array<JsonView> functionsJsonList = jsonValue.GetArray("Functions");
     for(unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex)
     {
       m_functions.push_back(functionsJsonList[functionsIndex].AsObject());

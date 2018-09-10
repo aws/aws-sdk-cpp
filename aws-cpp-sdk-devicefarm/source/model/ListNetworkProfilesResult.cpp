@@ -37,10 +37,10 @@ ListNetworkProfilesResult::ListNetworkProfilesResult(const Aws::AmazonWebService
 
 ListNetworkProfilesResult& ListNetworkProfilesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("networkProfiles"))
   {
-    Array<JsonValue> networkProfilesJsonList = jsonValue.GetArray("networkProfiles");
+    Array<JsonView> networkProfilesJsonList = jsonValue.GetArray("networkProfiles");
     for(unsigned networkProfilesIndex = 0; networkProfilesIndex < networkProfilesJsonList.GetLength(); ++networkProfilesIndex)
     {
       m_networkProfiles.push_back(networkProfilesJsonList[networkProfilesIndex].AsObject());

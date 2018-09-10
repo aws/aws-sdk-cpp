@@ -80,18 +80,19 @@ namespace Model
      * operation-specific parameters and their supported values.</p> <p> To exclude
      * <a>DocumentationParts</a> from the import, set <code>parameters</code> as
      * <code>ignore=documentation</code>.</p> <p> To configure the endpoint type, set
-     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>
-     * or<code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is
+     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or
+     * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basePath</code>, set
      * <code>parameters</code> as <code>basePath=ignore</code>,
      * <code>basePath=prepend</code> or <code>basePath=split</code>.</p> <p>For
      * example, the AWS CLI command to exclude documentation from the imported API
      * is:</p> <pre><code>aws apigateway import-rest-api --parameters
-     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code></pre>
-     * <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-     * <pre><code>aws apigateway import-rest-api --parameters
-     * endpointConfigurationTypes=REGIONAL --body
-     * 'file:///path/to/imported-api-body.json</code></pre>
+     * ignore=documentation --body
+     * 'file:///path/to/imported-api-body.json'</code></pre> <p>The AWS CLI command to
+     * set the regional endpoint on the imported API is:</p> <pre><code>aws apigateway
+     * import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body
+     * 'file:///path/to/imported-api-body.json'</code></pre>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
@@ -101,18 +102,19 @@ namespace Model
      * operation-specific parameters and their supported values.</p> <p> To exclude
      * <a>DocumentationParts</a> from the import, set <code>parameters</code> as
      * <code>ignore=documentation</code>.</p> <p> To configure the endpoint type, set
-     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>
-     * or<code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is
+     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or
+     * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basePath</code>, set
      * <code>parameters</code> as <code>basePath=ignore</code>,
      * <code>basePath=prepend</code> or <code>basePath=split</code>.</p> <p>For
      * example, the AWS CLI command to exclude documentation from the imported API
      * is:</p> <pre><code>aws apigateway import-rest-api --parameters
-     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code></pre>
-     * <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-     * <pre><code>aws apigateway import-rest-api --parameters
-     * endpointConfigurationTypes=REGIONAL --body
-     * 'file:///path/to/imported-api-body.json</code></pre>
+     * ignore=documentation --body
+     * 'file:///path/to/imported-api-body.json'</code></pre> <p>The AWS CLI command to
+     * set the regional endpoint on the imported API is:</p> <pre><code>aws apigateway
+     * import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body
+     * 'file:///path/to/imported-api-body.json'</code></pre>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
@@ -122,18 +124,19 @@ namespace Model
      * operation-specific parameters and their supported values.</p> <p> To exclude
      * <a>DocumentationParts</a> from the import, set <code>parameters</code> as
      * <code>ignore=documentation</code>.</p> <p> To configure the endpoint type, set
-     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>
-     * or<code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is
+     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or
+     * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basePath</code>, set
      * <code>parameters</code> as <code>basePath=ignore</code>,
      * <code>basePath=prepend</code> or <code>basePath=split</code>.</p> <p>For
      * example, the AWS CLI command to exclude documentation from the imported API
      * is:</p> <pre><code>aws apigateway import-rest-api --parameters
-     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code></pre>
-     * <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-     * <pre><code>aws apigateway import-rest-api --parameters
-     * endpointConfigurationTypes=REGIONAL --body
-     * 'file:///path/to/imported-api-body.json</code></pre>
+     * ignore=documentation --body
+     * 'file:///path/to/imported-api-body.json'</code></pre> <p>The AWS CLI command to
+     * set the regional endpoint on the imported API is:</p> <pre><code>aws apigateway
+     * import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body
+     * 'file:///path/to/imported-api-body.json'</code></pre>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
@@ -143,18 +146,19 @@ namespace Model
      * operation-specific parameters and their supported values.</p> <p> To exclude
      * <a>DocumentationParts</a> from the import, set <code>parameters</code> as
      * <code>ignore=documentation</code>.</p> <p> To configure the endpoint type, set
-     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>
-     * or<code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is
+     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or
+     * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basePath</code>, set
      * <code>parameters</code> as <code>basePath=ignore</code>,
      * <code>basePath=prepend</code> or <code>basePath=split</code>.</p> <p>For
      * example, the AWS CLI command to exclude documentation from the imported API
      * is:</p> <pre><code>aws apigateway import-rest-api --parameters
-     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code></pre>
-     * <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-     * <pre><code>aws apigateway import-rest-api --parameters
-     * endpointConfigurationTypes=REGIONAL --body
-     * 'file:///path/to/imported-api-body.json</code></pre>
+     * ignore=documentation --body
+     * 'file:///path/to/imported-api-body.json'</code></pre> <p>The AWS CLI command to
+     * set the regional endpoint on the imported API is:</p> <pre><code>aws apigateway
+     * import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body
+     * 'file:///path/to/imported-api-body.json'</code></pre>
      */
     inline ImportRestApiRequest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
@@ -164,18 +168,19 @@ namespace Model
      * operation-specific parameters and their supported values.</p> <p> To exclude
      * <a>DocumentationParts</a> from the import, set <code>parameters</code> as
      * <code>ignore=documentation</code>.</p> <p> To configure the endpoint type, set
-     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>
-     * or<code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is
+     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or
+     * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basePath</code>, set
      * <code>parameters</code> as <code>basePath=ignore</code>,
      * <code>basePath=prepend</code> or <code>basePath=split</code>.</p> <p>For
      * example, the AWS CLI command to exclude documentation from the imported API
      * is:</p> <pre><code>aws apigateway import-rest-api --parameters
-     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code></pre>
-     * <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-     * <pre><code>aws apigateway import-rest-api --parameters
-     * endpointConfigurationTypes=REGIONAL --body
-     * 'file:///path/to/imported-api-body.json</code></pre>
+     * ignore=documentation --body
+     * 'file:///path/to/imported-api-body.json'</code></pre> <p>The AWS CLI command to
+     * set the regional endpoint on the imported API is:</p> <pre><code>aws apigateway
+     * import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body
+     * 'file:///path/to/imported-api-body.json'</code></pre>
      */
     inline ImportRestApiRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -185,18 +190,19 @@ namespace Model
      * operation-specific parameters and their supported values.</p> <p> To exclude
      * <a>DocumentationParts</a> from the import, set <code>parameters</code> as
      * <code>ignore=documentation</code>.</p> <p> To configure the endpoint type, set
-     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>
-     * or<code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is
+     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or
+     * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basePath</code>, set
      * <code>parameters</code> as <code>basePath=ignore</code>,
      * <code>basePath=prepend</code> or <code>basePath=split</code>.</p> <p>For
      * example, the AWS CLI command to exclude documentation from the imported API
      * is:</p> <pre><code>aws apigateway import-rest-api --parameters
-     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code></pre>
-     * <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-     * <pre><code>aws apigateway import-rest-api --parameters
-     * endpointConfigurationTypes=REGIONAL --body
-     * 'file:///path/to/imported-api-body.json</code></pre>
+     * ignore=documentation --body
+     * 'file:///path/to/imported-api-body.json'</code></pre> <p>The AWS CLI command to
+     * set the regional endpoint on the imported API is:</p> <pre><code>aws apigateway
+     * import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body
+     * 'file:///path/to/imported-api-body.json'</code></pre>
      */
     inline ImportRestApiRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -206,18 +212,19 @@ namespace Model
      * operation-specific parameters and their supported values.</p> <p> To exclude
      * <a>DocumentationParts</a> from the import, set <code>parameters</code> as
      * <code>ignore=documentation</code>.</p> <p> To configure the endpoint type, set
-     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>
-     * or<code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is
+     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or
+     * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basePath</code>, set
      * <code>parameters</code> as <code>basePath=ignore</code>,
      * <code>basePath=prepend</code> or <code>basePath=split</code>.</p> <p>For
      * example, the AWS CLI command to exclude documentation from the imported API
      * is:</p> <pre><code>aws apigateway import-rest-api --parameters
-     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code></pre>
-     * <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-     * <pre><code>aws apigateway import-rest-api --parameters
-     * endpointConfigurationTypes=REGIONAL --body
-     * 'file:///path/to/imported-api-body.json</code></pre>
+     * ignore=documentation --body
+     * 'file:///path/to/imported-api-body.json'</code></pre> <p>The AWS CLI command to
+     * set the regional endpoint on the imported API is:</p> <pre><code>aws apigateway
+     * import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body
+     * 'file:///path/to/imported-api-body.json'</code></pre>
      */
     inline ImportRestApiRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -227,18 +234,19 @@ namespace Model
      * operation-specific parameters and their supported values.</p> <p> To exclude
      * <a>DocumentationParts</a> from the import, set <code>parameters</code> as
      * <code>ignore=documentation</code>.</p> <p> To configure the endpoint type, set
-     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>
-     * or<code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is
+     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or
+     * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basePath</code>, set
      * <code>parameters</code> as <code>basePath=ignore</code>,
      * <code>basePath=prepend</code> or <code>basePath=split</code>.</p> <p>For
      * example, the AWS CLI command to exclude documentation from the imported API
      * is:</p> <pre><code>aws apigateway import-rest-api --parameters
-     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code></pre>
-     * <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-     * <pre><code>aws apigateway import-rest-api --parameters
-     * endpointConfigurationTypes=REGIONAL --body
-     * 'file:///path/to/imported-api-body.json</code></pre>
+     * ignore=documentation --body
+     * 'file:///path/to/imported-api-body.json'</code></pre> <p>The AWS CLI command to
+     * set the regional endpoint on the imported API is:</p> <pre><code>aws apigateway
+     * import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body
+     * 'file:///path/to/imported-api-body.json'</code></pre>
      */
     inline ImportRestApiRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -248,18 +256,19 @@ namespace Model
      * operation-specific parameters and their supported values.</p> <p> To exclude
      * <a>DocumentationParts</a> from the import, set <code>parameters</code> as
      * <code>ignore=documentation</code>.</p> <p> To configure the endpoint type, set
-     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>
-     * or<code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is
+     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or
+     * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basePath</code>, set
      * <code>parameters</code> as <code>basePath=ignore</code>,
      * <code>basePath=prepend</code> or <code>basePath=split</code>.</p> <p>For
      * example, the AWS CLI command to exclude documentation from the imported API
      * is:</p> <pre><code>aws apigateway import-rest-api --parameters
-     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code></pre>
-     * <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-     * <pre><code>aws apigateway import-rest-api --parameters
-     * endpointConfigurationTypes=REGIONAL --body
-     * 'file:///path/to/imported-api-body.json</code></pre>
+     * ignore=documentation --body
+     * 'file:///path/to/imported-api-body.json'</code></pre> <p>The AWS CLI command to
+     * set the regional endpoint on the imported API is:</p> <pre><code>aws apigateway
+     * import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body
+     * 'file:///path/to/imported-api-body.json'</code></pre>
      */
     inline ImportRestApiRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -269,18 +278,19 @@ namespace Model
      * operation-specific parameters and their supported values.</p> <p> To exclude
      * <a>DocumentationParts</a> from the import, set <code>parameters</code> as
      * <code>ignore=documentation</code>.</p> <p> To configure the endpoint type, set
-     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>
-     * or<code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is
+     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or
+     * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basePath</code>, set
      * <code>parameters</code> as <code>basePath=ignore</code>,
      * <code>basePath=prepend</code> or <code>basePath=split</code>.</p> <p>For
      * example, the AWS CLI command to exclude documentation from the imported API
      * is:</p> <pre><code>aws apigateway import-rest-api --parameters
-     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code></pre>
-     * <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-     * <pre><code>aws apigateway import-rest-api --parameters
-     * endpointConfigurationTypes=REGIONAL --body
-     * 'file:///path/to/imported-api-body.json</code></pre>
+     * ignore=documentation --body
+     * 'file:///path/to/imported-api-body.json'</code></pre> <p>The AWS CLI command to
+     * set the regional endpoint on the imported API is:</p> <pre><code>aws apigateway
+     * import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body
+     * 'file:///path/to/imported-api-body.json'</code></pre>
      */
     inline ImportRestApiRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -290,18 +300,19 @@ namespace Model
      * operation-specific parameters and their supported values.</p> <p> To exclude
      * <a>DocumentationParts</a> from the import, set <code>parameters</code> as
      * <code>ignore=documentation</code>.</p> <p> To configure the endpoint type, set
-     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>
-     * or<code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is
+     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or
+     * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basePath</code>, set
      * <code>parameters</code> as <code>basePath=ignore</code>,
      * <code>basePath=prepend</code> or <code>basePath=split</code>.</p> <p>For
      * example, the AWS CLI command to exclude documentation from the imported API
      * is:</p> <pre><code>aws apigateway import-rest-api --parameters
-     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code></pre>
-     * <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-     * <pre><code>aws apigateway import-rest-api --parameters
-     * endpointConfigurationTypes=REGIONAL --body
-     * 'file:///path/to/imported-api-body.json</code></pre>
+     * ignore=documentation --body
+     * 'file:///path/to/imported-api-body.json'</code></pre> <p>The AWS CLI command to
+     * set the regional endpoint on the imported API is:</p> <pre><code>aws apigateway
+     * import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body
+     * 'file:///path/to/imported-api-body.json'</code></pre>
      */
     inline ImportRestApiRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -311,18 +322,19 @@ namespace Model
      * operation-specific parameters and their supported values.</p> <p> To exclude
      * <a>DocumentationParts</a> from the import, set <code>parameters</code> as
      * <code>ignore=documentation</code>.</p> <p> To configure the endpoint type, set
-     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>
-     * or<code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is
+     * <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or
+     * <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is
      * <code>EDGE</code>.</p> <p> To handle imported <code>basePath</code>, set
      * <code>parameters</code> as <code>basePath=ignore</code>,
      * <code>basePath=prepend</code> or <code>basePath=split</code>.</p> <p>For
      * example, the AWS CLI command to exclude documentation from the imported API
      * is:</p> <pre><code>aws apigateway import-rest-api --parameters
-     * ignore=documentation --body 'file:///path/to/imported-api-body.json</code></pre>
-     * <p>The AWS CLI command to set the regional endpoint on the imported API is:</p>
-     * <pre><code>aws apigateway import-rest-api --parameters
-     * endpointConfigurationTypes=REGIONAL --body
-     * 'file:///path/to/imported-api-body.json</code></pre>
+     * ignore=documentation --body
+     * 'file:///path/to/imported-api-body.json'</code></pre> <p>The AWS CLI command to
+     * set the regional endpoint on the imported API is:</p> <pre><code>aws apigateway
+     * import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body
+     * 'file:///path/to/imported-api-body.json'</code></pre>
      */
     inline ImportRestApiRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

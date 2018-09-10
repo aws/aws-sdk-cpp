@@ -44,7 +44,7 @@ Aws::String DeleteGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteGroupRequest::GetRequestSpecificHeaders() const

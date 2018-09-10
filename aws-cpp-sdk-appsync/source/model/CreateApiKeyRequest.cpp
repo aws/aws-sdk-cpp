@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 CreateApiKeyRequest::CreateApiKeyRequest() : 
     m_apiIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_expires(0),
+    m_expiresHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,13 @@ Aws::String CreateApiKeyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_expiresHasBeenSet)
+  {
+   payload.WithInt64("expires", m_expires);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 

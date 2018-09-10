@@ -33,17 +33,17 @@ ActionConfiguration::ActionConfiguration() :
 {
 }
 
-ActionConfiguration::ActionConfiguration(const JsonValue& jsonValue) : 
+ActionConfiguration::ActionConfiguration(JsonView jsonValue) : 
     m_configurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ActionConfiguration& ActionConfiguration::operator =(const JsonValue& jsonValue)
+ActionConfiguration& ActionConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("configuration"))
   {
-    Aws::Map<Aws::String, JsonValue> configurationJsonMap = jsonValue.GetObject("configuration").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> configurationJsonMap = jsonValue.GetObject("configuration").GetAllObjects();
     for(auto& configurationItem : configurationJsonMap)
     {
       m_configuration[configurationItem.first] = configurationItem.second.AsString();

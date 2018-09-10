@@ -37,7 +37,7 @@ Aws::String DescribeWorkingStorageRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeWorkingStorageRequest::GetRequestSpecificHeaders() const

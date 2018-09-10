@@ -52,37 +52,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the availability zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the availability zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the availability zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the availability zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the availability zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
     inline AvailabilityZone& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the availability zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
     inline AvailabilityZone& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the availability zone.</p>
+     * <p>The name of the Availability Zone.</p>
      */
     inline AvailabilityZone& WithName(const char* value) { SetName(value); return *this;}
 

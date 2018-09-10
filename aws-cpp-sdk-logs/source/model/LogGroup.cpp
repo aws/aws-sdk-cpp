@@ -43,7 +43,7 @@ LogGroup::LogGroup() :
 {
 }
 
-LogGroup::LogGroup(const JsonValue& jsonValue) : 
+LogGroup::LogGroup(JsonView jsonValue) : 
     m_logGroupNameHasBeenSet(false),
     m_creationTime(0),
     m_creationTimeHasBeenSet(false),
@@ -59,7 +59,7 @@ LogGroup::LogGroup(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LogGroup& LogGroup::operator =(const JsonValue& jsonValue)
+LogGroup& LogGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("logGroupName"))
   {

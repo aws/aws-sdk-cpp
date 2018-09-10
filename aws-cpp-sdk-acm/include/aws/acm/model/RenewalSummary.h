@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ACM
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     RenewalSummary();
-    RenewalSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    RenewalSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RenewalSummary(Aws::Utils::Json::JsonView jsonValue);
+    RenewalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

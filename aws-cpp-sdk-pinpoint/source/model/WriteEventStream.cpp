@@ -34,14 +34,14 @@ WriteEventStream::WriteEventStream() :
 {
 }
 
-WriteEventStream::WriteEventStream(const JsonValue& jsonValue) : 
+WriteEventStream::WriteEventStream(JsonView jsonValue) : 
     m_destinationStreamArnHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WriteEventStream& WriteEventStream::operator =(const JsonValue& jsonValue)
+WriteEventStream& WriteEventStream::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DestinationStreamArn"))
   {

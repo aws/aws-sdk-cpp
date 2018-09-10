@@ -35,8 +35,16 @@ namespace Model
 {
 
   /**
-   * <p>This type is not currently supported.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Filter">AWS API
+   * <p>A filter name and value pair that is used to return a more specific list of
+   * results from a describe operation. Filters can be used to match a set of
+   * resources by specific criteria, such as IDs. The filters supported by a describe
+   * operation are documented with the describe operation.</p> <note> <p>Currently,
+   * wildcards are not supported in filters.</p> </note> <p>The following actions can
+   * be filtered:</p> <ul> <li> <p> <a>DescribeDBClusterBacktracks</a> </p> </li>
+   * <li> <p> <a>DescribeDBClusters</a> </p> </li> <li> <p>
+   * <a>DescribeDBInstances</a> </p> </li> <li> <p>
+   * <a>DescribePendingMaintenanceActions</a> </p> </li> </ul><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Filter">AWS API
    * Reference</a></p>
    */
   class AWS_RDS_API Filter
@@ -51,78 +59,78 @@ namespace Model
 
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
      */
     inline Filter& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
      */
     inline Filter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>The name of the filter. Filter names are case-sensitive.</p>
      */
     inline Filter& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
      */
     inline Filter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
      */
     inline Filter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
      */
     inline Filter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
      */
     inline Filter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>This parameter is not currently supported.</p>
+     * <p>One or more filter values. Filter values are case-sensitive.</p>
      */
     inline Filter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

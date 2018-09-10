@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MachineLearning
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     RealtimeEndpointInfo();
-    RealtimeEndpointInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    RealtimeEndpointInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RealtimeEndpointInfo(Aws::Utils::Json::JsonView jsonValue);
+    RealtimeEndpointInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

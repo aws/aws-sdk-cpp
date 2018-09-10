@@ -35,7 +35,7 @@ DeploymentCommand::DeploymentCommand() :
 {
 }
 
-DeploymentCommand::DeploymentCommand(const JsonValue& jsonValue) : 
+DeploymentCommand::DeploymentCommand(JsonView jsonValue) : 
     m_name(DeploymentCommandName::NOT_SET),
     m_nameHasBeenSet(false),
     m_argsHasBeenSet(false)
@@ -43,7 +43,7 @@ DeploymentCommand::DeploymentCommand(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DeploymentCommand& DeploymentCommand::operator =(const JsonValue& jsonValue)
+DeploymentCommand& DeploymentCommand::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -54,10 +54,10 @@ DeploymentCommand& DeploymentCommand::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Args"))
   {
-    Aws::Map<Aws::String, JsonValue> argsJsonMap = jsonValue.GetObject("Args").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> argsJsonMap = jsonValue.GetObject("Args").GetAllObjects();
     for(auto& argsItem : argsJsonMap)
     {
-      Array<JsonValue> stringsJsonList = argsItem.second.AsArray();
+      Array<JsonView> stringsJsonList = argsItem.second.AsArray();
       Aws::Vector<Aws::String> stringsList;
       stringsList.reserve((size_t)stringsJsonList.GetLength());
       for(unsigned stringsIndex = 0; stringsIndex < stringsJsonList.GetLength(); ++stringsIndex)

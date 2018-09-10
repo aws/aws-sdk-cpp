@@ -36,7 +36,7 @@ ResourceCount::ResourceCount() :
 {
 }
 
-ResourceCount::ResourceCount(const JsonValue& jsonValue) : 
+ResourceCount::ResourceCount(JsonView jsonValue) : 
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_count(0),
@@ -45,7 +45,7 @@ ResourceCount::ResourceCount(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ResourceCount& ResourceCount::operator =(const JsonValue& jsonValue)
+ResourceCount& ResourceCount::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("resourceType"))
   {

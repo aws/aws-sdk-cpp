@@ -34,14 +34,14 @@ ScriptBootstrapActionConfig::ScriptBootstrapActionConfig() :
 {
 }
 
-ScriptBootstrapActionConfig::ScriptBootstrapActionConfig(const JsonValue& jsonValue) : 
+ScriptBootstrapActionConfig::ScriptBootstrapActionConfig(JsonView jsonValue) : 
     m_pathHasBeenSet(false),
     m_argsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ScriptBootstrapActionConfig& ScriptBootstrapActionConfig::operator =(const JsonValue& jsonValue)
+ScriptBootstrapActionConfig& ScriptBootstrapActionConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Path"))
   {
@@ -52,7 +52,7 @@ ScriptBootstrapActionConfig& ScriptBootstrapActionConfig::operator =(const JsonV
 
   if(jsonValue.ValueExists("Args"))
   {
-    Array<JsonValue> argsJsonList = jsonValue.GetArray("Args");
+    Array<JsonView> argsJsonList = jsonValue.GetArray("Args");
     for(unsigned argsIndex = 0; argsIndex < argsJsonList.GetLength(); ++argsIndex)
     {
       m_args.push_back(argsJsonList[argsIndex].AsString());

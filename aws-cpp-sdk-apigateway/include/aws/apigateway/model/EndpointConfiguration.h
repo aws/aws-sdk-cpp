@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace APIGateway
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     EndpointConfiguration();
-    EndpointConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    EndpointConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EndpointConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    EndpointConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -53,7 +54,8 @@ namespace Model
      * <p>A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name
      * (<a>DomainName</a>). For an edge-optimized API and its custom domain name, the
      * endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain
-     * name, the endpoint type is <code>REGIONAL</code>.</p>
+     * name, the endpoint type is <code>REGIONAL</code>. For a private API, the
+     * endpoint type is <code>PRIVATE</code>.</p>
      */
     inline const Aws::Vector<EndpointType>& GetTypes() const{ return m_types; }
 
@@ -61,7 +63,8 @@ namespace Model
      * <p>A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name
      * (<a>DomainName</a>). For an edge-optimized API and its custom domain name, the
      * endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain
-     * name, the endpoint type is <code>REGIONAL</code>.</p>
+     * name, the endpoint type is <code>REGIONAL</code>. For a private API, the
+     * endpoint type is <code>PRIVATE</code>.</p>
      */
     inline void SetTypes(const Aws::Vector<EndpointType>& value) { m_typesHasBeenSet = true; m_types = value; }
 
@@ -69,7 +72,8 @@ namespace Model
      * <p>A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name
      * (<a>DomainName</a>). For an edge-optimized API and its custom domain name, the
      * endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain
-     * name, the endpoint type is <code>REGIONAL</code>.</p>
+     * name, the endpoint type is <code>REGIONAL</code>. For a private API, the
+     * endpoint type is <code>PRIVATE</code>.</p>
      */
     inline void SetTypes(Aws::Vector<EndpointType>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
 
@@ -77,7 +81,8 @@ namespace Model
      * <p>A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name
      * (<a>DomainName</a>). For an edge-optimized API and its custom domain name, the
      * endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain
-     * name, the endpoint type is <code>REGIONAL</code>.</p>
+     * name, the endpoint type is <code>REGIONAL</code>. For a private API, the
+     * endpoint type is <code>PRIVATE</code>.</p>
      */
     inline EndpointConfiguration& WithTypes(const Aws::Vector<EndpointType>& value) { SetTypes(value); return *this;}
 
@@ -85,7 +90,8 @@ namespace Model
      * <p>A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name
      * (<a>DomainName</a>). For an edge-optimized API and its custom domain name, the
      * endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain
-     * name, the endpoint type is <code>REGIONAL</code>.</p>
+     * name, the endpoint type is <code>REGIONAL</code>. For a private API, the
+     * endpoint type is <code>PRIVATE</code>.</p>
      */
     inline EndpointConfiguration& WithTypes(Aws::Vector<EndpointType>&& value) { SetTypes(std::move(value)); return *this;}
 
@@ -93,7 +99,8 @@ namespace Model
      * <p>A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name
      * (<a>DomainName</a>). For an edge-optimized API and its custom domain name, the
      * endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain
-     * name, the endpoint type is <code>REGIONAL</code>.</p>
+     * name, the endpoint type is <code>REGIONAL</code>. For a private API, the
+     * endpoint type is <code>PRIVATE</code>.</p>
      */
     inline EndpointConfiguration& AddTypes(const EndpointType& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
 
@@ -101,7 +108,8 @@ namespace Model
      * <p>A list of endpoint types of an API (<a>RestApi</a>) or its custom domain name
      * (<a>DomainName</a>). For an edge-optimized API and its custom domain name, the
      * endpoint type is <code>"EDGE"</code>. For a regional API and its custom domain
-     * name, the endpoint type is <code>REGIONAL</code>.</p>
+     * name, the endpoint type is <code>REGIONAL</code>. For a private API, the
+     * endpoint type is <code>PRIVATE</code>.</p>
      */
     inline EndpointConfiguration& AddTypes(EndpointType&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
 

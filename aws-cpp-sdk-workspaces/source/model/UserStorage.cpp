@@ -33,13 +33,13 @@ UserStorage::UserStorage() :
 {
 }
 
-UserStorage::UserStorage(const JsonValue& jsonValue) : 
+UserStorage::UserStorage(JsonView jsonValue) : 
     m_capacityHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UserStorage& UserStorage::operator =(const JsonValue& jsonValue)
+UserStorage& UserStorage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Capacity"))
   {

@@ -38,7 +38,7 @@ EmbeddedSourceSettings::EmbeddedSourceSettings() :
 {
 }
 
-EmbeddedSourceSettings::EmbeddedSourceSettings(const JsonValue& jsonValue) : 
+EmbeddedSourceSettings::EmbeddedSourceSettings(JsonView jsonValue) : 
     m_convert608To708(EmbeddedConvert608To708::NOT_SET),
     m_convert608To708HasBeenSet(false),
     m_source608ChannelNumber(0),
@@ -49,7 +49,7 @@ EmbeddedSourceSettings::EmbeddedSourceSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EmbeddedSourceSettings& EmbeddedSourceSettings::operator =(const JsonValue& jsonValue)
+EmbeddedSourceSettings& EmbeddedSourceSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("convert608To708"))
   {

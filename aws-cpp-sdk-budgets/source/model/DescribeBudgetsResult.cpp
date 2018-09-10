@@ -37,10 +37,10 @@ DescribeBudgetsResult::DescribeBudgetsResult(const Aws::AmazonWebServiceResult<J
 
 DescribeBudgetsResult& DescribeBudgetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Budgets"))
   {
-    Array<JsonValue> budgetsJsonList = jsonValue.GetArray("Budgets");
+    Array<JsonView> budgetsJsonList = jsonValue.GetArray("Budgets");
     for(unsigned budgetsIndex = 0; budgetsIndex < budgetsJsonList.GetLength(); ++budgetsIndex)
     {
       m_budgets.push_back(budgetsJsonList[budgetsIndex].AsObject());

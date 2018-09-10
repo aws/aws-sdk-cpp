@@ -37,10 +37,10 @@ ListMultipartUploadsResult::ListMultipartUploadsResult(const Aws::AmazonWebServi
 
 ListMultipartUploadsResult& ListMultipartUploadsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UploadsList"))
   {
-    Array<JsonValue> uploadsListJsonList = jsonValue.GetArray("UploadsList");
+    Array<JsonView> uploadsListJsonList = jsonValue.GetArray("UploadsList");
     for(unsigned uploadsListIndex = 0; uploadsListIndex < uploadsListJsonList.GetLength(); ++uploadsListIndex)
     {
       m_uploadsList.push_back(uploadsListJsonList[uploadsListIndex].AsObject());

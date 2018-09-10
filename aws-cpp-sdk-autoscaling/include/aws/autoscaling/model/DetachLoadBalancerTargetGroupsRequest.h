@@ -84,42 +84,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups.</p>
+     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * 10 target groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetGroupARNs() const{ return m_targetGroupARNs; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups.</p>
+     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * 10 target groups.</p>
      */
     inline void SetTargetGroupARNs(const Aws::Vector<Aws::String>& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups.</p>
+     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * 10 target groups.</p>
      */
     inline void SetTargetGroupARNs(Aws::Vector<Aws::String>&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups.</p>
+     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * 10 target groups.</p>
      */
     inline DetachLoadBalancerTargetGroupsRequest& WithTargetGroupARNs(const Aws::Vector<Aws::String>& value) { SetTargetGroupARNs(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups.</p>
+     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * 10 target groups.</p>
      */
     inline DetachLoadBalancerTargetGroupsRequest& WithTargetGroupARNs(Aws::Vector<Aws::String>&& value) { SetTargetGroupARNs(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups.</p>
+     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * 10 target groups.</p>
      */
     inline DetachLoadBalancerTargetGroupsRequest& AddTargetGroupARNs(const Aws::String& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups.</p>
+     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * 10 target groups.</p>
      */
     inline DetachLoadBalancerTargetGroupsRequest& AddTargetGroupARNs(Aws::String&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the target groups.</p>
+     * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
+     * 10 target groups.</p>
      */
     inline DetachLoadBalancerTargetGroupsRequest& AddTargetGroupARNs(const char* value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
 

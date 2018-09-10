@@ -95,7 +95,7 @@ Aws::String GetItemRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetItemRequest::GetRequestSpecificHeaders() const

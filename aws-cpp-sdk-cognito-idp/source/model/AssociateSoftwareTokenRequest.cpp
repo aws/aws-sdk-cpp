@@ -44,7 +44,7 @@ Aws::String AssociateSoftwareTokenRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AssociateSoftwareTokenRequest::GetRequestSpecificHeaders() const

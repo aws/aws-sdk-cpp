@@ -50,12 +50,13 @@ namespace Model
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes, containing any ASCII character
-     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p>
+     * that must begin and end with forward slashes. In addition, it can contain any
+     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -63,12 +64,13 @@ namespace Model
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes, containing any ASCII character
-     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p>
+     * that must begin and end with forward slashes. In addition, it can contain any
+     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -76,12 +78,13 @@ namespace Model
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes, containing any ASCII character
-     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p>
+     * that must begin and end with forward slashes. In addition, it can contain any
+     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
@@ -89,12 +92,13 @@ namespace Model
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes, containing any ASCII character
-     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p>
+     * that must begin and end with forward slashes. In addition, it can contain any
+     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
@@ -102,12 +106,13 @@ namespace Model
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes, containing any ASCII character
-     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p>
+     * that must begin and end with forward slashes. In addition, it can contain any
+     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p>
      */
     inline CreateUserRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
@@ -115,12 +120,13 @@ namespace Model
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes, containing any ASCII character
-     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p>
+     * that must begin and end with forward slashes. In addition, it can contain any
+     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p>
      */
     inline CreateUserRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
@@ -128,12 +134,13 @@ namespace Model
      * <p> The path for the user name. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/).</p> <p>This paramater allows
+     * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
      * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes, containing any ASCII character
-     * from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p>
+     * that must begin and end with forward slashes. In addition, it can contain any
+     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p>
      */
     inline CreateUserRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
@@ -142,7 +149,7 @@ namespace Model
      * <p>The name of the user to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. User names are not
+     * can also include any of the following characters: _+=,.@-. User names are not
      * distinguished by case. For example, you cannot create users named both
      * "TESTUSER" and "testuser".</p>
      */
@@ -152,7 +159,7 @@ namespace Model
      * <p>The name of the user to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. User names are not
+     * can also include any of the following characters: _+=,.@-. User names are not
      * distinguished by case. For example, you cannot create users named both
      * "TESTUSER" and "testuser".</p>
      */
@@ -162,7 +169,7 @@ namespace Model
      * <p>The name of the user to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. User names are not
+     * can also include any of the following characters: _+=,.@-. User names are not
      * distinguished by case. For example, you cannot create users named both
      * "TESTUSER" and "testuser".</p>
      */
@@ -172,7 +179,7 @@ namespace Model
      * <p>The name of the user to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. User names are not
+     * can also include any of the following characters: _+=,.@-. User names are not
      * distinguished by case. For example, you cannot create users named both
      * "TESTUSER" and "testuser".</p>
      */
@@ -182,7 +189,7 @@ namespace Model
      * <p>The name of the user to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. User names are not
+     * can also include any of the following characters: _+=,.@-. User names are not
      * distinguished by case. For example, you cannot create users named both
      * "TESTUSER" and "testuser".</p>
      */
@@ -192,7 +199,7 @@ namespace Model
      * <p>The name of the user to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. User names are not
+     * can also include any of the following characters: _+=,.@-. User names are not
      * distinguished by case. For example, you cannot create users named both
      * "TESTUSER" and "testuser".</p>
      */
@@ -202,11 +209,54 @@ namespace Model
      * <p>The name of the user to create.</p> <p>This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: =,.@-. User names are not
+     * can also include any of the following characters: _+=,.@-. User names are not
      * distinguished by case. For example, you cannot create users named both
      * "TESTUSER" and "testuser".</p>
      */
     inline CreateUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline const Aws::String& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline void SetPermissionsBoundary(const Aws::String& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline void SetPermissionsBoundary(Aws::String&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::move(value); }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline void SetPermissionsBoundary(const char* value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary.assign(value); }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline CreateUserRequest& WithPermissionsBoundary(const Aws::String& value) { SetPermissionsBoundary(value); return *this;}
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline CreateUserRequest& WithPermissionsBoundary(Aws::String&& value) { SetPermissionsBoundary(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * user.</p>
+     */
+    inline CreateUserRequest& WithPermissionsBoundary(const char* value) { SetPermissionsBoundary(value); return *this;}
 
   private:
 
@@ -215,6 +265,9 @@ namespace Model
 
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
+    Aws::String m_permissionsBoundary;
+    bool m_permissionsBoundaryHasBeenSet;
   };
 
 } // namespace Model

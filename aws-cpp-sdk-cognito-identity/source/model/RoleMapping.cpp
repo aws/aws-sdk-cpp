@@ -37,7 +37,7 @@ RoleMapping::RoleMapping() :
 {
 }
 
-RoleMapping::RoleMapping(const JsonValue& jsonValue) : 
+RoleMapping::RoleMapping(JsonView jsonValue) : 
     m_type(RoleMappingType::NOT_SET),
     m_typeHasBeenSet(false),
     m_ambiguousRoleResolution(AmbiguousRoleResolutionType::NOT_SET),
@@ -47,7 +47,7 @@ RoleMapping::RoleMapping(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RoleMapping& RoleMapping::operator =(const JsonValue& jsonValue)
+RoleMapping& RoleMapping::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

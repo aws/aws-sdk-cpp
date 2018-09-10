@@ -30,7 +30,10 @@ CreateCachediSCSIVolumeRequest::CreateCachediSCSIVolumeRequest() :
     m_targetNameHasBeenSet(false),
     m_sourceVolumeARNHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_kMSEncrypted(false),
+    m_kMSEncryptedHasBeenSet(false),
+    m_kMSKeyHasBeenSet(false)
 {
 }
 
@@ -80,7 +83,19 @@ Aws::String CreateCachediSCSIVolumeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_kMSEncryptedHasBeenSet)
+  {
+   payload.WithBool("KMSEncrypted", m_kMSEncrypted);
+
+  }
+
+  if(m_kMSKeyHasBeenSet)
+  {
+   payload.WithString("KMSKey", m_kMSKey);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateCachediSCSIVolumeRequest::GetRequestSpecificHeaders() const

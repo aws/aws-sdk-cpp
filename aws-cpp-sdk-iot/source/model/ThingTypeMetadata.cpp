@@ -36,7 +36,7 @@ ThingTypeMetadata::ThingTypeMetadata() :
 {
 }
 
-ThingTypeMetadata::ThingTypeMetadata(const JsonValue& jsonValue) : 
+ThingTypeMetadata::ThingTypeMetadata(JsonView jsonValue) : 
     m_deprecated(false),
     m_deprecatedHasBeenSet(false),
     m_deprecationDateHasBeenSet(false),
@@ -45,7 +45,7 @@ ThingTypeMetadata::ThingTypeMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ThingTypeMetadata& ThingTypeMetadata::operator =(const JsonValue& jsonValue)
+ThingTypeMetadata& ThingTypeMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("deprecated"))
   {

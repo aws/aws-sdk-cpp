@@ -35,7 +35,7 @@ Service::Service() :
 {
 }
 
-Service::Service(const JsonValue& jsonValue) : 
+Service::Service(JsonView jsonValue) : 
     m_codeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_categoriesHasBeenSet(false)
@@ -43,7 +43,7 @@ Service::Service(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Service& Service::operator =(const JsonValue& jsonValue)
+Service& Service::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("code"))
   {
@@ -61,7 +61,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("categories"))
   {
-    Array<JsonValue> categoriesJsonList = jsonValue.GetArray("categories");
+    Array<JsonView> categoriesJsonList = jsonValue.GetArray("categories");
     for(unsigned categoriesIndex = 0; categoriesIndex < categoriesJsonList.GetLength(); ++categoriesIndex)
     {
       m_categories.push_back(categoriesJsonList[categoriesIndex].AsObject());

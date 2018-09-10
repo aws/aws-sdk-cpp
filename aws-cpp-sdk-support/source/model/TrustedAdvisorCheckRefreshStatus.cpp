@@ -36,7 +36,7 @@ TrustedAdvisorCheckRefreshStatus::TrustedAdvisorCheckRefreshStatus() :
 {
 }
 
-TrustedAdvisorCheckRefreshStatus::TrustedAdvisorCheckRefreshStatus(const JsonValue& jsonValue) : 
+TrustedAdvisorCheckRefreshStatus::TrustedAdvisorCheckRefreshStatus(JsonView jsonValue) : 
     m_checkIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_millisUntilNextRefreshable(0),
@@ -45,7 +45,7 @@ TrustedAdvisorCheckRefreshStatus::TrustedAdvisorCheckRefreshStatus(const JsonVal
   *this = jsonValue;
 }
 
-TrustedAdvisorCheckRefreshStatus& TrustedAdvisorCheckRefreshStatus::operator =(const JsonValue& jsonValue)
+TrustedAdvisorCheckRefreshStatus& TrustedAdvisorCheckRefreshStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("checkId"))
   {

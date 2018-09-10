@@ -38,7 +38,7 @@ EndpointSummary::EndpointSummary() :
 {
 }
 
-EndpointSummary::EndpointSummary(const JsonValue& jsonValue) : 
+EndpointSummary::EndpointSummary(JsonView jsonValue) : 
     m_endpointNameHasBeenSet(false),
     m_endpointArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -49,7 +49,7 @@ EndpointSummary::EndpointSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EndpointSummary& EndpointSummary::operator =(const JsonValue& jsonValue)
+EndpointSummary& EndpointSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EndpointName"))
   {

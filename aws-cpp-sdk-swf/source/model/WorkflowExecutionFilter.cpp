@@ -33,13 +33,13 @@ WorkflowExecutionFilter::WorkflowExecutionFilter() :
 {
 }
 
-WorkflowExecutionFilter::WorkflowExecutionFilter(const JsonValue& jsonValue) : 
+WorkflowExecutionFilter::WorkflowExecutionFilter(JsonView jsonValue) : 
     m_workflowIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WorkflowExecutionFilter& WorkflowExecutionFilter::operator =(const JsonValue& jsonValue)
+WorkflowExecutionFilter& WorkflowExecutionFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowId"))
   {

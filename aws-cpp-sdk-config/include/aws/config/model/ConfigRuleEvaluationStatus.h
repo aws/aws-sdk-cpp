@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -37,7 +38,7 @@ namespace Model
    * <p>Status information for your AWS managed Config rules. The status includes
    * information such as the last time the rule ran, the last time it failed, and the
    * related error for the last failure.</p> <p>This action does not return status
-   * information about custom Config rules.</p><p><h3>See Also:</h3>   <a
+   * information about custom AWS Config rules.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigRuleEvaluationStatus">AWS
    * API Reference</a></p>
    */
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     ConfigRuleEvaluationStatus();
-    ConfigRuleEvaluationStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    ConfigRuleEvaluationStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ConfigRuleEvaluationStatus(Aws::Utils::Json::JsonView jsonValue);
+    ConfigRuleEvaluationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

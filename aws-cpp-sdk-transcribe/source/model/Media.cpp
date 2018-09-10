@@ -33,13 +33,13 @@ Media::Media() :
 {
 }
 
-Media::Media(const JsonValue& jsonValue) : 
+Media::Media(JsonView jsonValue) : 
     m_mediaFileUriHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Media& Media::operator =(const JsonValue& jsonValue)
+Media& Media::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MediaFileUri"))
   {

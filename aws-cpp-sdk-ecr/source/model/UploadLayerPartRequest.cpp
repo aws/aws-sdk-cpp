@@ -74,7 +74,7 @@ Aws::String UploadLayerPartRequest::SerializePayload() const
    payload.WithString("layerPartBlob", HashingUtils::Base64Encode(m_layerPartBlob));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UploadLayerPartRequest::GetRequestSpecificHeaders() const

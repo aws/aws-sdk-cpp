@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Comprehend
@@ -43,43 +44,57 @@ namespace Model
   {
   public:
     DominantLanguage();
-    DominantLanguage(const Aws::Utils::Json::JsonValue& jsonValue);
-    DominantLanguage& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DominantLanguage(Aws::Utils::Json::JsonView jsonValue);
+    DominantLanguage& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The RFC 5646 language code for the dominant language. </p>
+     * <p>The RFC 5646 language code for the dominant language. For more information
+     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
+     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
      */
     inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The RFC 5646 language code for the dominant language. </p>
+     * <p>The RFC 5646 language code for the dominant language. For more information
+     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
+     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
      */
     inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The RFC 5646 language code for the dominant language. </p>
+     * <p>The RFC 5646 language code for the dominant language. For more information
+     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
+     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
      */
     inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The RFC 5646 language code for the dominant language. </p>
+     * <p>The RFC 5646 language code for the dominant language. For more information
+     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
+     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
      */
     inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
 
     /**
-     * <p>The RFC 5646 language code for the dominant language. </p>
+     * <p>The RFC 5646 language code for the dominant language. For more information
+     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
+     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
      */
     inline DominantLanguage& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The RFC 5646 language code for the dominant language. </p>
+     * <p>The RFC 5646 language code for the dominant language. For more information
+     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
+     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
      */
     inline DominantLanguage& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
 
     /**
-     * <p>The RFC 5646 language code for the dominant language. </p>
+     * <p>The RFC 5646 language code for the dominant language. For more information
+     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
+     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
      */
     inline DominantLanguage& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
 

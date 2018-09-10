@@ -37,7 +37,7 @@ HealthCheckConfig::HealthCheckConfig() :
 {
 }
 
-HealthCheckConfig::HealthCheckConfig(const JsonValue& jsonValue) : 
+HealthCheckConfig::HealthCheckConfig(JsonView jsonValue) : 
     m_type(HealthCheckType::NOT_SET),
     m_typeHasBeenSet(false),
     m_resourcePathHasBeenSet(false),
@@ -47,7 +47,7 @@ HealthCheckConfig::HealthCheckConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HealthCheckConfig& HealthCheckConfig::operator =(const JsonValue& jsonValue)
+HealthCheckConfig& HealthCheckConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

@@ -40,7 +40,7 @@ DomainValidation::DomainValidation() :
 {
 }
 
-DomainValidation::DomainValidation(const JsonValue& jsonValue) : 
+DomainValidation::DomainValidation(JsonView jsonValue) : 
     m_domainNameHasBeenSet(false),
     m_validationEmailsHasBeenSet(false),
     m_validationDomainHasBeenSet(false),
@@ -53,7 +53,7 @@ DomainValidation::DomainValidation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DomainValidation& DomainValidation::operator =(const JsonValue& jsonValue)
+DomainValidation& DomainValidation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DomainName"))
   {
@@ -64,7 +64,7 @@ DomainValidation& DomainValidation::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ValidationEmails"))
   {
-    Array<JsonValue> validationEmailsJsonList = jsonValue.GetArray("ValidationEmails");
+    Array<JsonView> validationEmailsJsonList = jsonValue.GetArray("ValidationEmails");
     for(unsigned validationEmailsIndex = 0; validationEmailsIndex < validationEmailsJsonList.GetLength(); ++validationEmailsIndex)
     {
       m_validationEmails.push_back(validationEmailsJsonList[validationEmailsIndex].AsString());

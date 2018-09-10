@@ -34,14 +34,14 @@ StandardHlsSettings::StandardHlsSettings() :
 {
 }
 
-StandardHlsSettings::StandardHlsSettings(const JsonValue& jsonValue) : 
+StandardHlsSettings::StandardHlsSettings(JsonView jsonValue) : 
     m_audioRenditionSetsHasBeenSet(false),
     m_m3u8SettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StandardHlsSettings& StandardHlsSettings::operator =(const JsonValue& jsonValue)
+StandardHlsSettings& StandardHlsSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioRenditionSets"))
   {

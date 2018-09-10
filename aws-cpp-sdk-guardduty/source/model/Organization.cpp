@@ -36,7 +36,7 @@ Organization::Organization() :
 {
 }
 
-Organization::Organization(const JsonValue& jsonValue) : 
+Organization::Organization(JsonView jsonValue) : 
     m_asnHasBeenSet(false),
     m_asnOrgHasBeenSet(false),
     m_ispHasBeenSet(false),
@@ -45,7 +45,7 @@ Organization::Organization(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Organization& Organization::operator =(const JsonValue& jsonValue)
+Organization& Organization::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("asn"))
   {

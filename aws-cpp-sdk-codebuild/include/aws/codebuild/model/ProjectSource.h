@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeBuild
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ProjectSource();
-    ProjectSource(const Aws::Utils::Json::JsonValue& jsonValue);
-    ProjectSource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ProjectSource(Aws::Utils::Json::JsonView jsonValue);
+    ProjectSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -390,6 +391,22 @@ namespace Model
 
 
     /**
+     * <p>Information about the git clone depth for the build project.</p>
+     */
+    inline int GetGitCloneDepth() const{ return m_gitCloneDepth; }
+
+    /**
+     * <p>Information about the git clone depth for the build project.</p>
+     */
+    inline void SetGitCloneDepth(int value) { m_gitCloneDepthHasBeenSet = true; m_gitCloneDepth = value; }
+
+    /**
+     * <p>Information about the git clone depth for the build project.</p>
+     */
+    inline ProjectSource& WithGitCloneDepth(int value) { SetGitCloneDepth(value); return *this;}
+
+
+    /**
      * <p>The build spec declaration to use for the builds in this build project.</p>
      * <p>If this value is not specified, a build spec must be included along with the
      * source code to be built.</p>
@@ -484,6 +501,86 @@ namespace Model
      */
     inline ProjectSource& WithAuth(SourceAuth&& value) { SetAuth(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Set to true to report the status of a build's start and finish to your
+     * source provider. This option is only valid when your source provider is GitHub.
+     * If this is set and you use a different source provider, an invalidInputException
+     * is thrown. </p>
+     */
+    inline bool GetReportBuildStatus() const{ return m_reportBuildStatus; }
+
+    /**
+     * <p> Set to true to report the status of a build's start and finish to your
+     * source provider. This option is only valid when your source provider is GitHub.
+     * If this is set and you use a different source provider, an invalidInputException
+     * is thrown. </p>
+     */
+    inline void SetReportBuildStatus(bool value) { m_reportBuildStatusHasBeenSet = true; m_reportBuildStatus = value; }
+
+    /**
+     * <p> Set to true to report the status of a build's start and finish to your
+     * source provider. This option is only valid when your source provider is GitHub.
+     * If this is set and you use a different source provider, an invalidInputException
+     * is thrown. </p>
+     */
+    inline ProjectSource& WithReportBuildStatus(bool value) { SetReportBuildStatus(value); return *this;}
+
+
+    /**
+     * <p>Enable this flag to ignore SSL warnings while connecting to the project
+     * source code.</p>
+     */
+    inline bool GetInsecureSsl() const{ return m_insecureSsl; }
+
+    /**
+     * <p>Enable this flag to ignore SSL warnings while connecting to the project
+     * source code.</p>
+     */
+    inline void SetInsecureSsl(bool value) { m_insecureSslHasBeenSet = true; m_insecureSsl = value; }
+
+    /**
+     * <p>Enable this flag to ignore SSL warnings while connecting to the project
+     * source code.</p>
+     */
+    inline ProjectSource& WithInsecureSsl(bool value) { SetInsecureSsl(value); return *this;}
+
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline ProjectSource& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline ProjectSource& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p> An identifier for this project source. </p>
+     */
+    inline ProjectSource& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
+
   private:
 
     SourceType m_type;
@@ -492,11 +589,23 @@ namespace Model
     Aws::String m_location;
     bool m_locationHasBeenSet;
 
+    int m_gitCloneDepth;
+    bool m_gitCloneDepthHasBeenSet;
+
     Aws::String m_buildspec;
     bool m_buildspecHasBeenSet;
 
     SourceAuth m_auth;
     bool m_authHasBeenSet;
+
+    bool m_reportBuildStatus;
+    bool m_reportBuildStatusHasBeenSet;
+
+    bool m_insecureSsl;
+    bool m_insecureSslHasBeenSet;
+
+    Aws::String m_sourceIdentifier;
+    bool m_sourceIdentifierHasBeenSet;
   };
 
 } // namespace Model

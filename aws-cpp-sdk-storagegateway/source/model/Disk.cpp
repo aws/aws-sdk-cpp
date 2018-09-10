@@ -40,7 +40,7 @@ Disk::Disk() :
 {
 }
 
-Disk::Disk(const JsonValue& jsonValue) : 
+Disk::Disk(JsonView jsonValue) : 
     m_diskIdHasBeenSet(false),
     m_diskPathHasBeenSet(false),
     m_diskNodeHasBeenSet(false),
@@ -53,7 +53,7 @@ Disk::Disk(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Disk& Disk::operator =(const JsonValue& jsonValue)
+Disk& Disk::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DiskId"))
   {

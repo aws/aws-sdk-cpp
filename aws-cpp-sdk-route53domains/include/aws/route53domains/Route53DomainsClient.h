@@ -67,11 +67,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -394,10 +389,10 @@ namespace Model
          * which you can renew a domain name varies by TLD. For a list of TLDs and their
          * renewal policies, see <a
          * href="http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times">"Renewal,
-         * restoration, and deletion times"</a> on the website for our registrar partner,
-         * Gandi. Route 53 requires that you renew before the end of the renewal period
-         * that is listed on the Gandi website so we can complete processing before the
-         * deadline.</p><p><h3>See Also:</h3>   <a
+         * restoration, and deletion times"</a> on the website for our registrar associate,
+         * Gandi. Amazon Route 53 requires that you renew before the end of the renewal
+         * period that is listed on the Gandi website so we can complete processing before
+         * the deadline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">AWS
          * API Reference</a></p>
          */
@@ -410,10 +405,10 @@ namespace Model
          * which you can renew a domain name varies by TLD. For a list of TLDs and their
          * renewal policies, see <a
          * href="http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times">"Renewal,
-         * restoration, and deletion times"</a> on the website for our registrar partner,
-         * Gandi. Route 53 requires that you renew before the end of the renewal period
-         * that is listed on the Gandi website so we can complete processing before the
-         * deadline.</p><p><h3>See Also:</h3>   <a
+         * restoration, and deletion times"</a> on the website for our registrar associate,
+         * Gandi. Amazon Route 53 requires that you renew before the end of the renewal
+         * period that is listed on the Gandi website so we can complete processing before
+         * the deadline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">AWS
          * API Reference</a></p>
          *
@@ -428,10 +423,10 @@ namespace Model
          * which you can renew a domain name varies by TLD. For a list of TLDs and their
          * renewal policies, see <a
          * href="http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times">"Renewal,
-         * restoration, and deletion times"</a> on the website for our registrar partner,
-         * Gandi. Route 53 requires that you renew before the end of the renewal period
-         * that is listed on the Gandi website so we can complete processing before the
-         * deadline.</p><p><h3>See Also:</h3>   <a
+         * restoration, and deletion times"</a> on the website for our registrar associate,
+         * Gandi. Amazon Route 53 requires that you renew before the end of the renewal
+         * period that is listed on the Gandi website so we can complete processing before
+         * the deadline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">AWS
          * API Reference</a></p>
          *
@@ -700,8 +695,9 @@ namespace Model
         virtual void ListTagsForDomainAsync(const Model::ListTagsForDomainRequest& request, const ListTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This operation registers a domain. Domains are registered by the AWS
-         * registrar partner, Gandi. For some top-level domains (TLDs), this operation
+         * <p>This operation registers a domain. Domains are registered either by Amazon
+         * Registrar (for .com, .net, and .org domains) or by our registrar associate,
+         * Gandi (for all other domains). For some top-level domains (TLDs), this operation
          * requires extra parameters.</p> <p>When you register a domain, Amazon Route 53
          * does the following:</p> <ul> <li> <p>Creates a Amazon Route 53 hosted zone that
          * has the same name as the domain. Amazon Route 53 assigns four name servers to
@@ -710,22 +706,25 @@ namespace Model
          * registration will renew automatically each year. We'll notify you in advance of
          * the renewal date so you can choose whether to renew the registration.</p> </li>
          * <li> <p>Optionally enables privacy protection, so WHOIS queries return contact
-         * information for our registrar partner, Gandi, instead of the information you
-         * entered for registrant, admin, and tech contacts.</p> </li> <li> <p>If
-         * registration is successful, returns an operation ID that you can use to track
-         * the progress and completion of the action. If the request is not completed
-         * successfully, the domain registrant is notified by email.</p> </li> <li>
-         * <p>Charges your AWS account an amount based on the top-level domain. For more
-         * information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
-         * 53 Pricing</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * information either for Amazon Registrar (for .com, .net, and .org domains) or
+         * for our registrar associate, Gandi (for all other TLDs). If you don't enable
+         * privacy protection, WHOIS queries return the information that you entered for
+         * the registrant, admin, and tech contacts.</p> </li> <li> <p>If registration is
+         * successful, returns an operation ID that you can use to track the progress and
+         * completion of the action. If the request is not completed successfully, the
+         * domain registrant is notified by email.</p> </li> <li> <p>Charges your AWS
+         * account an amount based on the top-level domain. For more information, see <a
+         * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">AWS
          * API Reference</a></p>
          */
         virtual Model::RegisterDomainOutcome RegisterDomain(const Model::RegisterDomainRequest& request) const;
 
         /**
-         * <p>This operation registers a domain. Domains are registered by the AWS
-         * registrar partner, Gandi. For some top-level domains (TLDs), this operation
+         * <p>This operation registers a domain. Domains are registered either by Amazon
+         * Registrar (for .com, .net, and .org domains) or by our registrar associate,
+         * Gandi (for all other domains). For some top-level domains (TLDs), this operation
          * requires extra parameters.</p> <p>When you register a domain, Amazon Route 53
          * does the following:</p> <ul> <li> <p>Creates a Amazon Route 53 hosted zone that
          * has the same name as the domain. Amazon Route 53 assigns four name servers to
@@ -734,14 +733,16 @@ namespace Model
          * registration will renew automatically each year. We'll notify you in advance of
          * the renewal date so you can choose whether to renew the registration.</p> </li>
          * <li> <p>Optionally enables privacy protection, so WHOIS queries return contact
-         * information for our registrar partner, Gandi, instead of the information you
-         * entered for registrant, admin, and tech contacts.</p> </li> <li> <p>If
-         * registration is successful, returns an operation ID that you can use to track
-         * the progress and completion of the action. If the request is not completed
-         * successfully, the domain registrant is notified by email.</p> </li> <li>
-         * <p>Charges your AWS account an amount based on the top-level domain. For more
-         * information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
-         * 53 Pricing</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * information either for Amazon Registrar (for .com, .net, and .org domains) or
+         * for our registrar associate, Gandi (for all other TLDs). If you don't enable
+         * privacy protection, WHOIS queries return the information that you entered for
+         * the registrant, admin, and tech contacts.</p> </li> <li> <p>If registration is
+         * successful, returns an operation ID that you can use to track the progress and
+         * completion of the action. If the request is not completed successfully, the
+         * domain registrant is notified by email.</p> </li> <li> <p>Charges your AWS
+         * account an amount based on the top-level domain. For more information, see <a
+         * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">AWS
          * API Reference</a></p>
          *
@@ -750,8 +751,9 @@ namespace Model
         virtual Model::RegisterDomainOutcomeCallable RegisterDomainCallable(const Model::RegisterDomainRequest& request) const;
 
         /**
-         * <p>This operation registers a domain. Domains are registered by the AWS
-         * registrar partner, Gandi. For some top-level domains (TLDs), this operation
+         * <p>This operation registers a domain. Domains are registered either by Amazon
+         * Registrar (for .com, .net, and .org domains) or by our registrar associate,
+         * Gandi (for all other domains). For some top-level domains (TLDs), this operation
          * requires extra parameters.</p> <p>When you register a domain, Amazon Route 53
          * does the following:</p> <ul> <li> <p>Creates a Amazon Route 53 hosted zone that
          * has the same name as the domain. Amazon Route 53 assigns four name servers to
@@ -760,14 +762,16 @@ namespace Model
          * registration will renew automatically each year. We'll notify you in advance of
          * the renewal date so you can choose whether to renew the registration.</p> </li>
          * <li> <p>Optionally enables privacy protection, so WHOIS queries return contact
-         * information for our registrar partner, Gandi, instead of the information you
-         * entered for registrant, admin, and tech contacts.</p> </li> <li> <p>If
-         * registration is successful, returns an operation ID that you can use to track
-         * the progress and completion of the action. If the request is not completed
-         * successfully, the domain registrant is notified by email.</p> </li> <li>
-         * <p>Charges your AWS account an amount based on the top-level domain. For more
-         * information, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
-         * 53 Pricing</a>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * information either for Amazon Registrar (for .com, .net, and .org domains) or
+         * for our registrar associate, Gandi (for all other TLDs). If you don't enable
+         * privacy protection, WHOIS queries return the information that you entered for
+         * the registrant, admin, and tech contacts.</p> </li> <li> <p>If registration is
+         * successful, returns an operation ID that you can use to track the progress and
+         * completion of the action. If the request is not completed successfully, the
+         * domain registrant is notified by email.</p> </li> <li> <p>Charges your AWS
+         * account an amount based on the top-level domain. For more information, see <a
+         * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RegisterDomain">AWS
          * API Reference</a></p>
          *
@@ -888,9 +892,10 @@ namespace Model
 
         /**
          * <p>This operation transfers a domain from another registrar to Amazon Route 53.
-         * When the transfer is complete, the domain is registered with the AWS registrar
-         * partner, Gandi.</p> <p>For transfer requirements, a detailed procedure, and
-         * information about viewing the status of a domain transfer, see <a
+         * When the transfer is complete, the domain is registered either with Amazon
+         * Registrar (for .com, .net, and .org domains) or with our registrar associate,
+         * Gandi (for all other TLDs).</p> <p>For transfer requirements, a detailed
+         * procedure, and information about viewing the status of a domain transfer, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
          * Registration for a Domain to Amazon Route 53</a> in the <i>Amazon Route 53
          * Developer Guide</i>.</p> <p>If the registrar for your domain is also the DNS
@@ -914,9 +919,10 @@ namespace Model
 
         /**
          * <p>This operation transfers a domain from another registrar to Amazon Route 53.
-         * When the transfer is complete, the domain is registered with the AWS registrar
-         * partner, Gandi.</p> <p>For transfer requirements, a detailed procedure, and
-         * information about viewing the status of a domain transfer, see <a
+         * When the transfer is complete, the domain is registered either with Amazon
+         * Registrar (for .com, .net, and .org domains) or with our registrar associate,
+         * Gandi (for all other TLDs).</p> <p>For transfer requirements, a detailed
+         * procedure, and information about viewing the status of a domain transfer, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
          * Registration for a Domain to Amazon Route 53</a> in the <i>Amazon Route 53
          * Developer Guide</i>.</p> <p>If the registrar for your domain is also the DNS
@@ -942,9 +948,10 @@ namespace Model
 
         /**
          * <p>This operation transfers a domain from another registrar to Amazon Route 53.
-         * When the transfer is complete, the domain is registered with the AWS registrar
-         * partner, Gandi.</p> <p>For transfer requirements, a detailed procedure, and
-         * information about viewing the status of a domain transfer, see <a
+         * When the transfer is complete, the domain is registered either with Amazon
+         * Registrar (for .com, .net, and .org domains) or with our registrar associate,
+         * Gandi (for all other TLDs).</p> <p>For transfer requirements, a detailed
+         * procedure, and information about viewing the status of a domain transfer, see <a
          * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
          * Registration for a Domain to Amazon Route 53</a> in the <i>Amazon Route 53
          * Developer Guide</i>.</p> <p>If the registrar for your domain is also the DNS
@@ -969,24 +976,24 @@ namespace Model
         virtual void TransferDomainAsync(const Model::TransferDomainRequest& request, const TransferDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This operation updates the contact information for a particular domain.
-         * Information for at least one contact (registrant, administrator, or technical)
-         * must be supplied for update.</p> <p>If the update is successful, this method
-         * returns an operation ID that you can use to track the progress and completion of
-         * the action. If the request is not completed successfully, the domain registrant
-         * will be notified by email.</p><p><h3>See Also:</h3>   <a
+         * <p>This operation updates the contact information for a particular domain. You
+         * must specify information for at least one contact: registrant, administrator, or
+         * technical.</p> <p>If the update is successful, this method returns an operation
+         * ID that you can use to track the progress and completion of the action. If the
+         * request is not completed successfully, the domain registrant will be notified by
+         * email.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDomainContactOutcome UpdateDomainContact(const Model::UpdateDomainContactRequest& request) const;
 
         /**
-         * <p>This operation updates the contact information for a particular domain.
-         * Information for at least one contact (registrant, administrator, or technical)
-         * must be supplied for update.</p> <p>If the update is successful, this method
-         * returns an operation ID that you can use to track the progress and completion of
-         * the action. If the request is not completed successfully, the domain registrant
-         * will be notified by email.</p><p><h3>See Also:</h3>   <a
+         * <p>This operation updates the contact information for a particular domain. You
+         * must specify information for at least one contact: registrant, administrator, or
+         * technical.</p> <p>If the update is successful, this method returns an operation
+         * ID that you can use to track the progress and completion of the action. If the
+         * request is not completed successfully, the domain registrant will be notified by
+         * email.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">AWS
          * API Reference</a></p>
          *
@@ -995,12 +1002,12 @@ namespace Model
         virtual Model::UpdateDomainContactOutcomeCallable UpdateDomainContactCallable(const Model::UpdateDomainContactRequest& request) const;
 
         /**
-         * <p>This operation updates the contact information for a particular domain.
-         * Information for at least one contact (registrant, administrator, or technical)
-         * must be supplied for update.</p> <p>If the update is successful, this method
-         * returns an operation ID that you can use to track the progress and completion of
-         * the action. If the request is not completed successfully, the domain registrant
-         * will be notified by email.</p><p><h3>See Also:</h3>   <a
+         * <p>This operation updates the contact information for a particular domain. You
+         * must specify information for at least one contact: registrant, administrator, or
+         * technical.</p> <p>If the update is successful, this method returns an operation
+         * ID that you can use to track the progress and completion of the action. If the
+         * request is not completed successfully, the domain registrant will be notified by
+         * email.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContact">AWS
          * API Reference</a></p>
          *
@@ -1010,15 +1017,14 @@ namespace Model
 
         /**
          * <p>This operation updates the specified domain contact's privacy setting. When
-         * the privacy option is enabled, personal information such as postal or email
-         * address is hidden from the results of a public WHOIS query. The privacy services
-         * are provided by the AWS registrar, Gandi. For more information, see the <a
-         * href="http://www.gandi.net/domain/whois/?currency=USD&amp;amp;lang=en">Gandi
-         * privacy features</a>.</p> <p>This operation only affects the privacy of the
-         * specified contact type (registrant, administrator, or tech). Successful
-         * acceptance returns an operation ID that you can use with
+         * privacy protection is enabled, contact information such as email address is
+         * replaced either with contact information for Amazon Registrar (for .com, .net,
+         * and .org domains) or with contact information for our registrar associate,
+         * Gandi.</p> <p>This operation affects only the contact information for the
+         * specified contact type (registrant, administrator, or tech). If the request
+         * succeeds, Amazon Route 53 returns an operation ID that you can use with
          * <a>GetOperationDetail</a> to track the progress and completion of the action. If
-         * the request is not completed successfully, the domain registrant will be
+         * the request doesn't complete successfully, the domain registrant will be
          * notified by email.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">AWS
          * API Reference</a></p>
@@ -1027,15 +1033,14 @@ namespace Model
 
         /**
          * <p>This operation updates the specified domain contact's privacy setting. When
-         * the privacy option is enabled, personal information such as postal or email
-         * address is hidden from the results of a public WHOIS query. The privacy services
-         * are provided by the AWS registrar, Gandi. For more information, see the <a
-         * href="http://www.gandi.net/domain/whois/?currency=USD&amp;amp;lang=en">Gandi
-         * privacy features</a>.</p> <p>This operation only affects the privacy of the
-         * specified contact type (registrant, administrator, or tech). Successful
-         * acceptance returns an operation ID that you can use with
+         * privacy protection is enabled, contact information such as email address is
+         * replaced either with contact information for Amazon Registrar (for .com, .net,
+         * and .org domains) or with contact information for our registrar associate,
+         * Gandi.</p> <p>This operation affects only the contact information for the
+         * specified contact type (registrant, administrator, or tech). If the request
+         * succeeds, Amazon Route 53 returns an operation ID that you can use with
          * <a>GetOperationDetail</a> to track the progress and completion of the action. If
-         * the request is not completed successfully, the domain registrant will be
+         * the request doesn't complete successfully, the domain registrant will be
          * notified by email.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">AWS
          * API Reference</a></p>
@@ -1046,15 +1051,14 @@ namespace Model
 
         /**
          * <p>This operation updates the specified domain contact's privacy setting. When
-         * the privacy option is enabled, personal information such as postal or email
-         * address is hidden from the results of a public WHOIS query. The privacy services
-         * are provided by the AWS registrar, Gandi. For more information, see the <a
-         * href="http://www.gandi.net/domain/whois/?currency=USD&amp;amp;lang=en">Gandi
-         * privacy features</a>.</p> <p>This operation only affects the privacy of the
-         * specified contact type (registrant, administrator, or tech). Successful
-         * acceptance returns an operation ID that you can use with
+         * privacy protection is enabled, contact information such as email address is
+         * replaced either with contact information for Amazon Registrar (for .com, .net,
+         * and .org domains) or with contact information for our registrar associate,
+         * Gandi.</p> <p>This operation affects only the contact information for the
+         * specified contact type (registrant, administrator, or tech). If the request
+         * succeeds, Amazon Route 53 returns an operation ID that you can use with
          * <a>GetOperationDetail</a> to track the progress and completion of the action. If
-         * the request is not completed successfully, the domain registrant will be
+         * the request doesn't complete successfully, the domain registrant will be
          * notified by email.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">AWS
          * API Reference</a></p>

@@ -18,10 +18,10 @@
 #include <aws/codebuild/CodeBuildRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codebuild/model/ProjectSource.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/ProjectArtifacts.h>
 #include <aws/codebuild/model/ProjectCache.h>
 #include <aws/codebuild/model/ProjectEnvironment.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/VpcConfig.h>
 #include <aws/codebuild/model/Tag.h>
 #include <utility>
@@ -162,6 +162,42 @@ namespace Model
 
 
     /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline const Aws::Vector<ProjectSource>& GetSecondarySources() const{ return m_secondarySources; }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline void SetSecondarySources(const Aws::Vector<ProjectSource>& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources = value; }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline void SetSecondarySources(Aws::Vector<ProjectSource>&& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources = std::move(value); }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline UpdateProjectRequest& WithSecondarySources(const Aws::Vector<ProjectSource>& value) { SetSecondarySources(value); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline UpdateProjectRequest& WithSecondarySources(Aws::Vector<ProjectSource>&& value) { SetSecondarySources(std::move(value)); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline UpdateProjectRequest& AddSecondarySources(const ProjectSource& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources.push_back(value); return *this; }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline UpdateProjectRequest& AddSecondarySources(ProjectSource&& value) { m_secondarySourcesHasBeenSet = true; m_secondarySources.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Information to be changed about the build output artifacts for the build
      * project.</p>
      */
@@ -190,6 +226,42 @@ namespace Model
      * project.</p>
      */
     inline UpdateProjectRequest& WithArtifacts(ProjectArtifacts&& value) { SetArtifacts(std::move(value)); return *this;}
+
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline const Aws::Vector<ProjectArtifacts>& GetSecondaryArtifacts() const{ return m_secondaryArtifacts; }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline void SetSecondaryArtifacts(const Aws::Vector<ProjectArtifacts>& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = value; }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline void SetSecondaryArtifacts(Aws::Vector<ProjectArtifacts>&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts = std::move(value); }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline UpdateProjectRequest& WithSecondaryArtifacts(const Aws::Vector<ProjectArtifacts>& value) { SetSecondaryArtifacts(value); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline UpdateProjectRequest& WithSecondaryArtifacts(Aws::Vector<ProjectArtifacts>&& value) { SetSecondaryArtifacts(std::move(value)); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline UpdateProjectRequest& AddSecondaryArtifacts(const ProjectArtifacts& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.push_back(value); return *this; }
+
+    /**
+     * <p> An array of <code>ProjectSource</code> objects. </p>
+     */
+    inline UpdateProjectRequest& AddSecondaryArtifacts(ProjectArtifacts&& value) { m_secondaryArtifactsHasBeenSet = true; m_secondaryArtifacts.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -488,8 +560,14 @@ namespace Model
     ProjectSource m_source;
     bool m_sourceHasBeenSet;
 
+    Aws::Vector<ProjectSource> m_secondarySources;
+    bool m_secondarySourcesHasBeenSet;
+
     ProjectArtifacts m_artifacts;
     bool m_artifactsHasBeenSet;
+
+    Aws::Vector<ProjectArtifacts> m_secondaryArtifacts;
+    bool m_secondaryArtifactsHasBeenSet;
 
     ProjectCache m_cache;
     bool m_cacheHasBeenSet;

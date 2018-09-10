@@ -38,7 +38,7 @@ IdentityPoolUsage::IdentityPoolUsage() :
 {
 }
 
-IdentityPoolUsage::IdentityPoolUsage(const JsonValue& jsonValue) : 
+IdentityPoolUsage::IdentityPoolUsage(JsonView jsonValue) : 
     m_identityPoolIdHasBeenSet(false),
     m_syncSessionsCount(0),
     m_syncSessionsCountHasBeenSet(false),
@@ -49,7 +49,7 @@ IdentityPoolUsage::IdentityPoolUsage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IdentityPoolUsage& IdentityPoolUsage::operator =(const JsonValue& jsonValue)
+IdentityPoolUsage& IdentityPoolUsage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IdentityPoolId"))
   {

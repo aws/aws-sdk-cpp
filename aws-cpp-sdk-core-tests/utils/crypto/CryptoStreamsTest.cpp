@@ -103,6 +103,55 @@ public:
     size_t m_finalizeDecryptionCalledCount;
 };
 
+class RealSymmetricCipher : public SymmetricCipher
+{
+public:
+    RealSymmetricCipher(std::shared_ptr<SymmetricCipher>&& cipher) : SymmetricCipher(),
+        m_resetCalledCount(0), m_encryptCalledCount(0), m_decryptCalledCount(0),
+        m_finalizeEncryptionCalledCount(0), m_finalizeDecryptionCalledCount(0), m_cipher(std::move(cipher))
+    {
+    }
+
+    CryptoBuffer EncryptBuffer(const CryptoBuffer& unEncryptedData) override
+    {
+        m_encryptCalledCount++;
+        return m_cipher->EncryptBuffer(unEncryptedData);
+    }
+
+    CryptoBuffer FinalizeEncryption() override
+    {
+        m_finalizeEncryptionCalledCount++;
+        return m_cipher->FinalizeEncryption();
+    }
+
+    CryptoBuffer DecryptBuffer(const CryptoBuffer& encryptedData) override
+    {
+        m_decryptCalledCount++;
+        return m_cipher->DecryptBuffer(encryptedData);
+    }
+
+    CryptoBuffer FinalizeDecryption() override
+    {
+        m_finalizeDecryptionCalledCount++;
+        return m_cipher->FinalizeDecryption();
+    }
+
+    void Reset() override
+    {
+        m_resetCalledCount++;
+        m_cipher->Reset();
+    }
+
+    size_t m_resetCalledCount;
+    size_t m_encryptCalledCount;
+    size_t m_decryptCalledCount;
+    size_t m_finalizeEncryptionCalledCount;
+    size_t m_finalizeDecryptionCalledCount;
+
+private:
+    std::shared_ptr<SymmetricCipher> m_cipher;
+};
+
 static const char* TEST_RESPONSE_1 = "BLAH_1_BLAH_1_BLAH_1_BLAH_1_BLAH_1_B";
 static const char* TEST_RESPONSE_2 = "BLAH_2_BLAH_2_BLAH_2_BLAH_2_BLAH_2_B";
 static const char* TEST_RESPONSE_FINAL = "BLAH_FIN_BLAH_FIN_BLAH_FIN_BLAH_FIN";
@@ -132,6 +181,119 @@ static Aws::String ComputePartialOutput()
     str.append(TEST_RESPONSE_FINAL);
 
     return str;
+}
+
+using CipherCreateImplementationFunction = std::shared_ptr<SymmetricCipher>(*)(const CryptoBuffer&);
+
+static void TestCiphersNeverUsedSrc(const CipherCreateImplementationFunction& createCipherFunction, const CryptoBuffer& key, CipherMode cipherMode)
+{
+    std::istringstream is;
+
+    auto cipher = RealSymmetricCipher(createCipherFunction(key));
+
+    SymmetricCryptoStream stream(is, cipherMode, cipher, Aws::Utils::Crypto::DEFAULT_BUF_SIZE);
+
+    ASSERT_EQ(0u, cipher.m_encryptCalledCount);
+    ASSERT_EQ(0u, cipher.m_decryptCalledCount);
+    ASSERT_EQ(0u, cipher.m_finalizeEncryptionCalledCount);
+    ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
+}
+
+static void TestCiphersNeverUsedSinkDestructorFinalizes(const CipherCreateImplementationFunction& createCipherFunction, const CryptoBuffer& key, CipherMode cipherMode)
+{
+    std::ostringstream os;
+
+    auto cipher = RealSymmetricCipher(createCipherFunction(key));
+
+    {
+        SymmetricCryptoStream stream(os, cipherMode, cipher, Aws::Utils::Crypto::DEFAULT_BUF_SIZE);
+    }
+
+    if (cipherMode == CipherMode::Encrypt)
+    {
+        ASSERT_EQ(1u, cipher.m_finalizeEncryptionCalledCount);
+        ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
+    }
+    else
+    {
+        ASSERT_EQ(0u, cipher.m_finalizeEncryptionCalledCount);
+        ASSERT_EQ(1u, cipher.m_finalizeDecryptionCalledCount);
+    }
+}
+
+static void TestCiphersNeverUsedSinkExplicitFinalize(const CipherCreateImplementationFunction& createCipherFunction, const CryptoBuffer& key, CipherMode cipherMode)
+{
+    std::ostringstream os;
+
+    auto cipher = RealSymmetricCipher(createCipherFunction(key));
+
+    SymmetricCryptoStream stream(os, cipherMode, cipher, Aws::Utils::Crypto::DEFAULT_BUF_SIZE);
+    stream.Finalize();
+
+    if (cipherMode == CipherMode::Encrypt)
+    {
+        ASSERT_EQ(1u, cipher.m_finalizeEncryptionCalledCount);
+        ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
+    }
+    else
+    {
+        ASSERT_EQ(0u, cipher.m_finalizeEncryptionCalledCount);
+        ASSERT_EQ(1u, cipher.m_finalizeDecryptionCalledCount);
+    }
+}
+
+TEST(CryptoStreamsTest, TestCiphersNeverUsedSrc)
+{
+    CryptoBuffer key = SymmetricCipher::GenerateKey();
+
+    TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_CBCImplementation), key, CipherMode::Encrypt);
+    TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_CBCImplementation), key, CipherMode::Decrypt);
+    TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_CTRImplementation), key, CipherMode::Encrypt);
+    TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_CTRImplementation), key, CipherMode::Decrypt);
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
+    TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_GCMImplementation), key, CipherMode::Encrypt);
+    TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_GCMImplementation), key, CipherMode::Decrypt);
+#endif
+    Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
+    CryptoBuffer kek_raw = HashingUtils::HexDecode(kek);
+    TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_KeyWrapImplementation), kek_raw, CipherMode::Encrypt);
+    TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_KeyWrapImplementation), kek_raw, CipherMode::Decrypt);
+}
+
+TEST(CryptoStreamsTest, TestCiphersNeverUsedSinkDestructorFinalizes)
+{
+    CryptoBuffer key = SymmetricCipher::GenerateKey();
+
+    TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_CBCImplementation), key, CipherMode::Encrypt);
+    TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_CBCImplementation), key, CipherMode::Decrypt);
+    TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_CTRImplementation), key, CipherMode::Encrypt);
+    TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_CTRImplementation), key, CipherMode::Decrypt);
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
+    TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_GCMImplementation), key, CipherMode::Encrypt);
+    TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_GCMImplementation), key, CipherMode::Decrypt);
+#endif
+    Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
+    CryptoBuffer kek_raw = HashingUtils::HexDecode(kek);
+    TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_KeyWrapImplementation), kek_raw, CipherMode::Encrypt);
+    TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_KeyWrapImplementation), kek_raw, CipherMode::Decrypt);
+}
+
+TEST(CryptoStreamsTest, TestUninitializedCiphersSinkExplicitFinalize)
+{
+    CryptoBuffer key = SymmetricCipher::GenerateKey();
+
+    TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_CBCImplementation), key, CipherMode::Encrypt);
+    TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_CBCImplementation), key, CipherMode::Decrypt);
+    TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_CTRImplementation), key, CipherMode::Encrypt);
+    TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_CTRImplementation), key, CipherMode::Decrypt);
+#ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
+    TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_GCMImplementation), key, CipherMode::Encrypt);
+    TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_GCMImplementation), key, CipherMode::Decrypt);
+#endif
+    Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
+    CryptoBuffer kek_raw = HashingUtils::HexDecode(kek);
+    TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_KeyWrapImplementation), kek_raw, CipherMode::Encrypt);
+    TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_KeyWrapImplementation), kek_raw, CipherMode::Decrypt);
 }
 
 TEST(CryptoStreamsTest, TestEncryptSrcStreamEvenBoundaries)

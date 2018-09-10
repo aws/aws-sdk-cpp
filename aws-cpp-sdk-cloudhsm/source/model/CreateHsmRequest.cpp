@@ -86,7 +86,7 @@ Aws::String CreateHsmRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateHsmRequest::GetRequestSpecificHeaders() const

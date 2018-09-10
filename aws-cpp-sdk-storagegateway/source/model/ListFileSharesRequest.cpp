@@ -52,7 +52,7 @@ Aws::String ListFileSharesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListFileSharesRequest::GetRequestSpecificHeaders() const

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -35,15 +36,15 @@ namespace Model
   /**
    * <p>Identifies the schema Amazon Resource Name (ARN) and facet name for the typed
    * link.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TypedLinkSchemaAndFacetName">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedLinkSchemaAndFacetName">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API TypedLinkSchemaAndFacetName
   {
   public:
     TypedLinkSchemaAndFacetName();
-    TypedLinkSchemaAndFacetName(const Aws::Utils::Json::JsonValue& jsonValue);
-    TypedLinkSchemaAndFacetName& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TypedLinkSchemaAndFacetName(Aws::Utils::Json::JsonView jsonValue);
+    TypedLinkSchemaAndFacetName& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

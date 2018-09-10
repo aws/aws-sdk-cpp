@@ -37,7 +37,7 @@ CreateStreamingURLResult::CreateStreamingURLResult(const Aws::AmazonWebServiceRe
 
 CreateStreamingURLResult& CreateStreamingURLResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StreamingURL"))
   {
     m_streamingURL = jsonValue.GetString("StreamingURL");

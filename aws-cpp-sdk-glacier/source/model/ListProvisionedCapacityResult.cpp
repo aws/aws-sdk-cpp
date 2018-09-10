@@ -37,10 +37,10 @@ ListProvisionedCapacityResult::ListProvisionedCapacityResult(const Aws::AmazonWe
 
 ListProvisionedCapacityResult& ListProvisionedCapacityResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisionedCapacityList"))
   {
-    Array<JsonValue> provisionedCapacityListJsonList = jsonValue.GetArray("ProvisionedCapacityList");
+    Array<JsonView> provisionedCapacityListJsonList = jsonValue.GetArray("ProvisionedCapacityList");
     for(unsigned provisionedCapacityListIndex = 0; provisionedCapacityListIndex < provisionedCapacityListJsonList.GetLength(); ++provisionedCapacityListIndex)
     {
       m_provisionedCapacityList.push_back(provisionedCapacityListJsonList[provisionedCapacityListIndex].AsObject());

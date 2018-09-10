@@ -34,14 +34,14 @@ RedshiftRetryOptions::RedshiftRetryOptions() :
 {
 }
 
-RedshiftRetryOptions::RedshiftRetryOptions(const JsonValue& jsonValue) : 
+RedshiftRetryOptions::RedshiftRetryOptions(JsonView jsonValue) : 
     m_durationInSeconds(0),
     m_durationInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RedshiftRetryOptions& RedshiftRetryOptions::operator =(const JsonValue& jsonValue)
+RedshiftRetryOptions& RedshiftRetryOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DurationInSeconds"))
   {

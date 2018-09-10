@@ -47,7 +47,7 @@ Aws::Http::HeaderValueCollection DescribeCommentsRequest::GetRequestSpecificHead
   if(m_authenticationTokenHasBeenSet)
   {
     ss << m_authenticationToken;
-    headers.insert(Aws::Http::HeaderValuePair("authentication", ss.str()));
+    headers.emplace("authentication",  ss.str());
     ss.str("");
   }
 

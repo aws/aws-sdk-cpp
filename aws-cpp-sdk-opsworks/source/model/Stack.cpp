@@ -57,7 +57,7 @@ Stack::Stack() :
 {
 }
 
-Stack::Stack(const JsonValue& jsonValue) : 
+Stack::Stack(JsonView jsonValue) : 
     m_stackIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_arnHasBeenSet(false),
@@ -87,7 +87,7 @@ Stack::Stack(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Stack& Stack::operator =(const JsonValue& jsonValue)
+Stack& Stack::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StackId"))
   {
@@ -126,7 +126,7 @@ Stack& Stack::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[StackAttributesKeysMapper::GetStackAttributesKeysForName(attributesItem.first)] = attributesItem.second.AsString();

@@ -37,7 +37,7 @@ DeleteTrustResult::DeleteTrustResult(const Aws::AmazonWebServiceResult<JsonValue
 
 DeleteTrustResult& DeleteTrustResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TrustId"))
   {
     m_trustId = jsonValue.GetString("TrustId");

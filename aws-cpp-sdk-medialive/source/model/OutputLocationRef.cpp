@@ -33,13 +33,13 @@ OutputLocationRef::OutputLocationRef() :
 {
 }
 
-OutputLocationRef::OutputLocationRef(const JsonValue& jsonValue) : 
+OutputLocationRef::OutputLocationRef(JsonView jsonValue) : 
     m_destinationRefIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OutputLocationRef& OutputLocationRef::operator =(const JsonValue& jsonValue)
+OutputLocationRef& OutputLocationRef::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("destinationRefId"))
   {

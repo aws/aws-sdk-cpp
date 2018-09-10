@@ -39,7 +39,7 @@ ContainerSettings::ContainerSettings() :
 {
 }
 
-ContainerSettings::ContainerSettings(const JsonValue& jsonValue) : 
+ContainerSettings::ContainerSettings(JsonView jsonValue) : 
     m_container(ContainerType::NOT_SET),
     m_containerHasBeenSet(false),
     m_f4vSettingsHasBeenSet(false),
@@ -51,7 +51,7 @@ ContainerSettings::ContainerSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ContainerSettings& ContainerSettings::operator =(const JsonValue& jsonValue)
+ContainerSettings& ContainerSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("container"))
   {

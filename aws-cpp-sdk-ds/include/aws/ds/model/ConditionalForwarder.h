@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectoryService
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     ConditionalForwarder();
-    ConditionalForwarder(const Aws::Utils::Json::JsonValue& jsonValue);
-    ConditionalForwarder& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ConditionalForwarder(Aws::Utils::Json::JsonView jsonValue);
+    ConditionalForwarder& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

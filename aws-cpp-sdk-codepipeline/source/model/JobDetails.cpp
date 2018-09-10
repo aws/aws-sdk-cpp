@@ -35,7 +35,7 @@ JobDetails::JobDetails() :
 {
 }
 
-JobDetails::JobDetails(const JsonValue& jsonValue) : 
+JobDetails::JobDetails(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_accountIdHasBeenSet(false)
@@ -43,7 +43,7 @@ JobDetails::JobDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobDetails& JobDetails::operator =(const JsonValue& jsonValue)
+JobDetails& JobDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -33,12 +34,17 @@ namespace Pinpoint
 namespace Model
 {
 
+  /**
+   * Message to send<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/Message">AWS
+   * API Reference</a></p>
+   */
   class AWS_PINPOINT_API Message
   {
   public:
     Message();
-    Message(const Aws::Utils::Json::JsonValue& jsonValue);
-    Message& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Message(Aws::Utils::Json::JsonView jsonValue);
+    Message& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -417,6 +423,34 @@ Silent pushes can
 
 
     /**
+     * This parameter specifies how long (in seconds) the message should be kept if the
+     * service is unable to deliver the notification the first time. If the value is 0,
+     * it treats the notification as if it expires immediately and does not store the
+     * notification or attempt to redeliver it. This value is converted to the
+     * expiration field when sent to the service. It only applies to APNs and GCM
+     */
+    inline int GetTimeToLive() const{ return m_timeToLive; }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept if the
+     * service is unable to deliver the notification the first time. If the value is 0,
+     * it treats the notification as if it expires immediately and does not store the
+     * notification or attempt to redeliver it. This value is converted to the
+     * expiration field when sent to the service. It only applies to APNs and GCM
+     */
+    inline void SetTimeToLive(int value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept if the
+     * service is unable to deliver the notification the first time. If the value is 0,
+     * it treats the notification as if it expires immediately and does not store the
+     * notification or attempt to redeliver it. This value is converted to the
+     * expiration field when sent to the service. It only applies to APNs and GCM
+     */
+    inline Message& WithTimeToLive(int value) { SetTimeToLive(value); return *this;}
+
+
+    /**
      * The message title that displays above the message on the user's device.
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
@@ -522,6 +556,9 @@ Silent pushes can
 
     bool m_silentPush;
     bool m_silentPushHasBeenSet;
+
+    int m_timeToLive;
+    bool m_timeToLiveHasBeenSet;
 
     Aws::String m_title;
     bool m_titleHasBeenSet;

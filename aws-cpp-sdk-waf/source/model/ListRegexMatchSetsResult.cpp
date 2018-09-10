@@ -37,7 +37,7 @@ ListRegexMatchSetsResult::ListRegexMatchSetsResult(const Aws::AmazonWebServiceRe
 
 ListRegexMatchSetsResult& ListRegexMatchSetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListRegexMatchSetsResult& ListRegexMatchSetsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("RegexMatchSets"))
   {
-    Array<JsonValue> regexMatchSetsJsonList = jsonValue.GetArray("RegexMatchSets");
+    Array<JsonView> regexMatchSetsJsonList = jsonValue.GetArray("RegexMatchSets");
     for(unsigned regexMatchSetsIndex = 0; regexMatchSetsIndex < regexMatchSetsJsonList.GetLength(); ++regexMatchSetsIndex)
     {
       m_regexMatchSets.push_back(regexMatchSetsJsonList[regexMatchSetsIndex].AsObject());

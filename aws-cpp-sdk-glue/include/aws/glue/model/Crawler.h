@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -51,8 +52,8 @@ namespace Model
   {
   public:
     Crawler();
-    Crawler(const Aws::Utils::Json::JsonValue& jsonValue);
-    Crawler& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Crawler(Aws::Utils::Json::JsonView jsonValue);
+    Crawler& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -590,6 +591,49 @@ namespace Model
      */
     inline Crawler& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline const Aws::String& GetCrawlerSecurityConfiguration() const{ return m_crawlerSecurityConfiguration; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline void SetCrawlerSecurityConfiguration(const Aws::String& value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration = value; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline void SetCrawlerSecurityConfiguration(Aws::String&& value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration = std::move(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline void SetCrawlerSecurityConfiguration(const char* value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration.assign(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline Crawler& WithCrawlerSecurityConfiguration(const Aws::String& value) { SetCrawlerSecurityConfiguration(value); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline Crawler& WithCrawlerSecurityConfiguration(Aws::String&& value) { SetCrawlerSecurityConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline Crawler& WithCrawlerSecurityConfiguration(const char* value) { SetCrawlerSecurityConfiguration(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -639,6 +683,9 @@ namespace Model
 
     Aws::String m_configuration;
     bool m_configurationHasBeenSet;
+
+    Aws::String m_crawlerSecurityConfiguration;
+    bool m_crawlerSecurityConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -40,7 +40,8 @@ PutObjectAclRequest::PutObjectAclRequest() :
     m_keyHasBeenSet(false),
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+    m_versionIdHasBeenSet(false),
+    m_customizedAccessLogTagHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,23 @@ void PutObjectAclRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(!m_customizedAccessLogTag.empty())
+    {
+        // only accept customized LogTag which starts with "x-"
+        Aws::Map<Aws::String, Aws::String> collectedLogTags;
+        for(const auto& entry: m_customizedAccessLogTag)
+        {
+            if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-")
+            {
+                collectedLogTags.emplace(entry.first, entry.second);
+            }
+        }
+
+        if (!collectedLogTags.empty())
+        {
+            uri.AddQueryStringParameter(collectedLogTags);
+        }
+    }
 }
 
 Aws::Http::HeaderValueCollection PutObjectAclRequest::GetRequestSpecificHeaders() const
@@ -78,54 +96,54 @@ Aws::Http::HeaderValueCollection PutObjectAclRequest::GetRequestSpecificHeaders(
   Aws::StringStream ss;
   if(m_aCLHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-acl", ObjectCannedACLMapper::GetNameForObjectCannedACL(m_aCL)));
+    headers.emplace("x-amz-acl", ObjectCannedACLMapper::GetNameForObjectCannedACL(m_aCL));
   }
 
   if(m_contentMD5HasBeenSet)
   {
     ss << m_contentMD5;
-    headers.insert(Aws::Http::HeaderValuePair("content-md5", ss.str()));
+    headers.emplace("content-md5",  ss.str());
     ss.str("");
   }
 
   if(m_grantFullControlHasBeenSet)
   {
     ss << m_grantFullControl;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-full-control", ss.str()));
+    headers.emplace("x-amz-grant-full-control",  ss.str());
     ss.str("");
   }
 
   if(m_grantReadHasBeenSet)
   {
     ss << m_grantRead;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-read", ss.str()));
+    headers.emplace("x-amz-grant-read",  ss.str());
     ss.str("");
   }
 
   if(m_grantReadACPHasBeenSet)
   {
     ss << m_grantReadACP;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-read-acp", ss.str()));
+    headers.emplace("x-amz-grant-read-acp",  ss.str());
     ss.str("");
   }
 
   if(m_grantWriteHasBeenSet)
   {
     ss << m_grantWrite;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-write", ss.str()));
+    headers.emplace("x-amz-grant-write",  ss.str());
     ss.str("");
   }
 
   if(m_grantWriteACPHasBeenSet)
   {
     ss << m_grantWriteACP;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-grant-write-acp", ss.str()));
+    headers.emplace("x-amz-grant-write-acp",  ss.str());
     ss.str("");
   }
 
   if(m_requestPayerHasBeenSet)
   {
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer)));
+    headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
 
   return headers;

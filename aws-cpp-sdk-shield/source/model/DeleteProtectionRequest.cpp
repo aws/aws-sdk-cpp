@@ -37,7 +37,7 @@ Aws::String DeleteProtectionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteProtectionRequest::GetRequestSpecificHeaders() const

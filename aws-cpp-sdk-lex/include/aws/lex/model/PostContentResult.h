@@ -17,6 +17,7 @@
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lex/model/MessageFormatType.h>
 #include <aws/lex/model/DialogState.h>
 #include <aws/core/utils/Array.h>
 #include <utility>
@@ -277,116 +278,184 @@ namespace Model
 
 
     /**
-     * <p> Message to convey to the user. It can come from the bot's configuration or a
-     * code hook (Lambda function). If the current intent is not configured with a code
-     * hook or if the code hook returned <code>Delegate</code> as the
-     * <code>dialogAction.type</code> in its response, then Amazon Lex decides the next
-     * course of action and selects an appropriate message from the bot configuration
-     * based on the current user interaction context. For example, if Amazon Lex is not
-     * able to understand the user input, it uses a clarification prompt message (For
-     * more information, see the Error Handling section in the Amazon Lex console).
-     * Another example: if the intent requires confirmation before fulfillment, then
-     * Amazon Lex uses the confirmation prompt message in the intent configuration. If
-     * the code hook returns a message, Amazon Lex passes it as-is in its response to
-     * the client. </p>
+     * <p>The message to convey to the user. The message can come from the bot's
+     * configuration or from a Lambda function.</p> <p>If the intent is not configured
+     * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
+     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * next course of action and selects an appropriate message from the bot's
+     * configuration based on the current interaction context. For example, if Amazon
+     * Lex isn't able to understand user input, it uses a clarification prompt
+     * message.</p> <p>When you create an intent you can assign messages to groups.
+     * When messages are assigned to groups Amazon Lex returns one message from each
+     * group in the response. The message field is an escaped JSON string containing
+     * the messages. For more information about the structure of the JSON string
+     * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
+     * a message, Amazon Lex passes it to the client in its response.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p> Message to convey to the user. It can come from the bot's configuration or a
-     * code hook (Lambda function). If the current intent is not configured with a code
-     * hook or if the code hook returned <code>Delegate</code> as the
-     * <code>dialogAction.type</code> in its response, then Amazon Lex decides the next
-     * course of action and selects an appropriate message from the bot configuration
-     * based on the current user interaction context. For example, if Amazon Lex is not
-     * able to understand the user input, it uses a clarification prompt message (For
-     * more information, see the Error Handling section in the Amazon Lex console).
-     * Another example: if the intent requires confirmation before fulfillment, then
-     * Amazon Lex uses the confirmation prompt message in the intent configuration. If
-     * the code hook returns a message, Amazon Lex passes it as-is in its response to
-     * the client. </p>
+     * <p>The message to convey to the user. The message can come from the bot's
+     * configuration or from a Lambda function.</p> <p>If the intent is not configured
+     * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
+     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * next course of action and selects an appropriate message from the bot's
+     * configuration based on the current interaction context. For example, if Amazon
+     * Lex isn't able to understand user input, it uses a clarification prompt
+     * message.</p> <p>When you create an intent you can assign messages to groups.
+     * When messages are assigned to groups Amazon Lex returns one message from each
+     * group in the response. The message field is an escaped JSON string containing
+     * the messages. For more information about the structure of the JSON string
+     * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
+     * a message, Amazon Lex passes it to the client in its response.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_message = value; }
 
     /**
-     * <p> Message to convey to the user. It can come from the bot's configuration or a
-     * code hook (Lambda function). If the current intent is not configured with a code
-     * hook or if the code hook returned <code>Delegate</code> as the
-     * <code>dialogAction.type</code> in its response, then Amazon Lex decides the next
-     * course of action and selects an appropriate message from the bot configuration
-     * based on the current user interaction context. For example, if Amazon Lex is not
-     * able to understand the user input, it uses a clarification prompt message (For
-     * more information, see the Error Handling section in the Amazon Lex console).
-     * Another example: if the intent requires confirmation before fulfillment, then
-     * Amazon Lex uses the confirmation prompt message in the intent configuration. If
-     * the code hook returns a message, Amazon Lex passes it as-is in its response to
-     * the client. </p>
+     * <p>The message to convey to the user. The message can come from the bot's
+     * configuration or from a Lambda function.</p> <p>If the intent is not configured
+     * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
+     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * next course of action and selects an appropriate message from the bot's
+     * configuration based on the current interaction context. For example, if Amazon
+     * Lex isn't able to understand user input, it uses a clarification prompt
+     * message.</p> <p>When you create an intent you can assign messages to groups.
+     * When messages are assigned to groups Amazon Lex returns one message from each
+     * group in the response. The message field is an escaped JSON string containing
+     * the messages. For more information about the structure of the JSON string
+     * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
+     * a message, Amazon Lex passes it to the client in its response.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
 
     /**
-     * <p> Message to convey to the user. It can come from the bot's configuration or a
-     * code hook (Lambda function). If the current intent is not configured with a code
-     * hook or if the code hook returned <code>Delegate</code> as the
-     * <code>dialogAction.type</code> in its response, then Amazon Lex decides the next
-     * course of action and selects an appropriate message from the bot configuration
-     * based on the current user interaction context. For example, if Amazon Lex is not
-     * able to understand the user input, it uses a clarification prompt message (For
-     * more information, see the Error Handling section in the Amazon Lex console).
-     * Another example: if the intent requires confirmation before fulfillment, then
-     * Amazon Lex uses the confirmation prompt message in the intent configuration. If
-     * the code hook returns a message, Amazon Lex passes it as-is in its response to
-     * the client. </p>
+     * <p>The message to convey to the user. The message can come from the bot's
+     * configuration or from a Lambda function.</p> <p>If the intent is not configured
+     * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
+     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * next course of action and selects an appropriate message from the bot's
+     * configuration based on the current interaction context. For example, if Amazon
+     * Lex isn't able to understand user input, it uses a clarification prompt
+     * message.</p> <p>When you create an intent you can assign messages to groups.
+     * When messages are assigned to groups Amazon Lex returns one message from each
+     * group in the response. The message field is an escaped JSON string containing
+     * the messages. For more information about the structure of the JSON string
+     * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
+     * a message, Amazon Lex passes it to the client in its response.</p>
      */
     inline void SetMessage(const char* value) { m_message.assign(value); }
 
     /**
-     * <p> Message to convey to the user. It can come from the bot's configuration or a
-     * code hook (Lambda function). If the current intent is not configured with a code
-     * hook or if the code hook returned <code>Delegate</code> as the
-     * <code>dialogAction.type</code> in its response, then Amazon Lex decides the next
-     * course of action and selects an appropriate message from the bot configuration
-     * based on the current user interaction context. For example, if Amazon Lex is not
-     * able to understand the user input, it uses a clarification prompt message (For
-     * more information, see the Error Handling section in the Amazon Lex console).
-     * Another example: if the intent requires confirmation before fulfillment, then
-     * Amazon Lex uses the confirmation prompt message in the intent configuration. If
-     * the code hook returns a message, Amazon Lex passes it as-is in its response to
-     * the client. </p>
+     * <p>The message to convey to the user. The message can come from the bot's
+     * configuration or from a Lambda function.</p> <p>If the intent is not configured
+     * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
+     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * next course of action and selects an appropriate message from the bot's
+     * configuration based on the current interaction context. For example, if Amazon
+     * Lex isn't able to understand user input, it uses a clarification prompt
+     * message.</p> <p>When you create an intent you can assign messages to groups.
+     * When messages are assigned to groups Amazon Lex returns one message from each
+     * group in the response. The message field is an escaped JSON string containing
+     * the messages. For more information about the structure of the JSON string
+     * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
+     * a message, Amazon Lex passes it to the client in its response.</p>
      */
     inline PostContentResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p> Message to convey to the user. It can come from the bot's configuration or a
-     * code hook (Lambda function). If the current intent is not configured with a code
-     * hook or if the code hook returned <code>Delegate</code> as the
-     * <code>dialogAction.type</code> in its response, then Amazon Lex decides the next
-     * course of action and selects an appropriate message from the bot configuration
-     * based on the current user interaction context. For example, if Amazon Lex is not
-     * able to understand the user input, it uses a clarification prompt message (For
-     * more information, see the Error Handling section in the Amazon Lex console).
-     * Another example: if the intent requires confirmation before fulfillment, then
-     * Amazon Lex uses the confirmation prompt message in the intent configuration. If
-     * the code hook returns a message, Amazon Lex passes it as-is in its response to
-     * the client. </p>
+     * <p>The message to convey to the user. The message can come from the bot's
+     * configuration or from a Lambda function.</p> <p>If the intent is not configured
+     * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
+     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * next course of action and selects an appropriate message from the bot's
+     * configuration based on the current interaction context. For example, if Amazon
+     * Lex isn't able to understand user input, it uses a clarification prompt
+     * message.</p> <p>When you create an intent you can assign messages to groups.
+     * When messages are assigned to groups Amazon Lex returns one message from each
+     * group in the response. The message field is an escaped JSON string containing
+     * the messages. For more information about the structure of the JSON string
+     * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
+     * a message, Amazon Lex passes it to the client in its response.</p>
      */
     inline PostContentResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p> Message to convey to the user. It can come from the bot's configuration or a
-     * code hook (Lambda function). If the current intent is not configured with a code
-     * hook or if the code hook returned <code>Delegate</code> as the
-     * <code>dialogAction.type</code> in its response, then Amazon Lex decides the next
-     * course of action and selects an appropriate message from the bot configuration
-     * based on the current user interaction context. For example, if Amazon Lex is not
-     * able to understand the user input, it uses a clarification prompt message (For
-     * more information, see the Error Handling section in the Amazon Lex console).
-     * Another example: if the intent requires confirmation before fulfillment, then
-     * Amazon Lex uses the confirmation prompt message in the intent configuration. If
-     * the code hook returns a message, Amazon Lex passes it as-is in its response to
-     * the client. </p>
+     * <p>The message to convey to the user. The message can come from the bot's
+     * configuration or from a Lambda function.</p> <p>If the intent is not configured
+     * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
+     * as the <code>dialogAction.type</code> its response, Amazon Lex decides on the
+     * next course of action and selects an appropriate message from the bot's
+     * configuration based on the current interaction context. For example, if Amazon
+     * Lex isn't able to understand user input, it uses a clarification prompt
+     * message.</p> <p>When you create an intent you can assign messages to groups.
+     * When messages are assigned to groups Amazon Lex returns one message from each
+     * group in the response. The message field is an escaped JSON string containing
+     * the messages. For more information about the structure of the JSON string
+     * returned, see <a>msg-prompts-formats</a>.</p> <p>If the Lambda function returns
+     * a message, Amazon Lex passes it to the client in its response.</p>
      */
     inline PostContentResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+
+
+    /**
+     * <p>The format of the response message. One of the following values:</p> <ul>
+     * <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p>
+     * </li> <li> <p> <code>CustomPayload</code> - The message is a custom format for
+     * the client.</p> </li> <li> <p> <code>SSML</code> - The message contains text
+     * formatted for voice output.</p> </li> <li> <p> <code>Composite</code> - The
+     * message contains an escaped JSON object containing one or more messages from the
+     * groups that messages were assigned to when the intent was created.</p> </li>
+     * </ul>
+     */
+    inline const MessageFormatType& GetMessageFormat() const{ return m_messageFormat; }
+
+    /**
+     * <p>The format of the response message. One of the following values:</p> <ul>
+     * <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p>
+     * </li> <li> <p> <code>CustomPayload</code> - The message is a custom format for
+     * the client.</p> </li> <li> <p> <code>SSML</code> - The message contains text
+     * formatted for voice output.</p> </li> <li> <p> <code>Composite</code> - The
+     * message contains an escaped JSON object containing one or more messages from the
+     * groups that messages were assigned to when the intent was created.</p> </li>
+     * </ul>
+     */
+    inline void SetMessageFormat(const MessageFormatType& value) { m_messageFormat = value; }
+
+    /**
+     * <p>The format of the response message. One of the following values:</p> <ul>
+     * <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p>
+     * </li> <li> <p> <code>CustomPayload</code> - The message is a custom format for
+     * the client.</p> </li> <li> <p> <code>SSML</code> - The message contains text
+     * formatted for voice output.</p> </li> <li> <p> <code>Composite</code> - The
+     * message contains an escaped JSON object containing one or more messages from the
+     * groups that messages were assigned to when the intent was created.</p> </li>
+     * </ul>
+     */
+    inline void SetMessageFormat(MessageFormatType&& value) { m_messageFormat = std::move(value); }
+
+    /**
+     * <p>The format of the response message. One of the following values:</p> <ul>
+     * <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p>
+     * </li> <li> <p> <code>CustomPayload</code> - The message is a custom format for
+     * the client.</p> </li> <li> <p> <code>SSML</code> - The message contains text
+     * formatted for voice output.</p> </li> <li> <p> <code>Composite</code> - The
+     * message contains an escaped JSON object containing one or more messages from the
+     * groups that messages were assigned to when the intent was created.</p> </li>
+     * </ul>
+     */
+    inline PostContentResult& WithMessageFormat(const MessageFormatType& value) { SetMessageFormat(value); return *this;}
+
+    /**
+     * <p>The format of the response message. One of the following values:</p> <ul>
+     * <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p>
+     * </li> <li> <p> <code>CustomPayload</code> - The message is a custom format for
+     * the client.</p> </li> <li> <p> <code>SSML</code> - The message contains text
+     * formatted for voice output.</p> </li> <li> <p> <code>Composite</code> - The
+     * message contains an escaped JSON object containing one or more messages from the
+     * groups that messages were assigned to when the intent was created.</p> </li>
+     * </ul>
+     */
+    inline PostContentResult& WithMessageFormat(MessageFormatType&& value) { SetMessageFormat(std::move(value)); return *this;}
 
 
     /**
@@ -690,6 +759,8 @@ namespace Model
     Aws::String m_sessionAttributes;
 
     Aws::String m_message;
+
+    MessageFormatType m_messageFormat;
 
     DialogState m_dialogState;
 

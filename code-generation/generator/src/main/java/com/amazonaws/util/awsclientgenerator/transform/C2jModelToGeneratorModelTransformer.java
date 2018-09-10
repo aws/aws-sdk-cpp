@@ -28,6 +28,8 @@ public class C2jModelToGeneratorModelTransformer {
 
     private final C2jServiceModel c2jServiceModel;
     Map<String, Shape> shapes;
+    Set<String> removedShapes;
+    Set<String> removedOperations;
     Map<String, Operation> operations;
     Set<Error> allErrors;
     boolean standalone;
@@ -45,6 +47,7 @@ public class C2jModelToGeneratorModelTransformer {
 
         convertShapes();
         convertOperations();
+        removeIgnoredOperations();
         removeUnreferencedShapes();
         postProcessShapes();
 
@@ -80,7 +83,7 @@ public class C2jModelToGeneratorModelTransformer {
         Iterator<String> iterator = shapes.keySet().iterator();
         while (iterator.hasNext()) {
             String key = iterator.next();
-            if (!shapes.get(key).isReferenced()) {
+            if (shapes.get(key).getReferencedBy().isEmpty()) {
                 iterator.remove();
             }
         }
@@ -93,13 +96,16 @@ public class C2jModelToGeneratorModelTransformer {
         metadata.setStandalone(standalone);
         metadata.setApiVersion(c2jMetadata.getApiVersion());
         metadata.setConcatAPIVersion(c2jMetadata.getApiVersion().replace("-", ""));
-        metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix());
         metadata.setSigningName(c2jMetadata.getSigningName() != null ? c2jMetadata.getSigningName() : c2jMetadata.getEndpointPrefix());
+        metadata.setServiceId(c2jMetadata.getServiceId() != null ? c2jMetadata.getServiceId() : c2jMetadata.getEndpointPrefix());
+
         metadata.setJsonVersion(c2jMetadata.getJsonVersion());
         if("api-gateway".equalsIgnoreCase(c2jMetadata.getProtocol())) {
+            metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix() + ".execute-api");
             metadata.setProtocol("application-json");
             metadata.setStandalone(true);
         } else {
+            metadata.setEndpointPrefix(c2jMetadata.getEndpointPrefix());
             metadata.setProtocol(c2jMetadata.getProtocol());
         }
         metadata.setNamespace(c2jMetadata.getServiceAbbreviation());
@@ -153,6 +159,7 @@ public class C2jModelToGeneratorModelTransformer {
 
     void convertShapes() {
         shapes = new LinkedHashMap<>(c2jServiceModel.getShapes().size());
+        removedShapes = new HashSet<String>();
 
         // First pass adds basic information
         for (Map.Entry<String, C2jShape> entry : c2jServiceModel.getShapes().entrySet()) {
@@ -170,6 +177,8 @@ public class C2jModelToGeneratorModelTransformer {
     Shape convertShapeBasics(C2jShape c2jShape, String shapeName) {
 
         Shape shape = new Shape();
+        HashSet<String> shapesReferencedBy = new HashSet<String>();
+        shape.setReferencedBy(shapesReferencedBy);
         shape.setName(CppViewHelper.convertToUpperCamel(shapeName));
         String crossLinkedShapeDocs = addDocCrossLinks(c2jShape.getDocumentation(), c2jServiceModel.getMetadata().getUid(), shape.getName());
         shape.setDocumentation(formatDocumentation(crossLinkedShapeDocs, 3));
@@ -178,6 +187,14 @@ public class C2jModelToGeneratorModelTransformer {
             shape.setEnumValues(new ArrayList<>(c2jShape.getEnums()));
         } else {
             shape.setEnumValues(Collections.emptyList());
+        }
+
+        // All shapes only related to shapes enable "eventstream" or "event" should be removed, there are two cases:
+        // 1. The removed shape is the only ancestor of this shape.
+        // 2. This shape is the ancestor of the removed shape.
+        if (c2jShape.isEventstream() || c2jShape.isEvent()) {
+            // shape.setIgnored(true);
+            removedShapes.add(shape.getName());
         }
 
         shape.setMax(c2jShape.getMax());
@@ -197,6 +214,10 @@ public class C2jModelToGeneratorModelTransformer {
 
     void convertShapeReferences(C2jShape c2jShape, Shape shape) {
 
+        if (removedShapes.contains(shape.getName())) {
+            return;
+        }
+        
         Map<String, ShapeMember> shapeMemberMap = new LinkedHashMap<>();
 
         Set<String> required;
@@ -208,7 +229,7 @@ public class C2jModelToGeneratorModelTransformer {
 
         if (c2jShape.getMembers() != null) {
             c2jShape.getMembers().entrySet().stream().filter(entry -> !entry.getValue().isDeprecated()).forEach(entry -> {
-                ShapeMember shapeMember = convertMember(entry.getValue(), required.contains(entry.getKey()));
+                ShapeMember shapeMember = convertMember(entry.getValue(), shape, required.contains(entry.getKey()));
                 shapeMemberMap.put(entry.getKey(), shapeMember);
             });
         }
@@ -217,24 +238,25 @@ public class C2jModelToGeneratorModelTransformer {
 
         // Shape is a List
         if (c2jShape.getMember() != null && !c2jShape.getMember().isDeprecated()) {
-            shape.setListMember(convertMember(c2jShape.getMember(), false));
+            shape.setListMember(convertMember(c2jShape.getMember(), shape, false));
         }
 
         if (c2jShape.getKey() != null && !c2jShape.getKey().isDeprecated()) {
-            shape.setMapKey(convertMember(c2jShape.getKey(), false));
+            shape.setMapKey(convertMember(c2jShape.getKey(), shape, false));
         }
 
         if (c2jShape.getValue() != null && !c2jShape.getValue().isDeprecated()) {
-            shape.setMapValue(convertMember(c2jShape.getValue(), false));
+            shape.setMapValue(convertMember(c2jShape.getValue(), shape, false));
         }
     }
 
-    ShapeMember convertMember(C2jShapeMember c2jShapeMember, boolean required) {
+    ShapeMember convertMember(C2jShapeMember c2jShapeMember, Shape shape, boolean required) {
         ShapeMember shapeMember = new ShapeMember();
         shapeMember.setRequired(required);
         shapeMember.setDocumentation(formatDocumentation(c2jShapeMember.getDocumentation(), 5));
         shapeMember.setFlattened(c2jShapeMember.isFlattened());
         Shape referencedShape = shapes.get(CppViewHelper.convertToUpperCamel(c2jShapeMember.getShape()));
+        referencedShape.getReferencedBy().add(shape.getName());
         referencedShape.setReferenced(true);
         shapeMember.setShape(referencedShape);
         shapeMember.setLocationName(c2jShapeMember.getLocationName());
@@ -257,12 +279,54 @@ public class C2jModelToGeneratorModelTransformer {
         return shapeMember;
     }
 
+    void removeIgnoredOperations() {
+        // Backward propagation to mark all operations containing removed shapes.
+        for (String shapeName : removedShapes) {            
+            markRemovedOperations(shapeName);
+        }
+
+        // Forward propagation to dereference all shapes related to the operations should be ignored.
+        for (String operationName : removedOperations) {
+            operations.get(operationName).getRequest().getShape().getReferencedBy().clear();
+            dereferenceShape(operations.get(operationName).getRequest().getShape());
+            operations.get(operationName).getResult().getShape().getReferencedBy().clear();
+            dereferenceShape(operations.get(operationName).getResult().getShape());
+            operations.remove(operationName);
+        }
+    }
+
+    void markRemovedOperations(String name) {
+        if (operations.containsKey(name)) {
+            removedOperations.add(name);
+        }
+        else if (shapes.containsKey(name)) {
+            Shape shapeShouldIgnore = shapes.get(name);
+            for (String shapeName : shapeShouldIgnore.getReferencedBy()) {
+                markRemovedOperations(shapeName);
+            }
+            shapeShouldIgnore.getReferencedBy().clear();
+        }
+    }
+
+    void dereferenceShape(Shape topShape) {
+        if (topShape.getMembers() == null) {
+            return;
+        }
+        for (Map.Entry<String, ShapeMember> entry : topShape.getMembers().entrySet()) {
+            entry.getValue().getShape().getReferencedBy().remove(topShape.getName());
+            if (entry.getValue().getShape().getReferencedBy().isEmpty()) {
+                dereferenceShape(entry.getValue().getShape());
+            }
+        }
+    }
+
     void convertOperations() {
         allErrors = new HashSet<>();
         operations = new LinkedHashMap<>(c2jServiceModel.getOperations().size());
+        removedOperations = new HashSet<>();
         for (Map.Entry<String, C2jOperation> entry : c2jServiceModel.getOperations().entrySet()) {
             if(!entry.getValue().isDeprecated()) {
-              operations.put(entry.getKey(), convertOperation(entry.getValue()));
+                operations.put(entry.getKey(), convertOperation(entry.getValue()));
             }
         }
     }
@@ -284,6 +348,7 @@ public class C2jModelToGeneratorModelTransformer {
             Shape requestShape = renameShape(shapes.get(c2jOperation.getInput().getShape()), requestName);
             requestShape.setRequest(true);
             requestShape.setReferenced(true);
+            requestShape.getReferencedBy().add(c2jOperation.getName());
             requestShape.setLocationName(c2jOperation.getInput().getLocationName());
             requestShape.setXmlNamespace(c2jOperation.getInput().getXmlNamespace() != null ? c2jOperation.getInput().getXmlNamespace().getUri() : null);
 
@@ -318,6 +383,7 @@ public class C2jModelToGeneratorModelTransformer {
             Shape resultShape = renameShape(shapes.get(c2jOperation.getOutput().getShape()), resultName);
             resultShape.setResult(true);
             resultShape.setReferenced(true);
+            resultShape.getReferencedBy().add(c2jOperation.getName());
             ShapeMember resultMember = new ShapeMember();
             resultMember.setShape(resultShape);
             resultMember.setDocumentation(formatDocumentation(c2jOperation.getOutput().getDocumentation(), 3));
@@ -346,7 +412,19 @@ public class C2jModelToGeneratorModelTransformer {
             return shape;
         }
         if (shapes.containsKey(name)) {
-            return shapes.get(name);
+            // Conflict with shape name defined by service team, need to rename it.
+            String newName = "";
+            switch(name) {
+                case "CopyObjectResult":
+                    newName = "CopyObjectResultDetails";
+                    renameShapeMember(shape, name, newName);
+                    break;
+                case "BatchUpdateScheduleResult":
+                    shapes.remove(name);                    
+                    break;
+                default:
+                    throw new RuntimeException("Unhandled shape name conflict: " + name);
+            }
         }
 
         Shape cloned = cloneShape(shape);
@@ -357,6 +435,7 @@ public class C2jModelToGeneratorModelTransformer {
 
     Shape cloneShape(Shape shape) {
         Shape cloned = new Shape();
+        cloned.setReferencedBy(shape.getReferencedBy());
         cloned.setDocumentation(shape.getDocumentation());
         cloned.setEnumValues(shape.getEnumValues());
         cloned.setListMember(shape.getListMember());
@@ -371,6 +450,14 @@ public class C2jModelToGeneratorModelTransformer {
         cloned.setPayload(shape.getPayload());
         cloned.setFlattened(shape.isFlattened());
         return cloned;
+    }
+    void renameShapeMember(Shape parentShape, String originalName, String newName) {
+        shapes.get(originalName).setName(newName);
+        shapes.put(newName, shapes.get(originalName));
+        shapes.remove(originalName);
+        parentShape.getMembers().put(newName, parentShape.getMembers().get(originalName));
+        parentShape.RemoveMember(originalName);
+        parentShape.setPayload(newName);
     }
 
     Http convertHttp(C2jHttp c2jHttp) {

@@ -37,7 +37,7 @@ ListDeploymentGroupsResult::ListDeploymentGroupsResult(const Aws::AmazonWebServi
 
 ListDeploymentGroupsResult& ListDeploymentGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("applicationName"))
   {
     m_applicationName = jsonValue.GetString("applicationName");
@@ -46,7 +46,7 @@ ListDeploymentGroupsResult& ListDeploymentGroupsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("deploymentGroups"))
   {
-    Array<JsonValue> deploymentGroupsJsonList = jsonValue.GetArray("deploymentGroups");
+    Array<JsonView> deploymentGroupsJsonList = jsonValue.GetArray("deploymentGroups");
     for(unsigned deploymentGroupsIndex = 0; deploymentGroupsIndex < deploymentGroupsJsonList.GetLength(); ++deploymentGroupsIndex)
     {
       m_deploymentGroups.push_back(deploymentGroupsJsonList[deploymentGroupsIndex].AsString());

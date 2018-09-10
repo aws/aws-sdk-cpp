@@ -35,7 +35,7 @@ StepTimeline::StepTimeline() :
 {
 }
 
-StepTimeline::StepTimeline(const JsonValue& jsonValue) : 
+StepTimeline::StepTimeline(JsonView jsonValue) : 
     m_creationDateTimeHasBeenSet(false),
     m_startDateTimeHasBeenSet(false),
     m_endDateTimeHasBeenSet(false)
@@ -43,7 +43,7 @@ StepTimeline::StepTimeline(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StepTimeline& StepTimeline::operator =(const JsonValue& jsonValue)
+StepTimeline& StepTimeline::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CreationDateTime"))
   {

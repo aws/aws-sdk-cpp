@@ -37,7 +37,7 @@ Diagnostics::Diagnostics() :
 {
 }
 
-Diagnostics::Diagnostics(const JsonValue& jsonValue) : 
+Diagnostics::Diagnostics(JsonView jsonValue) : 
     m_errorCode(LifecycleErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false),
     m_scriptNameHasBeenSet(false),
@@ -47,7 +47,7 @@ Diagnostics::Diagnostics(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Diagnostics& Diagnostics::operator =(const JsonValue& jsonValue)
+Diagnostics& Diagnostics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("errorCode"))
   {

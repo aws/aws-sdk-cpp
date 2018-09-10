@@ -35,7 +35,7 @@ ProvisionedCapacityDescription::ProvisionedCapacityDescription() :
 {
 }
 
-ProvisionedCapacityDescription::ProvisionedCapacityDescription(const JsonValue& jsonValue) : 
+ProvisionedCapacityDescription::ProvisionedCapacityDescription(JsonView jsonValue) : 
     m_capacityIdHasBeenSet(false),
     m_startDateHasBeenSet(false),
     m_expirationDateHasBeenSet(false)
@@ -43,7 +43,7 @@ ProvisionedCapacityDescription::ProvisionedCapacityDescription(const JsonValue& 
   *this = jsonValue;
 }
 
-ProvisionedCapacityDescription& ProvisionedCapacityDescription::operator =(const JsonValue& jsonValue)
+ProvisionedCapacityDescription& ProvisionedCapacityDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CapacityId"))
   {

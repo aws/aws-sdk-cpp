@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iam/model/AttachedPermissionsBoundary.h>
 #include <utility>
 
 namespace Aws
@@ -36,8 +37,8 @@ namespace Model
 
   /**
    * <p>Contains information about an IAM role. This structure is returned as a
-   * response element in several APIs that interact with roles.</p><p><h3>See
-   * Also:</h3>   <a
+   * response element in several API operations that interact with
+   * roles.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Role">AWS API
    * Reference</a></p>
    */
@@ -354,6 +355,72 @@ namespace Model
      */
     inline Role& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The maximum session duration (in seconds) for the specified role. Anyone who
+     * uses the AWS CLI or API to assume the role can specify the duration using the
+     * optional <code>DurationSeconds</code> API parameter or
+     * <code>duration-seconds</code> CLI parameter.</p>
+     */
+    inline int GetMaxSessionDuration() const{ return m_maxSessionDuration; }
+
+    /**
+     * <p>The maximum session duration (in seconds) for the specified role. Anyone who
+     * uses the AWS CLI or API to assume the role can specify the duration using the
+     * optional <code>DurationSeconds</code> API parameter or
+     * <code>duration-seconds</code> CLI parameter.</p>
+     */
+    inline void SetMaxSessionDuration(int value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = value; }
+
+    /**
+     * <p>The maximum session duration (in seconds) for the specified role. Anyone who
+     * uses the AWS CLI or API to assume the role can specify the duration using the
+     * optional <code>DurationSeconds</code> API parameter or
+     * <code>duration-seconds</code> CLI parameter.</p>
+     */
+    inline Role& WithMaxSessionDuration(int value) { SetMaxSessionDuration(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline const AttachedPermissionsBoundary& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetPermissionsBoundary(const AttachedPermissionsBoundary& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = value; }
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetPermissionsBoundary(AttachedPermissionsBoundary&& value) { m_permissionsBoundaryHasBeenSet = true; m_permissionsBoundary = std::move(value); }
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline Role& WithPermissionsBoundary(const AttachedPermissionsBoundary& value) { SetPermissionsBoundary(value); return *this;}
+
+    /**
+     * <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+     * <p>For more information about permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline Role& WithPermissionsBoundary(AttachedPermissionsBoundary&& value) { SetPermissionsBoundary(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_path;
@@ -376,6 +443,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    int m_maxSessionDuration;
+    bool m_maxSessionDurationHasBeenSet;
+
+    AttachedPermissionsBoundary m_permissionsBoundary;
+    bool m_permissionsBoundaryHasBeenSet;
   };
 
 } // namespace Model

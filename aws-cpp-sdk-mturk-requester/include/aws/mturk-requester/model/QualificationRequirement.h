@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mturk-requester/model/Comparator.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mturk-requester/model/HITAccessActions.h>
 #include <aws/mturk-requester/model/Locale.h>
 #include <utility>
 
@@ -28,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MTurk
@@ -39,7 +41,7 @@ namespace Model
    * <p> The QualificationRequirement data structure describes a Qualification that a
    * Worker must have before the Worker is allowed to accept a HIT. A requirement may
    * optionally state that a Worker must have the Qualification in order to preview
-   * the HIT. </p><p><h3>See Also:</h3>   <a
+   * the HIT, or see the HIT in search results. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/QualificationRequirement">AWS
    * API Reference</a></p>
    */
@@ -47,8 +49,8 @@ namespace Model
   {
   public:
     QualificationRequirement();
-    QualificationRequirement(const Aws::Utils::Json::JsonValue& jsonValue);
-    QualificationRequirement& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    QualificationRequirement(Aws::Utils::Json::JsonView jsonValue);
+    QualificationRequirement& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -296,40 +298,109 @@ namespace Model
 
 
     /**
-     * <p> If true, the question data for the HIT will not be shown when a Worker whose
-     * Qualifications do not meet this requirement tries to preview the HIT. That is, a
-     * Worker's Qualifications must meet all of the requirements for which
-     * RequiredToPreview is true in order to preview the HIT. If a Worker meets all of
-     * the requirements where RequiredToPreview is true (or if there are no such
-     * requirements), but does not meet all of the requirements for the HIT, the Worker
-     * will be allowed to preview the HIT's question data, but will not be allowed to
-     * accept and complete the HIT. The default is false. </p>
+     * <p> Setting this attribute prevents Workers whose Qualifications do not meet
+     * this QualificationRequirement from taking the specified action. Valid arguments
+     * include "Accept" (Worker cannot accept the HIT, but can preview the HIT and see
+     * it in their search results), "PreviewAndAccept" (Worker cannot accept or preview
+     * the HIT, but can see the HIT in their search results), and
+     * "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT in
+     * their search results). It's possible for you to create a HIT with multiple
+     * QualificationRequirements (which can have different values for the ActionGuarded
+     * attribute). In this case, the Worker is only permitted to perform an action when
+     * they have met all QualificationRequirements guarding the action. The actions in
+     * the order of least restrictive to most restrictive are Discover, Preview and
+     * Accept. For example, if a Worker meets all QualificationRequirements that are
+     * set to DiscoverPreviewAndAccept, but do not meet all requirements that are set
+     * with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the
+     * HIT in their search result, but will not be able to Preview or Accept the HIT.
+     * ActionsGuarded should not be used in combination with the
+     * <code>RequiredToPreview</code> field. </p>
      */
-    inline bool GetRequiredToPreview() const{ return m_requiredToPreview; }
+    inline const HITAccessActions& GetActionsGuarded() const{ return m_actionsGuarded; }
 
     /**
-     * <p> If true, the question data for the HIT will not be shown when a Worker whose
-     * Qualifications do not meet this requirement tries to preview the HIT. That is, a
-     * Worker's Qualifications must meet all of the requirements for which
-     * RequiredToPreview is true in order to preview the HIT. If a Worker meets all of
-     * the requirements where RequiredToPreview is true (or if there are no such
-     * requirements), but does not meet all of the requirements for the HIT, the Worker
-     * will be allowed to preview the HIT's question data, but will not be allowed to
-     * accept and complete the HIT. The default is false. </p>
+     * <p> Setting this attribute prevents Workers whose Qualifications do not meet
+     * this QualificationRequirement from taking the specified action. Valid arguments
+     * include "Accept" (Worker cannot accept the HIT, but can preview the HIT and see
+     * it in their search results), "PreviewAndAccept" (Worker cannot accept or preview
+     * the HIT, but can see the HIT in their search results), and
+     * "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT in
+     * their search results). It's possible for you to create a HIT with multiple
+     * QualificationRequirements (which can have different values for the ActionGuarded
+     * attribute). In this case, the Worker is only permitted to perform an action when
+     * they have met all QualificationRequirements guarding the action. The actions in
+     * the order of least restrictive to most restrictive are Discover, Preview and
+     * Accept. For example, if a Worker meets all QualificationRequirements that are
+     * set to DiscoverPreviewAndAccept, but do not meet all requirements that are set
+     * with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the
+     * HIT in their search result, but will not be able to Preview or Accept the HIT.
+     * ActionsGuarded should not be used in combination with the
+     * <code>RequiredToPreview</code> field. </p>
      */
-    inline void SetRequiredToPreview(bool value) { m_requiredToPreviewHasBeenSet = true; m_requiredToPreview = value; }
+    inline void SetActionsGuarded(const HITAccessActions& value) { m_actionsGuardedHasBeenSet = true; m_actionsGuarded = value; }
 
     /**
-     * <p> If true, the question data for the HIT will not be shown when a Worker whose
-     * Qualifications do not meet this requirement tries to preview the HIT. That is, a
-     * Worker's Qualifications must meet all of the requirements for which
-     * RequiredToPreview is true in order to preview the HIT. If a Worker meets all of
-     * the requirements where RequiredToPreview is true (or if there are no such
-     * requirements), but does not meet all of the requirements for the HIT, the Worker
-     * will be allowed to preview the HIT's question data, but will not be allowed to
-     * accept and complete the HIT. The default is false. </p>
+     * <p> Setting this attribute prevents Workers whose Qualifications do not meet
+     * this QualificationRequirement from taking the specified action. Valid arguments
+     * include "Accept" (Worker cannot accept the HIT, but can preview the HIT and see
+     * it in their search results), "PreviewAndAccept" (Worker cannot accept or preview
+     * the HIT, but can see the HIT in their search results), and
+     * "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT in
+     * their search results). It's possible for you to create a HIT with multiple
+     * QualificationRequirements (which can have different values for the ActionGuarded
+     * attribute). In this case, the Worker is only permitted to perform an action when
+     * they have met all QualificationRequirements guarding the action. The actions in
+     * the order of least restrictive to most restrictive are Discover, Preview and
+     * Accept. For example, if a Worker meets all QualificationRequirements that are
+     * set to DiscoverPreviewAndAccept, but do not meet all requirements that are set
+     * with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the
+     * HIT in their search result, but will not be able to Preview or Accept the HIT.
+     * ActionsGuarded should not be used in combination with the
+     * <code>RequiredToPreview</code> field. </p>
      */
-    inline QualificationRequirement& WithRequiredToPreview(bool value) { SetRequiredToPreview(value); return *this;}
+    inline void SetActionsGuarded(HITAccessActions&& value) { m_actionsGuardedHasBeenSet = true; m_actionsGuarded = std::move(value); }
+
+    /**
+     * <p> Setting this attribute prevents Workers whose Qualifications do not meet
+     * this QualificationRequirement from taking the specified action. Valid arguments
+     * include "Accept" (Worker cannot accept the HIT, but can preview the HIT and see
+     * it in their search results), "PreviewAndAccept" (Worker cannot accept or preview
+     * the HIT, but can see the HIT in their search results), and
+     * "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT in
+     * their search results). It's possible for you to create a HIT with multiple
+     * QualificationRequirements (which can have different values for the ActionGuarded
+     * attribute). In this case, the Worker is only permitted to perform an action when
+     * they have met all QualificationRequirements guarding the action. The actions in
+     * the order of least restrictive to most restrictive are Discover, Preview and
+     * Accept. For example, if a Worker meets all QualificationRequirements that are
+     * set to DiscoverPreviewAndAccept, but do not meet all requirements that are set
+     * with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the
+     * HIT in their search result, but will not be able to Preview or Accept the HIT.
+     * ActionsGuarded should not be used in combination with the
+     * <code>RequiredToPreview</code> field. </p>
+     */
+    inline QualificationRequirement& WithActionsGuarded(const HITAccessActions& value) { SetActionsGuarded(value); return *this;}
+
+    /**
+     * <p> Setting this attribute prevents Workers whose Qualifications do not meet
+     * this QualificationRequirement from taking the specified action. Valid arguments
+     * include "Accept" (Worker cannot accept the HIT, but can preview the HIT and see
+     * it in their search results), "PreviewAndAccept" (Worker cannot accept or preview
+     * the HIT, but can see the HIT in their search results), and
+     * "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT in
+     * their search results). It's possible for you to create a HIT with multiple
+     * QualificationRequirements (which can have different values for the ActionGuarded
+     * attribute). In this case, the Worker is only permitted to perform an action when
+     * they have met all QualificationRequirements guarding the action. The actions in
+     * the order of least restrictive to most restrictive are Discover, Preview and
+     * Accept. For example, if a Worker meets all QualificationRequirements that are
+     * set to DiscoverPreviewAndAccept, but do not meet all requirements that are set
+     * with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the
+     * HIT in their search result, but will not be able to Preview or Accept the HIT.
+     * ActionsGuarded should not be used in combination with the
+     * <code>RequiredToPreview</code> field. </p>
+     */
+    inline QualificationRequirement& WithActionsGuarded(HITAccessActions&& value) { SetActionsGuarded(std::move(value)); return *this;}
 
   private:
 
@@ -345,8 +416,8 @@ namespace Model
     Aws::Vector<Locale> m_localeValues;
     bool m_localeValuesHasBeenSet;
 
-    bool m_requiredToPreview;
-    bool m_requiredToPreviewHasBeenSet;
+    HITAccessActions m_actionsGuarded;
+    bool m_actionsGuardedHasBeenSet;
   };
 
 } // namespace Model

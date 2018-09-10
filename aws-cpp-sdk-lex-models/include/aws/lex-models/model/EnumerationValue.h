@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace LexModelBuildingService
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     EnumerationValue();
-    EnumerationValue(const Aws::Utils::Json::JsonValue& jsonValue);
-    EnumerationValue& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EnumerationValue(Aws::Utils::Json::JsonView jsonValue);
+    EnumerationValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

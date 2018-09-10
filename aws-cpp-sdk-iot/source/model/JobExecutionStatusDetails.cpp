@@ -33,17 +33,17 @@ JobExecutionStatusDetails::JobExecutionStatusDetails() :
 {
 }
 
-JobExecutionStatusDetails::JobExecutionStatusDetails(const JsonValue& jsonValue) : 
+JobExecutionStatusDetails::JobExecutionStatusDetails(JsonView jsonValue) : 
     m_detailsMapHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-JobExecutionStatusDetails& JobExecutionStatusDetails::operator =(const JsonValue& jsonValue)
+JobExecutionStatusDetails& JobExecutionStatusDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("detailsMap"))
   {
-    Aws::Map<Aws::String, JsonValue> detailsMapJsonMap = jsonValue.GetObject("detailsMap").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> detailsMapJsonMap = jsonValue.GetObject("detailsMap").GetAllObjects();
     for(auto& detailsMapItem : detailsMapJsonMap)
     {
       m_detailsMap[detailsMapItem.first] = detailsMapItem.second.AsString();

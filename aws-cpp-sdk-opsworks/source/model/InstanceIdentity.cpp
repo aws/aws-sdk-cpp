@@ -34,14 +34,14 @@ InstanceIdentity::InstanceIdentity() :
 {
 }
 
-InstanceIdentity::InstanceIdentity(const JsonValue& jsonValue) : 
+InstanceIdentity::InstanceIdentity(JsonView jsonValue) : 
     m_documentHasBeenSet(false),
     m_signatureHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InstanceIdentity& InstanceIdentity::operator =(const JsonValue& jsonValue)
+InstanceIdentity& InstanceIdentity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Document"))
   {

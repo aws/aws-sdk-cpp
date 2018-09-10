@@ -52,7 +52,7 @@ Aws::String ListPublishedSchemaArnsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lightsail
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     LoadBalancerTlsCertificateRenewalSummary();
-    LoadBalancerTlsCertificateRenewalSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    LoadBalancerTlsCertificateRenewalSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LoadBalancerTlsCertificateRenewalSummary(Aws::Utils::Json::JsonView jsonValue);
+    LoadBalancerTlsCertificateRenewalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

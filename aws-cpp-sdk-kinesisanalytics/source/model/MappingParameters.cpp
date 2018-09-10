@@ -34,14 +34,14 @@ MappingParameters::MappingParameters() :
 {
 }
 
-MappingParameters::MappingParameters(const JsonValue& jsonValue) : 
+MappingParameters::MappingParameters(JsonView jsonValue) : 
     m_jSONMappingParametersHasBeenSet(false),
     m_cSVMappingParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MappingParameters& MappingParameters::operator =(const JsonValue& jsonValue)
+MappingParameters& MappingParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("JSONMappingParameters"))
   {

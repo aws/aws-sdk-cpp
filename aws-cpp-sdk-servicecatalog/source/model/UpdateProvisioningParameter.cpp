@@ -36,7 +36,7 @@ UpdateProvisioningParameter::UpdateProvisioningParameter() :
 {
 }
 
-UpdateProvisioningParameter::UpdateProvisioningParameter(const JsonValue& jsonValue) : 
+UpdateProvisioningParameter::UpdateProvisioningParameter(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_usePreviousValue(false),
@@ -45,7 +45,7 @@ UpdateProvisioningParameter::UpdateProvisioningParameter(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-UpdateProvisioningParameter& UpdateProvisioningParameter::operator =(const JsonValue& jsonValue)
+UpdateProvisioningParameter& UpdateProvisioningParameter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

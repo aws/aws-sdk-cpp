@@ -34,14 +34,14 @@ LambdaOutputUpdate::LambdaOutputUpdate() :
 {
 }
 
-LambdaOutputUpdate::LambdaOutputUpdate(const JsonValue& jsonValue) : 
+LambdaOutputUpdate::LambdaOutputUpdate(JsonView jsonValue) : 
     m_resourceARNUpdateHasBeenSet(false),
     m_roleARNUpdateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LambdaOutputUpdate& LambdaOutputUpdate::operator =(const JsonValue& jsonValue)
+LambdaOutputUpdate& LambdaOutputUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceARNUpdate"))
   {

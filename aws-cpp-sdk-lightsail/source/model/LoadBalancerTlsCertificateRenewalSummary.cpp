@@ -35,7 +35,7 @@ LoadBalancerTlsCertificateRenewalSummary::LoadBalancerTlsCertificateRenewalSumma
 {
 }
 
-LoadBalancerTlsCertificateRenewalSummary::LoadBalancerTlsCertificateRenewalSummary(const JsonValue& jsonValue) : 
+LoadBalancerTlsCertificateRenewalSummary::LoadBalancerTlsCertificateRenewalSummary(JsonView jsonValue) : 
     m_renewalStatus(LoadBalancerTlsCertificateRenewalStatus::NOT_SET),
     m_renewalStatusHasBeenSet(false),
     m_domainValidationOptionsHasBeenSet(false)
@@ -43,7 +43,7 @@ LoadBalancerTlsCertificateRenewalSummary::LoadBalancerTlsCertificateRenewalSumma
   *this = jsonValue;
 }
 
-LoadBalancerTlsCertificateRenewalSummary& LoadBalancerTlsCertificateRenewalSummary::operator =(const JsonValue& jsonValue)
+LoadBalancerTlsCertificateRenewalSummary& LoadBalancerTlsCertificateRenewalSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("renewalStatus"))
   {
@@ -54,7 +54,7 @@ LoadBalancerTlsCertificateRenewalSummary& LoadBalancerTlsCertificateRenewalSumma
 
   if(jsonValue.ValueExists("domainValidationOptions"))
   {
-    Array<JsonValue> domainValidationOptionsJsonList = jsonValue.GetArray("domainValidationOptions");
+    Array<JsonView> domainValidationOptionsJsonList = jsonValue.GetArray("domainValidationOptions");
     for(unsigned domainValidationOptionsIndex = 0; domainValidationOptionsIndex < domainValidationOptionsJsonList.GetLength(); ++domainValidationOptionsIndex)
     {
       m_domainValidationOptions.push_back(domainValidationOptionsJsonList[domainValidationOptionsIndex].AsObject());

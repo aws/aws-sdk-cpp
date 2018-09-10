@@ -41,7 +41,7 @@ GetIPSetResult::GetIPSetResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 
 GetIPSetResult& GetIPSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("format"))
   {
     m_format = IpSetFormatMapper::GetIpSetFormatForName(jsonValue.GetString("format"));

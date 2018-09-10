@@ -29,7 +29,8 @@ using namespace Aws::Http;
 PutBucketAnalyticsConfigurationRequest::PutBucketAnalyticsConfigurationRequest() : 
     m_bucketHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_analyticsConfigurationHasBeenSet(false)
+    m_analyticsConfigurationHasBeenSet(false),
+    m_customizedAccessLogTagHasBeenSet(false)
 {
 }
 
@@ -59,5 +60,22 @@ void PutBucketAnalyticsConfigurationRequest::AddQueryStringParameters(URI& uri) 
       ss.str("");
     }
 
+    if(!m_customizedAccessLogTag.empty())
+    {
+        // only accept customized LogTag which starts with "x-"
+        Aws::Map<Aws::String, Aws::String> collectedLogTags;
+        for(const auto& entry: m_customizedAccessLogTag)
+        {
+            if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-")
+            {
+                collectedLogTags.emplace(entry.first, entry.second);
+            }
+        }
+
+        if (!collectedLogTags.empty())
+        {
+            uri.AddQueryStringParameter(collectedLogTags);
+        }
+    }
 }
 

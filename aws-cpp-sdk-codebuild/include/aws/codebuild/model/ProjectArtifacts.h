@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeBuild
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     ProjectArtifacts();
-    ProjectArtifacts(const Aws::Utils::Json::JsonValue& jsonValue);
-    ProjectArtifacts& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ProjectArtifacts(Aws::Utils::Json::JsonView jsonValue);
+    ProjectArtifacts& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -428,11 +429,20 @@ namespace Model
      * <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this
      * value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output artifact object.</p> </li> </ul> <p>For example, if
-     * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
-     * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
+     * is the name of the output artifact object. If you set the name to be a forward
+     * slash ("/"), then the artifact is stored in the root of the output bucket.</p>
+     * </li> </ul> <p>For example:</p> <ul> <li> <p> If <code>path</code> is set to
+     * <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact would be stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>path</code> is empty, <code>namespaceType</code> is set to
+     * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", then the
+     * output artifact would be stored in the root of the output bucket. </p> </li>
+     * <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>,
+     * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
+     * <code>name</code> is set to "<code>/</code>", then the output artifact would be
+     * stored in <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -445,11 +455,20 @@ namespace Model
      * <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this
      * value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output artifact object.</p> </li> </ul> <p>For example, if
-     * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
-     * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
+     * is the name of the output artifact object. If you set the name to be a forward
+     * slash ("/"), then the artifact is stored in the root of the output bucket.</p>
+     * </li> </ul> <p>For example:</p> <ul> <li> <p> If <code>path</code> is set to
+     * <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact would be stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>path</code> is empty, <code>namespaceType</code> is set to
+     * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", then the
+     * output artifact would be stored in the root of the output bucket. </p> </li>
+     * <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>,
+     * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
+     * <code>name</code> is set to "<code>/</code>", then the output artifact would be
+     * stored in <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -462,11 +481,20 @@ namespace Model
      * <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this
      * value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output artifact object.</p> </li> </ul> <p>For example, if
-     * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
-     * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
+     * is the name of the output artifact object. If you set the name to be a forward
+     * slash ("/"), then the artifact is stored in the root of the output bucket.</p>
+     * </li> </ul> <p>For example:</p> <ul> <li> <p> If <code>path</code> is set to
+     * <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact would be stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>path</code> is empty, <code>namespaceType</code> is set to
+     * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", then the
+     * output artifact would be stored in the root of the output bucket. </p> </li>
+     * <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>,
+     * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
+     * <code>name</code> is set to "<code>/</code>", then the output artifact would be
+     * stored in <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -479,11 +507,20 @@ namespace Model
      * <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this
      * value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output artifact object.</p> </li> </ul> <p>For example, if
-     * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
-     * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
+     * is the name of the output artifact object. If you set the name to be a forward
+     * slash ("/"), then the artifact is stored in the root of the output bucket.</p>
+     * </li> </ul> <p>For example:</p> <ul> <li> <p> If <code>path</code> is set to
+     * <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact would be stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>path</code> is empty, <code>namespaceType</code> is set to
+     * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", then the
+     * output artifact would be stored in the root of the output bucket. </p> </li>
+     * <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>,
+     * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
+     * <code>name</code> is set to "<code>/</code>", then the output artifact would be
+     * stored in <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -496,11 +533,20 @@ namespace Model
      * <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this
      * value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output artifact object.</p> </li> </ul> <p>For example, if
-     * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
-     * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
+     * is the name of the output artifact object. If you set the name to be a forward
+     * slash ("/"), then the artifact is stored in the root of the output bucket.</p>
+     * </li> </ul> <p>For example:</p> <ul> <li> <p> If <code>path</code> is set to
+     * <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact would be stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>path</code> is empty, <code>namespaceType</code> is set to
+     * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", then the
+     * output artifact would be stored in the root of the output bucket. </p> </li>
+     * <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>,
+     * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
+     * <code>name</code> is set to "<code>/</code>", then the output artifact would be
+     * stored in <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
      */
     inline ProjectArtifacts& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -513,11 +559,20 @@ namespace Model
      * <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this
      * value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output artifact object.</p> </li> </ul> <p>For example, if
-     * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
-     * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
+     * is the name of the output artifact object. If you set the name to be a forward
+     * slash ("/"), then the artifact is stored in the root of the output bucket.</p>
+     * </li> </ul> <p>For example:</p> <ul> <li> <p> If <code>path</code> is set to
+     * <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact would be stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>path</code> is empty, <code>namespaceType</code> is set to
+     * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", then the
+     * output artifact would be stored in the root of the output bucket. </p> </li>
+     * <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>,
+     * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
+     * <code>name</code> is set to "<code>/</code>", then the output artifact would be
+     * stored in <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
      */
     inline ProjectArtifacts& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -530,11 +585,20 @@ namespace Model
      * <li> <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, then this
      * value will be ignored if specified, because no build output will be
      * produced.</p> </li> <li> <p>If <code>type</code> is set to <code>S3</code>, this
-     * is the name of the output artifact object.</p> </li> </ul> <p>For example, if
-     * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
-     * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
+     * is the name of the output artifact object. If you set the name to be a forward
+     * slash ("/"), then the artifact is stored in the root of the output bucket.</p>
+     * </li> </ul> <p>For example:</p> <ul> <li> <p> If <code>path</code> is set to
+     * <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * <code>BUILD_ID</code>, and <code>name</code> is set to
      * <code>MyArtifact.zip</code>, then the output artifact would be stored in
-     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>path</code> is empty, <code>namespaceType</code> is set to
+     * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", then the
+     * output artifact would be stored in the root of the output bucket. </p> </li>
+     * <li> <p> If <code>path</code> is set to <code>MyArtifacts</code>,
+     * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
+     * <code>name</code> is set to "<code>/</code>", then the output artifact would be
+     * stored in <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
      */
     inline ProjectArtifacts& WithName(const char* value) { SetName(value); return *this;}
 
@@ -619,6 +683,89 @@ namespace Model
      */
     inline ProjectArtifacts& WithPackaging(ArtifactPackaging&& value) { SetPackaging(std::move(value)); return *this;}
 
+
+    /**
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
+    inline bool GetOverrideArtifactName() const{ return m_overrideArtifactName; }
+
+    /**
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
+    inline void SetOverrideArtifactName(bool value) { m_overrideArtifactNameHasBeenSet = true; m_overrideArtifactName = value; }
+
+    /**
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
+    inline ProjectArtifacts& WithOverrideArtifactName(bool value) { SetOverrideArtifactName(value); return *this;}
+
+
+    /**
+     * <p> Set to true if you do not want your output artifacts encrypted. This option
+     * is only valid if your artifacts type is Amazon S3. If this is set with another
+     * artifacts type, an invalidInputException will be thrown. </p>
+     */
+    inline bool GetEncryptionDisabled() const{ return m_encryptionDisabled; }
+
+    /**
+     * <p> Set to true if you do not want your output artifacts encrypted. This option
+     * is only valid if your artifacts type is Amazon S3. If this is set with another
+     * artifacts type, an invalidInputException will be thrown. </p>
+     */
+    inline void SetEncryptionDisabled(bool value) { m_encryptionDisabledHasBeenSet = true; m_encryptionDisabled = value; }
+
+    /**
+     * <p> Set to true if you do not want your output artifacts encrypted. This option
+     * is only valid if your artifacts type is Amazon S3. If this is set with another
+     * artifacts type, an invalidInputException will be thrown. </p>
+     */
+    inline ProjectArtifacts& WithEncryptionDisabled(bool value) { SetEncryptionDisabled(value); return *this;}
+
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline const Aws::String& GetArtifactIdentifier() const{ return m_artifactIdentifier; }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline void SetArtifactIdentifier(const Aws::String& value) { m_artifactIdentifierHasBeenSet = true; m_artifactIdentifier = value; }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline void SetArtifactIdentifier(Aws::String&& value) { m_artifactIdentifierHasBeenSet = true; m_artifactIdentifier = std::move(value); }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline void SetArtifactIdentifier(const char* value) { m_artifactIdentifierHasBeenSet = true; m_artifactIdentifier.assign(value); }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline ProjectArtifacts& WithArtifactIdentifier(const Aws::String& value) { SetArtifactIdentifier(value); return *this;}
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline ProjectArtifacts& WithArtifactIdentifier(Aws::String&& value) { SetArtifactIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline ProjectArtifacts& WithArtifactIdentifier(const char* value) { SetArtifactIdentifier(value); return *this;}
+
   private:
 
     ArtifactsType m_type;
@@ -638,6 +785,15 @@ namespace Model
 
     ArtifactPackaging m_packaging;
     bool m_packagingHasBeenSet;
+
+    bool m_overrideArtifactName;
+    bool m_overrideArtifactNameHasBeenSet;
+
+    bool m_encryptionDisabled;
+    bool m_encryptionDisabledHasBeenSet;
+
+    Aws::String m_artifactIdentifier;
+    bool m_artifactIdentifierHasBeenSet;
   };
 
 } // namespace Model

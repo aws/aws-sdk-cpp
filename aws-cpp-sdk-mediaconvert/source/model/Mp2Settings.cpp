@@ -38,7 +38,7 @@ Mp2Settings::Mp2Settings() :
 {
 }
 
-Mp2Settings::Mp2Settings(const JsonValue& jsonValue) : 
+Mp2Settings::Mp2Settings(JsonView jsonValue) : 
     m_bitrate(0),
     m_bitrateHasBeenSet(false),
     m_channels(0),
@@ -49,7 +49,7 @@ Mp2Settings::Mp2Settings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Mp2Settings& Mp2Settings::operator =(const JsonValue& jsonValue)
+Mp2Settings& Mp2Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bitrate"))
   {

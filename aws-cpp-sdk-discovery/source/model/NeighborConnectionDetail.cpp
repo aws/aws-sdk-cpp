@@ -39,7 +39,7 @@ NeighborConnectionDetail::NeighborConnectionDetail() :
 {
 }
 
-NeighborConnectionDetail::NeighborConnectionDetail(const JsonValue& jsonValue) : 
+NeighborConnectionDetail::NeighborConnectionDetail(JsonView jsonValue) : 
     m_sourceServerIdHasBeenSet(false),
     m_destinationServerIdHasBeenSet(false),
     m_destinationPort(0),
@@ -51,7 +51,7 @@ NeighborConnectionDetail::NeighborConnectionDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NeighborConnectionDetail& NeighborConnectionDetail::operator =(const JsonValue& jsonValue)
+NeighborConnectionDetail& NeighborConnectionDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("sourceServerId"))
   {

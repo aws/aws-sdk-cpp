@@ -44,63 +44,63 @@ namespace Model
 
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline CopyPartResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline CopyPartResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
-     * Entity tag of the object.
+     * <p>Entity tag of the object.</p>
      */
     inline CopyPartResult& WithETag(const char* value) { SetETag(value); return *this;}
 
 
     /**
-     * Date and time at which the object was uploaded.
+     * <p>Date and time at which the object was uploaded.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * Date and time at which the object was uploaded.
+     * <p>Date and time at which the object was uploaded.</p>
      */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
-     * Date and time at which the object was uploaded.
+     * <p>Date and time at which the object was uploaded.</p>
      */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
 
     /**
-     * Date and time at which the object was uploaded.
+     * <p>Date and time at which the object was uploaded.</p>
      */
     inline CopyPartResult& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
 
     /**
-     * Date and time at which the object was uploaded.
+     * <p>Date and time at which the object was uploaded.</p>
      */
     inline CopyPartResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 

@@ -120,50 +120,50 @@ namespace Model
 
     /**
      * <p>A universally unique identifier (UUID) that identifies a specific lifecycle
-     * action associated with an instance. Auto Scaling sends this token to the
-     * notification target you specified when you created the lifecycle hook.</p>
+     * action associated with an instance. Amazon EC2 Auto Scaling sends this token to
+     * the notification target you specified when you created the lifecycle hook.</p>
      */
     inline const Aws::String& GetLifecycleActionToken() const{ return m_lifecycleActionToken; }
 
     /**
      * <p>A universally unique identifier (UUID) that identifies a specific lifecycle
-     * action associated with an instance. Auto Scaling sends this token to the
-     * notification target you specified when you created the lifecycle hook.</p>
+     * action associated with an instance. Amazon EC2 Auto Scaling sends this token to
+     * the notification target you specified when you created the lifecycle hook.</p>
      */
     inline void SetLifecycleActionToken(const Aws::String& value) { m_lifecycleActionTokenHasBeenSet = true; m_lifecycleActionToken = value; }
 
     /**
      * <p>A universally unique identifier (UUID) that identifies a specific lifecycle
-     * action associated with an instance. Auto Scaling sends this token to the
-     * notification target you specified when you created the lifecycle hook.</p>
+     * action associated with an instance. Amazon EC2 Auto Scaling sends this token to
+     * the notification target you specified when you created the lifecycle hook.</p>
      */
     inline void SetLifecycleActionToken(Aws::String&& value) { m_lifecycleActionTokenHasBeenSet = true; m_lifecycleActionToken = std::move(value); }
 
     /**
      * <p>A universally unique identifier (UUID) that identifies a specific lifecycle
-     * action associated with an instance. Auto Scaling sends this token to the
-     * notification target you specified when you created the lifecycle hook.</p>
+     * action associated with an instance. Amazon EC2 Auto Scaling sends this token to
+     * the notification target you specified when you created the lifecycle hook.</p>
      */
     inline void SetLifecycleActionToken(const char* value) { m_lifecycleActionTokenHasBeenSet = true; m_lifecycleActionToken.assign(value); }
 
     /**
      * <p>A universally unique identifier (UUID) that identifies a specific lifecycle
-     * action associated with an instance. Auto Scaling sends this token to the
-     * notification target you specified when you created the lifecycle hook.</p>
+     * action associated with an instance. Amazon EC2 Auto Scaling sends this token to
+     * the notification target you specified when you created the lifecycle hook.</p>
      */
     inline CompleteLifecycleActionRequest& WithLifecycleActionToken(const Aws::String& value) { SetLifecycleActionToken(value); return *this;}
 
     /**
      * <p>A universally unique identifier (UUID) that identifies a specific lifecycle
-     * action associated with an instance. Auto Scaling sends this token to the
-     * notification target you specified when you created the lifecycle hook.</p>
+     * action associated with an instance. Amazon EC2 Auto Scaling sends this token to
+     * the notification target you specified when you created the lifecycle hook.</p>
      */
     inline CompleteLifecycleActionRequest& WithLifecycleActionToken(Aws::String&& value) { SetLifecycleActionToken(std::move(value)); return *this;}
 
     /**
      * <p>A universally unique identifier (UUID) that identifies a specific lifecycle
-     * action associated with an instance. Auto Scaling sends this token to the
-     * notification target you specified when you created the lifecycle hook.</p>
+     * action associated with an instance. Amazon EC2 Auto Scaling sends this token to
+     * the notification target you specified when you created the lifecycle hook.</p>
      */
     inline CompleteLifecycleActionRequest& WithLifecycleActionToken(const char* value) { SetLifecycleActionToken(value); return *this;}
 

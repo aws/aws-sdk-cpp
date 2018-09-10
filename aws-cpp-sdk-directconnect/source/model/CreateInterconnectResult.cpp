@@ -39,7 +39,7 @@ CreateInterconnectResult::CreateInterconnectResult(const Aws::AmazonWebServiceRe
 
 CreateInterconnectResult& CreateInterconnectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("interconnectId"))
   {
     m_interconnectId = jsonValue.GetString("interconnectId");
@@ -91,6 +91,12 @@ CreateInterconnectResult& CreateInterconnectResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("awsDevice"))
   {
     m_awsDevice = jsonValue.GetString("awsDevice");
+
+  }
+
+  if(jsonValue.ValueExists("awsDeviceV2"))
+  {
+    m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
 
   }
 

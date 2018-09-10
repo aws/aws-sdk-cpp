@@ -37,7 +37,7 @@ GetIntentResult::GetIntentResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetIntentResult& GetIntentResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -52,7 +52,7 @@ GetIntentResult& GetIntentResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("slots"))
   {
-    Array<JsonValue> slotsJsonList = jsonValue.GetArray("slots");
+    Array<JsonView> slotsJsonList = jsonValue.GetArray("slots");
     for(unsigned slotsIndex = 0; slotsIndex < slotsJsonList.GetLength(); ++slotsIndex)
     {
       m_slots.push_back(slotsJsonList[slotsIndex].AsObject());
@@ -61,7 +61,7 @@ GetIntentResult& GetIntentResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("sampleUtterances"))
   {
-    Array<JsonValue> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
+    Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
     for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
     {
       m_sampleUtterances.push_back(sampleUtterancesJsonList[sampleUtterancesIndex].AsString());

@@ -37,7 +37,7 @@ DescribeUserPoolClientResult::DescribeUserPoolClientResult(const Aws::AmazonWebS
 
 DescribeUserPoolClientResult& DescribeUserPoolClientResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserPoolClient"))
   {
     m_userPoolClient = jsonValue.GetObject("UserPoolClient");

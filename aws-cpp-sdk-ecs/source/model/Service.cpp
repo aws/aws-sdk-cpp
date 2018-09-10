@@ -33,6 +33,7 @@ Service::Service() :
     m_serviceNameHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
+    m_serviceRegistriesHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_desiredCount(0),
     m_desiredCountHasBeenSet(false),
@@ -53,15 +54,18 @@ Service::Service() :
     m_placementStrategyHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_healthCheckGracePeriodSeconds(0),
-    m_healthCheckGracePeriodSecondsHasBeenSet(false)
+    m_healthCheckGracePeriodSecondsHasBeenSet(false),
+    m_schedulingStrategy(SchedulingStrategy::NOT_SET),
+    m_schedulingStrategyHasBeenSet(false)
 {
 }
 
-Service::Service(const JsonValue& jsonValue) : 
+Service::Service(JsonView jsonValue) : 
     m_serviceArnHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
+    m_serviceRegistriesHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_desiredCount(0),
     m_desiredCountHasBeenSet(false),
@@ -82,12 +86,14 @@ Service::Service(const JsonValue& jsonValue) :
     m_placementStrategyHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_healthCheckGracePeriodSeconds(0),
-    m_healthCheckGracePeriodSecondsHasBeenSet(false)
+    m_healthCheckGracePeriodSecondsHasBeenSet(false),
+    m_schedulingStrategy(SchedulingStrategy::NOT_SET),
+    m_schedulingStrategyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Service& Service::operator =(const JsonValue& jsonValue)
+Service& Service::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("serviceArn"))
   {
@@ -112,12 +118,22 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("loadBalancers"))
   {
-    Array<JsonValue> loadBalancersJsonList = jsonValue.GetArray("loadBalancers");
+    Array<JsonView> loadBalancersJsonList = jsonValue.GetArray("loadBalancers");
     for(unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex)
     {
       m_loadBalancers.push_back(loadBalancersJsonList[loadBalancersIndex].AsObject());
     }
     m_loadBalancersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("serviceRegistries"))
+  {
+    Array<JsonView> serviceRegistriesJsonList = jsonValue.GetArray("serviceRegistries");
+    for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
+    {
+      m_serviceRegistries.push_back(serviceRegistriesJsonList[serviceRegistriesIndex].AsObject());
+    }
+    m_serviceRegistriesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -178,7 +194,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("deployments"))
   {
-    Array<JsonValue> deploymentsJsonList = jsonValue.GetArray("deployments");
+    Array<JsonView> deploymentsJsonList = jsonValue.GetArray("deployments");
     for(unsigned deploymentsIndex = 0; deploymentsIndex < deploymentsJsonList.GetLength(); ++deploymentsIndex)
     {
       m_deployments.push_back(deploymentsJsonList[deploymentsIndex].AsObject());
@@ -195,7 +211,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("events"))
   {
-    Array<JsonValue> eventsJsonList = jsonValue.GetArray("events");
+    Array<JsonView> eventsJsonList = jsonValue.GetArray("events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
@@ -212,7 +228,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("placementConstraints"))
   {
-    Array<JsonValue> placementConstraintsJsonList = jsonValue.GetArray("placementConstraints");
+    Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("placementConstraints");
     for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
     {
       m_placementConstraints.push_back(placementConstraintsJsonList[placementConstraintsIndex].AsObject());
@@ -222,7 +238,7 @@ Service& Service::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("placementStrategy"))
   {
-    Array<JsonValue> placementStrategyJsonList = jsonValue.GetArray("placementStrategy");
+    Array<JsonView> placementStrategyJsonList = jsonValue.GetArray("placementStrategy");
     for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
     {
       m_placementStrategy.push_back(placementStrategyJsonList[placementStrategyIndex].AsObject());
@@ -242,6 +258,13 @@ Service& Service::operator =(const JsonValue& jsonValue)
     m_healthCheckGracePeriodSeconds = jsonValue.GetInteger("healthCheckGracePeriodSeconds");
 
     m_healthCheckGracePeriodSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("schedulingStrategy"))
+  {
+    m_schedulingStrategy = SchedulingStrategyMapper::GetSchedulingStrategyForName(jsonValue.GetString("schedulingStrategy"));
+
+    m_schedulingStrategyHasBeenSet = true;
   }
 
   return *this;
@@ -277,6 +300,17 @@ JsonValue Service::Jsonize() const
      loadBalancersJsonList[loadBalancersIndex].AsObject(m_loadBalancers[loadBalancersIndex].Jsonize());
    }
    payload.WithArray("loadBalancers", std::move(loadBalancersJsonList));
+
+  }
+
+  if(m_serviceRegistriesHasBeenSet)
+  {
+   Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
+   for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
+   {
+     serviceRegistriesJsonList[serviceRegistriesIndex].AsObject(m_serviceRegistries[serviceRegistriesIndex].Jsonize());
+   }
+   payload.WithArray("serviceRegistries", std::move(serviceRegistriesJsonList));
 
   }
 
@@ -392,6 +426,11 @@ JsonValue Service::Jsonize() const
   {
    payload.WithInteger("healthCheckGracePeriodSeconds", m_healthCheckGracePeriodSeconds);
 
+  }
+
+  if(m_schedulingStrategyHasBeenSet)
+  {
+   payload.WithString("schedulingStrategy", SchedulingStrategyMapper::GetNameForSchedulingStrategy(m_schedulingStrategy));
   }
 
   return payload;

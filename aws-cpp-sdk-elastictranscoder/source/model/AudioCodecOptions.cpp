@@ -36,7 +36,7 @@ AudioCodecOptions::AudioCodecOptions() :
 {
 }
 
-AudioCodecOptions::AudioCodecOptions(const JsonValue& jsonValue) : 
+AudioCodecOptions::AudioCodecOptions(JsonView jsonValue) : 
     m_profileHasBeenSet(false),
     m_bitDepthHasBeenSet(false),
     m_bitOrderHasBeenSet(false),
@@ -45,7 +45,7 @@ AudioCodecOptions::AudioCodecOptions(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AudioCodecOptions& AudioCodecOptions::operator =(const JsonValue& jsonValue)
+AudioCodecOptions& AudioCodecOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Profile"))
   {

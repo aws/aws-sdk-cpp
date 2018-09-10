@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CognitoIdentityProvider
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     UserPoolClientType();
-    UserPoolClientType(const Aws::Utils::Json::JsonValue& jsonValue);
-    UserPoolClientType& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    UserPoolClientType(Aws::Utils::Json::JsonView jsonValue);
+    UserPoolClientType& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -434,42 +435,98 @@ namespace Model
 
 
     /**
-     * <p>A list of allowed callback URLs for the identity providers.</p>
+     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCallbackURLs() const{ return m_callbackURLs; }
 
     /**
-     * <p>A list of allowed callback URLs for the identity providers.</p>
+     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline void SetCallbackURLs(const Aws::Vector<Aws::String>& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs = value; }
 
     /**
-     * <p>A list of allowed callback URLs for the identity providers.</p>
+     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline void SetCallbackURLs(Aws::Vector<Aws::String>&& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs = std::move(value); }
 
     /**
-     * <p>A list of allowed callback URLs for the identity providers.</p>
+     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline UserPoolClientType& WithCallbackURLs(const Aws::Vector<Aws::String>& value) { SetCallbackURLs(value); return *this;}
 
     /**
-     * <p>A list of allowed callback URLs for the identity providers.</p>
+     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline UserPoolClientType& WithCallbackURLs(Aws::Vector<Aws::String>&& value) { SetCallbackURLs(std::move(value)); return *this;}
 
     /**
-     * <p>A list of allowed callback URLs for the identity providers.</p>
+     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline UserPoolClientType& AddCallbackURLs(const Aws::String& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs.push_back(value); return *this; }
 
     /**
-     * <p>A list of allowed callback URLs for the identity providers.</p>
+     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline UserPoolClientType& AddCallbackURLs(Aws::String&& value) { m_callbackURLsHasBeenSet = true; m_callbackURLs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of allowed callback URLs for the identity providers.</p>
+     * <p>A list of allowed redirect (callback) URLs for the identity providers.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline UserPoolClientType& AddCallbackURLs(const char* value) { m_callbackURLsHasBeenSet = true; m_callbackURLs.push_back(value); return *this; }
 
@@ -517,36 +574,85 @@ namespace Model
 
     /**
      * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline const Aws::String& GetDefaultRedirectURI() const{ return m_defaultRedirectURI; }
 
     /**
      * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline void SetDefaultRedirectURI(const Aws::String& value) { m_defaultRedirectURIHasBeenSet = true; m_defaultRedirectURI = value; }
 
     /**
      * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline void SetDefaultRedirectURI(Aws::String&& value) { m_defaultRedirectURIHasBeenSet = true; m_defaultRedirectURI = std::move(value); }
 
     /**
      * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline void SetDefaultRedirectURI(const char* value) { m_defaultRedirectURIHasBeenSet = true; m_defaultRedirectURI.assign(value); }
 
     /**
      * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline UserPoolClientType& WithDefaultRedirectURI(const Aws::String& value) { SetDefaultRedirectURI(value); return *this;}
 
     /**
      * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline UserPoolClientType& WithDefaultRedirectURI(Aws::String&& value) { SetDefaultRedirectURI(std::move(value)); return *this;}
 
     /**
      * <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+     * <p>A redirect URI must:</p> <ul> <li> <p>Be an absolute URI.</p> </li> <li>
+     * <p>Be registered with the authorization server.</p> </li> <li> <p>Not include a
+     * fragment component.</p> </li> </ul> <p>See <a
+     * href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection
+     * Endpoint</a>.</p> <p>Amazon Cognito requires HTTPS over HTTP except for
+     * http://localhost for testing purposes only.</p> <p>App callback URLs such as
+     * myapp://example are also supported.</p>
      */
     inline UserPoolClientType& WithDefaultRedirectURI(const char* value) { SetDefaultRedirectURI(value); return *this;}
 

@@ -40,7 +40,7 @@ StreamRecord::StreamRecord() :
 {
 }
 
-StreamRecord::StreamRecord(const JsonValue& jsonValue) : 
+StreamRecord::StreamRecord(JsonView jsonValue) : 
     m_keysHasBeenSet(false),
     m_newImageHasBeenSet(false),
     m_oldImageHasBeenSet(false),
@@ -53,11 +53,11 @@ StreamRecord::StreamRecord(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StreamRecord& StreamRecord::operator =(const JsonValue& jsonValue)
+StreamRecord& StreamRecord::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Keys"))
   {
-    Aws::Map<Aws::String, JsonValue> keysJsonMap = jsonValue.GetObject("Keys").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> keysJsonMap = jsonValue.GetObject("Keys").GetAllObjects();
     for(auto& keysItem : keysJsonMap)
     {
       m_keys[keysItem.first] = keysItem.second.AsObject();
@@ -67,7 +67,7 @@ StreamRecord& StreamRecord::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("NewImage"))
   {
-    Aws::Map<Aws::String, JsonValue> newImageJsonMap = jsonValue.GetObject("NewImage").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> newImageJsonMap = jsonValue.GetObject("NewImage").GetAllObjects();
     for(auto& newImageItem : newImageJsonMap)
     {
       m_newImage[newImageItem.first] = newImageItem.second.AsObject();
@@ -77,7 +77,7 @@ StreamRecord& StreamRecord::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("OldImage"))
   {
-    Aws::Map<Aws::String, JsonValue> oldImageJsonMap = jsonValue.GetObject("OldImage").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> oldImageJsonMap = jsonValue.GetObject("OldImage").GetAllObjects();
     for(auto& oldImageItem : oldImageJsonMap)
     {
       m_oldImage[oldImageItem.first] = oldImageItem.second.AsObject();

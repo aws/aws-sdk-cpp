@@ -37,10 +37,10 @@ ListDocumentsResult::ListDocumentsResult(const Aws::AmazonWebServiceResult<JsonV
 
 ListDocumentsResult& ListDocumentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DocumentIdentifiers"))
   {
-    Array<JsonValue> documentIdentifiersJsonList = jsonValue.GetArray("DocumentIdentifiers");
+    Array<JsonView> documentIdentifiersJsonList = jsonValue.GetArray("DocumentIdentifiers");
     for(unsigned documentIdentifiersIndex = 0; documentIdentifiersIndex < documentIdentifiersJsonList.GetLength(); ++documentIdentifiersIndex)
     {
       m_documentIdentifiers.push_back(documentIdentifiersJsonList[documentIdentifiersIndex].AsObject());

@@ -27,7 +27,11 @@ StartJobRunRequest::StartJobRunRequest() :
     m_jobRunIdHasBeenSet(false),
     m_argumentsHasBeenSet(false),
     m_allocatedCapacity(0),
-    m_allocatedCapacityHasBeenSet(false)
+    m_allocatedCapacityHasBeenSet(false),
+    m_timeout(0),
+    m_timeoutHasBeenSet(false),
+    m_notificationPropertyHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
 }
 
@@ -64,7 +68,25 @@ Aws::String StartJobRunRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_timeoutHasBeenSet)
+  {
+   payload.WithInteger("Timeout", m_timeout);
+
+  }
+
+  if(m_notificationPropertyHasBeenSet)
+  {
+   payload.WithObject("NotificationProperty", m_notificationProperty.Jsonize());
+
+  }
+
+  if(m_securityConfigurationHasBeenSet)
+  {
+   payload.WithString("SecurityConfiguration", m_securityConfiguration);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartJobRunRequest::GetRequestSpecificHeaders() const

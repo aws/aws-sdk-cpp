@@ -336,43 +336,43 @@ namespace Model
 
     /**
      * <p>The idempotency token that uniquely identifies the provisioning update
-     * rquest.</p>
+     * request.</p>
      */
     inline const Aws::String& GetUpdateToken() const{ return m_updateToken; }
 
     /**
      * <p>The idempotency token that uniquely identifies the provisioning update
-     * rquest.</p>
+     * request.</p>
      */
     inline void SetUpdateToken(const Aws::String& value) { m_updateTokenHasBeenSet = true; m_updateToken = value; }
 
     /**
      * <p>The idempotency token that uniquely identifies the provisioning update
-     * rquest.</p>
+     * request.</p>
      */
     inline void SetUpdateToken(Aws::String&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::move(value); }
 
     /**
      * <p>The idempotency token that uniquely identifies the provisioning update
-     * rquest.</p>
+     * request.</p>
      */
     inline void SetUpdateToken(const char* value) { m_updateTokenHasBeenSet = true; m_updateToken.assign(value); }
 
     /**
      * <p>The idempotency token that uniquely identifies the provisioning update
-     * rquest.</p>
+     * request.</p>
      */
     inline UpdateProvisionedProductRequest& WithUpdateToken(const Aws::String& value) { SetUpdateToken(value); return *this;}
 
     /**
      * <p>The idempotency token that uniquely identifies the provisioning update
-     * rquest.</p>
+     * request.</p>
      */
     inline UpdateProvisionedProductRequest& WithUpdateToken(Aws::String&& value) { SetUpdateToken(std::move(value)); return *this;}
 
     /**
      * <p>The idempotency token that uniquely identifies the provisioning update
-     * rquest.</p>
+     * request.</p>
      */
     inline UpdateProvisionedProductRequest& WithUpdateToken(const char* value) { SetUpdateToken(value); return *this;}
 

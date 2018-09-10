@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/TrafficType.h>
+#include <aws/ec2/model/LogDestinationType.h>
 #include <utility>
 
 namespace Aws
@@ -79,78 +80,71 @@ namespace Model
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
-     * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces, or that you've reached the limit on the number of CloudWatch
-     * Logs log groups that you can create. <code>Access error</code> indicates that
-     * the IAM role associated with the flow log does not have sufficient permissions
-     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
-     * error.</p>
+     * indicates that CloudWatch Logs throttling has been applied for one or more
+     * network interfaces, or that you've reached the limit on the number of log groups
+     * that you can create. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
      */
     inline const Aws::String& GetDeliverLogsErrorMessage() const{ return m_deliverLogsErrorMessage; }
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
-     * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces, or that you've reached the limit on the number of CloudWatch
-     * Logs log groups that you can create. <code>Access error</code> indicates that
-     * the IAM role associated with the flow log does not have sufficient permissions
-     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
-     * error.</p>
+     * indicates that CloudWatch Logs throttling has been applied for one or more
+     * network interfaces, or that you've reached the limit on the number of log groups
+     * that you can create. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
      */
     inline void SetDeliverLogsErrorMessage(const Aws::String& value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage = value; }
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
-     * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces, or that you've reached the limit on the number of CloudWatch
-     * Logs log groups that you can create. <code>Access error</code> indicates that
-     * the IAM role associated with the flow log does not have sufficient permissions
-     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
-     * error.</p>
+     * indicates that CloudWatch Logs throttling has been applied for one or more
+     * network interfaces, or that you've reached the limit on the number of log groups
+     * that you can create. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
      */
     inline void SetDeliverLogsErrorMessage(Aws::String&& value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage = std::move(value); }
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
-     * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces, or that you've reached the limit on the number of CloudWatch
-     * Logs log groups that you can create. <code>Access error</code> indicates that
-     * the IAM role associated with the flow log does not have sufficient permissions
-     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
-     * error.</p>
+     * indicates that CloudWatch Logs throttling has been applied for one or more
+     * network interfaces, or that you've reached the limit on the number of log groups
+     * that you can create. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
      */
     inline void SetDeliverLogsErrorMessage(const char* value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage.assign(value); }
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
-     * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces, or that you've reached the limit on the number of CloudWatch
-     * Logs log groups that you can create. <code>Access error</code> indicates that
-     * the IAM role associated with the flow log does not have sufficient permissions
-     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
-     * error.</p>
+     * indicates that CloudWatch Logs throttling has been applied for one or more
+     * network interfaces, or that you've reached the limit on the number of log groups
+     * that you can create. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
      */
     inline FlowLog& WithDeliverLogsErrorMessage(const Aws::String& value) { SetDeliverLogsErrorMessage(value); return *this;}
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
-     * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces, or that you've reached the limit on the number of CloudWatch
-     * Logs log groups that you can create. <code>Access error</code> indicates that
-     * the IAM role associated with the flow log does not have sufficient permissions
-     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
-     * error.</p>
+     * indicates that CloudWatch Logs throttling has been applied for one or more
+     * network interfaces, or that you've reached the limit on the number of log groups
+     * that you can create. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
      */
     inline FlowLog& WithDeliverLogsErrorMessage(Aws::String&& value) { SetDeliverLogsErrorMessage(std::move(value)); return *this;}
 
     /**
      * <p>Information about the error that occurred. <code>Rate limited</code>
-     * indicates that CloudWatch logs throttling has been applied for one or more
-     * network interfaces, or that you've reached the limit on the number of CloudWatch
-     * Logs log groups that you can create. <code>Access error</code> indicates that
-     * the IAM role associated with the flow log does not have sufficient permissions
-     * to publish to CloudWatch Logs. <code>Unknown error</code> indicates an internal
-     * error.</p>
+     * indicates that CloudWatch Logs throttling has been applied for one or more
+     * network interfaces, or that you've reached the limit on the number of log groups
+     * that you can create. <code>Access error</code> indicates that the IAM role
+     * associated with the flow log does not have sufficient permissions to publish to
+     * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
      */
     inline FlowLog& WithDeliverLogsErrorMessage(const char* value) { SetDeliverLogsErrorMessage(value); return *this;}
 
@@ -403,6 +397,108 @@ namespace Model
      */
     inline FlowLog& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the type of destination to which the flow log data is published.
+     * Flow log data can be published to CloudWatch Logs or Amazon S3.</p>
+     */
+    inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
+
+    /**
+     * <p>Specifies the type of destination to which the flow log data is published.
+     * Flow log data can be published to CloudWatch Logs or Amazon S3.</p>
+     */
+    inline void SetLogDestinationType(const LogDestinationType& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
+
+    /**
+     * <p>Specifies the type of destination to which the flow log data is published.
+     * Flow log data can be published to CloudWatch Logs or Amazon S3.</p>
+     */
+    inline void SetLogDestinationType(LogDestinationType&& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = std::move(value); }
+
+    /**
+     * <p>Specifies the type of destination to which the flow log data is published.
+     * Flow log data can be published to CloudWatch Logs or Amazon S3.</p>
+     */
+    inline FlowLog& WithLogDestinationType(const LogDestinationType& value) { SetLogDestinationType(value); return *this;}
+
+    /**
+     * <p>Specifies the type of destination to which the flow log data is published.
+     * Flow log data can be published to CloudWatch Logs or Amazon S3.</p>
+     */
+    inline FlowLog& WithLogDestinationType(LogDestinationType&& value) { SetLogDestinationType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the destination to which the flow log data is published. Flow log
+     * data can be published to an CloudWatch Logs log group or an Amazon S3 bucket. If
+     * the flow log publishes to CloudWatch Logs, this element indicates the Amazon
+     * Resource Name (ARN) of the CloudWatch Logs log group to which the data is
+     * published. If the flow log publishes to Amazon S3, this element indicates the
+     * ARN of the Amazon S3 bucket to which the data is published.</p>
+     */
+    inline const Aws::String& GetLogDestination() const{ return m_logDestination; }
+
+    /**
+     * <p>Specifies the destination to which the flow log data is published. Flow log
+     * data can be published to an CloudWatch Logs log group or an Amazon S3 bucket. If
+     * the flow log publishes to CloudWatch Logs, this element indicates the Amazon
+     * Resource Name (ARN) of the CloudWatch Logs log group to which the data is
+     * published. If the flow log publishes to Amazon S3, this element indicates the
+     * ARN of the Amazon S3 bucket to which the data is published.</p>
+     */
+    inline void SetLogDestination(const Aws::String& value) { m_logDestinationHasBeenSet = true; m_logDestination = value; }
+
+    /**
+     * <p>Specifies the destination to which the flow log data is published. Flow log
+     * data can be published to an CloudWatch Logs log group or an Amazon S3 bucket. If
+     * the flow log publishes to CloudWatch Logs, this element indicates the Amazon
+     * Resource Name (ARN) of the CloudWatch Logs log group to which the data is
+     * published. If the flow log publishes to Amazon S3, this element indicates the
+     * ARN of the Amazon S3 bucket to which the data is published.</p>
+     */
+    inline void SetLogDestination(Aws::String&& value) { m_logDestinationHasBeenSet = true; m_logDestination = std::move(value); }
+
+    /**
+     * <p>Specifies the destination to which the flow log data is published. Flow log
+     * data can be published to an CloudWatch Logs log group or an Amazon S3 bucket. If
+     * the flow log publishes to CloudWatch Logs, this element indicates the Amazon
+     * Resource Name (ARN) of the CloudWatch Logs log group to which the data is
+     * published. If the flow log publishes to Amazon S3, this element indicates the
+     * ARN of the Amazon S3 bucket to which the data is published.</p>
+     */
+    inline void SetLogDestination(const char* value) { m_logDestinationHasBeenSet = true; m_logDestination.assign(value); }
+
+    /**
+     * <p>Specifies the destination to which the flow log data is published. Flow log
+     * data can be published to an CloudWatch Logs log group or an Amazon S3 bucket. If
+     * the flow log publishes to CloudWatch Logs, this element indicates the Amazon
+     * Resource Name (ARN) of the CloudWatch Logs log group to which the data is
+     * published. If the flow log publishes to Amazon S3, this element indicates the
+     * ARN of the Amazon S3 bucket to which the data is published.</p>
+     */
+    inline FlowLog& WithLogDestination(const Aws::String& value) { SetLogDestination(value); return *this;}
+
+    /**
+     * <p>Specifies the destination to which the flow log data is published. Flow log
+     * data can be published to an CloudWatch Logs log group or an Amazon S3 bucket. If
+     * the flow log publishes to CloudWatch Logs, this element indicates the Amazon
+     * Resource Name (ARN) of the CloudWatch Logs log group to which the data is
+     * published. If the flow log publishes to Amazon S3, this element indicates the
+     * ARN of the Amazon S3 bucket to which the data is published.</p>
+     */
+    inline FlowLog& WithLogDestination(Aws::String&& value) { SetLogDestination(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the destination to which the flow log data is published. Flow log
+     * data can be published to an CloudWatch Logs log group or an Amazon S3 bucket. If
+     * the flow log publishes to CloudWatch Logs, this element indicates the Amazon
+     * Resource Name (ARN) of the CloudWatch Logs log group to which the data is
+     * published. If the flow log publishes to Amazon S3, this element indicates the
+     * ARN of the Amazon S3 bucket to which the data is published.</p>
+     */
+    inline FlowLog& WithLogDestination(const char* value) { SetLogDestination(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_creationTime;
@@ -431,6 +527,12 @@ namespace Model
 
     TrafficType m_trafficType;
     bool m_trafficTypeHasBeenSet;
+
+    LogDestinationType m_logDestinationType;
+    bool m_logDestinationTypeHasBeenSet;
+
+    Aws::String m_logDestination;
+    bool m_logDestinationHasBeenSet;
   };
 
 } // namespace Model

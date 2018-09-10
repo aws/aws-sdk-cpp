@@ -33,13 +33,13 @@ StageContext::StageContext() :
 {
 }
 
-StageContext::StageContext(const JsonValue& jsonValue) : 
+StageContext::StageContext(JsonView jsonValue) : 
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-StageContext& StageContext::operator =(const JsonValue& jsonValue)
+StageContext& StageContext::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

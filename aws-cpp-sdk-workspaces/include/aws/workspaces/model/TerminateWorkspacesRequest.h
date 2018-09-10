@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>The WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
      */
     inline const Aws::Vector<TerminateRequest>& GetTerminateWorkspaceRequests() const{ return m_terminateWorkspaceRequests; }
 
     /**
-     * <p>The WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
      */
     inline void SetTerminateWorkspaceRequests(const Aws::Vector<TerminateRequest>& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests = value; }
 
     /**
-     * <p>The WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
      */
     inline void SetTerminateWorkspaceRequests(Aws::Vector<TerminateRequest>&& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests = std::move(value); }
 
     /**
-     * <p>The WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
      */
     inline TerminateWorkspacesRequest& WithTerminateWorkspaceRequests(const Aws::Vector<TerminateRequest>& value) { SetTerminateWorkspaceRequests(value); return *this;}
 
     /**
-     * <p>The WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
      */
     inline TerminateWorkspacesRequest& WithTerminateWorkspaceRequests(Aws::Vector<TerminateRequest>&& value) { SetTerminateWorkspaceRequests(std::move(value)); return *this;}
 
     /**
-     * <p>The WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
      */
     inline TerminateWorkspacesRequest& AddTerminateWorkspaceRequests(const TerminateRequest& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests.push_back(value); return *this; }
 
     /**
-     * <p>The WorkSpaces to terminate.</p>
+     * <p>The WorkSpaces to terminate. You can specify up to 25 WorkSpaces.</p>
      */
     inline TerminateWorkspacesRequest& AddTerminateWorkspaceRequests(TerminateRequest&& value) { m_terminateWorkspaceRequestsHasBeenSet = true; m_terminateWorkspaceRequests.push_back(std::move(value)); return *this; }
 

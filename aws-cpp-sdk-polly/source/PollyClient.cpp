@@ -30,8 +30,11 @@
 #include <aws/polly/model/DeleteLexiconRequest.h>
 #include <aws/polly/model/DescribeVoicesRequest.h>
 #include <aws/polly/model/GetLexiconRequest.h>
+#include <aws/polly/model/GetSpeechSynthesisTaskRequest.h>
 #include <aws/polly/model/ListLexiconsRequest.h>
+#include <aws/polly/model/ListSpeechSynthesisTasksRequest.h>
 #include <aws/polly/model/PutLexiconRequest.h>
+#include <aws/polly/model/StartSpeechSynthesisTaskRequest.h>
 #include <aws/polly/model/SynthesizeSpeechRequest.h>
 
 using namespace Aws;
@@ -205,6 +208,42 @@ void PollyClient::GetLexiconAsyncHelper(const GetLexiconRequest& request, const 
   handler(this, request, GetLexicon(request), context);
 }
 
+GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeechSynthesisTaskRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/synthesisTasks/";
+  ss << request.GetTaskId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetSpeechSynthesisTaskOutcome(GetSpeechSynthesisTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSpeechSynthesisTaskOutcome(outcome.GetError());
+  }
+}
+
+GetSpeechSynthesisTaskOutcomeCallable PollyClient::GetSpeechSynthesisTaskCallable(const GetSpeechSynthesisTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSpeechSynthesisTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSpeechSynthesisTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PollyClient::GetSpeechSynthesisTaskAsync(const GetSpeechSynthesisTaskRequest& request, const GetSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSpeechSynthesisTaskAsyncHelper( request, handler, context ); } );
+}
+
+void PollyClient::GetSpeechSynthesisTaskAsyncHelper(const GetSpeechSynthesisTaskRequest& request, const GetSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSpeechSynthesisTask(request), context);
+}
+
 ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request) const
 {
   Aws::StringStream ss;
@@ -238,6 +277,41 @@ void PollyClient::ListLexiconsAsync(const ListLexiconsRequest& request, const Li
 void PollyClient::ListLexiconsAsyncHelper(const ListLexiconsRequest& request, const ListLexiconsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListLexicons(request), context);
+}
+
+ListSpeechSynthesisTasksOutcome PollyClient::ListSpeechSynthesisTasks(const ListSpeechSynthesisTasksRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/synthesisTasks";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListSpeechSynthesisTasksOutcome(ListSpeechSynthesisTasksResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListSpeechSynthesisTasksOutcome(outcome.GetError());
+  }
+}
+
+ListSpeechSynthesisTasksOutcomeCallable PollyClient::ListSpeechSynthesisTasksCallable(const ListSpeechSynthesisTasksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSpeechSynthesisTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSpeechSynthesisTasks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PollyClient::ListSpeechSynthesisTasksAsync(const ListSpeechSynthesisTasksRequest& request, const ListSpeechSynthesisTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSpeechSynthesisTasksAsyncHelper( request, handler, context ); } );
+}
+
+void PollyClient::ListSpeechSynthesisTasksAsyncHelper(const ListSpeechSynthesisTasksRequest& request, const ListSpeechSynthesisTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSpeechSynthesisTasks(request), context);
 }
 
 PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) const
@@ -274,6 +348,41 @@ void PollyClient::PutLexiconAsync(const PutLexiconRequest& request, const PutLex
 void PollyClient::PutLexiconAsyncHelper(const PutLexiconRequest& request, const PutLexiconResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutLexicon(request), context);
+}
+
+StartSpeechSynthesisTaskOutcome PollyClient::StartSpeechSynthesisTask(const StartSpeechSynthesisTaskRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/synthesisTasks";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartSpeechSynthesisTaskOutcome(StartSpeechSynthesisTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartSpeechSynthesisTaskOutcome(outcome.GetError());
+  }
+}
+
+StartSpeechSynthesisTaskOutcomeCallable PollyClient::StartSpeechSynthesisTaskCallable(const StartSpeechSynthesisTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartSpeechSynthesisTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSpeechSynthesisTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PollyClient::StartSpeechSynthesisTaskAsync(const StartSpeechSynthesisTaskRequest& request, const StartSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartSpeechSynthesisTaskAsyncHelper( request, handler, context ); } );
+}
+
+void PollyClient::StartSpeechSynthesisTaskAsyncHelper(const StartSpeechSynthesisTaskRequest& request, const StartSpeechSynthesisTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartSpeechSynthesisTask(request), context);
 }
 
 SynthesizeSpeechOutcome PollyClient::SynthesizeSpeech(const SynthesizeSpeechRequest& request) const

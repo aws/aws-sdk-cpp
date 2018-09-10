@@ -37,7 +37,7 @@ TelemetryMetadata::TelemetryMetadata() :
 {
 }
 
-TelemetryMetadata::TelemetryMetadata(const JsonValue& jsonValue) : 
+TelemetryMetadata::TelemetryMetadata(JsonView jsonValue) : 
     m_messageTypeHasBeenSet(false),
     m_count(0),
     m_countHasBeenSet(false),
@@ -47,7 +47,7 @@ TelemetryMetadata::TelemetryMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TelemetryMetadata& TelemetryMetadata::operator =(const JsonValue& jsonValue)
+TelemetryMetadata& TelemetryMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("messageType"))
   {

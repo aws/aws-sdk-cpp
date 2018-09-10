@@ -45,104 +45,109 @@ namespace Model
 
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline AnalyticsConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline AnalyticsConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The identifier used to represent an analytics configuration.
+     * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline AnalyticsConfiguration& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * The filter used to describe a set of objects for analyses. A filter must have
+     * <p>The filter used to describe a set of objects for analyses. A filter must have
      * exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no
-     * filter is provided, all objects will be considered in any analysis.
+     * filter is provided, all objects will be considered in any analysis.</p>
      */
     inline const AnalyticsFilter& GetFilter() const{ return m_filter; }
 
     /**
-     * The filter used to describe a set of objects for analyses. A filter must have
+     * <p>The filter used to describe a set of objects for analyses. A filter must have
      * exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no
-     * filter is provided, all objects will be considered in any analysis.
+     * filter is provided, all objects will be considered in any analysis.</p>
      */
     inline void SetFilter(const AnalyticsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * The filter used to describe a set of objects for analyses. A filter must have
+     * <p>The filter used to describe a set of objects for analyses. A filter must have
      * exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no
-     * filter is provided, all objects will be considered in any analysis.
+     * filter is provided, all objects will be considered in any analysis.</p>
      */
     inline void SetFilter(AnalyticsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * The filter used to describe a set of objects for analyses. A filter must have
+     * <p>The filter used to describe a set of objects for analyses. A filter must have
      * exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no
-     * filter is provided, all objects will be considered in any analysis.
+     * filter is provided, all objects will be considered in any analysis.</p>
      */
     inline AnalyticsConfiguration& WithFilter(const AnalyticsFilter& value) { SetFilter(value); return *this;}
 
     /**
-     * The filter used to describe a set of objects for analyses. A filter must have
+     * <p>The filter used to describe a set of objects for analyses. A filter must have
      * exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no
-     * filter is provided, all objects will be considered in any analysis.
+     * filter is provided, all objects will be considered in any analysis.</p>
      */
     inline AnalyticsConfiguration& WithFilter(AnalyticsFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
-     * If present, it indicates that data related to access patterns will be collected
-     * and made available to analyze the tradeoffs between different storage classes.
+     * <p>If present, it indicates that data related to access patterns will be
+     * collected and made available to analyze the tradeoffs between different storage
+     * classes.</p>
      */
     inline const StorageClassAnalysis& GetStorageClassAnalysis() const{ return m_storageClassAnalysis; }
 
     /**
-     * If present, it indicates that data related to access patterns will be collected
-     * and made available to analyze the tradeoffs between different storage classes.
+     * <p>If present, it indicates that data related to access patterns will be
+     * collected and made available to analyze the tradeoffs between different storage
+     * classes.</p>
      */
     inline void SetStorageClassAnalysis(const StorageClassAnalysis& value) { m_storageClassAnalysisHasBeenSet = true; m_storageClassAnalysis = value; }
 
     /**
-     * If present, it indicates that data related to access patterns will be collected
-     * and made available to analyze the tradeoffs between different storage classes.
+     * <p>If present, it indicates that data related to access patterns will be
+     * collected and made available to analyze the tradeoffs between different storage
+     * classes.</p>
      */
     inline void SetStorageClassAnalysis(StorageClassAnalysis&& value) { m_storageClassAnalysisHasBeenSet = true; m_storageClassAnalysis = std::move(value); }
 
     /**
-     * If present, it indicates that data related to access patterns will be collected
-     * and made available to analyze the tradeoffs between different storage classes.
+     * <p>If present, it indicates that data related to access patterns will be
+     * collected and made available to analyze the tradeoffs between different storage
+     * classes.</p>
      */
     inline AnalyticsConfiguration& WithStorageClassAnalysis(const StorageClassAnalysis& value) { SetStorageClassAnalysis(value); return *this;}
 
     /**
-     * If present, it indicates that data related to access patterns will be collected
-     * and made available to analyze the tradeoffs between different storage classes.
+     * <p>If present, it indicates that data related to access patterns will be
+     * collected and made available to analyze the tradeoffs between different storage
+     * classes.</p>
      */
     inline AnalyticsConfiguration& WithStorageClassAnalysis(StorageClassAnalysis&& value) { SetStorageClassAnalysis(std::move(value)); return *this;}
 

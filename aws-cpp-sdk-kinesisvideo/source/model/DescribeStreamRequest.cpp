@@ -44,7 +44,7 @@ Aws::String DescribeStreamRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

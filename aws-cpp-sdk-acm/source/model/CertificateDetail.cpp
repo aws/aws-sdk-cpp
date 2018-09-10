@@ -56,11 +56,15 @@ CertificateDetail::CertificateDetail() :
     m_typeHasBeenSet(false),
     m_renewalSummaryHasBeenSet(false),
     m_keyUsagesHasBeenSet(false),
-    m_extendedKeyUsagesHasBeenSet(false)
+    m_extendedKeyUsagesHasBeenSet(false),
+    m_certificateAuthorityArnHasBeenSet(false),
+    m_renewalEligibility(RenewalEligibility::NOT_SET),
+    m_renewalEligibilityHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
-CertificateDetail::CertificateDetail(const JsonValue& jsonValue) : 
+CertificateDetail::CertificateDetail(JsonView jsonValue) : 
     m_certificateArnHasBeenSet(false),
     m_domainNameHasBeenSet(false),
     m_subjectAlternativeNamesHasBeenSet(false),
@@ -88,12 +92,16 @@ CertificateDetail::CertificateDetail(const JsonValue& jsonValue) :
     m_typeHasBeenSet(false),
     m_renewalSummaryHasBeenSet(false),
     m_keyUsagesHasBeenSet(false),
-    m_extendedKeyUsagesHasBeenSet(false)
+    m_extendedKeyUsagesHasBeenSet(false),
+    m_certificateAuthorityArnHasBeenSet(false),
+    m_renewalEligibility(RenewalEligibility::NOT_SET),
+    m_renewalEligibilityHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CertificateDetail& CertificateDetail::operator =(const JsonValue& jsonValue)
+CertificateDetail& CertificateDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CertificateArn"))
   {
@@ -111,7 +119,7 @@ CertificateDetail& CertificateDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SubjectAlternativeNames"))
   {
-    Array<JsonValue> subjectAlternativeNamesJsonList = jsonValue.GetArray("SubjectAlternativeNames");
+    Array<JsonView> subjectAlternativeNamesJsonList = jsonValue.GetArray("SubjectAlternativeNames");
     for(unsigned subjectAlternativeNamesIndex = 0; subjectAlternativeNamesIndex < subjectAlternativeNamesJsonList.GetLength(); ++subjectAlternativeNamesIndex)
     {
       m_subjectAlternativeNames.push_back(subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsString());
@@ -121,7 +129,7 @@ CertificateDetail& CertificateDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("DomainValidationOptions"))
   {
-    Array<JsonValue> domainValidationOptionsJsonList = jsonValue.GetArray("DomainValidationOptions");
+    Array<JsonView> domainValidationOptionsJsonList = jsonValue.GetArray("DomainValidationOptions");
     for(unsigned domainValidationOptionsIndex = 0; domainValidationOptionsIndex < domainValidationOptionsJsonList.GetLength(); ++domainValidationOptionsIndex)
     {
       m_domainValidationOptions.push_back(domainValidationOptionsJsonList[domainValidationOptionsIndex].AsObject());
@@ -222,7 +230,7 @@ CertificateDetail& CertificateDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("InUseBy"))
   {
-    Array<JsonValue> inUseByJsonList = jsonValue.GetArray("InUseBy");
+    Array<JsonView> inUseByJsonList = jsonValue.GetArray("InUseBy");
     for(unsigned inUseByIndex = 0; inUseByIndex < inUseByJsonList.GetLength(); ++inUseByIndex)
     {
       m_inUseBy.push_back(inUseByJsonList[inUseByIndex].AsString());
@@ -253,7 +261,7 @@ CertificateDetail& CertificateDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("KeyUsages"))
   {
-    Array<JsonValue> keyUsagesJsonList = jsonValue.GetArray("KeyUsages");
+    Array<JsonView> keyUsagesJsonList = jsonValue.GetArray("KeyUsages");
     for(unsigned keyUsagesIndex = 0; keyUsagesIndex < keyUsagesJsonList.GetLength(); ++keyUsagesIndex)
     {
       m_keyUsages.push_back(keyUsagesJsonList[keyUsagesIndex].AsObject());
@@ -263,12 +271,33 @@ CertificateDetail& CertificateDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ExtendedKeyUsages"))
   {
-    Array<JsonValue> extendedKeyUsagesJsonList = jsonValue.GetArray("ExtendedKeyUsages");
+    Array<JsonView> extendedKeyUsagesJsonList = jsonValue.GetArray("ExtendedKeyUsages");
     for(unsigned extendedKeyUsagesIndex = 0; extendedKeyUsagesIndex < extendedKeyUsagesJsonList.GetLength(); ++extendedKeyUsagesIndex)
     {
       m_extendedKeyUsages.push_back(extendedKeyUsagesJsonList[extendedKeyUsagesIndex].AsObject());
     }
     m_extendedKeyUsagesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CertificateAuthorityArn"))
+  {
+    m_certificateAuthorityArn = jsonValue.GetString("CertificateAuthorityArn");
+
+    m_certificateAuthorityArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RenewalEligibility"))
+  {
+    m_renewalEligibility = RenewalEligibilityMapper::GetRenewalEligibilityForName(jsonValue.GetString("RenewalEligibility"));
+
+    m_renewalEligibilityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Options"))
+  {
+    m_options = jsonValue.GetObject("Options");
+
+    m_optionsHasBeenSet = true;
   }
 
   return *this;
@@ -427,6 +456,23 @@ JsonValue CertificateDetail::Jsonize() const
      extendedKeyUsagesJsonList[extendedKeyUsagesIndex].AsObject(m_extendedKeyUsages[extendedKeyUsagesIndex].Jsonize());
    }
    payload.WithArray("ExtendedKeyUsages", std::move(extendedKeyUsagesJsonList));
+
+  }
+
+  if(m_certificateAuthorityArnHasBeenSet)
+  {
+   payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
+
+  }
+
+  if(m_renewalEligibilityHasBeenSet)
+  {
+   payload.WithString("RenewalEligibility", RenewalEligibilityMapper::GetNameForRenewalEligibility(m_renewalEligibility));
+  }
+
+  if(m_optionsHasBeenSet)
+  {
+   payload.WithObject("Options", m_options.Jsonize());
 
   }
 

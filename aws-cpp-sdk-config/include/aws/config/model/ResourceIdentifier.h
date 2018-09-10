@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     ResourceIdentifier();
-    ResourceIdentifier(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceIdentifier& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
+    ResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -77,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline ResourceIdentifier& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline ResourceIdentifier& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline ResourceIdentifier& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

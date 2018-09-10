@@ -38,7 +38,7 @@ BookingOptions::BookingOptions() :
 {
 }
 
-BookingOptions::BookingOptions(const JsonValue& jsonValue) : 
+BookingOptions::BookingOptions(JsonView jsonValue) : 
     m_autoAcceptRequests(false),
     m_autoAcceptRequestsHasBeenSet(false),
     m_autoDeclineRecurringRequests(false),
@@ -49,7 +49,7 @@ BookingOptions::BookingOptions(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-BookingOptions& BookingOptions::operator =(const JsonValue& jsonValue)
+BookingOptions& BookingOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AutoAcceptRequests"))
   {

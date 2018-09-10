@@ -138,6 +138,16 @@ DescribeResizeResult& DescribeResizeResult::operator =(const Aws::AmazonWebServi
     {
       m_estimatedTimeToCompletionInSeconds = StringUtils::ConvertToInt64(StringUtils::Trim(estimatedTimeToCompletionInSecondsNode.GetText().c_str()).c_str());
     }
+    XmlNode resizeTypeNode = resultNode.FirstChild("ResizeType");
+    if(!resizeTypeNode.IsNull())
+    {
+      m_resizeType = StringUtils::Trim(resizeTypeNode.GetText().c_str());
+    }
+    XmlNode messageNode = resultNode.FirstChild("Message");
+    if(!messageNode.IsNull())
+    {
+      m_message = StringUtils::Trim(messageNode.GetText().c_str());
+    }
   }
 
   if (!rootNode.IsNull()) {

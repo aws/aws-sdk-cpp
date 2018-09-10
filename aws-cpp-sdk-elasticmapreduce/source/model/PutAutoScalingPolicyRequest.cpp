@@ -51,7 +51,7 @@ Aws::String PutAutoScalingPolicyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutAutoScalingPolicyRequest::GetRequestSpecificHeaders() const

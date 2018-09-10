@@ -78,7 +78,7 @@ Aws::String ListEndpointConfigsRequest::SerializePayload() const
    payload.WithDouble("CreationTimeAfter", m_creationTimeAfter.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListEndpointConfigsRequest::GetRequestSpecificHeaders() const

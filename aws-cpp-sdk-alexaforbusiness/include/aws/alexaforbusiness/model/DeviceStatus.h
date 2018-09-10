@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     READY,
     PENDING,
-    WAS_OFFLINE
+    WAS_OFFLINE,
+    DEREGISTERED
   };
 
 namespace DeviceStatusMapper

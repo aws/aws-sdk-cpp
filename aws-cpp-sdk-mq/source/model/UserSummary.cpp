@@ -35,7 +35,7 @@ UserSummary::UserSummary() :
 {
 }
 
-UserSummary::UserSummary(const JsonValue& jsonValue) : 
+UserSummary::UserSummary(JsonView jsonValue) : 
     m_pendingChange(ChangeType::NOT_SET),
     m_pendingChangeHasBeenSet(false),
     m_usernameHasBeenSet(false)
@@ -43,7 +43,7 @@ UserSummary::UserSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UserSummary& UserSummary::operator =(const JsonValue& jsonValue)
+UserSummary& UserSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pendingChange"))
   {

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KMS
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     KeyListEntry();
-    KeyListEntry(const Aws::Utils::Json::JsonValue& jsonValue);
-    KeyListEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    KeyListEntry(Aws::Utils::Json::JsonView jsonValue);
+    KeyListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

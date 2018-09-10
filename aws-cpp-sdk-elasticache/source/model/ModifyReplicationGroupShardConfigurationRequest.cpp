@@ -27,7 +27,8 @@ ModifyReplicationGroupShardConfigurationRequest::ModifyReplicationGroupShardConf
     m_applyImmediately(false),
     m_applyImmediatelyHasBeenSet(false),
     m_reshardingConfigurationHasBeenSet(false),
-    m_nodeGroupsToRemoveHasBeenSet(false)
+    m_nodeGroupsToRemoveHasBeenSet(false),
+    m_nodeGroupsToRetainHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,17 @@ Aws::String ModifyReplicationGroupShardConfigurationRequest::SerializePayload() 
       ss << "NodeGroupsToRemove.member." << nodeGroupsToRemoveCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       nodeGroupsToRemoveCount++;
+    }
+  }
+
+  if(m_nodeGroupsToRetainHasBeenSet)
+  {
+    unsigned nodeGroupsToRetainCount = 1;
+    for(auto& item : m_nodeGroupsToRetain)
+    {
+      ss << "NodeGroupsToRetain.member." << nodeGroupsToRetainCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      nodeGroupsToRetainCount++;
     }
   }
 

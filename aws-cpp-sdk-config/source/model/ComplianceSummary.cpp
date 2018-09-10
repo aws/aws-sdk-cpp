@@ -35,7 +35,7 @@ ComplianceSummary::ComplianceSummary() :
 {
 }
 
-ComplianceSummary::ComplianceSummary(const JsonValue& jsonValue) : 
+ComplianceSummary::ComplianceSummary(JsonView jsonValue) : 
     m_compliantResourceCountHasBeenSet(false),
     m_nonCompliantResourceCountHasBeenSet(false),
     m_complianceSummaryTimestampHasBeenSet(false)
@@ -43,7 +43,7 @@ ComplianceSummary::ComplianceSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComplianceSummary& ComplianceSummary::operator =(const JsonValue& jsonValue)
+ComplianceSummary& ComplianceSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CompliantResourceCount"))
   {

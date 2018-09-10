@@ -42,7 +42,7 @@ RepositoryMetadata::RepositoryMetadata() :
 {
 }
 
-RepositoryMetadata::RepositoryMetadata(const JsonValue& jsonValue) : 
+RepositoryMetadata::RepositoryMetadata(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
     m_repositoryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
@@ -57,7 +57,7 @@ RepositoryMetadata::RepositoryMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RepositoryMetadata& RepositoryMetadata::operator =(const JsonValue& jsonValue)
+RepositoryMetadata& RepositoryMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accountId"))
   {

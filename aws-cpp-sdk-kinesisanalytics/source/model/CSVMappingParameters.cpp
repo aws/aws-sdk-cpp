@@ -34,14 +34,14 @@ CSVMappingParameters::CSVMappingParameters() :
 {
 }
 
-CSVMappingParameters::CSVMappingParameters(const JsonValue& jsonValue) : 
+CSVMappingParameters::CSVMappingParameters(JsonView jsonValue) : 
     m_recordRowDelimiterHasBeenSet(false),
     m_recordColumnDelimiterHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CSVMappingParameters& CSVMappingParameters::operator =(const JsonValue& jsonValue)
+CSVMappingParameters& CSVMappingParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RecordRowDelimiter"))
   {

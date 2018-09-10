@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lambda
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     AliasConfiguration();
-    AliasConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    AliasConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AliasConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    AliasConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -248,6 +249,42 @@ namespace Model
      */
     inline AliasConfiguration& WithRoutingConfig(AliasRoutingConfiguration&& value) { SetRoutingConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline AliasConfiguration& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline AliasConfiguration& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
+
+    /**
+     * <p>Represents the latest updated revision of the function or alias.</p>
+     */
+    inline AliasConfiguration& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+
   private:
 
     Aws::String m_aliasArn;
@@ -264,6 +301,9 @@ namespace Model
 
     AliasRoutingConfiguration m_routingConfig;
     bool m_routingConfigHasBeenSet;
+
+    Aws::String m_revisionId;
+    bool m_revisionIdHasBeenSet;
   };
 
 } // namespace Model

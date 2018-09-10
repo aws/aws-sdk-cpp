@@ -52,7 +52,7 @@ Aws::String ListDirectoriesRequest::SerializePayload() const
    payload.WithString("state", DirectoryStateMapper::GetNameForDirectoryState(m_state));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

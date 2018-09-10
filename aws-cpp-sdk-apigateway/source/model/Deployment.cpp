@@ -36,7 +36,7 @@ Deployment::Deployment() :
 {
 }
 
-Deployment::Deployment(const JsonValue& jsonValue) : 
+Deployment::Deployment(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
@@ -45,7 +45,7 @@ Deployment::Deployment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Deployment& Deployment::operator =(const JsonValue& jsonValue)
+Deployment& Deployment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -70,10 +70,10 @@ Deployment& Deployment::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("apiSummary"))
   {
-    Aws::Map<Aws::String, JsonValue> apiSummaryJsonMap = jsonValue.GetObject("apiSummary").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> apiSummaryJsonMap = jsonValue.GetObject("apiSummary").GetAllObjects();
     for(auto& apiSummaryItem : apiSummaryJsonMap)
     {
-      Aws::Map<Aws::String, JsonValue> mapOfMethodSnapshotJsonMap = apiSummaryItem.second.GetAllObjects();
+      Aws::Map<Aws::String, JsonView> mapOfMethodSnapshotJsonMap = apiSummaryItem.second.GetAllObjects();
       Aws::Map<Aws::String, MethodSnapshot> mapOfMethodSnapshotMap;
       for(auto& mapOfMethodSnapshotItem : mapOfMethodSnapshotJsonMap)
       {

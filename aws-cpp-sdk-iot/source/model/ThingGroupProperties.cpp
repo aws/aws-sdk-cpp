@@ -34,14 +34,14 @@ ThingGroupProperties::ThingGroupProperties() :
 {
 }
 
-ThingGroupProperties::ThingGroupProperties(const JsonValue& jsonValue) : 
+ThingGroupProperties::ThingGroupProperties(JsonView jsonValue) : 
     m_thingGroupDescriptionHasBeenSet(false),
     m_attributePayloadHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ThingGroupProperties& ThingGroupProperties::operator =(const JsonValue& jsonValue)
+ThingGroupProperties& ThingGroupProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("thingGroupDescription"))
   {

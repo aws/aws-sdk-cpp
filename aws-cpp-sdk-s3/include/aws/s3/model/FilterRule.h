@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * Container for key value pair that defines the criteria for the filter
-   * rule.<p><h3>See Also:</h3>   <a
+   * <p>Container for key value pair that defines the criteria for the filter
+   * rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/FilterRule">AWS API
    * Reference</a></p>
    */
@@ -50,52 +50,57 @@ namespace Model
 
 
     /**
-     * Object key name prefix or suffix identifying one or more objects to which the
+     * <p>Object key name prefix or suffix identifying one or more objects to which the
      * filtering rule applies. Maximum prefix length can be up to 1,024 characters.
      * Overlapping prefixes and suffixes are not supported. For more information, go to
      * <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-     * Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
+     * Event Notifications</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p>
      */
     inline const FilterRuleName& GetName() const{ return m_name; }
 
     /**
-     * Object key name prefix or suffix identifying one or more objects to which the
+     * <p>Object key name prefix or suffix identifying one or more objects to which the
      * filtering rule applies. Maximum prefix length can be up to 1,024 characters.
      * Overlapping prefixes and suffixes are not supported. For more information, go to
      * <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-     * Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
+     * Event Notifications</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p>
      */
     inline void SetName(const FilterRuleName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * Object key name prefix or suffix identifying one or more objects to which the
+     * <p>Object key name prefix or suffix identifying one or more objects to which the
      * filtering rule applies. Maximum prefix length can be up to 1,024 characters.
      * Overlapping prefixes and suffixes are not supported. For more information, go to
      * <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-     * Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
+     * Event Notifications</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p>
      */
     inline void SetName(FilterRuleName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * Object key name prefix or suffix identifying one or more objects to which the
+     * <p>Object key name prefix or suffix identifying one or more objects to which the
      * filtering rule applies. Maximum prefix length can be up to 1,024 characters.
      * Overlapping prefixes and suffixes are not supported. For more information, go to
      * <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-     * Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
+     * Event Notifications</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p>
      */
     inline FilterRule& WithName(const FilterRuleName& value) { SetName(value); return *this;}
 
     /**
-     * Object key name prefix or suffix identifying one or more objects to which the
+     * <p>Object key name prefix or suffix identifying one or more objects to which the
      * filtering rule applies. Maximum prefix length can be up to 1,024 characters.
      * Overlapping prefixes and suffixes are not supported. For more information, go to
      * <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
-     * Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
+     * Event Notifications</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p>
      */
     inline FilterRule& WithName(FilterRuleName&& value) { SetName(std::move(value)); return *this;}
 

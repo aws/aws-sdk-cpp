@@ -44,7 +44,7 @@ Aws::String EnableRadiusRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection EnableRadiusRequest::GetRequestSpecificHeaders() const

@@ -45,7 +45,7 @@ JobSummary::JobSummary() :
 {
 }
 
-JobSummary::JobSummary(const JsonValue& jsonValue) : 
+JobSummary::JobSummary(JsonView jsonValue) : 
     m_jobIdHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_createdAt(0),
@@ -63,7 +63,7 @@ JobSummary::JobSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JobSummary& JobSummary::operator =(const JsonValue& jsonValue)
+JobSummary& JobSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("jobId"))
   {

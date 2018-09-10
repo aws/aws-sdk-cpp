@@ -36,7 +36,7 @@ StreamSpecification::StreamSpecification() :
 {
 }
 
-StreamSpecification::StreamSpecification(const JsonValue& jsonValue) : 
+StreamSpecification::StreamSpecification(JsonView jsonValue) : 
     m_streamEnabled(false),
     m_streamEnabledHasBeenSet(false),
     m_streamViewType(StreamViewType::NOT_SET),
@@ -45,7 +45,7 @@ StreamSpecification::StreamSpecification(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StreamSpecification& StreamSpecification::operator =(const JsonValue& jsonValue)
+StreamSpecification& StreamSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StreamEnabled"))
   {

@@ -37,10 +37,10 @@ ListHandshakesForAccountResult::ListHandshakesForAccountResult(const Aws::Amazon
 
 ListHandshakesForAccountResult& ListHandshakesForAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Handshakes"))
   {
-    Array<JsonValue> handshakesJsonList = jsonValue.GetArray("Handshakes");
+    Array<JsonView> handshakesJsonList = jsonValue.GetArray("Handshakes");
     for(unsigned handshakesIndex = 0; handshakesIndex < handshakesJsonList.GetLength(); ++handshakesIndex)
     {
       m_handshakes.push_back(handshakesJsonList[handshakesIndex].AsObject());

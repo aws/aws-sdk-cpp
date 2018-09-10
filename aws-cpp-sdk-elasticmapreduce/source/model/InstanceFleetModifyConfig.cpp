@@ -37,7 +37,7 @@ InstanceFleetModifyConfig::InstanceFleetModifyConfig() :
 {
 }
 
-InstanceFleetModifyConfig::InstanceFleetModifyConfig(const JsonValue& jsonValue) : 
+InstanceFleetModifyConfig::InstanceFleetModifyConfig(JsonView jsonValue) : 
     m_instanceFleetIdHasBeenSet(false),
     m_targetOnDemandCapacity(0),
     m_targetOnDemandCapacityHasBeenSet(false),
@@ -47,7 +47,7 @@ InstanceFleetModifyConfig::InstanceFleetModifyConfig(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-InstanceFleetModifyConfig& InstanceFleetModifyConfig::operator =(const JsonValue& jsonValue)
+InstanceFleetModifyConfig& InstanceFleetModifyConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceFleetId"))
   {

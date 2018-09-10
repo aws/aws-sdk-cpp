@@ -37,7 +37,7 @@ Aws::String GetRegexPatternSetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetRegexPatternSetRequest::GetRequestSpecificHeaders() const

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Snowball
@@ -56,8 +57,8 @@ namespace Model
   {
   public:
     JobLogs();
-    JobLogs(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobLogs& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobLogs(Aws::Utils::Json::JsonView jsonValue);
+    JobLogs& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

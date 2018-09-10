@@ -38,7 +38,7 @@ Evaluation::Evaluation() :
 {
 }
 
-Evaluation::Evaluation(const JsonValue& jsonValue) : 
+Evaluation::Evaluation(JsonView jsonValue) : 
     m_complianceResourceTypeHasBeenSet(false),
     m_complianceResourceIdHasBeenSet(false),
     m_complianceType(ComplianceType::NOT_SET),
@@ -49,7 +49,7 @@ Evaluation::Evaluation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Evaluation& Evaluation::operator =(const JsonValue& jsonValue)
+Evaluation& Evaluation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ComplianceResourceType"))
   {

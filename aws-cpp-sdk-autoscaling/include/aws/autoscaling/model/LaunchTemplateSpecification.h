@@ -136,44 +136,72 @@ namespace Model
 
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number, <code>$Latest</code>, or <code>$Default</code>. If the
+     * value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest
+     * version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
+     * <code>$Default</code>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number, <code>$Latest</code>, or <code>$Default</code>. If the
+     * value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest
+     * version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
+     * <code>$Default</code>.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number, <code>$Latest</code>, or <code>$Default</code>. If the
+     * value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest
+     * version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
+     * <code>$Default</code>.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number, <code>$Latest</code>, or <code>$Default</code>. If the
+     * value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest
+     * version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
+     * <code>$Default</code>.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number, <code>$Latest</code>, or <code>$Default</code>. If the
+     * value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest
+     * version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
+     * <code>$Default</code>.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number, <code>$Latest</code>, or <code>$Default</code>. If the
+     * value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest
+     * version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
+     * <code>$Default</code>.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number, <code>$Latest</code>, or <code>$Default</code>. If the
+     * value is <code>$Latest</code>, Amazon EC2 Auto Scaling selects the latest
+     * version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Amazon EC2 Auto Scaling selects the default version of
+     * the launch template when launching instances. The default value is
+     * <code>$Default</code>.</p>
      */
     inline LaunchTemplateSpecification& WithVersion(const char* value) { SetVersion(value); return *this;}
 

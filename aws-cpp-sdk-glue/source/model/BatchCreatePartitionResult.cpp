@@ -37,10 +37,10 @@ BatchCreatePartitionResult::BatchCreatePartitionResult(const Aws::AmazonWebServi
 
 BatchCreatePartitionResult& BatchCreatePartitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Errors"))
   {
-    Array<JsonValue> errorsJsonList = jsonValue.GetArray("Errors");
+    Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

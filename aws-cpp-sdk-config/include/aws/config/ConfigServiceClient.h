@@ -21,16 +21,25 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/config/model/BatchGetResourceConfigResult.h>
 #include <aws/config/model/DeleteEvaluationResultsResult.h>
 #include <aws/config/model/DeliverConfigSnapshotResult.h>
+#include <aws/config/model/DescribeAggregateComplianceByConfigRulesResult.h>
+#include <aws/config/model/DescribeAggregationAuthorizationsResult.h>
 #include <aws/config/model/DescribeComplianceByConfigRuleResult.h>
 #include <aws/config/model/DescribeComplianceByResourceResult.h>
 #include <aws/config/model/DescribeConfigRuleEvaluationStatusResult.h>
 #include <aws/config/model/DescribeConfigRulesResult.h>
+#include <aws/config/model/DescribeConfigurationAggregatorSourcesStatusResult.h>
+#include <aws/config/model/DescribeConfigurationAggregatorsResult.h>
 #include <aws/config/model/DescribeConfigurationRecorderStatusResult.h>
 #include <aws/config/model/DescribeConfigurationRecordersResult.h>
 #include <aws/config/model/DescribeDeliveryChannelStatusResult.h>
 #include <aws/config/model/DescribeDeliveryChannelsResult.h>
+#include <aws/config/model/DescribePendingAggregationRequestsResult.h>
+#include <aws/config/model/DescribeRetentionConfigurationsResult.h>
+#include <aws/config/model/GetAggregateComplianceDetailsByConfigRuleResult.h>
+#include <aws/config/model/GetAggregateConfigRuleComplianceSummaryResult.h>
 #include <aws/config/model/GetComplianceDetailsByConfigRuleResult.h>
 #include <aws/config/model/GetComplianceDetailsByResourceResult.h>
 #include <aws/config/model/GetComplianceSummaryByConfigRuleResult.h>
@@ -38,7 +47,10 @@
 #include <aws/config/model/GetDiscoveredResourceCountsResult.h>
 #include <aws/config/model/GetResourceConfigHistoryResult.h>
 #include <aws/config/model/ListDiscoveredResourcesResult.h>
+#include <aws/config/model/PutAggregationAuthorizationResult.h>
+#include <aws/config/model/PutConfigurationAggregatorResult.h>
 #include <aws/config/model/PutEvaluationsResult.h>
+#include <aws/config/model/PutRetentionConfigurationResult.h>
 #include <aws/config/model/StartConfigRulesEvaluationResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -63,11 +75,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -86,46 +93,75 @@ namespace ConfigService
 
 namespace Model
 {
+        class BatchGetResourceConfigRequest;
+        class DeleteAggregationAuthorizationRequest;
         class DeleteConfigRuleRequest;
+        class DeleteConfigurationAggregatorRequest;
         class DeleteConfigurationRecorderRequest;
         class DeleteDeliveryChannelRequest;
         class DeleteEvaluationResultsRequest;
+        class DeletePendingAggregationRequestRequest;
+        class DeleteRetentionConfigurationRequest;
         class DeliverConfigSnapshotRequest;
+        class DescribeAggregateComplianceByConfigRulesRequest;
+        class DescribeAggregationAuthorizationsRequest;
         class DescribeComplianceByConfigRuleRequest;
         class DescribeComplianceByResourceRequest;
         class DescribeConfigRuleEvaluationStatusRequest;
         class DescribeConfigRulesRequest;
+        class DescribeConfigurationAggregatorSourcesStatusRequest;
+        class DescribeConfigurationAggregatorsRequest;
         class DescribeConfigurationRecorderStatusRequest;
         class DescribeConfigurationRecordersRequest;
         class DescribeDeliveryChannelStatusRequest;
         class DescribeDeliveryChannelsRequest;
+        class DescribePendingAggregationRequestsRequest;
+        class DescribeRetentionConfigurationsRequest;
+        class GetAggregateComplianceDetailsByConfigRuleRequest;
+        class GetAggregateConfigRuleComplianceSummaryRequest;
         class GetComplianceDetailsByConfigRuleRequest;
         class GetComplianceDetailsByResourceRequest;
         class GetComplianceSummaryByResourceTypeRequest;
         class GetDiscoveredResourceCountsRequest;
         class GetResourceConfigHistoryRequest;
         class ListDiscoveredResourcesRequest;
+        class PutAggregationAuthorizationRequest;
         class PutConfigRuleRequest;
+        class PutConfigurationAggregatorRequest;
         class PutConfigurationRecorderRequest;
         class PutDeliveryChannelRequest;
         class PutEvaluationsRequest;
+        class PutRetentionConfigurationRequest;
         class StartConfigRulesEvaluationRequest;
         class StartConfigurationRecorderRequest;
         class StopConfigurationRecorderRequest;
 
+        typedef Aws::Utils::Outcome<BatchGetResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> BatchGetResourceConfigOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteAggregationAuthorizationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConfigRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConfigurationAggregatorOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConfigurationRecorderOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteDeliveryChannelOutcome;
         typedef Aws::Utils::Outcome<DeleteEvaluationResultsResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteEvaluationResultsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeletePendingAggregationRequestOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteRetentionConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeliverConfigSnapshotResult, Aws::Client::AWSError<ConfigServiceErrors>> DeliverConfigSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DescribeAggregateComplianceByConfigRulesResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeAggregateComplianceByConfigRulesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAggregationAuthorizationsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeAggregationAuthorizationsOutcome;
         typedef Aws::Utils::Outcome<DescribeComplianceByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeComplianceByConfigRuleOutcome;
         typedef Aws::Utils::Outcome<DescribeComplianceByResourceResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeComplianceByResourceOutcome;
         typedef Aws::Utils::Outcome<DescribeConfigRuleEvaluationStatusResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConfigRuleEvaluationStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeConfigRulesResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConfigRulesOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationAggregatorSourcesStatusResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConfigurationAggregatorSourcesStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeConfigurationAggregatorsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConfigurationAggregatorsOutcome;
         typedef Aws::Utils::Outcome<DescribeConfigurationRecorderStatusResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConfigurationRecorderStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeConfigurationRecordersResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeConfigurationRecordersOutcome;
         typedef Aws::Utils::Outcome<DescribeDeliveryChannelStatusResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeDeliveryChannelStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeDeliveryChannelsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeDeliveryChannelsOutcome;
+        typedef Aws::Utils::Outcome<DescribePendingAggregationRequestsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribePendingAggregationRequestsOutcome;
+        typedef Aws::Utils::Outcome<DescribeRetentionConfigurationsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeRetentionConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<GetAggregateComplianceDetailsByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> GetAggregateComplianceDetailsByConfigRuleOutcome;
+        typedef Aws::Utils::Outcome<GetAggregateConfigRuleComplianceSummaryResult, Aws::Client::AWSError<ConfigServiceErrors>> GetAggregateConfigRuleComplianceSummaryOutcome;
         typedef Aws::Utils::Outcome<GetComplianceDetailsByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceDetailsByConfigRuleOutcome;
         typedef Aws::Utils::Outcome<GetComplianceDetailsByResourceResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceDetailsByResourceOutcome;
         typedef Aws::Utils::Outcome<GetComplianceSummaryByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceSummaryByConfigRuleOutcome;
@@ -133,27 +169,43 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDiscoveredResourceCountsResult, Aws::Client::AWSError<ConfigServiceErrors>> GetDiscoveredResourceCountsOutcome;
         typedef Aws::Utils::Outcome<GetResourceConfigHistoryResult, Aws::Client::AWSError<ConfigServiceErrors>> GetResourceConfigHistoryOutcome;
         typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, Aws::Client::AWSError<ConfigServiceErrors>> ListDiscoveredResourcesOutcome;
+        typedef Aws::Utils::Outcome<PutAggregationAuthorizationResult, Aws::Client::AWSError<ConfigServiceErrors>> PutAggregationAuthorizationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> PutConfigRuleOutcome;
+        typedef Aws::Utils::Outcome<PutConfigurationAggregatorResult, Aws::Client::AWSError<ConfigServiceErrors>> PutConfigurationAggregatorOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> PutConfigurationRecorderOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> PutDeliveryChannelOutcome;
         typedef Aws::Utils::Outcome<PutEvaluationsResult, Aws::Client::AWSError<ConfigServiceErrors>> PutEvaluationsOutcome;
+        typedef Aws::Utils::Outcome<PutRetentionConfigurationResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRetentionConfigurationOutcome;
         typedef Aws::Utils::Outcome<StartConfigRulesEvaluationResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigRulesEvaluationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigurationRecorderOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> StopConfigurationRecorderOutcome;
 
+        typedef std::future<BatchGetResourceConfigOutcome> BatchGetResourceConfigOutcomeCallable;
+        typedef std::future<DeleteAggregationAuthorizationOutcome> DeleteAggregationAuthorizationOutcomeCallable;
         typedef std::future<DeleteConfigRuleOutcome> DeleteConfigRuleOutcomeCallable;
+        typedef std::future<DeleteConfigurationAggregatorOutcome> DeleteConfigurationAggregatorOutcomeCallable;
         typedef std::future<DeleteConfigurationRecorderOutcome> DeleteConfigurationRecorderOutcomeCallable;
         typedef std::future<DeleteDeliveryChannelOutcome> DeleteDeliveryChannelOutcomeCallable;
         typedef std::future<DeleteEvaluationResultsOutcome> DeleteEvaluationResultsOutcomeCallable;
+        typedef std::future<DeletePendingAggregationRequestOutcome> DeletePendingAggregationRequestOutcomeCallable;
+        typedef std::future<DeleteRetentionConfigurationOutcome> DeleteRetentionConfigurationOutcomeCallable;
         typedef std::future<DeliverConfigSnapshotOutcome> DeliverConfigSnapshotOutcomeCallable;
+        typedef std::future<DescribeAggregateComplianceByConfigRulesOutcome> DescribeAggregateComplianceByConfigRulesOutcomeCallable;
+        typedef std::future<DescribeAggregationAuthorizationsOutcome> DescribeAggregationAuthorizationsOutcomeCallable;
         typedef std::future<DescribeComplianceByConfigRuleOutcome> DescribeComplianceByConfigRuleOutcomeCallable;
         typedef std::future<DescribeComplianceByResourceOutcome> DescribeComplianceByResourceOutcomeCallable;
         typedef std::future<DescribeConfigRuleEvaluationStatusOutcome> DescribeConfigRuleEvaluationStatusOutcomeCallable;
         typedef std::future<DescribeConfigRulesOutcome> DescribeConfigRulesOutcomeCallable;
+        typedef std::future<DescribeConfigurationAggregatorSourcesStatusOutcome> DescribeConfigurationAggregatorSourcesStatusOutcomeCallable;
+        typedef std::future<DescribeConfigurationAggregatorsOutcome> DescribeConfigurationAggregatorsOutcomeCallable;
         typedef std::future<DescribeConfigurationRecorderStatusOutcome> DescribeConfigurationRecorderStatusOutcomeCallable;
         typedef std::future<DescribeConfigurationRecordersOutcome> DescribeConfigurationRecordersOutcomeCallable;
         typedef std::future<DescribeDeliveryChannelStatusOutcome> DescribeDeliveryChannelStatusOutcomeCallable;
         typedef std::future<DescribeDeliveryChannelsOutcome> DescribeDeliveryChannelsOutcomeCallable;
+        typedef std::future<DescribePendingAggregationRequestsOutcome> DescribePendingAggregationRequestsOutcomeCallable;
+        typedef std::future<DescribeRetentionConfigurationsOutcome> DescribeRetentionConfigurationsOutcomeCallable;
+        typedef std::future<GetAggregateComplianceDetailsByConfigRuleOutcome> GetAggregateComplianceDetailsByConfigRuleOutcomeCallable;
+        typedef std::future<GetAggregateConfigRuleComplianceSummaryOutcome> GetAggregateConfigRuleComplianceSummaryOutcomeCallable;
         typedef std::future<GetComplianceDetailsByConfigRuleOutcome> GetComplianceDetailsByConfigRuleOutcomeCallable;
         typedef std::future<GetComplianceDetailsByResourceOutcome> GetComplianceDetailsByResourceOutcomeCallable;
         typedef std::future<GetComplianceSummaryByConfigRuleOutcome> GetComplianceSummaryByConfigRuleOutcomeCallable;
@@ -161,10 +213,13 @@ namespace Model
         typedef std::future<GetDiscoveredResourceCountsOutcome> GetDiscoveredResourceCountsOutcomeCallable;
         typedef std::future<GetResourceConfigHistoryOutcome> GetResourceConfigHistoryOutcomeCallable;
         typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
+        typedef std::future<PutAggregationAuthorizationOutcome> PutAggregationAuthorizationOutcomeCallable;
         typedef std::future<PutConfigRuleOutcome> PutConfigRuleOutcomeCallable;
+        typedef std::future<PutConfigurationAggregatorOutcome> PutConfigurationAggregatorOutcomeCallable;
         typedef std::future<PutConfigurationRecorderOutcome> PutConfigurationRecorderOutcomeCallable;
         typedef std::future<PutDeliveryChannelOutcome> PutDeliveryChannelOutcomeCallable;
         typedef std::future<PutEvaluationsOutcome> PutEvaluationsOutcomeCallable;
+        typedef std::future<PutRetentionConfigurationOutcome> PutRetentionConfigurationOutcomeCallable;
         typedef std::future<StartConfigRulesEvaluationOutcome> StartConfigRulesEvaluationOutcomeCallable;
         typedef std::future<StartConfigurationRecorderOutcome> StartConfigurationRecorderOutcomeCallable;
         typedef std::future<StopConfigurationRecorderOutcome> StopConfigurationRecorderOutcomeCallable;
@@ -172,19 +227,32 @@ namespace Model
 
   class ConfigServiceClient;
 
+    typedef std::function<void(const ConfigServiceClient*, const Model::BatchGetResourceConfigRequest&, const Model::BatchGetResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetResourceConfigResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteAggregationAuthorizationRequest&, const Model::DeleteAggregationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAggregationAuthorizationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfigRuleRequest&, const Model::DeleteConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigRuleResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfigurationAggregatorRequest&, const Model::DeleteConfigurationAggregatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationAggregatorResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfigurationRecorderRequest&, const Model::DeleteConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationRecorderResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteDeliveryChannelRequest&, const Model::DeleteDeliveryChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeliveryChannelResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteEvaluationResultsRequest&, const Model::DeleteEvaluationResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEvaluationResultsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DeletePendingAggregationRequestRequest&, const Model::DeletePendingAggregationRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePendingAggregationRequestResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRetentionConfigurationRequest&, const Model::DeleteRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRetentionConfigurationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeliverConfigSnapshotRequest&, const Model::DeliverConfigSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeliverConfigSnapshotResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeAggregateComplianceByConfigRulesRequest&, const Model::DescribeAggregateComplianceByConfigRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateComplianceByConfigRulesResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeAggregationAuthorizationsRequest&, const Model::DescribeAggregationAuthorizationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregationAuthorizationsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeComplianceByConfigRuleRequest&, const Model::DescribeComplianceByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComplianceByConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeComplianceByResourceRequest&, const Model::DescribeComplianceByResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComplianceByResourceResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConfigRuleEvaluationStatusRequest&, const Model::DescribeConfigRuleEvaluationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigRuleEvaluationStatusResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConfigRulesRequest&, const Model::DescribeConfigRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigRulesResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConfigurationAggregatorSourcesStatusRequest&, const Model::DescribeConfigurationAggregatorSourcesStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationAggregatorSourcesStatusResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConfigurationAggregatorsRequest&, const Model::DescribeConfigurationAggregatorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationAggregatorsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConfigurationRecorderStatusRequest&, const Model::DescribeConfigurationRecorderStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationRecorderStatusResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConfigurationRecordersRequest&, const Model::DescribeConfigurationRecordersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationRecordersResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeDeliveryChannelStatusRequest&, const Model::DescribeDeliveryChannelStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeliveryChannelStatusResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeDeliveryChannelsRequest&, const Model::DescribeDeliveryChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeliveryChannelsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DescribePendingAggregationRequestsRequest&, const Model::DescribePendingAggregationRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePendingAggregationRequestsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRetentionConfigurationsRequest&, const Model::DescribeRetentionConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRetentionConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateComplianceDetailsByConfigRuleRequest&, const Model::GetAggregateComplianceDetailsByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateConfigRuleComplianceSummaryRequest&, const Model::GetAggregateConfigRuleComplianceSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceDetailsByConfigRuleRequest&, const Model::GetComplianceDetailsByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceDetailsByConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceDetailsByResourceRequest&, const Model::GetComplianceDetailsByResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceDetailsByResourceResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceSummaryByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceSummaryByConfigRuleResponseReceivedHandler;
@@ -192,10 +260,13 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::GetDiscoveredResourceCountsRequest&, const Model::GetDiscoveredResourceCountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiscoveredResourceCountsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetResourceConfigHistoryRequest&, const Model::GetResourceConfigHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceConfigHistoryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListDiscoveredResourcesRequest&, const Model::ListDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDiscoveredResourcesResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::PutAggregationAuthorizationRequest&, const Model::PutAggregationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAggregationAuthorizationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutConfigRuleRequest&, const Model::PutConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigRuleResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::PutConfigurationAggregatorRequest&, const Model::PutConfigurationAggregatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationAggregatorResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutConfigurationRecorderRequest&, const Model::PutConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationRecorderResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutDeliveryChannelRequest&, const Model::PutDeliveryChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDeliveryChannelResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutEvaluationsRequest&, const Model::PutEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEvaluationsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::PutRetentionConfigurationRequest&, const Model::PutRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionConfigurationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigRulesEvaluationRequest&, const Model::StartConfigRulesEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigRulesEvaluationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigurationRecorderRequest&, const Model::StartConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigurationRecorderResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StopConfigurationRecorderRequest&, const Model::StopConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopConfigurationRecorderResponseReceivedHandler;
@@ -206,23 +277,23 @@ namespace Model
    * You can use AWS Config to get the current and historical configurations of each
    * AWS resource and also to get information about the relationship between the
    * resources. An AWS resource can be an Amazon Compute Cloud (Amazon EC2) instance,
-   * an Elastic Block Store (EBS) volume, an Elastic network Interface (ENI), or a
+   * an Elastic Block Store (EBS) volume, an elastic network Interface (ENI), or a
    * security group. For a complete list of resources currently supported by AWS
    * Config, see <a
    * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
    * AWS Resources</a>.</p> <p>You can access and manage AWS Config through the AWS
    * Management Console, the AWS Command Line Interface (AWS CLI), the AWS Config
-   * API, or the AWS SDKs for AWS Config</p> <p>This reference guide contains
-   * documentation for the AWS Config API and the AWS CLI commands that you can use
-   * to manage AWS Config.</p> <p>The AWS Config API uses the Signature Version 4
-   * protocol for signing requests. For more information about how to sign a request
-   * with this protocol, see <a
+   * API, or the AWS SDKs for AWS Config. This reference guide contains documentation
+   * for the AWS Config API and the AWS CLI commands that you can use to manage AWS
+   * Config. The AWS Config API uses the Signature Version 4 protocol for signing
+   * requests. For more information about how to sign a request with this protocol,
+   * see <a
    * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-   * Version 4 Signing Process</a>.</p> <p>For detailed information about AWS Config
+   * Version 4 Signing Process</a>. For detailed information about AWS Config
    * features and their associated actions or commands, as well as how to work with
    * AWS Management Console, see <a
    * href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What
-   * Is AWS Config?</a> in the <i>AWS Config Developer Guide</i>.</p>
+   * Is AWS Config</a> in the <i>AWS Config Developer Guide</i>.</p>
    */
   class AWS_CONFIGSERVICE_API ConfigServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -250,8 +321,82 @@ namespace Model
 
         virtual ~ConfigServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "config"; }
+        inline virtual const char* GetServiceClientName() const override { return "Config Service"; }
 
+
+        /**
+         * <p>Returns the current configuration for one or more requested resources. The
+         * operation also returns a list of resources that are not processed in the current
+         * request. If there are no unprocessed resources, the operation returns an empty
+         * unprocessedResourceKeys list. </p> <note> <ul> <li> <p>The API does not return
+         * results for deleted resources.</p> </li> <li> <p> The API does not return any
+         * tags for the requested resources. This information is filtered out of the
+         * supplementaryConfiguration section of the API response.</p> </li> </ul>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetResourceConfigOutcome BatchGetResourceConfig(const Model::BatchGetResourceConfigRequest& request) const;
+
+        /**
+         * <p>Returns the current configuration for one or more requested resources. The
+         * operation also returns a list of resources that are not processed in the current
+         * request. If there are no unprocessed resources, the operation returns an empty
+         * unprocessedResourceKeys list. </p> <note> <ul> <li> <p>The API does not return
+         * results for deleted resources.</p> </li> <li> <p> The API does not return any
+         * tags for the requested resources. This information is filtered out of the
+         * supplementaryConfiguration section of the API response.</p> </li> </ul>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetResourceConfigOutcomeCallable BatchGetResourceConfigCallable(const Model::BatchGetResourceConfigRequest& request) const;
+
+        /**
+         * <p>Returns the current configuration for one or more requested resources. The
+         * operation also returns a list of resources that are not processed in the current
+         * request. If there are no unprocessed resources, the operation returns an empty
+         * unprocessedResourceKeys list. </p> <note> <ul> <li> <p>The API does not return
+         * results for deleted resources.</p> </li> <li> <p> The API does not return any
+         * tags for the requested resources. This information is filtered out of the
+         * supplementaryConfiguration section of the API response.</p> </li> </ul>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetResourceConfigAsync(const Model::BatchGetResourceConfigRequest& request, const BatchGetResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the authorization granted to the specified configuration aggregator
+         * account in a specified region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteAggregationAuthorization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAggregationAuthorizationOutcome DeleteAggregationAuthorization(const Model::DeleteAggregationAuthorizationRequest& request) const;
+
+        /**
+         * <p>Deletes the authorization granted to the specified configuration aggregator
+         * account in a specified region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteAggregationAuthorization">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAggregationAuthorizationOutcomeCallable DeleteAggregationAuthorizationCallable(const Model::DeleteAggregationAuthorizationRequest& request) const;
+
+        /**
+         * <p>Deletes the authorization granted to the specified configuration aggregator
+         * account in a specified region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteAggregationAuthorization">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAggregationAuthorizationAsync(const Model::DeleteAggregationAuthorizationRequest& request, const DeleteAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified AWS Config rule and all of its evaluation results.</p>
@@ -295,6 +440,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteConfigRuleAsync(const Model::DeleteConfigRuleRequest& request, const DeleteConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified configuration aggregator and the aggregated data
+         * associated with the aggregator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationAggregator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConfigurationAggregatorOutcome DeleteConfigurationAggregator(const Model::DeleteConfigurationAggregatorRequest& request) const;
+
+        /**
+         * <p>Deletes the specified configuration aggregator and the aggregated data
+         * associated with the aggregator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationAggregator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteConfigurationAggregatorOutcomeCallable DeleteConfigurationAggregatorCallable(const Model::DeleteConfigurationAggregatorRequest& request) const;
+
+        /**
+         * <p>Deletes the specified configuration aggregator and the aggregated data
+         * associated with the aggregator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationAggregator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteConfigurationAggregatorAsync(const Model::DeleteConfigurationAggregatorRequest& request, const DeleteConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the configuration recorder.</p> <p>After the configuration recorder
@@ -374,20 +547,20 @@ namespace Model
         virtual void DeleteDeliveryChannelAsync(const Model::DeleteDeliveryChannelRequest& request, const DeleteDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the evaluation results for the specified Config rule. You can specify
-         * one Config rule per request. After you delete the evaluation results, you can
-         * call the <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS
-         * resources against the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the evaluation results for the specified AWS Config rule. You can
+         * specify one AWS Config rule per request. After you delete the evaluation
+         * results, you can call the <a>StartConfigRulesEvaluation</a> API to start
+         * evaluating your AWS resources against the rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteEvaluationResultsOutcome DeleteEvaluationResults(const Model::DeleteEvaluationResultsRequest& request) const;
 
         /**
-         * <p>Deletes the evaluation results for the specified Config rule. You can specify
-         * one Config rule per request. After you delete the evaluation results, you can
-         * call the <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS
-         * resources against the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the evaluation results for the specified AWS Config rule. You can
+         * specify one AWS Config rule per request. After you delete the evaluation
+         * results, you can call the <a>StartConfigRulesEvaluation</a> API to start
+         * evaluating your AWS resources against the rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">AWS
          * API Reference</a></p>
          *
@@ -396,10 +569,10 @@ namespace Model
         virtual Model::DeleteEvaluationResultsOutcomeCallable DeleteEvaluationResultsCallable(const Model::DeleteEvaluationResultsRequest& request) const;
 
         /**
-         * <p>Deletes the evaluation results for the specified Config rule. You can specify
-         * one Config rule per request. After you delete the evaluation results, you can
-         * call the <a>StartConfigRulesEvaluation</a> API to start evaluating your AWS
-         * resources against the rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the evaluation results for the specified AWS Config rule. You can
+         * specify one AWS Config rule per request. After you delete the evaluation
+         * results, you can call the <a>StartConfigRulesEvaluation</a> API to start
+         * evaluating your AWS resources against the rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteEvaluationResults">AWS
          * API Reference</a></p>
          *
@@ -408,13 +581,66 @@ namespace Model
         virtual void DeleteEvaluationResultsAsync(const Model::DeleteEvaluationResultsRequest& request, const DeleteEvaluationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes pending authorization requests for a specified aggregator account in
+         * a specified region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeletePendingAggregationRequest">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePendingAggregationRequestOutcome DeletePendingAggregationRequest(const Model::DeletePendingAggregationRequestRequest& request) const;
+
+        /**
+         * <p>Deletes pending authorization requests for a specified aggregator account in
+         * a specified region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeletePendingAggregationRequest">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePendingAggregationRequestOutcomeCallable DeletePendingAggregationRequestCallable(const Model::DeletePendingAggregationRequestRequest& request) const;
+
+        /**
+         * <p>Deletes pending authorization requests for a specified aggregator account in
+         * a specified region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeletePendingAggregationRequest">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePendingAggregationRequestAsync(const Model::DeletePendingAggregationRequestRequest& request, const DeletePendingAggregationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the retention configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRetentionConfigurationOutcome DeleteRetentionConfiguration(const Model::DeleteRetentionConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes the retention configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRetentionConfigurationOutcomeCallable DeleteRetentionConfigurationCallable(const Model::DeleteRetentionConfigurationRequest& request) const;
+
+        /**
+         * <p>Deletes the retention configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRetentionConfigurationAsync(const Model::DeleteRetentionConfigurationRequest& request, const DeleteRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the
-         * specified delivery channel. After the delivery has started, AWS Config sends
+         * specified delivery channel. After the delivery has started, AWS Config sends the
          * following notifications using an Amazon SNS topic that you have specified.</p>
-         * <ul> <li> <p>Notification of starting the delivery.</p> </li> <li>
-         * <p>Notification of delivery completed, if the delivery was successfully
-         * completed.</p> </li> <li> <p>Notification of delivery failure, if the delivery
-         * failed to complete.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>Notification of the start of the delivery.</p> </li> <li>
+         * <p>Notification of the completion of the delivery, if the delivery was
+         * successfully completed.</p> </li> <li> <p>Notification of delivery failure, if
+         * the delivery failed.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">AWS
          * API Reference</a></p>
          */
@@ -422,12 +648,12 @@ namespace Model
 
         /**
          * <p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the
-         * specified delivery channel. After the delivery has started, AWS Config sends
+         * specified delivery channel. After the delivery has started, AWS Config sends the
          * following notifications using an Amazon SNS topic that you have specified.</p>
-         * <ul> <li> <p>Notification of starting the delivery.</p> </li> <li>
-         * <p>Notification of delivery completed, if the delivery was successfully
-         * completed.</p> </li> <li> <p>Notification of delivery failure, if the delivery
-         * failed to complete.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>Notification of the start of the delivery.</p> </li> <li>
+         * <p>Notification of the completion of the delivery, if the delivery was
+         * successfully completed.</p> </li> <li> <p>Notification of delivery failure, if
+         * the delivery failed.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">AWS
          * API Reference</a></p>
          *
@@ -437,12 +663,12 @@ namespace Model
 
         /**
          * <p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the
-         * specified delivery channel. After the delivery has started, AWS Config sends
+         * specified delivery channel. After the delivery has started, AWS Config sends the
          * following notifications using an Amazon SNS topic that you have specified.</p>
-         * <ul> <li> <p>Notification of starting the delivery.</p> </li> <li>
-         * <p>Notification of delivery completed, if the delivery was successfully
-         * completed.</p> </li> <li> <p>Notification of delivery failure, if the delivery
-         * failed to complete.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p>Notification of the start of the delivery.</p> </li> <li>
+         * <p>Notification of the completion of the delivery, if the delivery was
+         * successfully completed.</p> </li> <li> <p>Notification of delivery failure, if
+         * the delivery failed.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeliverConfigSnapshot">AWS
          * API Reference</a></p>
          *
@@ -451,19 +677,81 @@ namespace Model
         virtual void DeliverConfigSnapshotAsync(const Model::DeliverConfigSnapshotRequest& request, const DeliverConfigSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of compliant and noncompliant rules with the number of
+         * resources for compliant and noncompliant rules. </p> <note> <p>The results can
+         * return an empty result page, but if you have a nextToken, the results are
+         * displayed on the next page.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAggregateComplianceByConfigRulesOutcome DescribeAggregateComplianceByConfigRules(const Model::DescribeAggregateComplianceByConfigRulesRequest& request) const;
+
+        /**
+         * <p>Returns a list of compliant and noncompliant rules with the number of
+         * resources for compliant and noncompliant rules. </p> <note> <p>The results can
+         * return an empty result page, but if you have a nextToken, the results are
+         * displayed on the next page.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAggregateComplianceByConfigRulesOutcomeCallable DescribeAggregateComplianceByConfigRulesCallable(const Model::DescribeAggregateComplianceByConfigRulesRequest& request) const;
+
+        /**
+         * <p>Returns a list of compliant and noncompliant rules with the number of
+         * resources for compliant and noncompliant rules. </p> <note> <p>The results can
+         * return an empty result page, but if you have a nextToken, the results are
+         * displayed on the next page.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAggregateComplianceByConfigRulesAsync(const Model::DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of authorizations granted to various aggregator accounts and
+         * regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAggregationAuthorizationsOutcome DescribeAggregationAuthorizations(const Model::DescribeAggregationAuthorizationsRequest& request) const;
+
+        /**
+         * <p>Returns a list of authorizations granted to various aggregator accounts and
+         * regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAggregationAuthorizationsOutcomeCallable DescribeAggregationAuthorizationsCallable(const Model::DescribeAggregationAuthorizationsRequest& request) const;
+
+        /**
+         * <p>Returns a list of authorizations granted to various aggregator accounts and
+         * regions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAggregationAuthorizationsAsync(const Model::DescribeAggregationAuthorizationsRequest& request, const DescribeAggregationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Indicates whether the specified AWS Config rules are compliant. If a rule is
          * noncompliant, this action returns the number of AWS resources that do not comply
          * with the rule.</p> <p>A rule is compliant if all of the evaluated resources
-         * comply with it, and it is noncompliant if any of these resources do not
-         * comply.</p> <p>If AWS Config has no current evaluation results for the rule, it
-         * returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the
-         * following conditions:</p> <ul> <li> <p>AWS Config has never invoked an
-         * evaluation for the rule. To check whether it has, use the
+         * comply with it. It is noncompliant if any of these resources do not comply.</p>
+         * <p>If AWS Config has no current evaluation results for the rule, it returns
+         * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following
+         * conditions:</p> <ul> <li> <p>AWS Config has never invoked an evaluation for the
+         * rule. To check whether it has, use the
          * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
          * <code>LastSuccessfulInvocationTime</code> and
          * <code>LastFailedInvocationTime</code>.</p> </li> <li> <p>The rule's AWS Lambda
          * function is failing to send evaluation results to AWS Config. Verify that the
-         * role that you assigned to your configuration recorder includes the
+         * role you assigned to your configuration recorder includes the
          * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
          * verify that the AWS Lambda execution role includes the
          * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
@@ -479,16 +767,16 @@ namespace Model
          * <p>Indicates whether the specified AWS Config rules are compliant. If a rule is
          * noncompliant, this action returns the number of AWS resources that do not comply
          * with the rule.</p> <p>A rule is compliant if all of the evaluated resources
-         * comply with it, and it is noncompliant if any of these resources do not
-         * comply.</p> <p>If AWS Config has no current evaluation results for the rule, it
-         * returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the
-         * following conditions:</p> <ul> <li> <p>AWS Config has never invoked an
-         * evaluation for the rule. To check whether it has, use the
+         * comply with it. It is noncompliant if any of these resources do not comply.</p>
+         * <p>If AWS Config has no current evaluation results for the rule, it returns
+         * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following
+         * conditions:</p> <ul> <li> <p>AWS Config has never invoked an evaluation for the
+         * rule. To check whether it has, use the
          * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
          * <code>LastSuccessfulInvocationTime</code> and
          * <code>LastFailedInvocationTime</code>.</p> </li> <li> <p>The rule's AWS Lambda
          * function is failing to send evaluation results to AWS Config. Verify that the
-         * role that you assigned to your configuration recorder includes the
+         * role you assigned to your configuration recorder includes the
          * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
          * verify that the AWS Lambda execution role includes the
          * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
@@ -506,16 +794,16 @@ namespace Model
          * <p>Indicates whether the specified AWS Config rules are compliant. If a rule is
          * noncompliant, this action returns the number of AWS resources that do not comply
          * with the rule.</p> <p>A rule is compliant if all of the evaluated resources
-         * comply with it, and it is noncompliant if any of these resources do not
-         * comply.</p> <p>If AWS Config has no current evaluation results for the rule, it
-         * returns <code>INSUFFICIENT_DATA</code>. This result might indicate one of the
-         * following conditions:</p> <ul> <li> <p>AWS Config has never invoked an
-         * evaluation for the rule. To check whether it has, use the
+         * comply with it. It is noncompliant if any of these resources do not comply.</p>
+         * <p>If AWS Config has no current evaluation results for the rule, it returns
+         * <code>INSUFFICIENT_DATA</code>. This result might indicate one of the following
+         * conditions:</p> <ul> <li> <p>AWS Config has never invoked an evaluation for the
+         * rule. To check whether it has, use the
          * <code>DescribeConfigRuleEvaluationStatus</code> action to get the
          * <code>LastSuccessfulInvocationTime</code> and
          * <code>LastFailedInvocationTime</code>.</p> </li> <li> <p>The rule's AWS Lambda
          * function is failing to send evaluation results to AWS Config. Verify that the
-         * role that you assigned to your configuration recorder includes the
+         * role you assigned to your configuration recorder includes the
          * <code>config:PutEvaluations</code> permission. If the rule is a custom rule,
          * verify that the AWS Lambda execution role includes the
          * <code>config:PutEvaluations</code> permission.</p> </li> <li> <p>The rule's AWS
@@ -671,10 +959,78 @@ namespace Model
         virtual void DescribeConfigRulesAsync(const Model::DescribeConfigRulesRequest& request, const DescribeConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns status information for sources within an aggregator. The status
+         * includes information about the last time AWS Config aggregated data from source
+         * accounts or AWS Config failed to aggregate data from source accounts with the
+         * related error code or message. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregatorSourcesStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeConfigurationAggregatorSourcesStatusOutcome DescribeConfigurationAggregatorSourcesStatus(const Model::DescribeConfigurationAggregatorSourcesStatusRequest& request) const;
+
+        /**
+         * <p>Returns status information for sources within an aggregator. The status
+         * includes information about the last time AWS Config aggregated data from source
+         * accounts or AWS Config failed to aggregate data from source accounts with the
+         * related error code or message. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregatorSourcesStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeConfigurationAggregatorSourcesStatusOutcomeCallable DescribeConfigurationAggregatorSourcesStatusCallable(const Model::DescribeConfigurationAggregatorSourcesStatusRequest& request) const;
+
+        /**
+         * <p>Returns status information for sources within an aggregator. The status
+         * includes information about the last time AWS Config aggregated data from source
+         * accounts or AWS Config failed to aggregate data from source accounts with the
+         * related error code or message. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregatorSourcesStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeConfigurationAggregatorSourcesStatusAsync(const Model::DescribeConfigurationAggregatorSourcesStatusRequest& request, const DescribeConfigurationAggregatorSourcesStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the details of one or more configuration aggregators. If the
+         * configuration aggregator is not specified, this action returns the details for
+         * all the configuration aggregators associated with the account. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeConfigurationAggregatorsOutcome DescribeConfigurationAggregators(const Model::DescribeConfigurationAggregatorsRequest& request) const;
+
+        /**
+         * <p>Returns the details of one or more configuration aggregators. If the
+         * configuration aggregator is not specified, this action returns the details for
+         * all the configuration aggregators associated with the account. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeConfigurationAggregatorsOutcomeCallable DescribeConfigurationAggregatorsCallable(const Model::DescribeConfigurationAggregatorsRequest& request) const;
+
+        /**
+         * <p>Returns the details of one or more configuration aggregators. If the
+         * configuration aggregator is not specified, this action returns the details for
+         * all the configuration aggregators associated with the account. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeConfigurationAggregatorsAsync(const Model::DescribeConfigurationAggregatorsRequest& request, const DescribeConfigurationAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the current status of the specified configuration recorder. If a
          * configuration recorder is not specified, this action returns the status of all
-         * configuration recorder associated with the account.</p> <note> <p>Currently, you
-         * can specify only one configuration recorder per region in your account.</p>
+         * configuration recorders associated with the account.</p> <note> <p>Currently,
+         * you can specify only one configuration recorder per region in your account.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
          * API Reference</a></p>
@@ -684,8 +1040,8 @@ namespace Model
         /**
          * <p>Returns the current status of the specified configuration recorder. If a
          * configuration recorder is not specified, this action returns the status of all
-         * configuration recorder associated with the account.</p> <note> <p>Currently, you
-         * can specify only one configuration recorder per region in your account.</p>
+         * configuration recorders associated with the account.</p> <note> <p>Currently,
+         * you can specify only one configuration recorder per region in your account.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
          * API Reference</a></p>
@@ -697,8 +1053,8 @@ namespace Model
         /**
          * <p>Returns the current status of the specified configuration recorder. If a
          * configuration recorder is not specified, this action returns the status of all
-         * configuration recorder associated with the account.</p> <note> <p>Currently, you
-         * can specify only one configuration recorder per region in your account.</p>
+         * configuration recorders associated with the account.</p> <note> <p>Currently,
+         * you can specify only one configuration recorder per region in your account.</p>
          * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
          * API Reference</a></p>
@@ -817,6 +1173,145 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDeliveryChannelsAsync(const Model::DescribeDeliveryChannelsRequest& request, const DescribeDeliveryChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of all pending aggregation requests.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePendingAggregationRequestsOutcome DescribePendingAggregationRequests(const Model::DescribePendingAggregationRequestsRequest& request) const;
+
+        /**
+         * <p>Returns a list of all pending aggregation requests.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribePendingAggregationRequestsOutcomeCallable DescribePendingAggregationRequestsCallable(const Model::DescribePendingAggregationRequestsRequest& request) const;
+
+        /**
+         * <p>Returns a list of all pending aggregation requests.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribePendingAggregationRequestsAsync(const Model::DescribePendingAggregationRequestsRequest& request, const DescribePendingAggregationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the details of one or more retention configurations. If the retention
+         * configuration name is not specified, this action returns the details for all the
+         * retention configurations for that account.</p> <note> <p>Currently, AWS Config
+         * supports only one retention configuration per region in your account.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRetentionConfigurationsOutcome DescribeRetentionConfigurations(const Model::DescribeRetentionConfigurationsRequest& request) const;
+
+        /**
+         * <p>Returns the details of one or more retention configurations. If the retention
+         * configuration name is not specified, this action returns the details for all the
+         * retention configurations for that account.</p> <note> <p>Currently, AWS Config
+         * supports only one retention configuration per region in your account.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeRetentionConfigurationsOutcomeCallable DescribeRetentionConfigurationsCallable(const Model::DescribeRetentionConfigurationsRequest& request) const;
+
+        /**
+         * <p>Returns the details of one or more retention configurations. If the retention
+         * configuration name is not specified, this action returns the details for all the
+         * retention configurations for that account.</p> <note> <p>Currently, AWS Config
+         * supports only one retention configuration per region in your account.</p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeRetentionConfigurationsAsync(const Model::DescribeRetentionConfigurationsRequest& request, const DescribeRetentionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the evaluation results for the specified AWS Config rule for a
+         * specific resource in a rule. The results indicate which AWS resources were
+         * evaluated by the rule, when each resource was last evaluated, and whether each
+         * resource complies with the rule. </p> <note> <p>The results can return an empty
+         * result page. But if you have a nextToken, the results are displayed on the next
+         * page.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAggregateComplianceDetailsByConfigRuleOutcome GetAggregateComplianceDetailsByConfigRule(const Model::GetAggregateComplianceDetailsByConfigRuleRequest& request) const;
+
+        /**
+         * <p>Returns the evaluation results for the specified AWS Config rule for a
+         * specific resource in a rule. The results indicate which AWS resources were
+         * evaluated by the rule, when each resource was last evaluated, and whether each
+         * resource complies with the rule. </p> <note> <p>The results can return an empty
+         * result page. But if you have a nextToken, the results are displayed on the next
+         * page.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAggregateComplianceDetailsByConfigRuleOutcomeCallable GetAggregateComplianceDetailsByConfigRuleCallable(const Model::GetAggregateComplianceDetailsByConfigRuleRequest& request) const;
+
+        /**
+         * <p>Returns the evaluation results for the specified AWS Config rule for a
+         * specific resource in a rule. The results indicate which AWS resources were
+         * evaluated by the rule, when each resource was last evaluated, and whether each
+         * resource complies with the rule. </p> <note> <p>The results can return an empty
+         * result page. But if you have a nextToken, the results are displayed on the next
+         * page.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAggregateComplianceDetailsByConfigRuleAsync(const Model::GetAggregateComplianceDetailsByConfigRuleRequest& request, const GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the number of compliant and noncompliant rules for one or more
+         * accounts and regions in an aggregator.</p> <note> <p>The results can return an
+         * empty result page, but if you have a nextToken, the results are displayed on the
+         * next page.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAggregateConfigRuleComplianceSummaryOutcome GetAggregateConfigRuleComplianceSummary(const Model::GetAggregateConfigRuleComplianceSummaryRequest& request) const;
+
+        /**
+         * <p>Returns the number of compliant and noncompliant rules for one or more
+         * accounts and regions in an aggregator.</p> <note> <p>The results can return an
+         * empty result page, but if you have a nextToken, the results are displayed on the
+         * next page.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAggregateConfigRuleComplianceSummaryOutcomeCallable GetAggregateConfigRuleComplianceSummaryCallable(const Model::GetAggregateConfigRuleComplianceSummaryRequest& request) const;
+
+        /**
+         * <p>Returns the number of compliant and noncompliant rules for one or more
+         * accounts and regions in an aggregator.</p> <note> <p>The results can return an
+         * empty result page, but if you have a nextToken, the results are displayed on the
+         * next page.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAggregateConfigRuleComplianceSummaryAsync(const Model::GetAggregateConfigRuleComplianceSummaryRequest& request, const GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the evaluation results for the specified AWS Config rule. The results
@@ -956,18 +1451,18 @@ namespace Model
          * call to the <code>GetDiscoveredResourceCounts</code> action and specify that you
          * want all resource types. </p> </li> <li> <p>AWS Config returns the
          * following:</p> <ul> <li> <p>The resource types (EC2 instances, IAM users, and S3
-         * buckets)</p> </li> <li> <p>The number of each resource type (25, 20, and 15)</p>
-         * </li> <li> <p>The total number of all resources (60)</p> </li> </ul> </li> </ol>
-         * <p>The response is paginated. By default, AWS Config lists 100
+         * buckets).</p> </li> <li> <p>The number of each resource type (25, 20, and
+         * 15).</p> </li> <li> <p>The total number of all resources (60).</p> </li> </ul>
+         * </li> </ol> <p>The response is paginated. By default, AWS Config lists 100
          * <a>ResourceCount</a> objects on each page. You can customize this number with
          * the <code>limit</code> parameter. The response includes a <code>nextToken</code>
          * string. To get the next page of results, run the request again and specify the
          * string for the <code>nextToken</code> parameter.</p> <note> <p>If you make a
-         * call to the <a>GetDiscoveredResourceCounts</a> action, you may not immediately
+         * call to the <a>GetDiscoveredResourceCounts</a> action, you might not immediately
          * receive resource counts in the following situations:</p> <ul> <li> <p>You are a
-         * new AWS Config customer</p> </li> <li> <p>You just enabled resource
-         * recording</p> </li> </ul> <p>It may take a few minutes for AWS Config to record
-         * and count your resources. Wait a few minutes and then retry the
+         * new AWS Config customer.</p> </li> <li> <p>You just enabled resource
+         * recording.</p> </li> </ul> <p>It might take a few minutes for AWS Config to
+         * record and count your resources. Wait a few minutes and then retry the
          * <a>GetDiscoveredResourceCounts</a> action. </p> </note><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">AWS
@@ -984,18 +1479,18 @@ namespace Model
          * call to the <code>GetDiscoveredResourceCounts</code> action and specify that you
          * want all resource types. </p> </li> <li> <p>AWS Config returns the
          * following:</p> <ul> <li> <p>The resource types (EC2 instances, IAM users, and S3
-         * buckets)</p> </li> <li> <p>The number of each resource type (25, 20, and 15)</p>
-         * </li> <li> <p>The total number of all resources (60)</p> </li> </ul> </li> </ol>
-         * <p>The response is paginated. By default, AWS Config lists 100
+         * buckets).</p> </li> <li> <p>The number of each resource type (25, 20, and
+         * 15).</p> </li> <li> <p>The total number of all resources (60).</p> </li> </ul>
+         * </li> </ol> <p>The response is paginated. By default, AWS Config lists 100
          * <a>ResourceCount</a> objects on each page. You can customize this number with
          * the <code>limit</code> parameter. The response includes a <code>nextToken</code>
          * string. To get the next page of results, run the request again and specify the
          * string for the <code>nextToken</code> parameter.</p> <note> <p>If you make a
-         * call to the <a>GetDiscoveredResourceCounts</a> action, you may not immediately
+         * call to the <a>GetDiscoveredResourceCounts</a> action, you might not immediately
          * receive resource counts in the following situations:</p> <ul> <li> <p>You are a
-         * new AWS Config customer</p> </li> <li> <p>You just enabled resource
-         * recording</p> </li> </ul> <p>It may take a few minutes for AWS Config to record
-         * and count your resources. Wait a few minutes and then retry the
+         * new AWS Config customer.</p> </li> <li> <p>You just enabled resource
+         * recording.</p> </li> </ul> <p>It might take a few minutes for AWS Config to
+         * record and count your resources. Wait a few minutes and then retry the
          * <a>GetDiscoveredResourceCounts</a> action. </p> </note><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">AWS
@@ -1014,18 +1509,18 @@ namespace Model
          * call to the <code>GetDiscoveredResourceCounts</code> action and specify that you
          * want all resource types. </p> </li> <li> <p>AWS Config returns the
          * following:</p> <ul> <li> <p>The resource types (EC2 instances, IAM users, and S3
-         * buckets)</p> </li> <li> <p>The number of each resource type (25, 20, and 15)</p>
-         * </li> <li> <p>The total number of all resources (60)</p> </li> </ul> </li> </ol>
-         * <p>The response is paginated. By default, AWS Config lists 100
+         * buckets).</p> </li> <li> <p>The number of each resource type (25, 20, and
+         * 15).</p> </li> <li> <p>The total number of all resources (60).</p> </li> </ul>
+         * </li> </ol> <p>The response is paginated. By default, AWS Config lists 100
          * <a>ResourceCount</a> objects on each page. You can customize this number with
          * the <code>limit</code> parameter. The response includes a <code>nextToken</code>
          * string. To get the next page of results, run the request again and specify the
          * string for the <code>nextToken</code> parameter.</p> <note> <p>If you make a
-         * call to the <a>GetDiscoveredResourceCounts</a> action, you may not immediately
+         * call to the <a>GetDiscoveredResourceCounts</a> action, you might not immediately
          * receive resource counts in the following situations:</p> <ul> <li> <p>You are a
-         * new AWS Config customer</p> </li> <li> <p>You just enabled resource
-         * recording</p> </li> </ul> <p>It may take a few minutes for AWS Config to record
-         * and count your resources. Wait a few minutes and then retry the
+         * new AWS Config customer.</p> </li> <li> <p>You just enabled resource
+         * recording.</p> </li> </ul> <p>It might take a few minutes for AWS Config to
+         * record and count your resources. Wait a few minutes and then retry the
          * <a>GetDiscoveredResourceCounts</a> action. </p> </note><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts">AWS
@@ -1038,15 +1533,18 @@ namespace Model
         /**
          * <p>Returns a list of configuration items for the specified resource. The list
          * contains details about each state of the resource during the specified time
-         * interval.</p> <p>The response is paginated. By default, AWS Config returns a
-         * limit of 10 configuration items per page. You can customize this number with the
-         * <code>limit</code> parameter. The response includes a <code>nextToken</code>
-         * string. To get the next page of results, run the request again and specify the
-         * string for the <code>nextToken</code> parameter.</p> <note> <p>Each call to the
-         * API is limited to span a duration of seven days. It is likely that the number of
-         * records returned is smaller than the specified <code>limit</code>. In such
-         * cases, you can make another call, using the <code>nextToken</code>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * interval. If you specified a retention period to retain your
+         * <code>ConfigurationItems</code> between a minimum of 30 days and a maximum of 7
+         * years (2557 days), AWS Config returns the <code>ConfigurationItems</code> for
+         * the specified retention period. </p> <p>The response is paginated. By default,
+         * AWS Config returns a limit of 10 configuration items per page. You can customize
+         * this number with the <code>limit</code> parameter. The response includes a
+         * <code>nextToken</code> string. To get the next page of results, run the request
+         * again and specify the string for the <code>nextToken</code> parameter.</p>
+         * <note> <p>Each call to the API is limited to span a duration of seven days. It
+         * is likely that the number of records returned is smaller than the specified
+         * <code>limit</code>. In such cases, you can make another call, using the
+         * <code>nextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
          * API Reference</a></p>
          */
@@ -1055,15 +1553,18 @@ namespace Model
         /**
          * <p>Returns a list of configuration items for the specified resource. The list
          * contains details about each state of the resource during the specified time
-         * interval.</p> <p>The response is paginated. By default, AWS Config returns a
-         * limit of 10 configuration items per page. You can customize this number with the
-         * <code>limit</code> parameter. The response includes a <code>nextToken</code>
-         * string. To get the next page of results, run the request again and specify the
-         * string for the <code>nextToken</code> parameter.</p> <note> <p>Each call to the
-         * API is limited to span a duration of seven days. It is likely that the number of
-         * records returned is smaller than the specified <code>limit</code>. In such
-         * cases, you can make another call, using the <code>nextToken</code>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * interval. If you specified a retention period to retain your
+         * <code>ConfigurationItems</code> between a minimum of 30 days and a maximum of 7
+         * years (2557 days), AWS Config returns the <code>ConfigurationItems</code> for
+         * the specified retention period. </p> <p>The response is paginated. By default,
+         * AWS Config returns a limit of 10 configuration items per page. You can customize
+         * this number with the <code>limit</code> parameter. The response includes a
+         * <code>nextToken</code> string. To get the next page of results, run the request
+         * again and specify the string for the <code>nextToken</code> parameter.</p>
+         * <note> <p>Each call to the API is limited to span a duration of seven days. It
+         * is likely that the number of records returned is smaller than the specified
+         * <code>limit</code>. In such cases, you can make another call, using the
+         * <code>nextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
          * API Reference</a></p>
          *
@@ -1074,15 +1575,18 @@ namespace Model
         /**
          * <p>Returns a list of configuration items for the specified resource. The list
          * contains details about each state of the resource during the specified time
-         * interval.</p> <p>The response is paginated. By default, AWS Config returns a
-         * limit of 10 configuration items per page. You can customize this number with the
-         * <code>limit</code> parameter. The response includes a <code>nextToken</code>
-         * string. To get the next page of results, run the request again and specify the
-         * string for the <code>nextToken</code> parameter.</p> <note> <p>Each call to the
-         * API is limited to span a duration of seven days. It is likely that the number of
-         * records returned is smaller than the specified <code>limit</code>. In such
-         * cases, you can make another call, using the <code>nextToken</code>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * interval. If you specified a retention period to retain your
+         * <code>ConfigurationItems</code> between a minimum of 30 days and a maximum of 7
+         * years (2557 days), AWS Config returns the <code>ConfigurationItems</code> for
+         * the specified retention period. </p> <p>The response is paginated. By default,
+         * AWS Config returns a limit of 10 configuration items per page. You can customize
+         * this number with the <code>limit</code> parameter. The response includes a
+         * <code>nextToken</code> string. To get the next page of results, run the request
+         * again and specify the string for the <code>nextToken</code> parameter.</p>
+         * <note> <p>Each call to the API is limited to span a duration of seven days. It
+         * is likely that the number of records returned is smaller than the specified
+         * <code>limit</code>. In such cases, you can make another call, using the
+         * <code>nextToken</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">AWS
          * API Reference</a></p>
          *
@@ -1097,7 +1601,7 @@ namespace Model
          * that AWS Config has discovered, including those that AWS Config is not currently
          * recording. You can narrow the results to include only resources that have
          * specific resource IDs or a resource name.</p> <note> <p>You can specify either
-         * resource IDs or a resource name but not both in the same request.</p> </note>
+         * resource IDs or a resource name, but not both, in the same request.</p> </note>
          * <p>The response is paginated. By default, AWS Config lists 100 resource
          * identifiers on each page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
@@ -1115,7 +1619,7 @@ namespace Model
          * that AWS Config has discovered, including those that AWS Config is not currently
          * recording. You can narrow the results to include only resources that have
          * specific resource IDs or a resource name.</p> <note> <p>You can specify either
-         * resource IDs or a resource name but not both in the same request.</p> </note>
+         * resource IDs or a resource name, but not both, in the same request.</p> </note>
          * <p>The response is paginated. By default, AWS Config lists 100 resource
          * identifiers on each page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
@@ -1135,7 +1639,7 @@ namespace Model
          * that AWS Config has discovered, including those that AWS Config is not currently
          * recording. You can narrow the results to include only resources that have
          * specific resource IDs or a resource name.</p> <note> <p>You can specify either
-         * resource IDs or a resource name but not both in the same request.</p> </note>
+         * resource IDs or a resource name, but not both, in the same request.</p> </note>
          * <p>The response is paginated. By default, AWS Config lists 100 resource
          * identifiers on each page. You can customize this number with the
          * <code>limit</code> parameter. The response includes a <code>nextToken</code>
@@ -1149,20 +1653,48 @@ namespace Model
         virtual void ListDiscoveredResourcesAsync(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Authorizes the aggregator account and region to collect data from the source
+         * account and region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAggregationAuthorizationOutcome PutAggregationAuthorization(const Model::PutAggregationAuthorizationRequest& request) const;
+
+        /**
+         * <p>Authorizes the aggregator account and region to collect data from the source
+         * account and region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAggregationAuthorizationOutcomeCallable PutAggregationAuthorizationCallable(const Model::PutAggregationAuthorizationRequest& request) const;
+
+        /**
+         * <p>Authorizes the aggregator account and region to collect data from the source
+         * account and region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAggregationAuthorizationAsync(const Model::PutAggregationAuthorizationRequest& request, const PutAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds or updates an AWS Config rule for evaluating whether your AWS resources
          * comply with your desired configurations.</p> <p>You can use this action for
-         * custom Config rules and AWS managed Config rules. A custom Config rule is a rule
-         * that you develop and maintain. An AWS managed Config rule is a customizable,
-         * predefined rule that AWS Config provides.</p> <p>If you are adding a new custom
-         * Config rule, you must first create the AWS Lambda function that the rule invokes
-         * to evaluate your resources. When you use the <code>PutConfigRule</code> action
-         * to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
-         * that AWS Lambda assigns to the function. Specify the ARN for the
-         * <code>SourceIdentifier</code> key. This key is part of the <code>Source</code>
-         * object, which is part of the <code>ConfigRule</code> object. </p> <p>If you are
-         * adding an AWS managed Config rule, specify the rule's identifier for the
-         * <code>SourceIdentifier</code> key. To reference AWS managed Config rule
-         * identifiers, see <a
+         * custom AWS Config rules and AWS managed Config rules. A custom AWS Config rule
+         * is a rule that you develop and maintain. An AWS managed Config rule is a
+         * customizable, predefined rule that AWS Config provides.</p> <p>If you are adding
+         * a new custom AWS Config rule, you must first create the AWS Lambda function that
+         * the rule invokes to evaluate your resources. When you use the
+         * <code>PutConfigRule</code> action to add the rule to AWS Config, you must
+         * specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function.
+         * Specify the ARN for the <code>SourceIdentifier</code> key. This key is part of
+         * the <code>Source</code> object, which is part of the <code>ConfigRule</code>
+         * object. </p> <p>If you are adding an AWS managed Config rule, specify the rule's
+         * identifier for the <code>SourceIdentifier</code> key. To reference AWS managed
+         * Config rule identifiers, see <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
          * AWS Managed Config Rules</a>.</p> <p>For any new rule that you add, specify the
          * <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not
@@ -1172,7 +1704,7 @@ namespace Model
          * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
          * in this request.</p> <p>The maximum number of rules that AWS Config supports is
-         * 50.</p> <p>For more information about requesting a rule limit increase, see <a
+         * 50.</p> <p>For information about requesting a rule limit increase, see <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
          * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p> <p>For more
          * information about developing and using AWS Config rules, see <a
@@ -1187,18 +1719,18 @@ namespace Model
         /**
          * <p>Adds or updates an AWS Config rule for evaluating whether your AWS resources
          * comply with your desired configurations.</p> <p>You can use this action for
-         * custom Config rules and AWS managed Config rules. A custom Config rule is a rule
-         * that you develop and maintain. An AWS managed Config rule is a customizable,
-         * predefined rule that AWS Config provides.</p> <p>If you are adding a new custom
-         * Config rule, you must first create the AWS Lambda function that the rule invokes
-         * to evaluate your resources. When you use the <code>PutConfigRule</code> action
-         * to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
-         * that AWS Lambda assigns to the function. Specify the ARN for the
-         * <code>SourceIdentifier</code> key. This key is part of the <code>Source</code>
-         * object, which is part of the <code>ConfigRule</code> object. </p> <p>If you are
-         * adding an AWS managed Config rule, specify the rule's identifier for the
-         * <code>SourceIdentifier</code> key. To reference AWS managed Config rule
-         * identifiers, see <a
+         * custom AWS Config rules and AWS managed Config rules. A custom AWS Config rule
+         * is a rule that you develop and maintain. An AWS managed Config rule is a
+         * customizable, predefined rule that AWS Config provides.</p> <p>If you are adding
+         * a new custom AWS Config rule, you must first create the AWS Lambda function that
+         * the rule invokes to evaluate your resources. When you use the
+         * <code>PutConfigRule</code> action to add the rule to AWS Config, you must
+         * specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function.
+         * Specify the ARN for the <code>SourceIdentifier</code> key. This key is part of
+         * the <code>Source</code> object, which is part of the <code>ConfigRule</code>
+         * object. </p> <p>If you are adding an AWS managed Config rule, specify the rule's
+         * identifier for the <code>SourceIdentifier</code> key. To reference AWS managed
+         * Config rule identifiers, see <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
          * AWS Managed Config Rules</a>.</p> <p>For any new rule that you add, specify the
          * <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not
@@ -1208,7 +1740,7 @@ namespace Model
          * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
          * in this request.</p> <p>The maximum number of rules that AWS Config supports is
-         * 50.</p> <p>For more information about requesting a rule limit increase, see <a
+         * 50.</p> <p>For information about requesting a rule limit increase, see <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
          * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p> <p>For more
          * information about developing and using AWS Config rules, see <a
@@ -1225,18 +1757,18 @@ namespace Model
         /**
          * <p>Adds or updates an AWS Config rule for evaluating whether your AWS resources
          * comply with your desired configurations.</p> <p>You can use this action for
-         * custom Config rules and AWS managed Config rules. A custom Config rule is a rule
-         * that you develop and maintain. An AWS managed Config rule is a customizable,
-         * predefined rule that AWS Config provides.</p> <p>If you are adding a new custom
-         * Config rule, you must first create the AWS Lambda function that the rule invokes
-         * to evaluate your resources. When you use the <code>PutConfigRule</code> action
-         * to add the rule to AWS Config, you must specify the Amazon Resource Name (ARN)
-         * that AWS Lambda assigns to the function. Specify the ARN for the
-         * <code>SourceIdentifier</code> key. This key is part of the <code>Source</code>
-         * object, which is part of the <code>ConfigRule</code> object. </p> <p>If you are
-         * adding an AWS managed Config rule, specify the rule's identifier for the
-         * <code>SourceIdentifier</code> key. To reference AWS managed Config rule
-         * identifiers, see <a
+         * custom AWS Config rules and AWS managed Config rules. A custom AWS Config rule
+         * is a rule that you develop and maintain. An AWS managed Config rule is a
+         * customizable, predefined rule that AWS Config provides.</p> <p>If you are adding
+         * a new custom AWS Config rule, you must first create the AWS Lambda function that
+         * the rule invokes to evaluate your resources. When you use the
+         * <code>PutConfigRule</code> action to add the rule to AWS Config, you must
+         * specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function.
+         * Specify the ARN for the <code>SourceIdentifier</code> key. This key is part of
+         * the <code>Source</code> object, which is part of the <code>ConfigRule</code>
+         * object. </p> <p>If you are adding an AWS managed Config rule, specify the rule's
+         * identifier for the <code>SourceIdentifier</code> key. To reference AWS managed
+         * Config rule identifiers, see <a
          * href="http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
          * AWS Managed Config Rules</a>.</p> <p>For any new rule that you add, specify the
          * <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not
@@ -1246,7 +1778,7 @@ namespace Model
          * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
          * in this request.</p> <p>The maximum number of rules that AWS Config supports is
-         * 50.</p> <p>For more information about requesting a rule limit increase, see <a
+         * 50.</p> <p>For information about requesting a rule limit increase, see <a
          * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
          * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p> <p>For more
          * information about developing and using AWS Config rules, see <a
@@ -1261,12 +1793,58 @@ namespace Model
         virtual void PutConfigRuleAsync(const Model::PutConfigRuleRequest& request, const PutConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates and updates the configuration aggregator with the selected source
+         * accounts and regions. The source account can be individual account(s) or an
+         * organization.</p> <note> <p>AWS Config should be enabled in source accounts and
+         * regions you want to aggregate.</p> <p>If your source type is an organization,
+         * you must be signed in to the master account and all features must be enabled in
+         * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
+         * enable integration between AWS Config and AWS Organizations. </p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutConfigurationAggregatorOutcome PutConfigurationAggregator(const Model::PutConfigurationAggregatorRequest& request) const;
+
+        /**
+         * <p>Creates and updates the configuration aggregator with the selected source
+         * accounts and regions. The source account can be individual account(s) or an
+         * organization.</p> <note> <p>AWS Config should be enabled in source accounts and
+         * regions you want to aggregate.</p> <p>If your source type is an organization,
+         * you must be signed in to the master account and all features must be enabled in
+         * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
+         * enable integration between AWS Config and AWS Organizations. </p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutConfigurationAggregatorOutcomeCallable PutConfigurationAggregatorCallable(const Model::PutConfigurationAggregatorRequest& request) const;
+
+        /**
+         * <p>Creates and updates the configuration aggregator with the selected source
+         * accounts and regions. The source account can be individual account(s) or an
+         * organization.</p> <note> <p>AWS Config should be enabled in source accounts and
+         * regions you want to aggregate.</p> <p>If your source type is an organization,
+         * you must be signed in to the master account and all features must be enabled in
+         * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
+         * enable integration between AWS Config and AWS Organizations. </p>
+         * </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutConfigurationAggregatorAsync(const Model::PutConfigurationAggregatorRequest& request, const PutConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new configuration recorder to record the selected resource
          * configurations.</p> <p>You can use this action to change the role
-         * <code>roleARN</code> and/or the <code>recordingGroup</code> of an existing
-         * recorder. To change the role, call the action on the existing configuration
-         * recorder and specify a role.</p> <note> <p>Currently, you can specify only one
-         * configuration recorder per region in your account.</p> <p>If
+         * <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder.
+         * To change the role, call the action on the existing configuration recorder and
+         * specify a role.</p> <note> <p>Currently, you can specify only one configuration
+         * recorder per region in your account.</p> <p>If
          * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
          * parameter specified, the default is to record all supported resource types.</p>
          * </note><p><h3>See Also:</h3>   <a
@@ -1278,10 +1856,10 @@ namespace Model
         /**
          * <p>Creates a new configuration recorder to record the selected resource
          * configurations.</p> <p>You can use this action to change the role
-         * <code>roleARN</code> and/or the <code>recordingGroup</code> of an existing
-         * recorder. To change the role, call the action on the existing configuration
-         * recorder and specify a role.</p> <note> <p>Currently, you can specify only one
-         * configuration recorder per region in your account.</p> <p>If
+         * <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder.
+         * To change the role, call the action on the existing configuration recorder and
+         * specify a role.</p> <note> <p>Currently, you can specify only one configuration
+         * recorder per region in your account.</p> <p>If
          * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
          * parameter specified, the default is to record all supported resource types.</p>
          * </note><p><h3>See Also:</h3>   <a
@@ -1295,10 +1873,10 @@ namespace Model
         /**
          * <p>Creates a new configuration recorder to record the selected resource
          * configurations.</p> <p>You can use this action to change the role
-         * <code>roleARN</code> and/or the <code>recordingGroup</code> of an existing
-         * recorder. To change the role, call the action on the existing configuration
-         * recorder and specify a role.</p> <note> <p>Currently, you can specify only one
-         * configuration recorder per region in your account.</p> <p>If
+         * <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder.
+         * To change the role, call the action on the existing configuration recorder and
+         * specify a role.</p> <note> <p>Currently, you can specify only one configuration
+         * recorder per region in your account.</p> <p>If
          * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
          * parameter specified, the default is to record all supported resource types.</p>
          * </note><p><h3>See Also:</h3>   <a
@@ -1393,22 +1971,65 @@ namespace Model
         virtual void PutEvaluationsAsync(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Runs an on-demand evaluation for the specified Config rules against the last
-         * known configuration state of the resources. Use
-         * <code>StartConfigRulesEvaluation</code> when you want to test a rule that you
+         * <p>Creates and updates the retention configuration with details about retention
+         * period (number of days) that AWS Config stores your historical information. The
+         * API creates the <code>RetentionConfiguration</code> object and names the object
+         * as <b>default</b>. When you have a <code>RetentionConfiguration</code> object
+         * named <b>default</b>, calling the API modifies the default object. </p> <note>
+         * <p>Currently, AWS Config supports only one retention configuration per region in
+         * your account.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutRetentionConfigurationOutcome PutRetentionConfiguration(const Model::PutRetentionConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates and updates the retention configuration with details about retention
+         * period (number of days) that AWS Config stores your historical information. The
+         * API creates the <code>RetentionConfiguration</code> object and names the object
+         * as <b>default</b>. When you have a <code>RetentionConfiguration</code> object
+         * named <b>default</b>, calling the API modifies the default object. </p> <note>
+         * <p>Currently, AWS Config supports only one retention configuration per region in
+         * your account.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutRetentionConfigurationOutcomeCallable PutRetentionConfigurationCallable(const Model::PutRetentionConfigurationRequest& request) const;
+
+        /**
+         * <p>Creates and updates the retention configuration with details about retention
+         * period (number of days) that AWS Config stores your historical information. The
+         * API creates the <code>RetentionConfiguration</code> object and names the object
+         * as <b>default</b>. When you have a <code>RetentionConfiguration</code> object
+         * named <b>default</b>, calling the API modifies the default object. </p> <note>
+         * <p>Currently, AWS Config supports only one retention configuration per region in
+         * your account.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutRetentionConfigurationAsync(const Model::PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Runs an on-demand evaluation for the specified AWS Config rules against the
+         * last known configuration state of the resources. Use
+         * <code>StartConfigRulesEvaluation</code> when you want to test that a rule you
          * updated is working as expected. <code>StartConfigRulesEvaluation</code> does not
-         * re-record the latest configuration state for your resources; it re-runs an
+         * re-record the latest configuration state for your resources. It re-runs an
          * evaluation against the last known state of your resources. </p> <p>You can
-         * specify up to 25 Config rules per request. </p> <p>An existing
-         * <code>StartConfigRulesEvaluation</code> call must complete for the specified
-         * rules before you can call the API again. If you chose to have AWS Config stream
-         * to an Amazon SNS topic, you will receive a
+         * specify up to 25 AWS Config rules per request. </p> <p>An existing
+         * <code>StartConfigRulesEvaluation</code> call for the specified rules must
+         * complete before you can call the API again. If you chose to have AWS Config
+         * stream to an Amazon SNS topic, you will receive a
          * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
          * starts.</p> <note> <p>You don't need to call the
          * <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule.
-         * When you create a new rule, AWS Config automatically evaluates your resources
-         * against the rule. </p> </note> <p>The <code>StartConfigRulesEvaluation</code>
-         * API is useful if you want to run on-demand evaluations, such as the following
+         * When you create a rule, AWS Config evaluates your resources against the rule
+         * automatically. </p> </note> <p>The <code>StartConfigRulesEvaluation</code> API
+         * is useful if you want to run on-demand evaluations, such as the following
          * example:</p> <ol> <li> <p>You have a custom rule that evaluates your IAM
          * resources every 24 hours.</p> </li> <li> <p>You update your Lambda function to
          * add additional conditions to your rule.</p> </li> <li> <p>Instead of waiting for
@@ -1423,22 +2044,22 @@ namespace Model
         virtual Model::StartConfigRulesEvaluationOutcome StartConfigRulesEvaluation(const Model::StartConfigRulesEvaluationRequest& request) const;
 
         /**
-         * <p>Runs an on-demand evaluation for the specified Config rules against the last
-         * known configuration state of the resources. Use
-         * <code>StartConfigRulesEvaluation</code> when you want to test a rule that you
+         * <p>Runs an on-demand evaluation for the specified AWS Config rules against the
+         * last known configuration state of the resources. Use
+         * <code>StartConfigRulesEvaluation</code> when you want to test that a rule you
          * updated is working as expected. <code>StartConfigRulesEvaluation</code> does not
-         * re-record the latest configuration state for your resources; it re-runs an
+         * re-record the latest configuration state for your resources. It re-runs an
          * evaluation against the last known state of your resources. </p> <p>You can
-         * specify up to 25 Config rules per request. </p> <p>An existing
-         * <code>StartConfigRulesEvaluation</code> call must complete for the specified
-         * rules before you can call the API again. If you chose to have AWS Config stream
-         * to an Amazon SNS topic, you will receive a
+         * specify up to 25 AWS Config rules per request. </p> <p>An existing
+         * <code>StartConfigRulesEvaluation</code> call for the specified rules must
+         * complete before you can call the API again. If you chose to have AWS Config
+         * stream to an Amazon SNS topic, you will receive a
          * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
          * starts.</p> <note> <p>You don't need to call the
          * <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule.
-         * When you create a new rule, AWS Config automatically evaluates your resources
-         * against the rule. </p> </note> <p>The <code>StartConfigRulesEvaluation</code>
-         * API is useful if you want to run on-demand evaluations, such as the following
+         * When you create a rule, AWS Config evaluates your resources against the rule
+         * automatically. </p> </note> <p>The <code>StartConfigRulesEvaluation</code> API
+         * is useful if you want to run on-demand evaluations, such as the following
          * example:</p> <ol> <li> <p>You have a custom rule that evaluates your IAM
          * resources every 24 hours.</p> </li> <li> <p>You update your Lambda function to
          * add additional conditions to your rule.</p> </li> <li> <p>Instead of waiting for
@@ -1455,22 +2076,22 @@ namespace Model
         virtual Model::StartConfigRulesEvaluationOutcomeCallable StartConfigRulesEvaluationCallable(const Model::StartConfigRulesEvaluationRequest& request) const;
 
         /**
-         * <p>Runs an on-demand evaluation for the specified Config rules against the last
-         * known configuration state of the resources. Use
-         * <code>StartConfigRulesEvaluation</code> when you want to test a rule that you
+         * <p>Runs an on-demand evaluation for the specified AWS Config rules against the
+         * last known configuration state of the resources. Use
+         * <code>StartConfigRulesEvaluation</code> when you want to test that a rule you
          * updated is working as expected. <code>StartConfigRulesEvaluation</code> does not
-         * re-record the latest configuration state for your resources; it re-runs an
+         * re-record the latest configuration state for your resources. It re-runs an
          * evaluation against the last known state of your resources. </p> <p>You can
-         * specify up to 25 Config rules per request. </p> <p>An existing
-         * <code>StartConfigRulesEvaluation</code> call must complete for the specified
-         * rules before you can call the API again. If you chose to have AWS Config stream
-         * to an Amazon SNS topic, you will receive a
+         * specify up to 25 AWS Config rules per request. </p> <p>An existing
+         * <code>StartConfigRulesEvaluation</code> call for the specified rules must
+         * complete before you can call the API again. If you chose to have AWS Config
+         * stream to an Amazon SNS topic, you will receive a
          * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation
          * starts.</p> <note> <p>You don't need to call the
          * <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule.
-         * When you create a new rule, AWS Config automatically evaluates your resources
-         * against the rule. </p> </note> <p>The <code>StartConfigRulesEvaluation</code>
-         * API is useful if you want to run on-demand evaluations, such as the following
+         * When you create a rule, AWS Config evaluates your resources against the rule
+         * automatically. </p> </note> <p>The <code>StartConfigRulesEvaluation</code> API
+         * is useful if you want to run on-demand evaluations, such as the following
          * example:</p> <ol> <li> <p>You have a custom rule that evaluates your IAM
          * resources every 24 hours.</p> </li> <li> <p>You update your Lambda function to
          * add additional conditions to your rule.</p> </li> <li> <p>Instead of waiting for
@@ -1553,19 +2174,32 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void BatchGetResourceConfigAsyncHelper(const Model::BatchGetResourceConfigRequest& request, const BatchGetResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAggregationAuthorizationAsyncHelper(const Model::DeleteAggregationAuthorizationRequest& request, const DeleteAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigRuleAsyncHelper(const Model::DeleteConfigRuleRequest& request, const DeleteConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteConfigurationAggregatorAsyncHelper(const Model::DeleteConfigurationAggregatorRequest& request, const DeleteConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationRecorderAsyncHelper(const Model::DeleteConfigurationRecorderRequest& request, const DeleteConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDeliveryChannelAsyncHelper(const Model::DeleteDeliveryChannelRequest& request, const DeleteDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEvaluationResultsAsyncHelper(const Model::DeleteEvaluationResultsRequest& request, const DeleteEvaluationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePendingAggregationRequestAsyncHelper(const Model::DeletePendingAggregationRequestRequest& request, const DeletePendingAggregationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRetentionConfigurationAsyncHelper(const Model::DeleteRetentionConfigurationRequest& request, const DeleteRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeliverConfigSnapshotAsyncHelper(const Model::DeliverConfigSnapshotRequest& request, const DeliverConfigSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAggregateComplianceByConfigRulesAsyncHelper(const Model::DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAggregationAuthorizationsAsyncHelper(const Model::DescribeAggregationAuthorizationsRequest& request, const DescribeAggregationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeComplianceByConfigRuleAsyncHelper(const Model::DescribeComplianceByConfigRuleRequest& request, const DescribeComplianceByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeComplianceByResourceAsyncHelper(const Model::DescribeComplianceByResourceRequest& request, const DescribeComplianceByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConfigRuleEvaluationStatusAsyncHelper(const Model::DescribeConfigRuleEvaluationStatusRequest& request, const DescribeConfigRuleEvaluationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConfigRulesAsyncHelper(const Model::DescribeConfigRulesRequest& request, const DescribeConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeConfigurationAggregatorSourcesStatusAsyncHelper(const Model::DescribeConfigurationAggregatorSourcesStatusRequest& request, const DescribeConfigurationAggregatorSourcesStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeConfigurationAggregatorsAsyncHelper(const Model::DescribeConfigurationAggregatorsRequest& request, const DescribeConfigurationAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConfigurationRecorderStatusAsyncHelper(const Model::DescribeConfigurationRecorderStatusRequest& request, const DescribeConfigurationRecorderStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConfigurationRecordersAsyncHelper(const Model::DescribeConfigurationRecordersRequest& request, const DescribeConfigurationRecordersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDeliveryChannelStatusAsyncHelper(const Model::DescribeDeliveryChannelStatusRequest& request, const DescribeDeliveryChannelStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDeliveryChannelsAsyncHelper(const Model::DescribeDeliveryChannelsRequest& request, const DescribeDeliveryChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribePendingAggregationRequestsAsyncHelper(const Model::DescribePendingAggregationRequestsRequest& request, const DescribePendingAggregationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeRetentionConfigurationsAsyncHelper(const Model::DescribeRetentionConfigurationsRequest& request, const DescribeRetentionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAggregateComplianceDetailsByConfigRuleAsyncHelper(const Model::GetAggregateComplianceDetailsByConfigRuleRequest& request, const GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAggregateConfigRuleComplianceSummaryAsyncHelper(const Model::GetAggregateConfigRuleComplianceSummaryRequest& request, const GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComplianceDetailsByConfigRuleAsyncHelper(const Model::GetComplianceDetailsByConfigRuleRequest& request, const GetComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComplianceDetailsByResourceAsyncHelper(const Model::GetComplianceDetailsByResourceRequest& request, const GetComplianceDetailsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComplianceSummaryByConfigRuleAsyncHelper(const GetComplianceSummaryByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1573,10 +2207,13 @@ namespace Model
         void GetDiscoveredResourceCountsAsyncHelper(const Model::GetDiscoveredResourceCountsRequest& request, const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceConfigHistoryAsyncHelper(const Model::GetResourceConfigHistoryRequest& request, const GetResourceConfigHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDiscoveredResourcesAsyncHelper(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAggregationAuthorizationAsyncHelper(const Model::PutAggregationAuthorizationRequest& request, const PutAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutConfigRuleAsyncHelper(const Model::PutConfigRuleRequest& request, const PutConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutConfigurationAggregatorAsyncHelper(const Model::PutConfigurationAggregatorRequest& request, const PutConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutConfigurationRecorderAsyncHelper(const Model::PutConfigurationRecorderRequest& request, const PutConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDeliveryChannelAsyncHelper(const Model::PutDeliveryChannelRequest& request, const PutDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEvaluationsAsyncHelper(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutRetentionConfigurationAsyncHelper(const Model::PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartConfigRulesEvaluationAsyncHelper(const Model::StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartConfigurationRecorderAsyncHelper(const Model::StartConfigurationRecorderRequest& request, const StartConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopConfigurationRecorderAsyncHelper(const Model::StopConfigurationRecorderRequest& request, const StopConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

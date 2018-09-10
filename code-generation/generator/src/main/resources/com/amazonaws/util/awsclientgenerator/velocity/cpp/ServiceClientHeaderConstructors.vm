@@ -27,6 +27,15 @@
         ${className}(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration()${signPayloads}${virtualAddressing});
 
+#if($metadata.standalone)
+       /**
+        * Initializes client to use specified signer with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
+            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration()${signPayloads}${virtualAddressing});
+
+#end
         virtual ~${className}();
 
-        inline virtual const char* GetServiceClientName() const override { return "${metadata.signingName}"; }
+        inline virtual const char* GetServiceClientName() const override { return "${metadata.serviceId}"; }

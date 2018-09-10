@@ -34,14 +34,14 @@ ServiceAccountCredentials::ServiceAccountCredentials() :
 {
 }
 
-ServiceAccountCredentials::ServiceAccountCredentials(const JsonValue& jsonValue) : 
+ServiceAccountCredentials::ServiceAccountCredentials(JsonView jsonValue) : 
     m_accountNameHasBeenSet(false),
     m_accountPasswordHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ServiceAccountCredentials& ServiceAccountCredentials::operator =(const JsonValue& jsonValue)
+ServiceAccountCredentials& ServiceAccountCredentials::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AccountName"))
   {

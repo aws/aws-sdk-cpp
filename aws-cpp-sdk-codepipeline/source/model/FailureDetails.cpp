@@ -36,7 +36,7 @@ FailureDetails::FailureDetails() :
 {
 }
 
-FailureDetails::FailureDetails(const JsonValue& jsonValue) : 
+FailureDetails::FailureDetails(JsonView jsonValue) : 
     m_type(FailureType::NOT_SET),
     m_typeHasBeenSet(false),
     m_messageHasBeenSet(false),
@@ -45,7 +45,7 @@ FailureDetails::FailureDetails(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FailureDetails& FailureDetails::operator =(const JsonValue& jsonValue)
+FailureDetails& FailureDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

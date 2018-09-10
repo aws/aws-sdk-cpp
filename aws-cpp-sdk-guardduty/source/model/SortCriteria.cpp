@@ -35,7 +35,7 @@ SortCriteria::SortCriteria() :
 {
 }
 
-SortCriteria::SortCriteria(const JsonValue& jsonValue) : 
+SortCriteria::SortCriteria(JsonView jsonValue) : 
     m_attributeNameHasBeenSet(false),
     m_orderBy(OrderBy::NOT_SET),
     m_orderByHasBeenSet(false)
@@ -43,7 +43,7 @@ SortCriteria::SortCriteria(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SortCriteria& SortCriteria::operator =(const JsonValue& jsonValue)
+SortCriteria& SortCriteria::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("attributeName"))
   {

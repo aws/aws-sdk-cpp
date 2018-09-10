@@ -34,18 +34,18 @@ PartitionError::PartitionError() :
 {
 }
 
-PartitionError::PartitionError(const JsonValue& jsonValue) : 
+PartitionError::PartitionError(JsonView jsonValue) : 
     m_partitionValuesHasBeenSet(false),
     m_errorDetailHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PartitionError& PartitionError::operator =(const JsonValue& jsonValue)
+PartitionError& PartitionError::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PartitionValues"))
   {
-    Array<JsonValue> partitionValuesJsonList = jsonValue.GetArray("PartitionValues");
+    Array<JsonView> partitionValuesJsonList = jsonValue.GetArray("PartitionValues");
     for(unsigned partitionValuesIndex = 0; partitionValuesIndex < partitionValuesJsonList.GetLength(); ++partitionValuesIndex)
     {
       m_partitionValues.push_back(partitionValuesJsonList[partitionValuesIndex].AsString());

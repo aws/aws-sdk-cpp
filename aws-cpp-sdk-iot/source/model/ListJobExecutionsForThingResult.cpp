@@ -37,10 +37,10 @@ ListJobExecutionsForThingResult::ListJobExecutionsForThingResult(const Aws::Amaz
 
 ListJobExecutionsForThingResult& ListJobExecutionsForThingResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("executionSummaries"))
   {
-    Array<JsonValue> executionSummariesJsonList = jsonValue.GetArray("executionSummaries");
+    Array<JsonView> executionSummariesJsonList = jsonValue.GetArray("executionSummaries");
     for(unsigned executionSummariesIndex = 0; executionSummariesIndex < executionSummariesJsonList.GetLength(); ++executionSummariesIndex)
     {
       m_executionSummaries.push_back(executionSummariesJsonList[executionSummariesIndex].AsObject());

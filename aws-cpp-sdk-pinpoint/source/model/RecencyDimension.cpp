@@ -36,7 +36,7 @@ RecencyDimension::RecencyDimension() :
 {
 }
 
-RecencyDimension::RecencyDimension(const JsonValue& jsonValue) : 
+RecencyDimension::RecencyDimension(JsonView jsonValue) : 
     m_duration(Duration::NOT_SET),
     m_durationHasBeenSet(false),
     m_recencyType(RecencyType::NOT_SET),
@@ -45,7 +45,7 @@ RecencyDimension::RecencyDimension(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RecencyDimension& RecencyDimension::operator =(const JsonValue& jsonValue)
+RecencyDimension& RecencyDimension::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Duration"))
   {

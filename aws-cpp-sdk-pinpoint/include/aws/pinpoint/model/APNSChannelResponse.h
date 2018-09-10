@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -42,79 +43,79 @@ namespace Model
   {
   public:
     APNSChannelResponse();
-    APNSChannelResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    APNSChannelResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    APNSChannelResponse(Aws::Utils::Json::JsonView jsonValue);
+    APNSChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * The ID of the application to which the channel applies.
+     * The ID of the application that the channel applies to.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The ID of the application to which the channel applies.
+     * The ID of the application that the channel applies to.
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The ID of the application to which the channel applies.
+     * The ID of the application that the channel applies to.
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The ID of the application to which the channel applies.
+     * The ID of the application that the channel applies to.
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The ID of the application to which the channel applies.
+     * The ID of the application that the channel applies to.
      */
     inline APNSChannelResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The ID of the application to which the channel applies.
+     * The ID of the application that the channel applies to.
      */
     inline APNSChannelResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The ID of the application to which the channel applies.
+     * The ID of the application that the channel applies to.
      */
     inline APNSChannelResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline APNSChannelResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline APNSChannelResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
-     * When was this segment created
+     * The date and time when this channel was created.
      */
     inline APNSChannelResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
@@ -172,209 +173,219 @@ namespace Model
 
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline APNSChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * Indicates whether the channel is configured with a key for APNs token
+     * authentication. Provide a token key by setting the TokenKey attribute.
      */
     inline bool GetHasTokenKey() const{ return m_hasTokenKey; }
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * Indicates whether the channel is configured with a key for APNs token
+     * authentication. Provide a token key by setting the TokenKey attribute.
      */
     inline void SetHasTokenKey(bool value) { m_hasTokenKeyHasBeenSet = true; m_hasTokenKey = value; }
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * Indicates whether the channel is configured with a key for APNs token
+     * authentication. Provide a token key by setting the TokenKey attribute.
      */
     inline APNSChannelResponse& WithHasTokenKey(bool value) { SetHasTokenKey(value); return *this;}
 
 
     /**
-     * Channel ID. Not used. Present only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * Channel ID. Not used. Present only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * Channel ID. Not used. Present only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * Channel ID. Not used. Present only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * Channel ID. Not used. Present only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline APNSChannelResponse& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * Channel ID. Not used. Present only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline APNSChannelResponse& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * Channel ID. Not used. Present only for backwards compatibility.
+     * (Deprecated) An identifier for the channel. Retained for backwards
+     * compatibility.
      */
     inline APNSChannelResponse& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * Is this channel archived
+     * Indicates whether or not the channel is archived.
      */
     inline bool GetIsArchived() const{ return m_isArchived; }
 
     /**
-     * Is this channel archived
+     * Indicates whether or not the channel is archived.
      */
     inline void SetIsArchived(bool value) { m_isArchivedHasBeenSet = true; m_isArchived = value; }
 
     /**
-     * Is this channel archived
+     * Indicates whether or not the channel is archived.
      */
     inline APNSChannelResponse& WithIsArchived(bool value) { SetIsArchived(value); return *this;}
 
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline const Aws::String& GetLastModifiedBy() const{ return m_lastModifiedBy; }
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline void SetLastModifiedBy(const Aws::String& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = value; }
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline void SetLastModifiedBy(Aws::String&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::move(value); }
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline void SetLastModifiedBy(const char* value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy.assign(value); }
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline APNSChannelResponse& WithLastModifiedBy(const Aws::String& value) { SetLastModifiedBy(value); return *this;}
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline APNSChannelResponse& WithLastModifiedBy(Aws::String&& value) { SetLastModifiedBy(std::move(value)); return *this;}
 
     /**
-     * Who last updated this entry
+     * The user who last updated this channel.
      */
     inline APNSChannelResponse& WithLastModifiedBy(const char* value) { SetLastModifiedBy(value); return *this;}
 
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline void SetLastModifiedDate(Aws::String&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline APNSChannelResponse& WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline APNSChannelResponse& WithLastModifiedDate(Aws::String&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
     /**
-     * Last date this was updated
+     * The date and time when this channel was last modified.
      */
     inline APNSChannelResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
 
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline APNSChannelResponse& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline APNSChannelResponse& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
-     * The platform type. Will be APNS.
+     * The platform type. For this channel, the value is always "ADM."
      */
     inline APNSChannelResponse& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 
 
     /**
-     * Version of channel
+     * The channel version.
      */
     inline int GetVersion() const{ return m_version; }
 
     /**
-     * Version of channel
+     * The channel version.
      */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * Version of channel
+     * The channel version.
      */
     inline APNSChannelResponse& WithVersion(int value) { SetVersion(value); return *this;}
 

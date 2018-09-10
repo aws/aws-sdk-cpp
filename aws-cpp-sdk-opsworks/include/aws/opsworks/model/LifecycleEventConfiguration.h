@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     LifecycleEventConfiguration();
-    LifecycleEventConfiguration(const Aws::Utils::Json::JsonValue& jsonValue);
-    LifecycleEventConfiguration& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LifecycleEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
+    LifecycleEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

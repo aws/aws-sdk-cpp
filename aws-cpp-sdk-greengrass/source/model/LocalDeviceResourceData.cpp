@@ -34,14 +34,14 @@ LocalDeviceResourceData::LocalDeviceResourceData() :
 {
 }
 
-LocalDeviceResourceData::LocalDeviceResourceData(const JsonValue& jsonValue) : 
+LocalDeviceResourceData::LocalDeviceResourceData(JsonView jsonValue) : 
     m_groupOwnerSettingHasBeenSet(false),
     m_sourcePathHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-LocalDeviceResourceData& LocalDeviceResourceData::operator =(const JsonValue& jsonValue)
+LocalDeviceResourceData& LocalDeviceResourceData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GroupOwnerSetting"))
   {

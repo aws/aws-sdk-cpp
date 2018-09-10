@@ -43,25 +43,39 @@ namespace Model
     RegisterThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>.</p>
+     */
     inline const Aws::String& GetCertificatePem() const{ return m_certificatePem; }
 
-    
+    /**
+     * <p>.</p>
+     */
     inline void SetCertificatePem(const Aws::String& value) { m_certificatePem = value; }
 
-    
+    /**
+     * <p>.</p>
+     */
     inline void SetCertificatePem(Aws::String&& value) { m_certificatePem = std::move(value); }
 
-    
+    /**
+     * <p>.</p>
+     */
     inline void SetCertificatePem(const char* value) { m_certificatePem.assign(value); }
 
-    
+    /**
+     * <p>.</p>
+     */
     inline RegisterThingResult& WithCertificatePem(const Aws::String& value) { SetCertificatePem(value); return *this;}
 
-    
+    /**
+     * <p>.</p>
+     */
     inline RegisterThingResult& WithCertificatePem(Aws::String&& value) { SetCertificatePem(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>.</p>
+     */
     inline RegisterThingResult& WithCertificatePem(const char* value) { SetCertificatePem(value); return *this;}
 
 

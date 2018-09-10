@@ -37,7 +37,7 @@ TriggerUpdate::TriggerUpdate() :
 {
 }
 
-TriggerUpdate::TriggerUpdate(const JsonValue& jsonValue) : 
+TriggerUpdate::TriggerUpdate(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_scheduleHasBeenSet(false),
@@ -47,7 +47,7 @@ TriggerUpdate::TriggerUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TriggerUpdate& TriggerUpdate::operator =(const JsonValue& jsonValue)
+TriggerUpdate& TriggerUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -72,7 +72,7 @@ TriggerUpdate& TriggerUpdate::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Actions"))
   {
-    Array<JsonValue> actionsJsonList = jsonValue.GetArray("Actions");
+    Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());

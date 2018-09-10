@@ -36,7 +36,7 @@ SMSChannelRequest::SMSChannelRequest() :
 {
 }
 
-SMSChannelRequest::SMSChannelRequest(const JsonValue& jsonValue) : 
+SMSChannelRequest::SMSChannelRequest(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_senderIdHasBeenSet(false),
@@ -45,7 +45,7 @@ SMSChannelRequest::SMSChannelRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SMSChannelRequest& SMSChannelRequest::operator =(const JsonValue& jsonValue)
+SMSChannelRequest& SMSChannelRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Enabled"))
   {

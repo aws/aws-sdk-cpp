@@ -37,7 +37,7 @@ UpdateGroupResult::UpdateGroupResult(const Aws::AmazonWebServiceResult<JsonValue
 
 UpdateGroupResult& UpdateGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Group"))
   {
     m_group = jsonValue.GetObject("Group");

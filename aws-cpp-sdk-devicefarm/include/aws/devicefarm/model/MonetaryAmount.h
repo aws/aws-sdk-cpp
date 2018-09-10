@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DeviceFarm
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     MonetaryAmount();
-    MonetaryAmount(const Aws::Utils::Json::JsonValue& jsonValue);
-    MonetaryAmount& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MonetaryAmount(Aws::Utils::Json::JsonView jsonValue);
+    MonetaryAmount& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

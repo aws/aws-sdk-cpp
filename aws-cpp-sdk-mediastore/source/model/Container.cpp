@@ -38,7 +38,7 @@ Container::Container() :
 {
 }
 
-Container::Container(const JsonValue& jsonValue) : 
+Container::Container(JsonView jsonValue) : 
     m_endpointHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_aRNHasBeenSet(false),
@@ -49,7 +49,7 @@ Container::Container(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Container& Container::operator =(const JsonValue& jsonValue)
+Container& Container::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Endpoint"))
   {

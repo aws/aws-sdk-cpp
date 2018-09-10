@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     Preset();
-    Preset(const Aws::Utils::Json::JsonValue& jsonValue);
-    Preset& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Preset(Aws::Utils::Json::JsonView jsonValue);
+    Preset& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -264,31 +265,31 @@ namespace Model
 
 
     /**
-     * A preset can be of two types: system or custom. System or built-in preset can’t
+     * A preset can be of two types: system or custom. System or built-in preset can't
      * be modified or deleted by the user.
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
-     * A preset can be of two types: system or custom. System or built-in preset can’t
+     * A preset can be of two types: system or custom. System or built-in preset can't
      * be modified or deleted by the user.
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * A preset can be of two types: system or custom. System or built-in preset can’t
+     * A preset can be of two types: system or custom. System or built-in preset can't
      * be modified or deleted by the user.
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * A preset can be of two types: system or custom. System or built-in preset can’t
+     * A preset can be of two types: system or custom. System or built-in preset can't
      * be modified or deleted by the user.
      */
     inline Preset& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
-     * A preset can be of two types: system or custom. System or built-in preset can’t
+     * A preset can be of two types: system or custom. System or built-in preset can't
      * be modified or deleted by the user.
      */
     inline Preset& WithType(Type&& value) { SetType(std::move(value)); return *this;}

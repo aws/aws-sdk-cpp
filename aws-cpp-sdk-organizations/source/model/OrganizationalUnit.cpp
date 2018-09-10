@@ -35,7 +35,7 @@ OrganizationalUnit::OrganizationalUnit() :
 {
 }
 
-OrganizationalUnit::OrganizationalUnit(const JsonValue& jsonValue) : 
+OrganizationalUnit::OrganizationalUnit(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false)
@@ -43,7 +43,7 @@ OrganizationalUnit::OrganizationalUnit(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OrganizationalUnit& OrganizationalUnit::operator =(const JsonValue& jsonValue)
+OrganizationalUnit& OrganizationalUnit::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

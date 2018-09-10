@@ -30,7 +30,9 @@ StartTranscriptionJobRequest::StartTranscriptionJobRequest() :
     m_mediaSampleRateHertzHasBeenSet(false),
     m_mediaFormat(MediaFormat::NOT_SET),
     m_mediaFormatHasBeenSet(false),
-    m_mediaHasBeenSet(false)
+    m_mediaHasBeenSet(false),
+    m_outputBucketNameHasBeenSet(false),
+    m_settingsHasBeenSet(false)
 {
 }
 
@@ -66,7 +68,19 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_outputBucketNameHasBeenSet)
+  {
+   payload.WithString("OutputBucketName", m_outputBucketName);
+
+  }
+
+  if(m_settingsHasBeenSet)
+  {
+   payload.WithObject("Settings", m_settings.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartTranscriptionJobRequest::GetRequestSpecificHeaders() const

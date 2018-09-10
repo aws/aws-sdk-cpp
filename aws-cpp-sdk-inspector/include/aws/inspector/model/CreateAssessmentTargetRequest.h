@@ -89,43 +89,50 @@ namespace Model
 
     /**
      * <p>The ARN that specifies the resource group that is used to create the
-     * assessment target.</p>
+     * assessment target. If resourceGroupArn is not specified, all EC2 instances in
+     * the current AWS account and region are included in the assessment target.</p>
      */
     inline const Aws::String& GetResourceGroupArn() const{ return m_resourceGroupArn; }
 
     /**
      * <p>The ARN that specifies the resource group that is used to create the
-     * assessment target.</p>
+     * assessment target. If resourceGroupArn is not specified, all EC2 instances in
+     * the current AWS account and region are included in the assessment target.</p>
      */
     inline void SetResourceGroupArn(const Aws::String& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = value; }
 
     /**
      * <p>The ARN that specifies the resource group that is used to create the
-     * assessment target.</p>
+     * assessment target. If resourceGroupArn is not specified, all EC2 instances in
+     * the current AWS account and region are included in the assessment target.</p>
      */
     inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = std::move(value); }
 
     /**
      * <p>The ARN that specifies the resource group that is used to create the
-     * assessment target.</p>
+     * assessment target. If resourceGroupArn is not specified, all EC2 instances in
+     * the current AWS account and region are included in the assessment target.</p>
      */
     inline void SetResourceGroupArn(const char* value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn.assign(value); }
 
     /**
      * <p>The ARN that specifies the resource group that is used to create the
-     * assessment target.</p>
+     * assessment target. If resourceGroupArn is not specified, all EC2 instances in
+     * the current AWS account and region are included in the assessment target.</p>
      */
     inline CreateAssessmentTargetRequest& WithResourceGroupArn(const Aws::String& value) { SetResourceGroupArn(value); return *this;}
 
     /**
      * <p>The ARN that specifies the resource group that is used to create the
-     * assessment target.</p>
+     * assessment target. If resourceGroupArn is not specified, all EC2 instances in
+     * the current AWS account and region are included in the assessment target.</p>
      */
     inline CreateAssessmentTargetRequest& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN that specifies the resource group that is used to create the
-     * assessment target.</p>
+     * assessment target. If resourceGroupArn is not specified, all EC2 instances in
+     * the current AWS account and region are included in the assessment target.</p>
      */
     inline CreateAssessmentTargetRequest& WithResourceGroupArn(const char* value) { SetResourceGroupArn(value); return *this;}
 

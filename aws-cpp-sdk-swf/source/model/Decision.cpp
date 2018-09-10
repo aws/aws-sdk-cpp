@@ -47,7 +47,7 @@ Decision::Decision() :
 {
 }
 
-Decision::Decision(const JsonValue& jsonValue) : 
+Decision::Decision(JsonView jsonValue) : 
     m_decisionType(DecisionType::NOT_SET),
     m_decisionTypeHasBeenSet(false),
     m_scheduleActivityTaskDecisionAttributesHasBeenSet(false),
@@ -67,7 +67,7 @@ Decision::Decision(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Decision& Decision::operator =(const JsonValue& jsonValue)
+Decision& Decision::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("decisionType"))
   {

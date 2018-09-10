@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 CreateApplicationRequest::CreateApplicationRequest() : 
     m_authorHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_homePageUrlHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_licenseBodyHasBeenSet(false),
     m_licenseUrlHasBeenSet(false),
@@ -52,6 +53,12 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_homePageUrlHasBeenSet)
+  {
+   payload.WithString("homePageUrl", m_homePageUrl);
 
   }
 
@@ -126,7 +133,7 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

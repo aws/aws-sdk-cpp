@@ -35,7 +35,7 @@ DocumentationPart::DocumentationPart() :
 {
 }
 
-DocumentationPart::DocumentationPart(const JsonValue& jsonValue) : 
+DocumentationPart::DocumentationPart(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_propertiesHasBeenSet(false)
@@ -43,7 +43,7 @@ DocumentationPart::DocumentationPart(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DocumentationPart& DocumentationPart::operator =(const JsonValue& jsonValue)
+DocumentationPart& DocumentationPart::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

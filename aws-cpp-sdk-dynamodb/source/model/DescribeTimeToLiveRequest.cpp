@@ -37,7 +37,7 @@ Aws::String DescribeTimeToLiveRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeTimeToLiveRequest::GetRequestSpecificHeaders() const

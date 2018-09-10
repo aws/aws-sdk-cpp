@@ -34,14 +34,14 @@ NoiseReducerFilterSettings::NoiseReducerFilterSettings() :
 {
 }
 
-NoiseReducerFilterSettings::NoiseReducerFilterSettings(const JsonValue& jsonValue) : 
+NoiseReducerFilterSettings::NoiseReducerFilterSettings(JsonView jsonValue) : 
     m_strength(0),
     m_strengthHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NoiseReducerFilterSettings& NoiseReducerFilterSettings::operator =(const JsonValue& jsonValue)
+NoiseReducerFilterSettings& NoiseReducerFilterSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("strength"))
   {

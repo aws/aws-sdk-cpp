@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -38,15 +39,15 @@ namespace Model
    * node, policy node, and index node objects inside a <a>BatchRead</a> operation.
    * For more information, see <a>ListObjectParentPaths</a> and
    * <a>BatchReadRequest$Operations</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchListObjectParentPaths">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListObjectParentPaths">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchListObjectParentPaths
   {
   public:
     BatchListObjectParentPaths();
-    BatchListObjectParentPaths(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchListObjectParentPaths& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchListObjectParentPaths(Aws::Utils::Json::JsonView jsonValue);
+    BatchListObjectParentPaths& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -35,7 +35,7 @@ AttributePayload::AttributePayload() :
 {
 }
 
-AttributePayload::AttributePayload(const JsonValue& jsonValue) : 
+AttributePayload::AttributePayload(JsonView jsonValue) : 
     m_attributesHasBeenSet(false),
     m_merge(false),
     m_mergeHasBeenSet(false)
@@ -43,11 +43,11 @@ AttributePayload::AttributePayload(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AttributePayload& AttributePayload::operator =(const JsonValue& jsonValue)
+AttributePayload& AttributePayload::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();

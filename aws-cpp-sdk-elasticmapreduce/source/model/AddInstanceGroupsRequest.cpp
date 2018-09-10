@@ -49,7 +49,7 @@ Aws::String AddInstanceGroupsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AddInstanceGroupsRequest::GetRequestSpecificHeaders() const

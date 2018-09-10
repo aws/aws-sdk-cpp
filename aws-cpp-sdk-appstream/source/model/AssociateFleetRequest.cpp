@@ -44,7 +44,7 @@ Aws::String AssociateFleetRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AssociateFleetRequest::GetRequestSpecificHeaders() const

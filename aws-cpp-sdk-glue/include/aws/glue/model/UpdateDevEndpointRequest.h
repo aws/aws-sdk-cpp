@@ -17,6 +17,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/DevEndpointCustomLibraries.h>
 #include <utility>
 
@@ -118,6 +119,88 @@ namespace Model
 
 
     /**
+     * <p>The list of public keys for the DevEndpoint to use.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAddPublicKeys() const{ return m_addPublicKeys; }
+
+    /**
+     * <p>The list of public keys for the DevEndpoint to use.</p>
+     */
+    inline void SetAddPublicKeys(const Aws::Vector<Aws::String>& value) { m_addPublicKeysHasBeenSet = true; m_addPublicKeys = value; }
+
+    /**
+     * <p>The list of public keys for the DevEndpoint to use.</p>
+     */
+    inline void SetAddPublicKeys(Aws::Vector<Aws::String>&& value) { m_addPublicKeysHasBeenSet = true; m_addPublicKeys = std::move(value); }
+
+    /**
+     * <p>The list of public keys for the DevEndpoint to use.</p>
+     */
+    inline UpdateDevEndpointRequest& WithAddPublicKeys(const Aws::Vector<Aws::String>& value) { SetAddPublicKeys(value); return *this;}
+
+    /**
+     * <p>The list of public keys for the DevEndpoint to use.</p>
+     */
+    inline UpdateDevEndpointRequest& WithAddPublicKeys(Aws::Vector<Aws::String>&& value) { SetAddPublicKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of public keys for the DevEndpoint to use.</p>
+     */
+    inline UpdateDevEndpointRequest& AddAddPublicKeys(const Aws::String& value) { m_addPublicKeysHasBeenSet = true; m_addPublicKeys.push_back(value); return *this; }
+
+    /**
+     * <p>The list of public keys for the DevEndpoint to use.</p>
+     */
+    inline UpdateDevEndpointRequest& AddAddPublicKeys(Aws::String&& value) { m_addPublicKeysHasBeenSet = true; m_addPublicKeys.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of public keys for the DevEndpoint to use.</p>
+     */
+    inline UpdateDevEndpointRequest& AddAddPublicKeys(const char* value) { m_addPublicKeysHasBeenSet = true; m_addPublicKeys.push_back(value); return *this; }
+
+
+    /**
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDeletePublicKeys() const{ return m_deletePublicKeys; }
+
+    /**
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
+     */
+    inline void SetDeletePublicKeys(const Aws::Vector<Aws::String>& value) { m_deletePublicKeysHasBeenSet = true; m_deletePublicKeys = value; }
+
+    /**
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
+     */
+    inline void SetDeletePublicKeys(Aws::Vector<Aws::String>&& value) { m_deletePublicKeysHasBeenSet = true; m_deletePublicKeys = std::move(value); }
+
+    /**
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& WithDeletePublicKeys(const Aws::Vector<Aws::String>& value) { SetDeletePublicKeys(value); return *this;}
+
+    /**
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& WithDeletePublicKeys(Aws::Vector<Aws::String>&& value) { SetDeletePublicKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& AddDeletePublicKeys(const Aws::String& value) { m_deletePublicKeysHasBeenSet = true; m_deletePublicKeys.push_back(value); return *this; }
+
+    /**
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& AddDeletePublicKeys(Aws::String&& value) { m_deletePublicKeysHasBeenSet = true; m_deletePublicKeys.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of public keys to be deleted from the DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& AddDeletePublicKeys(const char* value) { m_deletePublicKeysHasBeenSet = true; m_deletePublicKeys.push_back(value); return *this; }
+
+
+    /**
      * <p>Custom Python or Java libraries to be loaded in the DevEndpoint.</p>
      */
     inline const DevEndpointCustomLibraries& GetCustomLibraries() const{ return m_customLibraries; }
@@ -168,6 +251,12 @@ namespace Model
 
     Aws::String m_publicKey;
     bool m_publicKeyHasBeenSet;
+
+    Aws::Vector<Aws::String> m_addPublicKeys;
+    bool m_addPublicKeysHasBeenSet;
+
+    Aws::Vector<Aws::String> m_deletePublicKeys;
+    bool m_deletePublicKeysHasBeenSet;
 
     DevEndpointCustomLibraries m_customLibraries;
     bool m_customLibrariesHasBeenSet;

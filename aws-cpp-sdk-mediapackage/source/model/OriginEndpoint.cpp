@@ -31,6 +31,7 @@ namespace Model
 OriginEndpoint::OriginEndpoint() : 
     m_arnHasBeenSet(false),
     m_channelIdHasBeenSet(false),
+    m_cmafPackageHasBeenSet(false),
     m_dashPackageHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_hlsPackageHasBeenSet(false),
@@ -46,9 +47,10 @@ OriginEndpoint::OriginEndpoint() :
 {
 }
 
-OriginEndpoint::OriginEndpoint(const JsonValue& jsonValue) : 
+OriginEndpoint::OriginEndpoint(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_channelIdHasBeenSet(false),
+    m_cmafPackageHasBeenSet(false),
     m_dashPackageHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_hlsPackageHasBeenSet(false),
@@ -65,7 +67,7 @@ OriginEndpoint::OriginEndpoint(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OriginEndpoint& OriginEndpoint::operator =(const JsonValue& jsonValue)
+OriginEndpoint& OriginEndpoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("arn"))
   {
@@ -79,6 +81,13 @@ OriginEndpoint& OriginEndpoint::operator =(const JsonValue& jsonValue)
     m_channelId = jsonValue.GetString("channelId");
 
     m_channelIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cmafPackage"))
+  {
+    m_cmafPackage = jsonValue.GetObject("cmafPackage");
+
+    m_cmafPackageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dashPackage"))
@@ -146,7 +155,7 @@ OriginEndpoint& OriginEndpoint::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("whitelist"))
   {
-    Array<JsonValue> whitelistJsonList = jsonValue.GetArray("whitelist");
+    Array<JsonView> whitelistJsonList = jsonValue.GetArray("whitelist");
     for(unsigned whitelistIndex = 0; whitelistIndex < whitelistJsonList.GetLength(); ++whitelistIndex)
     {
       m_whitelist.push_back(whitelistJsonList[whitelistIndex].AsString());
@@ -170,6 +179,12 @@ JsonValue OriginEndpoint::Jsonize() const
   if(m_channelIdHasBeenSet)
   {
    payload.WithString("channelId", m_channelId);
+
+  }
+
+  if(m_cmafPackageHasBeenSet)
+  {
+   payload.WithObject("cmafPackage", m_cmafPackage.Jsonize());
 
   }
 

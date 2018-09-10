@@ -33,13 +33,13 @@ Endpoint::Endpoint() :
 {
 }
 
-Endpoint::Endpoint(const JsonValue& jsonValue) : 
+Endpoint::Endpoint(JsonView jsonValue) : 
     m_urlHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Endpoint& Endpoint::operator =(const JsonValue& jsonValue)
+Endpoint& Endpoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("url"))
   {

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     NetworkBinding();
-    NetworkBinding(const Aws::Utils::Json::JsonValue& jsonValue);
-    NetworkBinding& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NetworkBinding(Aws::Utils::Json::JsonView jsonValue);
+    NetworkBinding& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

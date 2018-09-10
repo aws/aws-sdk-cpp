@@ -37,7 +37,7 @@ RemixSettings::RemixSettings() :
 {
 }
 
-RemixSettings::RemixSettings(const JsonValue& jsonValue) : 
+RemixSettings::RemixSettings(JsonView jsonValue) : 
     m_channelMappingsHasBeenSet(false),
     m_channelsIn(0),
     m_channelsInHasBeenSet(false),
@@ -47,11 +47,11 @@ RemixSettings::RemixSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RemixSettings& RemixSettings::operator =(const JsonValue& jsonValue)
+RemixSettings& RemixSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("channelMappings"))
   {
-    Array<JsonValue> channelMappingsJsonList = jsonValue.GetArray("channelMappings");
+    Array<JsonView> channelMappingsJsonList = jsonValue.GetArray("channelMappings");
     for(unsigned channelMappingsIndex = 0; channelMappingsIndex < channelMappingsJsonList.GetLength(); ++channelMappingsIndex)
     {
       m_channelMappings.push_back(channelMappingsJsonList[channelMappingsIndex].AsObject());

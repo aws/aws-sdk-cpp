@@ -45,7 +45,7 @@ Aws::String ListHITsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListHITsRequest::GetRequestSpecificHeaders() const

@@ -33,13 +33,13 @@ DeadLetterConfig::DeadLetterConfig() :
 {
 }
 
-DeadLetterConfig::DeadLetterConfig(const JsonValue& jsonValue) : 
+DeadLetterConfig::DeadLetterConfig(JsonView jsonValue) : 
     m_targetArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DeadLetterConfig& DeadLetterConfig::operator =(const JsonValue& jsonValue)
+DeadLetterConfig& DeadLetterConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TargetArn"))
   {

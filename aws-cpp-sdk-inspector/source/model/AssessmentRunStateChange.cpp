@@ -35,7 +35,7 @@ AssessmentRunStateChange::AssessmentRunStateChange() :
 {
 }
 
-AssessmentRunStateChange::AssessmentRunStateChange(const JsonValue& jsonValue) : 
+AssessmentRunStateChange::AssessmentRunStateChange(JsonView jsonValue) : 
     m_stateChangedAtHasBeenSet(false),
     m_state(AssessmentRunState::NOT_SET),
     m_stateHasBeenSet(false)
@@ -43,7 +43,7 @@ AssessmentRunStateChange::AssessmentRunStateChange(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AssessmentRunStateChange& AssessmentRunStateChange::operator =(const JsonValue& jsonValue)
+AssessmentRunStateChange& AssessmentRunStateChange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("stateChangedAt"))
   {

@@ -66,7 +66,7 @@ Aws::String ListConstraintsForPortfolioRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListConstraintsForPortfolioRequest::GetRequestSpecificHeaders() const

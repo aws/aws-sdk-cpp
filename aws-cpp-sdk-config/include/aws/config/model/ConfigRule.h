@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -57,8 +58,8 @@ namespace Model
   {
   public:
     ConfigRule();
-    ConfigRule(const Aws::Utils::Json::JsonValue& jsonValue);
-    ConfigRule& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ConfigRule(Aws::Utils::Json::JsonView jsonValue);
+    ConfigRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -296,43 +297,43 @@ namespace Model
 
 
     /**
-     * <p>A string in JSON format that is passed to the AWS Config rule Lambda
+     * <p>A string, in JSON format, that is passed to the AWS Config rule Lambda
      * function.</p>
      */
     inline const Aws::String& GetInputParameters() const{ return m_inputParameters; }
 
     /**
-     * <p>A string in JSON format that is passed to the AWS Config rule Lambda
+     * <p>A string, in JSON format, that is passed to the AWS Config rule Lambda
      * function.</p>
      */
     inline void SetInputParameters(const Aws::String& value) { m_inputParametersHasBeenSet = true; m_inputParameters = value; }
 
     /**
-     * <p>A string in JSON format that is passed to the AWS Config rule Lambda
+     * <p>A string, in JSON format, that is passed to the AWS Config rule Lambda
      * function.</p>
      */
     inline void SetInputParameters(Aws::String&& value) { m_inputParametersHasBeenSet = true; m_inputParameters = std::move(value); }
 
     /**
-     * <p>A string in JSON format that is passed to the AWS Config rule Lambda
+     * <p>A string, in JSON format, that is passed to the AWS Config rule Lambda
      * function.</p>
      */
     inline void SetInputParameters(const char* value) { m_inputParametersHasBeenSet = true; m_inputParameters.assign(value); }
 
     /**
-     * <p>A string in JSON format that is passed to the AWS Config rule Lambda
+     * <p>A string, in JSON format, that is passed to the AWS Config rule Lambda
      * function.</p>
      */
     inline ConfigRule& WithInputParameters(const Aws::String& value) { SetInputParameters(value); return *this;}
 
     /**
-     * <p>A string in JSON format that is passed to the AWS Config rule Lambda
+     * <p>A string, in JSON format, that is passed to the AWS Config rule Lambda
      * function.</p>
      */
     inline ConfigRule& WithInputParameters(Aws::String&& value) { SetInputParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A string in JSON format that is passed to the AWS Config rule Lambda
+     * <p>A string, in JSON format, that is passed to the AWS Config rule Lambda
      * function.</p>
      */
     inline ConfigRule& WithInputParameters(const char* value) { SetInputParameters(value); return *this;}
@@ -406,83 +407,128 @@ namespace Model
 
     /**
      * <p>Indicates whether the AWS Config rule is active or is currently being deleted
-     * by AWS Config. It can also indicate the evaluation status for the Config
+     * by AWS Config. It can also indicate the evaluation status for the AWS Config
      * rule.</p> <p>AWS Config sets the state of the rule to <code>EVALUATING</code>
      * temporarily after you use the <code>StartConfigRulesEvaluation</code> request to
-     * evaluate your resources against the Config rule.</p> <p>AWS Config sets the
+     * evaluate your resources against the AWS Config rule.</p> <p>AWS Config sets the
      * state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
      * <code>DeleteEvaluationResults</code> request to delete the current evaluation
-     * results for the Config rule.</p> <p>AWS Config sets the state of a rule to
-     * <code>DELETING</code> temporarily after you use the
-     * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config
-     * deletes the rule, the rule and all of its evaluations are erased and are no
-     * longer available.</p>
+     * results for the AWS Config rule.</p> <p>AWS Config temporarily sets the state of
+     * a rule to <code>DELETING</code> after you use the <code>DeleteConfigRule</code>
+     * request to delete the rule. After AWS Config deletes the rule, the rule and all
+     * of its evaluations are erased and are no longer available.</p>
      */
     inline const ConfigRuleState& GetConfigRuleState() const{ return m_configRuleState; }
 
     /**
      * <p>Indicates whether the AWS Config rule is active or is currently being deleted
-     * by AWS Config. It can also indicate the evaluation status for the Config
+     * by AWS Config. It can also indicate the evaluation status for the AWS Config
      * rule.</p> <p>AWS Config sets the state of the rule to <code>EVALUATING</code>
      * temporarily after you use the <code>StartConfigRulesEvaluation</code> request to
-     * evaluate your resources against the Config rule.</p> <p>AWS Config sets the
+     * evaluate your resources against the AWS Config rule.</p> <p>AWS Config sets the
      * state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
      * <code>DeleteEvaluationResults</code> request to delete the current evaluation
-     * results for the Config rule.</p> <p>AWS Config sets the state of a rule to
-     * <code>DELETING</code> temporarily after you use the
-     * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config
-     * deletes the rule, the rule and all of its evaluations are erased and are no
-     * longer available.</p>
+     * results for the AWS Config rule.</p> <p>AWS Config temporarily sets the state of
+     * a rule to <code>DELETING</code> after you use the <code>DeleteConfigRule</code>
+     * request to delete the rule. After AWS Config deletes the rule, the rule and all
+     * of its evaluations are erased and are no longer available.</p>
      */
     inline void SetConfigRuleState(const ConfigRuleState& value) { m_configRuleStateHasBeenSet = true; m_configRuleState = value; }
 
     /**
      * <p>Indicates whether the AWS Config rule is active or is currently being deleted
-     * by AWS Config. It can also indicate the evaluation status for the Config
+     * by AWS Config. It can also indicate the evaluation status for the AWS Config
      * rule.</p> <p>AWS Config sets the state of the rule to <code>EVALUATING</code>
      * temporarily after you use the <code>StartConfigRulesEvaluation</code> request to
-     * evaluate your resources against the Config rule.</p> <p>AWS Config sets the
+     * evaluate your resources against the AWS Config rule.</p> <p>AWS Config sets the
      * state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
      * <code>DeleteEvaluationResults</code> request to delete the current evaluation
-     * results for the Config rule.</p> <p>AWS Config sets the state of a rule to
-     * <code>DELETING</code> temporarily after you use the
-     * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config
-     * deletes the rule, the rule and all of its evaluations are erased and are no
-     * longer available.</p>
+     * results for the AWS Config rule.</p> <p>AWS Config temporarily sets the state of
+     * a rule to <code>DELETING</code> after you use the <code>DeleteConfigRule</code>
+     * request to delete the rule. After AWS Config deletes the rule, the rule and all
+     * of its evaluations are erased and are no longer available.</p>
      */
     inline void SetConfigRuleState(ConfigRuleState&& value) { m_configRuleStateHasBeenSet = true; m_configRuleState = std::move(value); }
 
     /**
      * <p>Indicates whether the AWS Config rule is active or is currently being deleted
-     * by AWS Config. It can also indicate the evaluation status for the Config
+     * by AWS Config. It can also indicate the evaluation status for the AWS Config
      * rule.</p> <p>AWS Config sets the state of the rule to <code>EVALUATING</code>
      * temporarily after you use the <code>StartConfigRulesEvaluation</code> request to
-     * evaluate your resources against the Config rule.</p> <p>AWS Config sets the
+     * evaluate your resources against the AWS Config rule.</p> <p>AWS Config sets the
      * state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
      * <code>DeleteEvaluationResults</code> request to delete the current evaluation
-     * results for the Config rule.</p> <p>AWS Config sets the state of a rule to
-     * <code>DELETING</code> temporarily after you use the
-     * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config
-     * deletes the rule, the rule and all of its evaluations are erased and are no
-     * longer available.</p>
+     * results for the AWS Config rule.</p> <p>AWS Config temporarily sets the state of
+     * a rule to <code>DELETING</code> after you use the <code>DeleteConfigRule</code>
+     * request to delete the rule. After AWS Config deletes the rule, the rule and all
+     * of its evaluations are erased and are no longer available.</p>
      */
     inline ConfigRule& WithConfigRuleState(const ConfigRuleState& value) { SetConfigRuleState(value); return *this;}
 
     /**
      * <p>Indicates whether the AWS Config rule is active or is currently being deleted
-     * by AWS Config. It can also indicate the evaluation status for the Config
+     * by AWS Config. It can also indicate the evaluation status for the AWS Config
      * rule.</p> <p>AWS Config sets the state of the rule to <code>EVALUATING</code>
      * temporarily after you use the <code>StartConfigRulesEvaluation</code> request to
-     * evaluate your resources against the Config rule.</p> <p>AWS Config sets the
+     * evaluate your resources against the AWS Config rule.</p> <p>AWS Config sets the
      * state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
      * <code>DeleteEvaluationResults</code> request to delete the current evaluation
-     * results for the Config rule.</p> <p>AWS Config sets the state of a rule to
-     * <code>DELETING</code> temporarily after you use the
-     * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config
-     * deletes the rule, the rule and all of its evaluations are erased and are no
-     * longer available.</p>
+     * results for the AWS Config rule.</p> <p>AWS Config temporarily sets the state of
+     * a rule to <code>DELETING</code> after you use the <code>DeleteConfigRule</code>
+     * request to delete the rule. After AWS Config deletes the rule, the rule and all
+     * of its evaluations are erased and are no longer available.</p>
      */
     inline ConfigRule& WithConfigRuleState(ConfigRuleState&& value) { SetConfigRuleState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline ConfigRule& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline ConfigRule& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
+
+    /**
+     * <p>Service principal name of the service that created the rule.</p> <note>
+     * <p>The field is populated only if the service linked rule is created by a
+     * service. The field is empty if you create your own rule.</p> </note>
+     */
+    inline ConfigRule& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
   private:
 
@@ -512,6 +558,9 @@ namespace Model
 
     ConfigRuleState m_configRuleState;
     bool m_configRuleStateHasBeenSet;
+
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet;
   };
 
 } // namespace Model

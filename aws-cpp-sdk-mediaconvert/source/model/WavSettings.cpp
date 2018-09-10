@@ -33,23 +33,27 @@ WavSettings::WavSettings() :
     m_bitDepthHasBeenSet(false),
     m_channels(0),
     m_channelsHasBeenSet(false),
+    m_format(WavFormat::NOT_SET),
+    m_formatHasBeenSet(false),
     m_sampleRate(0),
     m_sampleRateHasBeenSet(false)
 {
 }
 
-WavSettings::WavSettings(const JsonValue& jsonValue) : 
+WavSettings::WavSettings(JsonView jsonValue) : 
     m_bitDepth(0),
     m_bitDepthHasBeenSet(false),
     m_channels(0),
     m_channelsHasBeenSet(false),
+    m_format(WavFormat::NOT_SET),
+    m_formatHasBeenSet(false),
     m_sampleRate(0),
     m_sampleRateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WavSettings& WavSettings::operator =(const JsonValue& jsonValue)
+WavSettings& WavSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bitDepth"))
   {
@@ -63,6 +67,13 @@ WavSettings& WavSettings::operator =(const JsonValue& jsonValue)
     m_channels = jsonValue.GetInteger("channels");
 
     m_channelsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("format"))
+  {
+    m_format = WavFormatMapper::GetWavFormatForName(jsonValue.GetString("format"));
+
+    m_formatHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sampleRate"))
@@ -89,6 +100,11 @@ JsonValue WavSettings::Jsonize() const
   {
    payload.WithInteger("channels", m_channels);
 
+  }
+
+  if(m_formatHasBeenSet)
+  {
+   payload.WithString("format", WavFormatMapper::GetNameForWavFormat(m_format));
   }
 
   if(m_sampleRateHasBeenSet)

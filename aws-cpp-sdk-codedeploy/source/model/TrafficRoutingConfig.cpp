@@ -36,7 +36,7 @@ TrafficRoutingConfig::TrafficRoutingConfig() :
 {
 }
 
-TrafficRoutingConfig::TrafficRoutingConfig(const JsonValue& jsonValue) : 
+TrafficRoutingConfig::TrafficRoutingConfig(JsonView jsonValue) : 
     m_type(TrafficRoutingType::NOT_SET),
     m_typeHasBeenSet(false),
     m_timeBasedCanaryHasBeenSet(false),
@@ -45,7 +45,7 @@ TrafficRoutingConfig::TrafficRoutingConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TrafficRoutingConfig& TrafficRoutingConfig::operator =(const JsonValue& jsonValue)
+TrafficRoutingConfig& TrafficRoutingConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {

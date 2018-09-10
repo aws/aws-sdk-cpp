@@ -51,7 +51,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
@@ -60,7 +60,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
@@ -69,7 +69,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
@@ -78,7 +78,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
@@ -87,7 +87,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline UploadSSHPublicKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
@@ -96,7 +96,7 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline UploadSSHPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
@@ -105,92 +105,106 @@ namespace Model
      * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: =,.@-</p>
+     * following characters: _+=,.@-</p>
      */
     inline UploadSSHPublicKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of any
-     * printable ASCII character ranging from the space character (\u0020) through end
-     * of the ASCII character range as well as the printable characters in the Basic
-     * Latin and Latin-1 Supplement character set (through \u00FF). It also includes
-     * the special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
+     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
+     * character (\u0020) through the end of the ASCII character range</p> </li> <li>
+     * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
+     * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
+     * feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline const Aws::String& GetSSHPublicKeyBody() const{ return m_sSHPublicKeyBody; }
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of any
-     * printable ASCII character ranging from the space character (\u0020) through end
-     * of the ASCII character range as well as the printable characters in the Basic
-     * Latin and Latin-1 Supplement character set (through \u00FF). It also includes
-     * the special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
+     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
+     * character (\u0020) through the end of the ASCII character range</p> </li> <li>
+     * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
+     * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
+     * feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetSSHPublicKeyBody(const Aws::String& value) { m_sSHPublicKeyBodyHasBeenSet = true; m_sSHPublicKeyBody = value; }
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of any
-     * printable ASCII character ranging from the space character (\u0020) through end
-     * of the ASCII character range as well as the printable characters in the Basic
-     * Latin and Latin-1 Supplement character set (through \u00FF). It also includes
-     * the special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
+     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
+     * character (\u0020) through the end of the ASCII character range</p> </li> <li>
+     * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
+     * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
+     * feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetSSHPublicKeyBody(Aws::String&& value) { m_sSHPublicKeyBodyHasBeenSet = true; m_sSHPublicKeyBody = std::move(value); }
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of any
-     * printable ASCII character ranging from the space character (\u0020) through end
-     * of the ASCII character range as well as the printable characters in the Basic
-     * Latin and Latin-1 Supplement character set (through \u00FF). It also includes
-     * the special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
+     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
+     * character (\u0020) through the end of the ASCII character range</p> </li> <li>
+     * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
+     * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
+     * feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetSSHPublicKeyBody(const char* value) { m_sSHPublicKeyBodyHasBeenSet = true; m_sSHPublicKeyBody.assign(value); }
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of any
-     * printable ASCII character ranging from the space character (\u0020) through end
-     * of the ASCII character range as well as the printable characters in the Basic
-     * Latin and Latin-1 Supplement character set (through \u00FF). It also includes
-     * the special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
+     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
+     * character (\u0020) through the end of the ASCII character range</p> </li> <li>
+     * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
+     * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
+     * feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UploadSSHPublicKeyRequest& WithSSHPublicKeyBody(const Aws::String& value) { SetSSHPublicKeyBody(value); return *this;}
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of any
-     * printable ASCII character ranging from the space character (\u0020) through end
-     * of the ASCII character range as well as the printable characters in the Basic
-     * Latin and Latin-1 Supplement character set (through \u00FF). It also includes
-     * the special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
+     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
+     * character (\u0020) through the end of the ASCII character range</p> </li> <li>
+     * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
+     * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
+     * feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UploadSSHPublicKeyRequest& WithSSHPublicKeyBody(Aws::String&& value) { SetSSHPublicKeyBody(std::move(value)); return *this;}
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * used to validate this parameter is a string of characters consisting of any
-     * printable ASCII character ranging from the space character (\u0020) through end
-     * of the ASCII character range as well as the printable characters in the Basic
-     * Latin and Latin-1 Supplement character set (through \u00FF). It also includes
-     * the special characters tab (\u0009), line feed (\u000A), and carriage return
-     * (\u000D).</p>
+     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
+     * validate this parameter is a string of characters consisting of the
+     * following:</p> <ul> <li> <p>Any printable ASCII character ranging from the space
+     * character (\u0020) through the end of the ASCII character range</p> </li> <li>
+     * <p>The printable characters in the Basic Latin and Latin-1 Supplement character
+     * set (through \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line
+     * feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UploadSSHPublicKeyRequest& WithSSHPublicKeyBody(const char* value) { SetSSHPublicKeyBody(value); return *this;}
 

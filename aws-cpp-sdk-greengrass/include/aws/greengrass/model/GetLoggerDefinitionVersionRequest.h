@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline const Aws::String& GetLoggerDefinitionId() const{ return m_loggerDefinitionId; }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline void SetLoggerDefinitionId(const Aws::String& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = value; }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline void SetLoggerDefinitionId(Aws::String&& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = std::move(value); }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline void SetLoggerDefinitionId(const char* value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId.assign(value); }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline GetLoggerDefinitionVersionRequest& WithLoggerDefinitionId(const Aws::String& value) { SetLoggerDefinitionId(value); return *this;}
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline GetLoggerDefinitionVersionRequest& WithLoggerDefinitionId(Aws::String&& value) { SetLoggerDefinitionId(std::move(value)); return *this;}
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      */
     inline GetLoggerDefinitionVersionRequest& WithLoggerDefinitionId(const char* value) { SetLoggerDefinitionId(value); return *this;}
 
 
     /**
-     * logger definition version Id
+     * The ID of the logger definition version.
      */
     inline const Aws::String& GetLoggerDefinitionVersionId() const{ return m_loggerDefinitionVersionId; }
 
     /**
-     * logger definition version Id
+     * The ID of the logger definition version.
      */
     inline void SetLoggerDefinitionVersionId(const Aws::String& value) { m_loggerDefinitionVersionIdHasBeenSet = true; m_loggerDefinitionVersionId = value; }
 
     /**
-     * logger definition version Id
+     * The ID of the logger definition version.
      */
     inline void SetLoggerDefinitionVersionId(Aws::String&& value) { m_loggerDefinitionVersionIdHasBeenSet = true; m_loggerDefinitionVersionId = std::move(value); }
 
     /**
-     * logger definition version Id
+     * The ID of the logger definition version.
      */
     inline void SetLoggerDefinitionVersionId(const char* value) { m_loggerDefinitionVersionIdHasBeenSet = true; m_loggerDefinitionVersionId.assign(value); }
 
     /**
-     * logger definition version Id
+     * The ID of the logger definition version.
      */
     inline GetLoggerDefinitionVersionRequest& WithLoggerDefinitionVersionId(const Aws::String& value) { SetLoggerDefinitionVersionId(value); return *this;}
 
     /**
-     * logger definition version Id
+     * The ID of the logger definition version.
      */
     inline GetLoggerDefinitionVersionRequest& WithLoggerDefinitionVersionId(Aws::String&& value) { SetLoggerDefinitionVersionId(std::move(value)); return *this;}
 
     /**
-     * logger definition version Id
+     * The ID of the logger definition version.
      */
     inline GetLoggerDefinitionVersionRequest& WithLoggerDefinitionVersionId(const char* value) { SetLoggerDefinitionVersionId(value); return *this;}
 

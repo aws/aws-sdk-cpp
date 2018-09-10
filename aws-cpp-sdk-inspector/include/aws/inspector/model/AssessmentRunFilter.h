@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Inspector
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     AssessmentRunFilter();
-    AssessmentRunFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    AssessmentRunFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AssessmentRunFilter(Aws::Utils::Json::JsonView jsonValue);
+    AssessmentRunFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

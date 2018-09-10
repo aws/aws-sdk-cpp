@@ -34,6 +34,7 @@ namespace Aws
         static const int UNDER_CHANGE_HASH = HashingUtils::HashString("UNDER_CHANGE");
         static const int TAINTED_HASH = HashingUtils::HashString("TAINTED");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static const int PLAN_IN_PROGRESS_HASH = HashingUtils::HashString("PLAN_IN_PROGRESS");
 
 
         ProvisionedProductStatus GetProvisionedProductStatusForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == ERROR__HASH)
           {
             return ProvisionedProductStatus::ERROR_;
+          }
+          else if (hashCode == PLAN_IN_PROGRESS_HASH)
+          {
+            return ProvisionedProductStatus::PLAN_IN_PROGRESS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "TAINTED";
           case ProvisionedProductStatus::ERROR_:
             return "ERROR";
+          case ProvisionedProductStatus::PLAN_IN_PROGRESS:
+            return "PLAN_IN_PROGRESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -37,7 +37,7 @@ TransferDomainResult::TransferDomainResult(const Aws::AmazonWebServiceResult<Jso
 
 TransferDomainResult& TransferDomainResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OperationId"))
   {
     m_operationId = jsonValue.GetString("OperationId");

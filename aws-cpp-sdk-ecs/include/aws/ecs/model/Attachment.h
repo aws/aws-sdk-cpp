@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Attachment();
-    Attachment(const Aws::Utils::Json::JsonValue& jsonValue);
-    Attachment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Attachment(Aws::Utils::Json::JsonView jsonValue);
+    Attachment& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -86,44 +87,37 @@ namespace Model
 
 
     /**
-     * <p>The type of the attachment, such as an
-     * <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the attachment, such as an
-     * <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the attachment, such as an
-     * <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the attachment, such as an
-     * <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of the attachment, such as an
-     * <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
      */
     inline Attachment& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the attachment, such as an
-     * <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
      */
     inline Attachment& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the attachment, such as an
-     * <code>ElasticNetworkInterface</code>.</p>
+     * <p>The type of the attachment, such as <code>ElasticNetworkInterface</code>.</p>
      */
     inline Attachment& WithType(const char* value) { SetType(value); return *this;}
 
@@ -179,49 +173,49 @@ namespace Model
 
 
     /**
-     * <p>Details of the attachment. For Elastic Network Interfaces, this includes the
+     * <p>Details of the attachment. For elastic network interfaces, this includes the
      * network interface ID, the MAC address, the subnet ID, and the private IPv4
      * address.</p>
      */
     inline const Aws::Vector<KeyValuePair>& GetDetails() const{ return m_details; }
 
     /**
-     * <p>Details of the attachment. For Elastic Network Interfaces, this includes the
+     * <p>Details of the attachment. For elastic network interfaces, this includes the
      * network interface ID, the MAC address, the subnet ID, and the private IPv4
      * address.</p>
      */
     inline void SetDetails(const Aws::Vector<KeyValuePair>& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
-     * <p>Details of the attachment. For Elastic Network Interfaces, this includes the
+     * <p>Details of the attachment. For elastic network interfaces, this includes the
      * network interface ID, the MAC address, the subnet ID, and the private IPv4
      * address.</p>
      */
     inline void SetDetails(Aws::Vector<KeyValuePair>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
-     * <p>Details of the attachment. For Elastic Network Interfaces, this includes the
+     * <p>Details of the attachment. For elastic network interfaces, this includes the
      * network interface ID, the MAC address, the subnet ID, and the private IPv4
      * address.</p>
      */
     inline Attachment& WithDetails(const Aws::Vector<KeyValuePair>& value) { SetDetails(value); return *this;}
 
     /**
-     * <p>Details of the attachment. For Elastic Network Interfaces, this includes the
+     * <p>Details of the attachment. For elastic network interfaces, this includes the
      * network interface ID, the MAC address, the subnet ID, and the private IPv4
      * address.</p>
      */
     inline Attachment& WithDetails(Aws::Vector<KeyValuePair>&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Details of the attachment. For Elastic Network Interfaces, this includes the
+     * <p>Details of the attachment. For elastic network interfaces, this includes the
      * network interface ID, the MAC address, the subnet ID, and the private IPv4
      * address.</p>
      */
     inline Attachment& AddDetails(const KeyValuePair& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
 
     /**
-     * <p>Details of the attachment. For Elastic Network Interfaces, this includes the
+     * <p>Details of the attachment. For elastic network interfaces, this includes the
      * network interface ID, the MAC address, the subnet ID, and the private IPv4
      * address.</p>
      */

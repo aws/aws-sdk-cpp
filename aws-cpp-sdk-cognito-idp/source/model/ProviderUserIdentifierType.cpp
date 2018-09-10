@@ -35,7 +35,7 @@ ProviderUserIdentifierType::ProviderUserIdentifierType() :
 {
 }
 
-ProviderUserIdentifierType::ProviderUserIdentifierType(const JsonValue& jsonValue) : 
+ProviderUserIdentifierType::ProviderUserIdentifierType(JsonView jsonValue) : 
     m_providerNameHasBeenSet(false),
     m_providerAttributeNameHasBeenSet(false),
     m_providerAttributeValueHasBeenSet(false)
@@ -43,7 +43,7 @@ ProviderUserIdentifierType::ProviderUserIdentifierType(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-ProviderUserIdentifierType& ProviderUserIdentifierType::operator =(const JsonValue& jsonValue)
+ProviderUserIdentifierType& ProviderUserIdentifierType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ProviderName"))
   {

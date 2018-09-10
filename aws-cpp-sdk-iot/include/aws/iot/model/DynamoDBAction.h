@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -52,8 +53,8 @@ namespace Model
   {
   public:
     DynamoDBAction();
-    DynamoDBAction(const Aws::Utils::Json::JsonValue& jsonValue);
-    DynamoDBAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DynamoDBAction(Aws::Utils::Json::JsonView jsonValue);
+    DynamoDBAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

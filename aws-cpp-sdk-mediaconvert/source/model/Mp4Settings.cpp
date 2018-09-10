@@ -39,7 +39,7 @@ Mp4Settings::Mp4Settings() :
 {
 }
 
-Mp4Settings::Mp4Settings(const JsonValue& jsonValue) : 
+Mp4Settings::Mp4Settings(JsonView jsonValue) : 
     m_cslgAtom(Mp4CslgAtom::NOT_SET),
     m_cslgAtomHasBeenSet(false),
     m_freeSpaceBox(Mp4FreeSpaceBox::NOT_SET),
@@ -51,7 +51,7 @@ Mp4Settings::Mp4Settings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Mp4Settings& Mp4Settings::operator =(const JsonValue& jsonValue)
+Mp4Settings& Mp4Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("cslgAtom"))
   {

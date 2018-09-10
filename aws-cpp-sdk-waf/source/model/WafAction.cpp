@@ -34,14 +34,14 @@ WafAction::WafAction() :
 {
 }
 
-WafAction::WafAction(const JsonValue& jsonValue) : 
+WafAction::WafAction(JsonView jsonValue) : 
     m_type(WafActionType::NOT_SET),
     m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WafAction& WafAction::operator =(const JsonValue& jsonValue)
+WafAction& WafAction::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

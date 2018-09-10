@@ -37,7 +37,7 @@ GetTopicRuleResult::GetTopicRuleResult(const Aws::AmazonWebServiceResult<JsonVal
 
 GetTopicRuleResult& GetTopicRuleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ruleArn"))
   {
     m_ruleArn = jsonValue.GetString("ruleArn");

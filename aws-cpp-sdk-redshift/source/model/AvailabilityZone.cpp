@@ -31,12 +31,14 @@ namespace Model
 {
 
 AvailabilityZone::AvailabilityZone() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_supportedPlatformsHasBeenSet(false)
 {
 }
 
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_supportedPlatformsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,6 +55,18 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
       m_name = StringUtils::Trim(nameNode.GetText().c_str());
       m_nameHasBeenSet = true;
     }
+    XmlNode supportedPlatformsNode = resultNode.FirstChild("SupportedPlatforms");
+    if(!supportedPlatformsNode.IsNull())
+    {
+      XmlNode supportedPlatformsMember = supportedPlatformsNode.FirstChild("SupportedPlatform");
+      while(!supportedPlatformsMember.IsNull())
+      {
+        m_supportedPlatforms.push_back(supportedPlatformsMember);
+        supportedPlatformsMember = supportedPlatformsMember.NextNode("SupportedPlatform");
+      }
+
+      m_supportedPlatformsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -65,6 +79,17 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
   }
 
+  if(m_supportedPlatformsHasBeenSet)
+  {
+      unsigned supportedPlatformsIdx = 1;
+      for(auto& item : m_supportedPlatforms)
+      {
+        Aws::StringStream supportedPlatformsSs;
+        supportedPlatformsSs << location << index << locationValue << ".SupportedPlatform." << supportedPlatformsIdx++;
+        item.OutputToStream(oStream, supportedPlatformsSs.str().c_str());
+      }
+  }
+
 }
 
 void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -72,6 +97,16 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_nameHasBeenSet)
   {
       oStream << location << ".Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+  if(m_supportedPlatformsHasBeenSet)
+  {
+      unsigned supportedPlatformsIdx = 1;
+      for(auto& item : m_supportedPlatforms)
+      {
+        Aws::StringStream supportedPlatformsSs;
+        supportedPlatformsSs << location <<  ".SupportedPlatform." << supportedPlatformsIdx++;
+        item.OutputToStream(oStream, supportedPlatformsSs.str().c_str());
+      }
   }
 }
 

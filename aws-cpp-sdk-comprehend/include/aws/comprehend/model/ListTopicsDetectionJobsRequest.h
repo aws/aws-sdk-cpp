@@ -118,17 +118,17 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return in each page.</p>
+     * <p>The maximum number of results to return in each page. The default is 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return in each page.</p>
+     * <p>The maximum number of results to return in each page. The default is 100.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return in each page.</p>
+     * <p>The maximum number of results to return in each page. The default is 100.</p>
      */
     inline ListTopicsDetectionJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

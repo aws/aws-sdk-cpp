@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAF
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     RegexPatternSetSummary();
-    RegexPatternSetSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    RegexPatternSetSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RegexPatternSetSummary(Aws::Utils::Json::JsonView jsonValue);
+    RegexPatternSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -57,7 +57,7 @@ Aws::String ListCreateAccountStatusRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListCreateAccountStatusRequest::GetRequestSpecificHeaders() const

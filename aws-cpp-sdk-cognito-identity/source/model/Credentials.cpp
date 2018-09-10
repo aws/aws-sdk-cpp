@@ -36,7 +36,7 @@ Credentials::Credentials() :
 {
 }
 
-Credentials::Credentials(const JsonValue& jsonValue) : 
+Credentials::Credentials(JsonView jsonValue) : 
     m_accessKeyIdHasBeenSet(false),
     m_secretKeyHasBeenSet(false),
     m_sessionTokenHasBeenSet(false),
@@ -45,7 +45,7 @@ Credentials::Credentials(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Credentials& Credentials::operator =(const JsonValue& jsonValue)
+Credentials& Credentials::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AccessKeyId"))
   {

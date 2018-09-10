@@ -36,7 +36,7 @@ ModerationLabel::ModerationLabel() :
 {
 }
 
-ModerationLabel::ModerationLabel(const JsonValue& jsonValue) : 
+ModerationLabel::ModerationLabel(JsonView jsonValue) : 
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -45,7 +45,7 @@ ModerationLabel::ModerationLabel(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ModerationLabel& ModerationLabel::operator =(const JsonValue& jsonValue)
+ModerationLabel& ModerationLabel::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Confidence"))
   {

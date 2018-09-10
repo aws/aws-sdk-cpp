@@ -37,7 +37,7 @@ ArrayPropertiesDetail::ArrayPropertiesDetail() :
 {
 }
 
-ArrayPropertiesDetail::ArrayPropertiesDetail(const JsonValue& jsonValue) : 
+ArrayPropertiesDetail::ArrayPropertiesDetail(JsonView jsonValue) : 
     m_statusSummaryHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
@@ -47,11 +47,11 @@ ArrayPropertiesDetail::ArrayPropertiesDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ArrayPropertiesDetail& ArrayPropertiesDetail::operator =(const JsonValue& jsonValue)
+ArrayPropertiesDetail& ArrayPropertiesDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("statusSummary"))
   {
-    Aws::Map<Aws::String, JsonValue> statusSummaryJsonMap = jsonValue.GetObject("statusSummary").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> statusSummaryJsonMap = jsonValue.GetObject("statusSummary").GetAllObjects();
     for(auto& statusSummaryItem : statusSummaryJsonMap)
     {
       m_statusSummary[statusSummaryItem.first] = statusSummaryItem.second.AsInteger();

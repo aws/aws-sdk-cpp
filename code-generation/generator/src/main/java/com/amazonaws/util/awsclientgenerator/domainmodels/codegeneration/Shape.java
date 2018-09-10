@@ -20,6 +20,7 @@ import lombok.Data;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.HashSet;
 import java.util.Optional;
 
 @Data
@@ -27,10 +28,12 @@ public class Shape {
     private String name;
     private String type;
     private List<String> enumValues;
+    private HashSet<String> referencedBy;
     private Map<String, ShapeMember> members;
     private ShapeMember listMember;
     private ShapeMember mapKey;
     private ShapeMember mapValue;
+    private ShapeMember customizedQuery;
     private String max;
     private String min;
     private String documentation;
@@ -99,6 +102,7 @@ public class Shape {
     }
 
     public boolean hasStreamMembers() {
+      if (members == null) return false;
       return members.values().parallelStream()
               .anyMatch(member -> member.isStreaming()) || (payload != null && members.get(payload) != null && !members.get(payload).getShape().isStructure() && !members.get(payload).getShape().isList());
     }

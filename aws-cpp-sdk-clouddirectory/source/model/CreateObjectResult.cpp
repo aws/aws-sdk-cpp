@@ -37,7 +37,7 @@ CreateObjectResult::CreateObjectResult(const Aws::AmazonWebServiceResult<JsonVal
 
 CreateObjectResult& CreateObjectResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ObjectIdentifier"))
   {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lightsail
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides a summary of TLS/SSL certificate metadata.</p><p><h3>See Also:</h3> 
+   * <p>Provides a summary of SSL/TLS certificate metadata.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsCertificateSummary">AWS
    * API Reference</a></p>
@@ -42,61 +43,61 @@ namespace Model
   {
   public:
     LoadBalancerTlsCertificateSummary();
-    LoadBalancerTlsCertificateSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    LoadBalancerTlsCertificateSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LoadBalancerTlsCertificateSummary(Aws::Utils::Json::JsonView jsonValue);
+    LoadBalancerTlsCertificateSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p>
+     * <p>The name of the SSL/TLS certificate.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p>
+     * <p>The name of the SSL/TLS certificate.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p>
+     * <p>The name of the SSL/TLS certificate.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p>
+     * <p>The name of the SSL/TLS certificate.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p>
+     * <p>The name of the SSL/TLS certificate.</p>
      */
     inline LoadBalancerTlsCertificateSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p>
+     * <p>The name of the SSL/TLS certificate.</p>
      */
     inline LoadBalancerTlsCertificateSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the TLS/SSL certificate.</p>
+     * <p>The name of the SSL/TLS certificate.</p>
      */
     inline LoadBalancerTlsCertificateSummary& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail
+     * <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail
      * load balancer.</p>
      */
     inline bool GetIsAttached() const{ return m_isAttached; }
 
     /**
-     * <p>When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail
+     * <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail
      * load balancer.</p>
      */
     inline void SetIsAttached(bool value) { m_isAttachedHasBeenSet = true; m_isAttached = value; }
 
     /**
-     * <p>When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail
+     * <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail
      * load balancer.</p>
      */
     inline LoadBalancerTlsCertificateSummary& WithIsAttached(bool value) { SetIsAttached(value); return *this;}

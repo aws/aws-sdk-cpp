@@ -38,6 +38,12 @@ endif()
 include(${CMAKE_CURRENT_LIST_DIR}/AWSSDKConfigVersion.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/sdksCommon.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/platformDeps.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/resolve_platform.cmake)
+include(CMakePackageConfigHelpers)
+include(${CMAKE_CURRENT_LIST_DIR}/initialize_project_version.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/compiler_settings.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/utilities.cmake)
+
 
 if (NOT AWSSDK_INSTALL_LIBDIR)
     set(AWSSDK_INSTALL_LIBDIR "lib")
@@ -51,9 +57,11 @@ if (NOT AWSSDK_INSTALL_INCLUDEDIR)
     set(AWSSDK_INSTALL_INCLUDEDIR "include")
 endif()
 
-# on Windows or Win64 dlls are treated as runtime target and installed in bindir
-if (WIN32)
+# On Windows, dlls are treated as runtime target and installed in bindir
+if (WIN32 AND AWSSDK_INSTALL_AS_SHARED_LIBS)
     set(AWSSDK_INSTALL_LIBDIR "${AWSSDK_INSTALL_BINDIR}")
+    # If installed CMake scripts are associated with dll library, define USE_IMPORT_EXPORT for customers
+    add_definitions(-DUSE_IMPORT_EXPORT)
 endif()
 
 
@@ -63,6 +71,10 @@ get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH
 get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
 get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
 get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
+get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
+
+set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
+
 if(AWSSDK_DEFAULT_ROOT_DIR STREQUAL "/")
   set(AWSSDK_DEFAULT_ROOT_DIR "")
 endif()
@@ -247,6 +259,9 @@ macro(AWSSDK_DETERMINE_LIBS_TO_LINK SERVICE_LIST OUTPUT_VAR)
     foreach(DEP IN LISTS ALL_SERVICES)
         list(APPEND ${OUTPUT_VAR} "aws-cpp-sdk-${DEP}")
     endforeach()
+    if (NOT AWSSDK_INSTALL_AS_SHARED_LIBS)
+        list(APPEND ${OUTPUT_VAR} ${AWSSDK_PLATFORM_DEPS})
+    endif()
 endmacro(AWSSDK_DETERMINE_LIBS_TO_LINK)
 
 # output high level lib dependencies such as for transfer; sqs; dynamodb etc.

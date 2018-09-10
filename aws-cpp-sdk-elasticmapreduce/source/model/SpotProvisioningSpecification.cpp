@@ -38,7 +38,7 @@ SpotProvisioningSpecification::SpotProvisioningSpecification() :
 {
 }
 
-SpotProvisioningSpecification::SpotProvisioningSpecification(const JsonValue& jsonValue) : 
+SpotProvisioningSpecification::SpotProvisioningSpecification(JsonView jsonValue) : 
     m_timeoutDurationMinutes(0),
     m_timeoutDurationMinutesHasBeenSet(false),
     m_timeoutAction(SpotProvisioningTimeoutAction::NOT_SET),
@@ -49,7 +49,7 @@ SpotProvisioningSpecification::SpotProvisioningSpecification(const JsonValue& js
   *this = jsonValue;
 }
 
-SpotProvisioningSpecification& SpotProvisioningSpecification::operator =(const JsonValue& jsonValue)
+SpotProvisioningSpecification& SpotProvisioningSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TimeoutDurationMinutes"))
   {

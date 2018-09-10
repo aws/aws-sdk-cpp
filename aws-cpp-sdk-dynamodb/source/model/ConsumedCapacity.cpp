@@ -38,7 +38,7 @@ ConsumedCapacity::ConsumedCapacity() :
 {
 }
 
-ConsumedCapacity::ConsumedCapacity(const JsonValue& jsonValue) : 
+ConsumedCapacity::ConsumedCapacity(JsonView jsonValue) : 
     m_tableNameHasBeenSet(false),
     m_capacityUnits(0.0),
     m_capacityUnitsHasBeenSet(false),
@@ -49,7 +49,7 @@ ConsumedCapacity::ConsumedCapacity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ConsumedCapacity& ConsumedCapacity::operator =(const JsonValue& jsonValue)
+ConsumedCapacity& ConsumedCapacity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TableName"))
   {
@@ -74,7 +74,7 @@ ConsumedCapacity& ConsumedCapacity::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("LocalSecondaryIndexes"))
   {
-    Aws::Map<Aws::String, JsonValue> localSecondaryIndexesJsonMap = jsonValue.GetObject("LocalSecondaryIndexes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> localSecondaryIndexesJsonMap = jsonValue.GetObject("LocalSecondaryIndexes").GetAllObjects();
     for(auto& localSecondaryIndexesItem : localSecondaryIndexesJsonMap)
     {
       m_localSecondaryIndexes[localSecondaryIndexesItem.first] = localSecondaryIndexesItem.second.AsObject();
@@ -84,7 +84,7 @@ ConsumedCapacity& ConsumedCapacity::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
   {
-    Aws::Map<Aws::String, JsonValue> globalSecondaryIndexesJsonMap = jsonValue.GetObject("GlobalSecondaryIndexes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> globalSecondaryIndexesJsonMap = jsonValue.GetObject("GlobalSecondaryIndexes").GetAllObjects();
     for(auto& globalSecondaryIndexesItem : globalSecondaryIndexesJsonMap)
     {
       m_globalSecondaryIndexes[globalSecondaryIndexesItem.first] = globalSecondaryIndexesItem.second.AsObject();

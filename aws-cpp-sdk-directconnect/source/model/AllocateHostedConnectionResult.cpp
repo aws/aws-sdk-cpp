@@ -41,7 +41,7 @@ AllocateHostedConnectionResult::AllocateHostedConnectionResult(const Aws::Amazon
 
 AllocateHostedConnectionResult& AllocateHostedConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ownerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("ownerAccount");
@@ -111,6 +111,12 @@ AllocateHostedConnectionResult& AllocateHostedConnectionResult::operator =(const
   if(jsonValue.ValueExists("awsDevice"))
   {
     m_awsDevice = jsonValue.GetString("awsDevice");
+
+  }
+
+  if(jsonValue.ValueExists("awsDeviceV2"))
+  {
+    m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
 
   }
 

@@ -37,10 +37,10 @@ ListInvitationsResult::ListInvitationsResult(const Aws::AmazonWebServiceResult<J
 
 ListInvitationsResult& ListInvitationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("invitations"))
   {
-    Array<JsonValue> invitationsJsonList = jsonValue.GetArray("invitations");
+    Array<JsonView> invitationsJsonList = jsonValue.GetArray("invitations");
     for(unsigned invitationsIndex = 0; invitationsIndex < invitationsJsonList.GetLength(); ++invitationsIndex)
     {
       m_invitations.push_back(invitationsJsonList[invitationsIndex].AsObject());

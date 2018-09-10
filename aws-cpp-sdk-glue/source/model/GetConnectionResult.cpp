@@ -37,7 +37,7 @@ GetConnectionResult::GetConnectionResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetConnectionResult& GetConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Connection"))
   {
     m_connection = jsonValue.GetObject("Connection");

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -38,15 +39,15 @@ namespace Model
    * <p>Used when a regular object exists in a <a>Directory</a> and you want to find
    * all of the policies that are associated with that object and the parent to that
    * object.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PolicyToPath">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PolicyToPath">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API PolicyToPath
   {
   public:
     PolicyToPath();
-    PolicyToPath(const Aws::Utils::Json::JsonValue& jsonValue);
-    PolicyToPath& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PolicyToPath(Aws::Utils::Json::JsonView jsonValue);
+    PolicyToPath& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

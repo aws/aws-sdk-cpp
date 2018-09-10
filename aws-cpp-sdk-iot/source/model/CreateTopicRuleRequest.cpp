@@ -37,7 +37,7 @@ Aws::String CreateTopicRuleRequest::SerializePayload() const
    payload = m_topicRulePayload.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

@@ -37,10 +37,10 @@ GetPipelineDefinitionResult::GetPipelineDefinitionResult(const Aws::AmazonWebSer
 
 GetPipelineDefinitionResult& GetPipelineDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("pipelineObjects"))
   {
-    Array<JsonValue> pipelineObjectsJsonList = jsonValue.GetArray("pipelineObjects");
+    Array<JsonView> pipelineObjectsJsonList = jsonValue.GetArray("pipelineObjects");
     for(unsigned pipelineObjectsIndex = 0; pipelineObjectsIndex < pipelineObjectsJsonList.GetLength(); ++pipelineObjectsIndex)
     {
       m_pipelineObjects.push_back(pipelineObjectsJsonList[pipelineObjectsIndex].AsObject());
@@ -49,7 +49,7 @@ GetPipelineDefinitionResult& GetPipelineDefinitionResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("parameterObjects"))
   {
-    Array<JsonValue> parameterObjectsJsonList = jsonValue.GetArray("parameterObjects");
+    Array<JsonView> parameterObjectsJsonList = jsonValue.GetArray("parameterObjects");
     for(unsigned parameterObjectsIndex = 0; parameterObjectsIndex < parameterObjectsJsonList.GetLength(); ++parameterObjectsIndex)
     {
       m_parameterObjects.push_back(parameterObjectsJsonList[parameterObjectsIndex].AsObject());
@@ -58,7 +58,7 @@ GetPipelineDefinitionResult& GetPipelineDefinitionResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("parameterValues"))
   {
-    Array<JsonValue> parameterValuesJsonList = jsonValue.GetArray("parameterValues");
+    Array<JsonView> parameterValuesJsonList = jsonValue.GetArray("parameterValues");
     for(unsigned parameterValuesIndex = 0; parameterValuesIndex < parameterValuesJsonList.GetLength(); ++parameterValuesIndex)
     {
       m_parameterValues.push_back(parameterValuesJsonList[parameterValuesIndex].AsObject());

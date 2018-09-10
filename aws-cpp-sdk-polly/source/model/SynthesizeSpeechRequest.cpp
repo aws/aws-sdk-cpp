@@ -33,7 +33,9 @@ SynthesizeSpeechRequest::SynthesizeSpeechRequest() :
     m_textType(TextType::NOT_SET),
     m_textTypeHasBeenSet(false),
     m_voiceId(VoiceId::NOT_SET),
-    m_voiceIdHasBeenSet(false)
+    m_voiceIdHasBeenSet(false),
+    m_languageCode(LanguageCode::NOT_SET),
+    m_languageCodeHasBeenSet(false)
 {
 }
 
@@ -90,7 +92,12 @@ Aws::String SynthesizeSpeechRequest::SerializePayload() const
    payload.WithString("VoiceId", VoiceIdMapper::GetNameForVoiceId(m_voiceId));
   }
 
-  return payload.WriteReadable();
+  if(m_languageCodeHasBeenSet)
+  {
+   payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+  }
+
+  return payload.View().WriteReadable();
 }
 
 
@@ -135,6 +142,11 @@ void  SynthesizeSpeechRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
   if(m_voiceIdHasBeenSet)
   {
     uri.AddQueryStringParameter("VoiceId", VoiceIdMapper::GetNameForVoiceId(m_voiceId));
+  }
+
+  if(m_languageCodeHasBeenSet)
+  {
+    uri.AddQueryStringParameter("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
 
 }

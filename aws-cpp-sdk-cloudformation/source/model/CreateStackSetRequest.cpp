@@ -28,6 +28,8 @@ CreateStackSetRequest::CreateStackSetRequest() :
     m_parametersHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_administrationRoleARNHasBeenSet(false),
+    m_executionRoleNameHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
@@ -86,6 +88,16 @@ Aws::String CreateStackSetRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_administrationRoleARNHasBeenSet)
+  {
+    ss << "AdministrationRoleARN=" << StringUtils::URLEncode(m_administrationRoleARN.c_str()) << "&";
+  }
+
+  if(m_executionRoleNameHasBeenSet)
+  {
+    ss << "ExecutionRoleName=" << StringUtils::URLEncode(m_executionRoleName.c_str()) << "&";
   }
 
   if(m_clientRequestTokenHasBeenSet)

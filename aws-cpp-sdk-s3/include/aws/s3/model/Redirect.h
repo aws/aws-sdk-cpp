@@ -44,225 +44,232 @@ namespace Model
 
 
     /**
-     * The host name to use in the redirect request.
+     * <p>The host name to use in the redirect request.</p>
      */
     inline const Aws::String& GetHostName() const{ return m_hostName; }
 
     /**
-     * The host name to use in the redirect request.
+     * <p>The host name to use in the redirect request.</p>
      */
     inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
 
     /**
-     * The host name to use in the redirect request.
+     * <p>The host name to use in the redirect request.</p>
      */
     inline void SetHostName(Aws::String&& value) { m_hostNameHasBeenSet = true; m_hostName = std::move(value); }
 
     /**
-     * The host name to use in the redirect request.
+     * <p>The host name to use in the redirect request.</p>
      */
     inline void SetHostName(const char* value) { m_hostNameHasBeenSet = true; m_hostName.assign(value); }
 
     /**
-     * The host name to use in the redirect request.
+     * <p>The host name to use in the redirect request.</p>
      */
     inline Redirect& WithHostName(const Aws::String& value) { SetHostName(value); return *this;}
 
     /**
-     * The host name to use in the redirect request.
+     * <p>The host name to use in the redirect request.</p>
      */
     inline Redirect& WithHostName(Aws::String&& value) { SetHostName(std::move(value)); return *this;}
 
     /**
-     * The host name to use in the redirect request.
+     * <p>The host name to use in the redirect request.</p>
      */
     inline Redirect& WithHostName(const char* value) { SetHostName(value); return *this;}
 
 
     /**
-     * The HTTP redirect code to use on the response. Not required if one of the
-     * siblings is present.
+     * <p>The HTTP redirect code to use on the response. Not required if one of the
+     * siblings is present.</p>
      */
     inline const Aws::String& GetHttpRedirectCode() const{ return m_httpRedirectCode; }
 
     /**
-     * The HTTP redirect code to use on the response. Not required if one of the
-     * siblings is present.
+     * <p>The HTTP redirect code to use on the response. Not required if one of the
+     * siblings is present.</p>
      */
     inline void SetHttpRedirectCode(const Aws::String& value) { m_httpRedirectCodeHasBeenSet = true; m_httpRedirectCode = value; }
 
     /**
-     * The HTTP redirect code to use on the response. Not required if one of the
-     * siblings is present.
+     * <p>The HTTP redirect code to use on the response. Not required if one of the
+     * siblings is present.</p>
      */
     inline void SetHttpRedirectCode(Aws::String&& value) { m_httpRedirectCodeHasBeenSet = true; m_httpRedirectCode = std::move(value); }
 
     /**
-     * The HTTP redirect code to use on the response. Not required if one of the
-     * siblings is present.
+     * <p>The HTTP redirect code to use on the response. Not required if one of the
+     * siblings is present.</p>
      */
     inline void SetHttpRedirectCode(const char* value) { m_httpRedirectCodeHasBeenSet = true; m_httpRedirectCode.assign(value); }
 
     /**
-     * The HTTP redirect code to use on the response. Not required if one of the
-     * siblings is present.
+     * <p>The HTTP redirect code to use on the response. Not required if one of the
+     * siblings is present.</p>
      */
     inline Redirect& WithHttpRedirectCode(const Aws::String& value) { SetHttpRedirectCode(value); return *this;}
 
     /**
-     * The HTTP redirect code to use on the response. Not required if one of the
-     * siblings is present.
+     * <p>The HTTP redirect code to use on the response. Not required if one of the
+     * siblings is present.</p>
      */
     inline Redirect& WithHttpRedirectCode(Aws::String&& value) { SetHttpRedirectCode(std::move(value)); return *this;}
 
     /**
-     * The HTTP redirect code to use on the response. Not required if one of the
-     * siblings is present.
+     * <p>The HTTP redirect code to use on the response. Not required if one of the
+     * siblings is present.</p>
      */
     inline Redirect& WithHttpRedirectCode(const char* value) { SetHttpRedirectCode(value); return *this;}
 
 
     /**
-     * Protocol to use (http, https) when redirecting requests. The default is the
-     * protocol that is used in the original request.
+     * <p>Protocol to use (http, https) when redirecting requests. The default is the
+     * protocol that is used in the original request.</p>
      */
     inline const Protocol& GetProtocol() const{ return m_protocol; }
 
     /**
-     * Protocol to use (http, https) when redirecting requests. The default is the
-     * protocol that is used in the original request.
+     * <p>Protocol to use (http, https) when redirecting requests. The default is the
+     * protocol that is used in the original request.</p>
      */
     inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * Protocol to use (http, https) when redirecting requests. The default is the
-     * protocol that is used in the original request.
+     * <p>Protocol to use (http, https) when redirecting requests. The default is the
+     * protocol that is used in the original request.</p>
      */
     inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * Protocol to use (http, https) when redirecting requests. The default is the
-     * protocol that is used in the original request.
+     * <p>Protocol to use (http, https) when redirecting requests. The default is the
+     * protocol that is used in the original request.</p>
      */
     inline Redirect& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
 
     /**
-     * Protocol to use (http, https) when redirecting requests. The default is the
-     * protocol that is used in the original request.
+     * <p>Protocol to use (http, https) when redirecting requests. The default is the
+     * protocol that is used in the original request.</p>
      */
     inline Redirect& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
 
 
     /**
-     * The object key prefix to use in the redirect request. For example, to redirect
-     * requests for all pages with prefix docs/ (objects in the docs/ folder) to
-     * documents/, you can set a condition block with KeyPrefixEquals set to docs/ and
-     * in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of
-     * the siblings is present. Can be present only if ReplaceKeyWith is not provided.
+     * <p>The object key prefix to use in the redirect request. For example, to
+     * redirect requests for all pages with prefix docs/ (objects in the docs/ folder)
+     * to documents/, you can set a condition block with KeyPrefixEquals set to docs/
+     * and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one
+     * of the siblings is present. Can be present only if ReplaceKeyWith is not
+     * provided.</p>
      */
     inline const Aws::String& GetReplaceKeyPrefixWith() const{ return m_replaceKeyPrefixWith; }
 
     /**
-     * The object key prefix to use in the redirect request. For example, to redirect
-     * requests for all pages with prefix docs/ (objects in the docs/ folder) to
-     * documents/, you can set a condition block with KeyPrefixEquals set to docs/ and
-     * in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of
-     * the siblings is present. Can be present only if ReplaceKeyWith is not provided.
+     * <p>The object key prefix to use in the redirect request. For example, to
+     * redirect requests for all pages with prefix docs/ (objects in the docs/ folder)
+     * to documents/, you can set a condition block with KeyPrefixEquals set to docs/
+     * and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one
+     * of the siblings is present. Can be present only if ReplaceKeyWith is not
+     * provided.</p>
      */
     inline void SetReplaceKeyPrefixWith(const Aws::String& value) { m_replaceKeyPrefixWithHasBeenSet = true; m_replaceKeyPrefixWith = value; }
 
     /**
-     * The object key prefix to use in the redirect request. For example, to redirect
-     * requests for all pages with prefix docs/ (objects in the docs/ folder) to
-     * documents/, you can set a condition block with KeyPrefixEquals set to docs/ and
-     * in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of
-     * the siblings is present. Can be present only if ReplaceKeyWith is not provided.
+     * <p>The object key prefix to use in the redirect request. For example, to
+     * redirect requests for all pages with prefix docs/ (objects in the docs/ folder)
+     * to documents/, you can set a condition block with KeyPrefixEquals set to docs/
+     * and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one
+     * of the siblings is present. Can be present only if ReplaceKeyWith is not
+     * provided.</p>
      */
     inline void SetReplaceKeyPrefixWith(Aws::String&& value) { m_replaceKeyPrefixWithHasBeenSet = true; m_replaceKeyPrefixWith = std::move(value); }
 
     /**
-     * The object key prefix to use in the redirect request. For example, to redirect
-     * requests for all pages with prefix docs/ (objects in the docs/ folder) to
-     * documents/, you can set a condition block with KeyPrefixEquals set to docs/ and
-     * in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of
-     * the siblings is present. Can be present only if ReplaceKeyWith is not provided.
+     * <p>The object key prefix to use in the redirect request. For example, to
+     * redirect requests for all pages with prefix docs/ (objects in the docs/ folder)
+     * to documents/, you can set a condition block with KeyPrefixEquals set to docs/
+     * and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one
+     * of the siblings is present. Can be present only if ReplaceKeyWith is not
+     * provided.</p>
      */
     inline void SetReplaceKeyPrefixWith(const char* value) { m_replaceKeyPrefixWithHasBeenSet = true; m_replaceKeyPrefixWith.assign(value); }
 
     /**
-     * The object key prefix to use in the redirect request. For example, to redirect
-     * requests for all pages with prefix docs/ (objects in the docs/ folder) to
-     * documents/, you can set a condition block with KeyPrefixEquals set to docs/ and
-     * in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of
-     * the siblings is present. Can be present only if ReplaceKeyWith is not provided.
+     * <p>The object key prefix to use in the redirect request. For example, to
+     * redirect requests for all pages with prefix docs/ (objects in the docs/ folder)
+     * to documents/, you can set a condition block with KeyPrefixEquals set to docs/
+     * and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one
+     * of the siblings is present. Can be present only if ReplaceKeyWith is not
+     * provided.</p>
      */
     inline Redirect& WithReplaceKeyPrefixWith(const Aws::String& value) { SetReplaceKeyPrefixWith(value); return *this;}
 
     /**
-     * The object key prefix to use in the redirect request. For example, to redirect
-     * requests for all pages with prefix docs/ (objects in the docs/ folder) to
-     * documents/, you can set a condition block with KeyPrefixEquals set to docs/ and
-     * in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of
-     * the siblings is present. Can be present only if ReplaceKeyWith is not provided.
+     * <p>The object key prefix to use in the redirect request. For example, to
+     * redirect requests for all pages with prefix docs/ (objects in the docs/ folder)
+     * to documents/, you can set a condition block with KeyPrefixEquals set to docs/
+     * and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one
+     * of the siblings is present. Can be present only if ReplaceKeyWith is not
+     * provided.</p>
      */
     inline Redirect& WithReplaceKeyPrefixWith(Aws::String&& value) { SetReplaceKeyPrefixWith(std::move(value)); return *this;}
 
     /**
-     * The object key prefix to use in the redirect request. For example, to redirect
-     * requests for all pages with prefix docs/ (objects in the docs/ folder) to
-     * documents/, you can set a condition block with KeyPrefixEquals set to docs/ and
-     * in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one of
-     * the siblings is present. Can be present only if ReplaceKeyWith is not provided.
+     * <p>The object key prefix to use in the redirect request. For example, to
+     * redirect requests for all pages with prefix docs/ (objects in the docs/ folder)
+     * to documents/, you can set a condition block with KeyPrefixEquals set to docs/
+     * and in the Redirect set ReplaceKeyPrefixWith to /documents. Not required if one
+     * of the siblings is present. Can be present only if ReplaceKeyWith is not
+     * provided.</p>
      */
     inline Redirect& WithReplaceKeyPrefixWith(const char* value) { SetReplaceKeyPrefixWith(value); return *this;}
 
 
     /**
-     * The specific object key to use in the redirect request. For example, redirect
+     * <p>The specific object key to use in the redirect request. For example, redirect
      * request to error.html. Not required if one of the sibling is present. Can be
-     * present only if ReplaceKeyPrefixWith is not provided.
+     * present only if ReplaceKeyPrefixWith is not provided.</p>
      */
     inline const Aws::String& GetReplaceKeyWith() const{ return m_replaceKeyWith; }
 
     /**
-     * The specific object key to use in the redirect request. For example, redirect
+     * <p>The specific object key to use in the redirect request. For example, redirect
      * request to error.html. Not required if one of the sibling is present. Can be
-     * present only if ReplaceKeyPrefixWith is not provided.
+     * present only if ReplaceKeyPrefixWith is not provided.</p>
      */
     inline void SetReplaceKeyWith(const Aws::String& value) { m_replaceKeyWithHasBeenSet = true; m_replaceKeyWith = value; }
 
     /**
-     * The specific object key to use in the redirect request. For example, redirect
+     * <p>The specific object key to use in the redirect request. For example, redirect
      * request to error.html. Not required if one of the sibling is present. Can be
-     * present only if ReplaceKeyPrefixWith is not provided.
+     * present only if ReplaceKeyPrefixWith is not provided.</p>
      */
     inline void SetReplaceKeyWith(Aws::String&& value) { m_replaceKeyWithHasBeenSet = true; m_replaceKeyWith = std::move(value); }
 
     /**
-     * The specific object key to use in the redirect request. For example, redirect
+     * <p>The specific object key to use in the redirect request. For example, redirect
      * request to error.html. Not required if one of the sibling is present. Can be
-     * present only if ReplaceKeyPrefixWith is not provided.
+     * present only if ReplaceKeyPrefixWith is not provided.</p>
      */
     inline void SetReplaceKeyWith(const char* value) { m_replaceKeyWithHasBeenSet = true; m_replaceKeyWith.assign(value); }
 
     /**
-     * The specific object key to use in the redirect request. For example, redirect
+     * <p>The specific object key to use in the redirect request. For example, redirect
      * request to error.html. Not required if one of the sibling is present. Can be
-     * present only if ReplaceKeyPrefixWith is not provided.
+     * present only if ReplaceKeyPrefixWith is not provided.</p>
      */
     inline Redirect& WithReplaceKeyWith(const Aws::String& value) { SetReplaceKeyWith(value); return *this;}
 
     /**
-     * The specific object key to use in the redirect request. For example, redirect
+     * <p>The specific object key to use in the redirect request. For example, redirect
      * request to error.html. Not required if one of the sibling is present. Can be
-     * present only if ReplaceKeyPrefixWith is not provided.
+     * present only if ReplaceKeyPrefixWith is not provided.</p>
      */
     inline Redirect& WithReplaceKeyWith(Aws::String&& value) { SetReplaceKeyWith(std::move(value)); return *this;}
 
     /**
-     * The specific object key to use in the redirect request. For example, redirect
+     * <p>The specific object key to use in the redirect request. For example, redirect
      * request to error.html. Not required if one of the sibling is present. Can be
-     * present only if ReplaceKeyPrefixWith is not provided.
+     * present only if ReplaceKeyPrefixWith is not provided.</p>
      */
     inline Redirect& WithReplaceKeyWith(const char* value) { SetReplaceKeyWith(value); return *this;}
 

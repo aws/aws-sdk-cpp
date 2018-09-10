@@ -18,6 +18,7 @@
 #include <aws/ecs/model/KernelCapabilities.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/Device.h>
+#include <aws/ecs/model/Tmpfs.h>
 #include <utility>
 
 namespace Aws
@@ -27,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ECS
@@ -44,38 +46,48 @@ namespace Model
   {
   public:
     LinuxParameters();
-    LinuxParameters(const Aws::Utils::Json::JsonValue& jsonValue);
-    LinuxParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    LinuxParameters(Aws::Utils::Json::JsonView jsonValue);
+    LinuxParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p>
+     * the default configuration provided by Docker.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
+     * but the <code>add</code> parameter is not supported.</p> </note>
      */
     inline const KernelCapabilities& GetCapabilities() const{ return m_capabilities; }
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p>
+     * the default configuration provided by Docker.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
+     * but the <code>add</code> parameter is not supported.</p> </note>
      */
     inline void SetCapabilities(const KernelCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p>
+     * the default configuration provided by Docker.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
+     * but the <code>add</code> parameter is not supported.</p> </note>
      */
     inline void SetCapabilities(KernelCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p>
+     * the default configuration provided by Docker.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
+     * but the <code>add</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& WithCapabilities(const KernelCapabilities& value) { SetCapabilities(value); return *this;}
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p>
+     * the default configuration provided by Docker.</p> <note> <p>If you are using
+     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
+     * but the <code>add</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& WithCapabilities(KernelCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
 
@@ -83,77 +95,91 @@ namespace Model
     /**
      * <p>Any host devices to expose to the container. This parameter maps to
      * <code>Devices</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--device</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline const Aws::Vector<Device>& GetDevices() const{ return m_devices; }
 
     /**
      * <p>Any host devices to expose to the container. This parameter maps to
      * <code>Devices</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--device</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline void SetDevices(const Aws::Vector<Device>& value) { m_devicesHasBeenSet = true; m_devices = value; }
 
     /**
      * <p>Any host devices to expose to the container. This parameter maps to
      * <code>Devices</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--device</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline void SetDevices(Aws::Vector<Device>&& value) { m_devicesHasBeenSet = true; m_devices = std::move(value); }
 
     /**
      * <p>Any host devices to expose to the container. This parameter maps to
      * <code>Devices</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--device</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& WithDevices(const Aws::Vector<Device>& value) { SetDevices(value); return *this;}
 
     /**
      * <p>Any host devices to expose to the container. This parameter maps to
      * <code>Devices</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--device</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& WithDevices(Aws::Vector<Device>&& value) { SetDevices(std::move(value)); return *this;}
 
     /**
      * <p>Any host devices to expose to the container. This parameter maps to
      * <code>Devices</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--device</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& AddDevices(const Device& value) { m_devicesHasBeenSet = true; m_devices.push_back(value); return *this; }
 
     /**
      * <p>Any host devices to expose to the container. This parameter maps to
      * <code>Devices</code> in the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create
-     * a container</a> section of the <a
-     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker
-     * Remote API</a> and the <code>--device</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
+     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+     * <code>--device</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>devices</code> parameter is not supported.</p> </note>
      */
     inline LinuxParameters& AddDevices(Device&& value) { m_devicesHasBeenSet = true; m_devices.push_back(std::move(value)); return *this; }
 
@@ -191,6 +217,98 @@ namespace Model
      */
     inline LinuxParameters& WithInitProcessEnabled(bool value) { SetInitProcessEnabled(value); return *this;}
 
+
+    /**
+     * <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This
+     * parameter maps to the <code>--shm-size</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>sharedMemorySize</code> parameter is not supported.</p> </note>
+     */
+    inline int GetSharedMemorySize() const{ return m_sharedMemorySize; }
+
+    /**
+     * <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This
+     * parameter maps to the <code>--shm-size</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>sharedMemorySize</code> parameter is not supported.</p> </note>
+     */
+    inline void SetSharedMemorySize(int value) { m_sharedMemorySizeHasBeenSet = true; m_sharedMemorySize = value; }
+
+    /**
+     * <p>The value for the size (in MiB) of the <code>/dev/shm</code> volume. This
+     * parameter maps to the <code>--shm-size</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>sharedMemorySize</code> parameter is not supported.</p> </note>
+     */
+    inline LinuxParameters& WithSharedMemorySize(int value) { SetSharedMemorySize(value); return *this;}
+
+
+    /**
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
+     * parameter maps to the <code>--tmpfs</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
+     */
+    inline const Aws::Vector<Tmpfs>& GetTmpfs() const{ return m_tmpfs; }
+
+    /**
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
+     * parameter maps to the <code>--tmpfs</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
+     */
+    inline void SetTmpfs(const Aws::Vector<Tmpfs>& value) { m_tmpfsHasBeenSet = true; m_tmpfs = value; }
+
+    /**
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
+     * parameter maps to the <code>--tmpfs</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
+     */
+    inline void SetTmpfs(Aws::Vector<Tmpfs>&& value) { m_tmpfsHasBeenSet = true; m_tmpfs = std::move(value); }
+
+    /**
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
+     * parameter maps to the <code>--tmpfs</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
+     */
+    inline LinuxParameters& WithTmpfs(const Aws::Vector<Tmpfs>& value) { SetTmpfs(value); return *this;}
+
+    /**
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
+     * parameter maps to the <code>--tmpfs</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
+     */
+    inline LinuxParameters& WithTmpfs(Aws::Vector<Tmpfs>&& value) { SetTmpfs(std::move(value)); return *this;}
+
+    /**
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
+     * parameter maps to the <code>--tmpfs</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
+     */
+    inline LinuxParameters& AddTmpfs(const Tmpfs& value) { m_tmpfsHasBeenSet = true; m_tmpfs.push_back(value); return *this; }
+
+    /**
+     * <p>The container path, mount options, and size (in MiB) of the tmpfs mount. This
+     * parameter maps to the <code>--tmpfs</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
+     * <p>If you are using tasks that use the Fargate launch type, the
+     * <code>tmpfs</code> parameter is not supported.</p> </note>
+     */
+    inline LinuxParameters& AddTmpfs(Tmpfs&& value) { m_tmpfsHasBeenSet = true; m_tmpfs.push_back(std::move(value)); return *this; }
+
   private:
 
     KernelCapabilities m_capabilities;
@@ -201,6 +319,12 @@ namespace Model
 
     bool m_initProcessEnabled;
     bool m_initProcessEnabledHasBeenSet;
+
+    int m_sharedMemorySize;
+    bool m_sharedMemorySizeHasBeenSet;
+
+    Aws::Vector<Tmpfs> m_tmpfs;
+    bool m_tmpfsHasBeenSet;
   };
 
 } // namespace Model

@@ -40,7 +40,7 @@ Snapshot::Snapshot() :
 {
 }
 
-Snapshot::Snapshot(const JsonValue& jsonValue) : 
+Snapshot::Snapshot(JsonView jsonValue) : 
     m_directoryIdHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
     m_type(SnapshotType::NOT_SET),
@@ -53,7 +53,7 @@ Snapshot::Snapshot(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Snapshot& Snapshot::operator =(const JsonValue& jsonValue)
+Snapshot& Snapshot::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DirectoryId"))
   {

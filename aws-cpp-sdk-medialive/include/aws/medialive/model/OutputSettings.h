@@ -18,6 +18,7 @@
 #include <aws/medialive/model/ArchiveOutputSettings.h>
 #include <aws/medialive/model/HlsOutputSettings.h>
 #include <aws/medialive/model/MsSmoothOutputSettings.h>
+#include <aws/medialive/model/RtmpOutputSettings.h>
 #include <aws/medialive/model/UdpOutputSettings.h>
 #include <utility>
 
@@ -28,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -44,8 +46,8 @@ namespace Model
   {
   public:
     OutputSettings();
-    OutputSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    OutputSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OutputSettings(Aws::Utils::Json::JsonView jsonValue);
+    OutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -98,6 +100,22 @@ namespace Model
 
 
     
+    inline const RtmpOutputSettings& GetRtmpOutputSettings() const{ return m_rtmpOutputSettings; }
+
+    
+    inline void SetRtmpOutputSettings(const RtmpOutputSettings& value) { m_rtmpOutputSettingsHasBeenSet = true; m_rtmpOutputSettings = value; }
+
+    
+    inline void SetRtmpOutputSettings(RtmpOutputSettings&& value) { m_rtmpOutputSettingsHasBeenSet = true; m_rtmpOutputSettings = std::move(value); }
+
+    
+    inline OutputSettings& WithRtmpOutputSettings(const RtmpOutputSettings& value) { SetRtmpOutputSettings(value); return *this;}
+
+    
+    inline OutputSettings& WithRtmpOutputSettings(RtmpOutputSettings&& value) { SetRtmpOutputSettings(std::move(value)); return *this;}
+
+
+    
     inline const UdpOutputSettings& GetUdpOutputSettings() const{ return m_udpOutputSettings; }
 
     
@@ -122,6 +140,9 @@ namespace Model
 
     MsSmoothOutputSettings m_msSmoothOutputSettings;
     bool m_msSmoothOutputSettingsHasBeenSet;
+
+    RtmpOutputSettings m_rtmpOutputSettings;
+    bool m_rtmpOutputSettingsHasBeenSet;
 
     UdpOutputSettings m_udpOutputSettings;
     bool m_udpOutputSettingsHasBeenSet;

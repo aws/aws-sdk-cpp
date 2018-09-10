@@ -51,7 +51,7 @@ Aws::String GetAssessmentReportRequest::SerializePayload() const
    payload.WithString("reportType", ReportTypeMapper::GetNameForReportType(m_reportType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetAssessmentReportRequest::GetRequestSpecificHeaders() const

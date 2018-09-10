@@ -28,6 +28,7 @@ namespace ElasticLoadBalancingv2
 namespace ElasticLoadBalancingv2ErrorMapper
 {
 
+static const int INVALID_LOAD_BALANCER_ACTION_HASH = HashingUtils::HashString("InvalidLoadBalancerAction");
 static const int LOAD_BALANCER_NOT_FOUND_HASH = HashingUtils::HashString("LoadBalancerNotFound");
 static const int PRIORITY_IN_USE_HASH = HashingUtils::HashString("PriorityInUse");
 static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
@@ -49,6 +50,7 @@ static const int DUPLICATE_LISTENER_HASH = HashingUtils::HashString("DuplicateLi
 static const int TOO_MANY_REGISTRATIONS_FOR_TARGET_ID_HASH = HashingUtils::HashString("TooManyRegistrationsForTargetId");
 static const int UNSUPPORTED_PROTOCOL_HASH = HashingUtils::HashString("UnsupportedProtocol");
 static const int RULE_NOT_FOUND_HASH = HashingUtils::HashString("RuleNotFound");
+static const int TOO_MANY_ACTIONS_HASH = HashingUtils::HashString("TooManyActions");
 static const int ALLOCATION_ID_NOT_FOUND_HASH = HashingUtils::HashString("AllocationIdNotFound");
 static const int TOO_MANY_LISTENERS_HASH = HashingUtils::HashString("TooManyListeners");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUse");
@@ -67,7 +69,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == LOAD_BALANCER_NOT_FOUND_HASH)
+  if (hashCode == INVALID_LOAD_BALANCER_ACTION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::INVALID_LOAD_BALANCER_ACTION), false);
+  }
+  else if (hashCode == LOAD_BALANCER_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::LOAD_BALANCER_NOT_FOUND), false);
   }
@@ -150,6 +156,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RULE_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::RULE_NOT_FOUND), false);
+  }
+  else if (hashCode == TOO_MANY_ACTIONS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::TOO_MANY_ACTIONS), false);
   }
   else if (hashCode == ALLOCATION_ID_NOT_FOUND_HASH)
   {

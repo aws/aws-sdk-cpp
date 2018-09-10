@@ -34,14 +34,14 @@ EnumerationValue::EnumerationValue() :
 {
 }
 
-EnumerationValue::EnumerationValue(const JsonValue& jsonValue) : 
+EnumerationValue::EnumerationValue(JsonView jsonValue) : 
     m_valueHasBeenSet(false),
     m_synonymsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-EnumerationValue& EnumerationValue::operator =(const JsonValue& jsonValue)
+EnumerationValue& EnumerationValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("value"))
   {
@@ -52,7 +52,7 @@ EnumerationValue& EnumerationValue::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("synonyms"))
   {
-    Array<JsonValue> synonymsJsonList = jsonValue.GetArray("synonyms");
+    Array<JsonView> synonymsJsonList = jsonValue.GetArray("synonyms");
     for(unsigned synonymsIndex = 0; synonymsIndex < synonymsJsonList.GetLength(); ++synonymsIndex)
     {
       m_synonyms.push_back(synonymsJsonList[synonymsIndex].AsString());

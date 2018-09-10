@@ -37,7 +37,7 @@ DescribeUserImportJobResult::DescribeUserImportJobResult(const Aws::AmazonWebSer
 
 DescribeUserImportJobResult& DescribeUserImportJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserImportJob"))
   {
     m_userImportJob = jsonValue.GetObject("UserImportJob");

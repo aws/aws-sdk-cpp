@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -37,15 +38,15 @@ namespace Model
   /**
    * <p>Represents the output of a <a>ListIncomingTypedLinks</a> response
    * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchListIncomingTypedLinksResponse">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchListIncomingTypedLinksResponse">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchListIncomingTypedLinksResponse
   {
   public:
     BatchListIncomingTypedLinksResponse();
-    BatchListIncomingTypedLinksResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchListIncomingTypedLinksResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchListIncomingTypedLinksResponse(Aws::Utils::Json::JsonView jsonValue);
+    BatchListIncomingTypedLinksResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

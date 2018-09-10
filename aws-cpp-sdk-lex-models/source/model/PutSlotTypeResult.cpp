@@ -27,19 +27,21 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 PutSlotTypeResult::PutSlotTypeResult() : 
-    m_valueSelectionStrategy(SlotValueSelectionStrategy::NOT_SET)
+    m_valueSelectionStrategy(SlotValueSelectionStrategy::NOT_SET),
+    m_createVersion(false)
 {
 }
 
 PutSlotTypeResult::PutSlotTypeResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_valueSelectionStrategy(SlotValueSelectionStrategy::NOT_SET)
+    m_valueSelectionStrategy(SlotValueSelectionStrategy::NOT_SET),
+    m_createVersion(false)
 {
   *this = result;
 }
 
 PutSlotTypeResult& PutSlotTypeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
@@ -54,7 +56,7 @@ PutSlotTypeResult& PutSlotTypeResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("enumerationValues"))
   {
-    Array<JsonValue> enumerationValuesJsonList = jsonValue.GetArray("enumerationValues");
+    Array<JsonView> enumerationValuesJsonList = jsonValue.GetArray("enumerationValues");
     for(unsigned enumerationValuesIndex = 0; enumerationValuesIndex < enumerationValuesJsonList.GetLength(); ++enumerationValuesIndex)
     {
       m_enumerationValues.push_back(enumerationValuesJsonList[enumerationValuesIndex].AsObject());
@@ -88,6 +90,12 @@ PutSlotTypeResult& PutSlotTypeResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("valueSelectionStrategy"))
   {
     m_valueSelectionStrategy = SlotValueSelectionStrategyMapper::GetSlotValueSelectionStrategyForName(jsonValue.GetString("valueSelectionStrategy"));
+
+  }
+
+  if(jsonValue.ValueExists("createVersion"))
+  {
+    m_createVersion = jsonValue.GetBool("createVersion");
 
   }
 

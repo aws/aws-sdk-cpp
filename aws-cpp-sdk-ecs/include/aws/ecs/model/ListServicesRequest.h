@@ -18,6 +18,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/LaunchType.h>
+#include <aws/ecs/model/SchedulingStrategy.h>
 #include <utility>
 
 namespace Aws
@@ -211,29 +212,55 @@ namespace Model
 
 
     /**
-     * <p>The launch type for services you want to list.</p>
+     * <p>The launch type for the services to list.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type for services you want to list.</p>
+     * <p>The launch type for the services to list.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type for services you want to list.</p>
+     * <p>The launch type for the services to list.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type for services you want to list.</p>
+     * <p>The launch type for the services to list.</p>
      */
     inline ListServicesRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type for services you want to list.</p>
+     * <p>The launch type for the services to list.</p>
      */
     inline ListServicesRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The scheduling strategy for services to list.</p>
+     */
+    inline const SchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
+
+    /**
+     * <p>The scheduling strategy for services to list.</p>
+     */
+    inline void SetSchedulingStrategy(const SchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
+
+    /**
+     * <p>The scheduling strategy for services to list.</p>
+     */
+    inline void SetSchedulingStrategy(SchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
+
+    /**
+     * <p>The scheduling strategy for services to list.</p>
+     */
+    inline ListServicesRequest& WithSchedulingStrategy(const SchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
+
+    /**
+     * <p>The scheduling strategy for services to list.</p>
+     */
+    inline ListServicesRequest& WithSchedulingStrategy(SchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
 
   private:
 
@@ -248,6 +275,9 @@ namespace Model
 
     LaunchType m_launchType;
     bool m_launchTypeHasBeenSet;
+
+    SchedulingStrategy m_schedulingStrategy;
+    bool m_schedulingStrategyHasBeenSet;
   };
 
 } // namespace Model

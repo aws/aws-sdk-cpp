@@ -37,7 +37,7 @@ Core::Core() :
 {
 }
 
-Core::Core(const JsonValue& jsonValue) : 
+Core::Core(JsonView jsonValue) : 
     m_certificateArnHasBeenSet(false),
     m_idHasBeenSet(false),
     m_syncShadow(false),
@@ -47,7 +47,7 @@ Core::Core(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Core& Core::operator =(const JsonValue& jsonValue)
+Core& Core::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CertificateArn"))
   {

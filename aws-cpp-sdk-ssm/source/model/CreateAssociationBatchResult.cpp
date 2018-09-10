@@ -37,10 +37,10 @@ CreateAssociationBatchResult::CreateAssociationBatchResult(const Aws::AmazonWebS
 
 CreateAssociationBatchResult& CreateAssociationBatchResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Successful"))
   {
-    Array<JsonValue> successfulJsonList = jsonValue.GetArray("Successful");
+    Array<JsonView> successfulJsonList = jsonValue.GetArray("Successful");
     for(unsigned successfulIndex = 0; successfulIndex < successfulJsonList.GetLength(); ++successfulIndex)
     {
       m_successful.push_back(successfulJsonList[successfulIndex].AsObject());
@@ -49,7 +49,7 @@ CreateAssociationBatchResult& CreateAssociationBatchResult::operator =(const Aws
 
   if(jsonValue.ValueExists("Failed"))
   {
-    Array<JsonValue> failedJsonList = jsonValue.GetArray("Failed");
+    Array<JsonView> failedJsonList = jsonValue.GetArray("Failed");
     for(unsigned failedIndex = 0; failedIndex < failedJsonList.GetLength(); ++failedIndex)
     {
       m_failed.push_back(failedJsonList[failedIndex].AsObject());

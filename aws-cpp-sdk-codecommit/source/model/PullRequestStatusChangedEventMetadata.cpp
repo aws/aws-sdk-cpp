@@ -34,14 +34,14 @@ PullRequestStatusChangedEventMetadata::PullRequestStatusChangedEventMetadata() :
 {
 }
 
-PullRequestStatusChangedEventMetadata::PullRequestStatusChangedEventMetadata(const JsonValue& jsonValue) : 
+PullRequestStatusChangedEventMetadata::PullRequestStatusChangedEventMetadata(JsonView jsonValue) : 
     m_pullRequestStatus(PullRequestStatusEnum::NOT_SET),
     m_pullRequestStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PullRequestStatusChangedEventMetadata& PullRequestStatusChangedEventMetadata::operator =(const JsonValue& jsonValue)
+PullRequestStatusChangedEventMetadata& PullRequestStatusChangedEventMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("pullRequestStatus"))
   {

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ApplicationAutoScaling
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     PredefinedMetricSpecification();
-    PredefinedMetricSpecification(const Aws::Utils::Json::JsonValue& jsonValue);
-    PredefinedMetricSpecification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PredefinedMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
+    PredefinedMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

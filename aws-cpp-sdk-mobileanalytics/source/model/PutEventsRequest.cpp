@@ -45,7 +45,7 @@ Aws::String PutEventsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutEventsRequest::GetRequestSpecificHeaders() const
@@ -55,14 +55,14 @@ Aws::Http::HeaderValueCollection PutEventsRequest::GetRequestSpecificHeaders() c
   if(m_clientContextHasBeenSet)
   {
     ss << m_clientContext;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context", ss.str()));
+    headers.emplace("x-amz-client-context",  ss.str());
     ss.str("");
   }
 
   if(m_clientContextEncodingHasBeenSet)
   {
     ss << m_clientContextEncoding;
-    headers.insert(Aws::Http::HeaderValuePair("x-amz-client-context-encoding", ss.str()));
+    headers.emplace("x-amz-client-context-encoding",  ss.str());
     ss.str("");
   }
 

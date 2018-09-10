@@ -45,7 +45,7 @@ PutIntegrationResult::PutIntegrationResult(const Aws::AmazonWebServiceResult<Jso
 
 PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("type"))
   {
     m_type = IntegrationTypeMapper::GetIntegrationTypeForName(jsonValue.GetString("type"));
@@ -84,7 +84,7 @@ PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("requestParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> requestParametersJsonMap = jsonValue.GetObject("requestParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> requestParametersJsonMap = jsonValue.GetObject("requestParameters").GetAllObjects();
     for(auto& requestParametersItem : requestParametersJsonMap)
     {
       m_requestParameters[requestParametersItem.first] = requestParametersItem.second.AsString();
@@ -93,7 +93,7 @@ PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("requestTemplates"))
   {
-    Aws::Map<Aws::String, JsonValue> requestTemplatesJsonMap = jsonValue.GetObject("requestTemplates").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> requestTemplatesJsonMap = jsonValue.GetObject("requestTemplates").GetAllObjects();
     for(auto& requestTemplatesItem : requestTemplatesJsonMap)
     {
       m_requestTemplates[requestTemplatesItem.first] = requestTemplatesItem.second.AsString();
@@ -126,7 +126,7 @@ PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("cacheKeyParameters"))
   {
-    Array<JsonValue> cacheKeyParametersJsonList = jsonValue.GetArray("cacheKeyParameters");
+    Array<JsonView> cacheKeyParametersJsonList = jsonValue.GetArray("cacheKeyParameters");
     for(unsigned cacheKeyParametersIndex = 0; cacheKeyParametersIndex < cacheKeyParametersJsonList.GetLength(); ++cacheKeyParametersIndex)
     {
       m_cacheKeyParameters.push_back(cacheKeyParametersJsonList[cacheKeyParametersIndex].AsString());
@@ -135,7 +135,7 @@ PutIntegrationResult& PutIntegrationResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("integrationResponses"))
   {
-    Aws::Map<Aws::String, JsonValue> integrationResponsesJsonMap = jsonValue.GetObject("integrationResponses").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> integrationResponsesJsonMap = jsonValue.GetObject("integrationResponses").GetAllObjects();
     for(auto& integrationResponsesItem : integrationResponsesJsonMap)
     {
       m_integrationResponses[integrationResponsesItem.first] = integrationResponsesItem.second.AsObject();

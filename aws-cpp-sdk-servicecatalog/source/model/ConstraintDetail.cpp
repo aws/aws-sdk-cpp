@@ -36,7 +36,7 @@ ConstraintDetail::ConstraintDetail() :
 {
 }
 
-ConstraintDetail::ConstraintDetail(const JsonValue& jsonValue) : 
+ConstraintDetail::ConstraintDetail(JsonView jsonValue) : 
     m_constraintIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -45,7 +45,7 @@ ConstraintDetail::ConstraintDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ConstraintDetail& ConstraintDetail::operator =(const JsonValue& jsonValue)
+ConstraintDetail& ConstraintDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ConstraintId"))
   {

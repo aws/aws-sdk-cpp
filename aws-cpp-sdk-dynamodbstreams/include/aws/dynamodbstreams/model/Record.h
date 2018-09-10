@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DynamoDBStreams
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     Record();
-    Record(const Aws::Utils::Json::JsonValue& jsonValue);
-    Record& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Record(Aws::Utils::Json::JsonView jsonValue);
+    Record& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

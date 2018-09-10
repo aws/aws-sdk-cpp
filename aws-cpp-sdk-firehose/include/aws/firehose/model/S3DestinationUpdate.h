@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Firehose
@@ -46,188 +47,223 @@ namespace Model
   {
   public:
     S3DestinationUpdate();
-    S3DestinationUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    S3DestinationUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    S3DestinationUpdate(Aws::Utils::Json::JsonView jsonValue);
+    S3DestinationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline S3DestinationUpdate& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline S3DestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline S3DestinationUpdate& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetBucketARN() const{ return m_bucketARN; }
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetBucketARN(Aws::String&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::move(value); }
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline void SetBucketARN(const char* value) { m_bucketARNHasBeenSet = true; m_bucketARN.assign(value); }
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline S3DestinationUpdate& WithBucketARN(const Aws::String& value) { SetBucketARN(value); return *this;}
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline S3DestinationUpdate& WithBucketARN(Aws::String&& value) { SetBucketARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the S3 bucket.</p>
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
     inline S3DestinationUpdate& WithBucketARN(const char* value) { SetBucketARN(value); return *this;}
 
 
     /**
-     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
-     * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
-     * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
+     * Amazon S3 files. You can specify an extra prefix to be added in front of the
+     * time format prefix. If the prefix ends with a slash, it appears as a folder in
+     * the S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
-     * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
-     * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
+     * Amazon S3 files. You can specify an extra prefix to be added in front of the
+     * time format prefix. If the prefix ends with a slash, it appears as a folder in
+     * the S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
-     * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
-     * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
+     * Amazon S3 files. You can specify an extra prefix to be added in front of the
+     * time format prefix. If the prefix ends with a slash, it appears as a folder in
+     * the S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
-     * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
-     * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
+     * Amazon S3 files. You can specify an extra prefix to be added in front of the
+     * time format prefix. If the prefix ends with a slash, it appears as a folder in
+     * the S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
-     * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
-     * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
+     * Amazon S3 files. You can specify an extra prefix to be added in front of the
+     * time format prefix. If the prefix ends with a slash, it appears as a folder in
+     * the S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline S3DestinationUpdate& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
-     * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
-     * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
+     * Amazon S3 files. You can specify an extra prefix to be added in front of the
+     * time format prefix. If the prefix ends with a slash, it appears as a folder in
+     * the S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline S3DestinationUpdate& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered S3
-     * files. You can specify an extra prefix to be added in front of the time format
-     * prefix. If the prefix ends with a slash, it appears as a folder in the S3
-     * bucket. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html">Amazon
-     * S3 Object Name Format</a> in the <i>Amazon Kinesis Firehose Developer
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
+     * Amazon S3 files. You can specify an extra prefix to be added in front of the
+     * time format prefix. If the prefix ends with a slash, it appears as a folder in
+     * the S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
      * Guide</i>.</p>
      */
     inline S3DestinationUpdate& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
     /**
-     * <p>The buffering option. If no value is specified, <b>BufferingHints</b> object
-     * default values are used.</p>
+     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
+     * object default values are used.</p>
      */
     inline const BufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
 
     /**
-     * <p>The buffering option. If no value is specified, <b>BufferingHints</b> object
-     * default values are used.</p>
+     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
+     * object default values are used.</p>
      */
     inline void SetBufferingHints(const BufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
 
     /**
-     * <p>The buffering option. If no value is specified, <b>BufferingHints</b> object
-     * default values are used.</p>
+     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
+     * object default values are used.</p>
      */
     inline void SetBufferingHints(BufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
 
     /**
-     * <p>The buffering option. If no value is specified, <b>BufferingHints</b> object
-     * default values are used.</p>
+     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
+     * object default values are used.</p>
      */
     inline S3DestinationUpdate& WithBufferingHints(const BufferingHints& value) { SetBufferingHints(value); return *this;}
 
     /**
-     * <p>The buffering option. If no value is specified, <b>BufferingHints</b> object
-     * default values are used.</p>
+     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
+     * object default values are used.</p>
      */
     inline S3DestinationUpdate& WithBufferingHints(BufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
 

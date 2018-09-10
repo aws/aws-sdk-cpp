@@ -54,6 +54,42 @@ namespace Model
 
 
     /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline void SetNodeGroupId(Aws::String&& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = std::move(value); }
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline void SetNodeGroupId(const char* value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId.assign(value); }
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline NodeGroupConfiguration& WithNodeGroupId(const Aws::String& value) { SetNodeGroupId(value); return *this;}
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline NodeGroupConfiguration& WithNodeGroupId(Aws::String&& value) { SetNodeGroupId(std::move(value)); return *this;}
+
+    /**
+     * <p>The 4-digit id for the node group these configuration values apply to.</p>
+     */
+    inline NodeGroupConfiguration& WithNodeGroupId(const char* value) { SetNodeGroupId(value); return *this;}
+
+
+    /**
      * <p>A string that specifies the keyspace for a particular node group. Keyspaces
      * range from 0 to 16,383. The string is in the format
      * <code>startkey-endkey</code>.</p> <p>Example: <code>"0-3999"</code> </p>
@@ -227,6 +263,9 @@ namespace Model
     inline NodeGroupConfiguration& AddReplicaAvailabilityZones(const char* value) { m_replicaAvailabilityZonesHasBeenSet = true; m_replicaAvailabilityZones.push_back(value); return *this; }
 
   private:
+
+    Aws::String m_nodeGroupId;
+    bool m_nodeGroupIdHasBeenSet;
 
     Aws::String m_slots;
     bool m_slotsHasBeenSet;

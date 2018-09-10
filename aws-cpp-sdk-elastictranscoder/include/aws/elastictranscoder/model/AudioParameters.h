@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticTranscoder
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     AudioParameters();
-    AudioParameters(const Aws::Utils::Json::JsonValue& jsonValue);
-    AudioParameters& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AudioParameters(Aws::Utils::Json::JsonView jsonValue);
+    AudioParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

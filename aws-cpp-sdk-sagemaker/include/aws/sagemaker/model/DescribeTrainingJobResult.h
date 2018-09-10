@@ -24,9 +24,11 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/OutputDataConfig.h>
 #include <aws/sagemaker/model/ResourceConfig.h>
+#include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/Channel.h>
+#include <aws/sagemaker/model/SecondaryStatusTransition.h>
 #include <utility>
 
 namespace Aws
@@ -123,6 +125,49 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the training job.</p>
      */
     inline DescribeTrainingJobResult& WithTrainingJobArn(const char* value) { SetTrainingJobArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline const Aws::String& GetTuningJobArn() const{ return m_tuningJobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline void SetTuningJobArn(const Aws::String& value) { m_tuningJobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline void SetTuningJobArn(Aws::String&& value) { m_tuningJobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline void SetTuningJobArn(const char* value) { m_tuningJobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline DescribeTrainingJobResult& WithTuningJobArn(const Aws::String& value) { SetTuningJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline DescribeTrainingJobResult& WithTuningJobArn(Aws::String&& value) { SetTuningJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if
+     * the training job was launched by a hyperparameter tuning job.</p>
+     */
+    inline DescribeTrainingJobResult& WithTuningJobArn(const char* value) { SetTuningJobArn(value); return *this;}
 
 
     /**
@@ -229,31 +274,101 @@ namespace Model
 
     /**
      * <p> Provides granular information about the system state. For more information,
-     * see <code>TrainingJobStatus</code>. </p>
+     * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
+     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
+     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
+     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
+     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
+     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
+     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
+     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
+     * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
+     * <code>Failed</code> - the training job has failed. The failure reason is stored
+     * in the <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
+     * valid values for <code>SecondaryStatus</code> are subject to change. They
+     * primarily provide information on the progress of the training job.</p>
+     * </important>
      */
     inline const SecondaryStatus& GetSecondaryStatus() const{ return m_secondaryStatus; }
 
     /**
      * <p> Provides granular information about the system state. For more information,
-     * see <code>TrainingJobStatus</code>. </p>
+     * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
+     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
+     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
+     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
+     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
+     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
+     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
+     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
+     * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
+     * <code>Failed</code> - the training job has failed. The failure reason is stored
+     * in the <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
+     * valid values for <code>SecondaryStatus</code> are subject to change. They
+     * primarily provide information on the progress of the training job.</p>
+     * </important>
      */
     inline void SetSecondaryStatus(const SecondaryStatus& value) { m_secondaryStatus = value; }
 
     /**
      * <p> Provides granular information about the system state. For more information,
-     * see <code>TrainingJobStatus</code>. </p>
+     * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
+     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
+     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
+     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
+     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
+     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
+     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
+     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
+     * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
+     * <code>Failed</code> - the training job has failed. The failure reason is stored
+     * in the <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
+     * valid values for <code>SecondaryStatus</code> are subject to change. They
+     * primarily provide information on the progress of the training job.</p>
+     * </important>
      */
     inline void SetSecondaryStatus(SecondaryStatus&& value) { m_secondaryStatus = std::move(value); }
 
     /**
      * <p> Provides granular information about the system state. For more information,
-     * see <code>TrainingJobStatus</code>. </p>
+     * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
+     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
+     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
+     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
+     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
+     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
+     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
+     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
+     * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
+     * <code>Failed</code> - the training job has failed. The failure reason is stored
+     * in the <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
+     * valid values for <code>SecondaryStatus</code> are subject to change. They
+     * primarily provide information on the progress of the training job.</p>
+     * </important>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(const SecondaryStatus& value) { SetSecondaryStatus(value); return *this;}
 
     /**
      * <p> Provides granular information about the system state. For more information,
-     * see <code>TrainingJobStatus</code>. </p>
+     * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
+     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
+     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
+     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
+     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
+     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
+     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
+     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
+     * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
+     * <code>Failed</code> - the training job has failed. The failure reason is stored
+     * in the <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
+     * valid values for <code>SecondaryStatus</code> are subject to change. They
+     * primarily provide information on the progress of the training job.</p>
+     * </important>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(SecondaryStatus&& value) { SetSecondaryStatus(std::move(value)); return *this;}
 
@@ -535,6 +650,37 @@ namespace Model
 
 
     /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
+     * access to. For more information, see <a>train-vpc</a>.</p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
+     * access to. For more information, see <a>train-vpc</a>.</p>
+     */
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
+     * access to. For more information, see <a>train-vpc</a>.</p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
+     * access to. For more information, see <a>train-vpc</a>.</p>
+     */
+    inline DescribeTrainingJobResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
+     * access to. For more information, see <a>train-vpc</a>.</p>
+     */
+    inline DescribeTrainingJobResult& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>The condition under which to stop the training job. </p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
@@ -587,53 +733,93 @@ namespace Model
 
 
     /**
-     * <p>A timestamp that indicates when training started.</p>
+     * <p>Indicates the time when the training job starts on training instances. You
+     * are billed for the time interval between this time and the value of
+     * <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the
+     * training data and to the size of the training container.</p>
      */
     inline const Aws::Utils::DateTime& GetTrainingStartTime() const{ return m_trainingStartTime; }
 
     /**
-     * <p>A timestamp that indicates when training started.</p>
+     * <p>Indicates the time when the training job starts on training instances. You
+     * are billed for the time interval between this time and the value of
+     * <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the
+     * training data and to the size of the training container.</p>
      */
     inline void SetTrainingStartTime(const Aws::Utils::DateTime& value) { m_trainingStartTime = value; }
 
     /**
-     * <p>A timestamp that indicates when training started.</p>
+     * <p>Indicates the time when the training job starts on training instances. You
+     * are billed for the time interval between this time and the value of
+     * <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the
+     * training data and to the size of the training container.</p>
      */
     inline void SetTrainingStartTime(Aws::Utils::DateTime&& value) { m_trainingStartTime = std::move(value); }
 
     /**
-     * <p>A timestamp that indicates when training started.</p>
+     * <p>Indicates the time when the training job starts on training instances. You
+     * are billed for the time interval between this time and the value of
+     * <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the
+     * training data and to the size of the training container.</p>
      */
     inline DescribeTrainingJobResult& WithTrainingStartTime(const Aws::Utils::DateTime& value) { SetTrainingStartTime(value); return *this;}
 
     /**
-     * <p>A timestamp that indicates when training started.</p>
+     * <p>Indicates the time when the training job starts on training instances. You
+     * are billed for the time interval between this time and the value of
+     * <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the
+     * training data and to the size of the training container.</p>
      */
     inline DescribeTrainingJobResult& WithTrainingStartTime(Aws::Utils::DateTime&& value) { SetTrainingStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>A timestamp that indicates when model training ended.</p>
+     * <p>Indicates the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline const Aws::Utils::DateTime& GetTrainingEndTime() const{ return m_trainingEndTime; }
 
     /**
-     * <p>A timestamp that indicates when model training ended.</p>
+     * <p>Indicates the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline void SetTrainingEndTime(const Aws::Utils::DateTime& value) { m_trainingEndTime = value; }
 
     /**
-     * <p>A timestamp that indicates when model training ended.</p>
+     * <p>Indicates the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline void SetTrainingEndTime(Aws::Utils::DateTime&& value) { m_trainingEndTime = std::move(value); }
 
     /**
-     * <p>A timestamp that indicates when model training ended.</p>
+     * <p>Indicates the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline DescribeTrainingJobResult& WithTrainingEndTime(const Aws::Utils::DateTime& value) { SetTrainingEndTime(value); return *this;}
 
     /**
-     * <p>A timestamp that indicates when model training ended.</p>
+     * <p>Indicates the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline DescribeTrainingJobResult& WithTrainingEndTime(Aws::Utils::DateTime&& value) { SetTrainingEndTime(std::move(value)); return *this;}
 
@@ -668,11 +854,63 @@ namespace Model
      */
     inline DescribeTrainingJobResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
+     */
+    inline const Aws::Vector<SecondaryStatusTransition>& GetSecondaryStatusTransitions() const{ return m_secondaryStatusTransitions; }
+
+    /**
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
+     */
+    inline void SetSecondaryStatusTransitions(const Aws::Vector<SecondaryStatusTransition>& value) { m_secondaryStatusTransitions = value; }
+
+    /**
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
+     */
+    inline void SetSecondaryStatusTransitions(Aws::Vector<SecondaryStatusTransition>&& value) { m_secondaryStatusTransitions = std::move(value); }
+
+    /**
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
+     */
+    inline DescribeTrainingJobResult& WithSecondaryStatusTransitions(const Aws::Vector<SecondaryStatusTransition>& value) { SetSecondaryStatusTransitions(value); return *this;}
+
+    /**
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
+     */
+    inline DescribeTrainingJobResult& WithSecondaryStatusTransitions(Aws::Vector<SecondaryStatusTransition>&& value) { SetSecondaryStatusTransitions(std::move(value)); return *this;}
+
+    /**
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
+     */
+    inline DescribeTrainingJobResult& AddSecondaryStatusTransitions(const SecondaryStatusTransition& value) { m_secondaryStatusTransitions.push_back(value); return *this; }
+
+    /**
+     * <p>To give an overview of the training job lifecycle,
+     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
+     * statuses that a training job has transitioned.</p>
+     */
+    inline DescribeTrainingJobResult& AddSecondaryStatusTransitions(SecondaryStatusTransition&& value) { m_secondaryStatusTransitions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_trainingJobName;
 
     Aws::String m_trainingJobArn;
+
+    Aws::String m_tuningJobArn;
 
     ModelArtifacts m_modelArtifacts;
 
@@ -694,6 +932,8 @@ namespace Model
 
     ResourceConfig m_resourceConfig;
 
+    VpcConfig m_vpcConfig;
+
     StoppingCondition m_stoppingCondition;
 
     Aws::Utils::DateTime m_creationTime;
@@ -703,6 +943,8 @@ namespace Model
     Aws::Utils::DateTime m_trainingEndTime;
 
     Aws::Utils::DateTime m_lastModifiedTime;
+
+    Aws::Vector<SecondaryStatusTransition> m_secondaryStatusTransitions;
   };
 
 } // namespace Model

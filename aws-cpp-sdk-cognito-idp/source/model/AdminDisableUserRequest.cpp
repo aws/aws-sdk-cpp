@@ -44,7 +44,7 @@ Aws::String AdminDisableUserRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AdminDisableUserRequest::GetRequestSpecificHeaders() const

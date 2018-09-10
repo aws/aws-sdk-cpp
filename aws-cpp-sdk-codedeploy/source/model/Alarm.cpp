@@ -33,13 +33,13 @@ Alarm::Alarm() :
 {
 }
 
-Alarm::Alarm(const JsonValue& jsonValue) : 
+Alarm::Alarm(JsonView jsonValue) : 
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Alarm& Alarm::operator =(const JsonValue& jsonValue)
+Alarm& Alarm::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {

@@ -33,13 +33,13 @@ PutItemInput::PutItemInput() :
 {
 }
 
-PutItemInput::PutItemInput(const JsonValue& jsonValue) : 
+PutItemInput::PutItemInput(JsonView jsonValue) : 
     m_tableNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PutItemInput& PutItemInput::operator =(const JsonValue& jsonValue)
+PutItemInput& PutItemInput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("tableName"))
   {

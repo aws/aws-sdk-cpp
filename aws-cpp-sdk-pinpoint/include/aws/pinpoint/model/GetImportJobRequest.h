@@ -42,47 +42,75 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline GetImportJobRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline GetImportJobRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
-    
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline GetImportJobRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
-    
+    /**
+     * The unique ID of the job.
+     */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
-    
+    /**
+     * The unique ID of the job.
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
-    
+    /**
+     * The unique ID of the job.
+     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
-    
+    /**
+     * The unique ID of the job.
+     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
-    
+    /**
+     * The unique ID of the job.
+     */
     inline GetImportJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
-    
+    /**
+     * The unique ID of the job.
+     */
     inline GetImportJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
-    
+    /**
+     * The unique ID of the job.
+     */
     inline GetImportJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 
   private:

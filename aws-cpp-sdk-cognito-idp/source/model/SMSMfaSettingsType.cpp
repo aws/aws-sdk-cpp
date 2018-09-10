@@ -36,7 +36,7 @@ SMSMfaSettingsType::SMSMfaSettingsType() :
 {
 }
 
-SMSMfaSettingsType::SMSMfaSettingsType(const JsonValue& jsonValue) : 
+SMSMfaSettingsType::SMSMfaSettingsType(JsonView jsonValue) : 
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_preferredMfa(false),
@@ -45,7 +45,7 @@ SMSMfaSettingsType::SMSMfaSettingsType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SMSMfaSettingsType& SMSMfaSettingsType::operator =(const JsonValue& jsonValue)
+SMSMfaSettingsType& SMSMfaSettingsType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Enabled"))
   {

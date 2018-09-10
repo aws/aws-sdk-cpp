@@ -44,7 +44,7 @@ ReplicationTaskStats::ReplicationTaskStats() :
 {
 }
 
-ReplicationTaskStats::ReplicationTaskStats(const JsonValue& jsonValue) : 
+ReplicationTaskStats::ReplicationTaskStats(JsonView jsonValue) : 
     m_fullLoadProgressPercent(0),
     m_fullLoadProgressPercentHasBeenSet(false),
     m_elapsedTimeMillis(0),
@@ -61,7 +61,7 @@ ReplicationTaskStats::ReplicationTaskStats(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ReplicationTaskStats& ReplicationTaskStats::operator =(const JsonValue& jsonValue)
+ReplicationTaskStats& ReplicationTaskStats::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("FullLoadProgressPercent"))
   {

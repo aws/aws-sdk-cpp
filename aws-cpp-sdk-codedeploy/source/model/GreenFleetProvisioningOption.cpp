@@ -34,14 +34,14 @@ GreenFleetProvisioningOption::GreenFleetProvisioningOption() :
 {
 }
 
-GreenFleetProvisioningOption::GreenFleetProvisioningOption(const JsonValue& jsonValue) : 
+GreenFleetProvisioningOption::GreenFleetProvisioningOption(JsonView jsonValue) : 
     m_action(GreenFleetProvisioningAction::NOT_SET),
     m_actionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GreenFleetProvisioningOption& GreenFleetProvisioningOption::operator =(const JsonValue& jsonValue)
+GreenFleetProvisioningOption& GreenFleetProvisioningOption::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("action"))
   {

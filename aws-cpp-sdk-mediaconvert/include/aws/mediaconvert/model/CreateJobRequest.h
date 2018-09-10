@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/MediaConvertRequest.h>
+#include <aws/mediaconvert/model/BillingTagsSource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/JobSettings.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -43,6 +44,22 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateJob"; }
 
     Aws::String SerializePayload() const override;
+
+
+    
+    inline const BillingTagsSource& GetBillingTagsSource() const{ return m_billingTagsSource; }
+
+    
+    inline void SetBillingTagsSource(const BillingTagsSource& value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = value; }
+
+    
+    inline void SetBillingTagsSource(BillingTagsSource&& value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = std::move(value); }
+
+    
+    inline CreateJobRequest& WithBillingTagsSource(const BillingTagsSource& value) { SetBillingTagsSource(value); return *this;}
+
+    
+    inline CreateJobRequest& WithBillingTagsSource(BillingTagsSource&& value) { SetBillingTagsSource(std::move(value)); return *this;}
 
 
     /**
@@ -320,6 +337,9 @@ namespace Model
     inline CreateJobRequest& AddUserMetadata(const char* key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, value); return *this; }
 
   private:
+
+    BillingTagsSource m_billingTagsSource;
+    bool m_billingTagsSourceHasBeenSet;
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;

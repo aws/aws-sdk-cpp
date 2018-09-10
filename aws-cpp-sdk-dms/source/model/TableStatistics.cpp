@@ -53,11 +53,12 @@ TableStatistics::TableStatistics() :
     m_validationFailedRecordsHasBeenSet(false),
     m_validationSuspendedRecords(0),
     m_validationSuspendedRecordsHasBeenSet(false),
-    m_validationStateHasBeenSet(false)
+    m_validationStateHasBeenSet(false),
+    m_validationStateDetailsHasBeenSet(false)
 {
 }
 
-TableStatistics::TableStatistics(const JsonValue& jsonValue) : 
+TableStatistics::TableStatistics(JsonView jsonValue) : 
     m_schemaNameHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_inserts(0),
@@ -82,12 +83,13 @@ TableStatistics::TableStatistics(const JsonValue& jsonValue) :
     m_validationFailedRecordsHasBeenSet(false),
     m_validationSuspendedRecords(0),
     m_validationSuspendedRecordsHasBeenSet(false),
-    m_validationStateHasBeenSet(false)
+    m_validationStateHasBeenSet(false),
+    m_validationStateDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TableStatistics& TableStatistics::operator =(const JsonValue& jsonValue)
+TableStatistics& TableStatistics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SchemaName"))
   {
@@ -194,6 +196,13 @@ TableStatistics& TableStatistics::operator =(const JsonValue& jsonValue)
     m_validationStateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ValidationStateDetails"))
+  {
+    m_validationStateDetails = jsonValue.GetString("ValidationStateDetails");
+
+    m_validationStateDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -287,6 +296,12 @@ JsonValue TableStatistics::Jsonize() const
   if(m_validationStateHasBeenSet)
   {
    payload.WithString("ValidationState", m_validationState);
+
+  }
+
+  if(m_validationStateDetailsHasBeenSet)
+  {
+   payload.WithString("ValidationStateDetails", m_validationStateDetails);
 
   }
 

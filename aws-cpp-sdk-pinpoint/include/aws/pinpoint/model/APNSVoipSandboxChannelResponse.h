@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     APNSVoipSandboxChannelResponse();
-    APNSVoipSandboxChannelResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    APNSVoipSandboxChannelResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    APNSVoipSandboxChannelResponse(Aws::Utils::Json::JsonView jsonValue);
+    APNSVoipSandboxChannelResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -172,17 +173,17 @@ namespace Model
 
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline bool GetHasCredential() const{ return m_hasCredential; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline void SetHasCredential(bool value) { m_hasCredentialHasBeenSet = true; m_hasCredential = value; }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Not used. Retained for backwards compatibility.
      */
     inline APNSVoipSandboxChannelResponse& WithHasCredential(bool value) { SetHasCredential(value); return *this;}
 

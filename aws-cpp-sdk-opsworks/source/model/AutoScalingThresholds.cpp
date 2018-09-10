@@ -45,7 +45,7 @@ AutoScalingThresholds::AutoScalingThresholds() :
 {
 }
 
-AutoScalingThresholds::AutoScalingThresholds(const JsonValue& jsonValue) : 
+AutoScalingThresholds::AutoScalingThresholds(JsonView jsonValue) : 
     m_instanceCount(0),
     m_instanceCountHasBeenSet(false),
     m_thresholdsWaitTime(0),
@@ -63,7 +63,7 @@ AutoScalingThresholds::AutoScalingThresholds(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AutoScalingThresholds& AutoScalingThresholds::operator =(const JsonValue& jsonValue)
+AutoScalingThresholds& AutoScalingThresholds::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceCount"))
   {
@@ -109,7 +109,7 @@ AutoScalingThresholds& AutoScalingThresholds::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("Alarms"))
   {
-    Array<JsonValue> alarmsJsonList = jsonValue.GetArray("Alarms");
+    Array<JsonView> alarmsJsonList = jsonValue.GetArray("Alarms");
     for(unsigned alarmsIndex = 0; alarmsIndex < alarmsJsonList.GetLength(); ++alarmsIndex)
     {
       m_alarms.push_back(alarmsJsonList[alarmsIndex].AsString());

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lambda
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     FunctionCodeLocation();
-    FunctionCodeLocation(const Aws::Utils::Json::JsonValue& jsonValue);
-    FunctionCodeLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FunctionCodeLocation(Aws::Utils::Json::JsonView jsonValue);
+    FunctionCodeLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

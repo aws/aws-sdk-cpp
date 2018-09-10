@@ -39,7 +39,7 @@ Record::Record() :
 {
 }
 
-Record::Record(const JsonValue& jsonValue) : 
+Record::Record(JsonView jsonValue) : 
     m_sequenceNumberHasBeenSet(false),
     m_approximateArrivalTimestampHasBeenSet(false),
     m_dataHasBeenSet(false),
@@ -50,7 +50,7 @@ Record::Record(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Record& Record::operator =(const JsonValue& jsonValue)
+Record& Record::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SequenceNumber"))
   {

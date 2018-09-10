@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     InputLocation();
-    InputLocation(const Aws::Utils::Json::JsonValue& jsonValue);
-    InputLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InputLocation(Aws::Utils::Json::JsonView jsonValue);
+    InputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -85,49 +86,49 @@ namespace Model
     /**
      * Uniform Resource Identifier - This should be a path to a file accessible to the
      * Live system (eg. a http:// URI) depending on the output type. For example, a
-     * rtmpEndpoint should have a uri simliar to: "rtmp://fmsserver/live".
+     * RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
      */
     inline const Aws::String& GetUri() const{ return m_uri; }
 
     /**
      * Uniform Resource Identifier - This should be a path to a file accessible to the
      * Live system (eg. a http:// URI) depending on the output type. For example, a
-     * rtmpEndpoint should have a uri simliar to: "rtmp://fmsserver/live".
+     * RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
      */
     inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
 
     /**
      * Uniform Resource Identifier - This should be a path to a file accessible to the
      * Live system (eg. a http:// URI) depending on the output type. For example, a
-     * rtmpEndpoint should have a uri simliar to: "rtmp://fmsserver/live".
+     * RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
      */
     inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
 
     /**
      * Uniform Resource Identifier - This should be a path to a file accessible to the
      * Live system (eg. a http:// URI) depending on the output type. For example, a
-     * rtmpEndpoint should have a uri simliar to: "rtmp://fmsserver/live".
+     * RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
      */
     inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
 
     /**
      * Uniform Resource Identifier - This should be a path to a file accessible to the
      * Live system (eg. a http:// URI) depending on the output type. For example, a
-     * rtmpEndpoint should have a uri simliar to: "rtmp://fmsserver/live".
+     * RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
      */
     inline InputLocation& WithUri(const Aws::String& value) { SetUri(value); return *this;}
 
     /**
      * Uniform Resource Identifier - This should be a path to a file accessible to the
      * Live system (eg. a http:// URI) depending on the output type. For example, a
-     * rtmpEndpoint should have a uri simliar to: "rtmp://fmsserver/live".
+     * RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
      */
     inline InputLocation& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
 
     /**
      * Uniform Resource Identifier - This should be a path to a file accessible to the
      * Live system (eg. a http:// URI) depending on the output type. For example, a
-     * rtmpEndpoint should have a uri simliar to: "rtmp://fmsserver/live".
+     * RTMP destination should have a uri simliar to: "rtmp://fmsserver/live".
      */
     inline InputLocation& WithUri(const char* value) { SetUri(value); return *this;}
 

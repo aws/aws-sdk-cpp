@@ -37,10 +37,10 @@ ListAssessmentRunsResult::ListAssessmentRunsResult(const Aws::AmazonWebServiceRe
 
 ListAssessmentRunsResult& ListAssessmentRunsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assessmentRunArns"))
   {
-    Array<JsonValue> assessmentRunArnsJsonList = jsonValue.GetArray("assessmentRunArns");
+    Array<JsonView> assessmentRunArnsJsonList = jsonValue.GetArray("assessmentRunArns");
     for(unsigned assessmentRunArnsIndex = 0; assessmentRunArnsIndex < assessmentRunArnsJsonList.GetLength(); ++assessmentRunArnsIndex)
     {
       m_assessmentRunArns.push_back(assessmentRunArnsJsonList[assessmentRunArnsIndex].AsString());

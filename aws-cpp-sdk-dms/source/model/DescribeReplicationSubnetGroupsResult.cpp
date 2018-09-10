@@ -37,7 +37,7 @@ DescribeReplicationSubnetGroupsResult::DescribeReplicationSubnetGroupsResult(con
 
 DescribeReplicationSubnetGroupsResult& DescribeReplicationSubnetGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
@@ -46,7 +46,7 @@ DescribeReplicationSubnetGroupsResult& DescribeReplicationSubnetGroupsResult::op
 
   if(jsonValue.ValueExists("ReplicationSubnetGroups"))
   {
-    Array<JsonValue> replicationSubnetGroupsJsonList = jsonValue.GetArray("ReplicationSubnetGroups");
+    Array<JsonView> replicationSubnetGroupsJsonList = jsonValue.GetArray("ReplicationSubnetGroups");
     for(unsigned replicationSubnetGroupsIndex = 0; replicationSubnetGroupsIndex < replicationSubnetGroupsJsonList.GetLength(); ++replicationSubnetGroupsIndex)
     {
       m_replicationSubnetGroups.push_back(replicationSubnetGroupsJsonList[replicationSubnetGroupsIndex].AsObject());

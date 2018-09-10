@@ -39,7 +39,7 @@ VideoCodecSettings::VideoCodecSettings() :
 {
 }
 
-VideoCodecSettings::VideoCodecSettings(const JsonValue& jsonValue) : 
+VideoCodecSettings::VideoCodecSettings(JsonView jsonValue) : 
     m_codec(VideoCodec::NOT_SET),
     m_codecHasBeenSet(false),
     m_frameCaptureSettingsHasBeenSet(false),
@@ -51,7 +51,7 @@ VideoCodecSettings::VideoCodecSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VideoCodecSettings& VideoCodecSettings::operator =(const JsonValue& jsonValue)
+VideoCodecSettings& VideoCodecSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("codec"))
   {

@@ -38,7 +38,7 @@ IntegrationResponse::IntegrationResponse() :
 {
 }
 
-IntegrationResponse::IntegrationResponse(const JsonValue& jsonValue) : 
+IntegrationResponse::IntegrationResponse(JsonView jsonValue) : 
     m_statusCodeHasBeenSet(false),
     m_selectionPatternHasBeenSet(false),
     m_responseParametersHasBeenSet(false),
@@ -49,7 +49,7 @@ IntegrationResponse::IntegrationResponse(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-IntegrationResponse& IntegrationResponse::operator =(const JsonValue& jsonValue)
+IntegrationResponse& IntegrationResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("statusCode"))
   {
@@ -67,7 +67,7 @@ IntegrationResponse& IntegrationResponse::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("responseParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
     for(auto& responseParametersItem : responseParametersJsonMap)
     {
       m_responseParameters[responseParametersItem.first] = responseParametersItem.second.AsString();
@@ -77,7 +77,7 @@ IntegrationResponse& IntegrationResponse::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("responseTemplates"))
   {
-    Aws::Map<Aws::String, JsonValue> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
     for(auto& responseTemplatesItem : responseTemplatesJsonMap)
     {
       m_responseTemplates[responseTemplatesItem.first] = responseTemplatesItem.second.AsString();

@@ -37,7 +37,7 @@ VpcPeeringAuthorization::VpcPeeringAuthorization() :
 {
 }
 
-VpcPeeringAuthorization::VpcPeeringAuthorization(const JsonValue& jsonValue) : 
+VpcPeeringAuthorization::VpcPeeringAuthorization(JsonView jsonValue) : 
     m_gameLiftAwsAccountIdHasBeenSet(false),
     m_peerVpcAwsAccountIdHasBeenSet(false),
     m_peerVpcIdHasBeenSet(false),
@@ -47,7 +47,7 @@ VpcPeeringAuthorization::VpcPeeringAuthorization(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VpcPeeringAuthorization& VpcPeeringAuthorization::operator =(const JsonValue& jsonValue)
+VpcPeeringAuthorization& VpcPeeringAuthorization::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("GameLiftAwsAccountId"))
   {

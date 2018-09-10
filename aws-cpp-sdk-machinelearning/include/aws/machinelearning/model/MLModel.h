@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MachineLearning
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     MLModel();
-    MLModel(const Aws::Utils::Json::JsonValue& jsonValue);
-    MLModel& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MLModel(Aws::Utils::Json::JsonView jsonValue);
+    MLModel& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

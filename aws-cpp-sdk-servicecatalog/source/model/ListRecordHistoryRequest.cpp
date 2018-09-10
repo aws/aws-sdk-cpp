@@ -66,7 +66,7 @@ Aws::String ListRecordHistoryRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListRecordHistoryRequest::GetRequestSpecificHeaders() const

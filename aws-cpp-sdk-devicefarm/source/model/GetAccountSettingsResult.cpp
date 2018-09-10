@@ -37,7 +37,7 @@ GetAccountSettingsResult::GetAccountSettingsResult(const Aws::AmazonWebServiceRe
 
 GetAccountSettingsResult& GetAccountSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("accountSettings"))
   {
     m_accountSettings = jsonValue.GetObject("accountSettings");

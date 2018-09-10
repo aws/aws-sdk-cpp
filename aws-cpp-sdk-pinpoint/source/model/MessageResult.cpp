@@ -31,6 +31,7 @@ namespace Model
 MessageResult::MessageResult() : 
     m_deliveryStatus(DeliveryStatus::NOT_SET),
     m_deliveryStatusHasBeenSet(false),
+    m_messageIdHasBeenSet(false),
     m_statusCode(0),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
@@ -38,9 +39,10 @@ MessageResult::MessageResult() :
 {
 }
 
-MessageResult::MessageResult(const JsonValue& jsonValue) : 
+MessageResult::MessageResult(JsonView jsonValue) : 
     m_deliveryStatus(DeliveryStatus::NOT_SET),
     m_deliveryStatusHasBeenSet(false),
+    m_messageIdHasBeenSet(false),
     m_statusCode(0),
     m_statusCodeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
@@ -49,13 +51,20 @@ MessageResult::MessageResult(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MessageResult& MessageResult::operator =(const JsonValue& jsonValue)
+MessageResult& MessageResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeliveryStatus"))
   {
     m_deliveryStatus = DeliveryStatusMapper::GetDeliveryStatusForName(jsonValue.GetString("DeliveryStatus"));
 
     m_deliveryStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MessageId"))
+  {
+    m_messageId = jsonValue.GetString("MessageId");
+
+    m_messageIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("StatusCode"))
@@ -89,6 +98,12 @@ JsonValue MessageResult::Jsonize() const
   if(m_deliveryStatusHasBeenSet)
   {
    payload.WithString("DeliveryStatus", DeliveryStatusMapper::GetNameForDeliveryStatus(m_deliveryStatus));
+  }
+
+  if(m_messageIdHasBeenSet)
+  {
+   payload.WithString("MessageId", m_messageId);
+
   }
 
   if(m_statusCodeHasBeenSet)

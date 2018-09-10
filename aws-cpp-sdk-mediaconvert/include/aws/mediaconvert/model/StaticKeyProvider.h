@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     StaticKeyProvider();
-    StaticKeyProvider(const Aws::Utils::Json::JsonValue& jsonValue);
-    StaticKeyProvider& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StaticKeyProvider(Aws::Utils::Json::JsonView jsonValue);
+    StaticKeyProvider& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

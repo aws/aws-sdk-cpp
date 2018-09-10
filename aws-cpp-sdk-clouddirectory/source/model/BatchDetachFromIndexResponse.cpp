@@ -33,13 +33,13 @@ BatchDetachFromIndexResponse::BatchDetachFromIndexResponse() :
 {
 }
 
-BatchDetachFromIndexResponse::BatchDetachFromIndexResponse(const JsonValue& jsonValue) : 
+BatchDetachFromIndexResponse::BatchDetachFromIndexResponse(JsonView jsonValue) : 
     m_detachedObjectIdentifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BatchDetachFromIndexResponse& BatchDetachFromIndexResponse::operator =(const JsonValue& jsonValue)
+BatchDetachFromIndexResponse& BatchDetachFromIndexResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DetachedObjectIdentifier"))
   {

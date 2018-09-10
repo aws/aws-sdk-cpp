@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace APIGateway
@@ -130,8 +131,8 @@ namespace Model
   {
   public:
     Method();
-    Method(const Aws::Utils::Json::JsonValue& jsonValue);
-    Method& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Method(Aws::Utils::Json::JsonView jsonValue);
+    Method& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -1185,7 +1186,7 @@ namespace Model
 
     /**
      * <p>A list of authorization scopes configured on the method. The scopes are used
-     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method
      * invocation. The authorization works by matching the method scopes against the
      * scopes parsed from the access token in the incoming request. The method
      * invocation is authorized if any method scopes matches a claimed scope in the
@@ -1197,7 +1198,7 @@ namespace Model
 
     /**
      * <p>A list of authorization scopes configured on the method. The scopes are used
-     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method
      * invocation. The authorization works by matching the method scopes against the
      * scopes parsed from the access token in the incoming request. The method
      * invocation is authorized if any method scopes matches a claimed scope in the
@@ -1209,7 +1210,7 @@ namespace Model
 
     /**
      * <p>A list of authorization scopes configured on the method. The scopes are used
-     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method
      * invocation. The authorization works by matching the method scopes against the
      * scopes parsed from the access token in the incoming request. The method
      * invocation is authorized if any method scopes matches a claimed scope in the
@@ -1221,7 +1222,7 @@ namespace Model
 
     /**
      * <p>A list of authorization scopes configured on the method. The scopes are used
-     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method
      * invocation. The authorization works by matching the method scopes against the
      * scopes parsed from the access token in the incoming request. The method
      * invocation is authorized if any method scopes matches a claimed scope in the
@@ -1233,7 +1234,7 @@ namespace Model
 
     /**
      * <p>A list of authorization scopes configured on the method. The scopes are used
-     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method
      * invocation. The authorization works by matching the method scopes against the
      * scopes parsed from the access token in the incoming request. The method
      * invocation is authorized if any method scopes matches a claimed scope in the
@@ -1245,7 +1246,7 @@ namespace Model
 
     /**
      * <p>A list of authorization scopes configured on the method. The scopes are used
-     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method
      * invocation. The authorization works by matching the method scopes against the
      * scopes parsed from the access token in the incoming request. The method
      * invocation is authorized if any method scopes matches a claimed scope in the
@@ -1257,7 +1258,7 @@ namespace Model
 
     /**
      * <p>A list of authorization scopes configured on the method. The scopes are used
-     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method
      * invocation. The authorization works by matching the method scopes against the
      * scopes parsed from the access token in the incoming request. The method
      * invocation is authorized if any method scopes matches a claimed scope in the
@@ -1269,7 +1270,7 @@ namespace Model
 
     /**
      * <p>A list of authorization scopes configured on the method. The scopes are used
-     * with a <code>COGNITO_USER_POOL</code> authorizer to authorize the method
+     * with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method
      * invocation. The authorization works by matching the method scopes against the
      * scopes parsed from the access token in the incoming request. The method
      * invocation is authorized if any method scopes matches a claimed scope in the

@@ -40,7 +40,7 @@ S3DestinationUpdate::S3DestinationUpdate() :
 {
 }
 
-S3DestinationUpdate::S3DestinationUpdate(const JsonValue& jsonValue) : 
+S3DestinationUpdate::S3DestinationUpdate(JsonView jsonValue) : 
     m_roleARNHasBeenSet(false),
     m_bucketARNHasBeenSet(false),
     m_prefixHasBeenSet(false),
@@ -53,7 +53,7 @@ S3DestinationUpdate::S3DestinationUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-S3DestinationUpdate& S3DestinationUpdate::operator =(const JsonValue& jsonValue)
+S3DestinationUpdate& S3DestinationUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RoleARN"))
   {

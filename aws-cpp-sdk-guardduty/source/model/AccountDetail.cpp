@@ -34,14 +34,14 @@ AccountDetail::AccountDetail() :
 {
 }
 
-AccountDetail::AccountDetail(const JsonValue& jsonValue) : 
+AccountDetail::AccountDetail(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
     m_emailHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AccountDetail& AccountDetail::operator =(const JsonValue& jsonValue)
+AccountDetail& AccountDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accountId"))
   {

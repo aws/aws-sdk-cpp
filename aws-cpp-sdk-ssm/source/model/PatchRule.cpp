@@ -33,21 +33,25 @@ PatchRule::PatchRule() :
     m_complianceLevel(PatchComplianceLevel::NOT_SET),
     m_complianceLevelHasBeenSet(false),
     m_approveAfterDays(0),
-    m_approveAfterDaysHasBeenSet(false)
+    m_approveAfterDaysHasBeenSet(false),
+    m_enableNonSecurity(false),
+    m_enableNonSecurityHasBeenSet(false)
 {
 }
 
-PatchRule::PatchRule(const JsonValue& jsonValue) : 
+PatchRule::PatchRule(JsonView jsonValue) : 
     m_patchFilterGroupHasBeenSet(false),
     m_complianceLevel(PatchComplianceLevel::NOT_SET),
     m_complianceLevelHasBeenSet(false),
     m_approveAfterDays(0),
-    m_approveAfterDaysHasBeenSet(false)
+    m_approveAfterDaysHasBeenSet(false),
+    m_enableNonSecurity(false),
+    m_enableNonSecurityHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PatchRule& PatchRule::operator =(const JsonValue& jsonValue)
+PatchRule& PatchRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PatchFilterGroup"))
   {
@@ -68,6 +72,13 @@ PatchRule& PatchRule::operator =(const JsonValue& jsonValue)
     m_approveAfterDays = jsonValue.GetInteger("ApproveAfterDays");
 
     m_approveAfterDaysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EnableNonSecurity"))
+  {
+    m_enableNonSecurity = jsonValue.GetBool("EnableNonSecurity");
+
+    m_enableNonSecurityHasBeenSet = true;
   }
 
   return *this;
@@ -91,6 +102,12 @@ JsonValue PatchRule::Jsonize() const
   if(m_approveAfterDaysHasBeenSet)
   {
    payload.WithInteger("ApproveAfterDays", m_approveAfterDays);
+
+  }
+
+  if(m_enableNonSecurityHasBeenSet)
+  {
+   payload.WithBool("EnableNonSecurity", m_enableNonSecurity);
 
   }
 

@@ -54,7 +54,7 @@ ContainerDetail::ContainerDetail() :
 {
 }
 
-ContainerDetail::ContainerDetail(const JsonValue& jsonValue) : 
+ContainerDetail::ContainerDetail(JsonView jsonValue) : 
     m_imageHasBeenSet(false),
     m_vcpus(0),
     m_vcpusHasBeenSet(false),
@@ -81,7 +81,7 @@ ContainerDetail::ContainerDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ContainerDetail& ContainerDetail::operator =(const JsonValue& jsonValue)
+ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("image"))
   {
@@ -106,7 +106,7 @@ ContainerDetail& ContainerDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("command"))
   {
-    Array<JsonValue> commandJsonList = jsonValue.GetArray("command");
+    Array<JsonView> commandJsonList = jsonValue.GetArray("command");
     for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
     {
       m_command.push_back(commandJsonList[commandIndex].AsString());
@@ -123,7 +123,7 @@ ContainerDetail& ContainerDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("volumes"))
   {
-    Array<JsonValue> volumesJsonList = jsonValue.GetArray("volumes");
+    Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
     for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
     {
       m_volumes.push_back(volumesJsonList[volumesIndex].AsObject());
@@ -133,7 +133,7 @@ ContainerDetail& ContainerDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("environment"))
   {
-    Array<JsonValue> environmentJsonList = jsonValue.GetArray("environment");
+    Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
     for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
     {
       m_environment.push_back(environmentJsonList[environmentIndex].AsObject());
@@ -143,7 +143,7 @@ ContainerDetail& ContainerDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("mountPoints"))
   {
-    Array<JsonValue> mountPointsJsonList = jsonValue.GetArray("mountPoints");
+    Array<JsonView> mountPointsJsonList = jsonValue.GetArray("mountPoints");
     for(unsigned mountPointsIndex = 0; mountPointsIndex < mountPointsJsonList.GetLength(); ++mountPointsIndex)
     {
       m_mountPoints.push_back(mountPointsJsonList[mountPointsIndex].AsObject());
@@ -160,7 +160,7 @@ ContainerDetail& ContainerDetail::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ulimits"))
   {
-    Array<JsonValue> ulimitsJsonList = jsonValue.GetArray("ulimits");
+    Array<JsonView> ulimitsJsonList = jsonValue.GetArray("ulimits");
     for(unsigned ulimitsIndex = 0; ulimitsIndex < ulimitsJsonList.GetLength(); ++ulimitsIndex)
     {
       m_ulimits.push_back(ulimitsJsonList[ulimitsIndex].AsObject());

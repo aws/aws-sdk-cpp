@@ -27,7 +27,10 @@ namespace Model
   {
     NOT_SET,
     Starting,
+    LaunchingMLInstances,
+    PreparingTrainingStack,
     Downloading,
+    DownloadingTrainingImage,
     Training,
     Uploading,
     Stopping,

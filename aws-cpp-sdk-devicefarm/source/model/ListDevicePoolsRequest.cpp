@@ -51,7 +51,7 @@ Aws::String ListDevicePoolsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListDevicePoolsRequest::GetRequestSpecificHeaders() const

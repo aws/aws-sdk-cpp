@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Contains information about a managed policy.</p> <p>This data type is used as
    * a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and
-   * <a>ListPolicies</a> actions. </p> <p>For more information about managed
+   * <a>ListPolicies</a> operations. </p> <p>For more information about managed
    * policies, refer to <a
    * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
    * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p><p><h3>See
@@ -284,6 +284,34 @@ namespace Model
 
 
     /**
+     * <p>The number of entities (users and roles) for which the policy is used to set
+     * the permissions boundary. </p> <p>For more information about permissions
+     * boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline int GetPermissionsBoundaryUsageCount() const{ return m_permissionsBoundaryUsageCount; }
+
+    /**
+     * <p>The number of entities (users and roles) for which the policy is used to set
+     * the permissions boundary. </p> <p>For more information about permissions
+     * boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetPermissionsBoundaryUsageCount(int value) { m_permissionsBoundaryUsageCountHasBeenSet = true; m_permissionsBoundaryUsageCount = value; }
+
+    /**
+     * <p>The number of entities (users and roles) for which the policy is used to set
+     * the permissions boundary. </p> <p>For more information about permissions
+     * boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline Policy& WithPermissionsBoundaryUsageCount(int value) { SetPermissionsBoundaryUsageCount(value); return *this;}
+
+
+    /**
      * <p>Specifies whether the policy can be attached to an IAM user, group, or
      * role.</p>
      */
@@ -447,6 +475,9 @@ namespace Model
 
     int m_attachmentCount;
     bool m_attachmentCountHasBeenSet;
+
+    int m_permissionsBoundaryUsageCount;
+    bool m_permissionsBoundaryUsageCountHasBeenSet;
 
     bool m_isAttachable;
     bool m_isAttachableHasBeenSet;

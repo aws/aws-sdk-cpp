@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * The configuration and any analyses for the analytics filter.
+     * <p>The configuration and any analyses for the analytics filter.</p>
      */
     inline const AnalyticsConfiguration& GetAnalyticsConfiguration() const{ return m_analyticsConfiguration; }
 
     /**
-     * The configuration and any analyses for the analytics filter.
+     * <p>The configuration and any analyses for the analytics filter.</p>
      */
     inline void SetAnalyticsConfiguration(const AnalyticsConfiguration& value) { m_analyticsConfiguration = value; }
 
     /**
-     * The configuration and any analyses for the analytics filter.
+     * <p>The configuration and any analyses for the analytics filter.</p>
      */
     inline void SetAnalyticsConfiguration(AnalyticsConfiguration&& value) { m_analyticsConfiguration = std::move(value); }
 
     /**
-     * The configuration and any analyses for the analytics filter.
+     * <p>The configuration and any analyses for the analytics filter.</p>
      */
     inline GetBucketAnalyticsConfigurationResult& WithAnalyticsConfiguration(const AnalyticsConfiguration& value) { SetAnalyticsConfiguration(value); return *this;}
 
     /**
-     * The configuration and any analyses for the analytics filter.
+     * <p>The configuration and any analyses for the analytics filter.</p>
      */
     inline GetBucketAnalyticsConfigurationResult& WithAnalyticsConfiguration(AnalyticsConfiguration&& value) { SetAnalyticsConfiguration(std::move(value)); return *this;}
 

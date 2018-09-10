@@ -51,7 +51,7 @@ Aws::String AssociateMemberToGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AssociateMemberToGroupRequest::GetRequestSpecificHeaders() const

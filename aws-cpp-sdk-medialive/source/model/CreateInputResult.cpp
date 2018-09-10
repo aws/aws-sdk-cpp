@@ -37,7 +37,7 @@ CreateInputResult::CreateInputResult(const Aws::AmazonWebServiceResult<JsonValue
 
 CreateInputResult& CreateInputResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetObject("input");

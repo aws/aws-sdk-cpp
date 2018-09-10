@@ -34,14 +34,14 @@ CloseStatusFilter::CloseStatusFilter() :
 {
 }
 
-CloseStatusFilter::CloseStatusFilter(const JsonValue& jsonValue) : 
+CloseStatusFilter::CloseStatusFilter(JsonView jsonValue) : 
     m_status(CloseStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CloseStatusFilter& CloseStatusFilter::operator =(const JsonValue& jsonValue)
+CloseStatusFilter& CloseStatusFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("status"))
   {

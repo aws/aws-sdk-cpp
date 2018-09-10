@@ -57,7 +57,7 @@ Aws::String DescribeAutomationExecutionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeAutomationExecutionsRequest::GetRequestSpecificHeaders() const

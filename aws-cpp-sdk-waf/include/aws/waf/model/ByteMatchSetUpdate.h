@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace WAF
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ByteMatchSetUpdate();
-    ByteMatchSetUpdate(const Aws::Utils::Json::JsonValue& jsonValue);
-    ByteMatchSetUpdate& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ByteMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
+    ByteMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

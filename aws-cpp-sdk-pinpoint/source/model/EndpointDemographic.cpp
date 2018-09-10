@@ -40,7 +40,7 @@ EndpointDemographic::EndpointDemographic() :
 {
 }
 
-EndpointDemographic::EndpointDemographic(const JsonValue& jsonValue) : 
+EndpointDemographic::EndpointDemographic(JsonView jsonValue) : 
     m_appVersionHasBeenSet(false),
     m_localeHasBeenSet(false),
     m_makeHasBeenSet(false),
@@ -53,7 +53,7 @@ EndpointDemographic::EndpointDemographic(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EndpointDemographic& EndpointDemographic::operator =(const JsonValue& jsonValue)
+EndpointDemographic& EndpointDemographic::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AppVersion"))
   {

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lightsail
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     StaticIp();
-    StaticIp(const Aws::Utils::Json::JsonValue& jsonValue);
-    StaticIp& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    StaticIp(Aws::Utils::Json::JsonView jsonValue);
+    StaticIp& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

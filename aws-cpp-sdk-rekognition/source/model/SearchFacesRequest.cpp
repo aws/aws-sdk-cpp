@@ -60,7 +60,7 @@ Aws::String SearchFacesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SearchFacesRequest::GetRequestSpecificHeaders() const

@@ -54,7 +54,13 @@ namespace Model
     /**
      * <p>The name of the challenge which you are responding to with this call. This is
      * returned to you in the <code>AdminInitiateAuth</code> response if you need to
-     * pass another challenge.</p> <ul> <li> <p> <code>SMS_MFA</code>: Next challenge
+     * pass another challenge.</p> <ul> <li> <p> <code>MFA_SETUP</code>: If MFA is
+     * required, users who do not have at least one of the MFA methods set up are
+     * presented with an <code>MFA_SETUP</code> challenge. The user must set up at
+     * least one MFA type to continue to authenticate.</p> </li> <li> <p>
+     * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are
+     * <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for
+     * TOTP software token MFA.</p> </li> <li> <p> <code>SMS_MFA</code>: Next challenge
      * is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
      * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
      * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
@@ -78,7 +84,13 @@ namespace Model
     /**
      * <p>The name of the challenge which you are responding to with this call. This is
      * returned to you in the <code>AdminInitiateAuth</code> response if you need to
-     * pass another challenge.</p> <ul> <li> <p> <code>SMS_MFA</code>: Next challenge
+     * pass another challenge.</p> <ul> <li> <p> <code>MFA_SETUP</code>: If MFA is
+     * required, users who do not have at least one of the MFA methods set up are
+     * presented with an <code>MFA_SETUP</code> challenge. The user must set up at
+     * least one MFA type to continue to authenticate.</p> </li> <li> <p>
+     * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are
+     * <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for
+     * TOTP software token MFA.</p> </li> <li> <p> <code>SMS_MFA</code>: Next challenge
      * is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
      * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
      * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
@@ -102,7 +114,13 @@ namespace Model
     /**
      * <p>The name of the challenge which you are responding to with this call. This is
      * returned to you in the <code>AdminInitiateAuth</code> response if you need to
-     * pass another challenge.</p> <ul> <li> <p> <code>SMS_MFA</code>: Next challenge
+     * pass another challenge.</p> <ul> <li> <p> <code>MFA_SETUP</code>: If MFA is
+     * required, users who do not have at least one of the MFA methods set up are
+     * presented with an <code>MFA_SETUP</code> challenge. The user must set up at
+     * least one MFA type to continue to authenticate.</p> </li> <li> <p>
+     * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are
+     * <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for
+     * TOTP software token MFA.</p> </li> <li> <p> <code>SMS_MFA</code>: Next challenge
      * is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
      * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
      * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
@@ -126,7 +144,13 @@ namespace Model
     /**
      * <p>The name of the challenge which you are responding to with this call. This is
      * returned to you in the <code>AdminInitiateAuth</code> response if you need to
-     * pass another challenge.</p> <ul> <li> <p> <code>SMS_MFA</code>: Next challenge
+     * pass another challenge.</p> <ul> <li> <p> <code>MFA_SETUP</code>: If MFA is
+     * required, users who do not have at least one of the MFA methods set up are
+     * presented with an <code>MFA_SETUP</code> challenge. The user must set up at
+     * least one MFA type to continue to authenticate.</p> </li> <li> <p>
+     * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are
+     * <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for
+     * TOTP software token MFA.</p> </li> <li> <p> <code>SMS_MFA</code>: Next challenge
      * is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
      * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
      * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
@@ -150,7 +174,13 @@ namespace Model
     /**
      * <p>The name of the challenge which you are responding to with this call. This is
      * returned to you in the <code>AdminInitiateAuth</code> response if you need to
-     * pass another challenge.</p> <ul> <li> <p> <code>SMS_MFA</code>: Next challenge
+     * pass another challenge.</p> <ul> <li> <p> <code>MFA_SETUP</code>: If MFA is
+     * required, users who do not have at least one of the MFA methods set up are
+     * presented with an <code>MFA_SETUP</code> challenge. The user must set up at
+     * least one MFA type to continue to authenticate.</p> </li> <li> <p>
+     * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are
+     * <code>SMS_MFA</code> for text SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for
+     * TOTP software token MFA.</p> </li> <li> <p> <code>SMS_MFA</code>: Next challenge
      * is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.</p> </li> <li> <p>
      * <code>PASSWORD_VERIFIER</code>: Next challenge is to supply
      * <code>PASSWORD_CLAIM_SIGNATURE</code>, <code>PASSWORD_CLAIM_SECRET_BLOCK</code>,
@@ -249,7 +279,7 @@ namespace Model
      * The responses in this parameter should be used to compute inputs to the next
      * call (<code>AdminRespondToAuthChallenge</code>).</p> <p>All challenges require
      * <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p> <p>The
-     * value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+     * value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
      * username, not an alias (such as email address or phone number), even if you
      * specified an alias in your call to <code>AdminInitiateAuth</code>. This is
      * because, in the <code>AdminRespondToAuthChallenge</code> API
@@ -264,7 +294,7 @@ namespace Model
      * The responses in this parameter should be used to compute inputs to the next
      * call (<code>AdminRespondToAuthChallenge</code>).</p> <p>All challenges require
      * <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p> <p>The
-     * value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+     * value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
      * username, not an alias (such as email address or phone number), even if you
      * specified an alias in your call to <code>AdminInitiateAuth</code>. This is
      * because, in the <code>AdminRespondToAuthChallenge</code> API
@@ -279,7 +309,7 @@ namespace Model
      * The responses in this parameter should be used to compute inputs to the next
      * call (<code>AdminRespondToAuthChallenge</code>).</p> <p>All challenges require
      * <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p> <p>The
-     * value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+     * value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
      * username, not an alias (such as email address or phone number), even if you
      * specified an alias in your call to <code>AdminInitiateAuth</code>. This is
      * because, in the <code>AdminRespondToAuthChallenge</code> API
@@ -294,7 +324,7 @@ namespace Model
      * The responses in this parameter should be used to compute inputs to the next
      * call (<code>AdminRespondToAuthChallenge</code>).</p> <p>All challenges require
      * <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p> <p>The
-     * value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+     * value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
      * username, not an alias (such as email address or phone number), even if you
      * specified an alias in your call to <code>AdminInitiateAuth</code>. This is
      * because, in the <code>AdminRespondToAuthChallenge</code> API
@@ -309,7 +339,7 @@ namespace Model
      * The responses in this parameter should be used to compute inputs to the next
      * call (<code>AdminRespondToAuthChallenge</code>).</p> <p>All challenges require
      * <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p> <p>The
-     * value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+     * value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
      * username, not an alias (such as email address or phone number), even if you
      * specified an alias in your call to <code>AdminInitiateAuth</code>. This is
      * because, in the <code>AdminRespondToAuthChallenge</code> API
@@ -324,7 +354,7 @@ namespace Model
      * The responses in this parameter should be used to compute inputs to the next
      * call (<code>AdminRespondToAuthChallenge</code>).</p> <p>All challenges require
      * <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p> <p>The
-     * value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+     * value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
      * username, not an alias (such as email address or phone number), even if you
      * specified an alias in your call to <code>AdminInitiateAuth</code>. This is
      * because, in the <code>AdminRespondToAuthChallenge</code> API
@@ -339,7 +369,7 @@ namespace Model
      * The responses in this parameter should be used to compute inputs to the next
      * call (<code>AdminRespondToAuthChallenge</code>).</p> <p>All challenges require
      * <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p> <p>The
-     * value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+     * value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
      * username, not an alias (such as email address or phone number), even if you
      * specified an alias in your call to <code>AdminInitiateAuth</code>. This is
      * because, in the <code>AdminRespondToAuthChallenge</code> API
@@ -354,7 +384,7 @@ namespace Model
      * The responses in this parameter should be used to compute inputs to the next
      * call (<code>AdminRespondToAuthChallenge</code>).</p> <p>All challenges require
      * <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p> <p>The
-     * value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+     * value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
      * username, not an alias (such as email address or phone number), even if you
      * specified an alias in your call to <code>AdminInitiateAuth</code>. This is
      * because, in the <code>AdminRespondToAuthChallenge</code> API
@@ -369,7 +399,7 @@ namespace Model
      * The responses in this parameter should be used to compute inputs to the next
      * call (<code>AdminRespondToAuthChallenge</code>).</p> <p>All challenges require
      * <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p> <p>The
-     * value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+     * value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
      * username, not an alias (such as email address or phone number), even if you
      * specified an alias in your call to <code>AdminInitiateAuth</code>. This is
      * because, in the <code>AdminRespondToAuthChallenge</code> API
@@ -384,7 +414,7 @@ namespace Model
      * The responses in this parameter should be used to compute inputs to the next
      * call (<code>AdminRespondToAuthChallenge</code>).</p> <p>All challenges require
      * <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p> <p>The
-     * value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+     * value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
      * username, not an alias (such as email address or phone number), even if you
      * specified an alias in your call to <code>AdminInitiateAuth</code>. This is
      * because, in the <code>AdminRespondToAuthChallenge</code> API
@@ -399,7 +429,7 @@ namespace Model
      * The responses in this parameter should be used to compute inputs to the next
      * call (<code>AdminRespondToAuthChallenge</code>).</p> <p>All challenges require
      * <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p> <p>The
-     * value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+     * value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
      * username, not an alias (such as email address or phone number), even if you
      * specified an alias in your call to <code>AdminInitiateAuth</code>. This is
      * because, in the <code>AdminRespondToAuthChallenge</code> API
@@ -414,7 +444,7 @@ namespace Model
      * The responses in this parameter should be used to compute inputs to the next
      * call (<code>AdminRespondToAuthChallenge</code>).</p> <p>All challenges require
      * <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).</p> <p>The
-     * value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual
+     * value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual
      * username, not an alias (such as email address or phone number), even if you
      * specified an alias in your call to <code>AdminInitiateAuth</code>. This is
      * because, in the <code>AdminRespondToAuthChallenge</code> API

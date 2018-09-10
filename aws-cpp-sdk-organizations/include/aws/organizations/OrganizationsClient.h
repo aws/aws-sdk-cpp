@@ -76,11 +76,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -351,7 +346,7 @@ namespace Model
    * successfully made to Organizations, who made the request, when it was made, and
    * so on. For more about AWS Organizations and its support for AWS CloudTrail, see
    * <a
-   * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html">Logging
+   * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html#orgs_cloudtrail-integration">Logging
    * AWS Organizations Events with AWS CloudTrail</a> in the <i>AWS Organizations
    * User Guide</i>. To learn more about CloudTrail, including how to turn it on and
    * find your log files, see the <a
@@ -384,7 +379,7 @@ namespace Model
 
         virtual ~OrganizationsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "organizations"; }
+        inline virtual const char* GetServiceClientName() const override { return "Organizations"; }
 
 
         /**
@@ -485,7 +480,7 @@ namespace Model
         virtual void AcceptHandshakeAsync(const Model::AcceptHandshakeRequest& request, const AcceptHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches a policy to a root, an organizational unit, or an individual
+         * <p>Attaches a policy to a root, an organizational unit (OU), or an individual
          * account. How the policy affects accounts depends on the type of policy:</p> <ul>
          * <li> <p> <b>Service control policy (SCP)</b> - An SCP specifies what permissions
          * can be delegated to users in affected member accounts. The scope of influence
@@ -522,7 +517,7 @@ namespace Model
         virtual Model::AttachPolicyOutcome AttachPolicy(const Model::AttachPolicyRequest& request) const;
 
         /**
-         * <p>Attaches a policy to a root, an organizational unit, or an individual
+         * <p>Attaches a policy to a root, an organizational unit (OU), or an individual
          * account. How the policy affects accounts depends on the type of policy:</p> <ul>
          * <li> <p> <b>Service control policy (SCP)</b> - An SCP specifies what permissions
          * can be delegated to users in affected member accounts. The scope of influence
@@ -561,7 +556,7 @@ namespace Model
         virtual Model::AttachPolicyOutcomeCallable AttachPolicyCallable(const Model::AttachPolicyRequest& request) const;
 
         /**
-         * <p>Attaches a policy to a root, an organizational unit, or an individual
+         * <p>Attaches a policy to a root, an organizational unit (OU), or an individual
          * account. How the policy affects accounts depends on the type of policy:</p> <ul>
          * <li> <p> <b>Service control policy (SCP)</b> - An SCP specifies what permissions
          * can be delegated to users in affected member accounts. The scope of influence
@@ -667,30 +662,33 @@ namespace Model
          * account.</p> <p>For more information about creating accounts, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> <important> <p>When you create an account in an organization
-         * using the AWS Organizations console, API, or CLI commands, the information
-         * required for the account to operate as a standalone account, such as a payment
-         * method and signing the End User Licence Agreement (EULA) is <i>not</i>
+         * Guide</i>.</p> <important> <ul> <li> <p>When you create an account in an
+         * organization using the AWS Organizations console, API, or CLI commands, the
+         * information required for the account to operate as a standalone account, such as
+         * a payment method and signing the End User Licence Agreement (EULA) is <i>not</i>
          * automatically collected. If you must remove an account from your organization
          * later, you can do so only after you provide the missing information. Follow the
          * steps at <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
          * To leave an organization when all required account information has not yet been
-         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </important> <note>
-         * <p>When you create a member account with this operation, you can choose whether
-         * to create the account with the <b>IAM User and Role Access to Billing
-         * Information</b> switch enabled. If you enable it, IAM users and roles that have
-         * appropriate permissions can view billing information for the account. If you
-         * disable this, then only the account root user can access billing information.
-         * For information about how to disable this for an account, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
-         * Access to Your Billing Information and Tools</a>.</p> </note> <p>This operation
-         * can be called only from the organization's master account.</p> <important> <p>If
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>If
          * you get an exception that indicates that you exceeded your account limits for
-         * the organization or that you can"t add an account because your organization is
-         * still initializing, please contact <a
-         * href="https://console.aws.amazon.com/support/home#/"> AWS Customer
-         * Support</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * the organization or that the operation failed because your organization is still
+         * initializing, wait one hour and then try again. If the error persists after an
+         * hour, then contact <a href="https://console.aws.amazon.com/support/home#/">AWS
+         * Customer Support</a>.</p> </li> <li> <p>Because <code>CreateAccount</code>
+         * operates asynchronously, it can return a successful completion message even
+         * though account initialization might still be in progress. You might need to wait
+         * a few minutes before you can successfully access the account. </p> </li> </ul>
+         * </important> <note> <p>When you create a member account with this operation, you
+         * can choose whether to create the account with the <b>IAM User and Role Access to
+         * Billing Information</b> switch enabled. If you enable it, IAM users and roles
+         * that have appropriate permissions can view billing information for the account.
+         * If you disable this, then only the account root user can access billing
+         * information. For information about how to disable this for an account, see <a
+         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
+         * Access to Your Billing Information and Tools</a>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">AWS
          * API Reference</a></p>
          */
@@ -721,30 +719,33 @@ namespace Model
          * account.</p> <p>For more information about creating accounts, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> <important> <p>When you create an account in an organization
-         * using the AWS Organizations console, API, or CLI commands, the information
-         * required for the account to operate as a standalone account, such as a payment
-         * method and signing the End User Licence Agreement (EULA) is <i>not</i>
+         * Guide</i>.</p> <important> <ul> <li> <p>When you create an account in an
+         * organization using the AWS Organizations console, API, or CLI commands, the
+         * information required for the account to operate as a standalone account, such as
+         * a payment method and signing the End User Licence Agreement (EULA) is <i>not</i>
          * automatically collected. If you must remove an account from your organization
          * later, you can do so only after you provide the missing information. Follow the
          * steps at <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
          * To leave an organization when all required account information has not yet been
-         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </important> <note>
-         * <p>When you create a member account with this operation, you can choose whether
-         * to create the account with the <b>IAM User and Role Access to Billing
-         * Information</b> switch enabled. If you enable it, IAM users and roles that have
-         * appropriate permissions can view billing information for the account. If you
-         * disable this, then only the account root user can access billing information.
-         * For information about how to disable this for an account, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
-         * Access to Your Billing Information and Tools</a>.</p> </note> <p>This operation
-         * can be called only from the organization's master account.</p> <important> <p>If
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>If
          * you get an exception that indicates that you exceeded your account limits for
-         * the organization or that you can"t add an account because your organization is
-         * still initializing, please contact <a
-         * href="https://console.aws.amazon.com/support/home#/"> AWS Customer
-         * Support</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * the organization or that the operation failed because your organization is still
+         * initializing, wait one hour and then try again. If the error persists after an
+         * hour, then contact <a href="https://console.aws.amazon.com/support/home#/">AWS
+         * Customer Support</a>.</p> </li> <li> <p>Because <code>CreateAccount</code>
+         * operates asynchronously, it can return a successful completion message even
+         * though account initialization might still be in progress. You might need to wait
+         * a few minutes before you can successfully access the account. </p> </li> </ul>
+         * </important> <note> <p>When you create a member account with this operation, you
+         * can choose whether to create the account with the <b>IAM User and Role Access to
+         * Billing Information</b> switch enabled. If you enable it, IAM users and roles
+         * that have appropriate permissions can view billing information for the account.
+         * If you disable this, then only the account root user can access billing
+         * information. For information about how to disable this for an account, see <a
+         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
+         * Access to Your Billing Information and Tools</a>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">AWS
          * API Reference</a></p>
          *
@@ -777,30 +778,33 @@ namespace Model
          * account.</p> <p>For more information about creating accounts, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> <important> <p>When you create an account in an organization
-         * using the AWS Organizations console, API, or CLI commands, the information
-         * required for the account to operate as a standalone account, such as a payment
-         * method and signing the End User Licence Agreement (EULA) is <i>not</i>
+         * Guide</i>.</p> <important> <ul> <li> <p>When you create an account in an
+         * organization using the AWS Organizations console, API, or CLI commands, the
+         * information required for the account to operate as a standalone account, such as
+         * a payment method and signing the End User Licence Agreement (EULA) is <i>not</i>
          * automatically collected. If you must remove an account from your organization
          * later, you can do so only after you provide the missing information. Follow the
          * steps at <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
          * To leave an organization when all required account information has not yet been
-         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </important> <note>
-         * <p>When you create a member account with this operation, you can choose whether
-         * to create the account with the <b>IAM User and Role Access to Billing
-         * Information</b> switch enabled. If you enable it, IAM users and roles that have
-         * appropriate permissions can view billing information for the account. If you
-         * disable this, then only the account root user can access billing information.
-         * For information about how to disable this for an account, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
-         * Access to Your Billing Information and Tools</a>.</p> </note> <p>This operation
-         * can be called only from the organization's master account.</p> <important> <p>If
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>If
          * you get an exception that indicates that you exceeded your account limits for
-         * the organization or that you can"t add an account because your organization is
-         * still initializing, please contact <a
-         * href="https://console.aws.amazon.com/support/home#/"> AWS Customer
-         * Support</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * the organization or that the operation failed because your organization is still
+         * initializing, wait one hour and then try again. If the error persists after an
+         * hour, then contact <a href="https://console.aws.amazon.com/support/home#/">AWS
+         * Customer Support</a>.</p> </li> <li> <p>Because <code>CreateAccount</code>
+         * operates asynchronously, it can return a successful completion message even
+         * though account initialization might still be in progress. You might need to wait
+         * a few minutes before you can successfully access the account. </p> </li> </ul>
+         * </important> <note> <p>When you create a member account with this operation, you
+         * can choose whether to create the account with the <b>IAM User and Role Access to
+         * Billing Information</b> switch enabled. If you enable it, IAM users and roles
+         * that have appropriate permissions can view billing information for the account.
+         * If you disable this, then only the account root user can access billing
+         * information. For information about how to disable this for an account, see <a
+         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
+         * Access to Your Billing Information and Tools</a>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">AWS
          * API Reference</a></p>
          *
@@ -1010,7 +1014,8 @@ namespace Model
         /**
          * <p>Deletes the organization. You can delete an organization only by using
          * credentials from the master account. The organization must be empty of member
-         * accounts, OUs, and policies.</p><p><h3>See Also:</h3>   <a
+         * accounts, organizational units (OUs), and policies.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">AWS
          * API Reference</a></p>
          */
@@ -1019,7 +1024,8 @@ namespace Model
         /**
          * <p>Deletes the organization. You can delete an organization only by using
          * credentials from the master account. The organization must be empty of member
-         * accounts, OUs, and policies.</p><p><h3>See Also:</h3>   <a
+         * accounts, organizational units (OUs), and policies.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">AWS
          * API Reference</a></p>
          *
@@ -1030,7 +1036,8 @@ namespace Model
         /**
          * <p>Deletes the organization. You can delete an organization only by using
          * credentials from the master account. The organization must be empty of member
-         * accounts, OUs, and policies.</p><p><h3>See Also:</h3>   <a
+         * accounts, organizational units (OUs), and policies.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization">AWS
          * API Reference</a></p>
          *
@@ -1038,7 +1045,7 @@ namespace Model
          */
         virtual void DeleteOrganizationAsync(const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
-         * <p>Deletes an organizational unit from a root or another OU. You must first
+         * <p>Deletes an organizational unit (OU) from a root or another OU. You must first
          * remove all accounts and child OUs from the OU that you want to delete.</p>
          * <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
@@ -1048,7 +1055,7 @@ namespace Model
         virtual Model::DeleteOrganizationalUnitOutcome DeleteOrganizationalUnit(const Model::DeleteOrganizationalUnitRequest& request) const;
 
         /**
-         * <p>Deletes an organizational unit from a root or another OU. You must first
+         * <p>Deletes an organizational unit (OU) from a root or another OU. You must first
          * remove all accounts and child OUs from the OU that you want to delete.</p>
          * <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
@@ -1060,7 +1067,7 @@ namespace Model
         virtual Model::DeleteOrganizationalUnitOutcomeCallable DeleteOrganizationalUnitCallable(const Model::DeleteOrganizationalUnitRequest& request) const;
 
         /**
-         * <p>Deletes an organizational unit from a root or another OU. You must first
+         * <p>Deletes an organizational unit (OU) from a root or another OU. You must first
          * remove all accounts and child OUs from the OU that you want to delete.</p>
          * <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
@@ -1073,9 +1080,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified policy from your organization. Before you perform this
-         * operation, you must first detach the policy from all OUs, roots, and
-         * accounts.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * operation, you must first detach the policy from all organizational units (OUs),
+         * roots, and accounts.</p> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy">AWS
          * API Reference</a></p>
          */
@@ -1083,9 +1090,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified policy from your organization. Before you perform this
-         * operation, you must first detach the policy from all OUs, roots, and
-         * accounts.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * operation, you must first detach the policy from all organizational units (OUs),
+         * roots, and accounts.</p> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy">AWS
          * API Reference</a></p>
          *
@@ -1095,9 +1102,9 @@ namespace Model
 
         /**
          * <p>Deletes the specified policy from your organization. Before you perform this
-         * operation, you must first detach the policy from all OUs, roots, and
-         * accounts.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * operation, you must first detach the policy from all organizational units (OUs),
+         * roots, and accounts.</p> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy">AWS
          * API Reference</a></p>
          *
@@ -1210,7 +1217,10 @@ namespace Model
         /**
          * <p>Retrieves information about the organization that the user's account belongs
          * to.</p> <p>This operation can be called from any account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * organization.</p> <note> <p>Even if a policy type is shown as available in the
+         * organization, it can be disabled separately at the root level with
+         * <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the status of policy types
+         * for a specified root.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization">AWS
          * API Reference</a></p>
          */
@@ -1219,7 +1229,10 @@ namespace Model
         /**
          * <p>Retrieves information about the organization that the user's account belongs
          * to.</p> <p>This operation can be called from any account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * organization.</p> <note> <p>Even if a policy type is shown as available in the
+         * organization, it can be disabled separately at the root level with
+         * <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the status of policy types
+         * for a specified root.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization">AWS
          * API Reference</a></p>
          *
@@ -1230,7 +1243,10 @@ namespace Model
         /**
          * <p>Retrieves information about the organization that the user's account belongs
          * to.</p> <p>This operation can be called from any account in the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * organization.</p> <note> <p>Even if a policy type is shown as available in the
+         * organization, it can be disabled separately at the root level with
+         * <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the status of policy types
+         * for a specified root.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization">AWS
          * API Reference</a></p>
          *
@@ -1297,8 +1313,8 @@ namespace Model
         virtual void DescribePolicyAsync(const Model::DescribePolicyRequest& request, const DescribePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Detaches a policy from a target root, organizational unit, or account. If the
-         * policy being detached is a service control policy (SCP), the changes to
+         * <p>Detaches a policy from a target root, organizational unit (OU), or account.
+         * If the policy being detached is a service control policy (SCP), the changes to
          * permissions for IAM users and roles in affected accounts are immediate.</p> <p>
          * <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If
          * you want to replace the default <code>FullAWSAccess</code> policy with one that
@@ -1320,8 +1336,8 @@ namespace Model
         virtual Model::DetachPolicyOutcome DetachPolicy(const Model::DetachPolicyRequest& request) const;
 
         /**
-         * <p>Detaches a policy from a target root, organizational unit, or account. If the
-         * policy being detached is a service control policy (SCP), the changes to
+         * <p>Detaches a policy from a target root, organizational unit (OU), or account.
+         * If the policy being detached is a service control policy (SCP), the changes to
          * permissions for IAM users and roles in affected accounts are immediate.</p> <p>
          * <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If
          * you want to replace the default <code>FullAWSAccess</code> policy with one that
@@ -1345,8 +1361,8 @@ namespace Model
         virtual Model::DetachPolicyOutcomeCallable DetachPolicyCallable(const Model::DetachPolicyRequest& request) const;
 
         /**
-         * <p>Detaches a policy from a target root, organizational unit, or account. If the
-         * policy being detached is a service control policy (SCP), the changes to
+         * <p>Detaches a policy from a target root, organizational unit (OU), or account.
+         * If the policy being detached is a service control policy (SCP), the changes to
          * permissions for IAM users and roles in affected accounts are immediate.</p> <p>
          * <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If
          * you want to replace the default <code>FullAWSAccess</code> policy with one that
@@ -1470,10 +1486,14 @@ namespace Model
          * <p>Disables an organizational control policy type in a root. A policy of a
          * certain type can be attached to entities in a root only if that type is enabled
          * in the root. After you perform this operation, you no longer can attach policies
-         * of the specified type to that root or to any OU or account in that root. You can
-         * undo this by using the <a>EnablePolicyType</a> operation.</p> <p>This operation
-         * can be called only from the organization's master account.</p><p><h3>See
-         * Also:</h3>   <a
+         * of the specified type to that root or to any organizational unit (OU) or account
+         * in that root. You can undo this by using the <a>EnablePolicyType</a>
+         * operation.</p> <p>This operation can be called only from the organization's
+         * master account.</p> <note> <p>If you disable a policy type for a root, it still
+         * shows as enabled for the organization if all features are enabled in that
+         * organization. Use <a>ListRoots</a> to see the status of policy types for a
+         * specified root. Use <a>DescribeOrganization</a> to see the status of policy
+         * types in the organization.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">AWS
          * API Reference</a></p>
          */
@@ -1483,10 +1503,14 @@ namespace Model
          * <p>Disables an organizational control policy type in a root. A policy of a
          * certain type can be attached to entities in a root only if that type is enabled
          * in the root. After you perform this operation, you no longer can attach policies
-         * of the specified type to that root or to any OU or account in that root. You can
-         * undo this by using the <a>EnablePolicyType</a> operation.</p> <p>This operation
-         * can be called only from the organization's master account.</p><p><h3>See
-         * Also:</h3>   <a
+         * of the specified type to that root or to any organizational unit (OU) or account
+         * in that root. You can undo this by using the <a>EnablePolicyType</a>
+         * operation.</p> <p>This operation can be called only from the organization's
+         * master account.</p> <note> <p>If you disable a policy type for a root, it still
+         * shows as enabled for the organization if all features are enabled in that
+         * organization. Use <a>ListRoots</a> to see the status of policy types for a
+         * specified root. Use <a>DescribeOrganization</a> to see the status of policy
+         * types in the organization.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">AWS
          * API Reference</a></p>
          *
@@ -1498,10 +1522,14 @@ namespace Model
          * <p>Disables an organizational control policy type in a root. A policy of a
          * certain type can be attached to entities in a root only if that type is enabled
          * in the root. After you perform this operation, you no longer can attach policies
-         * of the specified type to that root or to any OU or account in that root. You can
-         * undo this by using the <a>EnablePolicyType</a> operation.</p> <p>This operation
-         * can be called only from the organization's master account.</p><p><h3>See
-         * Also:</h3>   <a
+         * of the specified type to that root or to any organizational unit (OU) or account
+         * in that root. You can undo this by using the <a>EnablePolicyType</a>
+         * operation.</p> <p>This operation can be called only from the organization's
+         * master account.</p> <note> <p>If you disable a policy type for a root, it still
+         * shows as enabled for the organization if all features are enabled in that
+         * organization. Use <a>ListRoots</a> to see the status of policy types for a
+         * specified root. Use <a>DescribeOrganization</a> to see the status of policy
+         * types in the organization.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisablePolicyType">AWS
          * API Reference</a></p>
          *
@@ -1601,20 +1629,22 @@ namespace Model
          * All Features in Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>.</p> <important> <p>This operation is required only for organizations
          * that were created explicitly with only the consolidated billing features
-         * enabled, or that were migrated from a Consolidated Billing account family to
-         * Organizations. Calling this operation sends a handshake to every invited account
-         * in the organization. The feature set change can be finalized and the additional
+         * enabled. Calling this operation sends a handshake to every invited account in
+         * the organization. The feature set change can be finalized and the additional
          * features enabled only after all administrators in the invited accounts approve
-         * the change by accepting the handshake.</p> </important> <p>After all invited
-         * member accounts accept the handshake, you finalize the feature set change by
-         * accepting the handshake that contains <code>"Action":
-         * "ENABLE_ALL_FEATURES"</code>. This completes the change.</p> <p>After you enable
-         * all features in your organization, the master account in the organization can
-         * apply policies on all member accounts. These policies can restrict what users
-         * and even administrators in those accounts can do. The master account can apply
-         * policies that prevent accounts from leaving the organization. Ensure that your
-         * account administrators are aware of this.</p> <p>This operation can be called
-         * only from the organization's master account. </p><p><h3>See Also:</h3>   <a
+         * the change by accepting the handshake.</p> </important> <p>After you enable all
+         * features, you can separately enable or disable individual policy types in a root
+         * using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. To see the status of
+         * policy types in a root, use <a>ListRoots</a>.</p> <p>After all invited member
+         * accounts accept the handshake, you finalize the feature set change by accepting
+         * the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This
+         * completes the change.</p> <p>After you enable all features in your organization,
+         * the master account in the organization can apply policies on all member
+         * accounts. These policies can restrict what users and even administrators in
+         * those accounts can do. The master account can apply policies that prevent
+         * accounts from leaving the organization. Ensure that your account administrators
+         * are aware of this.</p> <p>This operation can be called only from the
+         * organization's master account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">AWS
          * API Reference</a></p>
          */
@@ -1630,20 +1660,22 @@ namespace Model
          * All Features in Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>.</p> <important> <p>This operation is required only for organizations
          * that were created explicitly with only the consolidated billing features
-         * enabled, or that were migrated from a Consolidated Billing account family to
-         * Organizations. Calling this operation sends a handshake to every invited account
-         * in the organization. The feature set change can be finalized and the additional
+         * enabled. Calling this operation sends a handshake to every invited account in
+         * the organization. The feature set change can be finalized and the additional
          * features enabled only after all administrators in the invited accounts approve
-         * the change by accepting the handshake.</p> </important> <p>After all invited
-         * member accounts accept the handshake, you finalize the feature set change by
-         * accepting the handshake that contains <code>"Action":
-         * "ENABLE_ALL_FEATURES"</code>. This completes the change.</p> <p>After you enable
-         * all features in your organization, the master account in the organization can
-         * apply policies on all member accounts. These policies can restrict what users
-         * and even administrators in those accounts can do. The master account can apply
-         * policies that prevent accounts from leaving the organization. Ensure that your
-         * account administrators are aware of this.</p> <p>This operation can be called
-         * only from the organization's master account. </p><p><h3>See Also:</h3>   <a
+         * the change by accepting the handshake.</p> </important> <p>After you enable all
+         * features, you can separately enable or disable individual policy types in a root
+         * using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. To see the status of
+         * policy types in a root, use <a>ListRoots</a>.</p> <p>After all invited member
+         * accounts accept the handshake, you finalize the feature set change by accepting
+         * the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This
+         * completes the change.</p> <p>After you enable all features in your organization,
+         * the master account in the organization can apply policies on all member
+         * accounts. These policies can restrict what users and even administrators in
+         * those accounts can do. The master account can apply policies that prevent
+         * accounts from leaving the organization. Ensure that your account administrators
+         * are aware of this.</p> <p>This operation can be called only from the
+         * organization's master account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">AWS
          * API Reference</a></p>
          *
@@ -1661,20 +1693,22 @@ namespace Model
          * All Features in Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>.</p> <important> <p>This operation is required only for organizations
          * that were created explicitly with only the consolidated billing features
-         * enabled, or that were migrated from a Consolidated Billing account family to
-         * Organizations. Calling this operation sends a handshake to every invited account
-         * in the organization. The feature set change can be finalized and the additional
+         * enabled. Calling this operation sends a handshake to every invited account in
+         * the organization. The feature set change can be finalized and the additional
          * features enabled only after all administrators in the invited accounts approve
-         * the change by accepting the handshake.</p> </important> <p>After all invited
-         * member accounts accept the handshake, you finalize the feature set change by
-         * accepting the handshake that contains <code>"Action":
-         * "ENABLE_ALL_FEATURES"</code>. This completes the change.</p> <p>After you enable
-         * all features in your organization, the master account in the organization can
-         * apply policies on all member accounts. These policies can restrict what users
-         * and even administrators in those accounts can do. The master account can apply
-         * policies that prevent accounts from leaving the organization. Ensure that your
-         * account administrators are aware of this.</p> <p>This operation can be called
-         * only from the organization's master account. </p><p><h3>See Also:</h3>   <a
+         * the change by accepting the handshake.</p> </important> <p>After you enable all
+         * features, you can separately enable or disable individual policy types in a root
+         * using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. To see the status of
+         * policy types in a root, use <a>ListRoots</a>.</p> <p>After all invited member
+         * accounts accept the handshake, you finalize the feature set change by accepting
+         * the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This
+         * completes the change.</p> <p>After you enable all features in your organization,
+         * the master account in the organization can apply policies on all member
+         * accounts. These policies can restrict what users and even administrators in
+         * those accounts can do. The master account can apply policies that prevent
+         * accounts from leaving the organization. Ensure that your account administrators
+         * are aware of this.</p> <p>This operation can be called only from the
+         * organization's master account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures">AWS
          * API Reference</a></p>
          *
@@ -1684,10 +1718,14 @@ namespace Model
 
         /**
          * <p>Enables a policy type in a root. After you enable a policy type in a root,
-         * you can attach policies of that type to the root, any OU, or account in that
-         * root. You can undo this by using the <a>DisablePolicyType</a> operation.</p>
-         * <p>This operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * you can attach policies of that type to the root, any organizational unit (OU),
+         * or account in that root. You can undo this by using the <a>DisablePolicyType</a>
+         * operation.</p> <p>This operation can be called only from the organization's
+         * master account.</p> <p>You can enable a policy type in a root only if that
+         * policy type is available in the organization. Use <a>DescribeOrganization</a> to
+         * view the status of available policy types in the organization.</p> <p>To view
+         * the status of policy type in a root, use <a>ListRoots</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">AWS
          * API Reference</a></p>
          */
@@ -1695,10 +1733,14 @@ namespace Model
 
         /**
          * <p>Enables a policy type in a root. After you enable a policy type in a root,
-         * you can attach policies of that type to the root, any OU, or account in that
-         * root. You can undo this by using the <a>DisablePolicyType</a> operation.</p>
-         * <p>This operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * you can attach policies of that type to the root, any organizational unit (OU),
+         * or account in that root. You can undo this by using the <a>DisablePolicyType</a>
+         * operation.</p> <p>This operation can be called only from the organization's
+         * master account.</p> <p>You can enable a policy type in a root only if that
+         * policy type is available in the organization. Use <a>DescribeOrganization</a> to
+         * view the status of available policy types in the organization.</p> <p>To view
+         * the status of policy type in a root, use <a>ListRoots</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">AWS
          * API Reference</a></p>
          *
@@ -1708,10 +1750,14 @@ namespace Model
 
         /**
          * <p>Enables a policy type in a root. After you enable a policy type in a root,
-         * you can attach policies of that type to the root, any OU, or account in that
-         * root. You can undo this by using the <a>DisablePolicyType</a> operation.</p>
-         * <p>This operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * you can attach policies of that type to the root, any organizational unit (OU),
+         * or account in that root. You can undo this by using the <a>DisablePolicyType</a>
+         * operation.</p> <p>This operation can be called only from the organization's
+         * master account.</p> <p>You can enable a policy type in a root only if that
+         * policy type is available in the organization. Use <a>DescribeOrganization</a> to
+         * view the status of available policy types in the organization.</p> <p>To view
+         * the status of policy type in a root, use <a>ListRoots</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnablePolicyType">AWS
          * API Reference</a></p>
          *
@@ -1723,19 +1769,20 @@ namespace Model
          * <p>Sends an invitation to another account to join your organization as a member
          * account. Organizations sends email on your behalf to the email address that is
          * associated with the other account's owner. The invitation is implemented as a
-         * <a>Handshake</a> whose details are in the response.</p> <important> <p>You can
-         * invite AWS accounts only from the same seller as the master account. For
-         * example, if your organization's master account was created by Amazon Internet
-         * Services Pvt. Ltd (AISPL), an AWS seller in India, then you can only invite
-         * other AISPL accounts to your organization. You can't combine accounts from AISPL
-         * and AWS, or any other AWS seller. For more information, see <a
+         * <a>Handshake</a> whose details are in the response.</p> <important> <ul> <li>
+         * <p>You can invite AWS accounts only from the same seller as the master account.
+         * For example, if your organization's master account was created by Amazon
+         * Internet Services Pvt. Ltd (AISPL), an AWS seller in India, then you can only
+         * invite other AISPL accounts to your organization. You can't combine accounts
+         * from AISPL and AWS, or any other AWS seller. For more information, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
-         * Billing in India</a>.</p> </important> <p>This operation can be called only from
-         * the organization's master account.</p> <important> <p>If you get an exception
-         * that indicates that you exceeded your account limits for the organization or
-         * that you can"t add an account because your organization is still initializing,
-         * please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS
-         * Customer Support</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * Billing in India</a>.</p> </li> <li> <p>If you receive an exception that
+         * indicates that you exceeded your account limits for the organization or that the
+         * operation failed because your organization is still initializing, wait one hour
+         * and then try again. If the error persists after an hour, then contact <a
+         * href="https://console.aws.amazon.com/support/home#/">AWS Customer
+         * Support</a>.</p> </li> </ul> </important> <p>This operation can be called only
+         * from the organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">AWS
          * API Reference</a></p>
          */
@@ -1745,19 +1792,20 @@ namespace Model
          * <p>Sends an invitation to another account to join your organization as a member
          * account. Organizations sends email on your behalf to the email address that is
          * associated with the other account's owner. The invitation is implemented as a
-         * <a>Handshake</a> whose details are in the response.</p> <important> <p>You can
-         * invite AWS accounts only from the same seller as the master account. For
-         * example, if your organization's master account was created by Amazon Internet
-         * Services Pvt. Ltd (AISPL), an AWS seller in India, then you can only invite
-         * other AISPL accounts to your organization. You can't combine accounts from AISPL
-         * and AWS, or any other AWS seller. For more information, see <a
+         * <a>Handshake</a> whose details are in the response.</p> <important> <ul> <li>
+         * <p>You can invite AWS accounts only from the same seller as the master account.
+         * For example, if your organization's master account was created by Amazon
+         * Internet Services Pvt. Ltd (AISPL), an AWS seller in India, then you can only
+         * invite other AISPL accounts to your organization. You can't combine accounts
+         * from AISPL and AWS, or any other AWS seller. For more information, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
-         * Billing in India</a>.</p> </important> <p>This operation can be called only from
-         * the organization's master account.</p> <important> <p>If you get an exception
-         * that indicates that you exceeded your account limits for the organization or
-         * that you can"t add an account because your organization is still initializing,
-         * please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS
-         * Customer Support</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * Billing in India</a>.</p> </li> <li> <p>If you receive an exception that
+         * indicates that you exceeded your account limits for the organization or that the
+         * operation failed because your organization is still initializing, wait one hour
+         * and then try again. If the error persists after an hour, then contact <a
+         * href="https://console.aws.amazon.com/support/home#/">AWS Customer
+         * Support</a>.</p> </li> </ul> </important> <p>This operation can be called only
+         * from the organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">AWS
          * API Reference</a></p>
          *
@@ -1769,19 +1817,20 @@ namespace Model
          * <p>Sends an invitation to another account to join your organization as a member
          * account. Organizations sends email on your behalf to the email address that is
          * associated with the other account's owner. The invitation is implemented as a
-         * <a>Handshake</a> whose details are in the response.</p> <important> <p>You can
-         * invite AWS accounts only from the same seller as the master account. For
-         * example, if your organization's master account was created by Amazon Internet
-         * Services Pvt. Ltd (AISPL), an AWS seller in India, then you can only invite
-         * other AISPL accounts to your organization. You can't combine accounts from AISPL
-         * and AWS, or any other AWS seller. For more information, see <a
+         * <a>Handshake</a> whose details are in the response.</p> <important> <ul> <li>
+         * <p>You can invite AWS accounts only from the same seller as the master account.
+         * For example, if your organization's master account was created by Amazon
+         * Internet Services Pvt. Ltd (AISPL), an AWS seller in India, then you can only
+         * invite other AISPL accounts to your organization. You can't combine accounts
+         * from AISPL and AWS, or any other AWS seller. For more information, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html">Consolidated
-         * Billing in India</a>.</p> </important> <p>This operation can be called only from
-         * the organization's master account.</p> <important> <p>If you get an exception
-         * that indicates that you exceeded your account limits for the organization or
-         * that you can"t add an account because your organization is still initializing,
-         * please contact <a href="https://console.aws.amazon.com/support/home#/"> AWS
-         * Customer Support</a>.</p> </important><p><h3>See Also:</h3>   <a
+         * Billing in India</a>.</p> </li> <li> <p>If you receive an exception that
+         * indicates that you exceeded your account limits for the organization or that the
+         * operation failed because your organization is still initializing, wait one hour
+         * and then try again. If the error persists after an hour, then contact <a
+         * href="https://console.aws.amazon.com/support/home#/">AWS Customer
+         * Support</a>.</p> </li> </ul> </important> <p>This operation can be called only
+         * from the organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization">AWS
          * API Reference</a></p>
          *
@@ -1948,9 +1997,15 @@ namespace Model
 
         /**
          * <p>Lists all the accounts in the organization. To request only the accounts in a
-         * root or OU, use the <a>ListAccountsForParent</a> operation instead.</p> <p>This
-         * operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * specified root or organizational unit (OU), use the <a>ListAccountsForParent</a>
+         * operation instead.</p> <note> <p>Always check the <code>NextToken</code>
+         * response parameter for a <code>null</code> value when calling a
+         * <code>List*</code> operation. These operations can occasionally return an empty
+         * set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">AWS
          * API Reference</a></p>
          */
@@ -1958,9 +2013,15 @@ namespace Model
 
         /**
          * <p>Lists all the accounts in the organization. To request only the accounts in a
-         * root or OU, use the <a>ListAccountsForParent</a> operation instead.</p> <p>This
-         * operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * specified root or organizational unit (OU), use the <a>ListAccountsForParent</a>
+         * operation instead.</p> <note> <p>Always check the <code>NextToken</code>
+         * response parameter for a <code>null</code> value when calling a
+         * <code>List*</code> operation. These operations can occasionally return an empty
+         * set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">AWS
          * API Reference</a></p>
          *
@@ -1970,9 +2031,15 @@ namespace Model
 
         /**
          * <p>Lists all the accounts in the organization. To request only the accounts in a
-         * root or OU, use the <a>ListAccountsForParent</a> operation instead.</p> <p>This
-         * operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * specified root or organizational unit (OU), use the <a>ListAccountsForParent</a>
+         * operation instead.</p> <note> <p>Always check the <code>NextToken</code>
+         * response parameter for a <code>null</code> value when calling a
+         * <code>List*</code> operation. These operations can occasionally return an empty
+         * set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts">AWS
          * API Reference</a></p>
          *
@@ -1986,7 +2053,12 @@ namespace Model
          * of all the accounts that are not in any OU. If you specify an OU, you get a list
          * of all the accounts in only that OU, and not in any child OUs. To get a list of
          * all accounts in the organization, use the <a>ListAccounts</a> operation.</p>
-         * <p>This operation can be called only from the organization's master
+         * <note> <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">AWS
          * API Reference</a></p>
@@ -1999,7 +2071,12 @@ namespace Model
          * of all the accounts that are not in any OU. If you specify an OU, you get a list
          * of all the accounts in only that OU, and not in any child OUs. To get a list of
          * all accounts in the organization, use the <a>ListAccounts</a> operation.</p>
-         * <p>This operation can be called only from the organization's master
+         * <note> <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">AWS
          * API Reference</a></p>
@@ -2014,7 +2091,12 @@ namespace Model
          * of all the accounts that are not in any OU. If you specify an OU, you get a list
          * of all the accounts in only that OU, and not in any child OUs. To get a list of
          * all accounts in the organization, use the <a>ListAccounts</a> operation.</p>
-         * <p>This operation can be called only from the organization's master
+         * <note> <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent">AWS
          * API Reference</a></p>
@@ -2024,22 +2106,32 @@ namespace Model
         virtual void ListAccountsForParentAsync(const Model::ListAccountsForParentRequest& request, const ListAccountsForParentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all of the OUs or accounts that are contained in the specified parent
-         * OU or root. This operation, along with <a>ListParents</a> enables you to
-         * traverse the tree structure that makes up this root.</p> <p>This operation can
-         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Lists all of the organizational units (OUs) or accounts that are contained in
+         * the specified parent OU or root. This operation, along with <a>ListParents</a>
+         * enables you to traverse the tree structure that makes up this root.</p> <note>
+         * <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">AWS
          * API Reference</a></p>
          */
         virtual Model::ListChildrenOutcome ListChildren(const Model::ListChildrenRequest& request) const;
 
         /**
-         * <p>Lists all of the OUs or accounts that are contained in the specified parent
-         * OU or root. This operation, along with <a>ListParents</a> enables you to
-         * traverse the tree structure that makes up this root.</p> <p>This operation can
-         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Lists all of the organizational units (OUs) or accounts that are contained in
+         * the specified parent OU or root. This operation, along with <a>ListParents</a>
+         * enables you to traverse the tree structure that makes up this root.</p> <note>
+         * <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">AWS
          * API Reference</a></p>
          *
@@ -2048,11 +2140,16 @@ namespace Model
         virtual Model::ListChildrenOutcomeCallable ListChildrenCallable(const Model::ListChildrenRequest& request) const;
 
         /**
-         * <p>Lists all of the OUs or accounts that are contained in the specified parent
-         * OU or root. This operation, along with <a>ListParents</a> enables you to
-         * traverse the tree structure that makes up this root.</p> <p>This operation can
-         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Lists all of the organizational units (OUs) or accounts that are contained in
+         * the specified parent OU or root. This operation, along with <a>ListParents</a>
+         * enables you to traverse the tree structure that makes up this root.</p> <note>
+         * <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren">AWS
          * API Reference</a></p>
          *
@@ -2062,7 +2159,12 @@ namespace Model
 
         /**
          * <p>Lists the account creation requests that match the specified status that is
-         * currently being tracked for the organization.</p> <p>This operation can be
+         * currently being tracked for the organization.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
          * called only from the organization's master account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">AWS
@@ -2072,7 +2174,12 @@ namespace Model
 
         /**
          * <p>Lists the account creation requests that match the specified status that is
-         * currently being tracked for the organization.</p> <p>This operation can be
+         * currently being tracked for the organization.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
          * called only from the organization's master account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">AWS
@@ -2084,7 +2191,12 @@ namespace Model
 
         /**
          * <p>Lists the account creation requests that match the specified status that is
-         * currently being tracked for the organization.</p> <p>This operation can be
+         * currently being tracked for the organization.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
          * called only from the organization's master account.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus">AWS
@@ -2098,8 +2210,13 @@ namespace Model
          * <p>Lists the current handshakes that are associated with the account of the
          * requesting user.</p> <p>Handshakes that are ACCEPTED, DECLINED, or CANCELED
          * appear in the results of this API for only 30 days after changing to that state.
-         * After that they are deleted and no longer accessible.</p> <p>This operation can
-         * be called from any account in the organization.</p><p><h3>See Also:</h3>   <a
+         * After that they are deleted and no longer accessible.</p> <note> <p>Always check
+         * the <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
          * API Reference</a></p>
          */
@@ -2109,8 +2226,13 @@ namespace Model
          * <p>Lists the current handshakes that are associated with the account of the
          * requesting user.</p> <p>Handshakes that are ACCEPTED, DECLINED, or CANCELED
          * appear in the results of this API for only 30 days after changing to that state.
-         * After that they are deleted and no longer accessible.</p> <p>This operation can
-         * be called from any account in the organization.</p><p><h3>See Also:</h3>   <a
+         * After that they are deleted and no longer accessible.</p> <note> <p>Always check
+         * the <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
          * API Reference</a></p>
          *
@@ -2122,8 +2244,13 @@ namespace Model
          * <p>Lists the current handshakes that are associated with the account of the
          * requesting user.</p> <p>Handshakes that are ACCEPTED, DECLINED, or CANCELED
          * appear in the results of this API for only 30 days after changing to that state.
-         * After that they are deleted and no longer accessible.</p> <p>This operation can
-         * be called from any account in the organization.</p><p><h3>See Also:</h3>   <a
+         * After that they are deleted and no longer accessible.</p> <note> <p>Always check
+         * the <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called from any account in the organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount">AWS
          * API Reference</a></p>
          *
@@ -2138,8 +2265,13 @@ namespace Model
          * details and status about a handshake.</p> <p>Handshakes that are ACCEPTED,
          * DECLINED, or CANCELED appear in the results of this API for only 30 days after
          * changing to that state. After that they are deleted and no longer
-         * accessible.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * accessible.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
          * API Reference</a></p>
          */
@@ -2152,8 +2284,13 @@ namespace Model
          * details and status about a handshake.</p> <p>Handshakes that are ACCEPTED,
          * DECLINED, or CANCELED appear in the results of this API for only 30 days after
          * changing to that state. After that they are deleted and no longer
-         * accessible.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * accessible.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
          * API Reference</a></p>
          *
@@ -2168,8 +2305,13 @@ namespace Model
          * details and status about a handshake.</p> <p>Handshakes that are ACCEPTED,
          * DECLINED, or CANCELED appear in the results of this API for only 30 days after
          * changing to that state. After that they are deleted and no longer
-         * accessible.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * accessible.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization">AWS
          * API Reference</a></p>
          *
@@ -2179,7 +2321,12 @@ namespace Model
 
         /**
          * <p>Lists the organizational units (OUs) in a parent organizational unit or
-         * root.</p> <p>This operation can be called only from the organization's master
+         * root.</p> <note> <p>Always check the <code>NextToken</code> response parameter
+         * for a <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">AWS
          * API Reference</a></p>
@@ -2188,7 +2335,12 @@ namespace Model
 
         /**
          * <p>Lists the organizational units (OUs) in a parent organizational unit or
-         * root.</p> <p>This operation can be called only from the organization's master
+         * root.</p> <note> <p>Always check the <code>NextToken</code> response parameter
+         * for a <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">AWS
          * API Reference</a></p>
@@ -2199,7 +2351,12 @@ namespace Model
 
         /**
          * <p>Lists the organizational units (OUs) in a parent organizational unit or
-         * root.</p> <p>This operation can be called only from the organization's master
+         * root.</p> <note> <p>Always check the <code>NextToken</code> response parameter
+         * for a <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent">AWS
          * API Reference</a></p>
@@ -2212,9 +2369,14 @@ namespace Model
          * <p>Lists the root or organizational units (OUs) that serve as the immediate
          * parent of the specified child OU or account. This operation, along with
          * <a>ListChildren</a> enables you to traverse the tree structure that makes up
-         * this root.</p> <p>This operation can be called only from the organization's
-         * master account.</p> <note> <p>In the current release, a child can have only a
-         * single parent. </p> </note><p><h3>See Also:</h3>   <a
+         * this root.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p> <note> <p>In the current release, a child can
+         * have only a single parent. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">AWS
          * API Reference</a></p>
          */
@@ -2224,9 +2386,14 @@ namespace Model
          * <p>Lists the root or organizational units (OUs) that serve as the immediate
          * parent of the specified child OU or account. This operation, along with
          * <a>ListChildren</a> enables you to traverse the tree structure that makes up
-         * this root.</p> <p>This operation can be called only from the organization's
-         * master account.</p> <note> <p>In the current release, a child can have only a
-         * single parent. </p> </note><p><h3>See Also:</h3>   <a
+         * this root.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p> <note> <p>In the current release, a child can
+         * have only a single parent. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">AWS
          * API Reference</a></p>
          *
@@ -2238,9 +2405,14 @@ namespace Model
          * <p>Lists the root or organizational units (OUs) that serve as the immediate
          * parent of the specified child OU or account. This operation, along with
          * <a>ListChildren</a> enables you to traverse the tree structure that makes up
-         * this root.</p> <p>This operation can be called only from the organization's
-         * master account.</p> <note> <p>In the current release, a child can have only a
-         * single parent. </p> </note><p><h3>See Also:</h3>   <a
+         * this root.</p> <note> <p>Always check the <code>NextToken</code> response
+         * parameter for a <code>null</code> value when calling a <code>List*</code>
+         * operation. These operations can occasionally return an empty set of results even
+         * when there are more results available. The <code>NextToken</code> response
+         * parameter value is <code>null</code> <i>only</i> when there are no more results
+         * to display.</p> </note> <p>This operation can be called only from the
+         * organization's master account.</p> <note> <p>In the current release, a child can
+         * have only a single parent. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents">AWS
          * API Reference</a></p>
          *
@@ -2250,7 +2422,12 @@ namespace Model
 
         /**
          * <p>Retrieves the list of all policies in an organization of a specified
-         * type.</p> <p>This operation can be called only from the organization's master
+         * type.</p> <note> <p>Always check the <code>NextToken</code> response parameter
+         * for a <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">AWS
          * API Reference</a></p>
@@ -2259,7 +2436,12 @@ namespace Model
 
         /**
          * <p>Retrieves the list of all policies in an organization of a specified
-         * type.</p> <p>This operation can be called only from the organization's master
+         * type.</p> <note> <p>Always check the <code>NextToken</code> response parameter
+         * for a <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">AWS
          * API Reference</a></p>
@@ -2270,7 +2452,12 @@ namespace Model
 
         /**
          * <p>Retrieves the list of all policies in an organization of a specified
-         * type.</p> <p>This operation can be called only from the organization's master
+         * type.</p> <note> <p>Always check the <code>NextToken</code> response parameter
+         * for a <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies">AWS
          * API Reference</a></p>
@@ -2282,8 +2469,14 @@ namespace Model
         /**
          * <p>Lists the policies that are directly attached to the specified target root,
          * organizational unit (OU), or account. You must specify the policy type that you
-         * want included in the returned list.</p> <p>This operation can be called only
-         * from the organization's master account.</p><p><h3>See Also:</h3>   <a
+         * want included in the returned list.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">AWS
          * API Reference</a></p>
          */
@@ -2292,8 +2485,14 @@ namespace Model
         /**
          * <p>Lists the policies that are directly attached to the specified target root,
          * organizational unit (OU), or account. You must specify the policy type that you
-         * want included in the returned list.</p> <p>This operation can be called only
-         * from the organization's master account.</p><p><h3>See Also:</h3>   <a
+         * want included in the returned list.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">AWS
          * API Reference</a></p>
          *
@@ -2304,8 +2503,14 @@ namespace Model
         /**
          * <p>Lists the policies that are directly attached to the specified target root,
          * organizational unit (OU), or account. You must specify the policy type that you
-         * want included in the returned list.</p> <p>This operation can be called only
-         * from the organization's master account.</p><p><h3>See Also:</h3>   <a
+         * want included in the returned list.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget">AWS
          * API Reference</a></p>
          *
@@ -2314,18 +2519,38 @@ namespace Model
         virtual void ListPoliciesForTargetAsync(const Model::ListPoliciesForTargetRequest& request, const ListPoliciesForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the roots that are defined in the current organization.</p> <p>This
-         * operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the roots that are defined in the current organization.</p> <note>
+         * <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
+         * account.</p> <note> <p>Policy types can be enabled and disabled in roots. This
+         * is distinct from whether they are available in the organization. When you enable
+         * all features, you make policy types available for use in that organization.
+         * Individual policy types can then be enabled and disabled in a root. To see the
+         * availability of a policy type in an organization, use
+         * <a>DescribeOrganization</a>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots">AWS
          * API Reference</a></p>
          */
         virtual Model::ListRootsOutcome ListRoots(const Model::ListRootsRequest& request) const;
 
         /**
-         * <p>Lists the roots that are defined in the current organization.</p> <p>This
-         * operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the roots that are defined in the current organization.</p> <note>
+         * <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
+         * account.</p> <note> <p>Policy types can be enabled and disabled in roots. This
+         * is distinct from whether they are available in the organization. When you enable
+         * all features, you make policy types available for use in that organization.
+         * Individual policy types can then be enabled and disabled in a root. To see the
+         * availability of a policy type in an organization, use
+         * <a>DescribeOrganization</a>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots">AWS
          * API Reference</a></p>
          *
@@ -2334,9 +2559,19 @@ namespace Model
         virtual Model::ListRootsOutcomeCallable ListRootsCallable(const Model::ListRootsRequest& request) const;
 
         /**
-         * <p>Lists the roots that are defined in the current organization.</p> <p>This
-         * operation can be called only from the organization's master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the roots that are defined in the current organization.</p> <note>
+         * <p>Always check the <code>NextToken</code> response parameter for a
+         * <code>null</code> value when calling a <code>List*</code> operation. These
+         * operations can occasionally return an empty set of results even when there are
+         * more results available. The <code>NextToken</code> response parameter value is
+         * <code>null</code> <i>only</i> when there are no more results to display.</p>
+         * </note> <p>This operation can be called only from the organization's master
+         * account.</p> <note> <p>Policy types can be enabled and disabled in roots. This
+         * is distinct from whether they are available in the organization. When you enable
+         * all features, you make policy types available for use in that organization.
+         * Individual policy types can then be enabled and disabled in a root. To see the
+         * availability of a policy type in an organization, use
+         * <a>DescribeOrganization</a>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots">AWS
          * API Reference</a></p>
          *
@@ -2345,18 +2580,30 @@ namespace Model
         virtual void ListRootsAsync(const Model::ListRootsRequest& request, const ListRootsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the roots, OUs, and accounts to which the specified policy is
-         * attached.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the roots, organizaitonal units (OUs), and accounts to which the
+         * specified policy is attached.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTargetsForPolicyOutcome ListTargetsForPolicy(const Model::ListTargetsForPolicyRequest& request) const;
 
         /**
-         * <p>Lists all the roots, OUs, and accounts to which the specified policy is
-         * attached.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the roots, organizaitonal units (OUs), and accounts to which the
+         * specified policy is attached.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">AWS
          * API Reference</a></p>
          *
@@ -2365,9 +2612,15 @@ namespace Model
         virtual Model::ListTargetsForPolicyOutcomeCallable ListTargetsForPolicyCallable(const Model::ListTargetsForPolicyRequest& request) const;
 
         /**
-         * <p>Lists all the roots, OUs, and accounts to which the specified policy is
-         * attached.</p> <p>This operation can be called only from the organization's
-         * master account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the roots, organizaitonal units (OUs), and accounts to which the
+         * specified policy is attached.</p> <note> <p>Always check the
+         * <code>NextToken</code> response parameter for a <code>null</code> value when
+         * calling a <code>List*</code> operation. These operations can occasionally return
+         * an empty set of results even when there are more results available. The
+         * <code>NextToken</code> response parameter value is <code>null</code> <i>only</i>
+         * when there are no more results to display.</p> </note> <p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy">AWS
          * API Reference</a></p>
          *
@@ -2376,18 +2629,20 @@ namespace Model
         virtual void ListTargetsForPolicyAsync(const Model::ListTargetsForPolicyRequest& request, const ListTargetsForPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Moves an account from its current source parent root or OU to the specified
-         * destination parent root or OU.</p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * <p>Moves an account from its current source parent root or organizational unit
+         * (OU) to the specified destination parent root or OU.</p> <p>This operation can
+         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/MoveAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::MoveAccountOutcome MoveAccount(const Model::MoveAccountRequest& request) const;
 
         /**
-         * <p>Moves an account from its current source parent root or OU to the specified
-         * destination parent root or OU.</p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * <p>Moves an account from its current source parent root or organizational unit
+         * (OU) to the specified destination parent root or OU.</p> <p>This operation can
+         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/MoveAccount">AWS
          * API Reference</a></p>
          *
@@ -2396,9 +2651,10 @@ namespace Model
         virtual Model::MoveAccountOutcomeCallable MoveAccountCallable(const Model::MoveAccountRequest& request) const;
 
         /**
-         * <p>Moves an account from its current source parent root or OU to the specified
-         * destination parent root or OU.</p> <p>This operation can be called only from the
-         * organization's master account.</p><p><h3>See Also:</h3>   <a
+         * <p>Moves an account from its current source parent root or organizational unit
+         * (OU) to the specified destination parent root or OU.</p> <p>This operation can
+         * be called only from the organization's master account.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/MoveAccount">AWS
          * API Reference</a></p>
          *
@@ -2414,27 +2670,22 @@ namespace Model
          * expenses accrued by the member account after it is removed from the
          * organization.</p> <p>This operation can be called only from the organization's
          * master account. Member accounts can remove themselves with
-         * <a>LeaveOrganization</a> instead.</p> <important> <ul> <li> <p>You can remove an
-         * account from your organization only if the account is configured with the
-         * information required to operate as a standalone account. When you create an
-         * account in an organization using the AWS Organizations console, API, or CLI
-         * commands, the information required of standalone accounts is <i>not</i>
-         * automatically collected. For an account that you want to make standalone, you
-         * must accept the End User License Agreement (EULA), choose a support plan,
-         * provide and verify the required contact information, and provide a current
-         * payment method. AWS uses the payment method to charge for any billable (not free
-         * tier) AWS activity that occurs while the account is not attached to an
-         * organization. To remove an account that does not yet have this information, you
-         * must sign in as the member account and follow the steps at <a
+         * <a>LeaveOrganization</a> instead.</p> <important> <p>You can remove an account
+         * from your organization only if the account is configured with the information
+         * required to operate as a standalone account. When you create an account in an
+         * organization using the AWS Organizations console, API, or CLI commands, the
+         * information required of standalone accounts is <i>not</i> automatically
+         * collected. For an account that you want to make standalone, you must accept the
+         * End User License Agreement (EULA), choose a support plan, provide and verify the
+         * required contact information, and provide a current payment method. AWS uses the
+         * payment method to charge for any billable (not free tier) AWS activity that
+         * occurs while the account is not attached to an organization. To remove an
+         * account that does not yet have this information, you must sign in as the member
+         * account and follow the steps at <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
          * To leave an organization when all required account information has not yet been
-         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>You
-         * can remove a member account only after you enable IAM user access to billing in
-         * the member account. For more information, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-         * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
-         * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
-         * Also:</h3>   <a
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RemoveAccountFromOrganization">AWS
          * API Reference</a></p>
          */
@@ -2448,27 +2699,22 @@ namespace Model
          * expenses accrued by the member account after it is removed from the
          * organization.</p> <p>This operation can be called only from the organization's
          * master account. Member accounts can remove themselves with
-         * <a>LeaveOrganization</a> instead.</p> <important> <ul> <li> <p>You can remove an
-         * account from your organization only if the account is configured with the
-         * information required to operate as a standalone account. When you create an
-         * account in an organization using the AWS Organizations console, API, or CLI
-         * commands, the information required of standalone accounts is <i>not</i>
-         * automatically collected. For an account that you want to make standalone, you
-         * must accept the End User License Agreement (EULA), choose a support plan,
-         * provide and verify the required contact information, and provide a current
-         * payment method. AWS uses the payment method to charge for any billable (not free
-         * tier) AWS activity that occurs while the account is not attached to an
-         * organization. To remove an account that does not yet have this information, you
-         * must sign in as the member account and follow the steps at <a
+         * <a>LeaveOrganization</a> instead.</p> <important> <p>You can remove an account
+         * from your organization only if the account is configured with the information
+         * required to operate as a standalone account. When you create an account in an
+         * organization using the AWS Organizations console, API, or CLI commands, the
+         * information required of standalone accounts is <i>not</i> automatically
+         * collected. For an account that you want to make standalone, you must accept the
+         * End User License Agreement (EULA), choose a support plan, provide and verify the
+         * required contact information, and provide a current payment method. AWS uses the
+         * payment method to charge for any billable (not free tier) AWS activity that
+         * occurs while the account is not attached to an organization. To remove an
+         * account that does not yet have this information, you must sign in as the member
+         * account and follow the steps at <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
          * To leave an organization when all required account information has not yet been
-         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>You
-         * can remove a member account only after you enable IAM user access to billing in
-         * the member account. For more information, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-         * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
-         * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
-         * Also:</h3>   <a
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RemoveAccountFromOrganization">AWS
          * API Reference</a></p>
          *
@@ -2484,27 +2730,22 @@ namespace Model
          * expenses accrued by the member account after it is removed from the
          * organization.</p> <p>This operation can be called only from the organization's
          * master account. Member accounts can remove themselves with
-         * <a>LeaveOrganization</a> instead.</p> <important> <ul> <li> <p>You can remove an
-         * account from your organization only if the account is configured with the
-         * information required to operate as a standalone account. When you create an
-         * account in an organization using the AWS Organizations console, API, or CLI
-         * commands, the information required of standalone accounts is <i>not</i>
-         * automatically collected. For an account that you want to make standalone, you
-         * must accept the End User License Agreement (EULA), choose a support plan,
-         * provide and verify the required contact information, and provide a current
-         * payment method. AWS uses the payment method to charge for any billable (not free
-         * tier) AWS activity that occurs while the account is not attached to an
-         * organization. To remove an account that does not yet have this information, you
-         * must sign in as the member account and follow the steps at <a
+         * <a>LeaveOrganization</a> instead.</p> <important> <p>You can remove an account
+         * from your organization only if the account is configured with the information
+         * required to operate as a standalone account. When you create an account in an
+         * organization using the AWS Organizations console, API, or CLI commands, the
+         * information required of standalone accounts is <i>not</i> automatically
+         * collected. For an account that you want to make standalone, you must accept the
+         * End User License Agreement (EULA), choose a support plan, provide and verify the
+         * required contact information, and provide a current payment method. AWS uses the
+         * payment method to charge for any billable (not free tier) AWS activity that
+         * occurs while the account is not attached to an organization. To remove an
+         * account that does not yet have this information, you must sign in as the member
+         * account and follow the steps at <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info">
          * To leave an organization when all required account information has not yet been
-         * provided</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>You
-         * can remove a member account only after you enable IAM user access to billing in
-         * the member account. For more information, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
-         * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
-         * Cost Management User Guide</i>.</p> </li> </ul> </important><p><h3>See
-         * Also:</h3>   <a
+         * provided</a> in the <i>AWS Organizations User Guide</i>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RemoveAccountFromOrganization">AWS
          * API Reference</a></p>
          *

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ContainerDefinition();
-    ContainerDefinition(const Aws::Utils::Json::JsonValue& jsonValue);
-    ContainerDefinition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
+    ContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -88,7 +89,10 @@ namespace Model
      * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
      * stored. If you are using your own custom algorithm instead of an algorithm
      * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. For more information, see <a
+     * requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
@@ -98,7 +102,10 @@ namespace Model
      * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
      * stored. If you are using your own custom algorithm instead of an algorithm
      * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. For more information, see <a
+     * requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
@@ -108,7 +115,10 @@ namespace Model
      * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
      * stored. If you are using your own custom algorithm instead of an algorithm
      * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. For more information, see <a
+     * requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
@@ -118,7 +128,10 @@ namespace Model
      * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
      * stored. If you are using your own custom algorithm instead of an algorithm
      * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. For more information, see <a
+     * requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
@@ -128,7 +141,10 @@ namespace Model
      * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
      * stored. If you are using your own custom algorithm instead of an algorithm
      * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. For more information, see <a
+     * requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
@@ -138,7 +154,10 @@ namespace Model
      * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
      * stored. If you are using your own custom algorithm instead of an algorithm
      * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. For more information, see <a
+     * requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
@@ -148,7 +167,10 @@ namespace Model
      * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
      * stored. If you are using your own custom algorithm instead of an algorithm
      * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
-     * requirements. For more information, see <a
+     * requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
@@ -158,49 +180,98 @@ namespace Model
     /**
      * <p>The S3 path where the model artifacts, which result from model training, are
      * stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix). </p>
+     * suffix). </p> <p>If you provide a value for this parameter, Amazon SageMaker
+     * uses AWS Security Token Service to download model artifacts from the S3 path you
+     * provide. AWS STS is activated in your IAM user account by default. If you
+     * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
+     * that region. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
+     * Management User Guide</i>.</p>
      */
     inline const Aws::String& GetModelDataUrl() const{ return m_modelDataUrl; }
 
     /**
      * <p>The S3 path where the model artifacts, which result from model training, are
      * stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix). </p>
+     * suffix). </p> <p>If you provide a value for this parameter, Amazon SageMaker
+     * uses AWS Security Token Service to download model artifacts from the S3 path you
+     * provide. AWS STS is activated in your IAM user account by default. If you
+     * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
+     * that region. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
+     * Management User Guide</i>.</p>
      */
     inline void SetModelDataUrl(const Aws::String& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = value; }
 
     /**
      * <p>The S3 path where the model artifacts, which result from model training, are
      * stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix). </p>
+     * suffix). </p> <p>If you provide a value for this parameter, Amazon SageMaker
+     * uses AWS Security Token Service to download model artifacts from the S3 path you
+     * provide. AWS STS is activated in your IAM user account by default. If you
+     * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
+     * that region. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
+     * Management User Guide</i>.</p>
      */
     inline void SetModelDataUrl(Aws::String&& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = std::move(value); }
 
     /**
      * <p>The S3 path where the model artifacts, which result from model training, are
      * stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix). </p>
+     * suffix). </p> <p>If you provide a value for this parameter, Amazon SageMaker
+     * uses AWS Security Token Service to download model artifacts from the S3 path you
+     * provide. AWS STS is activated in your IAM user account by default. If you
+     * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
+     * that region. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
+     * Management User Guide</i>.</p>
      */
     inline void SetModelDataUrl(const char* value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl.assign(value); }
 
     /**
      * <p>The S3 path where the model artifacts, which result from model training, are
      * stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix). </p>
+     * suffix). </p> <p>If you provide a value for this parameter, Amazon SageMaker
+     * uses AWS Security Token Service to download model artifacts from the S3 path you
+     * provide. AWS STS is activated in your IAM user account by default. If you
+     * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
+     * that region. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
+     * Management User Guide</i>.</p>
      */
     inline ContainerDefinition& WithModelDataUrl(const Aws::String& value) { SetModelDataUrl(value); return *this;}
 
     /**
      * <p>The S3 path where the model artifacts, which result from model training, are
      * stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix). </p>
+     * suffix). </p> <p>If you provide a value for this parameter, Amazon SageMaker
+     * uses AWS Security Token Service to download model artifacts from the S3 path you
+     * provide. AWS STS is activated in your IAM user account by default. If you
+     * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
+     * that region. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
+     * Management User Guide</i>.</p>
      */
     inline ContainerDefinition& WithModelDataUrl(Aws::String&& value) { SetModelDataUrl(std::move(value)); return *this;}
 
     /**
      * <p>The S3 path where the model artifacts, which result from model training, are
      * stored. This path must point to a single gzip compressed tar archive (.tar.gz
-     * suffix). </p>
+     * suffix). </p> <p>If you provide a value for this parameter, Amazon SageMaker
+     * uses AWS Security Token Service to download model artifacts from the S3 path you
+     * provide. AWS STS is activated in your IAM user account by default. If you
+     * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
+     * that region. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
+     * Management User Guide</i>.</p>
      */
     inline ContainerDefinition& WithModelDataUrl(const char* value) { SetModelDataUrl(value); return *this;}
 

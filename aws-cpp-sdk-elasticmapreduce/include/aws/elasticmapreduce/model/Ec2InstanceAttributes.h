@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Ec2InstanceAttributes();
-    Ec2InstanceAttributes(const Aws::Utils::Json::JsonValue& jsonValue);
-    Ec2InstanceAttributes& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Ec2InstanceAttributes(Aws::Utils::Json::JsonView jsonValue);
+    Ec2InstanceAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

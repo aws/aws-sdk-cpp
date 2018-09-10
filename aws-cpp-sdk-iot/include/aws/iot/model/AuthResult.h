@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     AuthResult();
-    AuthResult(const Aws::Utils::Json::JsonValue& jsonValue);
-    AuthResult& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AuthResult(Aws::Utils::Json::JsonView jsonValue);
+    AuthResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

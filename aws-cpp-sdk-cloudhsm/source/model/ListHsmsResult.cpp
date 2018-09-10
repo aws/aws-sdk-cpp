@@ -37,10 +37,10 @@ ListHsmsResult::ListHsmsResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 
 ListHsmsResult& ListHsmsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HsmList"))
   {
-    Array<JsonValue> hsmListJsonList = jsonValue.GetArray("HsmList");
+    Array<JsonView> hsmListJsonList = jsonValue.GetArray("HsmList");
     for(unsigned hsmListIndex = 0; hsmListIndex < hsmListJsonList.GetLength(); ++hsmListIndex)
     {
       m_hsmList.push_back(hsmListJsonList[hsmListIndex].AsString());

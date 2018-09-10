@@ -31,7 +31,9 @@ namespace Model
     ec2,
     appstream,
     dynamodb,
-    rds
+    rds,
+    sagemaker,
+    custom_resource
   };
 
 namespace ServiceNamespaceMapper

@@ -31,23 +31,23 @@ namespace Model
 OTAUpdateFile::OTAUpdateFile() : 
     m_fileNameHasBeenSet(false),
     m_fileVersionHasBeenSet(false),
-    m_fileSourceHasBeenSet(false),
+    m_fileLocationHasBeenSet(false),
     m_codeSigningHasBeenSet(false),
     m_attributesHasBeenSet(false)
 {
 }
 
-OTAUpdateFile::OTAUpdateFile(const JsonValue& jsonValue) : 
+OTAUpdateFile::OTAUpdateFile(JsonView jsonValue) : 
     m_fileNameHasBeenSet(false),
     m_fileVersionHasBeenSet(false),
-    m_fileSourceHasBeenSet(false),
+    m_fileLocationHasBeenSet(false),
     m_codeSigningHasBeenSet(false),
     m_attributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-OTAUpdateFile& OTAUpdateFile::operator =(const JsonValue& jsonValue)
+OTAUpdateFile& OTAUpdateFile::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("fileName"))
   {
@@ -63,11 +63,11 @@ OTAUpdateFile& OTAUpdateFile::operator =(const JsonValue& jsonValue)
     m_fileVersionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("fileSource"))
+  if(jsonValue.ValueExists("fileLocation"))
   {
-    m_fileSource = jsonValue.GetObject("fileSource");
+    m_fileLocation = jsonValue.GetObject("fileLocation");
 
-    m_fileSourceHasBeenSet = true;
+    m_fileLocationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("codeSigning"))
@@ -79,7 +79,7 @@ OTAUpdateFile& OTAUpdateFile::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("attributes"))
   {
-    Aws::Map<Aws::String, JsonValue> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
     for(auto& attributesItem : attributesJsonMap)
     {
       m_attributes[attributesItem.first] = attributesItem.second.AsString();
@@ -106,9 +106,9 @@ JsonValue OTAUpdateFile::Jsonize() const
 
   }
 
-  if(m_fileSourceHasBeenSet)
+  if(m_fileLocationHasBeenSet)
   {
-   payload.WithObject("fileSource", m_fileSource.Jsonize());
+   payload.WithObject("fileLocation", m_fileLocation.Jsonize());
 
   }
 

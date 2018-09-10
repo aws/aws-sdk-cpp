@@ -89,52 +89,32 @@ namespace Model
 
 
     /**
-     * <p>The RFC 5646 language code for the input text. If you don't specify a
-     * language code, Amazon Comprehend detects the dominant language. If you specify
-     * the code for a language that Amazon Comprehend does not support, it returns and
-     * <code>UnsupportedLanguageException</code>. For more information about RFC 5646,
-     * see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying
-     * Languages</a> on the <i>IETF Tools</i> web site.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The RFC 5646 language code for the input text. If you don't specify a
-     * language code, Amazon Comprehend detects the dominant language. If you specify
-     * the code for a language that Amazon Comprehend does not support, it returns and
-     * <code>UnsupportedLanguageException</code>. For more information about RFC 5646,
-     * see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying
-     * Languages</a> on the <i>IETF Tools</i> web site.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The RFC 5646 language code for the input text. If you don't specify a
-     * language code, Amazon Comprehend detects the dominant language. If you specify
-     * the code for a language that Amazon Comprehend does not support, it returns and
-     * <code>UnsupportedLanguageException</code>. For more information about RFC 5646,
-     * see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying
-     * Languages</a> on the <i>IETF Tools</i> web site.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The RFC 5646 language code for the input text. If you don't specify a
-     * language code, Amazon Comprehend detects the dominant language. If you specify
-     * the code for a language that Amazon Comprehend does not support, it returns and
-     * <code>UnsupportedLanguageException</code>. For more information about RFC 5646,
-     * see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying
-     * Languages</a> on the <i>IETF Tools</i> web site.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
     inline DetectKeyPhrasesRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The RFC 5646 language code for the input text. If you don't specify a
-     * language code, Amazon Comprehend detects the dominant language. If you specify
-     * the code for a language that Amazon Comprehend does not support, it returns and
-     * <code>UnsupportedLanguageException</code>. For more information about RFC 5646,
-     * see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying
-     * Languages</a> on the <i>IETF Tools</i> web site.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
     inline DetectKeyPhrasesRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 

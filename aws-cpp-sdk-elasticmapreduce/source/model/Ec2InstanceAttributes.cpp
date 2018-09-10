@@ -43,7 +43,7 @@ Ec2InstanceAttributes::Ec2InstanceAttributes() :
 {
 }
 
-Ec2InstanceAttributes::Ec2InstanceAttributes(const JsonValue& jsonValue) : 
+Ec2InstanceAttributes::Ec2InstanceAttributes(JsonView jsonValue) : 
     m_ec2KeyNameHasBeenSet(false),
     m_ec2SubnetIdHasBeenSet(false),
     m_requestedEc2SubnetIdsHasBeenSet(false),
@@ -59,7 +59,7 @@ Ec2InstanceAttributes::Ec2InstanceAttributes(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Ec2InstanceAttributes& Ec2InstanceAttributes::operator =(const JsonValue& jsonValue)
+Ec2InstanceAttributes& Ec2InstanceAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Ec2KeyName"))
   {
@@ -77,7 +77,7 @@ Ec2InstanceAttributes& Ec2InstanceAttributes::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("RequestedEc2SubnetIds"))
   {
-    Array<JsonValue> requestedEc2SubnetIdsJsonList = jsonValue.GetArray("RequestedEc2SubnetIds");
+    Array<JsonView> requestedEc2SubnetIdsJsonList = jsonValue.GetArray("RequestedEc2SubnetIds");
     for(unsigned requestedEc2SubnetIdsIndex = 0; requestedEc2SubnetIdsIndex < requestedEc2SubnetIdsJsonList.GetLength(); ++requestedEc2SubnetIdsIndex)
     {
       m_requestedEc2SubnetIds.push_back(requestedEc2SubnetIdsJsonList[requestedEc2SubnetIdsIndex].AsString());
@@ -94,7 +94,7 @@ Ec2InstanceAttributes& Ec2InstanceAttributes::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("RequestedEc2AvailabilityZones"))
   {
-    Array<JsonValue> requestedEc2AvailabilityZonesJsonList = jsonValue.GetArray("RequestedEc2AvailabilityZones");
+    Array<JsonView> requestedEc2AvailabilityZonesJsonList = jsonValue.GetArray("RequestedEc2AvailabilityZones");
     for(unsigned requestedEc2AvailabilityZonesIndex = 0; requestedEc2AvailabilityZonesIndex < requestedEc2AvailabilityZonesJsonList.GetLength(); ++requestedEc2AvailabilityZonesIndex)
     {
       m_requestedEc2AvailabilityZones.push_back(requestedEc2AvailabilityZonesJsonList[requestedEc2AvailabilityZonesIndex].AsString());
@@ -132,7 +132,7 @@ Ec2InstanceAttributes& Ec2InstanceAttributes::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("AdditionalMasterSecurityGroups"))
   {
-    Array<JsonValue> additionalMasterSecurityGroupsJsonList = jsonValue.GetArray("AdditionalMasterSecurityGroups");
+    Array<JsonView> additionalMasterSecurityGroupsJsonList = jsonValue.GetArray("AdditionalMasterSecurityGroups");
     for(unsigned additionalMasterSecurityGroupsIndex = 0; additionalMasterSecurityGroupsIndex < additionalMasterSecurityGroupsJsonList.GetLength(); ++additionalMasterSecurityGroupsIndex)
     {
       m_additionalMasterSecurityGroups.push_back(additionalMasterSecurityGroupsJsonList[additionalMasterSecurityGroupsIndex].AsString());
@@ -142,7 +142,7 @@ Ec2InstanceAttributes& Ec2InstanceAttributes::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("AdditionalSlaveSecurityGroups"))
   {
-    Array<JsonValue> additionalSlaveSecurityGroupsJsonList = jsonValue.GetArray("AdditionalSlaveSecurityGroups");
+    Array<JsonView> additionalSlaveSecurityGroupsJsonList = jsonValue.GetArray("AdditionalSlaveSecurityGroups");
     for(unsigned additionalSlaveSecurityGroupsIndex = 0; additionalSlaveSecurityGroupsIndex < additionalSlaveSecurityGroupsJsonList.GetLength(); ++additionalSlaveSecurityGroupsIndex)
     {
       m_additionalSlaveSecurityGroups.push_back(additionalSlaveSecurityGroupsJsonList[additionalSlaveSecurityGroupsIndex].AsString());

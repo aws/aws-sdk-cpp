@@ -36,7 +36,7 @@ Attachment::Attachment() :
 {
 }
 
-Attachment::Attachment(const JsonValue& jsonValue) : 
+Attachment::Attachment(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -45,7 +45,7 @@ Attachment::Attachment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Attachment& Attachment::operator =(const JsonValue& jsonValue)
+Attachment& Attachment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -70,7 +70,7 @@ Attachment& Attachment::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("details"))
   {
-    Array<JsonValue> detailsJsonList = jsonValue.GetArray("details");
+    Array<JsonView> detailsJsonList = jsonValue.GetArray("details");
     for(unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex)
     {
       m_details.push_back(detailsJsonList[detailsIndex].AsObject());

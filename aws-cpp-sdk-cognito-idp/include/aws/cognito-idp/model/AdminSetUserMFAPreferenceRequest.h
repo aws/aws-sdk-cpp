@@ -99,37 +99,37 @@ namespace Model
 
 
     /**
-     * <p>The user pool username.</p>
+     * <p>The user pool username or alias.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user pool username.</p>
+     * <p>The user pool username or alias.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user pool username.</p>
+     * <p>The user pool username or alias.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user pool username.</p>
+     * <p>The user pool username or alias.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user pool username.</p>
+     * <p>The user pool username or alias.</p>
      */
     inline AdminSetUserMFAPreferenceRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user pool username.</p>
+     * <p>The user pool username or alias.</p>
      */
     inline AdminSetUserMFAPreferenceRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user pool username.</p>
+     * <p>The user pool username or alias.</p>
      */
     inline AdminSetUserMFAPreferenceRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

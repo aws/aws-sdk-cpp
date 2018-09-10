@@ -39,7 +39,7 @@ LambdaFunctionScheduledEventAttributes::LambdaFunctionScheduledEventAttributes()
 {
 }
 
-LambdaFunctionScheduledEventAttributes::LambdaFunctionScheduledEventAttributes(const JsonValue& jsonValue) : 
+LambdaFunctionScheduledEventAttributes::LambdaFunctionScheduledEventAttributes(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_controlHasBeenSet(false),
@@ -51,7 +51,7 @@ LambdaFunctionScheduledEventAttributes::LambdaFunctionScheduledEventAttributes(c
   *this = jsonValue;
 }
 
-LambdaFunctionScheduledEventAttributes& LambdaFunctionScheduledEventAttributes::operator =(const JsonValue& jsonValue)
+LambdaFunctionScheduledEventAttributes& LambdaFunctionScheduledEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

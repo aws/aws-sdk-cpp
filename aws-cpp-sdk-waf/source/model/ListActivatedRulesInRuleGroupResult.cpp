@@ -37,7 +37,7 @@ ListActivatedRulesInRuleGroupResult::ListActivatedRulesInRuleGroupResult(const A
 
 ListActivatedRulesInRuleGroupResult& ListActivatedRulesInRuleGroupResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListActivatedRulesInRuleGroupResult& ListActivatedRulesInRuleGroupResult::operat
 
   if(jsonValue.ValueExists("ActivatedRules"))
   {
-    Array<JsonValue> activatedRulesJsonList = jsonValue.GetArray("ActivatedRules");
+    Array<JsonView> activatedRulesJsonList = jsonValue.GetArray("ActivatedRules");
     for(unsigned activatedRulesIndex = 0; activatedRulesIndex < activatedRulesJsonList.GetLength(); ++activatedRulesIndex)
     {
       m_activatedRules.push_back(activatedRulesJsonList[activatedRulesIndex].AsObject());

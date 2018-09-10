@@ -52,7 +52,7 @@ Aws::String GetReplicationRunsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetReplicationRunsRequest::GetRequestSpecificHeaders() const

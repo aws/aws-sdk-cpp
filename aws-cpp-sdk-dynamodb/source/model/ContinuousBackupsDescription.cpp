@@ -30,24 +30,33 @@ namespace Model
 
 ContinuousBackupsDescription::ContinuousBackupsDescription() : 
     m_continuousBackupsStatus(ContinuousBackupsStatus::NOT_SET),
-    m_continuousBackupsStatusHasBeenSet(false)
+    m_continuousBackupsStatusHasBeenSet(false),
+    m_pointInTimeRecoveryDescriptionHasBeenSet(false)
 {
 }
 
-ContinuousBackupsDescription::ContinuousBackupsDescription(const JsonValue& jsonValue) : 
+ContinuousBackupsDescription::ContinuousBackupsDescription(JsonView jsonValue) : 
     m_continuousBackupsStatus(ContinuousBackupsStatus::NOT_SET),
-    m_continuousBackupsStatusHasBeenSet(false)
+    m_continuousBackupsStatusHasBeenSet(false),
+    m_pointInTimeRecoveryDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ContinuousBackupsDescription& ContinuousBackupsDescription::operator =(const JsonValue& jsonValue)
+ContinuousBackupsDescription& ContinuousBackupsDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ContinuousBackupsStatus"))
   {
     m_continuousBackupsStatus = ContinuousBackupsStatusMapper::GetContinuousBackupsStatusForName(jsonValue.GetString("ContinuousBackupsStatus"));
 
     m_continuousBackupsStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PointInTimeRecoveryDescription"))
+  {
+    m_pointInTimeRecoveryDescription = jsonValue.GetObject("PointInTimeRecoveryDescription");
+
+    m_pointInTimeRecoveryDescriptionHasBeenSet = true;
   }
 
   return *this;
@@ -60,6 +69,12 @@ JsonValue ContinuousBackupsDescription::Jsonize() const
   if(m_continuousBackupsStatusHasBeenSet)
   {
    payload.WithString("ContinuousBackupsStatus", ContinuousBackupsStatusMapper::GetNameForContinuousBackupsStatus(m_continuousBackupsStatus));
+  }
+
+  if(m_pointInTimeRecoveryDescriptionHasBeenSet)
+  {
+   payload.WithObject("PointInTimeRecoveryDescription", m_pointInTimeRecoveryDescription.Jsonize());
+
   }
 
   return payload;

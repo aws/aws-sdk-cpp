@@ -118,107 +118,86 @@ namespace Model
 
 
     /**
-     * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
-     * operation or parameter is not supported on Redis (cluster mode enabled)
-     * replication groups.</p> </important> <p>The ID of the replication group to which
-     * this cluster should belong. If this parameter is specified, the cluster is added
-     * to the specified replication group as a read replica; otherwise, the cluster is
-     * a standalone primary that is not part of any replication group.</p> <p>If the
-     * specified replication group is Multi-AZ enabled and the Availability Zone is not
-     * specified, the cluster is created in Availability Zones that provide the best
-     * spread of read replicas across Availability Zones.</p> <note> <p>This parameter
-     * is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
-     * </note>
+     * <p>The ID of the replication group to which this cluster should belong. If this
+     * parameter is specified, the cluster is added to the specified replication group
+     * as a read replica; otherwise, the cluster is a standalone primary that is not
+     * part of any replication group.</p> <p>If the specified replication group is
+     * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
+     * created in Availability Zones that provide the best spread of read replicas
+     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
 
     /**
-     * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
-     * operation or parameter is not supported on Redis (cluster mode enabled)
-     * replication groups.</p> </important> <p>The ID of the replication group to which
-     * this cluster should belong. If this parameter is specified, the cluster is added
-     * to the specified replication group as a read replica; otherwise, the cluster is
-     * a standalone primary that is not part of any replication group.</p> <p>If the
-     * specified replication group is Multi-AZ enabled and the Availability Zone is not
-     * specified, the cluster is created in Availability Zones that provide the best
-     * spread of read replicas across Availability Zones.</p> <note> <p>This parameter
-     * is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
-     * </note>
+     * <p>The ID of the replication group to which this cluster should belong. If this
+     * parameter is specified, the cluster is added to the specified replication group
+     * as a read replica; otherwise, the cluster is a standalone primary that is not
+     * part of any replication group.</p> <p>If the specified replication group is
+     * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
+     * created in Availability Zones that provide the best spread of read replicas
+     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
     /**
-     * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
-     * operation or parameter is not supported on Redis (cluster mode enabled)
-     * replication groups.</p> </important> <p>The ID of the replication group to which
-     * this cluster should belong. If this parameter is specified, the cluster is added
-     * to the specified replication group as a read replica; otherwise, the cluster is
-     * a standalone primary that is not part of any replication group.</p> <p>If the
-     * specified replication group is Multi-AZ enabled and the Availability Zone is not
-     * specified, the cluster is created in Availability Zones that provide the best
-     * spread of read replicas across Availability Zones.</p> <note> <p>This parameter
-     * is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
-     * </note>
+     * <p>The ID of the replication group to which this cluster should belong. If this
+     * parameter is specified, the cluster is added to the specified replication group
+     * as a read replica; otherwise, the cluster is a standalone primary that is not
+     * part of any replication group.</p> <p>If the specified replication group is
+     * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
+     * created in Availability Zones that provide the best spread of read replicas
+     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
 
     /**
-     * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
-     * operation or parameter is not supported on Redis (cluster mode enabled)
-     * replication groups.</p> </important> <p>The ID of the replication group to which
-     * this cluster should belong. If this parameter is specified, the cluster is added
-     * to the specified replication group as a read replica; otherwise, the cluster is
-     * a standalone primary that is not part of any replication group.</p> <p>If the
-     * specified replication group is Multi-AZ enabled and the Availability Zone is not
-     * specified, the cluster is created in Availability Zones that provide the best
-     * spread of read replicas across Availability Zones.</p> <note> <p>This parameter
-     * is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
-     * </note>
+     * <p>The ID of the replication group to which this cluster should belong. If this
+     * parameter is specified, the cluster is added to the specified replication group
+     * as a read replica; otherwise, the cluster is a standalone primary that is not
+     * part of any replication group.</p> <p>If the specified replication group is
+     * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
+     * created in Availability Zones that provide the best spread of read replicas
+     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline void SetReplicationGroupId(const char* value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId.assign(value); }
 
     /**
-     * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
-     * operation or parameter is not supported on Redis (cluster mode enabled)
-     * replication groups.</p> </important> <p>The ID of the replication group to which
-     * this cluster should belong. If this parameter is specified, the cluster is added
-     * to the specified replication group as a read replica; otherwise, the cluster is
-     * a standalone primary that is not part of any replication group.</p> <p>If the
-     * specified replication group is Multi-AZ enabled and the Availability Zone is not
-     * specified, the cluster is created in Availability Zones that provide the best
-     * spread of read replicas across Availability Zones.</p> <note> <p>This parameter
-     * is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
-     * </note>
+     * <p>The ID of the replication group to which this cluster should belong. If this
+     * parameter is specified, the cluster is added to the specified replication group
+     * as a read replica; otherwise, the cluster is a standalone primary that is not
+     * part of any replication group.</p> <p>If the specified replication group is
+     * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
+     * created in Availability Zones that provide the best spread of read replicas
+     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline CreateCacheClusterRequest& WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
 
     /**
-     * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
-     * operation or parameter is not supported on Redis (cluster mode enabled)
-     * replication groups.</p> </important> <p>The ID of the replication group to which
-     * this cluster should belong. If this parameter is specified, the cluster is added
-     * to the specified replication group as a read replica; otherwise, the cluster is
-     * a standalone primary that is not part of any replication group.</p> <p>If the
-     * specified replication group is Multi-AZ enabled and the Availability Zone is not
-     * specified, the cluster is created in Availability Zones that provide the best
-     * spread of read replicas across Availability Zones.</p> <note> <p>This parameter
-     * is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
-     * </note>
+     * <p>The ID of the replication group to which this cluster should belong. If this
+     * parameter is specified, the cluster is added to the specified replication group
+     * as a read replica; otherwise, the cluster is a standalone primary that is not
+     * part of any replication group.</p> <p>If the specified replication group is
+     * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
+     * created in Availability Zones that provide the best spread of read replicas
+     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline CreateCacheClusterRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
 
     /**
-     * <important> <p>Due to current limitations on Redis (cluster mode disabled), this
-     * operation or parameter is not supported on Redis (cluster mode enabled)
-     * replication groups.</p> </important> <p>The ID of the replication group to which
-     * this cluster should belong. If this parameter is specified, the cluster is added
-     * to the specified replication group as a read replica; otherwise, the cluster is
-     * a standalone primary that is not part of any replication group.</p> <p>If the
-     * specified replication group is Multi-AZ enabled and the Availability Zone is not
-     * specified, the cluster is created in Availability Zones that provide the best
-     * spread of read replicas across Availability Zones.</p> <note> <p>This parameter
-     * is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
-     * </note>
+     * <p>The ID of the replication group to which this cluster should belong. If this
+     * parameter is specified, the cluster is added to the specified replication group
+     * as a read replica; otherwise, the cluster is a standalone primary that is not
+     * part of any replication group.</p> <p>If the specified replication group is
+     * Multi-AZ enabled and the Availability Zone is not specified, the cluster is
+     * created in Availability Zones that provide the best spread of read replicas
+     * across Availability Zones.</p> <note> <p>This parameter is only valid if the
+     * <code>Engine</code> parameter is <code>redis</code>.</p> </note>
      */
     inline CreateCacheClusterRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
 
@@ -498,7 +477,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -508,12 +490,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
 
@@ -538,7 +521,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -548,12 +534,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline void SetCacheNodeType(const Aws::String& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = value; }
 
@@ -578,7 +565,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -588,12 +578,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline void SetCacheNodeType(Aws::String&& value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType = std::move(value); }
 
@@ -618,7 +609,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -628,12 +622,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline void SetCacheNodeType(const char* value) { m_cacheNodeTypeHasBeenSet = true; m_cacheNodeType.assign(value); }
 
@@ -658,7 +653,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -668,12 +666,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline CreateCacheClusterRequest& WithCacheNodeType(const Aws::String& value) { SetCacheNodeType(value); return *this;}
 
@@ -698,7 +697,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -708,12 +710,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline CreateCacheClusterRequest& WithCacheNodeType(Aws::String&& value) { SetCacheNodeType(std::move(value)); return *this;}
 
@@ -738,7 +741,10 @@ namespace Model
      * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
      * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
      * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
-     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> </li> <li>
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
      * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
      * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
@@ -748,12 +754,13 @@ namespace Model
      * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
      * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
      * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
-     * specifications, see <a href="http://aws.amazon.com/elasticache/details">Amazon
-     * ElastiCache Product Features and Details</a> and either <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Memcached</a> or <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/CacheParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
-     * Node Type-Specific Parameters for Redis</a>.</p>
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline CreateCacheClusterRequest& WithCacheNodeType(const char* value) { SetCacheNodeType(value); return *this;}
 
@@ -806,7 +813,7 @@ namespace Model
      * the supported cache engine versions, use the DescribeCacheEngineVersions
      * operation.</p> <p> <b>Important:</b> You can upgrade to a newer engine version
      * (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster or replication group and create it anew with the earlier engine
@@ -819,7 +826,7 @@ namespace Model
      * the supported cache engine versions, use the DescribeCacheEngineVersions
      * operation.</p> <p> <b>Important:</b> You can upgrade to a newer engine version
      * (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster or replication group and create it anew with the earlier engine
@@ -832,7 +839,7 @@ namespace Model
      * the supported cache engine versions, use the DescribeCacheEngineVersions
      * operation.</p> <p> <b>Important:</b> You can upgrade to a newer engine version
      * (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster or replication group and create it anew with the earlier engine
@@ -845,7 +852,7 @@ namespace Model
      * the supported cache engine versions, use the DescribeCacheEngineVersions
      * operation.</p> <p> <b>Important:</b> You can upgrade to a newer engine version
      * (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster or replication group and create it anew with the earlier engine
@@ -858,7 +865,7 @@ namespace Model
      * the supported cache engine versions, use the DescribeCacheEngineVersions
      * operation.</p> <p> <b>Important:</b> You can upgrade to a newer engine version
      * (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster or replication group and create it anew with the earlier engine
@@ -871,7 +878,7 @@ namespace Model
      * the supported cache engine versions, use the DescribeCacheEngineVersions
      * operation.</p> <p> <b>Important:</b> You can upgrade to a newer engine version
      * (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster or replication group and create it anew with the earlier engine
@@ -884,7 +891,7 @@ namespace Model
      * the supported cache engine versions, use the DescribeCacheEngineVersions
      * operation.</p> <p> <b>Important:</b> You can upgrade to a newer engine version
      * (see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SelectEngine.html#VersionManagement">Selecting
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting
      * a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine
      * version. If you want to use an earlier engine version, you must delete the
      * existing cluster or replication group and create it anew with the earlier engine
@@ -956,7 +963,7 @@ namespace Model
      * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
      * and Subnet Groups</a>.</p> </important>
      */
     inline const Aws::String& GetCacheSubnetGroupName() const{ return m_cacheSubnetGroupName; }
@@ -967,7 +974,7 @@ namespace Model
      * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
      * and Subnet Groups</a>.</p> </important>
      */
     inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
@@ -978,7 +985,7 @@ namespace Model
      * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
      * and Subnet Groups</a>.</p> </important>
      */
     inline void SetCacheSubnetGroupName(Aws::String&& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = std::move(value); }
@@ -989,7 +996,7 @@ namespace Model
      * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
      * and Subnet Groups</a>.</p> </important>
      */
     inline void SetCacheSubnetGroupName(const char* value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName.assign(value); }
@@ -1000,7 +1007,7 @@ namespace Model
      * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
      * and Subnet Groups</a>.</p> </important>
      */
     inline CreateCacheClusterRequest& WithCacheSubnetGroupName(const Aws::String& value) { SetCacheSubnetGroupName(value); return *this;}
@@ -1011,7 +1018,7 @@ namespace Model
      * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
      * and Subnet Groups</a>.</p> </important>
      */
     inline CreateCacheClusterRequest& WithCacheSubnetGroupName(Aws::String&& value) { SetCacheSubnetGroupName(std::move(value)); return *this;}
@@ -1022,7 +1029,7 @@ namespace Model
      * Cloud (Amazon VPC).</p> <important> <p>If you're going to launch your cluster in
      * an Amazon VPC, you need to create a subnet group before you start creating a
      * cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/SubnetGroups.html">Subnets
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets
      * and Subnet Groups</a>.</p> </important>
      */
     inline CreateCacheClusterRequest& WithCacheSubnetGroupName(const char* value) { SetCacheSubnetGroupName(value); return *this;}
@@ -1517,7 +1524,7 @@ namespace Model
      * a snapshot taken today is retained for 5 days before being deleted.</p> <note>
      * <p>This parameter is only valid if the <code>Engine</code> parameter is
      * <code>redis</code>.</p> </note> <p>Default: 0 (i.e., automatic backups are
-     * disabled for this cluster).</p>
+     * disabled for this cache cluster).</p>
      */
     inline int GetSnapshotRetentionLimit() const{ return m_snapshotRetentionLimit; }
 
@@ -1527,7 +1534,7 @@ namespace Model
      * a snapshot taken today is retained for 5 days before being deleted.</p> <note>
      * <p>This parameter is only valid if the <code>Engine</code> parameter is
      * <code>redis</code>.</p> </note> <p>Default: 0 (i.e., automatic backups are
-     * disabled for this cluster).</p>
+     * disabled for this cache cluster).</p>
      */
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
@@ -1537,7 +1544,7 @@ namespace Model
      * a snapshot taken today is retained for 5 days before being deleted.</p> <note>
      * <p>This parameter is only valid if the <code>Engine</code> parameter is
      * <code>redis</code>.</p> </note> <p>Default: 0 (i.e., automatic backups are
-     * disabled for this cluster).</p>
+     * disabled for this cache cluster).</p>
      */
     inline CreateCacheClusterRequest& WithSnapshotRetentionLimit(int value) { SetSnapshotRetentionLimit(value); return *this;}
 
@@ -1608,105 +1615,77 @@ namespace Model
 
     /**
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
-     * server.</p> <p>This parameter is valid only if:</p> <ul> <li> <p>The parameter
-     * <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the
-     * cluster was created.</p> </li> <li> <p>The line <code>requirepass</code> was
-     * added to the database configuration file.</p> </li> </ul> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline const Aws::String& GetAuthToken() const{ return m_authToken; }
 
     /**
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
-     * server.</p> <p>This parameter is valid only if:</p> <ul> <li> <p>The parameter
-     * <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the
-     * cluster was created.</p> </li> <li> <p>The line <code>requirepass</code> was
-     * added to the database configuration file.</p> </li> </ul> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline void SetAuthToken(const Aws::String& value) { m_authTokenHasBeenSet = true; m_authToken = value; }
 
     /**
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
-     * server.</p> <p>This parameter is valid only if:</p> <ul> <li> <p>The parameter
-     * <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the
-     * cluster was created.</p> </li> <li> <p>The line <code>requirepass</code> was
-     * added to the database configuration file.</p> </li> </ul> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline void SetAuthToken(Aws::String&& value) { m_authTokenHasBeenSet = true; m_authToken = std::move(value); }
 
     /**
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
-     * server.</p> <p>This parameter is valid only if:</p> <ul> <li> <p>The parameter
-     * <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the
-     * cluster was created.</p> </li> <li> <p>The line <code>requirepass</code> was
-     * added to the database configuration file.</p> </li> </ul> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline void SetAuthToken(const char* value) { m_authTokenHasBeenSet = true; m_authToken.assign(value); }
 
     /**
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
-     * server.</p> <p>This parameter is valid only if:</p> <ul> <li> <p>The parameter
-     * <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the
-     * cluster was created.</p> </li> <li> <p>The line <code>requirepass</code> was
-     * added to the database configuration file.</p> </li> </ul> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline CreateCacheClusterRequest& WithAuthToken(const Aws::String& value) { SetAuthToken(value); return *this;}
 
     /**
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
-     * server.</p> <p>This parameter is valid only if:</p> <ul> <li> <p>The parameter
-     * <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the
-     * cluster was created.</p> </li> <li> <p>The line <code>requirepass</code> was
-     * added to the database configuration file.</p> </li> </ul> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline CreateCacheClusterRequest& WithAuthToken(Aws::String&& value) { SetAuthToken(std::move(value)); return *this;}
 
     /**
      * <p> <b>Reserved parameter.</b> The password used to access a password protected
-     * server.</p> <p>This parameter is valid only if:</p> <ul> <li> <p>The parameter
-     * <code>TransitEncryptionEnabled</code> was set to <code>true</code> when the
-     * cluster was created.</p> </li> <li> <p>The line <code>requirepass</code> was
-     * added to the database configuration file.</p> </li> </ul> <p>Password
-     * constraints:</p> <ul> <li> <p>Must be only printable ASCII characters.</p> </li>
-     * <li> <p>Must be at least 16 characters and no more than 128 characters in
-     * length.</p> </li> <li> <p>Cannot contain any of the following characters: '/',
-     * '"', or '@'. </p> </li> </ul> <p>For more information, see <a
-     * href="http://redis.io/commands/AUTH">AUTH password</a> at
+     * server.</p> <p>Password constraints:</p> <ul> <li> <p>Must be only printable
+     * ASCII characters.</p> </li> <li> <p>Must be at least 16 characters and no more
+     * than 128 characters in length.</p> </li> <li> <p>Cannot contain any of the
+     * following characters: '/', '"', or '@'. </p> </li> </ul> <p>For more
+     * information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at
      * http://redis.io/commands/AUTH.</p>
      */
     inline CreateCacheClusterRequest& WithAuthToken(const char* value) { SetAuthToken(value); return *this;}

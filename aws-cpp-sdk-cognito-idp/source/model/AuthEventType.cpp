@@ -42,7 +42,7 @@ AuthEventType::AuthEventType() :
 {
 }
 
-AuthEventType::AuthEventType(const JsonValue& jsonValue) : 
+AuthEventType::AuthEventType(JsonView jsonValue) : 
     m_eventIdHasBeenSet(false),
     m_eventType(EventType::NOT_SET),
     m_eventTypeHasBeenSet(false),
@@ -57,7 +57,7 @@ AuthEventType::AuthEventType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AuthEventType& AuthEventType::operator =(const JsonValue& jsonValue)
+AuthEventType& AuthEventType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EventId"))
   {
@@ -96,7 +96,7 @@ AuthEventType& AuthEventType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ChallengeResponses"))
   {
-    Array<JsonValue> challengeResponsesJsonList = jsonValue.GetArray("ChallengeResponses");
+    Array<JsonView> challengeResponsesJsonList = jsonValue.GetArray("ChallengeResponses");
     for(unsigned challengeResponsesIndex = 0; challengeResponsesIndex < challengeResponsesJsonList.GetLength(); ++challengeResponsesIndex)
     {
       m_challengeResponses.push_back(challengeResponsesJsonList[challengeResponsesIndex].AsObject());

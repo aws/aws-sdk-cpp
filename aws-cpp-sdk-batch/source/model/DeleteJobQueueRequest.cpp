@@ -37,7 +37,7 @@ Aws::String DeleteJobQueueRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

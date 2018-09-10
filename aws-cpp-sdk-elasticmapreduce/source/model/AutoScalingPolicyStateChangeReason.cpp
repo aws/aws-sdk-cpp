@@ -35,7 +35,7 @@ AutoScalingPolicyStateChangeReason::AutoScalingPolicyStateChangeReason() :
 {
 }
 
-AutoScalingPolicyStateChangeReason::AutoScalingPolicyStateChangeReason(const JsonValue& jsonValue) : 
+AutoScalingPolicyStateChangeReason::AutoScalingPolicyStateChangeReason(JsonView jsonValue) : 
     m_code(AutoScalingPolicyStateChangeReasonCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
@@ -43,7 +43,7 @@ AutoScalingPolicyStateChangeReason::AutoScalingPolicyStateChangeReason(const Jso
   *this = jsonValue;
 }
 
-AutoScalingPolicyStateChangeReason& AutoScalingPolicyStateChangeReason::operator =(const JsonValue& jsonValue)
+AutoScalingPolicyStateChangeReason& AutoScalingPolicyStateChangeReason::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Code"))
   {

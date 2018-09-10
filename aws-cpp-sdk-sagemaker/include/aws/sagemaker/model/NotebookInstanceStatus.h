@@ -31,7 +31,8 @@ namespace Model
     Stopping,
     Stopped,
     Failed,
-    Deleting
+    Deleting,
+    Updating
   };
 
 namespace NotebookInstanceStatusMapper

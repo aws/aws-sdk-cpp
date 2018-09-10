@@ -35,7 +35,7 @@ FaceDetection::FaceDetection() :
 {
 }
 
-FaceDetection::FaceDetection(const JsonValue& jsonValue) : 
+FaceDetection::FaceDetection(JsonView jsonValue) : 
     m_timestamp(0),
     m_timestampHasBeenSet(false),
     m_faceHasBeenSet(false)
@@ -43,7 +43,7 @@ FaceDetection::FaceDetection(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FaceDetection& FaceDetection::operator =(const JsonValue& jsonValue)
+FaceDetection& FaceDetection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Timestamp"))
   {

@@ -41,7 +41,7 @@ APNSVoipChannelRequest::APNSVoipChannelRequest() :
 {
 }
 
-APNSVoipChannelRequest::APNSVoipChannelRequest(const JsonValue& jsonValue) : 
+APNSVoipChannelRequest::APNSVoipChannelRequest(JsonView jsonValue) : 
     m_bundleIdHasBeenSet(false),
     m_certificateHasBeenSet(false),
     m_defaultAuthenticationMethodHasBeenSet(false),
@@ -55,7 +55,7 @@ APNSVoipChannelRequest::APNSVoipChannelRequest(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-APNSVoipChannelRequest& APNSVoipChannelRequest::operator =(const JsonValue& jsonValue)
+APNSVoipChannelRequest& APNSVoipChannelRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BundleId"))
   {

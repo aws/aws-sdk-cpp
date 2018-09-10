@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -47,153 +48,241 @@ namespace Model
   {
   public:
     EndpointResponse();
-    EndpointResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    EndpointResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EndpointResponse(Aws::Utils::Json::JsonView jsonValue);
+    EndpointResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The address of the endpoint as provided by your push provider. For example, the
+     * DeviceToken or RegistrationId.
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The address of the endpoint as provided by your push provider. For example, the
+     * DeviceToken or RegistrationId.
      */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The address of the endpoint as provided by your push provider. For example, the
+     * DeviceToken or RegistrationId.
      */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The address of the endpoint as provided by your push provider. For example, the
+     * DeviceToken or RegistrationId.
      */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The address of the endpoint as provided by your push provider. For example, the
+     * DeviceToken or RegistrationId.
      */
     inline EndpointResponse& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The address of the endpoint as provided by your push provider. For example, the
+     * DeviceToken or RegistrationId.
      */
     inline EndpointResponse& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
 
     /**
-     * The address or token of the endpoint as provided by your push provider (e.g.
-     * DeviceToken or RegistrationId).
+     * The address of the endpoint as provided by your push provider. For example, the
+     * DeviceToken or RegistrationId.
      */
     inline EndpointResponse& WithAddress(const char* value) { SetAddress(value); return *this;}
 
 
     /**
-     * The ID of the application associated with the endpoint.
+     * The ID of the application that is associated with the endpoint.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The ID of the application associated with the endpoint.
+     * The ID of the application that is associated with the endpoint.
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The ID of the application associated with the endpoint.
+     * The ID of the application that is associated with the endpoint.
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The ID of the application associated with the endpoint.
+     * The ID of the application that is associated with the endpoint.
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The ID of the application associated with the endpoint.
+     * The ID of the application that is associated with the endpoint.
      */
     inline EndpointResponse& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The ID of the application associated with the endpoint.
+     * The ID of the application that is associated with the endpoint.
      */
     inline EndpointResponse& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The ID of the application associated with the endpoint.
+     * The ID of the application that is associated with the endpoint.
      */
     inline EndpointResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointResponse& WithAttributes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetAttributes(value); return *this;}
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointResponse& WithAttributes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointResponse& AddAttributes(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointResponse& AddAttributes(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointResponse& AddAttributes(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointResponse& AddAttributes(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointResponse& AddAttributes(const char* key, Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
-     * attributes as selection criteria when you create a segment.
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
      */
     inline EndpointResponse& AddAttributes(const char* key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -201,41 +290,46 @@ namespace Model
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline const ChannelType& GetChannelType() const{ return m_channelType; }
 
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline void SetChannelType(const ChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
 
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline void SetChannelType(ChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
 
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline EndpointResponse& WithChannelType(const ChannelType& value) { SetChannelType(value); return *this;}
 
     /**
      * The channel type.
 
-Valid values: GCM | APNS | SMS | EMAIL
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
     inline EndpointResponse& WithChannelType(ChannelType&& value) { SetChannelType(std::move(value)); return *this;}
 
 
     /**
-     * A number from 0 - 99 that represents the cohort the endpoint is assigned to.
+     * A number from 0-99 that represents the cohort the endpoint is assigned to.
      * Endpoints are grouped into cohorts randomly, and each cohort contains
      * approximately 1 percent of the endpoints for an app. Amazon Pinpoint assigns
      * cohorts to the holdout or treatment allocations for a campaign.
@@ -243,7 +337,7 @@ Valid values: GCM | APNS | SMS | EMAIL
     inline const Aws::String& GetCohortId() const{ return m_cohortId; }
 
     /**
-     * A number from 0 - 99 that represents the cohort the endpoint is assigned to.
+     * A number from 0-99 that represents the cohort the endpoint is assigned to.
      * Endpoints are grouped into cohorts randomly, and each cohort contains
      * approximately 1 percent of the endpoints for an app. Amazon Pinpoint assigns
      * cohorts to the holdout or treatment allocations for a campaign.
@@ -251,7 +345,7 @@ Valid values: GCM | APNS | SMS | EMAIL
     inline void SetCohortId(const Aws::String& value) { m_cohortIdHasBeenSet = true; m_cohortId = value; }
 
     /**
-     * A number from 0 - 99 that represents the cohort the endpoint is assigned to.
+     * A number from 0-99 that represents the cohort the endpoint is assigned to.
      * Endpoints are grouped into cohorts randomly, and each cohort contains
      * approximately 1 percent of the endpoints for an app. Amazon Pinpoint assigns
      * cohorts to the holdout or treatment allocations for a campaign.
@@ -259,7 +353,7 @@ Valid values: GCM | APNS | SMS | EMAIL
     inline void SetCohortId(Aws::String&& value) { m_cohortIdHasBeenSet = true; m_cohortId = std::move(value); }
 
     /**
-     * A number from 0 - 99 that represents the cohort the endpoint is assigned to.
+     * A number from 0-99 that represents the cohort the endpoint is assigned to.
      * Endpoints are grouped into cohorts randomly, and each cohort contains
      * approximately 1 percent of the endpoints for an app. Amazon Pinpoint assigns
      * cohorts to the holdout or treatment allocations for a campaign.
@@ -267,7 +361,7 @@ Valid values: GCM | APNS | SMS | EMAIL
     inline void SetCohortId(const char* value) { m_cohortIdHasBeenSet = true; m_cohortId.assign(value); }
 
     /**
-     * A number from 0 - 99 that represents the cohort the endpoint is assigned to.
+     * A number from 0-99 that represents the cohort the endpoint is assigned to.
      * Endpoints are grouped into cohorts randomly, and each cohort contains
      * approximately 1 percent of the endpoints for an app. Amazon Pinpoint assigns
      * cohorts to the holdout or treatment allocations for a campaign.
@@ -275,7 +369,7 @@ Valid values: GCM | APNS | SMS | EMAIL
     inline EndpointResponse& WithCohortId(const Aws::String& value) { SetCohortId(value); return *this;}
 
     /**
-     * A number from 0 - 99 that represents the cohort the endpoint is assigned to.
+     * A number from 0-99 that represents the cohort the endpoint is assigned to.
      * Endpoints are grouped into cohorts randomly, and each cohort contains
      * approximately 1 percent of the endpoints for an app. Amazon Pinpoint assigns
      * cohorts to the holdout or treatment allocations for a campaign.
@@ -283,7 +377,7 @@ Valid values: GCM | APNS | SMS | EMAIL
     inline EndpointResponse& WithCohortId(Aws::String&& value) { SetCohortId(std::move(value)); return *this;}
 
     /**
-     * A number from 0 - 99 that represents the cohort the endpoint is assigned to.
+     * A number from 0-99 that represents the cohort the endpoint is assigned to.
      * Endpoints are grouped into cohorts randomly, and each cohort contains
      * approximately 1 percent of the endpoints for an app. Amazon Pinpoint assigns
      * cohorts to the holdout or treatment allocations for a campaign.
@@ -292,37 +386,37 @@ Valid values: GCM | APNS | SMS | EMAIL
 
 
     /**
-     * The last time the endpoint was created. Provided in ISO 8601 format.
+     * The date and time when the endpoint was created, shown in ISO 8601 format.
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * The last time the endpoint was created. Provided in ISO 8601 format.
+     * The date and time when the endpoint was created, shown in ISO 8601 format.
      */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * The last time the endpoint was created. Provided in ISO 8601 format.
+     * The date and time when the endpoint was created, shown in ISO 8601 format.
      */
     inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * The last time the endpoint was created. Provided in ISO 8601 format.
+     * The date and time when the endpoint was created, shown in ISO 8601 format.
      */
     inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
 
     /**
-     * The last time the endpoint was created. Provided in ISO 8601 format.
+     * The date and time when the endpoint was created, shown in ISO 8601 format.
      */
     inline EndpointResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
 
     /**
-     * The last time the endpoint was created. Provided in ISO 8601 format.
+     * The date and time when the endpoint was created, shown in ISO 8601 format.
      */
     inline EndpointResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
-     * The last time the endpoint was created. Provided in ISO 8601 format.
+     * The date and time when the endpoint was created, shown in ISO 8601 format.
      */
     inline EndpointResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
@@ -354,130 +448,123 @@ Valid values: GCM | APNS | SMS | EMAIL
 
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was last updated, shown in ISO 8601 format.
      */
     inline const Aws::String& GetEffectiveDate() const{ return m_effectiveDate; }
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was last updated, shown in ISO 8601 format.
      */
     inline void SetEffectiveDate(const Aws::String& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = value; }
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was last updated, shown in ISO 8601 format.
      */
     inline void SetEffectiveDate(Aws::String&& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = std::move(value); }
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was last updated, shown in ISO 8601 format.
      */
     inline void SetEffectiveDate(const char* value) { m_effectiveDateHasBeenSet = true; m_effectiveDate.assign(value); }
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was last updated, shown in ISO 8601 format.
      */
     inline EndpointResponse& WithEffectiveDate(const Aws::String& value) { SetEffectiveDate(value); return *this;}
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was last updated, shown in ISO 8601 format.
      */
     inline EndpointResponse& WithEffectiveDate(Aws::String&& value) { SetEffectiveDate(std::move(value)); return *this;}
 
     /**
-     * The last time the endpoint was updated. Provided in ISO 8601 format.
+     * The date and time when the endpoint was last updated, shown in ISO 8601 format.
      */
     inline EndpointResponse& WithEffectiveDate(const char* value) { SetEffectiveDate(value); return *this;}
 
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline const Aws::String& GetEndpointStatus() const{ return m_endpointStatus; }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline void SetEndpointStatus(const Aws::String& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline void SetEndpointStatus(Aws::String&& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = std::move(value); }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline void SetEndpointStatus(const char* value) { m_endpointStatusHasBeenSet = true; m_endpointStatus.assign(value); }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline EndpointResponse& WithEndpointStatus(const Aws::String& value) { SetEndpointStatus(value); return *this;}
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline EndpointResponse& WithEndpointStatus(Aws::String&& value) { SetEndpointStatus(std::move(value)); return *this;}
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE
-     * if a delivery fails. Will be set to ACTIVE if the address is updated.
+     * Unused.
      */
     inline EndpointResponse& WithEndpointStatus(const char* value) { SetEndpointStatus(value); return *this;}
 
 
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally
-     * unique identifier (GUID) to ensure that it is unique compared to all other
-     * endpoints for the application.
+     * unique identifier (GUID) to ensure that it doesn't conflict with other endpoint
+     * IDs associated with the application.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally
-     * unique identifier (GUID) to ensure that it is unique compared to all other
-     * endpoints for the application.
+     * unique identifier (GUID) to ensure that it doesn't conflict with other endpoint
+     * IDs associated with the application.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally
-     * unique identifier (GUID) to ensure that it is unique compared to all other
-     * endpoints for the application.
+     * unique identifier (GUID) to ensure that it doesn't conflict with other endpoint
+     * IDs associated with the application.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally
-     * unique identifier (GUID) to ensure that it is unique compared to all other
-     * endpoints for the application.
+     * unique identifier (GUID) to ensure that it doesn't conflict with other endpoint
+     * IDs associated with the application.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally
-     * unique identifier (GUID) to ensure that it is unique compared to all other
-     * endpoints for the application.
+     * unique identifier (GUID) to ensure that it doesn't conflict with other endpoint
+     * IDs associated with the application.
      */
     inline EndpointResponse& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally
-     * unique identifier (GUID) to ensure that it is unique compared to all other
-     * endpoints for the application.
+     * unique identifier (GUID) to ensure that it doesn't conflict with other endpoint
+     * IDs associated with the application.
      */
     inline EndpointResponse& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally
-     * unique identifier (GUID) to ensure that it is unique compared to all other
-     * endpoints for the application.
+     * unique identifier (GUID) to ensure that it doesn't conflict with other endpoint
+     * IDs associated with the application.
      */
     inline EndpointResponse& WithId(const char* value) { SetId(value); return *this;}
 

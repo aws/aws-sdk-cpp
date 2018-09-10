@@ -34,14 +34,14 @@ ConfigSnapshotDeliveryProperties::ConfigSnapshotDeliveryProperties() :
 {
 }
 
-ConfigSnapshotDeliveryProperties::ConfigSnapshotDeliveryProperties(const JsonValue& jsonValue) : 
+ConfigSnapshotDeliveryProperties::ConfigSnapshotDeliveryProperties(JsonView jsonValue) : 
     m_deliveryFrequency(MaximumExecutionFrequency::NOT_SET),
     m_deliveryFrequencyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ConfigSnapshotDeliveryProperties& ConfigSnapshotDeliveryProperties::operator =(const JsonValue& jsonValue)
+ConfigSnapshotDeliveryProperties& ConfigSnapshotDeliveryProperties::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("deliveryFrequency"))
   {

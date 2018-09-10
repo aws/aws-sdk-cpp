@@ -34,18 +34,18 @@ Participants::Participants() :
 {
 }
 
-Participants::Participants(const JsonValue& jsonValue) : 
+Participants::Participants(JsonView jsonValue) : 
     m_usersHasBeenSet(false),
     m_groupsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Participants& Participants::operator =(const JsonValue& jsonValue)
+Participants& Participants::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Users"))
   {
-    Array<JsonValue> usersJsonList = jsonValue.GetArray("Users");
+    Array<JsonView> usersJsonList = jsonValue.GetArray("Users");
     for(unsigned usersIndex = 0; usersIndex < usersJsonList.GetLength(); ++usersIndex)
     {
       m_users.push_back(usersJsonList[usersIndex].AsObject());
@@ -55,7 +55,7 @@ Participants& Participants::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Groups"))
   {
-    Array<JsonValue> groupsJsonList = jsonValue.GetArray("Groups");
+    Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsObject());

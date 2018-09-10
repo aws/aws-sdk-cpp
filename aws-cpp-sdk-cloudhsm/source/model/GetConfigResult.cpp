@@ -37,7 +37,7 @@ GetConfigResult::GetConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetConfigResult& GetConfigResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConfigType"))
   {
     m_configType = jsonValue.GetString("ConfigType");

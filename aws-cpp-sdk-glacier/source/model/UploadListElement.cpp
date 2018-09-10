@@ -38,7 +38,7 @@ UploadListElement::UploadListElement() :
 {
 }
 
-UploadListElement::UploadListElement(const JsonValue& jsonValue) : 
+UploadListElement::UploadListElement(JsonView jsonValue) : 
     m_multipartUploadIdHasBeenSet(false),
     m_vaultARNHasBeenSet(false),
     m_archiveDescriptionHasBeenSet(false),
@@ -49,7 +49,7 @@ UploadListElement::UploadListElement(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UploadListElement& UploadListElement::operator =(const JsonValue& jsonValue)
+UploadListElement& UploadListElement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("MultipartUploadId"))
   {

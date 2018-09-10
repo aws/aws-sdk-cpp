@@ -26,6 +26,7 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_applicationIdHasBeenSet(false),
     m_authorHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_homePageUrlHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_readmeBodyHasBeenSet(false),
     m_readmeUrlHasBeenSet(false)
@@ -45,6 +46,12 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_homePageUrlHasBeenSet)
+  {
+   payload.WithString("homePageUrl", m_homePageUrl);
 
   }
 
@@ -71,7 +78,7 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

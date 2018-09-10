@@ -66,7 +66,7 @@ Aws::String StartExportTaskRequest::SerializePayload() const
    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection StartExportTaskRequest::GetRequestSpecificHeaders() const

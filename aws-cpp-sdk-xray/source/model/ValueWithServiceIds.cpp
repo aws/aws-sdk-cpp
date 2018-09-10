@@ -34,14 +34,14 @@ ValueWithServiceIds::ValueWithServiceIds() :
 {
 }
 
-ValueWithServiceIds::ValueWithServiceIds(const JsonValue& jsonValue) : 
+ValueWithServiceIds::ValueWithServiceIds(JsonView jsonValue) : 
     m_annotationValueHasBeenSet(false),
     m_serviceIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ValueWithServiceIds& ValueWithServiceIds::operator =(const JsonValue& jsonValue)
+ValueWithServiceIds& ValueWithServiceIds::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AnnotationValue"))
   {
@@ -52,7 +52,7 @@ ValueWithServiceIds& ValueWithServiceIds::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("ServiceIds"))
   {
-    Array<JsonValue> serviceIdsJsonList = jsonValue.GetArray("ServiceIds");
+    Array<JsonView> serviceIdsJsonList = jsonValue.GetArray("ServiceIds");
     for(unsigned serviceIdsIndex = 0; serviceIdsIndex < serviceIdsJsonList.GetLength(); ++serviceIdsIndex)
     {
       m_serviceIds.push_back(serviceIdsJsonList[serviceIdsIndex].AsObject());

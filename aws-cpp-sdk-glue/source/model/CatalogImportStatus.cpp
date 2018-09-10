@@ -36,7 +36,7 @@ CatalogImportStatus::CatalogImportStatus() :
 {
 }
 
-CatalogImportStatus::CatalogImportStatus(const JsonValue& jsonValue) : 
+CatalogImportStatus::CatalogImportStatus(JsonView jsonValue) : 
     m_importCompleted(false),
     m_importCompletedHasBeenSet(false),
     m_importTimeHasBeenSet(false),
@@ -45,7 +45,7 @@ CatalogImportStatus::CatalogImportStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CatalogImportStatus& CatalogImportStatus::operator =(const JsonValue& jsonValue)
+CatalogImportStatus& CatalogImportStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ImportCompleted"))
   {

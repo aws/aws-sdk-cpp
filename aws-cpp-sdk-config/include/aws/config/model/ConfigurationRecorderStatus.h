@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ConfigService
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ConfigurationRecorderStatus();
-    ConfigurationRecorderStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    ConfigurationRecorderStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ConfigurationRecorderStatus(Aws::Utils::Json::JsonView jsonValue);
+    ConfigurationRecorderStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -138,17 +139,17 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the recorder is currently recording or not.</p>
+     * <p>Specifies whether or not the recorder is currently recording.</p>
      */
     inline bool GetRecording() const{ return m_recording; }
 
     /**
-     * <p>Specifies whether the recorder is currently recording or not.</p>
+     * <p>Specifies whether or not the recorder is currently recording.</p>
      */
     inline void SetRecording(bool value) { m_recordingHasBeenSet = true; m_recording = value; }
 
     /**
-     * <p>Specifies whether the recorder is currently recording or not.</p>
+     * <p>Specifies whether or not the recorder is currently recording.</p>
      */
     inline ConfigurationRecorderStatus& WithRecording(bool value) { SetRecording(value); return *this;}
 

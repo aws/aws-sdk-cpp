@@ -28,6 +28,8 @@
 #include <aws/iot/model/CloudwatchAlarmAction.h>
 #include <aws/iot/model/ElasticsearchAction.h>
 #include <aws/iot/model/SalesforceAction.h>
+#include <aws/iot/model/IotAnalyticsAction.h>
+#include <aws/iot/model/StepFunctionsAction.h>
 #include <utility>
 
 namespace Aws
@@ -37,6 +39,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -53,8 +56,8 @@ namespace Model
   {
   public:
     Action();
-    Action(const Aws::Utils::Json::JsonValue& jsonValue);
-    Action& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Action(Aws::Utils::Json::JsonView jsonValue);
+    Action& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -405,6 +408,58 @@ namespace Model
      */
     inline Action& WithSalesforce(SalesforceAction&& value) { SetSalesforce(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     */
+    inline const IotAnalyticsAction& GetIotAnalytics() const{ return m_iotAnalytics; }
+
+    /**
+     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     */
+    inline void SetIotAnalytics(const IotAnalyticsAction& value) { m_iotAnalyticsHasBeenSet = true; m_iotAnalytics = value; }
+
+    /**
+     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     */
+    inline void SetIotAnalytics(IotAnalyticsAction&& value) { m_iotAnalyticsHasBeenSet = true; m_iotAnalytics = std::move(value); }
+
+    /**
+     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     */
+    inline Action& WithIotAnalytics(const IotAnalyticsAction& value) { SetIotAnalytics(value); return *this;}
+
+    /**
+     * <p>Sends message data to an AWS IoT Analytics channel.</p>
+     */
+    inline Action& WithIotAnalytics(IotAnalyticsAction&& value) { SetIotAnalytics(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Starts execution of a Step Functions state machine.</p>
+     */
+    inline const StepFunctionsAction& GetStepFunctions() const{ return m_stepFunctions; }
+
+    /**
+     * <p>Starts execution of a Step Functions state machine.</p>
+     */
+    inline void SetStepFunctions(const StepFunctionsAction& value) { m_stepFunctionsHasBeenSet = true; m_stepFunctions = value; }
+
+    /**
+     * <p>Starts execution of a Step Functions state machine.</p>
+     */
+    inline void SetStepFunctions(StepFunctionsAction&& value) { m_stepFunctionsHasBeenSet = true; m_stepFunctions = std::move(value); }
+
+    /**
+     * <p>Starts execution of a Step Functions state machine.</p>
+     */
+    inline Action& WithStepFunctions(const StepFunctionsAction& value) { SetStepFunctions(value); return *this;}
+
+    /**
+     * <p>Starts execution of a Step Functions state machine.</p>
+     */
+    inline Action& WithStepFunctions(StepFunctionsAction&& value) { SetStepFunctions(std::move(value)); return *this;}
+
   private:
 
     DynamoDBAction m_dynamoDB;
@@ -445,6 +500,12 @@ namespace Model
 
     SalesforceAction m_salesforce;
     bool m_salesforceHasBeenSet;
+
+    IotAnalyticsAction m_iotAnalytics;
+    bool m_iotAnalyticsHasBeenSet;
+
+    StepFunctionsAction m_stepFunctions;
+    bool m_stepFunctionsHasBeenSet;
   };
 
 } // namespace Model

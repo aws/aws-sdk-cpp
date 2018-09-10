@@ -37,7 +37,7 @@ Shard::Shard() :
 {
 }
 
-Shard::Shard(const JsonValue& jsonValue) : 
+Shard::Shard(JsonView jsonValue) : 
     m_shardIdHasBeenSet(false),
     m_parentShardIdHasBeenSet(false),
     m_adjacentParentShardIdHasBeenSet(false),
@@ -47,7 +47,7 @@ Shard::Shard(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Shard& Shard::operator =(const JsonValue& jsonValue)
+Shard& Shard::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ShardId"))
   {

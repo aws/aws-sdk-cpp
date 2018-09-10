@@ -59,11 +59,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -154,7 +149,9 @@ namespace Model
     typedef std::function<void(const MigrationHubClient*, const Model::PutResourceAttributesRequest&, const Model::PutResourceAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourceAttributesResponseReceivedHandler;
 
   /**
-   * <p/>
+   * <p>The AWS Migration Hub API methods help to obtain server and application
+   * migration status and integrate your resource-specific migration tool by
+   * providing a programmatic interface to Migration Hub. </p>
    */
   class AWS_MIGRATIONHUB_API MigrationHubClient : public Aws::Client::AWSJsonClient
   {
@@ -311,19 +308,19 @@ namespace Model
          * following traits:</p> <ul> <li> <p>The only parameter needed for
          * <code>DeleteProgressUpdateStream</code> is the stream name (same as a
          * <code>CreateProgressUpdateStream</code> call).</p> </li> <li> <p>The call will
-         * return, and a background process will asynchronously be doing the actual delete
-         * of the stream and all of its resources (tasks, associated resources, resource
-         * attributes, created artifacts).</p> </li> <li> <p>If the stream takes time to be
-         * deleted, it might still show up on a <code>ListProgressUpdateStreams</code>
-         * call.</p> </li> <li> <p> <code>CreateProgressUpdateStream</code>,
-         * <code>ImportMigrationTask</code>, <code>NotifyMigrationTaskState</code>, and all
-         * Associate[*] APIs realted to the tasks belonging to the stream will throw
-         * "InvalidInputException" if the stream of the same name is in the process of
-         * being deleted.</p> </li> <li> <p>Once the stream and all of its resources are
-         * deleted, <code>CreateProgressUpdateStream</code> for a stream of the same name
-         * will succeed, and that stream will be an entirely new logical resource (without
-         * any resources associated with the old stream).</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * return, and a background process will asynchronously delete the stream and all
+         * of its resources (tasks, associated resources, resource attributes, created
+         * artifacts).</p> </li> <li> <p>If the stream takes time to be deleted, it might
+         * still show up on a <code>ListProgressUpdateStreams</code> call.</p> </li> <li>
+         * <p> <code>CreateProgressUpdateStream</code>, <code>ImportMigrationTask</code>,
+         * <code>NotifyMigrationTaskState</code>, and all Associate[*] APIs realted to the
+         * tasks belonging to the stream will throw "InvalidInputException" if the stream
+         * of the same name is in the process of being deleted.</p> </li> <li> <p>Once the
+         * stream and all of its resources are deleted,
+         * <code>CreateProgressUpdateStream</code> for a stream of the same name will
+         * succeed, and that stream will be an entirely new logical resource (without any
+         * resources associated with the old stream).</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DeleteProgressUpdateStream">AWS
          * API Reference</a></p>
          */
@@ -335,19 +332,19 @@ namespace Model
          * following traits:</p> <ul> <li> <p>The only parameter needed for
          * <code>DeleteProgressUpdateStream</code> is the stream name (same as a
          * <code>CreateProgressUpdateStream</code> call).</p> </li> <li> <p>The call will
-         * return, and a background process will asynchronously be doing the actual delete
-         * of the stream and all of its resources (tasks, associated resources, resource
-         * attributes, created artifacts).</p> </li> <li> <p>If the stream takes time to be
-         * deleted, it might still show up on a <code>ListProgressUpdateStreams</code>
-         * call.</p> </li> <li> <p> <code>CreateProgressUpdateStream</code>,
-         * <code>ImportMigrationTask</code>, <code>NotifyMigrationTaskState</code>, and all
-         * Associate[*] APIs realted to the tasks belonging to the stream will throw
-         * "InvalidInputException" if the stream of the same name is in the process of
-         * being deleted.</p> </li> <li> <p>Once the stream and all of its resources are
-         * deleted, <code>CreateProgressUpdateStream</code> for a stream of the same name
-         * will succeed, and that stream will be an entirely new logical resource (without
-         * any resources associated with the old stream).</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * return, and a background process will asynchronously delete the stream and all
+         * of its resources (tasks, associated resources, resource attributes, created
+         * artifacts).</p> </li> <li> <p>If the stream takes time to be deleted, it might
+         * still show up on a <code>ListProgressUpdateStreams</code> call.</p> </li> <li>
+         * <p> <code>CreateProgressUpdateStream</code>, <code>ImportMigrationTask</code>,
+         * <code>NotifyMigrationTaskState</code>, and all Associate[*] APIs realted to the
+         * tasks belonging to the stream will throw "InvalidInputException" if the stream
+         * of the same name is in the process of being deleted.</p> </li> <li> <p>Once the
+         * stream and all of its resources are deleted,
+         * <code>CreateProgressUpdateStream</code> for a stream of the same name will
+         * succeed, and that stream will be an entirely new logical resource (without any
+         * resources associated with the old stream).</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DeleteProgressUpdateStream">AWS
          * API Reference</a></p>
          *
@@ -361,19 +358,19 @@ namespace Model
          * following traits:</p> <ul> <li> <p>The only parameter needed for
          * <code>DeleteProgressUpdateStream</code> is the stream name (same as a
          * <code>CreateProgressUpdateStream</code> call).</p> </li> <li> <p>The call will
-         * return, and a background process will asynchronously be doing the actual delete
-         * of the stream and all of its resources (tasks, associated resources, resource
-         * attributes, created artifacts).</p> </li> <li> <p>If the stream takes time to be
-         * deleted, it might still show up on a <code>ListProgressUpdateStreams</code>
-         * call.</p> </li> <li> <p> <code>CreateProgressUpdateStream</code>,
-         * <code>ImportMigrationTask</code>, <code>NotifyMigrationTaskState</code>, and all
-         * Associate[*] APIs realted to the tasks belonging to the stream will throw
-         * "InvalidInputException" if the stream of the same name is in the process of
-         * being deleted.</p> </li> <li> <p>Once the stream and all of its resources are
-         * deleted, <code>CreateProgressUpdateStream</code> for a stream of the same name
-         * will succeed, and that stream will be an entirely new logical resource (without
-         * any resources associated with the old stream).</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * return, and a background process will asynchronously delete the stream and all
+         * of its resources (tasks, associated resources, resource attributes, created
+         * artifacts).</p> </li> <li> <p>If the stream takes time to be deleted, it might
+         * still show up on a <code>ListProgressUpdateStreams</code> call.</p> </li> <li>
+         * <p> <code>CreateProgressUpdateStream</code>, <code>ImportMigrationTask</code>,
+         * <code>NotifyMigrationTaskState</code>, and all Associate[*] APIs realted to the
+         * tasks belonging to the stream will throw "InvalidInputException" if the stream
+         * of the same name is in the process of being deleted.</p> </li> <li> <p>Once the
+         * stream and all of its resources are deleted,
+         * <code>CreateProgressUpdateStream</code> for a stream of the same name will
+         * succeed, and that stream will be an entirely new logical resource (without any
+         * resources associated with the old stream).</p> </li> </ul><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/DeleteProgressUpdateStream">AWS
          * API Reference</a></p>
          *
@@ -774,15 +771,18 @@ namespace Model
          * <p>Provides identifying details of the resource being migrated so that it can be
          * associated in the Application Discovery Service (ADS)'s repository. This
          * association occurs asynchronously after <code>PutResourceAttributes</code>
-         * returns.</p> <important> <p>Keep in mind that subsequent calls to
+         * returns.</p> <important> <ul> <li> <p>Keep in mind that subsequent calls to
          * PutResourceAttributes will override previously stored attributes. For example,
          * if it is first called with a MAC address, but later, it is desired to <i>add</i>
          * an IP address, it will then be required to call it with <i>both</i> the IP and
-         * MAC addresses to prevent overiding the MAC address.</p> </important> <note>
-         * <p>Because this is an asynchronous call, it will always return 200, whether an
-         * association occurs or not. To confirm if an association was found based on the
-         * provided details, call <code>ListAssociatedResource</code>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * MAC addresses to prevent overiding the MAC address.</p> </li> <li> <p>Note the
+         * instructions regarding the special use case of the <a
+         * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList">
+         * <code>ResourceAttributeList</code> </a> parameter when specifying any "VM"
+         * related value. </p> </li> </ul> </important> <note> <p>Because this is an
+         * asynchronous call, it will always return 200, whether an association occurs or
+         * not. To confirm if an association was found based on the provided details, call
+         * <code>ListDiscoveredResources</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">AWS
          * API Reference</a></p>
          */
@@ -792,15 +792,18 @@ namespace Model
          * <p>Provides identifying details of the resource being migrated so that it can be
          * associated in the Application Discovery Service (ADS)'s repository. This
          * association occurs asynchronously after <code>PutResourceAttributes</code>
-         * returns.</p> <important> <p>Keep in mind that subsequent calls to
+         * returns.</p> <important> <ul> <li> <p>Keep in mind that subsequent calls to
          * PutResourceAttributes will override previously stored attributes. For example,
          * if it is first called with a MAC address, but later, it is desired to <i>add</i>
          * an IP address, it will then be required to call it with <i>both</i> the IP and
-         * MAC addresses to prevent overiding the MAC address.</p> </important> <note>
-         * <p>Because this is an asynchronous call, it will always return 200, whether an
-         * association occurs or not. To confirm if an association was found based on the
-         * provided details, call <code>ListAssociatedResource</code>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * MAC addresses to prevent overiding the MAC address.</p> </li> <li> <p>Note the
+         * instructions regarding the special use case of the <a
+         * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList">
+         * <code>ResourceAttributeList</code> </a> parameter when specifying any "VM"
+         * related value. </p> </li> </ul> </important> <note> <p>Because this is an
+         * asynchronous call, it will always return 200, whether an association occurs or
+         * not. To confirm if an association was found based on the provided details, call
+         * <code>ListDiscoveredResources</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">AWS
          * API Reference</a></p>
          *
@@ -812,15 +815,18 @@ namespace Model
          * <p>Provides identifying details of the resource being migrated so that it can be
          * associated in the Application Discovery Service (ADS)'s repository. This
          * association occurs asynchronously after <code>PutResourceAttributes</code>
-         * returns.</p> <important> <p>Keep in mind that subsequent calls to
+         * returns.</p> <important> <ul> <li> <p>Keep in mind that subsequent calls to
          * PutResourceAttributes will override previously stored attributes. For example,
          * if it is first called with a MAC address, but later, it is desired to <i>add</i>
          * an IP address, it will then be required to call it with <i>both</i> the IP and
-         * MAC addresses to prevent overiding the MAC address.</p> </important> <note>
-         * <p>Because this is an asynchronous call, it will always return 200, whether an
-         * association occurs or not. To confirm if an association was found based on the
-         * provided details, call <code>ListAssociatedResource</code>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * MAC addresses to prevent overiding the MAC address.</p> </li> <li> <p>Note the
+         * instructions regarding the special use case of the <a
+         * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList">
+         * <code>ResourceAttributeList</code> </a> parameter when specifying any "VM"
+         * related value. </p> </li> </ul> </important> <note> <p>Because this is an
+         * asynchronous call, it will always return 200, whether an association occurs or
+         * not. To confirm if an association was found based on the provided details, call
+         * <code>ListDiscoveredResources</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/PutResourceAttributes">AWS
          * API Reference</a></p>
          *

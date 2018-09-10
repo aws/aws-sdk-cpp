@@ -58,7 +58,7 @@ Aws::String CreateProjectRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateProjectRequest::GetRequestSpecificHeaders() const

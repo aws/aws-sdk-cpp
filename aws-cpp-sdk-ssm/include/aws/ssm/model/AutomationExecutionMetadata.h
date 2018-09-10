@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     AutomationExecutionMetadata();
-    AutomationExecutionMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    AutomationExecutionMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AutomationExecutionMetadata(Aws::Utils::Json::JsonView jsonValue);
+    AutomationExecutionMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -620,6 +621,49 @@ namespace Model
 
 
     /**
+     * <p>The specified key-value mapping of document parameters to target
+     * resources.</p>
+     */
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetTargetMaps() const{ return m_targetMaps; }
+
+    /**
+     * <p>The specified key-value mapping of document parameters to target
+     * resources.</p>
+     */
+    inline void SetTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps = value; }
+
+    /**
+     * <p>The specified key-value mapping of document parameters to target
+     * resources.</p>
+     */
+    inline void SetTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps = std::move(value); }
+
+    /**
+     * <p>The specified key-value mapping of document parameters to target
+     * resources.</p>
+     */
+    inline AutomationExecutionMetadata& WithTargetMaps(const Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetTargetMaps(value); return *this;}
+
+    /**
+     * <p>The specified key-value mapping of document parameters to target
+     * resources.</p>
+     */
+    inline AutomationExecutionMetadata& WithTargetMaps(Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetTargetMaps(std::move(value)); return *this;}
+
+    /**
+     * <p>The specified key-value mapping of document parameters to target
+     * resources.</p>
+     */
+    inline AutomationExecutionMetadata& AddTargetMaps(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(value); return *this; }
+
+    /**
+     * <p>The specified key-value mapping of document parameters to target
+     * resources.</p>
+     */
+    inline AutomationExecutionMetadata& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>A list of targets that resolved during the execution.</p>
      */
     inline const ResolvedTargets& GetResolvedTargets() const{ return m_resolvedTargets; }
@@ -808,6 +852,9 @@ namespace Model
 
     Aws::Vector<Target> m_targets;
     bool m_targetsHasBeenSet;
+
+    Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
+    bool m_targetMapsHasBeenSet;
 
     ResolvedTargets m_resolvedTargets;
     bool m_resolvedTargetsHasBeenSet;

@@ -40,7 +40,7 @@ Problem::Problem() :
 {
 }
 
-Problem::Problem(const JsonValue& jsonValue) : 
+Problem::Problem(JsonView jsonValue) : 
     m_runHasBeenSet(false),
     m_jobHasBeenSet(false),
     m_suiteHasBeenSet(false),
@@ -53,7 +53,7 @@ Problem::Problem(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Problem& Problem::operator =(const JsonValue& jsonValue)
+Problem& Problem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("run"))
   {

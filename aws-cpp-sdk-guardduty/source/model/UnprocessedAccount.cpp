@@ -34,14 +34,14 @@ UnprocessedAccount::UnprocessedAccount() :
 {
 }
 
-UnprocessedAccount::UnprocessedAccount(const JsonValue& jsonValue) : 
+UnprocessedAccount::UnprocessedAccount(JsonView jsonValue) : 
     m_accountIdHasBeenSet(false),
     m_resultHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UnprocessedAccount& UnprocessedAccount::operator =(const JsonValue& jsonValue)
+UnprocessedAccount& UnprocessedAccount::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("accountId"))
   {

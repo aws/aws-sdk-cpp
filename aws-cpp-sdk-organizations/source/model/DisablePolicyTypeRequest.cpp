@@ -44,7 +44,7 @@ Aws::String DisablePolicyTypeRequest::SerializePayload() const
    payload.WithString("PolicyType", PolicyTypeMapper::GetNameForPolicyType(m_policyType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DisablePolicyTypeRequest::GetRequestSpecificHeaders() const

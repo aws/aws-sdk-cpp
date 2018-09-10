@@ -64,7 +64,7 @@ Aws::String GetTraceSummariesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

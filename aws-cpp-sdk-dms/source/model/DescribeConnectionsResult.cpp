@@ -37,7 +37,7 @@ DescribeConnectionsResult::DescribeConnectionsResult(const Aws::AmazonWebService
 
 DescribeConnectionsResult& DescribeConnectionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
@@ -46,7 +46,7 @@ DescribeConnectionsResult& DescribeConnectionsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("Connections"))
   {
-    Array<JsonValue> connectionsJsonList = jsonValue.GetArray("Connections");
+    Array<JsonView> connectionsJsonList = jsonValue.GetArray("Connections");
     for(unsigned connectionsIndex = 0; connectionsIndex < connectionsJsonList.GetLength(); ++connectionsIndex)
     {
       m_connections.push_back(connectionsJsonList[connectionsIndex].AsObject());

@@ -18,6 +18,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
 
@@ -103,7 +104,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -113,7 +114,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -123,7 +124,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -133,7 +134,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -143,7 +144,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -153,7 +154,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -163,7 +164,7 @@ namespace Model
     /**
      * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
      * snapshot. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 255 letters, numbers, or hyphens</p> </li> <li>
+     * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
      * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
      * or contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
@@ -676,6 +677,183 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 
+
+    /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
+    inline long long GetBacktrackWindow() const{ return m_backtrackWindow; }
+
+    /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
+    inline void SetBacktrackWindow(long long value) { m_backtrackWindowHasBeenSet = true; m_backtrackWindow = value; }
+
+    /**
+     * <p>The target backtrack window, in seconds. To disable backtracking, set this
+     * value to 0.</p> <p>Default: 0</p> <p>Constraints:</p> <ul> <li> <p>If specified,
+     * this value must be set to a number from 0 to 259,200 (72 hours).</p> </li> </ul>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithBacktrackWindow(long long value) { SetBacktrackWindow(value); return *this;}
+
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of logs that the restored DB cluster is to export to CloudWatch
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
+
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline const ScalingConfiguration& GetScalingConfiguration() const{ return m_scalingConfiguration; }
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline void SetScalingConfiguration(const ScalingConfiguration& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = value; }
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline void SetScalingConfiguration(ScalingConfiguration&& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = std::move(value); }
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithScalingConfiguration(const ScalingConfiguration& value) { SetScalingConfiguration(value); return *this;}
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithScalingConfiguration(ScalingConfiguration&& value) { SetScalingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -716,6 +894,18 @@ namespace Model
 
     bool m_enableIAMDatabaseAuthentication;
     bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+
+    long long m_backtrackWindow;
+    bool m_backtrackWindowHasBeenSet;
+
+    Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
+    bool m_enableCloudwatchLogsExportsHasBeenSet;
+
+    Aws::String m_engineMode;
+    bool m_engineModeHasBeenSet;
+
+    ScalingConfiguration m_scalingConfiguration;
+    bool m_scalingConfigurationHasBeenSet;
   };
 
 } // namespace Model

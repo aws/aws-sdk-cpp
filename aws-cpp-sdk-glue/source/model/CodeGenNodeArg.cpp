@@ -36,7 +36,7 @@ CodeGenNodeArg::CodeGenNodeArg() :
 {
 }
 
-CodeGenNodeArg::CodeGenNodeArg(const JsonValue& jsonValue) : 
+CodeGenNodeArg::CodeGenNodeArg(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_param(false),
@@ -45,7 +45,7 @@ CodeGenNodeArg::CodeGenNodeArg(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CodeGenNodeArg& CodeGenNodeArg::operator =(const JsonValue& jsonValue)
+CodeGenNodeArg& CodeGenNodeArg::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

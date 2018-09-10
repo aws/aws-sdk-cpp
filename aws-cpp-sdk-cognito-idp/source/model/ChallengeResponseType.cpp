@@ -36,7 +36,7 @@ ChallengeResponseType::ChallengeResponseType() :
 {
 }
 
-ChallengeResponseType::ChallengeResponseType(const JsonValue& jsonValue) : 
+ChallengeResponseType::ChallengeResponseType(JsonView jsonValue) : 
     m_challengeName(ChallengeName::NOT_SET),
     m_challengeNameHasBeenSet(false),
     m_challengeResponse(ChallengeResponse::NOT_SET),
@@ -45,7 +45,7 @@ ChallengeResponseType::ChallengeResponseType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ChallengeResponseType& ChallengeResponseType::operator =(const JsonValue& jsonValue)
+ChallengeResponseType& ChallengeResponseType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ChallengeName"))
   {

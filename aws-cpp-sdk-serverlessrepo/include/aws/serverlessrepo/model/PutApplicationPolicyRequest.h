@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * Put policy request<p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicyRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_SERVERLESSAPPLICATIONREPOSITORY_API PutApplicationPolicyRequest : public ServerlessApplicationRepositoryRequest
   {
@@ -48,73 +45,73 @@ namespace Model
 
 
     /**
-     * The id of the application to put policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * The id of the application to put policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * The id of the application to put policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * The id of the application to put policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * The id of the application to put policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline PutApplicationPolicyRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * The id of the application to put policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline PutApplicationPolicyRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * The id of the application to put policy for
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline PutApplicationPolicyRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline const Aws::Vector<ApplicationPolicyStatement>& GetStatements() const{ return m_statements; }
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline void SetStatements(const Aws::Vector<ApplicationPolicyStatement>& value) { m_statementsHasBeenSet = true; m_statements = value; }
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline void SetStatements(Aws::Vector<ApplicationPolicyStatement>&& value) { m_statementsHasBeenSet = true; m_statements = std::move(value); }
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline PutApplicationPolicyRequest& WithStatements(const Aws::Vector<ApplicationPolicyStatement>& value) { SetStatements(value); return *this;}
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline PutApplicationPolicyRequest& WithStatements(Aws::Vector<ApplicationPolicyStatement>&& value) { SetStatements(std::move(value)); return *this;}
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline PutApplicationPolicyRequest& AddStatements(const ApplicationPolicyStatement& value) { m_statementsHasBeenSet = true; m_statements.push_back(value); return *this; }
 
     /**
-     * Array of policy statements applied to the application.
+     * <p>An array of policy statements applied to the application.</p>
      */
     inline PutApplicationPolicyRequest& AddStatements(ApplicationPolicyStatement&& value) { m_statementsHasBeenSet = true; m_statements.push_back(std::move(value)); return *this; }
 

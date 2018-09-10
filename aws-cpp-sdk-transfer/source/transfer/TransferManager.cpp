@@ -19,6 +19,7 @@
 #include <aws/core/utils/stream/PreallocatedStreamBuf.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/HeadObjectRequest.h>
@@ -35,7 +36,11 @@ namespace Aws
 {
     namespace Transfer
     {
-        static const char* const CLASS_TAG = "Aws::Transfer::TransferManager";
+        static inline bool IsS3KeyPrefix(const Aws::String& path)
+        {
+            return (path.find_last_of('/') == path.size() - 1 || path.find_last_of('\\') == path.size() - 1);
+        }
+
         struct TransferHandleAsyncContext : public Aws::Client::AsyncCallerContext
         {
             std::shared_ptr<TransferHandle> handle;
@@ -144,7 +149,13 @@ namespace Aws
         {
             assert(retryHandle->GetStatus() != TransferStatus::IN_PROGRESS);
             assert(retryHandle->GetStatus() != TransferStatus::COMPLETED);
-            assert(retryHandle->GetStatus() != TransferStatus::NOT_STARTED);           
+            assert(retryHandle->GetStatus() != TransferStatus::NOT_STARTED);
+
+            AWS_LOGSTREAM_INFO(CLASS_TAG, "Transfer handle [" << retryHandle->GetId()
+                    << "] Retrying upload to Bucket: [" << retryHandle->GetBucketName() << "] with Key: ["
+                    << retryHandle->GetKey() << "] with Upload ID: [" << retryHandle->GetMultiPartId()
+                    << "]. Current handle status: [" << retryHandle->GetStatus() << "].");
+
 
             bool hasFileName = (retryHandle->GetTargetFilePath().size() != 0);
 
@@ -152,10 +163,19 @@ namespace Aws
             {
                 if (hasFileName)
                 {
+                    AWS_LOGSTREAM_TRACE(CLASS_TAG, "Transfer handle [" << retryHandle->GetId() << "] Uploading file: "
+                            << retryHandle->GetTargetFilePath() << " from disk. In Bucket: ["
+                            << retryHandle->GetBucketName() << "] with Key: ["
+                            << retryHandle->GetKey() << "].");
+
                     return UploadFile(retryHandle->GetTargetFilePath(), retryHandle->GetBucketName(), retryHandle->GetKey(), retryHandle->GetContentType(), retryHandle->GetMetadata());
                 }
                 else
                 {
+                    AWS_LOGSTREAM_TRACE(CLASS_TAG, "Transfer handle [" << retryHandle->GetId() << "] Uploading bytes"
+                            " from stream. In Bucket: [" << retryHandle->GetBucketName() << "] with Key: ["
+                            << retryHandle->GetKey() << "].");
+
                     return UploadFile(stream, retryHandle->GetBucketName(), retryHandle->GetKey(), retryHandle->GetContentType(), retryHandle->GetMetadata());
                 }
             }
@@ -172,6 +192,8 @@ namespace Aws
         {
             assert(inProgressHandle->IsMultipart());
             assert(inProgressHandle->GetTransferDirection() == TransferDirection::UPLOAD);
+
+            AWS_LOGSTREAM_INFO(CLASS_TAG, "Transfer handle [" << inProgressHandle->GetId() << "] Attempting to abort multipart upload.");
 
             inProgressHandle->Cancel();
             auto self = shared_from_this();
@@ -194,13 +216,15 @@ namespace Aws
 
                     ssKey << prefix << "/" << relativePath;
                     Aws::String keyName = ssKey.str();
-                    
-                    self->m_transferConfig.transferInitiatedCallback(self.get(), self->UploadFile(entry.path, bucketName, keyName, DEFAULT_CONTENT_TYPE, metadata));                    
+                    AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Uploading file: " << entry.path
+                            << " as part of directory upload to S3 Bucket: [" << bucketName << "] and Key: ["
+                            << keyName << "].");
+                    self->m_transferConfig.transferInitiatedCallback(self.get(), self->UploadFile(entry.path, bucketName, keyName, DEFAULT_CONTENT_TYPE, metadata));
                 }
 
                 return true;
             };
-            
+
             m_transferConfig.transferExecutor->Submit([directory, visitor]() { Aws::FileSystem::DirectoryTree dir(directory); dir.TraverseDepthFirst(visitor); });
         }
 
@@ -215,6 +239,7 @@ namespace Aws
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { self->HandleListObjectsResponse(client, request, outcome, context); };
 
             Aws::S3::Model::ListObjectsV2Request request;
+            request.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
             request.WithBucket(bucketName)
                 .WithPrefix(prefix);
 
@@ -242,11 +267,12 @@ namespace Aws
             handle->SetIsMultipart(true);
 
             bool isRetry = !handle->GetMultiPartId().empty();
-            uint64_t sentBytes = 0;            
+            uint64_t sentBytes = 0;
 
             if (!isRetry)
             {
                 Aws::S3::Model::CreateMultipartUploadRequest createMultipartRequest = m_transferConfig.createMultipartUploadTemplate;
+                createMultipartRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                 createMultipartRequest.WithBucket(handle->GetBucketName());
                 createMultipartRequest.WithContentType(handle->GetContentType());
                 createMultipartRequest.WithKey(handle->GetKey());
@@ -258,16 +284,23 @@ namespace Aws
                     handle->SetMultipartId(createMultipartResponse.GetResult().GetUploadId());
                     uint64_t totalSize = handle->GetBytesTotalSize();
                     uint64_t partCount = ( totalSize + m_transferConfig.bufferSize - 1 ) / m_transferConfig.bufferSize;
+                    AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                            << "] Successfully created a multi-part upload request. Upload ID: ["
+                            << createMultipartResponse.GetResult().GetUploadId()
+                            << "]. Splitting the multi-part upload to " << partCount << " part(s).");
 
                     for (uint64_t i = 0; i < partCount; ++i)
                     {
                         uint64_t partSize = (std::min)(totalSize - i * m_transferConfig.bufferSize, m_transferConfig.bufferSize);
                         bool lastPart = (i == partCount - 1) ? true : false;
                         handle->AddQueuedPart(Aws::MakeShared<PartState>(CLASS_TAG, static_cast<int>(i + 1), 0, static_cast<size_t>(partSize), lastPart));
-                    }                    
+                    }
                 }
                 else
                 {
+                    AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId() << "] Failed to create a "
+                            "multi-part upload request. Bucket: [" << handle->GetBucketName()
+                            << "] with Key: [" << handle->GetKey() << "]. " << createMultipartResponse.GetError());
                     handle->SetError(createMultipartResponse.GetError());
                     handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
 
@@ -278,15 +311,21 @@ namespace Aws
             }
             else
             {
-                int partsToRetry = 0;
-                sentBytes = handle->GetBytesTotalSize();
+                size_t bytesLeft = 0;
                 //at this point we've been going synchronously so this is consistent
+                const auto failedPartsSize = handle->GetFailedParts().size();
                 for (auto failedParts : handle->GetFailedParts())
                 {
-                    partsToRetry++;
-                    sentBytes -= failedParts.second->GetSizeInBytes();
+                    bytesLeft += failedParts.second->GetSizeInBytes();
                     handle->AddQueuedPart(failedParts.second);
                 }
+
+                sentBytes = handle->GetBytesTotalSize() - bytesLeft;
+
+                AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                            << "] Retrying multi-part upload for " << failedPartsSize
+                            << " failed parts of total size " << bytesLeft << " bytes. Upload ID ["
+                            << handle->GetMultiPartId() << "].");
             }
 
             //still consistent
@@ -295,6 +334,7 @@ namespace Aws
 
             handle->UpdateStatus(TransferStatus::IN_PROGRESS);
             TriggerTransferStatusUpdatedCallback(handle);
+
 
             while (sentBytes < handle->GetBytesTotalSize() && handle->ShouldContinue() && partsIter != queuedParts.end())
             {
@@ -311,6 +351,7 @@ namespace Aws
                     auto self = shared_from_this(); // keep transfer manager alive until all callbacks are finished.
                     PartPointer partPtr = partsIter->second;
                     Aws::S3::Model::UploadPartRequest uploadPartRequest = m_transferConfig.uploadPartTemplate;
+                    uploadPartRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                     uploadPartRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
                     uploadPartRequest.SetDataSentEventHandler([self, handle, partPtr](const Aws::Http::HttpRequest*, long long amount){ partPtr->OnDataTransferred(amount, handle); self->TriggerUploadProgressCallback(handle); });
                     uploadPartRequest.SetRequestRetryHandler([partPtr](const AmazonWebServiceRequest&){ partPtr->Reset(); });
@@ -351,6 +392,11 @@ namespace Aws
                 handle->ChangePartToFailed(partsIter->second);
             }
 
+            if (handle->HasFailedParts())
+            {
+                handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
+                TriggerTransferStatusUpdatedCallback(handle);
+            }
         }
 
         void TransferManager::DoSinglePartUpload(const std::shared_ptr<TransferHandle>& handle)
@@ -375,6 +421,7 @@ namespace Aws
             TriggerTransferStatusUpdatedCallback(handle);
 
             auto putObjectRequest = m_transferConfig.putObjectTemplate;
+            putObjectRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
             putObjectRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
             putObjectRequest.WithBucket(handle->GetBucketName())
                 .WithKey(handle->GetKey())                
@@ -431,31 +478,56 @@ namespace Aws
 
             m_bufferManager.Release(originalStreamBuffer->GetBuffer());
             Aws::Delete(originalStreamBuffer);
+            const auto& handle = transferContext->handle;
+            const auto& partState = transferContext->partState;
 
             if (outcome.IsSuccess())
             {
-                transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
-                TriggerUploadProgressCallback(transferContext->handle);
+                if (handle->ShouldContinue())
+                {
+                    handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
+                    AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                            << " successfully uploaded Part: [" << partState->GetPartId() << "] to Bucket: ["
+                            << handle->GetBucketName() << "] with Key: [" << handle->GetKey() << "] with Upload ID: ["
+                            << handle->GetMultiPartId() << "].");
+                    TriggerUploadProgressCallback(handle);
+                }
+                else
+                {
+                    // marking this as failed so we eventually update the handle's status to CANCELED.
+                    // Updating the handle's status to CANCELED here might result in a race-condition between a
+                    // potentially restarting upload and a latent successful part.
+                    handle->ChangePartToFailed(partState);
+                    AWS_LOGSTREAM_WARN(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                            << " successfully uploaded Part: [" << partState->GetPartId() << "] to Bucket: ["
+                            << handle->GetBucketName() << "] with Key: [" << handle->GetKey() << "] with Upload ID: ["
+                            << handle->GetMultiPartId() << "] but transfer has been cancelled meanwhile.");
+                }
             }
             else
             {
-                transferContext->handle->ChangePartToFailed(transferContext->partState);
-                transferContext->handle->SetError(outcome.GetError());
-                TriggerErrorCallback(transferContext->handle, outcome.GetError());
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId() << "] Failed to upload part ["
+                        << partState->GetPartId() << "] to Bucket: [" << handle->GetBucketName()
+                        << "] with Key: [" << handle->GetKey() << "] with Upload ID: [" << handle->GetMultiPartId()
+                        << "]. " << outcome.GetError());
+
+                handle->ChangePartToFailed(partState);
+                handle->SetError(outcome.GetError());
+                TriggerErrorCallback(handle, outcome.GetError());
             }
 
-            TriggerTransferStatusUpdatedCallback(transferContext->handle);
+            TriggerTransferStatusUpdatedCallback(handle);
 
             PartStateMap pendingParts, queuedParts, failedParts, completedParts;
-            transferContext->handle->GetAllPartsTransactional(queuedParts, pendingParts, failedParts, completedParts);
+            handle->GetAllPartsTransactional(queuedParts, pendingParts, failedParts, completedParts);
 
-            if (pendingParts.size() == 0 && queuedParts.size() == 0 && transferContext->handle->LockForCompletion())
-            {               
-                if (failedParts.size() == 0 && transferContext->handle->GetBytesTransferred() == transferContext->handle->GetBytesTotalSize())
+            if (pendingParts.size() == 0 && queuedParts.size() == 0 && handle->LockForCompletion())
+            {
+                if (failedParts.size() == 0 && handle->GetBytesTransferred() == handle->GetBytesTotalSize())
                 {
                     Aws::S3::Model::CompletedMultipartUpload completedUpload;
 
-                    for (auto& part : transferContext->handle->GetCompletedParts())
+                    for (auto& part : handle->GetCompletedParts())
                     {
                         Aws::S3::Model::CompletedPart completedPart;
                         completedPart.WithPartNumber(part.first)
@@ -464,30 +536,43 @@ namespace Aws
                     }
 
                     Aws::S3::Model::CompleteMultipartUploadRequest completeMultipartUploadRequest;
-                    completeMultipartUploadRequest.SetContinueRequestHandler([=](const Aws::Http::HttpRequest*) { return transferContext->handle->ShouldContinue(); });
-                    completeMultipartUploadRequest.WithBucket(transferContext->handle->GetBucketName())
-                        .WithKey(transferContext->handle->GetKey())
-                        .WithUploadId(transferContext->handle->GetMultiPartId())
+                    completeMultipartUploadRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
+                    completeMultipartUploadRequest.SetContinueRequestHandler([=](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
+                    completeMultipartUploadRequest.WithBucket(handle->GetBucketName())
+                        .WithKey(handle->GetKey())
+                        .WithUploadId(handle->GetMultiPartId())
                         .WithMultipartUpload(completedUpload);
 
                     auto completeUploadOutcome = m_transferConfig.s3Client->CompleteMultipartUpload(completeMultipartUploadRequest);
 
                     if (completeUploadOutcome.IsSuccess())
                     {
-                        transferContext->handle->UpdateStatus(TransferStatus::COMPLETED);
+                        AWS_LOGSTREAM_INFO(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                                << "] Multi-part upload completed successfully to Bucket: ["
+                                << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
+                                << "] with Upload ID: [" << handle->GetMultiPartId() << "].");
+                        handle->UpdateStatus(TransferStatus::COMPLETED);
                     }
                     else
                     {
-                        transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
+                        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                                << "] Failed to complete multi-part upload. In Bucket: ["
+                                << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
+                                << "] with Upload ID: [" << handle->GetMultiPartId()
+                                << "]. " << completeUploadOutcome.GetError());
+
+                        handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
                     }
                 }
                 else
                 {
-                    transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
+                    AWS_LOGSTREAM_TRACE(CLASS_TAG, "Transfer handle [" << handle->GetId() << "] " << failedParts.size()
+                            << " Failed parts. " << handle->GetBytesTransferred() << " bytes transferred out of "
+                            << handle->GetBytesTotalSize() << " total bytes.");
+                    handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
                 }
+                TriggerTransferStatusUpdatedCallback(handle);
             }
-
-            TriggerTransferStatusUpdatedCallback(transferContext->handle);
         }
 
         void TransferManager::HandlePutObjectResponse(const Aws::S3::S3Client*, const Aws::S3::Model::PutObjectRequest& request,
@@ -501,20 +586,30 @@ namespace Aws
             m_bufferManager.Release(originalStreamBuffer->GetBuffer());
             Aws::Delete(originalStreamBuffer);
 
+            const auto& handle = transferContext->handle;
+            const auto& partState = transferContext->partState;
+
             if (outcome.IsSuccess())
             {
-                transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
-                transferContext->handle->UpdateStatus(TransferStatus::COMPLETED);
+                AWS_LOGSTREAM_INFO(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                        << "] PutObject completed successfully to Bucket: ["
+                        << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
+                        << "].");
+                handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
+                handle->UpdateStatus(TransferStatus::COMPLETED);
             }
             else
             {
-                transferContext->handle->ChangePartToFailed(transferContext->partState);
-                transferContext->handle->SetError(outcome.GetError());
-                transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
-                TriggerErrorCallback(transferContext->handle, outcome.GetError());
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId() << "] Failed to upload object to "
+                        "Bucket: [" << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
+                        << "] " << outcome.GetError());
+                handle->ChangePartToFailed(partState);
+                handle->SetError(outcome.GetError());
+                handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
+                TriggerErrorCallback(handle, outcome.GetError());
             }
 
-            TriggerTransferStatusUpdatedCallback(transferContext->handle);
+            TriggerTransferStatusUpdatedCallback(handle);
         }
 
         std::shared_ptr<TransferHandle> TransferManager::RetryDownload(const std::shared_ptr<TransferHandle>& retryHandle)
@@ -548,6 +643,7 @@ namespace Aws
 
             auto partState = queuedParts.begin()->second;
             Aws::S3::Model::GetObjectRequest request;
+            request.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
             request.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
             request.WithBucket(handle->GetBucketName())
                    .WithKey(handle->GetKey());
@@ -581,6 +677,9 @@ namespace Aws
             }
             else
             {
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                        << "] Failed to download object to Bucket: [" << handle->GetBucketName() << "] with Key: ["
+                        << handle->GetKey() << "] " << getObjectOutcome.GetError());
                 handle->ChangePartToFailed(partState);
                 handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
                 handle->SetError(getObjectOutcome.GetError());
@@ -605,6 +704,7 @@ namespace Aws
             if (!isRetry)
             {
                 Aws::S3::Model::HeadObjectRequest headObjectRequest;
+                headObjectRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                 headObjectRequest.WithBucket(handle->GetBucketName())
                                  .WithKey(handle->GetKey());
 
@@ -617,6 +717,10 @@ namespace Aws
 
                 if (!headObjectOutcome.IsSuccess())
                 {
+                    AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                            << "] Failed to get download parts information for object in Bucket: ["
+                            << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
+                            << "] " << headObjectOutcome.GetError());
                     handle->UpdateStatus(TransferStatus::FAILED);
                     handle->SetError(headObjectOutcome.GetError());
                     TriggerErrorCallback(handle, headObjectOutcome.GetError());
@@ -699,6 +803,7 @@ namespace Aws
                     partState->SetDownloadBuffer(buffer);
 
                     Aws::S3::Model::GetObjectRequest getObjectRangeRequest;
+                    getObjectRangeRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                     getObjectRangeRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
                     getObjectRangeRequest.SetBucket(handle->GetBucketName());
                     getObjectRangeRequest.WithKey(handle->GetKey());
@@ -752,6 +857,11 @@ namespace Aws
                 handle->ChangePartToFailed(queuedPartIter->second);
                 ++queuedPartIter;
             }
+            if (handle->HasFailedParts())
+            {
+                handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
+                TriggerTransferStatusUpdatedCallback(handle);      
+            }
         }
 
         void TransferManager::HandleGetObjectResponse(const Aws::S3::S3Client* client, 
@@ -764,60 +874,77 @@ namespace Aws
 
             std::shared_ptr<TransferHandleAsyncContext> transferContext =
                 std::const_pointer_cast<TransferHandleAsyncContext>(std::static_pointer_cast<const TransferHandleAsyncContext>(context));
+            const auto& handle = transferContext->handle;
+            const auto& partState = transferContext->partState;
 
             if (!outcome.IsSuccess())
             {
-                transferContext->handle->ChangePartToFailed(transferContext->partState);
-                transferContext->handle->SetError(outcome.GetError());
-                TriggerErrorCallback(transferContext->handle, outcome.GetError());
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
+                        << "] Failed to download object in Bucket: ["
+                        << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
+                        << "] " << outcome.GetError());
+                handle->ChangePartToFailed(partState);
+                handle->SetError(outcome.GetError());
+                TriggerErrorCallback(handle, outcome.GetError());
             }
             else
             {
-                if(transferContext->handle->ShouldContinue())
+                if(handle->ShouldContinue())
                 {
-                    Aws::IOStream* bufferStream = transferContext->partState->GetDownloadPartStream();
-                    transferContext->handle->WritePartToDownloadStream(bufferStream, transferContext->partState->GetRangeBegin());
-                    transferContext->handle->ChangePartToCompleted(transferContext->partState, outcome.GetResult().GetETag());
+                    Aws::IOStream* bufferStream = partState->GetDownloadPartStream();
+                    assert(bufferStream);
+                    handle->WritePartToDownloadStream(bufferStream, partState->GetRangeBegin());
+                    handle->ChangePartToCompleted(partState, outcome.GetResult().GetETag());
                 }
                 else
                 {
-                    transferContext->handle->ChangePartToFailed(transferContext->partState);
+                    handle->ChangePartToFailed(partState);
                 }
             }
 
             // buffer cleanup
-            if(transferContext->partState->GetDownloadBuffer())
+            if(partState->GetDownloadBuffer())
             {
-                m_bufferManager.Release(transferContext->partState->GetDownloadBuffer());
-                transferContext->partState->SetDownloadBuffer(nullptr);
+                m_bufferManager.Release(partState->GetDownloadBuffer());
+                partState->SetDownloadBuffer(nullptr);
             }
 
-            TriggerTransferStatusUpdatedCallback(transferContext->handle);
+            TriggerTransferStatusUpdatedCallback(handle);
 
             PartStateMap pendingParts, queuedParts, failedParts, completedParts;
-            transferContext->handle->GetAllPartsTransactional(queuedParts, pendingParts, failedParts, completedParts);
+            handle->GetAllPartsTransactional(queuedParts, pendingParts, failedParts, completedParts);
 
             if (pendingParts.size() == 0 && queuedParts.size() == 0)
-            {               
-                if (failedParts.size() == 0 && transferContext->handle->GetBytesTransferred() == transferContext->handle->GetBytesTotalSize())
+            {
+                if (failedParts.size() == 0 && handle->GetBytesTransferred() == handle->GetBytesTotalSize())
                 {
-                    transferContext->handle->UpdateStatus(TransferStatus::COMPLETED);
+                    handle->UpdateStatus(TransferStatus::COMPLETED);
                 }
                 else
                 {
-                    transferContext->handle->UpdateStatus(DetermineIfFailedOrCanceled(*transferContext->handle));
+                    handle->UpdateStatus(DetermineIfFailedOrCanceled(*handle));
                 }
+                TriggerTransferStatusUpdatedCallback(handle);
             }
-
-            TriggerTransferStatusUpdatedCallback(transferContext->handle);
+            partState->SetDownloadPartStream(nullptr);
         }
 
         void TransferManager::WaitForCancellationAndAbortUpload(const std::shared_ptr<TransferHandle>& canceledHandle)
         {
+            AWS_LOGSTREAM_TRACE(CLASS_TAG, "Transfer handle [" << canceledHandle->GetId()
+                    << "] Waiting on handle to abort upload. In Bucket: ["
+                    << canceledHandle->GetBucketName() << "] with Key: [" << canceledHandle->GetKey()
+                    << "] with Upload ID: [" << canceledHandle->GetMultiPartId() << "].");
+
             canceledHandle->WaitUntilFinished();
+            AWS_LOGSTREAM_TRACE(CLASS_TAG, "Transfer handle [" << canceledHandle->GetId()
+                    << "] Finished waiting on handle. In Bucket: ["
+                    << canceledHandle->GetBucketName() << "] with Key: [" << canceledHandle->GetKey()
+                    << "] with Upload ID: [" << canceledHandle->GetMultiPartId() << "].");
             if (canceledHandle->GetStatus() == TransferStatus::CANCELED)
             {
                 Aws::S3::Model::AbortMultipartUploadRequest abortMultipartUploadRequest;
+                abortMultipartUploadRequest.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
                 abortMultipartUploadRequest.WithBucket(canceledHandle->GetBucketName())
                     .WithKey(canceledHandle->GetKey())
                     .WithUploadId(canceledHandle->GetMultiPartId());
@@ -825,14 +952,32 @@ namespace Aws
                 auto abortOutcome = m_transferConfig.s3Client->AbortMultipartUpload(abortMultipartUploadRequest);
                 if (abortOutcome.IsSuccess())
                 {
+                    AWS_LOGSTREAM_INFO(CLASS_TAG, "Transfer handle [" << canceledHandle->GetId() <<
+                            "] Successfully aborted multi-part upload. In Bucket: ["
+                            << canceledHandle->GetBucketName() << "] with Key: [" << canceledHandle->GetKey()
+                            << "] with Upload ID: [" << canceledHandle->GetMultiPartId() << "].");
                     canceledHandle->UpdateStatus(TransferStatus::ABORTED);
                     TriggerTransferStatusUpdatedCallback(canceledHandle);
                 }
                 else
                 {
+                    AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << canceledHandle->GetId()
+                            << "] Failed to complete multi-part upload. In Bucket: ["
+                            << canceledHandle->GetBucketName() << "] with Key: [" << canceledHandle->GetKey()
+                            << "] with Upload ID: [" << canceledHandle->GetMultiPartId() << "]. "
+                            << abortOutcome.GetError());
+
                     canceledHandle->SetError(abortOutcome.GetError());
                     TriggerErrorCallback(canceledHandle, abortOutcome.GetError());
                 }
+            }
+            else
+            {
+                AWS_LOGSTREAM_TRACE(CLASS_TAG, "Transfer handle [" << canceledHandle->GetId()
+                        << "] Status changed to " << canceledHandle->GetStatus()
+                        << " after waiting for cancel status. In Bucket: ["
+                        << canceledHandle->GetBucketName() << "] with Key: [" << canceledHandle->GetKey()
+                        << "] with Upload ID: [" << canceledHandle->GetMultiPartId() << "].");
             }
         }
 
@@ -843,17 +988,24 @@ namespace Aws
             auto handler = [self](const Aws::S3::S3Client* client, const Aws::S3::Model::ListObjectsV2Request& request, const Aws::S3::Model::ListObjectsV2Outcome& outcome,
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { self->HandleListObjectsResponse(client, request, outcome, context); };
 
+            auto downloadContext = std::static_pointer_cast<const DownloadDirectoryContext>(context);
+            const auto& directory = downloadContext->rootDirectory;
+            const auto& prefix = downloadContext->prefix;
+
             if (outcome.IsSuccess())
             {
                 Aws::S3::Model::ListObjectsV2Request requestCpy = request;
-                std::shared_ptr<const DownloadDirectoryContext> downloadContext = (const std::shared_ptr<const DownloadDirectoryContext>&)context;
-                auto directory = downloadContext->rootDirectory;
-                auto prefix = downloadContext->prefix;
 
                 auto& result = outcome.GetResult();
+
+                AWS_LOGSTREAM_TRACE(CLASS_TAG, "Listing objects succeeded for bucket: " << directory <<
+                        " with prefix: " << prefix << ". Number of keys received: " << result.GetContents().size());
+
                 //if it was truncated, we don't care on this pass anyways. Just go ahead and kick off another list objects and will handle it when it finishes.
                 if (result.GetIsTruncated())
                 {
+                    AWS_LOGSTREAM_TRACE(CLASS_TAG, "Listing objects response has a continuation token for bucket: "
+                            << directory << " with prefix: " << prefix << ". Getting the next set of results.");
                     requestCpy.SetContinuationToken(result.GetNextContinuationToken());
                     m_transferConfig.s3Client->ListObjectsV2Async(requestCpy, handler, context);
                 }
@@ -862,22 +1014,24 @@ namespace Aws
                 // take the new prefix and call list again. if it's an object key, go ahead and initiate download.
                 for (auto& content : result.GetContents())
                 {
-                    if (content.GetSize() <= 0 && content.GetKey() != request.GetPrefix())
-                    {
-                        Aws::FileSystem::CreateDirectoryIfNotExists(DetermineFilePath(directory, prefix, content.GetKey()).c_str());
-                        requestCpy.SetPrefix(content.GetKey());
-                        m_transferConfig.s3Client->ListObjectsV2Async(requestCpy, handler, context);
-                    }
-                    //this is our fixed point in the algorithm. eventually, everything will return an object.
-                    else if (content.GetSize() > 0)
+                    if (!IsS3KeyPrefix(content.GetKey()))
                     {
                         Aws::String fileName = DetermineFilePath(downloadContext->rootDirectory, downloadContext->prefix, content.GetKey());
+                        auto lastDelimter = fileName.find_last_of(Aws::FileSystem::PATH_DELIM);
+                        if (lastDelimter != std::string::npos)
+                        {
+                            Aws::FileSystem::CreateDirectoryIfNotExists(fileName.substr(0, lastDelimter).c_str(), true/*create parent dirs*/);
+                        }
+                        AWS_LOGSTREAM_INFO(CLASS_TAG, "Initiating download of key: [" << content.GetKey() <<
+                                "] in bucket: [" << directory << "] to destination file: [" << fileName << "]");
                         m_transferConfig.transferInitiatedCallback(this, DownloadFile(request.GetBucket(), content.GetKey(), fileName));
                     }
                 }
             }
             else
             {
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Listing objects failed for bucket: " << directory << " with prefix: "
+                        << prefix << ". Error message: " << outcome.GetError());
                 //notify user if list objects failed.
                 if (m_transferConfig.errorCallback)
                 {
@@ -901,7 +1055,7 @@ namespace Aws
             char delimiter[] = { Aws::FileSystem::PATH_DELIM, 0 };
             Aws::Utils::StringUtils::Replace(shortenedFileName, "/", delimiter);
             Aws::StringStream ss;
-            ss << directory << delimiter << shortenedFileName;
+            ss << directory << shortenedFileName;
 
             return ss.str();
         }
@@ -963,17 +1117,23 @@ namespace Aws
             handle->SetMetadata(metadata);
             handle->SetContext(context);
 
-            if (!fileStream->good()) 
+            if (!fileStream->good())
             {
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Failed to read from input stream to upload file to bucket: " <<
+                        bucketName << " with key: " << keyName);
                 handle->SetError(Aws::Client::AWSError<Aws::Client::CoreErrors>(static_cast<Aws::Client::CoreErrors>(Aws::S3::S3Errors::NO_SUCH_UPLOAD), "NoSuchUpload", "The requested file could not be opened.", false));
                 handle->UpdateStatus(Aws::Transfer::TransferStatus::FAILED);
                 TriggerTransferStatusUpdatedCallback(handle);
                 return handle;
             }
 
+            AWS_LOGSTREAM_TRACE(CLASS_TAG, "Seeking input stream to determine content-length to upload file to bucket: "
+                    << bucketName << " with key: " << keyName);
             fileStream->seekg(0, std::ios_base::end);
             size_t length = static_cast<size_t>(fileStream->tellg());
             fileStream->seekg(0, std::ios_base::beg);
+            AWS_LOGSTREAM_TRACE(CLASS_TAG, "Setting content-length to " << length << " bytes. To upload file to bucket: "
+                    << bucketName << " with key: " << keyName);
 
             handle->SetBytesTotalSize(length);
             return handle;
@@ -990,6 +1150,7 @@ namespace Aws
             auto self = shared_from_this();
             if (MultipartUploadSupported(handle->GetBytesTotalSize()))
             {
+                AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle [" << handle->GetId() << "] Scheduling a multi-part upload.");
                 m_transferConfig.transferExecutor->Submit([self, handle, fileStream]
                     {
                         if (fileStream != nullptr)
@@ -1000,7 +1161,18 @@ namespace Aws
             }
             else
             {
-                m_transferConfig.transferExecutor->Submit([self, handle, fileStream] { if (fileStream != nullptr) self->DoSinglePartUpload(fileStream, handle); else self->DoSinglePartUpload(handle); });
+                AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Transfer handle [" << handle->GetId() << "] Scheduling a single-part upload.");
+                m_transferConfig.transferExecutor->Submit([self, handle, fileStream]
+                    {
+                        if (fileStream != nullptr)
+                        {
+                            self->DoSinglePartUpload(fileStream, handle);
+                        }
+                        else
+                        {
+                            self->DoSinglePartUpload(handle);
+                        }
+                    });
             }
             return handle;
         }

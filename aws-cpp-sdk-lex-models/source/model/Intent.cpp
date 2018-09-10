@@ -34,14 +34,14 @@ Intent::Intent() :
 {
 }
 
-Intent::Intent(const JsonValue& jsonValue) : 
+Intent::Intent(JsonView jsonValue) : 
     m_intentNameHasBeenSet(false),
     m_intentVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Intent& Intent::operator =(const JsonValue& jsonValue)
+Intent& Intent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("intentName"))
   {

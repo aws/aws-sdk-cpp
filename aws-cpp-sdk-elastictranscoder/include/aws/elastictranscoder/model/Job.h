@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ElasticTranscoder
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     Job();
-    Job(const Aws::Utils::Json::JsonValue& jsonValue);
-    Job& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Job(Aws::Utils::Json::JsonView jsonValue);
+    Job& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

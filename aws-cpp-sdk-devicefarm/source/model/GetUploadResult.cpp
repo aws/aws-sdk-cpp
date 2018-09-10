@@ -37,7 +37,7 @@ GetUploadResult::GetUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 GetUploadResult& GetUploadResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("upload"))
   {
     m_upload = jsonValue.GetObject("upload");

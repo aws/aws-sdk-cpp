@@ -37,7 +37,7 @@ DeregisterTaskDefinitionResult::DeregisterTaskDefinitionResult(const Aws::Amazon
 
 DeregisterTaskDefinitionResult& DeregisterTaskDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("taskDefinition"))
   {
     m_taskDefinition = jsonValue.GetObject("taskDefinition");

@@ -52,7 +52,7 @@ Aws::String CompareFacesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CompareFacesRequest::GetRequestSpecificHeaders() const

@@ -47,12 +47,12 @@ namespace Model
 
 
     /**
-     * The bucket policy as a JSON document.
+     * <p>The bucket policy as a JSON document.</p>
      */
     inline Aws::IOStream& GetPolicy() { return m_policy.GetUnderlyingStream(); }
 
     /**
-     * The bucket policy as a JSON document.
+     * <p>The bucket policy as a JSON document.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_policy = Aws::Utils::Stream::ResponseStream(body); }
     

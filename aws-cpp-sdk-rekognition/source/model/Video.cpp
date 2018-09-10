@@ -33,13 +33,13 @@ Video::Video() :
 {
 }
 
-Video::Video(const JsonValue& jsonValue) : 
+Video::Video(JsonView jsonValue) : 
     m_s3ObjectHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Video& Video::operator =(const JsonValue& jsonValue)
+Video& Video::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3Object"))
   {

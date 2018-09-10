@@ -96,7 +96,7 @@ Aws::String SignUpRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SignUpRequest::GetRequestSpecificHeaders() const

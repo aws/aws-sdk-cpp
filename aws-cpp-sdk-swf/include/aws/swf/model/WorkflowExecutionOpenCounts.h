@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SWF
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     WorkflowExecutionOpenCounts();
-    WorkflowExecutionOpenCounts(const Aws::Utils::Json::JsonValue& jsonValue);
-    WorkflowExecutionOpenCounts& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    WorkflowExecutionOpenCounts(Aws::Utils::Json::JsonView jsonValue);
+    WorkflowExecutionOpenCounts& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

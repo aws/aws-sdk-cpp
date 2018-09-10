@@ -38,7 +38,7 @@ Aws::String InitiateJobRequest::SerializePayload() const
    payload = m_jobParameters.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

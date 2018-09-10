@@ -37,7 +37,7 @@ GetWebACLForResourceResult::GetWebACLForResourceResult(const Aws::AmazonWebServi
 
 GetWebACLForResourceResult& GetWebACLForResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WebACLSummary"))
   {
     m_webACLSummary = jsonValue.GetObject("WebACLSummary");

@@ -34,14 +34,14 @@ GameProperty::GameProperty() :
 {
 }
 
-GameProperty::GameProperty(const JsonValue& jsonValue) : 
+GameProperty::GameProperty(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-GameProperty& GameProperty::operator =(const JsonValue& jsonValue)
+GameProperty& GameProperty::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

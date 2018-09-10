@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 CreateOriginEndpointRequest::CreateOriginEndpointRequest() : 
     m_channelIdHasBeenSet(false),
+    m_cmafPackageHasBeenSet(false),
     m_dashPackageHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_hlsPackageHasBeenSet(false),
@@ -45,6 +46,12 @@ Aws::String CreateOriginEndpointRequest::SerializePayload() const
   if(m_channelIdHasBeenSet)
   {
    payload.WithString("channelId", m_channelId);
+
+  }
+
+  if(m_cmafPackageHasBeenSet)
+  {
+   payload.WithObject("cmafPackage", m_cmafPackage.Jsonize());
 
   }
 
@@ -107,7 +114,7 @@ Aws::String CreateOriginEndpointRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

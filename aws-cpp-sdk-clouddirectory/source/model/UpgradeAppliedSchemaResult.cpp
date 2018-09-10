@@ -37,7 +37,7 @@ UpgradeAppliedSchemaResult::UpgradeAppliedSchemaResult(const Aws::AmazonWebServi
 
 UpgradeAppliedSchemaResult& UpgradeAppliedSchemaResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UpgradedSchemaArn"))
   {
     m_upgradedSchemaArn = jsonValue.GetString("UpgradedSchemaArn");

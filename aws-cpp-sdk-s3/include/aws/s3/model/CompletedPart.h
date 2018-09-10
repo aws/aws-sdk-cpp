@@ -43,56 +43,56 @@ namespace Model
 
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline CompletedPart& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline CompletedPart& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
-     * Entity tag returned when the part was uploaded.
+     * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline CompletedPart& WithETag(const char* value) { SetETag(value); return *this;}
 
 
     /**
-     * Part number that identifies the part. This is a positive integer between 1 and
-     * 10,000.
+     * <p>Part number that identifies the part. This is a positive integer between 1
+     * and 10,000.</p>
      */
     inline int GetPartNumber() const{ return m_partNumber; }
 
     /**
-     * Part number that identifies the part. This is a positive integer between 1 and
-     * 10,000.
+     * <p>Part number that identifies the part. This is a positive integer between 1
+     * and 10,000.</p>
      */
     inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
 
     /**
-     * Part number that identifies the part. This is a positive integer between 1 and
-     * 10,000.
+     * <p>Part number that identifies the part. This is a positive integer between 1
+     * and 10,000.</p>
      */
     inline CompletedPart& WithPartNumber(int value) { SetPartNumber(value); return *this;}
 

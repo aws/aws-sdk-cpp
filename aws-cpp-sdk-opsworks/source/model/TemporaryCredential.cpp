@@ -37,7 +37,7 @@ TemporaryCredential::TemporaryCredential() :
 {
 }
 
-TemporaryCredential::TemporaryCredential(const JsonValue& jsonValue) : 
+TemporaryCredential::TemporaryCredential(JsonView jsonValue) : 
     m_usernameHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_validForInMinutes(0),
@@ -47,7 +47,7 @@ TemporaryCredential::TemporaryCredential(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TemporaryCredential& TemporaryCredential::operator =(const JsonValue& jsonValue)
+TemporaryCredential& TemporaryCredential::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Username"))
   {

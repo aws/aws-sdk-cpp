@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     InstanceAssociationOutputLocation();
-    InstanceAssociationOutputLocation(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstanceAssociationOutputLocation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstanceAssociationOutputLocation(Aws::Utils::Json::JsonView jsonValue);
+    InstanceAssociationOutputLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

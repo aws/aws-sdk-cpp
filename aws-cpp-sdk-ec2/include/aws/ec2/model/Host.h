@@ -22,7 +22,9 @@
 #include <aws/ec2/model/HostProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/AllocationState.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ec2/model/HostInstance.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -144,8 +146,8 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -153,8 +155,8 @@ namespace Model
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -162,8 +164,8 @@ namespace Model
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -171,8 +173,8 @@ namespace Model
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -180,8 +182,8 @@ namespace Model
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -189,8 +191,8 @@ namespace Model
     inline Host& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -198,8 +200,8 @@ namespace Model
     inline Host& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
-     * request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure idempotency of
+     * the request. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -380,6 +382,94 @@ namespace Model
      */
     inline Host& WithState(AllocationState&& value) { SetState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The time that the Dedicated Host was allocated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetAllocationTime() const{ return m_allocationTime; }
+
+    /**
+     * <p>The time that the Dedicated Host was allocated.</p>
+     */
+    inline void SetAllocationTime(const Aws::Utils::DateTime& value) { m_allocationTimeHasBeenSet = true; m_allocationTime = value; }
+
+    /**
+     * <p>The time that the Dedicated Host was allocated.</p>
+     */
+    inline void SetAllocationTime(Aws::Utils::DateTime&& value) { m_allocationTimeHasBeenSet = true; m_allocationTime = std::move(value); }
+
+    /**
+     * <p>The time that the Dedicated Host was allocated.</p>
+     */
+    inline Host& WithAllocationTime(const Aws::Utils::DateTime& value) { SetAllocationTime(value); return *this;}
+
+    /**
+     * <p>The time that the Dedicated Host was allocated.</p>
+     */
+    inline Host& WithAllocationTime(Aws::Utils::DateTime&& value) { SetAllocationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time that the Dedicated Host was released.</p>
+     */
+    inline const Aws::Utils::DateTime& GetReleaseTime() const{ return m_releaseTime; }
+
+    /**
+     * <p>The time that the Dedicated Host was released.</p>
+     */
+    inline void SetReleaseTime(const Aws::Utils::DateTime& value) { m_releaseTimeHasBeenSet = true; m_releaseTime = value; }
+
+    /**
+     * <p>The time that the Dedicated Host was released.</p>
+     */
+    inline void SetReleaseTime(Aws::Utils::DateTime&& value) { m_releaseTimeHasBeenSet = true; m_releaseTime = std::move(value); }
+
+    /**
+     * <p>The time that the Dedicated Host was released.</p>
+     */
+    inline Host& WithReleaseTime(const Aws::Utils::DateTime& value) { SetReleaseTime(value); return *this;}
+
+    /**
+     * <p>The time that the Dedicated Host was released.</p>
+     */
+    inline Host& WithReleaseTime(Aws::Utils::DateTime&& value) { SetReleaseTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline Host& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline Host& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline Host& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to the Dedicated Host.</p>
+     */
+    inline Host& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     AutoPlacement m_autoPlacement;
@@ -408,6 +498,15 @@ namespace Model
 
     AllocationState m_state;
     bool m_stateHasBeenSet;
+
+    Aws::Utils::DateTime m_allocationTime;
+    bool m_allocationTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_releaseTime;
+    bool m_releaseTimeHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

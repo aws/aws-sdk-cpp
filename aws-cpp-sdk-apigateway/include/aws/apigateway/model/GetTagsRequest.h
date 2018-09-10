@@ -31,7 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>Gets the Tags collection for a given resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Gets the <a>Tags</a> collection for a given resource.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetTagsRequest">AWS
    * API Reference</a></p>
    */
@@ -52,44 +53,44 @@ namespace Model
 
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged. At present, <a>Stage</a>
-     * is the only taggable resource.</p>
+     * <p>[Required] The ARN of a resource that can be tagged. The resource ARN must be
+     * URL-encoded. At present, <a>Stage</a> is the only taggable resource.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged. At present, <a>Stage</a>
-     * is the only taggable resource.</p>
+     * <p>[Required] The ARN of a resource that can be tagged. The resource ARN must be
+     * URL-encoded. At present, <a>Stage</a> is the only taggable resource.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged. At present, <a>Stage</a>
-     * is the only taggable resource.</p>
+     * <p>[Required] The ARN of a resource that can be tagged. The resource ARN must be
+     * URL-encoded. At present, <a>Stage</a> is the only taggable resource.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged. At present, <a>Stage</a>
-     * is the only taggable resource.</p>
+     * <p>[Required] The ARN of a resource that can be tagged. The resource ARN must be
+     * URL-encoded. At present, <a>Stage</a> is the only taggable resource.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged. At present, <a>Stage</a>
-     * is the only taggable resource.</p>
+     * <p>[Required] The ARN of a resource that can be tagged. The resource ARN must be
+     * URL-encoded. At present, <a>Stage</a> is the only taggable resource.</p>
      */
     inline GetTagsRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged. At present, <a>Stage</a>
-     * is the only taggable resource.</p>
+     * <p>[Required] The ARN of a resource that can be tagged. The resource ARN must be
+     * URL-encoded. At present, <a>Stage</a> is the only taggable resource.</p>
      */
     inline GetTagsRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] The ARN of a resource that can be tagged. At present, <a>Stage</a>
-     * is the only taggable resource.</p>
+     * <p>[Required] The ARN of a resource that can be tagged. The resource ARN must be
+     * URL-encoded. At present, <a>Stage</a> is the only taggable resource.</p>
      */
     inline GetTagsRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
@@ -138,20 +139,20 @@ namespace Model
 
 
     /**
-     * <p>(Not currently supported) The maximum number of returned results per
-     * page.</p>
+     * <p>(Not currently supported) The maximum number of returned results per page.
+     * The default value is 25 and the maximum value is 500.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>(Not currently supported) The maximum number of returned results per
-     * page.</p>
+     * <p>(Not currently supported) The maximum number of returned results per page.
+     * The default value is 25 and the maximum value is 500.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>(Not currently supported) The maximum number of returned results per
-     * page.</p>
+     * <p>(Not currently supported) The maximum number of returned results per page.
+     * The default value is 25 and the maximum value is 500.</p>
      */
     inline GetTagsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

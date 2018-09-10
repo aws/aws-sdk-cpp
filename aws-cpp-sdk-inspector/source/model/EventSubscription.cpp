@@ -35,7 +35,7 @@ EventSubscription::EventSubscription() :
 {
 }
 
-EventSubscription::EventSubscription(const JsonValue& jsonValue) : 
+EventSubscription::EventSubscription(JsonView jsonValue) : 
     m_event(InspectorEvent::NOT_SET),
     m_eventHasBeenSet(false),
     m_subscribedAtHasBeenSet(false)
@@ -43,7 +43,7 @@ EventSubscription::EventSubscription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EventSubscription& EventSubscription::operator =(const JsonValue& jsonValue)
+EventSubscription& EventSubscription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("event"))
   {

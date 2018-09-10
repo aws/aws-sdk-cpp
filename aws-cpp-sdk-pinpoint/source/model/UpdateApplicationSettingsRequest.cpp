@@ -37,7 +37,7 @@ Aws::String UpdateApplicationSettingsRequest::SerializePayload() const
    payload = m_writeApplicationSettingsRequest.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

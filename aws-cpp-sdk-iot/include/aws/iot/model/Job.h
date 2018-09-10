@@ -23,7 +23,6 @@
 #include <aws/iot/model/JobExecutionsRolloutConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/JobProcessDetails.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -33,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -50,8 +50,8 @@ namespace Model
   {
   public:
     Job();
-    Job(const Aws::Utils::Json::JsonValue& jsonValue);
-    Job& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Job(Aws::Utils::Json::JsonView jsonValue);
+    Job& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -214,6 +214,25 @@ namespace Model
      * <code>CANCELED</code>, or <code>COMPLETED</code>. </p>
      */
     inline Job& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Will be <code>true</code> if the job was canceled with the optional
+     * <code>force</code> parameter set to <code>true</code>.</p>
+     */
+    inline bool GetForceCanceled() const{ return m_forceCanceled; }
+
+    /**
+     * <p>Will be <code>true</code> if the job was canceled with the optional
+     * <code>force</code> parameter set to <code>true</code>.</p>
+     */
+    inline void SetForceCanceled(bool value) { m_forceCanceledHasBeenSet = true; m_forceCanceled = value; }
+
+    /**
+     * <p>Will be <code>true</code> if the job was canceled with the optional
+     * <code>force</code> parameter set to <code>true</code>.</p>
+     */
+    inline Job& WithForceCanceled(bool value) { SetForceCanceled(value); return *this;}
 
 
     /**
@@ -484,67 +503,6 @@ namespace Model
      */
     inline Job& WithJobProcessDetails(JobProcessDetails&& value) { SetJobProcessDetails(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The parameters specified for the job document.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDocumentParameters() const{ return m_documentParameters; }
-
-    /**
-     * <p>The parameters specified for the job document.</p>
-     */
-    inline void SetDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_documentParametersHasBeenSet = true; m_documentParameters = value; }
-
-    /**
-     * <p>The parameters specified for the job document.</p>
-     */
-    inline void SetDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_documentParametersHasBeenSet = true; m_documentParameters = std::move(value); }
-
-    /**
-     * <p>The parameters specified for the job document.</p>
-     */
-    inline Job& WithDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetDocumentParameters(value); return *this;}
-
-    /**
-     * <p>The parameters specified for the job document.</p>
-     */
-    inline Job& WithDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetDocumentParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>The parameters specified for the job document.</p>
-     */
-    inline Job& AddDocumentParameters(const Aws::String& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
-
-    /**
-     * <p>The parameters specified for the job document.</p>
-     */
-    inline Job& AddDocumentParameters(Aws::String&& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The parameters specified for the job document.</p>
-     */
-    inline Job& AddDocumentParameters(const Aws::String& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The parameters specified for the job document.</p>
-     */
-    inline Job& AddDocumentParameters(Aws::String&& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The parameters specified for the job document.</p>
-     */
-    inline Job& AddDocumentParameters(const char* key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The parameters specified for the job document.</p>
-     */
-    inline Job& AddDocumentParameters(Aws::String&& key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The parameters specified for the job document.</p>
-     */
-    inline Job& AddDocumentParameters(const char* key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
-
   private:
 
     Aws::String m_jobArn;
@@ -558,6 +516,9 @@ namespace Model
 
     JobStatus m_status;
     bool m_statusHasBeenSet;
+
+    bool m_forceCanceled;
+    bool m_forceCanceledHasBeenSet;
 
     Aws::String m_comment;
     bool m_commentHasBeenSet;
@@ -585,9 +546,6 @@ namespace Model
 
     JobProcessDetails m_jobProcessDetails;
     bool m_jobProcessDetailsHasBeenSet;
-
-    Aws::Map<Aws::String, Aws::String> m_documentParameters;
-    bool m_documentParametersHasBeenSet;
   };
 
 } // namespace Model

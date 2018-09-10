@@ -62,7 +62,8 @@ DBSnapshot::DBSnapshot() :
     m_dBSnapshotArnHasBeenSet(false),
     m_timezoneHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_processorFeaturesHasBeenSet(false)
 {
 }
 
@@ -98,7 +99,8 @@ DBSnapshot::DBSnapshot(const XmlNode& xmlNode) :
     m_dBSnapshotArnHasBeenSet(false),
     m_timezoneHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_processorFeaturesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -265,6 +267,18 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
       m_iAMDatabaseAuthenticationEnabled = StringUtils::ConvertToBool(StringUtils::Trim(iAMDatabaseAuthenticationEnabledNode.GetText().c_str()).c_str());
       m_iAMDatabaseAuthenticationEnabledHasBeenSet = true;
     }
+    XmlNode processorFeaturesNode = resultNode.FirstChild("ProcessorFeatures");
+    if(!processorFeaturesNode.IsNull())
+    {
+      XmlNode processorFeaturesMember = processorFeaturesNode.FirstChild("ProcessorFeature");
+      while(!processorFeaturesMember.IsNull())
+      {
+        m_processorFeatures.push_back(processorFeaturesMember);
+        processorFeaturesMember = processorFeaturesMember.NextNode("ProcessorFeature");
+      }
+
+      m_processorFeaturesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -402,6 +416,17 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
   }
 
+  if(m_processorFeaturesHasBeenSet)
+  {
+      unsigned processorFeaturesIdx = 1;
+      for(auto& item : m_processorFeatures)
+      {
+        Aws::StringStream processorFeaturesSs;
+        processorFeaturesSs << location << index << locationValue << ".ProcessorFeature." << processorFeaturesIdx++;
+        item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
+      }
+  }
+
 }
 
 void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -509,6 +534,16 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_iAMDatabaseAuthenticationEnabledHasBeenSet)
   {
       oStream << location << ".IAMDatabaseAuthenticationEnabled=" << std::boolalpha << m_iAMDatabaseAuthenticationEnabled << "&";
+  }
+  if(m_processorFeaturesHasBeenSet)
+  {
+      unsigned processorFeaturesIdx = 1;
+      for(auto& item : m_processorFeatures)
+      {
+        Aws::StringStream processorFeaturesSs;
+        processorFeaturesSs << location <<  ".ProcessorFeature." << processorFeaturesIdx++;
+        item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
+      }
   }
 }
 

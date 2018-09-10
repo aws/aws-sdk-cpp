@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MTurk
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     PolicyParameter();
-    PolicyParameter(const Aws::Utils::Json::JsonValue& jsonValue);
-    PolicyParameter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PolicyParameter(Aws::Utils::Json::JsonView jsonValue);
+    PolicyParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

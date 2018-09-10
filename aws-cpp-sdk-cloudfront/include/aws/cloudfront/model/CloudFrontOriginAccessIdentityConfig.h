@@ -36,7 +36,7 @@ namespace Model
    * <p>Origin access identity configuration. Send a <code>GET</code> request to the
    * <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code>
    * resource. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CloudFrontOriginAccessIdentityConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CloudFrontOriginAccessIdentityConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentityConfig

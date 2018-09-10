@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     SerDeInfo();
-    SerDeInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    SerDeInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SerDeInfo(Aws::Utils::Json::JsonView jsonValue);
+    SerDeInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -128,62 +129,62 @@ namespace Model
 
 
     /**
-     * <p>A list of initialization parameters for the SerDe, in key-value form.</p>
+     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>A list of initialization parameters for the SerDe, in key-value form.</p>
+     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>A list of initialization parameters for the SerDe, in key-value form.</p>
+     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>A list of initialization parameters for the SerDe, in key-value form.</p>
+     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline SerDeInfo& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>A list of initialization parameters for the SerDe, in key-value form.</p>
+     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline SerDeInfo& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A list of initialization parameters for the SerDe, in key-value form.</p>
+     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline SerDeInfo& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
     /**
-     * <p>A list of initialization parameters for the SerDe, in key-value form.</p>
+     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline SerDeInfo& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of initialization parameters for the SerDe, in key-value form.</p>
+     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline SerDeInfo& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of initialization parameters for the SerDe, in key-value form.</p>
+     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline SerDeInfo& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A list of initialization parameters for the SerDe, in key-value form.</p>
+     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline SerDeInfo& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A list of initialization parameters for the SerDe, in key-value form.</p>
+     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline SerDeInfo& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A list of initialization parameters for the SerDe, in key-value form.</p>
+     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline SerDeInfo& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

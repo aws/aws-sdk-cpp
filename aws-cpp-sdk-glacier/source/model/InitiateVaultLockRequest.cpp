@@ -38,7 +38,7 @@ Aws::String InitiateVaultLockRequest::SerializePayload() const
    payload = m_policy.Jsonize();
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

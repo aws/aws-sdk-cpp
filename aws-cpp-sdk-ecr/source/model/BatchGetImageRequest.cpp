@@ -68,7 +68,7 @@ Aws::String BatchGetImageRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection BatchGetImageRequest::GetRequestSpecificHeaders() const

@@ -35,14 +35,14 @@ Image::Image() :
 {
 }
 
-Image::Image(const JsonValue& jsonValue) : 
+Image::Image(JsonView jsonValue) : 
     m_bytesHasBeenSet(false),
     m_s3ObjectHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Image& Image::operator =(const JsonValue& jsonValue)
+Image& Image::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Bytes"))
   {

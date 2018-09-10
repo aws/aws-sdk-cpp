@@ -10,7 +10,6 @@
 
 using namespace Aws;
 using namespace Aws::Utils;
-using namespace Aws::Utils::Crypto;
 using namespace Aws::KMS;
 using namespace Aws::KMS::Model;
 using namespace Aws::Client;
@@ -35,7 +34,7 @@ namespace Aws
             {
             }
 
-            void KMSEncryptionMaterials::EncryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
+            CryptoOutcome KMSEncryptionMaterials::EncryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
             {
                 EncryptRequest request;
                 request.SetKeyId(m_customerMasterKeyID);
@@ -51,37 +50,39 @@ namespace Aws
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "KMS encryption call not successful: "
                         << outcome.GetError().GetExceptionName() << " : " << outcome.GetError().GetMessage());
                     //return without changing the encrypted content encryption key
-                    return;
+                    return CryptoOutcome(AWSError<CryptoErrors>(CryptoErrors::ENCRYPT_CONTENT_ENCRYPTION_KEY_FAILED, "EncryptContentEncryptionKeyFailed", "Failed to encrypt content encryption key(CEK)", false/*not retryable*/));
                 }
 
                 EncryptResult result = outcome.GetResult();
                 contentCryptoMaterial.SetKeyWrapAlgorithm(KeyWrapAlgorithm::KMS);
                 contentCryptoMaterial.AddMaterialsDescription(cmkID_Identifier, m_customerMasterKeyID);
                 contentCryptoMaterial.SetEncryptedContentEncryptionKey(result.GetCiphertextBlob());
+                return CryptoOutcome(Aws::NoResult());
             }
 
-            void KMSEncryptionMaterials::DecryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
+            CryptoOutcome KMSEncryptionMaterials::DecryptCEK(ContentCryptoMaterial & contentCryptoMaterial)
             {
+                auto errorOutcome = CryptoOutcome(AWSError<CryptoErrors>(CryptoErrors::DECRYPT_CONTENT_ENCRYPTION_KEY_FAILED, "DecryptContentEncryptionKeyFailed", "Failed to decrypt content encryption key(CEK)", false/*not retryable*/));
                 if (contentCryptoMaterial.GetKeyWrapAlgorithm() != KeyWrapAlgorithm::KMS)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "The KeyWrapAlgorithm is not KMS during decryption, therefore the"
                         << " current encryption materials can not decrypt the content encryption key.");
                     //return without changing the encrypted content encryption key
-                    return;
+                    return errorOutcome;
                 }
                 auto materialDescription = contentCryptoMaterial.GetMaterialsDescription();
                 auto iterator = materialDescription.find(cmkID_Identifier);
                 if (iterator != materialDescription.end() && iterator->second != m_customerMasterKeyID)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Materials Description does not match encryption context.");
-                    return;
+                    return errorOutcome;
                 }
 
                 auto encryptedContentEncryptionKey = contentCryptoMaterial.GetEncryptedContentEncryptionKey();
                 if (encryptedContentEncryptionKey.GetLength() == 0)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Encrypted content encryption key does not exist.");
-                    return;
+                    return errorOutcome;
                 }
 
                 DecryptRequest request;
@@ -93,7 +94,7 @@ namespace Aws
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "KMS decryption not successful: "
                         << outcome.GetError().GetExceptionName() << outcome.GetError().GetMessage());
-                    return;
+                    return errorOutcome;
                 }
 
                 DecryptResult result = outcome.GetResult();
@@ -101,7 +102,9 @@ namespace Aws
                 if (contentCryptoMaterial.GetContentEncryptionKey().GetLength() == 0u)
                 {
                     AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Content Encryption Key could not be decrypted.");
+                    return errorOutcome;
                 }
+                return CryptoOutcome(Aws::NoResult());
             }
 
         }//namespace Materials

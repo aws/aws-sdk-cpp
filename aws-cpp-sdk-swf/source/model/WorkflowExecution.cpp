@@ -34,14 +34,14 @@ WorkflowExecution::WorkflowExecution() :
 {
 }
 
-WorkflowExecution::WorkflowExecution(const JsonValue& jsonValue) : 
+WorkflowExecution::WorkflowExecution(JsonView jsonValue) : 
     m_workflowIdHasBeenSet(false),
     m_runIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-WorkflowExecution& WorkflowExecution::operator =(const JsonValue& jsonValue)
+WorkflowExecution& WorkflowExecution::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowId"))
   {

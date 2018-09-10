@@ -89,32 +89,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the service-specific credential. <code>Active</code> means the
-     * key is valid for API calls, while <code>Inactive</code> means it is not.</p>
+     * <p>The status of the service-specific credential. <code>Active</code> means that
+     * the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
     inline const StatusType& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the service-specific credential. <code>Active</code> means the
-     * key is valid for API calls, while <code>Inactive</code> means it is not.</p>
+     * <p>The status of the service-specific credential. <code>Active</code> means that
+     * the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the service-specific credential. <code>Active</code> means the
-     * key is valid for API calls, while <code>Inactive</code> means it is not.</p>
+     * <p>The status of the service-specific credential. <code>Active</code> means that
+     * the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
     inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the service-specific credential. <code>Active</code> means the
-     * key is valid for API calls, while <code>Inactive</code> means it is not.</p>
+     * <p>The status of the service-specific credential. <code>Active</code> means that
+     * the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
     inline ServiceSpecificCredentialMetadata& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the service-specific credential. <code>Active</code> means the
-     * key is valid for API calls, while <code>Inactive</code> means it is not.</p>
+     * <p>The status of the service-specific credential. <code>Active</code> means that
+     * the key is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
     inline ServiceSpecificCredentialMetadata& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 

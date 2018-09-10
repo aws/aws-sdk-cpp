@@ -37,10 +37,10 @@ DescribeVirtualGatewaysResult::DescribeVirtualGatewaysResult(const Aws::AmazonWe
 
 DescribeVirtualGatewaysResult& DescribeVirtualGatewaysResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("virtualGateways"))
   {
-    Array<JsonValue> virtualGatewaysJsonList = jsonValue.GetArray("virtualGateways");
+    Array<JsonView> virtualGatewaysJsonList = jsonValue.GetArray("virtualGateways");
     for(unsigned virtualGatewaysIndex = 0; virtualGatewaysIndex < virtualGatewaysJsonList.GetLength(); ++virtualGatewaysIndex)
     {
       m_virtualGateways.push_back(virtualGatewaysJsonList[virtualGatewaysIndex].AsObject());

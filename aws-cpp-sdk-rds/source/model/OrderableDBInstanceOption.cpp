@@ -64,7 +64,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_minIopsPerGib(0.0),
     m_minIopsPerGibHasBeenSet(false),
     m_maxIopsPerGib(0.0),
-    m_maxIopsPerGibHasBeenSet(false)
+    m_maxIopsPerGibHasBeenSet(false),
+    m_availableProcessorFeaturesHasBeenSet(false),
+    m_supportedEngineModesHasBeenSet(false)
 {
 }
 
@@ -102,7 +104,9 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_minIopsPerGib(0.0),
     m_minIopsPerGibHasBeenSet(false),
     m_maxIopsPerGib(0.0),
-    m_maxIopsPerGibHasBeenSet(false)
+    m_maxIopsPerGibHasBeenSet(false),
+    m_availableProcessorFeaturesHasBeenSet(false),
+    m_supportedEngineModesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -239,6 +243,30 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
       m_maxIopsPerGib = StringUtils::ConvertToDouble(StringUtils::Trim(maxIopsPerGibNode.GetText().c_str()).c_str());
       m_maxIopsPerGibHasBeenSet = true;
     }
+    XmlNode availableProcessorFeaturesNode = resultNode.FirstChild("AvailableProcessorFeatures");
+    if(!availableProcessorFeaturesNode.IsNull())
+    {
+      XmlNode availableProcessorFeaturesMember = availableProcessorFeaturesNode.FirstChild("AvailableProcessorFeature");
+      while(!availableProcessorFeaturesMember.IsNull())
+      {
+        m_availableProcessorFeatures.push_back(availableProcessorFeaturesMember);
+        availableProcessorFeaturesMember = availableProcessorFeaturesMember.NextNode("AvailableProcessorFeature");
+      }
+
+      m_availableProcessorFeaturesHasBeenSet = true;
+    }
+    XmlNode supportedEngineModesNode = resultNode.FirstChild("SupportedEngineModes");
+    if(!supportedEngineModesNode.IsNull())
+    {
+      XmlNode supportedEngineModesMember = supportedEngineModesNode.FirstChild("member");
+      while(!supportedEngineModesMember.IsNull())
+      {
+        m_supportedEngineModes.push_back(StringUtils::Trim(supportedEngineModesMember.GetText().c_str()));
+        supportedEngineModesMember = supportedEngineModesMember.NextNode("member");
+      }
+
+      m_supportedEngineModesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -352,6 +380,26 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
         oStream << location << index << locationValue << ".MaxIopsPerGib=" << StringUtils::URLEncode(m_maxIopsPerGib) << "&";
   }
 
+  if(m_availableProcessorFeaturesHasBeenSet)
+  {
+      unsigned availableProcessorFeaturesIdx = 1;
+      for(auto& item : m_availableProcessorFeatures)
+      {
+        Aws::StringStream availableProcessorFeaturesSs;
+        availableProcessorFeaturesSs << location << index << locationValue << ".AvailableProcessorFeature." << availableProcessorFeaturesIdx++;
+        item.OutputToStream(oStream, availableProcessorFeaturesSs.str().c_str());
+      }
+  }
+
+  if(m_supportedEngineModesHasBeenSet)
+  {
+      unsigned supportedEngineModesIdx = 1;
+      for(auto& item : m_supportedEngineModes)
+      {
+        oStream << location << index << locationValue << ".SupportedEngineModes.member." << supportedEngineModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -441,6 +489,24 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_maxIopsPerGibHasBeenSet)
   {
         oStream << location << ".MaxIopsPerGib=" << StringUtils::URLEncode(m_maxIopsPerGib) << "&";
+  }
+  if(m_availableProcessorFeaturesHasBeenSet)
+  {
+      unsigned availableProcessorFeaturesIdx = 1;
+      for(auto& item : m_availableProcessorFeatures)
+      {
+        Aws::StringStream availableProcessorFeaturesSs;
+        availableProcessorFeaturesSs << location <<  ".AvailableProcessorFeature." << availableProcessorFeaturesIdx++;
+        item.OutputToStream(oStream, availableProcessorFeaturesSs.str().c_str());
+      }
+  }
+  if(m_supportedEngineModesHasBeenSet)
+  {
+      unsigned supportedEngineModesIdx = 1;
+      for(auto& item : m_supportedEngineModes)
+      {
+        oStream << location << ".SupportedEngineModes.member." << supportedEngineModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

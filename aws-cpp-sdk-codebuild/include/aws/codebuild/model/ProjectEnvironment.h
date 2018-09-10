@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeBuild
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     ProjectEnvironment();
-    ProjectEnvironment(const Aws::Utils::Json::JsonValue& jsonValue);
-    ProjectEnvironment& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ProjectEnvironment(Aws::Utils::Json::JsonView jsonValue);
+    ProjectEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -208,58 +209,106 @@ namespace Model
 
 
     /**
-     * <p>If set to true, enables running the Docker daemon inside a Docker container;
-     * otherwise, false or not specified (the default). This value must be set to true
-     * only if this build project will be used to build Docker images, and the
-     * specified build environment image is not one provided by AWS CodeBuild with
-     * Docker support. Otherwise, all associated builds that attempt to interact with
-     * the Docker daemon will fail. Note that you must also start the Docker daemon so
-     * that your builds can interact with it as needed. One way to do this is to
-     * initialize the Docker daemon in the install phase of your build spec by running
-     * the following build commands. (Do not run the following build commands if the
-     * specified build environment image is provided by AWS CodeBuild with Docker
-     * support.)</p> <p> <code>- nohup /usr/local/bin/dockerd
+     * <p>Enables running the Docker daemon inside a Docker container. Set to true only
+     * if the build project is be used to build Docker images, and the specified build
+     * environment image is not provided by AWS CodeBuild with Docker support.
+     * Otherwise, all associated builds that attempt to interact with the Docker daemon
+     * will fail. Note that you must also start the Docker daemon so that builds can
+     * interact with it. One way to do this is to initialize the Docker daemon during
+     * the install phase of your build spec by running the following build commands.
+     * (Do not run the following build commands if the specified build environment
+     * image is provided by AWS CodeBuild with Docker support.)</p> <p>If the operating
+     * system's base image is Ubuntu Linux:</p> <p> <code>- nohup
+     * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
+     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c
+     * "until docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating
+     * system's base image is Alpine Linux, add the <code>-t</code> argument to
+     * <code>timeout</code>:</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo
+     * --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo
      * .; sleep 1; done"</code> </p>
      */
     inline bool GetPrivilegedMode() const{ return m_privilegedMode; }
 
     /**
-     * <p>If set to true, enables running the Docker daemon inside a Docker container;
-     * otherwise, false or not specified (the default). This value must be set to true
-     * only if this build project will be used to build Docker images, and the
-     * specified build environment image is not one provided by AWS CodeBuild with
-     * Docker support. Otherwise, all associated builds that attempt to interact with
-     * the Docker daemon will fail. Note that you must also start the Docker daemon so
-     * that your builds can interact with it as needed. One way to do this is to
-     * initialize the Docker daemon in the install phase of your build spec by running
-     * the following build commands. (Do not run the following build commands if the
-     * specified build environment image is provided by AWS CodeBuild with Docker
-     * support.)</p> <p> <code>- nohup /usr/local/bin/dockerd
+     * <p>Enables running the Docker daemon inside a Docker container. Set to true only
+     * if the build project is be used to build Docker images, and the specified build
+     * environment image is not provided by AWS CodeBuild with Docker support.
+     * Otherwise, all associated builds that attempt to interact with the Docker daemon
+     * will fail. Note that you must also start the Docker daemon so that builds can
+     * interact with it. One way to do this is to initialize the Docker daemon during
+     * the install phase of your build spec by running the following build commands.
+     * (Do not run the following build commands if the specified build environment
+     * image is provided by AWS CodeBuild with Docker support.)</p> <p>If the operating
+     * system's base image is Ubuntu Linux:</p> <p> <code>- nohup
+     * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
+     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c
+     * "until docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating
+     * system's base image is Alpine Linux, add the <code>-t</code> argument to
+     * <code>timeout</code>:</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo
+     * --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo
      * .; sleep 1; done"</code> </p>
      */
     inline void SetPrivilegedMode(bool value) { m_privilegedModeHasBeenSet = true; m_privilegedMode = value; }
 
     /**
-     * <p>If set to true, enables running the Docker daemon inside a Docker container;
-     * otherwise, false or not specified (the default). This value must be set to true
-     * only if this build project will be used to build Docker images, and the
-     * specified build environment image is not one provided by AWS CodeBuild with
-     * Docker support. Otherwise, all associated builds that attempt to interact with
-     * the Docker daemon will fail. Note that you must also start the Docker daemon so
-     * that your builds can interact with it as needed. One way to do this is to
-     * initialize the Docker daemon in the install phase of your build spec by running
-     * the following build commands. (Do not run the following build commands if the
-     * specified build environment image is provided by AWS CodeBuild with Docker
-     * support.)</p> <p> <code>- nohup /usr/local/bin/dockerd
+     * <p>Enables running the Docker daemon inside a Docker container. Set to true only
+     * if the build project is be used to build Docker images, and the specified build
+     * environment image is not provided by AWS CodeBuild with Docker support.
+     * Otherwise, all associated builds that attempt to interact with the Docker daemon
+     * will fail. Note that you must also start the Docker daemon so that builds can
+     * interact with it. One way to do this is to initialize the Docker daemon during
+     * the install phase of your build spec by running the following build commands.
+     * (Do not run the following build commands if the specified build environment
+     * image is provided by AWS CodeBuild with Docker support.)</p> <p>If the operating
+     * system's base image is Ubuntu Linux:</p> <p> <code>- nohup
+     * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
+     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c
+     * "until docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating
+     * system's base image is Alpine Linux, add the <code>-t</code> argument to
+     * <code>timeout</code>:</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=overlay&amp; - timeout -t 15 sh -c "until docker info; do echo
+     * --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo
      * .; sleep 1; done"</code> </p>
      */
     inline ProjectEnvironment& WithPrivilegedMode(bool value) { SetPrivilegedMode(value); return *this;}
+
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline const Aws::String& GetCertificate() const{ return m_certificate; }
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline ProjectEnvironment& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline ProjectEnvironment& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
+
+    /**
+     * <p>The certificate to use with this build project.</p>
+     */
+    inline ProjectEnvironment& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
   private:
 
@@ -277,6 +326,9 @@ namespace Model
 
     bool m_privilegedMode;
     bool m_privilegedModeHasBeenSet;
+
+    Aws::String m_certificate;
+    bool m_certificateHasBeenSet;
   };
 
 } // namespace Model

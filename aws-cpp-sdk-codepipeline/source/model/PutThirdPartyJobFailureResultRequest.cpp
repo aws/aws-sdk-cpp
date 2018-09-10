@@ -51,7 +51,7 @@ Aws::String PutThirdPartyJobFailureResultRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection PutThirdPartyJobFailureResultRequest::GetRequestSpecificHeaders() const

@@ -21,7 +21,9 @@
 #include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
+#include <aws/ecs/model/SchedulingStrategy.h>
 #include <aws/ecs/model/LoadBalancer.h>
+#include <aws/ecs/model/ServiceRegistry.h>
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
 #include <utility>
@@ -105,7 +107,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
@@ -113,7 +115,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
@@ -121,7 +123,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
@@ -129,7 +131,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
@@ -137,7 +139,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
@@ -145,7 +147,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
@@ -153,7 +155,7 @@ namespace Model
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
      * numbers, hyphens, and underscores are allowed. Service names must be unique
      * within a cluster, but you can have similarly named services in multiple clusters
-     * within a region or across multiple regions.</p>
+     * within a Region or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -229,7 +231,14 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
 
@@ -247,7 +256,14 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
 
@@ -265,7 +281,14 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::move(value); }
 
@@ -283,7 +306,14 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline CreateServiceRequest& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
 
@@ -301,7 +331,14 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline CreateServiceRequest& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(std::move(value)); return *this;}
 
@@ -319,7 +356,14 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline CreateServiceRequest& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
 
@@ -337,9 +381,94 @@ namespace Model
      * ARN, the container name (as it appears in a container definition), and the
      * container port to access from the load balancer. When a task from this service
      * is placed on a container instance, the container instance and port combination
-     * is registered as a target in the target group specified here.</p>
+     * is registered as a target in the target group specified here.</p> <p>Services
+     * with tasks that use the <code>awsvpc</code> network mode (for example, those
+     * with the Fargate launch type) only support Application Load Balancers and
+     * Network Load Balancers; Classic Load Balancers are not supported. Also, when you
+     * create any target groups for these services, you must choose <code>ip</code> as
+     * the target type, not <code>instance</code>, because tasks that use the
+     * <code>awsvpc</code> network mode are associated with an elastic network
+     * interface, not an Amazon EC2 instance.</p>
      */
     inline CreateServiceRequest& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
+     */
+    inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
+
+    /**
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
+     */
+    inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
+
+    /**
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
+     */
+    inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
+
+    /**
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
+     */
+    inline CreateServiceRequest& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
+
+    /**
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
+     */
+    inline CreateServiceRequest& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
+
+    /**
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
+     */
+    inline CreateServiceRequest& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
+
+    /**
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p> <note> <p>Service discovery is supported for Fargate tasks if
+     * using platform version v1.1.0 or later. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a>.</p> </note>
+     */
+    inline CreateServiceRequest& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -362,44 +491,44 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline CreateServiceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline CreateServiceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. Up to 32 ASCII characters are allowed.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. Up to 32 ASCII characters are allowed.</p>
      */
     inline CreateServiceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -826,9 +955,9 @@ namespace Model
      * <p>The period of time, in seconds, that the Amazon ECS service scheduler should
      * ignore unhealthy Elastic Load Balancing target health checks after a task has
      * first started. This is only valid if your service is configured to use a load
-     * balancer. If your service's tasks take a while to start and respond to ELB
-     * health checks, you can specify a health check grace period of up to 1,800
-     * seconds during which the ECS service scheduler will ignore ELB health check
+     * balancer. If your service's tasks take a while to start and respond to Elastic
+     * Load Balancing health checks, you can specify a health check grace period of up
+     * to 7,200 seconds during which the ECS service scheduler ignores health check
      * status. This grace period can prevent the ECS service scheduler from marking
      * tasks as unhealthy and stopping them before they have time to come up.</p>
      */
@@ -838,9 +967,9 @@ namespace Model
      * <p>The period of time, in seconds, that the Amazon ECS service scheduler should
      * ignore unhealthy Elastic Load Balancing target health checks after a task has
      * first started. This is only valid if your service is configured to use a load
-     * balancer. If your service's tasks take a while to start and respond to ELB
-     * health checks, you can specify a health check grace period of up to 1,800
-     * seconds during which the ECS service scheduler will ignore ELB health check
+     * balancer. If your service's tasks take a while to start and respond to Elastic
+     * Load Balancing health checks, you can specify a health check grace period of up
+     * to 7,200 seconds during which the ECS service scheduler ignores health check
      * status. This grace period can prevent the ECS service scheduler from marking
      * tasks as unhealthy and stopping them before they have time to come up.</p>
      */
@@ -850,13 +979,99 @@ namespace Model
      * <p>The period of time, in seconds, that the Amazon ECS service scheduler should
      * ignore unhealthy Elastic Load Balancing target health checks after a task has
      * first started. This is only valid if your service is configured to use a load
-     * balancer. If your service's tasks take a while to start and respond to ELB
-     * health checks, you can specify a health check grace period of up to 1,800
-     * seconds during which the ECS service scheduler will ignore ELB health check
+     * balancer. If your service's tasks take a while to start and respond to Elastic
+     * Load Balancing health checks, you can specify a health check grace period of up
+     * to 7,200 seconds during which the ECS service scheduler ignores health check
      * status. This grace period can prevent the ECS service scheduler from marking
      * tasks as unhealthy and stopping them before they have time to come up.</p>
      */
     inline CreateServiceRequest& WithHealthCheckGracePeriodSeconds(int value) { SetHealthCheckGracePeriodSeconds(value); return *this;}
+
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When using this strategy, there is no need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     */
+    inline const SchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When using this strategy, there is no need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     */
+    inline void SetSchedulingStrategy(const SchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When using this strategy, there is no need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     */
+    inline void SetSchedulingStrategy(SchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When using this strategy, there is no need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     */
+    inline CreateServiceRequest& WithSchedulingStrategy(const SchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. When using this strategy, there is no need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
+     */
+    inline CreateServiceRequest& WithSchedulingStrategy(SchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
 
   private:
 
@@ -871,6 +1086,9 @@ namespace Model
 
     Aws::Vector<LoadBalancer> m_loadBalancers;
     bool m_loadBalancersHasBeenSet;
+
+    Aws::Vector<ServiceRegistry> m_serviceRegistries;
+    bool m_serviceRegistriesHasBeenSet;
 
     int m_desiredCount;
     bool m_desiredCountHasBeenSet;
@@ -901,6 +1119,9 @@ namespace Model
 
     int m_healthCheckGracePeriodSeconds;
     bool m_healthCheckGracePeriodSecondsHasBeenSet;
+
+    SchedulingStrategy m_schedulingStrategy;
+    bool m_schedulingStrategyHasBeenSet;
   };
 
 } // namespace Model

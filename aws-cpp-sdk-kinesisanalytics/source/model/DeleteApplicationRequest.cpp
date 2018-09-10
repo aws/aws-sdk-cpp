@@ -43,7 +43,7 @@ Aws::String DeleteApplicationRequest::SerializePayload() const
    payload.WithDouble("CreateTimestamp", m_createTimestamp.SecondsWithMSPrecision());
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteApplicationRequest::GetRequestSpecificHeaders() const

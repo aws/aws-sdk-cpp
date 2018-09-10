@@ -35,7 +35,7 @@ EnvironmentImage::EnvironmentImage() :
 {
 }
 
-EnvironmentImage::EnvironmentImage(const JsonValue& jsonValue) : 
+EnvironmentImage::EnvironmentImage(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_versionsHasBeenSet(false)
@@ -43,7 +43,7 @@ EnvironmentImage::EnvironmentImage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EnvironmentImage& EnvironmentImage::operator =(const JsonValue& jsonValue)
+EnvironmentImage& EnvironmentImage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("name"))
   {
@@ -61,7 +61,7 @@ EnvironmentImage& EnvironmentImage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("versions"))
   {
-    Array<JsonValue> versionsJsonList = jsonValue.GetArray("versions");
+    Array<JsonView> versionsJsonList = jsonValue.GetArray("versions");
     for(unsigned versionsIndex = 0; versionsIndex < versionsJsonList.GetLength(); ++versionsIndex)
     {
       m_versions.push_back(versionsJsonList[versionsIndex].AsString());

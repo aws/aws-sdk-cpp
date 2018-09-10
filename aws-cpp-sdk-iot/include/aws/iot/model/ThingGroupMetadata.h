@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ThingGroupMetadata();
-    ThingGroupMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    ThingGroupMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ThingGroupMetadata(Aws::Utils::Json::JsonView jsonValue);
+    ThingGroupMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -27,7 +27,8 @@ GetDevicePoolCompatibilityRequest::GetDevicePoolCompatibilityRequest() :
     m_appArnHasBeenSet(false),
     m_testType(TestType::NOT_SET),
     m_testTypeHasBeenSet(false),
-    m_testHasBeenSet(false)
+    m_testHasBeenSet(false),
+    m_configurationHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,13 @@ Aws::String GetDevicePoolCompatibilityRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithObject("configuration", m_configuration.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetDevicePoolCompatibilityRequest::GetRequestSpecificHeaders() const

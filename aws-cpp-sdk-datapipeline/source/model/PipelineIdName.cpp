@@ -34,14 +34,14 @@ PipelineIdName::PipelineIdName() :
 {
 }
 
-PipelineIdName::PipelineIdName(const JsonValue& jsonValue) : 
+PipelineIdName::PipelineIdName(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PipelineIdName& PipelineIdName::operator =(const JsonValue& jsonValue)
+PipelineIdName& PipelineIdName::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {

@@ -35,7 +35,7 @@ Endpoint::Endpoint() :
 {
 }
 
-Endpoint::Endpoint(const JsonValue& jsonValue) : 
+Endpoint::Endpoint(JsonView jsonValue) : 
     m_addressHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false)
@@ -43,7 +43,7 @@ Endpoint::Endpoint(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Endpoint& Endpoint::operator =(const JsonValue& jsonValue)
+Endpoint& Endpoint::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Address"))
   {

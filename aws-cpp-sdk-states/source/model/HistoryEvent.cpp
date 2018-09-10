@@ -58,7 +58,7 @@ HistoryEvent::HistoryEvent() :
 {
 }
 
-HistoryEvent::HistoryEvent(const JsonValue& jsonValue) : 
+HistoryEvent::HistoryEvent(JsonView jsonValue) : 
     m_timestampHasBeenSet(false),
     m_type(HistoryEventType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -89,7 +89,7 @@ HistoryEvent::HistoryEvent(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HistoryEvent& HistoryEvent::operator =(const JsonValue& jsonValue)
+HistoryEvent& HistoryEvent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("timestamp"))
   {

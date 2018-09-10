@@ -44,7 +44,7 @@ Aws::String SendTestEventNotificationRequest::SerializePayload() const
    payload.WithString("TestEventType", EventTypeMapper::GetNameForEventType(m_testEventType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection SendTestEventNotificationRequest::GetRequestSpecificHeaders() const

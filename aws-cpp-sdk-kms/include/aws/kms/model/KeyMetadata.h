@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace KMS
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     KeyMetadata();
-    KeyMetadata(const Aws::Utils::Json::JsonValue& jsonValue);
-    KeyMetadata& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    KeyMetadata(Aws::Utils::Json::JsonView jsonValue);
+    KeyMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -506,7 +507,7 @@ namespace Model
 
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -514,7 +515,7 @@ namespace Model
     inline const KeyManagerType& GetKeyManager() const{ return m_keyManager; }
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -522,7 +523,7 @@ namespace Model
     inline void SetKeyManager(const KeyManagerType& value) { m_keyManagerHasBeenSet = true; m_keyManager = value; }
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -530,7 +531,7 @@ namespace Model
     inline void SetKeyManager(KeyManagerType&& value) { m_keyManagerHasBeenSet = true; m_keyManager = std::move(value); }
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -538,7 +539,7 @@ namespace Model
     inline KeyMetadata& WithKeyManager(const KeyManagerType& value) { SetKeyManager(value); return *this;}
 
     /**
-     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
+     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>

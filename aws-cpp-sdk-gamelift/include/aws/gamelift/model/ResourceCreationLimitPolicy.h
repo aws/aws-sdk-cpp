@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -48,8 +49,8 @@ namespace Model
   {
   public:
     ResourceCreationLimitPolicy();
-    ResourceCreationLimitPolicy(const Aws::Utils::Json::JsonValue& jsonValue);
-    ResourceCreationLimitPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ResourceCreationLimitPolicy(Aws::Utils::Json::JsonView jsonValue);
+    ResourceCreationLimitPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

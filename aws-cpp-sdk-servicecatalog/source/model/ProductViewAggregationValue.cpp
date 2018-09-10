@@ -35,7 +35,7 @@ ProductViewAggregationValue::ProductViewAggregationValue() :
 {
 }
 
-ProductViewAggregationValue::ProductViewAggregationValue(const JsonValue& jsonValue) : 
+ProductViewAggregationValue::ProductViewAggregationValue(JsonView jsonValue) : 
     m_valueHasBeenSet(false),
     m_approximateCount(0),
     m_approximateCountHasBeenSet(false)
@@ -43,7 +43,7 @@ ProductViewAggregationValue::ProductViewAggregationValue(const JsonValue& jsonVa
   *this = jsonValue;
 }
 
-ProductViewAggregationValue& ProductViewAggregationValue::operator =(const JsonValue& jsonValue)
+ProductViewAggregationValue& ProductViewAggregationValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {

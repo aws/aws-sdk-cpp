@@ -37,7 +37,7 @@ CreateDataSourceFromRDSResult::CreateDataSourceFromRDSResult(const Aws::AmazonWe
 
 CreateDataSourceFromRDSResult& CreateDataSourceFromRDSResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("DataSourceId");

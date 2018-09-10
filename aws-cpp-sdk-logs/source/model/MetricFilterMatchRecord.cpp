@@ -36,7 +36,7 @@ MetricFilterMatchRecord::MetricFilterMatchRecord() :
 {
 }
 
-MetricFilterMatchRecord::MetricFilterMatchRecord(const JsonValue& jsonValue) : 
+MetricFilterMatchRecord::MetricFilterMatchRecord(JsonView jsonValue) : 
     m_eventNumber(0),
     m_eventNumberHasBeenSet(false),
     m_eventMessageHasBeenSet(false),
@@ -45,7 +45,7 @@ MetricFilterMatchRecord::MetricFilterMatchRecord(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MetricFilterMatchRecord& MetricFilterMatchRecord::operator =(const JsonValue& jsonValue)
+MetricFilterMatchRecord& MetricFilterMatchRecord::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("eventNumber"))
   {
@@ -63,7 +63,7 @@ MetricFilterMatchRecord& MetricFilterMatchRecord::operator =(const JsonValue& js
 
   if(jsonValue.ValueExists("extractedValues"))
   {
-    Aws::Map<Aws::String, JsonValue> extractedValuesJsonMap = jsonValue.GetObject("extractedValues").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> extractedValuesJsonMap = jsonValue.GetObject("extractedValues").GetAllObjects();
     for(auto& extractedValuesItem : extractedValuesJsonMap)
     {
       m_extractedValues[extractedValuesItem.first] = extractedValuesItem.second.AsString();

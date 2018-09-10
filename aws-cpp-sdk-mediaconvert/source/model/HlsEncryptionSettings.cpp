@@ -41,7 +41,7 @@ HlsEncryptionSettings::HlsEncryptionSettings() :
 {
 }
 
-HlsEncryptionSettings::HlsEncryptionSettings(const JsonValue& jsonValue) : 
+HlsEncryptionSettings::HlsEncryptionSettings(JsonView jsonValue) : 
     m_constantInitializationVectorHasBeenSet(false),
     m_encryptionMethod(HlsEncryptionType::NOT_SET),
     m_encryptionMethodHasBeenSet(false),
@@ -55,7 +55,7 @@ HlsEncryptionSettings::HlsEncryptionSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HlsEncryptionSettings& HlsEncryptionSettings::operator =(const JsonValue& jsonValue)
+HlsEncryptionSettings& HlsEncryptionSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("constantInitializationVector"))
   {

@@ -33,17 +33,17 @@ DnsConfigChange::DnsConfigChange() :
 {
 }
 
-DnsConfigChange::DnsConfigChange(const JsonValue& jsonValue) : 
+DnsConfigChange::DnsConfigChange(JsonView jsonValue) : 
     m_dnsRecordsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DnsConfigChange& DnsConfigChange::operator =(const JsonValue& jsonValue)
+DnsConfigChange& DnsConfigChange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DnsRecords"))
   {
-    Array<JsonValue> dnsRecordsJsonList = jsonValue.GetArray("DnsRecords");
+    Array<JsonView> dnsRecordsJsonList = jsonValue.GetArray("DnsRecords");
     for(unsigned dnsRecordsIndex = 0; dnsRecordsIndex < dnsRecordsJsonList.GetLength(); ++dnsRecordsIndex)
     {
       m_dnsRecords.push_back(dnsRecordsJsonList[dnsRecordsIndex].AsObject());

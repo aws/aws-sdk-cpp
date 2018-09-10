@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -45,74 +46,85 @@ namespace Model
   {
   public:
     MessageRequest();
-    MessageRequest(const Aws::Utils::Json::JsonValue& jsonValue);
-    MessageRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MessageRequest(Aws::Utils::Json::JsonView jsonValue);
+    MessageRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an
+     * AddressConfiguration object. An address can be a push notification token, a
+     * phone number, or an email address.
      */
     inline const Aws::Map<Aws::String, AddressConfiguration>& GetAddresses() const{ return m_addresses; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an
+     * AddressConfiguration object. An address can be a push notification token, a
+     * phone number, or an email address.
      */
     inline void SetAddresses(const Aws::Map<Aws::String, AddressConfiguration>& value) { m_addressesHasBeenSet = true; m_addresses = value; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an
+     * AddressConfiguration object. An address can be a push notification token, a
+     * phone number, or an email address.
      */
     inline void SetAddresses(Aws::Map<Aws::String, AddressConfiguration>&& value) { m_addressesHasBeenSet = true; m_addresses = std::move(value); }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an
+     * AddressConfiguration object. An address can be a push notification token, a
+     * phone number, or an email address.
      */
     inline MessageRequest& WithAddresses(const Aws::Map<Aws::String, AddressConfiguration>& value) { SetAddresses(value); return *this;}
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an
+     * AddressConfiguration object. An address can be a push notification token, a
+     * phone number, or an email address.
      */
     inline MessageRequest& WithAddresses(Aws::Map<Aws::String, AddressConfiguration>&& value) { SetAddresses(std::move(value)); return *this;}
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an
+     * AddressConfiguration object. An address can be a push notification token, a
+     * phone number, or an email address.
      */
     inline MessageRequest& AddAddresses(const Aws::String& key, const AddressConfiguration& value) { m_addressesHasBeenSet = true; m_addresses.emplace(key, value); return *this; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an
+     * AddressConfiguration object. An address can be a push notification token, a
+     * phone number, or an email address.
      */
     inline MessageRequest& AddAddresses(Aws::String&& key, const AddressConfiguration& value) { m_addressesHasBeenSet = true; m_addresses.emplace(std::move(key), value); return *this; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an
+     * AddressConfiguration object. An address can be a push notification token, a
+     * phone number, or an email address.
      */
     inline MessageRequest& AddAddresses(const Aws::String& key, AddressConfiguration&& value) { m_addressesHasBeenSet = true; m_addresses.emplace(key, std::move(value)); return *this; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an
+     * AddressConfiguration object. An address can be a push notification token, a
+     * phone number, or an email address.
      */
     inline MessageRequest& AddAddresses(Aws::String&& key, AddressConfiguration&& value) { m_addressesHasBeenSet = true; m_addresses.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an
+     * AddressConfiguration object. An address can be a push notification token, a
+     * phone number, or an email address.
      */
     inline MessageRequest& AddAddresses(const char* key, AddressConfiguration&& value) { m_addressesHasBeenSet = true; m_addresses.emplace(key, std::move(value)); return *this; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an
+     * AddressConfiguration object. An address can be a push notification token, a
+     * phone number, or an email address.
      */
     inline MessageRequest& AddAddresses(const char* key, const AddressConfiguration& value) { m_addressesHasBeenSet = true; m_addresses.emplace(key, value); return *this; }
 
@@ -203,68 +215,90 @@ namespace Model
 
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an
+     * EndpointSendConfiguration object. Within an EndpointSendConfiguration object,
+     * you can tailor the message for an endpoint by specifying message overrides or
+     * substitutions.
      */
     inline const Aws::Map<Aws::String, EndpointSendConfiguration>& GetEndpoints() const{ return m_endpoints; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an
+     * EndpointSendConfiguration object. Within an EndpointSendConfiguration object,
+     * you can tailor the message for an endpoint by specifying message overrides or
+     * substitutions.
      */
     inline void SetEndpoints(const Aws::Map<Aws::String, EndpointSendConfiguration>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an
+     * EndpointSendConfiguration object. Within an EndpointSendConfiguration object,
+     * you can tailor the message for an endpoint by specifying message overrides or
+     * substitutions.
      */
     inline void SetEndpoints(Aws::Map<Aws::String, EndpointSendConfiguration>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an
+     * EndpointSendConfiguration object. Within an EndpointSendConfiguration object,
+     * you can tailor the message for an endpoint by specifying message overrides or
+     * substitutions.
      */
     inline MessageRequest& WithEndpoints(const Aws::Map<Aws::String, EndpointSendConfiguration>& value) { SetEndpoints(value); return *this;}
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an
+     * EndpointSendConfiguration object. Within an EndpointSendConfiguration object,
+     * you can tailor the message for an endpoint by specifying message overrides or
+     * substitutions.
      */
     inline MessageRequest& WithEndpoints(Aws::Map<Aws::String, EndpointSendConfiguration>&& value) { SetEndpoints(std::move(value)); return *this;}
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an
+     * EndpointSendConfiguration object. Within an EndpointSendConfiguration object,
+     * you can tailor the message for an endpoint by specifying message overrides or
+     * substitutions.
      */
     inline MessageRequest& AddEndpoints(const Aws::String& key, const EndpointSendConfiguration& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, value); return *this; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an
+     * EndpointSendConfiguration object. Within an EndpointSendConfiguration object,
+     * you can tailor the message for an endpoint by specifying message overrides or
+     * substitutions.
      */
     inline MessageRequest& AddEndpoints(Aws::String&& key, const EndpointSendConfiguration& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), value); return *this; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an
+     * EndpointSendConfiguration object. Within an EndpointSendConfiguration object,
+     * you can tailor the message for an endpoint by specifying message overrides or
+     * substitutions.
      */
     inline MessageRequest& AddEndpoints(const Aws::String& key, EndpointSendConfiguration&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, std::move(value)); return *this; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an
+     * EndpointSendConfiguration object. Within an EndpointSendConfiguration object,
+     * you can tailor the message for an endpoint by specifying message overrides or
+     * substitutions.
      */
     inline MessageRequest& AddEndpoints(Aws::String&& key, EndpointSendConfiguration&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an
+     * EndpointSendConfiguration object. Within an EndpointSendConfiguration object,
+     * you can tailor the message for an endpoint by specifying message overrides or
+     * substitutions.
      */
     inline MessageRequest& AddEndpoints(const char* key, EndpointSendConfiguration&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, std::move(value)); return *this; }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone
-     * number or push token) and the Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an
+     * EndpointSendConfiguration object. Within an EndpointSendConfiguration object,
+     * you can tailor the message for an endpoint by specifying message overrides or
+     * substitutions.
      */
     inline MessageRequest& AddEndpoints(const char* key, const EndpointSendConfiguration& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, value); return *this; }
 
@@ -294,6 +328,49 @@ namespace Model
      */
     inline MessageRequest& WithMessageConfiguration(DirectMessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline const Aws::String& GetTraceId() const{ return m_traceId; }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline void SetTraceId(const Aws::String& value) { m_traceIdHasBeenSet = true; m_traceId = value; }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline void SetTraceId(Aws::String&& value) { m_traceIdHasBeenSet = true; m_traceId = std::move(value); }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline void SetTraceId(const char* value) { m_traceIdHasBeenSet = true; m_traceId.assign(value); }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline MessageRequest& WithTraceId(const Aws::String& value) { SetTraceId(value); return *this;}
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline MessageRequest& WithTraceId(Aws::String&& value) { SetTraceId(std::move(value)); return *this;}
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline MessageRequest& WithTraceId(const char* value) { SetTraceId(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, AddressConfiguration> m_addresses;
@@ -307,6 +384,9 @@ namespace Model
 
     DirectMessageConfiguration m_messageConfiguration;
     bool m_messageConfigurationHasBeenSet;
+
+    Aws::String m_traceId;
+    bool m_traceIdHasBeenSet;
   };
 
 } // namespace Model

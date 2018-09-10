@@ -43,7 +43,7 @@ Aws::String CreateSampleFindingsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

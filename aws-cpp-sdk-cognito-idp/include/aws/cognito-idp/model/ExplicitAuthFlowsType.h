@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     ADMIN_NO_SRP_AUTH,
-    CUSTOM_AUTH_FLOW_ONLY
+    CUSTOM_AUTH_FLOW_ONLY,
+    USER_PASSWORD_AUTH
   };
 
 namespace ExplicitAuthFlowsTypeMapper

@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glacier
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     VaultNotificationConfig();
-    VaultNotificationConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    VaultNotificationConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    VaultNotificationConfig(Aws::Utils::Json::JsonView jsonValue);
+    VaultNotificationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -35,7 +35,7 @@ StreamNameCondition::StreamNameCondition() :
 {
 }
 
-StreamNameCondition::StreamNameCondition(const JsonValue& jsonValue) : 
+StreamNameCondition::StreamNameCondition(JsonView jsonValue) : 
     m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_comparisonValueHasBeenSet(false)
@@ -43,7 +43,7 @@ StreamNameCondition::StreamNameCondition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StreamNameCondition& StreamNameCondition::operator =(const JsonValue& jsonValue)
+StreamNameCondition& StreamNameCondition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ComparisonOperator"))
   {

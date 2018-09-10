@@ -39,10 +39,10 @@ RecognizeCelebritiesResult::RecognizeCelebritiesResult(const Aws::AmazonWebServi
 
 RecognizeCelebritiesResult& RecognizeCelebritiesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CelebrityFaces"))
   {
-    Array<JsonValue> celebrityFacesJsonList = jsonValue.GetArray("CelebrityFaces");
+    Array<JsonView> celebrityFacesJsonList = jsonValue.GetArray("CelebrityFaces");
     for(unsigned celebrityFacesIndex = 0; celebrityFacesIndex < celebrityFacesJsonList.GetLength(); ++celebrityFacesIndex)
     {
       m_celebrityFaces.push_back(celebrityFacesJsonList[celebrityFacesIndex].AsObject());
@@ -51,7 +51,7 @@ RecognizeCelebritiesResult& RecognizeCelebritiesResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("UnrecognizedFaces"))
   {
-    Array<JsonValue> unrecognizedFacesJsonList = jsonValue.GetArray("UnrecognizedFaces");
+    Array<JsonView> unrecognizedFacesJsonList = jsonValue.GetArray("UnrecognizedFaces");
     for(unsigned unrecognizedFacesIndex = 0; unrecognizedFacesIndex < unrecognizedFacesJsonList.GetLength(); ++unrecognizedFacesIndex)
     {
       m_unrecognizedFaces.push_back(unrecognizedFacesJsonList[unrecognizedFacesIndex].AsObject());

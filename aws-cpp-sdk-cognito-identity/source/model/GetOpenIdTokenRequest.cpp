@@ -49,7 +49,7 @@ Aws::String GetOpenIdTokenRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetOpenIdTokenRequest::GetRequestSpecificHeaders() const

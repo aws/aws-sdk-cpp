@@ -147,20 +147,17 @@ namespace Model
 
 
     /**
-     * <p>The duration of the assessment run in seconds. The default value is 3600
-     * seconds (one hour).</p>
+     * <p>The duration of the assessment run in seconds.</p>
      */
     inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
 
     /**
-     * <p>The duration of the assessment run in seconds. The default value is 3600
-     * seconds (one hour).</p>
+     * <p>The duration of the assessment run in seconds.</p>
      */
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
 
     /**
-     * <p>The duration of the assessment run in seconds. The default value is 3600
-     * seconds (one hour).</p>
+     * <p>The duration of the assessment run in seconds.</p>
      */
     inline CreateAssessmentTemplateRequest& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
 

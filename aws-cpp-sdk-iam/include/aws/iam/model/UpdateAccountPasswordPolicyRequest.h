@@ -45,105 +45,132 @@ namespace Model
   public:
 
     /**
-     * <p>The minimum number of characters allowed in an IAM user password.</p>
-     * <p>Default value: 6</p>
+     * <p>The minimum number of characters allowed in an IAM user password.</p> <p>If
+     * you do not specify a value for this parameter, then the operation uses the
+     * default value of <code>6</code>.</p>
      */
     inline int GetMinimumPasswordLength() const{ return m_minimumPasswordLength; }
 
     /**
-     * <p>The minimum number of characters allowed in an IAM user password.</p>
-     * <p>Default value: 6</p>
+     * <p>The minimum number of characters allowed in an IAM user password.</p> <p>If
+     * you do not specify a value for this parameter, then the operation uses the
+     * default value of <code>6</code>.</p>
      */
     inline void SetMinimumPasswordLength(int value) { m_minimumPasswordLengthHasBeenSet = true; m_minimumPasswordLength = value; }
 
     /**
-     * <p>The minimum number of characters allowed in an IAM user password.</p>
-     * <p>Default value: 6</p>
+     * <p>The minimum number of characters allowed in an IAM user password.</p> <p>If
+     * you do not specify a value for this parameter, then the operation uses the
+     * default value of <code>6</code>.</p>
      */
     inline UpdateAccountPasswordPolicyRequest& WithMinimumPasswordLength(int value) { SetMinimumPasswordLength(value); return *this;}
 
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one of the
-     * following non-alphanumeric characters:</p> <p>! @ # $ % ^ &amp;amp; * ( ) _ + -
-     * = [ ] { } | '</p> <p>Default value: false</p>
+     * following non-alphanumeric characters:</p> <p>! @ # $ % ^ &amp; * ( ) _ + - = [
+     * ] { } | '</p> <p>If you do not specify a value for this parameter, then the
+     * operation uses the default value of <code>false</code>. The result is that
+     * passwords do not require at least one symbol character.</p>
      */
     inline bool GetRequireSymbols() const{ return m_requireSymbols; }
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one of the
-     * following non-alphanumeric characters:</p> <p>! @ # $ % ^ &amp;amp; * ( ) _ + -
-     * = [ ] { } | '</p> <p>Default value: false</p>
+     * following non-alphanumeric characters:</p> <p>! @ # $ % ^ &amp; * ( ) _ + - = [
+     * ] { } | '</p> <p>If you do not specify a value for this parameter, then the
+     * operation uses the default value of <code>false</code>. The result is that
+     * passwords do not require at least one symbol character.</p>
      */
     inline void SetRequireSymbols(bool value) { m_requireSymbolsHasBeenSet = true; m_requireSymbols = value; }
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one of the
-     * following non-alphanumeric characters:</p> <p>! @ # $ % ^ &amp;amp; * ( ) _ + -
-     * = [ ] { } | '</p> <p>Default value: false</p>
+     * following non-alphanumeric characters:</p> <p>! @ # $ % ^ &amp; * ( ) _ + - = [
+     * ] { } | '</p> <p>If you do not specify a value for this parameter, then the
+     * operation uses the default value of <code>false</code>. The result is that
+     * passwords do not require at least one symbol character.</p>
      */
     inline UpdateAccountPasswordPolicyRequest& WithRequireSymbols(bool value) { SetRequireSymbols(value); return *this;}
 
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one numeric
-     * character (0 to 9).</p> <p>Default value: false</p>
+     * character (0 to 9).</p> <p>If you do not specify a value for this parameter,
+     * then the operation uses the default value of <code>false</code>. The result is
+     * that passwords do not require at least one numeric character.</p>
      */
     inline bool GetRequireNumbers() const{ return m_requireNumbers; }
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one numeric
-     * character (0 to 9).</p> <p>Default value: false</p>
+     * character (0 to 9).</p> <p>If you do not specify a value for this parameter,
+     * then the operation uses the default value of <code>false</code>. The result is
+     * that passwords do not require at least one numeric character.</p>
      */
     inline void SetRequireNumbers(bool value) { m_requireNumbersHasBeenSet = true; m_requireNumbers = value; }
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one numeric
-     * character (0 to 9).</p> <p>Default value: false</p>
+     * character (0 to 9).</p> <p>If you do not specify a value for this parameter,
+     * then the operation uses the default value of <code>false</code>. The result is
+     * that passwords do not require at least one numeric character.</p>
      */
     inline UpdateAccountPasswordPolicyRequest& WithRequireNumbers(bool value) { SetRequireNumbers(value); return *this;}
 
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one uppercase
-     * character from the ISO basic Latin alphabet (A to Z).</p> <p>Default value:
-     * false</p>
+     * character from the ISO basic Latin alphabet (A to Z).</p> <p>If you do not
+     * specify a value for this parameter, then the operation uses the default value of
+     * <code>false</code>. The result is that passwords do not require at least one
+     * uppercase character.</p>
      */
     inline bool GetRequireUppercaseCharacters() const{ return m_requireUppercaseCharacters; }
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one uppercase
-     * character from the ISO basic Latin alphabet (A to Z).</p> <p>Default value:
-     * false</p>
+     * character from the ISO basic Latin alphabet (A to Z).</p> <p>If you do not
+     * specify a value for this parameter, then the operation uses the default value of
+     * <code>false</code>. The result is that passwords do not require at least one
+     * uppercase character.</p>
      */
     inline void SetRequireUppercaseCharacters(bool value) { m_requireUppercaseCharactersHasBeenSet = true; m_requireUppercaseCharacters = value; }
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one uppercase
-     * character from the ISO basic Latin alphabet (A to Z).</p> <p>Default value:
-     * false</p>
+     * character from the ISO basic Latin alphabet (A to Z).</p> <p>If you do not
+     * specify a value for this parameter, then the operation uses the default value of
+     * <code>false</code>. The result is that passwords do not require at least one
+     * uppercase character.</p>
      */
     inline UpdateAccountPasswordPolicyRequest& WithRequireUppercaseCharacters(bool value) { SetRequireUppercaseCharacters(value); return *this;}
 
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one lowercase
-     * character from the ISO basic Latin alphabet (a to z).</p> <p>Default value:
-     * false</p>
+     * character from the ISO basic Latin alphabet (a to z).</p> <p>If you do not
+     * specify a value for this parameter, then the operation uses the default value of
+     * <code>false</code>. The result is that passwords do not require at least one
+     * lowercase character.</p>
      */
     inline bool GetRequireLowercaseCharacters() const{ return m_requireLowercaseCharacters; }
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one lowercase
-     * character from the ISO basic Latin alphabet (a to z).</p> <p>Default value:
-     * false</p>
+     * character from the ISO basic Latin alphabet (a to z).</p> <p>If you do not
+     * specify a value for this parameter, then the operation uses the default value of
+     * <code>false</code>. The result is that passwords do not require at least one
+     * lowercase character.</p>
      */
     inline void SetRequireLowercaseCharacters(bool value) { m_requireLowercaseCharactersHasBeenSet = true; m_requireLowercaseCharacters = value; }
 
     /**
      * <p>Specifies whether IAM user passwords must contain at least one lowercase
-     * character from the ISO basic Latin alphabet (a to z).</p> <p>Default value:
-     * false</p>
+     * character from the ISO basic Latin alphabet (a to z).</p> <p>If you do not
+     * specify a value for this parameter, then the operation uses the default value of
+     * <code>false</code>. The result is that passwords do not require at least one
+     * lowercase character.</p>
      */
     inline UpdateAccountPasswordPolicyRequest& WithRequireLowercaseCharacters(bool value) { SetRequireLowercaseCharacters(value); return *this;}
 
@@ -152,8 +179,10 @@ namespace Model
      * <p> Allows all IAM users in your account to use the AWS Management Console to
      * change their own passwords. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.</p>
-     * <p>Default value: false</p>
+     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.</p> <p>If
+     * you do not specify a value for this parameter, then the operation uses the
+     * default value of <code>false</code>. The result is that IAM users in the account
+     * do not automatically have permissions to change their own password.</p>
      */
     inline bool GetAllowUsersToChangePassword() const{ return m_allowUsersToChangePassword; }
 
@@ -161,8 +190,10 @@ namespace Model
      * <p> Allows all IAM users in your account to use the AWS Management Console to
      * change their own passwords. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.</p>
-     * <p>Default value: false</p>
+     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.</p> <p>If
+     * you do not specify a value for this parameter, then the operation uses the
+     * default value of <code>false</code>. The result is that IAM users in the account
+     * do not automatically have permissions to change their own password.</p>
      */
     inline void SetAllowUsersToChangePassword(bool value) { m_allowUsersToChangePasswordHasBeenSet = true; m_allowUsersToChangePassword = value; }
 
@@ -170,68 +201,88 @@ namespace Model
      * <p> Allows all IAM users in your account to use the AWS Management Console to
      * change their own passwords. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/HowToPwdIAMUser.html">Letting
-     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.</p>
-     * <p>Default value: false</p>
+     * IAM Users Change Their Own Passwords</a> in the <i>IAM User Guide</i>.</p> <p>If
+     * you do not specify a value for this parameter, then the operation uses the
+     * default value of <code>false</code>. The result is that IAM users in the account
+     * do not automatically have permissions to change their own password.</p>
      */
     inline UpdateAccountPasswordPolicyRequest& WithAllowUsersToChangePassword(bool value) { SetAllowUsersToChangePassword(value); return *this;}
 
 
     /**
-     * <p>The number of days that an IAM user password is valid. The default value of 0
-     * means IAM user passwords never expire.</p> <p>Default value: 0</p>
+     * <p>The number of days that an IAM user password is valid.</p> <p>If you do not
+     * specify a value for this parameter, then the operation uses the default value of
+     * <code>0</code>. The result is that IAM user passwords never expire.</p>
      */
     inline int GetMaxPasswordAge() const{ return m_maxPasswordAge; }
 
     /**
-     * <p>The number of days that an IAM user password is valid. The default value of 0
-     * means IAM user passwords never expire.</p> <p>Default value: 0</p>
+     * <p>The number of days that an IAM user password is valid.</p> <p>If you do not
+     * specify a value for this parameter, then the operation uses the default value of
+     * <code>0</code>. The result is that IAM user passwords never expire.</p>
      */
     inline void SetMaxPasswordAge(int value) { m_maxPasswordAgeHasBeenSet = true; m_maxPasswordAge = value; }
 
     /**
-     * <p>The number of days that an IAM user password is valid. The default value of 0
-     * means IAM user passwords never expire.</p> <p>Default value: 0</p>
+     * <p>The number of days that an IAM user password is valid.</p> <p>If you do not
+     * specify a value for this parameter, then the operation uses the default value of
+     * <code>0</code>. The result is that IAM user passwords never expire.</p>
      */
     inline UpdateAccountPasswordPolicyRequest& WithMaxPasswordAge(int value) { SetMaxPasswordAge(value); return *this;}
 
 
     /**
      * <p>Specifies the number of previous passwords that IAM users are prevented from
-     * reusing. The default value of 0 means IAM users are not prevented from reusing
-     * previous passwords.</p> <p>Default value: 0</p>
+     * reusing.</p> <p>If you do not specify a value for this parameter, then the
+     * operation uses the default value of <code>0</code>. The result is that IAM users
+     * are not prevented from reusing previous passwords.</p>
      */
     inline int GetPasswordReusePrevention() const{ return m_passwordReusePrevention; }
 
     /**
      * <p>Specifies the number of previous passwords that IAM users are prevented from
-     * reusing. The default value of 0 means IAM users are not prevented from reusing
-     * previous passwords.</p> <p>Default value: 0</p>
+     * reusing.</p> <p>If you do not specify a value for this parameter, then the
+     * operation uses the default value of <code>0</code>. The result is that IAM users
+     * are not prevented from reusing previous passwords.</p>
      */
     inline void SetPasswordReusePrevention(int value) { m_passwordReusePreventionHasBeenSet = true; m_passwordReusePrevention = value; }
 
     /**
      * <p>Specifies the number of previous passwords that IAM users are prevented from
-     * reusing. The default value of 0 means IAM users are not prevented from reusing
-     * previous passwords.</p> <p>Default value: 0</p>
+     * reusing.</p> <p>If you do not specify a value for this parameter, then the
+     * operation uses the default value of <code>0</code>. The result is that IAM users
+     * are not prevented from reusing previous passwords.</p>
      */
     inline UpdateAccountPasswordPolicyRequest& WithPasswordReusePrevention(int value) { SetPasswordReusePrevention(value); return *this;}
 
 
     /**
      * <p>Prevents IAM users from setting a new password after their password has
-     * expired.</p> <p>Default value: false</p>
+     * expired. The IAM user cannot be accessed until an administrator resets the
+     * password.</p> <p>If you do not specify a value for this parameter, then the
+     * operation uses the default value of <code>false</code>. The result is that IAM
+     * users can change their passwords after they expire and continue to sign in as
+     * the user.</p>
      */
     inline bool GetHardExpiry() const{ return m_hardExpiry; }
 
     /**
      * <p>Prevents IAM users from setting a new password after their password has
-     * expired.</p> <p>Default value: false</p>
+     * expired. The IAM user cannot be accessed until an administrator resets the
+     * password.</p> <p>If you do not specify a value for this parameter, then the
+     * operation uses the default value of <code>false</code>. The result is that IAM
+     * users can change their passwords after they expire and continue to sign in as
+     * the user.</p>
      */
     inline void SetHardExpiry(bool value) { m_hardExpiryHasBeenSet = true; m_hardExpiry = value; }
 
     /**
      * <p>Prevents IAM users from setting a new password after their password has
-     * expired.</p> <p>Default value: false</p>
+     * expired. The IAM user cannot be accessed until an administrator resets the
+     * password.</p> <p>If you do not specify a value for this parameter, then the
+     * operation uses the default value of <code>false</code>. The result is that IAM
+     * users can change their passwords after they expire and continue to sign in as
+     * the user.</p>
      */
     inline UpdateAccountPasswordPolicyRequest& WithHardExpiry(bool value) { SetHardExpiry(value); return *this;}
 

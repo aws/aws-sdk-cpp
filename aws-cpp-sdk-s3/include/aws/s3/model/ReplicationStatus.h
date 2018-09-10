@@ -26,7 +26,7 @@ namespace Model
   enum class ReplicationStatus
   {
     NOT_SET,
-    COMPLETE,
+    COMPLETED,
     PENDING,
     FAILED,
     REPLICA

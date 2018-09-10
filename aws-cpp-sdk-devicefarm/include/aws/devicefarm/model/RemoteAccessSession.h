@@ -22,6 +22,7 @@
 #include <aws/devicefarm/model/Device.h>
 #include <aws/devicefarm/model/BillingMethod.h>
 #include <aws/devicefarm/model/DeviceMinutes.h>
+#include <aws/devicefarm/model/InteractionMode.h>
 #include <utility>
 
 namespace Aws
@@ -31,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DeviceFarm
@@ -48,8 +50,8 @@ namespace Model
   {
   public:
     RemoteAccessSession();
-    RemoteAccessSession(const Aws::Utils::Json::JsonValue& jsonValue);
-    RemoteAccessSession& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    RemoteAccessSession(Aws::Utils::Json::JsonView jsonValue);
+    RemoteAccessSession& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -378,6 +380,42 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline RemoteAccessSession& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline RemoteAccessSession& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline RemoteAccessSession& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+
+
+    /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
      * remote access session.</p>
      */
@@ -394,6 +432,68 @@ namespace Model
      * remote access session.</p>
      */
     inline RemoteAccessSession& WithRemoteDebugEnabled(bool value) { SetRemoteDebugEnabled(value); return *this;}
+
+
+    /**
+     * <p>This flag is set to <code>true</code> if remote recording is enabled for the
+     * remote access session.</p>
+     */
+    inline bool GetRemoteRecordEnabled() const{ return m_remoteRecordEnabled; }
+
+    /**
+     * <p>This flag is set to <code>true</code> if remote recording is enabled for the
+     * remote access session.</p>
+     */
+    inline void SetRemoteRecordEnabled(bool value) { m_remoteRecordEnabledHasBeenSet = true; m_remoteRecordEnabled = value; }
+
+    /**
+     * <p>This flag is set to <code>true</code> if remote recording is enabled for the
+     * remote access session.</p>
+     */
+    inline RemoteAccessSession& WithRemoteRecordEnabled(bool value) { SetRemoteRecordEnabled(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline const Aws::String& GetRemoteRecordAppArn() const{ return m_remoteRecordAppArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline void SetRemoteRecordAppArn(const Aws::String& value) { m_remoteRecordAppArnHasBeenSet = true; m_remoteRecordAppArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline void SetRemoteRecordAppArn(Aws::String&& value) { m_remoteRecordAppArnHasBeenSet = true; m_remoteRecordAppArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline void SetRemoteRecordAppArn(const char* value) { m_remoteRecordAppArnHasBeenSet = true; m_remoteRecordAppArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline RemoteAccessSession& WithRemoteRecordAppArn(const Aws::String& value) { SetRemoteRecordAppArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline RemoteAccessSession& WithRemoteRecordAppArn(Aws::String&& value) { SetRemoteRecordAppArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline RemoteAccessSession& WithRemoteRecordAppArn(const char* value) { SetRemoteRecordAppArn(value); return *this;}
 
 
     /**
@@ -644,6 +744,100 @@ namespace Model
      */
     inline RemoteAccessSession& WithDeviceUdid(const char* value) { SetDeviceUdid(value); return *this;}
 
+
+    /**
+     * <p>The interaction mode of the remote access session. Valid values are:</p> <ul>
+     * <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching,
+     * and rotating the screen. You <b>cannot</b> run XCUITest framework-based tests in
+     * this mode.</p> </li> <li> <p>NO_VIDEO: You are connected to the device but
+     * cannot interact with it or view the screen. This mode has the fastest test
+     * execution speed. You <b>can</b> run XCUITest framework-based tests in this
+     * mode.</p> </li> <li> <p>VIDEO_ONLY: You can view the screen but cannot touch or
+     * rotate it. You <b>can</b> run XCUITest framework-based tests and watch the
+     * screen in this mode.</p> </li> </ul>
+     */
+    inline const InteractionMode& GetInteractionMode() const{ return m_interactionMode; }
+
+    /**
+     * <p>The interaction mode of the remote access session. Valid values are:</p> <ul>
+     * <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching,
+     * and rotating the screen. You <b>cannot</b> run XCUITest framework-based tests in
+     * this mode.</p> </li> <li> <p>NO_VIDEO: You are connected to the device but
+     * cannot interact with it or view the screen. This mode has the fastest test
+     * execution speed. You <b>can</b> run XCUITest framework-based tests in this
+     * mode.</p> </li> <li> <p>VIDEO_ONLY: You can view the screen but cannot touch or
+     * rotate it. You <b>can</b> run XCUITest framework-based tests and watch the
+     * screen in this mode.</p> </li> </ul>
+     */
+    inline void SetInteractionMode(const InteractionMode& value) { m_interactionModeHasBeenSet = true; m_interactionMode = value; }
+
+    /**
+     * <p>The interaction mode of the remote access session. Valid values are:</p> <ul>
+     * <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching,
+     * and rotating the screen. You <b>cannot</b> run XCUITest framework-based tests in
+     * this mode.</p> </li> <li> <p>NO_VIDEO: You are connected to the device but
+     * cannot interact with it or view the screen. This mode has the fastest test
+     * execution speed. You <b>can</b> run XCUITest framework-based tests in this
+     * mode.</p> </li> <li> <p>VIDEO_ONLY: You can view the screen but cannot touch or
+     * rotate it. You <b>can</b> run XCUITest framework-based tests and watch the
+     * screen in this mode.</p> </li> </ul>
+     */
+    inline void SetInteractionMode(InteractionMode&& value) { m_interactionModeHasBeenSet = true; m_interactionMode = std::move(value); }
+
+    /**
+     * <p>The interaction mode of the remote access session. Valid values are:</p> <ul>
+     * <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching,
+     * and rotating the screen. You <b>cannot</b> run XCUITest framework-based tests in
+     * this mode.</p> </li> <li> <p>NO_VIDEO: You are connected to the device but
+     * cannot interact with it or view the screen. This mode has the fastest test
+     * execution speed. You <b>can</b> run XCUITest framework-based tests in this
+     * mode.</p> </li> <li> <p>VIDEO_ONLY: You can view the screen but cannot touch or
+     * rotate it. You <b>can</b> run XCUITest framework-based tests and watch the
+     * screen in this mode.</p> </li> </ul>
+     */
+    inline RemoteAccessSession& WithInteractionMode(const InteractionMode& value) { SetInteractionMode(value); return *this;}
+
+    /**
+     * <p>The interaction mode of the remote access session. Valid values are:</p> <ul>
+     * <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching,
+     * and rotating the screen. You <b>cannot</b> run XCUITest framework-based tests in
+     * this mode.</p> </li> <li> <p>NO_VIDEO: You are connected to the device but
+     * cannot interact with it or view the screen. This mode has the fastest test
+     * execution speed. You <b>can</b> run XCUITest framework-based tests in this
+     * mode.</p> </li> <li> <p>VIDEO_ONLY: You can view the screen but cannot touch or
+     * rotate it. You <b>can</b> run XCUITest framework-based tests and watch the
+     * screen in this mode.</p> </li> </ul>
+     */
+    inline RemoteAccessSession& WithInteractionMode(InteractionMode&& value) { SetInteractionMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline bool GetSkipAppResign() const{ return m_skipAppResign; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline void SetSkipAppResign(bool value) { m_skipAppResignHasBeenSet = true; m_skipAppResign = value; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline RemoteAccessSession& WithSkipAppResign(bool value) { SetSkipAppResign(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -673,8 +867,17 @@ namespace Model
     Device m_device;
     bool m_deviceHasBeenSet;
 
+    Aws::String m_instanceArn;
+    bool m_instanceArnHasBeenSet;
+
     bool m_remoteDebugEnabled;
     bool m_remoteDebugEnabledHasBeenSet;
+
+    bool m_remoteRecordEnabled;
+    bool m_remoteRecordEnabledHasBeenSet;
+
+    Aws::String m_remoteRecordAppArn;
+    bool m_remoteRecordAppArnHasBeenSet;
 
     Aws::String m_hostAddress;
     bool m_hostAddressHasBeenSet;
@@ -693,6 +896,12 @@ namespace Model
 
     Aws::String m_deviceUdid;
     bool m_deviceUdidHasBeenSet;
+
+    InteractionMode m_interactionMode;
+    bool m_interactionModeHasBeenSet;
+
+    bool m_skipAppResign;
+    bool m_skipAppResignHasBeenSet;
   };
 
 } // namespace Model

@@ -37,7 +37,7 @@ DescribeStackProvisioningParametersResult::DescribeStackProvisioningParametersRe
 
 DescribeStackProvisioningParametersResult& DescribeStackProvisioningParametersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AgentInstallerUrl"))
   {
     m_agentInstallerUrl = jsonValue.GetString("AgentInstallerUrl");
@@ -46,7 +46,7 @@ DescribeStackProvisioningParametersResult& DescribeStackProvisioningParametersRe
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
       m_parameters[parametersItem.first] = parametersItem.second.AsString();

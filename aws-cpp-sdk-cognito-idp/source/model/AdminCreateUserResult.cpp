@@ -37,7 +37,7 @@ AdminCreateUserResult::AdminCreateUserResult(const Aws::AmazonWebServiceResult<J
 
 AdminCreateUserResult& AdminCreateUserResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("User"))
   {
     m_user = jsonValue.GetObject("User");

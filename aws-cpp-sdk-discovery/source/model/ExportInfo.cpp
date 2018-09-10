@@ -42,7 +42,7 @@ ExportInfo::ExportInfo() :
 {
 }
 
-ExportInfo::ExportInfo(const JsonValue& jsonValue) : 
+ExportInfo::ExportInfo(JsonView jsonValue) : 
     m_exportIdHasBeenSet(false),
     m_exportStatus(ExportStatus::NOT_SET),
     m_exportStatusHasBeenSet(false),
@@ -57,7 +57,7 @@ ExportInfo::ExportInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ExportInfo& ExportInfo::operator =(const JsonValue& jsonValue)
+ExportInfo& ExportInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("exportId"))
   {

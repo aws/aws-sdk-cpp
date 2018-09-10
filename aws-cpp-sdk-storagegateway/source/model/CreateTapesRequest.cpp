@@ -29,7 +29,10 @@ CreateTapesRequest::CreateTapesRequest() :
     m_clientTokenHasBeenSet(false),
     m_numTapesToCreate(0),
     m_numTapesToCreateHasBeenSet(false),
-    m_tapeBarcodePrefixHasBeenSet(false)
+    m_tapeBarcodePrefixHasBeenSet(false),
+    m_kMSEncrypted(false),
+    m_kMSEncryptedHasBeenSet(false),
+    m_kMSKeyHasBeenSet(false)
 {
 }
 
@@ -67,7 +70,19 @@ Aws::String CreateTapesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_kMSEncryptedHasBeenSet)
+  {
+   payload.WithBool("KMSEncrypted", m_kMSEncrypted);
+
+  }
+
+  if(m_kMSKeyHasBeenSet)
+  {
+   payload.WithString("KMSKey", m_kMSKey);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateTapesRequest::GetRequestSpecificHeaders() const

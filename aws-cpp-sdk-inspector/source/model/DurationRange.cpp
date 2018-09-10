@@ -36,7 +36,7 @@ DurationRange::DurationRange() :
 {
 }
 
-DurationRange::DurationRange(const JsonValue& jsonValue) : 
+DurationRange::DurationRange(JsonView jsonValue) : 
     m_minSeconds(0),
     m_minSecondsHasBeenSet(false),
     m_maxSeconds(0),
@@ -45,7 +45,7 @@ DurationRange::DurationRange(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DurationRange& DurationRange::operator =(const JsonValue& jsonValue)
+DurationRange& DurationRange::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("minSeconds"))
   {

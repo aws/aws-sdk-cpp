@@ -50,16 +50,16 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This paramater allows (per
+     * If it is not included, it defaults to a slash (/). This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes, containing any ASCII character from the
-     * ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p> <note> <p> If you are
-     * uploading a server certificate specifically for use with Amazon CloudFront
-     * distributions, you must specify a path using the <code>--path</code> option. The
-     * path must begin with <code>/cloudfront</code> and must include a trailing slash
-     * (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
+     * If you are uploading a server certificate specifically for use with Amazon
+     * CloudFront distributions, you must specify a path using the <code>path</code>
+     * parameter. The path must begin with <code>/cloudfront</code> and must include a
+     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -67,16 +67,16 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This paramater allows (per
+     * If it is not included, it defaults to a slash (/). This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes, containing any ASCII character from the
-     * ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p> <note> <p> If you are
-     * uploading a server certificate specifically for use with Amazon CloudFront
-     * distributions, you must specify a path using the <code>--path</code> option. The
-     * path must begin with <code>/cloudfront</code> and must include a trailing slash
-     * (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
+     * If you are uploading a server certificate specifically for use with Amazon
+     * CloudFront distributions, you must specify a path using the <code>path</code>
+     * parameter. The path must begin with <code>/cloudfront</code> and must include a
+     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -84,16 +84,16 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This paramater allows (per
+     * If it is not included, it defaults to a slash (/). This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes, containing any ASCII character from the
-     * ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p> <note> <p> If you are
-     * uploading a server certificate specifically for use with Amazon CloudFront
-     * distributions, you must specify a path using the <code>--path</code> option. The
-     * path must begin with <code>/cloudfront</code> and must include a trailing slash
-     * (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
+     * If you are uploading a server certificate specifically for use with Amazon
+     * CloudFront distributions, you must specify a path using the <code>path</code>
+     * parameter. The path must begin with <code>/cloudfront</code> and must include a
+     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
@@ -101,16 +101,16 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This paramater allows (per
+     * If it is not included, it defaults to a slash (/). This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes, containing any ASCII character from the
-     * ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p> <note> <p> If you are
-     * uploading a server certificate specifically for use with Amazon CloudFront
-     * distributions, you must specify a path using the <code>--path</code> option. The
-     * path must begin with <code>/cloudfront</code> and must include a trailing slash
-     * (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
+     * If you are uploading a server certificate specifically for use with Amazon
+     * CloudFront distributions, you must specify a path using the <code>path</code>
+     * parameter. The path must begin with <code>/cloudfront</code> and must include a
+     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
@@ -118,16 +118,16 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This paramater allows (per
+     * If it is not included, it defaults to a slash (/). This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes, containing any ASCII character from the
-     * ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p> <note> <p> If you are
-     * uploading a server certificate specifically for use with Amazon CloudFront
-     * distributions, you must specify a path using the <code>--path</code> option. The
-     * path must begin with <code>/cloudfront</code> and must include a trailing slash
-     * (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
+     * If you are uploading a server certificate specifically for use with Amazon
+     * CloudFront distributions, you must specify a path using the <code>path</code>
+     * parameter. The path must begin with <code>/cloudfront</code> and must include a
+     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
      */
     inline UploadServerCertificateRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
@@ -135,16 +135,16 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This paramater allows (per
+     * If it is not included, it defaults to a slash (/). This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes, containing any ASCII character from the
-     * ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p> <note> <p> If you are
-     * uploading a server certificate specifically for use with Amazon CloudFront
-     * distributions, you must specify a path using the <code>--path</code> option. The
-     * path must begin with <code>/cloudfront</code> and must include a trailing slash
-     * (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
+     * If you are uploading a server certificate specifically for use with Amazon
+     * CloudFront distributions, you must specify a path using the <code>path</code>
+     * parameter. The path must begin with <code>/cloudfront</code> and must include a
+     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
      */
     inline UploadServerCertificateRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
@@ -152,16 +152,16 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This paramater allows (per
+     * If it is not included, it defaults to a slash (/). This parameter allows (per
      * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes, containing any ASCII character from the
-     * ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     * characters, digits, and upper and lowercased letters.</p> <note> <p> If you are
-     * uploading a server certificate specifically for use with Amazon CloudFront
-     * distributions, you must specify a path using the <code>--path</code> option. The
-     * path must begin with <code>/cloudfront</code> and must include a trailing slash
-     * (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
+     * If you are uploading a server certificate specifically for use with Amazon
+     * CloudFront distributions, you must specify a path using the <code>path</code>
+     * parameter. The path must begin with <code>/cloudfront</code> and must include a
+     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
      */
     inline UploadServerCertificateRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
@@ -171,7 +171,8 @@ namespace Model
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline const Aws::String& GetServerCertificateName() const{ return m_serverCertificateName; }
 
@@ -180,7 +181,8 @@ namespace Model
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
 
@@ -189,7 +191,8 @@ namespace Model
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetServerCertificateName(Aws::String&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = std::move(value); }
 
@@ -198,7 +201,8 @@ namespace Model
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetServerCertificateName(const char* value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName.assign(value); }
 
@@ -207,7 +211,8 @@ namespace Model
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline UploadServerCertificateRequest& WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
 
@@ -216,7 +221,8 @@ namespace Model
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline UploadServerCertificateRequest& WithServerCertificateName(Aws::String&& value) { SetServerCertificateName(std::move(value)); return *this;}
 
@@ -225,7 +231,8 @@ namespace Model
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline UploadServerCertificateRequest& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
 
@@ -233,77 +240,84 @@ namespace Model
     /**
      * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
-     * this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range as well as the printable characters in the Basic Latin and
-     * Latin-1 Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * this parameter is a string of characters consisting of the following:</p> <ul>
+     * <li> <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline const Aws::String& GetCertificateBody() const{ return m_certificateBody; }
 
     /**
      * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
-     * this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range as well as the printable characters in the Basic Latin and
-     * Latin-1 Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * this parameter is a string of characters consisting of the following:</p> <ul>
+     * <li> <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetCertificateBody(const Aws::String& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = value; }
 
     /**
      * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
-     * this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range as well as the printable characters in the Basic Latin and
-     * Latin-1 Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * this parameter is a string of characters consisting of the following:</p> <ul>
+     * <li> <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetCertificateBody(Aws::String&& value) { m_certificateBodyHasBeenSet = true; m_certificateBody = std::move(value); }
 
     /**
      * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
-     * this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range as well as the printable characters in the Basic Latin and
-     * Latin-1 Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * this parameter is a string of characters consisting of the following:</p> <ul>
+     * <li> <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetCertificateBody(const char* value) { m_certificateBodyHasBeenSet = true; m_certificateBody.assign(value); }
 
     /**
      * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
-     * this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range as well as the printable characters in the Basic Latin and
-     * Latin-1 Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * this parameter is a string of characters consisting of the following:</p> <ul>
+     * <li> <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UploadServerCertificateRequest& WithCertificateBody(const Aws::String& value) { SetCertificateBody(value); return *this;}
 
     /**
      * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
-     * this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range as well as the printable characters in the Basic Latin and
-     * Latin-1 Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * this parameter is a string of characters consisting of the following:</p> <ul>
+     * <li> <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UploadServerCertificateRequest& WithCertificateBody(Aws::String&& value) { SetCertificateBody(std::move(value)); return *this;}
 
     /**
      * <p>The contents of the public key certificate in PEM-encoded format.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate
-     * this parameter is a string of characters consisting of any printable ASCII
-     * character ranging from the space character (\u0020) through end of the ASCII
-     * character range as well as the printable characters in the Basic Latin and
-     * Latin-1 Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * this parameter is a string of characters consisting of the following:</p> <ul>
+     * <li> <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UploadServerCertificateRequest& WithCertificateBody(const char* value) { SetCertificateBody(value); return *this;}
 
@@ -311,77 +325,84 @@ namespace Model
     /**
      * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
 
     /**
      * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetPrivateKey(const Aws::String& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
 
     /**
      * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::move(value); }
 
     /**
      * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetPrivateKey(const char* value) { m_privateKeyHasBeenSet = true; m_privateKey.assign(value); }
 
     /**
      * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UploadServerCertificateRequest& WithPrivateKey(const Aws::String& value) { SetPrivateKey(value); return *this;}
 
     /**
      * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UploadServerCertificateRequest& WithPrivateKey(Aws::String&& value) { SetPrivateKey(std::move(value)); return *this;}
 
     /**
      * <p>The contents of the private key in PEM-encoded format.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UploadServerCertificateRequest& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
 
@@ -390,11 +411,12 @@ namespace Model
      * <p>The contents of the certificate chain. This is typically a concatenation of
      * the PEM-encoded public key certificates of the chain.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
 
@@ -402,11 +424,12 @@ namespace Model
      * <p>The contents of the certificate chain. This is typically a concatenation of
      * the PEM-encoded public key certificates of the chain.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetCertificateChain(const Aws::String& value) { m_certificateChainHasBeenSet = true; m_certificateChain = value; }
 
@@ -414,11 +437,12 @@ namespace Model
      * <p>The contents of the certificate chain. This is typically a concatenation of
      * the PEM-encoded public key certificates of the chain.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetCertificateChain(Aws::String&& value) { m_certificateChainHasBeenSet = true; m_certificateChain = std::move(value); }
 
@@ -426,11 +450,12 @@ namespace Model
      * <p>The contents of the certificate chain. This is typically a concatenation of
      * the PEM-encoded public key certificates of the chain.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline void SetCertificateChain(const char* value) { m_certificateChainHasBeenSet = true; m_certificateChain.assign(value); }
 
@@ -438,11 +463,12 @@ namespace Model
      * <p>The contents of the certificate chain. This is typically a concatenation of
      * the PEM-encoded public key certificates of the chain.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UploadServerCertificateRequest& WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
 
@@ -450,11 +476,12 @@ namespace Model
      * <p>The contents of the certificate chain. This is typically a concatenation of
      * the PEM-encoded public key certificates of the chain.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UploadServerCertificateRequest& WithCertificateChain(Aws::String&& value) { SetCertificateChain(std::move(value)); return *this;}
 
@@ -462,11 +489,12 @@ namespace Model
      * <p>The contents of the certificate chain. This is typically a concatenation of
      * the PEM-encoded public key certificates of the chain.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of any printable ASCII character
-     * ranging from the space character (\u0020) through end of the ASCII character
-     * range as well as the printable characters in the Basic Latin and Latin-1
-     * Supplement character set (through \u00FF). It also includes the special
-     * characters tab (\u0009), line feed (\u000A), and carriage return (\u000D).</p>
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character (\u0020)
+     * through the end of the ASCII character range</p> </li> <li> <p>The printable
+     * characters in the Basic Latin and Latin-1 Supplement character set (through
+     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
+     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline UploadServerCertificateRequest& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 

@@ -37,7 +37,7 @@ ListStreamProcessorsResult::ListStreamProcessorsResult(const Aws::AmazonWebServi
 
 ListStreamProcessorsResult& ListStreamProcessorsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -46,7 +46,7 @@ ListStreamProcessorsResult& ListStreamProcessorsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("StreamProcessors"))
   {
-    Array<JsonValue> streamProcessorsJsonList = jsonValue.GetArray("StreamProcessors");
+    Array<JsonView> streamProcessorsJsonList = jsonValue.GetArray("StreamProcessors");
     for(unsigned streamProcessorsIndex = 0; streamProcessorsIndex < streamProcessorsJsonList.GetLength(); ++streamProcessorsIndex)
     {
       m_streamProcessors.push_back(streamProcessorsJsonList[streamProcessorsIndex].AsObject());

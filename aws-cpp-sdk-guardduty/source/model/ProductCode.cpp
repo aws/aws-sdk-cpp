@@ -34,14 +34,14 @@ ProductCode::ProductCode() :
 {
 }
 
-ProductCode::ProductCode(const JsonValue& jsonValue) : 
+ProductCode::ProductCode(JsonView jsonValue) : 
     m_codeHasBeenSet(false),
     m_productTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ProductCode& ProductCode::operator =(const JsonValue& jsonValue)
+ProductCode& ProductCode::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("code"))
   {

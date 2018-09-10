@@ -50,13 +50,14 @@ M3u8Settings::M3u8Settings() :
     m_scte35PidHasBeenSet(false),
     m_timedMetadataBehavior(M3u8TimedMetadataBehavior::NOT_SET),
     m_timedMetadataBehaviorHasBeenSet(false),
+    m_timedMetadataPidHasBeenSet(false),
     m_transportStreamId(0),
     m_transportStreamIdHasBeenSet(false),
     m_videoPidHasBeenSet(false)
 {
 }
 
-M3u8Settings::M3u8Settings(const JsonValue& jsonValue) : 
+M3u8Settings::M3u8Settings(JsonView jsonValue) : 
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
@@ -78,6 +79,7 @@ M3u8Settings::M3u8Settings(const JsonValue& jsonValue) :
     m_scte35PidHasBeenSet(false),
     m_timedMetadataBehavior(M3u8TimedMetadataBehavior::NOT_SET),
     m_timedMetadataBehaviorHasBeenSet(false),
+    m_timedMetadataPidHasBeenSet(false),
     m_transportStreamId(0),
     m_transportStreamIdHasBeenSet(false),
     m_videoPidHasBeenSet(false)
@@ -85,7 +87,7 @@ M3u8Settings::M3u8Settings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-M3u8Settings& M3u8Settings::operator =(const JsonValue& jsonValue)
+M3u8Settings& M3u8Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioFramesPerPes"))
   {
@@ -176,6 +178,13 @@ M3u8Settings& M3u8Settings::operator =(const JsonValue& jsonValue)
     m_timedMetadataBehavior = M3u8TimedMetadataBehaviorMapper::GetM3u8TimedMetadataBehaviorForName(jsonValue.GetString("timedMetadataBehavior"));
 
     m_timedMetadataBehaviorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("timedMetadataPid"))
+  {
+    m_timedMetadataPid = jsonValue.GetString("timedMetadataPid");
+
+    m_timedMetadataPidHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("transportStreamId"))
@@ -272,6 +281,12 @@ JsonValue M3u8Settings::Jsonize() const
   if(m_timedMetadataBehaviorHasBeenSet)
   {
    payload.WithString("timedMetadataBehavior", M3u8TimedMetadataBehaviorMapper::GetNameForM3u8TimedMetadataBehavior(m_timedMetadataBehavior));
+  }
+
+  if(m_timedMetadataPidHasBeenSet)
+  {
+   payload.WithString("timedMetadataPid", m_timedMetadataPid);
+
   }
 
   if(m_transportStreamIdHasBeenSet)

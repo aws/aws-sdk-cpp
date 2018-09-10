@@ -45,7 +45,7 @@ UpdateFunctionCodeResult::UpdateFunctionCodeResult(const Aws::AmazonWebServiceRe
 
 UpdateFunctionCodeResult& UpdateFunctionCodeResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FunctionName"))
   {
     m_functionName = jsonValue.GetString("FunctionName");
@@ -151,6 +151,12 @@ UpdateFunctionCodeResult& UpdateFunctionCodeResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("MasterArn"))
   {
     m_masterArn = jsonValue.GetString("MasterArn");
+
+  }
+
+  if(jsonValue.ValueExists("RevisionId"))
+  {
+    m_revisionId = jsonValue.GetString("RevisionId");
 
   }
 

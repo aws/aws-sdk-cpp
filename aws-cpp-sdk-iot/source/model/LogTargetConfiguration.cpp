@@ -35,7 +35,7 @@ LogTargetConfiguration::LogTargetConfiguration() :
 {
 }
 
-LogTargetConfiguration::LogTargetConfiguration(const JsonValue& jsonValue) : 
+LogTargetConfiguration::LogTargetConfiguration(JsonView jsonValue) : 
     m_logTargetHasBeenSet(false),
     m_logLevel(LogLevel::NOT_SET),
     m_logLevelHasBeenSet(false)
@@ -43,7 +43,7 @@ LogTargetConfiguration::LogTargetConfiguration(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LogTargetConfiguration& LogTargetConfiguration::operator =(const JsonValue& jsonValue)
+LogTargetConfiguration& LogTargetConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("logTarget"))
   {

@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -35,22 +36,19 @@ namespace Model
   /**
    * <p>Current status of fleet utilization, including the number of game and player
    * sessions being hosted.</p> <p>Fleet-related operations include:</p> <ul> <li>
-   * <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li>
-   * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-   * <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+   * <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+   * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+   * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+   * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
    * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
    * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-   * <a>DescribeFleetEvents</a> </p> </li> </ul> </li> <li> <p>Update fleets:</p>
-   * <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
-   * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetPortSettings</a>
-   * </p> </li> <li> <p> <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li>
-   * <li> <p>Manage fleet capacity:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-   * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-   * <a>PutScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-   * <a>DescribeScalingPolicies</a> (automatic scaling)</p> </li> <li> <p>
-   * <a>DeleteScalingPolicy</a> (automatic scaling)</p> </li> <li> <p>
-   * <a>DescribeEC2InstanceLimits</a> </p> </li> </ul> </li> <li> <p>
-   * <a>DeleteFleet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
+   * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
+   * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+   * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
+   * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
+   * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
+   * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetUtilization">AWS
    * API Reference</a></p>
    */
@@ -58,8 +56,8 @@ namespace Model
   {
   public:
     FleetUtilization();
-    FleetUtilization(const Aws::Utils::Json::JsonValue& jsonValue);
-    FleetUtilization& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FleetUtilization(Aws::Utils::Json::JsonView jsonValue);
+    FleetUtilization& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -51,37 +51,37 @@ namespace Model
 
 
     /**
-     * <p>Information about one or more Internet gateways.</p>
+     * <p>Information about one or more internet gateways.</p>
      */
     inline const Aws::Vector<InternetGateway>& GetInternetGateways() const{ return m_internetGateways; }
 
     /**
-     * <p>Information about one or more Internet gateways.</p>
+     * <p>Information about one or more internet gateways.</p>
      */
     inline void SetInternetGateways(const Aws::Vector<InternetGateway>& value) { m_internetGateways = value; }
 
     /**
-     * <p>Information about one or more Internet gateways.</p>
+     * <p>Information about one or more internet gateways.</p>
      */
     inline void SetInternetGateways(Aws::Vector<InternetGateway>&& value) { m_internetGateways = std::move(value); }
 
     /**
-     * <p>Information about one or more Internet gateways.</p>
+     * <p>Information about one or more internet gateways.</p>
      */
     inline DescribeInternetGatewaysResponse& WithInternetGateways(const Aws::Vector<InternetGateway>& value) { SetInternetGateways(value); return *this;}
 
     /**
-     * <p>Information about one or more Internet gateways.</p>
+     * <p>Information about one or more internet gateways.</p>
      */
     inline DescribeInternetGatewaysResponse& WithInternetGateways(Aws::Vector<InternetGateway>&& value) { SetInternetGateways(std::move(value)); return *this;}
 
     /**
-     * <p>Information about one or more Internet gateways.</p>
+     * <p>Information about one or more internet gateways.</p>
      */
     inline DescribeInternetGatewaysResponse& AddInternetGateways(const InternetGateway& value) { m_internetGateways.push_back(value); return *this; }
 
     /**
-     * <p>Information about one or more Internet gateways.</p>
+     * <p>Information about one or more internet gateways.</p>
      */
     inline DescribeInternetGatewaysResponse& AddInternetGateways(InternetGateway&& value) { m_internetGateways.push_back(std::move(value)); return *this; }
 

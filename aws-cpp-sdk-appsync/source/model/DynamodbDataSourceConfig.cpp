@@ -36,7 +36,7 @@ DynamodbDataSourceConfig::DynamodbDataSourceConfig() :
 {
 }
 
-DynamodbDataSourceConfig::DynamodbDataSourceConfig(const JsonValue& jsonValue) : 
+DynamodbDataSourceConfig::DynamodbDataSourceConfig(JsonView jsonValue) : 
     m_tableNameHasBeenSet(false),
     m_awsRegionHasBeenSet(false),
     m_useCallerCredentials(false),
@@ -45,7 +45,7 @@ DynamodbDataSourceConfig::DynamodbDataSourceConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-DynamodbDataSourceConfig& DynamodbDataSourceConfig::operator =(const JsonValue& jsonValue)
+DynamodbDataSourceConfig& DynamodbDataSourceConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("tableName"))
   {

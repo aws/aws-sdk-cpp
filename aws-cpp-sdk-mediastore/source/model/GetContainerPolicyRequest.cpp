@@ -37,7 +37,7 @@ Aws::String GetContainerPolicyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetContainerPolicyRequest::GetRequestSpecificHeaders() const

@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ApplicationAutoScaling
@@ -40,8 +41,8 @@ namespace Model
   {
   public:
     ScalableTargetAction();
-    ScalableTargetAction(const Aws::Utils::Json::JsonValue& jsonValue);
-    ScalableTargetAction& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ScalableTargetAction(Aws::Utils::Json::JsonView jsonValue);
+    ScalableTargetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

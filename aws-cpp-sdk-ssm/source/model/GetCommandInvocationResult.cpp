@@ -41,7 +41,7 @@ GetCommandInvocationResult::GetCommandInvocationResult(const Aws::AmazonWebServi
 
 GetCommandInvocationResult& GetCommandInvocationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CommandId"))
   {
     m_commandId = jsonValue.GetString("CommandId");
@@ -63,6 +63,12 @@ GetCommandInvocationResult& GetCommandInvocationResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("DocumentName"))
   {
     m_documentName = jsonValue.GetString("DocumentName");
+
+  }
+
+  if(jsonValue.ValueExists("DocumentVersion"))
+  {
+    m_documentVersion = jsonValue.GetString("DocumentVersion");
 
   }
 
@@ -129,6 +135,12 @@ GetCommandInvocationResult& GetCommandInvocationResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("StandardErrorUrl"))
   {
     m_standardErrorUrl = jsonValue.GetString("StandardErrorUrl");
+
+  }
+
+  if(jsonValue.ValueExists("CloudWatchOutputConfig"))
+  {
+    m_cloudWatchOutputConfig = jsonValue.GetObject("CloudWatchOutputConfig");
 
   }
 

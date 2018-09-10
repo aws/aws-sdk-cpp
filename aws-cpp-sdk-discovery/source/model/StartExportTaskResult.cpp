@@ -37,7 +37,7 @@ StartExportTaskResult::StartExportTaskResult(const Aws::AmazonWebServiceResult<J
 
 StartExportTaskResult& StartExportTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("exportId"))
   {
     m_exportId = jsonValue.GetString("exportId");

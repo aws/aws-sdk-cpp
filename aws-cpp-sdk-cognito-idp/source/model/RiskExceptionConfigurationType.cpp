@@ -34,18 +34,18 @@ RiskExceptionConfigurationType::RiskExceptionConfigurationType() :
 {
 }
 
-RiskExceptionConfigurationType::RiskExceptionConfigurationType(const JsonValue& jsonValue) : 
+RiskExceptionConfigurationType::RiskExceptionConfigurationType(JsonView jsonValue) : 
     m_blockedIPRangeListHasBeenSet(false),
     m_skippedIPRangeListHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RiskExceptionConfigurationType& RiskExceptionConfigurationType::operator =(const JsonValue& jsonValue)
+RiskExceptionConfigurationType& RiskExceptionConfigurationType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BlockedIPRangeList"))
   {
-    Array<JsonValue> blockedIPRangeListJsonList = jsonValue.GetArray("BlockedIPRangeList");
+    Array<JsonView> blockedIPRangeListJsonList = jsonValue.GetArray("BlockedIPRangeList");
     for(unsigned blockedIPRangeListIndex = 0; blockedIPRangeListIndex < blockedIPRangeListJsonList.GetLength(); ++blockedIPRangeListIndex)
     {
       m_blockedIPRangeList.push_back(blockedIPRangeListJsonList[blockedIPRangeListIndex].AsString());
@@ -55,7 +55,7 @@ RiskExceptionConfigurationType& RiskExceptionConfigurationType::operator =(const
 
   if(jsonValue.ValueExists("SkippedIPRangeList"))
   {
-    Array<JsonValue> skippedIPRangeListJsonList = jsonValue.GetArray("SkippedIPRangeList");
+    Array<JsonView> skippedIPRangeListJsonList = jsonValue.GetArray("SkippedIPRangeList");
     for(unsigned skippedIPRangeListIndex = 0; skippedIPRangeListIndex < skippedIPRangeListJsonList.GetLength(); ++skippedIPRangeListIndex)
     {
       m_skippedIPRangeList.push_back(skippedIPRangeListJsonList[skippedIPRangeListIndex].AsString());

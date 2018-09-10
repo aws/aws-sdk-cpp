@@ -44,7 +44,7 @@ Aws::String DeleteEnvironmentMembershipRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteEnvironmentMembershipRequest::GetRequestSpecificHeaders() const

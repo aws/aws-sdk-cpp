@@ -39,7 +39,7 @@ Commit::Commit() :
 {
 }
 
-Commit::Commit(const JsonValue& jsonValue) : 
+Commit::Commit(JsonView jsonValue) : 
     m_commitIdHasBeenSet(false),
     m_treeIdHasBeenSet(false),
     m_parentsHasBeenSet(false),
@@ -51,7 +51,7 @@ Commit::Commit(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Commit& Commit::operator =(const JsonValue& jsonValue)
+Commit& Commit::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("commitId"))
   {
@@ -69,7 +69,7 @@ Commit& Commit::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("parents"))
   {
-    Array<JsonValue> parentsJsonList = jsonValue.GetArray("parents");
+    Array<JsonView> parentsJsonList = jsonValue.GetArray("parents");
     for(unsigned parentsIndex = 0; parentsIndex < parentsJsonList.GetLength(); ++parentsIndex)
     {
       m_parents.push_back(parentsJsonList[parentsIndex].AsString());

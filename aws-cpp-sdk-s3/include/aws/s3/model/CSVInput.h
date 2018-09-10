@@ -34,8 +34,9 @@ namespace Model
 {
 
   /**
-   * Describes how a CSV-formatted input object is formatted.<p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CSVInput">AWS API
+   * <p>Describes how a CSV-formatted input object is formatted.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CSVInput">AWS API
    * Reference</a></p>
    */
   class AWS_S3_API CSVInput
@@ -49,223 +50,245 @@ namespace Model
 
 
     /**
-     * Describes the first line of input. Valid values: None, Ignore, Use.
+     * <p>Describes the first line of input. Valid values: None, Ignore, Use.</p>
      */
     inline const FileHeaderInfo& GetFileHeaderInfo() const{ return m_fileHeaderInfo; }
 
     /**
-     * Describes the first line of input. Valid values: None, Ignore, Use.
+     * <p>Describes the first line of input. Valid values: None, Ignore, Use.</p>
      */
     inline void SetFileHeaderInfo(const FileHeaderInfo& value) { m_fileHeaderInfoHasBeenSet = true; m_fileHeaderInfo = value; }
 
     /**
-     * Describes the first line of input. Valid values: None, Ignore, Use.
+     * <p>Describes the first line of input. Valid values: None, Ignore, Use.</p>
      */
     inline void SetFileHeaderInfo(FileHeaderInfo&& value) { m_fileHeaderInfoHasBeenSet = true; m_fileHeaderInfo = std::move(value); }
 
     /**
-     * Describes the first line of input. Valid values: None, Ignore, Use.
+     * <p>Describes the first line of input. Valid values: None, Ignore, Use.</p>
      */
     inline CSVInput& WithFileHeaderInfo(const FileHeaderInfo& value) { SetFileHeaderInfo(value); return *this;}
 
     /**
-     * Describes the first line of input. Valid values: None, Ignore, Use.
+     * <p>Describes the first line of input. Valid values: None, Ignore, Use.</p>
      */
     inline CSVInput& WithFileHeaderInfo(FileHeaderInfo&& value) { SetFileHeaderInfo(std::move(value)); return *this;}
 
 
     /**
-     * Single character used to indicate a row should be ignored when present at the
-     * start of a row.
+     * <p>Single character used to indicate a row should be ignored when present at the
+     * start of a row.</p>
      */
     inline const Aws::String& GetComments() const{ return m_comments; }
 
     /**
-     * Single character used to indicate a row should be ignored when present at the
-     * start of a row.
+     * <p>Single character used to indicate a row should be ignored when present at the
+     * start of a row.</p>
      */
     inline void SetComments(const Aws::String& value) { m_commentsHasBeenSet = true; m_comments = value; }
 
     /**
-     * Single character used to indicate a row should be ignored when present at the
-     * start of a row.
+     * <p>Single character used to indicate a row should be ignored when present at the
+     * start of a row.</p>
      */
     inline void SetComments(Aws::String&& value) { m_commentsHasBeenSet = true; m_comments = std::move(value); }
 
     /**
-     * Single character used to indicate a row should be ignored when present at the
-     * start of a row.
+     * <p>Single character used to indicate a row should be ignored when present at the
+     * start of a row.</p>
      */
     inline void SetComments(const char* value) { m_commentsHasBeenSet = true; m_comments.assign(value); }
 
     /**
-     * Single character used to indicate a row should be ignored when present at the
-     * start of a row.
+     * <p>Single character used to indicate a row should be ignored when present at the
+     * start of a row.</p>
      */
     inline CSVInput& WithComments(const Aws::String& value) { SetComments(value); return *this;}
 
     /**
-     * Single character used to indicate a row should be ignored when present at the
-     * start of a row.
+     * <p>Single character used to indicate a row should be ignored when present at the
+     * start of a row.</p>
      */
     inline CSVInput& WithComments(Aws::String&& value) { SetComments(std::move(value)); return *this;}
 
     /**
-     * Single character used to indicate a row should be ignored when present at the
-     * start of a row.
+     * <p>Single character used to indicate a row should be ignored when present at the
+     * start of a row.</p>
      */
     inline CSVInput& WithComments(const char* value) { SetComments(value); return *this;}
 
 
     /**
-     * Single character used for escaping the quote character inside an already escaped
-     * value.
+     * <p>Single character used for escaping the quote character inside an already
+     * escaped value.</p>
      */
     inline const Aws::String& GetQuoteEscapeCharacter() const{ return m_quoteEscapeCharacter; }
 
     /**
-     * Single character used for escaping the quote character inside an already escaped
-     * value.
+     * <p>Single character used for escaping the quote character inside an already
+     * escaped value.</p>
      */
     inline void SetQuoteEscapeCharacter(const Aws::String& value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter = value; }
 
     /**
-     * Single character used for escaping the quote character inside an already escaped
-     * value.
+     * <p>Single character used for escaping the quote character inside an already
+     * escaped value.</p>
      */
     inline void SetQuoteEscapeCharacter(Aws::String&& value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter = std::move(value); }
 
     /**
-     * Single character used for escaping the quote character inside an already escaped
-     * value.
+     * <p>Single character used for escaping the quote character inside an already
+     * escaped value.</p>
      */
     inline void SetQuoteEscapeCharacter(const char* value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter.assign(value); }
 
     /**
-     * Single character used for escaping the quote character inside an already escaped
-     * value.
+     * <p>Single character used for escaping the quote character inside an already
+     * escaped value.</p>
      */
     inline CSVInput& WithQuoteEscapeCharacter(const Aws::String& value) { SetQuoteEscapeCharacter(value); return *this;}
 
     /**
-     * Single character used for escaping the quote character inside an already escaped
-     * value.
+     * <p>Single character used for escaping the quote character inside an already
+     * escaped value.</p>
      */
     inline CSVInput& WithQuoteEscapeCharacter(Aws::String&& value) { SetQuoteEscapeCharacter(std::move(value)); return *this;}
 
     /**
-     * Single character used for escaping the quote character inside an already escaped
-     * value.
+     * <p>Single character used for escaping the quote character inside an already
+     * escaped value.</p>
      */
     inline CSVInput& WithQuoteEscapeCharacter(const char* value) { SetQuoteEscapeCharacter(value); return *this;}
 
 
     /**
-     * Value used to separate individual records.
+     * <p>Value used to separate individual records.</p>
      */
     inline const Aws::String& GetRecordDelimiter() const{ return m_recordDelimiter; }
 
     /**
-     * Value used to separate individual records.
+     * <p>Value used to separate individual records.</p>
      */
     inline void SetRecordDelimiter(const Aws::String& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = value; }
 
     /**
-     * Value used to separate individual records.
+     * <p>Value used to separate individual records.</p>
      */
     inline void SetRecordDelimiter(Aws::String&& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = std::move(value); }
 
     /**
-     * Value used to separate individual records.
+     * <p>Value used to separate individual records.</p>
      */
     inline void SetRecordDelimiter(const char* value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter.assign(value); }
 
     /**
-     * Value used to separate individual records.
+     * <p>Value used to separate individual records.</p>
      */
     inline CSVInput& WithRecordDelimiter(const Aws::String& value) { SetRecordDelimiter(value); return *this;}
 
     /**
-     * Value used to separate individual records.
+     * <p>Value used to separate individual records.</p>
      */
     inline CSVInput& WithRecordDelimiter(Aws::String&& value) { SetRecordDelimiter(std::move(value)); return *this;}
 
     /**
-     * Value used to separate individual records.
+     * <p>Value used to separate individual records.</p>
      */
     inline CSVInput& WithRecordDelimiter(const char* value) { SetRecordDelimiter(value); return *this;}
 
 
     /**
-     * Value used to separate individual fields in a record.
+     * <p>Value used to separate individual fields in a record.</p>
      */
     inline const Aws::String& GetFieldDelimiter() const{ return m_fieldDelimiter; }
 
     /**
-     * Value used to separate individual fields in a record.
+     * <p>Value used to separate individual fields in a record.</p>
      */
     inline void SetFieldDelimiter(const Aws::String& value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter = value; }
 
     /**
-     * Value used to separate individual fields in a record.
+     * <p>Value used to separate individual fields in a record.</p>
      */
     inline void SetFieldDelimiter(Aws::String&& value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter = std::move(value); }
 
     /**
-     * Value used to separate individual fields in a record.
+     * <p>Value used to separate individual fields in a record.</p>
      */
     inline void SetFieldDelimiter(const char* value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter.assign(value); }
 
     /**
-     * Value used to separate individual fields in a record.
+     * <p>Value used to separate individual fields in a record.</p>
      */
     inline CSVInput& WithFieldDelimiter(const Aws::String& value) { SetFieldDelimiter(value); return *this;}
 
     /**
-     * Value used to separate individual fields in a record.
+     * <p>Value used to separate individual fields in a record.</p>
      */
     inline CSVInput& WithFieldDelimiter(Aws::String&& value) { SetFieldDelimiter(std::move(value)); return *this;}
 
     /**
-     * Value used to separate individual fields in a record.
+     * <p>Value used to separate individual fields in a record.</p>
      */
     inline CSVInput& WithFieldDelimiter(const char* value) { SetFieldDelimiter(value); return *this;}
 
 
     /**
-     * Value used for escaping where the field delimiter is part of the value.
+     * <p>Value used for escaping where the field delimiter is part of the value.</p>
      */
     inline const Aws::String& GetQuoteCharacter() const{ return m_quoteCharacter; }
 
     /**
-     * Value used for escaping where the field delimiter is part of the value.
+     * <p>Value used for escaping where the field delimiter is part of the value.</p>
      */
     inline void SetQuoteCharacter(const Aws::String& value) { m_quoteCharacterHasBeenSet = true; m_quoteCharacter = value; }
 
     /**
-     * Value used for escaping where the field delimiter is part of the value.
+     * <p>Value used for escaping where the field delimiter is part of the value.</p>
      */
     inline void SetQuoteCharacter(Aws::String&& value) { m_quoteCharacterHasBeenSet = true; m_quoteCharacter = std::move(value); }
 
     /**
-     * Value used for escaping where the field delimiter is part of the value.
+     * <p>Value used for escaping where the field delimiter is part of the value.</p>
      */
     inline void SetQuoteCharacter(const char* value) { m_quoteCharacterHasBeenSet = true; m_quoteCharacter.assign(value); }
 
     /**
-     * Value used for escaping where the field delimiter is part of the value.
+     * <p>Value used for escaping where the field delimiter is part of the value.</p>
      */
     inline CSVInput& WithQuoteCharacter(const Aws::String& value) { SetQuoteCharacter(value); return *this;}
 
     /**
-     * Value used for escaping where the field delimiter is part of the value.
+     * <p>Value used for escaping where the field delimiter is part of the value.</p>
      */
     inline CSVInput& WithQuoteCharacter(Aws::String&& value) { SetQuoteCharacter(std::move(value)); return *this;}
 
     /**
-     * Value used for escaping where the field delimiter is part of the value.
+     * <p>Value used for escaping where the field delimiter is part of the value.</p>
      */
     inline CSVInput& WithQuoteCharacter(const char* value) { SetQuoteCharacter(value); return *this;}
+
+
+    /**
+     * <p>Specifies that CSV field values may contain quoted record delimiters and such
+     * records should be allowed. Default value is FALSE. Setting this value to TRUE
+     * may lower performance.</p>
+     */
+    inline bool GetAllowQuotedRecordDelimiter() const{ return m_allowQuotedRecordDelimiter; }
+
+    /**
+     * <p>Specifies that CSV field values may contain quoted record delimiters and such
+     * records should be allowed. Default value is FALSE. Setting this value to TRUE
+     * may lower performance.</p>
+     */
+    inline void SetAllowQuotedRecordDelimiter(bool value) { m_allowQuotedRecordDelimiterHasBeenSet = true; m_allowQuotedRecordDelimiter = value; }
+
+    /**
+     * <p>Specifies that CSV field values may contain quoted record delimiters and such
+     * records should be allowed. Default value is FALSE. Setting this value to TRUE
+     * may lower performance.</p>
+     */
+    inline CSVInput& WithAllowQuotedRecordDelimiter(bool value) { SetAllowQuotedRecordDelimiter(value); return *this;}
 
   private:
 
@@ -286,6 +309,9 @@ namespace Model
 
     Aws::String m_quoteCharacter;
     bool m_quoteCharacterHasBeenSet;
+
+    bool m_allowQuotedRecordDelimiter;
+    bool m_allowQuotedRecordDelimiterHasBeenSet;
   };
 
 } // namespace Model

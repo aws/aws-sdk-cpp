@@ -33,13 +33,13 @@ ModelArtifacts::ModelArtifacts() :
 {
 }
 
-ModelArtifacts::ModelArtifacts(const JsonValue& jsonValue) : 
+ModelArtifacts::ModelArtifacts(JsonView jsonValue) : 
     m_s3ModelArtifactsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ModelArtifacts& ModelArtifacts::operator =(const JsonValue& jsonValue)
+ModelArtifacts& ModelArtifacts::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("S3ModelArtifacts"))
   {

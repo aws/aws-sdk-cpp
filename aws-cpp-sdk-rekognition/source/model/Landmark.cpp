@@ -38,7 +38,7 @@ Landmark::Landmark() :
 {
 }
 
-Landmark::Landmark(const JsonValue& jsonValue) : 
+Landmark::Landmark(JsonView jsonValue) : 
     m_type(LandmarkType::NOT_SET),
     m_typeHasBeenSet(false),
     m_x(0.0),
@@ -49,7 +49,7 @@ Landmark::Landmark(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Landmark& Landmark::operator =(const JsonValue& jsonValue)
+Landmark& Landmark::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Type"))
   {

@@ -17,6 +17,7 @@
 #include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/alexaforbusiness/model/DeviceStatus.h>
+#include <aws/alexaforbusiness/model/DeviceStatusInfo.h>
 #include <utility>
 
 namespace Aws
@@ -26,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AlexaForBusiness
@@ -42,8 +44,8 @@ namespace Model
   {
   public:
     Device();
-    Device(const Aws::Utils::Json::JsonValue& jsonValue);
-    Device& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Device(Aws::Utils::Json::JsonView jsonValue);
+    Device& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -300,29 +302,60 @@ namespace Model
 
 
     /**
-     * <p>The status of a device.</p>
+     * <p>The status of a device. If the status is not READY, check the
+     * DeviceStatusInfo value for details.</p>
      */
     inline const DeviceStatus& GetDeviceStatus() const{ return m_deviceStatus; }
 
     /**
-     * <p>The status of a device.</p>
+     * <p>The status of a device. If the status is not READY, check the
+     * DeviceStatusInfo value for details.</p>
      */
     inline void SetDeviceStatus(const DeviceStatus& value) { m_deviceStatusHasBeenSet = true; m_deviceStatus = value; }
 
     /**
-     * <p>The status of a device.</p>
+     * <p>The status of a device. If the status is not READY, check the
+     * DeviceStatusInfo value for details.</p>
      */
     inline void SetDeviceStatus(DeviceStatus&& value) { m_deviceStatusHasBeenSet = true; m_deviceStatus = std::move(value); }
 
     /**
-     * <p>The status of a device.</p>
+     * <p>The status of a device. If the status is not READY, check the
+     * DeviceStatusInfo value for details.</p>
      */
     inline Device& WithDeviceStatus(const DeviceStatus& value) { SetDeviceStatus(value); return *this;}
 
     /**
-     * <p>The status of a device.</p>
+     * <p>The status of a device. If the status is not READY, check the
+     * DeviceStatusInfo value for details.</p>
      */
     inline Device& WithDeviceStatus(DeviceStatus&& value) { SetDeviceStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Detailed information about a device's status.</p>
+     */
+    inline const DeviceStatusInfo& GetDeviceStatusInfo() const{ return m_deviceStatusInfo; }
+
+    /**
+     * <p>Detailed information about a device's status.</p>
+     */
+    inline void SetDeviceStatusInfo(const DeviceStatusInfo& value) { m_deviceStatusInfoHasBeenSet = true; m_deviceStatusInfo = value; }
+
+    /**
+     * <p>Detailed information about a device's status.</p>
+     */
+    inline void SetDeviceStatusInfo(DeviceStatusInfo&& value) { m_deviceStatusInfoHasBeenSet = true; m_deviceStatusInfo = std::move(value); }
+
+    /**
+     * <p>Detailed information about a device's status.</p>
+     */
+    inline Device& WithDeviceStatusInfo(const DeviceStatusInfo& value) { SetDeviceStatusInfo(value); return *this;}
+
+    /**
+     * <p>Detailed information about a device's status.</p>
+     */
+    inline Device& WithDeviceStatusInfo(DeviceStatusInfo&& value) { SetDeviceStatusInfo(std::move(value)); return *this;}
 
   private:
 
@@ -349,6 +382,9 @@ namespace Model
 
     DeviceStatus m_deviceStatus;
     bool m_deviceStatusHasBeenSet;
+
+    DeviceStatusInfo m_deviceStatusInfo;
+    bool m_deviceStatusInfoHasBeenSet;
   };
 
 } // namespace Model

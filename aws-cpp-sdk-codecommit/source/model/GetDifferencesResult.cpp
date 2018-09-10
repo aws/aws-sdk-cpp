@@ -37,10 +37,10 @@ GetDifferencesResult::GetDifferencesResult(const Aws::AmazonWebServiceResult<Jso
 
 GetDifferencesResult& GetDifferencesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("differences"))
   {
-    Array<JsonValue> differencesJsonList = jsonValue.GetArray("differences");
+    Array<JsonView> differencesJsonList = jsonValue.GetArray("differences");
     for(unsigned differencesIndex = 0; differencesIndex < differencesJsonList.GetLength(); ++differencesIndex)
     {
       m_differences.push_back(differencesJsonList[differencesIndex].AsObject());

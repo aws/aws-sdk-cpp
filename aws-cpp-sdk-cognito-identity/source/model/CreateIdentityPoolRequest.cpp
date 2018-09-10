@@ -100,7 +100,7 @@ Aws::String CreateIdentityPoolRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateIdentityPoolRequest::GetRequestSpecificHeaders() const

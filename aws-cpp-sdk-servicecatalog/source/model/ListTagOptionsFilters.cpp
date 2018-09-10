@@ -36,7 +36,7 @@ ListTagOptionsFilters::ListTagOptionsFilters() :
 {
 }
 
-ListTagOptionsFilters::ListTagOptionsFilters(const JsonValue& jsonValue) : 
+ListTagOptionsFilters::ListTagOptionsFilters(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_active(false),
@@ -45,7 +45,7 @@ ListTagOptionsFilters::ListTagOptionsFilters(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ListTagOptionsFilters& ListTagOptionsFilters::operator =(const JsonValue& jsonValue)
+ListTagOptionsFilters& ListTagOptionsFilters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Key"))
   {

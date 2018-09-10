@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Snowball
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ShippingDetails();
-    ShippingDetails(const Aws::Utils::Json::JsonValue& jsonValue);
-    ShippingDetails& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ShippingDetails(Aws::Utils::Json::JsonView jsonValue);
+    ShippingDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

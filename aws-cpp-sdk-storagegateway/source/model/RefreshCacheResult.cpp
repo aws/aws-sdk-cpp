@@ -37,7 +37,7 @@ RefreshCacheResult::RefreshCacheResult(const Aws::AmazonWebServiceResult<JsonVal
 
 RefreshCacheResult& RefreshCacheResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FileShareARN"))
   {
     m_fileShareARN = jsonValue.GetString("FileShareARN");

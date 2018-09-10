@@ -55,288 +55,288 @@ namespace Model
 
 
     /**
-     * <p>ID of the volume being modified.</p>
+     * <p>The ID of the volume.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
 
     /**
-     * <p>ID of the volume being modified.</p>
+     * <p>The ID of the volume.</p>
      */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
-     * <p>ID of the volume being modified.</p>
+     * <p>The ID of the volume.</p>
      */
     inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
 
     /**
-     * <p>ID of the volume being modified.</p>
+     * <p>The ID of the volume.</p>
      */
     inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
 
     /**
-     * <p>ID of the volume being modified.</p>
+     * <p>The ID of the volume.</p>
      */
     inline VolumeModification& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
 
     /**
-     * <p>ID of the volume being modified.</p>
+     * <p>The ID of the volume.</p>
      */
     inline VolumeModification& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the volume being modified.</p>
+     * <p>The ID of the volume.</p>
      */
     inline VolumeModification& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
 
     /**
-     * <p>Current state of modification. Modification state is null for unmodified
-     * volumes. </p>
+     * <p>The current modification state. The modification state is null for unmodified
+     * volumes.</p>
      */
     inline const VolumeModificationState& GetModificationState() const{ return m_modificationState; }
 
     /**
-     * <p>Current state of modification. Modification state is null for unmodified
-     * volumes. </p>
+     * <p>The current modification state. The modification state is null for unmodified
+     * volumes.</p>
      */
     inline void SetModificationState(const VolumeModificationState& value) { m_modificationStateHasBeenSet = true; m_modificationState = value; }
 
     /**
-     * <p>Current state of modification. Modification state is null for unmodified
-     * volumes. </p>
+     * <p>The current modification state. The modification state is null for unmodified
+     * volumes.</p>
      */
     inline void SetModificationState(VolumeModificationState&& value) { m_modificationStateHasBeenSet = true; m_modificationState = std::move(value); }
 
     /**
-     * <p>Current state of modification. Modification state is null for unmodified
-     * volumes. </p>
+     * <p>The current modification state. The modification state is null for unmodified
+     * volumes.</p>
      */
     inline VolumeModification& WithModificationState(const VolumeModificationState& value) { SetModificationState(value); return *this;}
 
     /**
-     * <p>Current state of modification. Modification state is null for unmodified
-     * volumes. </p>
+     * <p>The current modification state. The modification state is null for unmodified
+     * volumes.</p>
      */
     inline VolumeModification& WithModificationState(VolumeModificationState&& value) { SetModificationState(std::move(value)); return *this;}
 
 
     /**
-     * <p>Generic status message on modification progress or failure.</p>
+     * <p>A status message about the modification progress or failure.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * <p>Generic status message on modification progress or failure.</p>
+     * <p>A status message about the modification progress or failure.</p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
 
     /**
-     * <p>Generic status message on modification progress or failure.</p>
+     * <p>A status message about the modification progress or failure.</p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
 
     /**
-     * <p>Generic status message on modification progress or failure.</p>
+     * <p>A status message about the modification progress or failure.</p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
 
     /**
-     * <p>Generic status message on modification progress or failure.</p>
+     * <p>A status message about the modification progress or failure.</p>
      */
     inline VolumeModification& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>Generic status message on modification progress or failure.</p>
+     * <p>A status message about the modification progress or failure.</p>
      */
     inline VolumeModification& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Generic status message on modification progress or failure.</p>
+     * <p>A status message about the modification progress or failure.</p>
      */
     inline VolumeModification& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
     /**
-     * <p>Target size of the volume being modified.</p>
+     * <p>The target size of the volume, in GiB.</p>
      */
     inline int GetTargetSize() const{ return m_targetSize; }
 
     /**
-     * <p>Target size of the volume being modified.</p>
+     * <p>The target size of the volume, in GiB.</p>
      */
     inline void SetTargetSize(int value) { m_targetSizeHasBeenSet = true; m_targetSize = value; }
 
     /**
-     * <p>Target size of the volume being modified.</p>
+     * <p>The target size of the volume, in GiB.</p>
      */
     inline VolumeModification& WithTargetSize(int value) { SetTargetSize(value); return *this;}
 
 
     /**
-     * <p>Target IOPS rate of the volume being modified.</p>
+     * <p>The target IOPS rate of the volume.</p>
      */
     inline int GetTargetIops() const{ return m_targetIops; }
 
     /**
-     * <p>Target IOPS rate of the volume being modified.</p>
+     * <p>The target IOPS rate of the volume.</p>
      */
     inline void SetTargetIops(int value) { m_targetIopsHasBeenSet = true; m_targetIops = value; }
 
     /**
-     * <p>Target IOPS rate of the volume being modified.</p>
+     * <p>The target IOPS rate of the volume.</p>
      */
     inline VolumeModification& WithTargetIops(int value) { SetTargetIops(value); return *this;}
 
 
     /**
-     * <p>Target EBS volume type of the volume being modified.</p>
+     * <p>The target EBS volume type of the volume.</p>
      */
     inline const VolumeType& GetTargetVolumeType() const{ return m_targetVolumeType; }
 
     /**
-     * <p>Target EBS volume type of the volume being modified.</p>
+     * <p>The target EBS volume type of the volume.</p>
      */
     inline void SetTargetVolumeType(const VolumeType& value) { m_targetVolumeTypeHasBeenSet = true; m_targetVolumeType = value; }
 
     /**
-     * <p>Target EBS volume type of the volume being modified.</p>
+     * <p>The target EBS volume type of the volume.</p>
      */
     inline void SetTargetVolumeType(VolumeType&& value) { m_targetVolumeTypeHasBeenSet = true; m_targetVolumeType = std::move(value); }
 
     /**
-     * <p>Target EBS volume type of the volume being modified.</p>
+     * <p>The target EBS volume type of the volume.</p>
      */
     inline VolumeModification& WithTargetVolumeType(const VolumeType& value) { SetTargetVolumeType(value); return *this;}
 
     /**
-     * <p>Target EBS volume type of the volume being modified.</p>
+     * <p>The target EBS volume type of the volume.</p>
      */
     inline VolumeModification& WithTargetVolumeType(VolumeType&& value) { SetTargetVolumeType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Original size of the volume being modified.</p>
+     * <p>The original size of the volume.</p>
      */
     inline int GetOriginalSize() const{ return m_originalSize; }
 
     /**
-     * <p>Original size of the volume being modified.</p>
+     * <p>The original size of the volume.</p>
      */
     inline void SetOriginalSize(int value) { m_originalSizeHasBeenSet = true; m_originalSize = value; }
 
     /**
-     * <p>Original size of the volume being modified.</p>
+     * <p>The original size of the volume.</p>
      */
     inline VolumeModification& WithOriginalSize(int value) { SetOriginalSize(value); return *this;}
 
 
     /**
-     * <p>Original IOPS rate of the volume being modified.</p>
+     * <p>The original IOPS rate of the volume.</p>
      */
     inline int GetOriginalIops() const{ return m_originalIops; }
 
     /**
-     * <p>Original IOPS rate of the volume being modified.</p>
+     * <p>The original IOPS rate of the volume.</p>
      */
     inline void SetOriginalIops(int value) { m_originalIopsHasBeenSet = true; m_originalIops = value; }
 
     /**
-     * <p>Original IOPS rate of the volume being modified.</p>
+     * <p>The original IOPS rate of the volume.</p>
      */
     inline VolumeModification& WithOriginalIops(int value) { SetOriginalIops(value); return *this;}
 
 
     /**
-     * <p>Original EBS volume type of the volume being modified.</p>
+     * <p>The original EBS volume type of the volume.</p>
      */
     inline const VolumeType& GetOriginalVolumeType() const{ return m_originalVolumeType; }
 
     /**
-     * <p>Original EBS volume type of the volume being modified.</p>
+     * <p>The original EBS volume type of the volume.</p>
      */
     inline void SetOriginalVolumeType(const VolumeType& value) { m_originalVolumeTypeHasBeenSet = true; m_originalVolumeType = value; }
 
     /**
-     * <p>Original EBS volume type of the volume being modified.</p>
+     * <p>The original EBS volume type of the volume.</p>
      */
     inline void SetOriginalVolumeType(VolumeType&& value) { m_originalVolumeTypeHasBeenSet = true; m_originalVolumeType = std::move(value); }
 
     /**
-     * <p>Original EBS volume type of the volume being modified.</p>
+     * <p>The original EBS volume type of the volume.</p>
      */
     inline VolumeModification& WithOriginalVolumeType(const VolumeType& value) { SetOriginalVolumeType(value); return *this;}
 
     /**
-     * <p>Original EBS volume type of the volume being modified.</p>
+     * <p>The original EBS volume type of the volume.</p>
      */
     inline VolumeModification& WithOriginalVolumeType(VolumeType&& value) { SetOriginalVolumeType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Modification progress from 0 to 100%.</p>
+     * <p>The modification progress, from 0 to 100 percent complete.</p>
      */
     inline long long GetProgress() const{ return m_progress; }
 
     /**
-     * <p>Modification progress from 0 to 100%.</p>
+     * <p>The modification progress, from 0 to 100 percent complete.</p>
      */
     inline void SetProgress(long long value) { m_progressHasBeenSet = true; m_progress = value; }
 
     /**
-     * <p>Modification progress from 0 to 100%.</p>
+     * <p>The modification progress, from 0 to 100 percent complete.</p>
      */
     inline VolumeModification& WithProgress(long long value) { SetProgress(value); return *this;}
 
 
     /**
-     * <p>Modification start time </p>
+     * <p>The modification start time.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>Modification start time </p>
+     * <p>The modification start time.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>Modification start time </p>
+     * <p>The modification start time.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>Modification start time </p>
+     * <p>The modification start time.</p>
      */
     inline VolumeModification& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>Modification start time </p>
+     * <p>The modification start time.</p>
      */
     inline VolumeModification& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Modification completion or failure time.</p>
+     * <p>The modification completion or failure time.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>Modification completion or failure time.</p>
+     * <p>The modification completion or failure time.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>Modification completion or failure time.</p>
+     * <p>The modification completion or failure time.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>Modification completion or failure time.</p>
+     * <p>The modification completion or failure time.</p>
      */
     inline VolumeModification& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>Modification completion or failure time.</p>
+     * <p>The modification completion or failure time.</p>
      */
     inline VolumeModification& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

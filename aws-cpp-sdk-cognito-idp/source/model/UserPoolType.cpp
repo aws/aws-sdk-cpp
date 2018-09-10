@@ -57,12 +57,14 @@ UserPoolType::UserPoolType() :
     m_smsConfigurationFailureHasBeenSet(false),
     m_emailConfigurationFailureHasBeenSet(false),
     m_domainHasBeenSet(false),
+    m_customDomainHasBeenSet(false),
     m_adminCreateUserConfigHasBeenSet(false),
-    m_userPoolAddOnsHasBeenSet(false)
+    m_userPoolAddOnsHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
-UserPoolType::UserPoolType(const JsonValue& jsonValue) : 
+UserPoolType::UserPoolType(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_policiesHasBeenSet(false),
@@ -91,13 +93,15 @@ UserPoolType::UserPoolType(const JsonValue& jsonValue) :
     m_smsConfigurationFailureHasBeenSet(false),
     m_emailConfigurationFailureHasBeenSet(false),
     m_domainHasBeenSet(false),
+    m_customDomainHasBeenSet(false),
     m_adminCreateUserConfigHasBeenSet(false),
-    m_userPoolAddOnsHasBeenSet(false)
+    m_userPoolAddOnsHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
+UserPoolType& UserPoolType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -150,7 +154,7 @@ UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("SchemaAttributes"))
   {
-    Array<JsonValue> schemaAttributesJsonList = jsonValue.GetArray("SchemaAttributes");
+    Array<JsonView> schemaAttributesJsonList = jsonValue.GetArray("SchemaAttributes");
     for(unsigned schemaAttributesIndex = 0; schemaAttributesIndex < schemaAttributesJsonList.GetLength(); ++schemaAttributesIndex)
     {
       m_schemaAttributes.push_back(schemaAttributesJsonList[schemaAttributesIndex].AsObject());
@@ -160,7 +164,7 @@ UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AutoVerifiedAttributes"))
   {
-    Array<JsonValue> autoVerifiedAttributesJsonList = jsonValue.GetArray("AutoVerifiedAttributes");
+    Array<JsonView> autoVerifiedAttributesJsonList = jsonValue.GetArray("AutoVerifiedAttributes");
     for(unsigned autoVerifiedAttributesIndex = 0; autoVerifiedAttributesIndex < autoVerifiedAttributesJsonList.GetLength(); ++autoVerifiedAttributesIndex)
     {
       m_autoVerifiedAttributes.push_back(VerifiedAttributeTypeMapper::GetVerifiedAttributeTypeForName(autoVerifiedAttributesJsonList[autoVerifiedAttributesIndex].AsString()));
@@ -170,7 +174,7 @@ UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("AliasAttributes"))
   {
-    Array<JsonValue> aliasAttributesJsonList = jsonValue.GetArray("AliasAttributes");
+    Array<JsonView> aliasAttributesJsonList = jsonValue.GetArray("AliasAttributes");
     for(unsigned aliasAttributesIndex = 0; aliasAttributesIndex < aliasAttributesJsonList.GetLength(); ++aliasAttributesIndex)
     {
       m_aliasAttributes.push_back(AliasAttributeTypeMapper::GetAliasAttributeTypeForName(aliasAttributesJsonList[aliasAttributesIndex].AsString()));
@@ -180,7 +184,7 @@ UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("UsernameAttributes"))
   {
-    Array<JsonValue> usernameAttributesJsonList = jsonValue.GetArray("UsernameAttributes");
+    Array<JsonView> usernameAttributesJsonList = jsonValue.GetArray("UsernameAttributes");
     for(unsigned usernameAttributesIndex = 0; usernameAttributesIndex < usernameAttributesJsonList.GetLength(); ++usernameAttributesIndex)
     {
       m_usernameAttributes.push_back(UsernameAttributeTypeMapper::GetUsernameAttributeTypeForName(usernameAttributesJsonList[usernameAttributesIndex].AsString()));
@@ -260,7 +264,7 @@ UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("UserPoolTags"))
   {
-    Aws::Map<Aws::String, JsonValue> userPoolTagsJsonMap = jsonValue.GetObject("UserPoolTags").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> userPoolTagsJsonMap = jsonValue.GetObject("UserPoolTags").GetAllObjects();
     for(auto& userPoolTagsItem : userPoolTagsJsonMap)
     {
       m_userPoolTags[userPoolTagsItem.first] = userPoolTagsItem.second.AsString();
@@ -289,6 +293,13 @@ UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
     m_domainHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomDomain"))
+  {
+    m_customDomain = jsonValue.GetString("CustomDomain");
+
+    m_customDomainHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AdminCreateUserConfig"))
   {
     m_adminCreateUserConfig = jsonValue.GetObject("AdminCreateUserConfig");
@@ -301,6 +312,13 @@ UserPoolType& UserPoolType::operator =(const JsonValue& jsonValue)
     m_userPoolAddOns = jsonValue.GetObject("UserPoolAddOns");
 
     m_userPoolAddOnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
   }
 
   return *this;
@@ -481,6 +499,12 @@ JsonValue UserPoolType::Jsonize() const
 
   }
 
+  if(m_customDomainHasBeenSet)
+  {
+   payload.WithString("CustomDomain", m_customDomain);
+
+  }
+
   if(m_adminCreateUserConfigHasBeenSet)
   {
    payload.WithObject("AdminCreateUserConfig", m_adminCreateUserConfig.Jsonize());
@@ -490,6 +514,12 @@ JsonValue UserPoolType::Jsonize() const
   if(m_userPoolAddOnsHasBeenSet)
   {
    payload.WithObject("UserPoolAddOns", m_userPoolAddOns.Jsonize());
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
 
   }
 

@@ -33,13 +33,13 @@ KMSEncryptionConfig::KMSEncryptionConfig() :
 {
 }
 
-KMSEncryptionConfig::KMSEncryptionConfig(const JsonValue& jsonValue) : 
+KMSEncryptionConfig::KMSEncryptionConfig(JsonView jsonValue) : 
     m_aWSKMSKeyARNHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-KMSEncryptionConfig& KMSEncryptionConfig::operator =(const JsonValue& jsonValue)
+KMSEncryptionConfig& KMSEncryptionConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AWSKMSKeyARN"))
   {

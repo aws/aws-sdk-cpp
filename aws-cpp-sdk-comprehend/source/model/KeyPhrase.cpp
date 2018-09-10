@@ -39,7 +39,7 @@ KeyPhrase::KeyPhrase() :
 {
 }
 
-KeyPhrase::KeyPhrase(const JsonValue& jsonValue) : 
+KeyPhrase::KeyPhrase(JsonView jsonValue) : 
     m_score(0.0),
     m_scoreHasBeenSet(false),
     m_textHasBeenSet(false),
@@ -51,7 +51,7 @@ KeyPhrase::KeyPhrase(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-KeyPhrase& KeyPhrase::operator =(const JsonValue& jsonValue)
+KeyPhrase& KeyPhrase::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Score"))
   {

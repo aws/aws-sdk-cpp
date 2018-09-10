@@ -36,7 +36,7 @@ GeoLocation::GeoLocation() :
 {
 }
 
-GeoLocation::GeoLocation(const JsonValue& jsonValue) : 
+GeoLocation::GeoLocation(JsonView jsonValue) : 
     m_lat(0.0),
     m_latHasBeenSet(false),
     m_lon(0.0),
@@ -45,7 +45,7 @@ GeoLocation::GeoLocation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GeoLocation& GeoLocation::operator =(const JsonValue& jsonValue)
+GeoLocation& GeoLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("lat"))
   {

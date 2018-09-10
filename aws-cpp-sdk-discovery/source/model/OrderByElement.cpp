@@ -35,7 +35,7 @@ OrderByElement::OrderByElement() :
 {
 }
 
-OrderByElement::OrderByElement(const JsonValue& jsonValue) : 
+OrderByElement::OrderByElement(JsonView jsonValue) : 
     m_fieldNameHasBeenSet(false),
     m_sortOrder(OrderString::NOT_SET),
     m_sortOrderHasBeenSet(false)
@@ -43,7 +43,7 @@ OrderByElement::OrderByElement(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OrderByElement& OrderByElement::operator =(const JsonValue& jsonValue)
+OrderByElement& OrderByElement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("fieldName"))
   {

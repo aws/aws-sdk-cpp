@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +77,32 @@ namespace Model
      * Required. The unique ID that Amazon MQ generates for the configuration.
      */
     inline DescribeConfigurationRevisionResult& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
+
+
+    /**
+     * Required. The date and time of the configuration.
+     */
+    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+
+    /**
+     * Required. The date and time of the configuration.
+     */
+    inline void SetCreated(const Aws::Utils::DateTime& value) { m_created = value; }
+
+    /**
+     * Required. The date and time of the configuration.
+     */
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_created = std::move(value); }
+
+    /**
+     * Required. The date and time of the configuration.
+     */
+    inline DescribeConfigurationRevisionResult& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
+
+    /**
+     * Required. The date and time of the configuration.
+     */
+    inline DescribeConfigurationRevisionResult& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
 
     /**
@@ -152,6 +179,8 @@ namespace Model
   private:
 
     Aws::String m_configurationId;
+
+    Aws::Utils::DateTime m_created;
 
     Aws::String m_data;
 

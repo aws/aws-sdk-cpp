@@ -49,7 +49,7 @@ Aws::String AddJobFlowStepsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AddJobFlowStepsRequest::GetRequestSpecificHeaders() const

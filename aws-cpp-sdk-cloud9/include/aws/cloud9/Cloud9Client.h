@@ -53,11 +53,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -126,19 +121,15 @@ namespace Model
   /**
    * <fullname>AWS Cloud9</fullname> <p>AWS Cloud9 is a collection of tools that you
    * can use to code, build, run, test, debug, and release software in the cloud.</p>
-   * <p>In the background, these tools are available through development environments
-   * running on Amazon Elastic Compute Cloud (Amazon EC2) instances (known as
-   * <i>Amazon EC2 environments</i>), your own servers (known as <i>SSH
-   * environments</i>), or a combination. This enables you to create and switch
-   * between multiple environments, with each environment set up for a specific
-   * development project.</p> <p>For more information about AWS Cloud9, see the
-   * <i>AWS Cloud9 User Guide</i>.</p> <p>AWS Cloud9 supports these operations:</p>
-   * <ul> <li> <p> <code>CreateEnvironmentEC2</code>: Creates an AWS Cloud9
-   * development environment, launches an Amazon EC2 instance, and then hosts the
-   * environment on the instance.</p> </li> <li> <p>
+   * <p>For more information about AWS Cloud9, see the <a
+   * href="https://docs.aws.amazon.com/cloud9/latest/user-guide">AWS Cloud9 User
+   * Guide</a>.</p> <p>AWS Cloud9 supports these operations:</p> <ul> <li> <p>
+   * <code>CreateEnvironmentEC2</code>: Creates an AWS Cloud9 development
+   * environment, launches an Amazon EC2 instance, and then connects from the
+   * instance to the environment.</p> </li> <li> <p>
    * <code>CreateEnvironmentMembership</code>: Adds an environment member to an
    * environment.</p> </li> <li> <p> <code>DeleteEnvironment</code>: Deletes an
-   * environment. If the environment is hosted on an Amazon EC2 instance, also
+   * environment. If an Amazon EC2 instance is connected to the environment, also
    * terminates the instance.</p> </li> <li> <p>
    * <code>DeleteEnvironmentMembership</code>: Deletes an environment member from an
    * environment.</p> </li> <li> <p> <code>DescribeEnvironmentMemberships</code>:
@@ -183,8 +174,8 @@ namespace Model
 
         /**
          * <p>Creates an AWS Cloud9 development environment, launches an Amazon Elastic
-         * Compute Cloud (Amazon EC2) instance, and then hosts the environment on the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * Compute Cloud (Amazon EC2) instance, and then connects from the instance to the
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentEC2">AWS
          * API Reference</a></p>
          */
@@ -192,8 +183,8 @@ namespace Model
 
         /**
          * <p>Creates an AWS Cloud9 development environment, launches an Amazon Elastic
-         * Compute Cloud (Amazon EC2) instance, and then hosts the environment on the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * Compute Cloud (Amazon EC2) instance, and then connects from the instance to the
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentEC2">AWS
          * API Reference</a></p>
          *
@@ -203,8 +194,8 @@ namespace Model
 
         /**
          * <p>Creates an AWS Cloud9 development environment, launches an Amazon Elastic
-         * Compute Cloud (Amazon EC2) instance, and then hosts the environment on the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * Compute Cloud (Amazon EC2) instance, and then connects from the instance to the
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentEC2">AWS
          * API Reference</a></p>
          *
@@ -241,18 +232,18 @@ namespace Model
         virtual void CreateEnvironmentMembershipAsync(const Model::CreateEnvironmentMembershipRequest& request, const CreateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an AWS Cloud9 development environment. If the environment is hosted
-         * on an Amazon Elastic Compute Cloud (Amazon EC2) instance, also terminates the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is
+         * connected to the environment, also terminates the instance.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironment">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteEnvironmentOutcome DeleteEnvironment(const Model::DeleteEnvironmentRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Cloud9 development environment. If the environment is hosted
-         * on an Amazon Elastic Compute Cloud (Amazon EC2) instance, also terminates the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is
+         * connected to the environment, also terminates the instance.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironment">AWS
          * API Reference</a></p>
          *
@@ -261,9 +252,9 @@ namespace Model
         virtual Model::DeleteEnvironmentOutcomeCallable DeleteEnvironmentCallable(const Model::DeleteEnvironmentRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Cloud9 development environment. If the environment is hosted
-         * on an Amazon Elastic Compute Cloud (Amazon EC2) instance, also terminates the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is
+         * connected to the environment, also terminates the instance.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironment">AWS
          * API Reference</a></p>
          *

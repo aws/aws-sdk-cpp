@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudSearchDomain
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Hit();
-    Hit(const Aws::Utils::Json::JsonValue& jsonValue);
-    Hit& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Hit(Aws::Utils::Json::JsonView jsonValue);
+    Hit& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

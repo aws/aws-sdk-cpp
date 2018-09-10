@@ -34,14 +34,14 @@ RDSDatabase::RDSDatabase() :
 {
 }
 
-RDSDatabase::RDSDatabase(const JsonValue& jsonValue) : 
+RDSDatabase::RDSDatabase(JsonView jsonValue) : 
     m_instanceIdentifierHasBeenSet(false),
     m_databaseNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-RDSDatabase& RDSDatabase::operator =(const JsonValue& jsonValue)
+RDSDatabase& RDSDatabase::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceIdentifier"))
   {

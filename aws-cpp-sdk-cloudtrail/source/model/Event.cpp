@@ -39,7 +39,7 @@ Event::Event() :
 {
 }
 
-Event::Event(const JsonValue& jsonValue) : 
+Event::Event(JsonView jsonValue) : 
     m_eventIdHasBeenSet(false),
     m_eventNameHasBeenSet(false),
     m_eventTimeHasBeenSet(false),
@@ -51,7 +51,7 @@ Event::Event(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Event& Event::operator =(const JsonValue& jsonValue)
+Event& Event::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EventId"))
   {
@@ -90,7 +90,7 @@ Event& Event::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Resources"))
   {
-    Array<JsonValue> resourcesJsonList = jsonValue.GetArray("Resources");
+    Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());

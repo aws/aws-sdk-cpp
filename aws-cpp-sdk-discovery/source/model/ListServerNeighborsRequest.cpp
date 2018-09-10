@@ -72,7 +72,7 @@ Aws::String ListServerNeighborsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListServerNeighborsRequest::GetRequestSpecificHeaders() const

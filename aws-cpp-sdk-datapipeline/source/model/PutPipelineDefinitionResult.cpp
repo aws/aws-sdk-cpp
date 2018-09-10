@@ -39,10 +39,10 @@ PutPipelineDefinitionResult::PutPipelineDefinitionResult(const Aws::AmazonWebSer
 
 PutPipelineDefinitionResult& PutPipelineDefinitionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("validationErrors"))
   {
-    Array<JsonValue> validationErrorsJsonList = jsonValue.GetArray("validationErrors");
+    Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("validationErrors");
     for(unsigned validationErrorsIndex = 0; validationErrorsIndex < validationErrorsJsonList.GetLength(); ++validationErrorsIndex)
     {
       m_validationErrors.push_back(validationErrorsJsonList[validationErrorsIndex].AsObject());
@@ -51,7 +51,7 @@ PutPipelineDefinitionResult& PutPipelineDefinitionResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("validationWarnings"))
   {
-    Array<JsonValue> validationWarningsJsonList = jsonValue.GetArray("validationWarnings");
+    Array<JsonView> validationWarningsJsonList = jsonValue.GetArray("validationWarnings");
     for(unsigned validationWarningsIndex = 0; validationWarningsIndex < validationWarningsJsonList.GetLength(); ++validationWarningsIndex)
     {
       m_validationWarnings.push_back(validationWarningsJsonList[validationWarningsIndex].AsObject());

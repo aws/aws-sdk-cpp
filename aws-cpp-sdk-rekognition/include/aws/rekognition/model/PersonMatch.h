@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -37,8 +38,8 @@ namespace Model
   /**
    * <p>Information about a person whose face matches a face(s) in a Amazon
    * Rekognition collection. Includes information about the faces in the Amazon
-   * Rekognition collection (,information about the person (<a>PersonDetail</a>) and
-   * the timestamp for when the person was detected in a video. An array of
+   * Rekognition collection (), information about the person (<a>PersonDetail</a>)
+   * and the timestamp for when the person was detected in a video. An array of
    * <code>PersonMatch</code> objects is returned by . </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PersonMatch">AWS
    * API Reference</a></p>
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     PersonMatch();
-    PersonMatch(const Aws::Utils::Json::JsonValue& jsonValue);
-    PersonMatch& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PersonMatch(Aws::Utils::Json::JsonView jsonValue);
+    PersonMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -37,10 +37,10 @@ ListProtectionsResult::ListProtectionsResult(const Aws::AmazonWebServiceResult<J
 
 ListProtectionsResult& ListProtectionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Protections"))
   {
-    Array<JsonValue> protectionsJsonList = jsonValue.GetArray("Protections");
+    Array<JsonView> protectionsJsonList = jsonValue.GetArray("Protections");
     for(unsigned protectionsIndex = 0; protectionsIndex < protectionsJsonList.GetLength(); ++protectionsIndex)
     {
       m_protections.push_back(protectionsJsonList[protectionsIndex].AsObject());

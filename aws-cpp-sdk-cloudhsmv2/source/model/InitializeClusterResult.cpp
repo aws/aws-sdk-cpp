@@ -39,7 +39,7 @@ InitializeClusterResult::InitializeClusterResult(const Aws::AmazonWebServiceResu
 
 InitializeClusterResult& InitializeClusterResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("State"))
   {
     m_state = ClusterStateMapper::GetClusterStateForName(jsonValue.GetString("State"));

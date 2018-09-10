@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace OpsWorks
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     EbsBlockDevice();
-    EbsBlockDevice(const Aws::Utils::Json::JsonValue& jsonValue);
-    EbsBlockDevice& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EbsBlockDevice(Aws::Utils::Json::JsonView jsonValue);
+    EbsBlockDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -129,36 +130,61 @@ namespace Model
 
     /**
      * <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
-     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and <code>standard</code>
-     * for Magnetic volumes.</p>
+     * <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for
+     * Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and
+     * <code>standard</code> for Magnetic volumes.</p> <p>If you specify the
+     * <code>io1</code> volume type, you must also specify a value for the
+     * <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested
+     * volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB)
+     * specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
      * <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
-     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and <code>standard</code>
-     * for Magnetic volumes.</p>
+     * <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for
+     * Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and
+     * <code>standard</code> for Magnetic volumes.</p> <p>If you specify the
+     * <code>io1</code> volume type, you must also specify a value for the
+     * <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested
+     * volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB)
+     * specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
      * <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
-     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and <code>standard</code>
-     * for Magnetic volumes.</p>
+     * <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for
+     * Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and
+     * <code>standard</code> for Magnetic volumes.</p> <p>If you specify the
+     * <code>io1</code> volume type, you must also specify a value for the
+     * <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested
+     * volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB)
+     * specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
-     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and <code>standard</code>
-     * for Magnetic volumes.</p>
+     * <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for
+     * Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and
+     * <code>standard</code> for Magnetic volumes.</p> <p>If you specify the
+     * <code>io1</code> volume type, you must also specify a value for the
+     * <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested
+     * volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB)
+     * specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
      */
     inline EbsBlockDevice& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
      * <p>The volume type. <code>gp2</code> for General Purpose (SSD) volumes,
-     * <code>io1</code> for Provisioned IOPS (SSD) volumes, and <code>standard</code>
-     * for Magnetic volumes.</p>
+     * <code>io1</code> for Provisioned IOPS (SSD) volumes, <code>st1</code> for
+     * Throughput Optimized hard disk drives (HDD), <code>sc1</code> for Cold HDD,and
+     * <code>standard</code> for Magnetic volumes.</p> <p>If you specify the
+     * <code>io1</code> volume type, you must also specify a value for the
+     * <code>Iops</code> attribute. The maximum ratio of provisioned IOPS to requested
+     * volume size (in GiB) is 50:1. AWS uses the default volume size (in GiB)
+     * specified in the AMI attributes to set IOPS to 50 x (volume size).</p>
      */
     inline EbsBlockDevice& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 

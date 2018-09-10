@@ -59,11 +59,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -197,7 +192,7 @@ namespace Model
 
         virtual ~BatchClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "batch"; }
+        inline virtual const char* GetServiceClientName() const override { return "Batch"; }
 
 
         /**

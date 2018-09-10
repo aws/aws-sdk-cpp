@@ -51,7 +51,7 @@ Aws::String CreatePlayerSessionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreatePlayerSessionRequest::GetRequestSpecificHeaders() const

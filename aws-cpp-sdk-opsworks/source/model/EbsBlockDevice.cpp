@@ -41,7 +41,7 @@ EbsBlockDevice::EbsBlockDevice() :
 {
 }
 
-EbsBlockDevice::EbsBlockDevice(const JsonValue& jsonValue) : 
+EbsBlockDevice::EbsBlockDevice(JsonView jsonValue) : 
     m_snapshotIdHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
@@ -55,7 +55,7 @@ EbsBlockDevice::EbsBlockDevice(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EbsBlockDevice& EbsBlockDevice::operator =(const JsonValue& jsonValue)
+EbsBlockDevice& EbsBlockDevice::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SnapshotId"))
   {

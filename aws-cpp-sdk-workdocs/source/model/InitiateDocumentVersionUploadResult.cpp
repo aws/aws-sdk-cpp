@@ -37,7 +37,7 @@ InitiateDocumentVersionUploadResult::InitiateDocumentVersionUploadResult(const A
 
 InitiateDocumentVersionUploadResult& InitiateDocumentVersionUploadResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Metadata"))
   {
     m_metadata = jsonValue.GetObject("Metadata");

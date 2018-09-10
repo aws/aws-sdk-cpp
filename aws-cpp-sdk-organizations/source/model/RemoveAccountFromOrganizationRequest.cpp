@@ -37,7 +37,7 @@ Aws::String RemoveAccountFromOrganizationRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RemoveAccountFromOrganizationRequest::GetRequestSpecificHeaders() const

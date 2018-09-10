@@ -37,7 +37,7 @@ ProviderDescription::ProviderDescription() :
 {
 }
 
-ProviderDescription::ProviderDescription(const JsonValue& jsonValue) : 
+ProviderDescription::ProviderDescription(JsonView jsonValue) : 
     m_providerNameHasBeenSet(false),
     m_providerType(IdentityProviderTypeType::NOT_SET),
     m_providerTypeHasBeenSet(false),
@@ -47,7 +47,7 @@ ProviderDescription::ProviderDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProviderDescription& ProviderDescription::operator =(const JsonValue& jsonValue)
+ProviderDescription& ProviderDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ProviderName"))
   {

@@ -48,7 +48,7 @@ AssociationDescription::AssociationDescription() :
 {
 }
 
-AssociationDescription::AssociationDescription(const JsonValue& jsonValue) : 
+AssociationDescription::AssociationDescription(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_associationVersionHasBeenSet(false),
@@ -69,7 +69,7 @@ AssociationDescription::AssociationDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AssociationDescription& AssociationDescription::operator =(const JsonValue& jsonValue)
+AssociationDescription& AssociationDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -129,10 +129,10 @@ AssociationDescription& AssociationDescription::operator =(const JsonValue& json
 
   if(jsonValue.ValueExists("Parameters"))
   {
-    Aws::Map<Aws::String, JsonValue> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
-      Array<JsonValue> parameterValueListJsonList = parametersItem.second.AsArray();
+      Array<JsonView> parameterValueListJsonList = parametersItem.second.AsArray();
       Aws::Vector<Aws::String> parameterValueListList;
       parameterValueListList.reserve((size_t)parameterValueListJsonList.GetLength());
       for(unsigned parameterValueListIndex = 0; parameterValueListIndex < parameterValueListJsonList.GetLength(); ++parameterValueListIndex)
@@ -153,7 +153,7 @@ AssociationDescription& AssociationDescription::operator =(const JsonValue& json
 
   if(jsonValue.ValueExists("Targets"))
   {
-    Array<JsonValue> targetsJsonList = jsonValue.GetArray("Targets");
+    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsObject());

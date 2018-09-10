@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -33,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Settings for for a PULL type input<p><h3>See Also:</h3>   <a
+   * Settings for for a PULL type input.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputSourceRequest">AWS
    * API Reference</a></p>
    */
@@ -41,43 +42,43 @@ namespace Model
   {
   public:
     InputSourceRequest();
-    InputSourceRequest(const Aws::Utils::Json::JsonValue& jsonValue);
-    InputSourceRequest& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InputSourceRequest(Aws::Utils::Json::JsonView jsonValue);
+    InputSourceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * key used to extract the password from EC2 Parameter store
+     * The key used to extract the password from EC2 Parameter store.
      */
     inline const Aws::String& GetPasswordParam() const{ return m_passwordParam; }
 
     /**
-     * key used to extract the password from EC2 Parameter store
+     * The key used to extract the password from EC2 Parameter store.
      */
     inline void SetPasswordParam(const Aws::String& value) { m_passwordParamHasBeenSet = true; m_passwordParam = value; }
 
     /**
-     * key used to extract the password from EC2 Parameter store
+     * The key used to extract the password from EC2 Parameter store.
      */
     inline void SetPasswordParam(Aws::String&& value) { m_passwordParamHasBeenSet = true; m_passwordParam = std::move(value); }
 
     /**
-     * key used to extract the password from EC2 Parameter store
+     * The key used to extract the password from EC2 Parameter store.
      */
     inline void SetPasswordParam(const char* value) { m_passwordParamHasBeenSet = true; m_passwordParam.assign(value); }
 
     /**
-     * key used to extract the password from EC2 Parameter store
+     * The key used to extract the password from EC2 Parameter store.
      */
     inline InputSourceRequest& WithPasswordParam(const Aws::String& value) { SetPasswordParam(value); return *this;}
 
     /**
-     * key used to extract the password from EC2 Parameter store
+     * The key used to extract the password from EC2 Parameter store.
      */
     inline InputSourceRequest& WithPasswordParam(Aws::String&& value) { SetPasswordParam(std::move(value)); return *this;}
 
     /**
-     * key used to extract the password from EC2 Parameter store
+     * The key used to extract the password from EC2 Parameter store.
      */
     inline InputSourceRequest& WithPasswordParam(const char* value) { SetPasswordParam(value); return *this;}
 
@@ -133,37 +134,37 @@ pulled from.
 
 
     /**
-     * username for input source
+     * The username for the input source.
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * username for input source
+     * The username for the input source.
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * username for input source
+     * The username for the input source.
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * username for input source
+     * The username for the input source.
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * username for input source
+     * The username for the input source.
      */
     inline InputSourceRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * username for input source
+     * The username for the input source.
      */
     inline InputSourceRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * username for input source
+     * The username for the input source.
      */
     inline InputSourceRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

@@ -49,7 +49,7 @@ Aws::String GetServiceGraphRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 

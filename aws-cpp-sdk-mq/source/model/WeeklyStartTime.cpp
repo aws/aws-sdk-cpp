@@ -36,7 +36,7 @@ WeeklyStartTime::WeeklyStartTime() :
 {
 }
 
-WeeklyStartTime::WeeklyStartTime(const JsonValue& jsonValue) : 
+WeeklyStartTime::WeeklyStartTime(JsonView jsonValue) : 
     m_dayOfWeek(DayOfWeek::NOT_SET),
     m_dayOfWeekHasBeenSet(false),
     m_timeOfDayHasBeenSet(false),
@@ -45,7 +45,7 @@ WeeklyStartTime::WeeklyStartTime(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-WeeklyStartTime& WeeklyStartTime::operator =(const JsonValue& jsonValue)
+WeeklyStartTime& WeeklyStartTime::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("dayOfWeek"))
   {

@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     InstanceGroupConfig();
-    InstanceGroupConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstanceGroupConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstanceGroupConfig(Aws::Utils::Json::JsonView jsonValue);
+    InstanceGroupConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -141,44 +142,65 @@ namespace Model
 
 
     /**
-     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
-     * Spot Instances, expressed in USD.</p>
+     * <p>The maximum Spot price your are willing to pay for EC2 instances.</p> <p>An
+     * optional, nullable field that applies if the <code>MarketType</code> for the
+     * instance group is specified as <code>SPOT</code>. Specify the maximum spot price
+     * in USD. If the value is NULL and <code>SPOT</code> is specified, the maximum
+     * Spot price is set equal to the On-Demand price.</p>
      */
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
 
     /**
-     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
-     * Spot Instances, expressed in USD.</p>
+     * <p>The maximum Spot price your are willing to pay for EC2 instances.</p> <p>An
+     * optional, nullable field that applies if the <code>MarketType</code> for the
+     * instance group is specified as <code>SPOT</code>. Specify the maximum spot price
+     * in USD. If the value is NULL and <code>SPOT</code> is specified, the maximum
+     * Spot price is set equal to the On-Demand price.</p>
      */
     inline void SetBidPrice(const Aws::String& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
 
     /**
-     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
-     * Spot Instances, expressed in USD.</p>
+     * <p>The maximum Spot price your are willing to pay for EC2 instances.</p> <p>An
+     * optional, nullable field that applies if the <code>MarketType</code> for the
+     * instance group is specified as <code>SPOT</code>. Specify the maximum spot price
+     * in USD. If the value is NULL and <code>SPOT</code> is specified, the maximum
+     * Spot price is set equal to the On-Demand price.</p>
      */
     inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = std::move(value); }
 
     /**
-     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
-     * Spot Instances, expressed in USD.</p>
+     * <p>The maximum Spot price your are willing to pay for EC2 instances.</p> <p>An
+     * optional, nullable field that applies if the <code>MarketType</code> for the
+     * instance group is specified as <code>SPOT</code>. Specify the maximum spot price
+     * in USD. If the value is NULL and <code>SPOT</code> is specified, the maximum
+     * Spot price is set equal to the On-Demand price.</p>
      */
     inline void SetBidPrice(const char* value) { m_bidPriceHasBeenSet = true; m_bidPrice.assign(value); }
 
     /**
-     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
-     * Spot Instances, expressed in USD.</p>
+     * <p>The maximum Spot price your are willing to pay for EC2 instances.</p> <p>An
+     * optional, nullable field that applies if the <code>MarketType</code> for the
+     * instance group is specified as <code>SPOT</code>. Specify the maximum spot price
+     * in USD. If the value is NULL and <code>SPOT</code> is specified, the maximum
+     * Spot price is set equal to the On-Demand price.</p>
      */
     inline InstanceGroupConfig& WithBidPrice(const Aws::String& value) { SetBidPrice(value); return *this;}
 
     /**
-     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
-     * Spot Instances, expressed in USD.</p>
+     * <p>The maximum Spot price your are willing to pay for EC2 instances.</p> <p>An
+     * optional, nullable field that applies if the <code>MarketType</code> for the
+     * instance group is specified as <code>SPOT</code>. Specify the maximum spot price
+     * in USD. If the value is NULL and <code>SPOT</code> is specified, the maximum
+     * Spot price is set equal to the On-Demand price.</p>
      */
     inline InstanceGroupConfig& WithBidPrice(Aws::String&& value) { SetBidPrice(std::move(value)); return *this;}
 
     /**
-     * <p>Bid price for each EC2 instance in the instance group when launching nodes as
-     * Spot Instances, expressed in USD.</p>
+     * <p>The maximum Spot price your are willing to pay for EC2 instances.</p> <p>An
+     * optional, nullable field that applies if the <code>MarketType</code> for the
+     * instance group is specified as <code>SPOT</code>. Specify the maximum spot price
+     * in USD. If the value is NULL and <code>SPOT</code> is specified, the maximum
+     * Spot price is set equal to the On-Demand price.</p>
      */
     inline InstanceGroupConfig& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
 

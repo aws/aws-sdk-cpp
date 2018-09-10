@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+#define AWS_DISABLE_DEPRECATION
 
 #include <aws/core/http/windows/IXmlHttpRequest2HttpClient.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
@@ -176,6 +177,10 @@ namespace Aws
                     {
                         m_response.SetResponseCode(HttpResponseCode::REQUEST_TIMEOUT);
                     }
+                    else if (FAILED(res))
+                    {
+                        m_response.SetResponseCode(HttpResponseCode::REQUEST_NOT_MADE);
+                    }
                     else
                     {
                         m_response.SetResponseCode(HttpResponseCode::CLIENT_CLOSED_TO_REQUEST);
@@ -214,8 +219,8 @@ namespace Aws
                             auto unparsedHeadersStr = Aws::Utils::StringUtils::FromWString(headers);
                             for (auto& headerPair : Aws::Utils::StringUtils::SplitOnLine(unparsedHeadersStr))
                             {
-                                Aws::Vector<Aws::String>&& keyValue = Aws::Utils::StringUtils::Split(headerPair, ':');
-                                if (keyValue.size() >= 2)
+                                Aws::Vector<Aws::String>&& keyValue = Aws::Utils::StringUtils::Split(headerPair, ':', 2);
+                                if (keyValue.size() == 2)
                                 {
                                     AWS_LOGSTREAM_TRACE(CLASS_TAG, keyValue[0] << ": " << keyValue[1]);
                                     m_response.AddHeader(Aws::Utils::StringUtils::Trim(keyValue[0].c_str()), Aws::Utils::StringUtils::Trim(keyValue[1].c_str()));
@@ -278,6 +283,17 @@ namespace Aws
             Windows::Foundation::Initialize(RO_INIT_MULTITHREADED);
         }
 
+        void IXmlHttpRequest2HttpClient::ReturnHandleToResourceManager() const
+        {
+            HttpRequestComHandle handle;
+#ifdef PLATFORM_WINDOWS
+            CoCreateInstance(CLSID_FreeThreadedXMLHTTP60, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&handle));
+#else
+            CoCreateInstance(CLSID_FreeThreadedXMLHTTP60, nullptr, CLSCTX_SERVER, IID_PPV_ARGS(&handle));
+#endif // PLATFORM_WINDOWS
+            m_resourceManager.Release(handle);   
+        }
+
         IXmlHttpRequest2HttpClient::IXmlHttpRequest2HttpClient(const Aws::Client::ClientConfiguration& clientConfig) :
             m_proxyUserName(clientConfig.proxyUserName), m_proxyPassword(clientConfig.proxyPassword), m_poolSize(clientConfig.maxConnections),
             m_followRedirects(clientConfig.followRedirects), m_verifySSL(clientConfig.verifySSL), m_totalTimeoutMs(clientConfig.requestTimeoutMs + clientConfig.connectTimeoutMs)
@@ -318,7 +334,27 @@ namespace Aws
         }
 
         std::shared_ptr<HttpResponse> IXmlHttpRequest2HttpClient::MakeRequest(HttpRequest& request,
-                                        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter, Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+                Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+        {
+            std::shared_ptr<HttpResponse> response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request);
+            MakeRequestInternal(request, response, readLimiter, writeLimiter);
+            return response;
+        }
+
+        std::shared_ptr<HttpResponse> IXmlHttpRequest2HttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
+                                        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                                        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
+        {
+            std::shared_ptr<HttpResponse> response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request);
+            MakeRequestInternal(*request, response, readLimiter, writeLimiter);
+            return response;
+        }
+
+        void IXmlHttpRequest2HttpClient::MakeRequestInternal(HttpRequest& request,
+                                        std::shared_ptr<HttpResponse>& response,
+                                        Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
+                                        Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const
         {
             auto uri = request.GetUri();
             auto fullUriString = uri.GetURIString();
@@ -332,7 +368,6 @@ namespace Aws
 
             auto requestHandle = m_resourceManager.Acquire();     
             
-            auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CLASS_TAG, request);
             ComPtr<IXmlHttpRequest2HttpClientCallbacks> callbacks = Make<IXmlHttpRequest2HttpClientCallbacks>(*response, m_followRedirects);
                 
             HRESULT hrResult = requestHandle->Open(methodStr.c_str(), url.c_str(), callbacks.Get(), nullptr, nullptr, proxyUserNameStr.c_str(), proxyPasswordStr.c_str());
@@ -342,7 +377,9 @@ namespace Aws
             {
                 AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error opening http request with status code " << hrResult);
                 AWS_LOGSTREAM_DEBUG(CLASS_TAG, "The http request is: " << uri.GetURIString());
-                return nullptr;
+                response = nullptr;
+                ReturnHandleToResourceManager();
+                return;
             }
 
             AWS_LOGSTREAM_TRACE(CLASS_TAG, "Setting http headers:");
@@ -356,10 +393,12 @@ namespace Aws
                 {
                     AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error setting http header " << header.first << " With status code: " << hrResult);
                     AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Corresponding header's value is: " << header.second);
-                    return nullptr;
+                    response = nullptr;
+                    ReturnHandleToResourceManager();
+                    return;
                 }
             }
-            
+
             if (writeLimiter)
             {
                 writeLimiter->ApplyAndPayForCost(request.GetSize());
@@ -382,18 +421,17 @@ namespace Aws
 
             hrResult = requestHandle->Send(requestStream.Get(), streamLength);
             callbacks->WaitUntilFinished();
-            AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Request finished with response code: " << static_cast<int>(response->GetResponseCode()));
-            //we can't reuse these com objects like we do in other http clients, just put a new one back into the resource manager.
-            HttpRequestComHandle handle;
-#ifdef PLATFORM_WINDOWS
-            CoCreateInstance(CLSID_FreeThreadedXMLHTTP60, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&handle));
-#else
-            CoCreateInstance(CLSID_FreeThreadedXMLHTTP60, nullptr, CLSCTX_SERVER, IID_PPV_ARGS(&handle));
-#endif // PLATFORM_WINDOWS
-            m_resourceManager.Release(handle);
-
-            response->GetResponseBody().flush();
-            return response;
+            if (FAILED(hrResult) || response->GetResponseCode() == Http::HttpResponseCode::REQUEST_NOT_MADE)
+            {
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Request finished with response code: " << static_cast<int>(response->GetResponseCode()));
+                response = nullptr;
+            }
+            else 
+            {
+                response->GetResponseBody().flush();
+                AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Request finished with response code: " << static_cast<int>(response->GetResponseCode()));
+            }
+            ReturnHandleToResourceManager();
         }
 
         void IXmlHttpRequest2HttpClient::FillClientSettings(const HttpRequestComHandle& handle) const

@@ -37,7 +37,7 @@ AssociationStatus::AssociationStatus() :
 {
 }
 
-AssociationStatus::AssociationStatus(const JsonValue& jsonValue) : 
+AssociationStatus::AssociationStatus(JsonView jsonValue) : 
     m_dateHasBeenSet(false),
     m_name(AssociationStatusName::NOT_SET),
     m_nameHasBeenSet(false),
@@ -47,7 +47,7 @@ AssociationStatus::AssociationStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AssociationStatus& AssociationStatus::operator =(const JsonValue& jsonValue)
+AssociationStatus& AssociationStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Date"))
   {

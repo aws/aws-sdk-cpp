@@ -50,7 +50,7 @@ ParameterDefinition::ParameterDefinition() :
 {
 }
 
-ParameterDefinition::ParameterDefinition(const JsonValue& jsonValue) : 
+ParameterDefinition::ParameterDefinition(JsonView jsonValue) : 
     m_allowedPatternHasBeenSet(false),
     m_allowedValuesHasBeenSet(false),
     m_constraintDescriptionHasBeenSet(false),
@@ -73,7 +73,7 @@ ParameterDefinition::ParameterDefinition(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ParameterDefinition& ParameterDefinition::operator =(const JsonValue& jsonValue)
+ParameterDefinition& ParameterDefinition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("allowedPattern"))
   {
@@ -84,7 +84,7 @@ ParameterDefinition& ParameterDefinition::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("allowedValues"))
   {
-    Array<JsonValue> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
+    Array<JsonView> allowedValuesJsonList = jsonValue.GetArray("allowedValues");
     for(unsigned allowedValuesIndex = 0; allowedValuesIndex < allowedValuesJsonList.GetLength(); ++allowedValuesIndex)
     {
       m_allowedValues.push_back(allowedValuesJsonList[allowedValuesIndex].AsString());
@@ -157,7 +157,7 @@ ParameterDefinition& ParameterDefinition::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("referencedByResources"))
   {
-    Array<JsonValue> referencedByResourcesJsonList = jsonValue.GetArray("referencedByResources");
+    Array<JsonView> referencedByResourcesJsonList = jsonValue.GetArray("referencedByResources");
     for(unsigned referencedByResourcesIndex = 0; referencedByResourcesIndex < referencedByResourcesJsonList.GetLength(); ++referencedByResourcesIndex)
     {
       m_referencedByResources.push_back(referencedByResourcesJsonList[referencedByResourcesIndex].AsString());

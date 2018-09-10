@@ -39,7 +39,7 @@ VpcLink::VpcLink() :
 {
 }
 
-VpcLink::VpcLink(const JsonValue& jsonValue) : 
+VpcLink::VpcLink(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -51,7 +51,7 @@ VpcLink::VpcLink(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-VpcLink& VpcLink::operator =(const JsonValue& jsonValue)
+VpcLink& VpcLink::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -76,7 +76,7 @@ VpcLink& VpcLink::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("targetArns"))
   {
-    Array<JsonValue> targetArnsJsonList = jsonValue.GetArray("targetArns");
+    Array<JsonView> targetArnsJsonList = jsonValue.GetArray("targetArns");
     for(unsigned targetArnsIndex = 0; targetArnsIndex < targetArnsJsonList.GetLength(); ++targetArnsIndex)
     {
       m_targetArns.push_back(targetArnsJsonList[targetArnsIndex].AsString());

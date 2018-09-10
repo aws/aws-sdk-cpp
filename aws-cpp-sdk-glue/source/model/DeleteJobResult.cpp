@@ -37,7 +37,7 @@ DeleteJobResult::DeleteJobResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 DeleteJobResult& DeleteJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");

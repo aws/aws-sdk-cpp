@@ -46,7 +46,7 @@ CustomerConnectorInfo::CustomerConnectorInfo() :
 {
 }
 
-CustomerConnectorInfo::CustomerConnectorInfo(const JsonValue& jsonValue) : 
+CustomerConnectorInfo::CustomerConnectorInfo(JsonView jsonValue) : 
     m_activeConnectors(0),
     m_activeConnectorsHasBeenSet(false),
     m_healthyConnectors(0),
@@ -65,7 +65,7 @@ CustomerConnectorInfo::CustomerConnectorInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CustomerConnectorInfo& CustomerConnectorInfo::operator =(const JsonValue& jsonValue)
+CustomerConnectorInfo& CustomerConnectorInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("activeConnectors"))
   {

@@ -35,7 +35,7 @@ BatchDetectEntitiesItemResult::BatchDetectEntitiesItemResult() :
 {
 }
 
-BatchDetectEntitiesItemResult::BatchDetectEntitiesItemResult(const JsonValue& jsonValue) : 
+BatchDetectEntitiesItemResult::BatchDetectEntitiesItemResult(JsonView jsonValue) : 
     m_index(0),
     m_indexHasBeenSet(false),
     m_entitiesHasBeenSet(false)
@@ -43,7 +43,7 @@ BatchDetectEntitiesItemResult::BatchDetectEntitiesItemResult(const JsonValue& js
   *this = jsonValue;
 }
 
-BatchDetectEntitiesItemResult& BatchDetectEntitiesItemResult::operator =(const JsonValue& jsonValue)
+BatchDetectEntitiesItemResult& BatchDetectEntitiesItemResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Index"))
   {
@@ -54,7 +54,7 @@ BatchDetectEntitiesItemResult& BatchDetectEntitiesItemResult::operator =(const J
 
   if(jsonValue.ValueExists("Entities"))
   {
-    Array<JsonValue> entitiesJsonList = jsonValue.GetArray("Entities");
+    Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");
     for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
     {
       m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());

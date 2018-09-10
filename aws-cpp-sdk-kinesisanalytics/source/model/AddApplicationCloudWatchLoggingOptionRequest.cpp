@@ -52,7 +52,7 @@ Aws::String AddApplicationCloudWatchLoggingOptionRequest::SerializePayload() con
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AddApplicationCloudWatchLoggingOptionRequest::GetRequestSpecificHeaders() const

@@ -51,7 +51,8 @@ namespace Model
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
@@ -59,7 +60,8 @@ namespace Model
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
@@ -67,7 +69,8 @@ namespace Model
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
@@ -75,7 +78,8 @@ namespace Model
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
@@ -83,7 +87,8 @@ namespace Model
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline UpdateAccessKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
@@ -91,7 +96,8 @@ namespace Model
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline UpdateAccessKeyRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
@@ -99,7 +105,8 @@ namespace Model
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
      * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters: =,.@-</p>
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline UpdateAccessKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -163,36 +170,36 @@ namespace Model
 
     /**
      * <p> The status you want to assign to the secret access key. <code>Active</code>
-     * means the key can be used for API calls to AWS, while <code>Inactive</code>
-     * means the key cannot be used.</p>
+     * means that the key can be used for API calls to AWS, while <code>Inactive</code>
+     * means that the key cannot be used.</p>
      */
     inline const StatusType& GetStatus() const{ return m_status; }
 
     /**
      * <p> The status you want to assign to the secret access key. <code>Active</code>
-     * means the key can be used for API calls to AWS, while <code>Inactive</code>
-     * means the key cannot be used.</p>
+     * means that the key can be used for API calls to AWS, while <code>Inactive</code>
+     * means that the key cannot be used.</p>
      */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> The status you want to assign to the secret access key. <code>Active</code>
-     * means the key can be used for API calls to AWS, while <code>Inactive</code>
-     * means the key cannot be used.</p>
+     * means that the key can be used for API calls to AWS, while <code>Inactive</code>
+     * means that the key cannot be used.</p>
      */
     inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> The status you want to assign to the secret access key. <code>Active</code>
-     * means the key can be used for API calls to AWS, while <code>Inactive</code>
-     * means the key cannot be used.</p>
+     * means that the key can be used for API calls to AWS, while <code>Inactive</code>
+     * means that the key cannot be used.</p>
      */
     inline UpdateAccessKeyRequest& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
 
     /**
      * <p> The status you want to assign to the secret access key. <code>Active</code>
-     * means the key can be used for API calls to AWS, while <code>Inactive</code>
-     * means the key cannot be used.</p>
+     * means that the key can be used for API calls to AWS, while <code>Inactive</code>
+     * means that the key cannot be used.</p>
      */
     inline UpdateAccessKeyRequest& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 

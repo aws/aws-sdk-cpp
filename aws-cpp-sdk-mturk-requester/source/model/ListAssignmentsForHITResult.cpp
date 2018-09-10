@@ -39,7 +39,7 @@ ListAssignmentsForHITResult::ListAssignmentsForHITResult(const Aws::AmazonWebSer
 
 ListAssignmentsForHITResult& ListAssignmentsForHITResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
@@ -54,7 +54,7 @@ ListAssignmentsForHITResult& ListAssignmentsForHITResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("Assignments"))
   {
-    Array<JsonValue> assignmentsJsonList = jsonValue.GetArray("Assignments");
+    Array<JsonView> assignmentsJsonList = jsonValue.GetArray("Assignments");
     for(unsigned assignmentsIndex = 0; assignmentsIndex < assignmentsJsonList.GetLength(); ++assignmentsIndex)
     {
       m_assignments.push_back(assignmentsJsonList[assignmentsIndex].AsObject());

@@ -34,14 +34,14 @@ IpRoute::IpRoute() :
 {
 }
 
-IpRoute::IpRoute(const JsonValue& jsonValue) : 
+IpRoute::IpRoute(JsonView jsonValue) : 
     m_cidrIpHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-IpRoute& IpRoute::operator =(const JsonValue& jsonValue)
+IpRoute& IpRoute::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CidrIp"))
   {

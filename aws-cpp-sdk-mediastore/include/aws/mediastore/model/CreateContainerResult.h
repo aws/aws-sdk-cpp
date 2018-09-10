@@ -48,8 +48,8 @@ namespace Model
      * this container&gt;:container/&lt;name of container&gt;. For example:
      * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
      * <p>ContainerName: The container name as specified in the request.</p>
-     * <p>CreationTime: Unix timestamp.</p> <p>Status: The status of container creation
-     * or deletion. The status is one of the following: <code>CREATING</code>,
+     * <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container
+     * creation or deletion. The status is one of the following: <code>CREATING</code>,
      * <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the
      * container, the status is <code>CREATING</code>. When an endpoint is available,
      * the status changes to <code>ACTIVE</code>.</p> <p>The return value does not
@@ -64,8 +64,8 @@ namespace Model
      * this container&gt;:container/&lt;name of container&gt;. For example:
      * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
      * <p>ContainerName: The container name as specified in the request.</p>
-     * <p>CreationTime: Unix timestamp.</p> <p>Status: The status of container creation
-     * or deletion. The status is one of the following: <code>CREATING</code>,
+     * <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container
+     * creation or deletion. The status is one of the following: <code>CREATING</code>,
      * <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the
      * container, the status is <code>CREATING</code>. When an endpoint is available,
      * the status changes to <code>ACTIVE</code>.</p> <p>The return value does not
@@ -80,8 +80,8 @@ namespace Model
      * this container&gt;:container/&lt;name of container&gt;. For example:
      * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
      * <p>ContainerName: The container name as specified in the request.</p>
-     * <p>CreationTime: Unix timestamp.</p> <p>Status: The status of container creation
-     * or deletion. The status is one of the following: <code>CREATING</code>,
+     * <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container
+     * creation or deletion. The status is one of the following: <code>CREATING</code>,
      * <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the
      * container, the status is <code>CREATING</code>. When an endpoint is available,
      * the status changes to <code>ACTIVE</code>.</p> <p>The return value does not
@@ -96,8 +96,8 @@ namespace Model
      * this container&gt;:container/&lt;name of container&gt;. For example:
      * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
      * <p>ContainerName: The container name as specified in the request.</p>
-     * <p>CreationTime: Unix timestamp.</p> <p>Status: The status of container creation
-     * or deletion. The status is one of the following: <code>CREATING</code>,
+     * <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container
+     * creation or deletion. The status is one of the following: <code>CREATING</code>,
      * <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the
      * container, the status is <code>CREATING</code>. When an endpoint is available,
      * the status changes to <code>ACTIVE</code>.</p> <p>The return value does not
@@ -112,8 +112,8 @@ namespace Model
      * this container&gt;:container/&lt;name of container&gt;. For example:
      * arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
      * <p>ContainerName: The container name as specified in the request.</p>
-     * <p>CreationTime: Unix timestamp.</p> <p>Status: The status of container creation
-     * or deletion. The status is one of the following: <code>CREATING</code>,
+     * <p>CreationTime: Unix time stamp.</p> <p>Status: The status of container
+     * creation or deletion. The status is one of the following: <code>CREATING</code>,
      * <code>ACTIVE</code>, or <code>DELETING</code>. While the service is creating the
      * container, the status is <code>CREATING</code>. When an endpoint is available,
      * the status changes to <code>ACTIVE</code>.</p> <p>The return value does not

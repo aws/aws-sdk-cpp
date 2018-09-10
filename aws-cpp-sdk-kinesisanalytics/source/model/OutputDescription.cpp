@@ -38,7 +38,7 @@ OutputDescription::OutputDescription() :
 {
 }
 
-OutputDescription::OutputDescription(const JsonValue& jsonValue) : 
+OutputDescription::OutputDescription(JsonView jsonValue) : 
     m_outputIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_kinesisStreamsOutputDescriptionHasBeenSet(false),
@@ -49,7 +49,7 @@ OutputDescription::OutputDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OutputDescription& OutputDescription::operator =(const JsonValue& jsonValue)
+OutputDescription& OutputDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OutputId"))
   {

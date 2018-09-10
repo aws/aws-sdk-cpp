@@ -37,7 +37,7 @@ GetModelTemplateResult::GetModelTemplateResult(const Aws::AmazonWebServiceResult
 
 GetModelTemplateResult& GetModelTemplateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");

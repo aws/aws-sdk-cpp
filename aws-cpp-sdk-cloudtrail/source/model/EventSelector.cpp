@@ -37,7 +37,7 @@ EventSelector::EventSelector() :
 {
 }
 
-EventSelector::EventSelector(const JsonValue& jsonValue) : 
+EventSelector::EventSelector(JsonView jsonValue) : 
     m_readWriteType(ReadWriteType::NOT_SET),
     m_readWriteTypeHasBeenSet(false),
     m_includeManagementEvents(false),
@@ -47,7 +47,7 @@ EventSelector::EventSelector(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EventSelector& EventSelector::operator =(const JsonValue& jsonValue)
+EventSelector& EventSelector::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ReadWriteType"))
   {
@@ -65,7 +65,7 @@ EventSelector& EventSelector::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("DataResources"))
   {
-    Array<JsonValue> dataResourcesJsonList = jsonValue.GetArray("DataResources");
+    Array<JsonView> dataResourcesJsonList = jsonValue.GetArray("DataResources");
     for(unsigned dataResourcesIndex = 0; dataResourcesIndex < dataResourcesJsonList.GetLength(); ++dataResourcesIndex)
     {
       m_dataResources.push_back(dataResourcesJsonList[dataResourcesIndex].AsObject());

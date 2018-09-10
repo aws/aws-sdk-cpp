@@ -26,7 +26,11 @@ CreateStackRequest::CreateStackRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_displayNameHasBeenSet(false),
-    m_storageConnectorsHasBeenSet(false)
+    m_storageConnectorsHasBeenSet(false),
+    m_redirectURLHasBeenSet(false),
+    m_feedbackURLHasBeenSet(false),
+    m_userSettingsHasBeenSet(false),
+    m_applicationSettingsHasBeenSet(false)
 {
 }
 
@@ -63,7 +67,36 @@ Aws::String CreateStackRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_redirectURLHasBeenSet)
+  {
+   payload.WithString("RedirectURL", m_redirectURL);
+
+  }
+
+  if(m_feedbackURLHasBeenSet)
+  {
+   payload.WithString("FeedbackURL", m_feedbackURL);
+
+  }
+
+  if(m_userSettingsHasBeenSet)
+  {
+   Array<JsonValue> userSettingsJsonList(m_userSettings.size());
+   for(unsigned userSettingsIndex = 0; userSettingsIndex < userSettingsJsonList.GetLength(); ++userSettingsIndex)
+   {
+     userSettingsJsonList[userSettingsIndex].AsObject(m_userSettings[userSettingsIndex].Jsonize());
+   }
+   payload.WithArray("UserSettings", std::move(userSettingsJsonList));
+
+  }
+
+  if(m_applicationSettingsHasBeenSet)
+  {
+   payload.WithObject("ApplicationSettings", m_applicationSettings.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateStackRequest::GetRequestSpecificHeaders() const

@@ -30,20 +30,28 @@ namespace Model
 
 Subscription::Subscription() : 
     m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
     m_timeCommitmentInSeconds(0),
-    m_timeCommitmentInSecondsHasBeenSet(false)
+    m_timeCommitmentInSecondsHasBeenSet(false),
+    m_autoRenew(AutoRenew::NOT_SET),
+    m_autoRenewHasBeenSet(false),
+    m_limitsHasBeenSet(false)
 {
 }
 
-Subscription::Subscription(const JsonValue& jsonValue) : 
+Subscription::Subscription(JsonView jsonValue) : 
     m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
     m_timeCommitmentInSeconds(0),
-    m_timeCommitmentInSecondsHasBeenSet(false)
+    m_timeCommitmentInSecondsHasBeenSet(false),
+    m_autoRenew(AutoRenew::NOT_SET),
+    m_autoRenewHasBeenSet(false),
+    m_limitsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Subscription& Subscription::operator =(const JsonValue& jsonValue)
+Subscription& Subscription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StartTime"))
   {
@@ -52,11 +60,35 @@ Subscription& Subscription::operator =(const JsonValue& jsonValue)
     m_startTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EndTime"))
+  {
+    m_endTime = jsonValue.GetDouble("EndTime");
+
+    m_endTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("TimeCommitmentInSeconds"))
   {
     m_timeCommitmentInSeconds = jsonValue.GetInt64("TimeCommitmentInSeconds");
 
     m_timeCommitmentInSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutoRenew"))
+  {
+    m_autoRenew = AutoRenewMapper::GetAutoRenewForName(jsonValue.GetString("AutoRenew"));
+
+    m_autoRenewHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Limits"))
+  {
+    Array<JsonView> limitsJsonList = jsonValue.GetArray("Limits");
+    for(unsigned limitsIndex = 0; limitsIndex < limitsJsonList.GetLength(); ++limitsIndex)
+    {
+      m_limits.push_back(limitsJsonList[limitsIndex].AsObject());
+    }
+    m_limitsHasBeenSet = true;
   }
 
   return *this;
@@ -71,9 +103,30 @@ JsonValue Subscription::Jsonize() const
    payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
   }
 
+  if(m_endTimeHasBeenSet)
+  {
+   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  }
+
   if(m_timeCommitmentInSecondsHasBeenSet)
   {
    payload.WithInt64("TimeCommitmentInSeconds", m_timeCommitmentInSeconds);
+
+  }
+
+  if(m_autoRenewHasBeenSet)
+  {
+   payload.WithString("AutoRenew", AutoRenewMapper::GetNameForAutoRenew(m_autoRenew));
+  }
+
+  if(m_limitsHasBeenSet)
+  {
+   Array<JsonValue> limitsJsonList(m_limits.size());
+   for(unsigned limitsIndex = 0; limitsIndex < limitsJsonList.GetLength(); ++limitsIndex)
+   {
+     limitsJsonList[limitsIndex].AsObject(m_limits[limitsIndex].Jsonize());
+   }
+   payload.WithArray("Limits", std::move(limitsJsonList));
 
   }
 

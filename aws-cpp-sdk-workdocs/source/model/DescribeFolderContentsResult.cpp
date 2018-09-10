@@ -37,10 +37,10 @@ DescribeFolderContentsResult::DescribeFolderContentsResult(const Aws::AmazonWebS
 
 DescribeFolderContentsResult& DescribeFolderContentsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Folders"))
   {
-    Array<JsonValue> foldersJsonList = jsonValue.GetArray("Folders");
+    Array<JsonView> foldersJsonList = jsonValue.GetArray("Folders");
     for(unsigned foldersIndex = 0; foldersIndex < foldersJsonList.GetLength(); ++foldersIndex)
     {
       m_folders.push_back(foldersJsonList[foldersIndex].AsObject());
@@ -49,7 +49,7 @@ DescribeFolderContentsResult& DescribeFolderContentsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("Documents"))
   {
-    Array<JsonValue> documentsJsonList = jsonValue.GetArray("Documents");
+    Array<JsonView> documentsJsonList = jsonValue.GetArray("Documents");
     for(unsigned documentsIndex = 0; documentsIndex < documentsJsonList.GetLength(); ++documentsIndex)
     {
       m_documents.push_back(documentsJsonList[documentsIndex].AsObject());

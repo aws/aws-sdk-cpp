@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     Target();
-    Target(const Aws::Utils::Json::JsonValue& jsonValue);
-    Target& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Target(Aws::Utils::Json::JsonView jsonValue);
+    Target& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -54,8 +55,8 @@ namespace Model
      * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
+     * Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -64,8 +65,8 @@ namespace Model
      * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
+     * Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
@@ -74,8 +75,8 @@ namespace Model
      * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
+     * Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
@@ -84,8 +85,8 @@ namespace Model
      * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
+     * Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
@@ -94,8 +95,8 @@ namespace Model
      * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
+     * Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline Target& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
@@ -104,8 +105,8 @@ namespace Model
      * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
+     * Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline Target& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
@@ -114,8 +115,8 @@ namespace Model
      * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
+     * Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline Target& WithKey(const char* value) { SetKey(value); return *this;}
 
@@ -126,8 +127,8 @@ namespace Model
      * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
@@ -137,8 +138,8 @@ namespace Model
      * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
@@ -148,8 +149,8 @@ namespace Model
      * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
@@ -159,8 +160,8 @@ namespace Model
      * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline Target& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
@@ -170,8 +171,8 @@ namespace Model
      * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline Target& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
@@ -181,8 +182,8 @@ namespace Model
      * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline Target& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
@@ -192,8 +193,8 @@ namespace Model
      * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline Target& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
@@ -203,8 +204,8 @@ namespace Model
      * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
      * information about how to send commands that target instances using Key,Value
      * parameters, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Executing
-     * a Command Using Systems Manager Run Command</a>.</p>
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline Target& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

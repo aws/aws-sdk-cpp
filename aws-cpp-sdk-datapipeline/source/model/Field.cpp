@@ -35,7 +35,7 @@ Field::Field() :
 {
 }
 
-Field::Field(const JsonValue& jsonValue) : 
+Field::Field(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
     m_stringValueHasBeenSet(false),
     m_refValueHasBeenSet(false)
@@ -43,7 +43,7 @@ Field::Field(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Field& Field::operator =(const JsonValue& jsonValue)
+Field& Field::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("key"))
   {

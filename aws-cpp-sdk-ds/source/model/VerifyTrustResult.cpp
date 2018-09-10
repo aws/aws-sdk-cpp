@@ -37,7 +37,7 @@ VerifyTrustResult::VerifyTrustResult(const Aws::AmazonWebServiceResult<JsonValue
 
 VerifyTrustResult& VerifyTrustResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TrustId"))
   {
     m_trustId = jsonValue.GetString("TrustId");

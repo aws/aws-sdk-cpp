@@ -52,37 +52,44 @@ namespace Model
 
 
     /**
-     * <p>The endpoint type.</p>
+     * <p>The endpoint type (such as <code>iot:Data</code>,
+     * <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>). </p>
      */
     inline const Aws::String& GetEndpointType() const{ return m_endpointType; }
 
     /**
-     * <p>The endpoint type.</p>
+     * <p>The endpoint type (such as <code>iot:Data</code>,
+     * <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>). </p>
      */
     inline void SetEndpointType(const Aws::String& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
-     * <p>The endpoint type.</p>
+     * <p>The endpoint type (such as <code>iot:Data</code>,
+     * <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>). </p>
      */
     inline void SetEndpointType(Aws::String&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
-     * <p>The endpoint type.</p>
+     * <p>The endpoint type (such as <code>iot:Data</code>,
+     * <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>). </p>
      */
     inline void SetEndpointType(const char* value) { m_endpointTypeHasBeenSet = true; m_endpointType.assign(value); }
 
     /**
-     * <p>The endpoint type.</p>
+     * <p>The endpoint type (such as <code>iot:Data</code>,
+     * <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>). </p>
      */
     inline DescribeEndpointRequest& WithEndpointType(const Aws::String& value) { SetEndpointType(value); return *this;}
 
     /**
-     * <p>The endpoint type.</p>
+     * <p>The endpoint type (such as <code>iot:Data</code>,
+     * <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>). </p>
      */
     inline DescribeEndpointRequest& WithEndpointType(Aws::String&& value) { SetEndpointType(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoint type.</p>
+     * <p>The endpoint type (such as <code>iot:Data</code>,
+     * <code>iot:CredentialProvider</code> and <code>iot:Jobs</code>). </p>
      */
     inline DescribeEndpointRequest& WithEndpointType(const char* value) { SetEndpointType(value); return *this;}
 

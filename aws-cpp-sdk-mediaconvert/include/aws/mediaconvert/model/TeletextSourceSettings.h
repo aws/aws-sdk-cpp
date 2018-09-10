@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     TeletextSourceSettings();
-    TeletextSourceSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    TeletextSourceSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    TeletextSourceSettings(Aws::Utils::Json::JsonView jsonValue);
+    TeletextSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

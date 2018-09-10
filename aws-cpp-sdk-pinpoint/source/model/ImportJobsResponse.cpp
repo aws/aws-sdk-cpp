@@ -34,18 +34,18 @@ ImportJobsResponse::ImportJobsResponse() :
 {
 }
 
-ImportJobsResponse::ImportJobsResponse(const JsonValue& jsonValue) : 
+ImportJobsResponse::ImportJobsResponse(JsonView jsonValue) : 
     m_itemHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ImportJobsResponse& ImportJobsResponse::operator =(const JsonValue& jsonValue)
+ImportJobsResponse& ImportJobsResponse::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Item"))
   {
-    Array<JsonValue> itemJsonList = jsonValue.GetArray("Item");
+    Array<JsonView> itemJsonList = jsonValue.GetArray("Item");
     for(unsigned itemIndex = 0; itemIndex < itemJsonList.GetLength(); ++itemIndex)
     {
       m_item.push_back(itemJsonList[itemIndex].AsObject());

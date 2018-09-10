@@ -36,7 +36,7 @@ ChildWorkflowExecutionStartedEventAttributes::ChildWorkflowExecutionStartedEvent
 {
 }
 
-ChildWorkflowExecutionStartedEventAttributes::ChildWorkflowExecutionStartedEventAttributes(const JsonValue& jsonValue) : 
+ChildWorkflowExecutionStartedEventAttributes::ChildWorkflowExecutionStartedEventAttributes(JsonView jsonValue) : 
     m_workflowExecutionHasBeenSet(false),
     m_workflowTypeHasBeenSet(false),
     m_initiatedEventId(0),
@@ -45,7 +45,7 @@ ChildWorkflowExecutionStartedEventAttributes::ChildWorkflowExecutionStartedEvent
   *this = jsonValue;
 }
 
-ChildWorkflowExecutionStartedEventAttributes& ChildWorkflowExecutionStartedEventAttributes::operator =(const JsonValue& jsonValue)
+ChildWorkflowExecutionStartedEventAttributes& ChildWorkflowExecutionStartedEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("workflowExecution"))
   {

@@ -42,7 +42,7 @@ PresetWatermark::PresetWatermark() :
 {
 }
 
-PresetWatermark::PresetWatermark(const JsonValue& jsonValue) : 
+PresetWatermark::PresetWatermark(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_maxWidthHasBeenSet(false),
     m_maxHeightHasBeenSet(false),
@@ -57,7 +57,7 @@ PresetWatermark::PresetWatermark(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PresetWatermark& PresetWatermark::operator =(const JsonValue& jsonValue)
+PresetWatermark& PresetWatermark::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

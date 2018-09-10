@@ -45,11 +45,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -122,7 +117,7 @@ namespace Model
 
         virtual ~LexRuntimeServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "lex"; }
+        inline virtual const char* GetServiceClientName() const override { return "Lex Runtime Service"; }
 
 
         /**

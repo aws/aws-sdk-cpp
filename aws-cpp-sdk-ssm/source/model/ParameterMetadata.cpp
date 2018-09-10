@@ -42,7 +42,7 @@ ParameterMetadata::ParameterMetadata() :
 {
 }
 
-ParameterMetadata::ParameterMetadata(const JsonValue& jsonValue) : 
+ParameterMetadata::ParameterMetadata(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_type(ParameterType::NOT_SET),
     m_typeHasBeenSet(false),
@@ -57,7 +57,7 @@ ParameterMetadata::ParameterMetadata(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ParameterMetadata& ParameterMetadata::operator =(const JsonValue& jsonValue)
+ParameterMetadata& ParameterMetadata::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

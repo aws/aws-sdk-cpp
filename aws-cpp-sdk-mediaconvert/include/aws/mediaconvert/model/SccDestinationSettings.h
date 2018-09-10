@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -41,8 +42,8 @@ namespace Model
   {
   public:
     SccDestinationSettings();
-    SccDestinationSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    SccDestinationSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    SccDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    SccDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

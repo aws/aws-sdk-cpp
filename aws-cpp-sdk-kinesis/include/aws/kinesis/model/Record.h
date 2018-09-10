@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Kinesis
@@ -36,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>The unit of data of the Kinesis stream, which is composed of a sequence
+   * <p>The unit of data of the Kinesis data stream, which is composed of a sequence
    * number, a partition key, and a data blob.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/Record">AWS API
    * Reference</a></p>
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     Record();
-    Record(const Aws::Utils::Json::JsonValue& jsonValue);
-    Record& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Record(Aws::Utils::Json::JsonView jsonValue);
+    Record& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -114,46 +115,46 @@ namespace Model
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to Kinesis
-     * Streams, which does not inspect, interpret, or change the data in the blob in
-     * any way. When the data blob (the payload before base64-encoding) is added to the
-     * partition key size, the total size must not exceed the maximum record size (1
-     * MB).</p>
+     * Data Streams, which does not inspect, interpret, or change the data in the blob
+     * in any way. When the data blob (the payload before base64-encoding) is added to
+     * the partition key size, the total size must not exceed the maximum record size
+     * (1 MB).</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to Kinesis
-     * Streams, which does not inspect, interpret, or change the data in the blob in
-     * any way. When the data blob (the payload before base64-encoding) is added to the
-     * partition key size, the total size must not exceed the maximum record size (1
-     * MB).</p>
+     * Data Streams, which does not inspect, interpret, or change the data in the blob
+     * in any way. When the data blob (the payload before base64-encoding) is added to
+     * the partition key size, the total size must not exceed the maximum record size
+     * (1 MB).</p>
      */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to Kinesis
-     * Streams, which does not inspect, interpret, or change the data in the blob in
-     * any way. When the data blob (the payload before base64-encoding) is added to the
-     * partition key size, the total size must not exceed the maximum record size (1
-     * MB).</p>
+     * Data Streams, which does not inspect, interpret, or change the data in the blob
+     * in any way. When the data blob (the payload before base64-encoding) is added to
+     * the partition key size, the total size must not exceed the maximum record size
+     * (1 MB).</p>
      */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to Kinesis
-     * Streams, which does not inspect, interpret, or change the data in the blob in
-     * any way. When the data blob (the payload before base64-encoding) is added to the
-     * partition key size, the total size must not exceed the maximum record size (1
-     * MB).</p>
+     * Data Streams, which does not inspect, interpret, or change the data in the blob
+     * in any way. When the data blob (the payload before base64-encoding) is added to
+     * the partition key size, the total size must not exceed the maximum record size
+     * (1 MB).</p>
      */
     inline Record& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to Kinesis
-     * Streams, which does not inspect, interpret, or change the data in the blob in
-     * any way. When the data blob (the payload before base64-encoding) is added to the
-     * partition key size, the total size must not exceed the maximum record size (1
-     * MB).</p>
+     * Data Streams, which does not inspect, interpret, or change the data in the blob
+     * in any way. When the data blob (the payload before base64-encoding) is added to
+     * the partition key size, the total size must not exceed the maximum record size
+     * (1 MB).</p>
      */
     inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 
@@ -198,8 +199,8 @@ namespace Model
      * <p>The encryption type used on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed KMS key.</p>
-     * </li> </ul>
+     * encryption on the records in the stream using a customer-managed AWS KMS
+     * key.</p> </li> </ul>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
 
@@ -207,8 +208,8 @@ namespace Model
      * <p>The encryption type used on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed KMS key.</p>
-     * </li> </ul>
+     * encryption on the records in the stream using a customer-managed AWS KMS
+     * key.</p> </li> </ul>
      */
     inline void SetEncryptionType(const EncryptionType& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
 
@@ -216,8 +217,8 @@ namespace Model
      * <p>The encryption type used on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed KMS key.</p>
-     * </li> </ul>
+     * encryption on the records in the stream using a customer-managed AWS KMS
+     * key.</p> </li> </ul>
      */
     inline void SetEncryptionType(EncryptionType&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
 
@@ -225,8 +226,8 @@ namespace Model
      * <p>The encryption type used on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed KMS key.</p>
-     * </li> </ul>
+     * encryption on the records in the stream using a customer-managed AWS KMS
+     * key.</p> </li> </ul>
      */
     inline Record& WithEncryptionType(const EncryptionType& value) { SetEncryptionType(value); return *this;}
 
@@ -234,8 +235,8 @@ namespace Model
      * <p>The encryption type used on the record. This parameter can be one of the
      * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
      * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
-     * encryption on the records in the stream using a customer-managed KMS key.</p>
-     * </li> </ul>
+     * encryption on the records in the stream using a customer-managed AWS KMS
+     * key.</p> </li> </ul>
      */
     inline Record& WithEncryptionType(EncryptionType&& value) { SetEncryptionType(std::move(value)); return *this;}
 

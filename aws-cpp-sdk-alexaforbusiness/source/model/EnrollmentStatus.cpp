@@ -33,6 +33,7 @@ namespace Aws
         static const int INITIALIZED_HASH = HashingUtils::HashString("INITIALIZED");
         static const int PENDING_HASH = HashingUtils::HashString("PENDING");
         static const int REGISTERED_HASH = HashingUtils::HashString("REGISTERED");
+        static const int DISASSOCIATING_HASH = HashingUtils::HashString("DISASSOCIATING");
         static const int DEREGISTERING_HASH = HashingUtils::HashString("DEREGISTERING");
 
 
@@ -50,6 +51,10 @@ namespace Aws
           else if (hashCode == REGISTERED_HASH)
           {
             return EnrollmentStatus::REGISTERED;
+          }
+          else if (hashCode == DISASSOCIATING_HASH)
+          {
+            return EnrollmentStatus::DISASSOCIATING;
           }
           else if (hashCode == DEREGISTERING_HASH)
           {
@@ -75,6 +80,8 @@ namespace Aws
             return "PENDING";
           case EnrollmentStatus::REGISTERED:
             return "REGISTERED";
+          case EnrollmentStatus::DISASSOCIATING:
+            return "DISASSOCIATING";
           case EnrollmentStatus::DEREGISTERING:
             return "DEREGISTERING";
           default:

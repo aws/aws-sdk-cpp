@@ -37,7 +37,7 @@ CreatePlayerSessionResult::CreatePlayerSessionResult(const Aws::AmazonWebService
 
 CreatePlayerSessionResult& CreatePlayerSessionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PlayerSession"))
   {
     m_playerSession = jsonValue.GetObject("PlayerSession");

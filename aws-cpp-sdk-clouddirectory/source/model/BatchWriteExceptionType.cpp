@@ -41,6 +41,7 @@ namespace Aws
         static const int AccessDeniedException_HASH = HashingUtils::HashString("AccessDeniedException");
         static const int InvalidAttachmentException_HASH = HashingUtils::HashString("InvalidAttachmentException");
         static const int NotIndexException_HASH = HashingUtils::HashString("NotIndexException");
+        static const int NotNodeException_HASH = HashingUtils::HashString("NotNodeException");
         static const int IndexedAttributeMissingException_HASH = HashingUtils::HashString("IndexedAttributeMissingException");
         static const int ObjectAlreadyDetachedException_HASH = HashingUtils::HashString("ObjectAlreadyDetachedException");
         static const int NotPolicyException_HASH = HashingUtils::HashString("NotPolicyException");
@@ -95,6 +96,10 @@ namespace Aws
           else if (hashCode == NotIndexException_HASH)
           {
             return BatchWriteExceptionType::NotIndexException;
+          }
+          else if (hashCode == NotNodeException_HASH)
+          {
+            return BatchWriteExceptionType::NotNodeException;
           }
           else if (hashCode == IndexedAttributeMissingException_HASH)
           {
@@ -156,6 +161,8 @@ namespace Aws
             return "InvalidAttachmentException";
           case BatchWriteExceptionType::NotIndexException:
             return "NotIndexException";
+          case BatchWriteExceptionType::NotNodeException:
+            return "NotNodeException";
           case BatchWriteExceptionType::IndexedAttributeMissingException:
             return "IndexedAttributeMissingException";
           case BatchWriteExceptionType::ObjectAlreadyDetachedException:

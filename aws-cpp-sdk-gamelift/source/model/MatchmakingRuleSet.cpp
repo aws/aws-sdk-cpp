@@ -35,7 +35,7 @@ MatchmakingRuleSet::MatchmakingRuleSet() :
 {
 }
 
-MatchmakingRuleSet::MatchmakingRuleSet(const JsonValue& jsonValue) : 
+MatchmakingRuleSet::MatchmakingRuleSet(JsonView jsonValue) : 
     m_ruleSetNameHasBeenSet(false),
     m_ruleSetBodyHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
@@ -43,7 +43,7 @@ MatchmakingRuleSet::MatchmakingRuleSet(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MatchmakingRuleSet& MatchmakingRuleSet::operator =(const JsonValue& jsonValue)
+MatchmakingRuleSet& MatchmakingRuleSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RuleSetName"))
   {

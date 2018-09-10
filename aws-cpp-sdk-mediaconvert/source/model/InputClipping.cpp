@@ -34,14 +34,14 @@ InputClipping::InputClipping() :
 {
 }
 
-InputClipping::InputClipping(const JsonValue& jsonValue) : 
+InputClipping::InputClipping(JsonView jsonValue) : 
     m_endTimecodeHasBeenSet(false),
     m_startTimecodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputClipping& InputClipping::operator =(const JsonValue& jsonValue)
+InputClipping& InputClipping::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("endTimecode"))
   {

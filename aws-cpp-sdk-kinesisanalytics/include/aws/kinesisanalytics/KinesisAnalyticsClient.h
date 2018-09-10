@@ -60,11 +60,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -184,7 +179,7 @@ namespace Model
 
         virtual ~KinesisAnalyticsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "kinesisanalytics"; }
+        inline virtual const char* GetServiceClientName() const override { return "Kinesis Analytics"; }
 
 
         /**

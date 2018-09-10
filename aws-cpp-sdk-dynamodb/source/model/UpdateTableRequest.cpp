@@ -27,7 +27,8 @@ UpdateTableRequest::UpdateTableRequest() :
     m_tableNameHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false),
     m_globalSecondaryIndexUpdatesHasBeenSet(false),
-    m_streamSpecificationHasBeenSet(false)
+    m_streamSpecificationHasBeenSet(false),
+    m_sSESpecificationHasBeenSet(false)
 {
 }
 
@@ -75,7 +76,13 @@ Aws::String UpdateTableRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_sSESpecificationHasBeenSet)
+  {
+   payload.WithObject("SSESpecification", m_sSESpecification.Jsonize());
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateTableRequest::GetRequestSpecificHeaders() const

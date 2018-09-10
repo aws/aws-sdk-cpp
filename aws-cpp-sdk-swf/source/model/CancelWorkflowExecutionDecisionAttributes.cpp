@@ -33,13 +33,13 @@ CancelWorkflowExecutionDecisionAttributes::CancelWorkflowExecutionDecisionAttrib
 {
 }
 
-CancelWorkflowExecutionDecisionAttributes::CancelWorkflowExecutionDecisionAttributes(const JsonValue& jsonValue) : 
+CancelWorkflowExecutionDecisionAttributes::CancelWorkflowExecutionDecisionAttributes(JsonView jsonValue) : 
     m_detailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CancelWorkflowExecutionDecisionAttributes& CancelWorkflowExecutionDecisionAttributes::operator =(const JsonValue& jsonValue)
+CancelWorkflowExecutionDecisionAttributes& CancelWorkflowExecutionDecisionAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("details"))
   {

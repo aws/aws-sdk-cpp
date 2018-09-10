@@ -36,7 +36,7 @@ SchemaChangePolicy::SchemaChangePolicy() :
 {
 }
 
-SchemaChangePolicy::SchemaChangePolicy(const JsonValue& jsonValue) : 
+SchemaChangePolicy::SchemaChangePolicy(JsonView jsonValue) : 
     m_updateBehavior(UpdateBehavior::NOT_SET),
     m_updateBehaviorHasBeenSet(false),
     m_deleteBehavior(DeleteBehavior::NOT_SET),
@@ -45,7 +45,7 @@ SchemaChangePolicy::SchemaChangePolicy(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SchemaChangePolicy& SchemaChangePolicy::operator =(const JsonValue& jsonValue)
+SchemaChangePolicy& SchemaChangePolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UpdateBehavior"))
   {

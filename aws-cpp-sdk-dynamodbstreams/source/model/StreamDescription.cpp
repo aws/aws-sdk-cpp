@@ -43,7 +43,7 @@ StreamDescription::StreamDescription() :
 {
 }
 
-StreamDescription::StreamDescription(const JsonValue& jsonValue) : 
+StreamDescription::StreamDescription(JsonView jsonValue) : 
     m_streamArnHasBeenSet(false),
     m_streamLabelHasBeenSet(false),
     m_streamStatus(StreamStatus::NOT_SET),
@@ -59,7 +59,7 @@ StreamDescription::StreamDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StreamDescription& StreamDescription::operator =(const JsonValue& jsonValue)
+StreamDescription& StreamDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StreamArn"))
   {
@@ -105,7 +105,7 @@ StreamDescription& StreamDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("KeySchema"))
   {
-    Array<JsonValue> keySchemaJsonList = jsonValue.GetArray("KeySchema");
+    Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
     for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
     {
       m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());
@@ -115,7 +115,7 @@ StreamDescription& StreamDescription::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Shards"))
   {
-    Array<JsonValue> shardsJsonList = jsonValue.GetArray("Shards");
+    Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
     for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
     {
       m_shards.push_back(shardsJsonList[shardsIndex].AsObject());

@@ -41,7 +41,7 @@ GetEvaluationResult::GetEvaluationResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetEvaluationResult& GetEvaluationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EvaluationId"))
   {
     m_evaluationId = jsonValue.GetString("EvaluationId");

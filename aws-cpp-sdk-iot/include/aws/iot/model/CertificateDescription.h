@@ -19,6 +19,7 @@
 #include <aws/iot/model/CertificateStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/TransferData.h>
+#include <aws/iot/model/CertificateValidity.h>
 #include <utility>
 
 namespace Aws
@@ -28,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -44,8 +46,8 @@ namespace Model
   {
   public:
     CertificateDescription();
-    CertificateDescription(const Aws::Utils::Json::JsonValue& jsonValue);
-    CertificateDescription& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CertificateDescription(Aws::Utils::Json::JsonView jsonValue);
+    CertificateDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -344,6 +346,22 @@ namespace Model
 
 
     /**
+     * <p>The customer version of the certificate.</p>
+     */
+    inline int GetCustomerVersion() const{ return m_customerVersion; }
+
+    /**
+     * <p>The customer version of the certificate.</p>
+     */
+    inline void SetCustomerVersion(int value) { m_customerVersionHasBeenSet = true; m_customerVersion = value; }
+
+    /**
+     * <p>The customer version of the certificate.</p>
+     */
+    inline CertificateDescription& WithCustomerVersion(int value) { SetCustomerVersion(value); return *this;}
+
+
+    /**
      * <p>The transfer data.</p>
      */
     inline const TransferData& GetTransferData() const{ return m_transferData; }
@@ -367,6 +385,68 @@ namespace Model
      * <p>The transfer data.</p>
      */
     inline CertificateDescription& WithTransferData(TransferData&& value) { SetTransferData(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The generation ID of the certificate.</p>
+     */
+    inline const Aws::String& GetGenerationId() const{ return m_generationId; }
+
+    /**
+     * <p>The generation ID of the certificate.</p>
+     */
+    inline void SetGenerationId(const Aws::String& value) { m_generationIdHasBeenSet = true; m_generationId = value; }
+
+    /**
+     * <p>The generation ID of the certificate.</p>
+     */
+    inline void SetGenerationId(Aws::String&& value) { m_generationIdHasBeenSet = true; m_generationId = std::move(value); }
+
+    /**
+     * <p>The generation ID of the certificate.</p>
+     */
+    inline void SetGenerationId(const char* value) { m_generationIdHasBeenSet = true; m_generationId.assign(value); }
+
+    /**
+     * <p>The generation ID of the certificate.</p>
+     */
+    inline CertificateDescription& WithGenerationId(const Aws::String& value) { SetGenerationId(value); return *this;}
+
+    /**
+     * <p>The generation ID of the certificate.</p>
+     */
+    inline CertificateDescription& WithGenerationId(Aws::String&& value) { SetGenerationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The generation ID of the certificate.</p>
+     */
+    inline CertificateDescription& WithGenerationId(const char* value) { SetGenerationId(value); return *this;}
+
+
+    /**
+     * <p>When the certificate is valid.</p>
+     */
+    inline const CertificateValidity& GetValidity() const{ return m_validity; }
+
+    /**
+     * <p>When the certificate is valid.</p>
+     */
+    inline void SetValidity(const CertificateValidity& value) { m_validityHasBeenSet = true; m_validity = value; }
+
+    /**
+     * <p>When the certificate is valid.</p>
+     */
+    inline void SetValidity(CertificateValidity&& value) { m_validityHasBeenSet = true; m_validity = std::move(value); }
+
+    /**
+     * <p>When the certificate is valid.</p>
+     */
+    inline CertificateDescription& WithValidity(const CertificateValidity& value) { SetValidity(value); return *this;}
+
+    /**
+     * <p>When the certificate is valid.</p>
+     */
+    inline CertificateDescription& WithValidity(CertificateValidity&& value) { SetValidity(std::move(value)); return *this;}
 
   private:
 
@@ -397,8 +477,17 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
 
+    int m_customerVersion;
+    bool m_customerVersionHasBeenSet;
+
     TransferData m_transferData;
     bool m_transferDataHasBeenSet;
+
+    Aws::String m_generationId;
+    bool m_generationIdHasBeenSet;
+
+    CertificateValidity m_validity;
+    bool m_validityHasBeenSet;
   };
 
 } // namespace Model

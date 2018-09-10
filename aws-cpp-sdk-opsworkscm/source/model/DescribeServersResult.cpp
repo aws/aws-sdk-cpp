@@ -37,10 +37,10 @@ DescribeServersResult::DescribeServersResult(const Aws::AmazonWebServiceResult<J
 
 DescribeServersResult& DescribeServersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Servers"))
   {
-    Array<JsonValue> serversJsonList = jsonValue.GetArray("Servers");
+    Array<JsonView> serversJsonList = jsonValue.GetArray("Servers");
     for(unsigned serversIndex = 0; serversIndex < serversJsonList.GetLength(); ++serversIndex)
     {
       m_servers.push_back(serversJsonList[serversIndex].AsObject());

@@ -43,13 +43,16 @@ enum XmlErrorResponseStyle
     IllFormed = 4
 };
 
-static std::unique_ptr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::String& exception, const Aws::String& message, int style = LowerCaseMessage)
+static const char ERROR_MARSHALLER_TEST_ALLOC_TAG[] = "ErrorMarshllerTestAllocTag";
+
+static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::String& exception, const Aws::String& message, int style = LowerCaseMessage)
 {
     using namespace Aws::Http;
     using namespace Aws::Http::Standard;
-    StandardHttpRequest fakeRequest("/some/uri", Aws::Http::HttpMethod::HTTP_GET);
-    auto ss = new Aws::StringStream;
-    fakeRequest.SetResponseStreamFactory([=] { return ss; });
+    auto fakeRequest = Aws::MakeShared<StandardHttpRequest>(ERROR_MARSHALLER_TEST_ALLOC_TAG, 
+            "/some/uri", Aws::Http::HttpMethod::HTTP_GET);
+    auto ss = Aws::New<Aws::StringStream>(ERROR_MARSHALLER_TEST_ALLOC_TAG);
+    fakeRequest->SetResponseStreamFactory([=] { return ss; });
     if (style & LowerCaseMessage)
     {
         *ss << "{\"" << MESSAGE_LOWER_CASE << "\":\"" << message << "\"";
@@ -59,7 +62,7 @@ static std::unique_ptr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::Str
         *ss << "{\"" << MESSAGE_CAMEL_CASE << "\":\"" << message << "\"";
     }
 
-    auto response = std::unique_ptr<HttpResponse>(new StandardHttpResponse(fakeRequest));
+    auto response = Aws::MakeUnique<StandardHttpResponse>(ERROR_MARSHALLER_TEST_ALLOC_TAG, fakeRequest);
 
     if (!(style & Header)) 
     {
@@ -71,17 +74,18 @@ static std::unique_ptr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::Str
         response->AddHeader(ERROR_TYPE_HEADER, exception);
     }
 
-    return response;
+    return std::move(response);
 }
 
-static std::unique_ptr<Aws::Http::HttpResponse> BuildHttpXmlResponse(const Aws::String& exception, const Aws::String& message, int style = SingularErrorNode)
+static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpXmlResponse(const Aws::String& exception, const Aws::String& message, int style = SingularErrorNode)
 {
     using namespace Aws::Http;
     using namespace Aws::Http::Standard;
-    StandardHttpRequest fakeRequest("/some/uri", Aws::Http::HttpMethod::HTTP_GET);
-    auto ss = new Aws::StringStream;
-    fakeRequest.SetResponseStreamFactory([=] { return ss; });
-    auto response = std::unique_ptr<HttpResponse>(new StandardHttpResponse(fakeRequest));
+    auto fakeRequest = Aws::MakeShared<StandardHttpRequest>(ERROR_MARSHALLER_TEST_ALLOC_TAG, 
+            "/some/uri", Aws::Http::HttpMethod::HTTP_GET);
+    auto ss = Aws::New<Aws::StringStream>(ERROR_MARSHALLER_TEST_ALLOC_TAG);
+    fakeRequest->SetResponseStreamFactory([=] { return ss; });
+    auto response = Aws::MakeUnique<StandardHttpResponse>(ERROR_MARSHALLER_TEST_ALLOC_TAG, fakeRequest);
 
     *ss << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
     if (style & PluralErrorNode)
@@ -109,34 +113,20 @@ static std::unique_ptr<Aws::Http::HttpResponse> BuildHttpXmlResponse(const Aws::
     {
         *ss << "</Errors> </OtherRoot>";
     }
-    return response;
-}
-
-static Aws::UniquePtr<Aws::Http::HttpResponse> BuildEmptyHttpResponse()
-{
-    using namespace Aws::Http;
-    using namespace Aws::Http::Standard;
-    StandardHttpRequest fakeRequest("/some/uri", HttpMethod::HTTP_GET);
-    auto ss = Aws::New<Aws::StringStream>("EmptyHttpResponseTag");
-    fakeRequest.SetResponseStreamFactory([=] { return ss; });
-    return Aws::UniquePtr<Aws::Http::HttpResponse>(Aws::New<StandardHttpResponse>("StandardHttpRequestTag", fakeRequest));
+    return std::move(response);
 }
 
 TEST(XmlErrorMarshallerTest, TestXmlErrorPayload)
 {
     XmlErrorMarshaller awsErrorMarshaller;
     Aws::String message = "Test Message";
-    auto response = BuildHttpXmlResponse("IncompleteSignatureException", message);
-    ASSERT_TRUE(XmlErrorMarshaller::ContainsError(*response));
-    AWSError<CoreErrors> error = awsErrorMarshaller.Marshall(*response);
+    AWSError<CoreErrors> error = awsErrorMarshaller.Marshall(*BuildHttpXmlResponse("IncompleteSignatureException", message));
     ASSERT_EQ(CoreErrors::INCOMPLETE_SIGNATURE, error.GetErrorType());
     ASSERT_EQ("IncompleteSignatureException", error.GetExceptionName());
     ASSERT_EQ(message, error.GetMessage());
     ASSERT_FALSE(error.ShouldRetry());
 
-    response = BuildHttpXmlResponse("IncompleteSignatureException", message, PluralErrorNode);
-    ASSERT_TRUE(XmlErrorMarshaller::ContainsError(*response));
-    error = awsErrorMarshaller.Marshall(*response);
+    error = awsErrorMarshaller.Marshall(*BuildHttpXmlResponse("IncompleteSignatureException", message, PluralErrorNode));
     ASSERT_EQ(CoreErrors::INCOMPLETE_SIGNATURE, error.GetErrorType());
     ASSERT_EQ("IncompleteSignatureException", error.GetExceptionName());
     ASSERT_EQ(message, error.GetMessage());
@@ -147,8 +137,6 @@ TEST(XmlErrorMarshallerTest, TestXmlErrorPayload)
     ASSERT_EQ("", error.GetExceptionName());
     ASSERT_EQ("", error.GetMessage());
     ASSERT_TRUE(error.ShouldRetry());
-
-    ASSERT_FALSE(XmlErrorMarshaller::ContainsError(*BuildEmptyHttpResponse()));
 }
 
 TEST(JsonErrorMashallerTest, TestCombinationsOfJsonErrorPayload)

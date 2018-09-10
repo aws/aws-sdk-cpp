@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline const Aws::String& GetCoreDefinitionId() const{ return m_coreDefinitionId; }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline void SetCoreDefinitionId(const Aws::String& value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId = value; }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline void SetCoreDefinitionId(Aws::String&& value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId = std::move(value); }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline void SetCoreDefinitionId(const char* value) { m_coreDefinitionIdHasBeenSet = true; m_coreDefinitionId.assign(value); }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline DeleteCoreDefinitionRequest& WithCoreDefinitionId(const Aws::String& value) { SetCoreDefinitionId(value); return *this;}
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline DeleteCoreDefinitionRequest& WithCoreDefinitionId(Aws::String&& value) { SetCoreDefinitionId(std::move(value)); return *this;}
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      */
     inline DeleteCoreDefinitionRequest& WithCoreDefinitionId(const char* value) { SetCoreDefinitionId(value); return *this;}
 

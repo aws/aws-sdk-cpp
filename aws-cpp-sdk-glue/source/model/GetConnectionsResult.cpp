@@ -37,10 +37,10 @@ GetConnectionsResult::GetConnectionsResult(const Aws::AmazonWebServiceResult<Jso
 
 GetConnectionsResult& GetConnectionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConnectionList"))
   {
-    Array<JsonValue> connectionListJsonList = jsonValue.GetArray("ConnectionList");
+    Array<JsonView> connectionListJsonList = jsonValue.GetArray("ConnectionList");
     for(unsigned connectionListIndex = 0; connectionListIndex < connectionListJsonList.GetLength(); ++connectionListIndex)
     {
       m_connectionList.push_back(connectionListJsonList[connectionListIndex].AsObject());

@@ -31,6 +31,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     JobFlowDetail();
-    JobFlowDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    JobFlowDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    JobFlowDetail(Aws::Utils::Json::JsonView jsonValue);
+    JobFlowDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -161,65 +162,51 @@ namespace Model
 
 
     /**
-     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
-     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * supported by Amazon EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline const Aws::String& GetAmiVersion() const{ return m_amiVersion; }
 
     /**
-     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
-     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * supported by Amazon EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline void SetAmiVersion(const Aws::String& value) { m_amiVersionHasBeenSet = true; m_amiVersion = value; }
 
     /**
-     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
-     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * supported by Amazon EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline void SetAmiVersion(Aws::String&& value) { m_amiVersionHasBeenSet = true; m_amiVersion = std::move(value); }
 
     /**
-     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
-     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * supported by Amazon EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline void SetAmiVersion(const char* value) { m_amiVersionHasBeenSet = true; m_amiVersion.assign(value); }
 
     /**
-     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
-     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * supported by Amazon EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline JobFlowDetail& WithAmiVersion(const Aws::String& value) { SetAmiVersion(value); return *this;}
 
     /**
-     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
-     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * supported by Amazon EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline JobFlowDetail& WithAmiVersion(Aws::String&& value) { SetAmiVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Used only for version 2.x and 3.x of Amazon EMR. The version of the AMI used
-     * to initialize Amazon EC2 instances in the job flow. For a list of AMI versions
-     * supported by Amazon EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf#nameddest=ami-versions-supported">AMI
-     * Versions Supported in EMR</a> in the <i>Amazon EMR Developer Guide.</i> </p>
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
      */
     inline JobFlowDetail& WithAmiVersion(const char* value) { SetAmiVersion(value); return *this;}
 

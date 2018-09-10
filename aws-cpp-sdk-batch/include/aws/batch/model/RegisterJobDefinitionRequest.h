@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/ContainerProperties.h>
 #include <aws/batch/model/RetryStrategy.h>
+#include <aws/batch/model/JobTimeout.h>
 #include <utility>
 
 namespace Aws
@@ -251,37 +252,103 @@ namespace Model
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
      * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
-     * operation overrides the retry strategy defined here.</p>
+     * operation overrides the retry strategy defined here. If a job is terminated due
+     * to a timeout, it is not retried. </p>
      */
     inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
 
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
      * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
-     * operation overrides the retry strategy defined here.</p>
+     * operation overrides the retry strategy defined here. If a job is terminated due
+     * to a timeout, it is not retried. </p>
      */
     inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
 
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
      * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
-     * operation overrides the retry strategy defined here.</p>
+     * operation overrides the retry strategy defined here. If a job is terminated due
+     * to a timeout, it is not retried. </p>
      */
     inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::move(value); }
 
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
      * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
-     * operation overrides the retry strategy defined here.</p>
+     * operation overrides the retry strategy defined here. If a job is terminated due
+     * to a timeout, it is not retried. </p>
      */
     inline RegisterJobDefinitionRequest& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
 
     /**
      * <p>The retry strategy to use for failed jobs that are submitted with this job
      * definition. Any retry strategy that is specified during a <a>SubmitJob</a>
-     * operation overrides the retry strategy defined here.</p>
+     * operation overrides the retry strategy defined here. If a job is terminated due
+     * to a timeout, it is not retried. </p>
      */
     inline RegisterJobDefinitionRequest& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The timeout configuration for jobs that are submitted with this job
+     * definition, after which AWS Batch terminates your jobs if they have not
+     * finished. If a job is terminated due to a timeout, it is not retried. The
+     * minimum value for the timeout is 60 seconds. Any timeout configuration that is
+     * specified during a <a>SubmitJob</a> operation overrides the timeout
+     * configuration defined here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline const JobTimeout& GetTimeout() const{ return m_timeout; }
+
+    /**
+     * <p>The timeout configuration for jobs that are submitted with this job
+     * definition, after which AWS Batch terminates your jobs if they have not
+     * finished. If a job is terminated due to a timeout, it is not retried. The
+     * minimum value for the timeout is 60 seconds. Any timeout configuration that is
+     * specified during a <a>SubmitJob</a> operation overrides the timeout
+     * configuration defined here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline void SetTimeout(const JobTimeout& value) { m_timeoutHasBeenSet = true; m_timeout = value; }
+
+    /**
+     * <p>The timeout configuration for jobs that are submitted with this job
+     * definition, after which AWS Batch terminates your jobs if they have not
+     * finished. If a job is terminated due to a timeout, it is not retried. The
+     * minimum value for the timeout is 60 seconds. Any timeout configuration that is
+     * specified during a <a>SubmitJob</a> operation overrides the timeout
+     * configuration defined here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline void SetTimeout(JobTimeout&& value) { m_timeoutHasBeenSet = true; m_timeout = std::move(value); }
+
+    /**
+     * <p>The timeout configuration for jobs that are submitted with this job
+     * definition, after which AWS Batch terminates your jobs if they have not
+     * finished. If a job is terminated due to a timeout, it is not retried. The
+     * minimum value for the timeout is 60 seconds. Any timeout configuration that is
+     * specified during a <a>SubmitJob</a> operation overrides the timeout
+     * configuration defined here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline RegisterJobDefinitionRequest& WithTimeout(const JobTimeout& value) { SetTimeout(value); return *this;}
+
+    /**
+     * <p>The timeout configuration for jobs that are submitted with this job
+     * definition, after which AWS Batch terminates your jobs if they have not
+     * finished. If a job is terminated due to a timeout, it is not retried. The
+     * minimum value for the timeout is 60 seconds. Any timeout configuration that is
+     * specified during a <a>SubmitJob</a> operation overrides the timeout
+     * configuration defined here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     */
+    inline RegisterJobDefinitionRequest& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}
 
   private:
 
@@ -299,6 +366,9 @@ namespace Model
 
     RetryStrategy m_retryStrategy;
     bool m_retryStrategyHasBeenSet;
+
+    JobTimeout m_timeout;
+    bool m_timeoutHasBeenSet;
   };
 
 } // namespace Model

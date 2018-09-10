@@ -34,14 +34,14 @@ TableToReload::TableToReload() :
 {
 }
 
-TableToReload::TableToReload(const JsonValue& jsonValue) : 
+TableToReload::TableToReload(JsonView jsonValue) : 
     m_schemaNameHasBeenSet(false),
     m_tableNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-TableToReload& TableToReload::operator =(const JsonValue& jsonValue)
+TableToReload& TableToReload::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SchemaName"))
   {

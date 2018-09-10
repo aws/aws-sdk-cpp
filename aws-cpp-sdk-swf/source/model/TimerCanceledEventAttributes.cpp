@@ -37,7 +37,7 @@ TimerCanceledEventAttributes::TimerCanceledEventAttributes() :
 {
 }
 
-TimerCanceledEventAttributes::TimerCanceledEventAttributes(const JsonValue& jsonValue) : 
+TimerCanceledEventAttributes::TimerCanceledEventAttributes(JsonView jsonValue) : 
     m_timerIdHasBeenSet(false),
     m_startedEventId(0),
     m_startedEventIdHasBeenSet(false),
@@ -47,7 +47,7 @@ TimerCanceledEventAttributes::TimerCanceledEventAttributes(const JsonValue& json
   *this = jsonValue;
 }
 
-TimerCanceledEventAttributes& TimerCanceledEventAttributes::operator =(const JsonValue& jsonValue)
+TimerCanceledEventAttributes& TimerCanceledEventAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("timerId"))
   {

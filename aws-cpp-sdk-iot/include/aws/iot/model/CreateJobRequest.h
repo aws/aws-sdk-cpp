@@ -21,7 +21,6 @@
 #include <aws/iot/model/PresignedUrlConfig.h>
 #include <aws/iot/model/TargetSelection.h>
 #include <aws/iot/model/JobExecutionsRolloutConfig.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -341,67 +340,6 @@ namespace Model
      */
     inline CreateJobRequest& WithJobExecutionsRolloutConfig(JobExecutionsRolloutConfig&& value) { SetJobExecutionsRolloutConfig(std::move(value)); return *this;}
 
-
-    /**
-     * <p>Parameters for the job document.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDocumentParameters() const{ return m_documentParameters; }
-
-    /**
-     * <p>Parameters for the job document.</p>
-     */
-    inline void SetDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_documentParametersHasBeenSet = true; m_documentParameters = value; }
-
-    /**
-     * <p>Parameters for the job document.</p>
-     */
-    inline void SetDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_documentParametersHasBeenSet = true; m_documentParameters = std::move(value); }
-
-    /**
-     * <p>Parameters for the job document.</p>
-     */
-    inline CreateJobRequest& WithDocumentParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetDocumentParameters(value); return *this;}
-
-    /**
-     * <p>Parameters for the job document.</p>
-     */
-    inline CreateJobRequest& WithDocumentParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetDocumentParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>Parameters for the job document.</p>
-     */
-    inline CreateJobRequest& AddDocumentParameters(const Aws::String& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
-
-    /**
-     * <p>Parameters for the job document.</p>
-     */
-    inline CreateJobRequest& AddDocumentParameters(Aws::String&& key, const Aws::String& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Parameters for the job document.</p>
-     */
-    inline CreateJobRequest& AddDocumentParameters(const Aws::String& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Parameters for the job document.</p>
-     */
-    inline CreateJobRequest& AddDocumentParameters(Aws::String&& key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Parameters for the job document.</p>
-     */
-    inline CreateJobRequest& AddDocumentParameters(const char* key, Aws::String&& value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Parameters for the job document.</p>
-     */
-    inline CreateJobRequest& AddDocumentParameters(Aws::String&& key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Parameters for the job document.</p>
-     */
-    inline CreateJobRequest& AddDocumentParameters(const char* key, const char* value) { m_documentParametersHasBeenSet = true; m_documentParameters.emplace(key, value); return *this; }
-
   private:
 
     Aws::String m_jobId;
@@ -427,9 +365,6 @@ namespace Model
 
     JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
     bool m_jobExecutionsRolloutConfigHasBeenSet;
-
-    Aws::Map<Aws::String, Aws::String> m_documentParameters;
-    bool m_documentParametersHasBeenSet;
   };
 
 } // namespace Model

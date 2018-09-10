@@ -37,10 +37,10 @@ ListDocumentVersionsResult::ListDocumentVersionsResult(const Aws::AmazonWebServi
 
 ListDocumentVersionsResult& ListDocumentVersionsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DocumentVersions"))
   {
-    Array<JsonValue> documentVersionsJsonList = jsonValue.GetArray("DocumentVersions");
+    Array<JsonView> documentVersionsJsonList = jsonValue.GetArray("DocumentVersions");
     for(unsigned documentVersionsIndex = 0; documentVersionsIndex < documentVersionsJsonList.GetLength(); ++documentVersionsIndex)
     {
       m_documentVersions.push_back(documentVersionsJsonList[documentVersionsIndex].AsObject());

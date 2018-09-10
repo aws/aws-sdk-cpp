@@ -58,7 +58,7 @@ Aws::String AssociatePrincipalWithPortfolioRequest::SerializePayload() const
    payload.WithString("PrincipalType", PrincipalTypeMapper::GetNameForPrincipalType(m_principalType));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AssociatePrincipalWithPortfolioRequest::GetRequestSpecificHeaders() const

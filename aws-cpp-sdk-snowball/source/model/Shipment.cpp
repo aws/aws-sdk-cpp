@@ -34,14 +34,14 @@ Shipment::Shipment() :
 {
 }
 
-Shipment::Shipment(const JsonValue& jsonValue) : 
+Shipment::Shipment(JsonView jsonValue) : 
     m_statusHasBeenSet(false),
     m_trackingNumberHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Shipment& Shipment::operator =(const JsonValue& jsonValue)
+Shipment& Shipment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Status"))
   {

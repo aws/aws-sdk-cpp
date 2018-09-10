@@ -290,57 +290,57 @@ namespace Model
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassifiers() const{ return m_classifiers; }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline void SetClassifiers(const Aws::Vector<Aws::String>& value) { m_classifiersHasBeenSet = true; m_classifiers = value; }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline void SetClassifiers(Aws::Vector<Aws::String>&& value) { m_classifiersHasBeenSet = true; m_classifiers = std::move(value); }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline UpdateCrawlerRequest& WithClassifiers(const Aws::Vector<Aws::String>& value) { SetClassifiers(value); return *this;}
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline UpdateCrawlerRequest& WithClassifiers(Aws::Vector<Aws::String>&& value) { SetClassifiers(std::move(value)); return *this;}
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline UpdateCrawlerRequest& AddClassifiers(const Aws::String& value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(value); return *this; }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline UpdateCrawlerRequest& AddClassifiers(Aws::String&& value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline UpdateCrawlerRequest& AddClassifiers(const char* value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(value); return *this; }
 
@@ -413,7 +413,7 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */
@@ -425,7 +425,7 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */
@@ -437,7 +437,7 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */
@@ -449,7 +449,7 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */
@@ -461,7 +461,7 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */
@@ -473,7 +473,7 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */
@@ -485,11 +485,54 @@ namespace Model
      * partitions to inherit metadata such as classification, input format, output
      * format, serde information, and schema from their parent table, rather than
      * detect this information separately for each partition. Use the following JSON
-     * string to specify that behavior:</p> <p>Example:  <code>'{ "Version": 1.0,
+     * string to specify that behavior:</p> <p>Example: <code>'{ "Version": 1.0,
      * "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } }
      * }'</code> </p>
      */
     inline UpdateCrawlerRequest& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
+
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline const Aws::String& GetCrawlerSecurityConfiguration() const{ return m_crawlerSecurityConfiguration; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline void SetCrawlerSecurityConfiguration(const Aws::String& value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration = value; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline void SetCrawlerSecurityConfiguration(Aws::String&& value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration = std::move(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline void SetCrawlerSecurityConfiguration(const char* value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration.assign(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline UpdateCrawlerRequest& WithCrawlerSecurityConfiguration(const Aws::String& value) { SetCrawlerSecurityConfiguration(value); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline UpdateCrawlerRequest& WithCrawlerSecurityConfiguration(Aws::String&& value) { SetCrawlerSecurityConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline UpdateCrawlerRequest& WithCrawlerSecurityConfiguration(const char* value) { SetCrawlerSecurityConfiguration(value); return *this;}
 
   private:
 
@@ -522,6 +565,9 @@ namespace Model
 
     Aws::String m_configuration;
     bool m_configurationHasBeenSet;
+
+    Aws::String m_crawlerSecurityConfiguration;
+    bool m_crawlerSecurityConfigurationHasBeenSet;
   };
 
 } // namespace Model

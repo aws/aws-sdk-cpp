@@ -37,7 +37,7 @@ DeregisterContainerInstanceResult::DeregisterContainerInstanceResult(const Aws::
 
 DeregisterContainerInstanceResult& DeregisterContainerInstanceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("containerInstance"))
   {
     m_containerInstance = jsonValue.GetObject("containerInstance");

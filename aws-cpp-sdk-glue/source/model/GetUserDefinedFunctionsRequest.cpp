@@ -66,7 +66,7 @@ Aws::String GetUserDefinedFunctionsRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetUserDefinedFunctionsRequest::GetRequestSpecificHeaders() const

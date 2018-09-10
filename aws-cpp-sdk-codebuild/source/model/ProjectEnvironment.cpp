@@ -36,11 +36,12 @@ ProjectEnvironment::ProjectEnvironment() :
     m_computeTypeHasBeenSet(false),
     m_environmentVariablesHasBeenSet(false),
     m_privilegedMode(false),
-    m_privilegedModeHasBeenSet(false)
+    m_privilegedModeHasBeenSet(false),
+    m_certificateHasBeenSet(false)
 {
 }
 
-ProjectEnvironment::ProjectEnvironment(const JsonValue& jsonValue) : 
+ProjectEnvironment::ProjectEnvironment(JsonView jsonValue) : 
     m_type(EnvironmentType::NOT_SET),
     m_typeHasBeenSet(false),
     m_imageHasBeenSet(false),
@@ -48,12 +49,13 @@ ProjectEnvironment::ProjectEnvironment(const JsonValue& jsonValue) :
     m_computeTypeHasBeenSet(false),
     m_environmentVariablesHasBeenSet(false),
     m_privilegedMode(false),
-    m_privilegedModeHasBeenSet(false)
+    m_privilegedModeHasBeenSet(false),
+    m_certificateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ProjectEnvironment& ProjectEnvironment::operator =(const JsonValue& jsonValue)
+ProjectEnvironment& ProjectEnvironment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("type"))
   {
@@ -78,7 +80,7 @@ ProjectEnvironment& ProjectEnvironment::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("environmentVariables"))
   {
-    Array<JsonValue> environmentVariablesJsonList = jsonValue.GetArray("environmentVariables");
+    Array<JsonView> environmentVariablesJsonList = jsonValue.GetArray("environmentVariables");
     for(unsigned environmentVariablesIndex = 0; environmentVariablesIndex < environmentVariablesJsonList.GetLength(); ++environmentVariablesIndex)
     {
       m_environmentVariables.push_back(environmentVariablesJsonList[environmentVariablesIndex].AsObject());
@@ -91,6 +93,13 @@ ProjectEnvironment& ProjectEnvironment::operator =(const JsonValue& jsonValue)
     m_privilegedMode = jsonValue.GetBool("privilegedMode");
 
     m_privilegedModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("certificate"))
+  {
+    m_certificate = jsonValue.GetString("certificate");
+
+    m_certificateHasBeenSet = true;
   }
 
   return *this;
@@ -130,6 +139,12 @@ JsonValue ProjectEnvironment::Jsonize() const
   if(m_privilegedModeHasBeenSet)
   {
    payload.WithBool("privilegedMode", m_privilegedMode);
+
+  }
+
+  if(m_certificateHasBeenSet)
+  {
+   payload.WithString("certificate", m_certificate);
 
   }
 

@@ -12,6 +12,7 @@
 * express or implied. See the License for the specific language governing
 * permissions and limitations under the License.
 */
+#include <aws/s3-encryption/modules/CryptoModule.h>
 #include <aws/s3-encryption/modules/CryptoModuleFactory.h>
 #include <aws/core/utils/logging/LogMacros.h>
 

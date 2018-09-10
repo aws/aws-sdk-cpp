@@ -1,7 +1,10 @@
 #set($metadata = $serviceModel.metadata)
 #if($metadata.standalone)
+cmake_minimum_required (VERSION 2.8.12)
+
 find_package(AWSSDK)
-add_project(aws-cpp-sdk-${metadata.projectName} "C++ SDK for the AWS ${metadata.projectName} service" aws-cpp-sdk-core)
+find_package(aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-${metadata.projectName} "C++ SDK for the ${metadata.projectName} service" aws-cpp-sdk-core)
 #else
 add_project(aws-cpp-sdk-${metadata.projectName} "C++ SDK for the AWS ${metadata.projectName} service" aws-cpp-sdk-core)
 #end
@@ -72,9 +75,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
 
-target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
-
 #if($metadata.standalone)
+target_link_libraries(${PROJECT_NAME} PRIVATE ${AWSSDK_PLATFORM_DEPS} ${PROJECT_LIBS})
+
 if(USE_WINDOWS_DLL_SEMANTICS)
     target_compile_definitions(${PROJECT_NAME} PUBLIC "USE_WINDOWS_DLL_SEMANTICS")
 
@@ -94,17 +97,55 @@ else()
         target_compile_options(${PROJECT_NAME} PUBLIC /GR-)
     endif()
 endif()
-#end
+
+install(TARGETS ${PROJECT_NAME}
+    EXPORT "${PROJECT_NAME}-config"
+    ARCHIVE DESTINATION ${ARCHIVE_DIRECTORY}
+    LIBRARY DESTINATION ${LIBRARY_DIRECTORY}
+    RUNTIME DESTINATION ${BINARY_DIRECTORY} )
+#else
+target_link_libraries(${PROJECT_NAME} PRIVATE ${PLATFORM_DEP_LIBS} ${PROJECT_LIBS})
+
 
 setup_install()
+#end
 
 install (FILES ${cmakeVarStart}AWS_${projectNameCaps}_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/${metadata.projectName})
 install (FILES ${cmakeVarStart}AWS_${projectNameCaps}_MODEL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/${metadata.projectName}/model)
 
 if(PLATFORM_WINDOWS AND MSVC)
-    install (FILES nuget/${PROJECT_NAME}.autopkg DESTINATION nuget)
+    file(GLOB NUGET_FILES "nuget/${PROJECT_NAME}.*.autopkg")
+    install (FILES ${NUGET_FILES} DESTINATION nuget)
 endif()
 
+#if($metadata.standalone)
+write_basic_package_version_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake"
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY AnyNewerVersion
+)
+
+export(EXPORT "${PROJECT_NAME}-config"
+    FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
+)
+    
+set(ConfigPackageLocation "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
+install(EXPORT "${PROJECT_NAME}-config"
+    FILE "${PROJECT_NAME}-config.cmake"
+    DESTINATION ${ConfigPackageLocation}
+)
+
+install(
+    FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake"
+    DESTINATION
+    ${ConfigPackageLocation}
+    COMPONENT
+    Devel
+)
+#else
 do_packaging()
+#end
 
 

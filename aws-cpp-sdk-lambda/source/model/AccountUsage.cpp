@@ -36,7 +36,7 @@ AccountUsage::AccountUsage() :
 {
 }
 
-AccountUsage::AccountUsage(const JsonValue& jsonValue) : 
+AccountUsage::AccountUsage(JsonView jsonValue) : 
     m_totalCodeSize(0),
     m_totalCodeSizeHasBeenSet(false),
     m_functionCount(0),
@@ -45,7 +45,7 @@ AccountUsage::AccountUsage(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AccountUsage& AccountUsage::operator =(const JsonValue& jsonValue)
+AccountUsage& AccountUsage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TotalCodeSize"))
   {

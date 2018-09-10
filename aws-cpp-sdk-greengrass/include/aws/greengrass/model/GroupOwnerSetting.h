@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Greengrass
@@ -41,59 +42,72 @@ namespace Model
   {
   public:
     GroupOwnerSetting();
-    GroupOwnerSetting(const Aws::Utils::Json::JsonValue& jsonValue);
-    GroupOwnerSetting& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    GroupOwnerSetting(Aws::Utils::Json::JsonView jsonValue);
+    GroupOwnerSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * Eanble the auto added group owner.
+     * If true, GreenGrass automatically adds the specified Linux OS group owner of the
+     * resource to the Lambda process privileges. Thus the Lambda process will have the
+     * file access permissions of the added Linux group.
      */
     inline bool GetAutoAddGroupOwner() const{ return m_autoAddGroupOwner; }
 
     /**
-     * Eanble the auto added group owner.
+     * If true, GreenGrass automatically adds the specified Linux OS group owner of the
+     * resource to the Lambda process privileges. Thus the Lambda process will have the
+     * file access permissions of the added Linux group.
      */
     inline void SetAutoAddGroupOwner(bool value) { m_autoAddGroupOwnerHasBeenSet = true; m_autoAddGroupOwner = value; }
 
     /**
-     * Eanble the auto added group owner.
+     * If true, GreenGrass automatically adds the specified Linux OS group owner of the
+     * resource to the Lambda process privileges. Thus the Lambda process will have the
+     * file access permissions of the added Linux group.
      */
     inline GroupOwnerSetting& WithAutoAddGroupOwner(bool value) { SetAutoAddGroupOwner(value); return *this;}
 
 
     /**
-     * Name of the group owner.
+     * The name of the Linux OS group whose privileges will be added to the Lambda
+     * process. This field is optional.
      */
     inline const Aws::String& GetGroupOwner() const{ return m_groupOwner; }
 
     /**
-     * Name of the group owner.
+     * The name of the Linux OS group whose privileges will be added to the Lambda
+     * process. This field is optional.
      */
     inline void SetGroupOwner(const Aws::String& value) { m_groupOwnerHasBeenSet = true; m_groupOwner = value; }
 
     /**
-     * Name of the group owner.
+     * The name of the Linux OS group whose privileges will be added to the Lambda
+     * process. This field is optional.
      */
     inline void SetGroupOwner(Aws::String&& value) { m_groupOwnerHasBeenSet = true; m_groupOwner = std::move(value); }
 
     /**
-     * Name of the group owner.
+     * The name of the Linux OS group whose privileges will be added to the Lambda
+     * process. This field is optional.
      */
     inline void SetGroupOwner(const char* value) { m_groupOwnerHasBeenSet = true; m_groupOwner.assign(value); }
 
     /**
-     * Name of the group owner.
+     * The name of the Linux OS group whose privileges will be added to the Lambda
+     * process. This field is optional.
      */
     inline GroupOwnerSetting& WithGroupOwner(const Aws::String& value) { SetGroupOwner(value); return *this;}
 
     /**
-     * Name of the group owner.
+     * The name of the Linux OS group whose privileges will be added to the Lambda
+     * process. This field is optional.
      */
     inline GroupOwnerSetting& WithGroupOwner(Aws::String&& value) { SetGroupOwner(std::move(value)); return *this;}
 
     /**
-     * Name of the group owner.
+     * The name of the Linux OS group whose privileges will be added to the Lambda
+     * process. This field is optional.
      */
     inline GroupOwnerSetting& WithGroupOwner(const char* value) { SetGroupOwner(value); return *this;}
 

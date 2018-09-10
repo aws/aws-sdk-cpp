@@ -72,7 +72,7 @@ Aws::String CreateReplicationJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateReplicationJobRequest::GetRequestSpecificHeaders() const

@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     DevEndpoint();
-    DevEndpoint(const Aws::Utils::Json::JsonValue& jsonValue);
-    DevEndpoint& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    DevEndpoint(Aws::Utils::Json::JsonView jsonValue);
+    DevEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -235,6 +236,49 @@ namespace Model
 
 
     /**
+     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
+     * created within one.</p>
+     */
+    inline const Aws::String& GetPrivateAddress() const{ return m_privateAddress; }
+
+    /**
+     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
+     * created within one.</p>
+     */
+    inline void SetPrivateAddress(const Aws::String& value) { m_privateAddressHasBeenSet = true; m_privateAddress = value; }
+
+    /**
+     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
+     * created within one.</p>
+     */
+    inline void SetPrivateAddress(Aws::String&& value) { m_privateAddressHasBeenSet = true; m_privateAddress = std::move(value); }
+
+    /**
+     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
+     * created within one.</p>
+     */
+    inline void SetPrivateAddress(const char* value) { m_privateAddressHasBeenSet = true; m_privateAddress.assign(value); }
+
+    /**
+     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
+     * created within one.</p>
+     */
+    inline DevEndpoint& WithPrivateAddress(const Aws::String& value) { SetPrivateAddress(value); return *this;}
+
+    /**
+     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
+     * created within one.</p>
+     */
+    inline DevEndpoint& WithPrivateAddress(Aws::String&& value) { SetPrivateAddress(std::move(value)); return *this;}
+
+    /**
+     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
+     * created within one.</p>
+     */
+    inline DevEndpoint& WithPrivateAddress(const char* value) { SetPrivateAddress(value); return *this;}
+
+
+    /**
      * <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
      */
     inline int GetZeppelinRemoteSparkInterpreterPort() const{ return m_zeppelinRemoteSparkInterpreterPort; }
@@ -251,37 +295,37 @@ namespace Model
 
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline const Aws::String& GetPublicAddress() const{ return m_publicAddress; }
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline void SetPublicAddress(const Aws::String& value) { m_publicAddressHasBeenSet = true; m_publicAddress = value; }
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline void SetPublicAddress(Aws::String&& value) { m_publicAddressHasBeenSet = true; m_publicAddress = std::move(value); }
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline void SetPublicAddress(const char* value) { m_publicAddressHasBeenSet = true; m_publicAddress.assign(value); }
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline DevEndpoint& WithPublicAddress(const Aws::String& value) { SetPublicAddress(value); return *this;}
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline DevEndpoint& WithPublicAddress(Aws::String&& value) { SetPublicAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The public address used by this DevEndpoint.</p>
+     * <p>The public VPC address used by this DevEndpoint.</p>
      */
     inline DevEndpoint& WithPublicAddress(const char* value) { SetPublicAddress(value); return *this;}
 
@@ -659,39 +703,185 @@ namespace Model
 
 
     /**
-     * <p>The public key to be used by this DevEndpoint for authentication.</p>
+     * <p>The public key to be used by this DevEndpoint for authentication. This
+     * attribute is provided for backward compatibility, as the recommended attribute
+     * to use is public keys.</p>
      */
     inline const Aws::String& GetPublicKey() const{ return m_publicKey; }
 
     /**
-     * <p>The public key to be used by this DevEndpoint for authentication.</p>
+     * <p>The public key to be used by this DevEndpoint for authentication. This
+     * attribute is provided for backward compatibility, as the recommended attribute
+     * to use is public keys.</p>
      */
     inline void SetPublicKey(const Aws::String& value) { m_publicKeyHasBeenSet = true; m_publicKey = value; }
 
     /**
-     * <p>The public key to be used by this DevEndpoint for authentication.</p>
+     * <p>The public key to be used by this DevEndpoint for authentication. This
+     * attribute is provided for backward compatibility, as the recommended attribute
+     * to use is public keys.</p>
      */
     inline void SetPublicKey(Aws::String&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::move(value); }
 
     /**
-     * <p>The public key to be used by this DevEndpoint for authentication.</p>
+     * <p>The public key to be used by this DevEndpoint for authentication. This
+     * attribute is provided for backward compatibility, as the recommended attribute
+     * to use is public keys.</p>
      */
     inline void SetPublicKey(const char* value) { m_publicKeyHasBeenSet = true; m_publicKey.assign(value); }
 
     /**
-     * <p>The public key to be used by this DevEndpoint for authentication.</p>
+     * <p>The public key to be used by this DevEndpoint for authentication. This
+     * attribute is provided for backward compatibility, as the recommended attribute
+     * to use is public keys.</p>
      */
     inline DevEndpoint& WithPublicKey(const Aws::String& value) { SetPublicKey(value); return *this;}
 
     /**
-     * <p>The public key to be used by this DevEndpoint for authentication.</p>
+     * <p>The public key to be used by this DevEndpoint for authentication. This
+     * attribute is provided for backward compatibility, as the recommended attribute
+     * to use is public keys.</p>
      */
     inline DevEndpoint& WithPublicKey(Aws::String&& value) { SetPublicKey(std::move(value)); return *this;}
 
     /**
-     * <p>The public key to be used by this DevEndpoint for authentication.</p>
+     * <p>The public key to be used by this DevEndpoint for authentication. This
+     * attribute is provided for backward compatibility, as the recommended attribute
+     * to use is public keys.</p>
      */
     inline DevEndpoint& WithPublicKey(const char* value) { SetPublicKey(value); return *this;}
+
+
+    /**
+     * <p>A list of public keys to be used by the DevEndpoints for authentication. The
+     * use of this attribute is preferred over a single public key because the public
+     * keys allow you to have a different private key per client.</p> <note> <p>If you
+     * previously created an endpoint with a public key, you must remove that key to be
+     * able to set a list of public keys: call the <code>UpdateDevEndpoint</code> API
+     * with the public key content in the <code>deletePublicKeys</code> attribute, and
+     * the list of new keys in the <code>addPublicKeys</code> attribute.</p> </note>
+     */
+    inline const Aws::Vector<Aws::String>& GetPublicKeys() const{ return m_publicKeys; }
+
+    /**
+     * <p>A list of public keys to be used by the DevEndpoints for authentication. The
+     * use of this attribute is preferred over a single public key because the public
+     * keys allow you to have a different private key per client.</p> <note> <p>If you
+     * previously created an endpoint with a public key, you must remove that key to be
+     * able to set a list of public keys: call the <code>UpdateDevEndpoint</code> API
+     * with the public key content in the <code>deletePublicKeys</code> attribute, and
+     * the list of new keys in the <code>addPublicKeys</code> attribute.</p> </note>
+     */
+    inline void SetPublicKeys(const Aws::Vector<Aws::String>& value) { m_publicKeysHasBeenSet = true; m_publicKeys = value; }
+
+    /**
+     * <p>A list of public keys to be used by the DevEndpoints for authentication. The
+     * use of this attribute is preferred over a single public key because the public
+     * keys allow you to have a different private key per client.</p> <note> <p>If you
+     * previously created an endpoint with a public key, you must remove that key to be
+     * able to set a list of public keys: call the <code>UpdateDevEndpoint</code> API
+     * with the public key content in the <code>deletePublicKeys</code> attribute, and
+     * the list of new keys in the <code>addPublicKeys</code> attribute.</p> </note>
+     */
+    inline void SetPublicKeys(Aws::Vector<Aws::String>&& value) { m_publicKeysHasBeenSet = true; m_publicKeys = std::move(value); }
+
+    /**
+     * <p>A list of public keys to be used by the DevEndpoints for authentication. The
+     * use of this attribute is preferred over a single public key because the public
+     * keys allow you to have a different private key per client.</p> <note> <p>If you
+     * previously created an endpoint with a public key, you must remove that key to be
+     * able to set a list of public keys: call the <code>UpdateDevEndpoint</code> API
+     * with the public key content in the <code>deletePublicKeys</code> attribute, and
+     * the list of new keys in the <code>addPublicKeys</code> attribute.</p> </note>
+     */
+    inline DevEndpoint& WithPublicKeys(const Aws::Vector<Aws::String>& value) { SetPublicKeys(value); return *this;}
+
+    /**
+     * <p>A list of public keys to be used by the DevEndpoints for authentication. The
+     * use of this attribute is preferred over a single public key because the public
+     * keys allow you to have a different private key per client.</p> <note> <p>If you
+     * previously created an endpoint with a public key, you must remove that key to be
+     * able to set a list of public keys: call the <code>UpdateDevEndpoint</code> API
+     * with the public key content in the <code>deletePublicKeys</code> attribute, and
+     * the list of new keys in the <code>addPublicKeys</code> attribute.</p> </note>
+     */
+    inline DevEndpoint& WithPublicKeys(Aws::Vector<Aws::String>&& value) { SetPublicKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of public keys to be used by the DevEndpoints for authentication. The
+     * use of this attribute is preferred over a single public key because the public
+     * keys allow you to have a different private key per client.</p> <note> <p>If you
+     * previously created an endpoint with a public key, you must remove that key to be
+     * able to set a list of public keys: call the <code>UpdateDevEndpoint</code> API
+     * with the public key content in the <code>deletePublicKeys</code> attribute, and
+     * the list of new keys in the <code>addPublicKeys</code> attribute.</p> </note>
+     */
+    inline DevEndpoint& AddPublicKeys(const Aws::String& value) { m_publicKeysHasBeenSet = true; m_publicKeys.push_back(value); return *this; }
+
+    /**
+     * <p>A list of public keys to be used by the DevEndpoints for authentication. The
+     * use of this attribute is preferred over a single public key because the public
+     * keys allow you to have a different private key per client.</p> <note> <p>If you
+     * previously created an endpoint with a public key, you must remove that key to be
+     * able to set a list of public keys: call the <code>UpdateDevEndpoint</code> API
+     * with the public key content in the <code>deletePublicKeys</code> attribute, and
+     * the list of new keys in the <code>addPublicKeys</code> attribute.</p> </note>
+     */
+    inline DevEndpoint& AddPublicKeys(Aws::String&& value) { m_publicKeysHasBeenSet = true; m_publicKeys.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of public keys to be used by the DevEndpoints for authentication. The
+     * use of this attribute is preferred over a single public key because the public
+     * keys allow you to have a different private key per client.</p> <note> <p>If you
+     * previously created an endpoint with a public key, you must remove that key to be
+     * able to set a list of public keys: call the <code>UpdateDevEndpoint</code> API
+     * with the public key content in the <code>deletePublicKeys</code> attribute, and
+     * the list of new keys in the <code>addPublicKeys</code> attribute.</p> </note>
+     */
+    inline DevEndpoint& AddPublicKeys(const char* value) { m_publicKeysHasBeenSet = true; m_publicKeys.push_back(value); return *this; }
+
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline DevEndpoint& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline DevEndpoint& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
+    inline DevEndpoint& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
 
   private:
 
@@ -709,6 +899,9 @@ namespace Model
 
     Aws::String m_yarnEndpointAddress;
     bool m_yarnEndpointAddressHasBeenSet;
+
+    Aws::String m_privateAddress;
+    bool m_privateAddressHasBeenSet;
 
     int m_zeppelinRemoteSparkInterpreterPort;
     bool m_zeppelinRemoteSparkInterpreterPortHasBeenSet;
@@ -748,6 +941,12 @@ namespace Model
 
     Aws::String m_publicKey;
     bool m_publicKeyHasBeenSet;
+
+    Aws::Vector<Aws::String> m_publicKeys;
+    bool m_publicKeysHasBeenSet;
+
+    Aws::String m_securityConfiguration;
+    bool m_securityConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ JdbcTarget::JdbcTarget() :
 {
 }
 
-JdbcTarget::JdbcTarget(const JsonValue& jsonValue) : 
+JdbcTarget::JdbcTarget(JsonView jsonValue) : 
     m_connectionNameHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_exclusionsHasBeenSet(false)
@@ -43,7 +43,7 @@ JdbcTarget::JdbcTarget(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-JdbcTarget& JdbcTarget::operator =(const JsonValue& jsonValue)
+JdbcTarget& JdbcTarget::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ConnectionName"))
   {
@@ -61,7 +61,7 @@ JdbcTarget& JdbcTarget::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Exclusions"))
   {
-    Array<JsonValue> exclusionsJsonList = jsonValue.GetArray("Exclusions");
+    Array<JsonView> exclusionsJsonList = jsonValue.GetArray("Exclusions");
     for(unsigned exclusionsIndex = 0; exclusionsIndex < exclusionsJsonList.GetLength(); ++exclusionsIndex)
     {
       m_exclusions.push_back(exclusionsJsonList[exclusionsIndex].AsString());

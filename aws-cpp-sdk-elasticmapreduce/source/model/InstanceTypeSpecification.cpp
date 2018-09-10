@@ -42,7 +42,7 @@ InstanceTypeSpecification::InstanceTypeSpecification() :
 {
 }
 
-InstanceTypeSpecification::InstanceTypeSpecification(const JsonValue& jsonValue) : 
+InstanceTypeSpecification::InstanceTypeSpecification(JsonView jsonValue) : 
     m_instanceTypeHasBeenSet(false),
     m_weightedCapacity(0),
     m_weightedCapacityHasBeenSet(false),
@@ -57,7 +57,7 @@ InstanceTypeSpecification::InstanceTypeSpecification(const JsonValue& jsonValue)
   *this = jsonValue;
 }
 
-InstanceTypeSpecification& InstanceTypeSpecification::operator =(const JsonValue& jsonValue)
+InstanceTypeSpecification& InstanceTypeSpecification::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceType"))
   {
@@ -89,7 +89,7 @@ InstanceTypeSpecification& InstanceTypeSpecification::operator =(const JsonValue
 
   if(jsonValue.ValueExists("Configurations"))
   {
-    Array<JsonValue> configurationsJsonList = jsonValue.GetArray("Configurations");
+    Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
@@ -99,7 +99,7 @@ InstanceTypeSpecification& InstanceTypeSpecification::operator =(const JsonValue
 
   if(jsonValue.ValueExists("EbsBlockDevices"))
   {
-    Array<JsonValue> ebsBlockDevicesJsonList = jsonValue.GetArray("EbsBlockDevices");
+    Array<JsonView> ebsBlockDevicesJsonList = jsonValue.GetArray("EbsBlockDevices");
     for(unsigned ebsBlockDevicesIndex = 0; ebsBlockDevicesIndex < ebsBlockDevicesJsonList.GetLength(); ++ebsBlockDevicesIndex)
     {
       m_ebsBlockDevices.push_back(ebsBlockDevicesJsonList[ebsBlockDevicesIndex].AsObject());

@@ -39,7 +39,7 @@ TopicRulePayload::TopicRulePayload() :
 {
 }
 
-TopicRulePayload::TopicRulePayload(const JsonValue& jsonValue) : 
+TopicRulePayload::TopicRulePayload(JsonView jsonValue) : 
     m_sqlHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_actionsHasBeenSet(false),
@@ -51,7 +51,7 @@ TopicRulePayload::TopicRulePayload(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-TopicRulePayload& TopicRulePayload::operator =(const JsonValue& jsonValue)
+TopicRulePayload& TopicRulePayload::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("sql"))
   {
@@ -69,7 +69,7 @@ TopicRulePayload& TopicRulePayload::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("actions"))
   {
-    Array<JsonValue> actionsJsonList = jsonValue.GetArray("actions");
+    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());

@@ -41,7 +41,7 @@ AuthorizerDescription::AuthorizerDescription() :
 {
 }
 
-AuthorizerDescription::AuthorizerDescription(const JsonValue& jsonValue) : 
+AuthorizerDescription::AuthorizerDescription(JsonView jsonValue) : 
     m_authorizerNameHasBeenSet(false),
     m_authorizerArnHasBeenSet(false),
     m_authorizerFunctionArnHasBeenSet(false),
@@ -55,7 +55,7 @@ AuthorizerDescription::AuthorizerDescription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AuthorizerDescription& AuthorizerDescription::operator =(const JsonValue& jsonValue)
+AuthorizerDescription& AuthorizerDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("authorizerName"))
   {
@@ -87,7 +87,7 @@ AuthorizerDescription& AuthorizerDescription::operator =(const JsonValue& jsonVa
 
   if(jsonValue.ValueExists("tokenSigningPublicKeys"))
   {
-    Aws::Map<Aws::String, JsonValue> tokenSigningPublicKeysJsonMap = jsonValue.GetObject("tokenSigningPublicKeys").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> tokenSigningPublicKeysJsonMap = jsonValue.GetObject("tokenSigningPublicKeys").GetAllObjects();
     for(auto& tokenSigningPublicKeysItem : tokenSigningPublicKeysJsonMap)
     {
       m_tokenSigningPublicKeys[tokenSigningPublicKeysItem.first] = tokenSigningPublicKeysItem.second.AsString();

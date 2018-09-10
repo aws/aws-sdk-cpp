@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SSM
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     ComplianceItemEntry();
-    ComplianceItemEntry(const Aws::Utils::Json::JsonValue& jsonValue);
-    ComplianceItemEntry& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ComplianceItemEntry(Aws::Utils::Json::JsonView jsonValue);
+    ComplianceItemEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -94,57 +95,50 @@ namespace Model
 
     /**
      * <p>The title of the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.
-     * </p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services. </p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
      * <p>The title of the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.
-     * </p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services. </p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
      * <p>The title of the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.
-     * </p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services. </p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
      * <p>The title of the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.
-     * </p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services. </p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
      * <p>The title of the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.
-     * </p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services. </p>
      */
     inline ComplianceItemEntry& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
      * <p>The title of the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.
-     * </p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services. </p>
      */
     inline ComplianceItemEntry& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
      * <p>The title of the compliance item. For example, if the compliance item is a
-     * Windows patch, the title could be the title of the KB article for the patch.
-     * Here's an example: Security Update for Active Directory Federation Services.
-     * </p>
+     * Windows patch, the title could be the title of the KB article for the patch; for
+     * example: Security Update for Active Directory Federation Services. </p>
      */
     inline ComplianceItemEntry& WithTitle(const char* value) { SetTitle(value); return *this;}
 

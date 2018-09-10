@@ -37,10 +37,10 @@ DescribeAssessmentTemplatesResult::DescribeAssessmentTemplatesResult(const Aws::
 
 DescribeAssessmentTemplatesResult& DescribeAssessmentTemplatesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assessmentTemplates"))
   {
-    Array<JsonValue> assessmentTemplatesJsonList = jsonValue.GetArray("assessmentTemplates");
+    Array<JsonView> assessmentTemplatesJsonList = jsonValue.GetArray("assessmentTemplates");
     for(unsigned assessmentTemplatesIndex = 0; assessmentTemplatesIndex < assessmentTemplatesJsonList.GetLength(); ++assessmentTemplatesIndex)
     {
       m_assessmentTemplates.push_back(assessmentTemplatesJsonList[assessmentTemplatesIndex].AsObject());
@@ -49,7 +49,7 @@ DescribeAssessmentTemplatesResult& DescribeAssessmentTemplatesResult::operator =
 
   if(jsonValue.ValueExists("failedItems"))
   {
-    Aws::Map<Aws::String, JsonValue> failedItemsJsonMap = jsonValue.GetObject("failedItems").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> failedItemsJsonMap = jsonValue.GetObject("failedItems").GetAllObjects();
     for(auto& failedItemsItem : failedItemsJsonMap)
     {
       m_failedItems[failedItemsItem.first] = failedItemsItem.second.AsObject();

@@ -15,7 +15,6 @@
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
-#include <aws/iot/model/Stream.h>
 #include <aws/core/utils/Array.h>
 #include <utility>
 
@@ -26,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace IoT
@@ -42,35 +42,9 @@ namespace Model
   {
   public:
     CodeSigningSignature();
-    CodeSigningSignature(const Aws::Utils::Json::JsonValue& jsonValue);
-    CodeSigningSignature& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CodeSigningSignature(Aws::Utils::Json::JsonView jsonValue);
+    CodeSigningSignature& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
-    inline const Stream& GetStream() const{ return m_stream; }
-
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
-    inline void SetStream(const Stream& value) { m_streamHasBeenSet = true; m_stream = value; }
-
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
-    inline void SetStream(Stream&& value) { m_streamHasBeenSet = true; m_stream = std::move(value); }
-
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
-    inline CodeSigningSignature& WithStream(const Stream& value) { SetStream(value); return *this;}
-
-    /**
-     * <p>A stream of the code signing signature.</p>
-     */
-    inline CodeSigningSignature& WithStream(Stream&& value) { SetStream(std::move(value)); return *this;}
 
 
     /**
@@ -99,9 +73,6 @@ namespace Model
     inline CodeSigningSignature& WithInlineDocument(Aws::Utils::ByteBuffer&& value) { SetInlineDocument(std::move(value)); return *this;}
 
   private:
-
-    Stream m_stream;
-    bool m_streamHasBeenSet;
 
     Aws::Utils::ByteBuffer m_inlineDocument;
     bool m_inlineDocumentHasBeenSet;

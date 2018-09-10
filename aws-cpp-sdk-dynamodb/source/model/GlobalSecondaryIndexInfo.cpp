@@ -36,7 +36,7 @@ GlobalSecondaryIndexInfo::GlobalSecondaryIndexInfo() :
 {
 }
 
-GlobalSecondaryIndexInfo::GlobalSecondaryIndexInfo(const JsonValue& jsonValue) : 
+GlobalSecondaryIndexInfo::GlobalSecondaryIndexInfo(JsonView jsonValue) : 
     m_indexNameHasBeenSet(false),
     m_keySchemaHasBeenSet(false),
     m_projectionHasBeenSet(false),
@@ -45,7 +45,7 @@ GlobalSecondaryIndexInfo::GlobalSecondaryIndexInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GlobalSecondaryIndexInfo& GlobalSecondaryIndexInfo::operator =(const JsonValue& jsonValue)
+GlobalSecondaryIndexInfo& GlobalSecondaryIndexInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IndexName"))
   {
@@ -56,7 +56,7 @@ GlobalSecondaryIndexInfo& GlobalSecondaryIndexInfo::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("KeySchema"))
   {
-    Array<JsonValue> keySchemaJsonList = jsonValue.GetArray("KeySchema");
+    Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
     for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
     {
       m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());

@@ -270,27 +270,32 @@ namespace Model
 
 
     /**
-     * <p>Kinesis data stream to which Rekognition Video puts the analysis results.</p>
+     * <p>Kinesis data stream to which Amazon Rekognition Video puts the analysis
+     * results.</p>
      */
     inline const StreamProcessorOutput& GetOutput() const{ return m_output; }
 
     /**
-     * <p>Kinesis data stream to which Rekognition Video puts the analysis results.</p>
+     * <p>Kinesis data stream to which Amazon Rekognition Video puts the analysis
+     * results.</p>
      */
     inline void SetOutput(const StreamProcessorOutput& value) { m_output = value; }
 
     /**
-     * <p>Kinesis data stream to which Rekognition Video puts the analysis results.</p>
+     * <p>Kinesis data stream to which Amazon Rekognition Video puts the analysis
+     * results.</p>
      */
     inline void SetOutput(StreamProcessorOutput&& value) { m_output = std::move(value); }
 
     /**
-     * <p>Kinesis data stream to which Rekognition Video puts the analysis results.</p>
+     * <p>Kinesis data stream to which Amazon Rekognition Video puts the analysis
+     * results.</p>
      */
     inline DescribeStreamProcessorResult& WithOutput(const StreamProcessorOutput& value) { SetOutput(value); return *this;}
 
     /**
-     * <p>Kinesis data stream to which Rekognition Video puts the analysis results.</p>
+     * <p>Kinesis data stream to which Amazon Rekognition Video puts the analysis
+     * results.</p>
      */
     inline DescribeStreamProcessorResult& WithOutput(StreamProcessorOutput&& value) { SetOutput(std::move(value)); return *this;}
 

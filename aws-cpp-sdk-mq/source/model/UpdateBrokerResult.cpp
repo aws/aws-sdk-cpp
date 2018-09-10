@@ -37,7 +37,7 @@ UpdateBrokerResult::UpdateBrokerResult(const Aws::AmazonWebServiceResult<JsonVal
 
 UpdateBrokerResult& UpdateBrokerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("brokerId"))
   {
     m_brokerId = jsonValue.GetString("brokerId");
@@ -47,6 +47,12 @@ UpdateBrokerResult& UpdateBrokerResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
+
+  }
+
+  if(jsonValue.ValueExists("logs"))
+  {
+    m_logs = jsonValue.GetObject("logs");
 
   }
 

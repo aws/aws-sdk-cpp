@@ -34,14 +34,14 @@ InputLambdaProcessorUpdate::InputLambdaProcessorUpdate() :
 {
 }
 
-InputLambdaProcessorUpdate::InputLambdaProcessorUpdate(const JsonValue& jsonValue) : 
+InputLambdaProcessorUpdate::InputLambdaProcessorUpdate(JsonView jsonValue) : 
     m_resourceARNUpdateHasBeenSet(false),
     m_roleARNUpdateHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InputLambdaProcessorUpdate& InputLambdaProcessorUpdate::operator =(const JsonValue& jsonValue)
+InputLambdaProcessorUpdate& InputLambdaProcessorUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceARNUpdate"))
   {

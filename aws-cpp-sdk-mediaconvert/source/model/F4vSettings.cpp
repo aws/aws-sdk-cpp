@@ -34,14 +34,14 @@ F4vSettings::F4vSettings() :
 {
 }
 
-F4vSettings::F4vSettings(const JsonValue& jsonValue) : 
+F4vSettings::F4vSettings(JsonView jsonValue) : 
     m_moovPlacement(F4vMoovPlacement::NOT_SET),
     m_moovPlacementHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-F4vSettings& F4vSettings::operator =(const JsonValue& jsonValue)
+F4vSettings& F4vSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("moovPlacement"))
   {

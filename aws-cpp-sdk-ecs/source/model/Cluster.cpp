@@ -44,7 +44,7 @@ Cluster::Cluster() :
 {
 }
 
-Cluster::Cluster(const JsonValue& jsonValue) : 
+Cluster::Cluster(JsonView jsonValue) : 
     m_clusterArnHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -61,7 +61,7 @@ Cluster::Cluster(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Cluster& Cluster::operator =(const JsonValue& jsonValue)
+Cluster& Cluster::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("clusterArn"))
   {
@@ -114,7 +114,7 @@ Cluster& Cluster::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("statistics"))
   {
-    Array<JsonValue> statisticsJsonList = jsonValue.GetArray("statistics");
+    Array<JsonView> statisticsJsonList = jsonValue.GetArray("statistics");
     for(unsigned statisticsIndex = 0; statisticsIndex < statisticsJsonList.GetLength(); ++statisticsIndex)
     {
       m_statistics.push_back(statisticsJsonList[statisticsIndex].AsObject());

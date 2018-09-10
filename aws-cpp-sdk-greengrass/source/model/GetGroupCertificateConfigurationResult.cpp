@@ -37,7 +37,7 @@ GetGroupCertificateConfigurationResult::GetGroupCertificateConfigurationResult(c
 
 GetGroupCertificateConfigurationResult& GetGroupCertificateConfigurationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CertificateAuthorityExpiryInMilliseconds"))
   {
     m_certificateAuthorityExpiryInMilliseconds = jsonValue.GetString("CertificateAuthorityExpiryInMilliseconds");

@@ -37,7 +37,7 @@ namespace Model
    * <p>A complex type that lists the AWS accounts that were included in the
    * <code>TrustedSigners</code> complex type, as well as their active CloudFront key
    * pair IDs, if any. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/Signer">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/Signer">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Signer

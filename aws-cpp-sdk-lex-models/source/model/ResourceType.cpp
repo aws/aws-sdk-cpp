@@ -31,6 +31,8 @@ namespace Aws
       {
 
         static const int BOT_HASH = HashingUtils::HashString("BOT");
+        static const int INTENT_HASH = HashingUtils::HashString("INTENT");
+        static const int SLOT_TYPE_HASH = HashingUtils::HashString("SLOT_TYPE");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           if (hashCode == BOT_HASH)
           {
             return ResourceType::BOT;
+          }
+          else if (hashCode == INTENT_HASH)
+          {
+            return ResourceType::INTENT;
+          }
+          else if (hashCode == SLOT_TYPE_HASH)
+          {
+            return ResourceType::SLOT_TYPE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +66,10 @@ namespace Aws
           {
           case ResourceType::BOT:
             return "BOT";
+          case ResourceType::INTENT:
+            return "INTENT";
+          case ResourceType::SLOT_TYPE:
+            return "SLOT_TYPE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CodeCommit
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     CommentsForComparedCommit();
-    CommentsForComparedCommit(const Aws::Utils::Json::JsonValue& jsonValue);
-    CommentsForComparedCommit& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CommentsForComparedCommit(Aws::Utils::Json::JsonView jsonValue);
+    CommentsForComparedCommit& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

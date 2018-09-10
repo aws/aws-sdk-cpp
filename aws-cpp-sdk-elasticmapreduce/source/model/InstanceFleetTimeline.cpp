@@ -35,7 +35,7 @@ InstanceFleetTimeline::InstanceFleetTimeline() :
 {
 }
 
-InstanceFleetTimeline::InstanceFleetTimeline(const JsonValue& jsonValue) : 
+InstanceFleetTimeline::InstanceFleetTimeline(JsonView jsonValue) : 
     m_creationDateTimeHasBeenSet(false),
     m_readyDateTimeHasBeenSet(false),
     m_endDateTimeHasBeenSet(false)
@@ -43,7 +43,7 @@ InstanceFleetTimeline::InstanceFleetTimeline(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceFleetTimeline& InstanceFleetTimeline::operator =(const JsonValue& jsonValue)
+InstanceFleetTimeline& InstanceFleetTimeline::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CreationDateTime"))
   {

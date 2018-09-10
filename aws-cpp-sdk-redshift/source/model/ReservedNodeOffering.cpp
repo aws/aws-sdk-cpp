@@ -41,7 +41,9 @@ ReservedNodeOffering::ReservedNodeOffering() :
     m_usagePriceHasBeenSet(false),
     m_currencyCodeHasBeenSet(false),
     m_offeringTypeHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
+    m_recurringChargesHasBeenSet(false),
+    m_reservedNodeOfferingType(ReservedNodeOfferingType::NOT_SET),
+    m_reservedNodeOfferingTypeHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ ReservedNodeOffering::ReservedNodeOffering(const XmlNode& xmlNode) :
     m_usagePriceHasBeenSet(false),
     m_currencyCodeHasBeenSet(false),
     m_offeringTypeHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
+    m_recurringChargesHasBeenSet(false),
+    m_reservedNodeOfferingType(ReservedNodeOfferingType::NOT_SET),
+    m_reservedNodeOfferingTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -121,6 +125,12 @@ ReservedNodeOffering& ReservedNodeOffering::operator =(const XmlNode& xmlNode)
 
       m_recurringChargesHasBeenSet = true;
     }
+    XmlNode reservedNodeOfferingTypeNode = resultNode.FirstChild("ReservedNodeOfferingType");
+    if(!reservedNodeOfferingTypeNode.IsNull())
+    {
+      m_reservedNodeOfferingType = ReservedNodeOfferingTypeMapper::GetReservedNodeOfferingTypeForName(StringUtils::Trim(reservedNodeOfferingTypeNode.GetText().c_str()).c_str());
+      m_reservedNodeOfferingTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -174,6 +184,11 @@ void ReservedNodeOffering::OutputToStream(Aws::OStream& oStream, const char* loc
       }
   }
 
+  if(m_reservedNodeOfferingTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReservedNodeOfferingType=" << ReservedNodeOfferingTypeMapper::GetNameForReservedNodeOfferingType(m_reservedNodeOfferingType) << "&";
+  }
+
 }
 
 void ReservedNodeOffering::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -215,6 +230,10 @@ void ReservedNodeOffering::OutputToStream(Aws::OStream& oStream, const char* loc
         recurringChargesSs << location <<  ".RecurringCharge." << recurringChargesIdx++;
         item.OutputToStream(oStream, recurringChargesSs.str().c_str());
       }
+  }
+  if(m_reservedNodeOfferingTypeHasBeenSet)
+  {
+      oStream << location << ".ReservedNodeOfferingType=" << ReservedNodeOfferingTypeMapper::GetNameForReservedNodeOfferingType(m_reservedNodeOfferingType) << "&";
   }
 }
 

@@ -37,7 +37,7 @@ GetFunctionResult::GetFunctionResult(const Aws::AmazonWebServiceResult<JsonValue
 
 GetFunctionResult& GetFunctionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Configuration"))
   {
     m_configuration = jsonValue.GetObject("Configuration");
@@ -52,7 +52,7 @@ GetFunctionResult& GetFunctionResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Aws::Map<Aws::String, JsonValue> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
     for(auto& tagsItem : tagsJsonMap)
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();

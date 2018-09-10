@@ -37,7 +37,7 @@ SetUICustomizationResult::SetUICustomizationResult(const Aws::AmazonWebServiceRe
 
 SetUICustomizationResult& SetUICustomizationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UICustomization"))
   {
     m_uICustomization = jsonValue.GetObject("UICustomization");

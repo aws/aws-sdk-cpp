@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceCatalog
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     PortfolioDetail();
-    PortfolioDetail(const Aws::Utils::Json::JsonValue& jsonValue);
-    PortfolioDetail& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PortfolioDetail(Aws::Utils::Json::JsonView jsonValue);
+    PortfolioDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -192,27 +193,27 @@ namespace Model
 
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline PortfolioDetail& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The UTC timestamp of the creation time.</p>
+     * <p>The UTC time stamp of the creation time.</p>
      */
     inline PortfolioDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 

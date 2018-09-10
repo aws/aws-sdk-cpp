@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -38,15 +39,15 @@ namespace Model
    * inside a <a>BatchRead</a> operation. For more information, see
    * <a>LookupPolicy</a> and <a>BatchReadRequest$Operations</a>.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchLookupPolicy">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchLookupPolicy">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchLookupPolicy
   {
   public:
     BatchLookupPolicy();
-    BatchLookupPolicy(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchLookupPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchLookupPolicy(Aws::Utils::Json::JsonView jsonValue);
+    BatchLookupPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

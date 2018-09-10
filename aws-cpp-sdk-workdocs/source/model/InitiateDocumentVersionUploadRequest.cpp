@@ -80,7 +80,7 @@ Aws::String InitiateDocumentVersionUploadRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection InitiateDocumentVersionUploadRequest::GetRequestSpecificHeaders() const
@@ -90,7 +90,7 @@ Aws::Http::HeaderValueCollection InitiateDocumentVersionUploadRequest::GetReques
   if(m_authenticationTokenHasBeenSet)
   {
     ss << m_authenticationToken;
-    headers.insert(Aws::Http::HeaderValuePair("authentication", ss.str()));
+    headers.emplace("authentication",  ss.str());
     ss.str("");
   }
 

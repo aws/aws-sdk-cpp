@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/InstanceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/DirectInternetAccess.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -209,7 +210,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
@@ -221,7 +224,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
@@ -233,7 +238,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
@@ -245,7 +252,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
@@ -257,7 +266,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline CreateNotebookInstanceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
@@ -269,7 +280,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline CreateNotebookInstanceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
@@ -281,7 +294,9 @@ namespace Model
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
-     * SageMaker Roles</a>. </p>
+     * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
+     * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.</p> </note>
      */
     inline CreateNotebookInstanceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -371,6 +386,117 @@ namespace Model
      */
     inline CreateNotebookInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline const Aws::String& GetLifecycleConfigName() const{ return m_lifecycleConfigName; }
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetLifecycleConfigName(const Aws::String& value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName = value; }
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetLifecycleConfigName(Aws::String&& value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName = std::move(value); }
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetLifecycleConfigName(const char* value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName.assign(value); }
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline CreateNotebookInstanceRequest& WithLifecycleConfigName(const Aws::String& value) { SetLifecycleConfigName(value); return *this;}
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline CreateNotebookInstanceRequest& WithLifecycleConfigName(Aws::String&& value) { SetLifecycleConfigName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a lifecycle configuration to associate with the notebook
+     * instance. For information about lifestyle configurations, see
+     * <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline CreateNotebookInstanceRequest& WithLifecycleConfigName(const char* value) { SetLifecycleConfigName(value); return *this;}
+
+
+    /**
+     * <p>Sets whether Amazon SageMaker provides internet access to the notebook
+     * instance. If you set this to <code>Disabled</code> this notebook instance will
+     * be able to access resources only in your VPC, and will not be able to connect to
+     * Amazon SageMaker training and endpoint services unless your configure a NAT
+     * Gateway in your VPC.</p> <p>For more information, see
+     * <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     * parameter to <code>Disabled</code> only if you set a value for the
+     * <code>SubnetId</code> parameter.</p>
+     */
+    inline const DirectInternetAccess& GetDirectInternetAccess() const{ return m_directInternetAccess; }
+
+    /**
+     * <p>Sets whether Amazon SageMaker provides internet access to the notebook
+     * instance. If you set this to <code>Disabled</code> this notebook instance will
+     * be able to access resources only in your VPC, and will not be able to connect to
+     * Amazon SageMaker training and endpoint services unless your configure a NAT
+     * Gateway in your VPC.</p> <p>For more information, see
+     * <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     * parameter to <code>Disabled</code> only if you set a value for the
+     * <code>SubnetId</code> parameter.</p>
+     */
+    inline void SetDirectInternetAccess(const DirectInternetAccess& value) { m_directInternetAccessHasBeenSet = true; m_directInternetAccess = value; }
+
+    /**
+     * <p>Sets whether Amazon SageMaker provides internet access to the notebook
+     * instance. If you set this to <code>Disabled</code> this notebook instance will
+     * be able to access resources only in your VPC, and will not be able to connect to
+     * Amazon SageMaker training and endpoint services unless your configure a NAT
+     * Gateway in your VPC.</p> <p>For more information, see
+     * <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     * parameter to <code>Disabled</code> only if you set a value for the
+     * <code>SubnetId</code> parameter.</p>
+     */
+    inline void SetDirectInternetAccess(DirectInternetAccess&& value) { m_directInternetAccessHasBeenSet = true; m_directInternetAccess = std::move(value); }
+
+    /**
+     * <p>Sets whether Amazon SageMaker provides internet access to the notebook
+     * instance. If you set this to <code>Disabled</code> this notebook instance will
+     * be able to access resources only in your VPC, and will not be able to connect to
+     * Amazon SageMaker training and endpoint services unless your configure a NAT
+     * Gateway in your VPC.</p> <p>For more information, see
+     * <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     * parameter to <code>Disabled</code> only if you set a value for the
+     * <code>SubnetId</code> parameter.</p>
+     */
+    inline CreateNotebookInstanceRequest& WithDirectInternetAccess(const DirectInternetAccess& value) { SetDirectInternetAccess(value); return *this;}
+
+    /**
+     * <p>Sets whether Amazon SageMaker provides internet access to the notebook
+     * instance. If you set this to <code>Disabled</code> this notebook instance will
+     * be able to access resources only in your VPC, and will not be able to connect to
+     * Amazon SageMaker training and endpoint services unless your configure a NAT
+     * Gateway in your VPC.</p> <p>For more information, see
+     * <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     * parameter to <code>Disabled</code> only if you set a value for the
+     * <code>SubnetId</code> parameter.</p>
+     */
+    inline CreateNotebookInstanceRequest& WithDirectInternetAccess(DirectInternetAccess&& value) { SetDirectInternetAccess(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceName;
@@ -393,6 +519,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_lifecycleConfigName;
+    bool m_lifecycleConfigNameHasBeenSet;
+
+    DirectInternetAccess m_directInternetAccess;
+    bool m_directInternetAccessHasBeenSet;
   };
 
 } // namespace Model

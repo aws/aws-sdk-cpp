@@ -27,11 +27,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 PostTextResult::PostTextResult() : 
+    m_messageFormat(MessageFormatType::NOT_SET),
     m_dialogState(DialogState::NOT_SET)
 {
 }
 
 PostTextResult::PostTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_messageFormat(MessageFormatType::NOT_SET),
     m_dialogState(DialogState::NOT_SET)
 {
   *this = result;
@@ -39,7 +41,7 @@ PostTextResult::PostTextResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 
 PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("intentName"))
   {
     m_intentName = jsonValue.GetString("intentName");
@@ -48,7 +50,7 @@ PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   if(jsonValue.ValueExists("slots"))
   {
-    Aws::Map<Aws::String, JsonValue> slotsJsonMap = jsonValue.GetObject("slots").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> slotsJsonMap = jsonValue.GetObject("slots").GetAllObjects();
     for(auto& slotsItem : slotsJsonMap)
     {
       m_slots[slotsItem.first] = slotsItem.second.AsString();
@@ -57,7 +59,7 @@ PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   if(jsonValue.ValueExists("sessionAttributes"))
   {
-    Aws::Map<Aws::String, JsonValue> sessionAttributesJsonMap = jsonValue.GetObject("sessionAttributes").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> sessionAttributesJsonMap = jsonValue.GetObject("sessionAttributes").GetAllObjects();
     for(auto& sessionAttributesItem : sessionAttributesJsonMap)
     {
       m_sessionAttributes[sessionAttributesItem.first] = sessionAttributesItem.second.AsString();
@@ -67,6 +69,12 @@ PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
+
+  }
+
+  if(jsonValue.ValueExists("messageFormat"))
+  {
+    m_messageFormat = MessageFormatTypeMapper::GetMessageFormatTypeForName(jsonValue.GetString("messageFormat"));
 
   }
 

@@ -37,7 +37,7 @@ CreateDeliveryStreamResult::CreateDeliveryStreamResult(const Aws::AmazonWebServi
 
 CreateDeliveryStreamResult& CreateDeliveryStreamResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DeliveryStreamARN"))
   {
     m_deliveryStreamARN = jsonValue.GetString("DeliveryStreamARN");

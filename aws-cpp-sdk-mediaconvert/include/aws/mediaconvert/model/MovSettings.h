@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     MovSettings();
-    MovSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    MovSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    MovSettings(Aws::Utils::Json::JsonView jsonValue);
+    MovSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

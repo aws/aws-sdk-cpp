@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -33,7 +34,9 @@ namespace Model
 {
 
   /**
-   * Include one instance of (InputClipping) for each input clip.<p><h3>See
+   * To transcode only portions of your input (clips), include one Input clipping
+   * (one instance of InputClipping in the JSON job file) for each input clip. All
+   * input clips you specify will be included in every output of the job.<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/InputClipping">AWS
    * API Reference</a></p>
@@ -42,78 +45,99 @@ namespace Model
   {
   public:
     InputClipping();
-    InputClipping(const Aws::Utils::Json::JsonValue& jsonValue);
-    InputClipping& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InputClipping(Aws::Utils::Json::JsonView jsonValue);
+    InputClipping& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * Set End timecode (EndTimecode) to the end of the portion of the input you are
      * clipping. The frame corresponding to the End timecode value is included in the
-     * clip. Start timecode or End timecode may be left blank, but not both. When
-     * choosing this value, take into account your setting for Input timecode source.
-     * For example, if you have embedded timecodes that start at 01:00:00:00 and you
-     * want your clip to begin five minutes into the video, use 01:00:05:00.
+     * clip. Start timecode or End timecode may be left blank, but not both. Use the
+     * format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is
+     * the second, and FF is the frame number. When choosing this value, take into
+     * account your setting for timecode source under input settings
+     * (InputTimecodeSource). For example, if you have embedded timecodes that start at
+     * 01:00:00:00 and you want your clip to end six minutes into the video, use
+     * 01:06:00:00.
      */
     inline const Aws::String& GetEndTimecode() const{ return m_endTimecode; }
 
     /**
      * Set End timecode (EndTimecode) to the end of the portion of the input you are
      * clipping. The frame corresponding to the End timecode value is included in the
-     * clip. Start timecode or End timecode may be left blank, but not both. When
-     * choosing this value, take into account your setting for Input timecode source.
-     * For example, if you have embedded timecodes that start at 01:00:00:00 and you
-     * want your clip to begin five minutes into the video, use 01:00:05:00.
+     * clip. Start timecode or End timecode may be left blank, but not both. Use the
+     * format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is
+     * the second, and FF is the frame number. When choosing this value, take into
+     * account your setting for timecode source under input settings
+     * (InputTimecodeSource). For example, if you have embedded timecodes that start at
+     * 01:00:00:00 and you want your clip to end six minutes into the video, use
+     * 01:06:00:00.
      */
     inline void SetEndTimecode(const Aws::String& value) { m_endTimecodeHasBeenSet = true; m_endTimecode = value; }
 
     /**
      * Set End timecode (EndTimecode) to the end of the portion of the input you are
      * clipping. The frame corresponding to the End timecode value is included in the
-     * clip. Start timecode or End timecode may be left blank, but not both. When
-     * choosing this value, take into account your setting for Input timecode source.
-     * For example, if you have embedded timecodes that start at 01:00:00:00 and you
-     * want your clip to begin five minutes into the video, use 01:00:05:00.
+     * clip. Start timecode or End timecode may be left blank, but not both. Use the
+     * format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is
+     * the second, and FF is the frame number. When choosing this value, take into
+     * account your setting for timecode source under input settings
+     * (InputTimecodeSource). For example, if you have embedded timecodes that start at
+     * 01:00:00:00 and you want your clip to end six minutes into the video, use
+     * 01:06:00:00.
      */
     inline void SetEndTimecode(Aws::String&& value) { m_endTimecodeHasBeenSet = true; m_endTimecode = std::move(value); }
 
     /**
      * Set End timecode (EndTimecode) to the end of the portion of the input you are
      * clipping. The frame corresponding to the End timecode value is included in the
-     * clip. Start timecode or End timecode may be left blank, but not both. When
-     * choosing this value, take into account your setting for Input timecode source.
-     * For example, if you have embedded timecodes that start at 01:00:00:00 and you
-     * want your clip to begin five minutes into the video, use 01:00:05:00.
+     * clip. Start timecode or End timecode may be left blank, but not both. Use the
+     * format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is
+     * the second, and FF is the frame number. When choosing this value, take into
+     * account your setting for timecode source under input settings
+     * (InputTimecodeSource). For example, if you have embedded timecodes that start at
+     * 01:00:00:00 and you want your clip to end six minutes into the video, use
+     * 01:06:00:00.
      */
     inline void SetEndTimecode(const char* value) { m_endTimecodeHasBeenSet = true; m_endTimecode.assign(value); }
 
     /**
      * Set End timecode (EndTimecode) to the end of the portion of the input you are
      * clipping. The frame corresponding to the End timecode value is included in the
-     * clip. Start timecode or End timecode may be left blank, but not both. When
-     * choosing this value, take into account your setting for Input timecode source.
-     * For example, if you have embedded timecodes that start at 01:00:00:00 and you
-     * want your clip to begin five minutes into the video, use 01:00:05:00.
+     * clip. Start timecode or End timecode may be left blank, but not both. Use the
+     * format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is
+     * the second, and FF is the frame number. When choosing this value, take into
+     * account your setting for timecode source under input settings
+     * (InputTimecodeSource). For example, if you have embedded timecodes that start at
+     * 01:00:00:00 and you want your clip to end six minutes into the video, use
+     * 01:06:00:00.
      */
     inline InputClipping& WithEndTimecode(const Aws::String& value) { SetEndTimecode(value); return *this;}
 
     /**
      * Set End timecode (EndTimecode) to the end of the portion of the input you are
      * clipping. The frame corresponding to the End timecode value is included in the
-     * clip. Start timecode or End timecode may be left blank, but not both. When
-     * choosing this value, take into account your setting for Input timecode source.
-     * For example, if you have embedded timecodes that start at 01:00:00:00 and you
-     * want your clip to begin five minutes into the video, use 01:00:05:00.
+     * clip. Start timecode or End timecode may be left blank, but not both. Use the
+     * format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is
+     * the second, and FF is the frame number. When choosing this value, take into
+     * account your setting for timecode source under input settings
+     * (InputTimecodeSource). For example, if you have embedded timecodes that start at
+     * 01:00:00:00 and you want your clip to end six minutes into the video, use
+     * 01:06:00:00.
      */
     inline InputClipping& WithEndTimecode(Aws::String&& value) { SetEndTimecode(std::move(value)); return *this;}
 
     /**
      * Set End timecode (EndTimecode) to the end of the portion of the input you are
      * clipping. The frame corresponding to the End timecode value is included in the
-     * clip. Start timecode or End timecode may be left blank, but not both. When
-     * choosing this value, take into account your setting for Input timecode source.
-     * For example, if you have embedded timecodes that start at 01:00:00:00 and you
-     * want your clip to begin five minutes into the video, use 01:00:05:00.
+     * clip. Start timecode or End timecode may be left blank, but not both. Use the
+     * format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute, SS is
+     * the second, and FF is the frame number. When choosing this value, take into
+     * account your setting for timecode source under input settings
+     * (InputTimecodeSource). For example, if you have embedded timecodes that start at
+     * 01:00:00:00 and you want your clip to end six minutes into the video, use
+     * 01:06:00:00.
      */
     inline InputClipping& WithEndTimecode(const char* value) { SetEndTimecode(value); return *this;}
 
@@ -122,10 +146,11 @@ namespace Model
      * Set Start timecode (StartTimecode) to the beginning of the portion of the input
      * you are clipping. The frame corresponding to the Start timecode value is
      * included in the clip. Start timecode or End timecode may be left blank, but not
-     * both. When choosing this value, take into account your setting for Input
-     * timecode source. For example, if you have embedded timecodes that start at
-     * 01:00:00:00 and you want your clip to begin five minutes into the video, use
-     * 01:00:05:00.
+     * both. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the
+     * minute, SS is the second, and FF is the frame number. When choosing this value,
+     * take into account your setting for Input timecode source. For example, if you
+     * have embedded timecodes that start at 01:00:00:00 and you want your clip to
+     * begin five minutes into the video, use 01:05:00:00.
      */
     inline const Aws::String& GetStartTimecode() const{ return m_startTimecode; }
 
@@ -133,10 +158,11 @@ namespace Model
      * Set Start timecode (StartTimecode) to the beginning of the portion of the input
      * you are clipping. The frame corresponding to the Start timecode value is
      * included in the clip. Start timecode or End timecode may be left blank, but not
-     * both. When choosing this value, take into account your setting for Input
-     * timecode source. For example, if you have embedded timecodes that start at
-     * 01:00:00:00 and you want your clip to begin five minutes into the video, use
-     * 01:00:05:00.
+     * both. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the
+     * minute, SS is the second, and FF is the frame number. When choosing this value,
+     * take into account your setting for Input timecode source. For example, if you
+     * have embedded timecodes that start at 01:00:00:00 and you want your clip to
+     * begin five minutes into the video, use 01:05:00:00.
      */
     inline void SetStartTimecode(const Aws::String& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = value; }
 
@@ -144,10 +170,11 @@ namespace Model
      * Set Start timecode (StartTimecode) to the beginning of the portion of the input
      * you are clipping. The frame corresponding to the Start timecode value is
      * included in the clip. Start timecode or End timecode may be left blank, but not
-     * both. When choosing this value, take into account your setting for Input
-     * timecode source. For example, if you have embedded timecodes that start at
-     * 01:00:00:00 and you want your clip to begin five minutes into the video, use
-     * 01:00:05:00.
+     * both. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the
+     * minute, SS is the second, and FF is the frame number. When choosing this value,
+     * take into account your setting for Input timecode source. For example, if you
+     * have embedded timecodes that start at 01:00:00:00 and you want your clip to
+     * begin five minutes into the video, use 01:05:00:00.
      */
     inline void SetStartTimecode(Aws::String&& value) { m_startTimecodeHasBeenSet = true; m_startTimecode = std::move(value); }
 
@@ -155,10 +182,11 @@ namespace Model
      * Set Start timecode (StartTimecode) to the beginning of the portion of the input
      * you are clipping. The frame corresponding to the Start timecode value is
      * included in the clip. Start timecode or End timecode may be left blank, but not
-     * both. When choosing this value, take into account your setting for Input
-     * timecode source. For example, if you have embedded timecodes that start at
-     * 01:00:00:00 and you want your clip to begin five minutes into the video, use
-     * 01:00:05:00.
+     * both. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the
+     * minute, SS is the second, and FF is the frame number. When choosing this value,
+     * take into account your setting for Input timecode source. For example, if you
+     * have embedded timecodes that start at 01:00:00:00 and you want your clip to
+     * begin five minutes into the video, use 01:05:00:00.
      */
     inline void SetStartTimecode(const char* value) { m_startTimecodeHasBeenSet = true; m_startTimecode.assign(value); }
 
@@ -166,10 +194,11 @@ namespace Model
      * Set Start timecode (StartTimecode) to the beginning of the portion of the input
      * you are clipping. The frame corresponding to the Start timecode value is
      * included in the clip. Start timecode or End timecode may be left blank, but not
-     * both. When choosing this value, take into account your setting for Input
-     * timecode source. For example, if you have embedded timecodes that start at
-     * 01:00:00:00 and you want your clip to begin five minutes into the video, use
-     * 01:00:05:00.
+     * both. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the
+     * minute, SS is the second, and FF is the frame number. When choosing this value,
+     * take into account your setting for Input timecode source. For example, if you
+     * have embedded timecodes that start at 01:00:00:00 and you want your clip to
+     * begin five minutes into the video, use 01:05:00:00.
      */
     inline InputClipping& WithStartTimecode(const Aws::String& value) { SetStartTimecode(value); return *this;}
 
@@ -177,10 +206,11 @@ namespace Model
      * Set Start timecode (StartTimecode) to the beginning of the portion of the input
      * you are clipping. The frame corresponding to the Start timecode value is
      * included in the clip. Start timecode or End timecode may be left blank, but not
-     * both. When choosing this value, take into account your setting for Input
-     * timecode source. For example, if you have embedded timecodes that start at
-     * 01:00:00:00 and you want your clip to begin five minutes into the video, use
-     * 01:00:05:00.
+     * both. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the
+     * minute, SS is the second, and FF is the frame number. When choosing this value,
+     * take into account your setting for Input timecode source. For example, if you
+     * have embedded timecodes that start at 01:00:00:00 and you want your clip to
+     * begin five minutes into the video, use 01:05:00:00.
      */
     inline InputClipping& WithStartTimecode(Aws::String&& value) { SetStartTimecode(std::move(value)); return *this;}
 
@@ -188,10 +218,11 @@ namespace Model
      * Set Start timecode (StartTimecode) to the beginning of the portion of the input
      * you are clipping. The frame corresponding to the Start timecode value is
      * included in the clip. Start timecode or End timecode may be left blank, but not
-     * both. When choosing this value, take into account your setting for Input
-     * timecode source. For example, if you have embedded timecodes that start at
-     * 01:00:00:00 and you want your clip to begin five minutes into the video, use
-     * 01:00:05:00.
+     * both. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the
+     * minute, SS is the second, and FF is the frame number. When choosing this value,
+     * take into account your setting for Input timecode source. For example, if you
+     * have embedded timecodes that start at 01:00:00:00 and you want your clip to
+     * begin five minutes into the video, use 01:05:00:00.
      */
     inline InputClipping& WithStartTimecode(const char* value) { SetStartTimecode(value); return *this;}
 

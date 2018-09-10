@@ -37,7 +37,7 @@ KerberosAttributes::KerberosAttributes() :
 {
 }
 
-KerberosAttributes::KerberosAttributes(const JsonValue& jsonValue) : 
+KerberosAttributes::KerberosAttributes(JsonView jsonValue) : 
     m_realmHasBeenSet(false),
     m_kdcAdminPasswordHasBeenSet(false),
     m_crossRealmTrustPrincipalPasswordHasBeenSet(false),
@@ -47,7 +47,7 @@ KerberosAttributes::KerberosAttributes(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-KerberosAttributes& KerberosAttributes::operator =(const JsonValue& jsonValue)
+KerberosAttributes& KerberosAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Realm"))
   {

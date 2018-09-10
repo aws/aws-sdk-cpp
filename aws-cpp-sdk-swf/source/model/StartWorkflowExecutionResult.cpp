@@ -37,7 +37,7 @@ StartWorkflowExecutionResult::StartWorkflowExecutionResult(const Aws::AmazonWebS
 
 StartWorkflowExecutionResult& StartWorkflowExecutionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("runId"))
   {
     m_runId = jsonValue.GetString("runId");

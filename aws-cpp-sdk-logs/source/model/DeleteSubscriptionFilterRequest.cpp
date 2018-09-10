@@ -44,7 +44,7 @@ Aws::String DeleteSubscriptionFilterRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteSubscriptionFilterRequest::GetRequestSpecificHeaders() const

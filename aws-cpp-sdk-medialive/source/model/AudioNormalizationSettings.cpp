@@ -38,7 +38,7 @@ AudioNormalizationSettings::AudioNormalizationSettings() :
 {
 }
 
-AudioNormalizationSettings::AudioNormalizationSettings(const JsonValue& jsonValue) : 
+AudioNormalizationSettings::AudioNormalizationSettings(JsonView jsonValue) : 
     m_algorithm(AudioNormalizationAlgorithm::NOT_SET),
     m_algorithmHasBeenSet(false),
     m_algorithmControl(AudioNormalizationAlgorithmControl::NOT_SET),
@@ -49,7 +49,7 @@ AudioNormalizationSettings::AudioNormalizationSettings(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-AudioNormalizationSettings& AudioNormalizationSettings::operator =(const JsonValue& jsonValue)
+AudioNormalizationSettings& AudioNormalizationSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("algorithm"))
   {

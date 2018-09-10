@@ -34,14 +34,14 @@ NotificationChannel::NotificationChannel() :
 {
 }
 
-NotificationChannel::NotificationChannel(const JsonValue& jsonValue) : 
+NotificationChannel::NotificationChannel(JsonView jsonValue) : 
     m_sNSTopicArnHasBeenSet(false),
     m_roleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NotificationChannel& NotificationChannel::operator =(const JsonValue& jsonValue)
+NotificationChannel& NotificationChannel::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SNSTopicArn"))
   {

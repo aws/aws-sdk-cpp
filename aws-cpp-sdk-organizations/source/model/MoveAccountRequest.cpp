@@ -51,7 +51,7 @@ Aws::String MoveAccountRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection MoveAccountRequest::GetRequestSpecificHeaders() const

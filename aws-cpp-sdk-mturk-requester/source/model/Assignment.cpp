@@ -45,7 +45,7 @@ Assignment::Assignment() :
 {
 }
 
-Assignment::Assignment(const JsonValue& jsonValue) : 
+Assignment::Assignment(JsonView jsonValue) : 
     m_assignmentIdHasBeenSet(false),
     m_workerIdHasBeenSet(false),
     m_hITIdHasBeenSet(false),
@@ -63,7 +63,7 @@ Assignment::Assignment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Assignment& Assignment::operator =(const JsonValue& jsonValue)
+Assignment& Assignment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AssignmentId"))
   {

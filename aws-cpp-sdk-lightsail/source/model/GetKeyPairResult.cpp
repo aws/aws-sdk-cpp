@@ -37,7 +37,7 @@ GetKeyPairResult::GetKeyPairResult(const Aws::AmazonWebServiceResult<JsonValue>&
 
 GetKeyPairResult& GetKeyPairResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("keyPair"))
   {
     m_keyPair = jsonValue.GetObject("keyPair");

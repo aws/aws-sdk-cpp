@@ -37,14 +37,20 @@ DescribeImagesResult::DescribeImagesResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeImagesResult& DescribeImagesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Images"))
   {
-    Array<JsonValue> imagesJsonList = jsonValue.GetArray("Images");
+    Array<JsonView> imagesJsonList = jsonValue.GetArray("Images");
     for(unsigned imagesIndex = 0; imagesIndex < imagesJsonList.GetLength(); ++imagesIndex)
     {
       m_images.push_back(imagesJsonList[imagesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
   }
 
 

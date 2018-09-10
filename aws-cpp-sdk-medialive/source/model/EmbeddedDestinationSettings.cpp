@@ -32,12 +32,12 @@ EmbeddedDestinationSettings::EmbeddedDestinationSettings()
 {
 }
 
-EmbeddedDestinationSettings::EmbeddedDestinationSettings(const JsonValue& jsonValue)
+EmbeddedDestinationSettings::EmbeddedDestinationSettings(JsonView jsonValue)
 {
   *this = jsonValue;
 }
 
-EmbeddedDestinationSettings& EmbeddedDestinationSettings::operator =(const JsonValue& jsonValue)
+EmbeddedDestinationSettings& EmbeddedDestinationSettings::operator =(JsonView jsonValue)
 {
   AWS_UNREFERENCED_PARAM(jsonValue);
   return *this;

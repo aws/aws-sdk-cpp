@@ -29,6 +29,7 @@
 #include <aws/clouddirectory/model/BatchDetachFromIndex.h>
 #include <aws/clouddirectory/model/BatchAttachTypedLink.h>
 #include <aws/clouddirectory/model/BatchDetachTypedLink.h>
+#include <aws/clouddirectory/model/BatchUpdateLinkAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -38,6 +39,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -48,15 +50,15 @@ namespace Model
   /**
    * <p>Represents the output of a <code>BatchWrite</code> operation. </p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWriteOperation">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchWriteOperation">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API BatchWriteOperation
   {
   public:
     BatchWriteOperation();
-    BatchWriteOperation(const Aws::Utils::Json::JsonValue& jsonValue);
-    BatchWriteOperation& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BatchWriteOperation(Aws::Utils::Json::JsonView jsonValue);
+    BatchWriteOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -468,6 +470,32 @@ namespace Model
      */
     inline BatchWriteOperation& WithDetachTypedLink(BatchDetachTypedLink&& value) { SetDetachTypedLink(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Updates a given object's attributes.</p>
+     */
+    inline const BatchUpdateLinkAttributes& GetUpdateLinkAttributes() const{ return m_updateLinkAttributes; }
+
+    /**
+     * <p>Updates a given object's attributes.</p>
+     */
+    inline void SetUpdateLinkAttributes(const BatchUpdateLinkAttributes& value) { m_updateLinkAttributesHasBeenSet = true; m_updateLinkAttributes = value; }
+
+    /**
+     * <p>Updates a given object's attributes.</p>
+     */
+    inline void SetUpdateLinkAttributes(BatchUpdateLinkAttributes&& value) { m_updateLinkAttributesHasBeenSet = true; m_updateLinkAttributes = std::move(value); }
+
+    /**
+     * <p>Updates a given object's attributes.</p>
+     */
+    inline BatchWriteOperation& WithUpdateLinkAttributes(const BatchUpdateLinkAttributes& value) { SetUpdateLinkAttributes(value); return *this;}
+
+    /**
+     * <p>Updates a given object's attributes.</p>
+     */
+    inline BatchWriteOperation& WithUpdateLinkAttributes(BatchUpdateLinkAttributes&& value) { SetUpdateLinkAttributes(std::move(value)); return *this;}
+
   private:
 
     BatchCreateObject m_createObject;
@@ -511,6 +539,9 @@ namespace Model
 
     BatchDetachTypedLink m_detachTypedLink;
     bool m_detachTypedLinkHasBeenSet;
+
+    BatchUpdateLinkAttributes m_updateLinkAttributes;
+    bool m_updateLinkAttributesHasBeenSet;
   };
 
 } // namespace Model

@@ -29,6 +29,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace DirectoryService
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     Trust();
-    Trust(const Aws::Utils::Json::JsonValue& jsonValue);
-    Trust& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Trust(Aws::Utils::Json::JsonView jsonValue);
+    Trust& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

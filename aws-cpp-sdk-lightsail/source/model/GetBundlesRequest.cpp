@@ -45,7 +45,7 @@ Aws::String GetBundlesRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection GetBundlesRequest::GetRequestSpecificHeaders() const

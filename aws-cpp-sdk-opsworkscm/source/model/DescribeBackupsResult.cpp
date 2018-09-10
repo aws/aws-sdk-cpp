@@ -37,10 +37,10 @@ DescribeBackupsResult::DescribeBackupsResult(const Aws::AmazonWebServiceResult<J
 
 DescribeBackupsResult& DescribeBackupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Backups"))
   {
-    Array<JsonValue> backupsJsonList = jsonValue.GetArray("Backups");
+    Array<JsonView> backupsJsonList = jsonValue.GetArray("Backups");
     for(unsigned backupsIndex = 0; backupsIndex < backupsJsonList.GetLength(); ++backupsIndex)
     {
       m_backups.push_back(backupsJsonList[backupsIndex].AsObject());

@@ -56,6 +56,8 @@ M2tsSettings::M2tsSettings() :
     m_maxPcrIntervalHasBeenSet(false),
     m_minEbpInterval(0),
     m_minEbpIntervalHasBeenSet(false),
+    m_nielsenId3(M2tsNielsenId3::NOT_SET),
+    m_nielsenId3HasBeenSet(false),
     m_nullPacketBitrate(0.0),
     m_nullPacketBitrateHasBeenSet(false),
     m_patInterval(0),
@@ -84,6 +86,8 @@ M2tsSettings::M2tsSettings() :
     m_segmentationStyleHasBeenSet(false),
     m_segmentationTime(0.0),
     m_segmentationTimeHasBeenSet(false),
+    m_timedMetadataPid(0),
+    m_timedMetadataPidHasBeenSet(false),
     m_transportStreamId(0),
     m_transportStreamIdHasBeenSet(false),
     m_videoPid(0),
@@ -91,7 +95,7 @@ M2tsSettings::M2tsSettings() :
 {
 }
 
-M2tsSettings::M2tsSettings(const JsonValue& jsonValue) : 
+M2tsSettings::M2tsSettings(JsonView jsonValue) : 
     m_audioBufferModel(M2tsAudioBufferModel::NOT_SET),
     m_audioBufferModelHasBeenSet(false),
     m_audioFramesPerPes(0),
@@ -119,6 +123,8 @@ M2tsSettings::M2tsSettings(const JsonValue& jsonValue) :
     m_maxPcrIntervalHasBeenSet(false),
     m_minEbpInterval(0),
     m_minEbpIntervalHasBeenSet(false),
+    m_nielsenId3(M2tsNielsenId3::NOT_SET),
+    m_nielsenId3HasBeenSet(false),
     m_nullPacketBitrate(0.0),
     m_nullPacketBitrateHasBeenSet(false),
     m_patInterval(0),
@@ -147,6 +153,8 @@ M2tsSettings::M2tsSettings(const JsonValue& jsonValue) :
     m_segmentationStyleHasBeenSet(false),
     m_segmentationTime(0.0),
     m_segmentationTimeHasBeenSet(false),
+    m_timedMetadataPid(0),
+    m_timedMetadataPidHasBeenSet(false),
     m_transportStreamId(0),
     m_transportStreamIdHasBeenSet(false),
     m_videoPid(0),
@@ -155,7 +163,7 @@ M2tsSettings::M2tsSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-M2tsSettings& M2tsSettings::operator =(const JsonValue& jsonValue)
+M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioBufferModel"))
   {
@@ -173,7 +181,7 @@ M2tsSettings& M2tsSettings::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("audioPids"))
   {
-    Array<JsonValue> audioPidsJsonList = jsonValue.GetArray("audioPids");
+    Array<JsonView> audioPidsJsonList = jsonValue.GetArray("audioPids");
     for(unsigned audioPidsIndex = 0; audioPidsIndex < audioPidsJsonList.GetLength(); ++audioPidsIndex)
     {
       m_audioPids.push_back(audioPidsJsonList[audioPidsIndex].AsInteger());
@@ -211,7 +219,7 @@ M2tsSettings& M2tsSettings::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("dvbSubPids"))
   {
-    Array<JsonValue> dvbSubPidsJsonList = jsonValue.GetArray("dvbSubPids");
+    Array<JsonView> dvbSubPidsJsonList = jsonValue.GetArray("dvbSubPids");
     for(unsigned dvbSubPidsIndex = 0; dvbSubPidsIndex < dvbSubPidsJsonList.GetLength(); ++dvbSubPidsIndex)
     {
       m_dvbSubPids.push_back(dvbSubPidsJsonList[dvbSubPidsIndex].AsInteger());
@@ -273,6 +281,13 @@ M2tsSettings& M2tsSettings::operator =(const JsonValue& jsonValue)
     m_minEbpInterval = jsonValue.GetInteger("minEbpInterval");
 
     m_minEbpIntervalHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("nielsenId3"))
+  {
+    m_nielsenId3 = M2tsNielsenId3Mapper::GetM2tsNielsenId3ForName(jsonValue.GetString("nielsenId3"));
+
+    m_nielsenId3HasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("nullPacketBitrate"))
@@ -371,6 +386,13 @@ M2tsSettings& M2tsSettings::operator =(const JsonValue& jsonValue)
     m_segmentationTime = jsonValue.GetDouble("segmentationTime");
 
     m_segmentationTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("timedMetadataPid"))
+  {
+    m_timedMetadataPid = jsonValue.GetInteger("timedMetadataPid");
+
+    m_timedMetadataPidHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("transportStreamId"))
@@ -495,6 +517,11 @@ JsonValue M2tsSettings::Jsonize() const
 
   }
 
+  if(m_nielsenId3HasBeenSet)
+  {
+   payload.WithString("nielsenId3", M2tsNielsenId3Mapper::GetNameForM2tsNielsenId3(m_nielsenId3));
+  }
+
   if(m_nullPacketBitrateHasBeenSet)
   {
    payload.WithDouble("nullPacketBitrate", m_nullPacketBitrate);
@@ -571,6 +598,12 @@ JsonValue M2tsSettings::Jsonize() const
   if(m_segmentationTimeHasBeenSet)
   {
    payload.WithDouble("segmentationTime", m_segmentationTime);
+
+  }
+
+  if(m_timedMetadataPidHasBeenSet)
+  {
+   payload.WithInteger("timedMetadataPid", m_timedMetadataPid);
 
   }
 

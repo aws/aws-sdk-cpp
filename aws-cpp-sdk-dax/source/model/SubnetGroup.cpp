@@ -36,7 +36,7 @@ SubnetGroup::SubnetGroup() :
 {
 }
 
-SubnetGroup::SubnetGroup(const JsonValue& jsonValue) : 
+SubnetGroup::SubnetGroup(JsonView jsonValue) : 
     m_subnetGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
@@ -45,7 +45,7 @@ SubnetGroup::SubnetGroup(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SubnetGroup& SubnetGroup::operator =(const JsonValue& jsonValue)
+SubnetGroup& SubnetGroup::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SubnetGroupName"))
   {
@@ -70,7 +70,7 @@ SubnetGroup& SubnetGroup::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Subnets"))
   {
-    Array<JsonValue> subnetsJsonList = jsonValue.GetArray("Subnets");
+    Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
     for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
     {
       m_subnets.push_back(subnetsJsonList[subnetsIndex].AsObject());

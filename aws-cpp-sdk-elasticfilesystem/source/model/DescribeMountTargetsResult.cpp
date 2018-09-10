@@ -37,7 +37,7 @@ DescribeMountTargetsResult::DescribeMountTargetsResult(const Aws::AmazonWebServi
 
 DescribeMountTargetsResult& DescribeMountTargetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
@@ -46,7 +46,7 @@ DescribeMountTargetsResult& DescribeMountTargetsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("MountTargets"))
   {
-    Array<JsonValue> mountTargetsJsonList = jsonValue.GetArray("MountTargets");
+    Array<JsonView> mountTargetsJsonList = jsonValue.GetArray("MountTargets");
     for(unsigned mountTargetsIndex = 0; mountTargetsIndex < mountTargetsJsonList.GetLength(); ++mountTargetsIndex)
     {
       m_mountTargets.push_back(mountTargetsJsonList[mountTargetsIndex].AsObject());

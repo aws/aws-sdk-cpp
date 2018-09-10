@@ -37,10 +37,10 @@ GetAuthorizationTokenResult::GetAuthorizationTokenResult(const Aws::AmazonWebSer
 
 GetAuthorizationTokenResult& GetAuthorizationTokenResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("authorizationData"))
   {
-    Array<JsonValue> authorizationDataJsonList = jsonValue.GetArray("authorizationData");
+    Array<JsonView> authorizationDataJsonList = jsonValue.GetArray("authorizationData");
     for(unsigned authorizationDataIndex = 0; authorizationDataIndex < authorizationDataJsonList.GetLength(); ++authorizationDataIndex)
     {
       m_authorizationData.push_back(authorizationDataJsonList[authorizationDataIndex].AsObject());

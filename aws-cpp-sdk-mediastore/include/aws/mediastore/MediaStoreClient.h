@@ -24,10 +24,13 @@
 #include <aws/mediastore/model/CreateContainerResult.h>
 #include <aws/mediastore/model/DeleteContainerResult.h>
 #include <aws/mediastore/model/DeleteContainerPolicyResult.h>
+#include <aws/mediastore/model/DeleteCorsPolicyResult.h>
 #include <aws/mediastore/model/DescribeContainerResult.h>
 #include <aws/mediastore/model/GetContainerPolicyResult.h>
+#include <aws/mediastore/model/GetCorsPolicyResult.h>
 #include <aws/mediastore/model/ListContainersResult.h>
 #include <aws/mediastore/model/PutContainerPolicyResult.h>
+#include <aws/mediastore/model/PutCorsPolicyResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -50,11 +53,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -76,26 +74,35 @@ namespace Model
         class CreateContainerRequest;
         class DeleteContainerRequest;
         class DeleteContainerPolicyRequest;
+        class DeleteCorsPolicyRequest;
         class DescribeContainerRequest;
         class GetContainerPolicyRequest;
+        class GetCorsPolicyRequest;
         class ListContainersRequest;
         class PutContainerPolicyRequest;
+        class PutCorsPolicyRequest;
 
         typedef Aws::Utils::Outcome<CreateContainerResult, Aws::Client::AWSError<MediaStoreErrors>> CreateContainerOutcome;
         typedef Aws::Utils::Outcome<DeleteContainerResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteContainerOutcome;
         typedef Aws::Utils::Outcome<DeleteContainerPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteContainerPolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteCorsPolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeContainerResult, Aws::Client::AWSError<MediaStoreErrors>> DescribeContainerOutcome;
         typedef Aws::Utils::Outcome<GetContainerPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetContainerPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetCorsPolicyOutcome;
         typedef Aws::Utils::Outcome<ListContainersResult, Aws::Client::AWSError<MediaStoreErrors>> ListContainersOutcome;
         typedef Aws::Utils::Outcome<PutContainerPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutContainerPolicyOutcome;
+        typedef Aws::Utils::Outcome<PutCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutCorsPolicyOutcome;
 
         typedef std::future<CreateContainerOutcome> CreateContainerOutcomeCallable;
         typedef std::future<DeleteContainerOutcome> DeleteContainerOutcomeCallable;
         typedef std::future<DeleteContainerPolicyOutcome> DeleteContainerPolicyOutcomeCallable;
+        typedef std::future<DeleteCorsPolicyOutcome> DeleteCorsPolicyOutcomeCallable;
         typedef std::future<DescribeContainerOutcome> DescribeContainerOutcomeCallable;
         typedef std::future<GetContainerPolicyOutcome> GetContainerPolicyOutcomeCallable;
+        typedef std::future<GetCorsPolicyOutcome> GetCorsPolicyOutcomeCallable;
         typedef std::future<ListContainersOutcome> ListContainersOutcomeCallable;
         typedef std::future<PutContainerPolicyOutcome> PutContainerPolicyOutcomeCallable;
+        typedef std::future<PutCorsPolicyOutcome> PutCorsPolicyOutcomeCallable;
 } // namespace Model
 
   class MediaStoreClient;
@@ -103,10 +110,13 @@ namespace Model
     typedef std::function<void(const MediaStoreClient*, const Model::CreateContainerRequest&, const Model::CreateContainerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContainerResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::DeleteContainerRequest&, const Model::DeleteContainerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContainerResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::DeleteContainerPolicyRequest&, const Model::DeleteContainerPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContainerPolicyResponseReceivedHandler;
+    typedef std::function<void(const MediaStoreClient*, const Model::DeleteCorsPolicyRequest&, const Model::DeleteCorsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCorsPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::DescribeContainerRequest&, const Model::DescribeContainerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContainerResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::GetContainerPolicyRequest&, const Model::GetContainerPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerPolicyResponseReceivedHandler;
+    typedef std::function<void(const MediaStoreClient*, const Model::GetCorsPolicyRequest&, const Model::GetCorsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCorsPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::ListContainersRequest&, const Model::ListContainersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainersResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::PutContainerPolicyRequest&, const Model::PutContainerPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutContainerPolicyResponseReceivedHandler;
+    typedef std::function<void(const MediaStoreClient*, const Model::PutCorsPolicyRequest&, const Model::PutCorsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutCorsPolicyResponseReceivedHandler;
 
   /**
    * <p>An AWS Elemental MediaStore container is a namespace that holds folders and
@@ -138,7 +148,7 @@ namespace Model
 
         virtual ~MediaStoreClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "mediastore"; }
+        inline virtual const char* GetServiceClientName() const override { return "MediaStore"; }
 
 
         /**
@@ -232,20 +242,65 @@ namespace Model
         virtual void DeleteContainerPolicyAsync(const Model::DeleteContainerPolicyRequest& request, const DeleteContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the properties of the requested container. This returns a single
-         * <code>Container</code> object based on <code>ContainerName</code>. To return all
-         * <code>Container</code> objects that are associated with a specified AWS account,
-         * use <a>ListContainers</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the cross-origin resource sharing (CORS) configuration information
+         * that is set for the container.</p> <p>To use this operation, you must have
+         * permission to perform the <code>MediaStore:DeleteCorsPolicy</code> action. The
+         * container owner has this permission by default and can grant this permission to
+         * others.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCorsPolicyOutcome DeleteCorsPolicy(const Model::DeleteCorsPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the cross-origin resource sharing (CORS) configuration information
+         * that is set for the container.</p> <p>To use this operation, you must have
+         * permission to perform the <code>MediaStore:DeleteCorsPolicy</code> action. The
+         * container owner has this permission by default and can grant this permission to
+         * others.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCorsPolicyOutcomeCallable DeleteCorsPolicyCallable(const Model::DeleteCorsPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the cross-origin resource sharing (CORS) configuration information
+         * that is set for the container.</p> <p>To use this operation, you must have
+         * permission to perform the <code>MediaStore:DeleteCorsPolicy</code> action. The
+         * container owner has this permission by default and can grant this permission to
+         * others.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCorsPolicyAsync(const Model::DeleteCorsPolicyRequest& request, const DeleteCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the properties of the requested container. This request is commonly
+         * used to retrieve the endpoint of a container. An endpoint is a value assigned by
+         * the service when a new container is created. A container's endpoint does not
+         * change after it has been assigned. The <code>DescribeContainer</code> request
+         * returns a single <code>Container</code> object based on
+         * <code>ContainerName</code>. To return all <code>Container</code> objects that
+         * are associated with a specified AWS account, use
+         * <a>ListContainers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DescribeContainer">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeContainerOutcome DescribeContainer(const Model::DescribeContainerRequest& request) const;
 
         /**
-         * <p>Retrieves the properties of the requested container. This returns a single
-         * <code>Container</code> object based on <code>ContainerName</code>. To return all
-         * <code>Container</code> objects that are associated with a specified AWS account,
-         * use <a>ListContainers</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the properties of the requested container. This request is commonly
+         * used to retrieve the endpoint of a container. An endpoint is a value assigned by
+         * the service when a new container is created. A container's endpoint does not
+         * change after it has been assigned. The <code>DescribeContainer</code> request
+         * returns a single <code>Container</code> object based on
+         * <code>ContainerName</code>. To return all <code>Container</code> objects that
+         * are associated with a specified AWS account, use
+         * <a>ListContainers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DescribeContainer">AWS
          * API Reference</a></p>
          *
@@ -254,10 +309,14 @@ namespace Model
         virtual Model::DescribeContainerOutcomeCallable DescribeContainerCallable(const Model::DescribeContainerRequest& request) const;
 
         /**
-         * <p>Retrieves the properties of the requested container. This returns a single
-         * <code>Container</code> object based on <code>ContainerName</code>. To return all
-         * <code>Container</code> objects that are associated with a specified AWS account,
-         * use <a>ListContainers</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the properties of the requested container. This request is commonly
+         * used to retrieve the endpoint of a container. An endpoint is a value assigned by
+         * the service when a new container is created. A container's endpoint does not
+         * change after it has been assigned. The <code>DescribeContainer</code> request
+         * returns a single <code>Container</code> object based on
+         * <code>ContainerName</code>. To return all <code>Container</code> objects that
+         * are associated with a specified AWS account, use
+         * <a>ListContainers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DescribeContainer">AWS
          * API Reference</a></p>
          *
@@ -298,6 +357,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetContainerPolicyAsync(const Model::GetContainerPolicyRequest& request, const GetContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the cross-origin resource sharing (CORS) configuration information
+         * that is set for the container.</p> <p>To use this operation, you must have
+         * permission to perform the <code>MediaStore:GetCorsPolicy</code> action. By
+         * default, the container owner has this permission and can grant it to
+         * others.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCorsPolicyOutcome GetCorsPolicy(const Model::GetCorsPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the cross-origin resource sharing (CORS) configuration information
+         * that is set for the container.</p> <p>To use this operation, you must have
+         * permission to perform the <code>MediaStore:GetCorsPolicy</code> action. By
+         * default, the container owner has this permission and can grant it to
+         * others.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCorsPolicyOutcomeCallable GetCorsPolicyCallable(const Model::GetCorsPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the cross-origin resource sharing (CORS) configuration information
+         * that is set for the container.</p> <p>To use this operation, you must have
+         * permission to perform the <code>MediaStore:GetCorsPolicy</code> action. By
+         * default, the container owner has this permission and can grant it to
+         * others.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCorsPolicyAsync(const Model::GetCorsPolicyRequest& request, const GetCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the properties of all containers in AWS Elemental MediaStore. </p>
@@ -394,6 +490,58 @@ namespace Model
          */
         virtual void PutContainerPolicyAsync(const Model::PutContainerPolicyRequest& request, const PutContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Sets the cross-origin resource sharing (CORS) configuration on a container so
+         * that the container can service cross-origin requests. For example, you might
+         * want to enable a request whose origin is http://www.example.com to access your
+         * AWS Elemental MediaStore container at my.example.container.com by using the
+         * browser's XMLHttpRequest capability.</p> <p>To enable CORS on a container, you
+         * attach a CORS policy to the container. In the CORS policy, you configure rules
+         * that identify origins and the HTTP methods that can be executed on your
+         * container. The policy can contain up to 398,000 characters. You can add up to
+         * 100 rules to a CORS policy. If more than one rule applies, the service uses the
+         * first applicable rule listed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutCorsPolicyOutcome PutCorsPolicy(const Model::PutCorsPolicyRequest& request) const;
+
+        /**
+         * <p>Sets the cross-origin resource sharing (CORS) configuration on a container so
+         * that the container can service cross-origin requests. For example, you might
+         * want to enable a request whose origin is http://www.example.com to access your
+         * AWS Elemental MediaStore container at my.example.container.com by using the
+         * browser's XMLHttpRequest capability.</p> <p>To enable CORS on a container, you
+         * attach a CORS policy to the container. In the CORS policy, you configure rules
+         * that identify origins and the HTTP methods that can be executed on your
+         * container. The policy can contain up to 398,000 characters. You can add up to
+         * 100 rules to a CORS policy. If more than one rule applies, the service uses the
+         * first applicable rule listed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutCorsPolicyOutcomeCallable PutCorsPolicyCallable(const Model::PutCorsPolicyRequest& request) const;
+
+        /**
+         * <p>Sets the cross-origin resource sharing (CORS) configuration on a container so
+         * that the container can service cross-origin requests. For example, you might
+         * want to enable a request whose origin is http://www.example.com to access your
+         * AWS Elemental MediaStore container at my.example.container.com by using the
+         * browser's XMLHttpRequest capability.</p> <p>To enable CORS on a container, you
+         * attach a CORS policy to the container. In the CORS policy, you configure rules
+         * that identify origins and the HTTP methods that can be executed on your
+         * container. The policy can contain up to 398,000 characters. You can add up to
+         * 100 rules to a CORS policy. If more than one rule applies, the service uses the
+         * first applicable rule listed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutCorsPolicyAsync(const Model::PutCorsPolicyRequest& request, const PutCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
@@ -402,10 +550,13 @@ namespace Model
         void CreateContainerAsyncHelper(const Model::CreateContainerRequest& request, const CreateContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteContainerAsyncHelper(const Model::DeleteContainerRequest& request, const DeleteContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteContainerPolicyAsyncHelper(const Model::DeleteContainerPolicyRequest& request, const DeleteContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteCorsPolicyAsyncHelper(const Model::DeleteCorsPolicyRequest& request, const DeleteCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContainerAsyncHelper(const Model::DescribeContainerRequest& request, const DescribeContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetContainerPolicyAsyncHelper(const Model::GetContainerPolicyRequest& request, const GetContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCorsPolicyAsyncHelper(const Model::GetCorsPolicyRequest& request, const GetCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListContainersAsyncHelper(const Model::ListContainersRequest& request, const ListContainersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutContainerPolicyAsyncHelper(const Model::PutContainerPolicyRequest& request, const PutContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutCorsPolicyAsyncHelper(const Model::PutCorsPolicyRequest& request, const PutCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

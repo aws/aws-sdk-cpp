@@ -37,7 +37,7 @@ SearchIndexResult::SearchIndexResult(const Aws::AmazonWebServiceResult<JsonValue
 
 SearchIndexResult& SearchIndexResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
@@ -46,10 +46,19 @@ SearchIndexResult& SearchIndexResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("things"))
   {
-    Array<JsonValue> thingsJsonList = jsonValue.GetArray("things");
+    Array<JsonView> thingsJsonList = jsonValue.GetArray("things");
     for(unsigned thingsIndex = 0; thingsIndex < thingsJsonList.GetLength(); ++thingsIndex)
     {
       m_things.push_back(thingsJsonList[thingsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("thingGroups"))
+  {
+    Array<JsonView> thingGroupsJsonList = jsonValue.GetArray("thingGroups");
+    for(unsigned thingGroupsIndex = 0; thingGroupsIndex < thingGroupsJsonList.GetLength(); ++thingGroupsIndex)
+    {
+      m_thingGroups.push_back(thingGroupsJsonList[thingGroupsIndex].AsObject());
     }
   }
 

@@ -28,10 +28,12 @@ CreateDevEndpointRequest::CreateDevEndpointRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_publicKeyHasBeenSet(false),
+    m_publicKeysHasBeenSet(false),
     m_numberOfNodes(0),
     m_numberOfNodesHasBeenSet(false),
     m_extraPythonLibsS3PathHasBeenSet(false),
-    m_extraJarsS3PathHasBeenSet(false)
+    m_extraJarsS3PathHasBeenSet(false),
+    m_securityConfigurationHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,17 @@ Aws::String CreateDevEndpointRequest::SerializePayload() const
 
   }
 
+  if(m_publicKeysHasBeenSet)
+  {
+   Array<JsonValue> publicKeysJsonList(m_publicKeys.size());
+   for(unsigned publicKeysIndex = 0; publicKeysIndex < publicKeysJsonList.GetLength(); ++publicKeysIndex)
+   {
+     publicKeysJsonList[publicKeysIndex].AsString(m_publicKeys[publicKeysIndex]);
+   }
+   payload.WithArray("PublicKeys", std::move(publicKeysJsonList));
+
+  }
+
   if(m_numberOfNodesHasBeenSet)
   {
    payload.WithInteger("NumberOfNodes", m_numberOfNodes);
@@ -92,7 +105,13 @@ Aws::String CreateDevEndpointRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  if(m_securityConfigurationHasBeenSet)
+  {
+   payload.WithString("SecurityConfiguration", m_securityConfiguration);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateDevEndpointRequest::GetRequestSpecificHeaders() const

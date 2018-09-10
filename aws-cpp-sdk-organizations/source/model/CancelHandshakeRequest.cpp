@@ -37,7 +37,7 @@ Aws::String CancelHandshakeRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CancelHandshakeRequest::GetRequestSpecificHeaders() const

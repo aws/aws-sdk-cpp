@@ -37,10 +37,10 @@ DetectKeyPhrasesResult::DetectKeyPhrasesResult(const Aws::AmazonWebServiceResult
 
 DetectKeyPhrasesResult& DetectKeyPhrasesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("KeyPhrases"))
   {
-    Array<JsonValue> keyPhrasesJsonList = jsonValue.GetArray("KeyPhrases");
+    Array<JsonView> keyPhrasesJsonList = jsonValue.GetArray("KeyPhrases");
     for(unsigned keyPhrasesIndex = 0; keyPhrasesIndex < keyPhrasesJsonList.GetLength(); ++keyPhrasesIndex)
     {
       m_keyPhrases.push_back(keyPhrasesJsonList[keyPhrasesIndex].AsObject());

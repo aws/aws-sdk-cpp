@@ -33,13 +33,13 @@ ExecutionSucceededEventDetails::ExecutionSucceededEventDetails() :
 {
 }
 
-ExecutionSucceededEventDetails::ExecutionSucceededEventDetails(const JsonValue& jsonValue) : 
+ExecutionSucceededEventDetails::ExecutionSucceededEventDetails(JsonView jsonValue) : 
     m_outputHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ExecutionSucceededEventDetails& ExecutionSucceededEventDetails::operator =(const JsonValue& jsonValue)
+ExecutionSucceededEventDetails& ExecutionSucceededEventDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("output"))
   {

@@ -34,24 +34,24 @@ QualificationRequirement::QualificationRequirement() :
     m_comparatorHasBeenSet(false),
     m_integerValuesHasBeenSet(false),
     m_localeValuesHasBeenSet(false),
-    m_requiredToPreview(false),
-    m_requiredToPreviewHasBeenSet(false)
+    m_actionsGuarded(HITAccessActions::NOT_SET),
+    m_actionsGuardedHasBeenSet(false)
 {
 }
 
-QualificationRequirement::QualificationRequirement(const JsonValue& jsonValue) : 
+QualificationRequirement::QualificationRequirement(JsonView jsonValue) : 
     m_qualificationTypeIdHasBeenSet(false),
     m_comparator(Comparator::NOT_SET),
     m_comparatorHasBeenSet(false),
     m_integerValuesHasBeenSet(false),
     m_localeValuesHasBeenSet(false),
-    m_requiredToPreview(false),
-    m_requiredToPreviewHasBeenSet(false)
+    m_actionsGuarded(HITAccessActions::NOT_SET),
+    m_actionsGuardedHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-QualificationRequirement& QualificationRequirement::operator =(const JsonValue& jsonValue)
+QualificationRequirement& QualificationRequirement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("QualificationTypeId"))
   {
@@ -69,7 +69,7 @@ QualificationRequirement& QualificationRequirement::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("IntegerValues"))
   {
-    Array<JsonValue> integerValuesJsonList = jsonValue.GetArray("IntegerValues");
+    Array<JsonView> integerValuesJsonList = jsonValue.GetArray("IntegerValues");
     for(unsigned integerValuesIndex = 0; integerValuesIndex < integerValuesJsonList.GetLength(); ++integerValuesIndex)
     {
       m_integerValues.push_back(integerValuesJsonList[integerValuesIndex].AsInteger());
@@ -79,7 +79,7 @@ QualificationRequirement& QualificationRequirement::operator =(const JsonValue& 
 
   if(jsonValue.ValueExists("LocaleValues"))
   {
-    Array<JsonValue> localeValuesJsonList = jsonValue.GetArray("LocaleValues");
+    Array<JsonView> localeValuesJsonList = jsonValue.GetArray("LocaleValues");
     for(unsigned localeValuesIndex = 0; localeValuesIndex < localeValuesJsonList.GetLength(); ++localeValuesIndex)
     {
       m_localeValues.push_back(localeValuesJsonList[localeValuesIndex].AsObject());
@@ -87,11 +87,11 @@ QualificationRequirement& QualificationRequirement::operator =(const JsonValue& 
     m_localeValuesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("RequiredToPreview"))
+  if(jsonValue.ValueExists("ActionsGuarded"))
   {
-    m_requiredToPreview = jsonValue.GetBool("RequiredToPreview");
+    m_actionsGuarded = HITAccessActionsMapper::GetHITAccessActionsForName(jsonValue.GetString("ActionsGuarded"));
 
-    m_requiredToPreviewHasBeenSet = true;
+    m_actionsGuardedHasBeenSet = true;
   }
 
   return *this;
@@ -134,10 +134,9 @@ JsonValue QualificationRequirement::Jsonize() const
 
   }
 
-  if(m_requiredToPreviewHasBeenSet)
+  if(m_actionsGuardedHasBeenSet)
   {
-   payload.WithBool("RequiredToPreview", m_requiredToPreview);
-
+   payload.WithString("ActionsGuarded", HITAccessActionsMapper::GetNameForHITAccessActions(m_actionsGuarded));
   }
 
   return payload;

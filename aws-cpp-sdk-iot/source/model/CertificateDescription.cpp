@@ -39,11 +39,15 @@ CertificateDescription::CertificateDescription() :
     m_previousOwnedByHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
-    m_transferDataHasBeenSet(false)
+    m_customerVersion(0),
+    m_customerVersionHasBeenSet(false),
+    m_transferDataHasBeenSet(false),
+    m_generationIdHasBeenSet(false),
+    m_validityHasBeenSet(false)
 {
 }
 
-CertificateDescription::CertificateDescription(const JsonValue& jsonValue) : 
+CertificateDescription::CertificateDescription(JsonView jsonValue) : 
     m_certificateArnHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
     m_caCertificateIdHasBeenSet(false),
@@ -54,12 +58,16 @@ CertificateDescription::CertificateDescription(const JsonValue& jsonValue) :
     m_previousOwnedByHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
-    m_transferDataHasBeenSet(false)
+    m_customerVersion(0),
+    m_customerVersionHasBeenSet(false),
+    m_transferDataHasBeenSet(false),
+    m_generationIdHasBeenSet(false),
+    m_validityHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-CertificateDescription& CertificateDescription::operator =(const JsonValue& jsonValue)
+CertificateDescription& CertificateDescription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("certificateArn"))
   {
@@ -124,11 +132,32 @@ CertificateDescription& CertificateDescription::operator =(const JsonValue& json
     m_lastModifiedDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("customerVersion"))
+  {
+    m_customerVersion = jsonValue.GetInteger("customerVersion");
+
+    m_customerVersionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("transferData"))
   {
     m_transferData = jsonValue.GetObject("transferData");
 
     m_transferDataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("generationId"))
+  {
+    m_generationId = jsonValue.GetString("generationId");
+
+    m_generationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("validity"))
+  {
+    m_validity = jsonValue.GetObject("validity");
+
+    m_validityHasBeenSet = true;
   }
 
   return *this;
@@ -189,9 +218,27 @@ JsonValue CertificateDescription::Jsonize() const
    payload.WithDouble("lastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
   }
 
+  if(m_customerVersionHasBeenSet)
+  {
+   payload.WithInteger("customerVersion", m_customerVersion);
+
+  }
+
   if(m_transferDataHasBeenSet)
   {
    payload.WithObject("transferData", m_transferData.Jsonize());
+
+  }
+
+  if(m_generationIdHasBeenSet)
+  {
+   payload.WithString("generationId", m_generationId);
+
+  }
+
+  if(m_validityHasBeenSet)
+  {
+   payload.WithObject("validity", m_validity.Jsonize());
 
   }
 

@@ -44,7 +44,7 @@ Aws::String RespondActivityTaskCanceledRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection RespondActivityTaskCanceledRequest::GetRequestSpecificHeaders() const

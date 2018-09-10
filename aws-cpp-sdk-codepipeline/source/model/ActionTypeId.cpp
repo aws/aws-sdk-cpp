@@ -38,7 +38,7 @@ ActionTypeId::ActionTypeId() :
 {
 }
 
-ActionTypeId::ActionTypeId(const JsonValue& jsonValue) : 
+ActionTypeId::ActionTypeId(JsonView jsonValue) : 
     m_category(ActionCategory::NOT_SET),
     m_categoryHasBeenSet(false),
     m_owner(ActionOwner::NOT_SET),
@@ -49,7 +49,7 @@ ActionTypeId::ActionTypeId(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ActionTypeId& ActionTypeId::operator =(const JsonValue& jsonValue)
+ActionTypeId& ActionTypeId::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("category"))
   {

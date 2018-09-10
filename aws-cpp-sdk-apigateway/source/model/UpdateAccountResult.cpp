@@ -37,7 +37,7 @@ UpdateAccountResult::UpdateAccountResult(const Aws::AmazonWebServiceResult<JsonV
 
 UpdateAccountResult& UpdateAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("cloudwatchRoleArn"))
   {
     m_cloudwatchRoleArn = jsonValue.GetString("cloudwatchRoleArn");
@@ -52,7 +52,7 @@ UpdateAccountResult& UpdateAccountResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("features"))
   {
-    Array<JsonValue> featuresJsonList = jsonValue.GetArray("features");
+    Array<JsonView> featuresJsonList = jsonValue.GetArray("features");
     for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
     {
       m_features.push_back(featuresJsonList[featuresIndex].AsString());

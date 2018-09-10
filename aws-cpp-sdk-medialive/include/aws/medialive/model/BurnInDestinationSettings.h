@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     BurnInDestinationSettings();
-    BurnInDestinationSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    BurnInDestinationSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    BurnInDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
+    BurnInDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

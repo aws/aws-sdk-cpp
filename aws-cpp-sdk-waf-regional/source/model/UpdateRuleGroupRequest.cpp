@@ -56,7 +56,7 @@ Aws::String UpdateRuleGroupRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateRuleGroupRequest::GetRequestSpecificHeaders() const

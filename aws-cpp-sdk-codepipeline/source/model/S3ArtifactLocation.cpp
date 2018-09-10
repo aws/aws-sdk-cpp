@@ -34,14 +34,14 @@ S3ArtifactLocation::S3ArtifactLocation() :
 {
 }
 
-S3ArtifactLocation::S3ArtifactLocation(const JsonValue& jsonValue) : 
+S3ArtifactLocation::S3ArtifactLocation(JsonView jsonValue) : 
     m_bucketNameHasBeenSet(false),
     m_objectKeyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-S3ArtifactLocation& S3ArtifactLocation::operator =(const JsonValue& jsonValue)
+S3ArtifactLocation& S3ArtifactLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("bucketName"))
   {

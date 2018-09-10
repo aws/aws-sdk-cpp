@@ -44,7 +44,7 @@ Aws::String DeleteRepositoryPolicyRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeleteRepositoryPolicyRequest::GetRequestSpecificHeaders() const

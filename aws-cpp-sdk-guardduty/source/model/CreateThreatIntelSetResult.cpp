@@ -37,7 +37,7 @@ CreateThreatIntelSetResult::CreateThreatIntelSetResult(const Aws::AmazonWebServi
 
 CreateThreatIntelSetResult& CreateThreatIntelSetResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("threatIntelSetId"))
   {
     m_threatIntelSetId = jsonValue.GetString("threatIntelSetId");

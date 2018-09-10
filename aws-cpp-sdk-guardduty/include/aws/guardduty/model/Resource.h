@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
+#include <aws/guardduty/model/AccessKeyDetails.h>
 #include <aws/guardduty/model/InstanceDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -26,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GuardDuty
@@ -43,9 +45,25 @@ namespace Model
   {
   public:
     Resource();
-    Resource(const Aws::Utils::Json::JsonValue& jsonValue);
-    Resource& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Resource(Aws::Utils::Json::JsonView jsonValue);
+    Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    
+    inline const AccessKeyDetails& GetAccessKeyDetails() const{ return m_accessKeyDetails; }
+
+    
+    inline void SetAccessKeyDetails(const AccessKeyDetails& value) { m_accessKeyDetailsHasBeenSet = true; m_accessKeyDetails = value; }
+
+    
+    inline void SetAccessKeyDetails(AccessKeyDetails&& value) { m_accessKeyDetailsHasBeenSet = true; m_accessKeyDetails = std::move(value); }
+
+    
+    inline Resource& WithAccessKeyDetails(const AccessKeyDetails& value) { SetAccessKeyDetails(value); return *this;}
+
+    
+    inline Resource& WithAccessKeyDetails(AccessKeyDetails&& value) { SetAccessKeyDetails(std::move(value)); return *this;}
 
 
     
@@ -100,6 +118,9 @@ namespace Model
     inline Resource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
   private:
+
+    AccessKeyDetails m_accessKeyDetails;
+    bool m_accessKeyDetailsHasBeenSet;
 
     InstanceDetails m_instanceDetails;
     bool m_instanceDetailsHasBeenSet;

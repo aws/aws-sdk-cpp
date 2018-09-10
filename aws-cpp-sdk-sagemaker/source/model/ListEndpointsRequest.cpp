@@ -97,7 +97,7 @@ Aws::String ListEndpointsRequest::SerializePayload() const
    payload.WithString("StatusEquals", EndpointStatusMapper::GetNameForEndpointStatus(m_statusEquals));
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListEndpointsRequest::GetRequestSpecificHeaders() const

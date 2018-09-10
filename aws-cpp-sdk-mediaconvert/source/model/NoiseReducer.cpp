@@ -36,7 +36,7 @@ NoiseReducer::NoiseReducer() :
 {
 }
 
-NoiseReducer::NoiseReducer(const JsonValue& jsonValue) : 
+NoiseReducer::NoiseReducer(JsonView jsonValue) : 
     m_filter(NoiseReducerFilter::NOT_SET),
     m_filterHasBeenSet(false),
     m_filterSettingsHasBeenSet(false),
@@ -45,7 +45,7 @@ NoiseReducer::NoiseReducer(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NoiseReducer& NoiseReducer::operator =(const JsonValue& jsonValue)
+NoiseReducer& NoiseReducer::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("filter"))
   {

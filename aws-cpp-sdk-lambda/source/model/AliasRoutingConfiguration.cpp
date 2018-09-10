@@ -33,17 +33,17 @@ AliasRoutingConfiguration::AliasRoutingConfiguration() :
 {
 }
 
-AliasRoutingConfiguration::AliasRoutingConfiguration(const JsonValue& jsonValue) : 
+AliasRoutingConfiguration::AliasRoutingConfiguration(JsonView jsonValue) : 
     m_additionalVersionWeightsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AliasRoutingConfiguration& AliasRoutingConfiguration::operator =(const JsonValue& jsonValue)
+AliasRoutingConfiguration& AliasRoutingConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AdditionalVersionWeights"))
   {
-    Aws::Map<Aws::String, JsonValue> additionalVersionWeightsJsonMap = jsonValue.GetObject("AdditionalVersionWeights").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> additionalVersionWeightsJsonMap = jsonValue.GetObject("AdditionalVersionWeights").GetAllObjects();
     for(auto& additionalVersionWeightsItem : additionalVersionWeightsJsonMap)
     {
       m_additionalVersionWeights[additionalVersionWeightsItem.first] = additionalVersionWeightsItem.second.AsDouble();

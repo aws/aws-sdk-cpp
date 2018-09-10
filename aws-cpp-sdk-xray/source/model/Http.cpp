@@ -38,7 +38,7 @@ Http::Http() :
 {
 }
 
-Http::Http(const JsonValue& jsonValue) : 
+Http::Http(JsonView jsonValue) : 
     m_httpURLHasBeenSet(false),
     m_httpStatus(0),
     m_httpStatusHasBeenSet(false),
@@ -49,7 +49,7 @@ Http::Http(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Http& Http::operator =(const JsonValue& jsonValue)
+Http& Http::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("HttpURL"))
   {

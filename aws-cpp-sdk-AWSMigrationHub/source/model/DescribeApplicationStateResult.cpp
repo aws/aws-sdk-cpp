@@ -39,7 +39,7 @@ DescribeApplicationStateResult::DescribeApplicationStateResult(const Aws::Amazon
 
 DescribeApplicationStateResult& DescribeApplicationStateResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ApplicationStatus"))
   {
     m_applicationStatus = ApplicationStatusMapper::GetApplicationStatusForName(jsonValue.GetString("ApplicationStatus"));

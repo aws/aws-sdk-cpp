@@ -34,14 +34,14 @@ AccountTakeoverRiskConfigurationType::AccountTakeoverRiskConfigurationType() :
 {
 }
 
-AccountTakeoverRiskConfigurationType::AccountTakeoverRiskConfigurationType(const JsonValue& jsonValue) : 
+AccountTakeoverRiskConfigurationType::AccountTakeoverRiskConfigurationType(JsonView jsonValue) : 
     m_notifyConfigurationHasBeenSet(false),
     m_actionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-AccountTakeoverRiskConfigurationType& AccountTakeoverRiskConfigurationType::operator =(const JsonValue& jsonValue)
+AccountTakeoverRiskConfigurationType& AccountTakeoverRiskConfigurationType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NotifyConfiguration"))
   {

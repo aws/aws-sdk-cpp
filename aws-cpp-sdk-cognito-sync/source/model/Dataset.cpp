@@ -41,7 +41,7 @@ Dataset::Dataset() :
 {
 }
 
-Dataset::Dataset(const JsonValue& jsonValue) : 
+Dataset::Dataset(JsonView jsonValue) : 
     m_identityIdHasBeenSet(false),
     m_datasetNameHasBeenSet(false),
     m_creationDateHasBeenSet(false),
@@ -55,7 +55,7 @@ Dataset::Dataset(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Dataset& Dataset::operator =(const JsonValue& jsonValue)
+Dataset& Dataset::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IdentityId"))
   {

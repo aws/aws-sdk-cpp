@@ -35,7 +35,7 @@ FileSystemSize::FileSystemSize() :
 {
 }
 
-FileSystemSize::FileSystemSize(const JsonValue& jsonValue) : 
+FileSystemSize::FileSystemSize(JsonView jsonValue) : 
     m_value(0),
     m_valueHasBeenSet(false),
     m_timestampHasBeenSet(false)
@@ -43,7 +43,7 @@ FileSystemSize::FileSystemSize(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FileSystemSize& FileSystemSize::operator =(const JsonValue& jsonValue)
+FileSystemSize& FileSystemSize::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {

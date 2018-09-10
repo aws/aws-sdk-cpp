@@ -41,7 +41,7 @@ GetGatewayResponseResult::GetGatewayResponseResult(const Aws::AmazonWebServiceRe
 
 GetGatewayResponseResult& GetGatewayResponseResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("responseType"))
   {
     m_responseType = GatewayResponseTypeMapper::GetGatewayResponseTypeForName(jsonValue.GetString("responseType"));
@@ -56,7 +56,7 @@ GetGatewayResponseResult& GetGatewayResponseResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("responseParameters"))
   {
-    Aws::Map<Aws::String, JsonValue> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
     for(auto& responseParametersItem : responseParametersJsonMap)
     {
       m_responseParameters[responseParametersItem.first] = responseParametersItem.second.AsString();
@@ -65,7 +65,7 @@ GetGatewayResponseResult& GetGatewayResponseResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("responseTemplates"))
   {
-    Aws::Map<Aws::String, JsonValue> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
     for(auto& responseTemplatesItem : responseTemplatesJsonMap)
     {
       m_responseTemplates[responseTemplatesItem.first] = responseTemplatesItem.second.AsString();

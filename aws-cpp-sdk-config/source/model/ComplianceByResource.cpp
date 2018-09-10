@@ -35,7 +35,7 @@ ComplianceByResource::ComplianceByResource() :
 {
 }
 
-ComplianceByResource::ComplianceByResource(const JsonValue& jsonValue) : 
+ComplianceByResource::ComplianceByResource(JsonView jsonValue) : 
     m_resourceTypeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_complianceHasBeenSet(false)
@@ -43,7 +43,7 @@ ComplianceByResource::ComplianceByResource(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ComplianceByResource& ComplianceByResource::operator =(const JsonValue& jsonValue)
+ComplianceByResource& ComplianceByResource::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ResourceType"))
   {

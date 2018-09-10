@@ -11,10 +11,9 @@
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($entry.key))
 #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($entry.key))
 #if($memberName == $shape.payload)##member is the whole payload (not wrapped)
-  ${spaces}${memberVarName} = jsonValue;
-#break
+#set($memberIsWholePayload = true)  
 #end
-#if(!$member.required)
+#if(!$member.required && !$memberIsWholePayload)
   if(jsonValue.ValueExists("${memberName}"))
   {
 #set($spaces = '  ')
@@ -33,10 +32,19 @@
 #elseif($member.shape.blob)
   ${spaces}${memberVarName} = HashingUtils::Base64Decode(jsonValue.GetString("${memberName}"));
 #else
-  ${spaces}${memberVarName} = jsonValue.Get${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}");
+#if($member.shape.getName() == $shape.getName())
+#set($singleElementVector = '[0]')
+#else
+#set($singleElementVector = '')
+#end
+#if($memberIsWholePayload)
+  ${spaces}${memberVarName} = jsonValue;
+#else
+  ${spaces}${memberVarName}${singleElementVector} = jsonValue.Get${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}");
 
 #end
-#if(!$member.required)
+#end
+#if(!$member.required && !$memberIsWholePayload)
 #if($useRequiredField)
     $varNameHasBeenSet = true;
 #end

@@ -39,7 +39,7 @@ DeleteCollectionResult::DeleteCollectionResult(const Aws::AmazonWebServiceResult
 
 DeleteCollectionResult& DeleteCollectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = jsonValue.GetInteger("StatusCode");

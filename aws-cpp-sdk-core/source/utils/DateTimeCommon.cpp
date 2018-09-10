@@ -894,6 +894,12 @@ DateTime::DateTime() : m_valid(true)
     //init time_point to default by doing nothing.
 }
 
+DateTime& DateTime::operator=(const Aws::String& timestamp)
+{
+    *this = DateTime(timestamp, DateFormat::AutoDetect);
+    return *this;
+}
+
 DateTime& DateTime::operator=(double secondsMillis)
 {
     *this = DateTime(secondsMillis);
@@ -1101,6 +1107,12 @@ double DateTime::ComputeCurrentTimestampInAmazonFormat()
 std::chrono::milliseconds DateTime::Diff(const DateTime& a, const DateTime& b)
 {
     auto diff = a.m_time - b.m_time;
+    return std::chrono::duration_cast<std::chrono::milliseconds>(diff);
+}
+
+std::chrono::milliseconds DateTime::operator-(const DateTime& other)
+{
+    auto diff = this->m_time - other.m_time;
     return std::chrono::duration_cast<std::chrono::milliseconds>(diff);
 }
 

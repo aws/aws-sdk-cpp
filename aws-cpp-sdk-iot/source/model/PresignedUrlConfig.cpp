@@ -35,7 +35,7 @@ PresignedUrlConfig::PresignedUrlConfig() :
 {
 }
 
-PresignedUrlConfig::PresignedUrlConfig(const JsonValue& jsonValue) : 
+PresignedUrlConfig::PresignedUrlConfig(JsonView jsonValue) : 
     m_roleArnHasBeenSet(false),
     m_expiresInSec(0),
     m_expiresInSecHasBeenSet(false)
@@ -43,7 +43,7 @@ PresignedUrlConfig::PresignedUrlConfig(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PresignedUrlConfig& PresignedUrlConfig::operator =(const JsonValue& jsonValue)
+PresignedUrlConfig& PresignedUrlConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("roleArn"))
   {

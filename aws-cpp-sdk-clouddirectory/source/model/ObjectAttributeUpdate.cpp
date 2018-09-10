@@ -34,14 +34,14 @@ ObjectAttributeUpdate::ObjectAttributeUpdate() :
 {
 }
 
-ObjectAttributeUpdate::ObjectAttributeUpdate(const JsonValue& jsonValue) : 
+ObjectAttributeUpdate::ObjectAttributeUpdate(JsonView jsonValue) : 
     m_objectAttributeKeyHasBeenSet(false),
     m_objectAttributeActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ObjectAttributeUpdate& ObjectAttributeUpdate::operator =(const JsonValue& jsonValue)
+ObjectAttributeUpdate& ObjectAttributeUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ObjectAttributeKey"))
   {

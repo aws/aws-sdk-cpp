@@ -40,7 +40,7 @@ RateBasedRule::RateBasedRule() :
 {
 }
 
-RateBasedRule::RateBasedRule(const JsonValue& jsonValue) : 
+RateBasedRule::RateBasedRule(JsonView jsonValue) : 
     m_ruleIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_metricNameHasBeenSet(false),
@@ -53,7 +53,7 @@ RateBasedRule::RateBasedRule(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RateBasedRule& RateBasedRule::operator =(const JsonValue& jsonValue)
+RateBasedRule& RateBasedRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RuleId"))
   {
@@ -78,7 +78,7 @@ RateBasedRule& RateBasedRule::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("MatchPredicates"))
   {
-    Array<JsonValue> matchPredicatesJsonList = jsonValue.GetArray("MatchPredicates");
+    Array<JsonView> matchPredicatesJsonList = jsonValue.GetArray("MatchPredicates");
     for(unsigned matchPredicatesIndex = 0; matchPredicatesIndex < matchPredicatesJsonList.GetLength(); ++matchPredicatesIndex)
     {
       m_matchPredicates.push_back(matchPredicatesJsonList[matchPredicatesIndex].AsObject());

@@ -43,32 +43,32 @@ namespace Model
 
 
     /**
-     * Contains the bucket name, file format, bucket owner (optional), and prefix
-     * (optional) where inventory results are published.
+     * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
+     * (optional) where inventory results are published.</p>
      */
     inline const InventoryS3BucketDestination& GetS3BucketDestination() const{ return m_s3BucketDestination; }
 
     /**
-     * Contains the bucket name, file format, bucket owner (optional), and prefix
-     * (optional) where inventory results are published.
+     * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
+     * (optional) where inventory results are published.</p>
      */
     inline void SetS3BucketDestination(const InventoryS3BucketDestination& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = value; }
 
     /**
-     * Contains the bucket name, file format, bucket owner (optional), and prefix
-     * (optional) where inventory results are published.
+     * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
+     * (optional) where inventory results are published.</p>
      */
     inline void SetS3BucketDestination(InventoryS3BucketDestination&& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = std::move(value); }
 
     /**
-     * Contains the bucket name, file format, bucket owner (optional), and prefix
-     * (optional) where inventory results are published.
+     * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
+     * (optional) where inventory results are published.</p>
      */
     inline InventoryDestination& WithS3BucketDestination(const InventoryS3BucketDestination& value) { SetS3BucketDestination(value); return *this;}
 
     /**
-     * Contains the bucket name, file format, bucket owner (optional), and prefix
-     * (optional) where inventory results are published.
+     * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
+     * (optional) where inventory results are published.</p>
      */
     inline InventoryDestination& WithS3BucketDestination(InventoryS3BucketDestination&& value) { SetS3BucketDestination(std::move(value)); return *this;}
 

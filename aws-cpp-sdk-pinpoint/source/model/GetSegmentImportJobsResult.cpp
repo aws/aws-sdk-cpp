@@ -37,7 +37,7 @@ GetSegmentImportJobsResult::GetSegmentImportJobsResult(const Aws::AmazonWebServi
 
 GetSegmentImportJobsResult& GetSegmentImportJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_importJobsResponse = jsonValue;
 
 

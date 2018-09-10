@@ -35,7 +35,7 @@ CloudWatchLoggingOptionUpdate::CloudWatchLoggingOptionUpdate() :
 {
 }
 
-CloudWatchLoggingOptionUpdate::CloudWatchLoggingOptionUpdate(const JsonValue& jsonValue) : 
+CloudWatchLoggingOptionUpdate::CloudWatchLoggingOptionUpdate(JsonView jsonValue) : 
     m_cloudWatchLoggingOptionIdHasBeenSet(false),
     m_logStreamARNUpdateHasBeenSet(false),
     m_roleARNUpdateHasBeenSet(false)
@@ -43,7 +43,7 @@ CloudWatchLoggingOptionUpdate::CloudWatchLoggingOptionUpdate(const JsonValue& js
   *this = jsonValue;
 }
 
-CloudWatchLoggingOptionUpdate& CloudWatchLoggingOptionUpdate::operator =(const JsonValue& jsonValue)
+CloudWatchLoggingOptionUpdate& CloudWatchLoggingOptionUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CloudWatchLoggingOptionId"))
   {

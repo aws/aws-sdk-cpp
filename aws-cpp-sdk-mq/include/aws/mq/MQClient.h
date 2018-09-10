@@ -60,11 +60,6 @@ namespace Threading
 {
   class Executor;
 } // namespace Threading
-
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
 } // namespace Utils
 
 namespace Auth
@@ -220,9 +215,8 @@ namespace Model
 
         /**
          * Creates a new configuration for the specified configuration name. Amazon MQ uses
-         * the default configuration (the engine type and version). Note: If the
-         * configuration name already exists, Amazon MQ doesn't create a
-         * configuration.<p><h3>See Also:</h3>   <a
+         * the default configuration (the engine type and version).<p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration">AWS
          * API Reference</a></p>
          */
@@ -230,9 +224,8 @@ namespace Model
 
         /**
          * Creates a new configuration for the specified configuration name. Amazon MQ uses
-         * the default configuration (the engine type and version). Note: If the
-         * configuration name already exists, Amazon MQ doesn't create a
-         * configuration.<p><h3>See Also:</h3>   <a
+         * the default configuration (the engine type and version).<p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration">AWS
          * API Reference</a></p>
          *
@@ -242,9 +235,8 @@ namespace Model
 
         /**
          * Creates a new configuration for the specified configuration name. Amazon MQ uses
-         * the default configuration (the engine type and version). Note: If the
-         * configuration name already exists, Amazon MQ doesn't create a
-         * configuration.<p><h3>See Also:</h3>   <a
+         * the default configuration (the engine type and version).<p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateConfiguration">AWS
          * API Reference</a></p>
          *

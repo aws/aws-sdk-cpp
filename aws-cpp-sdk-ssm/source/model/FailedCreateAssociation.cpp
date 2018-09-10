@@ -36,7 +36,7 @@ FailedCreateAssociation::FailedCreateAssociation() :
 {
 }
 
-FailedCreateAssociation::FailedCreateAssociation(const JsonValue& jsonValue) : 
+FailedCreateAssociation::FailedCreateAssociation(JsonView jsonValue) : 
     m_entryHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_fault(Fault::NOT_SET),
@@ -45,7 +45,7 @@ FailedCreateAssociation::FailedCreateAssociation(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-FailedCreateAssociation& FailedCreateAssociation::operator =(const JsonValue& jsonValue)
+FailedCreateAssociation& FailedCreateAssociation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Entry"))
   {

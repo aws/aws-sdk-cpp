@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/CmafGroupSettings.h>
 #include <aws/mediaconvert/model/DashIsoGroupSettings.h>
 #include <aws/mediaconvert/model/FileGroupSettings.h>
 #include <aws/mediaconvert/model/HlsGroupSettings.h>
@@ -29,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaConvert
@@ -45,9 +47,25 @@ namespace Model
   {
   public:
     OutputGroupSettings();
-    OutputGroupSettings(const Aws::Utils::Json::JsonValue& jsonValue);
-    OutputGroupSettings& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OutputGroupSettings(Aws::Utils::Json::JsonView jsonValue);
+    OutputGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    
+    inline const CmafGroupSettings& GetCmafGroupSettings() const{ return m_cmafGroupSettings; }
+
+    
+    inline void SetCmafGroupSettings(const CmafGroupSettings& value) { m_cmafGroupSettingsHasBeenSet = true; m_cmafGroupSettings = value; }
+
+    
+    inline void SetCmafGroupSettings(CmafGroupSettings&& value) { m_cmafGroupSettingsHasBeenSet = true; m_cmafGroupSettings = std::move(value); }
+
+    
+    inline OutputGroupSettings& WithCmafGroupSettings(const CmafGroupSettings& value) { SetCmafGroupSettings(value); return *this;}
+
+    
+    inline OutputGroupSettings& WithCmafGroupSettings(CmafGroupSettings&& value) { SetCmafGroupSettings(std::move(value)); return *this;}
 
 
     
@@ -114,37 +132,25 @@ namespace Model
     inline OutputGroupSettings& WithMsSmoothGroupSettings(MsSmoothGroupSettings&& value) { SetMsSmoothGroupSettings(std::move(value)); return *this;}
 
 
-    /**
-     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
-     * Streaming)
-     */
+    
     inline const OutputGroupType& GetType() const{ return m_type; }
 
-    /**
-     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
-     * Streaming)
-     */
+    
     inline void SetType(const OutputGroupType& value) { m_typeHasBeenSet = true; m_type = value; }
 
-    /**
-     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
-     * Streaming)
-     */
+    
     inline void SetType(OutputGroupType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
-    /**
-     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
-     * Streaming)
-     */
+    
     inline OutputGroupSettings& WithType(const OutputGroupType& value) { SetType(value); return *this;}
 
-    /**
-     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
-     * Streaming)
-     */
+    
     inline OutputGroupSettings& WithType(OutputGroupType&& value) { SetType(std::move(value)); return *this;}
 
   private:
+
+    CmafGroupSettings m_cmafGroupSettings;
+    bool m_cmafGroupSettingsHasBeenSet;
 
     DashIsoGroupSettings m_dashIsoGroupSettings;
     bool m_dashIsoGroupSettingsHasBeenSet;

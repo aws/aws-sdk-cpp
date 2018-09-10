@@ -37,7 +37,7 @@ CodeGenNode::CodeGenNode() :
 {
 }
 
-CodeGenNode::CodeGenNode(const JsonValue& jsonValue) : 
+CodeGenNode::CodeGenNode(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_argsHasBeenSet(false),
@@ -47,7 +47,7 @@ CodeGenNode::CodeGenNode(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-CodeGenNode& CodeGenNode::operator =(const JsonValue& jsonValue)
+CodeGenNode& CodeGenNode::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {
@@ -65,7 +65,7 @@ CodeGenNode& CodeGenNode::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Args"))
   {
-    Array<JsonValue> argsJsonList = jsonValue.GetArray("Args");
+    Array<JsonView> argsJsonList = jsonValue.GetArray("Args");
     for(unsigned argsIndex = 0; argsIndex < argsJsonList.GetLength(); ++argsIndex)
     {
       m_args.push_back(argsJsonList[argsIndex].AsObject());

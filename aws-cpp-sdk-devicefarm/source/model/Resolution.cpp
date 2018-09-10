@@ -36,7 +36,7 @@ Resolution::Resolution() :
 {
 }
 
-Resolution::Resolution(const JsonValue& jsonValue) : 
+Resolution::Resolution(JsonView jsonValue) : 
     m_width(0),
     m_widthHasBeenSet(false),
     m_height(0),
@@ -45,7 +45,7 @@ Resolution::Resolution(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Resolution& Resolution::operator =(const JsonValue& jsonValue)
+Resolution& Resolution::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("width"))
   {

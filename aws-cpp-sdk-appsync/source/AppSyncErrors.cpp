@@ -35,6 +35,7 @@ static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestExceptio
 static const int API_KEY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ApiKeyLimitExceededException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int API_KEY_VALIDITY_OUT_OF_BOUNDS_HASH = HashingUtils::HashString("ApiKeyValidityOutOfBoundsException");
 static const int API_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ApiLimitExceededException");
 
 
@@ -69,6 +70,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AppSyncErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == API_KEY_VALIDITY_OUT_OF_BOUNDS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppSyncErrors::API_KEY_VALIDITY_OUT_OF_BOUNDS), false);
   }
   else if (hashCode == API_LIMIT_EXCEEDED_HASH)
   {

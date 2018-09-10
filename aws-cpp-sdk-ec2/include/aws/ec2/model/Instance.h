@@ -31,6 +31,7 @@
 #include <aws/ec2/model/DeviceType.h>
 #include <aws/ec2/model/StateReason.h>
 #include <aws/ec2/model/VirtualizationType.h>
+#include <aws/ec2/model/CpuOptions.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
 #include <aws/ec2/model/ElasticGpuAssociation.h>
@@ -1391,6 +1392,32 @@ namespace Model
      */
     inline Instance& WithVirtualizationType(VirtualizationType&& value) { SetVirtualizationType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The CPU options for the instance.</p>
+     */
+    inline const CpuOptions& GetCpuOptions() const{ return m_cpuOptions; }
+
+    /**
+     * <p>The CPU options for the instance.</p>
+     */
+    inline void SetCpuOptions(const CpuOptions& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = value; }
+
+    /**
+     * <p>The CPU options for the instance.</p>
+     */
+    inline void SetCpuOptions(CpuOptions&& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = std::move(value); }
+
+    /**
+     * <p>The CPU options for the instance.</p>
+     */
+    inline Instance& WithCpuOptions(const CpuOptions& value) { SetCpuOptions(value); return *this;}
+
+    /**
+     * <p>The CPU options for the instance.</p>
+     */
+    inline Instance& WithCpuOptions(CpuOptions&& value) { SetCpuOptions(std::move(value)); return *this;}
+
   private:
 
     int m_amiLaunchIndex;
@@ -1509,6 +1536,9 @@ namespace Model
 
     VirtualizationType m_virtualizationType;
     bool m_virtualizationTypeHasBeenSet;
+
+    CpuOptions m_cpuOptions;
+    bool m_cpuOptionsHasBeenSet;
   };
 
 } // namespace Model

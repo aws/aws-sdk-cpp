@@ -45,7 +45,7 @@ Aws::String DecreaseStreamRetentionPeriodRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DecreaseStreamRetentionPeriodRequest::GetRequestSpecificHeaders() const

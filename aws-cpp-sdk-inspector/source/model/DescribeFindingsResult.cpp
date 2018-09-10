@@ -37,10 +37,10 @@ DescribeFindingsResult::DescribeFindingsResult(const Aws::AmazonWebServiceResult
 
 DescribeFindingsResult& DescribeFindingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("findings"))
   {
-    Array<JsonValue> findingsJsonList = jsonValue.GetArray("findings");
+    Array<JsonView> findingsJsonList = jsonValue.GetArray("findings");
     for(unsigned findingsIndex = 0; findingsIndex < findingsJsonList.GetLength(); ++findingsIndex)
     {
       m_findings.push_back(findingsJsonList[findingsIndex].AsObject());
@@ -49,7 +49,7 @@ DescribeFindingsResult& DescribeFindingsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("failedItems"))
   {
-    Aws::Map<Aws::String, JsonValue> failedItemsJsonMap = jsonValue.GetObject("failedItems").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> failedItemsJsonMap = jsonValue.GetObject("failedItems").GetAllObjects();
     for(auto& failedItemsItem : failedItemsJsonMap)
     {
       m_failedItems[failedItemsItem.first] = failedItemsItem.second.AsObject();

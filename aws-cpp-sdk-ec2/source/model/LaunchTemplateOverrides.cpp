@@ -37,7 +37,9 @@ LaunchTemplateOverrides::LaunchTemplateOverrides() :
     m_subnetIdHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_weightedCapacity(0.0),
-    m_weightedCapacityHasBeenSet(false)
+    m_weightedCapacityHasBeenSet(false),
+    m_priority(0.0),
+    m_priorityHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ LaunchTemplateOverrides::LaunchTemplateOverrides(const XmlNode& xmlNode) :
     m_subnetIdHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_weightedCapacity(0.0),
-    m_weightedCapacityHasBeenSet(false)
+    m_weightedCapacityHasBeenSet(false),
+    m_priority(0.0),
+    m_priorityHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -89,6 +93,12 @@ LaunchTemplateOverrides& LaunchTemplateOverrides::operator =(const XmlNode& xmlN
       m_weightedCapacity = StringUtils::ConvertToDouble(StringUtils::Trim(weightedCapacityNode.GetText().c_str()).c_str());
       m_weightedCapacityHasBeenSet = true;
     }
+    XmlNode priorityNode = resultNode.FirstChild("priority");
+    if(!priorityNode.IsNull())
+    {
+      m_priority = StringUtils::ConvertToDouble(StringUtils::Trim(priorityNode.GetText().c_str()).c_str());
+      m_priorityHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -121,6 +131,11 @@ void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* 
         oStream << location << index << locationValue << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity) << "&";
   }
 
+  if(m_priorityHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".Priority=" << StringUtils::URLEncode(m_priority) << "&";
+  }
+
 }
 
 void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -144,6 +159,10 @@ void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_weightedCapacityHasBeenSet)
   {
         oStream << location << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity) << "&";
+  }
+  if(m_priorityHasBeenSet)
+  {
+        oStream << location << ".Priority=" << StringUtils::URLEncode(m_priority) << "&";
   }
 }
 

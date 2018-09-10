@@ -40,7 +40,7 @@ OptionStatus::OptionStatus() :
 {
 }
 
-OptionStatus::OptionStatus(const JsonValue& jsonValue) : 
+OptionStatus::OptionStatus(JsonView jsonValue) : 
     m_creationDateHasBeenSet(false),
     m_updateDateHasBeenSet(false),
     m_updateVersion(0),
@@ -53,7 +53,7 @@ OptionStatus::OptionStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-OptionStatus& OptionStatus::operator =(const JsonValue& jsonValue)
+OptionStatus& OptionStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CreationDate"))
   {

@@ -36,7 +36,7 @@ ShutdownEventConfiguration::ShutdownEventConfiguration() :
 {
 }
 
-ShutdownEventConfiguration::ShutdownEventConfiguration(const JsonValue& jsonValue) : 
+ShutdownEventConfiguration::ShutdownEventConfiguration(JsonView jsonValue) : 
     m_executionTimeout(0),
     m_executionTimeoutHasBeenSet(false),
     m_delayUntilElbConnectionsDrained(false),
@@ -45,7 +45,7 @@ ShutdownEventConfiguration::ShutdownEventConfiguration(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-ShutdownEventConfiguration& ShutdownEventConfiguration::operator =(const JsonValue& jsonValue)
+ShutdownEventConfiguration& ShutdownEventConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ExecutionTimeout"))
   {

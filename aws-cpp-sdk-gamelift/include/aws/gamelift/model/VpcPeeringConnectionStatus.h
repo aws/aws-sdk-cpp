@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -35,8 +36,8 @@ namespace Model
   /**
    * <p>Represents status information for a VPC peering connection. Status is
    * associated with a <a>VpcPeeringConnection</a> object. Status codes and messages
-   * are provided from EC2 (<a
-   * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">).</a>
+   * are provided from EC2 (see <a
+   * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>).
    * Connection status information is also communicated as a fleet
    * <a>Event</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/VpcPeeringConnectionStatus">AWS
@@ -46,8 +47,8 @@ namespace Model
   {
   public:
     VpcPeeringConnectionStatus();
-    VpcPeeringConnectionStatus(const Aws::Utils::Json::JsonValue& jsonValue);
-    VpcPeeringConnectionStatus& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    VpcPeeringConnectionStatus(Aws::Utils::Json::JsonView jsonValue);
+    VpcPeeringConnectionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

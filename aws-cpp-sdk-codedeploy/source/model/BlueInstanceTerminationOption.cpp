@@ -36,7 +36,7 @@ BlueInstanceTerminationOption::BlueInstanceTerminationOption() :
 {
 }
 
-BlueInstanceTerminationOption::BlueInstanceTerminationOption(const JsonValue& jsonValue) : 
+BlueInstanceTerminationOption::BlueInstanceTerminationOption(JsonView jsonValue) : 
     m_action(InstanceAction::NOT_SET),
     m_actionHasBeenSet(false),
     m_terminationWaitTimeInMinutes(0),
@@ -45,7 +45,7 @@ BlueInstanceTerminationOption::BlueInstanceTerminationOption(const JsonValue& js
   *this = jsonValue;
 }
 
-BlueInstanceTerminationOption& BlueInstanceTerminationOption::operator =(const JsonValue& jsonValue)
+BlueInstanceTerminationOption& BlueInstanceTerminationOption::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("action"))
   {

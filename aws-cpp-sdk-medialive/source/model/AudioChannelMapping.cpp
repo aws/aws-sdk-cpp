@@ -35,7 +35,7 @@ AudioChannelMapping::AudioChannelMapping() :
 {
 }
 
-AudioChannelMapping::AudioChannelMapping(const JsonValue& jsonValue) : 
+AudioChannelMapping::AudioChannelMapping(JsonView jsonValue) : 
     m_inputChannelLevelsHasBeenSet(false),
     m_outputChannel(0),
     m_outputChannelHasBeenSet(false)
@@ -43,11 +43,11 @@ AudioChannelMapping::AudioChannelMapping(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AudioChannelMapping& AudioChannelMapping::operator =(const JsonValue& jsonValue)
+AudioChannelMapping& AudioChannelMapping::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("inputChannelLevels"))
   {
-    Array<JsonValue> inputChannelLevelsJsonList = jsonValue.GetArray("inputChannelLevels");
+    Array<JsonView> inputChannelLevelsJsonList = jsonValue.GetArray("inputChannelLevels");
     for(unsigned inputChannelLevelsIndex = 0; inputChannelLevelsIndex < inputChannelLevelsJsonList.GetLength(); ++inputChannelLevelsIndex)
     {
       m_inputChannelLevels.push_back(inputChannelLevelsJsonList[inputChannelLevelsIndex].AsObject());

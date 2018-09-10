@@ -354,11 +354,12 @@ TEST_F(QueueOperationTest, TestPermissions)
     Aws::String policyString = queueAttributesOutcome.GetResult().GetAttributes().find(QueueAttributeName::Policy)->second;
     EXPECT_TRUE(policyString.length() > 0);
     JsonValue policy(policyString);
-    EXPECT_EQ(addPermissionRequest.GetLabel(), policy.GetArray("Statement")[0].GetString("Sid"));
+    auto policyView = policy.View();
+    EXPECT_EQ(addPermissionRequest.GetLabel(), policyView.GetArray("Statement")[0].GetString("Sid"));
     Aws::StringStream expectedValue;
     expectedValue << "arn:aws:iam::" << m_accountId << ":root";
-    EXPECT_EQ(expectedValue.str(), policy.GetArray("Statement")[0].GetObject("Principal").GetString("AWS"));
-    EXPECT_EQ("SQS:ReceiveMessage", policy.GetArray("Statement")[0].GetString("Action"));
+    EXPECT_EQ(expectedValue.str(), policyView.GetArray("Statement")[0].GetObject("Principal").GetString("AWS"));
+    EXPECT_EQ("SQS:ReceiveMessage", policyView.GetArray("Statement")[0].GetString("Action"));
 
     RemovePermissionRequest removePermissionRequest;
     removePermissionRequest.WithLabel("Test").WithQueueUrl(queueUrl);

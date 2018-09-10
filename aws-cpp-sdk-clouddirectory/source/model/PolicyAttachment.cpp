@@ -35,7 +35,7 @@ PolicyAttachment::PolicyAttachment() :
 {
 }
 
-PolicyAttachment::PolicyAttachment(const JsonValue& jsonValue) : 
+PolicyAttachment::PolicyAttachment(JsonView jsonValue) : 
     m_policyIdHasBeenSet(false),
     m_objectIdentifierHasBeenSet(false),
     m_policyTypeHasBeenSet(false)
@@ -43,7 +43,7 @@ PolicyAttachment::PolicyAttachment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PolicyAttachment& PolicyAttachment::operator =(const JsonValue& jsonValue)
+PolicyAttachment& PolicyAttachment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PolicyId"))
   {

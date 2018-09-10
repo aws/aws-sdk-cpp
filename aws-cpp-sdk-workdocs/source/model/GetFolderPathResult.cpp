@@ -37,7 +37,7 @@ GetFolderPathResult::GetFolderPathResult(const Aws::AmazonWebServiceResult<JsonV
 
 GetFolderPathResult& GetFolderPathResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetObject("Path");

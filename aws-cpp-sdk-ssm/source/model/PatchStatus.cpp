@@ -37,7 +37,7 @@ PatchStatus::PatchStatus() :
 {
 }
 
-PatchStatus::PatchStatus(const JsonValue& jsonValue) : 
+PatchStatus::PatchStatus(JsonView jsonValue) : 
     m_deploymentStatus(PatchDeploymentStatus::NOT_SET),
     m_deploymentStatusHasBeenSet(false),
     m_complianceLevel(PatchComplianceLevel::NOT_SET),
@@ -47,7 +47,7 @@ PatchStatus::PatchStatus(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PatchStatus& PatchStatus::operator =(const JsonValue& jsonValue)
+PatchStatus& PatchStatus::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeploymentStatus"))
   {

@@ -54,6 +54,9 @@ option(ANDROID_BUILD_CURL "When building for Android, should curl be built as we
 option(ANDROID_BUILD_OPENSSL "When building for Android, should Openssl be built as well" ON)
 option(ANDROID_BUILD_ZLIB "When building for Android, should Zlib be built as well" ON)
 option(FORCE_CURL "Forces usage of the Curl client rather than the default OS-specific api" OFF)
+option(ENABLE_ADDRESS_SANITIZER "Flags to enable/disable Address Sanitizer for gcc or clang" OFF)
+option(BYPASS_DEFAULT_PROXY "Bypass the machine's default proxy settings when using IXmlHttpRequest2" ON)
+
 
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
 set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
@@ -121,6 +124,9 @@ set(CMAKE_CONFIGURATION_TYPES
         )
 
 include(compiler_settings)
+# Instead of calling functions/macros inside included cmake scripts, we should call them in our main CMakeList.txt
+set_msvc_flags()
+set_msvc_warnings()
 
 include(sdks)
 
@@ -133,7 +139,7 @@ if(ENABLE_BCRYPT_ENCRYPTION)
     set(CRYPTO_LIBS_ABSTRACT_NAME Bcrypt)
 elseif(ENABLE_OPENSSL_ENCRYPTION)
     set(CRYPTO_LIBS ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARIES})
-    set(CRYPTO_LIBS_ABSTRACT_NAME ssl z)
+    set(CRYPTO_LIBS_ABSTRACT_NAME crypto ssl z)
 endif()
 
 if(ENABLE_CURL_CLIENT)
@@ -143,6 +149,10 @@ elseif(ENABLE_WINDOWS_CLIENT)
     if(USE_IXML_HTTP_REQUEST_2)
         set(CLIENT_LIBS msxml6 runtimeobject)
         set(CLIENT_LIBS_ABSTRACT_NAME msxml6 runtimeobject)
+        if(BYPASS_DEFAULT_PROXY)
+            list(APPEND CLIENT_LIBS winhttp)
+            list(APPEND CLIENT_LIBS_ABSTRACT_NAME winhttp)
+        endif()
     else()
         set(CLIENT_LIBS Wininet winhttp)
         set(CLIENT_LIBS_ABSTRACT_NAME Wininet winhttp)
@@ -168,10 +178,18 @@ else()
     set(ARCHIVE_DIRECTORY "${LIBRARY_DIRECTORY}")
 endif()
 
+if (ENABLE_ADDRESS_SANITIZER)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -g -fno-omit-frame-pointer")
+endif()
+
 add_sdks()
 
 # for user friendly cmake usage
 include(setup_cmake_find_module)
 
-# for generating make unstaill target
-ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${AWS_NATIVE_SDK_ROOT}/cmake/make_uninstall.cmake") 
+# for generating make uninstall target
+if (NOT TARGET uninstall)
+    ADD_CUSTOM_TARGET(uninstall "${CMAKE_COMMAND}" -P "${AWS_NATIVE_SDK_ROOT}/cmake/make_uninstall.cmake")
+else()
+    ADD_CUSTOM_TARGET(uninstall-awssdk "${CMAKE_COMMAND}" -P "${AWS_NATIVE_SDK_ROOT}/cmake/make_uninstall.cmake")
+endif()

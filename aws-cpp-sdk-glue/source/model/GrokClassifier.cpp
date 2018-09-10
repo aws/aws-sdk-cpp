@@ -40,7 +40,7 @@ GrokClassifier::GrokClassifier() :
 {
 }
 
-GrokClassifier::GrokClassifier(const JsonValue& jsonValue) : 
+GrokClassifier::GrokClassifier(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_classificationHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -53,7 +53,7 @@ GrokClassifier::GrokClassifier(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-GrokClassifier& GrokClassifier::operator =(const JsonValue& jsonValue)
+GrokClassifier& GrokClassifier::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {

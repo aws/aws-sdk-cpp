@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lightsail
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     PortInfo();
-    PortInfo(const Aws::Utils::Json::JsonValue& jsonValue);
-    PortInfo& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PortInfo(Aws::Utils::Json::JsonView jsonValue);
+    PortInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

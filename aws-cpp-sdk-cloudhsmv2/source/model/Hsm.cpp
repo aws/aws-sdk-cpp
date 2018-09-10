@@ -41,7 +41,7 @@ Hsm::Hsm() :
 {
 }
 
-Hsm::Hsm(const JsonValue& jsonValue) : 
+Hsm::Hsm(JsonView jsonValue) : 
     m_availabilityZoneHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
@@ -55,7 +55,7 @@ Hsm::Hsm(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Hsm& Hsm::operator =(const JsonValue& jsonValue)
+Hsm& Hsm::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AvailabilityZone"))
   {

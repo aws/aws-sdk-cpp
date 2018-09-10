@@ -37,10 +37,10 @@ DescribeImageBuildersResult::DescribeImageBuildersResult(const Aws::AmazonWebSer
 
 DescribeImageBuildersResult& DescribeImageBuildersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ImageBuilders"))
   {
-    Array<JsonValue> imageBuildersJsonList = jsonValue.GetArray("ImageBuilders");
+    Array<JsonView> imageBuildersJsonList = jsonValue.GetArray("ImageBuilders");
     for(unsigned imageBuildersIndex = 0; imageBuildersIndex < imageBuildersJsonList.GetLength(); ++imageBuildersIndex)
     {
       m_imageBuilders.push_back(imageBuildersJsonList[imageBuildersIndex].AsObject());

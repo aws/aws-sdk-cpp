@@ -40,7 +40,7 @@ ProductionVariant::ProductionVariant() :
 {
 }
 
-ProductionVariant::ProductionVariant(const JsonValue& jsonValue) : 
+ProductionVariant::ProductionVariant(JsonView jsonValue) : 
     m_variantNameHasBeenSet(false),
     m_modelNameHasBeenSet(false),
     m_initialInstanceCount(0),
@@ -53,7 +53,7 @@ ProductionVariant::ProductionVariant(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProductionVariant& ProductionVariant::operator =(const JsonValue& jsonValue)
+ProductionVariant& ProductionVariant::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("VariantName"))
   {

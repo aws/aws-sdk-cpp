@@ -35,7 +35,7 @@ ProjectBadge::ProjectBadge() :
 {
 }
 
-ProjectBadge::ProjectBadge(const JsonValue& jsonValue) : 
+ProjectBadge::ProjectBadge(JsonView jsonValue) : 
     m_badgeEnabled(false),
     m_badgeEnabledHasBeenSet(false),
     m_badgeRequestUrlHasBeenSet(false)
@@ -43,7 +43,7 @@ ProjectBadge::ProjectBadge(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProjectBadge& ProjectBadge::operator =(const JsonValue& jsonValue)
+ProjectBadge& ProjectBadge::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("badgeEnabled"))
   {

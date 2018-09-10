@@ -456,7 +456,7 @@ namespace Model
 
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are
@@ -471,7 +471,7 @@ namespace Model
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are
@@ -486,7 +486,7 @@ namespace Model
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are
@@ -501,7 +501,7 @@ namespace Model
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are
@@ -516,7 +516,7 @@ namespace Model
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are
@@ -531,7 +531,7 @@ namespace Model
     inline CreateGrantRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are
@@ -546,7 +546,7 @@ namespace Model
     inline CreateGrantRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A friendly name for identifying the grant. Use this value to prevent
+     * <p>A friendly name for identifying the grant. Use this value to prevent the
      * unintended creation of duplicate grants when retrying this request.</p> <p>When
      * this value is absent, all <code>CreateGrant</code> requests result in a new
      * grant with a unique <code>GrantId</code> even if all the supplied parameters are

@@ -41,7 +41,7 @@ StreamInfo::StreamInfo() :
 {
 }
 
-StreamInfo::StreamInfo(const JsonValue& jsonValue) : 
+StreamInfo::StreamInfo(JsonView jsonValue) : 
     m_streamIdHasBeenSet(false),
     m_streamArnHasBeenSet(false),
     m_streamVersion(0),
@@ -55,7 +55,7 @@ StreamInfo::StreamInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-StreamInfo& StreamInfo::operator =(const JsonValue& jsonValue)
+StreamInfo& StreamInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("streamId"))
   {
@@ -87,7 +87,7 @@ StreamInfo& StreamInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("files"))
   {
-    Array<JsonValue> filesJsonList = jsonValue.GetArray("files");
+    Array<JsonView> filesJsonList = jsonValue.GetArray("files");
     for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
     {
       m_files.push_back(filesJsonList[filesIndex].AsObject());

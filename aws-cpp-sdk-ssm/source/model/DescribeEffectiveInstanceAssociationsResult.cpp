@@ -37,10 +37,10 @@ DescribeEffectiveInstanceAssociationsResult::DescribeEffectiveInstanceAssociatio
 
 DescribeEffectiveInstanceAssociationsResult& DescribeEffectiveInstanceAssociationsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Associations"))
   {
-    Array<JsonValue> associationsJsonList = jsonValue.GetArray("Associations");
+    Array<JsonView> associationsJsonList = jsonValue.GetArray("Associations");
     for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
     {
       m_associations.push_back(associationsJsonList[associationsIndex].AsObject());

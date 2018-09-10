@@ -36,7 +36,7 @@ namespace Aws
                 {
                     jsonMap.WithString(mapItem.first, mapItem.second);
                 }
-                return jsonMap.WriteCompact();
+                return jsonMap.View().WriteCompact();
             }
 
             const Aws::Map<Aws::String, Aws::String> DataHandler::DeserializeMap(const Aws::String& jsonString)
@@ -45,7 +45,7 @@ namespace Aws
                 JsonValue jsonObject(jsonString);
                 if (jsonObject.WasParseSuccessful())
                 {
-                    Aws::Map<Aws::String, JsonValue> jsonMap = jsonObject.GetAllObjects();
+                    Aws::Map<Aws::String, JsonView> jsonMap = jsonObject.View().GetAllObjects();
                     for (auto& mapItem : jsonMap)
                     {
                         materialsDescriptionMap[mapItem.first] = mapItem.second.AsString();

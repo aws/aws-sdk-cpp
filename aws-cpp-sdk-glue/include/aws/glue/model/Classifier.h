@@ -17,6 +17,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/GrokClassifier.h>
 #include <aws/glue/model/XMLClassifier.h>
+#include <aws/glue/model/JsonClassifier.h>
 #include <utility>
 
 namespace Aws
@@ -26,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Glue
@@ -34,14 +36,15 @@ namespace Model
 {
 
   /**
-   * <p>Classifiers are written in Python and triggered during a crawl task. You can
-   * write your own classifiers to best categorize your data sources and specify the
-   * appropriate schemas to use for them. A classifier checks whether a given file is
-   * in a format it can handle, and if it is, the classifier creates a schema in the
-   * form of a <code>StructType</code> object that matches that data format.</p> <p>A
-   * classifier can be either a <code>grok</code> classifier or an XML classifier,
-   * specified in one or the other field of the <code>Classifier</code>
-   * object.</p><p><h3>See Also:</h3>   <a
+   * <p>Classifiers are triggered during a crawl task. A classifier checks whether a
+   * given file is in a format it can handle, and if it is, the classifier creates a
+   * schema in the form of a <code>StructType</code> object that matches that data
+   * format.</p> <p>You can use the standard classifiers that AWS Glue supplies, or
+   * you can write your own classifiers to best categorize your data sources and
+   * specify the appropriate schemas to use for them. A classifier can be a
+   * <code>grok</code> classifier, an <code>XML</code> classifier, or a
+   * <code>JSON</code> classifier, as specified in one of the fields in the
+   * <code>Classifier</code> object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Classifier">AWS API
    * Reference</a></p>
    */
@@ -49,8 +52,8 @@ namespace Model
   {
   public:
     Classifier();
-    Classifier(const Aws::Utils::Json::JsonValue& jsonValue);
-    Classifier& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Classifier(Aws::Utils::Json::JsonView jsonValue);
+    Classifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -105,6 +108,32 @@ namespace Model
      */
     inline Classifier& WithXMLClassifier(XMLClassifier&& value) { SetXMLClassifier(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A <code>JsonClassifier</code> object.</p>
+     */
+    inline const JsonClassifier& GetJsonClassifier() const{ return m_jsonClassifier; }
+
+    /**
+     * <p>A <code>JsonClassifier</code> object.</p>
+     */
+    inline void SetJsonClassifier(const JsonClassifier& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = value; }
+
+    /**
+     * <p>A <code>JsonClassifier</code> object.</p>
+     */
+    inline void SetJsonClassifier(JsonClassifier&& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = std::move(value); }
+
+    /**
+     * <p>A <code>JsonClassifier</code> object.</p>
+     */
+    inline Classifier& WithJsonClassifier(const JsonClassifier& value) { SetJsonClassifier(value); return *this;}
+
+    /**
+     * <p>A <code>JsonClassifier</code> object.</p>
+     */
+    inline Classifier& WithJsonClassifier(JsonClassifier&& value) { SetJsonClassifier(std::move(value)); return *this;}
+
   private:
 
     GrokClassifier m_grokClassifier;
@@ -112,6 +141,9 @@ namespace Model
 
     XMLClassifier m_xMLClassifier;
     bool m_xMLClassifierHasBeenSet;
+
+    JsonClassifier m_jsonClassifier;
+    bool m_jsonClassifierHasBeenSet;
   };
 
 } // namespace Model

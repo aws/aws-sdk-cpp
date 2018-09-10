@@ -290,57 +290,57 @@ namespace Model
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassifiers() const{ return m_classifiers; }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline void SetClassifiers(const Aws::Vector<Aws::String>& value) { m_classifiersHasBeenSet = true; m_classifiers = value; }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline void SetClassifiers(Aws::Vector<Aws::String>&& value) { m_classifiersHasBeenSet = true; m_classifiers = std::move(value); }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline CreateCrawlerRequest& WithClassifiers(const Aws::Vector<Aws::String>& value) { SetClassifiers(value); return *this;}
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline CreateCrawlerRequest& WithClassifiers(Aws::Vector<Aws::String>&& value) { SetClassifiers(std::move(value)); return *this;}
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline CreateCrawlerRequest& AddClassifiers(const Aws::String& value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(value); return *this; }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline CreateCrawlerRequest& AddClassifiers(Aws::String&& value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of custom classifiers that the user has registered. By default, all
-     * AWS classifiers are included in a crawl, but these custom classifiers always
-     * override the default classifiers for a given classification.</p>
+     * built-in classifiers are included in a crawl, but these custom classifiers
+     * always override the default classifiers for a given classification.</p>
      */
     inline CreateCrawlerRequest& AddClassifiers(const char* value) { m_classifiersHasBeenSet = true; m_classifiers.push_back(value); return *this; }
 
@@ -491,6 +491,49 @@ namespace Model
      */
     inline CreateCrawlerRequest& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline const Aws::String& GetCrawlerSecurityConfiguration() const{ return m_crawlerSecurityConfiguration; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline void SetCrawlerSecurityConfiguration(const Aws::String& value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration = value; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline void SetCrawlerSecurityConfiguration(Aws::String&& value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration = std::move(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline void SetCrawlerSecurityConfiguration(const char* value) { m_crawlerSecurityConfigurationHasBeenSet = true; m_crawlerSecurityConfiguration.assign(value); }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline CreateCrawlerRequest& WithCrawlerSecurityConfiguration(const Aws::String& value) { SetCrawlerSecurityConfiguration(value); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline CreateCrawlerRequest& WithCrawlerSecurityConfiguration(Aws::String&& value) { SetCrawlerSecurityConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline CreateCrawlerRequest& WithCrawlerSecurityConfiguration(const char* value) { SetCrawlerSecurityConfiguration(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -522,6 +565,9 @@ namespace Model
 
     Aws::String m_configuration;
     bool m_configurationHasBeenSet;
+
+    Aws::String m_crawlerSecurityConfiguration;
+    bool m_crawlerSecurityConfigurationHasBeenSet;
   };
 
 } // namespace Model

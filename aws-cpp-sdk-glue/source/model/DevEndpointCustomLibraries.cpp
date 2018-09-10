@@ -34,14 +34,14 @@ DevEndpointCustomLibraries::DevEndpointCustomLibraries() :
 {
 }
 
-DevEndpointCustomLibraries::DevEndpointCustomLibraries(const JsonValue& jsonValue) : 
+DevEndpointCustomLibraries::DevEndpointCustomLibraries(JsonView jsonValue) : 
     m_extraPythonLibsS3PathHasBeenSet(false),
     m_extraJarsS3PathHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DevEndpointCustomLibraries& DevEndpointCustomLibraries::operator =(const JsonValue& jsonValue)
+DevEndpointCustomLibraries& DevEndpointCustomLibraries::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ExtraPythonLibsS3Path"))
   {

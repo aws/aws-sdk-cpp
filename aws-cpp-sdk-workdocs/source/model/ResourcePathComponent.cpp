@@ -34,14 +34,14 @@ ResourcePathComponent::ResourcePathComponent() :
 {
 }
 
-ResourcePathComponent::ResourcePathComponent(const JsonValue& jsonValue) : 
+ResourcePathComponent::ResourcePathComponent(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-ResourcePathComponent& ResourcePathComponent::operator =(const JsonValue& jsonValue)
+ResourcePathComponent& ResourcePathComponent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

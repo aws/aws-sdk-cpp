@@ -19,10 +19,15 @@
 #include <aws/s3/model/BucketCannedACL.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3/model/CreateBucketConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace S3
 {
 namespace Model
@@ -43,31 +48,33 @@ namespace Model
 
     Aws::String SerializePayload() const override;
 
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
     /**
-     * The canned ACL to apply to the bucket.
+     * <p>The canned ACL to apply to the bucket.</p>
      */
     inline const BucketCannedACL& GetACL() const{ return m_aCL; }
 
     /**
-     * The canned ACL to apply to the bucket.
+     * <p>The canned ACL to apply to the bucket.</p>
      */
     inline void SetACL(const BucketCannedACL& value) { m_aCLHasBeenSet = true; m_aCL = value; }
 
     /**
-     * The canned ACL to apply to the bucket.
+     * <p>The canned ACL to apply to the bucket.</p>
      */
     inline void SetACL(BucketCannedACL&& value) { m_aCLHasBeenSet = true; m_aCL = std::move(value); }
 
     /**
-     * The canned ACL to apply to the bucket.
+     * <p>The canned ACL to apply to the bucket.</p>
      */
     inline CreateBucketRequest& WithACL(const BucketCannedACL& value) { SetACL(value); return *this;}
 
     /**
-     * The canned ACL to apply to the bucket.
+     * <p>The canned ACL to apply to the bucket.</p>
      */
     inline CreateBucketRequest& WithACL(BucketCannedACL&& value) { SetACL(std::move(value)); return *this;}
 
@@ -111,190 +118,227 @@ namespace Model
 
 
     /**
-     * Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.
+     * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
+     * bucket.</p>
      */
     inline const Aws::String& GetGrantFullControl() const{ return m_grantFullControl; }
 
     /**
-     * Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.
+     * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
+     * bucket.</p>
      */
     inline void SetGrantFullControl(const Aws::String& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = value; }
 
     /**
-     * Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.
+     * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
+     * bucket.</p>
      */
     inline void SetGrantFullControl(Aws::String&& value) { m_grantFullControlHasBeenSet = true; m_grantFullControl = std::move(value); }
 
     /**
-     * Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.
+     * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
+     * bucket.</p>
      */
     inline void SetGrantFullControl(const char* value) { m_grantFullControlHasBeenSet = true; m_grantFullControl.assign(value); }
 
     /**
-     * Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.
+     * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
+     * bucket.</p>
      */
     inline CreateBucketRequest& WithGrantFullControl(const Aws::String& value) { SetGrantFullControl(value); return *this;}
 
     /**
-     * Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.
+     * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
+     * bucket.</p>
      */
     inline CreateBucketRequest& WithGrantFullControl(Aws::String&& value) { SetGrantFullControl(std::move(value)); return *this;}
 
     /**
-     * Allows grantee the read, write, read ACP, and write ACP permissions on the
-     * bucket.
+     * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
+     * bucket.</p>
      */
     inline CreateBucketRequest& WithGrantFullControl(const char* value) { SetGrantFullControl(value); return *this;}
 
 
     /**
-     * Allows grantee to list the objects in the bucket.
+     * <p>Allows grantee to list the objects in the bucket.</p>
      */
     inline const Aws::String& GetGrantRead() const{ return m_grantRead; }
 
     /**
-     * Allows grantee to list the objects in the bucket.
+     * <p>Allows grantee to list the objects in the bucket.</p>
      */
     inline void SetGrantRead(const Aws::String& value) { m_grantReadHasBeenSet = true; m_grantRead = value; }
 
     /**
-     * Allows grantee to list the objects in the bucket.
+     * <p>Allows grantee to list the objects in the bucket.</p>
      */
     inline void SetGrantRead(Aws::String&& value) { m_grantReadHasBeenSet = true; m_grantRead = std::move(value); }
 
     /**
-     * Allows grantee to list the objects in the bucket.
+     * <p>Allows grantee to list the objects in the bucket.</p>
      */
     inline void SetGrantRead(const char* value) { m_grantReadHasBeenSet = true; m_grantRead.assign(value); }
 
     /**
-     * Allows grantee to list the objects in the bucket.
+     * <p>Allows grantee to list the objects in the bucket.</p>
      */
     inline CreateBucketRequest& WithGrantRead(const Aws::String& value) { SetGrantRead(value); return *this;}
 
     /**
-     * Allows grantee to list the objects in the bucket.
+     * <p>Allows grantee to list the objects in the bucket.</p>
      */
     inline CreateBucketRequest& WithGrantRead(Aws::String&& value) { SetGrantRead(std::move(value)); return *this;}
 
     /**
-     * Allows grantee to list the objects in the bucket.
+     * <p>Allows grantee to list the objects in the bucket.</p>
      */
     inline CreateBucketRequest& WithGrantRead(const char* value) { SetGrantRead(value); return *this;}
 
 
     /**
-     * Allows grantee to read the bucket ACL.
+     * <p>Allows grantee to read the bucket ACL.</p>
      */
     inline const Aws::String& GetGrantReadACP() const{ return m_grantReadACP; }
 
     /**
-     * Allows grantee to read the bucket ACL.
+     * <p>Allows grantee to read the bucket ACL.</p>
      */
     inline void SetGrantReadACP(const Aws::String& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = value; }
 
     /**
-     * Allows grantee to read the bucket ACL.
+     * <p>Allows grantee to read the bucket ACL.</p>
      */
     inline void SetGrantReadACP(Aws::String&& value) { m_grantReadACPHasBeenSet = true; m_grantReadACP = std::move(value); }
 
     /**
-     * Allows grantee to read the bucket ACL.
+     * <p>Allows grantee to read the bucket ACL.</p>
      */
     inline void SetGrantReadACP(const char* value) { m_grantReadACPHasBeenSet = true; m_grantReadACP.assign(value); }
 
     /**
-     * Allows grantee to read the bucket ACL.
+     * <p>Allows grantee to read the bucket ACL.</p>
      */
     inline CreateBucketRequest& WithGrantReadACP(const Aws::String& value) { SetGrantReadACP(value); return *this;}
 
     /**
-     * Allows grantee to read the bucket ACL.
+     * <p>Allows grantee to read the bucket ACL.</p>
      */
     inline CreateBucketRequest& WithGrantReadACP(Aws::String&& value) { SetGrantReadACP(std::move(value)); return *this;}
 
     /**
-     * Allows grantee to read the bucket ACL.
+     * <p>Allows grantee to read the bucket ACL.</p>
      */
     inline CreateBucketRequest& WithGrantReadACP(const char* value) { SetGrantReadACP(value); return *this;}
 
 
     /**
-     * Allows grantee to create, overwrite, and delete any object in the bucket.
+     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
      */
     inline const Aws::String& GetGrantWrite() const{ return m_grantWrite; }
 
     /**
-     * Allows grantee to create, overwrite, and delete any object in the bucket.
+     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
      */
     inline void SetGrantWrite(const Aws::String& value) { m_grantWriteHasBeenSet = true; m_grantWrite = value; }
 
     /**
-     * Allows grantee to create, overwrite, and delete any object in the bucket.
+     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
      */
     inline void SetGrantWrite(Aws::String&& value) { m_grantWriteHasBeenSet = true; m_grantWrite = std::move(value); }
 
     /**
-     * Allows grantee to create, overwrite, and delete any object in the bucket.
+     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
      */
     inline void SetGrantWrite(const char* value) { m_grantWriteHasBeenSet = true; m_grantWrite.assign(value); }
 
     /**
-     * Allows grantee to create, overwrite, and delete any object in the bucket.
+     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
      */
     inline CreateBucketRequest& WithGrantWrite(const Aws::String& value) { SetGrantWrite(value); return *this;}
 
     /**
-     * Allows grantee to create, overwrite, and delete any object in the bucket.
+     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
      */
     inline CreateBucketRequest& WithGrantWrite(Aws::String&& value) { SetGrantWrite(std::move(value)); return *this;}
 
     /**
-     * Allows grantee to create, overwrite, and delete any object in the bucket.
+     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
      */
     inline CreateBucketRequest& WithGrantWrite(const char* value) { SetGrantWrite(value); return *this;}
 
 
     /**
-     * Allows grantee to write the ACL for the applicable bucket.
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
      */
     inline const Aws::String& GetGrantWriteACP() const{ return m_grantWriteACP; }
 
     /**
-     * Allows grantee to write the ACL for the applicable bucket.
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
      */
     inline void SetGrantWriteACP(const Aws::String& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = value; }
 
     /**
-     * Allows grantee to write the ACL for the applicable bucket.
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
      */
     inline void SetGrantWriteACP(Aws::String&& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = std::move(value); }
 
     /**
-     * Allows grantee to write the ACL for the applicable bucket.
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
      */
     inline void SetGrantWriteACP(const char* value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP.assign(value); }
 
     /**
-     * Allows grantee to write the ACL for the applicable bucket.
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
      */
     inline CreateBucketRequest& WithGrantWriteACP(const Aws::String& value) { SetGrantWriteACP(value); return *this;}
 
     /**
-     * Allows grantee to write the ACL for the applicable bucket.
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
      */
     inline CreateBucketRequest& WithGrantWriteACP(Aws::String&& value) { SetGrantWriteACP(std::move(value)); return *this;}
 
     /**
-     * Allows grantee to write the ACL for the applicable bucket.
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
      */
     inline CreateBucketRequest& WithGrantWriteACP(const char* value) { SetGrantWriteACP(value); return *this;}
+
+
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
+
+    
+    inline void SetCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = std::move(value); }
+
+    
+    inline CreateBucketRequest& WithCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomizedAccessLogTag(value); return *this;}
+
+    
+    inline CreateBucketRequest& WithCustomizedAccessLogTag(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomizedAccessLogTag(std::move(value)); return *this;}
+
+    
+    inline CreateBucketRequest& AddCustomizedAccessLogTag(const Aws::String& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
+
+    
+    inline CreateBucketRequest& AddCustomizedAccessLogTag(Aws::String&& key, const Aws::String& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline CreateBucketRequest& AddCustomizedAccessLogTag(const Aws::String& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline CreateBucketRequest& AddCustomizedAccessLogTag(Aws::String&& key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline CreateBucketRequest& AddCustomizedAccessLogTag(const char* key, Aws::String&& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, std::move(value)); return *this; }
+
+    
+    inline CreateBucketRequest& AddCustomizedAccessLogTag(Aws::String&& key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(std::move(key), value); return *this; }
+
+    
+    inline CreateBucketRequest& AddCustomizedAccessLogTag(const char* key, const char* value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag.emplace(key, value); return *this; }
 
   private:
 
@@ -321,6 +365,9 @@ namespace Model
 
     Aws::String m_grantWriteACP;
     bool m_grantWriteACPHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
+    bool m_customizedAccessLogTagHasBeenSet;
   };
 
 } // namespace Model

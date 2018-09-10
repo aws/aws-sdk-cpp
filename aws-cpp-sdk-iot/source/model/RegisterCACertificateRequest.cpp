@@ -58,7 +58,7 @@ Aws::String RegisterCACertificateRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 void RegisterCACertificateRequest::AddQueryStringParameters(URI& uri) const

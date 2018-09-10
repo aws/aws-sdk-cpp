@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * Specifies the inventory configuration.
+     * <p>Specifies the inventory configuration.</p>
      */
     inline const InventoryConfiguration& GetInventoryConfiguration() const{ return m_inventoryConfiguration; }
 
     /**
-     * Specifies the inventory configuration.
+     * <p>Specifies the inventory configuration.</p>
      */
     inline void SetInventoryConfiguration(const InventoryConfiguration& value) { m_inventoryConfiguration = value; }
 
     /**
-     * Specifies the inventory configuration.
+     * <p>Specifies the inventory configuration.</p>
      */
     inline void SetInventoryConfiguration(InventoryConfiguration&& value) { m_inventoryConfiguration = std::move(value); }
 
     /**
-     * Specifies the inventory configuration.
+     * <p>Specifies the inventory configuration.</p>
      */
     inline GetBucketInventoryConfigurationResult& WithInventoryConfiguration(const InventoryConfiguration& value) { SetInventoryConfiguration(value); return *this;}
 
     /**
-     * Specifies the inventory configuration.
+     * <p>Specifies the inventory configuration.</p>
      */
     inline GetBucketInventoryConfigurationResult& WithInventoryConfiguration(InventoryConfiguration&& value) { SetInventoryConfiguration(std::move(value)); return *this;}
 

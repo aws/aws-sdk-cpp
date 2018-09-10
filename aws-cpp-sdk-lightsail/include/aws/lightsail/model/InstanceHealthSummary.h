@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lightsail
@@ -44,8 +45,8 @@ namespace Model
   {
   public:
     InstanceHealthSummary();
-    InstanceHealthSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstanceHealthSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstanceHealthSummary(Aws::Utils::Json::JsonView jsonValue);
+    InstanceHealthSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -119,27 +120,202 @@ namespace Model
 
 
     /**
-     * <p>More information about the instance health. Valid values are below.</p>
+     * <p>More information about the instance health. If the
+     * <code>instanceHealth</code> is <code>healthy</code>, then an
+     * <code>instanceHealthReason</code> value is not provided.</p> <p>If <b>
+     * <code>instanceHealth</code> </b> is <code>initial</code>, the <b>
+     * <code>instanceHealthReason</code> </b> value can be one of the following:</p>
+     * <ul> <li> <p> <b> <code>Lb.RegistrationInProgress</code> </b> - The target
+     * instance is in the process of being registered with the load balancer.</p> </li>
+     * <li> <p> <b> <code>Lb.InitialHealthChecking</code> </b> - The Lightsail load
+     * balancer is still sending the target instance the minimum number of health
+     * checks required to determine its health status.</p> </li> </ul> <p>If <b>
+     * <code>instanceHealth</code> </b> is <code>unhealthy</code>, the <b>
+     * <code>instanceHealthReason</code> </b> value can be one of the following:</p>
+     * <ul> <li> <p> <b> <code>Instance.ResponseCodeMismatch</code> </b> - The health
+     * checks did not return an expected HTTP code.</p> </li> <li> <p> <b>
+     * <code>Instance.Timeout</code> </b> - The health check requests timed out.</p>
+     * </li> <li> <p> <b> <code>Instance.FailedHealthChecks</code> </b> - The health
+     * checks failed because the connection to the target instance timed out, the
+     * target instance response was malformed, or the target instance failed the health
+     * check for an unknown reason.</p> </li> <li> <p> <b>
+     * <code>Lb.InternalError</code> </b> - The health checks failed due to an internal
+     * error.</p> </li> </ul> <p>If <b> <code>instanceHealth</code> </b> is
+     * <code>unused</code>, the <b> <code>instanceHealthReason</code> </b> value can be
+     * one of the following:</p> <ul> <li> <p> <b> <code>Instance.NotRegistered</code>
+     * </b> - The target instance is not registered with the target group.</p> </li>
+     * <li> <p> <b> <code>Instance.NotInUse</code> </b> - The target group is not used
+     * by any load balancer, or the target instance is in an Availability Zone that is
+     * not enabled for its load balancer.</p> </li> <li> <p> <b>
+     * <code>Instance.IpUnusable</code> </b> - The target IP address is reserved for
+     * use by a Lightsail load balancer.</p> </li> <li> <p> <b>
+     * <code>Instance.InvalidState</code> </b> - The target is in the stopped or
+     * terminated state.</p> </li> </ul> <p>If <b> <code>instanceHealth</code> </b> is
+     * <code>draining</code>, the <b> <code>instanceHealthReason</code> </b> value can
+     * be one of the following:</p> <ul> <li> <p> <b>
+     * <code>Instance.DeregistrationInProgress</code> </b> - The target instance is in
+     * the process of being deregistered and the deregistration delay period has not
+     * expired.</p> </li> </ul>
      */
     inline const InstanceHealthReason& GetInstanceHealthReason() const{ return m_instanceHealthReason; }
 
     /**
-     * <p>More information about the instance health. Valid values are below.</p>
+     * <p>More information about the instance health. If the
+     * <code>instanceHealth</code> is <code>healthy</code>, then an
+     * <code>instanceHealthReason</code> value is not provided.</p> <p>If <b>
+     * <code>instanceHealth</code> </b> is <code>initial</code>, the <b>
+     * <code>instanceHealthReason</code> </b> value can be one of the following:</p>
+     * <ul> <li> <p> <b> <code>Lb.RegistrationInProgress</code> </b> - The target
+     * instance is in the process of being registered with the load balancer.</p> </li>
+     * <li> <p> <b> <code>Lb.InitialHealthChecking</code> </b> - The Lightsail load
+     * balancer is still sending the target instance the minimum number of health
+     * checks required to determine its health status.</p> </li> </ul> <p>If <b>
+     * <code>instanceHealth</code> </b> is <code>unhealthy</code>, the <b>
+     * <code>instanceHealthReason</code> </b> value can be one of the following:</p>
+     * <ul> <li> <p> <b> <code>Instance.ResponseCodeMismatch</code> </b> - The health
+     * checks did not return an expected HTTP code.</p> </li> <li> <p> <b>
+     * <code>Instance.Timeout</code> </b> - The health check requests timed out.</p>
+     * </li> <li> <p> <b> <code>Instance.FailedHealthChecks</code> </b> - The health
+     * checks failed because the connection to the target instance timed out, the
+     * target instance response was malformed, or the target instance failed the health
+     * check for an unknown reason.</p> </li> <li> <p> <b>
+     * <code>Lb.InternalError</code> </b> - The health checks failed due to an internal
+     * error.</p> </li> </ul> <p>If <b> <code>instanceHealth</code> </b> is
+     * <code>unused</code>, the <b> <code>instanceHealthReason</code> </b> value can be
+     * one of the following:</p> <ul> <li> <p> <b> <code>Instance.NotRegistered</code>
+     * </b> - The target instance is not registered with the target group.</p> </li>
+     * <li> <p> <b> <code>Instance.NotInUse</code> </b> - The target group is not used
+     * by any load balancer, or the target instance is in an Availability Zone that is
+     * not enabled for its load balancer.</p> </li> <li> <p> <b>
+     * <code>Instance.IpUnusable</code> </b> - The target IP address is reserved for
+     * use by a Lightsail load balancer.</p> </li> <li> <p> <b>
+     * <code>Instance.InvalidState</code> </b> - The target is in the stopped or
+     * terminated state.</p> </li> </ul> <p>If <b> <code>instanceHealth</code> </b> is
+     * <code>draining</code>, the <b> <code>instanceHealthReason</code> </b> value can
+     * be one of the following:</p> <ul> <li> <p> <b>
+     * <code>Instance.DeregistrationInProgress</code> </b> - The target instance is in
+     * the process of being deregistered and the deregistration delay period has not
+     * expired.</p> </li> </ul>
      */
     inline void SetInstanceHealthReason(const InstanceHealthReason& value) { m_instanceHealthReasonHasBeenSet = true; m_instanceHealthReason = value; }
 
     /**
-     * <p>More information about the instance health. Valid values are below.</p>
+     * <p>More information about the instance health. If the
+     * <code>instanceHealth</code> is <code>healthy</code>, then an
+     * <code>instanceHealthReason</code> value is not provided.</p> <p>If <b>
+     * <code>instanceHealth</code> </b> is <code>initial</code>, the <b>
+     * <code>instanceHealthReason</code> </b> value can be one of the following:</p>
+     * <ul> <li> <p> <b> <code>Lb.RegistrationInProgress</code> </b> - The target
+     * instance is in the process of being registered with the load balancer.</p> </li>
+     * <li> <p> <b> <code>Lb.InitialHealthChecking</code> </b> - The Lightsail load
+     * balancer is still sending the target instance the minimum number of health
+     * checks required to determine its health status.</p> </li> </ul> <p>If <b>
+     * <code>instanceHealth</code> </b> is <code>unhealthy</code>, the <b>
+     * <code>instanceHealthReason</code> </b> value can be one of the following:</p>
+     * <ul> <li> <p> <b> <code>Instance.ResponseCodeMismatch</code> </b> - The health
+     * checks did not return an expected HTTP code.</p> </li> <li> <p> <b>
+     * <code>Instance.Timeout</code> </b> - The health check requests timed out.</p>
+     * </li> <li> <p> <b> <code>Instance.FailedHealthChecks</code> </b> - The health
+     * checks failed because the connection to the target instance timed out, the
+     * target instance response was malformed, or the target instance failed the health
+     * check for an unknown reason.</p> </li> <li> <p> <b>
+     * <code>Lb.InternalError</code> </b> - The health checks failed due to an internal
+     * error.</p> </li> </ul> <p>If <b> <code>instanceHealth</code> </b> is
+     * <code>unused</code>, the <b> <code>instanceHealthReason</code> </b> value can be
+     * one of the following:</p> <ul> <li> <p> <b> <code>Instance.NotRegistered</code>
+     * </b> - The target instance is not registered with the target group.</p> </li>
+     * <li> <p> <b> <code>Instance.NotInUse</code> </b> - The target group is not used
+     * by any load balancer, or the target instance is in an Availability Zone that is
+     * not enabled for its load balancer.</p> </li> <li> <p> <b>
+     * <code>Instance.IpUnusable</code> </b> - The target IP address is reserved for
+     * use by a Lightsail load balancer.</p> </li> <li> <p> <b>
+     * <code>Instance.InvalidState</code> </b> - The target is in the stopped or
+     * terminated state.</p> </li> </ul> <p>If <b> <code>instanceHealth</code> </b> is
+     * <code>draining</code>, the <b> <code>instanceHealthReason</code> </b> value can
+     * be one of the following:</p> <ul> <li> <p> <b>
+     * <code>Instance.DeregistrationInProgress</code> </b> - The target instance is in
+     * the process of being deregistered and the deregistration delay period has not
+     * expired.</p> </li> </ul>
      */
     inline void SetInstanceHealthReason(InstanceHealthReason&& value) { m_instanceHealthReasonHasBeenSet = true; m_instanceHealthReason = std::move(value); }
 
     /**
-     * <p>More information about the instance health. Valid values are below.</p>
+     * <p>More information about the instance health. If the
+     * <code>instanceHealth</code> is <code>healthy</code>, then an
+     * <code>instanceHealthReason</code> value is not provided.</p> <p>If <b>
+     * <code>instanceHealth</code> </b> is <code>initial</code>, the <b>
+     * <code>instanceHealthReason</code> </b> value can be one of the following:</p>
+     * <ul> <li> <p> <b> <code>Lb.RegistrationInProgress</code> </b> - The target
+     * instance is in the process of being registered with the load balancer.</p> </li>
+     * <li> <p> <b> <code>Lb.InitialHealthChecking</code> </b> - The Lightsail load
+     * balancer is still sending the target instance the minimum number of health
+     * checks required to determine its health status.</p> </li> </ul> <p>If <b>
+     * <code>instanceHealth</code> </b> is <code>unhealthy</code>, the <b>
+     * <code>instanceHealthReason</code> </b> value can be one of the following:</p>
+     * <ul> <li> <p> <b> <code>Instance.ResponseCodeMismatch</code> </b> - The health
+     * checks did not return an expected HTTP code.</p> </li> <li> <p> <b>
+     * <code>Instance.Timeout</code> </b> - The health check requests timed out.</p>
+     * </li> <li> <p> <b> <code>Instance.FailedHealthChecks</code> </b> - The health
+     * checks failed because the connection to the target instance timed out, the
+     * target instance response was malformed, or the target instance failed the health
+     * check for an unknown reason.</p> </li> <li> <p> <b>
+     * <code>Lb.InternalError</code> </b> - The health checks failed due to an internal
+     * error.</p> </li> </ul> <p>If <b> <code>instanceHealth</code> </b> is
+     * <code>unused</code>, the <b> <code>instanceHealthReason</code> </b> value can be
+     * one of the following:</p> <ul> <li> <p> <b> <code>Instance.NotRegistered</code>
+     * </b> - The target instance is not registered with the target group.</p> </li>
+     * <li> <p> <b> <code>Instance.NotInUse</code> </b> - The target group is not used
+     * by any load balancer, or the target instance is in an Availability Zone that is
+     * not enabled for its load balancer.</p> </li> <li> <p> <b>
+     * <code>Instance.IpUnusable</code> </b> - The target IP address is reserved for
+     * use by a Lightsail load balancer.</p> </li> <li> <p> <b>
+     * <code>Instance.InvalidState</code> </b> - The target is in the stopped or
+     * terminated state.</p> </li> </ul> <p>If <b> <code>instanceHealth</code> </b> is
+     * <code>draining</code>, the <b> <code>instanceHealthReason</code> </b> value can
+     * be one of the following:</p> <ul> <li> <p> <b>
+     * <code>Instance.DeregistrationInProgress</code> </b> - The target instance is in
+     * the process of being deregistered and the deregistration delay period has not
+     * expired.</p> </li> </ul>
      */
     inline InstanceHealthSummary& WithInstanceHealthReason(const InstanceHealthReason& value) { SetInstanceHealthReason(value); return *this;}
 
     /**
-     * <p>More information about the instance health. Valid values are below.</p>
+     * <p>More information about the instance health. If the
+     * <code>instanceHealth</code> is <code>healthy</code>, then an
+     * <code>instanceHealthReason</code> value is not provided.</p> <p>If <b>
+     * <code>instanceHealth</code> </b> is <code>initial</code>, the <b>
+     * <code>instanceHealthReason</code> </b> value can be one of the following:</p>
+     * <ul> <li> <p> <b> <code>Lb.RegistrationInProgress</code> </b> - The target
+     * instance is in the process of being registered with the load balancer.</p> </li>
+     * <li> <p> <b> <code>Lb.InitialHealthChecking</code> </b> - The Lightsail load
+     * balancer is still sending the target instance the minimum number of health
+     * checks required to determine its health status.</p> </li> </ul> <p>If <b>
+     * <code>instanceHealth</code> </b> is <code>unhealthy</code>, the <b>
+     * <code>instanceHealthReason</code> </b> value can be one of the following:</p>
+     * <ul> <li> <p> <b> <code>Instance.ResponseCodeMismatch</code> </b> - The health
+     * checks did not return an expected HTTP code.</p> </li> <li> <p> <b>
+     * <code>Instance.Timeout</code> </b> - The health check requests timed out.</p>
+     * </li> <li> <p> <b> <code>Instance.FailedHealthChecks</code> </b> - The health
+     * checks failed because the connection to the target instance timed out, the
+     * target instance response was malformed, or the target instance failed the health
+     * check for an unknown reason.</p> </li> <li> <p> <b>
+     * <code>Lb.InternalError</code> </b> - The health checks failed due to an internal
+     * error.</p> </li> </ul> <p>If <b> <code>instanceHealth</code> </b> is
+     * <code>unused</code>, the <b> <code>instanceHealthReason</code> </b> value can be
+     * one of the following:</p> <ul> <li> <p> <b> <code>Instance.NotRegistered</code>
+     * </b> - The target instance is not registered with the target group.</p> </li>
+     * <li> <p> <b> <code>Instance.NotInUse</code> </b> - The target group is not used
+     * by any load balancer, or the target instance is in an Availability Zone that is
+     * not enabled for its load balancer.</p> </li> <li> <p> <b>
+     * <code>Instance.IpUnusable</code> </b> - The target IP address is reserved for
+     * use by a Lightsail load balancer.</p> </li> <li> <p> <b>
+     * <code>Instance.InvalidState</code> </b> - The target is in the stopped or
+     * terminated state.</p> </li> </ul> <p>If <b> <code>instanceHealth</code> </b> is
+     * <code>draining</code>, the <b> <code>instanceHealthReason</code> </b> value can
+     * be one of the following:</p> <ul> <li> <p> <b>
+     * <code>Instance.DeregistrationInProgress</code> </b> - The target instance is in
+     * the process of being deregistered and the deregistration delay period has not
+     * expired.</p> </li> </ul>
      */
     inline InstanceHealthSummary& WithInstanceHealthReason(InstanceHealthReason&& value) { SetInstanceHealthReason(std::move(value)); return *this;}
 

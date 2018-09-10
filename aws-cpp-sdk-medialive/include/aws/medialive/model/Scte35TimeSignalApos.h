@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace MediaLive
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     Scte35TimeSignalApos();
-    Scte35TimeSignalApos(const Aws::Utils::Json::JsonValue& jsonValue);
-    Scte35TimeSignalApos& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Scte35TimeSignalApos(Aws::Utils::Json::JsonView jsonValue);
+    Scte35TimeSignalApos& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

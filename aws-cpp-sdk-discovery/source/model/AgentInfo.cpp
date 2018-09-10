@@ -43,7 +43,7 @@ AgentInfo::AgentInfo() :
 {
 }
 
-AgentInfo::AgentInfo(const JsonValue& jsonValue) : 
+AgentInfo::AgentInfo(JsonView jsonValue) : 
     m_agentIdHasBeenSet(false),
     m_hostNameHasBeenSet(false),
     m_agentNetworkInfoListHasBeenSet(false),
@@ -59,7 +59,7 @@ AgentInfo::AgentInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-AgentInfo& AgentInfo::operator =(const JsonValue& jsonValue)
+AgentInfo& AgentInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("agentId"))
   {
@@ -77,7 +77,7 @@ AgentInfo& AgentInfo::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("agentNetworkInfoList"))
   {
-    Array<JsonValue> agentNetworkInfoListJsonList = jsonValue.GetArray("agentNetworkInfoList");
+    Array<JsonView> agentNetworkInfoListJsonList = jsonValue.GetArray("agentNetworkInfoList");
     for(unsigned agentNetworkInfoListIndex = 0; agentNetworkInfoListIndex < agentNetworkInfoListJsonList.GetLength(); ++agentNetworkInfoListIndex)
     {
       m_agentNetworkInfoList.push_back(agentNetworkInfoListJsonList[agentNetworkInfoListIndex].AsObject());

@@ -42,12 +42,14 @@ BaiduMessage::BaiduMessage() :
     m_smallImageIconUrlHasBeenSet(false),
     m_soundHasBeenSet(false),
     m_substitutionsHasBeenSet(false),
+    m_timeToLive(0),
+    m_timeToLiveHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
 }
 
-BaiduMessage::BaiduMessage(const JsonValue& jsonValue) : 
+BaiduMessage::BaiduMessage(JsonView jsonValue) : 
     m_action(Action::NOT_SET),
     m_actionHasBeenSet(false),
     m_bodyHasBeenSet(false),
@@ -61,13 +63,15 @@ BaiduMessage::BaiduMessage(const JsonValue& jsonValue) :
     m_smallImageIconUrlHasBeenSet(false),
     m_soundHasBeenSet(false),
     m_substitutionsHasBeenSet(false),
+    m_timeToLive(0),
+    m_timeToLiveHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_urlHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BaiduMessage& BaiduMessage::operator =(const JsonValue& jsonValue)
+BaiduMessage& BaiduMessage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Action"))
   {
@@ -85,7 +89,7 @@ BaiduMessage& BaiduMessage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Data"))
   {
-    Aws::Map<Aws::String, JsonValue> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
     for(auto& dataItem : dataJsonMap)
     {
       m_data[dataItem.first] = dataItem.second.AsString();
@@ -144,10 +148,10 @@ BaiduMessage& BaiduMessage::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Substitutions"))
   {
-    Aws::Map<Aws::String, JsonValue> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
+    Aws::Map<Aws::String, JsonView> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
     for(auto& substitutionsItem : substitutionsJsonMap)
     {
-      Array<JsonValue> listOf__stringJsonList = substitutionsItem.second.AsArray();
+      Array<JsonView> listOf__stringJsonList = substitutionsItem.second.AsArray();
       Aws::Vector<Aws::String> listOf__stringList;
       listOf__stringList.reserve((size_t)listOf__stringJsonList.GetLength());
       for(unsigned listOf__stringIndex = 0; listOf__stringIndex < listOf__stringJsonList.GetLength(); ++listOf__stringIndex)
@@ -157,6 +161,13 @@ BaiduMessage& BaiduMessage::operator =(const JsonValue& jsonValue)
       m_substitutions[substitutionsItem.first] = std::move(listOf__stringList);
     }
     m_substitutionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TimeToLive"))
+  {
+    m_timeToLive = jsonValue.GetInteger("TimeToLive");
+
+    m_timeToLiveHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Title"))
@@ -257,6 +268,12 @@ JsonValue BaiduMessage::Jsonize() const
      substitutionsJsonMap.WithArray(substitutionsItem.first, std::move(listOf__stringJsonList));
    }
    payload.WithObject("Substitutions", std::move(substitutionsJsonMap));
+
+  }
+
+  if(m_timeToLiveHasBeenSet)
+  {
+   payload.WithInteger("TimeToLive", m_timeToLive);
 
   }
 

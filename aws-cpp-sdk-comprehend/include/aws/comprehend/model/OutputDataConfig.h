@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Comprehend
@@ -42,85 +43,99 @@ namespace Model
   {
   public:
     OutputDataConfig();
-    OutputDataConfig(const Aws::Utils::Json::JsonValue& jsonValue);
-    OutputDataConfig& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
+    OutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The Amazon S3 URI where you want to write the output data. The URI must be in
-     * the same region as the API endpoint that you are calling. </p> <p>The service
-     * creates an output file called <code>output.tar.gz</code>. It is a compressed
-     * archive that contains two files, <code>topic-terms.csv</code> that lists the
-     * terms associated with each topic, and <code>doc-topics.csv</code> that lists the
-     * documents associated with each topic. For more information, see
-     * <a>topic-modeling</a>.</p>
+     * <p>When you use the <code>OutputDataConfig</code> object with asynchronous
+     * operations, you specify the Amazon S3 location where you want to write the
+     * output data. The URI must be in the same region as the API endpoint that you are
+     * calling. The location is used as the prefix for the actual location of the
+     * output file.</p> <p>When the topic detection job is finished, the service
+     * creates an output file in a directory specific to the job. The
+     * <code>S3Uri</code> field contains the location of the output file, called
+     * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
+     * of the operation.</p>
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
 
     /**
-     * <p>The Amazon S3 URI where you want to write the output data. The URI must be in
-     * the same region as the API endpoint that you are calling. </p> <p>The service
-     * creates an output file called <code>output.tar.gz</code>. It is a compressed
-     * archive that contains two files, <code>topic-terms.csv</code> that lists the
-     * terms associated with each topic, and <code>doc-topics.csv</code> that lists the
-     * documents associated with each topic. For more information, see
-     * <a>topic-modeling</a>.</p>
+     * <p>When you use the <code>OutputDataConfig</code> object with asynchronous
+     * operations, you specify the Amazon S3 location where you want to write the
+     * output data. The URI must be in the same region as the API endpoint that you are
+     * calling. The location is used as the prefix for the actual location of the
+     * output file.</p> <p>When the topic detection job is finished, the service
+     * creates an output file in a directory specific to the job. The
+     * <code>S3Uri</code> field contains the location of the output file, called
+     * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
+     * of the operation.</p>
      */
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
 
     /**
-     * <p>The Amazon S3 URI where you want to write the output data. The URI must be in
-     * the same region as the API endpoint that you are calling. </p> <p>The service
-     * creates an output file called <code>output.tar.gz</code>. It is a compressed
-     * archive that contains two files, <code>topic-terms.csv</code> that lists the
-     * terms associated with each topic, and <code>doc-topics.csv</code> that lists the
-     * documents associated with each topic. For more information, see
-     * <a>topic-modeling</a>.</p>
+     * <p>When you use the <code>OutputDataConfig</code> object with asynchronous
+     * operations, you specify the Amazon S3 location where you want to write the
+     * output data. The URI must be in the same region as the API endpoint that you are
+     * calling. The location is used as the prefix for the actual location of the
+     * output file.</p> <p>When the topic detection job is finished, the service
+     * creates an output file in a directory specific to the job. The
+     * <code>S3Uri</code> field contains the location of the output file, called
+     * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
+     * of the operation.</p>
      */
     inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
 
     /**
-     * <p>The Amazon S3 URI where you want to write the output data. The URI must be in
-     * the same region as the API endpoint that you are calling. </p> <p>The service
-     * creates an output file called <code>output.tar.gz</code>. It is a compressed
-     * archive that contains two files, <code>topic-terms.csv</code> that lists the
-     * terms associated with each topic, and <code>doc-topics.csv</code> that lists the
-     * documents associated with each topic. For more information, see
-     * <a>topic-modeling</a>.</p>
+     * <p>When you use the <code>OutputDataConfig</code> object with asynchronous
+     * operations, you specify the Amazon S3 location where you want to write the
+     * output data. The URI must be in the same region as the API endpoint that you are
+     * calling. The location is used as the prefix for the actual location of the
+     * output file.</p> <p>When the topic detection job is finished, the service
+     * creates an output file in a directory specific to the job. The
+     * <code>S3Uri</code> field contains the location of the output file, called
+     * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
+     * of the operation.</p>
      */
     inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
 
     /**
-     * <p>The Amazon S3 URI where you want to write the output data. The URI must be in
-     * the same region as the API endpoint that you are calling. </p> <p>The service
-     * creates an output file called <code>output.tar.gz</code>. It is a compressed
-     * archive that contains two files, <code>topic-terms.csv</code> that lists the
-     * terms associated with each topic, and <code>doc-topics.csv</code> that lists the
-     * documents associated with each topic. For more information, see
-     * <a>topic-modeling</a>.</p>
+     * <p>When you use the <code>OutputDataConfig</code> object with asynchronous
+     * operations, you specify the Amazon S3 location where you want to write the
+     * output data. The URI must be in the same region as the API endpoint that you are
+     * calling. The location is used as the prefix for the actual location of the
+     * output file.</p> <p>When the topic detection job is finished, the service
+     * creates an output file in a directory specific to the job. The
+     * <code>S3Uri</code> field contains the location of the output file, called
+     * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
+     * of the operation.</p>
      */
     inline OutputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
 
     /**
-     * <p>The Amazon S3 URI where you want to write the output data. The URI must be in
-     * the same region as the API endpoint that you are calling. </p> <p>The service
-     * creates an output file called <code>output.tar.gz</code>. It is a compressed
-     * archive that contains two files, <code>topic-terms.csv</code> that lists the
-     * terms associated with each topic, and <code>doc-topics.csv</code> that lists the
-     * documents associated with each topic. For more information, see
-     * <a>topic-modeling</a>.</p>
+     * <p>When you use the <code>OutputDataConfig</code> object with asynchronous
+     * operations, you specify the Amazon S3 location where you want to write the
+     * output data. The URI must be in the same region as the API endpoint that you are
+     * calling. The location is used as the prefix for the actual location of the
+     * output file.</p> <p>When the topic detection job is finished, the service
+     * creates an output file in a directory specific to the job. The
+     * <code>S3Uri</code> field contains the location of the output file, called
+     * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
+     * of the operation.</p>
      */
     inline OutputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 URI where you want to write the output data. The URI must be in
-     * the same region as the API endpoint that you are calling. </p> <p>The service
-     * creates an output file called <code>output.tar.gz</code>. It is a compressed
-     * archive that contains two files, <code>topic-terms.csv</code> that lists the
-     * terms associated with each topic, and <code>doc-topics.csv</code> that lists the
-     * documents associated with each topic. For more information, see
-     * <a>topic-modeling</a>.</p>
+     * <p>When you use the <code>OutputDataConfig</code> object with asynchronous
+     * operations, you specify the Amazon S3 location where you want to write the
+     * output data. The URI must be in the same region as the API endpoint that you are
+     * calling. The location is used as the prefix for the actual location of the
+     * output file.</p> <p>When the topic detection job is finished, the service
+     * creates an output file in a directory specific to the job. The
+     * <code>S3Uri</code> field contains the location of the output file, called
+     * <code>output.tar.gz</code>. It is a compressed archive that contains the ouput
+     * of the operation.</p>
      */
     inline OutputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
 

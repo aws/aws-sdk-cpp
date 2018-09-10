@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     ClusterSummary();
-    ClusterSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    ClusterSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ClusterSummary(Aws::Utils::Json::JsonView jsonValue);
+    ClusterSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

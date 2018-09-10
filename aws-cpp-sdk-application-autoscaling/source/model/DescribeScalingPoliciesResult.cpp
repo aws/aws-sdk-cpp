@@ -37,10 +37,10 @@ DescribeScalingPoliciesResult::DescribeScalingPoliciesResult(const Aws::AmazonWe
 
 DescribeScalingPoliciesResult& DescribeScalingPoliciesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ScalingPolicies"))
   {
-    Array<JsonValue> scalingPoliciesJsonList = jsonValue.GetArray("ScalingPolicies");
+    Array<JsonView> scalingPoliciesJsonList = jsonValue.GetArray("ScalingPolicies");
     for(unsigned scalingPoliciesIndex = 0; scalingPoliciesIndex < scalingPoliciesJsonList.GetLength(); ++scalingPoliciesIndex)
     {
       m_scalingPolicies.push_back(scalingPoliciesJsonList[scalingPoliciesIndex].AsObject());

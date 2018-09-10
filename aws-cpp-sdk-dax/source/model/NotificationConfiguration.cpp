@@ -34,14 +34,14 @@ NotificationConfiguration::NotificationConfiguration() :
 {
 }
 
-NotificationConfiguration::NotificationConfiguration(const JsonValue& jsonValue) : 
+NotificationConfiguration::NotificationConfiguration(JsonView jsonValue) : 
     m_topicArnHasBeenSet(false),
     m_topicStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-NotificationConfiguration& NotificationConfiguration::operator =(const JsonValue& jsonValue)
+NotificationConfiguration& NotificationConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TopicArn"))
   {

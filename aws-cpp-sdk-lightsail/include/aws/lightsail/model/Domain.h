@@ -30,6 +30,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lightsail
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     Domain();
-    Domain(const Aws::Utils::Json::JsonValue& jsonValue);
-    Domain& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Domain(Aws::Utils::Json::JsonView jsonValue);
+    Domain& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

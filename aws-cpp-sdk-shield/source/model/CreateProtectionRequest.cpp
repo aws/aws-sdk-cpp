@@ -44,7 +44,7 @@ Aws::String CreateProtectionRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection CreateProtectionRequest::GetRequestSpecificHeaders() const

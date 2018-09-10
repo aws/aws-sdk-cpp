@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppStream
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     ImageStateChangeReason();
-    ImageStateChangeReason(const Aws::Utils::Json::JsonValue& jsonValue);
-    ImageStateChangeReason& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ImageStateChangeReason(Aws::Utils::Json::JsonView jsonValue);
+    ImageStateChangeReason& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

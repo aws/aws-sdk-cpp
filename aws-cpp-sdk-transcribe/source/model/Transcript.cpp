@@ -33,13 +33,13 @@ Transcript::Transcript() :
 {
 }
 
-Transcript::Transcript(const JsonValue& jsonValue) : 
+Transcript::Transcript(JsonView jsonValue) : 
     m_transcriptFileUriHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Transcript& Transcript::operator =(const JsonValue& jsonValue)
+Transcript& Transcript::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TranscriptFileUri"))
   {

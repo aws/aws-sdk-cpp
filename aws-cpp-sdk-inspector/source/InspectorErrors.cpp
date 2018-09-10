@@ -31,11 +31,13 @@ namespace InspectorErrorMapper
 static const int ASSESSMENT_RUN_IN_PROGRESS_HASH = HashingUtils::HashString("AssessmentRunInProgressException");
 static const int AGENTS_ALREADY_RUNNING_ASSESSMENT_HASH = HashingUtils::HashString("AgentsAlreadyRunningAssessmentException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
+static const int PREVIEW_GENERATION_IN_PROGRESS_HASH = HashingUtils::HashString("PreviewGenerationInProgressException");
 static const int UNSUPPORTED_FEATURE_HASH = HashingUtils::HashString("UnsupportedFeatureException");
 static const int INVALID_CROSS_ACCOUNT_ROLE_HASH = HashingUtils::HashString("InvalidCrossAccountRoleException");
 static const int NO_SUCH_ENTITY_HASH = HashingUtils::HashString("NoSuchEntityException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
+static const int SERVICE_TEMPORARILY_UNAVAILABLE_HASH = HashingUtils::HashString("ServiceTemporarilyUnavailableException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -53,6 +55,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_INPUT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INVALID_INPUT), false);
+  }
+  else if (hashCode == PREVIEW_GENERATION_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::PREVIEW_GENERATION_IN_PROGRESS), false);
   }
   else if (hashCode == UNSUPPORTED_FEATURE_HASH)
   {
@@ -73,6 +79,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::INTERNAL), false);
+  }
+  else if (hashCode == SERVICE_TEMPORARILY_UNAVAILABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(InspectorErrors::SERVICE_TEMPORARILY_UNAVAILABLE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

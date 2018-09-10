@@ -49,7 +49,7 @@ Aws::String ReportTaskProgressRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ReportTaskProgressRequest::GetRequestSpecificHeaders() const

@@ -39,7 +39,7 @@ PatchBaselineIdentity::PatchBaselineIdentity() :
 {
 }
 
-PatchBaselineIdentity::PatchBaselineIdentity(const JsonValue& jsonValue) : 
+PatchBaselineIdentity::PatchBaselineIdentity(JsonView jsonValue) : 
     m_baselineIdHasBeenSet(false),
     m_baselineNameHasBeenSet(false),
     m_operatingSystem(OperatingSystem::NOT_SET),
@@ -51,7 +51,7 @@ PatchBaselineIdentity::PatchBaselineIdentity(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PatchBaselineIdentity& PatchBaselineIdentity::operator =(const JsonValue& jsonValue)
+PatchBaselineIdentity& PatchBaselineIdentity::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("BaselineId"))
   {

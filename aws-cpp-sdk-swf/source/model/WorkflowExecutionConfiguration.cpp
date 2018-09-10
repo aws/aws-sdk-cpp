@@ -39,7 +39,7 @@ WorkflowExecutionConfiguration::WorkflowExecutionConfiguration() :
 {
 }
 
-WorkflowExecutionConfiguration::WorkflowExecutionConfiguration(const JsonValue& jsonValue) : 
+WorkflowExecutionConfiguration::WorkflowExecutionConfiguration(JsonView jsonValue) : 
     m_taskStartToCloseTimeoutHasBeenSet(false),
     m_executionStartToCloseTimeoutHasBeenSet(false),
     m_taskListHasBeenSet(false),
@@ -51,7 +51,7 @@ WorkflowExecutionConfiguration::WorkflowExecutionConfiguration(const JsonValue& 
   *this = jsonValue;
 }
 
-WorkflowExecutionConfiguration& WorkflowExecutionConfiguration::operator =(const JsonValue& jsonValue)
+WorkflowExecutionConfiguration& WorkflowExecutionConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("taskStartToCloseTimeout"))
   {

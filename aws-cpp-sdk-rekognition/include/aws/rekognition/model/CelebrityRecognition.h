@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Rekognition
@@ -34,8 +35,8 @@ namespace Model
 
   /**
    * <p>Information about a detected celebrity and the time the celebrity was
-   * detected in a stored video. For more information, see .</p><p><h3>See Also:</h3>
-   * <a
+   * detected in a stored video. For more information, see GetCelebrityRecognition in
+   * the Amazon Rekognition Developer Guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CelebrityRecognition">AWS
    * API Reference</a></p>
    */
@@ -43,8 +44,8 @@ namespace Model
   {
   public:
     CelebrityRecognition();
-    CelebrityRecognition(const Aws::Utils::Json::JsonValue& jsonValue);
-    CelebrityRecognition& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    CelebrityRecognition(Aws::Utils::Json::JsonView jsonValue);
+    CelebrityRecognition& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

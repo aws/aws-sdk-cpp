@@ -50,27 +50,107 @@ namespace Model
 
 
     /**
-     * <p>A structure containing details about the IAM user.</p>
+     * <p>A structure containing details about the IAM user.</p> <important> <p>Due to
+     * a service issue, password last used data does not include password use from May
+     * 3rd 2018 22:50 PDT to May 23rd 2018 14:08 PDT. This affects <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last
+     * sign-in</a> dates shown in the IAM console and password last used dates in the
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM
+     * credential report</a>, and returned by this GetUser API. If users signed in
+     * during the affected time, the password last used date that is returned is the
+     * date the user last signed in before May 3rd 2018. For users that signed in after
+     * May 23rd 2018 14:08 PDT, the returned password last used date is accurate.</p>
+     * <p>If you use password last used information to identify unused credentials for
+     * deletion, such as deleting users who did not sign in to AWS in the last 90 days,
+     * we recommend that you adjust your evaluation window to include dates after May
+     * 23rd 2018. Alternatively, if your users use access keys to access AWS
+     * programmatically you can refer to access key last used information because it is
+     * accurate for all dates. </p> </important>
      */
     inline const User& GetUser() const{ return m_user; }
 
     /**
-     * <p>A structure containing details about the IAM user.</p>
+     * <p>A structure containing details about the IAM user.</p> <important> <p>Due to
+     * a service issue, password last used data does not include password use from May
+     * 3rd 2018 22:50 PDT to May 23rd 2018 14:08 PDT. This affects <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last
+     * sign-in</a> dates shown in the IAM console and password last used dates in the
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM
+     * credential report</a>, and returned by this GetUser API. If users signed in
+     * during the affected time, the password last used date that is returned is the
+     * date the user last signed in before May 3rd 2018. For users that signed in after
+     * May 23rd 2018 14:08 PDT, the returned password last used date is accurate.</p>
+     * <p>If you use password last used information to identify unused credentials for
+     * deletion, such as deleting users who did not sign in to AWS in the last 90 days,
+     * we recommend that you adjust your evaluation window to include dates after May
+     * 23rd 2018. Alternatively, if your users use access keys to access AWS
+     * programmatically you can refer to access key last used information because it is
+     * accurate for all dates. </p> </important>
      */
     inline void SetUser(const User& value) { m_user = value; }
 
     /**
-     * <p>A structure containing details about the IAM user.</p>
+     * <p>A structure containing details about the IAM user.</p> <important> <p>Due to
+     * a service issue, password last used data does not include password use from May
+     * 3rd 2018 22:50 PDT to May 23rd 2018 14:08 PDT. This affects <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last
+     * sign-in</a> dates shown in the IAM console and password last used dates in the
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM
+     * credential report</a>, and returned by this GetUser API. If users signed in
+     * during the affected time, the password last used date that is returned is the
+     * date the user last signed in before May 3rd 2018. For users that signed in after
+     * May 23rd 2018 14:08 PDT, the returned password last used date is accurate.</p>
+     * <p>If you use password last used information to identify unused credentials for
+     * deletion, such as deleting users who did not sign in to AWS in the last 90 days,
+     * we recommend that you adjust your evaluation window to include dates after May
+     * 23rd 2018. Alternatively, if your users use access keys to access AWS
+     * programmatically you can refer to access key last used information because it is
+     * accurate for all dates. </p> </important>
      */
     inline void SetUser(User&& value) { m_user = std::move(value); }
 
     /**
-     * <p>A structure containing details about the IAM user.</p>
+     * <p>A structure containing details about the IAM user.</p> <important> <p>Due to
+     * a service issue, password last used data does not include password use from May
+     * 3rd 2018 22:50 PDT to May 23rd 2018 14:08 PDT. This affects <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last
+     * sign-in</a> dates shown in the IAM console and password last used dates in the
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM
+     * credential report</a>, and returned by this GetUser API. If users signed in
+     * during the affected time, the password last used date that is returned is the
+     * date the user last signed in before May 3rd 2018. For users that signed in after
+     * May 23rd 2018 14:08 PDT, the returned password last used date is accurate.</p>
+     * <p>If you use password last used information to identify unused credentials for
+     * deletion, such as deleting users who did not sign in to AWS in the last 90 days,
+     * we recommend that you adjust your evaluation window to include dates after May
+     * 23rd 2018. Alternatively, if your users use access keys to access AWS
+     * programmatically you can refer to access key last used information because it is
+     * accurate for all dates. </p> </important>
      */
     inline GetUserResult& WithUser(const User& value) { SetUser(value); return *this;}
 
     /**
-     * <p>A structure containing details about the IAM user.</p>
+     * <p>A structure containing details about the IAM user.</p> <important> <p>Due to
+     * a service issue, password last used data does not include password use from May
+     * 3rd 2018 22:50 PDT to May 23rd 2018 14:08 PDT. This affects <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html">last
+     * sign-in</a> dates shown in the IAM console and password last used dates in the
+     * <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_getting-report.html">IAM
+     * credential report</a>, and returned by this GetUser API. If users signed in
+     * during the affected time, the password last used date that is returned is the
+     * date the user last signed in before May 3rd 2018. For users that signed in after
+     * May 23rd 2018 14:08 PDT, the returned password last used date is accurate.</p>
+     * <p>If you use password last used information to identify unused credentials for
+     * deletion, such as deleting users who did not sign in to AWS in the last 90 days,
+     * we recommend that you adjust your evaluation window to include dates after May
+     * 23rd 2018. Alternatively, if your users use access keys to access AWS
+     * programmatically you can refer to access key last used information because it is
+     * accurate for all dates. </p> </important>
      */
     inline GetUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
 

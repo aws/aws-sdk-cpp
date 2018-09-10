@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace AppStream
@@ -42,8 +43,8 @@ namespace Model
   {
   public:
     FleetError();
-    FleetError(const Aws::Utils::Json::JsonValue& jsonValue);
-    FleetError& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    FleetError(Aws::Utils::Json::JsonView jsonValue);
+    FleetError& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

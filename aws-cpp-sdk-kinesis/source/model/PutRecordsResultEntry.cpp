@@ -36,7 +36,7 @@ PutRecordsResultEntry::PutRecordsResultEntry() :
 {
 }
 
-PutRecordsResultEntry::PutRecordsResultEntry(const JsonValue& jsonValue) : 
+PutRecordsResultEntry::PutRecordsResultEntry(JsonView jsonValue) : 
     m_sequenceNumberHasBeenSet(false),
     m_shardIdHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
@@ -45,7 +45,7 @@ PutRecordsResultEntry::PutRecordsResultEntry(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-PutRecordsResultEntry& PutRecordsResultEntry::operator =(const JsonValue& jsonValue)
+PutRecordsResultEntry& PutRecordsResultEntry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SequenceNumber"))
   {

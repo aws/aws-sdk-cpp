@@ -37,7 +37,7 @@ GetRepositoryTriggersResult::GetRepositoryTriggersResult(const Aws::AmazonWebSer
 
 GetRepositoryTriggersResult& GetRepositoryTriggersResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("configurationId"))
   {
     m_configurationId = jsonValue.GetString("configurationId");
@@ -46,7 +46,7 @@ GetRepositoryTriggersResult& GetRepositoryTriggersResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("triggers"))
   {
-    Array<JsonValue> triggersJsonList = jsonValue.GetArray("triggers");
+    Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
     for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
     {
       m_triggers.push_back(triggersJsonList[triggersIndex].AsObject());

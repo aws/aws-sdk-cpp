@@ -39,7 +39,7 @@ GetLoadBalancerMetricDataResult::GetLoadBalancerMetricDataResult(const Aws::Amaz
 
 GetLoadBalancerMetricDataResult& GetLoadBalancerMetricDataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("metricName"))
   {
     m_metricName = LoadBalancerMetricNameMapper::GetLoadBalancerMetricNameForName(jsonValue.GetString("metricName"));
@@ -48,7 +48,7 @@ GetLoadBalancerMetricDataResult& GetLoadBalancerMetricDataResult::operator =(con
 
   if(jsonValue.ValueExists("metricData"))
   {
-    Array<JsonValue> metricDataJsonList = jsonValue.GetArray("metricData");
+    Array<JsonView> metricDataJsonList = jsonValue.GetArray("metricData");
     for(unsigned metricDataIndex = 0; metricDataIndex < metricDataJsonList.GetLength(); ++metricDataIndex)
     {
       m_metricData.push_back(metricDataJsonList[metricDataIndex].AsObject());

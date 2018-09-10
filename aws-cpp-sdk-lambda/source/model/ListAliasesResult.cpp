@@ -37,7 +37,7 @@ ListAliasesResult::ListAliasesResult(const Aws::AmazonWebServiceResult<JsonValue
 
 ListAliasesResult& ListAliasesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
@@ -46,7 +46,7 @@ ListAliasesResult& ListAliasesResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("Aliases"))
   {
-    Array<JsonValue> aliasesJsonList = jsonValue.GetArray("Aliases");
+    Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
     for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
     {
       m_aliases.push_back(aliasesJsonList[aliasesIndex].AsObject());

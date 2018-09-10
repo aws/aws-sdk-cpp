@@ -98,6 +98,31 @@ protected:
         return false;
     }
 
+    static bool WaitForIdentitiesToBeCreated(const Aws::String& identityPoolId, const std::shared_ptr<CognitoIdentityClient>& client)
+    {
+        unsigned timeoutCount = 0;
+        const unsigned maxRetries = 10;
+        while (timeoutCount++ < maxRetries)
+        {
+            ListIdentitiesRequest listIdentitiesRequest;
+            listIdentitiesRequest.WithIdentityPoolId(identityPoolId).WithMaxResults(10);
+            ListIdentitiesOutcome listIdentitiesOutcome = client->ListIdentities(listIdentitiesRequest);
+            
+            if (listIdentitiesOutcome.IsSuccess())
+            {
+                if (listIdentitiesOutcome.GetResult().GetIdentities().size() > 0)
+                {
+                    return true;
+                }
+            }
+
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+
+        return false;
+    }
+
+
     void CleanupPreviousFailedTests()
     {
         Aws::String resourcePrefix = GetResourcePrefix();
@@ -249,7 +274,7 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
     EXPECT_FALSE(getCredentialsOutcome.IsSuccess());
     EXPECT_EQ(CognitoIdentityErrors::INVALID_IDENTITY_POOL_CONFIGURATION, getCredentialsOutcome.GetError().GetErrorType());
 
-    EXPECT_TRUE(WaitForIdentitiesToBeActive(identityPoolId, client));
+    EXPECT_TRUE(WaitForIdentitiesToBeCreated(identityPoolId, client));
 
     ListIdentitiesRequest listIdentitiesRequest;
     listIdentitiesRequest.WithIdentityPoolId(createIdentityPoolOutcome.GetResult().GetIdentityPoolId()).WithMaxResults(10);

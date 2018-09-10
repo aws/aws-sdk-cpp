@@ -47,11 +47,12 @@ Crawler::Crawler() :
     m_lastCrawlHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_crawlerSecurityConfigurationHasBeenSet(false)
 {
 }
 
-Crawler::Crawler(const JsonValue& jsonValue) : 
+Crawler::Crawler(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_targetsHasBeenSet(false),
@@ -70,12 +71,13 @@ Crawler::Crawler(const JsonValue& jsonValue) :
     m_lastCrawlHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_crawlerSecurityConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Crawler& Crawler::operator =(const JsonValue& jsonValue)
+Crawler& Crawler::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Name"))
   {
@@ -114,7 +116,7 @@ Crawler& Crawler::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("Classifiers"))
   {
-    Array<JsonValue> classifiersJsonList = jsonValue.GetArray("Classifiers");
+    Array<JsonView> classifiersJsonList = jsonValue.GetArray("Classifiers");
     for(unsigned classifiersIndex = 0; classifiersIndex < classifiersJsonList.GetLength(); ++classifiersIndex)
     {
       m_classifiers.push_back(classifiersJsonList[classifiersIndex].AsString());
@@ -190,6 +192,13 @@ Crawler& Crawler::operator =(const JsonValue& jsonValue)
     m_configuration = jsonValue.GetString("Configuration");
 
     m_configurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CrawlerSecurityConfiguration"))
+  {
+    m_crawlerSecurityConfiguration = jsonValue.GetString("CrawlerSecurityConfiguration");
+
+    m_crawlerSecurityConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -294,6 +303,12 @@ JsonValue Crawler::Jsonize() const
   if(m_configurationHasBeenSet)
   {
    payload.WithString("Configuration", m_configuration);
+
+  }
+
+  if(m_crawlerSecurityConfigurationHasBeenSet)
+  {
+   payload.WithString("CrawlerSecurityConfiguration", m_crawlerSecurityConfiguration);
 
   }
 

@@ -37,7 +37,7 @@ UpdateApplicationSettingsResult::UpdateApplicationSettingsResult(const Aws::Amaz
 
 UpdateApplicationSettingsResult& UpdateApplicationSettingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   m_applicationSettingsResource = jsonValue;
 
 

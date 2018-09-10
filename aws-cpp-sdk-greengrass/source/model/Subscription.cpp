@@ -36,7 +36,7 @@ Subscription::Subscription() :
 {
 }
 
-Subscription::Subscription(const JsonValue& jsonValue) : 
+Subscription::Subscription(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_subjectHasBeenSet(false),
@@ -45,7 +45,7 @@ Subscription::Subscription(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Subscription& Subscription::operator =(const JsonValue& jsonValue)
+Subscription& Subscription::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Id"))
   {

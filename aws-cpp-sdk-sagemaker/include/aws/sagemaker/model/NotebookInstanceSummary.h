@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace SageMaker
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     NotebookInstanceSummary();
-    NotebookInstanceSummary(const Aws::Utils::Json::JsonValue& jsonValue);
-    NotebookInstanceSummary& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    NotebookInstanceSummary(Aws::Utils::Json::JsonView jsonValue);
+    NotebookInstanceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -268,6 +269,56 @@ namespace Model
      */
     inline NotebookInstanceSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of a notebook instance lifecycle configuration associated with this
+     * notebook instance.</p> <p>For information about notebook instance lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline const Aws::String& GetNotebookInstanceLifecycleConfigName() const{ return m_notebookInstanceLifecycleConfigName; }
+
+    /**
+     * <p>The name of a notebook instance lifecycle configuration associated with this
+     * notebook instance.</p> <p>For information about notebook instance lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetNotebookInstanceLifecycleConfigName(const Aws::String& value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName = value; }
+
+    /**
+     * <p>The name of a notebook instance lifecycle configuration associated with this
+     * notebook instance.</p> <p>For information about notebook instance lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetNotebookInstanceLifecycleConfigName(Aws::String&& value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName = std::move(value); }
+
+    /**
+     * <p>The name of a notebook instance lifecycle configuration associated with this
+     * notebook instance.</p> <p>For information about notebook instance lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline void SetNotebookInstanceLifecycleConfigName(const char* value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName.assign(value); }
+
+    /**
+     * <p>The name of a notebook instance lifecycle configuration associated with this
+     * notebook instance.</p> <p>For information about notebook instance lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline NotebookInstanceSummary& WithNotebookInstanceLifecycleConfigName(const Aws::String& value) { SetNotebookInstanceLifecycleConfigName(value); return *this;}
+
+    /**
+     * <p>The name of a notebook instance lifecycle configuration associated with this
+     * notebook instance.</p> <p>For information about notebook instance lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline NotebookInstanceSummary& WithNotebookInstanceLifecycleConfigName(Aws::String&& value) { SetNotebookInstanceLifecycleConfigName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a notebook instance lifecycle configuration associated with this
+     * notebook instance.</p> <p>For information about notebook instance lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     */
+    inline NotebookInstanceSummary& WithNotebookInstanceLifecycleConfigName(const char* value) { SetNotebookInstanceLifecycleConfigName(value); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceName;
@@ -290,6 +341,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet;
+
+    Aws::String m_notebookInstanceLifecycleConfigName;
+    bool m_notebookInstanceLifecycleConfigNameHasBeenSet;
   };
 
 } // namespace Model

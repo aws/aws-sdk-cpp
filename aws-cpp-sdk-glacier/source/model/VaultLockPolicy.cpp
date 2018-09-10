@@ -33,13 +33,13 @@ VaultLockPolicy::VaultLockPolicy() :
 {
 }
 
-VaultLockPolicy::VaultLockPolicy(const JsonValue& jsonValue) : 
+VaultLockPolicy::VaultLockPolicy(JsonView jsonValue) : 
     m_policyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-VaultLockPolicy& VaultLockPolicy::operator =(const JsonValue& jsonValue)
+VaultLockPolicy& VaultLockPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Policy"))
   {

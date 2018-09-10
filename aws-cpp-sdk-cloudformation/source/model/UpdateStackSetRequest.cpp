@@ -31,8 +31,12 @@ UpdateStackSetRequest::UpdateStackSetRequest() :
     m_capabilitiesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_operationPreferencesHasBeenSet(false),
+    m_administrationRoleARNHasBeenSet(false),
+    m_executionRoleNameHasBeenSet(false),
     m_operationId(Aws::Utils::UUID::RandomUUID()),
-    m_operationIdHasBeenSet(true)
+    m_operationIdHasBeenSet(true),
+    m_accountsHasBeenSet(false),
+    m_regionsHasBeenSet(false)
 {
 }
 
@@ -101,9 +105,41 @@ Aws::String UpdateStackSetRequest::SerializePayload() const
     m_operationPreferences.OutputToStream(ss, "OperationPreferences");
   }
 
+  if(m_administrationRoleARNHasBeenSet)
+  {
+    ss << "AdministrationRoleARN=" << StringUtils::URLEncode(m_administrationRoleARN.c_str()) << "&";
+  }
+
+  if(m_executionRoleNameHasBeenSet)
+  {
+    ss << "ExecutionRoleName=" << StringUtils::URLEncode(m_executionRoleName.c_str()) << "&";
+  }
+
   if(m_operationIdHasBeenSet)
   {
     ss << "OperationId=" << StringUtils::URLEncode(m_operationId.c_str()) << "&";
+  }
+
+  if(m_accountsHasBeenSet)
+  {
+    unsigned accountsCount = 1;
+    for(auto& item : m_accounts)
+    {
+      ss << "Accounts.member." << accountsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      accountsCount++;
+    }
+  }
+
+  if(m_regionsHasBeenSet)
+  {
+    unsigned regionsCount = 1;
+    for(auto& item : m_regions)
+    {
+      ss << "Regions.member." << regionsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      regionsCount++;
+    }
   }
 
   ss << "Version=2010-05-15";

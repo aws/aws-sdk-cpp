@@ -325,9 +325,10 @@ namespace Model
      * types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. </p> <p>Valid Values: <code>ds1.xlarge</code> |
-     * <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code>. </p>
+     * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
+     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
+     * <code>dc2.8xlarge</code> </p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
 
@@ -336,9 +337,10 @@ namespace Model
      * types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. </p> <p>Valid Values: <code>ds1.xlarge</code> |
-     * <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code>. </p>
+     * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
+     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
+     * <code>dc2.8xlarge</code> </p>
      */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
@@ -347,9 +349,10 @@ namespace Model
      * types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. </p> <p>Valid Values: <code>ds1.xlarge</code> |
-     * <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code>. </p>
+     * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
+     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
+     * <code>dc2.8xlarge</code> </p>
      */
     inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
@@ -358,9 +361,10 @@ namespace Model
      * types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. </p> <p>Valid Values: <code>ds1.xlarge</code> |
-     * <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code>. </p>
+     * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
+     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
+     * <code>dc2.8xlarge</code> </p>
      */
     inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
 
@@ -369,9 +373,10 @@ namespace Model
      * types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. </p> <p>Valid Values: <code>ds1.xlarge</code> |
-     * <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code>. </p>
+     * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
+     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
+     * <code>dc2.8xlarge</code> </p>
      */
     inline CreateClusterRequest& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
 
@@ -380,9 +385,10 @@ namespace Model
      * types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. </p> <p>Valid Values: <code>ds1.xlarge</code> |
-     * <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code>. </p>
+     * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
+     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
+     * <code>dc2.8xlarge</code> </p>
      */
     inline CreateClusterRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
@@ -391,9 +397,10 @@ namespace Model
      * types, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
-     * Guide</i>. </p> <p>Valid Values: <code>ds1.xlarge</code> |
-     * <code>ds1.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code>. </p>
+     * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
+     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
+     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
+     * <code>dc2.8xlarge</code> </p>
      */
     inline CreateClusterRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 
@@ -401,8 +408,9 @@ namespace Model
     /**
      * <p>The user name associated with the master user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
-     * characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
+     * of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
@@ -411,8 +419,9 @@ namespace Model
     /**
      * <p>The user name associated with the master user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
-     * characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
+     * of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
@@ -421,8 +430,9 @@ namespace Model
     /**
      * <p>The user name associated with the master user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
-     * characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
+     * of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
@@ -431,8 +441,9 @@ namespace Model
     /**
      * <p>The user name associated with the master user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
-     * characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
+     * of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
@@ -441,8 +452,9 @@ namespace Model
     /**
      * <p>The user name associated with the master user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
-     * characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
+     * of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
@@ -451,8 +463,9 @@ namespace Model
     /**
      * <p>The user name associated with the master user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
-     * characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
+     * of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
@@ -461,8 +474,9 @@ namespace Model
     /**
      * <p>The user name associated with the master user account for the cluster that is
      * being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric
-     * characters.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word. A list of reserved words can be found in <a
+     * characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First
+     * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list
+     * of reserved words can be found in <a
      * href="http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html">Reserved
      * Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>
      */
@@ -1562,6 +1576,56 @@ namespace Model
      */
     inline CreateClusterRequest& AddIamRoles(const char* value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
 
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline const Aws::String& GetMaintenanceTrackName() const{ return m_maintenanceTrackName; }
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline void SetMaintenanceTrackName(Aws::String&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::move(value); }
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline void SetMaintenanceTrackName(const char* value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName.assign(value); }
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline CreateClusterRequest& WithMaintenanceTrackName(const Aws::String& value) { SetMaintenanceTrackName(value); return *this;}
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline CreateClusterRequest& WithMaintenanceTrackName(Aws::String&& value) { SetMaintenanceTrackName(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional parameter for the name of the maintenance track for the cluster.
+     * If you don't provide a maintenance track name, the cluster is assigned to the
+     * <code>current</code> track.</p>
+     */
+    inline CreateClusterRequest& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -1644,6 +1708,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_iamRoles;
     bool m_iamRolesHasBeenSet;
+
+    Aws::String m_maintenanceTrackName;
+    bool m_maintenanceTrackNameHasBeenSet;
   };
 
 } // namespace Model

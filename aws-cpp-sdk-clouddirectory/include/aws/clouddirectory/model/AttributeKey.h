@@ -25,6 +25,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudDirectory
@@ -34,15 +35,15 @@ namespace Model
 
   /**
    * <p>A unique identifier for an attribute.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttributeKey">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttributeKey">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDDIRECTORY_API AttributeKey
   {
   public:
     AttributeKey();
-    AttributeKey(const Aws::Utils::Json::JsonValue& jsonValue);
-    AttributeKey& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    AttributeKey(Aws::Utils::Json::JsonView jsonValue);
+    AttributeKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

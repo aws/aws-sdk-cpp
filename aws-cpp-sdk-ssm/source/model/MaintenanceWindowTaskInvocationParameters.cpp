@@ -36,7 +36,7 @@ MaintenanceWindowTaskInvocationParameters::MaintenanceWindowTaskInvocationParame
 {
 }
 
-MaintenanceWindowTaskInvocationParameters::MaintenanceWindowTaskInvocationParameters(const JsonValue& jsonValue) : 
+MaintenanceWindowTaskInvocationParameters::MaintenanceWindowTaskInvocationParameters(JsonView jsonValue) : 
     m_runCommandHasBeenSet(false),
     m_automationHasBeenSet(false),
     m_stepFunctionsHasBeenSet(false),
@@ -45,7 +45,7 @@ MaintenanceWindowTaskInvocationParameters::MaintenanceWindowTaskInvocationParame
   *this = jsonValue;
 }
 
-MaintenanceWindowTaskInvocationParameters& MaintenanceWindowTaskInvocationParameters::operator =(const JsonValue& jsonValue)
+MaintenanceWindowTaskInvocationParameters& MaintenanceWindowTaskInvocationParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RunCommand"))
   {

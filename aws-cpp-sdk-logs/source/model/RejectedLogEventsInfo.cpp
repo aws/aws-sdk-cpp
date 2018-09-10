@@ -38,7 +38,7 @@ RejectedLogEventsInfo::RejectedLogEventsInfo() :
 {
 }
 
-RejectedLogEventsInfo::RejectedLogEventsInfo(const JsonValue& jsonValue) : 
+RejectedLogEventsInfo::RejectedLogEventsInfo(JsonView jsonValue) : 
     m_tooNewLogEventStartIndex(0),
     m_tooNewLogEventStartIndexHasBeenSet(false),
     m_tooOldLogEventEndIndex(0),
@@ -49,7 +49,7 @@ RejectedLogEventsInfo::RejectedLogEventsInfo(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-RejectedLogEventsInfo& RejectedLogEventsInfo::operator =(const JsonValue& jsonValue)
+RejectedLogEventsInfo& RejectedLogEventsInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("tooNewLogEventStartIndex"))
   {

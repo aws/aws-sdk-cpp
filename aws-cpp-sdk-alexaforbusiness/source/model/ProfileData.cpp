@@ -42,7 +42,7 @@ ProfileData::ProfileData() :
 {
 }
 
-ProfileData::ProfileData(const JsonValue& jsonValue) : 
+ProfileData::ProfileData(JsonView jsonValue) : 
     m_profileArnHasBeenSet(false),
     m_profileNameHasBeenSet(false),
     m_addressHasBeenSet(false),
@@ -57,7 +57,7 @@ ProfileData::ProfileData(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ProfileData& ProfileData::operator =(const JsonValue& jsonValue)
+ProfileData& ProfileData::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ProfileArn"))
   {

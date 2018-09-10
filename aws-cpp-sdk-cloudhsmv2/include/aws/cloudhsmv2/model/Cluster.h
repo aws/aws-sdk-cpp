@@ -32,6 +32,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace CloudHSMV2
@@ -49,8 +50,8 @@ namespace Model
   {
   public:
     Cluster();
-    Cluster(const Aws::Utils::Json::JsonValue& jsonValue);
-    Cluster& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    Cluster(Aws::Utils::Json::JsonView jsonValue);
+    Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

@@ -43,73 +43,73 @@ namespace Model
 
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline UpdateSubscriptionDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline UpdateSubscriptionDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * name of the definition
+     * The name of the definition.
      */
     inline UpdateSubscriptionDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline const Aws::String& GetSubscriptionDefinitionId() const{ return m_subscriptionDefinitionId; }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline void SetSubscriptionDefinitionId(const Aws::String& value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId = value; }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline void SetSubscriptionDefinitionId(Aws::String&& value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId = std::move(value); }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline void SetSubscriptionDefinitionId(const char* value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId.assign(value); }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline UpdateSubscriptionDefinitionRequest& WithSubscriptionDefinitionId(const Aws::String& value) { SetSubscriptionDefinitionId(value); return *this;}
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline UpdateSubscriptionDefinitionRequest& WithSubscriptionDefinitionId(Aws::String&& value) { SetSubscriptionDefinitionId(std::move(value)); return *this;}
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      */
     inline UpdateSubscriptionDefinitionRequest& WithSubscriptionDefinitionId(const char* value) { SetSubscriptionDefinitionId(value); return *this;}
 

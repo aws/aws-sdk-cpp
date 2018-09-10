@@ -37,10 +37,10 @@ DescribeFleetsResult::DescribeFleetsResult(const Aws::AmazonWebServiceResult<Jso
 
 DescribeFleetsResult& DescribeFleetsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Fleets"))
   {
-    Array<JsonValue> fleetsJsonList = jsonValue.GetArray("Fleets");
+    Array<JsonView> fleetsJsonList = jsonValue.GetArray("Fleets");
     for(unsigned fleetsIndex = 0; fleetsIndex < fleetsJsonList.GetLength(); ++fleetsIndex)
     {
       m_fleets.push_back(fleetsJsonList[fleetsIndex].AsObject());

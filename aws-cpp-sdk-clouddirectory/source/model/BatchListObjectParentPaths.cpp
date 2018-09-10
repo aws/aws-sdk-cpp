@@ -36,7 +36,7 @@ BatchListObjectParentPaths::BatchListObjectParentPaths() :
 {
 }
 
-BatchListObjectParentPaths::BatchListObjectParentPaths(const JsonValue& jsonValue) : 
+BatchListObjectParentPaths::BatchListObjectParentPaths(JsonView jsonValue) : 
     m_objectReferenceHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
@@ -45,7 +45,7 @@ BatchListObjectParentPaths::BatchListObjectParentPaths(const JsonValue& jsonValu
   *this = jsonValue;
 }
 
-BatchListObjectParentPaths& BatchListObjectParentPaths::operator =(const JsonValue& jsonValue)
+BatchListObjectParentPaths& BatchListObjectParentPaths::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ObjectReference"))
   {

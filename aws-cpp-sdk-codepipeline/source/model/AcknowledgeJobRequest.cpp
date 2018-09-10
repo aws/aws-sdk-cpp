@@ -44,7 +44,7 @@ Aws::String AcknowledgeJobRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection AcknowledgeJobRequest::GetRequestSpecificHeaders() const

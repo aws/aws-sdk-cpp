@@ -38,7 +38,7 @@ LifecycleEvent::LifecycleEvent() :
 {
 }
 
-LifecycleEvent::LifecycleEvent(const JsonValue& jsonValue) : 
+LifecycleEvent::LifecycleEvent(JsonView jsonValue) : 
     m_lifecycleEventNameHasBeenSet(false),
     m_diagnosticsHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -49,7 +49,7 @@ LifecycleEvent::LifecycleEvent(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-LifecycleEvent& LifecycleEvent::operator =(const JsonValue& jsonValue)
+LifecycleEvent& LifecycleEvent::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("lifecycleEventName"))
   {

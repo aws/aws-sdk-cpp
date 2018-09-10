@@ -34,14 +34,14 @@ BranchInfo::BranchInfo() :
 {
 }
 
-BranchInfo::BranchInfo(const JsonValue& jsonValue) : 
+BranchInfo::BranchInfo(JsonView jsonValue) : 
     m_branchNameHasBeenSet(false),
     m_commitIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-BranchInfo& BranchInfo::operator =(const JsonValue& jsonValue)
+BranchInfo& BranchInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("branchName"))
   {

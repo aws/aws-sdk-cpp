@@ -36,7 +36,7 @@ Sunglasses::Sunglasses() :
 {
 }
 
-Sunglasses::Sunglasses(const JsonValue& jsonValue) : 
+Sunglasses::Sunglasses(JsonView jsonValue) : 
     m_value(false),
     m_valueHasBeenSet(false),
     m_confidence(0.0),
@@ -45,7 +45,7 @@ Sunglasses::Sunglasses(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Sunglasses& Sunglasses::operator =(const JsonValue& jsonValue)
+Sunglasses& Sunglasses::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Value"))
   {

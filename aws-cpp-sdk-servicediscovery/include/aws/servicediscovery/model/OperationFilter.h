@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ServiceDiscovery
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     OperationFilter();
-    OperationFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    OperationFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    OperationFilter(Aws::Utils::Json::JsonView jsonValue);
+    OperationFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
@@ -243,9 +244,10 @@ namespace Model
      * for the condition, you can specify a list of one or more values. <code>IN</code>
      * is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must
      * match one of the specified values to be returned in the response.</p> </li> <li>
-     * <p> <code>BETWEEN</code>: Specify two values, a start date and an end date. The
-     * start date must be the first value. <code>BETWEEN</code> is supported for
-     * <code>U</code>. </p> </li> </ul>
+     * <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time
+     * format and Coordinated Universal Time (UTC). The start date must be the first
+     * value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p>
+     * </li> </ul>
      */
     inline const FilterCondition& GetCondition() const{ return m_condition; }
 
@@ -260,9 +262,10 @@ namespace Model
      * for the condition, you can specify a list of one or more values. <code>IN</code>
      * is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must
      * match one of the specified values to be returned in the response.</p> </li> <li>
-     * <p> <code>BETWEEN</code>: Specify two values, a start date and an end date. The
-     * start date must be the first value. <code>BETWEEN</code> is supported for
-     * <code>U</code>. </p> </li> </ul>
+     * <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time
+     * format and Coordinated Universal Time (UTC). The start date must be the first
+     * value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p>
+     * </li> </ul>
      */
     inline void SetCondition(const FilterCondition& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
@@ -277,9 +280,10 @@ namespace Model
      * for the condition, you can specify a list of one or more values. <code>IN</code>
      * is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must
      * match one of the specified values to be returned in the response.</p> </li> <li>
-     * <p> <code>BETWEEN</code>: Specify two values, a start date and an end date. The
-     * start date must be the first value. <code>BETWEEN</code> is supported for
-     * <code>U</code>. </p> </li> </ul>
+     * <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time
+     * format and Coordinated Universal Time (UTC). The start date must be the first
+     * value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p>
+     * </li> </ul>
      */
     inline void SetCondition(FilterCondition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
 
@@ -294,9 +298,10 @@ namespace Model
      * for the condition, you can specify a list of one or more values. <code>IN</code>
      * is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must
      * match one of the specified values to be returned in the response.</p> </li> <li>
-     * <p> <code>BETWEEN</code>: Specify two values, a start date and an end date. The
-     * start date must be the first value. <code>BETWEEN</code> is supported for
-     * <code>U</code>. </p> </li> </ul>
+     * <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time
+     * format and Coordinated Universal Time (UTC). The start date must be the first
+     * value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p>
+     * </li> </ul>
      */
     inline OperationFilter& WithCondition(const FilterCondition& value) { SetCondition(value); return *this;}
 
@@ -311,9 +316,10 @@ namespace Model
      * for the condition, you can specify a list of one or more values. <code>IN</code>
      * is supported for <code>STATUS</code> and <code>TYPE</code>. An operation must
      * match one of the specified values to be returned in the response.</p> </li> <li>
-     * <p> <code>BETWEEN</code>: Specify two values, a start date and an end date. The
-     * start date must be the first value. <code>BETWEEN</code> is supported for
-     * <code>U</code>. </p> </li> </ul>
+     * <p> <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time
+     * format and Coordinated Universal Time (UTC). The start date must be the first
+     * value. <code>BETWEEN</code> is supported for <code>UPDATE_DATE</code>. </p>
+     * </li> </ul>
      */
     inline OperationFilter& WithCondition(FilterCondition&& value) { SetCondition(std::move(value)); return *this;}
 

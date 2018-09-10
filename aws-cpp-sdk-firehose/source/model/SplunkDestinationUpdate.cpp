@@ -44,7 +44,7 @@ SplunkDestinationUpdate::SplunkDestinationUpdate() :
 {
 }
 
-SplunkDestinationUpdate::SplunkDestinationUpdate(const JsonValue& jsonValue) : 
+SplunkDestinationUpdate::SplunkDestinationUpdate(JsonView jsonValue) : 
     m_hECEndpointHasBeenSet(false),
     m_hECEndpointType(HECEndpointType::NOT_SET),
     m_hECEndpointTypeHasBeenSet(false),
@@ -61,7 +61,7 @@ SplunkDestinationUpdate::SplunkDestinationUpdate(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-SplunkDestinationUpdate& SplunkDestinationUpdate::operator =(const JsonValue& jsonValue)
+SplunkDestinationUpdate& SplunkDestinationUpdate::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("HECEndpoint"))
   {

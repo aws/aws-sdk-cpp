@@ -36,7 +36,7 @@ MinimumHealthyHosts::MinimumHealthyHosts() :
 {
 }
 
-MinimumHealthyHosts::MinimumHealthyHosts(const JsonValue& jsonValue) : 
+MinimumHealthyHosts::MinimumHealthyHosts(JsonView jsonValue) : 
     m_value(0),
     m_valueHasBeenSet(false),
     m_type(MinimumHealthyHostsType::NOT_SET),
@@ -45,7 +45,7 @@ MinimumHealthyHosts::MinimumHealthyHosts(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-MinimumHealthyHosts& MinimumHealthyHosts::operator =(const JsonValue& jsonValue)
+MinimumHealthyHosts& MinimumHealthyHosts::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("value"))
   {

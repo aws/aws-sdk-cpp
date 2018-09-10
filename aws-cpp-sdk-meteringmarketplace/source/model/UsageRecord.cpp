@@ -37,7 +37,7 @@ UsageRecord::UsageRecord() :
 {
 }
 
-UsageRecord::UsageRecord(const JsonValue& jsonValue) : 
+UsageRecord::UsageRecord(JsonView jsonValue) : 
     m_timestampHasBeenSet(false),
     m_customerIdentifierHasBeenSet(false),
     m_dimensionHasBeenSet(false),
@@ -47,7 +47,7 @@ UsageRecord::UsageRecord(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UsageRecord& UsageRecord::operator =(const JsonValue& jsonValue)
+UsageRecord& UsageRecord::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Timestamp"))
   {

@@ -51,7 +51,7 @@ Aws::String DeletePortfolioShareRequest::SerializePayload() const
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DeletePortfolioShareRequest::GetRequestSpecificHeaders() const

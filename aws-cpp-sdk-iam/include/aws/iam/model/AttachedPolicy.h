@@ -38,7 +38,7 @@ namespace Model
    * managed policy that has been attached to a user, group, or role. This data type
    * is used as a response element in the <a>ListAttachedGroupPolicies</a>,
    * <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and
-   * <a>GetAccountAuthorizationDetails</a> actions. </p> <p>For more information
+   * <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information
    * about managed policies, refer to <a
    * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
    * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p><p><h3>See

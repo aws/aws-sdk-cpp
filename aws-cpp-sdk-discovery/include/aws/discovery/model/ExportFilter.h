@@ -26,6 +26,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace ApplicationDiscoveryService
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     ExportFilter();
-    ExportFilter(const Aws::Utils::Json::JsonValue& jsonValue);
-    ExportFilter& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ExportFilter(Aws::Utils::Json::JsonView jsonValue);
+    ExportFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

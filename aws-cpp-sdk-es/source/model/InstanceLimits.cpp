@@ -33,13 +33,13 @@ InstanceLimits::InstanceLimits() :
 {
 }
 
-InstanceLimits::InstanceLimits(const JsonValue& jsonValue) : 
+InstanceLimits::InstanceLimits(JsonView jsonValue) : 
     m_instanceCountLimitsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-InstanceLimits& InstanceLimits::operator =(const JsonValue& jsonValue)
+InstanceLimits& InstanceLimits::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceCountLimits"))
   {

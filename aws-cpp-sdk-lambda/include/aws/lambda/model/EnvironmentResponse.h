@@ -27,6 +27,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Lambda
@@ -45,8 +46,8 @@ namespace Model
   {
   public:
     EnvironmentResponse();
-    EnvironmentResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    EnvironmentResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    EnvironmentResponse(Aws::Utils::Json::JsonView jsonValue);
+    EnvironmentResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

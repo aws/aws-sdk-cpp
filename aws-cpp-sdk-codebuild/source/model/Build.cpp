@@ -40,9 +40,13 @@ Build::Build() :
     m_projectNameHasBeenSet(false),
     m_phasesHasBeenSet(false),
     m_sourceHasBeenSet(false),
+    m_secondarySourcesHasBeenSet(false),
+    m_secondarySourceVersionsHasBeenSet(false),
     m_artifactsHasBeenSet(false),
+    m_secondaryArtifactsHasBeenSet(false),
     m_cacheHasBeenSet(false),
     m_environmentHasBeenSet(false),
+    m_serviceRoleHasBeenSet(false),
     m_logsHasBeenSet(false),
     m_timeoutInMinutes(0),
     m_timeoutInMinutesHasBeenSet(false),
@@ -50,11 +54,12 @@ Build::Build() :
     m_buildCompleteHasBeenSet(false),
     m_initiatorHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_networkInterfaceHasBeenSet(false)
+    m_networkInterfaceHasBeenSet(false),
+    m_encryptionKeyHasBeenSet(false)
 {
 }
 
-Build::Build(const JsonValue& jsonValue) : 
+Build::Build(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -66,9 +71,13 @@ Build::Build(const JsonValue& jsonValue) :
     m_projectNameHasBeenSet(false),
     m_phasesHasBeenSet(false),
     m_sourceHasBeenSet(false),
+    m_secondarySourcesHasBeenSet(false),
+    m_secondarySourceVersionsHasBeenSet(false),
     m_artifactsHasBeenSet(false),
+    m_secondaryArtifactsHasBeenSet(false),
     m_cacheHasBeenSet(false),
     m_environmentHasBeenSet(false),
+    m_serviceRoleHasBeenSet(false),
     m_logsHasBeenSet(false),
     m_timeoutInMinutes(0),
     m_timeoutInMinutesHasBeenSet(false),
@@ -76,12 +85,13 @@ Build::Build(const JsonValue& jsonValue) :
     m_buildCompleteHasBeenSet(false),
     m_initiatorHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_networkInterfaceHasBeenSet(false)
+    m_networkInterfaceHasBeenSet(false),
+    m_encryptionKeyHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Build& Build::operator =(const JsonValue& jsonValue)
+Build& Build::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -141,7 +151,7 @@ Build& Build::operator =(const JsonValue& jsonValue)
 
   if(jsonValue.ValueExists("phases"))
   {
-    Array<JsonValue> phasesJsonList = jsonValue.GetArray("phases");
+    Array<JsonView> phasesJsonList = jsonValue.GetArray("phases");
     for(unsigned phasesIndex = 0; phasesIndex < phasesJsonList.GetLength(); ++phasesIndex)
     {
       m_phases.push_back(phasesJsonList[phasesIndex].AsObject());
@@ -156,11 +166,41 @@ Build& Build::operator =(const JsonValue& jsonValue)
     m_sourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("secondarySources"))
+  {
+    Array<JsonView> secondarySourcesJsonList = jsonValue.GetArray("secondarySources");
+    for(unsigned secondarySourcesIndex = 0; secondarySourcesIndex < secondarySourcesJsonList.GetLength(); ++secondarySourcesIndex)
+    {
+      m_secondarySources.push_back(secondarySourcesJsonList[secondarySourcesIndex].AsObject());
+    }
+    m_secondarySourcesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("secondarySourceVersions"))
+  {
+    Array<JsonView> secondarySourceVersionsJsonList = jsonValue.GetArray("secondarySourceVersions");
+    for(unsigned secondarySourceVersionsIndex = 0; secondarySourceVersionsIndex < secondarySourceVersionsJsonList.GetLength(); ++secondarySourceVersionsIndex)
+    {
+      m_secondarySourceVersions.push_back(secondarySourceVersionsJsonList[secondarySourceVersionsIndex].AsObject());
+    }
+    m_secondarySourceVersionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("artifacts"))
   {
     m_artifacts = jsonValue.GetObject("artifacts");
 
     m_artifactsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("secondaryArtifacts"))
+  {
+    Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("secondaryArtifacts");
+    for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
+    {
+      m_secondaryArtifacts.push_back(secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject());
+    }
+    m_secondaryArtifactsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("cache"))
@@ -175,6 +215,13 @@ Build& Build::operator =(const JsonValue& jsonValue)
     m_environment = jsonValue.GetObject("environment");
 
     m_environmentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("serviceRole"))
+  {
+    m_serviceRole = jsonValue.GetString("serviceRole");
+
+    m_serviceRoleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("logs"))
@@ -217,6 +264,13 @@ Build& Build::operator =(const JsonValue& jsonValue)
     m_networkInterface = jsonValue.GetObject("networkInterface");
 
     m_networkInterfaceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("encryptionKey"))
+  {
+    m_encryptionKey = jsonValue.GetString("encryptionKey");
+
+    m_encryptionKeyHasBeenSet = true;
   }
 
   return *this;
@@ -288,9 +342,42 @@ JsonValue Build::Jsonize() const
 
   }
 
+  if(m_secondarySourcesHasBeenSet)
+  {
+   Array<JsonValue> secondarySourcesJsonList(m_secondarySources.size());
+   for(unsigned secondarySourcesIndex = 0; secondarySourcesIndex < secondarySourcesJsonList.GetLength(); ++secondarySourcesIndex)
+   {
+     secondarySourcesJsonList[secondarySourcesIndex].AsObject(m_secondarySources[secondarySourcesIndex].Jsonize());
+   }
+   payload.WithArray("secondarySources", std::move(secondarySourcesJsonList));
+
+  }
+
+  if(m_secondarySourceVersionsHasBeenSet)
+  {
+   Array<JsonValue> secondarySourceVersionsJsonList(m_secondarySourceVersions.size());
+   for(unsigned secondarySourceVersionsIndex = 0; secondarySourceVersionsIndex < secondarySourceVersionsJsonList.GetLength(); ++secondarySourceVersionsIndex)
+   {
+     secondarySourceVersionsJsonList[secondarySourceVersionsIndex].AsObject(m_secondarySourceVersions[secondarySourceVersionsIndex].Jsonize());
+   }
+   payload.WithArray("secondarySourceVersions", std::move(secondarySourceVersionsJsonList));
+
+  }
+
   if(m_artifactsHasBeenSet)
   {
    payload.WithObject("artifacts", m_artifacts.Jsonize());
+
+  }
+
+  if(m_secondaryArtifactsHasBeenSet)
+  {
+   Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
+   for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
+   {
+     secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject(m_secondaryArtifacts[secondaryArtifactsIndex].Jsonize());
+   }
+   payload.WithArray("secondaryArtifacts", std::move(secondaryArtifactsJsonList));
 
   }
 
@@ -303,6 +390,12 @@ JsonValue Build::Jsonize() const
   if(m_environmentHasBeenSet)
   {
    payload.WithObject("environment", m_environment.Jsonize());
+
+  }
+
+  if(m_serviceRoleHasBeenSet)
+  {
+   payload.WithString("serviceRole", m_serviceRole);
 
   }
 
@@ -339,6 +432,12 @@ JsonValue Build::Jsonize() const
   if(m_networkInterfaceHasBeenSet)
   {
    payload.WithObject("networkInterface", m_networkInterface.Jsonize());
+
+  }
+
+  if(m_encryptionKeyHasBeenSet)
+  {
+   payload.WithString("encryptionKey", m_encryptionKey);
 
   }
 

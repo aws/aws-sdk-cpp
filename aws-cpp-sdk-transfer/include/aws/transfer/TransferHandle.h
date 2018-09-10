@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/UUID.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/s3/S3Errors.h>
@@ -39,6 +40,8 @@ namespace Aws
         class TransferHandle;
 
         typedef std::function<Aws::IOStream*(void)> CreateDownloadStreamCallback;
+
+        static const char CLASS_TAG[] = "TransferManager";
 
         struct DownloadConfiguration
         {
@@ -156,19 +159,19 @@ namespace Aws
             /**
              * Whether or not this transfer is being performed using parallel parts via a multi-part s3 api.
              */
-            inline bool IsMultipart() const { return m_isMultipart; }
+            inline bool IsMultipart() const { return m_isMultipart.load(); }
             /**
             * Whether or not this transfer is being performed using parallel parts via a multi-part s3 api.
             */
-            inline void SetIsMultipart(bool value) { m_isMultipart = value; }
+            inline void SetIsMultipart(bool value) { m_isMultipart.store(value); }
             /**
             * If this is a multi-part transfer, this is the ID of it. e.g. UploadId for UploadPart
             */
-            inline const Aws::String& GetMultiPartId() const { return m_multipartId; }
+            inline const Aws::String GetMultiPartId() const { std::lock_guard<std::mutex> locker(m_getterSetterLock); return m_multipartId; }
             /**
             * If this is a multi-part transfer, this is the ID of it. e.g. UploadId for UploadPart
             */
-            inline void SetMultipartId(const Aws::String& value) { m_multipartId = value; }
+            inline void SetMultipartId(const Aws::String& value) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_multipartId = value; }
             /**
              * Returns a copy of the completed parts, in the structure of <partId, ETag>. Used for all transfers.
              */
@@ -216,12 +219,12 @@ namespace Aws
             /**
              * Get the parts transactionally, mostly for internal purposes.
              */
-             void GetAllPartsTransactional(PartStateMap& queuedParts, PartStateMap& pendingParts,
-                 PartStateMap& failedParts, PartStateMap& completedParts);
-             /**
-              * Returns true or false if any parts have been created for this transfer
-              */
-             bool HasParts() const;
+            void GetAllPartsTransactional(PartStateMap& queuedParts, PartStateMap& pendingParts,
+                    PartStateMap& failedParts, PartStateMap& completedParts);
+            /**
+             * Returns true or false if any parts have been created for this transfer
+             */
+            bool HasParts() const;
             /**
              * Returns false if Cancel has been called. Largely for internal use.
              */
@@ -249,16 +252,16 @@ namespace Aws
             /**
             * Total bytes transferred successfully on this transfer operation.
             */
-            void UpdateBytesTransferred(uint64_t amount) { m_bytesTransferred += amount; }
+            void UpdateBytesTransferred(uint64_t amount) { m_bytesTransferred.fetch_add(amount); }
 
             /**
              * The calculated total size of the object being transferred.
              */
-            inline uint64_t GetBytesTotalSize() const { return m_bytesTotalSize; }
+            inline uint64_t GetBytesTotalSize() const { return m_bytesTotalSize.load(); }
             /**
              * Sets the total size of the object being transferred.
              */
-            inline void SetBytesTotalSize(uint64_t value) { m_bytesTotalSize = value; }
+            inline void SetBytesTotalSize(uint64_t value) { m_bytesTotalSize.store(value); }
 
             /**
              * Bucket portion of the object location in Amazon S3.
@@ -277,8 +280,8 @@ namespace Aws
             /**
              * (Download only) version id of the object to retrieve; if not specified in constructor, then latest is used
             */
-            const Aws::String& GetVersionId() const { return m_versionId; }
-            void SetVersionId(const Aws::String& versionId) { m_versionId = versionId; }
+            const Aws::String GetVersionId() const { std::lock_guard<std::mutex> locker(m_getterSetterLock); return m_versionId; }
+            void SetVersionId(const Aws::String& versionId) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_versionId = versionId; }
 
             /**
              * Upload or Download?
@@ -287,36 +290,36 @@ namespace Aws
             /**
              * Content type of the object being transferred
              */
-            inline const Aws::String& GetContentType() const { return m_contentType; }
+            inline const Aws::String GetContentType() const { std::lock_guard<std::mutex> locker(m_getterSetterLock); return m_contentType; }
             /**
              * Content type of the object being transferred
              */
-            inline void SetContentType(const Aws::String& value) { m_contentType = value; } 
+            inline void SetContentType(const Aws::String& value) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_contentType = value; } 
             /**
              * In case of an upload, this is the metadata that was placed on the object when it was uploaded.
              * In the case of a download, this is the object metadata from the GetObject operation.
              */
-            inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
+            inline const Aws::Map<Aws::String, Aws::String> GetMetadata() const { std::lock_guard<std::mutex> locker(m_getterSetterLock); return m_metadata; }
             /**
             * In case of an upload, this is the metadata that was placed on the object when it was uploaded.
             * In the case of a download, this is the object metadata from the GetObject operation.
             */
-            inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadata = value; }
+            inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_metadata = value; }
 
             /**
              * Add a new entry to or update an existed entry of m_metadata, useful when users want to get ETag directly from metadata.
              */
-            inline void AddMetadataEntry(const Aws::String& key, const Aws::String& value) { m_metadata[key] = value; }
+            inline void AddMetadataEntry(const Aws::String& key, const Aws::String& value) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_metadata[key] = value; }
 
             /**
              * Arbitrary user context that can be accessed from the callbacks
              */
-            inline void SetContext(const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { m_context = context; }
+            inline void SetContext(const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_context = context; }
 
             /**
              * Returns arbitrary user context or nullptr if it's not set.
              */
-            inline std::shared_ptr<const Aws::Client::AsyncCallerContext> GetContext() const { return m_context; }
+            inline std::shared_ptr<const Aws::Client::AsyncCallerContext> GetContext() const { std::lock_guard<std::mutex> locker(m_getterSetterLock); return m_context; }
 
             /**
              * The current status of the operation
@@ -331,12 +334,12 @@ namespace Aws
              * The last error that was encountered by the transfer. You can handle each error individually via the errorCallback callback function
              * in the TransferConfiguration.
              */
-            inline const Aws::Client::AWSError<Aws::S3::S3Errors>& GetLastError() const { return m_lastError; }
+            inline const Aws::Client::AWSError<Aws::S3::S3Errors> GetLastError() const { std::lock_guard<std::mutex> locker(m_getterSetterLock); return m_lastError; }
             /**
              * The last error that was encountered by the transfer. You can handle each error individually via the errorCallback callback function
              * in the TransferConfiguration.
              */
-            inline void SetError(const Aws::Client::AWSError<Aws::S3::S3Errors>& error) { m_lastError = error; }
+            inline void SetError(const Aws::Client::AWSError<Aws::S3::S3Errors>& error) { std::lock_guard<std::mutex> locker(m_getterSetterLock); m_lastError = error; }
             /**
              * Blocks the calling thread until the operation has finished. This function does not busy wait. It is safe for your CPU.
              */
@@ -354,11 +357,16 @@ namespace Aws
                 return m_lastPart.compare_exchange_strong(expected, true/*desired*/);
             }
 
+            /*
+             * Returns a unique identifier tied to this particular transfer handle.
+             */
+            Aws::String GetId() const;
+
         private:
 
             void CleanupDownloadStream();
 
-            bool m_isMultipart;
+            std::atomic<bool> m_isMultipart;
             Aws::String m_multipartId;
             TransferDirection m_direction;
             PartStateMap m_completedParts;
@@ -367,7 +375,7 @@ namespace Aws
             PartStateMap m_failedParts;
             std::atomic<uint64_t> m_bytesTransferred;
             std::atomic<bool> m_lastPart;
-            uint64_t m_bytesTotalSize;
+            std::atomic<uint64_t> m_bytesTotalSize;
             Aws::String m_bucket;
             Aws::String m_key;
             Aws::String m_fileName;
@@ -378,14 +386,18 @@ namespace Aws
             Aws::Client::AWSError<Aws::S3::S3Errors> m_lastError;
             std::atomic<bool> m_cancel;
             std::shared_ptr<const Aws::Client::AsyncCallerContext> m_context;
+            const Utils::UUID m_handleId;
 
             CreateDownloadStreamCallback m_createDownloadStreamFn;
             Aws::IOStream* m_downloadStream;
 
-            std::mutex m_downloadStreamLock;
+            mutable std::mutex m_downloadStreamLock;
             mutable std::mutex m_partsLock;
             mutable std::mutex m_statusLock;
             mutable std::condition_variable m_waitUntilFinishedSignal;
+            mutable std::mutex m_getterSetterLock;
         };
+
+        AWS_TRANSFER_API Aws::OStream& operator << (Aws::OStream& s, TransferStatus status);
     }
 }

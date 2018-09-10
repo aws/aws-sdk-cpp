@@ -38,7 +38,7 @@ NotifyConfigurationType::NotifyConfigurationType() :
 {
 }
 
-NotifyConfigurationType::NotifyConfigurationType(const JsonValue& jsonValue) : 
+NotifyConfigurationType::NotifyConfigurationType(JsonView jsonValue) : 
     m_fromHasBeenSet(false),
     m_replyToHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
@@ -49,7 +49,7 @@ NotifyConfigurationType::NotifyConfigurationType(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-NotifyConfigurationType& NotifyConfigurationType::operator =(const JsonValue& jsonValue)
+NotifyConfigurationType& NotifyConfigurationType::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("From"))
   {

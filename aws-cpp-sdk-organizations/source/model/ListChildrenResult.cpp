@@ -37,10 +37,10 @@ ListChildrenResult::ListChildrenResult(const Aws::AmazonWebServiceResult<JsonVal
 
 ListChildrenResult& ListChildrenResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Children"))
   {
-    Array<JsonValue> childrenJsonList = jsonValue.GetArray("Children");
+    Array<JsonView> childrenJsonList = jsonValue.GetArray("Children");
     for(unsigned childrenIndex = 0; childrenIndex < childrenJsonList.GetLength(); ++childrenIndex)
     {
       m_children.push_back(childrenJsonList[childrenIndex].AsObject());

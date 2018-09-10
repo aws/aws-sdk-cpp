@@ -37,6 +37,8 @@ Mpeg2Settings::Mpeg2Settings() :
     m_codecLevelHasBeenSet(false),
     m_codecProfile(Mpeg2CodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
+    m_dynamicSubGop(Mpeg2DynamicSubGop::NOT_SET),
+    m_dynamicSubGopHasBeenSet(false),
     m_framerateControl(Mpeg2FramerateControl::NOT_SET),
     m_framerateControlHasBeenSet(false),
     m_framerateConversionAlgorithm(Mpeg2FramerateConversionAlgorithm::NOT_SET),
@@ -92,7 +94,7 @@ Mpeg2Settings::Mpeg2Settings() :
 {
 }
 
-Mpeg2Settings::Mpeg2Settings(const JsonValue& jsonValue) : 
+Mpeg2Settings::Mpeg2Settings(JsonView jsonValue) : 
     m_adaptiveQuantization(Mpeg2AdaptiveQuantization::NOT_SET),
     m_adaptiveQuantizationHasBeenSet(false),
     m_bitrate(0),
@@ -101,6 +103,8 @@ Mpeg2Settings::Mpeg2Settings(const JsonValue& jsonValue) :
     m_codecLevelHasBeenSet(false),
     m_codecProfile(Mpeg2CodecProfile::NOT_SET),
     m_codecProfileHasBeenSet(false),
+    m_dynamicSubGop(Mpeg2DynamicSubGop::NOT_SET),
+    m_dynamicSubGopHasBeenSet(false),
     m_framerateControl(Mpeg2FramerateControl::NOT_SET),
     m_framerateControlHasBeenSet(false),
     m_framerateConversionAlgorithm(Mpeg2FramerateConversionAlgorithm::NOT_SET),
@@ -157,7 +161,7 @@ Mpeg2Settings::Mpeg2Settings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Mpeg2Settings& Mpeg2Settings::operator =(const JsonValue& jsonValue)
+Mpeg2Settings& Mpeg2Settings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("adaptiveQuantization"))
   {
@@ -185,6 +189,13 @@ Mpeg2Settings& Mpeg2Settings::operator =(const JsonValue& jsonValue)
     m_codecProfile = Mpeg2CodecProfileMapper::GetMpeg2CodecProfileForName(jsonValue.GetString("codecProfile"));
 
     m_codecProfileHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dynamicSubGop"))
+  {
+    m_dynamicSubGop = Mpeg2DynamicSubGopMapper::GetMpeg2DynamicSubGopForName(jsonValue.GetString("dynamicSubGop"));
+
+    m_dynamicSubGopHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("framerateControl"))
@@ -395,6 +406,11 @@ JsonValue Mpeg2Settings::Jsonize() const
   if(m_codecProfileHasBeenSet)
   {
    payload.WithString("codecProfile", Mpeg2CodecProfileMapper::GetNameForMpeg2CodecProfile(m_codecProfile));
+  }
+
+  if(m_dynamicSubGopHasBeenSet)
+  {
+   payload.WithString("dynamicSubGop", Mpeg2DynamicSubGopMapper::GetNameForMpeg2DynamicSubGop(m_dynamicSubGop));
   }
 
   if(m_framerateControlHasBeenSet)

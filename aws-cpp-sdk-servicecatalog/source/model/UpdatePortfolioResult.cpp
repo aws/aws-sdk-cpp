@@ -37,7 +37,7 @@ UpdatePortfolioResult::UpdatePortfolioResult(const Aws::AmazonWebServiceResult<J
 
 UpdatePortfolioResult& UpdatePortfolioResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PortfolioDetail"))
   {
     m_portfolioDetail = jsonValue.GetObject("PortfolioDetail");
@@ -46,7 +46,7 @@ UpdatePortfolioResult& UpdatePortfolioResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonValue> tagsJsonList = jsonValue.GetArray("Tags");
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

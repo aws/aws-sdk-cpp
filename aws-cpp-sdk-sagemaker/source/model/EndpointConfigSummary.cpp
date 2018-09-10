@@ -35,7 +35,7 @@ EndpointConfigSummary::EndpointConfigSummary() :
 {
 }
 
-EndpointConfigSummary::EndpointConfigSummary(const JsonValue& jsonValue) : 
+EndpointConfigSummary::EndpointConfigSummary(JsonView jsonValue) : 
     m_endpointConfigNameHasBeenSet(false),
     m_endpointConfigArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
@@ -43,7 +43,7 @@ EndpointConfigSummary::EndpointConfigSummary(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-EndpointConfigSummary& EndpointConfigSummary::operator =(const JsonValue& jsonValue)
+EndpointConfigSummary& EndpointConfigSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("EndpointConfigName"))
   {

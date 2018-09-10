@@ -37,7 +37,7 @@ SubmitJobResult::SubmitJobResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 SubmitJobResult& SubmitJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");

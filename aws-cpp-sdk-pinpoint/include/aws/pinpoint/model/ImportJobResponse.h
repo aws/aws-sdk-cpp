@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace Pinpoint
@@ -35,12 +36,17 @@ namespace Pinpoint
 namespace Model
 {
 
+  /**
+   * Import job response.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ImportJobResponse">AWS
+   * API Reference</a></p>
+   */
   class AWS_PINPOINT_API ImportJobResponse
   {
   public:
     ImportJobResponse();
-    ImportJobResponse(const Aws::Utils::Json::JsonValue& jsonValue);
-    ImportJobResponse& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    ImportJobResponse(Aws::Utils::Json::JsonView jsonValue);
+    ImportJobResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

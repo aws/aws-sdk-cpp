@@ -28,7 +28,9 @@ ListServicesRequest::ListServicesRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_launchType(LaunchType::NOT_SET),
-    m_launchTypeHasBeenSet(false)
+    m_launchTypeHasBeenSet(false),
+    m_schedulingStrategy(SchedulingStrategy::NOT_SET),
+    m_schedulingStrategyHasBeenSet(false)
 {
 }
 
@@ -59,7 +61,12 @@ Aws::String ListServicesRequest::SerializePayload() const
    payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
   }
 
-  return payload.WriteReadable();
+  if(m_schedulingStrategyHasBeenSet)
+  {
+   payload.WithString("schedulingStrategy", SchedulingStrategyMapper::GetNameForSchedulingStrategy(m_schedulingStrategy));
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection ListServicesRequest::GetRequestSpecificHeaders() const

@@ -28,6 +28,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace EMR
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     InstanceTypeSpecification();
-    InstanceTypeSpecification(const Aws::Utils::Json::JsonValue& jsonValue);
-    InstanceTypeSpecification& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    InstanceTypeSpecification(Aws::Utils::Json::JsonView jsonValue);
+    InstanceTypeSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

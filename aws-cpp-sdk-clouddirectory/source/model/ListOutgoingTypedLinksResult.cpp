@@ -37,10 +37,10 @@ ListOutgoingTypedLinksResult::ListOutgoingTypedLinksResult(const Aws::AmazonWebS
 
 ListOutgoingTypedLinksResult& ListOutgoingTypedLinksResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TypedLinkSpecifiers"))
   {
-    Array<JsonValue> typedLinkSpecifiersJsonList = jsonValue.GetArray("TypedLinkSpecifiers");
+    Array<JsonView> typedLinkSpecifiersJsonList = jsonValue.GetArray("TypedLinkSpecifiers");
     for(unsigned typedLinkSpecifiersIndex = 0; typedLinkSpecifiersIndex < typedLinkSpecifiersJsonList.GetLength(); ++typedLinkSpecifiersIndex)
     {
       m_typedLinkSpecifiers.push_back(typedLinkSpecifiersJsonList[typedLinkSpecifiersIndex].AsObject());

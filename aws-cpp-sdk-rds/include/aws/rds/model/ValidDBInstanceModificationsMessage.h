@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rds/model/ValidStorageOptions.h>
+#include <aws/rds/model/AvailableProcessorFeature.h>
 #include <utility>
 
 namespace Aws
@@ -88,10 +89,49 @@ namespace Model
      */
     inline ValidDBInstanceModificationsMessage& AddStorage(ValidStorageOptions&& value) { m_storageHasBeenSet = true; m_storage.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Valid processor features for your DB instance. </p>
+     */
+    inline const Aws::Vector<AvailableProcessorFeature>& GetValidProcessorFeatures() const{ return m_validProcessorFeatures; }
+
+    /**
+     * <p>Valid processor features for your DB instance. </p>
+     */
+    inline void SetValidProcessorFeatures(const Aws::Vector<AvailableProcessorFeature>& value) { m_validProcessorFeaturesHasBeenSet = true; m_validProcessorFeatures = value; }
+
+    /**
+     * <p>Valid processor features for your DB instance. </p>
+     */
+    inline void SetValidProcessorFeatures(Aws::Vector<AvailableProcessorFeature>&& value) { m_validProcessorFeaturesHasBeenSet = true; m_validProcessorFeatures = std::move(value); }
+
+    /**
+     * <p>Valid processor features for your DB instance. </p>
+     */
+    inline ValidDBInstanceModificationsMessage& WithValidProcessorFeatures(const Aws::Vector<AvailableProcessorFeature>& value) { SetValidProcessorFeatures(value); return *this;}
+
+    /**
+     * <p>Valid processor features for your DB instance. </p>
+     */
+    inline ValidDBInstanceModificationsMessage& WithValidProcessorFeatures(Aws::Vector<AvailableProcessorFeature>&& value) { SetValidProcessorFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>Valid processor features for your DB instance. </p>
+     */
+    inline ValidDBInstanceModificationsMessage& AddValidProcessorFeatures(const AvailableProcessorFeature& value) { m_validProcessorFeaturesHasBeenSet = true; m_validProcessorFeatures.push_back(value); return *this; }
+
+    /**
+     * <p>Valid processor features for your DB instance. </p>
+     */
+    inline ValidDBInstanceModificationsMessage& AddValidProcessorFeatures(AvailableProcessorFeature&& value) { m_validProcessorFeaturesHasBeenSet = true; m_validProcessorFeatures.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<ValidStorageOptions> m_storage;
     bool m_storageHasBeenSet;
+
+    Aws::Vector<AvailableProcessorFeature> m_validProcessorFeatures;
+    bool m_validProcessorFeaturesHasBeenSet;
   };
 
 } // namespace Model

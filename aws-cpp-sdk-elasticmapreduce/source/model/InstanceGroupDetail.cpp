@@ -51,7 +51,7 @@ InstanceGroupDetail::InstanceGroupDetail() :
 {
 }
 
-InstanceGroupDetail::InstanceGroupDetail(const JsonValue& jsonValue) : 
+InstanceGroupDetail::InstanceGroupDetail(JsonView jsonValue) : 
     m_instanceGroupIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_market(MarketType::NOT_SET),
@@ -75,7 +75,7 @@ InstanceGroupDetail::InstanceGroupDetail(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-InstanceGroupDetail& InstanceGroupDetail::operator =(const JsonValue& jsonValue)
+InstanceGroupDetail& InstanceGroupDetail::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("InstanceGroupId"))
   {

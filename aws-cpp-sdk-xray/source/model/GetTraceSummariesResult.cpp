@@ -39,10 +39,10 @@ GetTraceSummariesResult::GetTraceSummariesResult(const Aws::AmazonWebServiceResu
 
 GetTraceSummariesResult& GetTraceSummariesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const JsonValue& jsonValue = result.GetPayload();
+  JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TraceSummaries"))
   {
-    Array<JsonValue> traceSummariesJsonList = jsonValue.GetArray("TraceSummaries");
+    Array<JsonView> traceSummariesJsonList = jsonValue.GetArray("TraceSummaries");
     for(unsigned traceSummariesIndex = 0; traceSummariesIndex < traceSummariesJsonList.GetLength(); ++traceSummariesIndex)
     {
       m_traceSummaries.push_back(traceSummariesJsonList[traceSummariesIndex].AsObject());

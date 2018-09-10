@@ -36,7 +36,7 @@ Segment::Segment() :
 {
 }
 
-Segment::Segment(const JsonValue& jsonValue) : 
+Segment::Segment(JsonView jsonValue) : 
     m_segmentNumber(0),
     m_segmentNumberHasBeenSet(false),
     m_totalSegments(0),
@@ -45,7 +45,7 @@ Segment::Segment(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-Segment& Segment::operator =(const JsonValue& jsonValue)
+Segment& Segment::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SegmentNumber"))
   {

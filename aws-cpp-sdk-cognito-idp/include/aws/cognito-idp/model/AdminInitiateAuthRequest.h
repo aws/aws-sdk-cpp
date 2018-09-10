@@ -130,7 +130,9 @@ namespace Model
      * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
      * <code>SRP_A</code> and return the SRP variables to be used for next challenge
-     * execution.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
+     * execution.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code> will take in
+     * <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or
+     * tokens.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
      * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
      * (SRP) protocol.</p> </li> <li> <p>
      * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
@@ -138,7 +140,10 @@ namespace Model
      * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
      * flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication
      * flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled
-     * for calling the app client.</p> </li> </ul>
+     * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
+     * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration
+     * Lambda if the USERNAME is not found in the user pool. </p> </li> </ul>
      */
     inline const AuthFlowType& GetAuthFlow() const{ return m_authFlow; }
 
@@ -148,7 +153,9 @@ namespace Model
      * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
      * <code>SRP_A</code> and return the SRP variables to be used for next challenge
-     * execution.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
+     * execution.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code> will take in
+     * <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or
+     * tokens.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
      * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
      * (SRP) protocol.</p> </li> <li> <p>
      * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
@@ -156,7 +163,10 @@ namespace Model
      * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
      * flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication
      * flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled
-     * for calling the app client.</p> </li> </ul>
+     * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
+     * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration
+     * Lambda if the USERNAME is not found in the user pool. </p> </li> </ul>
      */
     inline void SetAuthFlow(const AuthFlowType& value) { m_authFlowHasBeenSet = true; m_authFlow = value; }
 
@@ -166,7 +176,9 @@ namespace Model
      * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
      * <code>SRP_A</code> and return the SRP variables to be used for next challenge
-     * execution.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
+     * execution.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code> will take in
+     * <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or
+     * tokens.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
      * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
      * (SRP) protocol.</p> </li> <li> <p>
      * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
@@ -174,7 +186,10 @@ namespace Model
      * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
      * flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication
      * flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled
-     * for calling the app client.</p> </li> </ul>
+     * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
+     * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration
+     * Lambda if the USERNAME is not found in the user pool. </p> </li> </ul>
      */
     inline void SetAuthFlow(AuthFlowType&& value) { m_authFlowHasBeenSet = true; m_authFlow = std::move(value); }
 
@@ -184,7 +199,9 @@ namespace Model
      * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
      * <code>SRP_A</code> and return the SRP variables to be used for next challenge
-     * execution.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
+     * execution.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code> will take in
+     * <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or
+     * tokens.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
      * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
      * (SRP) protocol.</p> </li> <li> <p>
      * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
@@ -192,7 +209,10 @@ namespace Model
      * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
      * flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication
      * flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled
-     * for calling the app client.</p> </li> </ul>
+     * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
+     * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration
+     * Lambda if the USERNAME is not found in the user pool. </p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& WithAuthFlow(const AuthFlowType& value) { SetAuthFlow(value); return *this;}
 
@@ -202,7 +222,9 @@ namespace Model
      * will take in a valid refresh token and return new tokens.</p> </li> <li> <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and
      * <code>SRP_A</code> and return the SRP variables to be used for next challenge
-     * execution.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
+     * execution.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code> will take in
+     * <code>USERNAME</code> and <code>PASSWORD</code> and return the next challenge or
+     * tokens.</p> </li> </ul> <p>Valid values include:</p> <ul> <li> <p>
      * <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password
      * (SRP) protocol.</p> </li> <li> <p>
      * <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow
@@ -210,7 +232,10 @@ namespace Model
      * token.</p> </li> <li> <p> <code>CUSTOM_AUTH</code>: Custom authentication
      * flow.</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication
      * flow; you can pass in the USERNAME and PASSWORD directly if the flow is enabled
-     * for calling the app client.</p> </li> </ul>
+     * for calling the app client.</p> </li> <li> <p> <code>USER_PASSWORD_AUTH</code>:
+     * Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration
+     * Lambda if the USERNAME is not found in the user pool. </p> </li> </ul>
      */
     inline AdminInitiateAuthRequest& WithAuthFlow(AuthFlowType&& value) { SetAuthFlow(std::move(value)); return *this;}
 
@@ -222,13 +247,13 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
-     * </li> <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code>
-     * (required), <code>SECRET_HASH</code> (if app client is configured with client
-     * secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li>
-     * <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+     * (required), <code>SECRET_HASH</code> (required if the app client is configured
+     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
@@ -241,13 +266,13 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
-     * </li> <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code>
-     * (required), <code>SECRET_HASH</code> (if app client is configured with client
-     * secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li>
-     * <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+     * (required), <code>SECRET_HASH</code> (required if the app client is configured
+     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
@@ -260,13 +285,13 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
-     * </li> <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code>
-     * (required), <code>SECRET_HASH</code> (if app client is configured with client
-     * secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li>
-     * <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+     * (required), <code>SECRET_HASH</code> (required if the app client is configured
+     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
@@ -279,13 +304,13 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
-     * </li> <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code>
-     * (required), <code>SECRET_HASH</code> (if app client is configured with client
-     * secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li>
-     * <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+     * (required), <code>SECRET_HASH</code> (required if the app client is configured
+     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
@@ -298,13 +323,13 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
-     * </li> <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code>
-     * (required), <code>SECRET_HASH</code> (if app client is configured with client
-     * secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li>
-     * <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+     * (required), <code>SECRET_HASH</code> (required if the app client is configured
+     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
@@ -317,13 +342,13 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
-     * </li> <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code>
-     * (required), <code>SECRET_HASH</code> (if app client is configured with client
-     * secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li>
-     * <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+     * (required), <code>SECRET_HASH</code> (required if the app client is configured
+     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
@@ -336,13 +361,13 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
-     * </li> <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code>
-     * (required), <code>SECRET_HASH</code> (if app client is configured with client
-     * secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li>
-     * <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+     * (required), <code>SECRET_HASH</code> (required if the app client is configured
+     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
@@ -355,13 +380,13 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
-     * </li> <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code>
-     * (required), <code>SECRET_HASH</code> (if app client is configured with client
-     * secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li>
-     * <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+     * (required), <code>SECRET_HASH</code> (required if the app client is configured
+     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
@@ -374,13 +399,13 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
-     * </li> <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code>
-     * (required), <code>SECRET_HASH</code> (if app client is configured with client
-     * secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li>
-     * <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+     * (required), <code>SECRET_HASH</code> (required if the app client is configured
+     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
@@ -393,13 +418,13 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
-     * </li> <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code>
-     * (required), <code>SECRET_HASH</code> (if app client is configured with client
-     * secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li>
-     * <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+     * (required), <code>SECRET_HASH</code> (required if the app client is configured
+     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
@@ -412,13 +437,13 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
-     * </li> <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code>
-     * (required), <code>SECRET_HASH</code> (if app client is configured with client
-     * secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li>
-     * <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+     * (required), <code>SECRET_HASH</code> (required if the app client is configured
+     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code> </p> </li> </ul>
      */
@@ -431,13 +456,13 @@ namespace Model
      * <code>USERNAME</code> (required), <code>SRP_A</code> (required),
      * <code>SECRET_HASH</code> (required if the app client is configured with a client
      * secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
-     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
-     * <code>SECRET_HASH</code> (required if the app client is configured with a client
-     * secret), <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code> </p>
-     * </li> <li> <p>For <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code>
-     * (required), <code>SECRET_HASH</code> (if app client is configured with client
-     * secret), <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li>
-     * <li> <p>For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code>
+     * (required), <code>SECRET_HASH</code> (required if the app client is configured
+     * with a client secret), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>ADMIN_NO_SRP_AUTH</code>: <code>USERNAME</code> (required),
+     * <code>SECRET_HASH</code> (if app client is configured with client secret),
+     * <code>PASSWORD</code> (required), <code>DEVICE_KEY</code> </p> </li> <li> <p>For
+     * <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required),
      * <code>SECRET_HASH</code> (if app client is configured with client secret),
      * <code>DEVICE_KEY</code> </p> </li> </ul>
      */

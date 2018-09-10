@@ -23,6 +23,7 @@ namespace Utils
 namespace Json
 {
   class JsonValue;
+  class JsonView;
 } // namespace Json
 } // namespace Utils
 namespace GameLift
@@ -47,8 +48,8 @@ namespace Model
   {
   public:
     PlayerLatencyPolicy();
-    PlayerLatencyPolicy(const Aws::Utils::Json::JsonValue& jsonValue);
-    PlayerLatencyPolicy& operator=(const Aws::Utils::Json::JsonValue& jsonValue);
+    PlayerLatencyPolicy(Aws::Utils::Json::JsonView jsonValue);
+    PlayerLatencyPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 

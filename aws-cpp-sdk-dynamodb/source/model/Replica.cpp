@@ -33,13 +33,13 @@ Replica::Replica() :
 {
 }
 
-Replica::Replica(const JsonValue& jsonValue) : 
+Replica::Replica(JsonView jsonValue) : 
     m_regionNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Replica& Replica::operator =(const JsonValue& jsonValue)
+Replica& Replica::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("RegionName"))
   {

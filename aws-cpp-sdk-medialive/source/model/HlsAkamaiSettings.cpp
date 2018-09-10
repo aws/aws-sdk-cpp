@@ -44,7 +44,7 @@ HlsAkamaiSettings::HlsAkamaiSettings() :
 {
 }
 
-HlsAkamaiSettings::HlsAkamaiSettings(const JsonValue& jsonValue) : 
+HlsAkamaiSettings::HlsAkamaiSettings(JsonView jsonValue) : 
     m_connectionRetryInterval(0),
     m_connectionRetryIntervalHasBeenSet(false),
     m_filecacheDuration(0),
@@ -61,7 +61,7 @@ HlsAkamaiSettings::HlsAkamaiSettings(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-HlsAkamaiSettings& HlsAkamaiSettings::operator =(const JsonValue& jsonValue)
+HlsAkamaiSettings& HlsAkamaiSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("connectionRetryInterval"))
   {

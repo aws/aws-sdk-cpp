@@ -36,7 +36,7 @@ ModificationState::ModificationState() :
 {
 }
 
-ModificationState::ModificationState(const JsonValue& jsonValue) : 
+ModificationState::ModificationState(JsonView jsonValue) : 
     m_resource(ModificationResourceEnum::NOT_SET),
     m_resourceHasBeenSet(false),
     m_state(ModificationStateEnum::NOT_SET),
@@ -45,7 +45,7 @@ ModificationState::ModificationState(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-ModificationState& ModificationState::operator =(const JsonValue& jsonValue)
+ModificationState& ModificationState::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Resource"))
   {

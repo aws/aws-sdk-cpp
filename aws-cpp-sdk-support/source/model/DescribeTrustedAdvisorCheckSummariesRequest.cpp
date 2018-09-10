@@ -42,7 +42,7 @@ Aws::String DescribeTrustedAdvisorCheckSummariesRequest::SerializePayload() cons
 
   }
 
-  return payload.WriteReadable();
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection DescribeTrustedAdvisorCheckSummariesRequest::GetRequestSpecificHeaders() const

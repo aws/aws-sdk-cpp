@@ -36,7 +36,7 @@ UsageRecordResult::UsageRecordResult() :
 {
 }
 
-UsageRecordResult::UsageRecordResult(const JsonValue& jsonValue) : 
+UsageRecordResult::UsageRecordResult(JsonView jsonValue) : 
     m_usageRecordHasBeenSet(false),
     m_meteringRecordIdHasBeenSet(false),
     m_status(UsageRecordResultStatus::NOT_SET),
@@ -45,7 +45,7 @@ UsageRecordResult::UsageRecordResult(const JsonValue& jsonValue) :
   *this = jsonValue;
 }
 
-UsageRecordResult& UsageRecordResult::operator =(const JsonValue& jsonValue)
+UsageRecordResult& UsageRecordResult::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("UsageRecord"))
   {
