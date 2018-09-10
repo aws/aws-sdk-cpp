@@ -255,6 +255,32 @@ namespace Model
     
     inline Backup& WithSourceCluster(const char* value) { SetSourceCluster(value); return *this;}
 
+
+    /**
+     * <p>The date and time when the backup will be permanently deleted.</p>
+     */
+    inline const Aws::Utils::DateTime& GetDeleteTimestamp() const{ return m_deleteTimestamp; }
+
+    /**
+     * <p>The date and time when the backup will be permanently deleted.</p>
+     */
+    inline void SetDeleteTimestamp(const Aws::Utils::DateTime& value) { m_deleteTimestampHasBeenSet = true; m_deleteTimestamp = value; }
+
+    /**
+     * <p>The date and time when the backup will be permanently deleted.</p>
+     */
+    inline void SetDeleteTimestamp(Aws::Utils::DateTime&& value) { m_deleteTimestampHasBeenSet = true; m_deleteTimestamp = std::move(value); }
+
+    /**
+     * <p>The date and time when the backup will be permanently deleted.</p>
+     */
+    inline Backup& WithDeleteTimestamp(const Aws::Utils::DateTime& value) { SetDeleteTimestamp(value); return *this;}
+
+    /**
+     * <p>The date and time when the backup will be permanently deleted.</p>
+     */
+    inline Backup& WithDeleteTimestamp(Aws::Utils::DateTime&& value) { SetDeleteTimestamp(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_backupId;
@@ -280,6 +306,9 @@ namespace Model
 
     Aws::String m_sourceCluster;
     bool m_sourceClusterHasBeenSet;
+
+    Aws::Utils::DateTime m_deleteTimestamp;
+    bool m_deleteTimestampHasBeenSet;
   };
 
 } // namespace Model

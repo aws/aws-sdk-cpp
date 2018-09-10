@@ -368,6 +368,49 @@ namespace Model
      */
     inline PendingModifiedValues& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
 
+
+    /**
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
+     * China region the possible values are None, and Legacy. </p>
+     */
+    inline const Aws::String& GetEncryptionType() const{ return m_encryptionType; }
+
+    /**
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
+     * China region the possible values are None, and Legacy. </p>
+     */
+    inline void SetEncryptionType(const Aws::String& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
+
+    /**
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
+     * China region the possible values are None, and Legacy. </p>
+     */
+    inline void SetEncryptionType(Aws::String&& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = std::move(value); }
+
+    /**
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
+     * China region the possible values are None, and Legacy. </p>
+     */
+    inline void SetEncryptionType(const char* value) { m_encryptionTypeHasBeenSet = true; m_encryptionType.assign(value); }
+
+    /**
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
+     * China region the possible values are None, and Legacy. </p>
+     */
+    inline PendingModifiedValues& WithEncryptionType(const Aws::String& value) { SetEncryptionType(value); return *this;}
+
+    /**
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
+     * China region the possible values are None, and Legacy. </p>
+     */
+    inline PendingModifiedValues& WithEncryptionType(Aws::String&& value) { SetEncryptionType(std::move(value)); return *this;}
+
+    /**
+     * <p>The encryption type for a cluster. Possible values are: KMS and None. For the
+     * China region the possible values are None, and Legacy. </p>
+     */
+    inline PendingModifiedValues& WithEncryptionType(const char* value) { SetEncryptionType(value); return *this;}
+
   private:
 
     Aws::String m_masterUserPassword;
@@ -399,6 +442,9 @@ namespace Model
 
     Aws::String m_maintenanceTrackName;
     bool m_maintenanceTrackNameHasBeenSet;
+
+    Aws::String m_encryptionType;
+    bool m_encryptionTypeHasBeenSet;
   };
 
 } // namespace Model

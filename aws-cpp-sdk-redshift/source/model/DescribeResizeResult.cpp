@@ -148,6 +148,11 @@ DescribeResizeResult& DescribeResizeResult::operator =(const Aws::AmazonWebServi
     {
       m_message = StringUtils::Trim(messageNode.GetText().c_str());
     }
+    XmlNode targetEncryptionTypeNode = resultNode.FirstChild("TargetEncryptionType");
+    if(!targetEncryptionTypeNode.IsNull())
+    {
+      m_targetEncryptionType = StringUtils::Trim(targetEncryptionTypeNode.GetText().c_str());
+    }
   }
 
   if (!rootNode.IsNull()) {

@@ -42,19 +42,54 @@ namespace Model
     CopyBackupToRegionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Information on the backup that will be copied to the destination region,
+     * including CreateTimestamp, SourceBackup, SourceCluster, and Source Region.
+     * CreateTimestamp of the destination backup will be the same as that of the source
+     * backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in
+     * this operation to use the <a>DescribeBackups</a> operation on the backup that
+     * will be copied to the destination region.</p>
+     */
     inline const DestinationBackup& GetDestinationBackup() const{ return m_destinationBackup; }
 
-    
+    /**
+     * <p>Information on the backup that will be copied to the destination region,
+     * including CreateTimestamp, SourceBackup, SourceCluster, and Source Region.
+     * CreateTimestamp of the destination backup will be the same as that of the source
+     * backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in
+     * this operation to use the <a>DescribeBackups</a> operation on the backup that
+     * will be copied to the destination region.</p>
+     */
     inline void SetDestinationBackup(const DestinationBackup& value) { m_destinationBackup = value; }
 
-    
+    /**
+     * <p>Information on the backup that will be copied to the destination region,
+     * including CreateTimestamp, SourceBackup, SourceCluster, and Source Region.
+     * CreateTimestamp of the destination backup will be the same as that of the source
+     * backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in
+     * this operation to use the <a>DescribeBackups</a> operation on the backup that
+     * will be copied to the destination region.</p>
+     */
     inline void SetDestinationBackup(DestinationBackup&& value) { m_destinationBackup = std::move(value); }
 
-    
+    /**
+     * <p>Information on the backup that will be copied to the destination region,
+     * including CreateTimestamp, SourceBackup, SourceCluster, and Source Region.
+     * CreateTimestamp of the destination backup will be the same as that of the source
+     * backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in
+     * this operation to use the <a>DescribeBackups</a> operation on the backup that
+     * will be copied to the destination region.</p>
+     */
     inline CopyBackupToRegionResult& WithDestinationBackup(const DestinationBackup& value) { SetDestinationBackup(value); return *this;}
 
-    
+    /**
+     * <p>Information on the backup that will be copied to the destination region,
+     * including CreateTimestamp, SourceBackup, SourceCluster, and Source Region.
+     * CreateTimestamp of the destination backup will be the same as that of the source
+     * backup.</p> <p>You will need to use the <code>sourceBackupID</code> returned in
+     * this operation to use the <a>DescribeBackups</a> operation on the backup that
+     * will be copied to the destination region.</p>
+     */
     inline CopyBackupToRegionResult& WithDestinationBackup(DestinationBackup&& value) { SetDestinationBackup(std::move(value)); return *this;}
 
   private:

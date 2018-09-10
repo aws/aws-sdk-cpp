@@ -37,7 +37,8 @@ Backup::Backup() :
     m_copyTimestampHasBeenSet(false),
     m_sourceRegionHasBeenSet(false),
     m_sourceBackupHasBeenSet(false),
-    m_sourceClusterHasBeenSet(false)
+    m_sourceClusterHasBeenSet(false),
+    m_deleteTimestampHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Backup::Backup(JsonView jsonValue) :
     m_copyTimestampHasBeenSet(false),
     m_sourceRegionHasBeenSet(false),
     m_sourceBackupHasBeenSet(false),
-    m_sourceClusterHasBeenSet(false)
+    m_sourceClusterHasBeenSet(false),
+    m_deleteTimestampHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +115,13 @@ Backup& Backup::operator =(JsonView jsonValue)
     m_sourceClusterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeleteTimestamp"))
+  {
+    m_deleteTimestamp = jsonValue.GetDouble("DeleteTimestamp");
+
+    m_deleteTimestampHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +172,11 @@ JsonValue Backup::Jsonize() const
   {
    payload.WithString("SourceCluster", m_sourceCluster);
 
+  }
+
+  if(m_deleteTimestampHasBeenSet)
+  {
+   payload.WithDouble("DeleteTimestamp", m_deleteTimestamp.SecondsWithMSPrecision());
   }
 
   return payload;

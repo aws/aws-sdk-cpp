@@ -24,12 +24,14 @@
 #include <aws/cloudhsmv2/model/CopyBackupToRegionResult.h>
 #include <aws/cloudhsmv2/model/CreateClusterResult.h>
 #include <aws/cloudhsmv2/model/CreateHsmResult.h>
+#include <aws/cloudhsmv2/model/DeleteBackupResult.h>
 #include <aws/cloudhsmv2/model/DeleteClusterResult.h>
 #include <aws/cloudhsmv2/model/DeleteHsmResult.h>
 #include <aws/cloudhsmv2/model/DescribeBackupsResult.h>
 #include <aws/cloudhsmv2/model/DescribeClustersResult.h>
 #include <aws/cloudhsmv2/model/InitializeClusterResult.h>
 #include <aws/cloudhsmv2/model/ListTagsResult.h>
+#include <aws/cloudhsmv2/model/RestoreBackupResult.h>
 #include <aws/cloudhsmv2/model/TagResourceResult.h>
 #include <aws/cloudhsmv2/model/UntagResourceResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -75,36 +77,42 @@ namespace Model
         class CopyBackupToRegionRequest;
         class CreateClusterRequest;
         class CreateHsmRequest;
+        class DeleteBackupRequest;
         class DeleteClusterRequest;
         class DeleteHsmRequest;
         class DescribeBackupsRequest;
         class DescribeClustersRequest;
         class InitializeClusterRequest;
         class ListTagsRequest;
+        class RestoreBackupRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<CopyBackupToRegionResult, Aws::Client::AWSError<CloudHSMV2Errors>> CopyBackupToRegionOutcome;
         typedef Aws::Utils::Outcome<CreateClusterResult, Aws::Client::AWSError<CloudHSMV2Errors>> CreateClusterOutcome;
         typedef Aws::Utils::Outcome<CreateHsmResult, Aws::Client::AWSError<CloudHSMV2Errors>> CreateHsmOutcome;
+        typedef Aws::Utils::Outcome<DeleteBackupResult, Aws::Client::AWSError<CloudHSMV2Errors>> DeleteBackupOutcome;
         typedef Aws::Utils::Outcome<DeleteClusterResult, Aws::Client::AWSError<CloudHSMV2Errors>> DeleteClusterOutcome;
         typedef Aws::Utils::Outcome<DeleteHsmResult, Aws::Client::AWSError<CloudHSMV2Errors>> DeleteHsmOutcome;
         typedef Aws::Utils::Outcome<DescribeBackupsResult, Aws::Client::AWSError<CloudHSMV2Errors>> DescribeBackupsOutcome;
         typedef Aws::Utils::Outcome<DescribeClustersResult, Aws::Client::AWSError<CloudHSMV2Errors>> DescribeClustersOutcome;
         typedef Aws::Utils::Outcome<InitializeClusterResult, Aws::Client::AWSError<CloudHSMV2Errors>> InitializeClusterOutcome;
         typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<CloudHSMV2Errors>> ListTagsOutcome;
+        typedef Aws::Utils::Outcome<RestoreBackupResult, Aws::Client::AWSError<CloudHSMV2Errors>> RestoreBackupOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CloudHSMV2Errors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CloudHSMV2Errors>> UntagResourceOutcome;
 
         typedef std::future<CopyBackupToRegionOutcome> CopyBackupToRegionOutcomeCallable;
         typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
         typedef std::future<CreateHsmOutcome> CreateHsmOutcomeCallable;
+        typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
         typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
         typedef std::future<DeleteHsmOutcome> DeleteHsmOutcomeCallable;
         typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
         typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
         typedef std::future<InitializeClusterOutcome> InitializeClusterOutcomeCallable;
         typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
+        typedef std::future<RestoreBackupOutcome> RestoreBackupOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
@@ -114,12 +122,14 @@ namespace Model
     typedef std::function<void(const CloudHSMV2Client*, const Model::CopyBackupToRegionRequest&, const Model::CopyBackupToRegionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyBackupToRegionResponseReceivedHandler;
     typedef std::function<void(const CloudHSMV2Client*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
     typedef std::function<void(const CloudHSMV2Client*, const Model::CreateHsmRequest&, const Model::CreateHsmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHsmResponseReceivedHandler;
+    typedef std::function<void(const CloudHSMV2Client*, const Model::DeleteBackupRequest&, const Model::DeleteBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupResponseReceivedHandler;
     typedef std::function<void(const CloudHSMV2Client*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
     typedef std::function<void(const CloudHSMV2Client*, const Model::DeleteHsmRequest&, const Model::DeleteHsmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHsmResponseReceivedHandler;
     typedef std::function<void(const CloudHSMV2Client*, const Model::DescribeBackupsRequest&, const Model::DescribeBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupsResponseReceivedHandler;
     typedef std::function<void(const CloudHSMV2Client*, const Model::DescribeClustersRequest&, const Model::DescribeClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClustersResponseReceivedHandler;
     typedef std::function<void(const CloudHSMV2Client*, const Model::InitializeClusterRequest&, const Model::InitializeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitializeClusterResponseReceivedHandler;
     typedef std::function<void(const CloudHSMV2Client*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
+    typedef std::function<void(const CloudHSMV2Client*, const Model::RestoreBackupRequest&, const Model::RestoreBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreBackupResponseReceivedHandler;
     typedef std::function<void(const CloudHSMV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CloudHSMV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
@@ -159,19 +169,28 @@ namespace Model
 
 
         /**
-         * 
+         * <p>Copy an AWS CloudHSM cluster backup to a different region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion">AWS
+         * API Reference</a></p>
          */
         virtual Model::CopyBackupToRegionOutcome CopyBackupToRegion(const Model::CopyBackupToRegionRequest& request) const;
 
         /**
-         * 
+         * <p>Copy an AWS CloudHSM cluster backup to a different region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CopyBackupToRegionOutcomeCallable CopyBackupToRegionCallable(const Model::CopyBackupToRegionRequest& request) const;
 
         /**
-         * 
+         * <p>Copy an AWS CloudHSM cluster backup to a different region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -229,6 +248,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateHsmAsync(const Model::CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7
+         * days after the DeleteBackup request. For more information on restoring a backup,
+         * see <a>RestoreBackup</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBackupOutcome DeleteBackup(const Model::DeleteBackupRequest& request) const;
+
+        /**
+         * <p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7
+         * days after the DeleteBackup request. For more information on restoring a backup,
+         * see <a>RestoreBackup</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBackupOutcomeCallable DeleteBackupCallable(const Model::DeleteBackupRequest& request) const;
+
+        /**
+         * <p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7
+         * days after the DeleteBackup request. For more information on restoring a backup,
+         * see <a>RestoreBackup</a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBackupAsync(const Model::DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified AWS CloudHSM cluster. Before you can delete a cluster,
@@ -465,6 +515,37 @@ namespace Model
         virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Restores a specified AWS CloudHSM backup that is in the
+         * <code>PENDING_DELETION</code> state. For more information on deleting a backup,
+         * see <a>DeleteBackup</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RestoreBackupOutcome RestoreBackup(const Model::RestoreBackupRequest& request) const;
+
+        /**
+         * <p>Restores a specified AWS CloudHSM backup that is in the
+         * <code>PENDING_DELETION</code> state. For more information on deleting a backup,
+         * see <a>DeleteBackup</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RestoreBackupOutcomeCallable RestoreBackupCallable(const Model::RestoreBackupRequest& request) const;
+
+        /**
+         * <p>Restores a specified AWS CloudHSM backup that is in the
+         * <code>PENDING_DELETION</code> state. For more information on deleting a backup,
+         * see <a>DeleteBackup</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RestoreBackupAsync(const Model::RestoreBackupRequest& request, const RestoreBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds or overwrites one or more tags for the specified AWS CloudHSM
          * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource">AWS
@@ -528,12 +609,14 @@ namespace Model
         void CopyBackupToRegionAsyncHelper(const Model::CopyBackupToRegionRequest& request, const CopyBackupToRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHsmAsyncHelper(const Model::CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBackupAsyncHelper(const Model::DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHsmAsyncHelper(const Model::DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBackupsAsyncHelper(const Model::DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClustersAsyncHelper(const Model::DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InitializeClusterAsyncHelper(const Model::InitializeClusterRequest& request, const InitializeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RestoreBackupAsyncHelper(const Model::RestoreBackupRequest& request, const RestoreBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

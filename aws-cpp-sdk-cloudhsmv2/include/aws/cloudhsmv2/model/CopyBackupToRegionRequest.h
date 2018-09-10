@@ -44,47 +44,75 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
+     */
     inline const Aws::String& GetDestinationRegion() const{ return m_destinationRegion; }
 
-    
+    /**
+     * <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
+     */
     inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
 
-    
+    /**
+     * <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
+     */
     inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::move(value); }
 
-    
+    /**
+     * <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
+     */
     inline void SetDestinationRegion(const char* value) { m_destinationRegionHasBeenSet = true; m_destinationRegion.assign(value); }
 
-    
+    /**
+     * <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
+     */
     inline CopyBackupToRegionRequest& WithDestinationRegion(const Aws::String& value) { SetDestinationRegion(value); return *this;}
 
-    
+    /**
+     * <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
+     */
     inline CopyBackupToRegionRequest& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
+     */
     inline CopyBackupToRegionRequest& WithDestinationRegion(const char* value) { SetDestinationRegion(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the backup that will be copied to the destination region. </p>
+     */
     inline const Aws::String& GetBackupId() const{ return m_backupId; }
 
-    
+    /**
+     * <p>The ID of the backup that will be copied to the destination region. </p>
+     */
     inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
 
-    
+    /**
+     * <p>The ID of the backup that will be copied to the destination region. </p>
+     */
     inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the backup that will be copied to the destination region. </p>
+     */
     inline void SetBackupId(const char* value) { m_backupIdHasBeenSet = true; m_backupId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the backup that will be copied to the destination region. </p>
+     */
     inline CopyBackupToRegionRequest& WithBackupId(const Aws::String& value) { SetBackupId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the backup that will be copied to the destination region. </p>
+     */
     inline CopyBackupToRegionRequest& WithBackupId(Aws::String&& value) { SetBackupId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the backup that will be copied to the destination region. </p>
+     */
     inline CopyBackupToRegionRequest& WithBackupId(const char* value) { SetBackupId(value); return *this;}
 
   private:

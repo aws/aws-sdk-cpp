@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-MTurk;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.6.20170117.7;
+        version : 1.6.20170117.8;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Mechanical Turk);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.6.7
+            AWSSDKCPP-Core/1.6.8
        }
     }
 

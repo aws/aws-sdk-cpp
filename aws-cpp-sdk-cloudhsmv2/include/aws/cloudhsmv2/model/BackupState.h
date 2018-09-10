@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     CREATE_IN_PROGRESS,
     READY,
-    DELETED
+    DELETED,
+    PENDING_DELETION
   };
 
 namespace BackupStateMapper

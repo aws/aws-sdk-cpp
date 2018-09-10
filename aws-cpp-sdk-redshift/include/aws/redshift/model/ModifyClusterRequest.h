@@ -1223,6 +1223,77 @@ namespace Model
      */
     inline ModifyClusterRequest& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the cluster is encrypted. If the cluster is encrypted and
+     * you provide a value for the <code>KmsKeyId</code> parameter, we will encrypt the
+     * cluster with the provided <code>KmsKeyId</code>. If you don't provide a
+     * <code>KmsKeyId</code>, we will encrypt with the default key. In the China region
+     * we will use legacy encryption if you specify that the cluster is encrypted.</p>
+     */
+    inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>Indicates whether the cluster is encrypted. If the cluster is encrypted and
+     * you provide a value for the <code>KmsKeyId</code> parameter, we will encrypt the
+     * cluster with the provided <code>KmsKeyId</code>. If you don't provide a
+     * <code>KmsKeyId</code>, we will encrypt with the default key. In the China region
+     * we will use legacy encryption if you specify that the cluster is encrypted.</p>
+     */
+    inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
+
+    /**
+     * <p>Indicates whether the cluster is encrypted. If the cluster is encrypted and
+     * you provide a value for the <code>KmsKeyId</code> parameter, we will encrypt the
+     * cluster with the provided <code>KmsKeyId</code>. If you don't provide a
+     * <code>KmsKeyId</code>, we will encrypt with the default key. In the China region
+     * we will use legacy encryption if you specify that the cluster is encrypted.</p>
+     */
+    inline ModifyClusterRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
+
+    /**
+     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
+     * want to use to encrypt data in the cluster.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
+     * want to use to encrypt data in the cluster.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
+     * want to use to encrypt data in the cluster.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
+     * want to use to encrypt data in the cluster.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
+     * want to use to encrypt data in the cluster.</p>
+     */
+    inline ModifyClusterRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
+     * want to use to encrypt data in the cluster.</p>
+     */
+    inline ModifyClusterRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
+     * want to use to encrypt data in the cluster.</p>
+     */
+    inline ModifyClusterRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1281,6 +1352,12 @@ namespace Model
 
     Aws::String m_maintenanceTrackName;
     bool m_maintenanceTrackNameHasBeenSet;
+
+    bool m_encrypted;
+    bool m_encryptedHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

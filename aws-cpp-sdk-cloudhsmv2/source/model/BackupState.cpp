@@ -33,6 +33,7 @@ namespace Aws
         static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
         static const int READY_HASH = HashingUtils::HashString("READY");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static const int PENDING_DELETION_HASH = HashingUtils::HashString("PENDING_DELETION");
 
 
         BackupState GetBackupStateForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == DELETED_HASH)
           {
             return BackupState::DELETED;
+          }
+          else if (hashCode == PENDING_DELETION_HASH)
+          {
+            return BackupState::PENDING_DELETION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "READY";
           case BackupState::DELETED:
             return "DELETED";
+          case BackupState::PENDING_DELETION:
+            return "PENDING_DELETION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
