@@ -76,8 +76,10 @@
 #include <aws/ssm/model/DescribePatchBaselinesRequest.h>
 #include <aws/ssm/model/DescribePatchGroupStateRequest.h>
 #include <aws/ssm/model/DescribePatchGroupsRequest.h>
+#include <aws/ssm/model/DescribeSessionsRequest.h>
 #include <aws/ssm/model/GetAutomationExecutionRequest.h>
 #include <aws/ssm/model/GetCommandInvocationRequest.h>
+#include <aws/ssm/model/GetConnectionStatusRequest.h>
 #include <aws/ssm/model/GetDefaultPatchBaselineRequest.h>
 #include <aws/ssm/model/GetDeployablePatchSnapshotForInstanceRequest.h>
 #include <aws/ssm/model/GetDocumentRequest.h>
@@ -116,11 +118,14 @@
 #include <aws/ssm/model/RegisterTargetWithMaintenanceWindowRequest.h>
 #include <aws/ssm/model/RegisterTaskWithMaintenanceWindowRequest.h>
 #include <aws/ssm/model/RemoveTagsFromResourceRequest.h>
+#include <aws/ssm/model/ResumeSessionRequest.h>
 #include <aws/ssm/model/SendAutomationSignalRequest.h>
 #include <aws/ssm/model/SendCommandRequest.h>
 #include <aws/ssm/model/StartAssociationsOnceRequest.h>
 #include <aws/ssm/model/StartAutomationExecutionRequest.h>
+#include <aws/ssm/model/StartSessionRequest.h>
 #include <aws/ssm/model/StopAutomationExecutionRequest.h>
+#include <aws/ssm/model/TerminateSessionRequest.h>
 #include <aws/ssm/model/UpdateAssociationRequest.h>
 #include <aws/ssm/model/UpdateAssociationStatusRequest.h>
 #include <aws/ssm/model/UpdateDocumentRequest.h>
@@ -1910,6 +1915,41 @@ void SSMClient::DescribePatchGroupsAsyncHelper(const DescribePatchGroupsRequest&
   handler(this, request, DescribePatchGroups(request), context);
 }
 
+DescribeSessionsOutcome SSMClient::DescribeSessions(const DescribeSessionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeSessionsOutcome(DescribeSessionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeSessionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeSessionsOutcomeCallable SSMClient::DescribeSessionsCallable(const DescribeSessionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSessionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSessions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::DescribeSessionsAsync(const DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSessionsAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::DescribeSessionsAsyncHelper(const DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSessions(request), context);
+}
+
 GetAutomationExecutionOutcome SSMClient::GetAutomationExecution(const GetAutomationExecutionRequest& request) const
 {
   Aws::StringStream ss;
@@ -1978,6 +2018,41 @@ void SSMClient::GetCommandInvocationAsync(const GetCommandInvocationRequest& req
 void SSMClient::GetCommandInvocationAsyncHelper(const GetCommandInvocationRequest& request, const GetCommandInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetCommandInvocation(request), context);
+}
+
+GetConnectionStatusOutcome SSMClient::GetConnectionStatus(const GetConnectionStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetConnectionStatusOutcome(GetConnectionStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetConnectionStatusOutcome(outcome.GetError());
+  }
+}
+
+GetConnectionStatusOutcomeCallable SSMClient::GetConnectionStatusCallable(const GetConnectionStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetConnectionStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnectionStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::GetConnectionStatusAsync(const GetConnectionStatusRequest& request, const GetConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetConnectionStatusAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::GetConnectionStatusAsyncHelper(const GetConnectionStatusRequest& request, const GetConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetConnectionStatus(request), context);
 }
 
 GetDefaultPatchBaselineOutcome SSMClient::GetDefaultPatchBaseline(const GetDefaultPatchBaselineRequest& request) const
@@ -3310,6 +3385,41 @@ void SSMClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRe
   handler(this, request, RemoveTagsFromResource(request), context);
 }
 
+ResumeSessionOutcome SSMClient::ResumeSession(const ResumeSessionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ResumeSessionOutcome(ResumeSessionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ResumeSessionOutcome(outcome.GetError());
+  }
+}
+
+ResumeSessionOutcomeCallable SSMClient::ResumeSessionCallable(const ResumeSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResumeSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResumeSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::ResumeSessionAsync(const ResumeSessionRequest& request, const ResumeSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResumeSessionAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::ResumeSessionAsyncHelper(const ResumeSessionRequest& request, const ResumeSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResumeSession(request), context);
+}
+
 SendAutomationSignalOutcome SSMClient::SendAutomationSignal(const SendAutomationSignalRequest& request) const
 {
   Aws::StringStream ss;
@@ -3450,6 +3560,41 @@ void SSMClient::StartAutomationExecutionAsyncHelper(const StartAutomationExecuti
   handler(this, request, StartAutomationExecution(request), context);
 }
 
+StartSessionOutcome SSMClient::StartSession(const StartSessionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartSessionOutcome(StartSessionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartSessionOutcome(outcome.GetError());
+  }
+}
+
+StartSessionOutcomeCallable SSMClient::StartSessionCallable(const StartSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::StartSessionAsync(const StartSessionRequest& request, const StartSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartSessionAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::StartSessionAsyncHelper(const StartSessionRequest& request, const StartSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartSession(request), context);
+}
+
 StopAutomationExecutionOutcome SSMClient::StopAutomationExecution(const StopAutomationExecutionRequest& request) const
 {
   Aws::StringStream ss;
@@ -3483,6 +3628,41 @@ void SSMClient::StopAutomationExecutionAsync(const StopAutomationExecutionReques
 void SSMClient::StopAutomationExecutionAsyncHelper(const StopAutomationExecutionRequest& request, const StopAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopAutomationExecution(request), context);
+}
+
+TerminateSessionOutcome SSMClient::TerminateSession(const TerminateSessionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TerminateSessionOutcome(TerminateSessionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TerminateSessionOutcome(outcome.GetError());
+  }
+}
+
+TerminateSessionOutcomeCallable SSMClient::TerminateSessionCallable(const TerminateSessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TerminateSessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TerminateSession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::TerminateSessionAsync(const TerminateSessionRequest& request, const TerminateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TerminateSessionAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::TerminateSessionAsyncHelper(const TerminateSessionRequest& request, const TerminateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TerminateSession(request), context);
 }
 
 UpdateAssociationOutcome SSMClient::UpdateAssociation(const UpdateAssociationRequest& request) const

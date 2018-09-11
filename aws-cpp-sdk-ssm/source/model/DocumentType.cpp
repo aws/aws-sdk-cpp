@@ -33,6 +33,7 @@ namespace Aws
         static const int Command_HASH = HashingUtils::HashString("Command");
         static const int Policy_HASH = HashingUtils::HashString("Policy");
         static const int Automation_HASH = HashingUtils::HashString("Automation");
+        static const int Session_HASH = HashingUtils::HashString("Session");
 
 
         DocumentType GetDocumentTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == Automation_HASH)
           {
             return DocumentType::Automation;
+          }
+          else if (hashCode == Session_HASH)
+          {
+            return DocumentType::Session;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "Policy";
           case DocumentType::Automation:
             return "Automation";
+          case DocumentType::Session:
+            return "Session";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

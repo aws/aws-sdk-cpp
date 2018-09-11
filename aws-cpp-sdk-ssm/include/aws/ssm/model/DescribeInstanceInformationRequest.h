@@ -48,44 +48,79 @@ namespace Model
 
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * <p>This is a legacy method. We recommend that you don't use this method.
+     * Instead, use the <a>InstanceInformationFilter</a> action. The
+     * <code>InstanceInformationFilter</code> action enables you to return instance
+     * information by using tags that are specified as a key-value mapping. </p> <p>If
+     * you do use this method, then you can't use the
+     * <code>InstanceInformationFilter</code> action. Using this method and the
+     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
      */
     inline const Aws::Vector<InstanceInformationFilter>& GetInstanceInformationFilterList() const{ return m_instanceInformationFilterList; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * <p>This is a legacy method. We recommend that you don't use this method.
+     * Instead, use the <a>InstanceInformationFilter</a> action. The
+     * <code>InstanceInformationFilter</code> action enables you to return instance
+     * information by using tags that are specified as a key-value mapping. </p> <p>If
+     * you do use this method, then you can't use the
+     * <code>InstanceInformationFilter</code> action. Using this method and the
+     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
      */
     inline void SetInstanceInformationFilterList(const Aws::Vector<InstanceInformationFilter>& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList = value; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * <p>This is a legacy method. We recommend that you don't use this method.
+     * Instead, use the <a>InstanceInformationFilter</a> action. The
+     * <code>InstanceInformationFilter</code> action enables you to return instance
+     * information by using tags that are specified as a key-value mapping. </p> <p>If
+     * you do use this method, then you can't use the
+     * <code>InstanceInformationFilter</code> action. Using this method and the
+     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
      */
     inline void SetInstanceInformationFilterList(Aws::Vector<InstanceInformationFilter>&& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList = std::move(value); }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * <p>This is a legacy method. We recommend that you don't use this method.
+     * Instead, use the <a>InstanceInformationFilter</a> action. The
+     * <code>InstanceInformationFilter</code> action enables you to return instance
+     * information by using tags that are specified as a key-value mapping. </p> <p>If
+     * you do use this method, then you can't use the
+     * <code>InstanceInformationFilter</code> action. Using this method and the
+     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
      */
     inline DescribeInstanceInformationRequest& WithInstanceInformationFilterList(const Aws::Vector<InstanceInformationFilter>& value) { SetInstanceInformationFilterList(value); return *this;}
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * <p>This is a legacy method. We recommend that you don't use this method.
+     * Instead, use the <a>InstanceInformationFilter</a> action. The
+     * <code>InstanceInformationFilter</code> action enables you to return instance
+     * information by using tags that are specified as a key-value mapping. </p> <p>If
+     * you do use this method, then you can't use the
+     * <code>InstanceInformationFilter</code> action. Using this method and the
+     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
      */
     inline DescribeInstanceInformationRequest& WithInstanceInformationFilterList(Aws::Vector<InstanceInformationFilter>&& value) { SetInstanceInformationFilterList(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * <p>This is a legacy method. We recommend that you don't use this method.
+     * Instead, use the <a>InstanceInformationFilter</a> action. The
+     * <code>InstanceInformationFilter</code> action enables you to return instance
+     * information by using tags that are specified as a key-value mapping. </p> <p>If
+     * you do use this method, then you can't use the
+     * <code>InstanceInformationFilter</code> action. Using this method and the
+     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
      */
     inline DescribeInstanceInformationRequest& AddInstanceInformationFilterList(const InstanceInformationFilter& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * <p>This is a legacy method. We recommend that you don't use this method.
+     * Instead, use the <a>InstanceInformationFilter</a> action. The
+     * <code>InstanceInformationFilter</code> action enables you to return instance
+     * information by using tags that are specified as a key-value mapping. </p> <p>If
+     * you do use this method, then you can't use the
+     * <code>InstanceInformationFilter</code> action. Using this method and the
+     * <code>InstanceInformationFilter</code> action causes an exception error. </p>
      */
     inline DescribeInstanceInformationRequest& AddInstanceInformationFilterList(InstanceInformationFilter&& value) { m_instanceInformationFilterListHasBeenSet = true; m_instanceInformationFilterList.push_back(std::move(value)); return *this; }
 

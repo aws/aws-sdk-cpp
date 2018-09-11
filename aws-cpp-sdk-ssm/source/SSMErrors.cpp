@@ -39,6 +39,7 @@ static const int INVALID_INVENTORY_REQUEST_HASH = HashingUtils::HashString("Inva
 static const int RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH = HashingUtils::HashString("ResourceDataSyncCountExceededException");
 static const int INVALID_DELETE_INVENTORY_PARAMETERS_HASH = HashingUtils::HashString("InvalidDeleteInventoryParametersException");
 static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("InvalidDocument");
+static const int TARGET_NOT_CONNECTED_HASH = HashingUtils::HashString("TargetNotConnected");
 static const int DOCUMENT_ALREADY_EXISTS_HASH = HashingUtils::HashString("DocumentAlreadyExists");
 static const int INVALID_PLUGIN_NAME_HASH = HashingUtils::HashString("InvalidPluginName");
 static const int UNSUPPORTED_INVENTORY_SCHEMA_VERSION_HASH = HashingUtils::HashString("UnsupportedInventorySchemaVersionException");
@@ -174,6 +175,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_DOCUMENT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_DOCUMENT), false);
+  }
+  else if (hashCode == TARGET_NOT_CONNECTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::TARGET_NOT_CONNECTED), false);
   }
   else if (hashCode == DOCUMENT_ALREADY_EXISTS_HASH)
   {

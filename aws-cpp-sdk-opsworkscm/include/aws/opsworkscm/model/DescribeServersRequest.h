@@ -81,121 +81,63 @@ namespace Model
 
 
     /**
-     * <p>NextToken is a string that is returned in some command responses. It
-     * indicates that not all entries have been returned, and that you must run at
-     * least one more request to get remaining items. To get remaining results, call
-     * <code>DescribeServers</code> again, and assign the token from the previous
-     * results as the value of the <code>nextToken</code> parameter. If there are no
-     * more results, the response object's <code>nextToken</code> parameter value is
-     * <code>null</code>. Setting a <code>nextToken</code> value that was not returned
-     * in your previous results causes an <code>InvalidNextTokenException</code> to
-     * occur. </p>
+     * <p>This is not currently implemented for <code>DescribeServers</code> requests.
+     * </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>NextToken is a string that is returned in some command responses. It
-     * indicates that not all entries have been returned, and that you must run at
-     * least one more request to get remaining items. To get remaining results, call
-     * <code>DescribeServers</code> again, and assign the token from the previous
-     * results as the value of the <code>nextToken</code> parameter. If there are no
-     * more results, the response object's <code>nextToken</code> parameter value is
-     * <code>null</code>. Setting a <code>nextToken</code> value that was not returned
-     * in your previous results causes an <code>InvalidNextTokenException</code> to
-     * occur. </p>
+     * <p>This is not currently implemented for <code>DescribeServers</code> requests.
+     * </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>NextToken is a string that is returned in some command responses. It
-     * indicates that not all entries have been returned, and that you must run at
-     * least one more request to get remaining items. To get remaining results, call
-     * <code>DescribeServers</code> again, and assign the token from the previous
-     * results as the value of the <code>nextToken</code> parameter. If there are no
-     * more results, the response object's <code>nextToken</code> parameter value is
-     * <code>null</code>. Setting a <code>nextToken</code> value that was not returned
-     * in your previous results causes an <code>InvalidNextTokenException</code> to
-     * occur. </p>
+     * <p>This is not currently implemented for <code>DescribeServers</code> requests.
+     * </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>NextToken is a string that is returned in some command responses. It
-     * indicates that not all entries have been returned, and that you must run at
-     * least one more request to get remaining items. To get remaining results, call
-     * <code>DescribeServers</code> again, and assign the token from the previous
-     * results as the value of the <code>nextToken</code> parameter. If there are no
-     * more results, the response object's <code>nextToken</code> parameter value is
-     * <code>null</code>. Setting a <code>nextToken</code> value that was not returned
-     * in your previous results causes an <code>InvalidNextTokenException</code> to
-     * occur. </p>
+     * <p>This is not currently implemented for <code>DescribeServers</code> requests.
+     * </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>NextToken is a string that is returned in some command responses. It
-     * indicates that not all entries have been returned, and that you must run at
-     * least one more request to get remaining items. To get remaining results, call
-     * <code>DescribeServers</code> again, and assign the token from the previous
-     * results as the value of the <code>nextToken</code> parameter. If there are no
-     * more results, the response object's <code>nextToken</code> parameter value is
-     * <code>null</code>. Setting a <code>nextToken</code> value that was not returned
-     * in your previous results causes an <code>InvalidNextTokenException</code> to
-     * occur. </p>
+     * <p>This is not currently implemented for <code>DescribeServers</code> requests.
+     * </p>
      */
     inline DescribeServersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>NextToken is a string that is returned in some command responses. It
-     * indicates that not all entries have been returned, and that you must run at
-     * least one more request to get remaining items. To get remaining results, call
-     * <code>DescribeServers</code> again, and assign the token from the previous
-     * results as the value of the <code>nextToken</code> parameter. If there are no
-     * more results, the response object's <code>nextToken</code> parameter value is
-     * <code>null</code>. Setting a <code>nextToken</code> value that was not returned
-     * in your previous results causes an <code>InvalidNextTokenException</code> to
-     * occur. </p>
+     * <p>This is not currently implemented for <code>DescribeServers</code> requests.
+     * </p>
      */
     inline DescribeServersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>NextToken is a string that is returned in some command responses. It
-     * indicates that not all entries have been returned, and that you must run at
-     * least one more request to get remaining items. To get remaining results, call
-     * <code>DescribeServers</code> again, and assign the token from the previous
-     * results as the value of the <code>nextToken</code> parameter. If there are no
-     * more results, the response object's <code>nextToken</code> parameter value is
-     * <code>null</code>. Setting a <code>nextToken</code> value that was not returned
-     * in your previous results causes an <code>InvalidNextTokenException</code> to
-     * occur. </p>
+     * <p>This is not currently implemented for <code>DescribeServers</code> requests.
+     * </p>
      */
     inline DescribeServersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>To receive a paginated response, use this parameter to specify the maximum
-     * number of results to be returned with a single call. If the number of available
-     * results exceeds this maximum, the response includes a <code>NextToken</code>
-     * value that you can assign to the <code>NextToken</code> request parameter to get
-     * the next set of results. </p>
+     * <p>This is not currently implemented for <code>DescribeServers</code> requests.
+     * </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>To receive a paginated response, use this parameter to specify the maximum
-     * number of results to be returned with a single call. If the number of available
-     * results exceeds this maximum, the response includes a <code>NextToken</code>
-     * value that you can assign to the <code>NextToken</code> request parameter to get
-     * the next set of results. </p>
+     * <p>This is not currently implemented for <code>DescribeServers</code> requests.
+     * </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>To receive a paginated response, use this parameter to specify the maximum
-     * number of results to be returned with a single call. If the number of available
-     * results exceeds this maximum, the response includes a <code>NextToken</code>
-     * value that you can assign to the <code>NextToken</code> request parameter to get
-     * the next set of results. </p>
+     * <p>This is not currently implemented for <code>DescribeServers</code> requests.
+     * </p>
      */
     inline DescribeServersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

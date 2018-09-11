@@ -70,8 +70,10 @@
 #include <aws/ssm/model/DescribePatchBaselinesResult.h>
 #include <aws/ssm/model/DescribePatchGroupStateResult.h>
 #include <aws/ssm/model/DescribePatchGroupsResult.h>
+#include <aws/ssm/model/DescribeSessionsResult.h>
 #include <aws/ssm/model/GetAutomationExecutionResult.h>
 #include <aws/ssm/model/GetCommandInvocationResult.h>
+#include <aws/ssm/model/GetConnectionStatusResult.h>
 #include <aws/ssm/model/GetDefaultPatchBaselineResult.h>
 #include <aws/ssm/model/GetDeployablePatchSnapshotForInstanceResult.h>
 #include <aws/ssm/model/GetDocumentResult.h>
@@ -110,11 +112,14 @@
 #include <aws/ssm/model/RegisterTargetWithMaintenanceWindowResult.h>
 #include <aws/ssm/model/RegisterTaskWithMaintenanceWindowResult.h>
 #include <aws/ssm/model/RemoveTagsFromResourceResult.h>
+#include <aws/ssm/model/ResumeSessionResult.h>
 #include <aws/ssm/model/SendAutomationSignalResult.h>
 #include <aws/ssm/model/SendCommandResult.h>
 #include <aws/ssm/model/StartAssociationsOnceResult.h>
 #include <aws/ssm/model/StartAutomationExecutionResult.h>
+#include <aws/ssm/model/StartSessionResult.h>
 #include <aws/ssm/model/StopAutomationExecutionResult.h>
+#include <aws/ssm/model/TerminateSessionResult.h>
 #include <aws/ssm/model/UpdateAssociationResult.h>
 #include <aws/ssm/model/UpdateAssociationStatusResult.h>
 #include <aws/ssm/model/UpdateDocumentResult.h>
@@ -213,8 +218,10 @@ namespace Model
         class DescribePatchBaselinesRequest;
         class DescribePatchGroupStateRequest;
         class DescribePatchGroupsRequest;
+        class DescribeSessionsRequest;
         class GetAutomationExecutionRequest;
         class GetCommandInvocationRequest;
+        class GetConnectionStatusRequest;
         class GetDefaultPatchBaselineRequest;
         class GetDeployablePatchSnapshotForInstanceRequest;
         class GetDocumentRequest;
@@ -253,11 +260,14 @@ namespace Model
         class RegisterTargetWithMaintenanceWindowRequest;
         class RegisterTaskWithMaintenanceWindowRequest;
         class RemoveTagsFromResourceRequest;
+        class ResumeSessionRequest;
         class SendAutomationSignalRequest;
         class SendCommandRequest;
         class StartAssociationsOnceRequest;
         class StartAutomationExecutionRequest;
+        class StartSessionRequest;
         class StopAutomationExecutionRequest;
+        class TerminateSessionRequest;
         class UpdateAssociationRequest;
         class UpdateAssociationStatusRequest;
         class UpdateDocumentRequest;
@@ -317,8 +327,10 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribePatchBaselinesResult, Aws::Client::AWSError<SSMErrors>> DescribePatchBaselinesOutcome;
         typedef Aws::Utils::Outcome<DescribePatchGroupStateResult, Aws::Client::AWSError<SSMErrors>> DescribePatchGroupStateOutcome;
         typedef Aws::Utils::Outcome<DescribePatchGroupsResult, Aws::Client::AWSError<SSMErrors>> DescribePatchGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeSessionsResult, Aws::Client::AWSError<SSMErrors>> DescribeSessionsOutcome;
         typedef Aws::Utils::Outcome<GetAutomationExecutionResult, Aws::Client::AWSError<SSMErrors>> GetAutomationExecutionOutcome;
         typedef Aws::Utils::Outcome<GetCommandInvocationResult, Aws::Client::AWSError<SSMErrors>> GetCommandInvocationOutcome;
+        typedef Aws::Utils::Outcome<GetConnectionStatusResult, Aws::Client::AWSError<SSMErrors>> GetConnectionStatusOutcome;
         typedef Aws::Utils::Outcome<GetDefaultPatchBaselineResult, Aws::Client::AWSError<SSMErrors>> GetDefaultPatchBaselineOutcome;
         typedef Aws::Utils::Outcome<GetDeployablePatchSnapshotForInstanceResult, Aws::Client::AWSError<SSMErrors>> GetDeployablePatchSnapshotForInstanceOutcome;
         typedef Aws::Utils::Outcome<GetDocumentResult, Aws::Client::AWSError<SSMErrors>> GetDocumentOutcome;
@@ -357,11 +369,14 @@ namespace Model
         typedef Aws::Utils::Outcome<RegisterTargetWithMaintenanceWindowResult, Aws::Client::AWSError<SSMErrors>> RegisterTargetWithMaintenanceWindowOutcome;
         typedef Aws::Utils::Outcome<RegisterTaskWithMaintenanceWindowResult, Aws::Client::AWSError<SSMErrors>> RegisterTaskWithMaintenanceWindowOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, Aws::Client::AWSError<SSMErrors>> RemoveTagsFromResourceOutcome;
+        typedef Aws::Utils::Outcome<ResumeSessionResult, Aws::Client::AWSError<SSMErrors>> ResumeSessionOutcome;
         typedef Aws::Utils::Outcome<SendAutomationSignalResult, Aws::Client::AWSError<SSMErrors>> SendAutomationSignalOutcome;
         typedef Aws::Utils::Outcome<SendCommandResult, Aws::Client::AWSError<SSMErrors>> SendCommandOutcome;
         typedef Aws::Utils::Outcome<StartAssociationsOnceResult, Aws::Client::AWSError<SSMErrors>> StartAssociationsOnceOutcome;
         typedef Aws::Utils::Outcome<StartAutomationExecutionResult, Aws::Client::AWSError<SSMErrors>> StartAutomationExecutionOutcome;
+        typedef Aws::Utils::Outcome<StartSessionResult, Aws::Client::AWSError<SSMErrors>> StartSessionOutcome;
         typedef Aws::Utils::Outcome<StopAutomationExecutionResult, Aws::Client::AWSError<SSMErrors>> StopAutomationExecutionOutcome;
+        typedef Aws::Utils::Outcome<TerminateSessionResult, Aws::Client::AWSError<SSMErrors>> TerminateSessionOutcome;
         typedef Aws::Utils::Outcome<UpdateAssociationResult, Aws::Client::AWSError<SSMErrors>> UpdateAssociationOutcome;
         typedef Aws::Utils::Outcome<UpdateAssociationStatusResult, Aws::Client::AWSError<SSMErrors>> UpdateAssociationStatusOutcome;
         typedef Aws::Utils::Outcome<UpdateDocumentResult, Aws::Client::AWSError<SSMErrors>> UpdateDocumentOutcome;
@@ -421,8 +436,10 @@ namespace Model
         typedef std::future<DescribePatchBaselinesOutcome> DescribePatchBaselinesOutcomeCallable;
         typedef std::future<DescribePatchGroupStateOutcome> DescribePatchGroupStateOutcomeCallable;
         typedef std::future<DescribePatchGroupsOutcome> DescribePatchGroupsOutcomeCallable;
+        typedef std::future<DescribeSessionsOutcome> DescribeSessionsOutcomeCallable;
         typedef std::future<GetAutomationExecutionOutcome> GetAutomationExecutionOutcomeCallable;
         typedef std::future<GetCommandInvocationOutcome> GetCommandInvocationOutcomeCallable;
+        typedef std::future<GetConnectionStatusOutcome> GetConnectionStatusOutcomeCallable;
         typedef std::future<GetDefaultPatchBaselineOutcome> GetDefaultPatchBaselineOutcomeCallable;
         typedef std::future<GetDeployablePatchSnapshotForInstanceOutcome> GetDeployablePatchSnapshotForInstanceOutcomeCallable;
         typedef std::future<GetDocumentOutcome> GetDocumentOutcomeCallable;
@@ -461,11 +478,14 @@ namespace Model
         typedef std::future<RegisterTargetWithMaintenanceWindowOutcome> RegisterTargetWithMaintenanceWindowOutcomeCallable;
         typedef std::future<RegisterTaskWithMaintenanceWindowOutcome> RegisterTaskWithMaintenanceWindowOutcomeCallable;
         typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
+        typedef std::future<ResumeSessionOutcome> ResumeSessionOutcomeCallable;
         typedef std::future<SendAutomationSignalOutcome> SendAutomationSignalOutcomeCallable;
         typedef std::future<SendCommandOutcome> SendCommandOutcomeCallable;
         typedef std::future<StartAssociationsOnceOutcome> StartAssociationsOnceOutcomeCallable;
         typedef std::future<StartAutomationExecutionOutcome> StartAutomationExecutionOutcomeCallable;
+        typedef std::future<StartSessionOutcome> StartSessionOutcomeCallable;
         typedef std::future<StopAutomationExecutionOutcome> StopAutomationExecutionOutcomeCallable;
+        typedef std::future<TerminateSessionOutcome> TerminateSessionOutcomeCallable;
         typedef std::future<UpdateAssociationOutcome> UpdateAssociationOutcomeCallable;
         typedef std::future<UpdateAssociationStatusOutcome> UpdateAssociationStatusOutcomeCallable;
         typedef std::future<UpdateDocumentOutcome> UpdateDocumentOutcomeCallable;
@@ -528,8 +548,10 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::DescribePatchBaselinesRequest&, const Model::DescribePatchBaselinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePatchBaselinesResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribePatchGroupStateRequest&, const Model::DescribePatchGroupStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePatchGroupStateResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribePatchGroupsRequest&, const Model::DescribePatchGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePatchGroupsResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::DescribeSessionsRequest&, const Model::DescribeSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSessionsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetAutomationExecutionRequest&, const Model::GetAutomationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutomationExecutionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetCommandInvocationRequest&, const Model::GetCommandInvocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommandInvocationResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::GetConnectionStatusRequest&, const Model::GetConnectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectionStatusResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetDefaultPatchBaselineRequest&, const Model::GetDefaultPatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDefaultPatchBaselineResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetDeployablePatchSnapshotForInstanceRequest&, const Model::GetDeployablePatchSnapshotForInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeployablePatchSnapshotForInstanceResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetDocumentRequest&, const Model::GetDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentResponseReceivedHandler;
@@ -568,11 +590,14 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::RegisterTargetWithMaintenanceWindowRequest&, const Model::RegisterTargetWithMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTargetWithMaintenanceWindowResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::RegisterTaskWithMaintenanceWindowRequest&, const Model::RegisterTaskWithMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTaskWithMaintenanceWindowResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::ResumeSessionRequest&, const Model::ResumeSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeSessionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::SendAutomationSignalRequest&, const Model::SendAutomationSignalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendAutomationSignalResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::SendCommandRequest&, const Model::SendCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendCommandResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StartAssociationsOnceRequest&, const Model::StartAssociationsOnceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAssociationsOnceResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StartAutomationExecutionRequest&, const Model::StartAutomationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAutomationExecutionResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::StartSessionRequest&, const Model::StartSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSessionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StopAutomationExecutionRequest&, const Model::StopAutomationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAutomationExecutionResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::TerminateSessionRequest&, const Model::TerminateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateSessionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateAssociationRequest&, const Model::UpdateAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssociationResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateAssociationStatusRequest&, const Model::UpdateAssociationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssociationStatusResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateDocumentRequest&, const Model::UpdateDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDocumentResponseReceivedHandler;
@@ -2232,6 +2257,34 @@ namespace Model
         virtual void DescribePatchGroupsAsync(const Model::DescribePatchGroupsRequest& request, const DescribePatchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves a list of all active sessions (both connected and disconnected) or
+         * terminated sessions from the past 30 days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSessionsOutcome DescribeSessions(const Model::DescribeSessionsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of all active sessions (both connected and disconnected) or
+         * terminated sessions from the past 30 days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeSessionsOutcomeCallable DescribeSessionsCallable(const Model::DescribeSessionsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of all active sessions (both connected and disconnected) or
+         * terminated sessions from the past 30 days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeSessions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeSessionsAsync(const Model::DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Get detailed information about a particular Automation
          * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">AWS
@@ -2286,6 +2339,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCommandInvocationAsync(const Model::GetCommandInvocationRequest& request, const GetCommandInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the Session Manager connection status for an instance to determine
+         * whether it is connected and ready to receive Session Manager
+         * connections.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConnectionStatusOutcome GetConnectionStatus(const Model::GetConnectionStatusRequest& request) const;
+
+        /**
+         * <p>Retrieves the Session Manager connection status for an instance to determine
+         * whether it is connected and ready to receive Session Manager
+         * connections.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetConnectionStatusOutcomeCallable GetConnectionStatusCallable(const Model::GetConnectionStatusRequest& request) const;
+
+        /**
+         * <p>Retrieves the Session Manager connection status for an instance to determine
+         * whether it is connected and ready to receive Session Manager
+         * connections.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetConnectionStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetConnectionStatusAsync(const Model::GetConnectionStatusRequest& request, const GetConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the default patch baseline. Note that Systems Manager supports
@@ -3556,6 +3640,43 @@ namespace Model
         virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Reconnects a session to an instance after it has been disconnected.
+         * Connections can be resumed for disconnected sessions, but not terminated
+         * sessions.</p> <note> <p>This command is primarily for use by client machines to
+         * automatically reconnect during intermittent network issues. It is not intended
+         * for any other use.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResumeSessionOutcome ResumeSession(const Model::ResumeSessionRequest& request) const;
+
+        /**
+         * <p>Reconnects a session to an instance after it has been disconnected.
+         * Connections can be resumed for disconnected sessions, but not terminated
+         * sessions.</p> <note> <p>This command is primarily for use by client machines to
+         * automatically reconnect during intermittent network issues. It is not intended
+         * for any other use.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResumeSessionOutcomeCallable ResumeSessionCallable(const Model::ResumeSessionRequest& request) const;
+
+        /**
+         * <p>Reconnects a session to an instance after it has been disconnected.
+         * Connections can be resumed for disconnected sessions, but not terminated
+         * sessions.</p> <note> <p>This command is primarily for use by client machines to
+         * automatically reconnect during intermittent network issues. It is not intended
+         * for any other use.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResumeSession">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResumeSessionAsync(const Model::ResumeSessionRequest& request, const ResumeSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sends a signal to an Automation execution to change the current behavior or
          * status of the execution. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendAutomationSignal">AWS
@@ -3665,6 +3786,55 @@ namespace Model
         virtual void StartAutomationExecutionAsync(const Model::StartAutomationExecutionRequest& request, const StartAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Initiates a connection to a target (for example, an instance) for a Session
+         * Manager session. Returns a URL and token that can be used to open a WebSocket
+         * connection for sending input and receiving outputs.</p> <note> <p>AWS CLI usage:
+         * <code>start-session</code> is an interactive command that requires the Session
+         * Manager plugin to be installed on the client machine making the call. For
+         * information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
+         * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems
+         * Manager User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSessionOutcome StartSession(const Model::StartSessionRequest& request) const;
+
+        /**
+         * <p>Initiates a connection to a target (for example, an instance) for a Session
+         * Manager session. Returns a URL and token that can be used to open a WebSocket
+         * connection for sending input and receiving outputs.</p> <note> <p>AWS CLI usage:
+         * <code>start-session</code> is an interactive command that requires the Session
+         * Manager plugin to be installed on the client machine making the call. For
+         * information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
+         * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems
+         * Manager User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartSessionOutcomeCallable StartSessionCallable(const Model::StartSessionRequest& request) const;
+
+        /**
+         * <p>Initiates a connection to a target (for example, an instance) for a Session
+         * Manager session. Returns a URL and token that can be used to open a WebSocket
+         * connection for sending input and receiving outputs.</p> <note> <p>AWS CLI usage:
+         * <code>start-session</code> is an interactive command that requires the Session
+         * Manager plugin to be installed on the client machine making the call. For
+         * information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">
+         * Install the Session Manager Plugin for the AWS CLI</a> in the <i>AWS Systems
+         * Manager User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartSession">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartSessionAsync(const Model::StartSessionRequest& request, const StartSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Stop an Automation that is currently executing.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">AWS
          * API Reference</a></p>
@@ -3688,6 +3858,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopAutomationExecutionAsync(const Model::StopAutomationExecutionRequest& request, const StopAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Permanently ends a session and closes the data connection between the Session
+         * Manager client and SSM Agent on the instance. A terminated session cannot be
+         * resumed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TerminateSessionOutcome TerminateSession(const Model::TerminateSessionRequest& request) const;
+
+        /**
+         * <p>Permanently ends a session and closes the data connection between the Session
+         * Manager client and SSM Agent on the instance. A terminated session cannot be
+         * resumed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TerminateSessionOutcomeCallable TerminateSessionCallable(const Model::TerminateSessionRequest& request) const;
+
+        /**
+         * <p>Permanently ends a session and closes the data connection between the Session
+         * Manager client and SSM Agent on the instance. A terminated session cannot be
+         * resumed.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/TerminateSession">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TerminateSessionAsync(const Model::TerminateSessionRequest& request, const TerminateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates an association. You can update the association name and version, the
@@ -4040,8 +4241,10 @@ namespace Model
         void DescribePatchBaselinesAsyncHelper(const Model::DescribePatchBaselinesRequest& request, const DescribePatchBaselinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePatchGroupStateAsyncHelper(const Model::DescribePatchGroupStateRequest& request, const DescribePatchGroupStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePatchGroupsAsyncHelper(const Model::DescribePatchGroupsRequest& request, const DescribePatchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeSessionsAsyncHelper(const Model::DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAutomationExecutionAsyncHelper(const Model::GetAutomationExecutionRequest& request, const GetAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCommandInvocationAsyncHelper(const Model::GetCommandInvocationRequest& request, const GetCommandInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetConnectionStatusAsyncHelper(const Model::GetConnectionStatusRequest& request, const GetConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDefaultPatchBaselineAsyncHelper(const Model::GetDefaultPatchBaselineRequest& request, const GetDefaultPatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeployablePatchSnapshotForInstanceAsyncHelper(const Model::GetDeployablePatchSnapshotForInstanceRequest& request, const GetDeployablePatchSnapshotForInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDocumentAsyncHelper(const Model::GetDocumentRequest& request, const GetDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4080,11 +4283,14 @@ namespace Model
         void RegisterTargetWithMaintenanceWindowAsyncHelper(const Model::RegisterTargetWithMaintenanceWindowRequest& request, const RegisterTargetWithMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTaskWithMaintenanceWindowAsyncHelper(const Model::RegisterTaskWithMaintenanceWindowRequest& request, const RegisterTaskWithMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResumeSessionAsyncHelper(const Model::ResumeSessionRequest& request, const ResumeSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendAutomationSignalAsyncHelper(const Model::SendAutomationSignalRequest& request, const SendAutomationSignalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendCommandAsyncHelper(const Model::SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartAssociationsOnceAsyncHelper(const Model::StartAssociationsOnceRequest& request, const StartAssociationsOnceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartAutomationExecutionAsyncHelper(const Model::StartAutomationExecutionRequest& request, const StartAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartSessionAsyncHelper(const Model::StartSessionRequest& request, const StartSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopAutomationExecutionAsyncHelper(const Model::StopAutomationExecutionRequest& request, const StopAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TerminateSessionAsyncHelper(const Model::TerminateSessionRequest& request, const TerminateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAssociationAsyncHelper(const Model::UpdateAssociationRequest& request, const UpdateAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAssociationStatusAsyncHelper(const Model::UpdateAssociationStatusRequest& request, const UpdateAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDocumentAsyncHelper(const Model::UpdateDocumentRequest& request, const UpdateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
