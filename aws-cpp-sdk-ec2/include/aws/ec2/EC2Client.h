@@ -2756,8 +2756,11 @@ namespace Model
         /**
          * <p>Initiates the copy of an AMI from the specified source region to the current
          * region. You specify the destination region by using its endpoint when making the
-         * request.</p> <p>For more information about the prerequisites and limits when
-         * copying an AMI, see <a
+         * request.</p> <p>Copies of encrypted backing snapshots for the AMI are encrypted.
+         * Copies of unencrypted backing snapshots remain unencrypted, unless you set
+         * <code>Encrypted</code> during the copy operation. You cannot create an
+         * unencrypted copy of an encrypted backing snapshot.</p> <p>For more information
+         * about the prerequisites and limits when copying an AMI, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
          * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2769,8 +2772,11 @@ namespace Model
         /**
          * <p>Initiates the copy of an AMI from the specified source region to the current
          * region. You specify the destination region by using its endpoint when making the
-         * request.</p> <p>For more information about the prerequisites and limits when
-         * copying an AMI, see <a
+         * request.</p> <p>Copies of encrypted backing snapshots for the AMI are encrypted.
+         * Copies of unencrypted backing snapshots remain unencrypted, unless you set
+         * <code>Encrypted</code> during the copy operation. You cannot create an
+         * unencrypted copy of an encrypted backing snapshot.</p> <p>For more information
+         * about the prerequisites and limits when copying an AMI, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
          * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2784,8 +2790,11 @@ namespace Model
         /**
          * <p>Initiates the copy of an AMI from the specified source region to the current
          * region. You specify the destination region by using its endpoint when making the
-         * request.</p> <p>For more information about the prerequisites and limits when
-         * copying an AMI, see <a
+         * request.</p> <p>Copies of encrypted backing snapshots for the AMI are encrypted.
+         * Copies of unencrypted backing snapshots remain unencrypted, unless you set
+         * <code>Encrypted</code> during the copy operation. You cannot create an
+         * unencrypted copy of an encrypted backing snapshot.</p> <p>For more information
+         * about the prerequisites and limits when copying an AMI, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
          * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2806,7 +2815,7 @@ namespace Model
          * is specified during the snapshot copy operation. By default, encrypted snapshot
          * copies use the default AWS Key Management Service (AWS KMS) customer master key
          * (CMK); however, you can specify a non-default CMK with the <code>KmsKeyId</code>
-         * parameter. </p> <p>To copy an encrypted snapshot that has been shared from
+         * parameter.</p> <p>To copy an encrypted snapshot that has been shared from
          * another account, you must have permissions for the CMK used to encrypt the
          * snapshot.</p> <p>Snapshots created by copying another snapshot have an arbitrary
          * volume ID that should not be used for any purpose.</p> <p>For more information,
@@ -2829,7 +2838,7 @@ namespace Model
          * is specified during the snapshot copy operation. By default, encrypted snapshot
          * copies use the default AWS Key Management Service (AWS KMS) customer master key
          * (CMK); however, you can specify a non-default CMK with the <code>KmsKeyId</code>
-         * parameter. </p> <p>To copy an encrypted snapshot that has been shared from
+         * parameter.</p> <p>To copy an encrypted snapshot that has been shared from
          * another account, you must have permissions for the CMK used to encrypt the
          * snapshot.</p> <p>Snapshots created by copying another snapshot have an arbitrary
          * volume ID that should not be used for any purpose.</p> <p>For more information,
@@ -2854,7 +2863,7 @@ namespace Model
          * is specified during the snapshot copy operation. By default, encrypted snapshot
          * copies use the default AWS Key Management Service (AWS KMS) customer master key
          * (CMK); however, you can specify a non-default CMK with the <code>KmsKeyId</code>
-         * parameter. </p> <p>To copy an encrypted snapshot that has been shared from
+         * parameter.</p> <p>To copy an encrypted snapshot that has been shared from
          * another account, you must have permissions for the CMK used to encrypt the
          * snapshot.</p> <p>Snapshots created by copying another snapshot have an arbitrary
          * volume ID that should not be used for any purpose.</p> <p>For more information,
@@ -3001,8 +3010,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
          * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
-         * <p>iIf you deleted your previous default VPC, you can create a default VPC. You
-         * cannot have more than one default VPC per Region. </p> <p>If your account
+         * <p>If you deleted your previous default VPC, you can create a default VPC. You
+         * cannot have more than one default VPC per Region.</p> <p>If your account
          * supports EC2-Classic, you cannot use this action to create a default VPC in a
          * Region that supports EC2-Classic. If you want a default VPC in a Region that
          * supports EC2-Classic, see "I really want a default VPC for my existing EC2
@@ -3021,8 +3030,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
          * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
-         * <p>iIf you deleted your previous default VPC, you can create a default VPC. You
-         * cannot have more than one default VPC per Region. </p> <p>If your account
+         * <p>If you deleted your previous default VPC, you can create a default VPC. You
+         * cannot have more than one default VPC per Region.</p> <p>If your account
          * supports EC2-Classic, you cannot use this action to create a default VPC in a
          * Region that supports EC2-Classic. If you want a default VPC in a Region that
          * supports EC2-Classic, see "I really want a default VPC for my existing EC2
@@ -3043,8 +3052,8 @@ namespace Model
          * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
          * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
-         * <p>iIf you deleted your previous default VPC, you can create a default VPC. You
-         * cannot have more than one default VPC per Region. </p> <p>If your account
+         * <p>If you deleted your previous default VPC, you can create a default VPC. You
+         * cannot have more than one default VPC per Region.</p> <p>If your account
          * supports EC2-Classic, you cannot use this action to create a default VPC in a
          * Region that supports EC2-Classic. If you want a default VPC in a Region that
          * supports EC2-Classic, see "I really want a default VPC for my existing EC2
@@ -6818,7 +6827,7 @@ namespace Model
          * offerings that may not match the instance family and region of your Dedicated
          * Hosts. When purchasing an offering, ensure that the instance family and Region
          * of the offering matches that of the Dedicated Hosts with which it is to be
-         * associated . For more information about supported instance types, see <a
+         * associated. For more information about supported instance types, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
          * Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
@@ -6833,7 +6842,7 @@ namespace Model
          * offerings that may not match the instance family and region of your Dedicated
          * Hosts. When purchasing an offering, ensure that the instance family and Region
          * of the offering matches that of the Dedicated Hosts with which it is to be
-         * associated . For more information about supported instance types, see <a
+         * associated. For more information about supported instance types, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
          * Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
@@ -6850,7 +6859,7 @@ namespace Model
          * offerings that may not match the instance family and region of your Dedicated
          * Hosts. When purchasing an offering, ensure that the instance family and Region
          * of the offering matches that of the Dedicated Hosts with which it is to be
-         * associated . For more information about supported instance types, see <a
+         * associated. For more information about supported instance types, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
          * Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
@@ -7316,21 +7325,25 @@ namespace Model
         virtual void DescribeInstanceAttributeAsync(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the credit option for CPU usage of one or more of your T2
+         * <p>Describes the credit option for CPU usage of one or more of your T2 or T3
          * instances. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>If you do not specify an instance ID, Amazon EC2
-         * returns only the T2 instances with the <code>unlimited</code> credit option. If
-         * you specify one or more instance IDs, Amazon EC2 returns the credit option
-         * (<code>standard</code> or <code>unlimited</code>) of those instances. If you
-         * specify an instance ID that is not valid, such as an instance that is not a T2
-         * instance, an error is returned.</p> <p>Recently terminated instances might
-         * appear in the returned results. This interval is usually less than one hour.</p>
-         * <p>If an Availability Zone is experiencing a service disruption and you specify
-         * instance IDs in the affected zone, or do not specify any instance IDs at all,
-         * the call fails. If you specify only instance IDs in an unaffected zone, the call
-         * works normally.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * returns T2 and T3 instances with the <code>unlimited</code> credit option, as
+         * well as instances that were previously configured as T2 or T3 with the
+         * <code>unlimited</code> credit option. For example, if you resize a T2 instance,
+         * while it is configured as <code>unlimited</code>, to an M4 instance, Amazon EC2
+         * returns the M4 instance.</p> <p>If you specify one or more instance IDs, Amazon
+         * EC2 returns the credit option (<code>standard</code> or <code>unlimited</code>)
+         * of those instances. If you specify an instance ID that is not valid, such as an
+         * instance that is not a T2 or T3 instance, an error is returned.</p> <p>Recently
+         * terminated instances might appear in the returned results. This interval is
+         * usually less than one hour.</p> <p>If an Availability Zone is experiencing a
+         * service disruption and you specify instance IDs in the affected zone, or do not
+         * specify any instance IDs at all, the call fails. If you specify only instance
+         * IDs in an unaffected zone, the call works normally.</p> <p>For more information,
+         * see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
          * API Reference</a></p>
@@ -7338,21 +7351,25 @@ namespace Model
         virtual Model::DescribeInstanceCreditSpecificationsOutcome DescribeInstanceCreditSpecifications(const Model::DescribeInstanceCreditSpecificationsRequest& request) const;
 
         /**
-         * <p>Describes the credit option for CPU usage of one or more of your T2
+         * <p>Describes the credit option for CPU usage of one or more of your T2 or T3
          * instances. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>If you do not specify an instance ID, Amazon EC2
-         * returns only the T2 instances with the <code>unlimited</code> credit option. If
-         * you specify one or more instance IDs, Amazon EC2 returns the credit option
-         * (<code>standard</code> or <code>unlimited</code>) of those instances. If you
-         * specify an instance ID that is not valid, such as an instance that is not a T2
-         * instance, an error is returned.</p> <p>Recently terminated instances might
-         * appear in the returned results. This interval is usually less than one hour.</p>
-         * <p>If an Availability Zone is experiencing a service disruption and you specify
-         * instance IDs in the affected zone, or do not specify any instance IDs at all,
-         * the call fails. If you specify only instance IDs in an unaffected zone, the call
-         * works normally.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * returns T2 and T3 instances with the <code>unlimited</code> credit option, as
+         * well as instances that were previously configured as T2 or T3 with the
+         * <code>unlimited</code> credit option. For example, if you resize a T2 instance,
+         * while it is configured as <code>unlimited</code>, to an M4 instance, Amazon EC2
+         * returns the M4 instance.</p> <p>If you specify one or more instance IDs, Amazon
+         * EC2 returns the credit option (<code>standard</code> or <code>unlimited</code>)
+         * of those instances. If you specify an instance ID that is not valid, such as an
+         * instance that is not a T2 or T3 instance, an error is returned.</p> <p>Recently
+         * terminated instances might appear in the returned results. This interval is
+         * usually less than one hour.</p> <p>If an Availability Zone is experiencing a
+         * service disruption and you specify instance IDs in the affected zone, or do not
+         * specify any instance IDs at all, the call fails. If you specify only instance
+         * IDs in an unaffected zone, the call works normally.</p> <p>For more information,
+         * see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
          * API Reference</a></p>
@@ -7362,21 +7379,25 @@ namespace Model
         virtual Model::DescribeInstanceCreditSpecificationsOutcomeCallable DescribeInstanceCreditSpecificationsCallable(const Model::DescribeInstanceCreditSpecificationsRequest& request) const;
 
         /**
-         * <p>Describes the credit option for CPU usage of one or more of your T2
+         * <p>Describes the credit option for CPU usage of one or more of your T2 or T3
          * instances. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>If you do not specify an instance ID, Amazon EC2
-         * returns only the T2 instances with the <code>unlimited</code> credit option. If
-         * you specify one or more instance IDs, Amazon EC2 returns the credit option
-         * (<code>standard</code> or <code>unlimited</code>) of those instances. If you
-         * specify an instance ID that is not valid, such as an instance that is not a T2
-         * instance, an error is returned.</p> <p>Recently terminated instances might
-         * appear in the returned results. This interval is usually less than one hour.</p>
-         * <p>If an Availability Zone is experiencing a service disruption and you specify
-         * instance IDs in the affected zone, or do not specify any instance IDs at all,
-         * the call fails. If you specify only instance IDs in an unaffected zone, the call
-         * works normally.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * returns T2 and T3 instances with the <code>unlimited</code> credit option, as
+         * well as instances that were previously configured as T2 or T3 with the
+         * <code>unlimited</code> credit option. For example, if you resize a T2 instance,
+         * while it is configured as <code>unlimited</code>, to an M4 instance, Amazon EC2
+         * returns the M4 instance.</p> <p>If you specify one or more instance IDs, Amazon
+         * EC2 returns the credit option (<code>standard</code> or <code>unlimited</code>)
+         * of those instances. If you specify an instance ID that is not valid, such as an
+         * instance that is not a T2 or T3 instance, an error is returned.</p> <p>Recently
+         * terminated instances might appear in the returned results. This interval is
+         * usually less than one hour.</p> <p>If an Availability Zone is experiencing a
+         * service disruption and you specify instance IDs in the affected zone, or do not
+         * specify any instance IDs at all, the call fails. If you specify only instance
+         * IDs in an unaffected zone, the call works normally.</p> <p>For more information,
+         * see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
          * API Reference</a></p>
@@ -10785,7 +10806,7 @@ namespace Model
          * enabled, any instances that you launch with a tenancy of <code>host</code> but
          * without a specific host ID are placed onto any available Dedicated Host in your
          * account that has auto-placement enabled. When auto-placement is disabled, you
-         * need to provide a host ID ito have the instance launch onto a specific host. If
+         * need to provide a host ID to have the instance launch onto a specific host. If
          * no host ID is provided, the instance is launched onto a suitable host with
          * auto-placement enabled.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHosts">AWS API
@@ -10798,7 +10819,7 @@ namespace Model
          * enabled, any instances that you launch with a tenancy of <code>host</code> but
          * without a specific host ID are placed onto any available Dedicated Host in your
          * account that has auto-placement enabled. When auto-placement is disabled, you
-         * need to provide a host ID ito have the instance launch onto a specific host. If
+         * need to provide a host ID to have the instance launch onto a specific host. If
          * no host ID is provided, the instance is launched onto a suitable host with
          * auto-placement enabled.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHosts">AWS API
@@ -10813,7 +10834,7 @@ namespace Model
          * enabled, any instances that you launch with a tenancy of <code>host</code> but
          * without a specific host ID are placed onto any available Dedicated Host in your
          * account that has auto-placement enabled. When auto-placement is disabled, you
-         * need to provide a host ID ito have the instance launch onto a specific host. If
+         * need to provide a host ID to have the instance launch onto a specific host. If
          * no host ID is provided, the instance is launched onto a suitable host with
          * auto-placement enabled.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyHosts">AWS API
@@ -11137,11 +11158,11 @@ namespace Model
         virtual void ModifyInstanceAttributeAsync(const Model::ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the credit option for CPU usage on a running or stopped T2 instance.
-         * The credit options are <code>standard</code> and <code>unlimited</code>.</p>
-         * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * <p>Modifies the credit option for CPU usage on a running or stopped T2 or T3
+         * instance. The credit options are <code>standard</code> and
+         * <code>unlimited</code>.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
          * API Reference</a></p>
@@ -11149,11 +11170,11 @@ namespace Model
         virtual Model::ModifyInstanceCreditSpecificationOutcome ModifyInstanceCreditSpecification(const Model::ModifyInstanceCreditSpecificationRequest& request) const;
 
         /**
-         * <p>Modifies the credit option for CPU usage on a running or stopped T2 instance.
-         * The credit options are <code>standard</code> and <code>unlimited</code>.</p>
-         * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * <p>Modifies the credit option for CPU usage on a running or stopped T2 or T3
+         * instance. The credit options are <code>standard</code> and
+         * <code>unlimited</code>.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
          * API Reference</a></p>
@@ -11163,11 +11184,11 @@ namespace Model
         virtual Model::ModifyInstanceCreditSpecificationOutcomeCallable ModifyInstanceCreditSpecificationCallable(const Model::ModifyInstanceCreditSpecificationRequest& request) const;
 
         /**
-         * <p>Modifies the credit option for CPU usage on a running or stopped T2 instance.
-         * The credit options are <code>standard</code> and <code>unlimited</code>.</p>
-         * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-         * Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * <p>Modifies the credit option for CPU usage on a running or stopped T2 or T3
+         * instance. The credit options are <code>standard</code> and
+         * <code>unlimited</code>.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
          * API Reference</a></p>
@@ -12493,8 +12514,8 @@ namespace Model
          * <p>When you no longer want to use an On-Demand Dedicated Host it can be
          * released. On-Demand billing is stopped and the host goes into
          * <code>released</code> state. The host ID of Dedicated Hosts that have been
-         * released can no longer be specified in another request, for example,
-         * ModifyHosts. You must stop or terminate all instances on a host before it can be
+         * released can no longer be specified in another request, for example, to modify
+         * the host. You must stop or terminate all instances on a host before it can be
          * released.</p> <p>When Dedicated Hosts are released, it may take some time for
          * them to stop counting toward your limit and you may receive capacity errors when
          * trying to allocate new Dedicated Hosts. Wait a few minutes and then try
@@ -12509,8 +12530,8 @@ namespace Model
          * <p>When you no longer want to use an On-Demand Dedicated Host it can be
          * released. On-Demand billing is stopped and the host goes into
          * <code>released</code> state. The host ID of Dedicated Hosts that have been
-         * released can no longer be specified in another request, for example,
-         * ModifyHosts. You must stop or terminate all instances on a host before it can be
+         * released can no longer be specified in another request, for example, to modify
+         * the host. You must stop or terminate all instances on a host before it can be
          * released.</p> <p>When Dedicated Hosts are released, it may take some time for
          * them to stop counting toward your limit and you may receive capacity errors when
          * trying to allocate new Dedicated Hosts. Wait a few minutes and then try
@@ -12527,8 +12548,8 @@ namespace Model
          * <p>When you no longer want to use an On-Demand Dedicated Host it can be
          * released. On-Demand billing is stopped and the host goes into
          * <code>released</code> state. The host ID of Dedicated Hosts that have been
-         * released can no longer be specified in another request, for example,
-         * ModifyHosts. You must stop or terminate all instances on a host before it can be
+         * released can no longer be specified in another request, for example, to modify
+         * the host. You must stop or terminate all instances on a host before it can be
          * released.</p> <p>When Dedicated Hosts are released, it may take some time for
          * them to stop counting toward your limit and you may receive capacity errors when
          * trying to allocate new Dedicated Hosts. Wait a few minutes and then try

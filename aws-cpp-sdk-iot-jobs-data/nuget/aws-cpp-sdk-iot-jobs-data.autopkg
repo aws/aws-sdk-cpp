@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-IoTJobsDataPlane;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.6.20170929.9;
+        version : 1.6.20170929.10;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS IoT Jobs Data Plane);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.6.9
+            AWSSDKCPP-Core/1.6.10
        }
     }
 

@@ -32,6 +32,7 @@ static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputExce
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalErrorException");
+static const int INVALID_TYPE_HASH = HashingUtils::HashString("InvalidTypeException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -53,6 +54,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_ERROR_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FMSErrors::INTERNAL_ERROR), false);
+  }
+  else if (hashCode == INVALID_TYPE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FMSErrors::INVALID_TYPE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

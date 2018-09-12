@@ -18,7 +18,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/fms/model/ComplianceViolator.h>
+#include <aws/fms/model/DependentServiceName.h>
 #include <utility>
 
 namespace Aws
@@ -246,6 +248,95 @@ namespace Model
      */
     inline PolicyComplianceDetail& WithExpiredAt(Aws::Utils::DateTime&& value) { SetExpiredAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Details about problems with dependent services, such as AWS WAF or AWS
+     * Config, that are causing a resource to be non-compliant. The details include the
+     * name of the dependent service and the error message recieved indicating the
+     * problem with the service.</p>
+     */
+    inline const Aws::Map<DependentServiceName, Aws::String>& GetIssueInfoMap() const{ return m_issueInfoMap; }
+
+    /**
+     * <p>Details about problems with dependent services, such as AWS WAF or AWS
+     * Config, that are causing a resource to be non-compliant. The details include the
+     * name of the dependent service and the error message recieved indicating the
+     * problem with the service.</p>
+     */
+    inline void SetIssueInfoMap(const Aws::Map<DependentServiceName, Aws::String>& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap = value; }
+
+    /**
+     * <p>Details about problems with dependent services, such as AWS WAF or AWS
+     * Config, that are causing a resource to be non-compliant. The details include the
+     * name of the dependent service and the error message recieved indicating the
+     * problem with the service.</p>
+     */
+    inline void SetIssueInfoMap(Aws::Map<DependentServiceName, Aws::String>&& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap = std::move(value); }
+
+    /**
+     * <p>Details about problems with dependent services, such as AWS WAF or AWS
+     * Config, that are causing a resource to be non-compliant. The details include the
+     * name of the dependent service and the error message recieved indicating the
+     * problem with the service.</p>
+     */
+    inline PolicyComplianceDetail& WithIssueInfoMap(const Aws::Map<DependentServiceName, Aws::String>& value) { SetIssueInfoMap(value); return *this;}
+
+    /**
+     * <p>Details about problems with dependent services, such as AWS WAF or AWS
+     * Config, that are causing a resource to be non-compliant. The details include the
+     * name of the dependent service and the error message recieved indicating the
+     * problem with the service.</p>
+     */
+    inline PolicyComplianceDetail& WithIssueInfoMap(Aws::Map<DependentServiceName, Aws::String>&& value) { SetIssueInfoMap(std::move(value)); return *this;}
+
+    /**
+     * <p>Details about problems with dependent services, such as AWS WAF or AWS
+     * Config, that are causing a resource to be non-compliant. The details include the
+     * name of the dependent service and the error message recieved indicating the
+     * problem with the service.</p>
+     */
+    inline PolicyComplianceDetail& AddIssueInfoMap(const DependentServiceName& key, const Aws::String& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(key, value); return *this; }
+
+    /**
+     * <p>Details about problems with dependent services, such as AWS WAF or AWS
+     * Config, that are causing a resource to be non-compliant. The details include the
+     * name of the dependent service and the error message recieved indicating the
+     * problem with the service.</p>
+     */
+    inline PolicyComplianceDetail& AddIssueInfoMap(DependentServiceName&& key, const Aws::String& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Details about problems with dependent services, such as AWS WAF or AWS
+     * Config, that are causing a resource to be non-compliant. The details include the
+     * name of the dependent service and the error message recieved indicating the
+     * problem with the service.</p>
+     */
+    inline PolicyComplianceDetail& AddIssueInfoMap(const DependentServiceName& key, Aws::String&& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Details about problems with dependent services, such as AWS WAF or AWS
+     * Config, that are causing a resource to be non-compliant. The details include the
+     * name of the dependent service and the error message recieved indicating the
+     * problem with the service.</p>
+     */
+    inline PolicyComplianceDetail& AddIssueInfoMap(DependentServiceName&& key, Aws::String&& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Details about problems with dependent services, such as AWS WAF or AWS
+     * Config, that are causing a resource to be non-compliant. The details include the
+     * name of the dependent service and the error message recieved indicating the
+     * problem with the service.</p>
+     */
+    inline PolicyComplianceDetail& AddIssueInfoMap(DependentServiceName&& key, const char* value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Details about problems with dependent services, such as AWS WAF or AWS
+     * Config, that are causing a resource to be non-compliant. The details include the
+     * name of the dependent service and the error message recieved indicating the
+     * problem with the service.</p>
+     */
+    inline PolicyComplianceDetail& AddIssueInfoMap(const DependentServiceName& key, const char* value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_policyOwner;
@@ -265,6 +356,9 @@ namespace Model
 
     Aws::Utils::DateTime m_expiredAt;
     bool m_expiredAtHasBeenSet;
+
+    Aws::Map<DependentServiceName, Aws::String> m_issueInfoMap;
+    bool m_issueInfoMapHasBeenSet;
   };
 
 } // namespace Model

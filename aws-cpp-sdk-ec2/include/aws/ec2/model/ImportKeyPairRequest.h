@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ImportKeyPair.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPairRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API ImportKeyPairRequest : public EC2Request
   {

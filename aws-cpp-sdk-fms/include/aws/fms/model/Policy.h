@@ -18,7 +18,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fms/model/SecurityServicePolicyData.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/fms/model/ResourceTag.h>
+#include <aws/fms/model/CustomerPolicyScopeIdType.h>
 #include <utility>
 
 namespace Aws
@@ -364,6 +366,197 @@ namespace Model
      */
     inline Policy& WithRemediationEnabled(bool value) { SetRemediationEnabled(value); return *this;}
 
+
+    /**
+     * <p>Specifies the AWS account IDs to include in the policy. If
+     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
+     * included in the policy. If <code>IncludeMap</code> is not null, only values
+     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
+     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
+     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetIncludeMap() const{ return m_includeMap; }
+
+    /**
+     * <p>Specifies the AWS account IDs to include in the policy. If
+     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
+     * included in the policy. If <code>IncludeMap</code> is not null, only values
+     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
+     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
+     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline void SetIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { m_includeMapHasBeenSet = true; m_includeMap = value; }
+
+    /**
+     * <p>Specifies the AWS account IDs to include in the policy. If
+     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
+     * included in the policy. If <code>IncludeMap</code> is not null, only values
+     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
+     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
+     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline void SetIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { m_includeMapHasBeenSet = true; m_includeMap = std::move(value); }
+
+    /**
+     * <p>Specifies the AWS account IDs to include in the policy. If
+     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
+     * included in the policy. If <code>IncludeMap</code> is not null, only values
+     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
+     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
+     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline Policy& WithIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { SetIncludeMap(value); return *this;}
+
+    /**
+     * <p>Specifies the AWS account IDs to include in the policy. If
+     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
+     * included in the policy. If <code>IncludeMap</code> is not null, only values
+     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
+     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
+     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline Policy& WithIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { SetIncludeMap(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the AWS account IDs to include in the policy. If
+     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
+     * included in the policy. If <code>IncludeMap</code> is not null, only values
+     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
+     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
+     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, value); return *this; }
+
+    /**
+     * <p>Specifies the AWS account IDs to include in the policy. If
+     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
+     * included in the policy. If <code>IncludeMap</code> is not null, only values
+     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
+     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
+     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Specifies the AWS account IDs to include in the policy. If
+     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
+     * included in the policy. If <code>IncludeMap</code> is not null, only values
+     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
+     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
+     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the AWS account IDs to include in the policy. If
+     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
+     * included in the policy. If <code>IncludeMap</code> is not null, only values
+     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
+     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
+     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies the AWS account IDs to exclude from the policy. The
+     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * account IDs added to the policy. Then the accounts listed in
+     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
+     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
+     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
+     * [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetExcludeMap() const{ return m_excludeMap; }
+
+    /**
+     * <p>Specifies the AWS account IDs to exclude from the policy. The
+     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * account IDs added to the policy. Then the accounts listed in
+     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
+     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
+     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
+     * [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline void SetExcludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { m_excludeMapHasBeenSet = true; m_excludeMap = value; }
+
+    /**
+     * <p>Specifies the AWS account IDs to exclude from the policy. The
+     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * account IDs added to the policy. Then the accounts listed in
+     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
+     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
+     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
+     * [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline void SetExcludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { m_excludeMapHasBeenSet = true; m_excludeMap = std::move(value); }
+
+    /**
+     * <p>Specifies the AWS account IDs to exclude from the policy. The
+     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * account IDs added to the policy. Then the accounts listed in
+     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
+     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
+     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
+     * [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline Policy& WithExcludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { SetExcludeMap(value); return *this;}
+
+    /**
+     * <p>Specifies the AWS account IDs to exclude from the policy. The
+     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * account IDs added to the policy. Then the accounts listed in
+     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
+     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
+     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
+     * [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline Policy& WithExcludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { SetExcludeMap(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the AWS account IDs to exclude from the policy. The
+     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * account IDs added to the policy. Then the accounts listed in
+     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
+     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
+     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
+     * [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline Policy& AddExcludeMap(const CustomerPolicyScopeIdType& key, const Aws::Vector<Aws::String>& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(key, value); return *this; }
+
+    /**
+     * <p>Specifies the AWS account IDs to exclude from the policy. The
+     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * account IDs added to the policy. Then the accounts listed in
+     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
+     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
+     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
+     * [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline Policy& AddExcludeMap(CustomerPolicyScopeIdType&& key, const Aws::Vector<Aws::String>& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Specifies the AWS account IDs to exclude from the policy. The
+     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * account IDs added to the policy. Then the accounts listed in
+     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
+     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
+     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
+     * [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline Policy& AddExcludeMap(const CustomerPolicyScopeIdType& key, Aws::Vector<Aws::String>&& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the AWS account IDs to exclude from the policy. The
+     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * account IDs added to the policy. Then the accounts listed in
+     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
+     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
+     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
+     * [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline Policy& AddExcludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(std::move(key), std::move(value)); return *this; }
+
   private:
 
     Aws::String m_policyId;
@@ -389,6 +582,12 @@ namespace Model
 
     bool m_remediationEnabled;
     bool m_remediationEnabledHasBeenSet;
+
+    Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>> m_includeMap;
+    bool m_includeMapHasBeenSet;
+
+    Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>> m_excludeMap;
+    bool m_excludeMapHasBeenSet;
   };
 
 } // namespace Model

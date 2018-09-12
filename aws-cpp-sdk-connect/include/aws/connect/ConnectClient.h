@@ -32,6 +32,7 @@
 #include <aws/connect/model/ListUsersResult.h>
 #include <aws/connect/model/StartOutboundVoiceContactResult.h>
 #include <aws/connect/model/StopContactResult.h>
+#include <aws/connect/model/UpdateContactAttributesResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -85,6 +86,7 @@ namespace Model
         class ListUsersRequest;
         class StartOutboundVoiceContactRequest;
         class StopContactRequest;
+        class UpdateContactAttributesRequest;
         class UpdateUserHierarchyRequest;
         class UpdateUserIdentityInfoRequest;
         class UpdateUserPhoneConfigRequest;
@@ -103,6 +105,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListUsersResult, Aws::Client::AWSError<ConnectErrors>> ListUsersOutcome;
         typedef Aws::Utils::Outcome<StartOutboundVoiceContactResult, Aws::Client::AWSError<ConnectErrors>> StartOutboundVoiceContactOutcome;
         typedef Aws::Utils::Outcome<StopContactResult, Aws::Client::AWSError<ConnectErrors>> StopContactOutcome;
+        typedef Aws::Utils::Outcome<UpdateContactAttributesResult, Aws::Client::AWSError<ConnectErrors>> UpdateContactAttributesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConnectErrors>> UpdateUserHierarchyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConnectErrors>> UpdateUserIdentityInfoOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConnectErrors>> UpdateUserPhoneConfigOutcome;
@@ -121,6 +124,7 @@ namespace Model
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
         typedef std::future<StartOutboundVoiceContactOutcome> StartOutboundVoiceContactOutcomeCallable;
         typedef std::future<StopContactOutcome> StopContactOutcomeCallable;
+        typedef std::future<UpdateContactAttributesOutcome> UpdateContactAttributesOutcomeCallable;
         typedef std::future<UpdateUserHierarchyOutcome> UpdateUserHierarchyOutcomeCallable;
         typedef std::future<UpdateUserIdentityInfoOutcome> UpdateUserIdentityInfoOutcomeCallable;
         typedef std::future<UpdateUserPhoneConfigOutcome> UpdateUserPhoneConfigOutcomeCallable;
@@ -142,6 +146,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StartOutboundVoiceContactRequest&, const Model::StartOutboundVoiceContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartOutboundVoiceContactResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::StopContactRequest&, const Model::StopContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContactResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::UpdateContactAttributesRequest&, const Model::UpdateContactAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactAttributesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateUserHierarchyRequest&, const Model::UpdateUserHierarchyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserHierarchyResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateUserIdentityInfoRequest&, const Model::UpdateUserIdentityInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserIdentityInfoResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::UpdateUserPhoneConfigRequest&, const Model::UpdateUserPhoneConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserPhoneConfigResponseReceivedHandler;
@@ -539,6 +544,64 @@ namespace Model
         virtual void StopContactAsync(const Model::StopContactRequest& request, const StopContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>The <code>UpdateContactAttributes</code> operation lets you programmatically
+         * create new or update existing contact attributes associated with a contact. You
+         * can use the operation to add or update attributes for both ongoing and completed
+         * contacts. For example, you can update the customer's name or the reason the
+         * customer called while the call is active, or add notes about steps that the
+         * agent took during the call that are displayed to the next agent that takes the
+         * call. You can also use the <code>UpdateContactAttributes</code> operation to
+         * update attributes for a contact using data from your CRM application and save
+         * the data with the contact in Amazon Connect. You could also flag calls for
+         * additional analysis, or flag abusive callers.</p> <p>Contact attributes are
+         * available in Amazon Connect for 24 months, and are then deleted.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateContactAttributesOutcome UpdateContactAttributes(const Model::UpdateContactAttributesRequest& request) const;
+
+        /**
+         * <p>The <code>UpdateContactAttributes</code> operation lets you programmatically
+         * create new or update existing contact attributes associated with a contact. You
+         * can use the operation to add or update attributes for both ongoing and completed
+         * contacts. For example, you can update the customer's name or the reason the
+         * customer called while the call is active, or add notes about steps that the
+         * agent took during the call that are displayed to the next agent that takes the
+         * call. You can also use the <code>UpdateContactAttributes</code> operation to
+         * update attributes for a contact using data from your CRM application and save
+         * the data with the contact in Amazon Connect. You could also flag calls for
+         * additional analysis, or flag abusive callers.</p> <p>Contact attributes are
+         * available in Amazon Connect for 24 months, and are then deleted.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateContactAttributesOutcomeCallable UpdateContactAttributesCallable(const Model::UpdateContactAttributesRequest& request) const;
+
+        /**
+         * <p>The <code>UpdateContactAttributes</code> operation lets you programmatically
+         * create new or update existing contact attributes associated with a contact. You
+         * can use the operation to add or update attributes for both ongoing and completed
+         * contacts. For example, you can update the customer's name or the reason the
+         * customer called while the call is active, or add notes about steps that the
+         * agent took during the call that are displayed to the next agent that takes the
+         * call. You can also use the <code>UpdateContactAttributes</code> operation to
+         * update attributes for a contact using data from your CRM application and save
+         * the data with the contact in Amazon Connect. You could also flag calls for
+         * additional analysis, or flag abusive callers.</p> <p>Contact attributes are
+         * available in Amazon Connect for 24 months, and are then deleted.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateContactAttributesAsync(const Model::UpdateContactAttributesRequest& request, const UpdateContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Assigns the specified hierarchy group to the user.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchy">AWS
@@ -698,6 +761,7 @@ namespace Model
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartOutboundVoiceContactAsyncHelper(const Model::StartOutboundVoiceContactRequest& request, const StartOutboundVoiceContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopContactAsyncHelper(const Model::StopContactRequest& request, const StopContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateContactAttributesAsyncHelper(const Model::UpdateContactAttributesRequest& request, const UpdateContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserHierarchyAsyncHelper(const Model::UpdateUserHierarchyRequest& request, const UpdateUserHierarchyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserIdentityInfoAsyncHelper(const Model::UpdateUserIdentityInfoRequest& request, const UpdateUserIdentityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserPhoneConfigAsyncHelper(const Model::UpdateUserPhoneConfigRequest& request, const UpdateUserPhoneConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

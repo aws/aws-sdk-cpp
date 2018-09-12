@@ -136,44 +136,44 @@ namespace Model
 
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number of the launch template. You must specify a version
+     * number.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number of the launch template. You must specify a version
+     * number.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number of the launch template. You must specify a version
+     * number.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number of the launch template. You must specify a version
+     * number.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number of the launch template. You must specify a version
+     * number.</p>
      */
     inline FleetLaunchTemplateSpecification& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number of the launch template. You must specify a version
+     * number.</p>
      */
     inline FleetLaunchTemplateSpecification& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number. By default, the default version of the launch template is
-     * used.</p>
+     * <p>The version number of the launch template. You must specify a version
+     * number.</p>
      */
     inline FleetLaunchTemplateSpecification& WithVersion(const char* value) { SetVersion(value); return *this;}
 

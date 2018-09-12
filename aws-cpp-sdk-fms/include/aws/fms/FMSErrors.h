@@ -58,6 +58,7 @@ enum class FMSErrors
   INTERNAL_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_INPUT,
   INVALID_OPERATION,
+  INVALID_TYPE,
   LIMIT_EXCEEDED
 };
 namespace FMSErrorMapper

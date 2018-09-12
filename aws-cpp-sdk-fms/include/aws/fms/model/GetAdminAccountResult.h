@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fms/model/AccountRoleStatus.h>
 #include <utility>
 
 namespace Aws
@@ -77,9 +78,42 @@ namespace Model
      */
     inline GetAdminAccountResult& WithAdminAccount(const char* value) { SetAdminAccount(value); return *this;}
 
+
+    /**
+     * <p>The status of the AWS account that you set as the AWS Firewall Manager
+     * administrator.</p>
+     */
+    inline const AccountRoleStatus& GetRoleStatus() const{ return m_roleStatus; }
+
+    /**
+     * <p>The status of the AWS account that you set as the AWS Firewall Manager
+     * administrator.</p>
+     */
+    inline void SetRoleStatus(const AccountRoleStatus& value) { m_roleStatus = value; }
+
+    /**
+     * <p>The status of the AWS account that you set as the AWS Firewall Manager
+     * administrator.</p>
+     */
+    inline void SetRoleStatus(AccountRoleStatus&& value) { m_roleStatus = std::move(value); }
+
+    /**
+     * <p>The status of the AWS account that you set as the AWS Firewall Manager
+     * administrator.</p>
+     */
+    inline GetAdminAccountResult& WithRoleStatus(const AccountRoleStatus& value) { SetRoleStatus(value); return *this;}
+
+    /**
+     * <p>The status of the AWS account that you set as the AWS Firewall Manager
+     * administrator.</p>
+     */
+    inline GetAdminAccountResult& WithRoleStatus(AccountRoleStatus&& value) { SetRoleStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_adminAccount;
+
+    AccountRoleStatus m_roleStatus;
   };
 
 } // namespace Model

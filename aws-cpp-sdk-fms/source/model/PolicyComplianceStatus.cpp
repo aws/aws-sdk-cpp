@@ -34,7 +34,8 @@ PolicyComplianceStatus::PolicyComplianceStatus() :
     m_policyNameHasBeenSet(false),
     m_memberAccountHasBeenSet(false),
     m_evaluationResultsHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false)
+    m_lastUpdatedHasBeenSet(false),
+    m_issueInfoMapHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ PolicyComplianceStatus::PolicyComplianceStatus(JsonView jsonValue) :
     m_policyNameHasBeenSet(false),
     m_memberAccountHasBeenSet(false),
     m_evaluationResultsHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false)
+    m_lastUpdatedHasBeenSet(false),
+    m_issueInfoMapHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +98,16 @@ PolicyComplianceStatus& PolicyComplianceStatus::operator =(JsonView jsonValue)
     m_lastUpdatedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IssueInfoMap"))
+  {
+    Aws::Map<Aws::String, JsonView> issueInfoMapJsonMap = jsonValue.GetObject("IssueInfoMap").GetAllObjects();
+    for(auto& issueInfoMapItem : issueInfoMapJsonMap)
+    {
+      m_issueInfoMap[DependentServiceNameMapper::GetDependentServiceNameForName(issueInfoMapItem.first)] = issueInfoMapItem.second.AsString();
+    }
+    m_issueInfoMapHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -141,6 +153,17 @@ JsonValue PolicyComplianceStatus::Jsonize() const
   if(m_lastUpdatedHasBeenSet)
   {
    payload.WithDouble("LastUpdated", m_lastUpdated.SecondsWithMSPrecision());
+  }
+
+  if(m_issueInfoMapHasBeenSet)
+  {
+   JsonValue issueInfoMapJsonMap;
+   for(auto& issueInfoMapItem : m_issueInfoMap)
+   {
+     issueInfoMapJsonMap.WithString(DependentServiceNameMapper::GetNameForDependentServiceName(issueInfoMapItem.first), issueInfoMapItem.second);
+   }
+   payload.WithObject("IssueInfoMap", std::move(issueInfoMapJsonMap));
+
   }
 
   return payload;

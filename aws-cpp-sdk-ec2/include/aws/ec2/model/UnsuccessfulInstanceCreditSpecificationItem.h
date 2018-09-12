@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the T2 instance whose credit option for CPU usage was not
+   * <p>Describes the T2 or T3 instance whose credit option for CPU usage was not
    * modified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnsuccessfulInstanceCreditSpecificationItem">AWS
    * API Reference</a></p>
@@ -88,32 +88,32 @@ namespace Model
 
 
     /**
-     * <p>The applicable error for the T2 instance whose credit option for CPU usage
-     * was not modified.</p>
+     * <p>The applicable error for the T2 or T3 instance whose credit option for CPU
+     * usage was not modified.</p>
      */
     inline const UnsuccessfulInstanceCreditSpecificationItemError& GetError() const{ return m_error; }
 
     /**
-     * <p>The applicable error for the T2 instance whose credit option for CPU usage
-     * was not modified.</p>
+     * <p>The applicable error for the T2 or T3 instance whose credit option for CPU
+     * usage was not modified.</p>
      */
     inline void SetError(const UnsuccessfulInstanceCreditSpecificationItemError& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
-     * <p>The applicable error for the T2 instance whose credit option for CPU usage
-     * was not modified.</p>
+     * <p>The applicable error for the T2 or T3 instance whose credit option for CPU
+     * usage was not modified.</p>
      */
     inline void SetError(UnsuccessfulInstanceCreditSpecificationItemError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
 
     /**
-     * <p>The applicable error for the T2 instance whose credit option for CPU usage
-     * was not modified.</p>
+     * <p>The applicable error for the T2 or T3 instance whose credit option for CPU
+     * usage was not modified.</p>
      */
     inline UnsuccessfulInstanceCreditSpecificationItem& WithError(const UnsuccessfulInstanceCreditSpecificationItemError& value) { SetError(value); return *this;}
 
     /**
-     * <p>The applicable error for the T2 instance whose credit option for CPU usage
-     * was not modified.</p>
+     * <p>The applicable error for the T2 or T3 instance whose credit option for CPU
+     * usage was not modified.</p>
      */
     inline UnsuccessfulInstanceCreditSpecificationItem& WithError(UnsuccessfulInstanceCreditSpecificationItemError&& value) { SetError(std::move(value)); return *this;}
 

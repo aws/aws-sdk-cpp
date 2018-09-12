@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/Filter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/Filter.h>
 #include <utility>
 
 namespace Aws
@@ -651,6 +651,64 @@ namespace Model
      */
     inline DescribeNetworkInterfacesRequest& AddNetworkInterfaceIds(const char* value) { m_networkInterfaceIdsHasBeenSet = true; m_networkInterfaceIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline DescribeNetworkInterfacesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline DescribeNetworkInterfacesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline DescribeNetworkInterfacesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of items to return for this request. The request returns a
+     * token that you can specify in a subsequent call to get the next set of
+     * results.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of items to return for this request. The request returns a
+     * token that you can specify in a subsequent call to get the next set of
+     * results.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of items to return for this request. The request returns a
+     * token that you can specify in a subsequent call to get the next set of
+     * results.</p>
+     */
+    inline DescribeNetworkInterfacesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
   private:
 
     Aws::Vector<Filter> m_filters;
@@ -661,6 +719,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_networkInterfaceIds;
     bool m_networkInterfaceIdsHasBeenSet;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
   };
 
 } // namespace Model

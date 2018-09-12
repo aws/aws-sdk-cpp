@@ -1372,9 +1372,10 @@ namespace Model
      * <code>standard</code> and <code>unlimited</code>. To change this attribute after
      * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>standard</code> </p>
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
+     * <code>unlimited</code> (T3 instances)</p>
      */
     inline const CreditSpecificationRequest& GetCreditSpecification() const{ return m_creditSpecification; }
 
@@ -1383,9 +1384,10 @@ namespace Model
      * <code>standard</code> and <code>unlimited</code>. To change this attribute after
      * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>standard</code> </p>
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
+     * <code>unlimited</code> (T3 instances)</p>
      */
     inline void SetCreditSpecification(const CreditSpecificationRequest& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = value; }
 
@@ -1394,9 +1396,10 @@ namespace Model
      * <code>standard</code> and <code>unlimited</code>. To change this attribute after
      * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>standard</code> </p>
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
+     * <code>unlimited</code> (T3 instances)</p>
      */
     inline void SetCreditSpecification(CreditSpecificationRequest&& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = std::move(value); }
 
@@ -1405,9 +1408,10 @@ namespace Model
      * <code>standard</code> and <code>unlimited</code>. To change this attribute after
      * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>standard</code> </p>
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
+     * <code>unlimited</code> (T3 instances)</p>
      */
     inline RunInstancesRequest& WithCreditSpecification(const CreditSpecificationRequest& value) { SetCreditSpecification(value); return *this;}
 
@@ -1416,9 +1420,10 @@ namespace Model
      * <code>standard</code> and <code>unlimited</code>. To change this attribute after
      * launch, use <a>ModifyInstanceCreditSpecification</a>. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/t2-instances.html">T2
-     * Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>standard</code> </p>
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+     * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
+     * <code>unlimited</code> (T3 instances)</p>
      */
     inline RunInstancesRequest& WithCreditSpecification(CreditSpecificationRequest&& value) { SetCreditSpecification(std::move(value)); return *this;}
 

@@ -35,7 +35,8 @@ PolicyComplianceDetail::PolicyComplianceDetail() :
     m_violatorsHasBeenSet(false),
     m_evaluationLimitExceeded(false),
     m_evaluationLimitExceededHasBeenSet(false),
-    m_expiredAtHasBeenSet(false)
+    m_expiredAtHasBeenSet(false),
+    m_issueInfoMapHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ PolicyComplianceDetail::PolicyComplianceDetail(JsonView jsonValue) :
     m_violatorsHasBeenSet(false),
     m_evaluationLimitExceeded(false),
     m_evaluationLimitExceededHasBeenSet(false),
-    m_expiredAtHasBeenSet(false)
+    m_expiredAtHasBeenSet(false),
+    m_issueInfoMapHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +100,16 @@ PolicyComplianceDetail& PolicyComplianceDetail::operator =(JsonView jsonValue)
     m_expiredAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IssueInfoMap"))
+  {
+    Aws::Map<Aws::String, JsonView> issueInfoMapJsonMap = jsonValue.GetObject("IssueInfoMap").GetAllObjects();
+    for(auto& issueInfoMapItem : issueInfoMapJsonMap)
+    {
+      m_issueInfoMap[DependentServiceNameMapper::GetDependentServiceNameForName(issueInfoMapItem.first)] = issueInfoMapItem.second.AsString();
+    }
+    m_issueInfoMapHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -143,6 +155,17 @@ JsonValue PolicyComplianceDetail::Jsonize() const
   if(m_expiredAtHasBeenSet)
   {
    payload.WithDouble("ExpiredAt", m_expiredAt.SecondsWithMSPrecision());
+  }
+
+  if(m_issueInfoMapHasBeenSet)
+  {
+   JsonValue issueInfoMapJsonMap;
+   for(auto& issueInfoMapItem : m_issueInfoMap)
+   {
+     issueInfoMapJsonMap.WithString(DependentServiceNameMapper::GetNameForDependentServiceName(issueInfoMapItem.first), issueInfoMapItem.second);
+   }
+   payload.WithObject("IssueInfoMap", std::move(issueInfoMapJsonMap));
+
   }
 
   return payload;

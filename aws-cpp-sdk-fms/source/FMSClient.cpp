@@ -36,6 +36,7 @@
 #include <aws/fms/model/GetNotificationChannelRequest.h>
 #include <aws/fms/model/GetPolicyRequest.h>
 #include <aws/fms/model/ListComplianceStatusRequest.h>
+#include <aws/fms/model/ListMemberAccountsRequest.h>
 #include <aws/fms/model/ListPoliciesRequest.h>
 #include <aws/fms/model/PutNotificationChannelRequest.h>
 #include <aws/fms/model/PutPolicyRequest.h>
@@ -417,6 +418,41 @@ void FMSClient::ListComplianceStatusAsync(const ListComplianceStatusRequest& req
 void FMSClient::ListComplianceStatusAsyncHelper(const ListComplianceStatusRequest& request, const ListComplianceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListComplianceStatus(request), context);
+}
+
+ListMemberAccountsOutcome FMSClient::ListMemberAccounts(const ListMemberAccountsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListMemberAccountsOutcome(ListMemberAccountsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListMemberAccountsOutcome(outcome.GetError());
+  }
+}
+
+ListMemberAccountsOutcomeCallable FMSClient::ListMemberAccountsCallable(const ListMemberAccountsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMemberAccountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMemberAccounts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FMSClient::ListMemberAccountsAsync(const ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMemberAccountsAsyncHelper( request, handler, context ); } );
+}
+
+void FMSClient::ListMemberAccountsAsyncHelper(const ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMemberAccounts(request), context);
 }
 
 ListPoliciesOutcome FMSClient::ListPolicies(const ListPoliciesRequest& request) const

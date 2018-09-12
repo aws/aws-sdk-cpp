@@ -26,6 +26,7 @@
 #include <aws/fms/model/GetNotificationChannelResult.h>
 #include <aws/fms/model/GetPolicyResult.h>
 #include <aws/fms/model/ListComplianceStatusResult.h>
+#include <aws/fms/model/ListMemberAccountsResult.h>
 #include <aws/fms/model/ListPoliciesResult.h>
 #include <aws/fms/model/PutPolicyResult.h>
 #include <aws/core/NoResult.h>
@@ -78,6 +79,7 @@ namespace Model
         class GetNotificationChannelRequest;
         class GetPolicyRequest;
         class ListComplianceStatusRequest;
+        class ListMemberAccountsRequest;
         class ListPoliciesRequest;
         class PutNotificationChannelRequest;
         class PutPolicyRequest;
@@ -91,6 +93,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetNotificationChannelResult, Aws::Client::AWSError<FMSErrors>> GetNotificationChannelOutcome;
         typedef Aws::Utils::Outcome<GetPolicyResult, Aws::Client::AWSError<FMSErrors>> GetPolicyOutcome;
         typedef Aws::Utils::Outcome<ListComplianceStatusResult, Aws::Client::AWSError<FMSErrors>> ListComplianceStatusOutcome;
+        typedef Aws::Utils::Outcome<ListMemberAccountsResult, Aws::Client::AWSError<FMSErrors>> ListMemberAccountsOutcome;
         typedef Aws::Utils::Outcome<ListPoliciesResult, Aws::Client::AWSError<FMSErrors>> ListPoliciesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<FMSErrors>> PutNotificationChannelOutcome;
         typedef Aws::Utils::Outcome<PutPolicyResult, Aws::Client::AWSError<FMSErrors>> PutPolicyOutcome;
@@ -104,6 +107,7 @@ namespace Model
         typedef std::future<GetNotificationChannelOutcome> GetNotificationChannelOutcomeCallable;
         typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
         typedef std::future<ListComplianceStatusOutcome> ListComplianceStatusOutcomeCallable;
+        typedef std::future<ListMemberAccountsOutcome> ListMemberAccountsOutcomeCallable;
         typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
         typedef std::future<PutNotificationChannelOutcome> PutNotificationChannelOutcomeCallable;
         typedef std::future<PutPolicyOutcome> PutPolicyOutcomeCallable;
@@ -120,6 +124,7 @@ namespace Model
     typedef std::function<void(const FMSClient*, const Model::GetNotificationChannelRequest&, const Model::GetNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNotificationChannelResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListComplianceStatusRequest&, const Model::ListComplianceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComplianceStatusResponseReceivedHandler;
+    typedef std::function<void(const FMSClient*, const Model::ListMemberAccountsRequest&, const Model::ListMemberAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMemberAccountsResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPoliciesResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::PutNotificationChannelRequest&, const Model::PutNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutNotificationChannelResponseReceivedHandler;
     typedef std::function<void(const FMSClient*, const Model::PutPolicyRequest&, const Model::PutPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPolicyResponseReceivedHandler;
@@ -163,12 +168,12 @@ namespace Model
 
         /**
          * <p>Sets the AWS Firewall Manager administrator account. AWS Firewall Manager
-         * must be associated with a master account in AWS Organizations or associated with
-         * a member account that has the appropriate permissions. If the account ID that
-         * you submit is not an AWS Organizations master account, AWS Firewall Manager will
-         * set the appropriate permissions for the given member account.</p> <p>The account
-         * that you associate with AWS Firewall Manager is called the AWS Firewall manager
-         * administrator account. </p><p><h3>See Also:</h3>   <a
+         * must be associated with the master account your AWS organization or associated
+         * with a member account that has the appropriate permissions. If the account ID
+         * that you submit is not an AWS Organizations master account, AWS Firewall Manager
+         * will set the appropriate permissions for the given member account.</p> <p>The
+         * account that you associate with AWS Firewall Manager is called the AWS Firewall
+         * Manager administrator account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateAdminAccount">AWS
          * API Reference</a></p>
          */
@@ -176,12 +181,12 @@ namespace Model
 
         /**
          * <p>Sets the AWS Firewall Manager administrator account. AWS Firewall Manager
-         * must be associated with a master account in AWS Organizations or associated with
-         * a member account that has the appropriate permissions. If the account ID that
-         * you submit is not an AWS Organizations master account, AWS Firewall Manager will
-         * set the appropriate permissions for the given member account.</p> <p>The account
-         * that you associate with AWS Firewall Manager is called the AWS Firewall manager
-         * administrator account. </p><p><h3>See Also:</h3>   <a
+         * must be associated with the master account your AWS organization or associated
+         * with a member account that has the appropriate permissions. If the account ID
+         * that you submit is not an AWS Organizations master account, AWS Firewall Manager
+         * will set the appropriate permissions for the given member account.</p> <p>The
+         * account that you associate with AWS Firewall Manager is called the AWS Firewall
+         * Manager administrator account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -191,12 +196,12 @@ namespace Model
 
         /**
          * <p>Sets the AWS Firewall Manager administrator account. AWS Firewall Manager
-         * must be associated with a master account in AWS Organizations or associated with
-         * a member account that has the appropriate permissions. If the account ID that
-         * you submit is not an AWS Organizations master account, AWS Firewall Manager will
-         * set the appropriate permissions for the given member account.</p> <p>The account
-         * that you associate with AWS Firewall Manager is called the AWS Firewall manager
-         * administrator account. </p><p><h3>See Also:</h3>   <a
+         * must be associated with the master account your AWS organization or associated
+         * with a member account that has the appropriate permissions. If the account ID
+         * that you submit is not an AWS Organizations master account, AWS Firewall Manager
+         * will set the appropriate permissions for the given member account.</p> <p>The
+         * account that you associate with AWS Firewall Manager is called the AWS Firewall
+         * Manager administrator account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/AssociateAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -453,6 +458,40 @@ namespace Model
         virtual void ListComplianceStatusAsync(const Model::ListComplianceStatusRequest& request, const ListComplianceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a <code>MemberAccounts</code> object that lists the member accounts
+         * in the administrator's AWS organization.</p> <p>The
+         * <code>ListMemberAccounts</code> must be submitted by the account that is set as
+         * the AWS Firewall Manager administrator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMemberAccountsOutcome ListMemberAccounts(const Model::ListMemberAccountsRequest& request) const;
+
+        /**
+         * <p>Returns a <code>MemberAccounts</code> object that lists the member accounts
+         * in the administrator's AWS organization.</p> <p>The
+         * <code>ListMemberAccounts</code> must be submitted by the account that is set as
+         * the AWS Firewall Manager administrator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMemberAccountsOutcomeCallable ListMemberAccountsCallable(const Model::ListMemberAccountsRequest& request) const;
+
+        /**
+         * <p>Returns a <code>MemberAccounts</code> object that lists the member accounts
+         * in the administrator's AWS organization.</p> <p>The
+         * <code>ListMemberAccounts</code> must be submitted by the account that is set as
+         * the AWS Firewall Manager administrator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListMemberAccounts">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMemberAccountsAsync(const Model::ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an array of <code>PolicySummary</code> objects in the
          * response.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListPolicies">AWS
@@ -547,6 +586,7 @@ namespace Model
         void GetNotificationChannelAsyncHelper(const Model::GetNotificationChannelRequest& request, const GetNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComplianceStatusAsyncHelper(const Model::ListComplianceStatusRequest& request, const ListComplianceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMemberAccountsAsyncHelper(const Model::ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPoliciesAsyncHelper(const Model::ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutNotificationChannelAsyncHelper(const Model::PutNotificationChannelRequest& request, const PutNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutPolicyAsyncHelper(const Model::PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
