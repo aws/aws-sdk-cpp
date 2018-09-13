@@ -78,7 +78,8 @@ namespace Model
     Vicki,
     Takumi,
     Seoyeon,
-    Aditi
+    Aditi,
+    Zhiyu
   };
 
 namespace VoiceIdMapper

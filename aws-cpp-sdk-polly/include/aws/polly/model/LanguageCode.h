@@ -26,6 +26,7 @@ namespace Model
   enum class LanguageCode
   {
     NOT_SET,
+    cmn_CN,
     cy_GB,
     da_DK,
     de_DE,

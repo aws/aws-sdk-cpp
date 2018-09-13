@@ -30,6 +30,7 @@ namespace Aws
       namespace LanguageCodeMapper
       {
 
+        static const int cmn_CN_HASH = HashingUtils::HashString("cmn-CN");
         static const int cy_GB_HASH = HashingUtils::HashString("cy-GB");
         static const int da_DK_HASH = HashingUtils::HashString("da-DK");
         static const int de_DE_HASH = HashingUtils::HashString("de-DE");
@@ -61,7 +62,11 @@ namespace Aws
         LanguageCode GetLanguageCodeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == cy_GB_HASH)
+          if (hashCode == cmn_CN_HASH)
+          {
+            return LanguageCode::cmn_CN;
+          }
+          else if (hashCode == cy_GB_HASH)
           {
             return LanguageCode::cy_GB;
           }
@@ -179,6 +184,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LanguageCode::cmn_CN:
+            return "cmn-CN";
           case LanguageCode::cy_GB:
             return "cy-GB";
           case LanguageCode::da_DK:
