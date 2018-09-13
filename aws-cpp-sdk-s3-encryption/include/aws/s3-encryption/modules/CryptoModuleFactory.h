@@ -33,6 +33,8 @@ namespace Aws
             class AWS_S3ENCRYPTION_API CryptoModuleAbstractFactory
             {
             public:
+                virtual ~CryptoModuleAbstractFactory() = default;
+
                 /*
                 * Override this method to create a specific crypto module.
                 */
