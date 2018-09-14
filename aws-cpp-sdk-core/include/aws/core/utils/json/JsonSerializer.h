@@ -243,6 +243,7 @@ namespace Aws
 
                 /**
                  * Returns the value of this node as a string.
+                 * The behavior is undefined if the node is _not_ of type string.
                  */
                 Aws::String AsString() const;
 

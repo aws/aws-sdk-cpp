@@ -411,8 +411,12 @@ Aws::String JsonView::GetString(const Aws::String& key) const
 
 Aws::String JsonView::AsString() const
 {
-    assert(cJSON_IsString(m_value));
-    return cJSON_GetStringValue(m_value);
+    const char* str = cJSON_GetStringValue(m_value);
+    if (str == nullptr)
+    {
+        return {};
+    }
+    return str;
 }
 
 bool JsonView::GetBool(const Aws::String& key) const

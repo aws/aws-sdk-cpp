@@ -106,6 +106,7 @@ TEST(JsonSerializerTest, TestParseJsonString)
         ASSERT_STREQ("testStringValue", view.GetString("testStringKey").c_str());
         ASSERT_EQ(10, view.GetInteger("testIntKey"));
         ASSERT_FALSE(view.GetBool("testBoolKey"));
+        ASSERT_TRUE(view.GetObject("object").AsString().empty());
         ASSERT_STREQ("stringArrayEntry1", view.GetArray("array")[0].AsString().c_str());
         ASSERT_STREQ("stringArrayEntry2", view.GetArray("array")[1].AsString().c_str());
         ASSERT_STREQ("testObjectStringValue", view.GetObject("object").GetString("testObjectStringKey").c_str());
