@@ -63,8 +63,9 @@ void SelectVoiceAndOutputSound(const std::shared_ptr<Aws::TextToSpeech::TextToSp
 			SelectVoiceAndOutputSound(manager);
 			return;
 		}
+		manager->SendTextToOutputDevice(line.c_str(), handler); //For Text to Audio outpur
+		manager->SendTextToOutputSpeechMarks(line.c_str(), handler); //For Text to Speech marks. Check SpeechMark.txt file in output folder
 
-		manager->SendTextToOutputDevice(line.c_str(), handler);
 		std::cout << "Anything else?" << std::endl;
 	}
 }
