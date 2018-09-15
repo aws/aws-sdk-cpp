@@ -18,6 +18,8 @@
 #include <aws/polly/model/DescribeVoicesRequest.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include<iostream>
+#include<fstream>
 
 using namespace Aws::Polly;
 using namespace Aws::Polly::Model;
@@ -86,6 +88,37 @@ namespace Aws
                 const Polly::Model::SynthesizeSpeechOutcome& speechOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
             {self -> OnPollySynthSpeechOutcomeRecieved(client, request, speechOutcome, context);}, context);
         }
+
+
+		void TextToSpeechManager::SendTextToOutputSpeechMarks(const char* text, SendTextCompletedHandler handler)
+		{
+			if (!m_activeDriver)
+			{
+				auto&& devices = EnumerateDevices();
+				assert(devices.size() > 0);
+
+				AWS_LOGSTREAM_INFO(CLASS_TAG, "No device has been configured. Defaulting to the first device available.");
+				SetActiveDevice(devices.front().second, devices.front().first, devices.front().first.capabilities.front());
+			}
+
+
+			SynthesizeSpeechRequest synthesizeSpeechRequest;
+			synthesizeSpeechRequest.WithOutputFormat(OutputFormat::json)
+				.WithSampleRate(StringUtils::to_string(m_selectedCaps.sampleRate))
+				.WithTextType(TextType::text)
+				.WithText(text)
+				.WithOutputFormat(OutputFormat::json)
+				.WithSpeechMarkTypes({ SpeechMarkType::word })
+				.WithVoiceId(m_activeVoice);
+
+			auto context = Aws::MakeShared<SendTextCompletionHandlerCallbackContext>(CLASS_TAG);
+			context->callback = handler;
+
+			auto self = shared_from_this();
+			m_pollyClient->SynthesizeSpeechAsync(synthesizeSpeechRequest, [self](const Polly::PollyClient* client, const Polly::Model::SynthesizeSpeechRequest& request,
+				const Polly::Model::SynthesizeSpeechOutcome& speechOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
+			{self->OnPollySynthSpeechMarksOutcomeRecieved(client, request, speechOutcome, context); }, context);
+		}
 
         OutputDeviceList TextToSpeechManager::EnumerateDevices() const
         {
@@ -187,5 +220,51 @@ namespace Aws
                 callback(request.GetText().c_str(), outcome, played);
             }
         }
-    }
+    
+
+		void TextToSpeechManager::OnPollySynthSpeechMarksOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest& request,
+			const Polly::Model::SynthesizeSpeechOutcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+		{
+			 bool played(false);
+			 std::string speechMarks;
+
+            if(outcome.IsSuccess())
+            {
+                auto result = const_cast<Polly::Model::SynthesizeSpeechOutcome&>(outcome).GetResultWithOwnership();
+                auto& stream = result.GetAudioStream();
+
+				std::ofstream myfile;
+
+				myfile.open("SpeechMarks.txt");
+				
+               AWS_LOGSTREAM_TRACE(CLASS_TAG, "Speech marks received from Polly. " << result.GetContentType() << " with " 
+                    << result.GetRequestCharacters() << " characters syntesized");
+
+                std::streamsize amountRead(0);
+                unsigned char buffer[BUFF_SIZE];
+
+				while (stream )
+                {
+                    stream.read((char*) buffer, BUFF_SIZE);
+                    auto read = stream.gcount();
+                    AWS_LOGSTREAM_TRACE(CLASS_TAG, "Writing " << read << " bytes to device.");
+					speechMarks.append((char*)buffer);
+                    amountRead += read;
+                }
+				myfile << speechMarks;
+				myfile.close();
+            }
+            else
+            {
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error while fetching audio speech marks from polly. " << outcome.GetError().GetExceptionName() << " "
+                    << outcome.GetError().GetMessage());
+            }
+
+            auto callback = ((const std::shared_ptr<SendTextCompletionHandlerCallbackContext>&)context)->callback;
+            if (callback)
+            {
+                callback(request.GetText().c_str(), outcome, played);
+            }
+        }
+	}
 }

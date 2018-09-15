@@ -56,6 +56,7 @@ namespace Aws
         class AWS_TEXT_TO_SPEECH_API TextToSpeechManager : public std::enable_shared_from_this<TextToSpeechManager>
         {
         public:
+
             /**
              * Create a TextToSpeechManager instance initialized with a polly client and a driver factory.
              * If driver factory is nullptr, we will create a default implementation for your operating system.
@@ -74,6 +75,13 @@ namespace Aws
              * @callback will be invoked once the entire operation has finished.
              */
             void SendTextToOutputDevice(const char* text, SendTextCompletedHandler callback);
+
+
+			/**
+			* Sends @text to the Polly Service, once the stream is returned, the stream (SpeechMarks in Json format) is returned by function.
+			* @callback will be invoked once the entire operation has finished.
+			*/
+			void SendTextToOutputSpeechMarks(const char* text, SendTextCompletedHandler callback);
 
             /**
              * Enumerate all devices and their capabilities from the installed drivers. On some operating systems,
@@ -99,6 +107,9 @@ namespace Aws
              */
             void SetActiveVoice(const Aws::String& voice);
 
+
+
+
         private:
             TextToSpeechManager(const std::shared_ptr<Polly::PollyClient>& pollyClient,
                 const std::shared_ptr<PCMOutputDriverFactory>& driverFactory);
@@ -106,6 +117,9 @@ namespace Aws
             void OnPollySynthSpeechOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest&, 
                 const Polly::Model::SynthesizeSpeechOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) const;
             
+			void OnPollySynthSpeechMarksOutcomeRecieved(const Polly::PollyClient*, const Polly::Model::SynthesizeSpeechRequest&,
+				const Polly::Model::SynthesizeSpeechOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) const;
+
             Polly::PollyClient* m_pollyClient;
             std::shared_ptr<PCMOutputDriver> m_activeDriver;
             Aws::Vector<std::shared_ptr<PCMOutputDriver>> m_drivers;
