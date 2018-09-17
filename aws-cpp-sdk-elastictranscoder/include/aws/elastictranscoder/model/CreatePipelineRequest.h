@@ -334,78 +334,78 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this
-     * pipeline.</p> <p>If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as
+     * pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as
      * your <code>Encryption:Mode</code>, you don't need to provide a key with your job
      * because a default key, known as an AWS-KMS key, is created for you
      * automatically. You need to provide an AWS-KMS key only if you want to use a
      * non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of
-     * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.</p>
+     * <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
      */
     inline const Aws::String& GetAwsKmsKeyArn() const{ return m_awsKmsKeyArn; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this
-     * pipeline.</p> <p>If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as
+     * pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as
      * your <code>Encryption:Mode</code>, you don't need to provide a key with your job
      * because a default key, known as an AWS-KMS key, is created for you
      * automatically. You need to provide an AWS-KMS key only if you want to use a
      * non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of
-     * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.</p>
+     * <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
      */
     inline void SetAwsKmsKeyArn(const Aws::String& value) { m_awsKmsKeyArnHasBeenSet = true; m_awsKmsKeyArn = value; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this
-     * pipeline.</p> <p>If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as
+     * pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as
      * your <code>Encryption:Mode</code>, you don't need to provide a key with your job
      * because a default key, known as an AWS-KMS key, is created for you
      * automatically. You need to provide an AWS-KMS key only if you want to use a
      * non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of
-     * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.</p>
+     * <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
      */
     inline void SetAwsKmsKeyArn(Aws::String&& value) { m_awsKmsKeyArnHasBeenSet = true; m_awsKmsKeyArn = std::move(value); }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this
-     * pipeline.</p> <p>If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as
+     * pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as
      * your <code>Encryption:Mode</code>, you don't need to provide a key with your job
      * because a default key, known as an AWS-KMS key, is created for you
      * automatically. You need to provide an AWS-KMS key only if you want to use a
      * non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of
-     * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.</p>
+     * <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
      */
     inline void SetAwsKmsKeyArn(const char* value) { m_awsKmsKeyArnHasBeenSet = true; m_awsKmsKeyArn.assign(value); }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this
-     * pipeline.</p> <p>If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as
+     * pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as
      * your <code>Encryption:Mode</code>, you don't need to provide a key with your job
      * because a default key, known as an AWS-KMS key, is created for you
      * automatically. You need to provide an AWS-KMS key only if you want to use a
      * non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of
-     * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.</p>
+     * <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
      */
     inline CreatePipelineRequest& WithAwsKmsKeyArn(const Aws::String& value) { SetAwsKmsKeyArn(value); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this
-     * pipeline.</p> <p>If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as
+     * pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as
      * your <code>Encryption:Mode</code>, you don't need to provide a key with your job
      * because a default key, known as an AWS-KMS key, is created for you
      * automatically. You need to provide an AWS-KMS key only if you want to use a
      * non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of
-     * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.</p>
+     * <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
      */
     inline CreatePipelineRequest& WithAwsKmsKeyArn(Aws::String&& value) { SetAwsKmsKeyArn(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this
-     * pipeline.</p> <p>If you use either <code>S3</code> or <code>S3-AWS-KMS</code> as
+     * pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as
      * your <code>Encryption:Mode</code>, you don't need to provide a key with your job
      * because a default key, known as an AWS-KMS key, is created for you
      * automatically. You need to provide an AWS-KMS key only if you want to use a
      * non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of
-     * <code>AES-PKCS7</code>, <code>AES-CTR</code>, or <code>AES-GCM</code>.</p>
+     * <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
      */
     inline CreatePipelineRequest& WithAwsKmsKeyArn(const char* value) { SetAwsKmsKeyArn(value); return *this;}
 
@@ -419,7 +419,7 @@ namespace Model
      * Transcoder has started to process a job in this pipeline. This is the ARN that
      * Amazon SNS returned when you created the topic. For more information, see Create
      * a Topic in the Amazon Simple Notification Service Developer Guide.</p> </li>
-     * <li> <p> <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want
+     * <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want
      * to notify when Elastic Transcoder has finished processing a job in this
      * pipeline. This is the ARN that Amazon SNS returned when you created the
      * topic.</p> </li> <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic
@@ -441,7 +441,7 @@ namespace Model
      * Transcoder has started to process a job in this pipeline. This is the ARN that
      * Amazon SNS returned when you created the topic. For more information, see Create
      * a Topic in the Amazon Simple Notification Service Developer Guide.</p> </li>
-     * <li> <p> <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want
+     * <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want
      * to notify when Elastic Transcoder has finished processing a job in this
      * pipeline. This is the ARN that Amazon SNS returned when you created the
      * topic.</p> </li> <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic
@@ -463,7 +463,7 @@ namespace Model
      * Transcoder has started to process a job in this pipeline. This is the ARN that
      * Amazon SNS returned when you created the topic. For more information, see Create
      * a Topic in the Amazon Simple Notification Service Developer Guide.</p> </li>
-     * <li> <p> <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want
+     * <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want
      * to notify when Elastic Transcoder has finished processing a job in this
      * pipeline. This is the ARN that Amazon SNS returned when you created the
      * topic.</p> </li> <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic
@@ -485,7 +485,7 @@ namespace Model
      * Transcoder has started to process a job in this pipeline. This is the ARN that
      * Amazon SNS returned when you created the topic. For more information, see Create
      * a Topic in the Amazon Simple Notification Service Developer Guide.</p> </li>
-     * <li> <p> <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want
+     * <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want
      * to notify when Elastic Transcoder has finished processing a job in this
      * pipeline. This is the ARN that Amazon SNS returned when you created the
      * topic.</p> </li> <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic
@@ -507,7 +507,7 @@ namespace Model
      * Transcoder has started to process a job in this pipeline. This is the ARN that
      * Amazon SNS returned when you created the topic. For more information, see Create
      * a Topic in the Amazon Simple Notification Service Developer Guide.</p> </li>
-     * <li> <p> <b>Completed</b>: The topic ARN for the Amazon SNS topic that you want
+     * <li> <p> <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want
      * to notify when Elastic Transcoder has finished processing a job in this
      * pipeline. This is the ARN that Amazon SNS returned when you created the
      * topic.</p> </li> <li> <p> <b>Warning</b>: The topic ARN for the Amazon SNS topic

@@ -193,32 +193,42 @@ namespace Model
 
 
     /**
-     * <p>The configuration for the Docker volume. This parameter is specified when
-     * using Docker volumes.</p>
+     * <p>This parameter is specified when using Docker volumes. Docker volumes are
+     * only supported when using the EC2 launch type. Windows containers only support
+     * the use of the <code>local</code> driver. To use bind mounts, specify a
+     * <code>host</code> instead.</p>
      */
     inline const DockerVolumeConfiguration& GetDockerVolumeConfiguration() const{ return m_dockerVolumeConfiguration; }
 
     /**
-     * <p>The configuration for the Docker volume. This parameter is specified when
-     * using Docker volumes.</p>
+     * <p>This parameter is specified when using Docker volumes. Docker volumes are
+     * only supported when using the EC2 launch type. Windows containers only support
+     * the use of the <code>local</code> driver. To use bind mounts, specify a
+     * <code>host</code> instead.</p>
      */
     inline void SetDockerVolumeConfiguration(const DockerVolumeConfiguration& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = value; }
 
     /**
-     * <p>The configuration for the Docker volume. This parameter is specified when
-     * using Docker volumes.</p>
+     * <p>This parameter is specified when using Docker volumes. Docker volumes are
+     * only supported when using the EC2 launch type. Windows containers only support
+     * the use of the <code>local</code> driver. To use bind mounts, specify a
+     * <code>host</code> instead.</p>
      */
     inline void SetDockerVolumeConfiguration(DockerVolumeConfiguration&& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration for the Docker volume. This parameter is specified when
-     * using Docker volumes.</p>
+     * <p>This parameter is specified when using Docker volumes. Docker volumes are
+     * only supported when using the EC2 launch type. Windows containers only support
+     * the use of the <code>local</code> driver. To use bind mounts, specify a
+     * <code>host</code> instead.</p>
      */
     inline Volume& WithDockerVolumeConfiguration(const DockerVolumeConfiguration& value) { SetDockerVolumeConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration for the Docker volume. This parameter is specified when
-     * using Docker volumes.</p>
+     * <p>This parameter is specified when using Docker volumes. Docker volumes are
+     * only supported when using the EC2 launch type. Windows containers only support
+     * the use of the <code>local</code> driver. To use bind mounts, specify a
+     * <code>host</code> instead.</p>
      */
     inline Volume& WithDockerVolumeConfiguration(DockerVolumeConfiguration&& value) { SetDockerVolumeConfiguration(std::move(value)); return *this;}
 

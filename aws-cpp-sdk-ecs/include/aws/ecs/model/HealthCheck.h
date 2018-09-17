@@ -38,7 +38,17 @@ namespace Model
    * <p>An object representing a container health check. Health check parameters that
    * are specified in a container definition override any Docker health checks that
    * exist in the container image (such as those specified in a parent image or from
-   * the image's Dockerfile).</p><p><h3>See Also:</h3>   <a
+   * the image's Dockerfile).</p> <p>The following are notes about container health
+   * check support:</p> <ul> <li> <p>Container health checks require version 1.17.0
+   * or greater of the Amazon ECS container agent. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
+   * the Amazon ECS Container Agent</a>.</p> </li> <li> <p>Container health checks
+   * are supported for Fargate tasks if using platform version version 1.1.0 or
+   * greater. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+   * Fargate Platform Versions</a>.</p> </li> <li> <p>Container health checks are not
+   * supported for tasks that are part of a service that is configured to use a
+   * Classic Load Balancer.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/HealthCheck">AWS API
    * Reference</a></p>
    */
@@ -59,8 +69,8 @@ namespace Model
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
      * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
-     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+     * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
@@ -73,8 +83,8 @@ namespace Model
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
      * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
-     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+     * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
      */
     inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
@@ -87,8 +97,8 @@ namespace Model
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
      * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
-     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+     * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
      */
     inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
@@ -101,8 +111,8 @@ namespace Model
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
      * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
-     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+     * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
      */
     inline HealthCheck& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
@@ -115,8 +125,8 @@ namespace Model
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
      * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
-     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+     * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
      */
     inline HealthCheck& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
@@ -129,8 +139,8 @@ namespace Model
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
      * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
-     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+     * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
      */
     inline HealthCheck& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
@@ -143,8 +153,8 @@ namespace Model
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
      * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
-     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+     * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
      */
     inline HealthCheck& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
@@ -157,8 +167,8 @@ namespace Model
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
      * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.35/#create-a-container">Create a
-     * container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+     * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
      */
     inline HealthCheck& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }

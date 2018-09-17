@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int customer_gateway_HASH = HashingUtils::HashString("customer-gateway");
+        static const int dedicated_host_HASH = HashingUtils::HashString("dedicated-host");
         static const int dhcp_options_HASH = HashingUtils::HashString("dhcp-options");
         static const int image_HASH = HashingUtils::HashString("image");
         static const int instance_HASH = HashingUtils::HashString("instance");
@@ -55,6 +56,10 @@ namespace Aws
           if (hashCode == customer_gateway_HASH)
           {
             return ResourceType::customer_gateway;
+          }
+          else if (hashCode == dedicated_host_HASH)
+          {
+            return ResourceType::dedicated_host;
           }
           else if (hashCode == dhcp_options_HASH)
           {
@@ -136,6 +141,8 @@ namespace Aws
           {
           case ResourceType::customer_gateway:
             return "customer-gateway";
+          case ResourceType::dedicated_host:
+            return "dedicated-host";
           case ResourceType::dhcp_options:
             return "dhcp-options";
           case ResourceType::image:

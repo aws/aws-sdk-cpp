@@ -38,7 +38,8 @@ UpdateProjectRequest::UpdateProjectRequest() :
     m_tagsHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_badgeEnabled(false),
-    m_badgeEnabledHasBeenSet(false)
+    m_badgeEnabledHasBeenSet(false),
+    m_logsConfigHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,12 @@ Aws::String UpdateProjectRequest::SerializePayload() const
   if(m_badgeEnabledHasBeenSet)
   {
    payload.WithBool("badgeEnabled", m_badgeEnabled);
+
+  }
+
+  if(m_logsConfigHasBeenSet)
+  {
+   payload.WithObject("logsConfig", m_logsConfig.Jsonize());
 
   }
 

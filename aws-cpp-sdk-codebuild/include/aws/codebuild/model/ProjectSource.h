@@ -58,8 +58,9 @@ namespace Model
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
      * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket.</p> </li> </ul>
+     * <p> <code>NO_SOURCE</code>: The project does not have input source code.</p>
+     * </li> <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage
+     * Service (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline const SourceType& GetType() const{ return m_type; }
 
@@ -71,8 +72,9 @@ namespace Model
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
      * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket.</p> </li> </ul>
+     * <p> <code>NO_SOURCE</code>: The project does not have input source code.</p>
+     * </li> <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage
+     * Service (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline void SetType(const SourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -84,8 +86,9 @@ namespace Model
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
      * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket.</p> </li> </ul>
+     * <p> <code>NO_SOURCE</code>: The project does not have input source code.</p>
+     * </li> <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage
+     * Service (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline void SetType(SourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -97,8 +100,9 @@ namespace Model
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
      * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket.</p> </li> </ul>
+     * <p> <code>NO_SOURCE</code>: The project does not have input source code.</p>
+     * </li> <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage
+     * Service (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline ProjectSource& WithType(const SourceType& value) { SetType(value); return *this;}
 
@@ -110,8 +114,9 @@ namespace Model
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in AWS CodePipeline.</p> </li> <li> <p>
      * <code>GITHUB</code>: The source code is in a GitHub repository.</p> </li> <li>
-     * <p> <code>S3</code>: The source code is in an Amazon Simple Storage Service
-     * (Amazon S3) input bucket.</p> </li> </ul>
+     * <p> <code>NO_SOURCE</code>: The project does not have input source code.</p>
+     * </li> <li> <p> <code>S3</code>: The source code is in an Amazon Simple Storage
+     * Service (Amazon S3) input bucket.</p> </li> </ul>
      */
     inline ProjectSource& WithType(SourceType&& value) { SetType(std::move(value)); return *this;}
 

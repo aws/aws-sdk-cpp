@@ -106,21 +106,21 @@ namespace Model
 
     /**
      * <p>The port value used if your service discovery service specified an SRV
-     * record. This field is required if both the <code>awsvpc</code> network mode and
+     * record. This field may be used if both the <code>awsvpc</code> network mode and
      * SRV records are used.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port value used if your service discovery service specified an SRV
-     * record. This field is required if both the <code>awsvpc</code> network mode and
+     * record. This field may be used if both the <code>awsvpc</code> network mode and
      * SRV records are used.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port value used if your service discovery service specified an SRV
-     * record. This field is required if both the <code>awsvpc</code> network mode and
+     * record. This field may be used if both the <code>awsvpc</code> network mode and
      * SRV records are used.</p>
      */
     inline ServiceRegistry& WithPort(int value) { SetPort(value); return *this;}

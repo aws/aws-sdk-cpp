@@ -213,6 +213,152 @@ namespace Model
 
 
     /**
+     * <p>Array of numbers representing the values for the metric during the period.
+     * Each unique value is listed just once in this array, and the corresponding
+     * number in the <code>Counts</code> array specifies the number of times that value
+     * occurred during the period. You can include up to 150 unique values in each
+     * <code>PutMetricData</code> action that specifies a <code>Values</code>
+     * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
+     * <code>Double</code>, CloudWatch rejects values that are either too small or too
+     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
+     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+     * +Infinity, -Infinity) are not supported.</p>
+     */
+    inline const Aws::Vector<double>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>Array of numbers representing the values for the metric during the period.
+     * Each unique value is listed just once in this array, and the corresponding
+     * number in the <code>Counts</code> array specifies the number of times that value
+     * occurred during the period. You can include up to 150 unique values in each
+     * <code>PutMetricData</code> action that specifies a <code>Values</code>
+     * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
+     * <code>Double</code>, CloudWatch rejects values that are either too small or too
+     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
+     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+     * +Infinity, -Infinity) are not supported.</p>
+     */
+    inline void SetValues(const Aws::Vector<double>& value) { m_valuesHasBeenSet = true; m_values = value; }
+
+    /**
+     * <p>Array of numbers representing the values for the metric during the period.
+     * Each unique value is listed just once in this array, and the corresponding
+     * number in the <code>Counts</code> array specifies the number of times that value
+     * occurred during the period. You can include up to 150 unique values in each
+     * <code>PutMetricData</code> action that specifies a <code>Values</code>
+     * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
+     * <code>Double</code>, CloudWatch rejects values that are either too small or too
+     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
+     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+     * +Infinity, -Infinity) are not supported.</p>
+     */
+    inline void SetValues(Aws::Vector<double>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
+
+    /**
+     * <p>Array of numbers representing the values for the metric during the period.
+     * Each unique value is listed just once in this array, and the corresponding
+     * number in the <code>Counts</code> array specifies the number of times that value
+     * occurred during the period. You can include up to 150 unique values in each
+     * <code>PutMetricData</code> action that specifies a <code>Values</code>
+     * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
+     * <code>Double</code>, CloudWatch rejects values that are either too small or too
+     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
+     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+     * +Infinity, -Infinity) are not supported.</p>
+     */
+    inline MetricDatum& WithValues(const Aws::Vector<double>& value) { SetValues(value); return *this;}
+
+    /**
+     * <p>Array of numbers representing the values for the metric during the period.
+     * Each unique value is listed just once in this array, and the corresponding
+     * number in the <code>Counts</code> array specifies the number of times that value
+     * occurred during the period. You can include up to 150 unique values in each
+     * <code>PutMetricData</code> action that specifies a <code>Values</code>
+     * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
+     * <code>Double</code>, CloudWatch rejects values that are either too small or too
+     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
+     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+     * +Infinity, -Infinity) are not supported.</p>
+     */
+    inline MetricDatum& WithValues(Aws::Vector<double>&& value) { SetValues(std::move(value)); return *this;}
+
+    /**
+     * <p>Array of numbers representing the values for the metric during the period.
+     * Each unique value is listed just once in this array, and the corresponding
+     * number in the <code>Counts</code> array specifies the number of times that value
+     * occurred during the period. You can include up to 150 unique values in each
+     * <code>PutMetricData</code> action that specifies a <code>Values</code>
+     * array.</p> <p>Although the <code>Values</code> array accepts numbers of type
+     * <code>Double</code>, CloudWatch rejects values that are either too small or too
+     * large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base 10)
+     * or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+     * +Infinity, -Infinity) are not supported.</p>
+     */
+    inline MetricDatum& AddValues(double value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+
+
+    /**
+     * <p>Array of numbers that is used along with the <code>Values</code> array. Each
+     * number in the <code>Count</code> array is the number of times the corresponding
+     * value in the <code>Values</code> array occurred during the period. </p> <p>If
+     * you omit the <code>Counts</code> array, the default of 1 is used as the value
+     * for each count. If you include a <code>Counts</code> array, it must include the
+     * same amount of values as the <code>Values</code> array.</p>
+     */
+    inline const Aws::Vector<double>& GetCounts() const{ return m_counts; }
+
+    /**
+     * <p>Array of numbers that is used along with the <code>Values</code> array. Each
+     * number in the <code>Count</code> array is the number of times the corresponding
+     * value in the <code>Values</code> array occurred during the period. </p> <p>If
+     * you omit the <code>Counts</code> array, the default of 1 is used as the value
+     * for each count. If you include a <code>Counts</code> array, it must include the
+     * same amount of values as the <code>Values</code> array.</p>
+     */
+    inline void SetCounts(const Aws::Vector<double>& value) { m_countsHasBeenSet = true; m_counts = value; }
+
+    /**
+     * <p>Array of numbers that is used along with the <code>Values</code> array. Each
+     * number in the <code>Count</code> array is the number of times the corresponding
+     * value in the <code>Values</code> array occurred during the period. </p> <p>If
+     * you omit the <code>Counts</code> array, the default of 1 is used as the value
+     * for each count. If you include a <code>Counts</code> array, it must include the
+     * same amount of values as the <code>Values</code> array.</p>
+     */
+    inline void SetCounts(Aws::Vector<double>&& value) { m_countsHasBeenSet = true; m_counts = std::move(value); }
+
+    /**
+     * <p>Array of numbers that is used along with the <code>Values</code> array. Each
+     * number in the <code>Count</code> array is the number of times the corresponding
+     * value in the <code>Values</code> array occurred during the period. </p> <p>If
+     * you omit the <code>Counts</code> array, the default of 1 is used as the value
+     * for each count. If you include a <code>Counts</code> array, it must include the
+     * same amount of values as the <code>Values</code> array.</p>
+     */
+    inline MetricDatum& WithCounts(const Aws::Vector<double>& value) { SetCounts(value); return *this;}
+
+    /**
+     * <p>Array of numbers that is used along with the <code>Values</code> array. Each
+     * number in the <code>Count</code> array is the number of times the corresponding
+     * value in the <code>Values</code> array occurred during the period. </p> <p>If
+     * you omit the <code>Counts</code> array, the default of 1 is used as the value
+     * for each count. If you include a <code>Counts</code> array, it must include the
+     * same amount of values as the <code>Values</code> array.</p>
+     */
+    inline MetricDatum& WithCounts(Aws::Vector<double>&& value) { SetCounts(std::move(value)); return *this;}
+
+    /**
+     * <p>Array of numbers that is used along with the <code>Values</code> array. Each
+     * number in the <code>Count</code> array is the number of times the corresponding
+     * value in the <code>Values</code> array occurred during the period. </p> <p>If
+     * you omit the <code>Counts</code> array, the default of 1 is used as the value
+     * for each count. If you include a <code>Counts</code> array, it must include the
+     * same amount of values as the <code>Values</code> array.</p>
+     */
+    inline MetricDatum& AddCounts(double value) { m_countsHasBeenSet = true; m_counts.push_back(value); return *this; }
+
+
+    /**
      * <p>The unit of the metric.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
@@ -293,6 +439,12 @@ namespace Model
 
     StatisticSet m_statisticValues;
     bool m_statisticValuesHasBeenSet;
+
+    Aws::Vector<double> m_values;
+    bool m_valuesHasBeenSet;
+
+    Aws::Vector<double> m_counts;
+    bool m_countsHasBeenSet;
 
     StandardUnit m_unit;
     bool m_unitHasBeenSet;

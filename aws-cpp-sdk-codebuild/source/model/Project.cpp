@@ -47,7 +47,8 @@ Project::Project() :
     m_lastModifiedHasBeenSet(false),
     m_webhookHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_badgeHasBeenSet(false)
+    m_badgeHasBeenSet(false),
+    m_logsConfigHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ Project::Project(JsonView jsonValue) :
     m_lastModifiedHasBeenSet(false),
     m_webhookHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_badgeHasBeenSet(false)
+    m_badgeHasBeenSet(false),
+    m_logsConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -212,6 +214,13 @@ Project& Project::operator =(JsonView jsonValue)
     m_badgeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("logsConfig"))
+  {
+    m_logsConfig = jsonValue.GetObject("logsConfig");
+
+    m_logsConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -337,6 +346,12 @@ JsonValue Project::Jsonize() const
   if(m_badgeHasBeenSet)
   {
    payload.WithObject("badge", m_badge.Jsonize());
+
+  }
+
+  if(m_logsConfigHasBeenSet)
+  {
+   payload.WithObject("logsConfig", m_logsConfig.Jsonize());
 
   }
 

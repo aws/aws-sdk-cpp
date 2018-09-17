@@ -145,144 +145,152 @@ namespace Model
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline const Aws::Vector<Aws::String>& GetOKActions() const{ return m_oKActions; }
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline void SetOKActions(const Aws::Vector<Aws::String>& value) { m_oKActionsHasBeenSet = true; m_oKActions = value; }
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline void SetOKActions(Aws::Vector<Aws::String>&& value) { m_oKActionsHasBeenSet = true; m_oKActions = std::move(value); }
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& WithOKActions(const Aws::Vector<Aws::String>& value) { SetOKActions(value); return *this;}
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& WithOKActions(Aws::Vector<Aws::String>&& value) { SetOKActions(std::move(value)); return *this;}
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& AddOKActions(const Aws::String& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& AddOKActions(Aws::String&& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& AddOKActions(const char* value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
@@ -290,144 +298,152 @@ namespace Model
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline const Aws::Vector<Aws::String>& GetAlarmActions() const{ return m_alarmActions; }
 
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline void SetAlarmActions(const Aws::Vector<Aws::String>& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
 
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline void SetAlarmActions(Aws::Vector<Aws::String>&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = std::move(value); }
 
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& WithAlarmActions(const Aws::Vector<Aws::String>& value) { SetAlarmActions(value); return *this;}
 
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& WithAlarmActions(Aws::Vector<Aws::String>&& value) { SetAlarmActions(std::move(value)); return *this;}
 
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& AddAlarmActions(const Aws::String& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
 
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& AddAlarmActions(Aws::String&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values: arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& AddAlarmActions(const char* value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
 
@@ -436,18 +452,19 @@ namespace Model
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
-     * arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline const Aws::Vector<Aws::String>& GetInsufficientDataActions() const{ return m_insufficientDataActions; }
 
@@ -455,18 +472,19 @@ namespace Model
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
-     * arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline void SetInsufficientDataActions(const Aws::Vector<Aws::String>& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = value; }
 
@@ -474,18 +492,19 @@ namespace Model
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
-     * arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline void SetInsufficientDataActions(Aws::Vector<Aws::String>&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = std::move(value); }
 
@@ -493,18 +512,19 @@ namespace Model
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
-     * arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& WithInsufficientDataActions(const Aws::Vector<Aws::String>& value) { SetInsufficientDataActions(value); return *this;}
 
@@ -512,18 +532,19 @@ namespace Model
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
-     * arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& WithInsufficientDataActions(Aws::Vector<Aws::String>&& value) { SetInsufficientDataActions(std::move(value)); return *this;}
 
@@ -531,18 +552,19 @@ namespace Model
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
-     * arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& AddInsufficientDataActions(const Aws::String& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 
@@ -550,18 +572,19 @@ namespace Model
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
-     * arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& AddInsufficientDataActions(Aws::String&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(std::move(value)); return *this; }
 
@@ -569,18 +592,19 @@ namespace Model
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
      * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
-     * arn:aws:automate:<i>region</i>:ec2:stop |
-     * arn:aws:automate:<i>region</i>:ec2:terminate |
-     * arn:aws:automate:<i>region</i>:ec2:recover |
-     * arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> |
-     * arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>
-     * autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </p> <p>Valid Values (for use with IAM roles):
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Stop/1.0
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Terminate/1.0
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+     * </code> </p> <p>Valid Values (for use with IAM roles):
+     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
      * |
-     * arn:aws:swf:<i>region</i>:{<i>account-id</i>}:action/actions/AWS_EC2.InstanceId.Reboot/1.0</p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * |
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
      */
     inline PutMetricAlarmRequest& AddInsufficientDataActions(const char* value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 

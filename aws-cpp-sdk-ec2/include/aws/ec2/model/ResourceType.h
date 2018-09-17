@@ -27,6 +27,7 @@ namespace Model
   {
     NOT_SET,
     customer_gateway,
+    dedicated_host,
     dhcp_options,
     image,
     instance,

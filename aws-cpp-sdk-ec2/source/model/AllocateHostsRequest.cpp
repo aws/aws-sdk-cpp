@@ -27,7 +27,8 @@ AllocateHostsRequest::AllocateHostsRequest() :
     m_clientTokenHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_quantity(0),
-    m_quantityHasBeenSet(false)
+    m_quantityHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ Aws::String AllocateHostsRequest::SerializePayload() const
   if(m_quantityHasBeenSet)
   {
     ss << "Quantity=" << m_quantity << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

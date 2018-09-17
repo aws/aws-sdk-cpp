@@ -189,7 +189,7 @@ namespace Model
 
         virtual ~CloudWatchClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "monitoring"; }
+        inline virtual const char* GetServiceClientName() const override { return "CloudWatch"; }
 
 
        /**
@@ -456,7 +456,21 @@ namespace Model
          * <p>Calls to the <code>GetMetricData</code> API have a different pricing
          * structure than calls to <code>GetMetricStatistics</code>. For more information
          * about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
-         * CloudWatch Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * CloudWatch Pricing</a>.</p> <p>Amazon CloudWatch retains metric data as
+         * follows:</p> <ul> <li> <p>Data points with a period of less than 60 seconds are
+         * available for 3 hours. These data points are high-resolution metrics and are
+         * available only for custom metrics that have been defined with a
+         * <code>StorageResolution</code> of 1.</p> </li> <li> <p>Data points with a period
+         * of 60 seconds (1-minute) are available for 15 days.</p> </li> <li> <p>Data
+         * points with a period of 300 seconds (5-minute) are available for 63 days.</p>
+         * </li> <li> <p>Data points with a period of 3600 seconds (1 hour) are available
+         * for 455 days (15 months).</p> </li> </ul> <p>Data points that are initially
+         * published with a shorter period are aggregated together for long-term storage.
+         * For example, if you collect data using a period of 1 minute, the data remains
+         * available for 15 days with 1-minute resolution. After 15 days, this data is
+         * still available, but is aggregated and retrievable only with a resolution of 5
+         * minutes. After 63 days, the data is further aggregated and is available with a
+         * resolution of 1 hour.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
          * API Reference</a></p>
          */
@@ -475,7 +489,21 @@ namespace Model
          * <p>Calls to the <code>GetMetricData</code> API have a different pricing
          * structure than calls to <code>GetMetricStatistics</code>. For more information
          * about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
-         * CloudWatch Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * CloudWatch Pricing</a>.</p> <p>Amazon CloudWatch retains metric data as
+         * follows:</p> <ul> <li> <p>Data points with a period of less than 60 seconds are
+         * available for 3 hours. These data points are high-resolution metrics and are
+         * available only for custom metrics that have been defined with a
+         * <code>StorageResolution</code> of 1.</p> </li> <li> <p>Data points with a period
+         * of 60 seconds (1-minute) are available for 15 days.</p> </li> <li> <p>Data
+         * points with a period of 300 seconds (5-minute) are available for 63 days.</p>
+         * </li> <li> <p>Data points with a period of 3600 seconds (1 hour) are available
+         * for 455 days (15 months).</p> </li> </ul> <p>Data points that are initially
+         * published with a shorter period are aggregated together for long-term storage.
+         * For example, if you collect data using a period of 1 minute, the data remains
+         * available for 15 days with 1-minute resolution. After 15 days, this data is
+         * still available, but is aggregated and retrievable only with a resolution of 5
+         * minutes. After 63 days, the data is further aggregated and is available with a
+         * resolution of 1 hour.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
          * API Reference</a></p>
          *
@@ -496,7 +524,21 @@ namespace Model
          * <p>Calls to the <code>GetMetricData</code> API have a different pricing
          * structure than calls to <code>GetMetricStatistics</code>. For more information
          * about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
-         * CloudWatch Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * CloudWatch Pricing</a>.</p> <p>Amazon CloudWatch retains metric data as
+         * follows:</p> <ul> <li> <p>Data points with a period of less than 60 seconds are
+         * available for 3 hours. These data points are high-resolution metrics and are
+         * available only for custom metrics that have been defined with a
+         * <code>StorageResolution</code> of 1.</p> </li> <li> <p>Data points with a period
+         * of 60 seconds (1-minute) are available for 15 days.</p> </li> <li> <p>Data
+         * points with a period of 300 seconds (5-minute) are available for 63 days.</p>
+         * </li> <li> <p>Data points with a period of 3600 seconds (1 hour) are available
+         * for 455 days (15 months).</p> </li> </ul> <p>Data points that are initially
+         * published with a shorter period are aggregated together for long-term storage.
+         * For example, if you collect data using a period of 1 minute, the data remains
+         * available for 15 days with 1-minute resolution. After 15 days, this data is
+         * still available, but is aggregated and retrievable only with a resolution of 5
+         * minutes. After 63 days, the data is further aggregated and is available with a
+         * resolution of 1 hour.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData">AWS
          * API Reference</a></p>
          *
@@ -520,23 +562,24 @@ namespace Model
          * retrieve percentile statistics for this data if one of the following conditions
          * is true:</p> <ul> <li> <p>The SampleCount value of the statistic set is 1.</p>
          * </li> <li> <p>The Min and the Max values of the statistic set are equal.</p>
-         * </li> </ul> <p>Amazon CloudWatch retains metric data as follows:</p> <ul> <li>
-         * <p>Data points with a period of less than 60 seconds are available for 3 hours.
-         * These data points are high-resolution metrics and are available only for custom
-         * metrics that have been defined with a <code>StorageResolution</code> of 1.</p>
-         * </li> <li> <p>Data points with a period of 60 seconds (1-minute) are available
-         * for 15 days.</p> </li> <li> <p>Data points with a period of 300 seconds
-         * (5-minute) are available for 63 days.</p> </li> <li> <p>Data points with a
-         * period of 3600 seconds (1 hour) are available for 455 days (15 months).</p>
-         * </li> </ul> <p>Data points that are initially published with a shorter period
-         * are aggregated together for long-term storage. For example, if you collect data
-         * using a period of 1 minute, the data remains available for 15 days with 1-minute
-         * resolution. After 15 days, this data is still available, but is aggregated and
-         * retrievable only with a resolution of 5 minutes. After 63 days, the data is
-         * further aggregated and is available with a resolution of 1 hour.</p>
-         * <p>CloudWatch started retaining 5-minute and 1-hour metric data as of July 9,
-         * 2016.</p> <p>For information about metrics and dimensions supported by AWS
-         * services, see the <a
+         * </li> </ul> <p>Percentile statistics are not available for metrics when any of
+         * the metric values are negative numbers.</p> <p>Amazon CloudWatch retains metric
+         * data as follows:</p> <ul> <li> <p>Data points with a period of less than 60
+         * seconds are available for 3 hours. These data points are high-resolution metrics
+         * and are available only for custom metrics that have been defined with a
+         * <code>StorageResolution</code> of 1.</p> </li> <li> <p>Data points with a period
+         * of 60 seconds (1-minute) are available for 15 days.</p> </li> <li> <p>Data
+         * points with a period of 300 seconds (5-minute) are available for 63 days.</p>
+         * </li> <li> <p>Data points with a period of 3600 seconds (1 hour) are available
+         * for 455 days (15 months).</p> </li> </ul> <p>Data points that are initially
+         * published with a shorter period are aggregated together for long-term storage.
+         * For example, if you collect data using a period of 1 minute, the data remains
+         * available for 15 days with 1-minute resolution. After 15 days, this data is
+         * still available, but is aggregated and retrievable only with a resolution of 5
+         * minutes. After 63 days, the data is further aggregated and is available with a
+         * resolution of 1 hour.</p> <p>CloudWatch started retaining 5-minute and 1-hour
+         * metric data as of July 9, 2016.</p> <p>For information about metrics and
+         * dimensions supported by AWS services, see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -561,23 +604,24 @@ namespace Model
          * retrieve percentile statistics for this data if one of the following conditions
          * is true:</p> <ul> <li> <p>The SampleCount value of the statistic set is 1.</p>
          * </li> <li> <p>The Min and the Max values of the statistic set are equal.</p>
-         * </li> </ul> <p>Amazon CloudWatch retains metric data as follows:</p> <ul> <li>
-         * <p>Data points with a period of less than 60 seconds are available for 3 hours.
-         * These data points are high-resolution metrics and are available only for custom
-         * metrics that have been defined with a <code>StorageResolution</code> of 1.</p>
-         * </li> <li> <p>Data points with a period of 60 seconds (1-minute) are available
-         * for 15 days.</p> </li> <li> <p>Data points with a period of 300 seconds
-         * (5-minute) are available for 63 days.</p> </li> <li> <p>Data points with a
-         * period of 3600 seconds (1 hour) are available for 455 days (15 months).</p>
-         * </li> </ul> <p>Data points that are initially published with a shorter period
-         * are aggregated together for long-term storage. For example, if you collect data
-         * using a period of 1 minute, the data remains available for 15 days with 1-minute
-         * resolution. After 15 days, this data is still available, but is aggregated and
-         * retrievable only with a resolution of 5 minutes. After 63 days, the data is
-         * further aggregated and is available with a resolution of 1 hour.</p>
-         * <p>CloudWatch started retaining 5-minute and 1-hour metric data as of July 9,
-         * 2016.</p> <p>For information about metrics and dimensions supported by AWS
-         * services, see the <a
+         * </li> </ul> <p>Percentile statistics are not available for metrics when any of
+         * the metric values are negative numbers.</p> <p>Amazon CloudWatch retains metric
+         * data as follows:</p> <ul> <li> <p>Data points with a period of less than 60
+         * seconds are available for 3 hours. These data points are high-resolution metrics
+         * and are available only for custom metrics that have been defined with a
+         * <code>StorageResolution</code> of 1.</p> </li> <li> <p>Data points with a period
+         * of 60 seconds (1-minute) are available for 15 days.</p> </li> <li> <p>Data
+         * points with a period of 300 seconds (5-minute) are available for 63 days.</p>
+         * </li> <li> <p>Data points with a period of 3600 seconds (1 hour) are available
+         * for 455 days (15 months).</p> </li> </ul> <p>Data points that are initially
+         * published with a shorter period are aggregated together for long-term storage.
+         * For example, if you collect data using a period of 1 minute, the data remains
+         * available for 15 days with 1-minute resolution. After 15 days, this data is
+         * still available, but is aggregated and retrievable only with a resolution of 5
+         * minutes. After 63 days, the data is further aggregated and is available with a
+         * resolution of 1 hour.</p> <p>CloudWatch started retaining 5-minute and 1-hour
+         * metric data as of July 9, 2016.</p> <p>For information about metrics and
+         * dimensions supported by AWS services, see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -604,23 +648,24 @@ namespace Model
          * retrieve percentile statistics for this data if one of the following conditions
          * is true:</p> <ul> <li> <p>The SampleCount value of the statistic set is 1.</p>
          * </li> <li> <p>The Min and the Max values of the statistic set are equal.</p>
-         * </li> </ul> <p>Amazon CloudWatch retains metric data as follows:</p> <ul> <li>
-         * <p>Data points with a period of less than 60 seconds are available for 3 hours.
-         * These data points are high-resolution metrics and are available only for custom
-         * metrics that have been defined with a <code>StorageResolution</code> of 1.</p>
-         * </li> <li> <p>Data points with a period of 60 seconds (1-minute) are available
-         * for 15 days.</p> </li> <li> <p>Data points with a period of 300 seconds
-         * (5-minute) are available for 63 days.</p> </li> <li> <p>Data points with a
-         * period of 3600 seconds (1 hour) are available for 455 days (15 months).</p>
-         * </li> </ul> <p>Data points that are initially published with a shorter period
-         * are aggregated together for long-term storage. For example, if you collect data
-         * using a period of 1 minute, the data remains available for 15 days with 1-minute
-         * resolution. After 15 days, this data is still available, but is aggregated and
-         * retrievable only with a resolution of 5 minutes. After 63 days, the data is
-         * further aggregated and is available with a resolution of 1 hour.</p>
-         * <p>CloudWatch started retaining 5-minute and 1-hour metric data as of July 9,
-         * 2016.</p> <p>For information about metrics and dimensions supported by AWS
-         * services, see the <a
+         * </li> </ul> <p>Percentile statistics are not available for metrics when any of
+         * the metric values are negative numbers.</p> <p>Amazon CloudWatch retains metric
+         * data as follows:</p> <ul> <li> <p>Data points with a period of less than 60
+         * seconds are available for 3 hours. These data points are high-resolution metrics
+         * and are available only for custom metrics that have been defined with a
+         * <code>StorageResolution</code> of 1.</p> </li> <li> <p>Data points with a period
+         * of 60 seconds (1-minute) are available for 15 days.</p> </li> <li> <p>Data
+         * points with a period of 300 seconds (5-minute) are available for 63 days.</p>
+         * </li> <li> <p>Data points with a period of 3600 seconds (1 hour) are available
+         * for 455 days (15 months).</p> </li> </ul> <p>Data points that are initially
+         * published with a shorter period are aggregated together for long-term storage.
+         * For example, if you collect data using a period of 1 minute, the data remains
+         * available for 15 days with 1-minute resolution. After 15 days, this data is
+         * still available, but is aggregated and retrievable only with a resolution of 5
+         * minutes. After 63 days, the data is further aggregated and is available with a
+         * resolution of 1 hour.</p> <p>CloudWatch started retaining 5-minute and 1-hour
+         * metric data as of July 9, 2016.</p> <p>For information about metrics and
+         * dimensions supported by AWS services, see the <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -635,7 +680,10 @@ namespace Model
          * <p>Returns a list of the dashboards for your account. If you include
          * <code>DashboardNamePrefix</code>, only those dashboards with names starting with
          * the prefix are listed. Otherwise, all dashboards in your account are listed.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p> <code>ListDashboards</code> returns up to 1000 results on one page. If
+         * there are more than 1000 dashboards, you can call <code>ListDashboards</code>
+         * again and include the value you received for <code>NextToken</code> in the first
+         * call, to receive the next 1000 results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">AWS
          * API Reference</a></p>
          */
@@ -645,7 +693,10 @@ namespace Model
          * <p>Returns a list of the dashboards for your account. If you include
          * <code>DashboardNamePrefix</code>, only those dashboards with names starting with
          * the prefix are listed. Otherwise, all dashboards in your account are listed.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p> <code>ListDashboards</code> returns up to 1000 results on one page. If
+         * there are more than 1000 dashboards, you can call <code>ListDashboards</code>
+         * again and include the value you received for <code>NextToken</code> in the first
+         * call, to receive the next 1000 results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">AWS
          * API Reference</a></p>
          *
@@ -657,7 +708,10 @@ namespace Model
          * <p>Returns a list of the dashboards for your account. If you include
          * <code>DashboardNamePrefix</code>, only those dashboards with names starting with
          * the prefix are listed. Otherwise, all dashboards in your account are listed.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p> <code>ListDashboards</code> returns up to 1000 results on one page. If
+         * there are more than 1000 dashboards, you can call <code>ListDashboards</code>
+         * again and include the value you received for <code>NextToken</code> in the first
+         * call, to receive the next 1000 results.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListDashboards">AWS
          * API Reference</a></p>
          *
@@ -667,11 +721,12 @@ namespace Model
 
         /**
          * <p>List the specified metrics. You can use the returned metrics with
-         * <a>GetMetricStatistics</a> to obtain statistical data.</p> <p>Up to 500 results
-         * are returned for any one call. To retrieve additional results, use the returned
-         * token with subsequent calls.</p> <p>After you create a metric, allow up to
-         * fifteen minutes before the metric appears. Statistics about the metric, however,
-         * are available sooner using <a>GetMetricStatistics</a>.</p><p><h3>See Also:</h3> 
+         * <a>GetMetricData</a> or <a>GetMetricStatistics</a> to obtain statistical
+         * data.</p> <p>Up to 500 results are returned for any one call. To retrieve
+         * additional results, use the returned token with subsequent calls.</p> <p>After
+         * you create a metric, allow up to fifteen minutes before the metric appears.
+         * Statistics about the metric, however, are available sooner using
+         * <a>GetMetricData</a> or <a>GetMetricStatistics</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">AWS
          * API Reference</a></p>
@@ -680,11 +735,12 @@ namespace Model
 
         /**
          * <p>List the specified metrics. You can use the returned metrics with
-         * <a>GetMetricStatistics</a> to obtain statistical data.</p> <p>Up to 500 results
-         * are returned for any one call. To retrieve additional results, use the returned
-         * token with subsequent calls.</p> <p>After you create a metric, allow up to
-         * fifteen minutes before the metric appears. Statistics about the metric, however,
-         * are available sooner using <a>GetMetricStatistics</a>.</p><p><h3>See Also:</h3> 
+         * <a>GetMetricData</a> or <a>GetMetricStatistics</a> to obtain statistical
+         * data.</p> <p>Up to 500 results are returned for any one call. To retrieve
+         * additional results, use the returned token with subsequent calls.</p> <p>After
+         * you create a metric, allow up to fifteen minutes before the metric appears.
+         * Statistics about the metric, however, are available sooner using
+         * <a>GetMetricData</a> or <a>GetMetricStatistics</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">AWS
          * API Reference</a></p>
@@ -695,11 +751,12 @@ namespace Model
 
         /**
          * <p>List the specified metrics. You can use the returned metrics with
-         * <a>GetMetricStatistics</a> to obtain statistical data.</p> <p>Up to 500 results
-         * are returned for any one call. To retrieve additional results, use the returned
-         * token with subsequent calls.</p> <p>After you create a metric, allow up to
-         * fifteen minutes before the metric appears. Statistics about the metric, however,
-         * are available sooner using <a>GetMetricStatistics</a>.</p><p><h3>See Also:</h3> 
+         * <a>GetMetricData</a> or <a>GetMetricStatistics</a> to obtain statistical
+         * data.</p> <p>Up to 500 results are returned for any one call. To retrieve
+         * additional results, use the returned token with subsequent calls.</p> <p>After
+         * you create a metric, allow up to fifteen minutes before the metric appears.
+         * Statistics about the metric, however, are available sooner using
+         * <a>GetMetricData</a> or <a>GetMetricStatistics</a>.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">AWS
          * API Reference</a></p>
@@ -711,13 +768,13 @@ namespace Model
         /**
          * <p>Creates a dashboard if it does not already exist, or updates an existing
          * dashboard. If you update a dashboard, the entire contents are replaced with what
-         * you specify here.</p> <p>You can have up to 500 dashboards per account. All
-         * dashboards in your account are global, not region-specific.</p> <p>A simple way
-         * to create a dashboard using <code>PutDashboard</code> is to copy an existing
-         * dashboard. To copy an existing dashboard using the console, you can load the
-         * dashboard and then use the View/edit source command in the Actions menu to
-         * display the JSON block for that dashboard. Another way to copy a dashboard is to
-         * use <code>GetDashboard</code>, and then use the data returned within
+         * you specify here.</p> <p>There is no limit to the number of dashboards in your
+         * account. All dashboards in your account are global, not region-specific.</p>
+         * <p>A simple way to create a dashboard using <code>PutDashboard</code> is to copy
+         * an existing dashboard. To copy an existing dashboard using the console, you can
+         * load the dashboard and then use the View/edit source command in the Actions menu
+         * to display the JSON block for that dashboard. Another way to copy a dashboard is
+         * to use <code>GetDashboard</code>, and then use the data returned within
          * <code>DashboardBody</code> as the template for the new dashboard when you call
          * <code>PutDashboard</code>.</p> <p>When you create a dashboard with
          * <code>PutDashboard</code>, a good practice is to add a text widget at the top of
@@ -733,13 +790,13 @@ namespace Model
         /**
          * <p>Creates a dashboard if it does not already exist, or updates an existing
          * dashboard. If you update a dashboard, the entire contents are replaced with what
-         * you specify here.</p> <p>You can have up to 500 dashboards per account. All
-         * dashboards in your account are global, not region-specific.</p> <p>A simple way
-         * to create a dashboard using <code>PutDashboard</code> is to copy an existing
-         * dashboard. To copy an existing dashboard using the console, you can load the
-         * dashboard and then use the View/edit source command in the Actions menu to
-         * display the JSON block for that dashboard. Another way to copy a dashboard is to
-         * use <code>GetDashboard</code>, and then use the data returned within
+         * you specify here.</p> <p>There is no limit to the number of dashboards in your
+         * account. All dashboards in your account are global, not region-specific.</p>
+         * <p>A simple way to create a dashboard using <code>PutDashboard</code> is to copy
+         * an existing dashboard. To copy an existing dashboard using the console, you can
+         * load the dashboard and then use the View/edit source command in the Actions menu
+         * to display the JSON block for that dashboard. Another way to copy a dashboard is
+         * to use <code>GetDashboard</code>, and then use the data returned within
          * <code>DashboardBody</code> as the template for the new dashboard when you call
          * <code>PutDashboard</code>.</p> <p>When you create a dashboard with
          * <code>PutDashboard</code>, a good practice is to add a text widget at the top of
@@ -757,13 +814,13 @@ namespace Model
         /**
          * <p>Creates a dashboard if it does not already exist, or updates an existing
          * dashboard. If you update a dashboard, the entire contents are replaced with what
-         * you specify here.</p> <p>You can have up to 500 dashboards per account. All
-         * dashboards in your account are global, not region-specific.</p> <p>A simple way
-         * to create a dashboard using <code>PutDashboard</code> is to copy an existing
-         * dashboard. To copy an existing dashboard using the console, you can load the
-         * dashboard and then use the View/edit source command in the Actions menu to
-         * display the JSON block for that dashboard. Another way to copy a dashboard is to
-         * use <code>GetDashboard</code>, and then use the data returned within
+         * you specify here.</p> <p>There is no limit to the number of dashboards in your
+         * account. All dashboards in your account are global, not region-specific.</p>
+         * <p>A simple way to create a dashboard using <code>PutDashboard</code> is to copy
+         * an existing dashboard. To copy an existing dashboard using the console, you can
+         * load the dashboard and then use the View/edit source command in the Actions menu
+         * to display the JSON block for that dashboard. Another way to copy a dashboard is
+         * to use <code>GetDashboard</code>, and then use the data returned within
          * <code>DashboardBody</code> as the template for the new dashboard when you call
          * <code>PutDashboard</code>.</p> <p>When you create a dashboard with
          * <code>PutDashboard</code>, a good practice is to add a text widget at the top of
@@ -804,10 +861,13 @@ namespace Model
          * perform any other actions such as Amazon SNS notifications or Auto Scaling
          * policies.</p> <p>If you are using temporary security credentials granted using
          * AWS STS, you cannot stop or terminate an EC2 instance using alarm actions.</p>
-         * <p>You must create at least one stop, terminate, or reboot alarm using either
-         * the Amazon EC2 or CloudWatch consoles to create the <b>EC2ActionsAccess</b> IAM
-         * role. After this IAM role is created, you can create stop, terminate, or reboot
-         * alarms using a command-line interface or API.</p><p><h3>See Also:</h3>   <a
+         * <p>The first time you create an alarm in the AWS Management Console, the CLI, or
+         * by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked
+         * role for you. The service-linked role is called
+         * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information about
+         * service-linked roles, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
+         * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
          * API Reference</a></p>
          */
@@ -839,10 +899,13 @@ namespace Model
          * perform any other actions such as Amazon SNS notifications or Auto Scaling
          * policies.</p> <p>If you are using temporary security credentials granted using
          * AWS STS, you cannot stop or terminate an EC2 instance using alarm actions.</p>
-         * <p>You must create at least one stop, terminate, or reboot alarm using either
-         * the Amazon EC2 or CloudWatch consoles to create the <b>EC2ActionsAccess</b> IAM
-         * role. After this IAM role is created, you can create stop, terminate, or reboot
-         * alarms using a command-line interface or API.</p><p><h3>See Also:</h3>   <a
+         * <p>The first time you create an alarm in the AWS Management Console, the CLI, or
+         * by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked
+         * role for you. The service-linked role is called
+         * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information about
+         * service-linked roles, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
+         * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
          * API Reference</a></p>
          *
@@ -876,10 +939,13 @@ namespace Model
          * perform any other actions such as Amazon SNS notifications or Auto Scaling
          * policies.</p> <p>If you are using temporary security credentials granted using
          * AWS STS, you cannot stop or terminate an EC2 instance using alarm actions.</p>
-         * <p>You must create at least one stop, terminate, or reboot alarm using either
-         * the Amazon EC2 or CloudWatch consoles to create the <b>EC2ActionsAccess</b> IAM
-         * role. After this IAM role is created, you can create stop, terminate, or reboot
-         * alarms using a command-line interface or API.</p><p><h3>See Also:</h3>   <a
+         * <p>The first time you create an alarm in the AWS Management Console, the CLI, or
+         * by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked
+         * role for you. The service-linked role is called
+         * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information about
+         * service-linked roles, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
+         * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
          * API Reference</a></p>
          *
@@ -888,56 +954,80 @@ namespace Model
         virtual void PutMetricAlarmAsync(const Model::PutMetricAlarmRequest& request, const PutMetricAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
-         * data points with the specified metric. If the specified metric does not exist,
-         * CloudWatch creates the metric. When CloudWatch creates a metric, it can take up
-         * to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.</p>
-         * <p>Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP
-         * POST requests.</p> <p>Although the <code>Value</code> parameter accepts numbers
-         * of type <code>Double</code>, CloudWatch rejects values that are either too small
-         * or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108
-         * (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example,
-         * NaN, +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10
-         * dimensions per metric to further clarify what data the metric collects. For more
+         * <p>Publishes metric data to Amazon CloudWatch. CloudWatch associates the data
+         * with the specified metric. If the specified metric does not exist, CloudWatch
+         * creates the metric. When CloudWatch creates a metric, it can take up to fifteen
+         * minutes for the metric to appear in calls to <a>ListMetrics</a>.</p> <p>You can
+         * publish either individual data points in the <code>Value</code> field, or arrays
+         * of values and the number of times each value occurred during the period by using
+         * the <code>Values</code> and <code>Counts</code> fields in the
+         * <code>MetricDatum</code> structure. Using the <code>Values</code> and
+         * <code>Counts</code> method enables you to publish up to 150 values per metric
+         * with one <code>PutMetricData</code> request, and supports retrieving percentile
+         * statistics on this data.</p> <p>Each <code>PutMetricData</code> request is
+         * limited to 40 KB in size for HTTP POST requests. You can send a payload
+         * compressed by gzip. Each request is also limited to no more than 20 different
+         * metrics.</p> <p>Although the <code>Value</code> parameter accepts numbers of
+         * type <code>Double</code>, CloudWatch rejects values that are either too small or
+         * too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base
+         * 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+         * +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10 dimensions
+         * per metric to further clarify what data the metric collects. For more
          * information about specifying dimensions, see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a>GetMetricStatistics</a> from the time they are submitted.</p>
-         * <p>CloudWatch needs raw data points to calculate percentile statistics. If you
-         * publish data using a statistic set instead, you can only retrieve percentile
-         * statistics for this data if one of the following conditions is true:</p> <ul>
-         * <li> <p>The SampleCount value of the statistic set is 1</p> </li> <li> <p>The
-         * Min and the Max values of the statistic set are equal</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time
+         * they are submitted.</p> <p>CloudWatch needs raw data points to calculate
+         * percentile statistics. These raw data points could be published individually or
+         * as part of <code>Values</code> and <code>Counts</code> arrays. If you publish
+         * data using statistic sets in the <code>StatisticValues</code> field instead, you
+         * can only retrieve percentile statistics for this data if one of the following
+         * conditions is true:</p> <ul> <li> <p>The <code>SampleCount</code> value of the
+         * statistic set is 1 and <code>Min</code>, <code>Max</code>, and <code>Sum</code>
+         * are all equal.</p> </li> <li> <p>The <code>Min</code> and <code>Max</code> are
+         * equal, and <code>Sum</code> is equal to <code>Min</code> multiplied by
+         * <code>SampleCount</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">AWS
          * API Reference</a></p>
          */
         virtual Model::PutMetricDataOutcome PutMetricData(const Model::PutMetricDataRequest& request) const;
 
         /**
-         * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
-         * data points with the specified metric. If the specified metric does not exist,
-         * CloudWatch creates the metric. When CloudWatch creates a metric, it can take up
-         * to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.</p>
-         * <p>Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP
-         * POST requests.</p> <p>Although the <code>Value</code> parameter accepts numbers
-         * of type <code>Double</code>, CloudWatch rejects values that are either too small
-         * or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108
-         * (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example,
-         * NaN, +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10
-         * dimensions per metric to further clarify what data the metric collects. For more
+         * <p>Publishes metric data to Amazon CloudWatch. CloudWatch associates the data
+         * with the specified metric. If the specified metric does not exist, CloudWatch
+         * creates the metric. When CloudWatch creates a metric, it can take up to fifteen
+         * minutes for the metric to appear in calls to <a>ListMetrics</a>.</p> <p>You can
+         * publish either individual data points in the <code>Value</code> field, or arrays
+         * of values and the number of times each value occurred during the period by using
+         * the <code>Values</code> and <code>Counts</code> fields in the
+         * <code>MetricDatum</code> structure. Using the <code>Values</code> and
+         * <code>Counts</code> method enables you to publish up to 150 values per metric
+         * with one <code>PutMetricData</code> request, and supports retrieving percentile
+         * statistics on this data.</p> <p>Each <code>PutMetricData</code> request is
+         * limited to 40 KB in size for HTTP POST requests. You can send a payload
+         * compressed by gzip. Each request is also limited to no more than 20 different
+         * metrics.</p> <p>Although the <code>Value</code> parameter accepts numbers of
+         * type <code>Double</code>, CloudWatch rejects values that are either too small or
+         * too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base
+         * 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+         * +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10 dimensions
+         * per metric to further clarify what data the metric collects. For more
          * information about specifying dimensions, see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a>GetMetricStatistics</a> from the time they are submitted.</p>
-         * <p>CloudWatch needs raw data points to calculate percentile statistics. If you
-         * publish data using a statistic set instead, you can only retrieve percentile
-         * statistics for this data if one of the following conditions is true:</p> <ul>
-         * <li> <p>The SampleCount value of the statistic set is 1</p> </li> <li> <p>The
-         * Min and the Max values of the statistic set are equal</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time
+         * they are submitted.</p> <p>CloudWatch needs raw data points to calculate
+         * percentile statistics. These raw data points could be published individually or
+         * as part of <code>Values</code> and <code>Counts</code> arrays. If you publish
+         * data using statistic sets in the <code>StatisticValues</code> field instead, you
+         * can only retrieve percentile statistics for this data if one of the following
+         * conditions is true:</p> <ul> <li> <p>The <code>SampleCount</code> value of the
+         * statistic set is 1 and <code>Min</code>, <code>Max</code>, and <code>Sum</code>
+         * are all equal.</p> </li> <li> <p>The <code>Min</code> and <code>Max</code> are
+         * equal, and <code>Sum</code> is equal to <code>Min</code> multiplied by
+         * <code>SampleCount</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">AWS
          * API Reference</a></p>
          *
@@ -946,28 +1036,40 @@ namespace Model
         virtual Model::PutMetricDataOutcomeCallable PutMetricDataCallable(const Model::PutMetricDataRequest& request) const;
 
         /**
-         * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
-         * data points with the specified metric. If the specified metric does not exist,
-         * CloudWatch creates the metric. When CloudWatch creates a metric, it can take up
-         * to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.</p>
-         * <p>Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP
-         * POST requests.</p> <p>Although the <code>Value</code> parameter accepts numbers
-         * of type <code>Double</code>, CloudWatch rejects values that are either too small
-         * or too large. Values must be in the range of 8.515920e-109 to 1.174271e+108
-         * (Base 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example,
-         * NaN, +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10
-         * dimensions per metric to further clarify what data the metric collects. For more
+         * <p>Publishes metric data to Amazon CloudWatch. CloudWatch associates the data
+         * with the specified metric. If the specified metric does not exist, CloudWatch
+         * creates the metric. When CloudWatch creates a metric, it can take up to fifteen
+         * minutes for the metric to appear in calls to <a>ListMetrics</a>.</p> <p>You can
+         * publish either individual data points in the <code>Value</code> field, or arrays
+         * of values and the number of times each value occurred during the period by using
+         * the <code>Values</code> and <code>Counts</code> fields in the
+         * <code>MetricDatum</code> structure. Using the <code>Values</code> and
+         * <code>Counts</code> method enables you to publish up to 150 values per metric
+         * with one <code>PutMetricData</code> request, and supports retrieving percentile
+         * statistics on this data.</p> <p>Each <code>PutMetricData</code> request is
+         * limited to 40 KB in size for HTTP POST requests. You can send a payload
+         * compressed by gzip. Each request is also limited to no more than 20 different
+         * metrics.</p> <p>Although the <code>Value</code> parameter accepts numbers of
+         * type <code>Double</code>, CloudWatch rejects values that are either too small or
+         * too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base
+         * 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
+         * +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10 dimensions
+         * per metric to further clarify what data the metric collects. For more
          * information about specifying dimensions, see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a>GetMetricStatistics</a> from the time they are submitted.</p>
-         * <p>CloudWatch needs raw data points to calculate percentile statistics. If you
-         * publish data using a statistic set instead, you can only retrieve percentile
-         * statistics for this data if one of the following conditions is true:</p> <ul>
-         * <li> <p>The SampleCount value of the statistic set is 1</p> </li> <li> <p>The
-         * Min and the Max values of the statistic set are equal</p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time
+         * they are submitted.</p> <p>CloudWatch needs raw data points to calculate
+         * percentile statistics. These raw data points could be published individually or
+         * as part of <code>Values</code> and <code>Counts</code> arrays. If you publish
+         * data using statistic sets in the <code>StatisticValues</code> field instead, you
+         * can only retrieve percentile statistics for this data if one of the following
+         * conditions is true:</p> <ul> <li> <p>The <code>SampleCount</code> value of the
+         * statistic set is 1 and <code>Min</code>, <code>Max</code>, and <code>Sum</code>
+         * are all equal.</p> </li> <li> <p>The <code>Min</code> and <code>Max</code> are
+         * equal, and <code>Sum</code> is equal to <code>Min</code> multiplied by
+         * <code>SampleCount</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">AWS
          * API Reference</a></p>
          *

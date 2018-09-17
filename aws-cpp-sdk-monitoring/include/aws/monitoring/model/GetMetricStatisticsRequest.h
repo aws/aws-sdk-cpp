@@ -491,56 +491,72 @@ namespace Model
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
      * <code>GetMetricStatistics</code>, you must specify either
-     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.
+     * Percentile statistics are not available for metrics when any of the metric
+     * values are negative numbers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExtendedStatistics() const{ return m_extendedStatistics; }
 
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
      * <code>GetMetricStatistics</code>, you must specify either
-     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.
+     * Percentile statistics are not available for metrics when any of the metric
+     * values are negative numbers.</p>
      */
     inline void SetExtendedStatistics(const Aws::Vector<Aws::String>& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics = value; }
 
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
      * <code>GetMetricStatistics</code>, you must specify either
-     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.
+     * Percentile statistics are not available for metrics when any of the metric
+     * values are negative numbers.</p>
      */
     inline void SetExtendedStatistics(Aws::Vector<Aws::String>&& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics = std::move(value); }
 
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
      * <code>GetMetricStatistics</code>, you must specify either
-     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.
+     * Percentile statistics are not available for metrics when any of the metric
+     * values are negative numbers.</p>
      */
     inline GetMetricStatisticsRequest& WithExtendedStatistics(const Aws::Vector<Aws::String>& value) { SetExtendedStatistics(value); return *this;}
 
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
      * <code>GetMetricStatistics</code>, you must specify either
-     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.
+     * Percentile statistics are not available for metrics when any of the metric
+     * values are negative numbers.</p>
      */
     inline GetMetricStatisticsRequest& WithExtendedStatistics(Aws::Vector<Aws::String>&& value) { SetExtendedStatistics(std::move(value)); return *this;}
 
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
      * <code>GetMetricStatistics</code>, you must specify either
-     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.
+     * Percentile statistics are not available for metrics when any of the metric
+     * values are negative numbers.</p>
      */
     inline GetMetricStatisticsRequest& AddExtendedStatistics(const Aws::String& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.push_back(value); return *this; }
 
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
      * <code>GetMetricStatistics</code>, you must specify either
-     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.
+     * Percentile statistics are not available for metrics when any of the metric
+     * values are negative numbers.</p>
      */
     inline GetMetricStatisticsRequest& AddExtendedStatistics(Aws::String&& value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The percentile statistics. Specify values between p0.0 and p100. When calling
      * <code>GetMetricStatistics</code>, you must specify either
-     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.</p>
+     * <code>Statistics</code> or <code>ExtendedStatistics</code>, but not both.
+     * Percentile statistics are not available for metrics when any of the metric
+     * values are negative numbers.</p>
      */
     inline GetMetricStatisticsRequest& AddExtendedStatistics(const char* value) { m_extendedStatisticsHasBeenSet = true; m_extendedStatistics.push_back(value); return *this; }
 

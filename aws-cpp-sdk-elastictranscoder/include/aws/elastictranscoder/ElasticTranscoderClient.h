@@ -178,7 +178,7 @@ namespace Model
 
         virtual ~ElasticTranscoderClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "elastictranscoder"; }
+        inline virtual const char* GetServiceClientName() const override { return "Elastic Transcoder"; }
 
 
         /**

@@ -31,14 +31,20 @@ namespace Model
 LogsLocation::LogsLocation() : 
     m_groupNameHasBeenSet(false),
     m_streamNameHasBeenSet(false),
-    m_deepLinkHasBeenSet(false)
+    m_deepLinkHasBeenSet(false),
+    m_s3DeepLinkHasBeenSet(false),
+    m_cloudWatchLogsHasBeenSet(false),
+    m_s3LogsHasBeenSet(false)
 {
 }
 
 LogsLocation::LogsLocation(JsonView jsonValue) : 
     m_groupNameHasBeenSet(false),
     m_streamNameHasBeenSet(false),
-    m_deepLinkHasBeenSet(false)
+    m_deepLinkHasBeenSet(false),
+    m_s3DeepLinkHasBeenSet(false),
+    m_cloudWatchLogsHasBeenSet(false),
+    m_s3LogsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +72,27 @@ LogsLocation& LogsLocation::operator =(JsonView jsonValue)
     m_deepLinkHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("s3DeepLink"))
+  {
+    m_s3DeepLink = jsonValue.GetString("s3DeepLink");
+
+    m_s3DeepLinkHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cloudWatchLogs"))
+  {
+    m_cloudWatchLogs = jsonValue.GetObject("cloudWatchLogs");
+
+    m_cloudWatchLogsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("s3Logs"))
+  {
+    m_s3Logs = jsonValue.GetObject("s3Logs");
+
+    m_s3LogsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +115,24 @@ JsonValue LogsLocation::Jsonize() const
   if(m_deepLinkHasBeenSet)
   {
    payload.WithString("deepLink", m_deepLink);
+
+  }
+
+  if(m_s3DeepLinkHasBeenSet)
+  {
+   payload.WithString("s3DeepLink", m_s3DeepLink);
+
+  }
+
+  if(m_cloudWatchLogsHasBeenSet)
+  {
+   payload.WithObject("cloudWatchLogs", m_cloudWatchLogs.Jsonize());
+
+  }
+
+  if(m_s3LogsHasBeenSet)
+  {
+   payload.WithObject("s3Logs", m_s3Logs.Jsonize());
 
   }
 

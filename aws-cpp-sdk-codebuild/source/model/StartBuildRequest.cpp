@@ -53,7 +53,8 @@ StartBuildRequest::StartBuildRequest() :
     m_privilegedModeOverrideHasBeenSet(false),
     m_timeoutInMinutesOverride(0),
     m_timeoutInMinutesOverrideHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false)
+    m_idempotencyTokenHasBeenSet(false),
+    m_logsConfigOverrideHasBeenSet(false)
 {
 }
 
@@ -213,6 +214,12 @@ Aws::String StartBuildRequest::SerializePayload() const
   if(m_idempotencyTokenHasBeenSet)
   {
    payload.WithString("idempotencyToken", m_idempotencyToken);
+
+  }
+
+  if(m_logsConfigOverrideHasBeenSet)
+  {
+   payload.WithObject("logsConfigOverride", m_logsConfigOverride.Jsonize());
 
   }
 

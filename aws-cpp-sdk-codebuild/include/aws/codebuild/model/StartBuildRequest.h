@@ -24,6 +24,7 @@
 #include <aws/codebuild/model/EnvironmentType.h>
 #include <aws/codebuild/model/ComputeType.h>
 #include <aws/codebuild/model/ProjectCache.h>
+#include <aws/codebuild/model/LogsConfig.h>
 #include <aws/codebuild/model/ProjectSource.h>
 #include <aws/codebuild/model/ProjectSourceVersion.h>
 #include <aws/codebuild/model/EnvironmentVariable.h>
@@ -415,31 +416,31 @@ namespace Model
 
     /**
      * <p>A source input type for this build that overrides the source input defined in
-     * the build project</p>
+     * the build project.</p>
      */
     inline const SourceType& GetSourceTypeOverride() const{ return m_sourceTypeOverride; }
 
     /**
      * <p>A source input type for this build that overrides the source input defined in
-     * the build project</p>
+     * the build project.</p>
      */
     inline void SetSourceTypeOverride(const SourceType& value) { m_sourceTypeOverrideHasBeenSet = true; m_sourceTypeOverride = value; }
 
     /**
      * <p>A source input type for this build that overrides the source input defined in
-     * the build project</p>
+     * the build project.</p>
      */
     inline void SetSourceTypeOverride(SourceType&& value) { m_sourceTypeOverrideHasBeenSet = true; m_sourceTypeOverride = std::move(value); }
 
     /**
      * <p>A source input type for this build that overrides the source input defined in
-     * the build project</p>
+     * the build project.</p>
      */
     inline StartBuildRequest& WithSourceTypeOverride(const SourceType& value) { SetSourceTypeOverride(value); return *this;}
 
     /**
      * <p>A source input type for this build that overrides the source input defined in
-     * the build project</p>
+     * the build project.</p>
      */
     inline StartBuildRequest& WithSourceTypeOverride(SourceType&& value) { SetSourceTypeOverride(std::move(value)); return *this;}
 
@@ -951,6 +952,37 @@ namespace Model
      */
     inline StartBuildRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
+
+    /**
+     * <p> Log settings for this build that override the log settings defined in the
+     * build project. </p>
+     */
+    inline const LogsConfig& GetLogsConfigOverride() const{ return m_logsConfigOverride; }
+
+    /**
+     * <p> Log settings for this build that override the log settings defined in the
+     * build project. </p>
+     */
+    inline void SetLogsConfigOverride(const LogsConfig& value) { m_logsConfigOverrideHasBeenSet = true; m_logsConfigOverride = value; }
+
+    /**
+     * <p> Log settings for this build that override the log settings defined in the
+     * build project. </p>
+     */
+    inline void SetLogsConfigOverride(LogsConfig&& value) { m_logsConfigOverrideHasBeenSet = true; m_logsConfigOverride = std::move(value); }
+
+    /**
+     * <p> Log settings for this build that override the log settings defined in the
+     * build project. </p>
+     */
+    inline StartBuildRequest& WithLogsConfigOverride(const LogsConfig& value) { SetLogsConfigOverride(value); return *this;}
+
+    /**
+     * <p> Log settings for this build that override the log settings defined in the
+     * build project. </p>
+     */
+    inline StartBuildRequest& WithLogsConfigOverride(LogsConfig&& value) { SetLogsConfigOverride(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_projectName;
@@ -1021,6 +1053,9 @@ namespace Model
 
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
+
+    LogsConfig m_logsConfigOverride;
+    bool m_logsConfigOverrideHasBeenSet;
   };
 
 } // namespace Model

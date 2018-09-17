@@ -23,6 +23,7 @@
 #include <aws/codebuild/model/ProjectCache.h>
 #include <aws/codebuild/model/ProjectEnvironment.h>
 #include <aws/codebuild/model/VpcConfig.h>
+#include <aws/codebuild/model/LogsConfig.h>
 #include <aws/codebuild/model/Tag.h>
 #include <utility>
 
@@ -520,6 +521,37 @@ namespace Model
      */
     inline CreateProjectRequest& WithBadgeEnabled(bool value) { SetBadgeEnabled(value); return *this;}
 
+
+    /**
+     * <p> Information about logs for the build project. Logs can be Amazon CloudWatch
+     * Logs, uploaded to a specified S3 bucket, or both. </p>
+     */
+    inline const LogsConfig& GetLogsConfig() const{ return m_logsConfig; }
+
+    /**
+     * <p> Information about logs for the build project. Logs can be Amazon CloudWatch
+     * Logs, uploaded to a specified S3 bucket, or both. </p>
+     */
+    inline void SetLogsConfig(const LogsConfig& value) { m_logsConfigHasBeenSet = true; m_logsConfig = value; }
+
+    /**
+     * <p> Information about logs for the build project. Logs can be Amazon CloudWatch
+     * Logs, uploaded to a specified S3 bucket, or both. </p>
+     */
+    inline void SetLogsConfig(LogsConfig&& value) { m_logsConfigHasBeenSet = true; m_logsConfig = std::move(value); }
+
+    /**
+     * <p> Information about logs for the build project. Logs can be Amazon CloudWatch
+     * Logs, uploaded to a specified S3 bucket, or both. </p>
+     */
+    inline CreateProjectRequest& WithLogsConfig(const LogsConfig& value) { SetLogsConfig(value); return *this;}
+
+    /**
+     * <p> Information about logs for the build project. Logs can be Amazon CloudWatch
+     * Logs, uploaded to a specified S3 bucket, or both. </p>
+     */
+    inline CreateProjectRequest& WithLogsConfig(LogsConfig&& value) { SetLogsConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -563,6 +595,9 @@ namespace Model
 
     bool m_badgeEnabled;
     bool m_badgeEnabledHasBeenSet;
+
+    LogsConfig m_logsConfig;
+    bool m_logsConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -108,53 +108,113 @@ namespace Model
 
 
     /**
-     * <p>The time stamp indicating the earliest data to be returned.</p>
+     * <p>The time stamp indicating the earliest data to be returned.</p> <p>For better
+     * performance, specify <code>StartTime</code> and <code>EndTime</code> values that
+     * align with the value of the metric's <code>Period</code> and sync up with the
+     * beginning and end of an hour. For example, if the <code>Period</code> of a
+     * metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get
+     * a faster response from CloudWatch then setting 12:07 or 12:29 as the
+     * <code>StartTime</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time stamp indicating the earliest data to be returned.</p>
+     * <p>The time stamp indicating the earliest data to be returned.</p> <p>For better
+     * performance, specify <code>StartTime</code> and <code>EndTime</code> values that
+     * align with the value of the metric's <code>Period</code> and sync up with the
+     * beginning and end of an hour. For example, if the <code>Period</code> of a
+     * metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get
+     * a faster response from CloudWatch then setting 12:07 or 12:29 as the
+     * <code>StartTime</code>.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The time stamp indicating the earliest data to be returned.</p>
+     * <p>The time stamp indicating the earliest data to be returned.</p> <p>For better
+     * performance, specify <code>StartTime</code> and <code>EndTime</code> values that
+     * align with the value of the metric's <code>Period</code> and sync up with the
+     * beginning and end of an hour. For example, if the <code>Period</code> of a
+     * metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get
+     * a faster response from CloudWatch then setting 12:07 or 12:29 as the
+     * <code>StartTime</code>.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The time stamp indicating the earliest data to be returned.</p>
+     * <p>The time stamp indicating the earliest data to be returned.</p> <p>For better
+     * performance, specify <code>StartTime</code> and <code>EndTime</code> values that
+     * align with the value of the metric's <code>Period</code> and sync up with the
+     * beginning and end of an hour. For example, if the <code>Period</code> of a
+     * metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get
+     * a faster response from CloudWatch then setting 12:07 or 12:29 as the
+     * <code>StartTime</code>.</p>
      */
     inline GetMetricDataRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The time stamp indicating the earliest data to be returned.</p>
+     * <p>The time stamp indicating the earliest data to be returned.</p> <p>For better
+     * performance, specify <code>StartTime</code> and <code>EndTime</code> values that
+     * align with the value of the metric's <code>Period</code> and sync up with the
+     * beginning and end of an hour. For example, if the <code>Period</code> of a
+     * metric is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get
+     * a faster response from CloudWatch then setting 12:07 or 12:29 as the
+     * <code>StartTime</code>.</p>
      */
     inline GetMetricDataRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time stamp indicating the latest data to be returned.</p>
+     * <p>The time stamp indicating the latest data to be returned.</p> <p>For better
+     * performance, specify <code>StartTime</code> and <code>EndTime</code> values that
+     * align with the value of the metric's <code>Period</code> and sync up with the
+     * beginning and end of an hour. For example, if the <code>Period</code> of a
+     * metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a
+     * faster response from CloudWatch then setting 12:07 or 12:29 as the
+     * <code>EndTime</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The time stamp indicating the latest data to be returned.</p>
+     * <p>The time stamp indicating the latest data to be returned.</p> <p>For better
+     * performance, specify <code>StartTime</code> and <code>EndTime</code> values that
+     * align with the value of the metric's <code>Period</code> and sync up with the
+     * beginning and end of an hour. For example, if the <code>Period</code> of a
+     * metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a
+     * faster response from CloudWatch then setting 12:07 or 12:29 as the
+     * <code>EndTime</code>.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The time stamp indicating the latest data to be returned.</p>
+     * <p>The time stamp indicating the latest data to be returned.</p> <p>For better
+     * performance, specify <code>StartTime</code> and <code>EndTime</code> values that
+     * align with the value of the metric's <code>Period</code> and sync up with the
+     * beginning and end of an hour. For example, if the <code>Period</code> of a
+     * metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a
+     * faster response from CloudWatch then setting 12:07 or 12:29 as the
+     * <code>EndTime</code>.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The time stamp indicating the latest data to be returned.</p>
+     * <p>The time stamp indicating the latest data to be returned.</p> <p>For better
+     * performance, specify <code>StartTime</code> and <code>EndTime</code> values that
+     * align with the value of the metric's <code>Period</code> and sync up with the
+     * beginning and end of an hour. For example, if the <code>Period</code> of a
+     * metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a
+     * faster response from CloudWatch then setting 12:07 or 12:29 as the
+     * <code>EndTime</code>.</p>
      */
     inline GetMetricDataRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The time stamp indicating the latest data to be returned.</p>
+     * <p>The time stamp indicating the latest data to be returned.</p> <p>For better
+     * performance, specify <code>StartTime</code> and <code>EndTime</code> values that
+     * align with the value of the metric's <code>Period</code> and sync up with the
+     * beginning and end of an hour. For example, if the <code>Period</code> of a
+     * metric is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a
+     * faster response from CloudWatch then setting 12:07 or 12:29 as the
+     * <code>EndTime</code>.</p>
      */
     inline GetMetricDataRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
