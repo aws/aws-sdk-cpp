@@ -23,6 +23,7 @@
 #include <aws/es/model/VPCDerivedInfoStatus.h>
 #include <aws/es/model/CognitoOptionsStatus.h>
 #include <aws/es/model/EncryptionAtRestOptionsStatus.h>
+#include <aws/es/model/NodeToNodeEncryptionOptionsStatus.h>
 #include <aws/es/model/AdvancedOptionsStatus.h>
 #include <aws/es/model/LogPublishingOptionsStatus.h>
 #include <utility>
@@ -305,6 +306,37 @@ namespace Model
 
 
     /**
+     * <p>Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch
+     * domain.</p>
+     */
+    inline const NodeToNodeEncryptionOptionsStatus& GetNodeToNodeEncryptionOptions() const{ return m_nodeToNodeEncryptionOptions; }
+
+    /**
+     * <p>Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch
+     * domain.</p>
+     */
+    inline void SetNodeToNodeEncryptionOptions(const NodeToNodeEncryptionOptionsStatus& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = value; }
+
+    /**
+     * <p>Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch
+     * domain.</p>
+     */
+    inline void SetNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptionsStatus&& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = std::move(value); }
+
+    /**
+     * <p>Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch
+     * domain.</p>
+     */
+    inline ElasticsearchDomainConfig& WithNodeToNodeEncryptionOptions(const NodeToNodeEncryptionOptionsStatus& value) { SetNodeToNodeEncryptionOptions(value); return *this;}
+
+    /**
+     * <p>Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch
+     * domain.</p>
+     */
+    inline ElasticsearchDomainConfig& WithNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptionsStatus&& value) { SetNodeToNodeEncryptionOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the <code>AdvancedOptions</code> for the domain. See <a
      * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
      * target="_blank">Configuring Advanced Options</a> for more information.</p>
@@ -390,6 +422,9 @@ namespace Model
 
     EncryptionAtRestOptionsStatus m_encryptionAtRestOptions;
     bool m_encryptionAtRestOptionsHasBeenSet;
+
+    NodeToNodeEncryptionOptionsStatus m_nodeToNodeEncryptionOptions;
+    bool m_nodeToNodeEncryptionOptionsHasBeenSet;
 
     AdvancedOptionsStatus m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;

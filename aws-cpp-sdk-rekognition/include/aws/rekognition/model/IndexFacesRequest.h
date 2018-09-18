@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/Image.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/QualityFilter.h>
 #include <aws/rekognition/model/Attribute.h>
 #include <utility>
 
@@ -260,6 +261,116 @@ namespace Model
      */
     inline IndexFacesRequest& AddDetectionAttributes(Attribute&& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must
+     * be greater than or equal to 1. <code>IndexFaces</code> returns no more that 100
+     * detected faces in an image, even if you specify a larger value for
+     * <code>MaxFaces</code>.</p> <p>If <code>IndexFaces</code> detects more faces than
+     * the value of <code>MaxFaces</code>, the faces with the lowest quality are
+     * filtered out first. If there are still more faces than the value of
+     * <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered
+     * out (up to the number needed to satisfy the value of <code>MaxFaces</code>).
+     * Information about the unindexed faces is available in the
+     * <code>UnindexedFaces</code> array. </p> <p>The faces returned by
+     * <code>IndexFaces</code> are sorted, in descending order, by the largest face
+     * bounding box size, to the smallest.</p>
+     */
+    inline int GetMaxFaces() const{ return m_maxFaces; }
+
+    /**
+     * <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must
+     * be greater than or equal to 1. <code>IndexFaces</code> returns no more that 100
+     * detected faces in an image, even if you specify a larger value for
+     * <code>MaxFaces</code>.</p> <p>If <code>IndexFaces</code> detects more faces than
+     * the value of <code>MaxFaces</code>, the faces with the lowest quality are
+     * filtered out first. If there are still more faces than the value of
+     * <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered
+     * out (up to the number needed to satisfy the value of <code>MaxFaces</code>).
+     * Information about the unindexed faces is available in the
+     * <code>UnindexedFaces</code> array. </p> <p>The faces returned by
+     * <code>IndexFaces</code> are sorted, in descending order, by the largest face
+     * bounding box size, to the smallest.</p>
+     */
+    inline void SetMaxFaces(int value) { m_maxFacesHasBeenSet = true; m_maxFaces = value; }
+
+    /**
+     * <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must
+     * be greater than or equal to 1. <code>IndexFaces</code> returns no more that 100
+     * detected faces in an image, even if you specify a larger value for
+     * <code>MaxFaces</code>.</p> <p>If <code>IndexFaces</code> detects more faces than
+     * the value of <code>MaxFaces</code>, the faces with the lowest quality are
+     * filtered out first. If there are still more faces than the value of
+     * <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered
+     * out (up to the number needed to satisfy the value of <code>MaxFaces</code>).
+     * Information about the unindexed faces is available in the
+     * <code>UnindexedFaces</code> array. </p> <p>The faces returned by
+     * <code>IndexFaces</code> are sorted, in descending order, by the largest face
+     * bounding box size, to the smallest.</p>
+     */
+    inline IndexFacesRequest& WithMaxFaces(int value) { SetMaxFaces(value); return *this;}
+
+
+    /**
+     * <p>Specifies how much filtering is done to identify faces detected with low
+     * quality. Filtered faces are not indexed. If you specify <code>AUTO</code>,
+     * filtering prioritizes the identification of faces that don’t meet the required
+     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety
+     * of common use cases. Low quality detections can arise for a number of reasons.
+     * For example, an object misidentified as a face, a face that is too blurry, or a
+     * face with a pose that is too extreme to use. If you specify <code>NONE</code>,
+     * no filtering is performed. The default value is NONE.</p>
+     */
+    inline const QualityFilter& GetQualityFilter() const{ return m_qualityFilter; }
+
+    /**
+     * <p>Specifies how much filtering is done to identify faces detected with low
+     * quality. Filtered faces are not indexed. If you specify <code>AUTO</code>,
+     * filtering prioritizes the identification of faces that don’t meet the required
+     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety
+     * of common use cases. Low quality detections can arise for a number of reasons.
+     * For example, an object misidentified as a face, a face that is too blurry, or a
+     * face with a pose that is too extreme to use. If you specify <code>NONE</code>,
+     * no filtering is performed. The default value is NONE.</p>
+     */
+    inline void SetQualityFilter(const QualityFilter& value) { m_qualityFilterHasBeenSet = true; m_qualityFilter = value; }
+
+    /**
+     * <p>Specifies how much filtering is done to identify faces detected with low
+     * quality. Filtered faces are not indexed. If you specify <code>AUTO</code>,
+     * filtering prioritizes the identification of faces that don’t meet the required
+     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety
+     * of common use cases. Low quality detections can arise for a number of reasons.
+     * For example, an object misidentified as a face, a face that is too blurry, or a
+     * face with a pose that is too extreme to use. If you specify <code>NONE</code>,
+     * no filtering is performed. The default value is NONE.</p>
+     */
+    inline void SetQualityFilter(QualityFilter&& value) { m_qualityFilterHasBeenSet = true; m_qualityFilter = std::move(value); }
+
+    /**
+     * <p>Specifies how much filtering is done to identify faces detected with low
+     * quality. Filtered faces are not indexed. If you specify <code>AUTO</code>,
+     * filtering prioritizes the identification of faces that don’t meet the required
+     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety
+     * of common use cases. Low quality detections can arise for a number of reasons.
+     * For example, an object misidentified as a face, a face that is too blurry, or a
+     * face with a pose that is too extreme to use. If you specify <code>NONE</code>,
+     * no filtering is performed. The default value is NONE.</p>
+     */
+    inline IndexFacesRequest& WithQualityFilter(const QualityFilter& value) { SetQualityFilter(value); return *this;}
+
+    /**
+     * <p>Specifies how much filtering is done to identify faces detected with low
+     * quality. Filtered faces are not indexed. If you specify <code>AUTO</code>,
+     * filtering prioritizes the identification of faces that don’t meet the required
+     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety
+     * of common use cases. Low quality detections can arise for a number of reasons.
+     * For example, an object misidentified as a face, a face that is too blurry, or a
+     * face with a pose that is too extreme to use. If you specify <code>NONE</code>,
+     * no filtering is performed. The default value is NONE.</p>
+     */
+    inline IndexFacesRequest& WithQualityFilter(QualityFilter&& value) { SetQualityFilter(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_collectionId;
@@ -273,6 +384,12 @@ namespace Model
 
     Aws::Vector<Attribute> m_detectionAttributes;
     bool m_detectionAttributesHasBeenSet;
+
+    int m_maxFaces;
+    bool m_maxFacesHasBeenSet;
+
+    QualityFilter m_qualityFilter;
+    bool m_qualityFilterHasBeenSet;
   };
 
 } // namespace Model

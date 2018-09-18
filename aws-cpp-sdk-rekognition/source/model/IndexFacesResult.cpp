@@ -61,6 +61,15 @@ IndexFacesResult& IndexFacesResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("UnindexedFaces"))
+  {
+    Array<JsonView> unindexedFacesJsonList = jsonValue.GetArray("UnindexedFaces");
+    for(unsigned unindexedFacesIndex = 0; unindexedFacesIndex < unindexedFacesJsonList.GetLength(); ++unindexedFacesIndex)
+    {
+      m_unindexedFaces.push_back(unindexedFacesJsonList[unindexedFacesIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

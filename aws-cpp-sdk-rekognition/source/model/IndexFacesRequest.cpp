@@ -26,7 +26,11 @@ IndexFacesRequest::IndexFacesRequest() :
     m_collectionIdHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_externalImageIdHasBeenSet(false),
-    m_detectionAttributesHasBeenSet(false)
+    m_detectionAttributesHasBeenSet(false),
+    m_maxFaces(0),
+    m_maxFacesHasBeenSet(false),
+    m_qualityFilter(QualityFilter::NOT_SET),
+    m_qualityFilterHasBeenSet(false)
 {
 }
 
@@ -61,6 +65,17 @@ Aws::String IndexFacesRequest::SerializePayload() const
    }
    payload.WithArray("DetectionAttributes", std::move(detectionAttributesJsonList));
 
+  }
+
+  if(m_maxFacesHasBeenSet)
+  {
+   payload.WithInteger("MaxFaces", m_maxFaces);
+
+  }
+
+  if(m_qualityFilterHasBeenSet)
+  {
+   payload.WithString("QualityFilter", QualityFilterMapper::GetNameForQualityFilter(m_qualityFilter));
   }
 
   return payload.View().WriteReadable();

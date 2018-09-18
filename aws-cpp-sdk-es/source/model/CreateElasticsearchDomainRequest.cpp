@@ -32,6 +32,7 @@ CreateElasticsearchDomainRequest::CreateElasticsearchDomainRequest() :
     m_vPCOptionsHasBeenSet(false),
     m_cognitoOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
+    m_nodeToNodeEncryptionOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
 {
@@ -92,6 +93,12 @@ Aws::String CreateElasticsearchDomainRequest::SerializePayload() const
   if(m_encryptionAtRestOptionsHasBeenSet)
   {
    payload.WithObject("EncryptionAtRestOptions", m_encryptionAtRestOptions.Jsonize());
+
+  }
+
+  if(m_nodeToNodeEncryptionOptionsHasBeenSet)
+  {
+   payload.WithObject("NodeToNodeEncryptionOptions", m_nodeToNodeEncryptionOptions.Jsonize());
 
   }
 

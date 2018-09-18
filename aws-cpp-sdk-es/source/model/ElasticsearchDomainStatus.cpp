@@ -50,6 +50,7 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus() :
     m_vPCOptionsHasBeenSet(false),
     m_cognitoOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
+    m_nodeToNodeEncryptionOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
 {
@@ -77,6 +78,7 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus(JsonView jsonValue) :
     m_vPCOptionsHasBeenSet(false),
     m_cognitoOptionsHasBeenSet(false),
     m_encryptionAtRestOptionsHasBeenSet(false),
+    m_nodeToNodeEncryptionOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false)
 {
@@ -205,6 +207,13 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(JsonView jsonVa
     m_encryptionAtRestOptions = jsonValue.GetObject("EncryptionAtRestOptions");
 
     m_encryptionAtRestOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NodeToNodeEncryptionOptions"))
+  {
+    m_nodeToNodeEncryptionOptions = jsonValue.GetObject("NodeToNodeEncryptionOptions");
+
+    m_nodeToNodeEncryptionOptionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AdvancedOptions"))
@@ -338,6 +347,12 @@ JsonValue ElasticsearchDomainStatus::Jsonize() const
   if(m_encryptionAtRestOptionsHasBeenSet)
   {
    payload.WithObject("EncryptionAtRestOptions", m_encryptionAtRestOptions.Jsonize());
+
+  }
+
+  if(m_nodeToNodeEncryptionOptionsHasBeenSet)
+  {
+   payload.WithObject("NodeToNodeEncryptionOptions", m_nodeToNodeEncryptionOptions.Jsonize());
 
   }
 

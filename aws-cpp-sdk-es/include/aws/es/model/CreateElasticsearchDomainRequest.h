@@ -23,6 +23,7 @@
 #include <aws/es/model/VPCOptions.h>
 #include <aws/es/model/CognitoOptions.h>
 #include <aws/es/model/EncryptionAtRestOptions.h>
+#include <aws/es/model/NodeToNodeEncryptionOptions.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
@@ -415,6 +416,32 @@ namespace Model
 
 
     /**
+     * <p>Specifies the NodeToNodeEncryptionOptions.</p>
+     */
+    inline const NodeToNodeEncryptionOptions& GetNodeToNodeEncryptionOptions() const{ return m_nodeToNodeEncryptionOptions; }
+
+    /**
+     * <p>Specifies the NodeToNodeEncryptionOptions.</p>
+     */
+    inline void SetNodeToNodeEncryptionOptions(const NodeToNodeEncryptionOptions& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = value; }
+
+    /**
+     * <p>Specifies the NodeToNodeEncryptionOptions.</p>
+     */
+    inline void SetNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions&& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = std::move(value); }
+
+    /**
+     * <p>Specifies the NodeToNodeEncryptionOptions.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithNodeToNodeEncryptionOptions(const NodeToNodeEncryptionOptions& value) { SetNodeToNodeEncryptionOptions(value); return *this;}
+
+    /**
+     * <p>Specifies the NodeToNodeEncryptionOptions.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions&& value) { SetNodeToNodeEncryptionOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p> Option to allow references to indices in an HTTP request body. Must be
      * <code>false</code> when configuring access to individual sub-resources. By
      * default, the value is <code>true</code>. See <a
@@ -605,6 +632,9 @@ namespace Model
 
     EncryptionAtRestOptions m_encryptionAtRestOptions;
     bool m_encryptionAtRestOptionsHasBeenSet;
+
+    NodeToNodeEncryptionOptions m_nodeToNodeEncryptionOptions;
+    bool m_nodeToNodeEncryptionOptionsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
     bool m_advancedOptionsHasBeenSet;
