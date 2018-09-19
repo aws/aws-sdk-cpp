@@ -94,44 +94,44 @@ namespace Model
 
 
     /**
-     * <p>Container for information about a particular replication rule. Replication
-     * configuration must have at least one rule and can contain up to 1,000 rules.</p>
+     * <p>Container for one or more replication rules. Replication configuration must
+     * have at least one rule and can contain up to 1,000 rules. </p>
      */
     inline const Aws::Vector<ReplicationRule>& GetRules() const{ return m_rules; }
 
     /**
-     * <p>Container for information about a particular replication rule. Replication
-     * configuration must have at least one rule and can contain up to 1,000 rules.</p>
+     * <p>Container for one or more replication rules. Replication configuration must
+     * have at least one rule and can contain up to 1,000 rules. </p>
      */
     inline void SetRules(const Aws::Vector<ReplicationRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
-     * <p>Container for information about a particular replication rule. Replication
-     * configuration must have at least one rule and can contain up to 1,000 rules.</p>
+     * <p>Container for one or more replication rules. Replication configuration must
+     * have at least one rule and can contain up to 1,000 rules. </p>
      */
     inline void SetRules(Aws::Vector<ReplicationRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
-     * <p>Container for information about a particular replication rule. Replication
-     * configuration must have at least one rule and can contain up to 1,000 rules.</p>
+     * <p>Container for one or more replication rules. Replication configuration must
+     * have at least one rule and can contain up to 1,000 rules. </p>
      */
     inline ReplicationConfiguration& WithRules(const Aws::Vector<ReplicationRule>& value) { SetRules(value); return *this;}
 
     /**
-     * <p>Container for information about a particular replication rule. Replication
-     * configuration must have at least one rule and can contain up to 1,000 rules.</p>
+     * <p>Container for one or more replication rules. Replication configuration must
+     * have at least one rule and can contain up to 1,000 rules. </p>
      */
     inline ReplicationConfiguration& WithRules(Aws::Vector<ReplicationRule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
-     * <p>Container for information about a particular replication rule. Replication
-     * configuration must have at least one rule and can contain up to 1,000 rules.</p>
+     * <p>Container for one or more replication rules. Replication configuration must
+     * have at least one rule and can contain up to 1,000 rules. </p>
      */
     inline ReplicationConfiguration& AddRules(const ReplicationRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
-     * <p>Container for information about a particular replication rule. Replication
-     * configuration must have at least one rule and can contain up to 1,000 rules.</p>
+     * <p>Container for one or more replication rules. Replication configuration must
+     * have at least one rule and can contain up to 1,000 rules. </p>
      */
     inline ReplicationConfiguration& AddRules(ReplicationRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 

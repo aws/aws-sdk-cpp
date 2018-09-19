@@ -48,7 +48,7 @@ namespace Model
     /**
      * <p>The email address of the owner to assign to the new member account. This
      * email address must not already be associated with another AWS account. You must
-     * use a valid email address to complete account creation. You cannot access the
+     * use a valid email address to complete account creation. You can't access the
      * root user of the account or remove an account that was created with an invalid
      * email address.</p>
      */
@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>The email address of the owner to assign to the new member account. This
      * email address must not already be associated with another AWS account. You must
-     * use a valid email address to complete account creation. You cannot access the
+     * use a valid email address to complete account creation. You can't access the
      * root user of the account or remove an account that was created with an invalid
      * email address.</p>
      */
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>The email address of the owner to assign to the new member account. This
      * email address must not already be associated with another AWS account. You must
-     * use a valid email address to complete account creation. You cannot access the
+     * use a valid email address to complete account creation. You can't access the
      * root user of the account or remove an account that was created with an invalid
      * email address.</p>
      */
@@ -75,7 +75,7 @@ namespace Model
     /**
      * <p>The email address of the owner to assign to the new member account. This
      * email address must not already be associated with another AWS account. You must
-     * use a valid email address to complete account creation. You cannot access the
+     * use a valid email address to complete account creation. You can't access the
      * root user of the account or remove an account that was created with an invalid
      * email address.</p>
      */
@@ -84,7 +84,7 @@ namespace Model
     /**
      * <p>The email address of the owner to assign to the new member account. This
      * email address must not already be associated with another AWS account. You must
-     * use a valid email address to complete account creation. You cannot access the
+     * use a valid email address to complete account creation. You can't access the
      * root user of the account or remove an account that was created with an invalid
      * email address.</p>
      */
@@ -93,7 +93,7 @@ namespace Model
     /**
      * <p>The email address of the owner to assign to the new member account. This
      * email address must not already be associated with another AWS account. You must
-     * use a valid email address to complete account creation. You cannot access the
+     * use a valid email address to complete account creation. You can't access the
      * root user of the account or remove an account that was created with an invalid
      * email address.</p>
      */
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>The email address of the owner to assign to the new member account. This
      * email address must not already be associated with another AWS account. You must
-     * use a valid email address to complete account creation. You cannot access the
+     * use a valid email address to complete account creation. You can't access the
      * root user of the account or remove an account that was created with an invalid
      * email address.</p>
      */
@@ -146,13 +146,14 @@ namespace Model
 
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you do not specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
+     * automatically preconfigures in the new member account. This role trusts the
+     * master account, allowing users in the master account to assume the role, as
+     * permitted by the master account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i>, and steps 2 and 3 in <a
@@ -166,13 +167,14 @@ namespace Model
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you do not specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
+     * automatically preconfigures in the new member account. This role trusts the
+     * master account, allowing users in the master account to assume the role, as
+     * permitted by the master account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i>, and steps 2 and 3 in <a
@@ -186,13 +188,14 @@ namespace Model
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you do not specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
+     * automatically preconfigures in the new member account. This role trusts the
+     * master account, allowing users in the master account to assume the role, as
+     * permitted by the master account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i>, and steps 2 and 3 in <a
@@ -206,13 +209,14 @@ namespace Model
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you do not specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
+     * automatically preconfigures in the new member account. This role trusts the
+     * master account, allowing users in the master account to assume the role, as
+     * permitted by the master account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i>, and steps 2 and 3 in <a
@@ -226,13 +230,14 @@ namespace Model
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you do not specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
+     * automatically preconfigures in the new member account. This role trusts the
+     * master account, allowing users in the master account to assume the role, as
+     * permitted by the master account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i>, and steps 2 and 3 in <a
@@ -246,13 +251,14 @@ namespace Model
     inline CreateAccountRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you do not specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
+     * automatically preconfigures in the new member account. This role trusts the
+     * master account, allowing users in the master account to assume the role, as
+     * permitted by the master account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i>, and steps 2 and 3 in <a
@@ -266,13 +272,14 @@ namespace Model
     inline CreateAccountRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional)</p> <p>The name of an IAM role that Organizations automatically
-     * preconfigures in the new member account. This role trusts the master account,
-     * allowing users in the master account to assume the role, as permitted by the
-     * master account administrator. The role has administrator permissions in the new
-     * member account.</p> <p>If you do not specify this parameter, the role name
-     * defaults to <code>OrganizationAccountAccessRole</code>.</p> <p>For more
-     * information about how to use this role to access the member account, see <a
+     * <p>(Optional)</p> <p>The name of an IAM role that AWS Organizations
+     * automatically preconfigures in the new member account. This role trusts the
+     * master account, allowing users in the master account to assume the role, as
+     * permitted by the master account administrator. The role has administrator
+     * permissions in the new member account.</p> <p>If you don't specify this
+     * parameter, the role name defaults to
+     * <code>OrganizationAccountAccessRole</code>.</p> <p>For more information about
+     * how to use this role to access the member account, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
      * Organizations User Guide</i>, and steps 2 and 3 in <a
@@ -289,65 +296,65 @@ namespace Model
     /**
      * <p>If set to <code>ALLOW</code>, the new account enables IAM users to access
      * account billing information <i>if</i> they have the required permissions. If set
-     * to <code>DENY</code>, then only the root user of the new account can access
-     * account billing information. For more information, see <a
+     * to <code>DENY</code>, only the root user of the new account can access account
+     * billing information. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
-     * Cost Management User Guide</i>.</p> <p>If you do not specify this parameter, the
-     * value defaults to ALLOW, and IAM users and roles with the required permissions
-     * can access billing information for the new account.</p>
+     * Cost Management User Guide</i>.</p> <p>If you don't specify this parameter, the
+     * value defaults to <code>ALLOW</code>, and IAM users and roles with the required
+     * permissions can access billing information for the new account.</p>
      */
     inline const IAMUserAccessToBilling& GetIamUserAccessToBilling() const{ return m_iamUserAccessToBilling; }
 
     /**
      * <p>If set to <code>ALLOW</code>, the new account enables IAM users to access
      * account billing information <i>if</i> they have the required permissions. If set
-     * to <code>DENY</code>, then only the root user of the new account can access
-     * account billing information. For more information, see <a
+     * to <code>DENY</code>, only the root user of the new account can access account
+     * billing information. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
-     * Cost Management User Guide</i>.</p> <p>If you do not specify this parameter, the
-     * value defaults to ALLOW, and IAM users and roles with the required permissions
-     * can access billing information for the new account.</p>
+     * Cost Management User Guide</i>.</p> <p>If you don't specify this parameter, the
+     * value defaults to <code>ALLOW</code>, and IAM users and roles with the required
+     * permissions can access billing information for the new account.</p>
      */
     inline void SetIamUserAccessToBilling(const IAMUserAccessToBilling& value) { m_iamUserAccessToBillingHasBeenSet = true; m_iamUserAccessToBilling = value; }
 
     /**
      * <p>If set to <code>ALLOW</code>, the new account enables IAM users to access
      * account billing information <i>if</i> they have the required permissions. If set
-     * to <code>DENY</code>, then only the root user of the new account can access
-     * account billing information. For more information, see <a
+     * to <code>DENY</code>, only the root user of the new account can access account
+     * billing information. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
-     * Cost Management User Guide</i>.</p> <p>If you do not specify this parameter, the
-     * value defaults to ALLOW, and IAM users and roles with the required permissions
-     * can access billing information for the new account.</p>
+     * Cost Management User Guide</i>.</p> <p>If you don't specify this parameter, the
+     * value defaults to <code>ALLOW</code>, and IAM users and roles with the required
+     * permissions can access billing information for the new account.</p>
      */
     inline void SetIamUserAccessToBilling(IAMUserAccessToBilling&& value) { m_iamUserAccessToBillingHasBeenSet = true; m_iamUserAccessToBilling = std::move(value); }
 
     /**
      * <p>If set to <code>ALLOW</code>, the new account enables IAM users to access
      * account billing information <i>if</i> they have the required permissions. If set
-     * to <code>DENY</code>, then only the root user of the new account can access
-     * account billing information. For more information, see <a
+     * to <code>DENY</code>, only the root user of the new account can access account
+     * billing information. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
-     * Cost Management User Guide</i>.</p> <p>If you do not specify this parameter, the
-     * value defaults to ALLOW, and IAM users and roles with the required permissions
-     * can access billing information for the new account.</p>
+     * Cost Management User Guide</i>.</p> <p>If you don't specify this parameter, the
+     * value defaults to <code>ALLOW</code>, and IAM users and roles with the required
+     * permissions can access billing information for the new account.</p>
      */
     inline CreateAccountRequest& WithIamUserAccessToBilling(const IAMUserAccessToBilling& value) { SetIamUserAccessToBilling(value); return *this;}
 
     /**
      * <p>If set to <code>ALLOW</code>, the new account enables IAM users to access
      * account billing information <i>if</i> they have the required permissions. If set
-     * to <code>DENY</code>, then only the root user of the new account can access
-     * account billing information. For more information, see <a
+     * to <code>DENY</code>, only the root user of the new account can access account
+     * billing information. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
-     * Cost Management User Guide</i>.</p> <p>If you do not specify this parameter, the
-     * value defaults to ALLOW, and IAM users and roles with the required permissions
-     * can access billing information for the new account.</p>
+     * Cost Management User Guide</i>.</p> <p>If you don't specify this parameter, the
+     * value defaults to <code>ALLOW</code>, and IAM users and roles with the required
+     * permissions can access billing information for the new account.</p>
      */
     inline CreateAccountRequest& WithIamUserAccessToBilling(IAMUserAccessToBilling&& value) { SetIamUserAccessToBilling(std::move(value)); return *this;}
 

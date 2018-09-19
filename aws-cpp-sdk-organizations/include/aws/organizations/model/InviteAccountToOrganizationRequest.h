@@ -55,7 +55,7 @@ namespace Model
      * "ACCOUNT"</code>, then you must provide the AWS account ID number as the
      * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must
      * specify the email address that is associated with the account.</p> <p>
-     * <code>--target Id=bill@example.com,Type=EMAIL</code> </p>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline const HandshakeParty& GetTarget() const{ return m_target; }
 
@@ -69,7 +69,7 @@ namespace Model
      * "ACCOUNT"</code>, then you must provide the AWS account ID number as the
      * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must
      * specify the email address that is associated with the account.</p> <p>
-     * <code>--target Id=bill@example.com,Type=EMAIL</code> </p>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline void SetTarget(const HandshakeParty& value) { m_targetHasBeenSet = true; m_target = value; }
 
@@ -83,7 +83,7 @@ namespace Model
      * "ACCOUNT"</code>, then you must provide the AWS account ID number as the
      * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must
      * specify the email address that is associated with the account.</p> <p>
-     * <code>--target Id=bill@example.com,Type=EMAIL</code> </p>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline void SetTarget(HandshakeParty&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
@@ -97,7 +97,7 @@ namespace Model
      * "ACCOUNT"</code>, then you must provide the AWS account ID number as the
      * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must
      * specify the email address that is associated with the account.</p> <p>
-     * <code>--target Id=bill@example.com,Type=EMAIL</code> </p>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline InviteAccountToOrganizationRequest& WithTarget(const HandshakeParty& value) { SetTarget(value); return *this;}
 
@@ -111,7 +111,7 @@ namespace Model
      * "ACCOUNT"</code>, then you must provide the AWS account ID number as the
      * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must
      * specify the email address that is associated with the account.</p> <p>
-     * <code>--target Id=bill@example.com,Type=EMAIL</code> </p>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
      */
     inline InviteAccountToOrganizationRequest& WithTarget(HandshakeParty&& value) { SetTarget(std::move(value)); return *this;}
 

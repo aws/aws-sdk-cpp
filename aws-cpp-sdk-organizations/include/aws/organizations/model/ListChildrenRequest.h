@@ -214,11 +214,11 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Use this to limit the number of results you want included in the
-     * response. If you do not include this parameter, it defaults to a value that is
-     * specific to the operation. If additional items exist beyond the maximum you
-     * specify, the <code>NextToken</code> response element is present and has a value
-     * (is not null). Include that value as the <code>NextToken</code> request
+     * <p>(Optional) Use this to limit the number of results you want included per page
+     * in the response. If you do not include this parameter, it defaults to a value
+     * that is specific to the operation. If additional items exist beyond the maximum
+     * you specify, the <code>NextToken</code> response element is present and has a
+     * value (is not null). Include that value as the <code>NextToken</code> request
      * parameter in the next call to the operation to get the next part of the results.
      * Note that Organizations might return fewer results than the maximum even when
      * there are more results available. You should check <code>NextToken</code> after
@@ -227,11 +227,11 @@ namespace Model
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>(Optional) Use this to limit the number of results you want included in the
-     * response. If you do not include this parameter, it defaults to a value that is
-     * specific to the operation. If additional items exist beyond the maximum you
-     * specify, the <code>NextToken</code> response element is present and has a value
-     * (is not null). Include that value as the <code>NextToken</code> request
+     * <p>(Optional) Use this to limit the number of results you want included per page
+     * in the response. If you do not include this parameter, it defaults to a value
+     * that is specific to the operation. If additional items exist beyond the maximum
+     * you specify, the <code>NextToken</code> response element is present and has a
+     * value (is not null). Include that value as the <code>NextToken</code> request
      * parameter in the next call to the operation to get the next part of the results.
      * Note that Organizations might return fewer results than the maximum even when
      * there are more results available. You should check <code>NextToken</code> after
@@ -240,11 +240,11 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>(Optional) Use this to limit the number of results you want included in the
-     * response. If you do not include this parameter, it defaults to a value that is
-     * specific to the operation. If additional items exist beyond the maximum you
-     * specify, the <code>NextToken</code> response element is present and has a value
-     * (is not null). Include that value as the <code>NextToken</code> request
+     * <p>(Optional) Use this to limit the number of results you want included per page
+     * in the response. If you do not include this parameter, it defaults to a value
+     * that is specific to the operation. If additional items exist beyond the maximum
+     * you specify, the <code>NextToken</code> response element is present and has a
+     * value (is not null). Include that value as the <code>NextToken</code> request
      * parameter in the next call to the operation to get the next part of the results.
      * Note that Organizations might return fewer results than the maximum even when
      * there are more results available. You should check <code>NextToken</code> after

@@ -39,6 +39,7 @@ static const int HANDSHAKE_ALREADY_IN_STATE_HASH = HashingUtils::HashString("Han
 static const int CREATE_ACCOUNT_STATUS_NOT_FOUND_HASH = HashingUtils::HashString("CreateAccountStatusNotFoundException");
 static const int POLICY_TYPE_ALREADY_ENABLED_HASH = HashingUtils::HashString("PolicyTypeAlreadyEnabledException");
 static const int POLICY_NOT_ATTACHED_HASH = HashingUtils::HashString("PolicyNotAttachedException");
+static const int ACCOUNT_OWNER_NOT_VERIFIED_HASH = HashingUtils::HashString("AccountOwnerNotVerifiedException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
 static const int FINALIZING_ORGANIZATION_HASH = HashingUtils::HashString("FinalizingOrganizationException");
 static const int ACCESS_DENIED_FOR_DEPENDENCY_HASH = HashingUtils::HashString("AccessDeniedForDependencyException");
@@ -114,6 +115,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == POLICY_NOT_ATTACHED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_NOT_ATTACHED), false);
+  }
+  else if (hashCode == ACCOUNT_OWNER_NOT_VERIFIED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_OWNER_NOT_VERIFIED), false);
   }
   else if (hashCode == SERVICE_HASH)
   {

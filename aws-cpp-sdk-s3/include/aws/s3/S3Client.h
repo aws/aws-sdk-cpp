@@ -2181,16 +2181,22 @@ namespace Aws
         virtual void PutBucketPolicyAsync(const Model::PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new replication configuration (or replaces an existing one, if
-         * present).</p><p><h3>See Also:</h3>   <a
+         * <p> Creates a new replication configuration (or replaces an existing one, if
+         * present). For more information, see <a href="
+         * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+         * Replication (CRR)</a> in the Amazon S3 Developer Guide. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketReplicationOutcome PutBucketReplication(const Model::PutBucketReplicationRequest& request) const;
 
         /**
-         * <p>Creates a new replication configuration (or replaces an existing one, if
-         * present).</p><p><h3>See Also:</h3>   <a
+         * <p> Creates a new replication configuration (or replaces an existing one, if
+         * present). For more information, see <a href="
+         * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+         * Replication (CRR)</a> in the Amazon S3 Developer Guide. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">AWS
          * API Reference</a></p>
          *
@@ -2199,8 +2205,11 @@ namespace Aws
         virtual Model::PutBucketReplicationOutcomeCallable PutBucketReplicationCallable(const Model::PutBucketReplicationRequest& request) const;
 
         /**
-         * <p>Creates a new replication configuration (or replaces an existing one, if
-         * present).</p><p><h3>See Also:</h3>   <a
+         * <p> Creates a new replication configuration (or replaces an existing one, if
+         * present). For more information, see <a href="
+         * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+         * Replication (CRR)</a> in the Amazon S3 Developer Guide. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">AWS
          * API Reference</a></p>
          *

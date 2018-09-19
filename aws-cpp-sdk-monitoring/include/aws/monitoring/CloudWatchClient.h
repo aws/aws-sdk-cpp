@@ -29,6 +29,7 @@
 #include <aws/monitoring/model/GetDashboardResult.h>
 #include <aws/monitoring/model/GetMetricDataResult.h>
 #include <aws/monitoring/model/GetMetricStatisticsResult.h>
+#include <aws/monitoring/model/GetMetricWidgetImageResult.h>
 #include <aws/monitoring/model/ListDashboardsResult.h>
 #include <aws/monitoring/model/ListMetricsResult.h>
 #include <aws/monitoring/model/PutDashboardResult.h>
@@ -88,6 +89,7 @@ namespace Model
         class GetDashboardRequest;
         class GetMetricDataRequest;
         class GetMetricStatisticsRequest;
+        class GetMetricWidgetImageRequest;
         class ListDashboardsRequest;
         class ListMetricsRequest;
         class PutDashboardRequest;
@@ -105,6 +107,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDashboardResult, Aws::Client::AWSError<CloudWatchErrors>> GetDashboardOutcome;
         typedef Aws::Utils::Outcome<GetMetricDataResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricDataOutcome;
         typedef Aws::Utils::Outcome<GetMetricStatisticsResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricStatisticsOutcome;
+        typedef Aws::Utils::Outcome<GetMetricWidgetImageResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricWidgetImageOutcome;
         typedef Aws::Utils::Outcome<ListDashboardsResult, Aws::Client::AWSError<CloudWatchErrors>> ListDashboardsOutcome;
         typedef Aws::Utils::Outcome<ListMetricsResult, Aws::Client::AWSError<CloudWatchErrors>> ListMetricsOutcome;
         typedef Aws::Utils::Outcome<PutDashboardResult, Aws::Client::AWSError<CloudWatchErrors>> PutDashboardOutcome;
@@ -122,6 +125,7 @@ namespace Model
         typedef std::future<GetDashboardOutcome> GetDashboardOutcomeCallable;
         typedef std::future<GetMetricDataOutcome> GetMetricDataOutcomeCallable;
         typedef std::future<GetMetricStatisticsOutcome> GetMetricStatisticsOutcomeCallable;
+        typedef std::future<GetMetricWidgetImageOutcome> GetMetricWidgetImageOutcomeCallable;
         typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
         typedef std::future<ListMetricsOutcome> ListMetricsOutcomeCallable;
         typedef std::future<PutDashboardOutcome> PutDashboardOutcomeCallable;
@@ -142,6 +146,7 @@ namespace Model
     typedef std::function<void(const CloudWatchClient*, const Model::GetDashboardRequest&, const Model::GetDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDashboardResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::GetMetricDataRequest&, const Model::GetMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricDataResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::GetMetricStatisticsRequest&, const Model::GetMetricStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricStatisticsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::GetMetricWidgetImageRequest&, const Model::GetMetricWidgetImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricWidgetImageResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListDashboardsRequest&, const Model::ListDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDashboardsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListMetricsRequest&, const Model::ListMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutDashboardRequest&, const Model::PutDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDashboardResponseReceivedHandler;
@@ -677,6 +682,61 @@ namespace Model
         virtual void GetMetricStatisticsAsync(const Model::GetMetricStatisticsRequest& request, const GetMetricStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot
+         * graph of one or more Amazon CloudWatch metrics as a bitmap image. You can then
+         * embed this image into your services and products, such as wiki pages, reports,
+         * and documents. You could also retrieve images regularly, such as every minute,
+         * and create your own custom live dashboard.</p> <p>The graph you retrieve can
+         * include all CloudWatch metric graph features, including metric math and
+         * horizontal and vertical annotations.</p> <p>There is a limit of 20 transactions
+         * per second for this API. Each <code>GetMetricWidgetImage</code> action has the
+         * following limits:</p> <ul> <li> <p>As many as 100 metrics in the graph.</p>
+         * </li> <li> <p>Up to 100 KB uncompressed payload.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMetricWidgetImageOutcome GetMetricWidgetImage(const Model::GetMetricWidgetImageRequest& request) const;
+
+        /**
+         * <p>You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot
+         * graph of one or more Amazon CloudWatch metrics as a bitmap image. You can then
+         * embed this image into your services and products, such as wiki pages, reports,
+         * and documents. You could also retrieve images regularly, such as every minute,
+         * and create your own custom live dashboard.</p> <p>The graph you retrieve can
+         * include all CloudWatch metric graph features, including metric math and
+         * horizontal and vertical annotations.</p> <p>There is a limit of 20 transactions
+         * per second for this API. Each <code>GetMetricWidgetImage</code> action has the
+         * following limits:</p> <ul> <li> <p>As many as 100 metrics in the graph.</p>
+         * </li> <li> <p>Up to 100 KB uncompressed payload.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMetricWidgetImageOutcomeCallable GetMetricWidgetImageCallable(const Model::GetMetricWidgetImageRequest& request) const;
+
+        /**
+         * <p>You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot
+         * graph of one or more Amazon CloudWatch metrics as a bitmap image. You can then
+         * embed this image into your services and products, such as wiki pages, reports,
+         * and documents. You could also retrieve images regularly, such as every minute,
+         * and create your own custom live dashboard.</p> <p>The graph you retrieve can
+         * include all CloudWatch metric graph features, including metric math and
+         * horizontal and vertical annotations.</p> <p>There is a limit of 20 transactions
+         * per second for this API. Each <code>GetMetricWidgetImage</code> action has the
+         * following limits:</p> <ul> <li> <p>As many as 100 metrics in the graph.</p>
+         * </li> <li> <p>Up to 100 KB uncompressed payload.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMetricWidgetImageAsync(const Model::GetMetricWidgetImageRequest& request, const GetMetricWidgetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of the dashboards for your account. If you include
          * <code>DashboardNamePrefix</code>, only those dashboards with names starting with
          * the prefix are listed. Otherwise, all dashboards in your account are listed.
@@ -1141,6 +1201,7 @@ namespace Model
         void GetDashboardAsyncHelper(const Model::GetDashboardRequest& request, const GetDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMetricDataAsyncHelper(const Model::GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMetricStatisticsAsyncHelper(const Model::GetMetricStatisticsRequest& request, const GetMetricStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMetricWidgetImageAsyncHelper(const Model::GetMetricWidgetImageRequest& request, const GetMetricWidgetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDashboardsAsyncHelper(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMetricsAsyncHelper(const Model::ListMetricsRequest& request, const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDashboardAsyncHelper(const Model::PutDashboardRequest& request, const PutDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

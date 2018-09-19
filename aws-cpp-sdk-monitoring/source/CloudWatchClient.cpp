@@ -37,6 +37,7 @@
 #include <aws/monitoring/model/GetDashboardRequest.h>
 #include <aws/monitoring/model/GetMetricDataRequest.h>
 #include <aws/monitoring/model/GetMetricStatisticsRequest.h>
+#include <aws/monitoring/model/GetMetricWidgetImageRequest.h>
 #include <aws/monitoring/model/ListDashboardsRequest.h>
 #include <aws/monitoring/model/ListMetricsRequest.h>
 #include <aws/monitoring/model/PutDashboardRequest.h>
@@ -467,6 +468,41 @@ void CloudWatchClient::GetMetricStatisticsAsync(const GetMetricStatisticsRequest
 void CloudWatchClient::GetMetricStatisticsAsyncHelper(const GetMetricStatisticsRequest& request, const GetMetricStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetMetricStatistics(request), context);
+}
+
+GetMetricWidgetImageOutcome CloudWatchClient::GetMetricWidgetImage(const GetMetricWidgetImageRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetMetricWidgetImageOutcome(GetMetricWidgetImageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetMetricWidgetImageOutcome(outcome.GetError());
+  }
+}
+
+GetMetricWidgetImageOutcomeCallable CloudWatchClient::GetMetricWidgetImageCallable(const GetMetricWidgetImageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMetricWidgetImageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMetricWidgetImage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchClient::GetMetricWidgetImageAsync(const GetMetricWidgetImageRequest& request, const GetMetricWidgetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMetricWidgetImageAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchClient::GetMetricWidgetImageAsyncHelper(const GetMetricWidgetImageRequest& request, const GetMetricWidgetImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMetricWidgetImage(request), context);
 }
 
 ListDashboardsOutcome CloudWatchClient::ListDashboards(const ListDashboardsRequest& request) const

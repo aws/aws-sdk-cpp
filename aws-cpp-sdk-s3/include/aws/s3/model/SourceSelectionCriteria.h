@@ -49,32 +49,37 @@ namespace Model
 
 
     /**
-     * <p>Container for filter information of selection of KMS Encrypted S3
-     * objects.</p>
+     * <p> Container for filter information of selection of KMS Encrypted S3 objects.
+     * The element is required if you include <code>SourceSelectionCriteria</code> in
+     * the replication configuration. </p>
      */
     inline const SseKmsEncryptedObjects& GetSseKmsEncryptedObjects() const{ return m_sseKmsEncryptedObjects; }
 
     /**
-     * <p>Container for filter information of selection of KMS Encrypted S3
-     * objects.</p>
+     * <p> Container for filter information of selection of KMS Encrypted S3 objects.
+     * The element is required if you include <code>SourceSelectionCriteria</code> in
+     * the replication configuration. </p>
      */
     inline void SetSseKmsEncryptedObjects(const SseKmsEncryptedObjects& value) { m_sseKmsEncryptedObjectsHasBeenSet = true; m_sseKmsEncryptedObjects = value; }
 
     /**
-     * <p>Container for filter information of selection of KMS Encrypted S3
-     * objects.</p>
+     * <p> Container for filter information of selection of KMS Encrypted S3 objects.
+     * The element is required if you include <code>SourceSelectionCriteria</code> in
+     * the replication configuration. </p>
      */
     inline void SetSseKmsEncryptedObjects(SseKmsEncryptedObjects&& value) { m_sseKmsEncryptedObjectsHasBeenSet = true; m_sseKmsEncryptedObjects = std::move(value); }
 
     /**
-     * <p>Container for filter information of selection of KMS Encrypted S3
-     * objects.</p>
+     * <p> Container for filter information of selection of KMS Encrypted S3 objects.
+     * The element is required if you include <code>SourceSelectionCriteria</code> in
+     * the replication configuration. </p>
      */
     inline SourceSelectionCriteria& WithSseKmsEncryptedObjects(const SseKmsEncryptedObjects& value) { SetSseKmsEncryptedObjects(value); return *this;}
 
     /**
-     * <p>Container for filter information of selection of KMS Encrypted S3
-     * objects.</p>
+     * <p> Container for filter information of selection of KMS Encrypted S3 objects.
+     * The element is required if you include <code>SourceSelectionCriteria</code> in
+     * the replication configuration. </p>
      */
     inline SourceSelectionCriteria& WithSseKmsEncryptedObjects(SseKmsEncryptedObjects&& value) { SetSseKmsEncryptedObjects(std::move(value)); return *this;}
 

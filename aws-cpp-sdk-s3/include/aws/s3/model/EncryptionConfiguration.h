@@ -49,37 +49,44 @@ namespace Model
 
 
     /**
-     * <p>The id of the KMS key used to encrypt the replica object.</p>
+     * <p> The ID of the AWS KMS key for the region where the destination bucket
+     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
      */
     inline const Aws::String& GetReplicaKmsKeyID() const{ return m_replicaKmsKeyID; }
 
     /**
-     * <p>The id of the KMS key used to encrypt the replica object.</p>
+     * <p> The ID of the AWS KMS key for the region where the destination bucket
+     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
      */
     inline void SetReplicaKmsKeyID(const Aws::String& value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID = value; }
 
     /**
-     * <p>The id of the KMS key used to encrypt the replica object.</p>
+     * <p> The ID of the AWS KMS key for the region where the destination bucket
+     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
      */
     inline void SetReplicaKmsKeyID(Aws::String&& value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID = std::move(value); }
 
     /**
-     * <p>The id of the KMS key used to encrypt the replica object.</p>
+     * <p> The ID of the AWS KMS key for the region where the destination bucket
+     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
      */
     inline void SetReplicaKmsKeyID(const char* value) { m_replicaKmsKeyIDHasBeenSet = true; m_replicaKmsKeyID.assign(value); }
 
     /**
-     * <p>The id of the KMS key used to encrypt the replica object.</p>
+     * <p> The ID of the AWS KMS key for the region where the destination bucket
+     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
      */
     inline EncryptionConfiguration& WithReplicaKmsKeyID(const Aws::String& value) { SetReplicaKmsKeyID(value); return *this;}
 
     /**
-     * <p>The id of the KMS key used to encrypt the replica object.</p>
+     * <p> The ID of the AWS KMS key for the region where the destination bucket
+     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
      */
     inline EncryptionConfiguration& WithReplicaKmsKeyID(Aws::String&& value) { SetReplicaKmsKeyID(std::move(value)); return *this;}
 
     /**
-     * <p>The id of the KMS key used to encrypt the replica object.</p>
+     * <p> The ID of the AWS KMS key for the region where the destination bucket
+     * resides. Amazon S3 uses this key to encrypt the replica object. </p>
      */
     inline EncryptionConfiguration& WithReplicaKmsKeyID(const char* value) { SetReplicaKmsKeyID(value); return *this;}
 

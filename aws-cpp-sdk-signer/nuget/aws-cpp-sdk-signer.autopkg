@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Signer;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.6.20170825.13;
+        version : 1.6.20170825.14;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Signer);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.6.13
+            AWSSDKCPP-Core/1.6.14
        }
     }
 

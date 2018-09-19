@@ -46,6 +46,8 @@ namespace Aws
         static const int MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE_HASH = HashingUtils::HashString("MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE");
         static const int MASTER_ACCOUNT_MISSING_CONTACT_INFO_HASH = HashingUtils::HashString("MASTER_ACCOUNT_MISSING_CONTACT_INFO");
         static const int ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH = HashingUtils::HashString("ORGANIZATION_NOT_IN_ALL_FEATURES_MODE");
+        static const int EMAIL_VERIFICATION_CODE_EXPIRED_HASH = HashingUtils::HashString("EMAIL_VERIFICATION_CODE_EXPIRED");
+        static const int WAIT_PERIOD_ACTIVE_HASH = HashingUtils::HashString("WAIT_PERIOD_ACTIVE");
 
 
         ConstraintViolationExceptionReason GetConstraintViolationExceptionReasonForName(const Aws::String& name)
@@ -115,6 +117,14 @@ namespace Aws
           {
             return ConstraintViolationExceptionReason::ORGANIZATION_NOT_IN_ALL_FEATURES_MODE;
           }
+          else if (hashCode == EMAIL_VERIFICATION_CODE_EXPIRED_HASH)
+          {
+            return ConstraintViolationExceptionReason::EMAIL_VERIFICATION_CODE_EXPIRED;
+          }
+          else if (hashCode == WAIT_PERIOD_ACTIVE_HASH)
+          {
+            return ConstraintViolationExceptionReason::WAIT_PERIOD_ACTIVE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -161,6 +171,10 @@ namespace Aws
             return "MASTER_ACCOUNT_MISSING_CONTACT_INFO";
           case ConstraintViolationExceptionReason::ORGANIZATION_NOT_IN_ALL_FEATURES_MODE:
             return "ORGANIZATION_NOT_IN_ALL_FEATURES_MODE";
+          case ConstraintViolationExceptionReason::EMAIL_VERIFICATION_CODE_EXPIRED:
+            return "EMAIL_VERIFICATION_CODE_EXPIRED";
+          case ConstraintViolationExceptionReason::WAIT_PERIOD_ACTIVE:
+            return "WAIT_PERIOD_ACTIVE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
