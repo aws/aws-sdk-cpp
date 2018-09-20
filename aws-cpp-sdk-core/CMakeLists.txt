@@ -403,6 +403,15 @@ endif()
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
+
+if (EXTERNAL_DEPS_INCLUDE_DIRS)
+    foreach(DIR IN LISTS EXTERNAL_DEPS_INCLUDE_DIRS)
+        target_include_directories(${PROJECT_NAME} PUBLIC
+            $<BUILD_INTERFACE:${DIR}>
+            $<INSTALL_INTERFACE:include>)
+    endforeach()
+endif()
+
 target_link_libraries(${PROJECT_NAME} PRIVATE ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS} ${AWS_SDK_ADDITIONAL_LIBRARIES})
 
 if(USE_WINDOWS_DLL_SEMANTICS)
