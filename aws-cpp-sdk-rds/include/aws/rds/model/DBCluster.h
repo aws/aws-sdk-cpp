@@ -41,9 +41,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the details of an Amazon RDS DB cluster. </p> <p>This data type is
-   * used as a response element in the <a>DescribeDBClusters</a> action.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Contains the details of an Amazon Aurora DB cluster. </p> <p>This data type
+   * is used as a response element in the <a>DescribeDBClusters</a>,
+   * <a>StopDBCluster</a>, and <a>StartDBCluster</a> actions. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DBCluster">AWS API
    * Reference</a></p>
    */
@@ -1550,44 +1551,44 @@ namespace Model
 
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
-     * <code>serverless</code>.</p>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <code>serverless</code>, or <code>parallelquery</code>.</p>
      */
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
-     * <code>serverless</code>.</p>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <code>serverless</code>, or <code>parallelquery</code>.</p>
      */
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
-     * <code>serverless</code>.</p>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <code>serverless</code>, or <code>parallelquery</code>.</p>
      */
     inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
-     * <code>serverless</code>.</p>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <code>serverless</code>, or <code>parallelquery</code>.</p>
      */
     inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
-     * <code>serverless</code>.</p>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <code>serverless</code>, or <code>parallelquery</code>.</p>
      */
     inline DBCluster& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
-     * <code>serverless</code>.</p>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <code>serverless</code>, or <code>parallelquery</code>.</p>
      */
     inline DBCluster& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
-     * <code>serverless</code>.</p>
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
+     * <code>serverless</code>, or <code>parallelquery</code>.</p>
      */
     inline DBCluster& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
 

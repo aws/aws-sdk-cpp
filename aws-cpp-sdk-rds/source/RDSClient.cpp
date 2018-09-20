@@ -119,7 +119,9 @@
 #include <aws/rds/model/RestoreDBInstanceFromS3Request.h>
 #include <aws/rds/model/RestoreDBInstanceToPointInTimeRequest.h>
 #include <aws/rds/model/RevokeDBSecurityGroupIngressRequest.h>
+#include <aws/rds/model/StartDBClusterRequest.h>
 #include <aws/rds/model/StartDBInstanceRequest.h>
+#include <aws/rds/model/StopDBClusterRequest.h>
 #include <aws/rds/model/StopDBInstanceRequest.h>
 
 using namespace Aws;
@@ -3417,6 +3419,41 @@ void RDSClient::RevokeDBSecurityGroupIngressAsyncHelper(const RevokeDBSecurityGr
   handler(this, request, RevokeDBSecurityGroupIngress(request), context);
 }
 
+StartDBClusterOutcome RDSClient::StartDBCluster(const StartDBClusterRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartDBClusterOutcome(StartDBClusterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartDBClusterOutcome(outcome.GetError());
+  }
+}
+
+StartDBClusterOutcomeCallable RDSClient::StartDBClusterCallable(const StartDBClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartDBClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDBCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::StartDBClusterAsync(const StartDBClusterRequest& request, const StartDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartDBClusterAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::StartDBClusterAsyncHelper(const StartDBClusterRequest& request, const StartDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartDBCluster(request), context);
+}
+
 StartDBInstanceOutcome RDSClient::StartDBInstance(const StartDBInstanceRequest& request) const
 {
   Aws::StringStream ss;
@@ -3450,6 +3487,41 @@ void RDSClient::StartDBInstanceAsync(const StartDBInstanceRequest& request, cons
 void RDSClient::StartDBInstanceAsyncHelper(const StartDBInstanceRequest& request, const StartDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartDBInstance(request), context);
+}
+
+StopDBClusterOutcome RDSClient::StopDBCluster(const StopDBClusterRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StopDBClusterOutcome(StopDBClusterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopDBClusterOutcome(outcome.GetError());
+  }
+}
+
+StopDBClusterOutcomeCallable RDSClient::StopDBClusterCallable(const StopDBClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopDBClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopDBCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::StopDBClusterAsync(const StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopDBClusterAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::StopDBClusterAsyncHelper(const StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopDBCluster(request), context);
 }
 
 StopDBInstanceOutcome RDSClient::StopDBInstance(const StopDBInstanceRequest& request) const

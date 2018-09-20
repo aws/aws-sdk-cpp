@@ -93,8 +93,8 @@ static const int BACKUP_POLICY_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("
 static const int SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionCategoryNotFound");
 static const int RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResourceNotFoundFault");
 static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
-static const int AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AuthorizationAlreadyExists");
 static const int INVALID_D_B_INSTANCE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBInstanceState");
+static const int AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("AuthorizationAlreadyExists");
 static const int D_B_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupQuotaExceeded");
 static const int D_B_CLUSTER_ROLE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterRoleNotFound");
 static const int CERTIFICATE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CertificateNotFound");
@@ -373,13 +373,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_SUBNET), false);
   }
-  else if (hashCode == AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::AUTHORIZATION_ALREADY_EXISTS_FAULT), false);
-  }
   else if (hashCode == INVALID_D_B_INSTANCE_STATE_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_D_B_INSTANCE_STATE_FAULT), false);
+  }
+  else if (hashCode == AUTHORIZATION_ALREADY_EXISTS_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::AUTHORIZATION_ALREADY_EXISTS_FAULT), false);
   }
   else if (hashCode == D_B_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
   {

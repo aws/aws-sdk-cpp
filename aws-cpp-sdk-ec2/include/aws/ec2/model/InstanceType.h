@@ -152,6 +152,7 @@ namespace Model
     d2_4xlarge,
     d2_8xlarge,
     f1_2xlarge,
+    f1_4xlarge,
     f1_16xlarge,
     m5_large,
     m5_xlarge,

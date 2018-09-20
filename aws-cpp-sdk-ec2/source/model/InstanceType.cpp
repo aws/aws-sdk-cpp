@@ -156,6 +156,7 @@ namespace Aws
         static const int d2_4xlarge_HASH = HashingUtils::HashString("d2.4xlarge");
         static const int d2_8xlarge_HASH = HashingUtils::HashString("d2.8xlarge");
         static const int f1_2xlarge_HASH = HashingUtils::HashString("f1.2xlarge");
+        static const int f1_4xlarge_HASH = HashingUtils::HashString("f1.4xlarge");
         static const int f1_16xlarge_HASH = HashingUtils::HashString("f1.16xlarge");
         static const int m5_large_HASH = HashingUtils::HashString("m5.large");
         static const int m5_xlarge_HASH = HashingUtils::HashString("m5.xlarge");
@@ -821,6 +822,11 @@ namespace Aws
             enumValue = InstanceType::f1_2xlarge;
             return true;
           }
+          else if (hashCode == f1_4xlarge_HASH)
+          {
+            enumValue = InstanceType::f1_4xlarge;
+            return true;
+          }
           else if (hashCode == f1_16xlarge_HASH)
           {
             enumValue = InstanceType::f1_16xlarge;
@@ -1328,6 +1334,9 @@ namespace Aws
             return true;
           case InstanceType::f1_2xlarge:
             value = "f1.2xlarge";
+            return true;
+          case InstanceType::f1_4xlarge:
+            value = "f1.4xlarge";
             return true;
           case InstanceType::f1_16xlarge:
             value = "f1.16xlarge";

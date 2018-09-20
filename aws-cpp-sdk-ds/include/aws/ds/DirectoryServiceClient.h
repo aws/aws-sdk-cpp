@@ -29,11 +29,13 @@
 #include <aws/ds/model/CreateComputerResult.h>
 #include <aws/ds/model/CreateConditionalForwarderResult.h>
 #include <aws/ds/model/CreateDirectoryResult.h>
+#include <aws/ds/model/CreateLogSubscriptionResult.h>
 #include <aws/ds/model/CreateMicrosoftADResult.h>
 #include <aws/ds/model/CreateSnapshotResult.h>
 #include <aws/ds/model/CreateTrustResult.h>
 #include <aws/ds/model/DeleteConditionalForwarderResult.h>
 #include <aws/ds/model/DeleteDirectoryResult.h>
+#include <aws/ds/model/DeleteLogSubscriptionResult.h>
 #include <aws/ds/model/DeleteSnapshotResult.h>
 #include <aws/ds/model/DeleteTrustResult.h>
 #include <aws/ds/model/DeregisterEventTopicResult.h>
@@ -50,6 +52,7 @@
 #include <aws/ds/model/GetDirectoryLimitsResult.h>
 #include <aws/ds/model/GetSnapshotLimitsResult.h>
 #include <aws/ds/model/ListIpRoutesResult.h>
+#include <aws/ds/model/ListLogSubscriptionsResult.h>
 #include <aws/ds/model/ListSchemaExtensionsResult.h>
 #include <aws/ds/model/ListTagsForResourceResult.h>
 #include <aws/ds/model/RegisterEventTopicResult.h>
@@ -110,11 +113,13 @@ namespace Model
         class CreateComputerRequest;
         class CreateConditionalForwarderRequest;
         class CreateDirectoryRequest;
+        class CreateLogSubscriptionRequest;
         class CreateMicrosoftADRequest;
         class CreateSnapshotRequest;
         class CreateTrustRequest;
         class DeleteConditionalForwarderRequest;
         class DeleteDirectoryRequest;
+        class DeleteLogSubscriptionRequest;
         class DeleteSnapshotRequest;
         class DeleteTrustRequest;
         class DeregisterEventTopicRequest;
@@ -131,6 +136,7 @@ namespace Model
         class GetDirectoryLimitsRequest;
         class GetSnapshotLimitsRequest;
         class ListIpRoutesRequest;
+        class ListLogSubscriptionsRequest;
         class ListSchemaExtensionsRequest;
         class ListTagsForResourceRequest;
         class RegisterEventTopicRequest;
@@ -152,11 +158,13 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateComputerResult, Aws::Client::AWSError<DirectoryServiceErrors>> CreateComputerOutcome;
         typedef Aws::Utils::Outcome<CreateConditionalForwarderResult, Aws::Client::AWSError<DirectoryServiceErrors>> CreateConditionalForwarderOutcome;
         typedef Aws::Utils::Outcome<CreateDirectoryResult, Aws::Client::AWSError<DirectoryServiceErrors>> CreateDirectoryOutcome;
+        typedef Aws::Utils::Outcome<CreateLogSubscriptionResult, Aws::Client::AWSError<DirectoryServiceErrors>> CreateLogSubscriptionOutcome;
         typedef Aws::Utils::Outcome<CreateMicrosoftADResult, Aws::Client::AWSError<DirectoryServiceErrors>> CreateMicrosoftADOutcome;
         typedef Aws::Utils::Outcome<CreateSnapshotResult, Aws::Client::AWSError<DirectoryServiceErrors>> CreateSnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateTrustResult, Aws::Client::AWSError<DirectoryServiceErrors>> CreateTrustOutcome;
         typedef Aws::Utils::Outcome<DeleteConditionalForwarderResult, Aws::Client::AWSError<DirectoryServiceErrors>> DeleteConditionalForwarderOutcome;
         typedef Aws::Utils::Outcome<DeleteDirectoryResult, Aws::Client::AWSError<DirectoryServiceErrors>> DeleteDirectoryOutcome;
+        typedef Aws::Utils::Outcome<DeleteLogSubscriptionResult, Aws::Client::AWSError<DirectoryServiceErrors>> DeleteLogSubscriptionOutcome;
         typedef Aws::Utils::Outcome<DeleteSnapshotResult, Aws::Client::AWSError<DirectoryServiceErrors>> DeleteSnapshotOutcome;
         typedef Aws::Utils::Outcome<DeleteTrustResult, Aws::Client::AWSError<DirectoryServiceErrors>> DeleteTrustOutcome;
         typedef Aws::Utils::Outcome<DeregisterEventTopicResult, Aws::Client::AWSError<DirectoryServiceErrors>> DeregisterEventTopicOutcome;
@@ -173,6 +181,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDirectoryLimitsResult, Aws::Client::AWSError<DirectoryServiceErrors>> GetDirectoryLimitsOutcome;
         typedef Aws::Utils::Outcome<GetSnapshotLimitsResult, Aws::Client::AWSError<DirectoryServiceErrors>> GetSnapshotLimitsOutcome;
         typedef Aws::Utils::Outcome<ListIpRoutesResult, Aws::Client::AWSError<DirectoryServiceErrors>> ListIpRoutesOutcome;
+        typedef Aws::Utils::Outcome<ListLogSubscriptionsResult, Aws::Client::AWSError<DirectoryServiceErrors>> ListLogSubscriptionsOutcome;
         typedef Aws::Utils::Outcome<ListSchemaExtensionsResult, Aws::Client::AWSError<DirectoryServiceErrors>> ListSchemaExtensionsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<DirectoryServiceErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RegisterEventTopicResult, Aws::Client::AWSError<DirectoryServiceErrors>> RegisterEventTopicOutcome;
@@ -194,11 +203,13 @@ namespace Model
         typedef std::future<CreateComputerOutcome> CreateComputerOutcomeCallable;
         typedef std::future<CreateConditionalForwarderOutcome> CreateConditionalForwarderOutcomeCallable;
         typedef std::future<CreateDirectoryOutcome> CreateDirectoryOutcomeCallable;
+        typedef std::future<CreateLogSubscriptionOutcome> CreateLogSubscriptionOutcomeCallable;
         typedef std::future<CreateMicrosoftADOutcome> CreateMicrosoftADOutcomeCallable;
         typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
         typedef std::future<CreateTrustOutcome> CreateTrustOutcomeCallable;
         typedef std::future<DeleteConditionalForwarderOutcome> DeleteConditionalForwarderOutcomeCallable;
         typedef std::future<DeleteDirectoryOutcome> DeleteDirectoryOutcomeCallable;
+        typedef std::future<DeleteLogSubscriptionOutcome> DeleteLogSubscriptionOutcomeCallable;
         typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
         typedef std::future<DeleteTrustOutcome> DeleteTrustOutcomeCallable;
         typedef std::future<DeregisterEventTopicOutcome> DeregisterEventTopicOutcomeCallable;
@@ -215,6 +226,7 @@ namespace Model
         typedef std::future<GetDirectoryLimitsOutcome> GetDirectoryLimitsOutcomeCallable;
         typedef std::future<GetSnapshotLimitsOutcome> GetSnapshotLimitsOutcomeCallable;
         typedef std::future<ListIpRoutesOutcome> ListIpRoutesOutcomeCallable;
+        typedef std::future<ListLogSubscriptionsOutcome> ListLogSubscriptionsOutcomeCallable;
         typedef std::future<ListSchemaExtensionsOutcome> ListSchemaExtensionsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RegisterEventTopicOutcome> RegisterEventTopicOutcomeCallable;
@@ -239,11 +251,13 @@ namespace Model
     typedef std::function<void(const DirectoryServiceClient*, const Model::CreateComputerRequest&, const Model::CreateComputerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateComputerResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::CreateConditionalForwarderRequest&, const Model::CreateConditionalForwarderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConditionalForwarderResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::CreateDirectoryRequest&, const Model::CreateDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDirectoryResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::CreateLogSubscriptionRequest&, const Model::CreateLogSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLogSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::CreateMicrosoftADRequest&, const Model::CreateMicrosoftADOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMicrosoftADResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::CreateSnapshotRequest&, const Model::CreateSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::CreateTrustRequest&, const Model::CreateTrustOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrustResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DeleteConditionalForwarderRequest&, const Model::DeleteConditionalForwarderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConditionalForwarderResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DeleteDirectoryRequest&, const Model::DeleteDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDirectoryResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::DeleteLogSubscriptionRequest&, const Model::DeleteLogSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLogSubscriptionResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DeleteSnapshotRequest&, const Model::DeleteSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DeleteTrustRequest&, const Model::DeleteTrustOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrustResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DeregisterEventTopicRequest&, const Model::DeregisterEventTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterEventTopicResponseReceivedHandler;
@@ -260,6 +274,7 @@ namespace Model
     typedef std::function<void(const DirectoryServiceClient*, const Model::GetDirectoryLimitsRequest&, const Model::GetDirectoryLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDirectoryLimitsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::GetSnapshotLimitsRequest&, const Model::GetSnapshotLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSnapshotLimitsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::ListIpRoutesRequest&, const Model::ListIpRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIpRoutesResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::ListLogSubscriptionsRequest&, const Model::ListLogSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLogSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::ListSchemaExtensionsRequest&, const Model::ListSchemaExtensionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemaExtensionsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::RegisterEventTopicRequest&, const Model::RegisterEventTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterEventTopicResponseReceivedHandler;
@@ -629,6 +644,37 @@ namespace Model
         virtual void CreateDirectoryAsync(const Model::CreateDirectoryRequest& request, const CreateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a subscription to forward real time Directory Service domain
+         * controller security logs to the specified CloudWatch log group in your AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLogSubscriptionOutcome CreateLogSubscription(const Model::CreateLogSubscriptionRequest& request) const;
+
+        /**
+         * <p>Creates a subscription to forward real time Directory Service domain
+         * controller security logs to the specified CloudWatch log group in your AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLogSubscriptionOutcomeCallable CreateLogSubscriptionCallable(const Model::CreateLogSubscriptionRequest& request) const;
+
+        /**
+         * <p>Creates a subscription to forward real time Directory Service domain
+         * controller security logs to the specified CloudWatch log group in your AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateLogSubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLogSubscriptionAsync(const Model::CreateLogSubscriptionRequest& request, const CreateLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a Microsoft AD in the AWS cloud.</p> <p>Before you call
          * <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been
          * explicitly granted through a policy. For details about what permissions are
@@ -815,6 +861,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDirectoryAsync(const Model::DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified log subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLogSubscriptionOutcome DeleteLogSubscription(const Model::DeleteLogSubscriptionRequest& request) const;
+
+        /**
+         * <p>Deletes the specified log subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLogSubscriptionOutcomeCallable DeleteLogSubscriptionCallable(const Model::DeleteLogSubscriptionRequest& request) const;
+
+        /**
+         * <p>Deletes the specified log subscription.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteLogSubscription">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLogSubscriptionAsync(const Model::DeleteLogSubscriptionRequest& request, const DeleteLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a directory snapshot.</p><p><h3>See Also:</h3>   <a
@@ -1319,6 +1390,34 @@ namespace Model
         virtual void ListIpRoutesAsync(const Model::ListIpRoutesRequest& request, const ListIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the active log subscriptions for the AWS account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLogSubscriptionsOutcome ListLogSubscriptions(const Model::ListLogSubscriptionsRequest& request) const;
+
+        /**
+         * <p>Lists the active log subscriptions for the AWS account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListLogSubscriptionsOutcomeCallable ListLogSubscriptionsCallable(const Model::ListLogSubscriptionsRequest& request) const;
+
+        /**
+         * <p>Lists the active log subscriptions for the AWS account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListLogSubscriptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListLogSubscriptionsAsync(const Model::ListLogSubscriptionsRequest& request, const ListLogSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all schema extensions applied to a Microsoft AD
          * Directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ListSchemaExtensions">AWS
@@ -1703,11 +1802,13 @@ namespace Model
         void CreateComputerAsyncHelper(const Model::CreateComputerRequest& request, const CreateComputerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConditionalForwarderAsyncHelper(const Model::CreateConditionalForwarderRequest& request, const CreateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDirectoryAsyncHelper(const Model::CreateDirectoryRequest& request, const CreateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateLogSubscriptionAsyncHelper(const Model::CreateLogSubscriptionRequest& request, const CreateLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMicrosoftADAsyncHelper(const Model::CreateMicrosoftADRequest& request, const CreateMicrosoftADResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSnapshotAsyncHelper(const Model::CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrustAsyncHelper(const Model::CreateTrustRequest& request, const CreateTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConditionalForwarderAsyncHelper(const Model::DeleteConditionalForwarderRequest& request, const DeleteConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDirectoryAsyncHelper(const Model::DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteLogSubscriptionAsyncHelper(const Model::DeleteLogSubscriptionRequest& request, const DeleteLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSnapshotAsyncHelper(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrustAsyncHelper(const Model::DeleteTrustRequest& request, const DeleteTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterEventTopicAsyncHelper(const Model::DeregisterEventTopicRequest& request, const DeregisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1724,6 +1825,7 @@ namespace Model
         void GetDirectoryLimitsAsyncHelper(const Model::GetDirectoryLimitsRequest& request, const GetDirectoryLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSnapshotLimitsAsyncHelper(const Model::GetSnapshotLimitsRequest& request, const GetSnapshotLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIpRoutesAsyncHelper(const Model::ListIpRoutesRequest& request, const ListIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListLogSubscriptionsAsyncHelper(const Model::ListLogSubscriptionsRequest& request, const ListLogSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSchemaExtensionsAsyncHelper(const Model::ListSchemaExtensionsRequest& request, const ListSchemaExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterEventTopicAsyncHelper(const Model::RegisterEventTopicRequest& request, const RegisterEventTopicResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

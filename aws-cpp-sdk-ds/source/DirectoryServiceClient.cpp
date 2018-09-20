@@ -35,11 +35,13 @@
 #include <aws/ds/model/CreateComputerRequest.h>
 #include <aws/ds/model/CreateConditionalForwarderRequest.h>
 #include <aws/ds/model/CreateDirectoryRequest.h>
+#include <aws/ds/model/CreateLogSubscriptionRequest.h>
 #include <aws/ds/model/CreateMicrosoftADRequest.h>
 #include <aws/ds/model/CreateSnapshotRequest.h>
 #include <aws/ds/model/CreateTrustRequest.h>
 #include <aws/ds/model/DeleteConditionalForwarderRequest.h>
 #include <aws/ds/model/DeleteDirectoryRequest.h>
+#include <aws/ds/model/DeleteLogSubscriptionRequest.h>
 #include <aws/ds/model/DeleteSnapshotRequest.h>
 #include <aws/ds/model/DeleteTrustRequest.h>
 #include <aws/ds/model/DeregisterEventTopicRequest.h>
@@ -56,6 +58,7 @@
 #include <aws/ds/model/GetDirectoryLimitsRequest.h>
 #include <aws/ds/model/GetSnapshotLimitsRequest.h>
 #include <aws/ds/model/ListIpRoutesRequest.h>
+#include <aws/ds/model/ListLogSubscriptionsRequest.h>
 #include <aws/ds/model/ListSchemaExtensionsRequest.h>
 #include <aws/ds/model/ListTagsForResourceRequest.h>
 #include <aws/ds/model/RegisterEventTopicRequest.h>
@@ -413,6 +416,41 @@ void DirectoryServiceClient::CreateDirectoryAsyncHelper(const CreateDirectoryReq
   handler(this, request, CreateDirectory(request), context);
 }
 
+CreateLogSubscriptionOutcome DirectoryServiceClient::CreateLogSubscription(const CreateLogSubscriptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateLogSubscriptionOutcome(CreateLogSubscriptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateLogSubscriptionOutcome(outcome.GetError());
+  }
+}
+
+CreateLogSubscriptionOutcomeCallable DirectoryServiceClient::CreateLogSubscriptionCallable(const CreateLogSubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLogSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLogSubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::CreateLogSubscriptionAsync(const CreateLogSubscriptionRequest& request, const CreateLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLogSubscriptionAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::CreateLogSubscriptionAsyncHelper(const CreateLogSubscriptionRequest& request, const CreateLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLogSubscription(request), context);
+}
+
 CreateMicrosoftADOutcome DirectoryServiceClient::CreateMicrosoftAD(const CreateMicrosoftADRequest& request) const
 {
   Aws::StringStream ss;
@@ -586,6 +624,41 @@ void DirectoryServiceClient::DeleteDirectoryAsync(const DeleteDirectoryRequest& 
 void DirectoryServiceClient::DeleteDirectoryAsyncHelper(const DeleteDirectoryRequest& request, const DeleteDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDirectory(request), context);
+}
+
+DeleteLogSubscriptionOutcome DirectoryServiceClient::DeleteLogSubscription(const DeleteLogSubscriptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteLogSubscriptionOutcome(DeleteLogSubscriptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteLogSubscriptionOutcome(outcome.GetError());
+  }
+}
+
+DeleteLogSubscriptionOutcomeCallable DirectoryServiceClient::DeleteLogSubscriptionCallable(const DeleteLogSubscriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLogSubscriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLogSubscription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::DeleteLogSubscriptionAsync(const DeleteLogSubscriptionRequest& request, const DeleteLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLogSubscriptionAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::DeleteLogSubscriptionAsyncHelper(const DeleteLogSubscriptionRequest& request, const DeleteLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLogSubscription(request), context);
 }
 
 DeleteSnapshotOutcome DirectoryServiceClient::DeleteSnapshot(const DeleteSnapshotRequest& request) const
@@ -1146,6 +1219,41 @@ void DirectoryServiceClient::ListIpRoutesAsync(const ListIpRoutesRequest& reques
 void DirectoryServiceClient::ListIpRoutesAsyncHelper(const ListIpRoutesRequest& request, const ListIpRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListIpRoutes(request), context);
+}
+
+ListLogSubscriptionsOutcome DirectoryServiceClient::ListLogSubscriptions(const ListLogSubscriptionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListLogSubscriptionsOutcome(ListLogSubscriptionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListLogSubscriptionsOutcome(outcome.GetError());
+  }
+}
+
+ListLogSubscriptionsOutcomeCallable DirectoryServiceClient::ListLogSubscriptionsCallable(const ListLogSubscriptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLogSubscriptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLogSubscriptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::ListLogSubscriptionsAsync(const ListLogSubscriptionsRequest& request, const ListLogSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLogSubscriptionsAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::ListLogSubscriptionsAsyncHelper(const ListLogSubscriptionsRequest& request, const ListLogSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLogSubscriptions(request), context);
 }
 
 ListSchemaExtensionsOutcome DirectoryServiceClient::ListSchemaExtensions(const ListSchemaExtensionsRequest& request) const

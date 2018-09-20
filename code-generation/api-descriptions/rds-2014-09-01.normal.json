@@ -2264,7 +2264,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p> The specified DB instance isn't in the <i>available</i> state. </p>",
+      "documentation":"<p>The DB instance isn't in a valid state.</p>",
       "error":{
         "code":"InvalidDBInstanceState",
         "httpStatusCode":400,
