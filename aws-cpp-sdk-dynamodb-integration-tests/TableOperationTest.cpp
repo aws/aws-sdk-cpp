@@ -287,8 +287,7 @@ protected:
 
         while (shouldContinue)
         {     
-            EXPECT_TRUE(outcome.IsSuccess());
-            if (outcome.GetResult().GetTable().GetTableStatus() == TableStatus::ACTIVE)
+            if (outcome.IsSuccess() && outcome.GetResult().GetTable().GetTableStatus() == TableStatus::ACTIVE)
             {
                 break;
             }
