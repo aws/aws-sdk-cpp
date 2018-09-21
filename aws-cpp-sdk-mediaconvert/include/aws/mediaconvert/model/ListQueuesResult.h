@@ -81,37 +81,37 @@ namespace Model
 
 
     /**
-     * List of queues
+     * List of queues.
      */
     inline const Aws::Vector<Queue>& GetQueues() const{ return m_queues; }
 
     /**
-     * List of queues
+     * List of queues.
      */
     inline void SetQueues(const Aws::Vector<Queue>& value) { m_queues = value; }
 
     /**
-     * List of queues
+     * List of queues.
      */
     inline void SetQueues(Aws::Vector<Queue>&& value) { m_queues = std::move(value); }
 
     /**
-     * List of queues
+     * List of queues.
      */
     inline ListQueuesResult& WithQueues(const Aws::Vector<Queue>& value) { SetQueues(value); return *this;}
 
     /**
-     * List of queues
+     * List of queues.
      */
     inline ListQueuesResult& WithQueues(Aws::Vector<Queue>&& value) { SetQueues(std::move(value)); return *this;}
 
     /**
-     * List of queues
+     * List of queues.
      */
     inline ListQueuesResult& AddQueues(const Queue& value) { m_queues.push_back(value); return *this; }
 
     /**
-     * List of queues
+     * List of queues.
      */
     inline ListQueuesResult& AddQueues(Queue&& value) { m_queues.push_back(std::move(value)); return *this; }
 

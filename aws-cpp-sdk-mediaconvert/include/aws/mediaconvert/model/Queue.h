@@ -17,6 +17,8 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/mediaconvert/model/PricingPlan.h>
+#include <aws/mediaconvert/model/ReservationPlan.h>
 #include <aws/mediaconvert/model/QueueStatus.h>
 #include <aws/mediaconvert/model/Type.h>
 #include <utility>
@@ -37,9 +39,12 @@ namespace Model
 {
 
   /**
-   * MediaConvert jobs are submitted to a queue. Unless specified otherwise jobs are
-   * submitted to a built-in default queue. User can create additional queues to
-   * separate the jobs of different categories or priority.<p><h3>See Also:</h3>   <a
+   * You can use queues to manage the resources that are available to your AWS
+   * account for running multiple transcoding jobs at the same time. If you don't
+   * specify a queue, the service sends all jobs through the default queue. For more
+   * information, see
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/about-resource-allocation-and-job-prioritization.html.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Queue">AWS
    * API Reference</a></p>
    */
@@ -89,204 +94,313 @@ namespace Model
 
 
     /**
-     * The timestamp in epoch seconds for queue creation.
+     * The time stamp in epoch seconds for queue creation.
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * The timestamp in epoch seconds for queue creation.
+     * The time stamp in epoch seconds for queue creation.
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * The timestamp in epoch seconds for queue creation.
+     * The time stamp in epoch seconds for queue creation.
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * The timestamp in epoch seconds for queue creation.
+     * The time stamp in epoch seconds for queue creation.
      */
     inline Queue& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * The timestamp in epoch seconds for queue creation.
+     * The time stamp in epoch seconds for queue creation.
      */
     inline Queue& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * An optional description you create for each queue.
+     * An optional description that you create for each queue.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * An optional description you create for each queue.
+     * An optional description that you create for each queue.
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * An optional description you create for each queue.
+     * An optional description that you create for each queue.
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * An optional description you create for each queue.
+     * An optional description that you create for each queue.
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * An optional description you create for each queue.
+     * An optional description that you create for each queue.
      */
     inline Queue& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * An optional description you create for each queue.
+     * An optional description that you create for each queue.
      */
     inline Queue& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * An optional description you create for each queue.
+     * An optional description that you create for each queue.
      */
     inline Queue& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * The timestamp in epoch seconds when the queue was last updated.
+     * The time stamp in epoch seconds when the queue was last updated.
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
-     * The timestamp in epoch seconds when the queue was last updated.
+     * The time stamp in epoch seconds when the queue was last updated.
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
-     * The timestamp in epoch seconds when the queue was last updated.
+     * The time stamp in epoch seconds when the queue was last updated.
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
-     * The timestamp in epoch seconds when the queue was last updated.
+     * The time stamp in epoch seconds when the queue was last updated.
      */
     inline Queue& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
-     * The timestamp in epoch seconds when the queue was last updated.
+     * The time stamp in epoch seconds when the queue was last updated.
      */
     inline Queue& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
 
     /**
-     * A name you create for each queue. Each name must be unique within your account.
+     * A name that you create for each queue. Each name must be unique within your
+     * account.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * A name you create for each queue. Each name must be unique within your account.
+     * A name that you create for each queue. Each name must be unique within your
+     * account.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * A name you create for each queue. Each name must be unique within your account.
+     * A name that you create for each queue. Each name must be unique within your
+     * account.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * A name you create for each queue. Each name must be unique within your account.
+     * A name that you create for each queue. Each name must be unique within your
+     * account.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * A name you create for each queue. Each name must be unique within your account.
+     * A name that you create for each queue. Each name must be unique within your
+     * account.
      */
     inline Queue& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * A name you create for each queue. Each name must be unique within your account.
+     * A name that you create for each queue. Each name must be unique within your
+     * account.
      */
     inline Queue& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * A name you create for each queue. Each name must be unique within your account.
+     * A name that you create for each queue. Each name must be unique within your
+     * account.
      */
     inline Queue& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * Estimated number of jobs in PROGRESSING status.
+     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The
+     * pricing plan for the queue determines whether you pay On-demand or Reserved
+     * pricing for the transcoding jobs that you run through the queue. For Reserved
+     * queue pricing, you must set up a contract. You can create a Reserved queue
+     * contract through the AWS Elemental MediaConvert console.
+     */
+    inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
+
+    /**
+     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The
+     * pricing plan for the queue determines whether you pay On-demand or Reserved
+     * pricing for the transcoding jobs that you run through the queue. For Reserved
+     * queue pricing, you must set up a contract. You can create a Reserved queue
+     * contract through the AWS Elemental MediaConvert console.
+     */
+    inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
+
+    /**
+     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The
+     * pricing plan for the queue determines whether you pay On-demand or Reserved
+     * pricing for the transcoding jobs that you run through the queue. For Reserved
+     * queue pricing, you must set up a contract. You can create a Reserved queue
+     * contract through the AWS Elemental MediaConvert console.
+     */
+    inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
+
+    /**
+     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The
+     * pricing plan for the queue determines whether you pay On-demand or Reserved
+     * pricing for the transcoding jobs that you run through the queue. For Reserved
+     * queue pricing, you must set up a contract. You can create a Reserved queue
+     * contract through the AWS Elemental MediaConvert console.
+     */
+    inline Queue& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
+
+    /**
+     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The
+     * pricing plan for the queue determines whether you pay On-demand or Reserved
+     * pricing for the transcoding jobs that you run through the queue. For Reserved
+     * queue pricing, you must set up a contract. You can create a Reserved queue
+     * contract through the AWS Elemental MediaConvert console.
+     */
+    inline Queue& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
+
+
+    /**
+     * The estimated number of jobs with a PROGRESSING status.
      */
     inline int GetProgressingJobsCount() const{ return m_progressingJobsCount; }
 
     /**
-     * Estimated number of jobs in PROGRESSING status.
+     * The estimated number of jobs with a PROGRESSING status.
      */
     inline void SetProgressingJobsCount(int value) { m_progressingJobsCountHasBeenSet = true; m_progressingJobsCount = value; }
 
     /**
-     * Estimated number of jobs in PROGRESSING status.
+     * The estimated number of jobs with a PROGRESSING status.
      */
     inline Queue& WithProgressingJobsCount(int value) { SetProgressingJobsCount(value); return *this;}
 
 
-    
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline const ReservationPlan& GetReservationPlan() const{ return m_reservationPlan; }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline void SetReservationPlan(const ReservationPlan& value) { m_reservationPlanHasBeenSet = true; m_reservationPlan = value; }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline void SetReservationPlan(ReservationPlan&& value) { m_reservationPlanHasBeenSet = true; m_reservationPlan = std::move(value); }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline Queue& WithReservationPlan(const ReservationPlan& value) { SetReservationPlan(value); return *this;}
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline Queue& WithReservationPlan(ReservationPlan&& value) { SetReservationPlan(std::move(value)); return *this;}
+
+
+    /**
+     * Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin
+     * processing jobs in that queue. Jobs that are running when you pause the queue
+     * continue to run until they finish or result in an error.
+     */
     inline const QueueStatus& GetStatus() const{ return m_status; }
 
-    
+    /**
+     * Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin
+     * processing jobs in that queue. Jobs that are running when you pause the queue
+     * continue to run until they finish or result in an error.
+     */
     inline void SetStatus(const QueueStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    
+    /**
+     * Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin
+     * processing jobs in that queue. Jobs that are running when you pause the queue
+     * continue to run until they finish or result in an error.
+     */
     inline void SetStatus(QueueStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
-    
+    /**
+     * Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin
+     * processing jobs in that queue. Jobs that are running when you pause the queue
+     * continue to run until they finish or result in an error.
+     */
     inline Queue& WithStatus(const QueueStatus& value) { SetStatus(value); return *this;}
 
-    
+    /**
+     * Queues can be ACTIVE or PAUSED. If you pause a queue, the service won't begin
+     * processing jobs in that queue. Jobs that are running when you pause the queue
+     * continue to run until they finish or result in an error.
+     */
     inline Queue& WithStatus(QueueStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * Estimated number of jobs in SUBMITTED status.
+     * The estimated number of jobs with a SUBMITTED status.
      */
     inline int GetSubmittedJobsCount() const{ return m_submittedJobsCount; }
 
     /**
-     * Estimated number of jobs in SUBMITTED status.
+     * The estimated number of jobs with a SUBMITTED status.
      */
     inline void SetSubmittedJobsCount(int value) { m_submittedJobsCountHasBeenSet = true; m_submittedJobsCount = value; }
 
     /**
-     * Estimated number of jobs in SUBMITTED status.
+     * The estimated number of jobs with a SUBMITTED status.
      */
     inline Queue& WithSubmittedJobsCount(int value) { SetSubmittedJobsCount(value); return *this;}
 
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can't
-     * be modified or deleted by the user.
+     * Specifies whether this queue is system or custom. System queues are built in.
+     * You can't modify or delete system queues. You can create and modify custom
+     * queues.
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can't
-     * be modified or deleted by the user.
+     * Specifies whether this queue is system or custom. System queues are built in.
+     * You can't modify or delete system queues. You can create and modify custom
+     * queues.
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can't
-     * be modified or deleted by the user.
+     * Specifies whether this queue is system or custom. System queues are built in.
+     * You can't modify or delete system queues. You can create and modify custom
+     * queues.
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can't
-     * be modified or deleted by the user.
+     * Specifies whether this queue is system or custom. System queues are built in.
+     * You can't modify or delete system queues. You can create and modify custom
+     * queues.
      */
     inline Queue& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
-     * A queue can be of two types: system or custom. System or built-in queues can't
-     * be modified or deleted by the user.
+     * Specifies whether this queue is system or custom. System queues are built in.
+     * You can't modify or delete system queues. You can create and modify custom
+     * queues.
      */
     inline Queue& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 
@@ -307,8 +421,14 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
+    PricingPlan m_pricingPlan;
+    bool m_pricingPlanHasBeenSet;
+
     int m_progressingJobsCount;
     bool m_progressingJobsCountHasBeenSet;
+
+    ReservationPlan m_reservationPlan;
+    bool m_reservationPlanHasBeenSet;
 
     QueueStatus m_status;
     bool m_statusHasBeenSet;

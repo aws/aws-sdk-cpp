@@ -17,6 +17,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/MediaConvertRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/ReservationPlanSettings.h>
 #include <aws/mediaconvert/model/QueueStatus.h>
 #include <utility>
 
@@ -80,54 +81,105 @@ namespace Model
 
 
     /**
-     * The name of the queue you are modifying.
+     * The name of the queue that you are modifying.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * The name of the queue you are modifying.
+     * The name of the queue that you are modifying.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * The name of the queue you are modifying.
+     * The name of the queue that you are modifying.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * The name of the queue you are modifying.
+     * The name of the queue that you are modifying.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * The name of the queue you are modifying.
+     * The name of the queue that you are modifying.
      */
     inline UpdateQueueRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * The name of the queue you are modifying.
+     * The name of the queue that you are modifying.
      */
     inline UpdateQueueRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * The name of the queue you are modifying.
+     * The name of the queue that you are modifying.
      */
     inline UpdateQueueRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
-    
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline const ReservationPlanSettings& GetReservationPlanSettings() const{ return m_reservationPlanSettings; }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline void SetReservationPlanSettings(const ReservationPlanSettings& value) { m_reservationPlanSettingsHasBeenSet = true; m_reservationPlanSettings = value; }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline void SetReservationPlanSettings(ReservationPlanSettings&& value) { m_reservationPlanSettingsHasBeenSet = true; m_reservationPlanSettings = std::move(value); }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline UpdateQueueRequest& WithReservationPlanSettings(const ReservationPlanSettings& value) { SetReservationPlanSettings(value); return *this;}
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline UpdateQueueRequest& WithReservationPlanSettings(ReservationPlanSettings&& value) { SetReservationPlanSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Pause or activate a queue by changing its status between ACTIVE and PAUSED. If
+     * you pause a queue, jobs in that queue won't begin. Jobs that are running when
+     * you pause the queue continue to run until they finish or result in an error.
+     */
     inline const QueueStatus& GetStatus() const{ return m_status; }
 
-    
+    /**
+     * Pause or activate a queue by changing its status between ACTIVE and PAUSED. If
+     * you pause a queue, jobs in that queue won't begin. Jobs that are running when
+     * you pause the queue continue to run until they finish or result in an error.
+     */
     inline void SetStatus(const QueueStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    
+    /**
+     * Pause or activate a queue by changing its status between ACTIVE and PAUSED. If
+     * you pause a queue, jobs in that queue won't begin. Jobs that are running when
+     * you pause the queue continue to run until they finish or result in an error.
+     */
     inline void SetStatus(QueueStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
-    
+    /**
+     * Pause or activate a queue by changing its status between ACTIVE and PAUSED. If
+     * you pause a queue, jobs in that queue won't begin. Jobs that are running when
+     * you pause the queue continue to run until they finish or result in an error.
+     */
     inline UpdateQueueRequest& WithStatus(const QueueStatus& value) { SetStatus(value); return *this;}
 
-    
+    /**
+     * Pause or activate a queue by changing its status between ACTIVE and PAUSED. If
+     * you pause a queue, jobs in that queue won't begin. Jobs that are running when
+     * you pause the queue continue to run until they finish or result in an error.
+     */
     inline UpdateQueueRequest& WithStatus(QueueStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:
@@ -137,6 +189,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    ReservationPlanSettings m_reservationPlanSettings;
+    bool m_reservationPlanSettingsHasBeenSet;
 
     QueueStatus m_status;
     bool m_statusHasBeenSet;

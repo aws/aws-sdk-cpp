@@ -34,8 +34,11 @@ Queue::Queue() :
     m_descriptionHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_pricingPlan(PricingPlan::NOT_SET),
+    m_pricingPlanHasBeenSet(false),
     m_progressingJobsCount(0),
     m_progressingJobsCountHasBeenSet(false),
+    m_reservationPlanHasBeenSet(false),
     m_status(QueueStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_submittedJobsCount(0),
@@ -51,8 +54,11 @@ Queue::Queue(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_pricingPlan(PricingPlan::NOT_SET),
+    m_pricingPlanHasBeenSet(false),
     m_progressingJobsCount(0),
     m_progressingJobsCountHasBeenSet(false),
+    m_reservationPlanHasBeenSet(false),
     m_status(QueueStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_submittedJobsCount(0),
@@ -100,11 +106,25 @@ Queue& Queue::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("pricingPlan"))
+  {
+    m_pricingPlan = PricingPlanMapper::GetPricingPlanForName(jsonValue.GetString("pricingPlan"));
+
+    m_pricingPlanHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("progressingJobsCount"))
   {
     m_progressingJobsCount = jsonValue.GetInteger("progressingJobsCount");
 
     m_progressingJobsCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("reservationPlan"))
+  {
+    m_reservationPlan = jsonValue.GetObject("reservationPlan");
+
+    m_reservationPlanHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -163,9 +183,20 @@ JsonValue Queue::Jsonize() const
 
   }
 
+  if(m_pricingPlanHasBeenSet)
+  {
+   payload.WithString("pricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
+  }
+
   if(m_progressingJobsCountHasBeenSet)
   {
    payload.WithInteger("progressingJobsCount", m_progressingJobsCount);
+
+  }
+
+  if(m_reservationPlanHasBeenSet)
+  {
+   payload.WithObject("reservationPlan", m_reservationPlan.Jsonize());
 
   }
 

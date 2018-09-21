@@ -17,6 +17,8 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/MediaConvertRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/PricingPlan.h>
+#include <aws/mediaconvert/model/ReservationPlanSettings.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -44,75 +46,152 @@ namespace Model
 
 
     /**
-     * Optional. A description of the queue you are creating.
+     * Optional. A description of the queue that you are creating.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * Optional. A description of the queue you are creating.
+     * Optional. A description of the queue that you are creating.
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * Optional. A description of the queue you are creating.
+     * Optional. A description of the queue that you are creating.
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * Optional. A description of the queue you are creating.
+     * Optional. A description of the queue that you are creating.
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * Optional. A description of the queue you are creating.
+     * Optional. A description of the queue that you are creating.
      */
     inline CreateQueueRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * Optional. A description of the queue you are creating.
+     * Optional. A description of the queue that you are creating.
      */
     inline CreateQueueRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * Optional. A description of the queue you are creating.
+     * Optional. A description of the queue that you are creating.
      */
     inline CreateQueueRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * The name of the queue you are creating.
+     * The name of the queue that you are creating.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * The name of the queue you are creating.
+     * The name of the queue that you are creating.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * The name of the queue you are creating.
+     * The name of the queue that you are creating.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * The name of the queue you are creating.
+     * The name of the queue that you are creating.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * The name of the queue you are creating.
+     * The name of the queue that you are creating.
      */
     inline CreateQueueRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * The name of the queue you are creating.
+     * The name of the queue that you are creating.
      */
     inline CreateQueueRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * The name of the queue you are creating.
+     * The name of the queue that you are creating.
      */
     inline CreateQueueRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
+     * is on-demand or reserved. The pricing plan for the queue determines whether you
+     * pay on-demand or reserved pricing for the transcoding jobs you run through the
+     * queue. For reserved queue pricing, you must set up a contract. You can create a
+     * reserved queue contract through the AWS Elemental MediaConvert console.
+     */
+    inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
+
+    /**
+     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
+     * is on-demand or reserved. The pricing plan for the queue determines whether you
+     * pay on-demand or reserved pricing for the transcoding jobs you run through the
+     * queue. For reserved queue pricing, you must set up a contract. You can create a
+     * reserved queue contract through the AWS Elemental MediaConvert console.
+     */
+    inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
+
+    /**
+     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
+     * is on-demand or reserved. The pricing plan for the queue determines whether you
+     * pay on-demand or reserved pricing for the transcoding jobs you run through the
+     * queue. For reserved queue pricing, you must set up a contract. You can create a
+     * reserved queue contract through the AWS Elemental MediaConvert console.
+     */
+    inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
+
+    /**
+     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
+     * is on-demand or reserved. The pricing plan for the queue determines whether you
+     * pay on-demand or reserved pricing for the transcoding jobs you run through the
+     * queue. For reserved queue pricing, you must set up a contract. You can create a
+     * reserved queue contract through the AWS Elemental MediaConvert console.
+     */
+    inline CreateQueueRequest& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
+
+    /**
+     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
+     * is on-demand or reserved. The pricing plan for the queue determines whether you
+     * pay on-demand or reserved pricing for the transcoding jobs you run through the
+     * queue. For reserved queue pricing, you must set up a contract. You can create a
+     * reserved queue contract through the AWS Elemental MediaConvert console.
+     */
+    inline CreateQueueRequest& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
+
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline const ReservationPlanSettings& GetReservationPlanSettings() const{ return m_reservationPlanSettings; }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline void SetReservationPlanSettings(const ReservationPlanSettings& value) { m_reservationPlanSettingsHasBeenSet = true; m_reservationPlanSettings = value; }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline void SetReservationPlanSettings(ReservationPlanSettings&& value) { m_reservationPlanSettingsHasBeenSet = true; m_reservationPlanSettings = std::move(value); }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline CreateQueueRequest& WithReservationPlanSettings(const ReservationPlanSettings& value) { SetReservationPlanSettings(value); return *this;}
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline CreateQueueRequest& WithReservationPlanSettings(ReservationPlanSettings&& value) { SetReservationPlanSettings(std::move(value)); return *this;}
 
 
     /**
@@ -194,6 +273,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    PricingPlan m_pricingPlan;
+    bool m_pricingPlanHasBeenSet;
+
+    ReservationPlanSettings m_reservationPlanSettings;
+    bool m_reservationPlanSettingsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

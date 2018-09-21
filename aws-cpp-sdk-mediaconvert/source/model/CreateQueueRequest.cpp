@@ -25,6 +25,9 @@ using namespace Aws::Utils;
 CreateQueueRequest::CreateQueueRequest() : 
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_pricingPlan(PricingPlan::NOT_SET),
+    m_pricingPlanHasBeenSet(false),
+    m_reservationPlanSettingsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -42,6 +45,17 @@ Aws::String CreateQueueRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_pricingPlanHasBeenSet)
+  {
+   payload.WithString("pricingPlan", PricingPlanMapper::GetNameForPricingPlan(m_pricingPlan));
+  }
+
+  if(m_reservationPlanSettingsHasBeenSet)
+  {
+   payload.WithObject("reservationPlanSettings", m_reservationPlanSettings.Jsonize());
 
   }
 
