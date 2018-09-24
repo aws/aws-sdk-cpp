@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>The user name in Amazon Connect for the user to create.</p>
+     * <p>The user name in Amazon Connect for the account to create.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name in Amazon Connect for the user to create.</p>
+     * <p>The user name in Amazon Connect for the account to create.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name in Amazon Connect for the user to create.</p>
+     * <p>The user name in Amazon Connect for the account to create.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name in Amazon Connect for the user to create.</p>
+     * <p>The user name in Amazon Connect for the account to create.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name in Amazon Connect for the user to create.</p>
+     * <p>The user name in Amazon Connect for the account to create.</p>
      */
     inline CreateUserRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name in Amazon Connect for the user to create.</p>
+     * <p>The user name in Amazon Connect for the account to create.</p>
      */
     inline CreateUserRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name in Amazon Connect for the user to create.</p>
+     * <p>The user name in Amazon Connect for the account to create.</p>
      */
     inline CreateUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

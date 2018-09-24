@@ -17,6 +17,8 @@
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/MinimumEngineVersionPerAllowedValue.h>
 #include <utility>
 
 namespace Aws
@@ -249,6 +251,68 @@ namespace Model
      */
     inline OptionGroupOptionSetting& WithIsModifiable(bool value) { SetIsModifiable(value); return *this;}
 
+
+    /**
+     * <p>Boolean value where true indicates that a value must be specified for this
+     * option setting of the option group option.</p>
+     */
+    inline bool GetIsRequired() const{ return m_isRequired; }
+
+    /**
+     * <p>Boolean value where true indicates that a value must be specified for this
+     * option setting of the option group option.</p>
+     */
+    inline void SetIsRequired(bool value) { m_isRequiredHasBeenSet = true; m_isRequired = value; }
+
+    /**
+     * <p>Boolean value where true indicates that a value must be specified for this
+     * option setting of the option group option.</p>
+     */
+    inline OptionGroupOptionSetting& WithIsRequired(bool value) { SetIsRequired(value); return *this;}
+
+
+    /**
+     * <p>The minimum DB engine version required for the corresponding allowed value
+     * for this option setting.</p>
+     */
+    inline const Aws::Vector<MinimumEngineVersionPerAllowedValue>& GetMinimumEngineVersionPerAllowedValue() const{ return m_minimumEngineVersionPerAllowedValue; }
+
+    /**
+     * <p>The minimum DB engine version required for the corresponding allowed value
+     * for this option setting.</p>
+     */
+    inline void SetMinimumEngineVersionPerAllowedValue(const Aws::Vector<MinimumEngineVersionPerAllowedValue>& value) { m_minimumEngineVersionPerAllowedValueHasBeenSet = true; m_minimumEngineVersionPerAllowedValue = value; }
+
+    /**
+     * <p>The minimum DB engine version required for the corresponding allowed value
+     * for this option setting.</p>
+     */
+    inline void SetMinimumEngineVersionPerAllowedValue(Aws::Vector<MinimumEngineVersionPerAllowedValue>&& value) { m_minimumEngineVersionPerAllowedValueHasBeenSet = true; m_minimumEngineVersionPerAllowedValue = std::move(value); }
+
+    /**
+     * <p>The minimum DB engine version required for the corresponding allowed value
+     * for this option setting.</p>
+     */
+    inline OptionGroupOptionSetting& WithMinimumEngineVersionPerAllowedValue(const Aws::Vector<MinimumEngineVersionPerAllowedValue>& value) { SetMinimumEngineVersionPerAllowedValue(value); return *this;}
+
+    /**
+     * <p>The minimum DB engine version required for the corresponding allowed value
+     * for this option setting.</p>
+     */
+    inline OptionGroupOptionSetting& WithMinimumEngineVersionPerAllowedValue(Aws::Vector<MinimumEngineVersionPerAllowedValue>&& value) { SetMinimumEngineVersionPerAllowedValue(std::move(value)); return *this;}
+
+    /**
+     * <p>The minimum DB engine version required for the corresponding allowed value
+     * for this option setting.</p>
+     */
+    inline OptionGroupOptionSetting& AddMinimumEngineVersionPerAllowedValue(const MinimumEngineVersionPerAllowedValue& value) { m_minimumEngineVersionPerAllowedValueHasBeenSet = true; m_minimumEngineVersionPerAllowedValue.push_back(value); return *this; }
+
+    /**
+     * <p>The minimum DB engine version required for the corresponding allowed value
+     * for this option setting.</p>
+     */
+    inline OptionGroupOptionSetting& AddMinimumEngineVersionPerAllowedValue(MinimumEngineVersionPerAllowedValue&& value) { m_minimumEngineVersionPerAllowedValueHasBeenSet = true; m_minimumEngineVersionPerAllowedValue.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_settingName;
@@ -268,6 +332,12 @@ namespace Model
 
     bool m_isModifiable;
     bool m_isModifiableHasBeenSet;
+
+    bool m_isRequired;
+    bool m_isRequiredHasBeenSet;
+
+    Aws::Vector<MinimumEngineVersionPerAllowedValue> m_minimumEngineVersionPerAllowedValue;
+    bool m_minimumEngineVersionPerAllowedValueHasBeenSet;
   };
 
 } // namespace Model

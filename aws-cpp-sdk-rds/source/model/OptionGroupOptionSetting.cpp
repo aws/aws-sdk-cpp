@@ -37,7 +37,10 @@ OptionGroupOptionSetting::OptionGroupOptionSetting() :
     m_applyTypeHasBeenSet(false),
     m_allowedValuesHasBeenSet(false),
     m_isModifiable(false),
-    m_isModifiableHasBeenSet(false)
+    m_isModifiableHasBeenSet(false),
+    m_isRequired(false),
+    m_isRequiredHasBeenSet(false),
+    m_minimumEngineVersionPerAllowedValueHasBeenSet(false)
 {
 }
 
@@ -48,7 +51,10 @@ OptionGroupOptionSetting::OptionGroupOptionSetting(const XmlNode& xmlNode) :
     m_applyTypeHasBeenSet(false),
     m_allowedValuesHasBeenSet(false),
     m_isModifiable(false),
-    m_isModifiableHasBeenSet(false)
+    m_isModifiableHasBeenSet(false),
+    m_isRequired(false),
+    m_isRequiredHasBeenSet(false),
+    m_minimumEngineVersionPerAllowedValueHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -95,6 +101,24 @@ OptionGroupOptionSetting& OptionGroupOptionSetting::operator =(const XmlNode& xm
       m_isModifiable = StringUtils::ConvertToBool(StringUtils::Trim(isModifiableNode.GetText().c_str()).c_str());
       m_isModifiableHasBeenSet = true;
     }
+    XmlNode isRequiredNode = resultNode.FirstChild("IsRequired");
+    if(!isRequiredNode.IsNull())
+    {
+      m_isRequired = StringUtils::ConvertToBool(StringUtils::Trim(isRequiredNode.GetText().c_str()).c_str());
+      m_isRequiredHasBeenSet = true;
+    }
+    XmlNode minimumEngineVersionPerAllowedValueNode = resultNode.FirstChild("MinimumEngineVersionPerAllowedValue");
+    if(!minimumEngineVersionPerAllowedValueNode.IsNull())
+    {
+      XmlNode minimumEngineVersionPerAllowedValueMember = minimumEngineVersionPerAllowedValueNode.FirstChild("MinimumEngineVersionPerAllowedValue");
+      while(!minimumEngineVersionPerAllowedValueMember.IsNull())
+      {
+        m_minimumEngineVersionPerAllowedValue.push_back(minimumEngineVersionPerAllowedValueMember);
+        minimumEngineVersionPerAllowedValueMember = minimumEngineVersionPerAllowedValueMember.NextNode("MinimumEngineVersionPerAllowedValue");
+      }
+
+      m_minimumEngineVersionPerAllowedValueHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -132,6 +156,22 @@ void OptionGroupOptionSetting::OutputToStream(Aws::OStream& oStream, const char*
       oStream << location << index << locationValue << ".IsModifiable=" << std::boolalpha << m_isModifiable << "&";
   }
 
+  if(m_isRequiredHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IsRequired=" << std::boolalpha << m_isRequired << "&";
+  }
+
+  if(m_minimumEngineVersionPerAllowedValueHasBeenSet)
+  {
+      unsigned minimumEngineVersionPerAllowedValueIdx = 1;
+      for(auto& item : m_minimumEngineVersionPerAllowedValue)
+      {
+        Aws::StringStream minimumEngineVersionPerAllowedValueSs;
+        minimumEngineVersionPerAllowedValueSs << location << index << locationValue << ".MinimumEngineVersionPerAllowedValue." << minimumEngineVersionPerAllowedValueIdx++;
+        item.OutputToStream(oStream, minimumEngineVersionPerAllowedValueSs.str().c_str());
+      }
+  }
+
 }
 
 void OptionGroupOptionSetting::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -159,6 +199,20 @@ void OptionGroupOptionSetting::OutputToStream(Aws::OStream& oStream, const char*
   if(m_isModifiableHasBeenSet)
   {
       oStream << location << ".IsModifiable=" << std::boolalpha << m_isModifiable << "&";
+  }
+  if(m_isRequiredHasBeenSet)
+  {
+      oStream << location << ".IsRequired=" << std::boolalpha << m_isRequired << "&";
+  }
+  if(m_minimumEngineVersionPerAllowedValueHasBeenSet)
+  {
+      unsigned minimumEngineVersionPerAllowedValueIdx = 1;
+      for(auto& item : m_minimumEngineVersionPerAllowedValue)
+      {
+        Aws::StringStream minimumEngineVersionPerAllowedValueSs;
+        minimumEngineVersionPerAllowedValueSs << location <<  ".MinimumEngineVersionPerAllowedValue." << minimumEngineVersionPerAllowedValueIdx++;
+        item.OutputToStream(oStream, minimumEngineVersionPerAllowedValueSs.str().c_str());
+      }
   }
 }
 
