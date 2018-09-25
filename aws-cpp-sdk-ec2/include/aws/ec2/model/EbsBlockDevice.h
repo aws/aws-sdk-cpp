@@ -229,25 +229,37 @@ namespace Model
 
     /**
      * <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be
-     * attached to instances that support Amazon EBS encryption. If you are creating a
-     * volume from a snapshot, you can't specify an encryption value. This is because
-     * only blank volumes can be encrypted on creation.</p>
+     * attached to instances that support Amazon EBS encryption. </p> <p>If you are
+     * creating a volume from a snapshot, you cannot specify an encryption value. This
+     * is because only blank volumes can be encrypted on creation. If you are creating
+     * a snapshot from an existing EBS volume, you cannot specify an encryption value
+     * that differs from that of the EBS volume. We recommend that you omit the
+     * encryption value from the block device mappings when creating an image from an
+     * instance.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
      * <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be
-     * attached to instances that support Amazon EBS encryption. If you are creating a
-     * volume from a snapshot, you can't specify an encryption value. This is because
-     * only blank volumes can be encrypted on creation.</p>
+     * attached to instances that support Amazon EBS encryption. </p> <p>If you are
+     * creating a volume from a snapshot, you cannot specify an encryption value. This
+     * is because only blank volumes can be encrypted on creation. If you are creating
+     * a snapshot from an existing EBS volume, you cannot specify an encryption value
+     * that differs from that of the EBS volume. We recommend that you omit the
+     * encryption value from the block device mappings when creating an image from an
+     * instance.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
      * <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be
-     * attached to instances that support Amazon EBS encryption. If you are creating a
-     * volume from a snapshot, you can't specify an encryption value. This is because
-     * only blank volumes can be encrypted on creation.</p>
+     * attached to instances that support Amazon EBS encryption. </p> <p>If you are
+     * creating a volume from a snapshot, you cannot specify an encryption value. This
+     * is because only blank volumes can be encrypted on creation. If you are creating
+     * a snapshot from an existing EBS volume, you cannot specify an encryption value
+     * that differs from that of the EBS volume. We recommend that you omit the
+     * encryption value from the block device mappings when creating an image from an
+     * instance.</p>
      */
     inline EbsBlockDevice& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 

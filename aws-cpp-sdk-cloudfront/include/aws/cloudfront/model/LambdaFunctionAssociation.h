@@ -196,24 +196,27 @@ namespace Model
     /**
      * <p>A flag that allows a Lambda function to have read access to the body content.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/">Accessing
-     * Body Content</a> in the Amazon CloudFront Developer Guide.</p>
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+     * the Request Body by Choosing the Include Body Option</a> in the Amazon
+     * CloudFront Developer Guide.</p>
      */
     inline bool GetIncludeBody() const{ return m_includeBody; }
 
     /**
      * <p>A flag that allows a Lambda function to have read access to the body content.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/">Accessing
-     * Body Content</a> in the Amazon CloudFront Developer Guide.</p>
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+     * the Request Body by Choosing the Include Body Option</a> in the Amazon
+     * CloudFront Developer Guide.</p>
      */
     inline void SetIncludeBody(bool value) { m_includeBodyHasBeenSet = true; m_includeBody = value; }
 
     /**
      * <p>A flag that allows a Lambda function to have read access to the body content.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/">Accessing
-     * Body Content</a> in the Amazon CloudFront Developer Guide.</p>
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing
+     * the Request Body by Choosing the Include Body Option</a> in the Amazon
+     * CloudFront Developer Guide.</p>
      */
     inline LambdaFunctionAssociation& WithIncludeBody(bool value) { SetIncludeBody(value); return *this;}
 

@@ -51,43 +51,43 @@ namespace Model
 
 
     /**
-     * <p>The fully-qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of the on-premises directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The fully-qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of the on-premises directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The fully-qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of the on-premises directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The fully-qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of the on-premises directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The fully-qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of the on-premises directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline ConnectDirectoryRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The fully-qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of the on-premises directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline ConnectDirectoryRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The fully-qualified name of the on-premises directory, such as
+     * <p>The fully qualified name of the on-premises directory, such as
      * <code>corp.example.com</code>.</p>
      */
     inline ConnectDirectoryRequest& WithName(const char* value) { SetName(value); return *this;}

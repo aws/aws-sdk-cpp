@@ -157,37 +157,37 @@ namespace Model
 
 
     /**
-     * <p>Not currently used.</p>
+     * <p>Required for enabling RADIUS on the directory.</p>
      */
     inline const Aws::String& GetSharedSecret() const{ return m_sharedSecret; }
 
     /**
-     * <p>Not currently used.</p>
+     * <p>Required for enabling RADIUS on the directory.</p>
      */
     inline void SetSharedSecret(const Aws::String& value) { m_sharedSecretHasBeenSet = true; m_sharedSecret = value; }
 
     /**
-     * <p>Not currently used.</p>
+     * <p>Required for enabling RADIUS on the directory.</p>
      */
     inline void SetSharedSecret(Aws::String&& value) { m_sharedSecretHasBeenSet = true; m_sharedSecret = std::move(value); }
 
     /**
-     * <p>Not currently used.</p>
+     * <p>Required for enabling RADIUS on the directory.</p>
      */
     inline void SetSharedSecret(const char* value) { m_sharedSecretHasBeenSet = true; m_sharedSecret.assign(value); }
 
     /**
-     * <p>Not currently used.</p>
+     * <p>Required for enabling RADIUS on the directory.</p>
      */
     inline RadiusSettings& WithSharedSecret(const Aws::String& value) { SetSharedSecret(value); return *this;}
 
     /**
-     * <p>Not currently used.</p>
+     * <p>Required for enabling RADIUS on the directory.</p>
      */
     inline RadiusSettings& WithSharedSecret(Aws::String&& value) { SetSharedSecret(std::move(value)); return *this;}
 
     /**
-     * <p>Not currently used.</p>
+     * <p>Required for enabling RADIUS on the directory.</p>
      */
     inline RadiusSettings& WithSharedSecret(const char* value) { SetSharedSecret(value); return *this;}
 

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <aws/ec2/model/RouteTable.h>
 #include <utility>
@@ -36,6 +37,11 @@ namespace EC2
 {
 namespace Model
 {
+  /**
+   * <p>Contains the output of DescribeRouteTables.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTablesResult">AWS
+   * API Reference</a></p>
+   */
   class AWS_EC2_API DescribeRouteTablesResponse
   {
   public:
@@ -80,6 +86,49 @@ namespace Model
     inline DescribeRouteTablesResponse& AddRouteTables(RouteTable&& value) { m_routeTables.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline DescribeRouteTablesResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline DescribeRouteTablesResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token to use to retrieve the next page of results. This value is
+     * <code>null</code> when there are no more results to return.</p>
+     */
+    inline DescribeRouteTablesResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -98,6 +147,8 @@ namespace Model
   private:
 
     Aws::Vector<RouteTable> m_routeTables;
+
+    Aws::String m_nextToken;
 
     ResponseMetadata m_responseMetadata;
   };

@@ -33,6 +33,7 @@ namespace Aws
         static const int SimpleAD_HASH = HashingUtils::HashString("SimpleAD");
         static const int ADConnector_HASH = HashingUtils::HashString("ADConnector");
         static const int MicrosoftAD_HASH = HashingUtils::HashString("MicrosoftAD");
+        static const int SharedMicrosoftAD_HASH = HashingUtils::HashString("SharedMicrosoftAD");
 
 
         DirectoryType GetDirectoryTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == MicrosoftAD_HASH)
           {
             return DirectoryType::MicrosoftAD;
+          }
+          else if (hashCode == SharedMicrosoftAD_HASH)
+          {
+            return DirectoryType::SharedMicrosoftAD;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "ADConnector";
           case DirectoryType::MicrosoftAD:
             return "MicrosoftAD";
+          case DirectoryType::SharedMicrosoftAD:
+            return "SharedMicrosoftAD";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

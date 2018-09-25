@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     SimpleAD,
     ADConnector,
-    MicrosoftAD
+    MicrosoftAD,
+    SharedMicrosoftAD
   };
 
 namespace DirectoryTypeMapper

@@ -27,6 +27,7 @@
 #include <aws/ds/DirectoryServiceClient.h>
 #include <aws/ds/DirectoryServiceEndpoint.h>
 #include <aws/ds/DirectoryServiceErrorMarshaller.h>
+#include <aws/ds/model/AcceptSharedDirectoryRequest.h>
 #include <aws/ds/model/AddIpRoutesRequest.h>
 #include <aws/ds/model/AddTagsToResourceRequest.h>
 #include <aws/ds/model/CancelSchemaExtensionRequest.h>
@@ -49,6 +50,7 @@
 #include <aws/ds/model/DescribeDirectoriesRequest.h>
 #include <aws/ds/model/DescribeDomainControllersRequest.h>
 #include <aws/ds/model/DescribeEventTopicsRequest.h>
+#include <aws/ds/model/DescribeSharedDirectoriesRequest.h>
 #include <aws/ds/model/DescribeSnapshotsRequest.h>
 #include <aws/ds/model/DescribeTrustsRequest.h>
 #include <aws/ds/model/DisableRadiusRequest.h>
@@ -62,11 +64,14 @@
 #include <aws/ds/model/ListSchemaExtensionsRequest.h>
 #include <aws/ds/model/ListTagsForResourceRequest.h>
 #include <aws/ds/model/RegisterEventTopicRequest.h>
+#include <aws/ds/model/RejectSharedDirectoryRequest.h>
 #include <aws/ds/model/RemoveIpRoutesRequest.h>
 #include <aws/ds/model/RemoveTagsFromResourceRequest.h>
 #include <aws/ds/model/ResetUserPasswordRequest.h>
 #include <aws/ds/model/RestoreFromSnapshotRequest.h>
+#include <aws/ds/model/ShareDirectoryRequest.h>
 #include <aws/ds/model/StartSchemaExtensionRequest.h>
+#include <aws/ds/model/UnshareDirectoryRequest.h>
 #include <aws/ds/model/UpdateConditionalForwarderRequest.h>
 #include <aws/ds/model/UpdateNumberOfDomainControllersRequest.h>
 #include <aws/ds/model/UpdateRadiusRequest.h>
@@ -134,6 +139,41 @@ void DirectoryServiceClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+AcceptSharedDirectoryOutcome DirectoryServiceClient::AcceptSharedDirectory(const AcceptSharedDirectoryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AcceptSharedDirectoryOutcome(AcceptSharedDirectoryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AcceptSharedDirectoryOutcome(outcome.GetError());
+  }
+}
+
+AcceptSharedDirectoryOutcomeCallable DirectoryServiceClient::AcceptSharedDirectoryCallable(const AcceptSharedDirectoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AcceptSharedDirectoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptSharedDirectory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::AcceptSharedDirectoryAsync(const AcceptSharedDirectoryRequest& request, const AcceptSharedDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AcceptSharedDirectoryAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::AcceptSharedDirectoryAsyncHelper(const AcceptSharedDirectoryRequest& request, const AcceptSharedDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AcceptSharedDirectory(request), context);
 }
 
 AddIpRoutesOutcome DirectoryServiceClient::AddIpRoutes(const AddIpRoutesRequest& request) const
@@ -906,6 +946,41 @@ void DirectoryServiceClient::DescribeEventTopicsAsyncHelper(const DescribeEventT
   handler(this, request, DescribeEventTopics(request), context);
 }
 
+DescribeSharedDirectoriesOutcome DirectoryServiceClient::DescribeSharedDirectories(const DescribeSharedDirectoriesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeSharedDirectoriesOutcome(DescribeSharedDirectoriesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeSharedDirectoriesOutcome(outcome.GetError());
+  }
+}
+
+DescribeSharedDirectoriesOutcomeCallable DirectoryServiceClient::DescribeSharedDirectoriesCallable(const DescribeSharedDirectoriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSharedDirectoriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSharedDirectories(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::DescribeSharedDirectoriesAsync(const DescribeSharedDirectoriesRequest& request, const DescribeSharedDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSharedDirectoriesAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::DescribeSharedDirectoriesAsyncHelper(const DescribeSharedDirectoriesRequest& request, const DescribeSharedDirectoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSharedDirectories(request), context);
+}
+
 DescribeSnapshotsOutcome DirectoryServiceClient::DescribeSnapshots(const DescribeSnapshotsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1361,6 +1436,41 @@ void DirectoryServiceClient::RegisterEventTopicAsyncHelper(const RegisterEventTo
   handler(this, request, RegisterEventTopic(request), context);
 }
 
+RejectSharedDirectoryOutcome DirectoryServiceClient::RejectSharedDirectory(const RejectSharedDirectoryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RejectSharedDirectoryOutcome(RejectSharedDirectoryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RejectSharedDirectoryOutcome(outcome.GetError());
+  }
+}
+
+RejectSharedDirectoryOutcomeCallable DirectoryServiceClient::RejectSharedDirectoryCallable(const RejectSharedDirectoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RejectSharedDirectoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectSharedDirectory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::RejectSharedDirectoryAsync(const RejectSharedDirectoryRequest& request, const RejectSharedDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RejectSharedDirectoryAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::RejectSharedDirectoryAsyncHelper(const RejectSharedDirectoryRequest& request, const RejectSharedDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RejectSharedDirectory(request), context);
+}
+
 RemoveIpRoutesOutcome DirectoryServiceClient::RemoveIpRoutes(const RemoveIpRoutesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1501,6 +1611,41 @@ void DirectoryServiceClient::RestoreFromSnapshotAsyncHelper(const RestoreFromSna
   handler(this, request, RestoreFromSnapshot(request), context);
 }
 
+ShareDirectoryOutcome DirectoryServiceClient::ShareDirectory(const ShareDirectoryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ShareDirectoryOutcome(ShareDirectoryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ShareDirectoryOutcome(outcome.GetError());
+  }
+}
+
+ShareDirectoryOutcomeCallable DirectoryServiceClient::ShareDirectoryCallable(const ShareDirectoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ShareDirectoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ShareDirectory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::ShareDirectoryAsync(const ShareDirectoryRequest& request, const ShareDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ShareDirectoryAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::ShareDirectoryAsyncHelper(const ShareDirectoryRequest& request, const ShareDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ShareDirectory(request), context);
+}
+
 StartSchemaExtensionOutcome DirectoryServiceClient::StartSchemaExtension(const StartSchemaExtensionRequest& request) const
 {
   Aws::StringStream ss;
@@ -1534,6 +1679,41 @@ void DirectoryServiceClient::StartSchemaExtensionAsync(const StartSchemaExtensio
 void DirectoryServiceClient::StartSchemaExtensionAsyncHelper(const StartSchemaExtensionRequest& request, const StartSchemaExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartSchemaExtension(request), context);
+}
+
+UnshareDirectoryOutcome DirectoryServiceClient::UnshareDirectory(const UnshareDirectoryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UnshareDirectoryOutcome(UnshareDirectoryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UnshareDirectoryOutcome(outcome.GetError());
+  }
+}
+
+UnshareDirectoryOutcomeCallable DirectoryServiceClient::UnshareDirectoryCallable(const UnshareDirectoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UnshareDirectoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnshareDirectory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::UnshareDirectoryAsync(const UnshareDirectoryRequest& request, const UnshareDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UnshareDirectoryAsyncHelper( request, handler, context ); } );
+}
+
+void DirectoryServiceClient::UnshareDirectoryAsyncHelper(const UnshareDirectoryRequest& request, const UnshareDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UnshareDirectory(request), context);
 }
 
 UpdateConditionalForwarderOutcome DirectoryServiceClient::UpdateConditionalForwarder(const UpdateConditionalForwarderRequest& request) const

@@ -131,49 +131,49 @@ namespace Model
 
     /**
      * <p>The password for the directory administrator. The directory creation process
-     * creates a directory administrator account with the username
+     * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
      * <p>The password for the directory administrator. The directory creation process
-     * creates a directory administrator account with the username
+     * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
      * <p>The password for the directory administrator. The directory creation process
-     * creates a directory administrator account with the username
+     * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
      * <p>The password for the directory administrator. The directory creation process
-     * creates a directory administrator account with the username
+     * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /**
      * <p>The password for the directory administrator. The directory creation process
-     * creates a directory administrator account with the username
+     * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p>
      */
     inline CreateDirectoryRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
      * <p>The password for the directory administrator. The directory creation process
-     * creates a directory administrator account with the username
+     * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p>
      */
     inline CreateDirectoryRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password for the directory administrator. The directory creation process
-     * creates a directory administrator account with the username
+     * creates a directory administrator account with the user name
      * <code>Administrator</code> and this password.</p>
      */
     inline CreateDirectoryRequest& WithPassword(const char* value) { SetPassword(value); return *this;}

@@ -88,37 +88,37 @@ namespace Model
 
 
     /**
-     * <p>The username of the user whose password will be reset.</p>
+     * <p>The user name of the user whose password will be reset.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The username of the user whose password will be reset.</p>
+     * <p>The user name of the user whose password will be reset.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The username of the user whose password will be reset.</p>
+     * <p>The user name of the user whose password will be reset.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The username of the user whose password will be reset.</p>
+     * <p>The user name of the user whose password will be reset.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The username of the user whose password will be reset.</p>
+     * <p>The user name of the user whose password will be reset.</p>
      */
     inline ResetUserPasswordRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The username of the user whose password will be reset.</p>
+     * <p>The user name of the user whose password will be reset.</p>
      */
     inline ResetUserPasswordRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The username of the user whose password will be reset.</p>
+     * <p>The user name of the user whose password will be reset.</p>
      */
     inline ResetUserPasswordRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

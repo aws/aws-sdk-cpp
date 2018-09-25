@@ -115,44 +115,44 @@ namespace Model
 
 
     /**
-     * <p>The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to
-     * <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous
+     * call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to
-     * <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous
+     * call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to
-     * <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous
+     * call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to
-     * <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous
+     * call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to
-     * <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous
+     * call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
      */
     inline DescribeDirectoriesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to
-     * <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous
+     * call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
      */
     inline DescribeDirectoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <i>DescribeDirectoriesResult.NextToken</i> value from a previous call to
-     * <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
+     * <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous
+     * call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
      */
     inline DescribeDirectoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
