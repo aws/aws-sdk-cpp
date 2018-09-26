@@ -41,7 +41,9 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_backtrackWindowHasBeenSet(false),
     m_cloudwatchLogsExportConfigurationHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_scalingConfigurationHasBeenSet(false)
+    m_scalingConfigurationHasBeenSet(false),
+    m_deletionProtection(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -133,6 +135,11 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_scalingConfigurationHasBeenSet)
   {
     m_scalingConfiguration.OutputToStream(ss, "ScalingConfiguration");
+  }
+
+  if(m_deletionProtectionHasBeenSet)
+  {
+    ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -1389,6 +1389,28 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
 
+
+    /**
+     * <p>Indicates if the DB cluster should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * </p>
+     */
+    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p>Indicates if the DB cluster should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * </p>
+     */
+    inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+
+    /**
+     * <p>Indicates if the DB cluster should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * </p>
+     */
+    inline RestoreDBClusterFromS3Request& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -1471,6 +1493,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
     bool m_enableCloudwatchLogsExportsHasBeenSet;
+
+    bool m_deletionProtection;
+    bool m_deletionProtectionHasBeenSet;
   };
 
 } // namespace Model

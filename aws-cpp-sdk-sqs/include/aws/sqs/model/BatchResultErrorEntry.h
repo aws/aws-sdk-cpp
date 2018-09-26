@@ -34,9 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>This is used in the responses of batch API to give a detailed description of
-   * the result of an action on each entry in the request.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Gives a detailed description of the result of an action on each entry in the
+   * request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/BatchResultErrorEntry">AWS
    * API Reference</a></p>
    */
@@ -88,17 +87,17 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the error happened due to the sender's fault.</p>
+     * <p>Specifies whether the error happened due to the producer.</p>
      */
     inline bool GetSenderFault() const{ return m_senderFault; }
 
     /**
-     * <p>Specifies whether the error happened due to the sender's fault.</p>
+     * <p>Specifies whether the error happened due to the producer.</p>
      */
     inline void SetSenderFault(bool value) { m_senderFaultHasBeenSet = true; m_senderFault = value; }
 
     /**
-     * <p>Specifies whether the error happened due to the sender's fault.</p>
+     * <p>Specifies whether the error happened due to the producer.</p>
      */
     inline BatchResultErrorEntry& WithSenderFault(bool value) { SetSenderFault(value); return *this;}
 

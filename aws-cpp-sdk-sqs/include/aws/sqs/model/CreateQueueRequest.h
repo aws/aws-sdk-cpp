@@ -56,7 +56,7 @@ namespace Model
      * <li> <p>A queue name can have up to 80 characters.</p> </li> <li> <p>Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
      * (<code>_</code>).</p> </li> <li> <p>A FIFO queue name must end with the
-     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue names are
+     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue URLs and names are
      * case-sensitive.</p>
      */
     inline const Aws::String& GetQueueName() const{ return m_queueName; }
@@ -66,7 +66,7 @@ namespace Model
      * <li> <p>A queue name can have up to 80 characters.</p> </li> <li> <p>Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
      * (<code>_</code>).</p> </li> <li> <p>A FIFO queue name must end with the
-     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue names are
+     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue URLs and names are
      * case-sensitive.</p>
      */
     inline void SetQueueName(const Aws::String& value) { m_queueNameHasBeenSet = true; m_queueName = value; }
@@ -76,7 +76,7 @@ namespace Model
      * <li> <p>A queue name can have up to 80 characters.</p> </li> <li> <p>Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
      * (<code>_</code>).</p> </li> <li> <p>A FIFO queue name must end with the
-     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue names are
+     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue URLs and names are
      * case-sensitive.</p>
      */
     inline void SetQueueName(Aws::String&& value) { m_queueNameHasBeenSet = true; m_queueName = std::move(value); }
@@ -86,7 +86,7 @@ namespace Model
      * <li> <p>A queue name can have up to 80 characters.</p> </li> <li> <p>Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
      * (<code>_</code>).</p> </li> <li> <p>A FIFO queue name must end with the
-     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue names are
+     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue URLs and names are
      * case-sensitive.</p>
      */
     inline void SetQueueName(const char* value) { m_queueNameHasBeenSet = true; m_queueName.assign(value); }
@@ -96,7 +96,7 @@ namespace Model
      * <li> <p>A queue name can have up to 80 characters.</p> </li> <li> <p>Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
      * (<code>_</code>).</p> </li> <li> <p>A FIFO queue name must end with the
-     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue names are
+     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue URLs and names are
      * case-sensitive.</p>
      */
     inline CreateQueueRequest& WithQueueName(const Aws::String& value) { SetQueueName(value); return *this;}
@@ -106,7 +106,7 @@ namespace Model
      * <li> <p>A queue name can have up to 80 characters.</p> </li> <li> <p>Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
      * (<code>_</code>).</p> </li> <li> <p>A FIFO queue name must end with the
-     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue names are
+     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue URLs and names are
      * case-sensitive.</p>
      */
     inline CreateQueueRequest& WithQueueName(Aws::String&& value) { SetQueueName(std::move(value)); return *this;}
@@ -116,7 +116,7 @@ namespace Model
      * <li> <p>A queue name can have up to 80 characters.</p> </li> <li> <p>Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
      * (<code>_</code>).</p> </li> <li> <p>A FIFO queue name must end with the
-     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue names are
+     * <code>.fifo</code> suffix.</p> </li> </ul> <p>Queue URLs and names are
      * case-sensitive.</p>
      */
     inline CreateQueueRequest& WithQueueName(const char* value) { SetQueueName(value); return *this;}
@@ -128,37 +128,38 @@ namespace Model
      * the <code>CreateQueue</code> action uses:</p> <ul> <li> <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the
      * delivery of all messages in the queue is delayed. Valid values: An integer from
-     * 0 to 900 seconds (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * 0 to 900 seconds (15 minutes). Default: 0. </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
-     * (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p> </li>
-     * <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds,
-     * for which Amazon SQS retains a message. Valid values: An integer from 60 seconds
-     * (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4 days). </p>
-     * </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For
-     * more information about policy structure, see <a
+     * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
+     * <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds, for
+     * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For more
+     * information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
-     * arrive. Valid values: An integer from 0 to 20 (seconds). The default is 0
-     * (zero). </p> </li> <li> <p> <code>RedrivePolicy</code> - The string that
-     * includes the parameters for the dead-letter queue functionality of the source
-     * queue. For more information about the redrive policy and dead-letter queues, see
-     * <a
+     * arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+     * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
+     * for the dead-letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
-     * queue. Similarly, the dead-letter queue of a standard queue must also be a
-     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
-     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
-     * hours). The default is 30. For more information about the visibility timeout,
-     * see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
+     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
+     * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
+     * more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
@@ -176,9 +177,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
-     * hours). The default is 300 (5 minutes). A shorter time period provides better
-     * security but results in more calls to KMS which might incur charges after Free
-     * Tier. For more information, see <a
+     * hours). Default: 300 (5 minutes). A shorter time period provides better security
+     * but results in more calls to KMS which might incur charges after Free Tier. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attributes apply only to <a
@@ -214,14 +215,7 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
-     * </p> </li> </ul>
+     * delivered. </p> </li> </ul> </li> </ul>
      */
     inline const Aws::Map<QueueAttributeName, Aws::String>& GetAttributes() const{ return m_attributes; }
 
@@ -231,37 +225,38 @@ namespace Model
      * the <code>CreateQueue</code> action uses:</p> <ul> <li> <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the
      * delivery of all messages in the queue is delayed. Valid values: An integer from
-     * 0 to 900 seconds (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * 0 to 900 seconds (15 minutes). Default: 0. </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
-     * (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p> </li>
-     * <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds,
-     * for which Amazon SQS retains a message. Valid values: An integer from 60 seconds
-     * (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4 days). </p>
-     * </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For
-     * more information about policy structure, see <a
+     * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
+     * <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds, for
+     * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For more
+     * information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
-     * arrive. Valid values: An integer from 0 to 20 (seconds). The default is 0
-     * (zero). </p> </li> <li> <p> <code>RedrivePolicy</code> - The string that
-     * includes the parameters for the dead-letter queue functionality of the source
-     * queue. For more information about the redrive policy and dead-letter queues, see
-     * <a
+     * arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+     * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
+     * for the dead-letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
-     * queue. Similarly, the dead-letter queue of a standard queue must also be a
-     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
-     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
-     * hours). The default is 30. For more information about the visibility timeout,
-     * see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
+     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
+     * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
+     * more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
@@ -279,9 +274,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
-     * hours). The default is 300 (5 minutes). A shorter time period provides better
-     * security but results in more calls to KMS which might incur charges after Free
-     * Tier. For more information, see <a
+     * hours). Default: 300 (5 minutes). A shorter time period provides better security
+     * but results in more calls to KMS which might incur charges after Free Tier. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attributes apply only to <a
@@ -317,14 +312,7 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
-     * </p> </li> </ul>
+     * delivered. </p> </li> </ul> </li> </ul>
      */
     inline void SetAttributes(const Aws::Map<QueueAttributeName, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -334,37 +322,38 @@ namespace Model
      * the <code>CreateQueue</code> action uses:</p> <ul> <li> <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the
      * delivery of all messages in the queue is delayed. Valid values: An integer from
-     * 0 to 900 seconds (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * 0 to 900 seconds (15 minutes). Default: 0. </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
-     * (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p> </li>
-     * <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds,
-     * for which Amazon SQS retains a message. Valid values: An integer from 60 seconds
-     * (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4 days). </p>
-     * </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For
-     * more information about policy structure, see <a
+     * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
+     * <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds, for
+     * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For more
+     * information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
-     * arrive. Valid values: An integer from 0 to 20 (seconds). The default is 0
-     * (zero). </p> </li> <li> <p> <code>RedrivePolicy</code> - The string that
-     * includes the parameters for the dead-letter queue functionality of the source
-     * queue. For more information about the redrive policy and dead-letter queues, see
-     * <a
+     * arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+     * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
+     * for the dead-letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
-     * queue. Similarly, the dead-letter queue of a standard queue must also be a
-     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
-     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
-     * hours). The default is 30. For more information about the visibility timeout,
-     * see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
+     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
+     * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
+     * more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
@@ -382,9 +371,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
-     * hours). The default is 300 (5 minutes). A shorter time period provides better
-     * security but results in more calls to KMS which might incur charges after Free
-     * Tier. For more information, see <a
+     * hours). Default: 300 (5 minutes). A shorter time period provides better security
+     * but results in more calls to KMS which might incur charges after Free Tier. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attributes apply only to <a
@@ -420,14 +409,7 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
-     * </p> </li> </ul>
+     * delivered. </p> </li> </ul> </li> </ul>
      */
     inline void SetAttributes(Aws::Map<QueueAttributeName, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
@@ -437,37 +419,38 @@ namespace Model
      * the <code>CreateQueue</code> action uses:</p> <ul> <li> <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the
      * delivery of all messages in the queue is delayed. Valid values: An integer from
-     * 0 to 900 seconds (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * 0 to 900 seconds (15 minutes). Default: 0. </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
-     * (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p> </li>
-     * <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds,
-     * for which Amazon SQS retains a message. Valid values: An integer from 60 seconds
-     * (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4 days). </p>
-     * </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For
-     * more information about policy structure, see <a
+     * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
+     * <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds, for
+     * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For more
+     * information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
-     * arrive. Valid values: An integer from 0 to 20 (seconds). The default is 0
-     * (zero). </p> </li> <li> <p> <code>RedrivePolicy</code> - The string that
-     * includes the parameters for the dead-letter queue functionality of the source
-     * queue. For more information about the redrive policy and dead-letter queues, see
-     * <a
+     * arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+     * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
+     * for the dead-letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
-     * queue. Similarly, the dead-letter queue of a standard queue must also be a
-     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
-     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
-     * hours). The default is 30. For more information about the visibility timeout,
-     * see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
+     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
+     * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
+     * more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
@@ -485,9 +468,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
-     * hours). The default is 300 (5 minutes). A shorter time period provides better
-     * security but results in more calls to KMS which might incur charges after Free
-     * Tier. For more information, see <a
+     * hours). Default: 300 (5 minutes). A shorter time period provides better security
+     * but results in more calls to KMS which might incur charges after Free Tier. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attributes apply only to <a
@@ -523,14 +506,7 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
-     * </p> </li> </ul>
+     * delivered. </p> </li> </ul> </li> </ul>
      */
     inline CreateQueueRequest& WithAttributes(const Aws::Map<QueueAttributeName, Aws::String>& value) { SetAttributes(value); return *this;}
 
@@ -540,37 +516,38 @@ namespace Model
      * the <code>CreateQueue</code> action uses:</p> <ul> <li> <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the
      * delivery of all messages in the queue is delayed. Valid values: An integer from
-     * 0 to 900 seconds (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * 0 to 900 seconds (15 minutes). Default: 0. </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
-     * (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p> </li>
-     * <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds,
-     * for which Amazon SQS retains a message. Valid values: An integer from 60 seconds
-     * (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4 days). </p>
-     * </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For
-     * more information about policy structure, see <a
+     * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
+     * <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds, for
+     * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For more
+     * information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
-     * arrive. Valid values: An integer from 0 to 20 (seconds). The default is 0
-     * (zero). </p> </li> <li> <p> <code>RedrivePolicy</code> - The string that
-     * includes the parameters for the dead-letter queue functionality of the source
-     * queue. For more information about the redrive policy and dead-letter queues, see
-     * <a
+     * arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+     * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
+     * for the dead-letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
-     * queue. Similarly, the dead-letter queue of a standard queue must also be a
-     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
-     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
-     * hours). The default is 30. For more information about the visibility timeout,
-     * see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
+     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
+     * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
+     * more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
@@ -588,9 +565,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
-     * hours). The default is 300 (5 minutes). A shorter time period provides better
-     * security but results in more calls to KMS which might incur charges after Free
-     * Tier. For more information, see <a
+     * hours). Default: 300 (5 minutes). A shorter time period provides better security
+     * but results in more calls to KMS which might incur charges after Free Tier. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attributes apply only to <a
@@ -626,14 +603,7 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
-     * </p> </li> </ul>
+     * delivered. </p> </li> </ul> </li> </ul>
      */
     inline CreateQueueRequest& WithAttributes(Aws::Map<QueueAttributeName, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -643,37 +613,38 @@ namespace Model
      * the <code>CreateQueue</code> action uses:</p> <ul> <li> <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the
      * delivery of all messages in the queue is delayed. Valid values: An integer from
-     * 0 to 900 seconds (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * 0 to 900 seconds (15 minutes). Default: 0. </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
-     * (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p> </li>
-     * <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds,
-     * for which Amazon SQS retains a message. Valid values: An integer from 60 seconds
-     * (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4 days). </p>
-     * </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For
-     * more information about policy structure, see <a
+     * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
+     * <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds, for
+     * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For more
+     * information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
-     * arrive. Valid values: An integer from 0 to 20 (seconds). The default is 0
-     * (zero). </p> </li> <li> <p> <code>RedrivePolicy</code> - The string that
-     * includes the parameters for the dead-letter queue functionality of the source
-     * queue. For more information about the redrive policy and dead-letter queues, see
-     * <a
+     * arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+     * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
+     * for the dead-letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
-     * queue. Similarly, the dead-letter queue of a standard queue must also be a
-     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
-     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
-     * hours). The default is 30. For more information about the visibility timeout,
-     * see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
+     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
+     * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
+     * more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
@@ -691,9 +662,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
-     * hours). The default is 300 (5 minutes). A shorter time period provides better
-     * security but results in more calls to KMS which might incur charges after Free
-     * Tier. For more information, see <a
+     * hours). Default: 300 (5 minutes). A shorter time period provides better security
+     * but results in more calls to KMS which might incur charges after Free Tier. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attributes apply only to <a
@@ -729,14 +700,7 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
-     * </p> </li> </ul>
+     * delivered. </p> </li> </ul> </li> </ul>
      */
     inline CreateQueueRequest& AddAttributes(const QueueAttributeName& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -746,37 +710,38 @@ namespace Model
      * the <code>CreateQueue</code> action uses:</p> <ul> <li> <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the
      * delivery of all messages in the queue is delayed. Valid values: An integer from
-     * 0 to 900 seconds (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * 0 to 900 seconds (15 minutes). Default: 0. </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
-     * (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p> </li>
-     * <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds,
-     * for which Amazon SQS retains a message. Valid values: An integer from 60 seconds
-     * (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4 days). </p>
-     * </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For
-     * more information about policy structure, see <a
+     * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
+     * <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds, for
+     * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For more
+     * information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
-     * arrive. Valid values: An integer from 0 to 20 (seconds). The default is 0
-     * (zero). </p> </li> <li> <p> <code>RedrivePolicy</code> - The string that
-     * includes the parameters for the dead-letter queue functionality of the source
-     * queue. For more information about the redrive policy and dead-letter queues, see
-     * <a
+     * arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+     * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
+     * for the dead-letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
-     * queue. Similarly, the dead-letter queue of a standard queue must also be a
-     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
-     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
-     * hours). The default is 30. For more information about the visibility timeout,
-     * see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
+     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
+     * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
+     * more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
@@ -794,9 +759,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
-     * hours). The default is 300 (5 minutes). A shorter time period provides better
-     * security but results in more calls to KMS which might incur charges after Free
-     * Tier. For more information, see <a
+     * hours). Default: 300 (5 minutes). A shorter time period provides better security
+     * but results in more calls to KMS which might incur charges after Free Tier. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attributes apply only to <a
@@ -832,14 +797,7 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
-     * </p> </li> </ul>
+     * delivered. </p> </li> </ul> </li> </ul>
      */
     inline CreateQueueRequest& AddAttributes(QueueAttributeName&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -849,37 +807,38 @@ namespace Model
      * the <code>CreateQueue</code> action uses:</p> <ul> <li> <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the
      * delivery of all messages in the queue is delayed. Valid values: An integer from
-     * 0 to 900 seconds (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * 0 to 900 seconds (15 minutes). Default: 0. </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
-     * (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p> </li>
-     * <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds,
-     * for which Amazon SQS retains a message. Valid values: An integer from 60 seconds
-     * (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4 days). </p>
-     * </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For
-     * more information about policy structure, see <a
+     * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
+     * <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds, for
+     * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For more
+     * information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
-     * arrive. Valid values: An integer from 0 to 20 (seconds). The default is 0
-     * (zero). </p> </li> <li> <p> <code>RedrivePolicy</code> - The string that
-     * includes the parameters for the dead-letter queue functionality of the source
-     * queue. For more information about the redrive policy and dead-letter queues, see
-     * <a
+     * arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+     * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
+     * for the dead-letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
-     * queue. Similarly, the dead-letter queue of a standard queue must also be a
-     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
-     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
-     * hours). The default is 30. For more information about the visibility timeout,
-     * see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
+     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
+     * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
+     * more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
@@ -897,9 +856,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
-     * hours). The default is 300 (5 minutes). A shorter time period provides better
-     * security but results in more calls to KMS which might incur charges after Free
-     * Tier. For more information, see <a
+     * hours). Default: 300 (5 minutes). A shorter time period provides better security
+     * but results in more calls to KMS which might incur charges after Free Tier. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attributes apply only to <a
@@ -935,14 +894,7 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
-     * </p> </li> </ul>
+     * delivered. </p> </li> </ul> </li> </ul>
      */
     inline CreateQueueRequest& AddAttributes(const QueueAttributeName& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -952,37 +904,38 @@ namespace Model
      * the <code>CreateQueue</code> action uses:</p> <ul> <li> <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the
      * delivery of all messages in the queue is delayed. Valid values: An integer from
-     * 0 to 900 seconds (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * 0 to 900 seconds (15 minutes). Default: 0. </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
-     * (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p> </li>
-     * <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds,
-     * for which Amazon SQS retains a message. Valid values: An integer from 60 seconds
-     * (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4 days). </p>
-     * </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For
-     * more information about policy structure, see <a
+     * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
+     * <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds, for
+     * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For more
+     * information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
-     * arrive. Valid values: An integer from 0 to 20 (seconds). The default is 0
-     * (zero). </p> </li> <li> <p> <code>RedrivePolicy</code> - The string that
-     * includes the parameters for the dead-letter queue functionality of the source
-     * queue. For more information about the redrive policy and dead-letter queues, see
-     * <a
+     * arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+     * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
+     * for the dead-letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
-     * queue. Similarly, the dead-letter queue of a standard queue must also be a
-     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
-     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
-     * hours). The default is 30. For more information about the visibility timeout,
-     * see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
+     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
+     * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
+     * more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
@@ -1000,9 +953,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
-     * hours). The default is 300 (5 minutes). A shorter time period provides better
-     * security but results in more calls to KMS which might incur charges after Free
-     * Tier. For more information, see <a
+     * hours). Default: 300 (5 minutes). A shorter time period provides better security
+     * but results in more calls to KMS which might incur charges after Free Tier. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attributes apply only to <a
@@ -1038,14 +991,7 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
-     * </p> </li> </ul>
+     * delivered. </p> </li> </ul> </li> </ul>
      */
     inline CreateQueueRequest& AddAttributes(QueueAttributeName&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -1055,37 +1001,38 @@ namespace Model
      * the <code>CreateQueue</code> action uses:</p> <ul> <li> <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the
      * delivery of all messages in the queue is delayed. Valid values: An integer from
-     * 0 to 900 seconds (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * 0 to 900 seconds (15 minutes). Default: 0. </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
-     * (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p> </li>
-     * <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds,
-     * for which Amazon SQS retains a message. Valid values: An integer from 60 seconds
-     * (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4 days). </p>
-     * </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For
-     * more information about policy structure, see <a
+     * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
+     * <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds, for
+     * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For more
+     * information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
-     * arrive. Valid values: An integer from 0 to 20 (seconds). The default is 0
-     * (zero). </p> </li> <li> <p> <code>RedrivePolicy</code> - The string that
-     * includes the parameters for the dead-letter queue functionality of the source
-     * queue. For more information about the redrive policy and dead-letter queues, see
-     * <a
+     * arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+     * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
+     * for the dead-letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
-     * queue. Similarly, the dead-letter queue of a standard queue must also be a
-     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
-     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
-     * hours). The default is 30. For more information about the visibility timeout,
-     * see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
+     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
+     * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
+     * more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
@@ -1103,9 +1050,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
-     * hours). The default is 300 (5 minutes). A shorter time period provides better
-     * security but results in more calls to KMS which might incur charges after Free
-     * Tier. For more information, see <a
+     * hours). Default: 300 (5 minutes). A shorter time period provides better security
+     * but results in more calls to KMS which might incur charges after Free Tier. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attributes apply only to <a
@@ -1141,14 +1088,7 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
-     * </p> </li> </ul>
+     * delivered. </p> </li> </ul> </li> </ul>
      */
     inline CreateQueueRequest& AddAttributes(QueueAttributeName&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -1158,37 +1098,38 @@ namespace Model
      * the <code>CreateQueue</code> action uses:</p> <ul> <li> <p>
      * <code>DelaySeconds</code> - The length of time, in seconds, for which the
      * delivery of all messages in the queue is delayed. Valid values: An integer from
-     * 0 to 900 seconds (15 minutes). The default is 0 (zero). </p> </li> <li> <p>
+     * 0 to 900 seconds (15 minutes). Default: 0. </p> </li> <li> <p>
      * <code>MaximumMessageSize</code> - The limit of how many bytes a message can
      * contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes
-     * (1 KiB) to 262,144 bytes (256 KiB). The default is 262,144 (256 KiB). </p> </li>
-     * <li> <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds,
-     * for which Amazon SQS retains a message. Valid values: An integer from 60 seconds
-     * (1 minute) to 1,209,600 seconds (14 days). The default is 345,600 (4 days). </p>
-     * </li> <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For
-     * more information about policy structure, see <a
+     * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
+     * <p> <code>MessageRetentionPeriod</code> - The length of time, in seconds, for
+     * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> - The queue's policy. A valid AWS policy. For more
+     * information about policy structure, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
      * of AWS IAM Policies</a> in the <i>Amazon IAM User Guide</i>. </p> </li> <li> <p>
      * <code>ReceiveMessageWaitTimeSeconds</code> - The length of time, in seconds, for
      * which a <code> <a>ReceiveMessage</a> </code> action waits for a message to
-     * arrive. Valid values: An integer from 0 to 20 (seconds). The default is 0
-     * (zero). </p> </li> <li> <p> <code>RedrivePolicy</code> - The string that
-     * includes the parameters for the dead-letter queue functionality of the source
-     * queue. For more information about the redrive policy and dead-letter queues, see
-     * <a
+     * arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0. </p> </li>
+     * <li> <p> <code>RedrivePolicy</code> - The string that includes the parameters
+     * for the dead-letter queue functionality of the source queue. For more
+     * information about the redrive policy and dead-letter queues, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
      * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
      * Developer Guide</i>. </p> <ul> <li> <p> <code>deadLetterTargetArn</code> - The
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> <note> <p>The dead-letter queue of a FIFO queue must also be a FIFO
-     * queue. Similarly, the dead-letter queue of a standard queue must also be a
-     * standard queue.</p> </note> </li> <li> <p> <code>VisibilityTimeout</code> - The
-     * visibility timeout for the queue. Valid values: An integer from 0 to 43,200 (12
-     * hours). The default is 30. For more information about the visibility timeout,
-     * see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> <note> <p>The dead-letter queue of a FIFO
+     * queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard
+     * queue must also be a standard queue.</p> </note> </li> <li> <p>
+     * <code>VisibilityTimeout</code> - The visibility timeout for the queue, in
+     * seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For
+     * more information about the visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> </li>
      * </ul> <p>The following attributes apply only to <a
@@ -1206,9 +1147,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
      * key</a> to encrypt or decrypt messages before calling AWS KMS again. An integer
      * representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24
-     * hours). The default is 300 (5 minutes). A shorter time period provides better
-     * security but results in more calls to KMS which might incur charges after Free
-     * Tier. For more information, see <a
+     * hours). Default: 300 (5 minutes). A shorter time period provides better security
+     * but results in more calls to KMS which might incur charges after Free Tier. For
+     * more information, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
      * Does the Data Key Reuse Period Work?</a>. </p> </li> </ul> <p>The following
      * attributes apply only to <a
@@ -1244,14 +1185,7 @@ namespace Model
      * then another message with a <code>MessageDeduplicationId</code> that is the same
      * as the one generated for the first <code>MessageDeduplicationId</code>, the two
      * messages are treated as duplicates and only one copy of the message is
-     * delivered. </p> </li> </ul> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>LastModifiedTimestamp</code> </p> </li> <li> <p> <code>QueueArn</code>
-     * </p> </li> </ul>
+     * delivered. </p> </li> </ul> </li> </ul>
      */
     inline CreateQueueRequest& AddAttributes(const QueueAttributeName& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

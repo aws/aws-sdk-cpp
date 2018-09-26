@@ -1608,6 +1608,25 @@ namespace Model
     
     inline DBCluster& WithScalingConfigurationInfo(ScalingConfigurationInfo&& value) { SetScalingConfigurationInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates if the DB cluster has deletion protection enabled. The database
+     * can't be deleted when this value is set to true. </p>
+     */
+    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p>Indicates if the DB cluster has deletion protection enabled. The database
+     * can't be deleted when this value is set to true. </p>
+     */
+    inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+
+    /**
+     * <p>Indicates if the DB cluster has deletion protection enabled. The database
+     * can't be deleted when this value is set to true. </p>
+     */
+    inline DBCluster& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -1735,6 +1754,9 @@ namespace Model
 
     ScalingConfigurationInfo m_scalingConfigurationInfo;
     bool m_scalingConfigurationInfoHasBeenSet;
+
+    bool m_deletionProtection;
+    bool m_deletionProtectionHasBeenSet;
   };
 
 } // namespace Model

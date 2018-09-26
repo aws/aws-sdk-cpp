@@ -53,49 +53,49 @@ namespace Model
 
     /**
      * <p>The URL of the Amazon SQS queue from which messages are received.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
     /**
      * <p>The URL of the Amazon SQS queue from which messages are received.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
      * <p>The URL of the Amazon SQS queue from which messages are received.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
 
     /**
      * <p>The URL of the Amazon SQS queue from which messages are received.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /**
      * <p>The URL of the Amazon SQS queue from which messages are received.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline ReceiveMessageRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
     /**
      * <p>The URL of the Amazon SQS queue from which messages are received.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline ReceiveMessageRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of the Amazon SQS queue from which messages are received.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline ReceiveMessageRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. These
+     * <p>A list of s that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -110,31 +110,17 @@ namespace Model
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
-     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * the value provided by the producer that calls the <code> <a>SendMessage</a>
      * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
-     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
      * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
-     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
-     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
-     * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
-     * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
-     * </p> </li> </ul>
+     * provided by Amazon SQS.</p> </li> </ul>
      */
     inline const Aws::Vector<QueueAttributeName>& GetAttributeNames() const{ return m_attributeNames; }
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. These
+     * <p>A list of s that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -149,31 +135,17 @@ namespace Model
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
-     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * the value provided by the producer that calls the <code> <a>SendMessage</a>
      * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
-     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
      * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
-     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
-     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
-     * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
-     * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
-     * </p> </li> </ul>
+     * provided by Amazon SQS.</p> </li> </ul>
      */
     inline void SetAttributeNames(const Aws::Vector<QueueAttributeName>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. These
+     * <p>A list of s that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -188,31 +160,17 @@ namespace Model
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
-     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * the value provided by the producer that calls the <code> <a>SendMessage</a>
      * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
-     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
      * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
-     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
-     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
-     * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
-     * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
-     * </p> </li> </ul>
+     * provided by Amazon SQS.</p> </li> </ul>
      */
     inline void SetAttributeNames(Aws::Vector<QueueAttributeName>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. These
+     * <p>A list of s that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -227,31 +185,17 @@ namespace Model
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
-     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * the value provided by the producer that calls the <code> <a>SendMessage</a>
      * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
-     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
      * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
-     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
-     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
-     * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
-     * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
-     * </p> </li> </ul>
+     * provided by Amazon SQS.</p> </li> </ul>
      */
     inline ReceiveMessageRequest& WithAttributeNames(const Aws::Vector<QueueAttributeName>& value) { SetAttributeNames(value); return *this;}
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. These
+     * <p>A list of s that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -266,31 +210,17 @@ namespace Model
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
-     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * the value provided by the producer that calls the <code> <a>SendMessage</a>
      * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
-     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
      * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
-     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
-     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
-     * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
-     * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
-     * </p> </li> </ul>
+     * provided by Amazon SQS.</p> </li> </ul>
      */
     inline ReceiveMessageRequest& WithAttributeNames(Aws::Vector<QueueAttributeName>&& value) { SetAttributeNames(std::move(value)); return *this;}
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. These
+     * <p>A list of s that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -305,31 +235,17 @@ namespace Model
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
-     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * the value provided by the producer that calls the <code> <a>SendMessage</a>
      * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
-     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
      * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
-     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
-     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
-     * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
-     * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
-     * </p> </li> </ul>
+     * provided by Amazon SQS.</p> </li> </ul>
      */
     inline ReceiveMessageRequest& AddAttributeNames(const QueueAttributeName& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of attributes that need to be returned along with each message. These
+     * <p>A list of s that need to be returned along with each message. These
      * attributes include:</p> <ul> <li> <p> <code>All</code> - Returns all values.</p>
      * </li> <li> <p> <code>ApproximateFirstReceiveTimestamp</code> - Returns the time
      * the message was first received from the queue (<a
@@ -344,26 +260,12 @@ namespace Model
      * message was sent to the queue (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>MessageDeduplicationId</code> - Returns
-     * the value provided by the sender that calls the <code> <a>SendMessage</a>
+     * the value provided by the producer that calls the <code> <a>SendMessage</a>
      * </code> action.</p> </li> <li> <p> <code>MessageGroupId</code> - Returns the
-     * value provided by the sender that calls the <code> <a>SendMessage</a> </code>
+     * value provided by the producer that calls the <code> <a>SendMessage</a> </code>
      * action. Messages with the same <code>MessageGroupId</code> are returned in
      * sequence.</p> </li> <li> <p> <code>SequenceNumber</code> - Returns the value
-     * provided by Amazon SQS.</p> </li> </ul> <p>Any other valid special request
-     * parameters (such as the following) are ignored:</p> <ul> <li> <p>
-     * <code>ApproximateNumberOfMessages</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesDelayed</code> </p> </li> <li> <p>
-     * <code>ApproximateNumberOfMessagesNotVisible</code> </p> </li> <li> <p>
-     * <code>CreatedTimestamp</code> </p> </li> <li> <p>
-     * <code>ContentBasedDeduplication</code> </p> </li> <li> <p>
-     * <code>DelaySeconds</code> </p> </li> <li> <p> <code>FifoQueue</code> </p> </li>
-     * <li> <p> <code>LastModifiedTimestamp</code> </p> </li> <li> <p>
-     * <code>MaximumMessageSize</code> </p> </li> <li> <p>
-     * <code>MessageRetentionPeriod</code> </p> </li> <li> <p> <code>Policy</code> </p>
-     * </li> <li> <p> <code>QueueArn</code>, </p> </li> <li> <p>
-     * <code>ReceiveMessageWaitTimeSeconds</code> </p> </li> <li> <p>
-     * <code>RedrivePolicy</code> </p> </li> <li> <p> <code>VisibilityTimeout</code>
-     * </p> </li> </ul>
+     * provided by Amazon SQS.</p> </li> </ul>
      */
     inline ReceiveMessageRequest& AddAttributeNames(QueueAttributeName&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
 
@@ -516,21 +418,21 @@ namespace Model
     /**
      * <p>The maximum number of messages to return. Amazon SQS never returns more
      * messages than this value (however, fewer messages might be returned). Valid
-     * values are 1 to 10. Default is 1.</p>
+     * values: 1 to 10. Default: 1.</p>
      */
     inline int GetMaxNumberOfMessages() const{ return m_maxNumberOfMessages; }
 
     /**
      * <p>The maximum number of messages to return. Amazon SQS never returns more
      * messages than this value (however, fewer messages might be returned). Valid
-     * values are 1 to 10. Default is 1.</p>
+     * values: 1 to 10. Default: 1.</p>
      */
     inline void SetMaxNumberOfMessages(int value) { m_maxNumberOfMessagesHasBeenSet = true; m_maxNumberOfMessages = value; }
 
     /**
      * <p>The maximum number of messages to return. Amazon SQS never returns more
      * messages than this value (however, fewer messages might be returned). Valid
-     * values are 1 to 10. Default is 1.</p>
+     * values: 1 to 10. Default: 1.</p>
      */
     inline ReceiveMessageRequest& WithMaxNumberOfMessages(int value) { SetMaxNumberOfMessages(value); return *this;}
 
@@ -605,10 +507,10 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
-     * processing messages when the visibility timeout expires and messages become
-     * visible, another worker reading from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a reader whose message
+     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     * processes messages when the visibility timeout expires and messages become
+     * visible, another worker consuming from the same queue can receive the same
+     * messages and therefore process duplicates. Also, if a consumer whose message
      * processing time is longer than the visibility timeout tries to delete the
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
@@ -627,7 +529,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-receiverequestattemptid-request-parameter">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
@@ -656,10 +558,10 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
-     * processing messages when the visibility timeout expires and messages become
-     * visible, another worker reading from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a reader whose message
+     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     * processes messages when the visibility timeout expires and messages become
+     * visible, another worker consuming from the same queue can receive the same
+     * messages and therefore process duplicates. Also, if a consumer whose message
      * processing time is longer than the visibility timeout tries to delete the
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
@@ -678,7 +580,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-receiverequestattemptid-request-parameter">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
@@ -707,10 +609,10 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
-     * processing messages when the visibility timeout expires and messages become
-     * visible, another worker reading from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a reader whose message
+     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     * processes messages when the visibility timeout expires and messages become
+     * visible, another worker consuming from the same queue can receive the same
+     * messages and therefore process duplicates. Also, if a consumer whose message
      * processing time is longer than the visibility timeout tries to delete the
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
@@ -729,7 +631,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-receiverequestattemptid-request-parameter">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
@@ -758,10 +660,10 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
-     * processing messages when the visibility timeout expires and messages become
-     * visible, another worker reading from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a reader whose message
+     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     * processes messages when the visibility timeout expires and messages become
+     * visible, another worker consuming from the same queue can receive the same
+     * messages and therefore process duplicates. Also, if a consumer whose message
      * processing time is longer than the visibility timeout tries to delete the
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
@@ -780,7 +682,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-receiverequestattemptid-request-parameter">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
@@ -809,10 +711,10 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
-     * processing messages when the visibility timeout expires and messages become
-     * visible, another worker reading from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a reader whose message
+     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     * processes messages when the visibility timeout expires and messages become
+     * visible, another worker consuming from the same queue can receive the same
+     * messages and therefore process duplicates. Also, if a consumer whose message
      * processing time is longer than the visibility timeout tries to delete the
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
@@ -831,7 +733,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-receiverequestattemptid-request-parameter">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
@@ -860,10 +762,10 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
-     * processing messages when the visibility timeout expires and messages become
-     * visible, another worker reading from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a reader whose message
+     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     * processes messages when the visibility timeout expires and messages become
+     * visible, another worker consuming from the same queue can receive the same
+     * messages and therefore process duplicates. Also, if a consumer whose message
      * processing time is longer than the visibility timeout tries to delete the
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
@@ -882,7 +784,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-receiverequestattemptid-request-parameter">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */
@@ -911,10 +813,10 @@ namespace Model
      * see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     * <important> <p>If a caller of the <code>ReceiveMessage</code> action is still
-     * processing messages when the visibility timeout expires and messages become
-     * visible, another worker reading from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a reader whose message
+     * <important> <p>If a caller of the <code>ReceiveMessage</code> action still
+     * processes messages when the visibility timeout expires and messages become
+     * visible, another worker consuming from the same queue can receive the same
+     * messages and therefore process duplicates. Also, if a consumer whose message
      * processing time is longer than the visibility timeout tries to delete the
      * processed messages, the action fails with an error.</p> <p>To mitigate this
      * effect, ensure that your application observes a safe threshold before the
@@ -933,7 +835,7 @@ namespace Model
      * (<code>a-z</code>, <code>A-Z</code>, <code>0-9</code>) and punctuation
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queue-recommendations.html#using-receiverequestattemptid-request-parameter">Using
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
      * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
      * Service Developer Guide</i>.</p>
      */

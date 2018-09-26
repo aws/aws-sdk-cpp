@@ -60,6 +60,7 @@
 #include <aws/glue/model/GetCrawlerResult.h>
 #include <aws/glue/model/GetCrawlerMetricsResult.h>
 #include <aws/glue/model/GetCrawlersResult.h>
+#include <aws/glue/model/GetDataCatalogEncryptionSettingsResult.h>
 #include <aws/glue/model/GetDatabaseResult.h>
 #include <aws/glue/model/GetDatabasesResult.h>
 #include <aws/glue/model/GetDataflowGraphResult.h>
@@ -183,6 +184,7 @@ namespace Model
         class GetCrawlerRequest;
         class GetCrawlerMetricsRequest;
         class GetCrawlersRequest;
+        class GetDataCatalogEncryptionSettingsRequest;
         class GetDatabaseRequest;
         class GetDatabasesRequest;
         class GetDataflowGraphRequest;
@@ -267,6 +269,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetCrawlerResult, Aws::Client::AWSError<GlueErrors>> GetCrawlerOutcome;
         typedef Aws::Utils::Outcome<GetCrawlerMetricsResult, Aws::Client::AWSError<GlueErrors>> GetCrawlerMetricsOutcome;
         typedef Aws::Utils::Outcome<GetCrawlersResult, Aws::Client::AWSError<GlueErrors>> GetCrawlersOutcome;
+        typedef Aws::Utils::Outcome<GetDataCatalogEncryptionSettingsResult, Aws::Client::AWSError<GlueErrors>> GetDataCatalogEncryptionSettingsOutcome;
         typedef Aws::Utils::Outcome<GetDatabaseResult, Aws::Client::AWSError<GlueErrors>> GetDatabaseOutcome;
         typedef Aws::Utils::Outcome<GetDatabasesResult, Aws::Client::AWSError<GlueErrors>> GetDatabasesOutcome;
         typedef Aws::Utils::Outcome<GetDataflowGraphResult, Aws::Client::AWSError<GlueErrors>> GetDataflowGraphOutcome;
@@ -351,6 +354,7 @@ namespace Model
         typedef std::future<GetCrawlerOutcome> GetCrawlerOutcomeCallable;
         typedef std::future<GetCrawlerMetricsOutcome> GetCrawlerMetricsOutcomeCallable;
         typedef std::future<GetCrawlersOutcome> GetCrawlersOutcomeCallable;
+        typedef std::future<GetDataCatalogEncryptionSettingsOutcome> GetDataCatalogEncryptionSettingsOutcomeCallable;
         typedef std::future<GetDatabaseOutcome> GetDatabaseOutcomeCallable;
         typedef std::future<GetDatabasesOutcome> GetDatabasesOutcomeCallable;
         typedef std::future<GetDataflowGraphOutcome> GetDataflowGraphOutcomeCallable;
@@ -438,6 +442,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::GetCrawlerRequest&, const Model::GetCrawlerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCrawlerResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetCrawlerMetricsRequest&, const Model::GetCrawlerMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCrawlerMetricsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetCrawlersRequest&, const Model::GetCrawlersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCrawlersResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::GetDataCatalogEncryptionSettingsRequest&, const Model::GetDataCatalogEncryptionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataCatalogEncryptionSettingsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetDatabaseRequest&, const Model::GetDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDatabaseResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetDatabasesRequest&, const Model::GetDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDatabasesResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::GetDataflowGraphRequest&, const Model::GetDataflowGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataflowGraphResponseReceivedHandler;
@@ -1634,6 +1639,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCrawlersAsync(const Model::GetCrawlersRequest& request, const GetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the security configuration for a specified catalog.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataCatalogEncryptionSettingsOutcome GetDataCatalogEncryptionSettings(const Model::GetDataCatalogEncryptionSettingsRequest& request) const;
+
+        /**
+         * <p>Retrieves the security configuration for a specified catalog.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDataCatalogEncryptionSettingsOutcomeCallable GetDataCatalogEncryptionSettingsCallable(const Model::GetDataCatalogEncryptionSettingsRequest& request) const;
+
+        /**
+         * <p>Retrieves the security configuration for a specified catalog.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogEncryptionSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDataCatalogEncryptionSettingsAsync(const Model::GetDataCatalogEncryptionSettingsRequest& request, const GetDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the definition of a specified database.</p><p><h3>See Also:</h3>  
@@ -2881,6 +2914,7 @@ namespace Model
         void GetCrawlerAsyncHelper(const Model::GetCrawlerRequest& request, const GetCrawlerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCrawlerMetricsAsyncHelper(const Model::GetCrawlerMetricsRequest& request, const GetCrawlerMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCrawlersAsyncHelper(const Model::GetCrawlersRequest& request, const GetCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDataCatalogEncryptionSettingsAsyncHelper(const Model::GetDataCatalogEncryptionSettingsRequest& request, const GetDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDatabaseAsyncHelper(const Model::GetDatabaseRequest& request, const GetDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDatabasesAsyncHelper(const Model::GetDatabasesRequest& request, const GetDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDataflowGraphAsyncHelper(const Model::GetDataflowGraphRequest& request, const GetDataflowGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

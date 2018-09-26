@@ -98,7 +98,9 @@ DBInstance::DBInstance() :
     m_performanceInsightsRetentionPeriod(0),
     m_performanceInsightsRetentionPeriodHasBeenSet(false),
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false)
+    m_processorFeaturesHasBeenSet(false),
+    m_deletionProtection(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -170,7 +172,9 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_performanceInsightsRetentionPeriod(0),
     m_performanceInsightsRetentionPeriodHasBeenSet(false),
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false)
+    m_processorFeaturesHasBeenSet(false),
+    m_deletionProtection(false),
+    m_deletionProtectionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -565,6 +569,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
 
       m_processorFeaturesHasBeenSet = true;
     }
+    XmlNode deletionProtectionNode = resultNode.FirstChild("DeletionProtection");
+    if(!deletionProtectionNode.IsNull())
+    {
+      m_deletionProtection = StringUtils::ConvertToBool(StringUtils::Trim(deletionProtectionNode.GetText().c_str()).c_str());
+      m_deletionProtectionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -902,6 +912,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_deletionProtectionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1181,6 +1196,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
         processorFeaturesSs << location <<  ".ProcessorFeature." << processorFeaturesIdx++;
         item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
       }
+  }
+  if(m_deletionProtectionHasBeenSet)
+  {
+      oStream << location << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 }
 

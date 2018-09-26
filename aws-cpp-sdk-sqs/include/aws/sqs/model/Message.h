@@ -218,112 +218,178 @@ namespace Model
 
 
     /**
-     * <p> <code>SenderId</code>, <code>SentTimestamp</code>,
-     * <code>ApproximateReceiveCount</code>, and/or
-     * <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
-     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer
-     * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
-     * in milliseconds.</p>
+     * <p>A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to
+     * their respective values. Supported attributes:</p> <ul> <li> <p>
+     * <code>ApproximateReceiveCount</code> </p> </li> <li> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> </p> </li> <li> <p>
+     * <code>MessageDeduplicationId</code> </p> </li> <li> <p>
+     * <code>MessageGroupId</code> </p> </li> <li> <p> <code>SenderId</code> </p> </li>
+     * <li> <p> <code>SentTimestamp</code> </p> </li> <li> <p>
+     * <code>SequenceNumber</code> </p> </li> </ul> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
+     * each returned as an integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.</p>
      */
     inline const Aws::Map<MessageSystemAttributeName, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p> <code>SenderId</code>, <code>SentTimestamp</code>,
-     * <code>ApproximateReceiveCount</code>, and/or
-     * <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
-     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer
-     * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
-     * in milliseconds.</p>
+     * <p>A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to
+     * their respective values. Supported attributes:</p> <ul> <li> <p>
+     * <code>ApproximateReceiveCount</code> </p> </li> <li> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> </p> </li> <li> <p>
+     * <code>MessageDeduplicationId</code> </p> </li> <li> <p>
+     * <code>MessageGroupId</code> </p> </li> <li> <p> <code>SenderId</code> </p> </li>
+     * <li> <p> <code>SentTimestamp</code> </p> </li> <li> <p>
+     * <code>SequenceNumber</code> </p> </li> </ul> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
+     * each returned as an integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.</p>
      */
     inline void SetAttributes(const Aws::Map<MessageSystemAttributeName, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p> <code>SenderId</code>, <code>SentTimestamp</code>,
-     * <code>ApproximateReceiveCount</code>, and/or
-     * <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
-     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer
-     * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
-     * in milliseconds.</p>
+     * <p>A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to
+     * their respective values. Supported attributes:</p> <ul> <li> <p>
+     * <code>ApproximateReceiveCount</code> </p> </li> <li> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> </p> </li> <li> <p>
+     * <code>MessageDeduplicationId</code> </p> </li> <li> <p>
+     * <code>MessageGroupId</code> </p> </li> <li> <p> <code>SenderId</code> </p> </li>
+     * <li> <p> <code>SentTimestamp</code> </p> </li> <li> <p>
+     * <code>SequenceNumber</code> </p> </li> </ul> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
+     * each returned as an integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.</p>
      */
     inline void SetAttributes(Aws::Map<MessageSystemAttributeName, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p> <code>SenderId</code>, <code>SentTimestamp</code>,
-     * <code>ApproximateReceiveCount</code>, and/or
-     * <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
-     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer
-     * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
-     * in milliseconds.</p>
+     * <p>A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to
+     * their respective values. Supported attributes:</p> <ul> <li> <p>
+     * <code>ApproximateReceiveCount</code> </p> </li> <li> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> </p> </li> <li> <p>
+     * <code>MessageDeduplicationId</code> </p> </li> <li> <p>
+     * <code>MessageGroupId</code> </p> </li> <li> <p> <code>SenderId</code> </p> </li>
+     * <li> <p> <code>SentTimestamp</code> </p> </li> <li> <p>
+     * <code>SequenceNumber</code> </p> </li> </ul> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
+     * each returned as an integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.</p>
      */
     inline Message& WithAttributes(const Aws::Map<MessageSystemAttributeName, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p> <code>SenderId</code>, <code>SentTimestamp</code>,
-     * <code>ApproximateReceiveCount</code>, and/or
-     * <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
-     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer
-     * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
-     * in milliseconds.</p>
+     * <p>A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to
+     * their respective values. Supported attributes:</p> <ul> <li> <p>
+     * <code>ApproximateReceiveCount</code> </p> </li> <li> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> </p> </li> <li> <p>
+     * <code>MessageDeduplicationId</code> </p> </li> <li> <p>
+     * <code>MessageGroupId</code> </p> </li> <li> <p> <code>SenderId</code> </p> </li>
+     * <li> <p> <code>SentTimestamp</code> </p> </li> <li> <p>
+     * <code>SequenceNumber</code> </p> </li> </ul> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
+     * each returned as an integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.</p>
      */
     inline Message& WithAttributes(Aws::Map<MessageSystemAttributeName, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p> <code>SenderId</code>, <code>SentTimestamp</code>,
-     * <code>ApproximateReceiveCount</code>, and/or
-     * <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
-     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer
-     * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
-     * in milliseconds.</p>
+     * <p>A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to
+     * their respective values. Supported attributes:</p> <ul> <li> <p>
+     * <code>ApproximateReceiveCount</code> </p> </li> <li> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> </p> </li> <li> <p>
+     * <code>MessageDeduplicationId</code> </p> </li> <li> <p>
+     * <code>MessageGroupId</code> </p> </li> <li> <p> <code>SenderId</code> </p> </li>
+     * <li> <p> <code>SentTimestamp</code> </p> </li> <li> <p>
+     * <code>SequenceNumber</code> </p> </li> </ul> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
+     * each returned as an integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.</p>
      */
     inline Message& AddAttributes(const MessageSystemAttributeName& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
-     * <p> <code>SenderId</code>, <code>SentTimestamp</code>,
-     * <code>ApproximateReceiveCount</code>, and/or
-     * <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
-     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer
-     * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
-     * in milliseconds.</p>
+     * <p>A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to
+     * their respective values. Supported attributes:</p> <ul> <li> <p>
+     * <code>ApproximateReceiveCount</code> </p> </li> <li> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> </p> </li> <li> <p>
+     * <code>MessageDeduplicationId</code> </p> </li> <li> <p>
+     * <code>MessageGroupId</code> </p> </li> <li> <p> <code>SenderId</code> </p> </li>
+     * <li> <p> <code>SentTimestamp</code> </p> </li> <li> <p>
+     * <code>SequenceNumber</code> </p> </li> </ul> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
+     * each returned as an integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.</p>
      */
     inline Message& AddAttributes(MessageSystemAttributeName&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> <code>SenderId</code>, <code>SentTimestamp</code>,
-     * <code>ApproximateReceiveCount</code>, and/or
-     * <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
-     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer
-     * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
-     * in milliseconds.</p>
+     * <p>A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to
+     * their respective values. Supported attributes:</p> <ul> <li> <p>
+     * <code>ApproximateReceiveCount</code> </p> </li> <li> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> </p> </li> <li> <p>
+     * <code>MessageDeduplicationId</code> </p> </li> <li> <p>
+     * <code>MessageGroupId</code> </p> </li> <li> <p> <code>SenderId</code> </p> </li>
+     * <li> <p> <code>SentTimestamp</code> </p> </li> <li> <p>
+     * <code>SequenceNumber</code> </p> </li> </ul> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
+     * each returned as an integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.</p>
      */
     inline Message& AddAttributes(const MessageSystemAttributeName& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> <code>SenderId</code>, <code>SentTimestamp</code>,
-     * <code>ApproximateReceiveCount</code>, and/or
-     * <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
-     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer
-     * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
-     * in milliseconds.</p>
+     * <p>A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to
+     * their respective values. Supported attributes:</p> <ul> <li> <p>
+     * <code>ApproximateReceiveCount</code> </p> </li> <li> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> </p> </li> <li> <p>
+     * <code>MessageDeduplicationId</code> </p> </li> <li> <p>
+     * <code>MessageGroupId</code> </p> </li> <li> <p> <code>SenderId</code> </p> </li>
+     * <li> <p> <code>SentTimestamp</code> </p> </li> <li> <p>
+     * <code>SequenceNumber</code> </p> </li> </ul> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
+     * each returned as an integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.</p>
      */
     inline Message& AddAttributes(MessageSystemAttributeName&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> <code>SenderId</code>, <code>SentTimestamp</code>,
-     * <code>ApproximateReceiveCount</code>, and/or
-     * <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
-     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer
-     * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
-     * in milliseconds.</p>
+     * <p>A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to
+     * their respective values. Supported attributes:</p> <ul> <li> <p>
+     * <code>ApproximateReceiveCount</code> </p> </li> <li> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> </p> </li> <li> <p>
+     * <code>MessageDeduplicationId</code> </p> </li> <li> <p>
+     * <code>MessageGroupId</code> </p> </li> <li> <p> <code>SenderId</code> </p> </li>
+     * <li> <p> <code>SentTimestamp</code> </p> </li> <li> <p>
+     * <code>SequenceNumber</code> </p> </li> </ul> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
+     * each returned as an integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.</p>
      */
     inline Message& AddAttributes(MessageSystemAttributeName&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> <code>SenderId</code>, <code>SentTimestamp</code>,
-     * <code>ApproximateReceiveCount</code>, and/or
-     * <code>ApproximateFirstReceiveTimestamp</code>. <code>SentTimestamp</code> and
-     * <code>ApproximateFirstReceiveTimestamp</code> are each returned as an integer
-     * representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>
-     * in milliseconds.</p>
+     * <p>A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to
+     * their respective values. Supported attributes:</p> <ul> <li> <p>
+     * <code>ApproximateReceiveCount</code> </p> </li> <li> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> </p> </li> <li> <p>
+     * <code>MessageDeduplicationId</code> </p> </li> <li> <p>
+     * <code>MessageGroupId</code> </p> </li> <li> <p> <code>SenderId</code> </p> </li>
+     * <li> <p> <code>SentTimestamp</code> </p> </li> <li> <p>
+     * <code>SequenceNumber</code> </p> </li> </ul> <p>
+     * <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
+     * each returned as an integer representing the <a
+     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
+     * milliseconds.</p>
      */
     inline Message& AddAttributes(const MessageSystemAttributeName& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -388,99 +454,99 @@ namespace Model
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, MessageAttributeValue>& GetMessageAttributes() const{ return m_messageAttributes; }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline void SetMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = value; }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline void SetMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes = std::move(value); }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline Message& WithMessageAttributes(const Aws::Map<Aws::String, MessageAttributeValue>& value) { SetMessageAttributes(value); return *this;}
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline Message& WithMessageAttributes(Aws::Map<Aws::String, MessageAttributeValue>&& value) { SetMessageAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(const Aws::String& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(Aws::String&& key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(const Aws::String& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(Aws::String&& key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(const char* key, MessageAttributeValue&& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Each message attribute consists of a <code>Name</code>, <code>Type</code>,
      * and <code>Value</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html#message-attributes-items-validation">Message
-     * Attribute Items and Validation</a> in the <i>Amazon Simple Queue Service
-     * Developer Guide</i>.</p>
+     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">Amazon
+     * SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.</p>
      */
     inline Message& AddMessageAttributes(const char* key, const MessageAttributeValue& value) { m_messageAttributesHasBeenSet = true; m_messageAttributes.emplace(key, value); return *this; }
 

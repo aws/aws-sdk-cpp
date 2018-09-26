@@ -76,7 +76,9 @@ RestoreDBInstanceFromS3Request::RestoreDBInstanceFromS3Request() :
     m_enableCloudwatchLogsExportsHasBeenSet(false),
     m_processorFeaturesHasBeenSet(false),
     m_useDefaultProcessorFeatures(false),
-    m_useDefaultProcessorFeaturesHasBeenSet(false)
+    m_useDefaultProcessorFeaturesHasBeenSet(false),
+    m_deletionProtection(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -320,6 +322,11 @@ Aws::String RestoreDBInstanceFromS3Request::SerializePayload() const
   if(m_useDefaultProcessorFeaturesHasBeenSet)
   {
     ss << "UseDefaultProcessorFeatures=" << std::boolalpha << m_useDefaultProcessorFeatures << "&";
+  }
+
+  if(m_deletionProtectionHasBeenSet)
+  {
+    ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 
   ss << "Version=2014-10-31";

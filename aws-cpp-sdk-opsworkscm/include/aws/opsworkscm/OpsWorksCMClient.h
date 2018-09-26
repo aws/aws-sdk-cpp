@@ -32,6 +32,7 @@
 #include <aws/opsworkscm/model/DescribeNodeAssociationStatusResult.h>
 #include <aws/opsworkscm/model/DescribeServersResult.h>
 #include <aws/opsworkscm/model/DisassociateNodeResult.h>
+#include <aws/opsworkscm/model/ExportServerEngineAttributeResult.h>
 #include <aws/opsworkscm/model/RestoreServerResult.h>
 #include <aws/opsworkscm/model/StartMaintenanceResult.h>
 #include <aws/opsworkscm/model/UpdateServerResult.h>
@@ -87,6 +88,7 @@ namespace Model
         class DescribeNodeAssociationStatusRequest;
         class DescribeServersRequest;
         class DisassociateNodeRequest;
+        class ExportServerEngineAttributeRequest;
         class RestoreServerRequest;
         class StartMaintenanceRequest;
         class UpdateServerRequest;
@@ -103,6 +105,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeNodeAssociationStatusResult, Aws::Client::AWSError<OpsWorksCMErrors>> DescribeNodeAssociationStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeServersResult, Aws::Client::AWSError<OpsWorksCMErrors>> DescribeServersOutcome;
         typedef Aws::Utils::Outcome<DisassociateNodeResult, Aws::Client::AWSError<OpsWorksCMErrors>> DisassociateNodeOutcome;
+        typedef Aws::Utils::Outcome<ExportServerEngineAttributeResult, Aws::Client::AWSError<OpsWorksCMErrors>> ExportServerEngineAttributeOutcome;
         typedef Aws::Utils::Outcome<RestoreServerResult, Aws::Client::AWSError<OpsWorksCMErrors>> RestoreServerOutcome;
         typedef Aws::Utils::Outcome<StartMaintenanceResult, Aws::Client::AWSError<OpsWorksCMErrors>> StartMaintenanceOutcome;
         typedef Aws::Utils::Outcome<UpdateServerResult, Aws::Client::AWSError<OpsWorksCMErrors>> UpdateServerOutcome;
@@ -119,6 +122,7 @@ namespace Model
         typedef std::future<DescribeNodeAssociationStatusOutcome> DescribeNodeAssociationStatusOutcomeCallable;
         typedef std::future<DescribeServersOutcome> DescribeServersOutcomeCallable;
         typedef std::future<DisassociateNodeOutcome> DisassociateNodeOutcomeCallable;
+        typedef std::future<ExportServerEngineAttributeOutcome> ExportServerEngineAttributeOutcomeCallable;
         typedef std::future<RestoreServerOutcome> RestoreServerOutcomeCallable;
         typedef std::future<StartMaintenanceOutcome> StartMaintenanceOutcomeCallable;
         typedef std::future<UpdateServerOutcome> UpdateServerOutcomeCallable;
@@ -138,6 +142,7 @@ namespace Model
     typedef std::function<void(const OpsWorksCMClient*, const Model::DescribeNodeAssociationStatusRequest&, const Model::DescribeNodeAssociationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNodeAssociationStatusResponseReceivedHandler;
     typedef std::function<void(const OpsWorksCMClient*, const Model::DescribeServersRequest&, const Model::DescribeServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServersResponseReceivedHandler;
     typedef std::function<void(const OpsWorksCMClient*, const Model::DisassociateNodeRequest&, const Model::DisassociateNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateNodeResponseReceivedHandler;
+    typedef std::function<void(const OpsWorksCMClient*, const Model::ExportServerEngineAttributeRequest&, const Model::ExportServerEngineAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportServerEngineAttributeResponseReceivedHandler;
     typedef std::function<void(const OpsWorksCMClient*, const Model::RestoreServerRequest&, const Model::RestoreServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreServerResponseReceivedHandler;
     typedef std::function<void(const OpsWorksCMClient*, const Model::StartMaintenanceRequest&, const Model::StartMaintenanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMaintenanceResponseReceivedHandler;
     typedef std::function<void(const OpsWorksCMClient*, const Model::UpdateServerRequest&, const Model::UpdateServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServerResponseReceivedHandler;
@@ -762,6 +767,52 @@ namespace Model
         virtual void DisassociateNodeAsync(const Model::DisassociateNodeRequest& request, const DisassociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Exports a specified server engine attribute as a base64-encoded string. For
+         * example, you can export user data that you can use in EC2 to associate nodes
+         * with a server. </p> <p> This operation is synchronous. </p> <p> A
+         * <code>ValidationException</code> is raised when parameters of the request are
+         * not valid. A <code>ResourceNotFoundException</code> is thrown when the server
+         * does not exist. An <code>InvalidStateException</code> is thrown when the server
+         * is in any of the following states: CREATING, TERMINATED, FAILED or DELETING.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ExportServerEngineAttribute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportServerEngineAttributeOutcome ExportServerEngineAttribute(const Model::ExportServerEngineAttributeRequest& request) const;
+
+        /**
+         * <p> Exports a specified server engine attribute as a base64-encoded string. For
+         * example, you can export user data that you can use in EC2 to associate nodes
+         * with a server. </p> <p> This operation is synchronous. </p> <p> A
+         * <code>ValidationException</code> is raised when parameters of the request are
+         * not valid. A <code>ResourceNotFoundException</code> is thrown when the server
+         * does not exist. An <code>InvalidStateException</code> is thrown when the server
+         * is in any of the following states: CREATING, TERMINATED, FAILED or DELETING.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ExportServerEngineAttribute">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExportServerEngineAttributeOutcomeCallable ExportServerEngineAttributeCallable(const Model::ExportServerEngineAttributeRequest& request) const;
+
+        /**
+         * <p> Exports a specified server engine attribute as a base64-encoded string. For
+         * example, you can export user data that you can use in EC2 to associate nodes
+         * with a server. </p> <p> This operation is synchronous. </p> <p> A
+         * <code>ValidationException</code> is raised when parameters of the request are
+         * not valid. A <code>ResourceNotFoundException</code> is thrown when the server
+         * does not exist. An <code>InvalidStateException</code> is thrown when the server
+         * is in any of the following states: CREATING, TERMINATED, FAILED or DELETING.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ExportServerEngineAttribute">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExportServerEngineAttributeAsync(const Model::ExportServerEngineAttributeRequest& request, const ExportServerEngineAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Restores a backup to a server that is in a <code>CONNECTION_LOST</code>,
          * <code>HEALTHY</code>, <code>RUNNING</code>, <code>UNHEALTHY</code>, or
          * <code>TERMINATED</code> state. When you run RestoreServer, the server's EC2
@@ -967,6 +1018,7 @@ namespace Model
         void DescribeNodeAssociationStatusAsyncHelper(const Model::DescribeNodeAssociationStatusRequest& request, const DescribeNodeAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeServersAsyncHelper(const Model::DescribeServersRequest& request, const DescribeServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateNodeAsyncHelper(const Model::DisassociateNodeRequest& request, const DisassociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExportServerEngineAttributeAsyncHelper(const Model::ExportServerEngineAttributeRequest& request, const ExportServerEngineAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreServerAsyncHelper(const Model::RestoreServerRequest& request, const RestoreServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMaintenanceAsyncHelper(const Model::StartMaintenanceRequest& request, const StartMaintenanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateServerAsyncHelper(const Model::UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

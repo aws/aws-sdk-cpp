@@ -53,43 +53,43 @@ namespace Model
 
     /**
      * <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
     /**
      * <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
      * <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
 
     /**
      * <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /**
      * <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline GetQueueAttributesRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
     /**
      * <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline GetQueueAttributesRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
-     * <p>Queue URLs are case-sensitive.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
      */
     inline GetQueueAttributesRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 
@@ -101,22 +101,20 @@ namespace Model
      * gracefully.</p> </note> <p>The following attributes are supported:</p> <ul> <li>
      * <p> <code>All</code> - Returns all values. </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of
-     * visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> -
-     * Returns the approximate number of messages that are waiting to be added to the
-     * queue. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> -
-     * Returns the approximate number of messages that have not timed-out and aren't
-     * deleted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time
-     * when the queue was created in seconds (<a
-     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
-     * <p> <code>DelaySeconds</code> - Returns the default delay on the queue in
-     * seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> - Returns the
-     * time when the queue was last changed in seconds (<a
+     * messages available for retrieval from the queue.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesDelayed</code> - Returns the approximate number
+     * of messages in the queue that are delayed and not available for reading
+     * immediately. This can happen when the queue is configured as a delay queue or
+     * when a message has been sent with a delay parameter.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate
+     * number of messages that are in flight. Messages are considered to be <i>in
+     * flight</i> if they have been sent to a client but have not yet been deleted or
+     * have not yet reached the end of their visibility window. </p> </li> <li> <p>
+     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in
+     * seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p>
+     * </li> <li> <p> <code>DelaySeconds</code> - Returns the default delay on the
+     * queue in seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> -
+     * Returns the time when the queue was last changed in seconds (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
      * <p> <code>MaximumMessageSize</code> - Returns the limit of how many bytes a
      * message can contain before Amazon SQS rejects it.</p> </li> <li> <p>
@@ -135,10 +133,12 @@ namespace Model
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code> - Returns the
-     * visibility timeout for the queue. For more information about the visibility
-     * timeout, see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
+     * - Returns the visibility timeout for the queue. For more information about the
+     * visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * </li> </ul> <p>The following attributes apply only to <a
@@ -178,22 +178,20 @@ namespace Model
      * gracefully.</p> </note> <p>The following attributes are supported:</p> <ul> <li>
      * <p> <code>All</code> - Returns all values. </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of
-     * visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> -
-     * Returns the approximate number of messages that are waiting to be added to the
-     * queue. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> -
-     * Returns the approximate number of messages that have not timed-out and aren't
-     * deleted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time
-     * when the queue was created in seconds (<a
-     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
-     * <p> <code>DelaySeconds</code> - Returns the default delay on the queue in
-     * seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> - Returns the
-     * time when the queue was last changed in seconds (<a
+     * messages available for retrieval from the queue.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesDelayed</code> - Returns the approximate number
+     * of messages in the queue that are delayed and not available for reading
+     * immediately. This can happen when the queue is configured as a delay queue or
+     * when a message has been sent with a delay parameter.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate
+     * number of messages that are in flight. Messages are considered to be <i>in
+     * flight</i> if they have been sent to a client but have not yet been deleted or
+     * have not yet reached the end of their visibility window. </p> </li> <li> <p>
+     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in
+     * seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p>
+     * </li> <li> <p> <code>DelaySeconds</code> - Returns the default delay on the
+     * queue in seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> -
+     * Returns the time when the queue was last changed in seconds (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
      * <p> <code>MaximumMessageSize</code> - Returns the limit of how many bytes a
      * message can contain before Amazon SQS rejects it.</p> </li> <li> <p>
@@ -212,10 +210,12 @@ namespace Model
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code> - Returns the
-     * visibility timeout for the queue. For more information about the visibility
-     * timeout, see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
+     * - Returns the visibility timeout for the queue. For more information about the
+     * visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * </li> </ul> <p>The following attributes apply only to <a
@@ -255,22 +255,20 @@ namespace Model
      * gracefully.</p> </note> <p>The following attributes are supported:</p> <ul> <li>
      * <p> <code>All</code> - Returns all values. </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of
-     * visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> -
-     * Returns the approximate number of messages that are waiting to be added to the
-     * queue. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> -
-     * Returns the approximate number of messages that have not timed-out and aren't
-     * deleted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time
-     * when the queue was created in seconds (<a
-     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
-     * <p> <code>DelaySeconds</code> - Returns the default delay on the queue in
-     * seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> - Returns the
-     * time when the queue was last changed in seconds (<a
+     * messages available for retrieval from the queue.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesDelayed</code> - Returns the approximate number
+     * of messages in the queue that are delayed and not available for reading
+     * immediately. This can happen when the queue is configured as a delay queue or
+     * when a message has been sent with a delay parameter.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate
+     * number of messages that are in flight. Messages are considered to be <i>in
+     * flight</i> if they have been sent to a client but have not yet been deleted or
+     * have not yet reached the end of their visibility window. </p> </li> <li> <p>
+     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in
+     * seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p>
+     * </li> <li> <p> <code>DelaySeconds</code> - Returns the default delay on the
+     * queue in seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> -
+     * Returns the time when the queue was last changed in seconds (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
      * <p> <code>MaximumMessageSize</code> - Returns the limit of how many bytes a
      * message can contain before Amazon SQS rejects it.</p> </li> <li> <p>
@@ -289,10 +287,12 @@ namespace Model
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code> - Returns the
-     * visibility timeout for the queue. For more information about the visibility
-     * timeout, see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
+     * - Returns the visibility timeout for the queue. For more information about the
+     * visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * </li> </ul> <p>The following attributes apply only to <a
@@ -332,22 +332,20 @@ namespace Model
      * gracefully.</p> </note> <p>The following attributes are supported:</p> <ul> <li>
      * <p> <code>All</code> - Returns all values. </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of
-     * visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> -
-     * Returns the approximate number of messages that are waiting to be added to the
-     * queue. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> -
-     * Returns the approximate number of messages that have not timed-out and aren't
-     * deleted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time
-     * when the queue was created in seconds (<a
-     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
-     * <p> <code>DelaySeconds</code> - Returns the default delay on the queue in
-     * seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> - Returns the
-     * time when the queue was last changed in seconds (<a
+     * messages available for retrieval from the queue.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesDelayed</code> - Returns the approximate number
+     * of messages in the queue that are delayed and not available for reading
+     * immediately. This can happen when the queue is configured as a delay queue or
+     * when a message has been sent with a delay parameter.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate
+     * number of messages that are in flight. Messages are considered to be <i>in
+     * flight</i> if they have been sent to a client but have not yet been deleted or
+     * have not yet reached the end of their visibility window. </p> </li> <li> <p>
+     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in
+     * seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p>
+     * </li> <li> <p> <code>DelaySeconds</code> - Returns the default delay on the
+     * queue in seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> -
+     * Returns the time when the queue was last changed in seconds (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
      * <p> <code>MaximumMessageSize</code> - Returns the limit of how many bytes a
      * message can contain before Amazon SQS rejects it.</p> </li> <li> <p>
@@ -366,10 +364,12 @@ namespace Model
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code> - Returns the
-     * visibility timeout for the queue. For more information about the visibility
-     * timeout, see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
+     * - Returns the visibility timeout for the queue. For more information about the
+     * visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * </li> </ul> <p>The following attributes apply only to <a
@@ -409,22 +409,20 @@ namespace Model
      * gracefully.</p> </note> <p>The following attributes are supported:</p> <ul> <li>
      * <p> <code>All</code> - Returns all values. </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of
-     * visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> -
-     * Returns the approximate number of messages that are waiting to be added to the
-     * queue. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> -
-     * Returns the approximate number of messages that have not timed-out and aren't
-     * deleted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time
-     * when the queue was created in seconds (<a
-     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
-     * <p> <code>DelaySeconds</code> - Returns the default delay on the queue in
-     * seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> - Returns the
-     * time when the queue was last changed in seconds (<a
+     * messages available for retrieval from the queue.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesDelayed</code> - Returns the approximate number
+     * of messages in the queue that are delayed and not available for reading
+     * immediately. This can happen when the queue is configured as a delay queue or
+     * when a message has been sent with a delay parameter.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate
+     * number of messages that are in flight. Messages are considered to be <i>in
+     * flight</i> if they have been sent to a client but have not yet been deleted or
+     * have not yet reached the end of their visibility window. </p> </li> <li> <p>
+     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in
+     * seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p>
+     * </li> <li> <p> <code>DelaySeconds</code> - Returns the default delay on the
+     * queue in seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> -
+     * Returns the time when the queue was last changed in seconds (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
      * <p> <code>MaximumMessageSize</code> - Returns the limit of how many bytes a
      * message can contain before Amazon SQS rejects it.</p> </li> <li> <p>
@@ -443,10 +441,12 @@ namespace Model
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code> - Returns the
-     * visibility timeout for the queue. For more information about the visibility
-     * timeout, see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
+     * - Returns the visibility timeout for the queue. For more information about the
+     * visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * </li> </ul> <p>The following attributes apply only to <a
@@ -486,22 +486,20 @@ namespace Model
      * gracefully.</p> </note> <p>The following attributes are supported:</p> <ul> <li>
      * <p> <code>All</code> - Returns all values. </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of
-     * visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> -
-     * Returns the approximate number of messages that are waiting to be added to the
-     * queue. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> -
-     * Returns the approximate number of messages that have not timed-out and aren't
-     * deleted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time
-     * when the queue was created in seconds (<a
-     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
-     * <p> <code>DelaySeconds</code> - Returns the default delay on the queue in
-     * seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> - Returns the
-     * time when the queue was last changed in seconds (<a
+     * messages available for retrieval from the queue.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesDelayed</code> - Returns the approximate number
+     * of messages in the queue that are delayed and not available for reading
+     * immediately. This can happen when the queue is configured as a delay queue or
+     * when a message has been sent with a delay parameter.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate
+     * number of messages that are in flight. Messages are considered to be <i>in
+     * flight</i> if they have been sent to a client but have not yet been deleted or
+     * have not yet reached the end of their visibility window. </p> </li> <li> <p>
+     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in
+     * seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p>
+     * </li> <li> <p> <code>DelaySeconds</code> - Returns the default delay on the
+     * queue in seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> -
+     * Returns the time when the queue was last changed in seconds (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
      * <p> <code>MaximumMessageSize</code> - Returns the limit of how many bytes a
      * message can contain before Amazon SQS rejects it.</p> </li> <li> <p>
@@ -520,10 +518,12 @@ namespace Model
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code> - Returns the
-     * visibility timeout for the queue. For more information about the visibility
-     * timeout, see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
+     * - Returns the visibility timeout for the queue. For more information about the
+     * visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * </li> </ul> <p>The following attributes apply only to <a
@@ -563,22 +563,20 @@ namespace Model
      * gracefully.</p> </note> <p>The following attributes are supported:</p> <ul> <li>
      * <p> <code>All</code> - Returns all values. </p> </li> <li> <p>
      * <code>ApproximateNumberOfMessages</code> - Returns the approximate number of
-     * visible messages in a queue. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesDelayed</code> -
-     * Returns the approximate number of messages that are waiting to be added to the
-     * queue. </p> </li> <li> <p> <code>ApproximateNumberOfMessagesNotVisible</code> -
-     * Returns the approximate number of messages that have not timed-out and aren't
-     * deleted. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-resources-required-process-messages.html">Resources
-     * Required to Process Messages</a> in the <i>Amazon Simple Queue Service Developer
-     * Guide</i>. </p> </li> <li> <p> <code>CreatedTimestamp</code> - Returns the time
-     * when the queue was created in seconds (<a
-     * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
-     * <p> <code>DelaySeconds</code> - Returns the default delay on the queue in
-     * seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> - Returns the
-     * time when the queue was last changed in seconds (<a
+     * messages available for retrieval from the queue.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesDelayed</code> - Returns the approximate number
+     * of messages in the queue that are delayed and not available for reading
+     * immediately. This can happen when the queue is configured as a delay queue or
+     * when a message has been sent with a delay parameter.</p> </li> <li> <p>
+     * <code>ApproximateNumberOfMessagesNotVisible</code> - Returns the approximate
+     * number of messages that are in flight. Messages are considered to be <i>in
+     * flight</i> if they have been sent to a client but have not yet been deleted or
+     * have not yet reached the end of their visibility window. </p> </li> <li> <p>
+     * <code>CreatedTimestamp</code> - Returns the time when the queue was created in
+     * seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p>
+     * </li> <li> <p> <code>DelaySeconds</code> - Returns the default delay on the
+     * queue in seconds.</p> </li> <li> <p> <code>LastModifiedTimestamp</code> -
+     * Returns the time when the queue was last changed in seconds (<a
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>).</p> </li> <li>
      * <p> <code>MaximumMessageSize</code> - Returns the limit of how many bytes a
      * message can contain before Amazon SQS rejects it.</p> </li> <li> <p>
@@ -597,10 +595,12 @@ namespace Model
      * Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves
      * messages after the value of <code>maxReceiveCount</code> is exceeded.</p> </li>
      * <li> <p> <code>maxReceiveCount</code> - The number of times a message is
-     * delivered to the source queue before being moved to the dead-letter queue.</p>
-     * </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code> - Returns the
-     * visibility timeout for the queue. For more information about the visibility
-     * timeout, see <a
+     * delivered to the source queue before being moved to the dead-letter queue. When
+     * the <code>ReceiveCount</code> for a message exceeds the
+     * <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the
+     * dead-letter-queue.</p> </li> </ul> </li> <li> <p> <code>VisibilityTimeout</code>
+     * - Returns the visibility timeout for the queue. For more information about the
+     * visibility timeout, see <a
      * href="http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
      * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>. </p>
      * </li> </ul> <p>The following attributes apply only to <a

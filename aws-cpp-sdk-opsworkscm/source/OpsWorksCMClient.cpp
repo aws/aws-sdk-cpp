@@ -38,6 +38,7 @@
 #include <aws/opsworkscm/model/DescribeNodeAssociationStatusRequest.h>
 #include <aws/opsworkscm/model/DescribeServersRequest.h>
 #include <aws/opsworkscm/model/DisassociateNodeRequest.h>
+#include <aws/opsworkscm/model/ExportServerEngineAttributeRequest.h>
 #include <aws/opsworkscm/model/RestoreServerRequest.h>
 #include <aws/opsworkscm/model/StartMaintenanceRequest.h>
 #include <aws/opsworkscm/model/UpdateServerRequest.h>
@@ -490,6 +491,41 @@ void OpsWorksCMClient::DisassociateNodeAsync(const DisassociateNodeRequest& requ
 void OpsWorksCMClient::DisassociateNodeAsyncHelper(const DisassociateNodeRequest& request, const DisassociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateNode(request), context);
+}
+
+ExportServerEngineAttributeOutcome OpsWorksCMClient::ExportServerEngineAttribute(const ExportServerEngineAttributeRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ExportServerEngineAttributeOutcome(ExportServerEngineAttributeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ExportServerEngineAttributeOutcome(outcome.GetError());
+  }
+}
+
+ExportServerEngineAttributeOutcomeCallable OpsWorksCMClient::ExportServerEngineAttributeCallable(const ExportServerEngineAttributeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportServerEngineAttributeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportServerEngineAttribute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OpsWorksCMClient::ExportServerEngineAttributeAsync(const ExportServerEngineAttributeRequest& request, const ExportServerEngineAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExportServerEngineAttributeAsyncHelper( request, handler, context ); } );
+}
+
+void OpsWorksCMClient::ExportServerEngineAttributeAsyncHelper(const ExportServerEngineAttributeRequest& request, const ExportServerEngineAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExportServerEngineAttribute(request), context);
 }
 
 RestoreServerOutcome OpsWorksCMClient::RestoreServer(const RestoreServerRequest& request) const

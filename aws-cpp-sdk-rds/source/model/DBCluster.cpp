@@ -81,7 +81,9 @@ DBCluster::DBCluster() :
     m_capacity(0),
     m_capacityHasBeenSet(false),
     m_engineModeHasBeenSet(false),
-    m_scalingConfigurationInfoHasBeenSet(false)
+    m_scalingConfigurationInfoHasBeenSet(false),
+    m_deletionProtection(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -136,7 +138,9 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_capacity(0),
     m_capacityHasBeenSet(false),
     m_engineModeHasBeenSet(false),
-    m_scalingConfigurationInfoHasBeenSet(false)
+    m_scalingConfigurationInfoHasBeenSet(false),
+    m_deletionProtection(false),
+    m_deletionProtectionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -441,6 +445,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_scalingConfigurationInfo = scalingConfigurationInfoNode;
       m_scalingConfigurationInfoHasBeenSet = true;
     }
+    XmlNode deletionProtectionNode = resultNode.FirstChild("DeletionProtection");
+    if(!deletionProtectionNode.IsNull())
+    {
+      m_deletionProtection = StringUtils::ConvertToBool(StringUtils::Trim(deletionProtectionNode.GetText().c_str()).c_str());
+      m_deletionProtectionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -696,6 +706,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       m_scalingConfigurationInfo.OutputToStream(oStream, scalingConfigurationInfoLocationAndMemberSs.str().c_str());
   }
 
+  if(m_deletionProtectionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -905,6 +920,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       Aws::String scalingConfigurationInfoLocationAndMember(location);
       scalingConfigurationInfoLocationAndMember += ".ScalingConfigurationInfo";
       m_scalingConfigurationInfo.OutputToStream(oStream, scalingConfigurationInfoLocationAndMember.c_str());
+  }
+  if(m_deletionProtectionHasBeenSet)
+  {
+      oStream << location << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 }
 

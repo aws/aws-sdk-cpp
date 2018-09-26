@@ -78,7 +78,9 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_performanceInsightsRetentionPeriod(0),
     m_performanceInsightsRetentionPeriodHasBeenSet(false),
     m_enableCloudwatchLogsExportsHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false)
+    m_processorFeaturesHasBeenSet(false),
+    m_deletionProtection(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -332,6 +334,11 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
       item.OutputToStream(ss, "ProcessorFeatures.member.", processorFeaturesCount, "");
       processorFeaturesCount++;
     }
+  }
+
+  if(m_deletionProtectionHasBeenSet)
+  {
+    ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 
   ss << "Version=2014-10-31";

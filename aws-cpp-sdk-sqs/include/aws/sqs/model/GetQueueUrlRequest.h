@@ -52,49 +52,49 @@ namespace Model
     /**
      * <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
-     * (<code>_</code>).</p> <p>Queue names are case-sensitive.</p>
+     * (<code>_</code>).</p> <p>Queue URLs and names are case-sensitive.</p>
      */
     inline const Aws::String& GetQueueName() const{ return m_queueName; }
 
     /**
      * <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
-     * (<code>_</code>).</p> <p>Queue names are case-sensitive.</p>
+     * (<code>_</code>).</p> <p>Queue URLs and names are case-sensitive.</p>
      */
     inline void SetQueueName(const Aws::String& value) { m_queueNameHasBeenSet = true; m_queueName = value; }
 
     /**
      * <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
-     * (<code>_</code>).</p> <p>Queue names are case-sensitive.</p>
+     * (<code>_</code>).</p> <p>Queue URLs and names are case-sensitive.</p>
      */
     inline void SetQueueName(Aws::String&& value) { m_queueNameHasBeenSet = true; m_queueName = std::move(value); }
 
     /**
      * <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
-     * (<code>_</code>).</p> <p>Queue names are case-sensitive.</p>
+     * (<code>_</code>).</p> <p>Queue URLs and names are case-sensitive.</p>
      */
     inline void SetQueueName(const char* value) { m_queueNameHasBeenSet = true; m_queueName.assign(value); }
 
     /**
      * <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
-     * (<code>_</code>).</p> <p>Queue names are case-sensitive.</p>
+     * (<code>_</code>).</p> <p>Queue URLs and names are case-sensitive.</p>
      */
     inline GetQueueUrlRequest& WithQueueName(const Aws::String& value) { SetQueueName(value); return *this;}
 
     /**
      * <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
-     * (<code>_</code>).</p> <p>Queue names are case-sensitive.</p>
+     * (<code>_</code>).</p> <p>Queue URLs and names are case-sensitive.</p>
      */
     inline GetQueueUrlRequest& WithQueueName(Aws::String&& value) { SetQueueName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid
      * values: alphanumeric characters, hyphens (<code>-</code>), and underscores
-     * (<code>_</code>).</p> <p>Queue names are case-sensitive.</p>
+     * (<code>_</code>).</p> <p>Queue URLs and names are case-sensitive.</p>
      */
     inline GetQueueUrlRequest& WithQueueName(const char* value) { SetQueueName(value); return *this;}
 
