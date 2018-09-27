@@ -36,13 +36,13 @@ namespace Model
 {
   /**
    * <p>A set of validation rules for incoming <a>Method</a> requests.</p> <div
-   * class="remarks"> <p>In Swagger, a <a>RequestValidator</a> of an API is defined
+   * class="remarks"> <p>In OpenAPI, a <a>RequestValidator</a> of an API is defined
    * by the <a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validators.requestValidator.html">x-amazon-apigateway-request-validators.requestValidator</a>
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validators.requestValidator.html">x-amazon-apigateway-request-validators.requestValidator</a>
    * object. It the referenced using the <a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validator">x-amazon-apigateway-request-validator</a>
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html#api-gateway-swagger-extensions-request-validator">x-amazon-apigateway-request-validator</a>
    * property.</p> </div> <div class="seeAlso"><a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html">Enable
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html">Enable
    * Basic Request Validation in API Gateway</a></div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/RequestValidator">AWS
    * API Reference</a></p>

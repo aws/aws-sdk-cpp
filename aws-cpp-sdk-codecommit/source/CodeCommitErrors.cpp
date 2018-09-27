@@ -62,6 +62,7 @@ static const int BRANCH_DOES_NOT_EXIST_HASH = HashingUtils::HashString("BranchDo
 static const int IDEMPOTENCY_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotencyParameterMismatchException");
 static const int INVALID_REPOSITORY_TRIGGER_EVENTS_HASH = HashingUtils::HashString("InvalidRepositoryTriggerEventsException");
 static const int BRANCH_NAME_REQUIRED_HASH = HashingUtils::HashString("BranchNameRequiredException");
+static const int INVALID_DELETION_PARAMETER_HASH = HashingUtils::HashString("InvalidDeletionParameterException");
 static const int COMMENT_ID_REQUIRED_HASH = HashingUtils::HashString("CommentIdRequiredException");
 static const int INVALID_CLIENT_REQUEST_TOKEN_HASH = HashingUtils::HashString("InvalidClientRequestTokenException");
 static const int REPOSITORY_NOT_ASSOCIATED_WITH_PULL_REQUEST_HASH = HashingUtils::HashString("RepositoryNotAssociatedWithPullRequestException");
@@ -78,6 +79,7 @@ static const int MAXIMUM_OPEN_PULL_REQUESTS_EXCEEDED_HASH = HashingUtils::HashSt
 static const int REFERENCE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ReferenceDoesNotExistException");
 static const int PATH_DOES_NOT_EXIST_HASH = HashingUtils::HashString("PathDoesNotExistException");
 static const int TIP_OF_SOURCE_REFERENCE_IS_DIFFERENT_HASH = HashingUtils::HashString("TipOfSourceReferenceIsDifferentException");
+static const int FILE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("FileDoesNotExistException");
 static const int TARGETS_REQUIRED_HASH = HashingUtils::HashString("TargetsRequiredException");
 static const int FILE_CONTENT_REQUIRED_HASH = HashingUtils::HashString("FileContentRequiredException");
 static const int PULL_REQUEST_DOES_NOT_EXIST_HASH = HashingUtils::HashString("PullRequestDoesNotExistException");
@@ -89,8 +91,8 @@ static const int REPOSITORY_TRIGGER_EVENTS_LIST_REQUIRED_HASH = HashingUtils::Ha
 static const int INVALID_REPOSITORY_TRIGGER_DESTINATION_ARN_HASH = HashingUtils::HashString("InvalidRepositoryTriggerDestinationArnException");
 static const int INVALID_ORDER_HASH = HashingUtils::HashString("InvalidOrderException");
 static const int INVALID_REPOSITORY_TRIGGER_CUSTOM_DATA_HASH = HashingUtils::HashString("InvalidRepositoryTriggerCustomDataException");
-static const int PULL_REQUEST_ALREADY_CLOSED_HASH = HashingUtils::HashString("PullRequestAlreadyClosedException");
 static const int INVALID_EMAIL_HASH = HashingUtils::HashString("InvalidEmailException");
+static const int PULL_REQUEST_ALREADY_CLOSED_HASH = HashingUtils::HashString("PullRequestAlreadyClosedException");
 static const int INVALID_FILE_MODE_HASH = HashingUtils::HashString("InvalidFileModeException");
 static const int PULL_REQUEST_STATUS_REQUIRED_HASH = HashingUtils::HashString("PullRequestStatusRequiredException");
 static const int PATH_REQUIRED_HASH = HashingUtils::HashString("PathRequiredException");
@@ -126,6 +128,7 @@ static const int AUTHOR_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AuthorDo
 static const int FILE_NAME_CONFLICTS_WITH_DIRECTORY_NAME_HASH = HashingUtils::HashString("FileNameConflictsWithDirectoryNameException");
 static const int INVALID_FILE_POSITION_HASH = HashingUtils::HashString("InvalidFilePositionException");
 static const int INVALID_REPOSITORY_NAME_HASH = HashingUtils::HashString("InvalidRepositoryNameException");
+static const int FOLDER_DOES_NOT_EXIST_HASH = HashingUtils::HashString("FolderDoesNotExistException");
 static const int TIPS_DIVERGENCE_EXCEEDED_HASH = HashingUtils::HashString("TipsDivergenceExceededException");
 static const int INVALID_PARENT_COMMIT_ID_HASH = HashingUtils::HashString("InvalidParentCommitIdException");
 static const int TARGET_REQUIRED_HASH = HashingUtils::HashString("TargetRequiredException");
@@ -280,6 +283,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::BRANCH_NAME_REQUIRED), false);
   }
+  else if (hashCode == INVALID_DELETION_PARAMETER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_DELETION_PARAMETER), false);
+  }
   else if (hashCode == COMMENT_ID_REQUIRED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::COMMENT_ID_REQUIRED), false);
@@ -344,6 +351,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TIP_OF_SOURCE_REFERENCE_IS_DIFFERENT), false);
   }
+  else if (hashCode == FILE_DOES_NOT_EXIST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_DOES_NOT_EXIST), false);
+  }
   else if (hashCode == TARGETS_REQUIRED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::TARGETS_REQUIRED), false);
@@ -388,13 +399,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_TRIGGER_CUSTOM_DATA), false);
   }
-  else if (hashCode == PULL_REQUEST_ALREADY_CLOSED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_ALREADY_CLOSED), false);
-  }
   else if (hashCode == INVALID_EMAIL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_EMAIL), false);
+  }
+  else if (hashCode == PULL_REQUEST_ALREADY_CLOSED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::PULL_REQUEST_ALREADY_CLOSED), false);
   }
   else if (hashCode == INVALID_FILE_MODE_HASH)
   {
@@ -535,6 +546,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_REPOSITORY_NAME_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_REPOSITORY_NAME), false);
+  }
+  else if (hashCode == FOLDER_DOES_NOT_EXIST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FOLDER_DOES_NOT_EXIST), false);
   }
   else if (hashCode == TIPS_DIVERGENCE_EXCEEDED_HASH)
   {

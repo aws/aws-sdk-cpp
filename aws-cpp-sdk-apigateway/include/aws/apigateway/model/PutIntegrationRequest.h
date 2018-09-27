@@ -252,7 +252,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -285,7 +285,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -318,7 +318,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -351,7 +351,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -384,7 +384,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -417,7 +417,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -450,7 +450,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -507,7 +507,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -515,7 +515,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -523,7 +523,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -531,7 +531,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -539,7 +539,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -547,7 +547,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -555,7 +555,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */

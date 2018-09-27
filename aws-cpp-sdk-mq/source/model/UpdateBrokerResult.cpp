@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateBrokerResult::UpdateBrokerResult()
+UpdateBrokerResult::UpdateBrokerResult() : 
+    m_autoMinorVersionUpgrade(false)
 {
 }
 
-UpdateBrokerResult::UpdateBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+UpdateBrokerResult::UpdateBrokerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_autoMinorVersionUpgrade(false)
 {
   *this = result;
 }
@@ -38,6 +40,12 @@ UpdateBrokerResult::UpdateBrokerResult(const Aws::AmazonWebServiceResult<JsonVal
 UpdateBrokerResult& UpdateBrokerResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("autoMinorVersionUpgrade"))
+  {
+    m_autoMinorVersionUpgrade = jsonValue.GetBool("autoMinorVersionUpgrade");
+
+  }
+
   if(jsonValue.ValueExists("brokerId"))
   {
     m_brokerId = jsonValue.GetString("brokerId");
@@ -47,6 +55,12 @@ UpdateBrokerResult& UpdateBrokerResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
+
+  }
+
+  if(jsonValue.ValueExists("engineVersion"))
+  {
+    m_engineVersion = jsonValue.GetString("engineVersion");
 
   }
 

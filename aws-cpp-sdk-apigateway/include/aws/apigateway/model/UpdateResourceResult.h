@@ -38,7 +38,7 @@ namespace Model
 {
   /**
    * <p>Represents an API resource.</p> <div class="seeAlso"> <a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Create
    * an API</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Resource">AWS
    * API Reference</a></p>
@@ -209,13 +209,13 @@ namespace Model
      * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
      * "name": "integration", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
      * "name": "method", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
      * "name": "methodresponse", "templated": true } ], "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title":
      * "GET" }, "integration:put": { "href":
@@ -285,13 +285,13 @@ namespace Model
      * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
      * "name": "integration", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
      * "name": "method", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
      * "name": "methodresponse", "templated": true } ], "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title":
      * "GET" }, "integration:put": { "href":
@@ -361,13 +361,13 @@ namespace Model
      * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
      * "name": "integration", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
      * "name": "method", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
      * "name": "methodresponse", "templated": true } ], "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title":
      * "GET" }, "integration:put": { "href":
@@ -437,13 +437,13 @@ namespace Model
      * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
      * "name": "integration", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
      * "name": "method", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
      * "name": "methodresponse", "templated": true } ], "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title":
      * "GET" }, "integration:put": { "href":
@@ -513,13 +513,13 @@ namespace Model
      * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
      * "name": "integration", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
      * "name": "method", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
      * "name": "methodresponse", "templated": true } ], "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title":
      * "GET" }, "integration:put": { "href":
@@ -589,13 +589,13 @@ namespace Model
      * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
      * "name": "integration", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
      * "name": "method", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
      * "name": "methodresponse", "templated": true } ], "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title":
      * "GET" }, "integration:put": { "href":
@@ -665,13 +665,13 @@ namespace Model
      * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
      * "name": "integration", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
      * "name": "method", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
      * "name": "methodresponse", "templated": true } ], "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title":
      * "GET" }, "integration:put": { "href":
@@ -741,13 +741,13 @@ namespace Model
      * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
      * "name": "integration", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
      * "name": "method", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
      * "name": "methodresponse", "templated": true } ], "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title":
      * "GET" }, "integration:put": { "href":
@@ -817,13 +817,13 @@ namespace Model
      * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
      * "name": "integration", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
      * "name": "method", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
      * "name": "methodresponse", "templated": true } ], "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title":
      * "GET" }, "integration:put": { "href":
@@ -893,13 +893,13 @@ namespace Model
      * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
      * "name": "integration", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
      * "name": "method", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
      * "name": "methodresponse", "templated": true } ], "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title":
      * "GET" }, "integration:put": { "href":
@@ -969,13 +969,13 @@ namespace Model
      * Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request,
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
      * <h5>Response</h5> <pre><code>{ "_links": { "curies": [ { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
      * "name": "integration", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
      * "name": "method", "templated": true }, { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
      * "name": "methodresponse", "templated": true } ], "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET", "name": "GET", "title":
      * "GET" }, "integration:put": { "href":

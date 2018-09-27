@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CostandUsageReportService;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.6.20170106.19;
+        version : 1.6.20170106.20;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Cost and Usage Report Service);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.6.19
+            AWSSDKCPP-Core/1.6.20
        }
     }
 

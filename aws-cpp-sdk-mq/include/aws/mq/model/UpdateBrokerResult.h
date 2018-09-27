@@ -45,6 +45,22 @@ namespace Model
 
 
     /**
+     * The new value of automatic upgrades to new minor version for brokers.
+     */
+    inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+
+    /**
+     * The new value of automatic upgrades to new minor version for brokers.
+     */
+    inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgrade = value; }
+
+    /**
+     * The new value of automatic upgrades to new minor version for brokers.
+     */
+    inline UpdateBrokerResult& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
+
+    /**
      * Required. The unique ID that Amazon MQ generates for the broker.
      */
     inline const Aws::String& GetBrokerId() const{ return m_brokerId; }
@@ -107,6 +123,42 @@ namespace Model
 
 
     /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline void SetEngineVersion(const Aws::String& value) { m_engineVersion = value; }
+
+    /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersion = std::move(value); }
+
+    /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline void SetEngineVersion(const char* value) { m_engineVersion.assign(value); }
+
+    /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline UpdateBrokerResult& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+
+    /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline UpdateBrokerResult& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
+
+    /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline UpdateBrokerResult& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
+
+    /**
      * The list of information about logs to be enabled for the specified broker.
      */
     inline const Logs& GetLogs() const{ return m_logs; }
@@ -133,9 +185,13 @@ namespace Model
 
   private:
 
+    bool m_autoMinorVersionUpgrade;
+
     Aws::String m_brokerId;
 
     ConfigurationId m_configuration;
+
+    Aws::String m_engineVersion;
 
     Logs m_logs;
   };

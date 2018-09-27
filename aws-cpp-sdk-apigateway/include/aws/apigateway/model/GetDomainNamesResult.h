@@ -39,7 +39,7 @@ namespace Model
   /**
    * <p>Represents a collection of <a>DomainName</a> resources.</p> <div
    * class="seeAlso"> <a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Use
    * Client-Side Certificate</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DomainNames">AWS
    * API Reference</a></p>

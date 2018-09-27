@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Import documentation parts from an external (e.g., Swagger) definition file.
+   * <p>Import documentation parts from an external (e.g., OpenAPI) definition file.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportDocumentationPartsRequest">AWS
    * API Reference</a></p>

@@ -33,6 +33,7 @@
 #include <aws/codecommit/model/CreateRepositoryRequest.h>
 #include <aws/codecommit/model/DeleteBranchRequest.h>
 #include <aws/codecommit/model/DeleteCommentContentRequest.h>
+#include <aws/codecommit/model/DeleteFileRequest.h>
 #include <aws/codecommit/model/DeleteRepositoryRequest.h>
 #include <aws/codecommit/model/DescribePullRequestEventsRequest.h>
 #include <aws/codecommit/model/GetBlobRequest.h>
@@ -42,6 +43,8 @@
 #include <aws/codecommit/model/GetCommentsForPullRequestRequest.h>
 #include <aws/codecommit/model/GetCommitRequest.h>
 #include <aws/codecommit/model/GetDifferencesRequest.h>
+#include <aws/codecommit/model/GetFileRequest.h>
+#include <aws/codecommit/model/GetFolderRequest.h>
 #include <aws/codecommit/model/GetMergeConflictsRequest.h>
 #include <aws/codecommit/model/GetPullRequestRequest.h>
 #include <aws/codecommit/model/GetRepositoryRequest.h>
@@ -336,6 +339,41 @@ void CodeCommitClient::DeleteCommentContentAsync(const DeleteCommentContentReque
 void CodeCommitClient::DeleteCommentContentAsyncHelper(const DeleteCommentContentRequest& request, const DeleteCommentContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteCommentContent(request), context);
+}
+
+DeleteFileOutcome CodeCommitClient::DeleteFile(const DeleteFileRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteFileOutcome(DeleteFileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteFileOutcome(outcome.GetError());
+  }
+}
+
+DeleteFileOutcomeCallable CodeCommitClient::DeleteFileCallable(const DeleteFileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::DeleteFileAsync(const DeleteFileRequest& request, const DeleteFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFileAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::DeleteFileAsyncHelper(const DeleteFileRequest& request, const DeleteFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFile(request), context);
 }
 
 DeleteRepositoryOutcome CodeCommitClient::DeleteRepository(const DeleteRepositoryRequest& request) const
@@ -651,6 +689,76 @@ void CodeCommitClient::GetDifferencesAsync(const GetDifferencesRequest& request,
 void CodeCommitClient::GetDifferencesAsyncHelper(const GetDifferencesRequest& request, const GetDifferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDifferences(request), context);
+}
+
+GetFileOutcome CodeCommitClient::GetFile(const GetFileRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetFileOutcome(GetFileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetFileOutcome(outcome.GetError());
+  }
+}
+
+GetFileOutcomeCallable CodeCommitClient::GetFileCallable(const GetFileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetFileAsync(const GetFileRequest& request, const GetFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFileAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetFileAsyncHelper(const GetFileRequest& request, const GetFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFile(request), context);
+}
+
+GetFolderOutcome CodeCommitClient::GetFolder(const GetFolderRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetFolderOutcome(GetFolderResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetFolderOutcome(outcome.GetError());
+  }
+}
+
+GetFolderOutcomeCallable CodeCommitClient::GetFolderCallable(const GetFolderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFolderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFolder(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetFolderAsync(const GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFolderAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetFolderAsyncHelper(const GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFolder(request), context);
 }
 
 GetMergeConflictsOutcome CodeCommitClient::GetMergeConflicts(const GetMergeConflictsRequest& request) const

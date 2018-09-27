@@ -69,37 +69,37 @@ namespace Model
 
 
     /**
-     * Location of CloudWatch Log group where audit logs will be sent.
+     * The location of the CloudWatch Logs log group where audit logs are sent.
      */
     inline const Aws::String& GetAuditLogGroup() const{ return m_auditLogGroup; }
 
     /**
-     * Location of CloudWatch Log group where audit logs will be sent.
+     * The location of the CloudWatch Logs log group where audit logs are sent.
      */
     inline void SetAuditLogGroup(const Aws::String& value) { m_auditLogGroupHasBeenSet = true; m_auditLogGroup = value; }
 
     /**
-     * Location of CloudWatch Log group where audit logs will be sent.
+     * The location of the CloudWatch Logs log group where audit logs are sent.
      */
     inline void SetAuditLogGroup(Aws::String&& value) { m_auditLogGroupHasBeenSet = true; m_auditLogGroup = std::move(value); }
 
     /**
-     * Location of CloudWatch Log group where audit logs will be sent.
+     * The location of the CloudWatch Logs log group where audit logs are sent.
      */
     inline void SetAuditLogGroup(const char* value) { m_auditLogGroupHasBeenSet = true; m_auditLogGroup.assign(value); }
 
     /**
-     * Location of CloudWatch Log group where audit logs will be sent.
+     * The location of the CloudWatch Logs log group where audit logs are sent.
      */
     inline LogsSummary& WithAuditLogGroup(const Aws::String& value) { SetAuditLogGroup(value); return *this;}
 
     /**
-     * Location of CloudWatch Log group where audit logs will be sent.
+     * The location of the CloudWatch Logs log group where audit logs are sent.
      */
     inline LogsSummary& WithAuditLogGroup(Aws::String&& value) { SetAuditLogGroup(std::move(value)); return *this;}
 
     /**
-     * Location of CloudWatch Log group where audit logs will be sent.
+     * The location of the CloudWatch Logs log group where audit logs are sent.
      */
     inline LogsSummary& WithAuditLogGroup(const char* value) { SetAuditLogGroup(value); return *this;}
 
@@ -121,37 +121,37 @@ namespace Model
 
 
     /**
-     * Location of CloudWatch Log group where general logs will be sent.
+     * The location of the CloudWatch Logs log group where general logs are sent.
      */
     inline const Aws::String& GetGeneralLogGroup() const{ return m_generalLogGroup; }
 
     /**
-     * Location of CloudWatch Log group where general logs will be sent.
+     * The location of the CloudWatch Logs log group where general logs are sent.
      */
     inline void SetGeneralLogGroup(const Aws::String& value) { m_generalLogGroupHasBeenSet = true; m_generalLogGroup = value; }
 
     /**
-     * Location of CloudWatch Log group where general logs will be sent.
+     * The location of the CloudWatch Logs log group where general logs are sent.
      */
     inline void SetGeneralLogGroup(Aws::String&& value) { m_generalLogGroupHasBeenSet = true; m_generalLogGroup = std::move(value); }
 
     /**
-     * Location of CloudWatch Log group where general logs will be sent.
+     * The location of the CloudWatch Logs log group where general logs are sent.
      */
     inline void SetGeneralLogGroup(const char* value) { m_generalLogGroupHasBeenSet = true; m_generalLogGroup.assign(value); }
 
     /**
-     * Location of CloudWatch Log group where general logs will be sent.
+     * The location of the CloudWatch Logs log group where general logs are sent.
      */
     inline LogsSummary& WithGeneralLogGroup(const Aws::String& value) { SetGeneralLogGroup(value); return *this;}
 
     /**
-     * Location of CloudWatch Log group where general logs will be sent.
+     * The location of the CloudWatch Logs log group where general logs are sent.
      */
     inline LogsSummary& WithGeneralLogGroup(Aws::String&& value) { SetGeneralLogGroup(std::move(value)); return *this;}
 
     /**
-     * Location of CloudWatch Log group where general logs will be sent.
+     * The location of the CloudWatch Logs log group where general logs are sent.
      */
     inline LogsSummary& WithGeneralLogGroup(const char* value) { SetGeneralLogGroup(value); return *this;}
 

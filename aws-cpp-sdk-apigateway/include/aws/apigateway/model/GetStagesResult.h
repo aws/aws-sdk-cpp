@@ -38,7 +38,7 @@ namespace Model
   /**
    * <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a>
    * resource.</p> <div class="seeAlso"><a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/stages.html">Deploying
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/stages.html">Deploying
    * API in Stages</a></div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Stages">AWS
    * API Reference</a></p>

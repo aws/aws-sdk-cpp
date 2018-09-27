@@ -42,7 +42,7 @@ namespace Model
    * pairs. As such, pagination is not supported for querying this collection.</p>
    * <div class="remarks"> For more information about valid gateway response types,
    * see <a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/supported-gateway-response-types.html">Gateway
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/supported-gateway-response-types.html">Gateway
    * Response Types Supported by API Gateway</a> <div class="example"> <h4>Example:
    * Get the collection of gateway responses of an API</h4> <h5>Request</h5> <p>This
    * example request shows how to retrieve the <a>GatewayResponses</a> collection
@@ -242,7 +242,7 @@ namespace Model
    * "application/json": "{\"message\":$context.error.messageString}" },
    * "responseType": "AUTHORIZER_FAILURE", "statusCode": "500" } ] } }</code></pre>
    * <p></p> </div> </div> <div class="seeAlso"> <a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/customize-gateway-responses.html">Customize
    * Gateway Responses</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GatewayResponses">AWS
    * API Reference</a></p>

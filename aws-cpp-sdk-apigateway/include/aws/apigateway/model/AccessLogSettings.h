@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
      * variables</a>. The format must include at least
      * <code>$context.requestId</code>.</p>
      */
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
      * variables</a>. The format must include at least
      * <code>$context.requestId</code>.</p>
      */
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
      * variables</a>. The format must include at least
      * <code>$context.requestId</code>.</p>
      */
@@ -74,7 +74,7 @@ namespace Model
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
      * variables</a>. The format must include at least
      * <code>$context.requestId</code>.</p>
      */
@@ -82,7 +82,7 @@ namespace Model
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
      * variables</a>. The format must include at least
      * <code>$context.requestId</code>.</p>
      */
@@ -90,7 +90,7 @@ namespace Model
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
      * variables</a>. The format must include at least
      * <code>$context.requestId</code>.</p>
      */
@@ -98,7 +98,7 @@ namespace Model
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
      * variables</a>. The format must include at least
      * <code>$context.requestId</code>.</p>
      */

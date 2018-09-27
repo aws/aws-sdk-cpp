@@ -39,7 +39,7 @@ namespace Model
   /**
    * <p>Represents a collection of usage plans for an AWS account.</p> <div
    * class="seeAlso"> <a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html">Create
    * and Use Usage Plans</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UsagePlans">AWS
    * API Reference</a></p>

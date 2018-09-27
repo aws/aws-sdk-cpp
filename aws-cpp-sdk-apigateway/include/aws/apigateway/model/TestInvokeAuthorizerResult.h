@@ -229,7 +229,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
      * identity claims</a>, with any supported custom attributes, returned from the
      * Cognito Your User Pool configured for the API.</p>
      */
@@ -237,7 +237,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
      * identity claims</a>, with any supported custom attributes, returned from the
      * Cognito Your User Pool configured for the API.</p>
      */
@@ -245,7 +245,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
      * identity claims</a>, with any supported custom attributes, returned from the
      * Cognito Your User Pool configured for the API.</p>
      */
@@ -253,7 +253,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
      * identity claims</a>, with any supported custom attributes, returned from the
      * Cognito Your User Pool configured for the API.</p>
      */
@@ -261,7 +261,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
      * identity claims</a>, with any supported custom attributes, returned from the
      * Cognito Your User Pool configured for the API.</p>
      */
@@ -269,7 +269,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
      * identity claims</a>, with any supported custom attributes, returned from the
      * Cognito Your User Pool configured for the API.</p>
      */
@@ -277,7 +277,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
      * identity claims</a>, with any supported custom attributes, returned from the
      * Cognito Your User Pool configured for the API.</p>
      */
@@ -285,7 +285,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
      * identity claims</a>, with any supported custom attributes, returned from the
      * Cognito Your User Pool configured for the API.</p>
      */
@@ -293,7 +293,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
      * identity claims</a>, with any supported custom attributes, returned from the
      * Cognito Your User Pool configured for the API.</p>
      */
@@ -301,7 +301,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
      * identity claims</a>, with any supported custom attributes, returned from the
      * Cognito Your User Pool configured for the API.</p>
      */
@@ -309,7 +309,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
      * identity claims</a>, with any supported custom attributes, returned from the
      * Cognito Your User Pool configured for the API.</p>
      */
@@ -317,7 +317,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
+     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
      * identity claims</a>, with any supported custom attributes, returned from the
      * Cognito Your User Pool configured for the API.</p>
      */

@@ -38,11 +38,11 @@ namespace Model
   /**
    * <p>A collection of the imported <a>DocumentationPart</a> identifiers.</p> <div
    * class="remarks">This is used to return the result when documentation parts in an
-   * external (e.g., Swagger) file are imported into API Gateway</div> <div
+   * external (e.g., OpenAPI) file are imported into API Gateway</div> <div
    * class="seeAlso"> <a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
    * an API</a>, <a
-   * href="http://docs.aws.amazon.com/apigateway/api-reference/link-relation/documentationpart-import/">documentationpart:import</a>,
+   * href="https://docs.aws.amazon.com/apigateway/api-reference/link-relation/documentationpart-import/">documentationpart:import</a>,
    * <a>DocumentationPart</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DocumentationPartIds">AWS
    * API Reference</a></p>

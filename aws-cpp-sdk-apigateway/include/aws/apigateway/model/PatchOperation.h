@@ -207,7 +207,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
@@ -217,7 +217,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
@@ -227,7 +227,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
@@ -237,7 +237,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
@@ -247,7 +247,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline PatchOperation& WithValue(const Aws::String& value) { SetValue(value); return *this;}
@@ -257,7 +257,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline PatchOperation& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
@@ -267,7 +267,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline PatchOperation& WithValue(const char* value) { SetValue(value); return *this;}

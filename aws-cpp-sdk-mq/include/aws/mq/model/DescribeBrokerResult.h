@@ -376,43 +376,43 @@ namespace Model
 
     /**
      * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.0.
+     * 5.15.6 and 5.15.0.
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
      * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.0.
+     * 5.15.6 and 5.15.0.
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersion = value; }
 
     /**
      * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.0.
+     * 5.15.6 and 5.15.0.
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersion = std::move(value); }
 
     /**
      * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.0.
+     * 5.15.6 and 5.15.0.
      */
     inline void SetEngineVersion(const char* value) { m_engineVersion.assign(value); }
 
     /**
      * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.0.
+     * 5.15.6 and 5.15.0.
      */
     inline DescribeBrokerResult& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
      * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.0.
+     * 5.15.6 and 5.15.0.
      */
     inline DescribeBrokerResult& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.0.
+     * 5.15.6 and 5.15.0.
      */
     inline DescribeBrokerResult& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -508,6 +508,42 @@ namespace Model
      * The parameters that determine the WeeklyStartTime.
      */
     inline DescribeBrokerResult& WithMaintenanceWindowStartTime(WeeklyStartTime&& value) { SetMaintenanceWindowStartTime(std::move(value)); return *this;}
+
+
+    /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline const Aws::String& GetPendingEngineVersion() const{ return m_pendingEngineVersion; }
+
+    /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline void SetPendingEngineVersion(const Aws::String& value) { m_pendingEngineVersion = value; }
+
+    /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline void SetPendingEngineVersion(Aws::String&& value) { m_pendingEngineVersion = std::move(value); }
+
+    /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline void SetPendingEngineVersion(const char* value) { m_pendingEngineVersion.assign(value); }
+
+    /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline DescribeBrokerResult& WithPendingEngineVersion(const Aws::String& value) { SetPendingEngineVersion(value); return *this;}
+
+    /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline DescribeBrokerResult& WithPendingEngineVersion(Aws::String&& value) { SetPendingEngineVersion(std::move(value)); return *this;}
+
+    /**
+     * The version of the broker engine to upgrade to.
+     */
+    inline DescribeBrokerResult& WithPendingEngineVersion(const char* value) { SetPendingEngineVersion(value); return *this;}
 
 
     /**
@@ -707,6 +743,8 @@ namespace Model
     LogsSummary m_logs;
 
     WeeklyStartTime m_maintenanceWindowStartTime;
+
+    Aws::String m_pendingEngineVersion;
 
     bool m_publiclyAccessible;
 

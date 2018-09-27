@@ -47,10 +47,10 @@ namespace Model
    * and <code>RESPONSE_BODY</code>. Valid <code>location</code> fields depend on the
    * API entity type. All valid fields are not required.</p> <p>The content map is a
    * JSON string of API-specific key-value pairs. Although an API can use any shape
-   * for the content map, only the Swagger-compliant documentation fields will be
-   * injected into the associated API entity definition in the exported Swagger
+   * for the content map, only the OpenAPI-compliant documentation fields will be
+   * injected into the associated API entity definition in the exported OpenAPI
    * definition file.</p></div> <div class="seeAlso"> <a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api.html">Documenting
    * an API</a>, <a>DocumentationParts</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DocumentationPart">AWS
    * API Reference</a></p>
@@ -155,10 +155,10 @@ namespace Model
     /**
      * <p>A content map of API-specific key-value pairs describing the targeted API
      * entity. The map must be encoded as a JSON string, e.g., <code>"{
-     * \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
+     * \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
      * documentation-related fields from the <literal>properties</literal> map are
      * exported and, hence, published as part of the API entity definitions, while the
-     * original documentation parts are exported in a Swagger extension of
+     * original documentation parts are exported in a OpenAPI extension of
      * <code>x-amazon-apigateway-documentation</code>.</p>
      */
     inline const Aws::String& GetProperties() const{ return m_properties; }
@@ -166,10 +166,10 @@ namespace Model
     /**
      * <p>A content map of API-specific key-value pairs describing the targeted API
      * entity. The map must be encoded as a JSON string, e.g., <code>"{
-     * \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
+     * \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
      * documentation-related fields from the <literal>properties</literal> map are
      * exported and, hence, published as part of the API entity definitions, while the
-     * original documentation parts are exported in a Swagger extension of
+     * original documentation parts are exported in a OpenAPI extension of
      * <code>x-amazon-apigateway-documentation</code>.</p>
      */
     inline void SetProperties(const Aws::String& value) { m_properties = value; }
@@ -177,10 +177,10 @@ namespace Model
     /**
      * <p>A content map of API-specific key-value pairs describing the targeted API
      * entity. The map must be encoded as a JSON string, e.g., <code>"{
-     * \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
+     * \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
      * documentation-related fields from the <literal>properties</literal> map are
      * exported and, hence, published as part of the API entity definitions, while the
-     * original documentation parts are exported in a Swagger extension of
+     * original documentation parts are exported in a OpenAPI extension of
      * <code>x-amazon-apigateway-documentation</code>.</p>
      */
     inline void SetProperties(Aws::String&& value) { m_properties = std::move(value); }
@@ -188,10 +188,10 @@ namespace Model
     /**
      * <p>A content map of API-specific key-value pairs describing the targeted API
      * entity. The map must be encoded as a JSON string, e.g., <code>"{
-     * \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
+     * \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
      * documentation-related fields from the <literal>properties</literal> map are
      * exported and, hence, published as part of the API entity definitions, while the
-     * original documentation parts are exported in a Swagger extension of
+     * original documentation parts are exported in a OpenAPI extension of
      * <code>x-amazon-apigateway-documentation</code>.</p>
      */
     inline void SetProperties(const char* value) { m_properties.assign(value); }
@@ -199,10 +199,10 @@ namespace Model
     /**
      * <p>A content map of API-specific key-value pairs describing the targeted API
      * entity. The map must be encoded as a JSON string, e.g., <code>"{
-     * \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
+     * \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
      * documentation-related fields from the <literal>properties</literal> map are
      * exported and, hence, published as part of the API entity definitions, while the
-     * original documentation parts are exported in a Swagger extension of
+     * original documentation parts are exported in a OpenAPI extension of
      * <code>x-amazon-apigateway-documentation</code>.</p>
      */
     inline UpdateDocumentationPartResult& WithProperties(const Aws::String& value) { SetProperties(value); return *this;}
@@ -210,10 +210,10 @@ namespace Model
     /**
      * <p>A content map of API-specific key-value pairs describing the targeted API
      * entity. The map must be encoded as a JSON string, e.g., <code>"{
-     * \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
+     * \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
      * documentation-related fields from the <literal>properties</literal> map are
      * exported and, hence, published as part of the API entity definitions, while the
-     * original documentation parts are exported in a Swagger extension of
+     * original documentation parts are exported in a OpenAPI extension of
      * <code>x-amazon-apigateway-documentation</code>.</p>
      */
     inline UpdateDocumentationPartResult& WithProperties(Aws::String&& value) { SetProperties(std::move(value)); return *this;}
@@ -221,10 +221,10 @@ namespace Model
     /**
      * <p>A content map of API-specific key-value pairs describing the targeted API
      * entity. The map must be encoded as a JSON string, e.g., <code>"{
-     * \"description\": \"The API does ...\" }"</code>. Only Swagger-compliant
+     * \"description\": \"The API does ...\" }"</code>. Only OpenAPI-compliant
      * documentation-related fields from the <literal>properties</literal> map are
      * exported and, hence, published as part of the API entity definitions, while the
-     * original documentation parts are exported in a Swagger extension of
+     * original documentation parts are exported in a OpenAPI extension of
      * <code>x-amazon-apigateway-documentation</code>.</p>
      */
     inline UpdateDocumentationPartResult& WithProperties(const char* value) { SetProperties(value); return *this;}

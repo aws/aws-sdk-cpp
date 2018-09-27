@@ -44,7 +44,7 @@ namespace Model
    * <p>Represents an HTTP, HTTP_PROXY, AWS, AWS_PROXY, or Mock integration.</p> <div
    * class="remarks">In the API Gateway console, the built-in Lambda integration is
    * an AWS integration.</div> <div class="seeAlso"> <a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
    * an API</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Integration">AWS
    * API Reference</a></p>
@@ -249,7 +249,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -282,7 +282,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -315,7 +315,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -348,7 +348,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -381,7 +381,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -414,7 +414,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -447,7 +447,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -504,7 +504,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -512,7 +512,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -520,7 +520,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -528,7 +528,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -536,7 +536,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -544,7 +544,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -552,7 +552,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="http://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -1212,7 +1212,7 @@ namespace Model
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
      * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
      * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
      * "title": "200" }, "integrationresponse:delete": { "href":
@@ -1224,7 +1224,7 @@ namespace Model
      * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
      * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
      * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
      * an API</a> </div>
      */
     inline const Aws::Map<Aws::String, IntegrationResponse>& GetIntegrationResponses() const{ return m_integrationResponses; }
@@ -1240,7 +1240,7 @@ namespace Model
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
      * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
      * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
      * "title": "200" }, "integrationresponse:delete": { "href":
@@ -1252,7 +1252,7 @@ namespace Model
      * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
      * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
      * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
      * an API</a> </div>
      */
     inline void SetIntegrationResponses(const Aws::Map<Aws::String, IntegrationResponse>& value) { m_integrationResponses = value; }
@@ -1268,7 +1268,7 @@ namespace Model
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
      * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
      * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
      * "title": "200" }, "integrationresponse:delete": { "href":
@@ -1280,7 +1280,7 @@ namespace Model
      * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
      * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
      * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
      * an API</a> </div>
      */
     inline void SetIntegrationResponses(Aws::Map<Aws::String, IntegrationResponse>&& value) { m_integrationResponses = std::move(value); }
@@ -1296,7 +1296,7 @@ namespace Model
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
      * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
      * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
      * "title": "200" }, "integrationresponse:delete": { "href":
@@ -1308,7 +1308,7 @@ namespace Model
      * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
      * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
      * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
      * an API</a> </div>
      */
     inline UpdateIntegrationResult& WithIntegrationResponses(const Aws::Map<Aws::String, IntegrationResponse>& value) { SetIntegrationResponses(value); return *this;}
@@ -1324,7 +1324,7 @@ namespace Model
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
      * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
      * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
      * "title": "200" }, "integrationresponse:delete": { "href":
@@ -1336,7 +1336,7 @@ namespace Model
      * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
      * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
      * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
      * an API</a> </div>
      */
     inline UpdateIntegrationResult& WithIntegrationResponses(Aws::Map<Aws::String, IntegrationResponse>&& value) { SetIntegrationResponses(std::move(value)); return *this;}
@@ -1352,7 +1352,7 @@ namespace Model
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
      * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
      * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
      * "title": "200" }, "integrationresponse:delete": { "href":
@@ -1364,7 +1364,7 @@ namespace Model
      * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
      * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
      * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
      * an API</a> </div>
      */
     inline UpdateIntegrationResult& AddIntegrationResponses(const Aws::String& key, const IntegrationResponse& value) { m_integrationResponses.emplace(key, value); return *this; }
@@ -1380,7 +1380,7 @@ namespace Model
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
      * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
      * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
      * "title": "200" }, "integrationresponse:delete": { "href":
@@ -1392,7 +1392,7 @@ namespace Model
      * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
      * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
      * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
      * an API</a> </div>
      */
     inline UpdateIntegrationResult& AddIntegrationResponses(Aws::String&& key, const IntegrationResponse& value) { m_integrationResponses.emplace(std::move(key), value); return *this; }
@@ -1408,7 +1408,7 @@ namespace Model
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
      * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
      * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
      * "title": "200" }, "integrationresponse:delete": { "href":
@@ -1420,7 +1420,7 @@ namespace Model
      * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
      * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
      * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
      * an API</a> </div>
      */
     inline UpdateIntegrationResult& AddIntegrationResponses(const Aws::String& key, IntegrationResponse&& value) { m_integrationResponses.emplace(key, std::move(value)); return *this; }
@@ -1436,7 +1436,7 @@ namespace Model
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
      * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
      * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
      * "title": "200" }, "integrationresponse:delete": { "href":
@@ -1448,7 +1448,7 @@ namespace Model
      * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
      * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
      * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
      * an API</a> </div>
      */
     inline UpdateIntegrationResult& AddIntegrationResponses(Aws::String&& key, IntegrationResponse&& value) { m_integrationResponses.emplace(std::move(key), std::move(value)); return *this; }
@@ -1464,7 +1464,7 @@ namespace Model
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
      * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
      * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
      * "title": "200" }, "integrationresponse:delete": { "href":
@@ -1476,7 +1476,7 @@ namespace Model
      * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
      * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
      * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
      * an API</a> </div>
      */
     inline UpdateIntegrationResult& AddIntegrationResponses(const char* key, IntegrationResponse&& value) { m_integrationResponses.emplace(key, std::move(value)); return *this; }
@@ -1492,7 +1492,7 @@ namespace Model
      * SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash} </code></pre>
      * <h5>Response</h5> <p>The successful response returns <code>200 OK</code> status
      * and a payload as follows:</p> <pre><code>{ "_links": { "curies": { "href":
-     * "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+     * "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
      * "name": "integrationresponse", "templated": true }, "self": { "href":
      * "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
      * "title": "200" }, "integrationresponse:delete": { "href":
@@ -1504,7 +1504,7 @@ namespace Model
      * "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in
      * $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
      * }, "statusCode": "200" }</code></pre> <p/> </div> <div class="seeAlso"> <a
-     * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating
      * an API</a> </div>
      */
     inline UpdateIntegrationResult& AddIntegrationResponses(const char* key, const IntegrationResponse& value) { m_integrationResponses.emplace(key, value); return *this; }

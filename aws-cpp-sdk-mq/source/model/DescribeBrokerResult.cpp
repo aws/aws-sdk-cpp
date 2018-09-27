@@ -135,6 +135,12 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("pendingEngineVersion"))
+  {
+    m_pendingEngineVersion = jsonValue.GetString("pendingEngineVersion");
+
+  }
+
   if(jsonValue.ValueExists("publiclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetBool("publiclyAccessible");

@@ -26,6 +26,7 @@
 #include <aws/codecommit/model/CreateRepositoryResult.h>
 #include <aws/codecommit/model/DeleteBranchResult.h>
 #include <aws/codecommit/model/DeleteCommentContentResult.h>
+#include <aws/codecommit/model/DeleteFileResult.h>
 #include <aws/codecommit/model/DeleteRepositoryResult.h>
 #include <aws/codecommit/model/DescribePullRequestEventsResult.h>
 #include <aws/codecommit/model/GetBlobResult.h>
@@ -35,6 +36,8 @@
 #include <aws/codecommit/model/GetCommentsForPullRequestResult.h>
 #include <aws/codecommit/model/GetCommitResult.h>
 #include <aws/codecommit/model/GetDifferencesResult.h>
+#include <aws/codecommit/model/GetFileResult.h>
+#include <aws/codecommit/model/GetFolderResult.h>
 #include <aws/codecommit/model/GetMergeConflictsResult.h>
 #include <aws/codecommit/model/GetPullRequestResult.h>
 #include <aws/codecommit/model/GetRepositoryResult.h>
@@ -100,6 +103,7 @@ namespace Model
         class CreateRepositoryRequest;
         class DeleteBranchRequest;
         class DeleteCommentContentRequest;
+        class DeleteFileRequest;
         class DeleteRepositoryRequest;
         class DescribePullRequestEventsRequest;
         class GetBlobRequest;
@@ -109,6 +113,8 @@ namespace Model
         class GetCommentsForPullRequestRequest;
         class GetCommitRequest;
         class GetDifferencesRequest;
+        class GetFileRequest;
+        class GetFolderRequest;
         class GetMergeConflictsRequest;
         class GetPullRequestRequest;
         class GetRepositoryRequest;
@@ -137,6 +143,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateRepositoryResult, Aws::Client::AWSError<CodeCommitErrors>> CreateRepositoryOutcome;
         typedef Aws::Utils::Outcome<DeleteBranchResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteBranchOutcome;
         typedef Aws::Utils::Outcome<DeleteCommentContentResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteCommentContentOutcome;
+        typedef Aws::Utils::Outcome<DeleteFileResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteFileOutcome;
         typedef Aws::Utils::Outcome<DeleteRepositoryResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteRepositoryOutcome;
         typedef Aws::Utils::Outcome<DescribePullRequestEventsResult, Aws::Client::AWSError<CodeCommitErrors>> DescribePullRequestEventsOutcome;
         typedef Aws::Utils::Outcome<GetBlobResult, Aws::Client::AWSError<CodeCommitErrors>> GetBlobOutcome;
@@ -146,6 +153,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetCommentsForPullRequestResult, Aws::Client::AWSError<CodeCommitErrors>> GetCommentsForPullRequestOutcome;
         typedef Aws::Utils::Outcome<GetCommitResult, Aws::Client::AWSError<CodeCommitErrors>> GetCommitOutcome;
         typedef Aws::Utils::Outcome<GetDifferencesResult, Aws::Client::AWSError<CodeCommitErrors>> GetDifferencesOutcome;
+        typedef Aws::Utils::Outcome<GetFileResult, Aws::Client::AWSError<CodeCommitErrors>> GetFileOutcome;
+        typedef Aws::Utils::Outcome<GetFolderResult, Aws::Client::AWSError<CodeCommitErrors>> GetFolderOutcome;
         typedef Aws::Utils::Outcome<GetMergeConflictsResult, Aws::Client::AWSError<CodeCommitErrors>> GetMergeConflictsOutcome;
         typedef Aws::Utils::Outcome<GetPullRequestResult, Aws::Client::AWSError<CodeCommitErrors>> GetPullRequestOutcome;
         typedef Aws::Utils::Outcome<GetRepositoryResult, Aws::Client::AWSError<CodeCommitErrors>> GetRepositoryOutcome;
@@ -174,6 +183,7 @@ namespace Model
         typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
         typedef std::future<DeleteBranchOutcome> DeleteBranchOutcomeCallable;
         typedef std::future<DeleteCommentContentOutcome> DeleteCommentContentOutcomeCallable;
+        typedef std::future<DeleteFileOutcome> DeleteFileOutcomeCallable;
         typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
         typedef std::future<DescribePullRequestEventsOutcome> DescribePullRequestEventsOutcomeCallable;
         typedef std::future<GetBlobOutcome> GetBlobOutcomeCallable;
@@ -183,6 +193,8 @@ namespace Model
         typedef std::future<GetCommentsForPullRequestOutcome> GetCommentsForPullRequestOutcomeCallable;
         typedef std::future<GetCommitOutcome> GetCommitOutcomeCallable;
         typedef std::future<GetDifferencesOutcome> GetDifferencesOutcomeCallable;
+        typedef std::future<GetFileOutcome> GetFileOutcomeCallable;
+        typedef std::future<GetFolderOutcome> GetFolderOutcomeCallable;
         typedef std::future<GetMergeConflictsOutcome> GetMergeConflictsOutcomeCallable;
         typedef std::future<GetPullRequestOutcome> GetPullRequestOutcomeCallable;
         typedef std::future<GetRepositoryOutcome> GetRepositoryOutcomeCallable;
@@ -214,6 +226,7 @@ namespace Model
     typedef std::function<void(const CodeCommitClient*, const Model::CreateRepositoryRequest&, const Model::CreateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRepositoryResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::DeleteBranchRequest&, const Model::DeleteBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBranchResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::DeleteCommentContentRequest&, const Model::DeleteCommentContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCommentContentResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::DeleteFileRequest&, const Model::DeleteFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::DeleteRepositoryRequest&, const Model::DeleteRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::DescribePullRequestEventsRequest&, const Model::DescribePullRequestEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePullRequestEventsResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetBlobRequest&, const Model::GetBlobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlobResponseReceivedHandler;
@@ -223,6 +236,8 @@ namespace Model
     typedef std::function<void(const CodeCommitClient*, const Model::GetCommentsForPullRequestRequest&, const Model::GetCommentsForPullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommentsForPullRequestResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetCommitRequest&, const Model::GetCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommitResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetDifferencesRequest&, const Model::GetDifferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDifferencesResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::GetFileRequest&, const Model::GetFileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFileResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::GetFolderRequest&, const Model::GetFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFolderResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetMergeConflictsRequest&, const Model::GetMergeConflictsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMergeConflictsResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetPullRequestRequest&, const Model::GetPullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPullRequestResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::GetRepositoryRequest&, const Model::GetRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryResponseReceivedHandler;
@@ -270,7 +285,11 @@ namespace Model
    * <a>ListBranches</a>, which lists all branches for a specified repository.</p>
    * </li> <li> <p> <a>UpdateDefaultBranch</a>, which changes the default branch for
    * a repository.</p> </li> </ul> <p>Files, by calling the following:</p> <ul> <li>
-   * <p> <a>PutFile</a>, which adds or modifies a file in a specified repository and
+   * <p> <a>DeleteFile</a>, which deletes the content of a specified file from a
+   * specified branch.</p> </li> <li> <p> <a>GetFile</a>, which returns the base-64
+   * encoded content of a specified file.</p> </li> <li> <p> <a>GetFolder</a>, which
+   * returns the contents of a specified folder or directory.</p> </li> <li> <p>
+   * <a>PutFile</a>, which adds or modifies a file in a specified repository and
    * branch.</p> </li> </ul> <p>Information about committed code in a repository, by
    * calling the following:</p> <ul> <li> <p> <a>GetBlob</a>, which returns the
    * base-64 encoded content of an individual Git blob object within a
@@ -534,6 +553,37 @@ namespace Model
         virtual void DeleteCommentContentAsync(const Model::DeleteCommentContentRequest& request, const DeleteCommentContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a specified file from a specified branch. A commit is created on the
+         * branch that contains the revision. The file will still exist in the commits
+         * prior to the commit that contains the deletion.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFileOutcome DeleteFile(const Model::DeleteFileRequest& request) const;
+
+        /**
+         * <p>Deletes a specified file from a specified branch. A commit is created on the
+         * branch that contains the revision. The file will still exist in the commits
+         * prior to the commit that contains the deletion.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFileOutcomeCallable DeleteFileCallable(const Model::DeleteFileRequest& request) const;
+
+        /**
+         * <p>Deletes a specified file from a specified branch. A commit is created on the
+         * branch that contains the revision. The file will still exist in the commits
+         * prior to the commit that contains the deletion.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFileAsync(const Model::DeleteFileRequest& request, const DeleteFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a repository. If a specified repository was already deleted, a null
          * repository ID will be returned.</p> <important> <p>Deleting a repository also
          * deletes all associated objects and metadata. After a repository is deleted, all
@@ -793,6 +843,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDifferencesAsync(const Model::GetDifferencesRequest& request, const GetDifferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the base-64 encoded contents of a specified file and its
+         * metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFileOutcome GetFile(const Model::GetFileRequest& request) const;
+
+        /**
+         * <p>Returns the base-64 encoded contents of a specified file and its
+         * metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetFileOutcomeCallable GetFileCallable(const Model::GetFileRequest& request) const;
+
+        /**
+         * <p>Returns the base-64 encoded contents of a specified file and its
+         * metadata.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetFileAsync(const Model::GetFileRequest& request, const GetFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the contents of a specified folder in a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFolder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFolderOutcome GetFolder(const Model::GetFolderRequest& request) const;
+
+        /**
+         * <p>Returns the contents of a specified folder in a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFolder">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetFolderOutcomeCallable GetFolderCallable(const Model::GetFolderRequest& request) const;
+
+        /**
+         * <p>Returns the contents of a specified folder in a repository.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFolder">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetFolderAsync(const Model::GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about merge conflicts between the before and after commit
@@ -1450,6 +1556,7 @@ namespace Model
         void CreateRepositoryAsyncHelper(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBranchAsyncHelper(const Model::DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCommentContentAsyncHelper(const Model::DeleteCommentContentRequest& request, const DeleteCommentContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFileAsyncHelper(const Model::DeleteFileRequest& request, const DeleteFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRepositoryAsyncHelper(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePullRequestEventsAsyncHelper(const Model::DescribePullRequestEventsRequest& request, const DescribePullRequestEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBlobAsyncHelper(const Model::GetBlobRequest& request, const GetBlobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1459,6 +1566,8 @@ namespace Model
         void GetCommentsForPullRequestAsyncHelper(const Model::GetCommentsForPullRequestRequest& request, const GetCommentsForPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCommitAsyncHelper(const Model::GetCommitRequest& request, const GetCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDifferencesAsyncHelper(const Model::GetDifferencesRequest& request, const GetDifferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFileAsyncHelper(const Model::GetFileRequest& request, const GetFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFolderAsyncHelper(const Model::GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMergeConflictsAsyncHelper(const Model::GetMergeConflictsRequest& request, const GetMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPullRequestAsyncHelper(const Model::GetPullRequestRequest& request, const GetPullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRepositoryAsyncHelper(const Model::GetRepositoryRequest& request, const GetRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

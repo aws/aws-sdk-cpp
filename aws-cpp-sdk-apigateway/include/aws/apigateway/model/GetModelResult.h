@@ -43,7 +43,7 @@ namespace Model
    * is used for generating an API's SDK, validating the input request body, and
    * creating a skeletal mapping template.</p> </div> <div class="seeAlso">
    * <a>Method</a>, <a>MethodResponse</a>, <a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Models
    * and Mappings</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Model">AWS
    * API Reference</a></p>

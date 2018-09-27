@@ -48,6 +48,28 @@ namespace Model
 
 
     /**
+     * Enables automatic upgrades to new minor versions for brokers, as Apache releases
+     * the versions. The automatic upgrades occur during the maintenance window of the
+     * broker or after a manual broker reboot.
+     */
+    inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+
+    /**
+     * Enables automatic upgrades to new minor versions for brokers, as Apache releases
+     * the versions. The automatic upgrades occur during the maintenance window of the
+     * broker or after a manual broker reboot.
+     */
+    inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
+
+    /**
+     * Enables automatic upgrades to new minor versions for brokers, as Apache releases
+     * the versions. The automatic upgrades occur during the maintenance window of the
+     * broker or after a manual broker reboot.
+     */
+    inline UpdateBrokerRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
+
+    /**
      * The name of the broker. This value must be unique in your AWS account, 1-50
      * characters long, must contain only letters, numbers, dashes, and underscores,
      * and must not contain whitespaces, brackets, wildcard characters, or special
@@ -131,6 +153,49 @@ namespace Model
 
 
     /**
+     * The version of the broker engine. Note: Currently, Amazon MQ supports only
+     * 5.15.6 and 5.15.0.
+     */
+    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * The version of the broker engine. Note: Currently, Amazon MQ supports only
+     * 5.15.6 and 5.15.0.
+     */
+    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /**
+     * The version of the broker engine. Note: Currently, Amazon MQ supports only
+     * 5.15.6 and 5.15.0.
+     */
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
+
+    /**
+     * The version of the broker engine. Note: Currently, Amazon MQ supports only
+     * 5.15.6 and 5.15.0.
+     */
+    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
+
+    /**
+     * The version of the broker engine. Note: Currently, Amazon MQ supports only
+     * 5.15.6 and 5.15.0.
+     */
+    inline UpdateBrokerRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+
+    /**
+     * The version of the broker engine. Note: Currently, Amazon MQ supports only
+     * 5.15.6 and 5.15.0.
+     */
+    inline UpdateBrokerRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
+
+    /**
+     * The version of the broker engine. Note: Currently, Amazon MQ supports only
+     * 5.15.6 and 5.15.0.
+     */
+    inline UpdateBrokerRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
+
+    /**
      * Enables Amazon CloudWatch logging for brokers.
      */
     inline const Logs& GetLogs() const{ return m_logs; }
@@ -157,11 +222,17 @@ namespace Model
 
   private:
 
+    bool m_autoMinorVersionUpgrade;
+    bool m_autoMinorVersionUpgradeHasBeenSet;
+
     Aws::String m_brokerId;
     bool m_brokerIdHasBeenSet;
 
     ConfigurationId m_configuration;
     bool m_configurationHasBeenSet;
+
+    Aws::String m_engineVersion;
+    bool m_engineVersionHasBeenSet;
 
     Logs m_logs;
     bool m_logsHasBeenSet;

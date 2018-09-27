@@ -47,7 +47,7 @@ namespace Model
    * <code>https://apis.examples.com/myApi</code>, where <code>myApi</code> is the
    * base path mapping (<a>BasePathMapping</a>) of your API under the custom domain
    * name. </p> </div> <div class="seeAlso"> <a
-   * href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Set
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html">Set
    * a Custom Host Name for an API</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DomainName">AWS
    * API Reference</a></p>
@@ -290,7 +290,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline const Aws::String& GetRegionalHostedZoneId() const{ return m_regionalHostedZoneId; }
@@ -300,7 +300,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline void SetRegionalHostedZoneId(const Aws::String& value) { m_regionalHostedZoneIdHasBeenSet = true; m_regionalHostedZoneId = value; }
@@ -310,7 +310,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline void SetRegionalHostedZoneId(Aws::String&& value) { m_regionalHostedZoneIdHasBeenSet = true; m_regionalHostedZoneId = std::move(value); }
@@ -320,7 +320,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline void SetRegionalHostedZoneId(const char* value) { m_regionalHostedZoneIdHasBeenSet = true; m_regionalHostedZoneId.assign(value); }
@@ -330,7 +330,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline DomainName& WithRegionalHostedZoneId(const Aws::String& value) { SetRegionalHostedZoneId(value); return *this;}
@@ -340,7 +340,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline DomainName& WithRegionalHostedZoneId(Aws::String&& value) { SetRegionalHostedZoneId(std::move(value)); return *this;}
@@ -350,7 +350,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline DomainName& WithRegionalHostedZoneId(const char* value) { SetRegionalHostedZoneId(value); return *this;}
@@ -454,7 +454,7 @@ namespace Model
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
      * name. For more information about CloudFront distributions, see the <a
-     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
      * CloudFront documentation</a>.</p>
      */
     inline const Aws::String& GetDistributionDomainName() const{ return m_distributionDomainName; }
@@ -464,7 +464,7 @@ namespace Model
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
      * name. For more information about CloudFront distributions, see the <a
-     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
      * CloudFront documentation</a>.</p>
      */
     inline void SetDistributionDomainName(const Aws::String& value) { m_distributionDomainNameHasBeenSet = true; m_distributionDomainName = value; }
@@ -474,7 +474,7 @@ namespace Model
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
      * name. For more information about CloudFront distributions, see the <a
-     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
      * CloudFront documentation</a>.</p>
      */
     inline void SetDistributionDomainName(Aws::String&& value) { m_distributionDomainNameHasBeenSet = true; m_distributionDomainName = std::move(value); }
@@ -484,7 +484,7 @@ namespace Model
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
      * name. For more information about CloudFront distributions, see the <a
-     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
      * CloudFront documentation</a>.</p>
      */
     inline void SetDistributionDomainName(const char* value) { m_distributionDomainNameHasBeenSet = true; m_distributionDomainName.assign(value); }
@@ -494,7 +494,7 @@ namespace Model
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
      * name. For more information about CloudFront distributions, see the <a
-     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
      * CloudFront documentation</a>.</p>
      */
     inline DomainName& WithDistributionDomainName(const Aws::String& value) { SetDistributionDomainName(value); return *this;}
@@ -504,7 +504,7 @@ namespace Model
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
      * name. For more information about CloudFront distributions, see the <a
-     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
      * CloudFront documentation</a>.</p>
      */
     inline DomainName& WithDistributionDomainName(Aws::String&& value) { SetDistributionDomainName(std::move(value)); return *this;}
@@ -514,7 +514,7 @@ namespace Model
      * custom domain name for an edge-optimized endpoint. You set up this association
      * when adding a DNS record pointing the custom domain name to this distribution
      * name. For more information about CloudFront distributions, see the <a
-     * href="http://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
      * CloudFront documentation</a>.</p>
      */
     inline DomainName& WithDistributionDomainName(const char* value) { SetDistributionDomainName(value); return *this;}
@@ -526,7 +526,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline const Aws::String& GetDistributionHostedZoneId() const{ return m_distributionHostedZoneId; }
@@ -537,7 +537,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline void SetDistributionHostedZoneId(const Aws::String& value) { m_distributionHostedZoneIdHasBeenSet = true; m_distributionHostedZoneId = value; }
@@ -548,7 +548,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline void SetDistributionHostedZoneId(Aws::String&& value) { m_distributionHostedZoneIdHasBeenSet = true; m_distributionHostedZoneId = std::move(value); }
@@ -559,7 +559,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline void SetDistributionHostedZoneId(const char* value) { m_distributionHostedZoneIdHasBeenSet = true; m_distributionHostedZoneId.assign(value); }
@@ -570,7 +570,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline DomainName& WithDistributionHostedZoneId(const Aws::String& value) { SetDistributionHostedZoneId(value); return *this;}
@@ -581,7 +581,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline DomainName& WithDistributionHostedZoneId(Aws::String&& value) { SetDistributionHostedZoneId(std::move(value)); return *this;}
@@ -592,7 +592,7 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
      * up a Regional Custom Domain Name</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline DomainName& WithDistributionHostedZoneId(const char* value) { SetDistributionHostedZoneId(value); return *this;}
