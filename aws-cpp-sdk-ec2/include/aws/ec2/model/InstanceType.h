@@ -175,7 +175,10 @@ namespace Model
     z1d_2xlarge,
     z1d_3xlarge,
     z1d_6xlarge,
-    z1d_12xlarge
+    z1d_12xlarge,
+    u_6tb1_metal,
+    u_9tb1_metal,
+    u_12tb1_metal
   };
 
 namespace InstanceTypeMapper

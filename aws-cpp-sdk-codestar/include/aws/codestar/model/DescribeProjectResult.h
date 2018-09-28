@@ -17,6 +17,7 @@
 #include <aws/codestar/CodeStar_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/codestar/model/ProjectStatus.h>
 #include <utility>
 
 namespace Aws
@@ -334,6 +335,32 @@ namespace Model
      */
     inline DescribeProjectResult& WithProjectTemplateId(const char* value) { SetProjectTemplateId(value); return *this;}
 
+
+    /**
+     * <p>The project creation or deletion status.</p>
+     */
+    inline const ProjectStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The project creation or deletion status.</p>
+     */
+    inline void SetStatus(const ProjectStatus& value) { m_status = value; }
+
+    /**
+     * <p>The project creation or deletion status.</p>
+     */
+    inline void SetStatus(ProjectStatus&& value) { m_status = std::move(value); }
+
+    /**
+     * <p>The project creation or deletion status.</p>
+     */
+    inline DescribeProjectResult& WithStatus(const ProjectStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The project creation or deletion status.</p>
+     */
+    inline DescribeProjectResult& WithStatus(ProjectStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -351,6 +378,8 @@ namespace Model
     Aws::String m_stackId;
 
     Aws::String m_projectTemplateId;
+
+    ProjectStatus m_status;
   };
 
 } // namespace Model

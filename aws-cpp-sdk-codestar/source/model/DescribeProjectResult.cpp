@@ -86,6 +86,12 @@ DescribeProjectResult& DescribeProjectResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = jsonValue.GetObject("status");
+
+  }
+
 
 
   return *this;

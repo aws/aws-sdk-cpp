@@ -180,6 +180,9 @@ namespace Aws
         static const int z1d_3xlarge_HASH = HashingUtils::HashString("z1d.3xlarge");
         static const int z1d_6xlarge_HASH = HashingUtils::HashString("z1d.6xlarge");
         static const int z1d_12xlarge_HASH = HashingUtils::HashString("z1d.12xlarge");
+        static const int u_6tb1_metal_HASH = HashingUtils::HashString("u-6tb1.metal");
+        static const int u_9tb1_metal_HASH = HashingUtils::HashString("u-9tb1.metal");
+        static const int u_12tb1_metal_HASH = HashingUtils::HashString("u-12tb1.metal");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -942,6 +945,21 @@ namespace Aws
             enumValue = InstanceType::z1d_12xlarge;
             return true;
           }
+          else if (hashCode == u_6tb1_metal_HASH)
+          {
+            enumValue = InstanceType::u_6tb1_metal;
+            return true;
+          }
+          else if (hashCode == u_9tb1_metal_HASH)
+          {
+            enumValue = InstanceType::u_9tb1_metal;
+            return true;
+          }
+          else if (hashCode == u_12tb1_metal_HASH)
+          {
+            enumValue = InstanceType::u_12tb1_metal;
+            return true;
+          }
           return false;
         }
 
@@ -1406,6 +1424,15 @@ namespace Aws
             return true;
           case InstanceType::z1d_12xlarge:
             value = "z1d.12xlarge";
+            return true;
+          case InstanceType::u_6tb1_metal:
+            value = "u-6tb1.metal";
+            return true;
+          case InstanceType::u_9tb1_metal:
+            value = "u-9tb1.metal";
+            return true;
+          case InstanceType::u_12tb1_metal:
+            value = "u-12tb1.metal";
             return true;
           default:
             return false;
