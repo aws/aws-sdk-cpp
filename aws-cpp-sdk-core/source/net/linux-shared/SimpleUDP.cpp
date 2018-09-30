@@ -82,7 +82,7 @@ namespace Aws
                 int ret = setsockopt(sock, SOL_SOCKET, SO_SNDBUF, &sendBufSize, sizeof(sendBufSize));
                 if (ret)
                 {
-                    AWS_LOGSTREAM_WARN(ALLOC_TAG, "Failed to set UDP send buffer size to " << sendBufSize << " for socket " << sock << " error message: " << strerror(errno));
+                    AWS_LOGSTREAM_WARN(ALLOC_TAG, "Failed to set UDP send buffer size to " << sendBufSize << " for socket " << sock << " error message: " << strerror(ret));
                 }
                 assert(ret == 0);
             }
@@ -93,7 +93,7 @@ namespace Aws
                 int ret = setsockopt(sock, SOL_SOCKET, SO_RCVBUF, &receiveBufSize, sizeof(receiveBufSize));
                 if (ret)
                 {
-                    AWS_LOGSTREAM_WARN(ALLOC_TAG, "Failed to set UDP receive buffer size to " << receiveBufSize << " for socket " << sock << " error message: " << strerror(errno));
+                    AWS_LOGSTREAM_WARN(ALLOC_TAG, "Failed to set UDP receive buffer size to " << receiveBufSize << " for socket " << sock << " error message: " << strerror(ret));
                 }
                 assert(ret == 0);
             }
@@ -150,7 +150,7 @@ namespace Aws
 
         int SimpleUDP::SendData(const uint8_t* data, size_t dataLen) const
         {
-            return send(GetUnderlyingSocket(), data, dataLen, 0);
+            return (int)send(GetUnderlyingSocket(), data, dataLen, 0);
         }
 
         int SimpleUDP::SendDataTo(const sockaddr* address, size_t addressLength, const uint8_t* data, size_t dataLen) const
@@ -161,7 +161,7 @@ namespace Aws
             }
             else
             {
-                return sendto(GetUnderlyingSocket(), data, dataLen, 0, address, static_cast<socklen_t>(addressLength));
+                return (int)sendto(GetUnderlyingSocket(), data, dataLen, 0, address, static_cast<socklen_t>(addressLength));
             }
         }
 
@@ -175,25 +175,25 @@ namespace Aws
             {
                 sockaddr_in6 addrinfo;
                 BuildLocalAddrInfoIPV6(&addrinfo, port);
-                return sendto(GetUnderlyingSocket(), data, dataLen, 0, reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in6));
+                return (int)sendto(GetUnderlyingSocket(), data, dataLen, 0, reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in6));
             }
             else
             {
                 sockaddr_in addrinfo;
                 BuildLocalAddrInfoIPV4(&addrinfo, port);
-                return sendto(GetUnderlyingSocket(), data, dataLen, 0, reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in));
+                return (int)sendto(GetUnderlyingSocket(), data, dataLen, 0, reinterpret_cast<sockaddr*>(&addrinfo), sizeof(sockaddr_in));
             }
         }
 
         int SimpleUDP::ReceiveData(uint8_t* buffer, size_t bufferLen) const
         {
-            return recv(GetUnderlyingSocket(), buffer, static_cast<int>(bufferLen), 0);
+            return (int)recv(GetUnderlyingSocket(), buffer, static_cast<int>(bufferLen), 0);
         }
 
 
         int SimpleUDP::ReceiveDataFrom(sockaddr* address, size_t* addressLength, uint8_t* buffer, size_t bufferLen) const
         {
-            return recvfrom(GetUnderlyingSocket(), buffer, static_cast<int>(bufferLen), 0, address, reinterpret_cast<socklen_t*>(addressLength));
+            return (int)recvfrom(GetUnderlyingSocket(), buffer, static_cast<int>(bufferLen), 0, address, reinterpret_cast<socklen_t*>(addressLength));
         }
     }
 }
