@@ -48,6 +48,12 @@ namespace Aws
                 */
                 CryptoModule(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const CryptoConfiguration & cryptoConfig);
 
+
+		/*
+		* Default destructor
+		*/
+		virtual ~CryptoModule() = default;
+
                 /*
                 * Function to put an encrypted object to S3.
                 */
