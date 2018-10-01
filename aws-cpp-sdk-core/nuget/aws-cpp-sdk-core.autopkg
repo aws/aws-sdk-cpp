@@ -197,6 +197,7 @@ nuget {
         Libraries += bcrypt.lib;
         Libraries += userenv.lib;
         Libraries += Version.lib;
+        Libraries += ws2_32.lib;
     }
 }    
      
