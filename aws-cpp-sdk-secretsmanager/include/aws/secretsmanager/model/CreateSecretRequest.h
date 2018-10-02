@@ -50,43 +50,71 @@ namespace Model
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
+     * end your secret name with a hyphen followed by six characters. If you do so, you
+     * risk confusion and unexpected results when searching for a secret by partial
+     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
+     * characters at the end of the ARN.</p> </note>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
+     * end your secret name with a hyphen followed by six characters. If you do so, you
+     * risk confusion and unexpected results when searching for a secret by partial
+     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
+     * characters at the end of the ARN.</p> </note>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
+     * end your secret name with a hyphen followed by six characters. If you do so, you
+     * risk confusion and unexpected results when searching for a secret by partial
+     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
+     * characters at the end of the ARN.</p> </note>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
+     * end your secret name with a hyphen followed by six characters. If you do so, you
+     * risk confusion and unexpected results when searching for a secret by partial
+     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
+     * characters at the end of the ARN.</p> </note>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
+     * end your secret name with a hyphen followed by six characters. If you do so, you
+     * risk confusion and unexpected results when searching for a secret by partial
+     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
+     * characters at the end of the ARN.</p> </note>
      */
     inline CreateSecretRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
+     * end your secret name with a hyphen followed by six characters. If you do so, you
+     * risk confusion and unexpected results when searching for a secret by partial
+     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
+     * characters at the end of the ARN.</p> </note>
      */
     inline CreateSecretRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the friendly name of the new secret.</p> <p>The secret name must be
-     * ASCII letters, digits, or the following characters : /_+=.@-</p>
+     * ASCII letters, digits, or the following characters : /_+=.@-</p> <note> <p>Don't
+     * end your secret name with a hyphen followed by six characters. If you do so, you
+     * risk confusion and unexpected results when searching for a secret by partial
+     * ARN. This is because Secrets Manager automatically adds a hyphen and six random
+     * characters at the end of the ARN.</p> </note>
      */
     inline CreateSecretRequest& WithName(const char* value) { SetName(value); return *this;}
 
