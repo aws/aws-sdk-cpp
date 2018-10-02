@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>A face detected by but not indexed. Use the <code>Reasons</code> response
-   * attribute to determine why a face is not indexed.</p><p><h3>See Also:</h3>   <a
+   * <p>A face that detected, but didn't index. Use the <code>Reasons</code> response
+   * attribute to determine why a face wasn't indexed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UnindexedFace">AWS
    * API Reference</a></p>
    */
@@ -51,7 +51,7 @@ namespace Model
 
 
     /**
-     * <p>An array of reasons specifying why a face was not indexed. </p> <ul> <li>
+     * <p>An array of reasons that specify why a face wasn't indexed. </p> <ul> <li>
      * <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the
      * head is turned too far away from the camera.</p> </li> <li> <p>EXCEEDS_MAX_FACES
      * - The number of faces detected is already higher than that specified by the
@@ -64,7 +64,7 @@ namespace Model
     inline const Aws::Vector<Reason>& GetReasons() const{ return m_reasons; }
 
     /**
-     * <p>An array of reasons specifying why a face was not indexed. </p> <ul> <li>
+     * <p>An array of reasons that specify why a face wasn't indexed. </p> <ul> <li>
      * <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the
      * head is turned too far away from the camera.</p> </li> <li> <p>EXCEEDS_MAX_FACES
      * - The number of faces detected is already higher than that specified by the
@@ -77,7 +77,7 @@ namespace Model
     inline void SetReasons(const Aws::Vector<Reason>& value) { m_reasonsHasBeenSet = true; m_reasons = value; }
 
     /**
-     * <p>An array of reasons specifying why a face was not indexed. </p> <ul> <li>
+     * <p>An array of reasons that specify why a face wasn't indexed. </p> <ul> <li>
      * <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the
      * head is turned too far away from the camera.</p> </li> <li> <p>EXCEEDS_MAX_FACES
      * - The number of faces detected is already higher than that specified by the
@@ -90,7 +90,7 @@ namespace Model
     inline void SetReasons(Aws::Vector<Reason>&& value) { m_reasonsHasBeenSet = true; m_reasons = std::move(value); }
 
     /**
-     * <p>An array of reasons specifying why a face was not indexed. </p> <ul> <li>
+     * <p>An array of reasons that specify why a face wasn't indexed. </p> <ul> <li>
      * <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the
      * head is turned too far away from the camera.</p> </li> <li> <p>EXCEEDS_MAX_FACES
      * - The number of faces detected is already higher than that specified by the
@@ -103,7 +103,7 @@ namespace Model
     inline UnindexedFace& WithReasons(const Aws::Vector<Reason>& value) { SetReasons(value); return *this;}
 
     /**
-     * <p>An array of reasons specifying why a face was not indexed. </p> <ul> <li>
+     * <p>An array of reasons that specify why a face wasn't indexed. </p> <ul> <li>
      * <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the
      * head is turned too far away from the camera.</p> </li> <li> <p>EXCEEDS_MAX_FACES
      * - The number of faces detected is already higher than that specified by the
@@ -116,7 +116,7 @@ namespace Model
     inline UnindexedFace& WithReasons(Aws::Vector<Reason>&& value) { SetReasons(std::move(value)); return *this;}
 
     /**
-     * <p>An array of reasons specifying why a face was not indexed. </p> <ul> <li>
+     * <p>An array of reasons that specify why a face wasn't indexed. </p> <ul> <li>
      * <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the
      * head is turned too far away from the camera.</p> </li> <li> <p>EXCEEDS_MAX_FACES
      * - The number of faces detected is already higher than that specified by the
@@ -129,7 +129,7 @@ namespace Model
     inline UnindexedFace& AddReasons(const Reason& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(value); return *this; }
 
     /**
-     * <p>An array of reasons specifying why a face was not indexed. </p> <ul> <li>
+     * <p>An array of reasons that specify why a face wasn't indexed. </p> <ul> <li>
      * <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the
      * head is turned too far away from the camera.</p> </li> <li> <p>EXCEEDS_MAX_FACES
      * - The number of faces detected is already higher than that specified by the
@@ -143,32 +143,32 @@ namespace Model
 
 
     /**
-     * <p>Structure containing attributes of a face that was detected, but not indexed,
-     * by <code>IndexFaces</code>. </p>
+     * <p>The structure that contains attributes of a face that
+     * <code>IndexFaces</code>detected, but didn't index. </p>
      */
     inline const FaceDetail& GetFaceDetail() const{ return m_faceDetail; }
 
     /**
-     * <p>Structure containing attributes of a face that was detected, but not indexed,
-     * by <code>IndexFaces</code>. </p>
+     * <p>The structure that contains attributes of a face that
+     * <code>IndexFaces</code>detected, but didn't index. </p>
      */
     inline void SetFaceDetail(const FaceDetail& value) { m_faceDetailHasBeenSet = true; m_faceDetail = value; }
 
     /**
-     * <p>Structure containing attributes of a face that was detected, but not indexed,
-     * by <code>IndexFaces</code>. </p>
+     * <p>The structure that contains attributes of a face that
+     * <code>IndexFaces</code>detected, but didn't index. </p>
      */
     inline void SetFaceDetail(FaceDetail&& value) { m_faceDetailHasBeenSet = true; m_faceDetail = std::move(value); }
 
     /**
-     * <p>Structure containing attributes of a face that was detected, but not indexed,
-     * by <code>IndexFaces</code>. </p>
+     * <p>The structure that contains attributes of a face that
+     * <code>IndexFaces</code>detected, but didn't index. </p>
      */
     inline UnindexedFace& WithFaceDetail(const FaceDetail& value) { SetFaceDetail(value); return *this;}
 
     /**
-     * <p>Structure containing attributes of a face that was detected, but not indexed,
-     * by <code>IndexFaces</code>. </p>
+     * <p>The structure that contains attributes of a face that
+     * <code>IndexFaces</code>detected, but didn't index. </p>
      */
     inline UnindexedFace& WithFaceDetail(FaceDetail&& value) { SetFaceDetail(std::move(value)); return *this;}
 

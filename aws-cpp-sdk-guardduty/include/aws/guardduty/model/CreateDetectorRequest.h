@@ -16,6 +16,10 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/GuardDutyRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/model/FindingPublishingFrequency.h>
+#include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -44,6 +48,42 @@ namespace Model
 
 
     /**
+     * The idempotency token for the create request.
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline CreateDetectorRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline CreateDetectorRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline CreateDetectorRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
      * A boolean value that specifies whether the detector is to be enabled.
      */
     inline bool GetEnable() const{ return m_enable; }
@@ -58,10 +98,47 @@ namespace Model
      */
     inline CreateDetectorRequest& WithEnable(bool value) { SetEnable(value); return *this;}
 
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates
+     * published.
+     */
+    inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates
+     * published.
+     */
+    inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates
+     * published.
+     */
+    inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = std::move(value); }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates
+     * published.
+     */
+    inline CreateDetectorRequest& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates
+     * published.
+     */
+    inline CreateDetectorRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
+
   private:
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
 
     bool m_enable;
     bool m_enableHasBeenSet;
+
+    FindingPublishingFrequency m_findingPublishingFrequency;
+    bool m_findingPublishingFrequencyHasBeenSet;
   };
 
 } // namespace Model

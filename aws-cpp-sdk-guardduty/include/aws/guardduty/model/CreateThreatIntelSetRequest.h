@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/ThreatIntelSetFormat.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -63,6 +64,42 @@ namespace Model
      * ThreatIntelSet.
      */
     inline CreateThreatIntelSetRequest& WithActivate(bool value) { SetActivate(value); return *this;}
+
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline CreateThreatIntelSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline CreateThreatIntelSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * The idempotency token for the create request.
+     */
+    inline CreateThreatIntelSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
@@ -216,6 +253,9 @@ namespace Model
 
     bool m_activate;
     bool m_activateHasBeenSet;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
 
     Aws::String m_detectorId;
     bool m_detectorIdHasBeenSet;

@@ -103,7 +103,7 @@ namespace Model
      * represent face locations before the image orientation is corrected. </p> <note>
      * <p>If the input image is in jpeg format, it might contain exchangeable image
      * (Exif) metadata. If so, and the Exif metadata populates the orientation field,
-     * the value of <code>OrientationCorrection</code> is null and the bounding box
+     * the value of <code>OrientationCorrection</code> is null. The bounding box
      * coordinates in <code>FaceRecords</code> represent face locations after Exif
      * metadata is used to correct the image orientation. Images in .png format don't
      * contain Exif metadata.</p> </note>
@@ -117,7 +117,7 @@ namespace Model
      * represent face locations before the image orientation is corrected. </p> <note>
      * <p>If the input image is in jpeg format, it might contain exchangeable image
      * (Exif) metadata. If so, and the Exif metadata populates the orientation field,
-     * the value of <code>OrientationCorrection</code> is null and the bounding box
+     * the value of <code>OrientationCorrection</code> is null. The bounding box
      * coordinates in <code>FaceRecords</code> represent face locations after Exif
      * metadata is used to correct the image orientation. Images in .png format don't
      * contain Exif metadata.</p> </note>
@@ -131,7 +131,7 @@ namespace Model
      * represent face locations before the image orientation is corrected. </p> <note>
      * <p>If the input image is in jpeg format, it might contain exchangeable image
      * (Exif) metadata. If so, and the Exif metadata populates the orientation field,
-     * the value of <code>OrientationCorrection</code> is null and the bounding box
+     * the value of <code>OrientationCorrection</code> is null. The bounding box
      * coordinates in <code>FaceRecords</code> represent face locations after Exif
      * metadata is used to correct the image orientation. Images in .png format don't
      * contain Exif metadata.</p> </note>
@@ -145,7 +145,7 @@ namespace Model
      * represent face locations before the image orientation is corrected. </p> <note>
      * <p>If the input image is in jpeg format, it might contain exchangeable image
      * (Exif) metadata. If so, and the Exif metadata populates the orientation field,
-     * the value of <code>OrientationCorrection</code> is null and the bounding box
+     * the value of <code>OrientationCorrection</code> is null. The bounding box
      * coordinates in <code>FaceRecords</code> represent face locations after Exif
      * metadata is used to correct the image orientation. Images in .png format don't
      * contain Exif metadata.</p> </note>
@@ -159,7 +159,7 @@ namespace Model
      * represent face locations before the image orientation is corrected. </p> <note>
      * <p>If the input image is in jpeg format, it might contain exchangeable image
      * (Exif) metadata. If so, and the Exif metadata populates the orientation field,
-     * the value of <code>OrientationCorrection</code> is null and the bounding box
+     * the value of <code>OrientationCorrection</code> is null. The bounding box
      * coordinates in <code>FaceRecords</code> represent face locations after Exif
      * metadata is used to correct the image orientation. Images in .png format don't
      * contain Exif metadata.</p> </note>
@@ -168,101 +168,108 @@ namespace Model
 
 
     /**
-     * <p>Version number of the face detection model associated with the input
-     * collection (<code>CollectionId</code>).</p>
+     * <p>The version number of the face detection model that's associated with the
+     * input collection (<code>CollectionId</code>).</p>
      */
     inline const Aws::String& GetFaceModelVersion() const{ return m_faceModelVersion; }
 
     /**
-     * <p>Version number of the face detection model associated with the input
-     * collection (<code>CollectionId</code>).</p>
+     * <p>The version number of the face detection model that's associated with the
+     * input collection (<code>CollectionId</code>).</p>
      */
     inline void SetFaceModelVersion(const Aws::String& value) { m_faceModelVersion = value; }
 
     /**
-     * <p>Version number of the face detection model associated with the input
-     * collection (<code>CollectionId</code>).</p>
+     * <p>The version number of the face detection model that's associated with the
+     * input collection (<code>CollectionId</code>).</p>
      */
     inline void SetFaceModelVersion(Aws::String&& value) { m_faceModelVersion = std::move(value); }
 
     /**
-     * <p>Version number of the face detection model associated with the input
-     * collection (<code>CollectionId</code>).</p>
+     * <p>The version number of the face detection model that's associated with the
+     * input collection (<code>CollectionId</code>).</p>
      */
     inline void SetFaceModelVersion(const char* value) { m_faceModelVersion.assign(value); }
 
     /**
-     * <p>Version number of the face detection model associated with the input
-     * collection (<code>CollectionId</code>).</p>
+     * <p>The version number of the face detection model that's associated with the
+     * input collection (<code>CollectionId</code>).</p>
      */
     inline IndexFacesResult& WithFaceModelVersion(const Aws::String& value) { SetFaceModelVersion(value); return *this;}
 
     /**
-     * <p>Version number of the face detection model associated with the input
-     * collection (<code>CollectionId</code>).</p>
+     * <p>The version number of the face detection model that's associated with the
+     * input collection (<code>CollectionId</code>).</p>
      */
     inline IndexFacesResult& WithFaceModelVersion(Aws::String&& value) { SetFaceModelVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version number of the face detection model associated with the input
-     * collection (<code>CollectionId</code>).</p>
+     * <p>The version number of the face detection model that's associated with the
+     * input collection (<code>CollectionId</code>).</p>
      */
     inline IndexFacesResult& WithFaceModelVersion(const char* value) { SetFaceModelVersion(value); return *this;}
 
 
     /**
-     * <p>An array of faces that detected in the image but not indexed either because
-     * the quality filter deemed them to be of low-quality or the <code>MaxFaces</code>
-     * request parameter filtered them out. To use the quality filter, you specify the
-     * <code>QualityFilter</code> request parameter.</p>
+     * <p>An array of faces that were detected in the image but weren't indexed. They
+     * weren't indexed because the quality filter identified them as low quality, or
+     * the <code>MaxFaces</code> request parameter filtered them out. To use the
+     * quality filter, you specify the <code>QualityFilter</code> request
+     * parameter.</p>
      */
     inline const Aws::Vector<UnindexedFace>& GetUnindexedFaces() const{ return m_unindexedFaces; }
 
     /**
-     * <p>An array of faces that detected in the image but not indexed either because
-     * the quality filter deemed them to be of low-quality or the <code>MaxFaces</code>
-     * request parameter filtered them out. To use the quality filter, you specify the
-     * <code>QualityFilter</code> request parameter.</p>
+     * <p>An array of faces that were detected in the image but weren't indexed. They
+     * weren't indexed because the quality filter identified them as low quality, or
+     * the <code>MaxFaces</code> request parameter filtered them out. To use the
+     * quality filter, you specify the <code>QualityFilter</code> request
+     * parameter.</p>
      */
     inline void SetUnindexedFaces(const Aws::Vector<UnindexedFace>& value) { m_unindexedFaces = value; }
 
     /**
-     * <p>An array of faces that detected in the image but not indexed either because
-     * the quality filter deemed them to be of low-quality or the <code>MaxFaces</code>
-     * request parameter filtered them out. To use the quality filter, you specify the
-     * <code>QualityFilter</code> request parameter.</p>
+     * <p>An array of faces that were detected in the image but weren't indexed. They
+     * weren't indexed because the quality filter identified them as low quality, or
+     * the <code>MaxFaces</code> request parameter filtered them out. To use the
+     * quality filter, you specify the <code>QualityFilter</code> request
+     * parameter.</p>
      */
     inline void SetUnindexedFaces(Aws::Vector<UnindexedFace>&& value) { m_unindexedFaces = std::move(value); }
 
     /**
-     * <p>An array of faces that detected in the image but not indexed either because
-     * the quality filter deemed them to be of low-quality or the <code>MaxFaces</code>
-     * request parameter filtered them out. To use the quality filter, you specify the
-     * <code>QualityFilter</code> request parameter.</p>
+     * <p>An array of faces that were detected in the image but weren't indexed. They
+     * weren't indexed because the quality filter identified them as low quality, or
+     * the <code>MaxFaces</code> request parameter filtered them out. To use the
+     * quality filter, you specify the <code>QualityFilter</code> request
+     * parameter.</p>
      */
     inline IndexFacesResult& WithUnindexedFaces(const Aws::Vector<UnindexedFace>& value) { SetUnindexedFaces(value); return *this;}
 
     /**
-     * <p>An array of faces that detected in the image but not indexed either because
-     * the quality filter deemed them to be of low-quality or the <code>MaxFaces</code>
-     * request parameter filtered them out. To use the quality filter, you specify the
-     * <code>QualityFilter</code> request parameter.</p>
+     * <p>An array of faces that were detected in the image but weren't indexed. They
+     * weren't indexed because the quality filter identified them as low quality, or
+     * the <code>MaxFaces</code> request parameter filtered them out. To use the
+     * quality filter, you specify the <code>QualityFilter</code> request
+     * parameter.</p>
      */
     inline IndexFacesResult& WithUnindexedFaces(Aws::Vector<UnindexedFace>&& value) { SetUnindexedFaces(std::move(value)); return *this;}
 
     /**
-     * <p>An array of faces that detected in the image but not indexed either because
-     * the quality filter deemed them to be of low-quality or the <code>MaxFaces</code>
-     * request parameter filtered them out. To use the quality filter, you specify the
-     * <code>QualityFilter</code> request parameter.</p>
+     * <p>An array of faces that were detected in the image but weren't indexed. They
+     * weren't indexed because the quality filter identified them as low quality, or
+     * the <code>MaxFaces</code> request parameter filtered them out. To use the
+     * quality filter, you specify the <code>QualityFilter</code> request
+     * parameter.</p>
      */
     inline IndexFacesResult& AddUnindexedFaces(const UnindexedFace& value) { m_unindexedFaces.push_back(value); return *this; }
 
     /**
-     * <p>An array of faces that detected in the image but not indexed either because
-     * the quality filter deemed them to be of low-quality or the <code>MaxFaces</code>
-     * request parameter filtered them out. To use the quality filter, you specify the
-     * <code>QualityFilter</code> request parameter.</p>
+     * <p>An array of faces that were detected in the image but weren't indexed. They
+     * weren't indexed because the quality filter identified them as low quality, or
+     * the <code>MaxFaces</code> request parameter filtered them out. To use the
+     * quality filter, you specify the <code>QualityFilter</code> request
+     * parameter.</p>
      */
     inline IndexFacesResult& AddUnindexedFaces(UnindexedFace&& value) { m_unindexedFaces.push_back(std::move(value)); return *this; }
 

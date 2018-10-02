@@ -203,20 +203,20 @@ namespace Model
 
 
     /**
-     * <p>The confidence, in percentage, that Rekognition has that the recognized face
-     * is the celebrity.</p>
+     * <p>The confidence, in percentage, that Amazon Rekognition has that the
+     * recognized face is the celebrity.</p>
      */
     inline double GetMatchConfidence() const{ return m_matchConfidence; }
 
     /**
-     * <p>The confidence, in percentage, that Rekognition has that the recognized face
-     * is the celebrity.</p>
+     * <p>The confidence, in percentage, that Amazon Rekognition has that the
+     * recognized face is the celebrity.</p>
      */
     inline void SetMatchConfidence(double value) { m_matchConfidenceHasBeenSet = true; m_matchConfidence = value; }
 
     /**
-     * <p>The confidence, in percentage, that Rekognition has that the recognized face
-     * is the celebrity.</p>
+     * <p>The confidence, in percentage, that Amazon Rekognition has that the
+     * recognized face is the celebrity.</p>
      */
     inline Celebrity& WithMatchConfidence(double value) { SetMatchConfidence(value); return *this;}
 

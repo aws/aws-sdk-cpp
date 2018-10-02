@@ -49,71 +49,71 @@ namespace Model
 
 
     /**
-     * <p>Type of the landmark.</p>
+     * <p>Type of landmark.</p>
      */
     inline const LandmarkType& GetType() const{ return m_type; }
 
     /**
-     * <p>Type of the landmark.</p>
+     * <p>Type of landmark.</p>
      */
     inline void SetType(const LandmarkType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Type of the landmark.</p>
+     * <p>Type of landmark.</p>
      */
     inline void SetType(LandmarkType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Type of the landmark.</p>
+     * <p>Type of landmark.</p>
      */
     inline Landmark& WithType(const LandmarkType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Type of the landmark.</p>
+     * <p>Type of landmark.</p>
      */
     inline Landmark& WithType(LandmarkType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>x-coordinate from the top left of the landmark expressed as the ratio of the
-     * width of the image. For example, if the images is 700x200 and the x-coordinate
-     * of the landmark is at 350 pixels, this value is 0.5. </p>
+     * <p>The x-coordinate from the top left of the landmark expressed as the ratio of
+     * the width of the image. For example, if the image is 700 x 200 and the
+     * x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
      */
     inline double GetX() const{ return m_x; }
 
     /**
-     * <p>x-coordinate from the top left of the landmark expressed as the ratio of the
-     * width of the image. For example, if the images is 700x200 and the x-coordinate
-     * of the landmark is at 350 pixels, this value is 0.5. </p>
+     * <p>The x-coordinate from the top left of the landmark expressed as the ratio of
+     * the width of the image. For example, if the image is 700 x 200 and the
+     * x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
      */
     inline void SetX(double value) { m_xHasBeenSet = true; m_x = value; }
 
     /**
-     * <p>x-coordinate from the top left of the landmark expressed as the ratio of the
-     * width of the image. For example, if the images is 700x200 and the x-coordinate
-     * of the landmark is at 350 pixels, this value is 0.5. </p>
+     * <p>The x-coordinate from the top left of the landmark expressed as the ratio of
+     * the width of the image. For example, if the image is 700 x 200 and the
+     * x-coordinate of the landmark is at 350 pixels, this value is 0.5. </p>
      */
     inline Landmark& WithX(double value) { SetX(value); return *this;}
 
 
     /**
-     * <p>y-coordinate from the top left of the landmark expressed as the ratio of the
-     * height of the image. For example, if the images is 700x200 and the y-coordinate
-     * of the landmark is at 100 pixels, this value is 0.5.</p>
+     * <p>The y-coordinate from the top left of the landmark expressed as the ratio of
+     * the height of the image. For example, if the image is 700 x 200 and the
+     * y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>
      */
     inline double GetY() const{ return m_y; }
 
     /**
-     * <p>y-coordinate from the top left of the landmark expressed as the ratio of the
-     * height of the image. For example, if the images is 700x200 and the y-coordinate
-     * of the landmark is at 100 pixels, this value is 0.5.</p>
+     * <p>The y-coordinate from the top left of the landmark expressed as the ratio of
+     * the height of the image. For example, if the image is 700 x 200 and the
+     * y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>
      */
     inline void SetY(double value) { m_yHasBeenSet = true; m_y = value; }
 
     /**
-     * <p>y-coordinate from the top left of the landmark expressed as the ratio of the
-     * height of the image. For example, if the images is 700x200 and the y-coordinate
-     * of the landmark is at 100 pixels, this value is 0.5.</p>
+     * <p>The y-coordinate from the top left of the landmark expressed as the ratio of
+     * the height of the image. For example, if the image is 700 x 200 and the
+     * y-coordinate of the landmark is at 100 pixels, this value is 0.5.</p>
      */
     inline Landmark& WithY(double value) { SetY(value); return *this;}
 

@@ -38,7 +38,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides face metadata for target image faces that are analysed by
+   * <p>Provides face metadata for target image faces that are analyzed by
    * <code>CompareFaces</code> and <code>RecognizeCelebrities</code>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ComparedFace">AWS

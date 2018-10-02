@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/model/FindingPublishingFrequency.h>
 #include <aws/guardduty/model/DetectorStatus.h>
 #include <utility>
 
@@ -63,6 +64,22 @@ namespace Model
 
     
     inline GetDetectorResult& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
+
+    
+    inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
+
+    
+    inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequency = value; }
+
+    
+    inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequency = std::move(value); }
+
+    
+    inline GetDetectorResult& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
+
+    
+    inline GetDetectorResult& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 
 
     
@@ -127,6 +144,8 @@ namespace Model
   private:
 
     Aws::String m_createdAt;
+
+    FindingPublishingFrequency m_findingPublishingFrequency;
 
     Aws::String m_serviceRole;
 

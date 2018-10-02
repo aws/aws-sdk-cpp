@@ -25,7 +25,9 @@ using namespace Aws::Utils;
 UpdateDetectorRequest::UpdateDetectorRequest() : 
     m_detectorIdHasBeenSet(false),
     m_enable(false),
-    m_enableHasBeenSet(false)
+    m_enableHasBeenSet(false),
+    m_findingPublishingFrequency(FindingPublishingFrequency::NOT_SET),
+    m_findingPublishingFrequencyHasBeenSet(false)
 {
 }
 
@@ -37,6 +39,11 @@ Aws::String UpdateDetectorRequest::SerializePayload() const
   {
    payload.WithBool("enable", m_enable);
 
+  }
+
+  if(m_findingPublishingFrequencyHasBeenSet)
+  {
+   payload.WithString("findingPublishingFrequency", FindingPublishingFrequencyMapper::GetNameForFindingPublishingFrequency(m_findingPublishingFrequency));
   }
 
   return payload.View().WriteReadable();

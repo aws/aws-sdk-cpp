@@ -87,11 +87,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
@@ -101,11 +101,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
@@ -115,11 +115,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
@@ -129,11 +129,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline DetectFacesRequest& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
@@ -143,11 +143,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline DetectFacesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
@@ -157,11 +157,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline DetectFacesRequest& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
@@ -171,11 +171,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline DetectFacesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }

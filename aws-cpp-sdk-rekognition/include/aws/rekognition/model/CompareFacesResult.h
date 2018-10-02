@@ -180,7 +180,7 @@ namespace Model
      * orientation is corrected. </p> <note> <p>If the source image is in .jpeg format,
      * it might contain exchangeable image (Exif) metadata that includes the image's
      * orientation. If the Exif metadata for the source image populates the orientation
-     * field, the value of <code>OrientationCorrection</code> is null and the
+     * field, the value of <code>OrientationCorrection</code> is null. The
      * <code>SourceImageFace</code> bounding box coordinates represent the location of
      * the face after Exif metadata is used to correct the orientation. Images in .png
      * format don't contain Exif metadata.</p> </note>
@@ -195,7 +195,7 @@ namespace Model
      * orientation is corrected. </p> <note> <p>If the source image is in .jpeg format,
      * it might contain exchangeable image (Exif) metadata that includes the image's
      * orientation. If the Exif metadata for the source image populates the orientation
-     * field, the value of <code>OrientationCorrection</code> is null and the
+     * field, the value of <code>OrientationCorrection</code> is null. The
      * <code>SourceImageFace</code> bounding box coordinates represent the location of
      * the face after Exif metadata is used to correct the orientation. Images in .png
      * format don't contain Exif metadata.</p> </note>
@@ -210,7 +210,7 @@ namespace Model
      * orientation is corrected. </p> <note> <p>If the source image is in .jpeg format,
      * it might contain exchangeable image (Exif) metadata that includes the image's
      * orientation. If the Exif metadata for the source image populates the orientation
-     * field, the value of <code>OrientationCorrection</code> is null and the
+     * field, the value of <code>OrientationCorrection</code> is null. The
      * <code>SourceImageFace</code> bounding box coordinates represent the location of
      * the face after Exif metadata is used to correct the orientation. Images in .png
      * format don't contain Exif metadata.</p> </note>
@@ -225,7 +225,7 @@ namespace Model
      * orientation is corrected. </p> <note> <p>If the source image is in .jpeg format,
      * it might contain exchangeable image (Exif) metadata that includes the image's
      * orientation. If the Exif metadata for the source image populates the orientation
-     * field, the value of <code>OrientationCorrection</code> is null and the
+     * field, the value of <code>OrientationCorrection</code> is null. The
      * <code>SourceImageFace</code> bounding box coordinates represent the location of
      * the face after Exif metadata is used to correct the orientation. Images in .png
      * format don't contain Exif metadata.</p> </note>
@@ -240,7 +240,7 @@ namespace Model
      * orientation is corrected. </p> <note> <p>If the source image is in .jpeg format,
      * it might contain exchangeable image (Exif) metadata that includes the image's
      * orientation. If the Exif metadata for the source image populates the orientation
-     * field, the value of <code>OrientationCorrection</code> is null and the
+     * field, the value of <code>OrientationCorrection</code> is null. The
      * <code>SourceImageFace</code> bounding box coordinates represent the location of
      * the face after Exif metadata is used to correct the orientation. Images in .png
      * format don't contain Exif metadata.</p> </note>
@@ -256,8 +256,8 @@ namespace Model
      * locations before the image orientation is corrected. </p> <note> <p>If the
      * target image is in .jpg format, it might contain Exif metadata that includes the
      * orientation of the image. If the Exif metadata for the target image populates
-     * the orientation field, the value of <code>OrientationCorrection</code> is null
-     * and the bounding box coordinates in <code>FaceMatches</code> and
+     * the orientation field, the value of <code>OrientationCorrection</code> is null.
+     * The bounding box coordinates in <code>FaceMatches</code> and
      * <code>UnmatchedFaces</code> represent the location of the face after Exif
      * metadata is used to correct the orientation. Images in .png format don't contain
      * Exif metadata.</p> </note>
@@ -272,8 +272,8 @@ namespace Model
      * locations before the image orientation is corrected. </p> <note> <p>If the
      * target image is in .jpg format, it might contain Exif metadata that includes the
      * orientation of the image. If the Exif metadata for the target image populates
-     * the orientation field, the value of <code>OrientationCorrection</code> is null
-     * and the bounding box coordinates in <code>FaceMatches</code> and
+     * the orientation field, the value of <code>OrientationCorrection</code> is null.
+     * The bounding box coordinates in <code>FaceMatches</code> and
      * <code>UnmatchedFaces</code> represent the location of the face after Exif
      * metadata is used to correct the orientation. Images in .png format don't contain
      * Exif metadata.</p> </note>
@@ -288,8 +288,8 @@ namespace Model
      * locations before the image orientation is corrected. </p> <note> <p>If the
      * target image is in .jpg format, it might contain Exif metadata that includes the
      * orientation of the image. If the Exif metadata for the target image populates
-     * the orientation field, the value of <code>OrientationCorrection</code> is null
-     * and the bounding box coordinates in <code>FaceMatches</code> and
+     * the orientation field, the value of <code>OrientationCorrection</code> is null.
+     * The bounding box coordinates in <code>FaceMatches</code> and
      * <code>UnmatchedFaces</code> represent the location of the face after Exif
      * metadata is used to correct the orientation. Images in .png format don't contain
      * Exif metadata.</p> </note>
@@ -304,8 +304,8 @@ namespace Model
      * locations before the image orientation is corrected. </p> <note> <p>If the
      * target image is in .jpg format, it might contain Exif metadata that includes the
      * orientation of the image. If the Exif metadata for the target image populates
-     * the orientation field, the value of <code>OrientationCorrection</code> is null
-     * and the bounding box coordinates in <code>FaceMatches</code> and
+     * the orientation field, the value of <code>OrientationCorrection</code> is null.
+     * The bounding box coordinates in <code>FaceMatches</code> and
      * <code>UnmatchedFaces</code> represent the location of the face after Exif
      * metadata is used to correct the orientation. Images in .png format don't contain
      * Exif metadata.</p> </note>
@@ -320,8 +320,8 @@ namespace Model
      * locations before the image orientation is corrected. </p> <note> <p>If the
      * target image is in .jpg format, it might contain Exif metadata that includes the
      * orientation of the image. If the Exif metadata for the target image populates
-     * the orientation field, the value of <code>OrientationCorrection</code> is null
-     * and the bounding box coordinates in <code>FaceMatches</code> and
+     * the orientation field, the value of <code>OrientationCorrection</code> is null.
+     * The bounding box coordinates in <code>FaceMatches</code> and
      * <code>UnmatchedFaces</code> represent the location of the face after Exif
      * metadata is used to correct the orientation. Images in .png format don't contain
      * Exif metadata.</p> </note>

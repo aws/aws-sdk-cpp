@@ -17,6 +17,7 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/GuardDutyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/guardduty/model/FindingPublishingFrequency.h>
 #include <utility>
 
 namespace Aws
@@ -99,6 +100,37 @@ namespace Model
      */
     inline UpdateDetectorRequest& WithEnable(bool value) { SetEnable(value); return *this;}
 
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates
+     * published.
+     */
+    inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates
+     * published.
+     */
+    inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates
+     * published.
+     */
+    inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = std::move(value); }
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates
+     * published.
+     */
+    inline UpdateDetectorRequest& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
+
+    /**
+     * A enum value that specifies how frequently customer got Finding updates
+     * published.
+     */
+    inline UpdateDetectorRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_detectorId;
@@ -106,6 +138,9 @@ namespace Model
 
     bool m_enable;
     bool m_enableHasBeenSet;
+
+    FindingPublishingFrequency m_findingPublishingFrequency;
+    bool m_findingPublishingFrequencyHasBeenSet;
   };
 
 } // namespace Model

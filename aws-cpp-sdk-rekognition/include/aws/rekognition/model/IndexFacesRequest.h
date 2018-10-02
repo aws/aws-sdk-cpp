@@ -93,72 +93,72 @@ namespace Model
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes
+     * isn't supported. </p>
      */
     inline const Image& GetImage() const{ return m_image; }
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes
+     * isn't supported. </p>
      */
     inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes
+     * isn't supported. </p>
      */
     inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes
+     * isn't supported. </p>
      */
     inline IndexFacesRequest& WithImage(const Image& value) { SetImage(value); return *this;}
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes
+     * isn't supported. </p>
      */
     inline IndexFacesRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
 
     /**
-     * <p>ID you want to assign to all the faces detected in the image.</p>
+     * <p>The ID you want to assign to all the faces detected in the image.</p>
      */
     inline const Aws::String& GetExternalImageId() const{ return m_externalImageId; }
 
     /**
-     * <p>ID you want to assign to all the faces detected in the image.</p>
+     * <p>The ID you want to assign to all the faces detected in the image.</p>
      */
     inline void SetExternalImageId(const Aws::String& value) { m_externalImageIdHasBeenSet = true; m_externalImageId = value; }
 
     /**
-     * <p>ID you want to assign to all the faces detected in the image.</p>
+     * <p>The ID you want to assign to all the faces detected in the image.</p>
      */
     inline void SetExternalImageId(Aws::String&& value) { m_externalImageIdHasBeenSet = true; m_externalImageId = std::move(value); }
 
     /**
-     * <p>ID you want to assign to all the faces detected in the image.</p>
+     * <p>The ID you want to assign to all the faces detected in the image.</p>
      */
     inline void SetExternalImageId(const char* value) { m_externalImageIdHasBeenSet = true; m_externalImageId.assign(value); }
 
     /**
-     * <p>ID you want to assign to all the faces detected in the image.</p>
+     * <p>The ID you want to assign to all the faces detected in the image.</p>
      */
     inline IndexFacesRequest& WithExternalImageId(const Aws::String& value) { SetExternalImageId(value); return *this;}
 
     /**
-     * <p>ID you want to assign to all the faces detected in the image.</p>
+     * <p>The ID you want to assign to all the faces detected in the image.</p>
      */
     inline IndexFacesRequest& WithExternalImageId(Aws::String&& value) { SetExternalImageId(std::move(value)); return *this;}
 
     /**
-     * <p>ID you want to assign to all the faces detected in the image.</p>
+     * <p>The ID you want to assign to all the faces detected in the image.</p>
      */
     inline IndexFacesRequest& WithExternalImageId(const char* value) { SetExternalImageId(value); return *this;}
 
@@ -168,11 +168,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline const Aws::Vector<Attribute>& GetDetectionAttributes() const{ return m_detectionAttributes; }
@@ -182,11 +182,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline void SetDetectionAttributes(const Aws::Vector<Attribute>& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes = value; }
@@ -196,11 +196,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline void SetDetectionAttributes(Aws::Vector<Attribute>&& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes = std::move(value); }
@@ -210,11 +210,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline IndexFacesRequest& WithDetectionAttributes(const Aws::Vector<Attribute>& value) { SetDetectionAttributes(value); return *this;}
@@ -224,11 +224,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline IndexFacesRequest& WithDetectionAttributes(Aws::Vector<Attribute>&& value) { SetDetectionAttributes(std::move(value)); return *this;}
@@ -238,11 +238,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline IndexFacesRequest& AddDetectionAttributes(const Attribute& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes.push_back(value); return *this; }
@@ -252,11 +252,11 @@ namespace Model
      * default list of attributes or all attributes. If you don't specify a value for
      * <code>Attributes</code> or if you specify <code>["DEFAULT"]</code>, the API
      * returns the following subset of facial attributes: <code>BoundingBox</code>,
-     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code> and
+     * <code>Confidence</code>, <code>Pose</code>, <code>Quality</code>, and
      * <code>Landmarks</code>. If you provide <code>["ALL"]</code>, all facial
-     * attributes are returned but the operation will take longer to complete.</p>
-     * <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a
-     * logical AND operator to determine which attributes to return (in this case, all
+     * attributes are returned, but the operation takes longer to complete.</p> <p>If
+     * you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical
+     * AND operator to determine which attributes to return (in this case, all
      * attributes). </p>
      */
     inline IndexFacesRequest& AddDetectionAttributes(Attribute&& value) { m_detectionAttributesHasBeenSet = true; m_detectionAttributes.push_back(std::move(value)); return *this; }
@@ -264,110 +264,123 @@ namespace Model
 
     /**
      * <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must
-     * be greater than or equal to 1. <code>IndexFaces</code> returns no more that 100
+     * be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100
      * detected faces in an image, even if you specify a larger value for
      * <code>MaxFaces</code>.</p> <p>If <code>IndexFaces</code> detects more faces than
      * the value of <code>MaxFaces</code>, the faces with the lowest quality are
      * filtered out first. If there are still more faces than the value of
      * <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered
-     * out (up to the number needed to satisfy the value of <code>MaxFaces</code>).
-     * Information about the unindexed faces is available in the
-     * <code>UnindexedFaces</code> array. </p> <p>The faces returned by
-     * <code>IndexFaces</code> are sorted, in descending order, by the largest face
-     * bounding box size, to the smallest.</p>
+     * out (up to the number that's needed to satisfy the value of
+     * <code>MaxFaces</code>). Information about the unindexed faces is available in
+     * the <code>UnindexedFaces</code> array. </p> <p>The faces that are returned by
+     * <code>IndexFaces</code> are sorted by the largest face bounding box size to the
+     * smallest size, in descending order.</p> <p> <code>MaxFaces</code> can be used
+     * with a collection associated with any version of the face model.</p>
      */
     inline int GetMaxFaces() const{ return m_maxFaces; }
 
     /**
      * <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must
-     * be greater than or equal to 1. <code>IndexFaces</code> returns no more that 100
+     * be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100
      * detected faces in an image, even if you specify a larger value for
      * <code>MaxFaces</code>.</p> <p>If <code>IndexFaces</code> detects more faces than
      * the value of <code>MaxFaces</code>, the faces with the lowest quality are
      * filtered out first. If there are still more faces than the value of
      * <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered
-     * out (up to the number needed to satisfy the value of <code>MaxFaces</code>).
-     * Information about the unindexed faces is available in the
-     * <code>UnindexedFaces</code> array. </p> <p>The faces returned by
-     * <code>IndexFaces</code> are sorted, in descending order, by the largest face
-     * bounding box size, to the smallest.</p>
+     * out (up to the number that's needed to satisfy the value of
+     * <code>MaxFaces</code>). Information about the unindexed faces is available in
+     * the <code>UnindexedFaces</code> array. </p> <p>The faces that are returned by
+     * <code>IndexFaces</code> are sorted by the largest face bounding box size to the
+     * smallest size, in descending order.</p> <p> <code>MaxFaces</code> can be used
+     * with a collection associated with any version of the face model.</p>
      */
     inline void SetMaxFaces(int value) { m_maxFacesHasBeenSet = true; m_maxFaces = value; }
 
     /**
      * <p>The maximum number of faces to index. The value of <code>MaxFaces</code> must
-     * be greater than or equal to 1. <code>IndexFaces</code> returns no more that 100
+     * be greater than or equal to 1. <code>IndexFaces</code> returns no more than 100
      * detected faces in an image, even if you specify a larger value for
      * <code>MaxFaces</code>.</p> <p>If <code>IndexFaces</code> detects more faces than
      * the value of <code>MaxFaces</code>, the faces with the lowest quality are
      * filtered out first. If there are still more faces than the value of
      * <code>MaxFaces</code>, the faces with the smallest bounding boxes are filtered
-     * out (up to the number needed to satisfy the value of <code>MaxFaces</code>).
-     * Information about the unindexed faces is available in the
-     * <code>UnindexedFaces</code> array. </p> <p>The faces returned by
-     * <code>IndexFaces</code> are sorted, in descending order, by the largest face
-     * bounding box size, to the smallest.</p>
+     * out (up to the number that's needed to satisfy the value of
+     * <code>MaxFaces</code>). Information about the unindexed faces is available in
+     * the <code>UnindexedFaces</code> array. </p> <p>The faces that are returned by
+     * <code>IndexFaces</code> are sorted by the largest face bounding box size to the
+     * smallest size, in descending order.</p> <p> <code>MaxFaces</code> can be used
+     * with a collection associated with any version of the face model.</p>
      */
     inline IndexFacesRequest& WithMaxFaces(int value) { SetMaxFaces(value); return *this;}
 
 
     /**
-     * <p>Specifies how much filtering is done to identify faces detected with low
-     * quality. Filtered faces are not indexed. If you specify <code>AUTO</code>,
-     * filtering prioritizes the identification of faces that don’t meet the required
-     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety
-     * of common use cases. Low quality detections can arise for a number of reasons.
-     * For example, an object misidentified as a face, a face that is too blurry, or a
-     * face with a pose that is too extreme to use. If you specify <code>NONE</code>,
-     * no filtering is performed. The default value is NONE.</p>
+     * <p>A filter that specifies how much filtering is done to identify faces that are
+     * detected with low quality. Filtered faces aren't indexed. If you specify
+     * <code>AUTO</code>, filtering prioritizes the identification of faces that don’t
+     * meet the required quality bar chosen by Amazon Rekognition. The quality bar is
+     * based on a variety of common use cases. Low-quality detections can occur for a
+     * number of reasons. Some examples are an object that's misidentified as a face, a
+     * face that's too blurry, or a face with a pose that's too extreme to use. If you
+     * specify <code>NONE</code>, no filtering is performed. The default value is
+     * AUTO.</p> <p>To use quality filtering, the collection you are using must be
+     * associated with version 3 of the face model.</p>
      */
     inline const QualityFilter& GetQualityFilter() const{ return m_qualityFilter; }
 
     /**
-     * <p>Specifies how much filtering is done to identify faces detected with low
-     * quality. Filtered faces are not indexed. If you specify <code>AUTO</code>,
-     * filtering prioritizes the identification of faces that don’t meet the required
-     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety
-     * of common use cases. Low quality detections can arise for a number of reasons.
-     * For example, an object misidentified as a face, a face that is too blurry, or a
-     * face with a pose that is too extreme to use. If you specify <code>NONE</code>,
-     * no filtering is performed. The default value is NONE.</p>
+     * <p>A filter that specifies how much filtering is done to identify faces that are
+     * detected with low quality. Filtered faces aren't indexed. If you specify
+     * <code>AUTO</code>, filtering prioritizes the identification of faces that don’t
+     * meet the required quality bar chosen by Amazon Rekognition. The quality bar is
+     * based on a variety of common use cases. Low-quality detections can occur for a
+     * number of reasons. Some examples are an object that's misidentified as a face, a
+     * face that's too blurry, or a face with a pose that's too extreme to use. If you
+     * specify <code>NONE</code>, no filtering is performed. The default value is
+     * AUTO.</p> <p>To use quality filtering, the collection you are using must be
+     * associated with version 3 of the face model.</p>
      */
     inline void SetQualityFilter(const QualityFilter& value) { m_qualityFilterHasBeenSet = true; m_qualityFilter = value; }
 
     /**
-     * <p>Specifies how much filtering is done to identify faces detected with low
-     * quality. Filtered faces are not indexed. If you specify <code>AUTO</code>,
-     * filtering prioritizes the identification of faces that don’t meet the required
-     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety
-     * of common use cases. Low quality detections can arise for a number of reasons.
-     * For example, an object misidentified as a face, a face that is too blurry, or a
-     * face with a pose that is too extreme to use. If you specify <code>NONE</code>,
-     * no filtering is performed. The default value is NONE.</p>
+     * <p>A filter that specifies how much filtering is done to identify faces that are
+     * detected with low quality. Filtered faces aren't indexed. If you specify
+     * <code>AUTO</code>, filtering prioritizes the identification of faces that don’t
+     * meet the required quality bar chosen by Amazon Rekognition. The quality bar is
+     * based on a variety of common use cases. Low-quality detections can occur for a
+     * number of reasons. Some examples are an object that's misidentified as a face, a
+     * face that's too blurry, or a face with a pose that's too extreme to use. If you
+     * specify <code>NONE</code>, no filtering is performed. The default value is
+     * AUTO.</p> <p>To use quality filtering, the collection you are using must be
+     * associated with version 3 of the face model.</p>
      */
     inline void SetQualityFilter(QualityFilter&& value) { m_qualityFilterHasBeenSet = true; m_qualityFilter = std::move(value); }
 
     /**
-     * <p>Specifies how much filtering is done to identify faces detected with low
-     * quality. Filtered faces are not indexed. If you specify <code>AUTO</code>,
-     * filtering prioritizes the identification of faces that don’t meet the required
-     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety
-     * of common use cases. Low quality detections can arise for a number of reasons.
-     * For example, an object misidentified as a face, a face that is too blurry, or a
-     * face with a pose that is too extreme to use. If you specify <code>NONE</code>,
-     * no filtering is performed. The default value is NONE.</p>
+     * <p>A filter that specifies how much filtering is done to identify faces that are
+     * detected with low quality. Filtered faces aren't indexed. If you specify
+     * <code>AUTO</code>, filtering prioritizes the identification of faces that don’t
+     * meet the required quality bar chosen by Amazon Rekognition. The quality bar is
+     * based on a variety of common use cases. Low-quality detections can occur for a
+     * number of reasons. Some examples are an object that's misidentified as a face, a
+     * face that's too blurry, or a face with a pose that's too extreme to use. If you
+     * specify <code>NONE</code>, no filtering is performed. The default value is
+     * AUTO.</p> <p>To use quality filtering, the collection you are using must be
+     * associated with version 3 of the face model.</p>
      */
     inline IndexFacesRequest& WithQualityFilter(const QualityFilter& value) { SetQualityFilter(value); return *this;}
 
     /**
-     * <p>Specifies how much filtering is done to identify faces detected with low
-     * quality. Filtered faces are not indexed. If you specify <code>AUTO</code>,
-     * filtering prioritizes the identification of faces that don’t meet the required
-     * quality bar chosen by Amazon Rekognition. The quality bar is based on a variety
-     * of common use cases. Low quality detections can arise for a number of reasons.
-     * For example, an object misidentified as a face, a face that is too blurry, or a
-     * face with a pose that is too extreme to use. If you specify <code>NONE</code>,
-     * no filtering is performed. The default value is NONE.</p>
+     * <p>A filter that specifies how much filtering is done to identify faces that are
+     * detected with low quality. Filtered faces aren't indexed. If you specify
+     * <code>AUTO</code>, filtering prioritizes the identification of faces that don’t
+     * meet the required quality bar chosen by Amazon Rekognition. The quality bar is
+     * based on a variety of common use cases. Low-quality detections can occur for a
+     * number of reasons. Some examples are an object that's misidentified as a face, a
+     * face that's too blurry, or a face with a pose that's too extreme to use. If you
+     * specify <code>NONE</code>, no filtering is performed. The default value is
+     * AUTO.</p> <p>To use quality filtering, the collection you are using must be
+     * associated with version 3 of the face model.</p>
      */
     inline IndexFacesRequest& WithQualityFilter(QualityFilter&& value) { SetQualityFilter(std::move(value)); return *this;}
 

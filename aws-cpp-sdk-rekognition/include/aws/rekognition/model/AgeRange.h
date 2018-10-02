@@ -33,10 +33,10 @@ namespace Model
 
   /**
    * <p>Structure containing the estimated age range, in years, for a face.</p>
-   * <p>Rekognition estimates an age-range for faces detected in the input image.
-   * Estimated age ranges can overlap; a face of a 5 year old may have an estimated
-   * range of 4-6 whilst the face of a 6 year old may have an estimated range of
-   * 4-8.</p><p><h3>See Also:</h3>   <a
+   * <p>Amazon Rekognition estimates an age range for faces detected in the input
+   * image. Estimated age ranges can overlap. A face of a 5-year-old might have an
+   * estimated range of 4-6, while the face of a 6-year-old might have an estimated
+   * range of 4-8.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/AgeRange">AWS
    * API Reference</a></p>
    */

@@ -112,43 +112,43 @@ namespace Model
 
 
     /**
-     * <p>The name for the parent label. Labels at the top-level of the hierarchy have
+     * <p>The name for the parent label. Labels at the top level of the hierarchy have
      * the parent label <code>""</code>.</p>
      */
     inline const Aws::String& GetParentName() const{ return m_parentName; }
 
     /**
-     * <p>The name for the parent label. Labels at the top-level of the hierarchy have
+     * <p>The name for the parent label. Labels at the top level of the hierarchy have
      * the parent label <code>""</code>.</p>
      */
     inline void SetParentName(const Aws::String& value) { m_parentNameHasBeenSet = true; m_parentName = value; }
 
     /**
-     * <p>The name for the parent label. Labels at the top-level of the hierarchy have
+     * <p>The name for the parent label. Labels at the top level of the hierarchy have
      * the parent label <code>""</code>.</p>
      */
     inline void SetParentName(Aws::String&& value) { m_parentNameHasBeenSet = true; m_parentName = std::move(value); }
 
     /**
-     * <p>The name for the parent label. Labels at the top-level of the hierarchy have
+     * <p>The name for the parent label. Labels at the top level of the hierarchy have
      * the parent label <code>""</code>.</p>
      */
     inline void SetParentName(const char* value) { m_parentNameHasBeenSet = true; m_parentName.assign(value); }
 
     /**
-     * <p>The name for the parent label. Labels at the top-level of the hierarchy have
+     * <p>The name for the parent label. Labels at the top level of the hierarchy have
      * the parent label <code>""</code>.</p>
      */
     inline ModerationLabel& WithParentName(const Aws::String& value) { SetParentName(value); return *this;}
 
     /**
-     * <p>The name for the parent label. Labels at the top-level of the hierarchy have
+     * <p>The name for the parent label. Labels at the top level of the hierarchy have
      * the parent label <code>""</code>.</p>
      */
     inline ModerationLabel& WithParentName(Aws::String&& value) { SetParentName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the parent label. Labels at the top-level of the hierarchy have
+     * <p>The name for the parent label. Labels at the top level of the hierarchy have
      * the parent label <code>""</code>.</p>
      */
     inline ModerationLabel& WithParentName(const char* value) { SetParentName(value); return *this;}

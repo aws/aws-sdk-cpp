@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Object containing both the face metadata (stored in the back-end database)
+   * <p>Object containing both the face metadata (stored in the backend database),
    * and facial attributes that are detected but aren't stored in the
    * database.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/FaceRecord">AWS

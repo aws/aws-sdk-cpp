@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Route53Domains;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.6.20140515.21;
+        version : 1.6.20140515.22;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Route 53 Domains);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.6.21
+            AWSSDKCPP-Core/1.6.22
        }
     }
 

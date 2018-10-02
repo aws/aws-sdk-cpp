@@ -25,6 +25,8 @@ using namespace Aws::Utils;
 CreateThreatIntelSetRequest::CreateThreatIntelSetRequest() : 
     m_activate(false),
     m_activateHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_detectorIdHasBeenSet(false),
     m_format(ThreatIntelSetFormat::NOT_SET),
     m_formatHasBeenSet(false),
@@ -40,6 +42,12 @@ Aws::String CreateThreatIntelSetRequest::SerializePayload() const
   if(m_activateHasBeenSet)
   {
    payload.WithBool("activate", m_activate);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 
