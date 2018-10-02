@@ -117,4 +117,5 @@ void CurlHandleContainer::SetDefaultOptionsOnHandle(CURL* handle)
     curl_easy_setopt(handle, CURLOPT_CONNECTTIMEOUT_MS, m_connectTimeout);
     curl_easy_setopt(handle, CURLOPT_LOW_SPEED_LIMIT, 1L);
     curl_easy_setopt(handle, CURLOPT_LOW_SPEED_TIME, m_requestTimeout / 1000);
+    curl_easy_setopt(handle, CURLOPT_TCP_NODELAY, 1L);
 }
