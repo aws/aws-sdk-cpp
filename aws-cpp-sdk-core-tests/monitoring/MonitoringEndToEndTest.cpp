@@ -225,11 +225,13 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbSingleAttemptSucceeded)
 {
     Threading::DefaultExecutor exec;
     Threading::Semaphore ev(0, 1);
+    Threading::Semaphore sync(0, 1);
     int packetsNum = 2;
     Aws::Vector<Aws::String> results;
     auto ListenerAgent = [&] {
         Aws::Net::SimpleUDP serverUDP(true/*IPV4*/, Aws::Net::UDP_BUFFER_SIZE/*SENDBUF*/, Aws::Net::UDP_BUFFER_SIZE/*RECVBUF*/, true/*NOBLOCKING*/);
         ASSERT_EQ(0, serverUDP.BindToLocalHost(static_cast<unsigned short>(StringUtils::ConvertToInt32(Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_PORT).c_str()))));
+        sync.ReleaseAll(); // I am ready to receive now, you can start sending...
         uint8_t buffer[Aws::Net::UDP_BUFFER_SIZE];
         for (int i = 0; i < packetsNum; i++)
         {
@@ -237,18 +239,18 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbSingleAttemptSucceeded)
             while ((dataLen = serverUDP.ReceiveDataFrom(nullptr, nullptr, buffer, sizeof(buffer))) == -1);
             results.push_back(Aws::String(reinterpret_cast<const char*>(buffer), dataLen));
         }
-        ev.ReleaseAll();
+        ev.ReleaseAll(); // I received all metrics, you can do comparison...
     };
     exec.Submit(ListenerAgent);
 
-    
+    sync.WaitOne(); // Waiting for agent to be ready to receive...
     SetServiceClient("DynamoDb", Aws::Region::US_EAST_1);
     MockServiceRequest request("PutItem");
     HeaderValueCollection responseHeaders;
     QueueMockResponse(HttpResponseCode::OK, responseHeaders);
     auto outcome = mockClient->MakeRequest(request);
 
-    ev.WaitOne();
+    ev.WaitOne(); // Waiting for agent to receive all metrics...
 
     ASSERT_EQ(2u, results.size());
     Aws::Utils::Json::JsonValue attempt(results[0]);
@@ -266,18 +268,19 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbSingleAttemptSucceeded)
 
     ASSERT_EQ(api.View().GetString("Timestamp"), attempt.View().GetString("Timestamp"));
     ASSERT_GE(api.View().GetInt64("Latency"), attempt.View().GetInt64("AttemptLatency"));
-
 }
 
 TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbTwoAttemptsFailedThenSucceeded)
 {
     Threading::DefaultExecutor exec;
     Threading::Semaphore ev(0, 1);
+    Threading::Semaphore sync(0, 1);
     int packetsNum = 3;
     Aws::Vector<Aws::String> results;
     auto ListenerAgent = [&] {
         Aws::Net::SimpleUDP serverUDP(true/*IPV4*/, Aws::Net::UDP_BUFFER_SIZE/*SENDBUF*/, Aws::Net::UDP_BUFFER_SIZE/*RECVBUF*/, true/*NOBLOCKING*/);
         ASSERT_EQ(0, serverUDP.BindToLocalHost(static_cast<unsigned short>(StringUtils::ConvertToInt32(Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_PORT).c_str()))));
+        sync.ReleaseAll();
         uint8_t buffer[Aws::Net::UDP_BUFFER_SIZE];
         for (int i = 0; i < packetsNum; i++)
         {
@@ -288,7 +291,7 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbTwoAttemptsFailedThenSucceed
         ev.ReleaseAll();
     };
     exec.Submit(ListenerAgent);
-
+    sync.WaitOne();
     SetServiceClient("DynamoDb", Aws::Region::US_WEST_2);
     MockServiceRequest request("PutItem");
     HeaderValueCollection responseHeaders;
@@ -330,11 +333,13 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockS3TwoAttemptsFailedThenSucceeded)
 {
     Threading::DefaultExecutor exec;
     Threading::Semaphore ev(0, 1);
+    Threading::Semaphore sync(0, 1);
     int packetsNum = 3;
     Aws::Vector<Aws::String> results;
     auto ListenerAgent = [&] {
         auto serverUDP = Aws::MakeUnique<Aws::Net::SimpleUDP>(ALLOCATION_TAG, true/*IPV4*/, Aws::Net::UDP_BUFFER_SIZE/*SENDBUF*/, Aws::Net::UDP_BUFFER_SIZE/*RECVBUF*/, true/*NOBLOCKING*/);
         ASSERT_EQ(0, serverUDP->BindToLocalHost(static_cast<unsigned short>(StringUtils::ConvertToInt32(Aws::Environment::GetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_PORT).c_str()))));
+        sync.ReleaseAll();
         uint8_t buffer[Aws::Net::UDP_BUFFER_SIZE];
         for (int i = 0; i < packetsNum; i++)
         {
@@ -345,7 +350,7 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockS3TwoAttemptsFailedThenSucceeded)
         ev.ReleaseAll();
     };
     exec.Submit(ListenerAgent);
-
+    sync.WaitOne();
     SetServiceClient("DynamoDb", Aws::Region::US_WEST_2);
     MockServiceRequest request("PutItem");
     HeaderValueCollection responseHeaders;
