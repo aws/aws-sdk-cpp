@@ -107,8 +107,17 @@ namespace Aws
             }
         }
 
+        static inline void FillOptionalApiCallFieldsToJson(Json::JsonValue& json,
+            const Aws::Http::HttpRequest* request)
+        {
+            if (!request->GetSigningRegion().empty())
+            {
+                json.WithString("Region", request->GetSigningRegion());
+            }
+        }
+
         static inline void FillOptionalApiAttemptFieldsToJson(Json::JsonValue& json,
-            const std::shared_ptr<const Aws::Http::HttpRequest>& request,
+            const Aws::Http::HttpRequest* request,
             const Aws::Client::HttpResponseOutcome& outcome,
             const CoreMetricsCollection& metricsFromCore)
         {
@@ -215,6 +224,7 @@ namespace Aws
             Aws::Utils::Json::JsonValue json;
             FillRequiredFieldsToJson(json, "ApiCall", serviceName, requestName, m_clientId, defaultContext->apiCallStartTime, DEFAULT_MONITORING_VERSION);
             FillRequiredApiCallFieldsToJson(json, defaultContext->retryCount + 1, DateTime::Now().Millis() - defaultContext->apiCallStartTime.Millis());
+            FillOptionalApiCallFieldsToJson(json, request.get());
             Aws::String compactData = json.View().WriteCompact();
             m_udp.SendDataToLocalHost(reinterpret_cast<const uint8_t*>(compactData.c_str()), static_cast<int>(compactData.size()), m_port);
             AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Send API Metrics: \n" << json.View().WriteReadable());
@@ -230,7 +240,7 @@ namespace Aws
             FillRequiredFieldsToJson(json, "ApiCallAttempt", serviceName, requestName, m_clientId, defaultContext->attemptStartTime, DEFAULT_MONITORING_VERSION);
             FillRequiredApiAttemptFieldsToJson(json, request->GetUri().GetAuthority(), request->GetUserAgent(),
                 DateTime::Now().Millis() - defaultContext->attemptStartTime.Millis());
-            FillOptionalApiAttemptFieldsToJson(json, request, outcome, metricsFromCore);
+            FillOptionalApiAttemptFieldsToJson(json, request.get(), outcome, metricsFromCore);
             Aws::String compactData = json.View().WriteCompact();
             AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Send Attempt Metrics: \n" << json.View().WriteReadable());
             m_udp.SendDataToLocalHost(reinterpret_cast<const uint8_t*>(compactData.c_str()), static_cast<int>(compactData.size()), m_port);

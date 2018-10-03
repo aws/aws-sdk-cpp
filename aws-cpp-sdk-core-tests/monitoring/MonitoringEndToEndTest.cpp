@@ -213,11 +213,13 @@ protected:
         ASSERT_EQ(static_cast<int>(responseCode), json.View().GetInteger("HttpStatusCode"));
     }
 
-    void DefaultMonitoringApiCallAssert(Aws::Utils::Json::JsonValue& json, int attemptCount)
+    void DefaultMonitoringApiCallAssert(Aws::Utils::Json::JsonValue& json, const Aws::String& region, int attemptCount)
     {
         ASSERT_TRUE(json.View().ValueExists("Latency"));
         ASSERT_TRUE(json.View().ValueExists("AttemptCount"));
         ASSERT_EQ(attemptCount, json.View().GetInteger("AttemptCount"));
+        ASSERT_TRUE(json.View().ValueExists("Region"));
+        ASSERT_STREQ(region.c_str(), json.View().GetString("Region").c_str());
     }
 };
 
@@ -262,9 +264,9 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbSingleAttemptSucceeded)
     DefaultMonitoringAttemptAssert(attempt, HttpResponseCode::OK, Aws::Region::US_EAST_1);
 
     // 6 common items in CommonAssert + 2 api required items in ApiCallAssert
-    ASSERT_EQ(8u, api.View().GetAllObjects().size());
+    ASSERT_EQ(9u, api.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(api, request.GetServiceRequestName(), "ApiCall");
-    DefaultMonitoringApiCallAssert(api, 1/*AttemptCount*/);
+    DefaultMonitoringApiCallAssert(api, Aws::Region::US_EAST_1, 1/*AttemptCount*/);
 
     ASSERT_EQ(api.View().GetString("Timestamp"), attempt.View().GetString("Timestamp"));
     ASSERT_GE(api.View().GetInt64("Latency"), attempt.View().GetInt64("AttemptLatency"));
@@ -320,9 +322,9 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbTwoAttemptsFailedThenSucceed
     DefaultMonitoringAttemptAssert(attemptSuccess, HttpResponseCode::OK, Aws::Region::US_WEST_2);
 
     // 6 common items in CommonAssert + 2 api required items in ApiCallAssert
-    ASSERT_EQ(8u, api.View().GetAllObjects().size());
+    ASSERT_EQ(9u, api.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(api, request.GetServiceRequestName(), "ApiCall");
-    DefaultMonitoringApiCallAssert(api, 2/*AttemptCount*/);
+    DefaultMonitoringApiCallAssert(api, Aws::Region::US_WEST_2, 2/*AttemptCount*/);
 
     ASSERT_EQ(api.View().GetString("Timestamp"), attemptFail.View().GetString("Timestamp"));
     ASSERT_LE(api.View().GetString("Timestamp"), attemptSuccess.View().GetString("Timestamp"));
@@ -379,9 +381,9 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockS3TwoAttemptsFailedThenSucceeded)
     DefaultMonitoringAttemptAssert(attemptSuccess, HttpResponseCode::OK, Aws::Region::US_WEST_2);
 
     // 6 common items in CommonAssert + 2 api required items in ApiCallAssert
-    ASSERT_EQ(8u, api.View().GetAllObjects().size());
+    ASSERT_EQ(9u, api.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(api, request.GetServiceRequestName(), "ApiCall");
-    DefaultMonitoringApiCallAssert(api, 2/*AttemptCount*/);
+    DefaultMonitoringApiCallAssert(api, Aws::Region::US_WEST_2, 2/*AttemptCount*/);
 
     ASSERT_EQ(api.View().GetString("Timestamp"), attemptFail.View().GetString("Timestamp"));
     ASSERT_LE(api.View().GetString("Timestamp"), attemptSuccess.View().GetString("Timestamp"));
