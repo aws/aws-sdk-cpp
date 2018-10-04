@@ -442,7 +442,8 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
         if (curlResponseCode != CURLE_OK && shouldContinueRequest)
         {
             response = nullptr;
-            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl returned error code " << curlResponseCode);
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl returned error code " << curlResponseCode
+                    << " - " << curl_easy_strerror(curlResponseCode));
         }
         else if(!shouldContinueRequest)
         {
