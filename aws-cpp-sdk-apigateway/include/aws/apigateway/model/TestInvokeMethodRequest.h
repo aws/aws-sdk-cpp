@@ -18,6 +18,7 @@
 #include <aws/apigateway/APIGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -196,6 +197,73 @@ namespace Model
      * Use this to specify path parameters and query string parameters.</p>
      */
     inline TestInvokeMethodRequest& WithPathWithQueryString(const char* value) { SetPathWithQueryString(value); return *this;}
+
+
+    /**
+     * <p>The headers as a map from string to list of values to simulate an incoming
+     * invocation request.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetMultiValueHeaders() const{ return m_multiValueHeaders; }
+
+    /**
+     * <p>The headers as a map from string to list of values to simulate an incoming
+     * invocation request.</p>
+     */
+    inline void SetMultiValueHeaders(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders = value; }
+
+    /**
+     * <p>The headers as a map from string to list of values to simulate an incoming
+     * invocation request.</p>
+     */
+    inline void SetMultiValueHeaders(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders = std::move(value); }
+
+    /**
+     * <p>The headers as a map from string to list of values to simulate an incoming
+     * invocation request.</p>
+     */
+    inline TestInvokeMethodRequest& WithMultiValueHeaders(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetMultiValueHeaders(value); return *this;}
+
+    /**
+     * <p>The headers as a map from string to list of values to simulate an incoming
+     * invocation request.</p>
+     */
+    inline TestInvokeMethodRequest& WithMultiValueHeaders(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetMultiValueHeaders(std::move(value)); return *this;}
+
+    /**
+     * <p>The headers as a map from string to list of values to simulate an incoming
+     * invocation request.</p>
+     */
+    inline TestInvokeMethodRequest& AddMultiValueHeaders(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders.emplace(key, value); return *this; }
+
+    /**
+     * <p>The headers as a map from string to list of values to simulate an incoming
+     * invocation request.</p>
+     */
+    inline TestInvokeMethodRequest& AddMultiValueHeaders(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The headers as a map from string to list of values to simulate an incoming
+     * invocation request.</p>
+     */
+    inline TestInvokeMethodRequest& AddMultiValueHeaders(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The headers as a map from string to list of values to simulate an incoming
+     * invocation request.</p>
+     */
+    inline TestInvokeMethodRequest& AddMultiValueHeaders(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The headers as a map from string to list of values to simulate an incoming
+     * invocation request.</p>
+     */
+    inline TestInvokeMethodRequest& AddMultiValueHeaders(const char* key, Aws::Vector<Aws::String>&& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The headers as a map from string to list of values to simulate an incoming
+     * invocation request.</p>
+     */
+    inline TestInvokeMethodRequest& AddMultiValueHeaders(const char* key, const Aws::Vector<Aws::String>& value) { m_multiValueHeadersHasBeenSet = true; m_multiValueHeaders.emplace(key, value); return *this; }
 
 
     /**
@@ -430,6 +498,9 @@ namespace Model
 
     Aws::String m_pathWithQueryString;
     bool m_pathWithQueryStringHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_multiValueHeaders;
+    bool m_multiValueHeadersHasBeenSet;
 
     Aws::String m_clientCertificateId;
     bool m_clientCertificateIdHasBeenSet;

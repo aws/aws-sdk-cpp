@@ -23,23 +23,19 @@ namespace SSM
 {
 namespace Model
 {
-  enum class PatchComplianceDataState
+  enum class PatchAction
   {
     NOT_SET,
-    INSTALLED,
-    INSTALLED_OTHER,
-    INSTALLED_REJECTED,
-    MISSING,
-    NOT_APPLICABLE,
-    FAILED
+    ALLOW_AS_DEPENDENCY,
+    BLOCK
   };
 
-namespace PatchComplianceDataStateMapper
+namespace PatchActionMapper
 {
-AWS_SSM_API PatchComplianceDataState GetPatchComplianceDataStateForName(const Aws::String& name);
+AWS_SSM_API PatchAction GetPatchActionForName(const Aws::String& name);
 
-AWS_SSM_API Aws::String GetNameForPatchComplianceDataState(PatchComplianceDataState value);
-} // namespace PatchComplianceDataStateMapper
+AWS_SSM_API Aws::String GetNameForPatchAction(PatchAction value);
+} // namespace PatchActionMapper
 } // namespace Model
 } // namespace SSM
 } // namespace Aws

@@ -94,8 +94,8 @@ namespace Model
      * <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3
      * bucket name is <code>my-bucket</code>, and your path prefix is
      * <code>build-log</code>, then acceptable formats are
-     * <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.
-     * </p>
+     * <code>my-bucket/build-log</code> or
+     * <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
@@ -103,8 +103,8 @@ namespace Model
      * <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3
      * bucket name is <code>my-bucket</code>, and your path prefix is
      * <code>build-log</code>, then acceptable formats are
-     * <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.
-     * </p>
+     * <code>my-bucket/build-log</code> or
+     * <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
@@ -112,8 +112,8 @@ namespace Model
      * <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3
      * bucket name is <code>my-bucket</code>, and your path prefix is
      * <code>build-log</code>, then acceptable formats are
-     * <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.
-     * </p>
+     * <code>my-bucket/build-log</code> or
+     * <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
@@ -121,8 +121,8 @@ namespace Model
      * <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3
      * bucket name is <code>my-bucket</code>, and your path prefix is
      * <code>build-log</code>, then acceptable formats are
-     * <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.
-     * </p>
+     * <code>my-bucket/build-log</code> or
+     * <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
@@ -130,8 +130,8 @@ namespace Model
      * <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3
      * bucket name is <code>my-bucket</code>, and your path prefix is
      * <code>build-log</code>, then acceptable formats are
-     * <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.
-     * </p>
+     * <code>my-bucket/build-log</code> or
+     * <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
      */
     inline S3LogsConfig& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
@@ -139,8 +139,8 @@ namespace Model
      * <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3
      * bucket name is <code>my-bucket</code>, and your path prefix is
      * <code>build-log</code>, then acceptable formats are
-     * <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.
-     * </p>
+     * <code>my-bucket/build-log</code> or
+     * <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
      */
     inline S3LogsConfig& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
@@ -148,8 +148,8 @@ namespace Model
      * <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3
      * bucket name is <code>my-bucket</code>, and your path prefix is
      * <code>build-log</code>, then acceptable formats are
-     * <code>my-bucket/build-log</code> or <code>aws:s3:::my-bucket/build-log</code>.
-     * </p>
+     * <code>my-bucket/build-log</code> or
+     * <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
      */
     inline S3LogsConfig& WithLocation(const char* value) { SetLocation(value); return *this;}
 

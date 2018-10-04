@@ -30,6 +30,7 @@ DescribePatchGroupStateResult::DescribePatchGroupStateResult() :
     m_instances(0),
     m_instancesWithInstalledPatches(0),
     m_instancesWithInstalledOtherPatches(0),
+    m_instancesWithInstalledRejectedPatches(0),
     m_instancesWithMissingPatches(0),
     m_instancesWithFailedPatches(0),
     m_instancesWithNotApplicablePatches(0)
@@ -40,6 +41,7 @@ DescribePatchGroupStateResult::DescribePatchGroupStateResult(const Aws::AmazonWe
     m_instances(0),
     m_instancesWithInstalledPatches(0),
     m_instancesWithInstalledOtherPatches(0),
+    m_instancesWithInstalledRejectedPatches(0),
     m_instancesWithMissingPatches(0),
     m_instancesWithFailedPatches(0),
     m_instancesWithNotApplicablePatches(0)
@@ -65,6 +67,12 @@ DescribePatchGroupStateResult& DescribePatchGroupStateResult::operator =(const A
   if(jsonValue.ValueExists("InstancesWithInstalledOtherPatches"))
   {
     m_instancesWithInstalledOtherPatches = jsonValue.GetInteger("InstancesWithInstalledOtherPatches");
+
+  }
+
+  if(jsonValue.ValueExists("InstancesWithInstalledRejectedPatches"))
+  {
+    m_instancesWithInstalledRejectedPatches = jsonValue.GetInteger("InstancesWithInstalledRejectedPatches");
 
   }
 

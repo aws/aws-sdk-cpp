@@ -228,98 +228,86 @@ namespace Model
 
 
     /**
-     * <p>The <a
-     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
-     * identity claims</a>, with any supported custom attributes, returned from the
-     * Cognito Your User Pool configured for the API.</p>
+     * <p>The <a href="[[OpenIdClaimsUrl]]">open identity claims</a>, with any
+     * supported custom attributes, returned from the Cognito Your User Pool configured
+     * for the API.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetClaims() const{ return m_claims; }
 
     /**
-     * <p>The <a
-     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
-     * identity claims</a>, with any supported custom attributes, returned from the
-     * Cognito Your User Pool configured for the API.</p>
+     * <p>The <a href="[[OpenIdClaimsUrl]]">open identity claims</a>, with any
+     * supported custom attributes, returned from the Cognito Your User Pool configured
+     * for the API.</p>
      */
     inline void SetClaims(const Aws::Map<Aws::String, Aws::String>& value) { m_claims = value; }
 
     /**
-     * <p>The <a
-     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
-     * identity claims</a>, with any supported custom attributes, returned from the
-     * Cognito Your User Pool configured for the API.</p>
+     * <p>The <a href="[[OpenIdClaimsUrl]]">open identity claims</a>, with any
+     * supported custom attributes, returned from the Cognito Your User Pool configured
+     * for the API.</p>
      */
     inline void SetClaims(Aws::Map<Aws::String, Aws::String>&& value) { m_claims = std::move(value); }
 
     /**
-     * <p>The <a
-     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
-     * identity claims</a>, with any supported custom attributes, returned from the
-     * Cognito Your User Pool configured for the API.</p>
+     * <p>The <a href="[[OpenIdClaimsUrl]]">open identity claims</a>, with any
+     * supported custom attributes, returned from the Cognito Your User Pool configured
+     * for the API.</p>
      */
     inline TestInvokeAuthorizerResult& WithClaims(const Aws::Map<Aws::String, Aws::String>& value) { SetClaims(value); return *this;}
 
     /**
-     * <p>The <a
-     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
-     * identity claims</a>, with any supported custom attributes, returned from the
-     * Cognito Your User Pool configured for the API.</p>
+     * <p>The <a href="[[OpenIdClaimsUrl]]">open identity claims</a>, with any
+     * supported custom attributes, returned from the Cognito Your User Pool configured
+     * for the API.</p>
      */
     inline TestInvokeAuthorizerResult& WithClaims(Aws::Map<Aws::String, Aws::String>&& value) { SetClaims(std::move(value)); return *this;}
 
     /**
-     * <p>The <a
-     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
-     * identity claims</a>, with any supported custom attributes, returned from the
-     * Cognito Your User Pool configured for the API.</p>
+     * <p>The <a href="[[OpenIdClaimsUrl]]">open identity claims</a>, with any
+     * supported custom attributes, returned from the Cognito Your User Pool configured
+     * for the API.</p>
      */
     inline TestInvokeAuthorizerResult& AddClaims(const Aws::String& key, const Aws::String& value) { m_claims.emplace(key, value); return *this; }
 
     /**
-     * <p>The <a
-     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
-     * identity claims</a>, with any supported custom attributes, returned from the
-     * Cognito Your User Pool configured for the API.</p>
+     * <p>The <a href="[[OpenIdClaimsUrl]]">open identity claims</a>, with any
+     * supported custom attributes, returned from the Cognito Your User Pool configured
+     * for the API.</p>
      */
     inline TestInvokeAuthorizerResult& AddClaims(Aws::String&& key, const Aws::String& value) { m_claims.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The <a
-     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
-     * identity claims</a>, with any supported custom attributes, returned from the
-     * Cognito Your User Pool configured for the API.</p>
+     * <p>The <a href="[[OpenIdClaimsUrl]]">open identity claims</a>, with any
+     * supported custom attributes, returned from the Cognito Your User Pool configured
+     * for the API.</p>
      */
     inline TestInvokeAuthorizerResult& AddClaims(const Aws::String& key, Aws::String&& value) { m_claims.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The <a
-     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
-     * identity claims</a>, with any supported custom attributes, returned from the
-     * Cognito Your User Pool configured for the API.</p>
+     * <p>The <a href="[[OpenIdClaimsUrl]]">open identity claims</a>, with any
+     * supported custom attributes, returned from the Cognito Your User Pool configured
+     * for the API.</p>
      */
     inline TestInvokeAuthorizerResult& AddClaims(Aws::String&& key, Aws::String&& value) { m_claims.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The <a
-     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
-     * identity claims</a>, with any supported custom attributes, returned from the
-     * Cognito Your User Pool configured for the API.</p>
+     * <p>The <a href="[[OpenIdClaimsUrl]]">open identity claims</a>, with any
+     * supported custom attributes, returned from the Cognito Your User Pool configured
+     * for the API.</p>
      */
     inline TestInvokeAuthorizerResult& AddClaims(const char* key, Aws::String&& value) { m_claims.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The <a
-     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
-     * identity claims</a>, with any supported custom attributes, returned from the
-     * Cognito Your User Pool configured for the API.</p>
+     * <p>The <a href="[[OpenIdClaimsUrl]]">open identity claims</a>, with any
+     * supported custom attributes, returned from the Cognito Your User Pool configured
+     * for the API.</p>
      */
     inline TestInvokeAuthorizerResult& AddClaims(Aws::String&& key, const char* value) { m_claims.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The <a
-     * href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open
-     * identity claims</a>, with any supported custom attributes, returned from the
-     * Cognito Your User Pool configured for the API.</p>
+     * <p>The <a href="[[OpenIdClaimsUrl]]">open identity claims</a>, with any
+     * supported custom attributes, returned from the Cognito Your User Pool configured
+     * for the API.</p>
      */
     inline TestInvokeAuthorizerResult& AddClaims(const char* key, const char* value) { m_claims.emplace(key, value); return *this; }
 

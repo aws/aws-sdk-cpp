@@ -21,6 +21,7 @@
 #include <aws/ssm/model/PatchRuleGroup.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/PatchComplianceLevel.h>
+#include <aws/ssm/model/PatchAction.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/PatchSource.h>
 #include <utility>
@@ -335,6 +336,42 @@ namespace Model
 
 
     /**
+     * <p>The action specified to take on patches included in the RejectedPatches list.
+     * A patch can be allowed only if it is a dependency of another package, or blocked
+     * entirely along with packages that include it as a dependency.</p>
+     */
+    inline const PatchAction& GetRejectedPatchesAction() const{ return m_rejectedPatchesAction; }
+
+    /**
+     * <p>The action specified to take on patches included in the RejectedPatches list.
+     * A patch can be allowed only if it is a dependency of another package, or blocked
+     * entirely along with packages that include it as a dependency.</p>
+     */
+    inline void SetRejectedPatchesAction(const PatchAction& value) { m_rejectedPatchesAction = value; }
+
+    /**
+     * <p>The action specified to take on patches included in the RejectedPatches list.
+     * A patch can be allowed only if it is a dependency of another package, or blocked
+     * entirely along with packages that include it as a dependency.</p>
+     */
+    inline void SetRejectedPatchesAction(PatchAction&& value) { m_rejectedPatchesAction = std::move(value); }
+
+    /**
+     * <p>The action specified to take on patches included in the RejectedPatches list.
+     * A patch can be allowed only if it is a dependency of another package, or blocked
+     * entirely along with packages that include it as a dependency.</p>
+     */
+    inline GetPatchBaselineResult& WithRejectedPatchesAction(const PatchAction& value) { SetRejectedPatchesAction(value); return *this;}
+
+    /**
+     * <p>The action specified to take on patches included in the RejectedPatches list.
+     * A patch can be allowed only if it is a dependency of another package, or blocked
+     * entirely along with packages that include it as a dependency.</p>
+     */
+    inline GetPatchBaselineResult& WithRejectedPatchesAction(PatchAction&& value) { SetRejectedPatchesAction(std::move(value)); return *this;}
+
+
+    /**
      * <p>Patch groups included in the patch baseline.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPatchGroups() const{ return m_patchGroups; }
@@ -531,6 +568,8 @@ namespace Model
     bool m_approvedPatchesEnableNonSecurity;
 
     Aws::Vector<Aws::String> m_rejectedPatches;
+
+    PatchAction m_rejectedPatchesAction;
 
     Aws::Vector<Aws::String> m_patchGroups;
 

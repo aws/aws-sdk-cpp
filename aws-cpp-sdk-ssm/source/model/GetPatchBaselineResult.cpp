@@ -29,14 +29,16 @@ using namespace Aws;
 GetPatchBaselineResult::GetPatchBaselineResult() : 
     m_operatingSystem(OperatingSystem::NOT_SET),
     m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
-    m_approvedPatchesEnableNonSecurity(false)
+    m_approvedPatchesEnableNonSecurity(false),
+    m_rejectedPatchesAction(PatchAction::NOT_SET)
 {
 }
 
 GetPatchBaselineResult::GetPatchBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_operatingSystem(OperatingSystem::NOT_SET),
     m_approvedPatchesComplianceLevel(PatchComplianceLevel::NOT_SET),
-    m_approvedPatchesEnableNonSecurity(false)
+    m_approvedPatchesEnableNonSecurity(false),
+    m_rejectedPatchesAction(PatchAction::NOT_SET)
 {
   *this = result;
 }
@@ -102,6 +104,12 @@ GetPatchBaselineResult& GetPatchBaselineResult::operator =(const Aws::AmazonWebS
     {
       m_rejectedPatches.push_back(rejectedPatchesJsonList[rejectedPatchesIndex].AsString());
     }
+  }
+
+  if(jsonValue.ValueExists("RejectedPatchesAction"))
+  {
+    m_rejectedPatchesAction = PatchActionMapper::GetPatchActionForName(jsonValue.GetString("RejectedPatchesAction"));
+
   }
 
   if(jsonValue.ValueExists("PatchGroups"))

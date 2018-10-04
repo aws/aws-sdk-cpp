@@ -34,6 +34,11 @@ namespace StorageGateway
 {
 namespace Model
 {
+  /**
+   * <p>RefreshCacheOutput</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCacheOutput">AWS
+   * API Reference</a></p>
+   */
   class AWS_STORAGEGATEWAY_API RefreshCacheResult
   {
   public:
@@ -63,9 +68,33 @@ namespace Model
     
     inline RefreshCacheResult& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
 
+
+    
+    inline const Aws::String& GetNotificationId() const{ return m_notificationId; }
+
+    
+    inline void SetNotificationId(const Aws::String& value) { m_notificationId = value; }
+
+    
+    inline void SetNotificationId(Aws::String&& value) { m_notificationId = std::move(value); }
+
+    
+    inline void SetNotificationId(const char* value) { m_notificationId.assign(value); }
+
+    
+    inline RefreshCacheResult& WithNotificationId(const Aws::String& value) { SetNotificationId(value); return *this;}
+
+    
+    inline RefreshCacheResult& WithNotificationId(Aws::String&& value) { SetNotificationId(std::move(value)); return *this;}
+
+    
+    inline RefreshCacheResult& WithNotificationId(const char* value) { SetNotificationId(value); return *this;}
+
   private:
 
     Aws::String m_fileShareARN;
+
+    Aws::String m_notificationId;
   };
 
 } // namespace Model

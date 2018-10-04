@@ -349,7 +349,7 @@ namespace Model
     /**
      * <p>A value that defines the type of gateway to activate. The type specified is
      * critical to all later functions of the gateway and cannot be changed after
-     * activation. The default value is <code>STORED</code>. </p> <p> Valid Values:
+     * activation. The default value is <code>CACHED</code>. </p> <p> Valid Values:
      * "STORED", "CACHED", "VTL", "FILE_S3"</p>
      */
     inline const Aws::String& GetGatewayType() const{ return m_gatewayType; }
@@ -357,7 +357,7 @@ namespace Model
     /**
      * <p>A value that defines the type of gateway to activate. The type specified is
      * critical to all later functions of the gateway and cannot be changed after
-     * activation. The default value is <code>STORED</code>. </p> <p> Valid Values:
+     * activation. The default value is <code>CACHED</code>. </p> <p> Valid Values:
      * "STORED", "CACHED", "VTL", "FILE_S3"</p>
      */
     inline void SetGatewayType(const Aws::String& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = value; }
@@ -365,7 +365,7 @@ namespace Model
     /**
      * <p>A value that defines the type of gateway to activate. The type specified is
      * critical to all later functions of the gateway and cannot be changed after
-     * activation. The default value is <code>STORED</code>. </p> <p> Valid Values:
+     * activation. The default value is <code>CACHED</code>. </p> <p> Valid Values:
      * "STORED", "CACHED", "VTL", "FILE_S3"</p>
      */
     inline void SetGatewayType(Aws::String&& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = std::move(value); }
@@ -373,7 +373,7 @@ namespace Model
     /**
      * <p>A value that defines the type of gateway to activate. The type specified is
      * critical to all later functions of the gateway and cannot be changed after
-     * activation. The default value is <code>STORED</code>. </p> <p> Valid Values:
+     * activation. The default value is <code>CACHED</code>. </p> <p> Valid Values:
      * "STORED", "CACHED", "VTL", "FILE_S3"</p>
      */
     inline void SetGatewayType(const char* value) { m_gatewayTypeHasBeenSet = true; m_gatewayType.assign(value); }
@@ -381,7 +381,7 @@ namespace Model
     /**
      * <p>A value that defines the type of gateway to activate. The type specified is
      * critical to all later functions of the gateway and cannot be changed after
-     * activation. The default value is <code>STORED</code>. </p> <p> Valid Values:
+     * activation. The default value is <code>CACHED</code>. </p> <p> Valid Values:
      * "STORED", "CACHED", "VTL", "FILE_S3"</p>
      */
     inline ActivateGatewayRequest& WithGatewayType(const Aws::String& value) { SetGatewayType(value); return *this;}
@@ -389,7 +389,7 @@ namespace Model
     /**
      * <p>A value that defines the type of gateway to activate. The type specified is
      * critical to all later functions of the gateway and cannot be changed after
-     * activation. The default value is <code>STORED</code>. </p> <p> Valid Values:
+     * activation. The default value is <code>CACHED</code>. </p> <p> Valid Values:
      * "STORED", "CACHED", "VTL", "FILE_S3"</p>
      */
     inline ActivateGatewayRequest& WithGatewayType(Aws::String&& value) { SetGatewayType(std::move(value)); return *this;}
@@ -397,7 +397,7 @@ namespace Model
     /**
      * <p>A value that defines the type of gateway to activate. The type specified is
      * critical to all later functions of the gateway and cannot be changed after
-     * activation. The default value is <code>STORED</code>. </p> <p> Valid Values:
+     * activation. The default value is <code>CACHED</code>. </p> <p> Valid Values:
      * "STORED", "CACHED", "VTL", "FILE_S3"</p>
      */
     inline ActivateGatewayRequest& WithGatewayType(const char* value) { SetGatewayType(value); return *this;}

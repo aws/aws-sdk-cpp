@@ -39,7 +39,7 @@ namespace Model
    * <p>Represents an authorization layer for methods. If enabled on a method, API
    * Gateway will activate the authorizer when a client calls the method.</p> <div
    * class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+   * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
    * custom authorization</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Authorizer">AWS
    * API Reference</a></p>
@@ -240,43 +240,43 @@ namespace Model
 
 
     /**
-     * <p>Optional customer-defined field, used in OpenAPI imports and exports without
+     * <p>Optional customer-defined field, used in Swagger imports and exports without
      * functional impact.</p>
      */
     inline const Aws::String& GetAuthType() const{ return m_authType; }
 
     /**
-     * <p>Optional customer-defined field, used in OpenAPI imports and exports without
+     * <p>Optional customer-defined field, used in Swagger imports and exports without
      * functional impact.</p>
      */
     inline void SetAuthType(const Aws::String& value) { m_authTypeHasBeenSet = true; m_authType = value; }
 
     /**
-     * <p>Optional customer-defined field, used in OpenAPI imports and exports without
+     * <p>Optional customer-defined field, used in Swagger imports and exports without
      * functional impact.</p>
      */
     inline void SetAuthType(Aws::String&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
 
     /**
-     * <p>Optional customer-defined field, used in OpenAPI imports and exports without
+     * <p>Optional customer-defined field, used in Swagger imports and exports without
      * functional impact.</p>
      */
     inline void SetAuthType(const char* value) { m_authTypeHasBeenSet = true; m_authType.assign(value); }
 
     /**
-     * <p>Optional customer-defined field, used in OpenAPI imports and exports without
+     * <p>Optional customer-defined field, used in Swagger imports and exports without
      * functional impact.</p>
      */
     inline Authorizer& WithAuthType(const Aws::String& value) { SetAuthType(value); return *this;}
 
     /**
-     * <p>Optional customer-defined field, used in OpenAPI imports and exports without
+     * <p>Optional customer-defined field, used in Swagger imports and exports without
      * functional impact.</p>
      */
     inline Authorizer& WithAuthType(Aws::String&& value) { SetAuthType(std::move(value)); return *this;}
 
     /**
-     * <p>Optional customer-defined field, used in OpenAPI imports and exports without
+     * <p>Optional customer-defined field, used in Swagger imports and exports without
      * functional impact.</p>
      */
     inline Authorizer& WithAuthType(const char* value) { SetAuthType(value); return *this;}

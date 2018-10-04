@@ -307,6 +307,70 @@ namespace Model
 
 
     /**
+     * <p> An identifier for the version of this build's source code. </p> <ul> <li>
+     * <p> For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     * </p> </li> <li> <p> For AWS CodePipeline, the source revision provided by AWS
+     * CodePipeline. </p> </li> <li> <p> For Amazon Simple Storage Service (Amazon S3),
+     * this does not apply. </p> </li> </ul>
+     */
+    inline const Aws::String& GetResolvedSourceVersion() const{ return m_resolvedSourceVersion; }
+
+    /**
+     * <p> An identifier for the version of this build's source code. </p> <ul> <li>
+     * <p> For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     * </p> </li> <li> <p> For AWS CodePipeline, the source revision provided by AWS
+     * CodePipeline. </p> </li> <li> <p> For Amazon Simple Storage Service (Amazon S3),
+     * this does not apply. </p> </li> </ul>
+     */
+    inline void SetResolvedSourceVersion(const Aws::String& value) { m_resolvedSourceVersionHasBeenSet = true; m_resolvedSourceVersion = value; }
+
+    /**
+     * <p> An identifier for the version of this build's source code. </p> <ul> <li>
+     * <p> For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     * </p> </li> <li> <p> For AWS CodePipeline, the source revision provided by AWS
+     * CodePipeline. </p> </li> <li> <p> For Amazon Simple Storage Service (Amazon S3),
+     * this does not apply. </p> </li> </ul>
+     */
+    inline void SetResolvedSourceVersion(Aws::String&& value) { m_resolvedSourceVersionHasBeenSet = true; m_resolvedSourceVersion = std::move(value); }
+
+    /**
+     * <p> An identifier for the version of this build's source code. </p> <ul> <li>
+     * <p> For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     * </p> </li> <li> <p> For AWS CodePipeline, the source revision provided by AWS
+     * CodePipeline. </p> </li> <li> <p> For Amazon Simple Storage Service (Amazon S3),
+     * this does not apply. </p> </li> </ul>
+     */
+    inline void SetResolvedSourceVersion(const char* value) { m_resolvedSourceVersionHasBeenSet = true; m_resolvedSourceVersion.assign(value); }
+
+    /**
+     * <p> An identifier for the version of this build's source code. </p> <ul> <li>
+     * <p> For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     * </p> </li> <li> <p> For AWS CodePipeline, the source revision provided by AWS
+     * CodePipeline. </p> </li> <li> <p> For Amazon Simple Storage Service (Amazon S3),
+     * this does not apply. </p> </li> </ul>
+     */
+    inline Build& WithResolvedSourceVersion(const Aws::String& value) { SetResolvedSourceVersion(value); return *this;}
+
+    /**
+     * <p> An identifier for the version of this build's source code. </p> <ul> <li>
+     * <p> For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     * </p> </li> <li> <p> For AWS CodePipeline, the source revision provided by AWS
+     * CodePipeline. </p> </li> <li> <p> For Amazon Simple Storage Service (Amazon S3),
+     * this does not apply. </p> </li> </ul>
+     */
+    inline Build& WithResolvedSourceVersion(Aws::String&& value) { SetResolvedSourceVersion(std::move(value)); return *this;}
+
+    /**
+     * <p> An identifier for the version of this build's source code. </p> <ul> <li>
+     * <p> For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.
+     * </p> </li> <li> <p> For AWS CodePipeline, the source revision provided by AWS
+     * CodePipeline. </p> </li> <li> <p> For Amazon Simple Storage Service (Amazon S3),
+     * this does not apply. </p> </li> </ul>
+     */
+    inline Build& WithResolvedSourceVersion(const char* value) { SetResolvedSourceVersion(value); return *this;}
+
+
+    /**
      * <p>The name of the AWS CodeBuild project.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
@@ -1008,6 +1072,9 @@ namespace Model
 
     Aws::String m_sourceVersion;
     bool m_sourceVersionHasBeenSet;
+
+    Aws::String m_resolvedSourceVersion;
+    bool m_resolvedSourceVersionHasBeenSet;
 
     Aws::String m_projectName;
     bool m_projectNameHasBeenSet;

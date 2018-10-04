@@ -37,6 +37,7 @@ Build::Build() :
     m_buildStatus(StatusType::NOT_SET),
     m_buildStatusHasBeenSet(false),
     m_sourceVersionHasBeenSet(false),
+    m_resolvedSourceVersionHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_phasesHasBeenSet(false),
     m_sourceHasBeenSet(false),
@@ -68,6 +69,7 @@ Build::Build(JsonView jsonValue) :
     m_buildStatus(StatusType::NOT_SET),
     m_buildStatusHasBeenSet(false),
     m_sourceVersionHasBeenSet(false),
+    m_resolvedSourceVersionHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_phasesHasBeenSet(false),
     m_sourceHasBeenSet(false),
@@ -140,6 +142,13 @@ Build& Build::operator =(JsonView jsonValue)
     m_sourceVersion = jsonValue.GetString("sourceVersion");
 
     m_sourceVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resolvedSourceVersion"))
+  {
+    m_resolvedSourceVersion = jsonValue.GetString("resolvedSourceVersion");
+
+    m_resolvedSourceVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("projectName"))
@@ -316,6 +325,12 @@ JsonValue Build::Jsonize() const
   if(m_sourceVersionHasBeenSet)
   {
    payload.WithString("sourceVersion", m_sourceVersion);
+
+  }
+
+  if(m_resolvedSourceVersionHasBeenSet)
+  {
+   payload.WithString("resolvedSourceVersion", m_resolvedSourceVersion);
 
   }
 

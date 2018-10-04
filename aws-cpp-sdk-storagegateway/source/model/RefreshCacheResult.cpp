@@ -44,6 +44,12 @@ RefreshCacheResult& RefreshCacheResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("NotificationId"))
+  {
+    m_notificationId = jsonValue.GetString("NotificationId");
+
+  }
+
 
 
   return *this;

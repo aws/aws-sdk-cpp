@@ -46,8 +46,8 @@ namespace Model
    * the specified deployment resource
    * (<code>/restapis/{restapi_id}/deployments/{deployment_id}</code>).</div> <div
    * class="seeAlso"><a>RestApi</a>, <a>Deployments</a>, <a>Stage</a>, <a
-   * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS
-   * CLI</a>, <a href="https://aws.amazon.com/tools/">AWS SDKs</a> </div><p><h3>See
+   * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-deployment.html">AWS
+   * CLI</a>, <a href="[[AwsAmazonUrlPrefix]]/tools/">AWS SDKs</a> </div><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Deployment">AWS
    * API Reference</a></p>

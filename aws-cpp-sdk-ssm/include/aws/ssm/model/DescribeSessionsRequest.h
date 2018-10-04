@@ -49,31 +49,31 @@ namespace Model
 
     /**
      * <p>The session status to retrieve a list of sessions for. For example,
-     * "active".</p>
+     * "Active".</p>
      */
     inline const SessionState& GetState() const{ return m_state; }
 
     /**
      * <p>The session status to retrieve a list of sessions for. For example,
-     * "active".</p>
+     * "Active".</p>
      */
     inline void SetState(const SessionState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * <p>The session status to retrieve a list of sessions for. For example,
-     * "active".</p>
+     * "Active".</p>
      */
     inline void SetState(SessionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The session status to retrieve a list of sessions for. For example,
-     * "active".</p>
+     * "Active".</p>
      */
     inline DescribeSessionsRequest& WithState(const SessionState& value) { SetState(value); return *this;}
 
     /**
      * <p>The session status to retrieve a list of sessions for. For example,
-     * "active".</p>
+     * "Active".</p>
      */
     inline DescribeSessionsRequest& WithState(SessionState&& value) { SetState(std::move(value)); return *this;}
 

@@ -17,6 +17,7 @@
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -38,7 +39,7 @@ namespace Model
   /**
    * <p>Represents the response of the test invoke request in the HTTP method.</p>
    * <div class="seeAlso"> <a
-   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-test-method.html#how-to-test-method-console">Test
+   * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-test-method.html#how-to-test-method-console">Test
    * API using the API Gateway console</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeMethodResponse">AWS
    * API Reference</a></p>
@@ -165,6 +166,62 @@ namespace Model
 
 
     /**
+     * <p>The headers of the HTTP response as a map from string to list of values.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetMultiValueHeaders() const{ return m_multiValueHeaders; }
+
+    /**
+     * <p>The headers of the HTTP response as a map from string to list of values.</p>
+     */
+    inline void SetMultiValueHeaders(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_multiValueHeaders = value; }
+
+    /**
+     * <p>The headers of the HTTP response as a map from string to list of values.</p>
+     */
+    inline void SetMultiValueHeaders(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_multiValueHeaders = std::move(value); }
+
+    /**
+     * <p>The headers of the HTTP response as a map from string to list of values.</p>
+     */
+    inline TestInvokeMethodResult& WithMultiValueHeaders(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetMultiValueHeaders(value); return *this;}
+
+    /**
+     * <p>The headers of the HTTP response as a map from string to list of values.</p>
+     */
+    inline TestInvokeMethodResult& WithMultiValueHeaders(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetMultiValueHeaders(std::move(value)); return *this;}
+
+    /**
+     * <p>The headers of the HTTP response as a map from string to list of values.</p>
+     */
+    inline TestInvokeMethodResult& AddMultiValueHeaders(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_multiValueHeaders.emplace(key, value); return *this; }
+
+    /**
+     * <p>The headers of the HTTP response as a map from string to list of values.</p>
+     */
+    inline TestInvokeMethodResult& AddMultiValueHeaders(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_multiValueHeaders.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The headers of the HTTP response as a map from string to list of values.</p>
+     */
+    inline TestInvokeMethodResult& AddMultiValueHeaders(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_multiValueHeaders.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The headers of the HTTP response as a map from string to list of values.</p>
+     */
+    inline TestInvokeMethodResult& AddMultiValueHeaders(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_multiValueHeaders.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The headers of the HTTP response as a map from string to list of values.</p>
+     */
+    inline TestInvokeMethodResult& AddMultiValueHeaders(const char* key, Aws::Vector<Aws::String>&& value) { m_multiValueHeaders.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The headers of the HTTP response as a map from string to list of values.</p>
+     */
+    inline TestInvokeMethodResult& AddMultiValueHeaders(const char* key, const Aws::Vector<Aws::String>& value) { m_multiValueHeaders.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The API Gateway execution log for the test invoke request.</p>
      */
     inline const Aws::String& GetLog() const{ return m_log; }
@@ -222,6 +279,8 @@ namespace Model
     Aws::String m_body;
 
     Aws::Map<Aws::String, Aws::String> m_headers;
+
+    Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_multiValueHeaders;
 
     Aws::String m_log;
 

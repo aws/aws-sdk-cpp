@@ -211,6 +211,98 @@ namespace Model
 
 
     /**
+     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
+     * installed. This patch installation list, which you maintain in an Amazon S3
+     * bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetInstallOverrideList() const{ return m_installOverrideList; }
+
+    /**
+     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
+     * installed. This patch installation list, which you maintain in an Amazon S3
+     * bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
+     */
+    inline void SetInstallOverrideList(const Aws::String& value) { m_installOverrideListHasBeenSet = true; m_installOverrideList = value; }
+
+    /**
+     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
+     * installed. This patch installation list, which you maintain in an Amazon S3
+     * bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
+     */
+    inline void SetInstallOverrideList(Aws::String&& value) { m_installOverrideListHasBeenSet = true; m_installOverrideList = std::move(value); }
+
+    /**
+     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
+     * installed. This patch installation list, which you maintain in an Amazon S3
+     * bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
+     */
+    inline void SetInstallOverrideList(const char* value) { m_installOverrideListHasBeenSet = true; m_installOverrideList.assign(value); }
+
+    /**
+     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
+     * installed. This patch installation list, which you maintain in an Amazon S3
+     * bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
+     */
+    inline InstancePatchState& WithInstallOverrideList(const Aws::String& value) { SetInstallOverrideList(value); return *this;}
+
+    /**
+     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
+     * installed. This patch installation list, which you maintain in an Amazon S3
+     * bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
+     */
+    inline InstancePatchState& WithInstallOverrideList(Aws::String&& value) { SetInstallOverrideList(std::move(value)); return *this;}
+
+    /**
+     * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
+     * installed. This patch installation list, which you maintain in an Amazon S3
+     * bucket in YAML format and specify in the SSM document
+     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
+     * default patch baseline.</p> <p>For more information about the
+     * <code>InstallOverrideList</code> parameter, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
+     */
+    inline InstancePatchState& WithInstallOverrideList(const char* value) { SetInstallOverrideList(value); return *this;}
+
+
+    /**
      * <p>Placeholder information. This field will always be empty in the current
      * release of the service.</p>
      */
@@ -289,6 +381,34 @@ namespace Model
      * on the instance.</p>
      */
     inline InstancePatchState& WithInstalledOtherCount(int value) { SetInstalledOtherCount(value); return *this;}
+
+
+    /**
+     * <p>The number of instances with patches installed that are specified in a
+     * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
+     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
+     * value of InstalledRejectedCount will always be 0 (zero).</p> </note>
+     */
+    inline int GetInstalledRejectedCount() const{ return m_installedRejectedCount; }
+
+    /**
+     * <p>The number of instances with patches installed that are specified in a
+     * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
+     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
+     * value of InstalledRejectedCount will always be 0 (zero).</p> </note>
+     */
+    inline void SetInstalledRejectedCount(int value) { m_installedRejectedCountHasBeenSet = true; m_installedRejectedCount = value; }
+
+    /**
+     * <p>The number of instances with patches installed that are specified in a
+     * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
+     * typically installed before they were added to a RejectedPatches list.</p> <note>
+     * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
+     * value of InstalledRejectedCount will always be 0 (zero).</p> </note>
+     */
+    inline InstancePatchState& WithInstalledRejectedCount(int value) { SetInstalledRejectedCount(value); return *this;}
 
 
     /**
@@ -444,6 +564,9 @@ namespace Model
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
 
+    Aws::String m_installOverrideList;
+    bool m_installOverrideListHasBeenSet;
+
     Aws::String m_ownerInformation;
     bool m_ownerInformationHasBeenSet;
 
@@ -452,6 +575,9 @@ namespace Model
 
     int m_installedOtherCount;
     bool m_installedOtherCountHasBeenSet;
+
+    int m_installedRejectedCount;
+    bool m_installedRejectedCountHasBeenSet;
 
     int m_missingCount;
     bool m_missingCountHasBeenSet;

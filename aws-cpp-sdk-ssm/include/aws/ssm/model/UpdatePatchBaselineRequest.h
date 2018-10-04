@@ -21,6 +21,7 @@
 #include <aws/ssm/model/PatchRuleGroup.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/PatchComplianceLevel.h>
+#include <aws/ssm/model/PatchAction.h>
 #include <aws/ssm/model/PatchSource.h>
 #include <utility>
 
@@ -384,6 +385,77 @@ namespace Model
 
 
     /**
+     * <p>The action for Patch Manager to take on patches included in the
+     * RejectedPackages list.</p> <ul> <li> <p> <b>ALLOW_AS_DEPENDENCY</b>: A package
+     * in the Rejected patches list is installed only if it is a dependency of another
+     * package. It is considered compliant with the patch baseline, and its status is
+     * reported as <i>InstalledOther</i>. This is the default action if no option is
+     * specified.</p> </li> <li> <p> <b>BLOCK</b>: Packages in the RejectedPatches
+     * list, and packages that include them as dependencies, are not installed under
+     * any circumstances. If a package was installed before it was added to the
+     * Rejected patches list, it is considered non-compliant with the patch baseline,
+     * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
+     */
+    inline const PatchAction& GetRejectedPatchesAction() const{ return m_rejectedPatchesAction; }
+
+    /**
+     * <p>The action for Patch Manager to take on patches included in the
+     * RejectedPackages list.</p> <ul> <li> <p> <b>ALLOW_AS_DEPENDENCY</b>: A package
+     * in the Rejected patches list is installed only if it is a dependency of another
+     * package. It is considered compliant with the patch baseline, and its status is
+     * reported as <i>InstalledOther</i>. This is the default action if no option is
+     * specified.</p> </li> <li> <p> <b>BLOCK</b>: Packages in the RejectedPatches
+     * list, and packages that include them as dependencies, are not installed under
+     * any circumstances. If a package was installed before it was added to the
+     * Rejected patches list, it is considered non-compliant with the patch baseline,
+     * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
+     */
+    inline void SetRejectedPatchesAction(const PatchAction& value) { m_rejectedPatchesActionHasBeenSet = true; m_rejectedPatchesAction = value; }
+
+    /**
+     * <p>The action for Patch Manager to take on patches included in the
+     * RejectedPackages list.</p> <ul> <li> <p> <b>ALLOW_AS_DEPENDENCY</b>: A package
+     * in the Rejected patches list is installed only if it is a dependency of another
+     * package. It is considered compliant with the patch baseline, and its status is
+     * reported as <i>InstalledOther</i>. This is the default action if no option is
+     * specified.</p> </li> <li> <p> <b>BLOCK</b>: Packages in the RejectedPatches
+     * list, and packages that include them as dependencies, are not installed under
+     * any circumstances. If a package was installed before it was added to the
+     * Rejected patches list, it is considered non-compliant with the patch baseline,
+     * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
+     */
+    inline void SetRejectedPatchesAction(PatchAction&& value) { m_rejectedPatchesActionHasBeenSet = true; m_rejectedPatchesAction = std::move(value); }
+
+    /**
+     * <p>The action for Patch Manager to take on patches included in the
+     * RejectedPackages list.</p> <ul> <li> <p> <b>ALLOW_AS_DEPENDENCY</b>: A package
+     * in the Rejected patches list is installed only if it is a dependency of another
+     * package. It is considered compliant with the patch baseline, and its status is
+     * reported as <i>InstalledOther</i>. This is the default action if no option is
+     * specified.</p> </li> <li> <p> <b>BLOCK</b>: Packages in the RejectedPatches
+     * list, and packages that include them as dependencies, are not installed under
+     * any circumstances. If a package was installed before it was added to the
+     * Rejected patches list, it is considered non-compliant with the patch baseline,
+     * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
+     */
+    inline UpdatePatchBaselineRequest& WithRejectedPatchesAction(const PatchAction& value) { SetRejectedPatchesAction(value); return *this;}
+
+    /**
+     * <p>The action for Patch Manager to take on patches included in the
+     * RejectedPackages list.</p> <ul> <li> <p> <b>ALLOW_AS_DEPENDENCY</b>: A package
+     * in the Rejected patches list is installed only if it is a dependency of another
+     * package. It is considered compliant with the patch baseline, and its status is
+     * reported as <i>InstalledOther</i>. This is the default action if no option is
+     * specified.</p> </li> <li> <p> <b>BLOCK</b>: Packages in the RejectedPatches
+     * list, and packages that include them as dependencies, are not installed under
+     * any circumstances. If a package was installed before it was added to the
+     * Rejected patches list, it is considered non-compliant with the patch baseline,
+     * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
+     */
+    inline UpdatePatchBaselineRequest& WithRejectedPatchesAction(PatchAction&& value) { SetRejectedPatchesAction(std::move(value)); return *this;}
+
+
+    /**
      * <p>A description of the patch baseline.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -515,6 +587,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_rejectedPatches;
     bool m_rejectedPatchesHasBeenSet;
+
+    PatchAction m_rejectedPatchesAction;
+    bool m_rejectedPatchesActionHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

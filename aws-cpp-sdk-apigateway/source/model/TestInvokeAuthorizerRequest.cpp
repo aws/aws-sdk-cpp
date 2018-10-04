@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 TestInvokeAuthorizerRequest::TestInvokeAuthorizerRequest() : 
     m_restApiIdHasBeenSet(false),
     m_authorizerIdHasBeenSet(false),
+    m_multiValueHeadersHasBeenSet(false),
     m_pathWithQueryStringHasBeenSet(false),
     m_stageVariablesHasBeenSet(false),
     m_additionalContextHasBeenSet(false),
@@ -36,6 +37,22 @@ TestInvokeAuthorizerRequest::TestInvokeAuthorizerRequest() :
 Aws::String TestInvokeAuthorizerRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_multiValueHeadersHasBeenSet)
+  {
+   JsonValue multiValueHeadersJsonMap;
+   for(auto& multiValueHeadersItem : m_multiValueHeaders)
+   {
+     Array<JsonValue> listOfStringJsonList(multiValueHeadersItem.second.size());
+     for(unsigned listOfStringIndex = 0; listOfStringIndex < listOfStringJsonList.GetLength(); ++listOfStringIndex)
+     {
+       listOfStringJsonList[listOfStringIndex].AsString(multiValueHeadersItem.second[listOfStringIndex]);
+     }
+     multiValueHeadersJsonMap.WithArray(multiValueHeadersItem.first, std::move(listOfStringJsonList));
+   }
+   payload.WithObject("multiValueHeaders", std::move(multiValueHeadersJsonMap));
+
+  }
 
   if(m_pathWithQueryStringHasBeenSet)
   {

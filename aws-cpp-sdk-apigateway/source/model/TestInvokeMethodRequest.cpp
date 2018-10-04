@@ -27,6 +27,7 @@ TestInvokeMethodRequest::TestInvokeMethodRequest() :
     m_resourceIdHasBeenSet(false),
     m_httpMethodHasBeenSet(false),
     m_pathWithQueryStringHasBeenSet(false),
+    m_multiValueHeadersHasBeenSet(false),
     m_clientCertificateIdHasBeenSet(false),
     m_stageVariablesHasBeenSet(false),
     m_requestBodyHasBeenSet(false),
@@ -41,6 +42,22 @@ Aws::String TestInvokeMethodRequest::SerializePayload() const
   if(m_pathWithQueryStringHasBeenSet)
   {
    payload.WithString("pathWithQueryString", m_pathWithQueryString);
+
+  }
+
+  if(m_multiValueHeadersHasBeenSet)
+  {
+   JsonValue multiValueHeadersJsonMap;
+   for(auto& multiValueHeadersItem : m_multiValueHeaders)
+   {
+     Array<JsonValue> listOfStringJsonList(multiValueHeadersItem.second.size());
+     for(unsigned listOfStringIndex = 0; listOfStringIndex < listOfStringJsonList.GetLength(); ++listOfStringIndex)
+     {
+       listOfStringJsonList[listOfStringIndex].AsString(multiValueHeadersItem.second[listOfStringIndex]);
+     }
+     multiValueHeadersJsonMap.WithArray(multiValueHeadersItem.first, std::move(listOfStringJsonList));
+   }
+   payload.WithObject("multiValueHeaders", std::move(multiValueHeadersJsonMap));
 
   }
 

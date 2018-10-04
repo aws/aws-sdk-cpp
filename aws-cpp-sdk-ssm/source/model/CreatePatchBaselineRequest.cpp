@@ -34,6 +34,8 @@ CreatePatchBaselineRequest::CreatePatchBaselineRequest() :
     m_approvedPatchesEnableNonSecurity(false),
     m_approvedPatchesEnableNonSecurityHasBeenSet(false),
     m_rejectedPatchesHasBeenSet(false),
+    m_rejectedPatchesAction(PatchAction::NOT_SET),
+    m_rejectedPatchesActionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_sourcesHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
@@ -99,6 +101,11 @@ Aws::String CreatePatchBaselineRequest::SerializePayload() const
    }
    payload.WithArray("RejectedPatches", std::move(rejectedPatchesJsonList));
 
+  }
+
+  if(m_rejectedPatchesActionHasBeenSet)
+  {
+   payload.WithString("RejectedPatchesAction", PatchActionMapper::GetNameForPatchAction(m_rejectedPatchesAction));
   }
 
   if(m_descriptionHasBeenSet)
