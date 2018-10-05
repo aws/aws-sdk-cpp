@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int Forest_HASH = HashingUtils::HashString("Forest");
+        static const int External_HASH = HashingUtils::HashString("External");
 
 
         TrustType GetTrustTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == Forest_HASH)
           {
             return TrustType::Forest;
+          }
+          else if (hashCode == External_HASH)
+          {
+            return TrustType::External;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case TrustType::Forest:
             return "Forest";
+          case TrustType::External:
+            return "External";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

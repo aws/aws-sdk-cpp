@@ -35,6 +35,9 @@ namespace Aws
         static const int Verifying_HASH = HashingUtils::HashString("Verifying");
         static const int VerifyFailed_HASH = HashingUtils::HashString("VerifyFailed");
         static const int Verified_HASH = HashingUtils::HashString("Verified");
+        static const int Updating_HASH = HashingUtils::HashString("Updating");
+        static const int UpdateFailed_HASH = HashingUtils::HashString("UpdateFailed");
+        static const int Updated_HASH = HashingUtils::HashString("Updated");
         static const int Deleting_HASH = HashingUtils::HashString("Deleting");
         static const int Deleted_HASH = HashingUtils::HashString("Deleted");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
@@ -62,6 +65,18 @@ namespace Aws
           else if (hashCode == Verified_HASH)
           {
             return TrustState::Verified;
+          }
+          else if (hashCode == Updating_HASH)
+          {
+            return TrustState::Updating;
+          }
+          else if (hashCode == UpdateFailed_HASH)
+          {
+            return TrustState::UpdateFailed;
+          }
+          else if (hashCode == Updated_HASH)
+          {
+            return TrustState::Updated;
           }
           else if (hashCode == Deleting_HASH)
           {
@@ -99,6 +114,12 @@ namespace Aws
             return "VerifyFailed";
           case TrustState::Verified:
             return "Verified";
+          case TrustState::Updating:
+            return "Updating";
+          case TrustState::UpdateFailed:
+            return "UpdateFailed";
+          case TrustState::Updated:
+            return "Updated";
           case TrustState::Deleting:
             return "Deleting";
           case TrustState::Deleted:

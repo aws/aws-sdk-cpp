@@ -28,10 +28,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the trust relationships for a particular Microsoft AD in the AWS
-   * cloud. If no input parameters are are provided, such as directory ID or trust
-   * ID, this request describes all the trust relationships.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Describes the trust relationships for a particular AWS Managed Microsoft AD
+   * directory. If no input parameters are are provided, such as directory ID or
+   * trust ID, this request describes all the trust relationships.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeTrustsRequest">AWS
    * API Reference</a></p>
    */

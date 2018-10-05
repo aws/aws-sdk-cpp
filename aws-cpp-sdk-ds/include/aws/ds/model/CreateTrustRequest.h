@@ -20,6 +20,7 @@
 #include <aws/ds/model/TrustDirection.h>
 #include <aws/ds/model/TrustType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ds/model/SelectiveAuth.h>
 #include <utility>
 
 namespace Aws
@@ -31,12 +32,12 @@ namespace Model
 
   /**
    * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-   * trust relationships. For example, you can establish a trust between your
-   * Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active
+   * trust relationships. For example, you can establish a trust between your AWS
+   * Managed Microsoft AD directory, and your existing on-premises Microsoft Active
    * Directory. This would allow you to provide users and groups access to resources
    * in either domain, with a single set of credentials.</p> <p>This action initiates
-   * the creation of the AWS side of a trust relationship between a Microsoft AD in
-   * the AWS cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+   * the creation of the AWS side of a trust relationship between an AWS Managed
+   * Microsoft AD directory and an external domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrustRequest">AWS
    * API Reference</a></p>
    */
@@ -57,44 +58,44 @@ namespace Model
 
 
     /**
-     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
-     * the trust relationship.</p>
+     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
+     * establish the trust relationship.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
-     * the trust relationship.</p>
+     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
+     * establish the trust relationship.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
-     * the trust relationship.</p>
+     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
+     * establish the trust relationship.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
-     * the trust relationship.</p>
+     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
+     * establish the trust relationship.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
-     * the trust relationship.</p>
+     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
+     * establish the trust relationship.</p>
      */
     inline CreateTrustRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
-     * the trust relationship.</p>
+     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
+     * establish the trust relationship.</p>
      */
     inline CreateTrustRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The Directory ID of the Microsoft AD in the AWS cloud for which to establish
-     * the trust relationship.</p>
+     * <p>The Directory ID of the AWS Managed Microsoft AD directory for which to
+     * establish the trust relationship.</p>
      */
     inline CreateTrustRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
@@ -212,27 +213,27 @@ namespace Model
 
 
     /**
-     * <p>The trust relationship type.</p>
+     * <p>The trust relationship type. <code>Forest</code> is the default.</p>
      */
     inline const TrustType& GetTrustType() const{ return m_trustType; }
 
     /**
-     * <p>The trust relationship type.</p>
+     * <p>The trust relationship type. <code>Forest</code> is the default.</p>
      */
     inline void SetTrustType(const TrustType& value) { m_trustTypeHasBeenSet = true; m_trustType = value; }
 
     /**
-     * <p>The trust relationship type.</p>
+     * <p>The trust relationship type. <code>Forest</code> is the default.</p>
      */
     inline void SetTrustType(TrustType&& value) { m_trustTypeHasBeenSet = true; m_trustType = std::move(value); }
 
     /**
-     * <p>The trust relationship type.</p>
+     * <p>The trust relationship type. <code>Forest</code> is the default.</p>
      */
     inline CreateTrustRequest& WithTrustType(const TrustType& value) { SetTrustType(value); return *this;}
 
     /**
-     * <p>The trust relationship type.</p>
+     * <p>The trust relationship type. <code>Forest</code> is the default.</p>
      */
     inline CreateTrustRequest& WithTrustType(TrustType&& value) { SetTrustType(std::move(value)); return *this;}
 
@@ -285,6 +286,32 @@ namespace Model
      */
     inline CreateTrustRequest& AddConditionalForwarderIpAddrs(const char* value) { m_conditionalForwarderIpAddrsHasBeenSet = true; m_conditionalForwarderIpAddrs.push_back(value); return *this; }
 
+
+    /**
+     * <p>Optional parameter to enable selective authentication for the trust.</p>
+     */
+    inline const SelectiveAuth& GetSelectiveAuth() const{ return m_selectiveAuth; }
+
+    /**
+     * <p>Optional parameter to enable selective authentication for the trust.</p>
+     */
+    inline void SetSelectiveAuth(const SelectiveAuth& value) { m_selectiveAuthHasBeenSet = true; m_selectiveAuth = value; }
+
+    /**
+     * <p>Optional parameter to enable selective authentication for the trust.</p>
+     */
+    inline void SetSelectiveAuth(SelectiveAuth&& value) { m_selectiveAuthHasBeenSet = true; m_selectiveAuth = std::move(value); }
+
+    /**
+     * <p>Optional parameter to enable selective authentication for the trust.</p>
+     */
+    inline CreateTrustRequest& WithSelectiveAuth(const SelectiveAuth& value) { SetSelectiveAuth(value); return *this;}
+
+    /**
+     * <p>Optional parameter to enable selective authentication for the trust.</p>
+     */
+    inline CreateTrustRequest& WithSelectiveAuth(SelectiveAuth&& value) { SetSelectiveAuth(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_directoryId;
@@ -304,6 +331,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_conditionalForwarderIpAddrs;
     bool m_conditionalForwarderIpAddrsHasBeenSet;
+
+    SelectiveAuth m_selectiveAuth;
+    bool m_selectiveAuthHasBeenSet;
   };
 
 } // namespace Model

@@ -26,7 +26,8 @@ namespace Model
   enum class TrustType
   {
     NOT_SET,
-    Forest
+    Forest,
+    External
   };
 
 namespace TrustTypeMapper

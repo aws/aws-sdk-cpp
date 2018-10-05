@@ -41,7 +41,9 @@ Trust::Trust() :
     m_createdDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
     m_stateLastUpdatedDateTimeHasBeenSet(false),
-    m_trustStateReasonHasBeenSet(false)
+    m_trustStateReasonHasBeenSet(false),
+    m_selectiveAuth(SelectiveAuth::NOT_SET),
+    m_selectiveAuthHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ Trust::Trust(JsonView jsonValue) :
     m_createdDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
     m_stateLastUpdatedDateTimeHasBeenSet(false),
-    m_trustStateReasonHasBeenSet(false)
+    m_trustStateReasonHasBeenSet(false),
+    m_selectiveAuth(SelectiveAuth::NOT_SET),
+    m_selectiveAuthHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -135,6 +139,13 @@ Trust& Trust::operator =(JsonView jsonValue)
     m_trustStateReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SelectiveAuth"))
+  {
+    m_selectiveAuth = SelectiveAuthMapper::GetSelectiveAuthForName(jsonValue.GetString("SelectiveAuth"));
+
+    m_selectiveAuthHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -194,6 +205,11 @@ JsonValue Trust::Jsonize() const
   {
    payload.WithString("TrustStateReason", m_trustStateReason);
 
+  }
+
+  if(m_selectiveAuthHasBeenSet)
+  {
+   payload.WithString("SelectiveAuth", SelectiveAuthMapper::GetNameForSelectiveAuth(m_selectiveAuth));
   }
 
   return payload;

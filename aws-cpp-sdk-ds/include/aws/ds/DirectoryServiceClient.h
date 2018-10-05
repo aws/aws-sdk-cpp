@@ -69,6 +69,7 @@
 #include <aws/ds/model/UpdateConditionalForwarderResult.h>
 #include <aws/ds/model/UpdateNumberOfDomainControllersResult.h>
 #include <aws/ds/model/UpdateRadiusResult.h>
+#include <aws/ds/model/UpdateTrustResult.h>
 #include <aws/ds/model/VerifyTrustResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -158,6 +159,7 @@ namespace Model
         class UpdateConditionalForwarderRequest;
         class UpdateNumberOfDomainControllersRequest;
         class UpdateRadiusRequest;
+        class UpdateTrustRequest;
         class VerifyTrustRequest;
 
         typedef Aws::Utils::Outcome<AcceptSharedDirectoryResult, Aws::Client::AWSError<DirectoryServiceErrors>> AcceptSharedDirectoryOutcome;
@@ -208,6 +210,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateConditionalForwarderResult, Aws::Client::AWSError<DirectoryServiceErrors>> UpdateConditionalForwarderOutcome;
         typedef Aws::Utils::Outcome<UpdateNumberOfDomainControllersResult, Aws::Client::AWSError<DirectoryServiceErrors>> UpdateNumberOfDomainControllersOutcome;
         typedef Aws::Utils::Outcome<UpdateRadiusResult, Aws::Client::AWSError<DirectoryServiceErrors>> UpdateRadiusOutcome;
+        typedef Aws::Utils::Outcome<UpdateTrustResult, Aws::Client::AWSError<DirectoryServiceErrors>> UpdateTrustOutcome;
         typedef Aws::Utils::Outcome<VerifyTrustResult, Aws::Client::AWSError<DirectoryServiceErrors>> VerifyTrustOutcome;
 
         typedef std::future<AcceptSharedDirectoryOutcome> AcceptSharedDirectoryOutcomeCallable;
@@ -258,6 +261,7 @@ namespace Model
         typedef std::future<UpdateConditionalForwarderOutcome> UpdateConditionalForwarderOutcomeCallable;
         typedef std::future<UpdateNumberOfDomainControllersOutcome> UpdateNumberOfDomainControllersOutcomeCallable;
         typedef std::future<UpdateRadiusOutcome> UpdateRadiusOutcomeCallable;
+        typedef std::future<UpdateTrustOutcome> UpdateTrustOutcomeCallable;
         typedef std::future<VerifyTrustOutcome> VerifyTrustOutcomeCallable;
 } // namespace Model
 
@@ -311,6 +315,7 @@ namespace Model
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateConditionalForwarderRequest&, const Model::UpdateConditionalForwarderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConditionalForwarderResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateNumberOfDomainControllersRequest&, const Model::UpdateNumberOfDomainControllersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNumberOfDomainControllersResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateRadiusRequest&, const Model::UpdateRadiusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRadiusResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateTrustRequest&, const Model::UpdateTrustOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrustResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::VerifyTrustRequest&, const Model::VerifyTrustOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyTrustResponseReceivedHandler;
 
   /**
@@ -731,7 +736,7 @@ namespace Model
         virtual void CreateLogSubscriptionAsync(const Model::CreateLogSubscriptionRequest& request, const CreateLogSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a Microsoft AD in the AWS cloud.</p> <p>Before you call
+         * <p>Creates an AWS Managed Microsoft AD directory.</p> <p>Before you call
          * <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been
          * explicitly granted through a policy. For details about what permissions are
          * required to run the <i>CreateMicrosoftAD</i> operation, see <a
@@ -744,7 +749,7 @@ namespace Model
         virtual Model::CreateMicrosoftADOutcome CreateMicrosoftAD(const Model::CreateMicrosoftADRequest& request) const;
 
         /**
-         * <p>Creates a Microsoft AD in the AWS cloud.</p> <p>Before you call
+         * <p>Creates an AWS Managed Microsoft AD directory.</p> <p>Before you call
          * <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been
          * explicitly granted through a policy. For details about what permissions are
          * required to run the <i>CreateMicrosoftAD</i> operation, see <a
@@ -759,7 +764,7 @@ namespace Model
         virtual Model::CreateMicrosoftADOutcomeCallable CreateMicrosoftADCallable(const Model::CreateMicrosoftADRequest& request) const;
 
         /**
-         * <p>Creates a Microsoft AD in the AWS cloud.</p> <p>Before you call
+         * <p>Creates an AWS Managed Microsoft AD directory.</p> <p>Before you call
          * <i>CreateMicrosoftAD</i>, ensure that all of the required permissions have been
          * explicitly granted through a policy. For details about what permissions are
          * required to run the <i>CreateMicrosoftAD</i> operation, see <a
@@ -806,12 +811,13 @@ namespace Model
 
         /**
          * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-         * trust relationships. For example, you can establish a trust between your
-         * Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active
+         * trust relationships. For example, you can establish a trust between your AWS
+         * Managed Microsoft AD directory, and your existing on-premises Microsoft Active
          * Directory. This would allow you to provide users and groups access to resources
          * in either domain, with a single set of credentials.</p> <p>This action initiates
-         * the creation of the AWS side of a trust relationship between a Microsoft AD in
-         * the AWS cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+         * the creation of the AWS side of a trust relationship between an AWS Managed
+         * Microsoft AD directory and an external domain. You can create either a forest
+         * trust or an external trust.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">AWS API
          * Reference</a></p>
          */
@@ -819,12 +825,13 @@ namespace Model
 
         /**
          * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-         * trust relationships. For example, you can establish a trust between your
-         * Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active
+         * trust relationships. For example, you can establish a trust between your AWS
+         * Managed Microsoft AD directory, and your existing on-premises Microsoft Active
          * Directory. This would allow you to provide users and groups access to resources
          * in either domain, with a single set of credentials.</p> <p>This action initiates
-         * the creation of the AWS side of a trust relationship between a Microsoft AD in
-         * the AWS cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+         * the creation of the AWS side of a trust relationship between an AWS Managed
+         * Microsoft AD directory and an external domain. You can create either a forest
+         * trust or an external trust.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">AWS API
          * Reference</a></p>
          *
@@ -834,12 +841,13 @@ namespace Model
 
         /**
          * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
-         * trust relationships. For example, you can establish a trust between your
-         * Microsoft AD in the AWS cloud, and your existing on-premises Microsoft Active
+         * trust relationships. For example, you can establish a trust between your AWS
+         * Managed Microsoft AD directory, and your existing on-premises Microsoft Active
          * Directory. This would allow you to provide users and groups access to resources
          * in either domain, with a single set of credentials.</p> <p>This action initiates
-         * the creation of the AWS side of a trust relationship between a Microsoft AD in
-         * the AWS cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+         * the creation of the AWS side of a trust relationship between an AWS Managed
+         * Microsoft AD directory and an external domain. You can create either a forest
+         * trust or an external trust.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/CreateTrust">AWS API
          * Reference</a></p>
          *
@@ -969,16 +977,16 @@ namespace Model
         virtual void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing trust relationship between your Microsoft AD in the AWS
-         * cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing trust relationship between your AWS Managed Microsoft AD
+         * directory and an external domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">AWS API
          * Reference</a></p>
          */
         virtual Model::DeleteTrustOutcome DeleteTrust(const Model::DeleteTrustRequest& request) const;
 
         /**
-         * <p>Deletes an existing trust relationship between your Microsoft AD in the AWS
-         * cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing trust relationship between your AWS Managed Microsoft AD
+         * directory and an external domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">AWS API
          * Reference</a></p>
          *
@@ -987,8 +995,8 @@ namespace Model
         virtual Model::DeleteTrustOutcomeCallable DeleteTrustCallable(const Model::DeleteTrustRequest& request) const;
 
         /**
-         * <p>Deletes an existing trust relationship between your Microsoft AD in the AWS
-         * cloud and an external domain.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing trust relationship between your AWS Managed Microsoft AD
+         * directory and an external domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DeleteTrust">AWS API
          * Reference</a></p>
          *
@@ -1969,10 +1977,38 @@ namespace Model
         virtual void UpdateRadiusAsync(const Model::UpdateRadiusRequest& request, const UpdateRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the trust that has been set up between your AWS Managed Microsoft AD
+         * directory and an on-premises Active Directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::UpdateTrustOutcome UpdateTrust(const Model::UpdateTrustRequest& request) const;
+
+        /**
+         * <p>Updates the trust that has been set up between your AWS Managed Microsoft AD
+         * directory and an on-premises Active Directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTrustOutcomeCallable UpdateTrustCallable(const Model::UpdateTrustRequest& request) const;
+
+        /**
+         * <p>Updates the trust that has been set up between your AWS Managed Microsoft AD
+         * directory and an on-premises Active Directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateTrust">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTrustAsync(const Model::UpdateTrustRequest& request, const UpdateTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
          * and verify trust relationships.</p> <p>This action verifies a trust relationship
-         * between your Microsoft AD in the AWS cloud and an external domain.</p><p><h3>See
-         * Also:</h3>   <a
+         * between your AWS Managed Microsoft AD directory and an external
+         * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">AWS API
          * Reference</a></p>
          */
@@ -1981,8 +2017,8 @@ namespace Model
         /**
          * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
          * and verify trust relationships.</p> <p>This action verifies a trust relationship
-         * between your Microsoft AD in the AWS cloud and an external domain.</p><p><h3>See
-         * Also:</h3>   <a
+         * between your AWS Managed Microsoft AD directory and an external
+         * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">AWS API
          * Reference</a></p>
          *
@@ -1993,8 +2029,8 @@ namespace Model
         /**
          * <p>AWS Directory Service for Microsoft Active Directory allows you to configure
          * and verify trust relationships.</p> <p>This action verifies a trust relationship
-         * between your Microsoft AD in the AWS cloud and an external domain.</p><p><h3>See
-         * Also:</h3>   <a
+         * between your AWS Managed Microsoft AD directory and an external
+         * domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/VerifyTrust">AWS API
          * Reference</a></p>
          *
@@ -2055,6 +2091,7 @@ namespace Model
         void UpdateConditionalForwarderAsyncHelper(const Model::UpdateConditionalForwarderRequest& request, const UpdateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNumberOfDomainControllersAsyncHelper(const Model::UpdateNumberOfDomainControllersRequest& request, const UpdateNumberOfDomainControllersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRadiusAsyncHelper(const Model::UpdateRadiusRequest& request, const UpdateRadiusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTrustAsyncHelper(const Model::UpdateTrustRequest& request, const UpdateTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void VerifyTrustAsyncHelper(const Model::VerifyTrustRequest& request, const VerifyTrustResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

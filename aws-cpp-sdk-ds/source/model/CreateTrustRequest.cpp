@@ -30,7 +30,9 @@ CreateTrustRequest::CreateTrustRequest() :
     m_trustDirectionHasBeenSet(false),
     m_trustType(TrustType::NOT_SET),
     m_trustTypeHasBeenSet(false),
-    m_conditionalForwarderIpAddrsHasBeenSet(false)
+    m_conditionalForwarderIpAddrsHasBeenSet(false),
+    m_selectiveAuth(SelectiveAuth::NOT_SET),
+    m_selectiveAuthHasBeenSet(false)
 {
 }
 
@@ -75,6 +77,11 @@ Aws::String CreateTrustRequest::SerializePayload() const
    }
    payload.WithArray("ConditionalForwarderIpAddrs", std::move(conditionalForwarderIpAddrsJsonList));
 
+  }
+
+  if(m_selectiveAuthHasBeenSet)
+  {
+   payload.WithString("SelectiveAuth", SelectiveAuthMapper::GetNameForSelectiveAuth(m_selectiveAuth));
   }
 
   return payload.View().WriteReadable();

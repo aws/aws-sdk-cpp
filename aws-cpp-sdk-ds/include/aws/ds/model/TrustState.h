@@ -31,6 +31,9 @@ namespace Model
     Verifying,
     VerifyFailed,
     Verified,
+    Updating,
+    UpdateFailed,
+    Updated,
     Deleting,
     Deleted,
     Failed
