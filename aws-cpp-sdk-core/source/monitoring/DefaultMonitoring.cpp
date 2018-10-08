@@ -25,6 +25,8 @@
 #include <aws/core/utils/logging/LogMacros.h>
 using namespace Aws::Utils;
 
+extern const char AWS_PROFILE_DEFAULT_ENV_VAR[];
+
 namespace Aws
 {
     namespace Monitoring
@@ -242,35 +244,43 @@ namespace Aws
             unsigned short port = DEFAULT_MONITORING_PORT; // default to 31000
             bool enable = DEFAULT_MONITORING_ENABLE; //default to false;
 
-            //check profile_config
-            Aws::String defaultConfigFile = Aws::Auth::ProfileConfigFileAWSCredentialsProvider::GetConfigProfileFilename();
-            Aws::Config::AWSConfigFileProfileConfigLoader configLoader(defaultConfigFile, true/*use profile prefix for config file*/);
-
-            if (configLoader.Load())
+            const Aws::String defaultProfile  = Aws::Environment::GetEnv(AWS_PROFILE_DEFAULT_ENV_VAR);
+            if (!defaultProfile.empty())
             {
-                auto profilesMap = configLoader.GetProfiles();
-                // If these variables set in multiple sections, the one set later will override the former one.
-                for (const auto& iter : profilesMap)
-                {
-                    Aws::String tmpEnable = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_ENABLED);
-                    Aws::String tmpClientId = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_CLIENT_ID);
-                    Aws::String tmpPort = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_PORT);
+                //check profile_config
+                Aws::String defaultConfigFile = Aws::Auth::ProfileConfigFileAWSCredentialsProvider::GetConfigProfileFilename();
+                Aws::Config::AWSConfigFileProfileConfigLoader configLoader(defaultConfigFile, true/*use profile prefix for config file*/);
 
-                    if (!tmpEnable.empty())
+                if (configLoader.Load())
+                {
+                    auto profilesMap = configLoader.GetProfiles();
+                    // If these variables set in multiple sections, the one set later will override the former one.
+                    for (const auto& iter : profilesMap)
                     {
-                        enable = StringUtils::CaselessCompare(tmpEnable.c_str(), "true") ? true : false;
-                        AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_enabled from profile_config to be " << enable);
+                        if (iter.first != defaultProfile)
+                        {
+                            continue;
+                        }
+                        Aws::String tmpEnable = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_ENABLED);
+                        Aws::String tmpClientId = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_CLIENT_ID);
+                        Aws::String tmpPort = iter.second.GetValue(DefaultMonitoring::DEFAULT_CSM_CONFIG_PORT);
+
+                        if (!tmpEnable.empty())
+                        {
+                            enable = StringUtils::CaselessCompare(tmpEnable.c_str(), "true") ? true : false;
+                            AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_enabled from profile_config to be " << enable);
+                        }
+                        if (!tmpClientId.empty())
+                        {
+                            clientId = tmpClientId;
+                            AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_client_id from profile_config to be " << clientId);
+                        }
+                        if (!tmpPort.empty())
+                        {
+                            port = static_cast<short>(StringUtils::ConvertToInt32(tmpPort.c_str()));
+                            AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_port from profile_config to be " << port);
+                        }             
                     }
-                    if (!tmpClientId.empty())
-                    {
-                        clientId = tmpClientId;
-                        AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_client_id from profile_config to be " << clientId);
-                    }
-                    if (!tmpPort.empty())
-                    {
-                        port = static_cast<short>(StringUtils::ConvertToInt32(tmpPort.c_str()));
-                        AWS_LOGSTREAM_DEBUG(DEFAULT_MONITORING_ALLOC_TAG, "Resolved csm_port from profile_config to be " << port);
-                    }             
                 }
             }
 

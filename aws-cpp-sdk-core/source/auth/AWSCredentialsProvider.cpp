@@ -42,7 +42,7 @@ static const char SECRET_KEY_ENV_VAR[] = "AWS_SECRET_ACCESS_KEY";
 static const char SESSION_TOKEN_ENV_VAR[] = "AWS_SESSION_TOKEN";
 static const char DEFAULT_PROFILE[] = "default";
 static const char AWS_PROFILE_ENV_VAR[] = "AWS_PROFILE";
-static const char AWS_PROFILE_DEFAULT_ENV_VAR[] = "AWS_DEFAULT_PROFILE";
+extern const char AWS_PROFILE_DEFAULT_ENV_VAR[] = "AWS_DEFAULT_PROFILE";
 
 static const char AWS_CREDENTIAL_PROFILES_FILE[] = "AWS_SHARED_CREDENTIALS_FILE";
 
