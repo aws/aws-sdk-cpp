@@ -43,7 +43,9 @@ JobProcessDetails::JobProcessDetails() :
     m_numberOfInProgressThings(0),
     m_numberOfInProgressThingsHasBeenSet(false),
     m_numberOfRemovedThings(0),
-    m_numberOfRemovedThingsHasBeenSet(false)
+    m_numberOfRemovedThingsHasBeenSet(false),
+    m_numberOfTimedOutThings(0),
+    m_numberOfTimedOutThingsHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ JobProcessDetails::JobProcessDetails(JsonView jsonValue) :
     m_numberOfInProgressThings(0),
     m_numberOfInProgressThingsHasBeenSet(false),
     m_numberOfRemovedThings(0),
-    m_numberOfRemovedThingsHasBeenSet(false)
+    m_numberOfRemovedThingsHasBeenSet(false),
+    m_numberOfTimedOutThings(0),
+    m_numberOfTimedOutThingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +132,13 @@ JobProcessDetails& JobProcessDetails::operator =(JsonView jsonValue)
     m_numberOfRemovedThingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("numberOfTimedOutThings"))
+  {
+    m_numberOfTimedOutThings = jsonValue.GetInteger("numberOfTimedOutThings");
+
+    m_numberOfTimedOutThingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -185,6 +196,12 @@ JsonValue JobProcessDetails::Jsonize() const
   if(m_numberOfRemovedThingsHasBeenSet)
   {
    payload.WithInteger("numberOfRemovedThings", m_numberOfRemovedThings);
+
+  }
+
+  if(m_numberOfTimedOutThingsHasBeenSet)
+  {
+   payload.WithInteger("numberOfTimedOutThings", m_numberOfTimedOutThings);
 
   }
 

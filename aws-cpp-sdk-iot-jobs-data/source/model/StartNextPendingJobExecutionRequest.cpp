@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 StartNextPendingJobExecutionRequest::StartNextPendingJobExecutionRequest() : 
     m_thingNameHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false)
+    m_statusDetailsHasBeenSet(false),
+    m_stepTimeoutInMinutes(0),
+    m_stepTimeoutInMinutesHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,12 @@ Aws::String StartNextPendingJobExecutionRequest::SerializePayload() const
      statusDetailsJsonMap.WithString(statusDetailsItem.first, statusDetailsItem.second);
    }
    payload.WithObject("statusDetails", std::move(statusDetailsJsonMap));
+
+  }
+
+  if(m_stepTimeoutInMinutesHasBeenSet)
+  {
+   payload.WithInt64("stepTimeoutInMinutes", m_stepTimeoutInMinutes);
 
   }
 

@@ -283,6 +283,25 @@ namespace Model
 
 
     /**
+     * <p>The estimated number of seconds that remain before the job execution status
+     * will be changed to <code>TIMED_OUT</code>.</p>
+     */
+    inline long long GetApproximateSecondsBeforeTimedOut() const{ return m_approximateSecondsBeforeTimedOut; }
+
+    /**
+     * <p>The estimated number of seconds that remain before the job execution status
+     * will be changed to <code>TIMED_OUT</code>.</p>
+     */
+    inline void SetApproximateSecondsBeforeTimedOut(long long value) { m_approximateSecondsBeforeTimedOutHasBeenSet = true; m_approximateSecondsBeforeTimedOut = value; }
+
+    /**
+     * <p>The estimated number of seconds that remain before the job execution status
+     * will be changed to <code>TIMED_OUT</code>.</p>
+     */
+    inline JobExecution& WithApproximateSecondsBeforeTimedOut(long long value) { SetApproximateSecondsBeforeTimedOut(value); return *this;}
+
+
+    /**
      * <p>The version of the job execution. Job execution versions are incremented each
      * time they are updated by a device.</p>
      */
@@ -380,6 +399,9 @@ namespace Model
 
     long long m_lastUpdatedAt;
     bool m_lastUpdatedAtHasBeenSet;
+
+    long long m_approximateSecondsBeforeTimedOut;
+    bool m_approximateSecondsBeforeTimedOutHasBeenSet;
 
     long long m_versionNumber;
     bool m_versionNumberHasBeenSet;

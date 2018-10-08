@@ -21,6 +21,7 @@
 #include <aws/iot/model/PresignedUrlConfig.h>
 #include <aws/iot/model/TargetSelection.h>
 #include <aws/iot/model/JobExecutionsRolloutConfig.h>
+#include <aws/iot/model/TimeoutConfig.h>
 #include <utility>
 
 namespace Aws
@@ -340,6 +341,52 @@ namespace Model
      */
     inline CreateJobRequest& WithJobExecutionsRolloutConfig(JobExecutionsRolloutConfig&& value) { SetJobExecutionsRolloutConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the amount of time each device has to finish its execution of the
+     * job. The timer is started when the job execution status is set to
+     * <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline const TimeoutConfig& GetTimeoutConfig() const{ return m_timeoutConfig; }
+
+    /**
+     * <p>Specifies the amount of time each device has to finish its execution of the
+     * job. The timer is started when the job execution status is set to
+     * <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline void SetTimeoutConfig(const TimeoutConfig& value) { m_timeoutConfigHasBeenSet = true; m_timeoutConfig = value; }
+
+    /**
+     * <p>Specifies the amount of time each device has to finish its execution of the
+     * job. The timer is started when the job execution status is set to
+     * <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline void SetTimeoutConfig(TimeoutConfig&& value) { m_timeoutConfigHasBeenSet = true; m_timeoutConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the amount of time each device has to finish its execution of the
+     * job. The timer is started when the job execution status is set to
+     * <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline CreateJobRequest& WithTimeoutConfig(const TimeoutConfig& value) { SetTimeoutConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the amount of time each device has to finish its execution of the
+     * job. The timer is started when the job execution status is set to
+     * <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline CreateJobRequest& WithTimeoutConfig(TimeoutConfig&& value) { SetTimeoutConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -365,6 +412,9 @@ namespace Model
 
     JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
     bool m_jobExecutionsRolloutConfigHasBeenSet;
+
+    TimeoutConfig m_timeoutConfig;
+    bool m_timeoutConfigHasBeenSet;
   };
 
 } // namespace Model

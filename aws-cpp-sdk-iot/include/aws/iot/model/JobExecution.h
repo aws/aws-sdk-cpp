@@ -88,32 +88,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS,
-     * CANCELED, or REJECTED).</p>
+     * <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED,
+     * TIMED_OUT, CANCELED, or REJECTED).</p>
      */
     inline const JobExecutionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS,
-     * CANCELED, or REJECTED).</p>
+     * <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED,
+     * TIMED_OUT, CANCELED, or REJECTED).</p>
      */
     inline void SetStatus(const JobExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS,
-     * CANCELED, or REJECTED).</p>
+     * <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED,
+     * TIMED_OUT, CANCELED, or REJECTED).</p>
      */
     inline void SetStatus(JobExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS,
-     * CANCELED, or REJECTED).</p>
+     * <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED,
+     * TIMED_OUT, CANCELED, or REJECTED).</p>
      */
     inline JobExecution& WithStatus(const JobExecutionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCESS,
-     * CANCELED, or REJECTED).</p>
+     * <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED,
+     * TIMED_OUT, CANCELED, or REJECTED).</p>
      */
     inline JobExecution& WithStatus(JobExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -337,6 +337,25 @@ namespace Model
      */
     inline JobExecution& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
 
+
+    /**
+     * <p>The estimated number of seconds that remain before the job execution status
+     * will be changed to <code>TIMED_OUT</code>.</p>
+     */
+    inline long long GetApproximateSecondsBeforeTimedOut() const{ return m_approximateSecondsBeforeTimedOut; }
+
+    /**
+     * <p>The estimated number of seconds that remain before the job execution status
+     * will be changed to <code>TIMED_OUT</code>.</p>
+     */
+    inline void SetApproximateSecondsBeforeTimedOut(long long value) { m_approximateSecondsBeforeTimedOutHasBeenSet = true; m_approximateSecondsBeforeTimedOut = value; }
+
+    /**
+     * <p>The estimated number of seconds that remain before the job execution status
+     * will be changed to <code>TIMED_OUT</code>.</p>
+     */
+    inline JobExecution& WithApproximateSecondsBeforeTimedOut(long long value) { SetApproximateSecondsBeforeTimedOut(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -368,6 +387,9 @@ namespace Model
 
     long long m_versionNumber;
     bool m_versionNumberHasBeenSet;
+
+    long long m_approximateSecondsBeforeTimedOut;
+    bool m_approximateSecondsBeforeTimedOutHasBeenSet;
   };
 
 } // namespace Model

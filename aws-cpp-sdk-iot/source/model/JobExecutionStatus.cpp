@@ -34,6 +34,7 @@ namespace Aws
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
         static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
         static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
         static const int REMOVED_HASH = HashingUtils::HashString("REMOVED");
         static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
@@ -57,6 +58,10 @@ namespace Aws
           else if (hashCode == FAILED_HASH)
           {
             return JobExecutionStatus::FAILED;
+          }
+          else if (hashCode == TIMED_OUT_HASH)
+          {
+            return JobExecutionStatus::TIMED_OUT;
           }
           else if (hashCode == REJECTED_HASH)
           {
@@ -92,6 +97,8 @@ namespace Aws
             return "SUCCEEDED";
           case JobExecutionStatus::FAILED:
             return "FAILED";
+          case JobExecutionStatus::TIMED_OUT:
+            return "TIMED_OUT";
           case JobExecutionStatus::REJECTED:
             return "REJECTED";
           case JobExecutionStatus::REMOVED:

@@ -30,6 +30,7 @@ namespace Model
     IN_PROGRESS,
     SUCCEEDED,
     FAILED,
+    TIMED_OUT,
     REJECTED,
     REMOVED,
     CANCELED

@@ -45,7 +45,8 @@ Job::Job() :
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_completedAtHasBeenSet(false),
-    m_jobProcessDetailsHasBeenSet(false)
+    m_jobProcessDetailsHasBeenSet(false),
+    m_timeoutConfigHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ Job::Job(JsonView jsonValue) :
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_completedAtHasBeenSet(false),
-    m_jobProcessDetailsHasBeenSet(false)
+    m_jobProcessDetailsHasBeenSet(false),
+    m_timeoutConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -174,6 +176,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_jobProcessDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timeoutConfig"))
+  {
+    m_timeoutConfig = jsonValue.GetObject("timeoutConfig");
+
+    m_timeoutConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -262,6 +271,12 @@ JsonValue Job::Jsonize() const
   if(m_jobProcessDetailsHasBeenSet)
   {
    payload.WithObject("jobProcessDetails", m_jobProcessDetails.Jsonize());
+
+  }
+
+  if(m_timeoutConfigHasBeenSet)
+  {
+   payload.WithObject("timeoutConfig", m_timeoutConfig.Jsonize());
 
   }
 

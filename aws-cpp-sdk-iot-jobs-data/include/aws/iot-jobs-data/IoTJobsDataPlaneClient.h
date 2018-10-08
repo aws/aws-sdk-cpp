@@ -129,7 +129,7 @@ namespace Model
 
         virtual ~IoTJobsDataPlaneClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "data.jobs.iot"; }
+        inline virtual const char* GetServiceClientName() const override { return "IoT Jobs Data Plane"; }
 
 
         /**

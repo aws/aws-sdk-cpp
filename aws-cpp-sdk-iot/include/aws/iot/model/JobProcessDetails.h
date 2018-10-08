@@ -222,6 +222,25 @@ namespace Model
      */
     inline JobProcessDetails& WithNumberOfRemovedThings(int value) { SetNumberOfRemovedThings(value); return *this;}
 
+
+    /**
+     * <p>The number of things whose job execution status is
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline int GetNumberOfTimedOutThings() const{ return m_numberOfTimedOutThings; }
+
+    /**
+     * <p>The number of things whose job execution status is
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline void SetNumberOfTimedOutThings(int value) { m_numberOfTimedOutThingsHasBeenSet = true; m_numberOfTimedOutThings = value; }
+
+    /**
+     * <p>The number of things whose job execution status is
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline JobProcessDetails& WithNumberOfTimedOutThings(int value) { SetNumberOfTimedOutThings(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_processingTargets;
@@ -247,6 +266,9 @@ namespace Model
 
     int m_numberOfRemovedThings;
     bool m_numberOfRemovedThingsHasBeenSet;
+
+    int m_numberOfTimedOutThings;
+    bool m_numberOfTimedOutThingsHasBeenSet;
   };
 
 } // namespace Model

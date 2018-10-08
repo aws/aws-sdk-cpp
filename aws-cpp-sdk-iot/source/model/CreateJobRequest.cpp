@@ -31,7 +31,8 @@ CreateJobRequest::CreateJobRequest() :
     m_presignedUrlConfigHasBeenSet(false),
     m_targetSelection(TargetSelection::NOT_SET),
     m_targetSelectionHasBeenSet(false),
-    m_jobExecutionsRolloutConfigHasBeenSet(false)
+    m_jobExecutionsRolloutConfigHasBeenSet(false),
+    m_timeoutConfigHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_jobExecutionsRolloutConfigHasBeenSet)
   {
    payload.WithObject("jobExecutionsRolloutConfig", m_jobExecutionsRolloutConfig.Jsonize());
+
+  }
+
+  if(m_timeoutConfigHasBeenSet)
+  {
+   payload.WithObject("timeoutConfig", m_timeoutConfig.Jsonize());
 
   }
 

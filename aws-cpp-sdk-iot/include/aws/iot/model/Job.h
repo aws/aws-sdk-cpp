@@ -23,6 +23,7 @@
 #include <aws/iot/model/JobExecutionsRolloutConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/JobProcessDetails.h>
+#include <aws/iot/model/TimeoutConfig.h>
 #include <utility>
 
 namespace Aws
@@ -187,31 +188,36 @@ namespace Model
 
     /**
      * <p>The status of the job, one of <code>IN_PROGRESS</code>,
-     * <code>CANCELED</code>, or <code>COMPLETED</code>. </p>
+     * <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or
+     * <code>COMPLETED</code>. </p>
      */
     inline const JobStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the job, one of <code>IN_PROGRESS</code>,
-     * <code>CANCELED</code>, or <code>COMPLETED</code>. </p>
+     * <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or
+     * <code>COMPLETED</code>. </p>
      */
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the job, one of <code>IN_PROGRESS</code>,
-     * <code>CANCELED</code>, or <code>COMPLETED</code>. </p>
+     * <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or
+     * <code>COMPLETED</code>. </p>
      */
     inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the job, one of <code>IN_PROGRESS</code>,
-     * <code>CANCELED</code>, or <code>COMPLETED</code>. </p>
+     * <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or
+     * <code>COMPLETED</code>. </p>
      */
     inline Job& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the job, one of <code>IN_PROGRESS</code>,
-     * <code>CANCELED</code>, or <code>COMPLETED</code>. </p>
+     * <code>CANCELED</code>, <code>DELETION_IN_PROGRESS</code> or
+     * <code>COMPLETED</code>. </p>
      */
     inline Job& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -503,6 +509,52 @@ namespace Model
      */
     inline Job& WithJobProcessDetails(JobProcessDetails&& value) { SetJobProcessDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the amount of time each device has to finish its execution of the
+     * job. A timer is started when the job execution status is set to
+     * <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the timer expires, it will be automatically set to
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline const TimeoutConfig& GetTimeoutConfig() const{ return m_timeoutConfig; }
+
+    /**
+     * <p>Specifies the amount of time each device has to finish its execution of the
+     * job. A timer is started when the job execution status is set to
+     * <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the timer expires, it will be automatically set to
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline void SetTimeoutConfig(const TimeoutConfig& value) { m_timeoutConfigHasBeenSet = true; m_timeoutConfig = value; }
+
+    /**
+     * <p>Specifies the amount of time each device has to finish its execution of the
+     * job. A timer is started when the job execution status is set to
+     * <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the timer expires, it will be automatically set to
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline void SetTimeoutConfig(TimeoutConfig&& value) { m_timeoutConfigHasBeenSet = true; m_timeoutConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the amount of time each device has to finish its execution of the
+     * job. A timer is started when the job execution status is set to
+     * <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the timer expires, it will be automatically set to
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline Job& WithTimeoutConfig(const TimeoutConfig& value) { SetTimeoutConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the amount of time each device has to finish its execution of the
+     * job. A timer is started when the job execution status is set to
+     * <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the timer expires, it will be automatically set to
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline Job& WithTimeoutConfig(TimeoutConfig&& value) { SetTimeoutConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobArn;
@@ -546,6 +598,9 @@ namespace Model
 
     JobProcessDetails m_jobProcessDetails;
     bool m_jobProcessDetailsHasBeenSet;
+
+    TimeoutConfig m_timeoutConfig;
+    bool m_timeoutConfigHasBeenSet;
   };
 
 } // namespace Model

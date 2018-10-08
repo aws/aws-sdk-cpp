@@ -40,6 +40,8 @@ JobExecution::JobExecution() :
     m_startedAtHasBeenSet(false),
     m_lastUpdatedAt(0),
     m_lastUpdatedAtHasBeenSet(false),
+    m_approximateSecondsBeforeTimedOut(0),
+    m_approximateSecondsBeforeTimedOutHasBeenSet(false),
     m_versionNumber(0),
     m_versionNumberHasBeenSet(false),
     m_executionNumber(0),
@@ -60,6 +62,8 @@ JobExecution::JobExecution(JsonView jsonValue) :
     m_startedAtHasBeenSet(false),
     m_lastUpdatedAt(0),
     m_lastUpdatedAtHasBeenSet(false),
+    m_approximateSecondsBeforeTimedOut(0),
+    m_approximateSecondsBeforeTimedOutHasBeenSet(false),
     m_versionNumber(0),
     m_versionNumberHasBeenSet(false),
     m_executionNumber(0),
@@ -121,6 +125,13 @@ JobExecution& JobExecution::operator =(JsonView jsonValue)
     m_lastUpdatedAt = jsonValue.GetInt64("lastUpdatedAt");
 
     m_lastUpdatedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("approximateSecondsBeforeTimedOut"))
+  {
+    m_approximateSecondsBeforeTimedOut = jsonValue.GetInt64("approximateSecondsBeforeTimedOut");
+
+    m_approximateSecondsBeforeTimedOutHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("versionNumber"))
@@ -194,6 +205,12 @@ JsonValue JobExecution::Jsonize() const
   if(m_lastUpdatedAtHasBeenSet)
   {
    payload.WithInt64("lastUpdatedAt", m_lastUpdatedAt);
+
+  }
+
+  if(m_approximateSecondsBeforeTimedOutHasBeenSet)
+  {
+   payload.WithInt64("approximateSecondsBeforeTimedOut", m_approximateSecondsBeforeTimedOut);
 
   }
 

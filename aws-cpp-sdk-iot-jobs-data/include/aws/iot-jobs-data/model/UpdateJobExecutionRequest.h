@@ -221,6 +221,46 @@ namespace Model
 
 
     /**
+     * <p>Specifies the amount of time this device has to finish execution of this job.
+     * If the job execution status is not set to a terminal state before this timer
+     * expires, or before the timer is reset (by again calling
+     * <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code>
+     * and specifying a new timeout value in this field) the job execution status will
+     * be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting
+     * this timeout has no effect on that job execution timeout which may have been
+     * specified when the job was created (<code>CreateJob</code> using field
+     * <code>timeoutConfig</code>).</p>
+     */
+    inline long long GetStepTimeoutInMinutes() const{ return m_stepTimeoutInMinutes; }
+
+    /**
+     * <p>Specifies the amount of time this device has to finish execution of this job.
+     * If the job execution status is not set to a terminal state before this timer
+     * expires, or before the timer is reset (by again calling
+     * <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code>
+     * and specifying a new timeout value in this field) the job execution status will
+     * be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting
+     * this timeout has no effect on that job execution timeout which may have been
+     * specified when the job was created (<code>CreateJob</code> using field
+     * <code>timeoutConfig</code>).</p>
+     */
+    inline void SetStepTimeoutInMinutes(long long value) { m_stepTimeoutInMinutesHasBeenSet = true; m_stepTimeoutInMinutes = value; }
+
+    /**
+     * <p>Specifies the amount of time this device has to finish execution of this job.
+     * If the job execution status is not set to a terminal state before this timer
+     * expires, or before the timer is reset (by again calling
+     * <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code>
+     * and specifying a new timeout value in this field) the job execution status will
+     * be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting
+     * this timeout has no effect on that job execution timeout which may have been
+     * specified when the job was created (<code>CreateJob</code> using field
+     * <code>timeoutConfig</code>).</p>
+     */
+    inline UpdateJobExecutionRequest& WithStepTimeoutInMinutes(long long value) { SetStepTimeoutInMinutes(value); return *this;}
+
+
+    /**
      * <p>Optional. The expected current version of the job execution. Each time you
      * update the job execution, its version is incremented. If the version of the job
      * execution stored in Jobs does not match, the update is rejected with a
@@ -323,6 +363,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_statusDetails;
     bool m_statusDetailsHasBeenSet;
+
+    long long m_stepTimeoutInMinutes;
+    bool m_stepTimeoutInMinutesHasBeenSet;
 
     long long m_expectedVersion;
     bool m_expectedVersionHasBeenSet;
