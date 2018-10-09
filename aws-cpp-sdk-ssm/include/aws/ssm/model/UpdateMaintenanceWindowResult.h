@@ -151,6 +151,106 @@ namespace Model
 
 
     /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active. The Maintenance Window will not run before
+     * this specified time.</p>
+     */
+    inline const Aws::String& GetStartDate() const{ return m_startDate; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active. The Maintenance Window will not run before
+     * this specified time.</p>
+     */
+    inline void SetStartDate(const Aws::String& value) { m_startDate = value; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active. The Maintenance Window will not run before
+     * this specified time.</p>
+     */
+    inline void SetStartDate(Aws::String&& value) { m_startDate = std::move(value); }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active. The Maintenance Window will not run before
+     * this specified time.</p>
+     */
+    inline void SetStartDate(const char* value) { m_startDate.assign(value); }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active. The Maintenance Window will not run before
+     * this specified time.</p>
+     */
+    inline UpdateMaintenanceWindowResult& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active. The Maintenance Window will not run before
+     * this specified time.</p>
+     */
+    inline UpdateMaintenanceWindowResult& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active. The Maintenance Window will not run before
+     * this specified time.</p>
+     */
+    inline UpdateMaintenanceWindowResult& WithStartDate(const char* value) { SetStartDate(value); return *this;}
+
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive. The Maintenance Window will not run
+     * after this specified time.</p>
+     */
+    inline const Aws::String& GetEndDate() const{ return m_endDate; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive. The Maintenance Window will not run
+     * after this specified time.</p>
+     */
+    inline void SetEndDate(const Aws::String& value) { m_endDate = value; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive. The Maintenance Window will not run
+     * after this specified time.</p>
+     */
+    inline void SetEndDate(Aws::String&& value) { m_endDate = std::move(value); }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive. The Maintenance Window will not run
+     * after this specified time.</p>
+     */
+    inline void SetEndDate(const char* value) { m_endDate.assign(value); }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive. The Maintenance Window will not run
+     * after this specified time.</p>
+     */
+    inline UpdateMaintenanceWindowResult& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive. The Maintenance Window will not run
+     * after this specified time.</p>
+     */
+    inline UpdateMaintenanceWindowResult& WithEndDate(Aws::String&& value) { SetEndDate(std::move(value)); return *this;}
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive. The Maintenance Window will not run
+     * after this specified time.</p>
+     */
+    inline UpdateMaintenanceWindowResult& WithEndDate(const char* value) { SetEndDate(value); return *this;}
+
+
+    /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
      * expression.</p>
      */
@@ -191,6 +291,70 @@ namespace Model
      * expression.</p>
      */
     inline UpdateMaintenanceWindowResult& WithSchedule(const char* value) { SetSchedule(value); return *this;}
+
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format. For example:
+     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
+     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * website.</p>
+     */
+    inline const Aws::String& GetScheduleTimezone() const{ return m_scheduleTimezone; }
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format. For example:
+     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
+     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * website.</p>
+     */
+    inline void SetScheduleTimezone(const Aws::String& value) { m_scheduleTimezone = value; }
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format. For example:
+     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
+     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * website.</p>
+     */
+    inline void SetScheduleTimezone(Aws::String&& value) { m_scheduleTimezone = std::move(value); }
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format. For example:
+     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
+     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * website.</p>
+     */
+    inline void SetScheduleTimezone(const char* value) { m_scheduleTimezone.assign(value); }
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format. For example:
+     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
+     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * website.</p>
+     */
+    inline UpdateMaintenanceWindowResult& WithScheduleTimezone(const Aws::String& value) { SetScheduleTimezone(value); return *this;}
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format. For example:
+     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
+     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * website.</p>
+     */
+    inline UpdateMaintenanceWindowResult& WithScheduleTimezone(Aws::String&& value) { SetScheduleTimezone(std::move(value)); return *this;}
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format. For example:
+     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
+     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * website.</p>
+     */
+    inline UpdateMaintenanceWindowResult& WithScheduleTimezone(const char* value) { SetScheduleTimezone(value); return *this;}
 
 
     /**
@@ -270,7 +434,13 @@ namespace Model
 
     Aws::String m_description;
 
+    Aws::String m_startDate;
+
+    Aws::String m_endDate;
+
     Aws::String m_schedule;
+
+    Aws::String m_scheduleTimezone;
 
     int m_duration;
 

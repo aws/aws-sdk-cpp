@@ -205,6 +205,221 @@ namespace Model
      */
     inline MaintenanceWindowIdentity& WithCutoff(int value) { SetCutoff(value); return *this;}
 
+
+    /**
+     * <p>The schedule of the Maintenance Window in the form of a cron or rate
+     * expression.</p>
+     */
+    inline const Aws::String& GetSchedule() const{ return m_schedule; }
+
+    /**
+     * <p>The schedule of the Maintenance Window in the form of a cron or rate
+     * expression.</p>
+     */
+    inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
+
+    /**
+     * <p>The schedule of the Maintenance Window in the form of a cron or rate
+     * expression.</p>
+     */
+    inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
+
+    /**
+     * <p>The schedule of the Maintenance Window in the form of a cron or rate
+     * expression.</p>
+     */
+    inline void SetSchedule(const char* value) { m_scheduleHasBeenSet = true; m_schedule.assign(value); }
+
+    /**
+     * <p>The schedule of the Maintenance Window in the form of a cron or rate
+     * expression.</p>
+     */
+    inline MaintenanceWindowIdentity& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
+
+    /**
+     * <p>The schedule of the Maintenance Window in the form of a cron or rate
+     * expression.</p>
+     */
+    inline MaintenanceWindowIdentity& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
+
+    /**
+     * <p>The schedule of the Maintenance Window in the form of a cron or rate
+     * expression.</p>
+     */
+    inline MaintenanceWindowIdentity& WithSchedule(const char* value) { SetSchedule(value); return *this;}
+
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format.</p>
+     */
+    inline const Aws::String& GetScheduleTimezone() const{ return m_scheduleTimezone; }
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format.</p>
+     */
+    inline void SetScheduleTimezone(const Aws::String& value) { m_scheduleTimezoneHasBeenSet = true; m_scheduleTimezone = value; }
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format.</p>
+     */
+    inline void SetScheduleTimezone(Aws::String&& value) { m_scheduleTimezoneHasBeenSet = true; m_scheduleTimezone = std::move(value); }
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format.</p>
+     */
+    inline void SetScheduleTimezone(const char* value) { m_scheduleTimezoneHasBeenSet = true; m_scheduleTimezone.assign(value); }
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format.</p>
+     */
+    inline MaintenanceWindowIdentity& WithScheduleTimezone(const Aws::String& value) { SetScheduleTimezone(value); return *this;}
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format.</p>
+     */
+    inline MaintenanceWindowIdentity& WithScheduleTimezone(Aws::String&& value) { SetScheduleTimezone(std::move(value)); return *this;}
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format.</p>
+     */
+    inline MaintenanceWindowIdentity& WithScheduleTimezone(const char* value) { SetScheduleTimezone(value); return *this;}
+
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive.</p>
+     */
+    inline const Aws::String& GetEndDate() const{ return m_endDate; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive.</p>
+     */
+    inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive.</p>
+     */
+    inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive.</p>
+     */
+    inline void SetEndDate(const char* value) { m_endDateHasBeenSet = true; m_endDate.assign(value); }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive.</p>
+     */
+    inline MaintenanceWindowIdentity& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive.</p>
+     */
+    inline MaintenanceWindowIdentity& WithEndDate(Aws::String&& value) { SetEndDate(std::move(value)); return *this;}
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive.</p>
+     */
+    inline MaintenanceWindowIdentity& WithEndDate(const char* value) { SetEndDate(value); return *this;}
+
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active.</p>
+     */
+    inline const Aws::String& GetStartDate() const{ return m_startDate; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active.</p>
+     */
+    inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active.</p>
+     */
+    inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active.</p>
+     */
+    inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active.</p>
+     */
+    inline MaintenanceWindowIdentity& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active.</p>
+     */
+    inline MaintenanceWindowIdentity& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active.</p>
+     */
+    inline MaintenanceWindowIdentity& WithStartDate(const char* value) { SetStartDate(value); return *this;}
+
+
+    /**
+     * <p>The next time the Maintenance Window will actually run, taking into account
+     * any specified times for the Maintenance Window to become active or inactive.</p>
+     */
+    inline const Aws::String& GetNextExecutionTime() const{ return m_nextExecutionTime; }
+
+    /**
+     * <p>The next time the Maintenance Window will actually run, taking into account
+     * any specified times for the Maintenance Window to become active or inactive.</p>
+     */
+    inline void SetNextExecutionTime(const Aws::String& value) { m_nextExecutionTimeHasBeenSet = true; m_nextExecutionTime = value; }
+
+    /**
+     * <p>The next time the Maintenance Window will actually run, taking into account
+     * any specified times for the Maintenance Window to become active or inactive.</p>
+     */
+    inline void SetNextExecutionTime(Aws::String&& value) { m_nextExecutionTimeHasBeenSet = true; m_nextExecutionTime = std::move(value); }
+
+    /**
+     * <p>The next time the Maintenance Window will actually run, taking into account
+     * any specified times for the Maintenance Window to become active or inactive.</p>
+     */
+    inline void SetNextExecutionTime(const char* value) { m_nextExecutionTimeHasBeenSet = true; m_nextExecutionTime.assign(value); }
+
+    /**
+     * <p>The next time the Maintenance Window will actually run, taking into account
+     * any specified times for the Maintenance Window to become active or inactive.</p>
+     */
+    inline MaintenanceWindowIdentity& WithNextExecutionTime(const Aws::String& value) { SetNextExecutionTime(value); return *this;}
+
+    /**
+     * <p>The next time the Maintenance Window will actually run, taking into account
+     * any specified times for the Maintenance Window to become active or inactive.</p>
+     */
+    inline MaintenanceWindowIdentity& WithNextExecutionTime(Aws::String&& value) { SetNextExecutionTime(std::move(value)); return *this;}
+
+    /**
+     * <p>The next time the Maintenance Window will actually run, taking into account
+     * any specified times for the Maintenance Window to become active or inactive.</p>
+     */
+    inline MaintenanceWindowIdentity& WithNextExecutionTime(const char* value) { SetNextExecutionTime(value); return *this;}
+
   private:
 
     Aws::String m_windowId;
@@ -224,6 +439,21 @@ namespace Model
 
     int m_cutoff;
     bool m_cutoffHasBeenSet;
+
+    Aws::String m_schedule;
+    bool m_scheduleHasBeenSet;
+
+    Aws::String m_scheduleTimezone;
+    bool m_scheduleTimezoneHasBeenSet;
+
+    Aws::String m_endDate;
+    bool m_endDateHasBeenSet;
+
+    Aws::String m_startDate;
+    bool m_startDateHasBeenSet;
+
+    Aws::String m_nextExecutionTime;
+    bool m_nextExecutionTimeHasBeenSet;
   };
 
 } // namespace Model

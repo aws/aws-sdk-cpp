@@ -37,7 +37,12 @@ MaintenanceWindowIdentity::MaintenanceWindowIdentity() :
     m_duration(0),
     m_durationHasBeenSet(false),
     m_cutoff(0),
-    m_cutoffHasBeenSet(false)
+    m_cutoffHasBeenSet(false),
+    m_scheduleHasBeenSet(false),
+    m_scheduleTimezoneHasBeenSet(false),
+    m_endDateHasBeenSet(false),
+    m_startDateHasBeenSet(false),
+    m_nextExecutionTimeHasBeenSet(false)
 {
 }
 
@@ -50,7 +55,12 @@ MaintenanceWindowIdentity::MaintenanceWindowIdentity(JsonView jsonValue) :
     m_duration(0),
     m_durationHasBeenSet(false),
     m_cutoff(0),
-    m_cutoffHasBeenSet(false)
+    m_cutoffHasBeenSet(false),
+    m_scheduleHasBeenSet(false),
+    m_scheduleTimezoneHasBeenSet(false),
+    m_endDateHasBeenSet(false),
+    m_startDateHasBeenSet(false),
+    m_nextExecutionTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +109,41 @@ MaintenanceWindowIdentity& MaintenanceWindowIdentity::operator =(JsonView jsonVa
     m_cutoffHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Schedule"))
+  {
+    m_schedule = jsonValue.GetString("Schedule");
+
+    m_scheduleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScheduleTimezone"))
+  {
+    m_scheduleTimezone = jsonValue.GetString("ScheduleTimezone");
+
+    m_scheduleTimezoneHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndDate"))
+  {
+    m_endDate = jsonValue.GetString("EndDate");
+
+    m_endDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartDate"))
+  {
+    m_startDate = jsonValue.GetString("StartDate");
+
+    m_startDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NextExecutionTime"))
+  {
+    m_nextExecutionTime = jsonValue.GetString("NextExecutionTime");
+
+    m_nextExecutionTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -139,6 +184,36 @@ JsonValue MaintenanceWindowIdentity::Jsonize() const
   if(m_cutoffHasBeenSet)
   {
    payload.WithInteger("Cutoff", m_cutoff);
+
+  }
+
+  if(m_scheduleHasBeenSet)
+  {
+   payload.WithString("Schedule", m_schedule);
+
+  }
+
+  if(m_scheduleTimezoneHasBeenSet)
+  {
+   payload.WithString("ScheduleTimezone", m_scheduleTimezone);
+
+  }
+
+  if(m_endDateHasBeenSet)
+  {
+   payload.WithString("EndDate", m_endDate);
+
+  }
+
+  if(m_startDateHasBeenSet)
+  {
+   payload.WithString("StartDate", m_startDate);
+
+  }
+
+  if(m_nextExecutionTimeHasBeenSet)
+  {
+   payload.WithString("NextExecutionTime", m_nextExecutionTime);
 
   }
 

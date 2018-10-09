@@ -54,7 +54,7 @@ namespace Model
      * <p>The instance IDs where the command should execute. You can specify a maximum
      * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
      * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use Targets, see <a
+     * EC2 tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -64,7 +64,7 @@ namespace Model
      * <p>The instance IDs where the command should execute. You can specify a maximum
      * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
      * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use Targets, see <a
+     * EC2 tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -74,7 +74,7 @@ namespace Model
      * <p>The instance IDs where the command should execute. You can specify a maximum
      * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
      * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use Targets, see <a
+     * EC2 tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -84,7 +84,7 @@ namespace Model
      * <p>The instance IDs where the command should execute. You can specify a maximum
      * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
      * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use Targets, see <a
+     * EC2 tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -94,7 +94,7 @@ namespace Model
      * <p>The instance IDs where the command should execute. You can specify a maximum
      * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
      * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use Targets, see <a
+     * EC2 tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -104,7 +104,7 @@ namespace Model
      * <p>The instance IDs where the command should execute. You can specify a maximum
      * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
      * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use Targets, see <a
+     * EC2 tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -114,7 +114,7 @@ namespace Model
      * <p>The instance IDs where the command should execute. You can specify a maximum
      * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
      * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use Targets, see <a
+     * EC2 tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -124,7 +124,7 @@ namespace Model
      * <p>The instance IDs where the command should execute. You can specify a maximum
      * of 50 IDs. If you prefer not to list individual instance IDs, you can instead
      * send commands to a fleet of instances using the Targets parameter, which accepts
-     * EC2 tags. For more information about how to use Targets, see <a
+     * EC2 tags. For more information about how to use targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -135,7 +135,7 @@ namespace Model
      * <p>(Optional) An array of search criteria that targets instances using a
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
-     * Targets, see <a
+     * targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -145,7 +145,7 @@ namespace Model
      * <p>(Optional) An array of search criteria that targets instances using a
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
-     * Targets, see <a
+     * targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -155,7 +155,7 @@ namespace Model
      * <p>(Optional) An array of search criteria that targets instances using a
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
-     * Targets, see <a
+     * targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -165,7 +165,7 @@ namespace Model
      * <p>(Optional) An array of search criteria that targets instances using a
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
-     * Targets, see <a
+     * targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -175,7 +175,7 @@ namespace Model
      * <p>(Optional) An array of search criteria that targets instances using a
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
-     * Targets, see <a
+     * targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -185,7 +185,7 @@ namespace Model
      * <p>(Optional) An array of search criteria that targets instances using a
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
-     * Targets, see <a
+     * targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -195,7 +195,7 @@ namespace Model
      * <p>(Optional) An array of search criteria that targets instances using a
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
-     * Targets, see <a
+     * targets, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */

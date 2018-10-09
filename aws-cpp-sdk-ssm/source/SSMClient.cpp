@@ -29,6 +29,7 @@
 #include <aws/ssm/SSMErrorMarshaller.h>
 #include <aws/ssm/model/AddTagsToResourceRequest.h>
 #include <aws/ssm/model/CancelCommandRequest.h>
+#include <aws/ssm/model/CancelMaintenanceWindowExecutionRequest.h>
 #include <aws/ssm/model/CreateActivationRequest.h>
 #include <aws/ssm/model/CreateAssociationRequest.h>
 #include <aws/ssm/model/CreateAssociationBatchRequest.h>
@@ -69,9 +70,11 @@
 #include <aws/ssm/model/DescribeMaintenanceWindowExecutionTaskInvocationsRequest.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowExecutionTasksRequest.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowExecutionsRequest.h>
+#include <aws/ssm/model/DescribeMaintenanceWindowScheduleRequest.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowTargetsRequest.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowTasksRequest.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowsRequest.h>
+#include <aws/ssm/model/DescribeMaintenanceWindowsForTargetRequest.h>
 #include <aws/ssm/model/DescribeParametersRequest.h>
 #include <aws/ssm/model/DescribePatchBaselinesRequest.h>
 #include <aws/ssm/model/DescribePatchGroupStateRequest.h>
@@ -268,6 +271,41 @@ void SSMClient::CancelCommandAsync(const CancelCommandRequest& request, const Ca
 void SSMClient::CancelCommandAsyncHelper(const CancelCommandRequest& request, const CancelCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CancelCommand(request), context);
+}
+
+CancelMaintenanceWindowExecutionOutcome SSMClient::CancelMaintenanceWindowExecution(const CancelMaintenanceWindowExecutionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CancelMaintenanceWindowExecutionOutcome(CancelMaintenanceWindowExecutionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CancelMaintenanceWindowExecutionOutcome(outcome.GetError());
+  }
+}
+
+CancelMaintenanceWindowExecutionOutcomeCallable SSMClient::CancelMaintenanceWindowExecutionCallable(const CancelMaintenanceWindowExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelMaintenanceWindowExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelMaintenanceWindowExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::CancelMaintenanceWindowExecutionAsync(const CancelMaintenanceWindowExecutionRequest& request, const CancelMaintenanceWindowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelMaintenanceWindowExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::CancelMaintenanceWindowExecutionAsyncHelper(const CancelMaintenanceWindowExecutionRequest& request, const CancelMaintenanceWindowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelMaintenanceWindowExecution(request), context);
 }
 
 CreateActivationOutcome SSMClient::CreateActivation(const CreateActivationRequest& request) const
@@ -1670,6 +1708,41 @@ void SSMClient::DescribeMaintenanceWindowExecutionsAsyncHelper(const DescribeMai
   handler(this, request, DescribeMaintenanceWindowExecutions(request), context);
 }
 
+DescribeMaintenanceWindowScheduleOutcome SSMClient::DescribeMaintenanceWindowSchedule(const DescribeMaintenanceWindowScheduleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeMaintenanceWindowScheduleOutcome(DescribeMaintenanceWindowScheduleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeMaintenanceWindowScheduleOutcome(outcome.GetError());
+  }
+}
+
+DescribeMaintenanceWindowScheduleOutcomeCallable SSMClient::DescribeMaintenanceWindowScheduleCallable(const DescribeMaintenanceWindowScheduleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMaintenanceWindowScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMaintenanceWindowSchedule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::DescribeMaintenanceWindowScheduleAsync(const DescribeMaintenanceWindowScheduleRequest& request, const DescribeMaintenanceWindowScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeMaintenanceWindowScheduleAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::DescribeMaintenanceWindowScheduleAsyncHelper(const DescribeMaintenanceWindowScheduleRequest& request, const DescribeMaintenanceWindowScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeMaintenanceWindowSchedule(request), context);
+}
+
 DescribeMaintenanceWindowTargetsOutcome SSMClient::DescribeMaintenanceWindowTargets(const DescribeMaintenanceWindowTargetsRequest& request) const
 {
   Aws::StringStream ss;
@@ -1773,6 +1846,41 @@ void SSMClient::DescribeMaintenanceWindowsAsync(const DescribeMaintenanceWindows
 void SSMClient::DescribeMaintenanceWindowsAsyncHelper(const DescribeMaintenanceWindowsRequest& request, const DescribeMaintenanceWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeMaintenanceWindows(request), context);
+}
+
+DescribeMaintenanceWindowsForTargetOutcome SSMClient::DescribeMaintenanceWindowsForTarget(const DescribeMaintenanceWindowsForTargetRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeMaintenanceWindowsForTargetOutcome(DescribeMaintenanceWindowsForTargetResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeMaintenanceWindowsForTargetOutcome(outcome.GetError());
+  }
+}
+
+DescribeMaintenanceWindowsForTargetOutcomeCallable SSMClient::DescribeMaintenanceWindowsForTargetCallable(const DescribeMaintenanceWindowsForTargetRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeMaintenanceWindowsForTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeMaintenanceWindowsForTarget(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::DescribeMaintenanceWindowsForTargetAsync(const DescribeMaintenanceWindowsForTargetRequest& request, const DescribeMaintenanceWindowsForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeMaintenanceWindowsForTargetAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::DescribeMaintenanceWindowsForTargetAsyncHelper(const DescribeMaintenanceWindowsForTargetRequest& request, const DescribeMaintenanceWindowsForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeMaintenanceWindowsForTarget(request), context);
 }
 
 DescribeParametersOutcome SSMClient::DescribeParameters(const DescribeParametersRequest& request) const

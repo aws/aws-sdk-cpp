@@ -23,6 +23,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm/model/AddTagsToResourceResult.h>
 #include <aws/ssm/model/CancelCommandResult.h>
+#include <aws/ssm/model/CancelMaintenanceWindowExecutionResult.h>
 #include <aws/ssm/model/CreateActivationResult.h>
 #include <aws/ssm/model/CreateAssociationResult.h>
 #include <aws/ssm/model/CreateAssociationBatchResult.h>
@@ -63,9 +64,11 @@
 #include <aws/ssm/model/DescribeMaintenanceWindowExecutionTaskInvocationsResult.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowExecutionTasksResult.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowExecutionsResult.h>
+#include <aws/ssm/model/DescribeMaintenanceWindowScheduleResult.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowTargetsResult.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowTasksResult.h>
 #include <aws/ssm/model/DescribeMaintenanceWindowsResult.h>
+#include <aws/ssm/model/DescribeMaintenanceWindowsForTargetResult.h>
 #include <aws/ssm/model/DescribeParametersResult.h>
 #include <aws/ssm/model/DescribePatchBaselinesResult.h>
 #include <aws/ssm/model/DescribePatchGroupStateResult.h>
@@ -171,6 +174,7 @@ namespace Model
 {
         class AddTagsToResourceRequest;
         class CancelCommandRequest;
+        class CancelMaintenanceWindowExecutionRequest;
         class CreateActivationRequest;
         class CreateAssociationRequest;
         class CreateAssociationBatchRequest;
@@ -211,9 +215,11 @@ namespace Model
         class DescribeMaintenanceWindowExecutionTaskInvocationsRequest;
         class DescribeMaintenanceWindowExecutionTasksRequest;
         class DescribeMaintenanceWindowExecutionsRequest;
+        class DescribeMaintenanceWindowScheduleRequest;
         class DescribeMaintenanceWindowTargetsRequest;
         class DescribeMaintenanceWindowTasksRequest;
         class DescribeMaintenanceWindowsRequest;
+        class DescribeMaintenanceWindowsForTargetRequest;
         class DescribeParametersRequest;
         class DescribePatchBaselinesRequest;
         class DescribePatchGroupStateRequest;
@@ -280,6 +286,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<AddTagsToResourceResult, Aws::Client::AWSError<SSMErrors>> AddTagsToResourceOutcome;
         typedef Aws::Utils::Outcome<CancelCommandResult, Aws::Client::AWSError<SSMErrors>> CancelCommandOutcome;
+        typedef Aws::Utils::Outcome<CancelMaintenanceWindowExecutionResult, Aws::Client::AWSError<SSMErrors>> CancelMaintenanceWindowExecutionOutcome;
         typedef Aws::Utils::Outcome<CreateActivationResult, Aws::Client::AWSError<SSMErrors>> CreateActivationOutcome;
         typedef Aws::Utils::Outcome<CreateAssociationResult, Aws::Client::AWSError<SSMErrors>> CreateAssociationOutcome;
         typedef Aws::Utils::Outcome<CreateAssociationBatchResult, Aws::Client::AWSError<SSMErrors>> CreateAssociationBatchOutcome;
@@ -320,9 +327,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeMaintenanceWindowExecutionTaskInvocationsResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowExecutionTaskInvocationsOutcome;
         typedef Aws::Utils::Outcome<DescribeMaintenanceWindowExecutionTasksResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowExecutionTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeMaintenanceWindowExecutionsResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowExecutionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeMaintenanceWindowScheduleResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowScheduleOutcome;
         typedef Aws::Utils::Outcome<DescribeMaintenanceWindowTargetsResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowTargetsOutcome;
         typedef Aws::Utils::Outcome<DescribeMaintenanceWindowTasksResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeMaintenanceWindowsResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowsOutcome;
+        typedef Aws::Utils::Outcome<DescribeMaintenanceWindowsForTargetResult, Aws::Client::AWSError<SSMErrors>> DescribeMaintenanceWindowsForTargetOutcome;
         typedef Aws::Utils::Outcome<DescribeParametersResult, Aws::Client::AWSError<SSMErrors>> DescribeParametersOutcome;
         typedef Aws::Utils::Outcome<DescribePatchBaselinesResult, Aws::Client::AWSError<SSMErrors>> DescribePatchBaselinesOutcome;
         typedef Aws::Utils::Outcome<DescribePatchGroupStateResult, Aws::Client::AWSError<SSMErrors>> DescribePatchGroupStateOutcome;
@@ -389,6 +398,7 @@ namespace Model
 
         typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
         typedef std::future<CancelCommandOutcome> CancelCommandOutcomeCallable;
+        typedef std::future<CancelMaintenanceWindowExecutionOutcome> CancelMaintenanceWindowExecutionOutcomeCallable;
         typedef std::future<CreateActivationOutcome> CreateActivationOutcomeCallable;
         typedef std::future<CreateAssociationOutcome> CreateAssociationOutcomeCallable;
         typedef std::future<CreateAssociationBatchOutcome> CreateAssociationBatchOutcomeCallable;
@@ -429,9 +439,11 @@ namespace Model
         typedef std::future<DescribeMaintenanceWindowExecutionTaskInvocationsOutcome> DescribeMaintenanceWindowExecutionTaskInvocationsOutcomeCallable;
         typedef std::future<DescribeMaintenanceWindowExecutionTasksOutcome> DescribeMaintenanceWindowExecutionTasksOutcomeCallable;
         typedef std::future<DescribeMaintenanceWindowExecutionsOutcome> DescribeMaintenanceWindowExecutionsOutcomeCallable;
+        typedef std::future<DescribeMaintenanceWindowScheduleOutcome> DescribeMaintenanceWindowScheduleOutcomeCallable;
         typedef std::future<DescribeMaintenanceWindowTargetsOutcome> DescribeMaintenanceWindowTargetsOutcomeCallable;
         typedef std::future<DescribeMaintenanceWindowTasksOutcome> DescribeMaintenanceWindowTasksOutcomeCallable;
         typedef std::future<DescribeMaintenanceWindowsOutcome> DescribeMaintenanceWindowsOutcomeCallable;
+        typedef std::future<DescribeMaintenanceWindowsForTargetOutcome> DescribeMaintenanceWindowsForTargetOutcomeCallable;
         typedef std::future<DescribeParametersOutcome> DescribeParametersOutcomeCallable;
         typedef std::future<DescribePatchBaselinesOutcome> DescribePatchBaselinesOutcomeCallable;
         typedef std::future<DescribePatchGroupStateOutcome> DescribePatchGroupStateOutcomeCallable;
@@ -501,6 +513,7 @@ namespace Model
 
     typedef std::function<void(const SSMClient*, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToResourceResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::CancelCommandRequest&, const Model::CancelCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelCommandResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::CancelMaintenanceWindowExecutionRequest&, const Model::CancelMaintenanceWindowExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelMaintenanceWindowExecutionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::CreateActivationRequest&, const Model::CreateActivationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateActivationResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::CreateAssociationRequest&, const Model::CreateAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssociationResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::CreateAssociationBatchRequest&, const Model::CreateAssociationBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAssociationBatchResponseReceivedHandler;
@@ -541,9 +554,11 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowExecutionTaskInvocationsRequest&, const Model::DescribeMaintenanceWindowExecutionTaskInvocationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowExecutionTaskInvocationsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowExecutionTasksRequest&, const Model::DescribeMaintenanceWindowExecutionTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowExecutionTasksResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowExecutionsRequest&, const Model::DescribeMaintenanceWindowExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowExecutionsResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowScheduleRequest&, const Model::DescribeMaintenanceWindowScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowScheduleResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowTargetsRequest&, const Model::DescribeMaintenanceWindowTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowTargetsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowTasksRequest&, const Model::DescribeMaintenanceWindowTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowTasksResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowsRequest&, const Model::DescribeMaintenanceWindowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowsResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::DescribeMaintenanceWindowsForTargetRequest&, const Model::DescribeMaintenanceWindowsForTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceWindowsForTargetResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeParametersRequest&, const Model::DescribeParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeParametersResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribePatchBaselinesRequest&, const Model::DescribePatchBaselinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePatchBaselinesResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribePatchGroupStateRequest&, const Model::DescribePatchGroupStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePatchGroupStateResponseReceivedHandler;
@@ -765,6 +780,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CancelCommandAsync(const Model::CancelCommandRequest& request, const CancelCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops a Maintenance Window execution that is already in progress and cancels
+         * any tasks in the window that have not already starting running. (Tasks already
+         * in progress will continue to completion.)</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelMaintenanceWindowExecutionOutcome CancelMaintenanceWindowExecution(const Model::CancelMaintenanceWindowExecutionRequest& request) const;
+
+        /**
+         * <p>Stops a Maintenance Window execution that is already in progress and cancels
+         * any tasks in the window that have not already starting running. (Tasks already
+         * in progress will continue to completion.)</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelMaintenanceWindowExecutionOutcomeCallable CancelMaintenanceWindowExecutionCallable(const Model::CancelMaintenanceWindowExecutionRequest& request) const;
+
+        /**
+         * <p>Stops a Maintenance Window execution that is already in progress and cancels
+         * any tasks in the window that have not already starting running. (Tasks already
+         * in progress will continue to completion.)</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CancelMaintenanceWindowExecution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelMaintenanceWindowExecutionAsync(const Model::CancelMaintenanceWindowExecutionRequest& request, const CancelMaintenanceWindowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Registers your on-premises server or virtual machine with Amazon EC2 so that
@@ -2049,6 +2095,34 @@ namespace Model
         virtual void DescribeMaintenanceWindowExecutionsAsync(const Model::DescribeMaintenanceWindowExecutionsRequest& request, const DescribeMaintenanceWindowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves information about upcoming executions of a Maintenance
+         * Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMaintenanceWindowScheduleOutcome DescribeMaintenanceWindowSchedule(const Model::DescribeMaintenanceWindowScheduleRequest& request) const;
+
+        /**
+         * <p>Retrieves information about upcoming executions of a Maintenance
+         * Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMaintenanceWindowScheduleOutcomeCallable DescribeMaintenanceWindowScheduleCallable(const Model::DescribeMaintenanceWindowScheduleRequest& request) const;
+
+        /**
+         * <p>Retrieves information about upcoming executions of a Maintenance
+         * Window.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMaintenanceWindowScheduleAsync(const Model::DescribeMaintenanceWindowScheduleRequest& request, const DescribeMaintenanceWindowScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the targets registered with the Maintenance Window.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowTargets">AWS
@@ -2128,6 +2202,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeMaintenanceWindowsAsync(const Model::DescribeMaintenanceWindowsRequest& request, const DescribeMaintenanceWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves information about the Maintenance Windows targets or tasks that an
+         * instance is associated with.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMaintenanceWindowsForTargetOutcome DescribeMaintenanceWindowsForTarget(const Model::DescribeMaintenanceWindowsForTargetRequest& request) const;
+
+        /**
+         * <p>Retrieves information about the Maintenance Windows targets or tasks that an
+         * instance is associated with.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMaintenanceWindowsForTargetOutcomeCallable DescribeMaintenanceWindowsForTargetCallable(const Model::DescribeMaintenanceWindowsForTargetRequest& request) const;
+
+        /**
+         * <p>Retrieves information about the Maintenance Windows targets or tasks that an
+         * instance is associated with.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowsForTarget">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMaintenanceWindowsForTargetAsync(const Model::DescribeMaintenanceWindowsForTargetRequest& request, const DescribeMaintenanceWindowsForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Get information about a parameter.</p> <p>Request results are returned on a
@@ -4194,6 +4296,7 @@ namespace Model
         /**Async helpers**/
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelCommandAsyncHelper(const Model::CancelCommandRequest& request, const CancelCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelMaintenanceWindowExecutionAsyncHelper(const Model::CancelMaintenanceWindowExecutionRequest& request, const CancelMaintenanceWindowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateActivationAsyncHelper(const Model::CreateActivationRequest& request, const CreateActivationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAssociationAsyncHelper(const Model::CreateAssociationRequest& request, const CreateAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAssociationBatchAsyncHelper(const Model::CreateAssociationBatchRequest& request, const CreateAssociationBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4234,9 +4337,11 @@ namespace Model
         void DescribeMaintenanceWindowExecutionTaskInvocationsAsyncHelper(const Model::DescribeMaintenanceWindowExecutionTaskInvocationsRequest& request, const DescribeMaintenanceWindowExecutionTaskInvocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMaintenanceWindowExecutionTasksAsyncHelper(const Model::DescribeMaintenanceWindowExecutionTasksRequest& request, const DescribeMaintenanceWindowExecutionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMaintenanceWindowExecutionsAsyncHelper(const Model::DescribeMaintenanceWindowExecutionsRequest& request, const DescribeMaintenanceWindowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeMaintenanceWindowScheduleAsyncHelper(const Model::DescribeMaintenanceWindowScheduleRequest& request, const DescribeMaintenanceWindowScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMaintenanceWindowTargetsAsyncHelper(const Model::DescribeMaintenanceWindowTargetsRequest& request, const DescribeMaintenanceWindowTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMaintenanceWindowTasksAsyncHelper(const Model::DescribeMaintenanceWindowTasksRequest& request, const DescribeMaintenanceWindowTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMaintenanceWindowsAsyncHelper(const Model::DescribeMaintenanceWindowsRequest& request, const DescribeMaintenanceWindowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeMaintenanceWindowsForTargetAsyncHelper(const Model::DescribeMaintenanceWindowsForTargetRequest& request, const DescribeMaintenanceWindowsForTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeParametersAsyncHelper(const Model::DescribeParametersRequest& request, const DescribeParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePatchBaselinesAsyncHelper(const Model::DescribePatchBaselinesRequest& request, const DescribePatchBaselinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePatchGroupStateAsyncHelper(const Model::DescribePatchGroupStateRequest& request, const DescribePatchGroupStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

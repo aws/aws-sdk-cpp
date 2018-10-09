@@ -26,7 +26,10 @@ UpdateMaintenanceWindowRequest::UpdateMaintenanceWindowRequest() :
     m_windowIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_startDateHasBeenSet(false),
+    m_endDateHasBeenSet(false),
     m_scheduleHasBeenSet(false),
+    m_scheduleTimezoneHasBeenSet(false),
     m_duration(0),
     m_durationHasBeenSet(false),
     m_cutoff(0),
@@ -62,9 +65,27 @@ Aws::String UpdateMaintenanceWindowRequest::SerializePayload() const
 
   }
 
+  if(m_startDateHasBeenSet)
+  {
+   payload.WithString("StartDate", m_startDate);
+
+  }
+
+  if(m_endDateHasBeenSet)
+  {
+   payload.WithString("EndDate", m_endDate);
+
+  }
+
   if(m_scheduleHasBeenSet)
   {
    payload.WithString("Schedule", m_schedule);
+
+  }
+
+  if(m_scheduleTimezoneHasBeenSet)
+  {
+   payload.WithString("ScheduleTimezone", m_scheduleTimezone);
 
   }
 

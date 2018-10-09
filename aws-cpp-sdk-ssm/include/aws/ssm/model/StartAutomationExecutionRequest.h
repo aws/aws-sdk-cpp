@@ -263,43 +263,43 @@ namespace Model
 
     /**
      * <p>The name of the parameter used as the target resource for the rate-controlled
-     * execution. Required if you specify Targets.</p>
+     * execution. Required if you specify targets.</p>
      */
     inline const Aws::String& GetTargetParameterName() const{ return m_targetParameterName; }
 
     /**
      * <p>The name of the parameter used as the target resource for the rate-controlled
-     * execution. Required if you specify Targets.</p>
+     * execution. Required if you specify targets.</p>
      */
     inline void SetTargetParameterName(const Aws::String& value) { m_targetParameterNameHasBeenSet = true; m_targetParameterName = value; }
 
     /**
      * <p>The name of the parameter used as the target resource for the rate-controlled
-     * execution. Required if you specify Targets.</p>
+     * execution. Required if you specify targets.</p>
      */
     inline void SetTargetParameterName(Aws::String&& value) { m_targetParameterNameHasBeenSet = true; m_targetParameterName = std::move(value); }
 
     /**
      * <p>The name of the parameter used as the target resource for the rate-controlled
-     * execution. Required if you specify Targets.</p>
+     * execution. Required if you specify targets.</p>
      */
     inline void SetTargetParameterName(const char* value) { m_targetParameterNameHasBeenSet = true; m_targetParameterName.assign(value); }
 
     /**
      * <p>The name of the parameter used as the target resource for the rate-controlled
-     * execution. Required if you specify Targets.</p>
+     * execution. Required if you specify targets.</p>
      */
     inline StartAutomationExecutionRequest& WithTargetParameterName(const Aws::String& value) { SetTargetParameterName(value); return *this;}
 
     /**
      * <p>The name of the parameter used as the target resource for the rate-controlled
-     * execution. Required if you specify Targets.</p>
+     * execution. Required if you specify targets.</p>
      */
     inline StartAutomationExecutionRequest& WithTargetParameterName(Aws::String&& value) { SetTargetParameterName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the parameter used as the target resource for the rate-controlled
-     * execution. Required if you specify Targets.</p>
+     * execution. Required if you specify targets.</p>
      */
     inline StartAutomationExecutionRequest& WithTargetParameterName(const char* value) { SetTargetParameterName(value); return *this;}
 

@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Filter used in the request.</p><p><h3>See Also:</h3>   <a
+   * <p>Filter used in the request. Supported filter keys are Name and
+   * Enabled.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/MaintenanceWindowFilter">AWS
    * API Reference</a></p>
    */
