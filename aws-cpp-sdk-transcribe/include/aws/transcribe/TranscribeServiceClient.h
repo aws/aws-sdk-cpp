@@ -70,6 +70,7 @@ namespace TranscribeService
 namespace Model
 {
         class CreateVocabularyRequest;
+        class DeleteTranscriptionJobRequest;
         class DeleteVocabularyRequest;
         class GetTranscriptionJobRequest;
         class GetVocabularyRequest;
@@ -79,6 +80,7 @@ namespace Model
         class UpdateVocabularyRequest;
 
         typedef Aws::Utils::Outcome<CreateVocabularyResult, Aws::Client::AWSError<TranscribeServiceErrors>> CreateVocabularyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<TranscribeServiceErrors>> DeleteTranscriptionJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<TranscribeServiceErrors>> DeleteVocabularyOutcome;
         typedef Aws::Utils::Outcome<GetTranscriptionJobResult, Aws::Client::AWSError<TranscribeServiceErrors>> GetTranscriptionJobOutcome;
         typedef Aws::Utils::Outcome<GetVocabularyResult, Aws::Client::AWSError<TranscribeServiceErrors>> GetVocabularyOutcome;
@@ -88,6 +90,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateVocabularyResult, Aws::Client::AWSError<TranscribeServiceErrors>> UpdateVocabularyOutcome;
 
         typedef std::future<CreateVocabularyOutcome> CreateVocabularyOutcomeCallable;
+        typedef std::future<DeleteTranscriptionJobOutcome> DeleteTranscriptionJobOutcomeCallable;
         typedef std::future<DeleteVocabularyOutcome> DeleteVocabularyOutcomeCallable;
         typedef std::future<GetTranscriptionJobOutcome> GetTranscriptionJobOutcomeCallable;
         typedef std::future<GetVocabularyOutcome> GetVocabularyOutcomeCallable;
@@ -100,6 +103,7 @@ namespace Model
   class TranscribeServiceClient;
 
     typedef std::function<void(const TranscribeServiceClient*, const Model::CreateVocabularyRequest&, const Model::CreateVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVocabularyResponseReceivedHandler;
+    typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteTranscriptionJobRequest&, const Model::DeleteTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTranscriptionJobResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteVocabularyRequest&, const Model::DeleteVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVocabularyResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::GetTranscriptionJobRequest&, const Model::GetTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTranscriptionJobResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::GetVocabularyRequest&, const Model::GetVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVocabularyResponseReceivedHandler;
@@ -167,6 +171,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateVocabularyAsync(const Model::CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a previously submitted transcription job as wella s any other
+         * generated results such as the transcription, models, and so on.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTranscriptionJobOutcome DeleteTranscriptionJob(const Model::DeleteTranscriptionJobRequest& request) const;
+
+        /**
+         * <p>Deletes a previously submitted transcription job as wella s any other
+         * generated results such as the transcription, models, and so on.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTranscriptionJobOutcomeCallable DeleteTranscriptionJobCallable(const Model::DeleteTranscriptionJobRequest& request) const;
+
+        /**
+         * <p>Deletes a previously submitted transcription job as wella s any other
+         * generated results such as the transcription, models, and so on.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTranscriptionJobAsync(const Model::DeleteTranscriptionJobRequest& request, const DeleteTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a vocabulary from Amazon Transcribe. </p><p><h3>See Also:</h3>   <a
@@ -382,6 +417,7 @@ namespace Model
 
         /**Async helpers**/
         void CreateVocabularyAsyncHelper(const Model::CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTranscriptionJobAsyncHelper(const Model::DeleteTranscriptionJobRequest& request, const DeleteTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVocabularyAsyncHelper(const Model::DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTranscriptionJobAsyncHelper(const Model::GetTranscriptionJobRequest& request, const GetTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVocabularyAsyncHelper(const Model::GetVocabularyRequest& request, const GetVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

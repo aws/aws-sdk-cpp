@@ -52,7 +52,8 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus() :
     m_encryptionAtRestOptionsHasBeenSet(false),
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
-    m_logPublishingOptionsHasBeenSet(false)
+    m_logPublishingOptionsHasBeenSet(false),
+    m_serviceSoftwareOptionsHasBeenSet(false)
 {
 }
 
@@ -80,7 +81,8 @@ ElasticsearchDomainStatus::ElasticsearchDomainStatus(JsonView jsonValue) :
     m_encryptionAtRestOptionsHasBeenSet(false),
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
-    m_logPublishingOptionsHasBeenSet(false)
+    m_logPublishingOptionsHasBeenSet(false),
+    m_serviceSoftwareOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -236,6 +238,13 @@ ElasticsearchDomainStatus& ElasticsearchDomainStatus::operator =(JsonView jsonVa
     m_logPublishingOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServiceSoftwareOptions"))
+  {
+    m_serviceSoftwareOptions = jsonValue.GetObject("ServiceSoftwareOptions");
+
+    m_serviceSoftwareOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -375,6 +384,12 @@ JsonValue ElasticsearchDomainStatus::Jsonize() const
      logPublishingOptionsJsonMap.WithObject(LogTypeMapper::GetNameForLogType(logPublishingOptionsItem.first), logPublishingOptionsItem.second.Jsonize());
    }
    payload.WithObject("LogPublishingOptions", std::move(logPublishingOptionsJsonMap));
+
+  }
+
+  if(m_serviceSoftwareOptionsHasBeenSet)
+  {
+   payload.WithObject("ServiceSoftwareOptions", m_serviceSoftwareOptions.Jsonize());
 
   }
 

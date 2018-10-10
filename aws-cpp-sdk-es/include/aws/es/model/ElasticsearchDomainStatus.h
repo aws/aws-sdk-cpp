@@ -24,6 +24,7 @@
 #include <aws/es/model/CognitoOptions.h>
 #include <aws/es/model/EncryptionAtRestOptions.h>
 #include <aws/es/model/NodeToNodeEncryptionOptions.h>
+#include <aws/es/model/ServiceSoftwareOptions.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
 #include <utility>
@@ -812,6 +813,32 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& AddLogPublishingOptions(LogType&& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), std::move(value)); return *this; }
 
+
+    /**
+     * <p>The current status of the Elasticsearch domain's service software.</p>
+     */
+    inline const ServiceSoftwareOptions& GetServiceSoftwareOptions() const{ return m_serviceSoftwareOptions; }
+
+    /**
+     * <p>The current status of the Elasticsearch domain's service software.</p>
+     */
+    inline void SetServiceSoftwareOptions(const ServiceSoftwareOptions& value) { m_serviceSoftwareOptionsHasBeenSet = true; m_serviceSoftwareOptions = value; }
+
+    /**
+     * <p>The current status of the Elasticsearch domain's service software.</p>
+     */
+    inline void SetServiceSoftwareOptions(ServiceSoftwareOptions&& value) { m_serviceSoftwareOptionsHasBeenSet = true; m_serviceSoftwareOptions = std::move(value); }
+
+    /**
+     * <p>The current status of the Elasticsearch domain's service software.</p>
+     */
+    inline ElasticsearchDomainStatus& WithServiceSoftwareOptions(const ServiceSoftwareOptions& value) { SetServiceSoftwareOptions(value); return *this;}
+
+    /**
+     * <p>The current status of the Elasticsearch domain's service software.</p>
+     */
+    inline ElasticsearchDomainStatus& WithServiceSoftwareOptions(ServiceSoftwareOptions&& value) { SetServiceSoftwareOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -873,6 +900,9 @@ namespace Model
 
     Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
     bool m_logPublishingOptionsHasBeenSet;
+
+    ServiceSoftwareOptions m_serviceSoftwareOptions;
+    bool m_serviceSoftwareOptionsHasBeenSet;
   };
 
 } // namespace Model

@@ -26,7 +26,12 @@ namespace Model
   enum class SyntaxLanguageCode
   {
     NOT_SET,
-    en
+    en,
+    es,
+    fr,
+    de,
+    it,
+    pt
   };
 
 namespace SyntaxLanguageCodeMapper

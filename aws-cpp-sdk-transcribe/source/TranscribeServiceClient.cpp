@@ -28,6 +28,7 @@
 #include <aws/transcribe/TranscribeServiceEndpoint.h>
 #include <aws/transcribe/TranscribeServiceErrorMarshaller.h>
 #include <aws/transcribe/model/CreateVocabularyRequest.h>
+#include <aws/transcribe/model/DeleteTranscriptionJobRequest.h>
 #include <aws/transcribe/model/DeleteVocabularyRequest.h>
 #include <aws/transcribe/model/GetTranscriptionJobRequest.h>
 #include <aws/transcribe/model/GetVocabularyRequest.h>
@@ -133,6 +134,41 @@ void TranscribeServiceClient::CreateVocabularyAsync(const CreateVocabularyReques
 void TranscribeServiceClient::CreateVocabularyAsyncHelper(const CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateVocabulary(request), context);
+}
+
+DeleteTranscriptionJobOutcome TranscribeServiceClient::DeleteTranscriptionJob(const DeleteTranscriptionJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteTranscriptionJobOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteTranscriptionJobOutcome(outcome.GetError());
+  }
+}
+
+DeleteTranscriptionJobOutcomeCallable TranscribeServiceClient::DeleteTranscriptionJobCallable(const DeleteTranscriptionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTranscriptionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTranscriptionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::DeleteTranscriptionJobAsync(const DeleteTranscriptionJobRequest& request, const DeleteTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTranscriptionJobAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::DeleteTranscriptionJobAsyncHelper(const DeleteTranscriptionJobRequest& request, const DeleteTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTranscriptionJob(request), context);
 }
 
 DeleteVocabularyOutcome TranscribeServiceClient::DeleteVocabulary(const DeleteVocabularyRequest& request) const

@@ -28,6 +28,7 @@
 #include <aws/es/ElasticsearchServiceEndpoint.h>
 #include <aws/es/ElasticsearchServiceErrorMarshaller.h>
 #include <aws/es/model/AddTagsRequest.h>
+#include <aws/es/model/CancelElasticsearchServiceSoftwareUpdateRequest.h>
 #include <aws/es/model/CreateElasticsearchDomainRequest.h>
 #include <aws/es/model/DeleteElasticsearchDomainRequest.h>
 #include <aws/es/model/DescribeElasticsearchDomainRequest.h>
@@ -44,6 +45,7 @@
 #include <aws/es/model/ListTagsRequest.h>
 #include <aws/es/model/PurchaseReservedElasticsearchInstanceOfferingRequest.h>
 #include <aws/es/model/RemoveTagsRequest.h>
+#include <aws/es/model/StartElasticsearchServiceSoftwareUpdateRequest.h>
 #include <aws/es/model/UpdateElasticsearchDomainConfigRequest.h>
 #include <aws/es/model/UpgradeElasticsearchDomainRequest.h>
 
@@ -144,6 +146,41 @@ void ElasticsearchServiceClient::AddTagsAsync(const AddTagsRequest& request, con
 void ElasticsearchServiceClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AddTags(request), context);
+}
+
+CancelElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdate(const CancelElasticsearchServiceSoftwareUpdateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-01-01/es/serviceSoftwareUpdate/cancel";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CancelElasticsearchServiceSoftwareUpdateOutcome(CancelElasticsearchServiceSoftwareUpdateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CancelElasticsearchServiceSoftwareUpdateOutcome(outcome.GetError());
+  }
+}
+
+CancelElasticsearchServiceSoftwareUpdateOutcomeCallable ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdateCallable(const CancelElasticsearchServiceSoftwareUpdateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelElasticsearchServiceSoftwareUpdateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelElasticsearchServiceSoftwareUpdate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdateAsync(const CancelElasticsearchServiceSoftwareUpdateRequest& request, const CancelElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelElasticsearchServiceSoftwareUpdateAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdateAsyncHelper(const CancelElasticsearchServiceSoftwareUpdateRequest& request, const CancelElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelElasticsearchServiceSoftwareUpdate(request), context);
 }
 
 CreateElasticsearchDomainOutcome ElasticsearchServiceClient::CreateElasticsearchDomain(const CreateElasticsearchDomainRequest& request) const
@@ -784,6 +821,41 @@ void ElasticsearchServiceClient::RemoveTagsAsync(const RemoveTagsRequest& reques
 void ElasticsearchServiceClient::RemoveTagsAsyncHelper(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RemoveTags(request), context);
+}
+
+StartElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::StartElasticsearchServiceSoftwareUpdate(const StartElasticsearchServiceSoftwareUpdateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2015-01-01/es/serviceSoftwareUpdate/start";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartElasticsearchServiceSoftwareUpdateOutcome(StartElasticsearchServiceSoftwareUpdateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartElasticsearchServiceSoftwareUpdateOutcome(outcome.GetError());
+  }
+}
+
+StartElasticsearchServiceSoftwareUpdateOutcomeCallable ElasticsearchServiceClient::StartElasticsearchServiceSoftwareUpdateCallable(const StartElasticsearchServiceSoftwareUpdateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartElasticsearchServiceSoftwareUpdateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartElasticsearchServiceSoftwareUpdate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::StartElasticsearchServiceSoftwareUpdateAsync(const StartElasticsearchServiceSoftwareUpdateRequest& request, const StartElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartElasticsearchServiceSoftwareUpdateAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::StartElasticsearchServiceSoftwareUpdateAsyncHelper(const StartElasticsearchServiceSoftwareUpdateRequest& request, const StartElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartElasticsearchServiceSoftwareUpdate(request), context);
 }
 
 UpdateElasticsearchDomainConfigOutcome ElasticsearchServiceClient::UpdateElasticsearchDomainConfig(const UpdateElasticsearchDomainConfigRequest& request) const

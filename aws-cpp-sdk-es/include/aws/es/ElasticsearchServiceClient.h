@@ -21,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/es/model/CancelElasticsearchServiceSoftwareUpdateResult.h>
 #include <aws/es/model/CreateElasticsearchDomainResult.h>
 #include <aws/es/model/DeleteElasticsearchDomainResult.h>
 #include <aws/es/model/DescribeElasticsearchDomainResult.h>
@@ -37,6 +38,7 @@
 #include <aws/es/model/ListElasticsearchVersionsResult.h>
 #include <aws/es/model/ListTagsResult.h>
 #include <aws/es/model/PurchaseReservedElasticsearchInstanceOfferingResult.h>
+#include <aws/es/model/StartElasticsearchServiceSoftwareUpdateResult.h>
 #include <aws/es/model/UpdateElasticsearchDomainConfigResult.h>
 #include <aws/es/model/UpgradeElasticsearchDomainResult.h>
 #include <aws/core/NoResult.h>
@@ -81,6 +83,7 @@ namespace ElasticsearchService
 namespace Model
 {
         class AddTagsRequest;
+        class CancelElasticsearchServiceSoftwareUpdateRequest;
         class CreateElasticsearchDomainRequest;
         class DeleteElasticsearchDomainRequest;
         class DescribeElasticsearchDomainRequest;
@@ -97,10 +100,12 @@ namespace Model
         class ListTagsRequest;
         class PurchaseReservedElasticsearchInstanceOfferingRequest;
         class RemoveTagsRequest;
+        class StartElasticsearchServiceSoftwareUpdateRequest;
         class UpdateElasticsearchDomainConfigRequest;
         class UpgradeElasticsearchDomainRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticsearchServiceErrors>> AddTagsOutcome;
+        typedef Aws::Utils::Outcome<CancelElasticsearchServiceSoftwareUpdateResult, Aws::Client::AWSError<ElasticsearchServiceErrors>> CancelElasticsearchServiceSoftwareUpdateOutcome;
         typedef Aws::Utils::Outcome<CreateElasticsearchDomainResult, Aws::Client::AWSError<ElasticsearchServiceErrors>> CreateElasticsearchDomainOutcome;
         typedef Aws::Utils::Outcome<DeleteElasticsearchDomainResult, Aws::Client::AWSError<ElasticsearchServiceErrors>> DeleteElasticsearchDomainOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticsearchServiceErrors>> DeleteElasticsearchServiceRoleOutcome;
@@ -119,10 +124,12 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<ElasticsearchServiceErrors>> ListTagsOutcome;
         typedef Aws::Utils::Outcome<PurchaseReservedElasticsearchInstanceOfferingResult, Aws::Client::AWSError<ElasticsearchServiceErrors>> PurchaseReservedElasticsearchInstanceOfferingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticsearchServiceErrors>> RemoveTagsOutcome;
+        typedef Aws::Utils::Outcome<StartElasticsearchServiceSoftwareUpdateResult, Aws::Client::AWSError<ElasticsearchServiceErrors>> StartElasticsearchServiceSoftwareUpdateOutcome;
         typedef Aws::Utils::Outcome<UpdateElasticsearchDomainConfigResult, Aws::Client::AWSError<ElasticsearchServiceErrors>> UpdateElasticsearchDomainConfigOutcome;
         typedef Aws::Utils::Outcome<UpgradeElasticsearchDomainResult, Aws::Client::AWSError<ElasticsearchServiceErrors>> UpgradeElasticsearchDomainOutcome;
 
         typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
+        typedef std::future<CancelElasticsearchServiceSoftwareUpdateOutcome> CancelElasticsearchServiceSoftwareUpdateOutcomeCallable;
         typedef std::future<CreateElasticsearchDomainOutcome> CreateElasticsearchDomainOutcomeCallable;
         typedef std::future<DeleteElasticsearchDomainOutcome> DeleteElasticsearchDomainOutcomeCallable;
         typedef std::future<DeleteElasticsearchServiceRoleOutcome> DeleteElasticsearchServiceRoleOutcomeCallable;
@@ -141,6 +148,7 @@ namespace Model
         typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
         typedef std::future<PurchaseReservedElasticsearchInstanceOfferingOutcome> PurchaseReservedElasticsearchInstanceOfferingOutcomeCallable;
         typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
+        typedef std::future<StartElasticsearchServiceSoftwareUpdateOutcome> StartElasticsearchServiceSoftwareUpdateOutcomeCallable;
         typedef std::future<UpdateElasticsearchDomainConfigOutcome> UpdateElasticsearchDomainConfigOutcomeCallable;
         typedef std::future<UpgradeElasticsearchDomainOutcome> UpgradeElasticsearchDomainOutcomeCallable;
 } // namespace Model
@@ -148,6 +156,7 @@ namespace Model
   class ElasticsearchServiceClient;
 
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
+    typedef std::function<void(const ElasticsearchServiceClient*, const Model::CancelElasticsearchServiceSoftwareUpdateRequest&, const Model::CancelElasticsearchServiceSoftwareUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelElasticsearchServiceSoftwareUpdateResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::CreateElasticsearchDomainRequest&, const Model::CreateElasticsearchDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateElasticsearchDomainResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::DeleteElasticsearchDomainRequest&, const Model::DeleteElasticsearchDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteElasticsearchDomainResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::DeleteElasticsearchServiceRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteElasticsearchServiceRoleResponseReceivedHandler;
@@ -166,6 +175,7 @@ namespace Model
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::PurchaseReservedElasticsearchInstanceOfferingRequest&, const Model::PurchaseReservedElasticsearchInstanceOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedElasticsearchInstanceOfferingResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
+    typedef std::function<void(const ElasticsearchServiceClient*, const Model::StartElasticsearchServiceSoftwareUpdateRequest&, const Model::StartElasticsearchServiceSoftwareUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartElasticsearchServiceSoftwareUpdateResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::UpdateElasticsearchDomainConfigRequest&, const Model::UpdateElasticsearchDomainConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateElasticsearchDomainConfigResponseReceivedHandler;
     typedef std::function<void(const ElasticsearchServiceClient*, const Model::UpgradeElasticsearchDomainRequest&, const Model::UpgradeElasticsearchDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpgradeElasticsearchDomainResponseReceivedHandler;
 
@@ -247,6 +257,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Cancels a scheduled service software update for an Amazon ES domain. You can
+         * only perform this operation before the <code>AutomatedUpdateDate</code> and when
+         * the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code>
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelElasticsearchServiceSoftwareUpdate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelElasticsearchServiceSoftwareUpdateOutcome CancelElasticsearchServiceSoftwareUpdate(const Model::CancelElasticsearchServiceSoftwareUpdateRequest& request) const;
+
+        /**
+         * <p>Cancels a scheduled service software update for an Amazon ES domain. You can
+         * only perform this operation before the <code>AutomatedUpdateDate</code> and when
+         * the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code>
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelElasticsearchServiceSoftwareUpdate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelElasticsearchServiceSoftwareUpdateOutcomeCallable CancelElasticsearchServiceSoftwareUpdateCallable(const Model::CancelElasticsearchServiceSoftwareUpdateRequest& request) const;
+
+        /**
+         * <p>Cancels a scheduled service software update for an Amazon ES domain. You can
+         * only perform this operation before the <code>AutomatedUpdateDate</code> and when
+         * the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code>
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelElasticsearchServiceSoftwareUpdate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelElasticsearchServiceSoftwareUpdateAsync(const Model::CancelElasticsearchServiceSoftwareUpdateRequest& request, const CancelElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new Elasticsearch domain. For more information, see <a
@@ -784,6 +828,34 @@ namespace Model
         virtual void RemoveTagsAsync(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Schedules a service software update for an Amazon ES domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/StartElasticsearchServiceSoftwareUpdate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartElasticsearchServiceSoftwareUpdateOutcome StartElasticsearchServiceSoftwareUpdate(const Model::StartElasticsearchServiceSoftwareUpdateRequest& request) const;
+
+        /**
+         * <p>Schedules a service software update for an Amazon ES domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/StartElasticsearchServiceSoftwareUpdate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartElasticsearchServiceSoftwareUpdateOutcomeCallable StartElasticsearchServiceSoftwareUpdateCallable(const Model::StartElasticsearchServiceSoftwareUpdateRequest& request) const;
+
+        /**
+         * <p>Schedules a service software update for an Amazon ES domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/StartElasticsearchServiceSoftwareUpdate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartElasticsearchServiceSoftwareUpdateAsync(const Model::StartElasticsearchServiceSoftwareUpdateRequest& request, const StartElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the cluster configuration of the specified Elasticsearch domain,
          * setting as setting the instance type and the number of instances. </p><p><h3>See
          * Also:</h3>   <a
@@ -848,6 +920,7 @@ namespace Model
 
         /**Async helpers**/
         void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelElasticsearchServiceSoftwareUpdateAsyncHelper(const Model::CancelElasticsearchServiceSoftwareUpdateRequest& request, const CancelElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateElasticsearchDomainAsyncHelper(const Model::CreateElasticsearchDomainRequest& request, const CreateElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteElasticsearchDomainAsyncHelper(const Model::DeleteElasticsearchDomainRequest& request, const DeleteElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteElasticsearchServiceRoleAsyncHelper(const DeleteElasticsearchServiceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -866,6 +939,7 @@ namespace Model
         void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseReservedElasticsearchInstanceOfferingAsyncHelper(const Model::PurchaseReservedElasticsearchInstanceOfferingRequest& request, const PurchaseReservedElasticsearchInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartElasticsearchServiceSoftwareUpdateAsyncHelper(const Model::StartElasticsearchServiceSoftwareUpdateRequest& request, const StartElasticsearchServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateElasticsearchDomainConfigAsyncHelper(const Model::UpdateElasticsearchDomainConfigRequest& request, const UpdateElasticsearchDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpgradeElasticsearchDomainAsyncHelper(const Model::UpgradeElasticsearchDomainRequest& request, const UpgradeElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
