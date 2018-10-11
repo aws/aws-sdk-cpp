@@ -35,11 +35,6 @@ namespace DirectConnect
 {
 namespace Model
 {
-  /**
-   * <p>A structure containing a list of LAGs.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Lags">AWS
-   * API Reference</a></p>
-   */
   class AWS_DIRECTCONNECT_API DescribeLagsResult
   {
   public:
@@ -49,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>A list of LAGs.</p>
+     * <p>The LAGs.</p>
      */
     inline const Aws::Vector<Lag>& GetLags() const{ return m_lags; }
 
     /**
-     * <p>A list of LAGs.</p>
+     * <p>The LAGs.</p>
      */
     inline void SetLags(const Aws::Vector<Lag>& value) { m_lags = value; }
 
     /**
-     * <p>A list of LAGs.</p>
+     * <p>The LAGs.</p>
      */
     inline void SetLags(Aws::Vector<Lag>&& value) { m_lags = std::move(value); }
 
     /**
-     * <p>A list of LAGs.</p>
+     * <p>The LAGs.</p>
      */
     inline DescribeLagsResult& WithLags(const Aws::Vector<Lag>& value) { SetLags(value); return *this;}
 
     /**
-     * <p>A list of LAGs.</p>
+     * <p>The LAGs.</p>
      */
     inline DescribeLagsResult& WithLags(Aws::Vector<Lag>&& value) { SetLags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of LAGs.</p>
+     * <p>The LAGs.</p>
      */
     inline DescribeLagsResult& AddLags(const Lag& value) { m_lags.push_back(value); return *this; }
 
     /**
-     * <p>A list of LAGs.</p>
+     * <p>The LAGs.</p>
      */
     inline DescribeLagsResult& AddLags(Lag&& value) { m_lags.push_back(std::move(value)); return *this; }
 

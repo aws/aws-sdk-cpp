@@ -29,10 +29,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the TagResource operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/TagResourceRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API TagResourceRequest : public DirectConnectRequest
   {
@@ -51,87 +47,73 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
-     * <p>Example:
-     * arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
-     * <p>Example:
-     * arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
-     * <p>Example:
-     * arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
-     * <p>Example:
-     * arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
-     * <p>Example:
-     * arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline TagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
-     * <p>Example:
-     * arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline TagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
-     * <p>Example:
-     * arn:aws:directconnect:us-east-1:123456789012:dxcon/dxcon-fg5678gh</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
 
     /**
-     * <p>The list of tags to add.</p>
+     * <p>The tags to add.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The list of tags to add.</p>
+     * <p>The tags to add.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The list of tags to add.</p>
+     * <p>The tags to add.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The list of tags to add.</p>
+     * <p>The tags to add.</p>
      */
     inline TagResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The list of tags to add.</p>
+     * <p>The tags to add.</p>
      */
     inline TagResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The list of tags to add.</p>
+     * <p>The tags to add.</p>
      */
     inline TagResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The list of tags to add.</p>
+     * <p>The tags to add.</p>
      */
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

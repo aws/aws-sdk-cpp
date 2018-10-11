@@ -45,7 +45,9 @@ Lag::Lag() :
     m_awsDeviceV2HasBeenSet(false),
     m_connectionsHasBeenSet(false),
     m_allowsHostedConnections(false),
-    m_allowsHostedConnectionsHasBeenSet(false)
+    m_allowsHostedConnectionsHasBeenSet(false),
+    m_jumboFrameCapable(false),
+    m_jumboFrameCapableHasBeenSet(false)
 {
 }
 
@@ -66,7 +68,9 @@ Lag::Lag(JsonView jsonValue) :
     m_awsDeviceV2HasBeenSet(false),
     m_connectionsHasBeenSet(false),
     m_allowsHostedConnections(false),
-    m_allowsHostedConnectionsHasBeenSet(false)
+    m_allowsHostedConnectionsHasBeenSet(false),
+    m_jumboFrameCapable(false),
+    m_jumboFrameCapableHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -167,6 +171,13 @@ Lag& Lag::operator =(JsonView jsonValue)
     m_allowsHostedConnectionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("jumboFrameCapable"))
+  {
+    m_jumboFrameCapable = jsonValue.GetBool("jumboFrameCapable");
+
+    m_jumboFrameCapableHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -253,6 +264,12 @@ JsonValue Lag::Jsonize() const
   if(m_allowsHostedConnectionsHasBeenSet)
   {
    payload.WithBool("allowsHostedConnections", m_allowsHostedConnections);
+
+  }
+
+  if(m_jumboFrameCapableHasBeenSet)
+  {
+   payload.WithBool("jumboFrameCapable", m_jumboFrameCapable);
 
   }
 

@@ -33,7 +33,8 @@ namespace Model
 
   /**
    * <p>The amount of data scanned during the query execution and the amount of time
-   * that it took to execute.</p><p><h3>See Also:</h3>   <a
+   * that it took to execute, and the type of statement that was run.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryExecutionStatistics">AWS
    * API Reference</a></p>
    */

@@ -34,6 +34,8 @@ NewPrivateVirtualInterfaceAllocation::NewPrivateVirtualInterfaceAllocation() :
     m_vlanHasBeenSet(false),
     m_asn(0),
     m_asnHasBeenSet(false),
+    m_mtu(0),
+    m_mtuHasBeenSet(false),
     m_authKeyHasBeenSet(false),
     m_amazonAddressHasBeenSet(false),
     m_addressFamily(AddressFamily::NOT_SET),
@@ -48,6 +50,8 @@ NewPrivateVirtualInterfaceAllocation::NewPrivateVirtualInterfaceAllocation(JsonV
     m_vlanHasBeenSet(false),
     m_asn(0),
     m_asnHasBeenSet(false),
+    m_mtu(0),
+    m_mtuHasBeenSet(false),
     m_authKeyHasBeenSet(false),
     m_amazonAddressHasBeenSet(false),
     m_addressFamily(AddressFamily::NOT_SET),
@@ -78,6 +82,13 @@ NewPrivateVirtualInterfaceAllocation& NewPrivateVirtualInterfaceAllocation::oper
     m_asn = jsonValue.GetInteger("asn");
 
     m_asnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mtu"))
+  {
+    m_mtu = jsonValue.GetInteger("mtu");
+
+    m_mtuHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("authKey"))
@@ -130,6 +141,12 @@ JsonValue NewPrivateVirtualInterfaceAllocation::Jsonize() const
   if(m_asnHasBeenSet)
   {
    payload.WithInteger("asn", m_asn);
+
+  }
+
+  if(m_mtuHasBeenSet)
+  {
+   payload.WithInteger("mtu", m_mtu);
 
   }
 

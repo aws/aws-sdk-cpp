@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the DescribeHostedConnections
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeHostedConnectionsRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API DescribeHostedConnectionsRequest : public DirectConnectRequest
   {
@@ -49,51 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the interconnect or LAG on which the hosted connections are
-     * provisioned.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the interconnect or LAG.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
     /**
-     * <p>The ID of the interconnect or LAG on which the hosted connections are
-     * provisioned.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the interconnect or LAG.</p>
      */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
-     * <p>The ID of the interconnect or LAG on which the hosted connections are
-     * provisioned.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the interconnect or LAG.</p>
      */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
-     * <p>The ID of the interconnect or LAG on which the hosted connections are
-     * provisioned.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the interconnect or LAG.</p>
      */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
 
     /**
-     * <p>The ID of the interconnect or LAG on which the hosted connections are
-     * provisioned.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the interconnect or LAG.</p>
      */
     inline DescribeHostedConnectionsRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the interconnect or LAG on which the hosted connections are
-     * provisioned.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the interconnect or LAG.</p>
      */
     inline DescribeHostedConnectionsRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the interconnect or LAG on which the hosted connections are
-     * provisioned.</p> <p>Example: dxcon-abc123 or dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the interconnect or LAG.</p>
      */
     inline DescribeHostedConnectionsRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 

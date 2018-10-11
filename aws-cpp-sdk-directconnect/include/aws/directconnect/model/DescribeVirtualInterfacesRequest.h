@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the DescribeVirtualInterfaces
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeVirtualInterfacesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API DescribeVirtualInterfacesRequest : public DirectConnectRequest
   {
@@ -48,47 +44,75 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The ID of the connection.</p>
+     */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
-    
+    /**
+     * <p>The ID of the connection.</p>
+     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
-    
+    /**
+     * <p>The ID of the connection.</p>
+     */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the connection.</p>
+     */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the connection.</p>
+     */
     inline DescribeVirtualInterfacesRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the connection.</p>
+     */
     inline DescribeVirtualInterfacesRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the connection.</p>
+     */
     inline DescribeVirtualInterfacesRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline const Aws::String& GetVirtualInterfaceId() const{ return m_virtualInterfaceId; }
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline void SetVirtualInterfaceId(const char* value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline DescribeVirtualInterfacesRequest& WithVirtualInterfaceId(const Aws::String& value) { SetVirtualInterfaceId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline DescribeVirtualInterfacesRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline DescribeVirtualInterfacesRequest& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
 
   private:

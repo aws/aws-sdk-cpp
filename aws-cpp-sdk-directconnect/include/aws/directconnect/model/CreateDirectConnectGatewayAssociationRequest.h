@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the CreateDirectConnectGatewayAssociation
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayAssociationRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API CreateDirectConnectGatewayAssociationRequest : public DirectConnectRequest
   {
@@ -49,87 +45,73 @@ namespace Model
 
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
 
 
     /**
-     * <p>The ID of the virtual private gateway.</p> <p>Example: "vgw-abc123ef"</p>
-     * <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline const Aws::String& GetVirtualGatewayId() const{ return m_virtualGatewayId; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p> <p>Example: "vgw-abc123ef"</p>
-     * <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline void SetVirtualGatewayId(const Aws::String& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = value; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p> <p>Example: "vgw-abc123ef"</p>
-     * <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline void SetVirtualGatewayId(Aws::String&& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the virtual private gateway.</p> <p>Example: "vgw-abc123ef"</p>
-     * <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline void SetVirtualGatewayId(const char* value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the virtual private gateway.</p> <p>Example: "vgw-abc123ef"</p>
-     * <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& WithVirtualGatewayId(const Aws::String& value) { SetVirtualGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway.</p> <p>Example: "vgw-abc123ef"</p>
-     * <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& WithVirtualGatewayId(Aws::String&& value) { SetVirtualGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway.</p> <p>Example: "vgw-abc123ef"</p>
-     * <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline CreateDirectConnectGatewayAssociationRequest& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
 

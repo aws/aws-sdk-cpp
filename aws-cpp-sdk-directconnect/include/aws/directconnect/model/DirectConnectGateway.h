@@ -35,9 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>A direct connect gateway is an intermediate object that enables you to
-   * connect virtual interfaces and virtual private gateways.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about a Direct Connect gateway, which enables you to connect
+   * virtual interfaces and virtual private gateways.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DirectConnectGateway">AWS
    * API Reference</a></p>
    */
@@ -50,47 +49,75 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The ID of the Direct Connect gateway.</p>
+     */
     inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
 
-    
+    /**
+     * <p>The ID of the Direct Connect gateway.</p>
+     */
     inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
 
-    
+    /**
+     * <p>The ID of the Direct Connect gateway.</p>
+     */
     inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the Direct Connect gateway.</p>
+     */
     inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the Direct Connect gateway.</p>
+     */
     inline DirectConnectGateway& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the Direct Connect gateway.</p>
+     */
     inline DirectConnectGateway& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the Direct Connect gateway.</p>
+     */
     inline DirectConnectGateway& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
 
 
-    
+    /**
+     * <p>The name of the Direct Connect gateway.</p>
+     */
     inline const Aws::String& GetDirectConnectGatewayName() const{ return m_directConnectGatewayName; }
 
-    
+    /**
+     * <p>The name of the Direct Connect gateway.</p>
+     */
     inline void SetDirectConnectGatewayName(const Aws::String& value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName = value; }
 
-    
+    /**
+     * <p>The name of the Direct Connect gateway.</p>
+     */
     inline void SetDirectConnectGatewayName(Aws::String&& value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName = std::move(value); }
 
-    
+    /**
+     * <p>The name of the Direct Connect gateway.</p>
+     */
     inline void SetDirectConnectGatewayName(const char* value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName.assign(value); }
 
-    
+    /**
+     * <p>The name of the Direct Connect gateway.</p>
+     */
     inline DirectConnectGateway& WithDirectConnectGatewayName(const Aws::String& value) { SetDirectConnectGatewayName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the Direct Connect gateway.</p>
+     */
     inline DirectConnectGateway& WithDirectConnectGatewayName(Aws::String&& value) { SetDirectConnectGatewayName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the Direct Connect gateway.</p>
+     */
     inline DirectConnectGateway& WithDirectConnectGatewayName(const char* value) { SetDirectConnectGatewayName(value); return *this;}
 
 
@@ -111,76 +138,130 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the direct connect gateway.</p>
+     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The AWS account ID of the owner of the direct connect gateway.</p>
+     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the direct connect gateway.</p>
+     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the direct connect gateway.</p>
+     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the direct connect gateway.</p>
+     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
      */
     inline DirectConnectGateway& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the direct connect gateway.</p>
+     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
      */
     inline DirectConnectGateway& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the direct connect gateway.</p>
+     * <p>The ID of the AWS account that owns the Direct Connect gateway.</p>
      */
     inline DirectConnectGateway& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
 
-    
+    /**
+     * <p>The state of the Direct Connect gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: The initial state after calling
+     * <a>CreateDirectConnectGateway</a>.</p> </li> <li> <p> <code>available</code>:
+     * The Direct Connect gateway is ready for use.</p> </li> <li> <p>
+     * <code>deleting</code>: The initial state after calling
+     * <a>DeleteDirectConnectGateway</a>.</p> </li> <li> <p> <code>deleted</code>: The
+     * Direct Connect gateway is deleted and cannot pass traffic.</p> </li> </ul>
+     */
     inline const DirectConnectGatewayState& GetDirectConnectGatewayState() const{ return m_directConnectGatewayState; }
 
-    
+    /**
+     * <p>The state of the Direct Connect gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: The initial state after calling
+     * <a>CreateDirectConnectGateway</a>.</p> </li> <li> <p> <code>available</code>:
+     * The Direct Connect gateway is ready for use.</p> </li> <li> <p>
+     * <code>deleting</code>: The initial state after calling
+     * <a>DeleteDirectConnectGateway</a>.</p> </li> <li> <p> <code>deleted</code>: The
+     * Direct Connect gateway is deleted and cannot pass traffic.</p> </li> </ul>
+     */
     inline void SetDirectConnectGatewayState(const DirectConnectGatewayState& value) { m_directConnectGatewayStateHasBeenSet = true; m_directConnectGatewayState = value; }
 
-    
+    /**
+     * <p>The state of the Direct Connect gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: The initial state after calling
+     * <a>CreateDirectConnectGateway</a>.</p> </li> <li> <p> <code>available</code>:
+     * The Direct Connect gateway is ready for use.</p> </li> <li> <p>
+     * <code>deleting</code>: The initial state after calling
+     * <a>DeleteDirectConnectGateway</a>.</p> </li> <li> <p> <code>deleted</code>: The
+     * Direct Connect gateway is deleted and cannot pass traffic.</p> </li> </ul>
+     */
     inline void SetDirectConnectGatewayState(DirectConnectGatewayState&& value) { m_directConnectGatewayStateHasBeenSet = true; m_directConnectGatewayState = std::move(value); }
 
-    
+    /**
+     * <p>The state of the Direct Connect gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: The initial state after calling
+     * <a>CreateDirectConnectGateway</a>.</p> </li> <li> <p> <code>available</code>:
+     * The Direct Connect gateway is ready for use.</p> </li> <li> <p>
+     * <code>deleting</code>: The initial state after calling
+     * <a>DeleteDirectConnectGateway</a>.</p> </li> <li> <p> <code>deleted</code>: The
+     * Direct Connect gateway is deleted and cannot pass traffic.</p> </li> </ul>
+     */
     inline DirectConnectGateway& WithDirectConnectGatewayState(const DirectConnectGatewayState& value) { SetDirectConnectGatewayState(value); return *this;}
 
-    
+    /**
+     * <p>The state of the Direct Connect gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: The initial state after calling
+     * <a>CreateDirectConnectGateway</a>.</p> </li> <li> <p> <code>available</code>:
+     * The Direct Connect gateway is ready for use.</p> </li> <li> <p>
+     * <code>deleting</code>: The initial state after calling
+     * <a>DeleteDirectConnectGateway</a>.</p> </li> <li> <p> <code>deleted</code>: The
+     * Direct Connect gateway is deleted and cannot pass traffic.</p> </li> </ul>
+     */
     inline DirectConnectGateway& WithDirectConnectGatewayState(DirectConnectGatewayState&& value) { SetDirectConnectGatewayState(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The error message if the state of an object failed to advance.</p>
+     */
     inline const Aws::String& GetStateChangeError() const{ return m_stateChangeError; }
 
-    
+    /**
+     * <p>The error message if the state of an object failed to advance.</p>
+     */
     inline void SetStateChangeError(const Aws::String& value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError = value; }
 
-    
+    /**
+     * <p>The error message if the state of an object failed to advance.</p>
+     */
     inline void SetStateChangeError(Aws::String&& value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError = std::move(value); }
 
-    
+    /**
+     * <p>The error message if the state of an object failed to advance.</p>
+     */
     inline void SetStateChangeError(const char* value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError.assign(value); }
 
-    
+    /**
+     * <p>The error message if the state of an object failed to advance.</p>
+     */
     inline DirectConnectGateway& WithStateChangeError(const Aws::String& value) { SetStateChangeError(value); return *this;}
 
-    
+    /**
+     * <p>The error message if the state of an object failed to advance.</p>
+     */
     inline DirectConnectGateway& WithStateChangeError(Aws::String&& value) { SetStateChangeError(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The error message if the state of an object failed to advance.</p>
+     */
     inline DirectConnectGateway& WithStateChangeError(const char* value) { SetStateChangeError(value); return *this;}
 
   private:

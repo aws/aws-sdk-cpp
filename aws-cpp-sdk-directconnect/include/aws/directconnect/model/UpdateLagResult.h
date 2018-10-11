@@ -38,11 +38,8 @@ namespace DirectConnect
 namespace Model
 {
   /**
-   * <p>Describes a link aggregation group (LAG). A LAG is a connection that uses the
-   * Link Aggregation Control Protocol (LACP) to logically aggregate a bundle of
-   * physical connections. Like an interconnect, it can host other connections. All
-   * connections in a LAG must terminate on the same physical AWS Direct Connect
-   * endpoint, and must be the same bandwidth.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a link aggregation group (LAG).</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Lag">AWS
    * API Reference</a></p>
    */
@@ -55,44 +52,44 @@ namespace Model
 
 
     /**
-     * <p>The individual bandwidth of the physical connections bundled by the LAG.</p>
-     * <p>Available values: 1Gbps, 10Gbps</p>
+     * <p>The individual bandwidth of the physical connections bundled by the LAG. The
+     * possible values are 1Gbps and 10Gbps.</p>
      */
     inline const Aws::String& GetConnectionsBandwidth() const{ return m_connectionsBandwidth; }
 
     /**
-     * <p>The individual bandwidth of the physical connections bundled by the LAG.</p>
-     * <p>Available values: 1Gbps, 10Gbps</p>
+     * <p>The individual bandwidth of the physical connections bundled by the LAG. The
+     * possible values are 1Gbps and 10Gbps.</p>
      */
     inline void SetConnectionsBandwidth(const Aws::String& value) { m_connectionsBandwidth = value; }
 
     /**
-     * <p>The individual bandwidth of the physical connections bundled by the LAG.</p>
-     * <p>Available values: 1Gbps, 10Gbps</p>
+     * <p>The individual bandwidth of the physical connections bundled by the LAG. The
+     * possible values are 1Gbps and 10Gbps.</p>
      */
     inline void SetConnectionsBandwidth(Aws::String&& value) { m_connectionsBandwidth = std::move(value); }
 
     /**
-     * <p>The individual bandwidth of the physical connections bundled by the LAG.</p>
-     * <p>Available values: 1Gbps, 10Gbps</p>
+     * <p>The individual bandwidth of the physical connections bundled by the LAG. The
+     * possible values are 1Gbps and 10Gbps.</p>
      */
     inline void SetConnectionsBandwidth(const char* value) { m_connectionsBandwidth.assign(value); }
 
     /**
-     * <p>The individual bandwidth of the physical connections bundled by the LAG.</p>
-     * <p>Available values: 1Gbps, 10Gbps</p>
+     * <p>The individual bandwidth of the physical connections bundled by the LAG. The
+     * possible values are 1Gbps and 10Gbps.</p>
      */
     inline UpdateLagResult& WithConnectionsBandwidth(const Aws::String& value) { SetConnectionsBandwidth(value); return *this;}
 
     /**
-     * <p>The individual bandwidth of the physical connections bundled by the LAG.</p>
-     * <p>Available values: 1Gbps, 10Gbps</p>
+     * <p>The individual bandwidth of the physical connections bundled by the LAG. The
+     * possible values are 1Gbps and 10Gbps.</p>
      */
     inline UpdateLagResult& WithConnectionsBandwidth(Aws::String&& value) { SetConnectionsBandwidth(std::move(value)); return *this;}
 
     /**
-     * <p>The individual bandwidth of the physical connections bundled by the LAG.</p>
-     * <p>Available values: 1Gbps, 10Gbps</p>
+     * <p>The individual bandwidth of the physical connections bundled by the LAG. The
+     * possible values are 1Gbps and 10Gbps.</p>
      */
     inline UpdateLagResult& WithConnectionsBandwidth(const char* value) { SetConnectionsBandwidth(value); return *this;}
 
@@ -116,60 +113,74 @@ namespace Model
     inline UpdateLagResult& WithNumberOfConnections(int value) { SetNumberOfConnections(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline const Aws::String& GetLagId() const{ return m_lagId; }
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline void SetLagId(const Aws::String& value) { m_lagId = value; }
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline void SetLagId(Aws::String&& value) { m_lagId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline void SetLagId(const char* value) { m_lagId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline UpdateLagResult& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline UpdateLagResult& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline UpdateLagResult& WithLagId(const char* value) { SetLagId(value); return *this;}
 
 
     /**
-     * <p>The owner of the LAG.</p>
+     * <p>The ID of the AWS account that owns the LAG.</p>
      */
     inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
 
     /**
-     * <p>The owner of the LAG.</p>
+     * <p>The ID of the AWS account that owns the LAG.</p>
      */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccount = value; }
 
     /**
-     * <p>The owner of the LAG.</p>
+     * <p>The ID of the AWS account that owns the LAG.</p>
      */
     inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccount = std::move(value); }
 
     /**
-     * <p>The owner of the LAG.</p>
+     * <p>The ID of the AWS account that owns the LAG.</p>
      */
     inline void SetOwnerAccount(const char* value) { m_ownerAccount.assign(value); }
 
     /**
-     * <p>The owner of the LAG.</p>
+     * <p>The ID of the AWS account that owns the LAG.</p>
      */
     inline UpdateLagResult& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
 
     /**
-     * <p>The owner of the LAG.</p>
+     * <p>The ID of the AWS account that owns the LAG.</p>
      */
     inline UpdateLagResult& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The owner of the LAG.</p>
+     * <p>The ID of the AWS account that owns the LAG.</p>
      */
     inline UpdateLagResult& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
 
@@ -210,226 +221,301 @@ namespace Model
     inline UpdateLagResult& WithLagName(const char* value) { SetLagName(value); return *this;}
 
 
-    
+    /**
+     * <p>The state of the LAG. The following are the possible values:</p> <ul> <li>
+     * <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the
+     * requested state until the Letter of Authorization (LOA) is available.</p> </li>
+     * <li> <p> <code>pending</code>: The LAG has been approved and is being
+     * initialized.</p> </li> <li> <p> <code>available</code>: The network link is
+     * established and the LAG is ready for use.</p> </li> <li> <p> <code>down</code>:
+     * The network link is down.</p> </li> <li> <p> <code>deleting</code>: The LAG is
+     * being deleted.</p> </li> <li> <p> <code>deleted</code>: The LAG is deleted.</p>
+     * </li> </ul>
+     */
     inline const LagState& GetLagState() const{ return m_lagState; }
 
-    
+    /**
+     * <p>The state of the LAG. The following are the possible values:</p> <ul> <li>
+     * <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the
+     * requested state until the Letter of Authorization (LOA) is available.</p> </li>
+     * <li> <p> <code>pending</code>: The LAG has been approved and is being
+     * initialized.</p> </li> <li> <p> <code>available</code>: The network link is
+     * established and the LAG is ready for use.</p> </li> <li> <p> <code>down</code>:
+     * The network link is down.</p> </li> <li> <p> <code>deleting</code>: The LAG is
+     * being deleted.</p> </li> <li> <p> <code>deleted</code>: The LAG is deleted.</p>
+     * </li> </ul>
+     */
     inline void SetLagState(const LagState& value) { m_lagState = value; }
 
-    
+    /**
+     * <p>The state of the LAG. The following are the possible values:</p> <ul> <li>
+     * <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the
+     * requested state until the Letter of Authorization (LOA) is available.</p> </li>
+     * <li> <p> <code>pending</code>: The LAG has been approved and is being
+     * initialized.</p> </li> <li> <p> <code>available</code>: The network link is
+     * established and the LAG is ready for use.</p> </li> <li> <p> <code>down</code>:
+     * The network link is down.</p> </li> <li> <p> <code>deleting</code>: The LAG is
+     * being deleted.</p> </li> <li> <p> <code>deleted</code>: The LAG is deleted.</p>
+     * </li> </ul>
+     */
     inline void SetLagState(LagState&& value) { m_lagState = std::move(value); }
 
-    
+    /**
+     * <p>The state of the LAG. The following are the possible values:</p> <ul> <li>
+     * <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the
+     * requested state until the Letter of Authorization (LOA) is available.</p> </li>
+     * <li> <p> <code>pending</code>: The LAG has been approved and is being
+     * initialized.</p> </li> <li> <p> <code>available</code>: The network link is
+     * established and the LAG is ready for use.</p> </li> <li> <p> <code>down</code>:
+     * The network link is down.</p> </li> <li> <p> <code>deleting</code>: The LAG is
+     * being deleted.</p> </li> <li> <p> <code>deleted</code>: The LAG is deleted.</p>
+     * </li> </ul>
+     */
     inline UpdateLagResult& WithLagState(const LagState& value) { SetLagState(value); return *this;}
 
-    
+    /**
+     * <p>The state of the LAG. The following are the possible values:</p> <ul> <li>
+     * <p> <code>requested</code>: The initial state of a LAG. The LAG stays in the
+     * requested state until the Letter of Authorization (LOA) is available.</p> </li>
+     * <li> <p> <code>pending</code>: The LAG has been approved and is being
+     * initialized.</p> </li> <li> <p> <code>available</code>: The network link is
+     * established and the LAG is ready for use.</p> </li> <li> <p> <code>down</code>:
+     * The network link is down.</p> </li> <li> <p> <code>deleting</code>: The LAG is
+     * being deleted.</p> </li> <li> <p> <code>deleted</code>: The LAG is deleted.</p>
+     * </li> </ul>
+     */
     inline UpdateLagResult& WithLagState(LagState&& value) { SetLagState(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The location of the LAG.</p>
+     */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
-    
+    /**
+     * <p>The location of the LAG.</p>
+     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
-    
+    /**
+     * <p>The location of the LAG.</p>
+     */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
-    
+    /**
+     * <p>The location of the LAG.</p>
+     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
 
-    
+    /**
+     * <p>The location of the LAG.</p>
+     */
     inline UpdateLagResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
-    
+    /**
+     * <p>The location of the LAG.</p>
+     */
     inline UpdateLagResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The location of the LAG.</p>
+     */
     inline UpdateLagResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
 
-    
+    /**
+     * <p>The AWS Region where the connection is located.</p>
+     */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
-    
+    /**
+     * <p>The AWS Region where the connection is located.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_region = value; }
 
-    
+    /**
+     * <p>The AWS Region where the connection is located.</p>
+     */
     inline void SetRegion(Aws::String&& value) { m_region = std::move(value); }
 
-    
+    /**
+     * <p>The AWS Region where the connection is located.</p>
+     */
     inline void SetRegion(const char* value) { m_region.assign(value); }
 
-    
+    /**
+     * <p>The AWS Region where the connection is located.</p>
+     */
     inline UpdateLagResult& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
-    
+    /**
+     * <p>The AWS Region where the connection is located.</p>
+     */
     inline UpdateLagResult& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The AWS Region where the connection is located.</p>
+     */
     inline UpdateLagResult& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
      * <p>The minimum number of physical connections that must be operational for the
-     * LAG itself to be operational. If the number of operational connections drops
-     * below this setting, the LAG state changes to <code>down</code>. This value can
-     * help to ensure that a LAG is not overutilized if a significant number of its
-     * bundled connections go down.</p>
+     * LAG itself to be operational.</p>
      */
     inline int GetMinimumLinks() const{ return m_minimumLinks; }
 
     /**
      * <p>The minimum number of physical connections that must be operational for the
-     * LAG itself to be operational. If the number of operational connections drops
-     * below this setting, the LAG state changes to <code>down</code>. This value can
-     * help to ensure that a LAG is not overutilized if a significant number of its
-     * bundled connections go down.</p>
+     * LAG itself to be operational.</p>
      */
     inline void SetMinimumLinks(int value) { m_minimumLinks = value; }
 
     /**
      * <p>The minimum number of physical connections that must be operational for the
-     * LAG itself to be operational. If the number of operational connections drops
-     * below this setting, the LAG state changes to <code>down</code>. This value can
-     * help to ensure that a LAG is not overutilized if a significant number of its
-     * bundled connections go down.</p>
+     * LAG itself to be operational.</p>
      */
     inline UpdateLagResult& WithMinimumLinks(int value) { SetMinimumLinks(value); return *this;}
 
 
     /**
-     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
-     * that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline const Aws::String& GetAwsDevice() const{ return m_awsDevice; }
 
     /**
-     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
-     * that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDevice(const Aws::String& value) { m_awsDevice = value; }
 
     /**
-     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
-     * that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDevice(Aws::String&& value) { m_awsDevice = std::move(value); }
 
     /**
-     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
-     * that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDevice(const char* value) { m_awsDevice.assign(value); }
 
     /**
-     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
-     * that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline UpdateLagResult& WithAwsDevice(const Aws::String& value) { SetAwsDevice(value); return *this;}
 
     /**
-     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
-     * that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline UpdateLagResult& WithAwsDevice(Aws::String&& value) { SetAwsDevice(std::move(value)); return *this;}
 
     /**
-     * <p>Deprecated in favor of awsDeviceV2.</p> <p>The AWS Direct Connection endpoint
-     * that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline UpdateLagResult& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
 
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDeviceV2(const Aws::String& value) { m_awsDeviceV2 = value; }
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDeviceV2(Aws::String&& value) { m_awsDeviceV2 = std::move(value); }
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline void SetAwsDeviceV2(const char* value) { m_awsDeviceV2.assign(value); }
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline UpdateLagResult& WithAwsDeviceV2(const Aws::String& value) { SetAwsDeviceV2(value); return *this;}
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline UpdateLagResult& WithAwsDeviceV2(Aws::String&& value) { SetAwsDeviceV2(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Direct Connection endpoint that hosts the LAG.</p>
+     * <p>The Direct Connect endpoint that hosts the LAG.</p>
      */
     inline UpdateLagResult& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
 
 
     /**
-     * <p>A list of connections bundled by this LAG.</p>
+     * <p>The connections bundled by the LAG.</p>
      */
     inline const Aws::Vector<Connection>& GetConnections() const{ return m_connections; }
 
     /**
-     * <p>A list of connections bundled by this LAG.</p>
+     * <p>The connections bundled by the LAG.</p>
      */
     inline void SetConnections(const Aws::Vector<Connection>& value) { m_connections = value; }
 
     /**
-     * <p>A list of connections bundled by this LAG.</p>
+     * <p>The connections bundled by the LAG.</p>
      */
     inline void SetConnections(Aws::Vector<Connection>&& value) { m_connections = std::move(value); }
 
     /**
-     * <p>A list of connections bundled by this LAG.</p>
+     * <p>The connections bundled by the LAG.</p>
      */
     inline UpdateLagResult& WithConnections(const Aws::Vector<Connection>& value) { SetConnections(value); return *this;}
 
     /**
-     * <p>A list of connections bundled by this LAG.</p>
+     * <p>The connections bundled by the LAG.</p>
      */
     inline UpdateLagResult& WithConnections(Aws::Vector<Connection>&& value) { SetConnections(std::move(value)); return *this;}
 
     /**
-     * <p>A list of connections bundled by this LAG.</p>
+     * <p>The connections bundled by the LAG.</p>
      */
     inline UpdateLagResult& AddConnections(const Connection& value) { m_connections.push_back(value); return *this; }
 
     /**
-     * <p>A list of connections bundled by this LAG.</p>
+     * <p>The connections bundled by the LAG.</p>
      */
     inline UpdateLagResult& AddConnections(Connection&& value) { m_connections.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Indicates whether the LAG can host other connections.</p> <note> <p>This is
-     * intended for use by AWS Direct Connect partners only.</p> </note>
+     * <p>Indicates whether the LAG can host other connections.</p>
      */
     inline bool GetAllowsHostedConnections() const{ return m_allowsHostedConnections; }
 
     /**
-     * <p>Indicates whether the LAG can host other connections.</p> <note> <p>This is
-     * intended for use by AWS Direct Connect partners only.</p> </note>
+     * <p>Indicates whether the LAG can host other connections.</p>
      */
     inline void SetAllowsHostedConnections(bool value) { m_allowsHostedConnections = value; }
 
     /**
-     * <p>Indicates whether the LAG can host other connections.</p> <note> <p>This is
-     * intended for use by AWS Direct Connect partners only.</p> </note>
+     * <p>Indicates whether the LAG can host other connections.</p>
      */
     inline UpdateLagResult& WithAllowsHostedConnections(bool value) { SetAllowsHostedConnections(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+     */
+    inline bool GetJumboFrameCapable() const{ return m_jumboFrameCapable; }
+
+    /**
+     * <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+     */
+    inline void SetJumboFrameCapable(bool value) { m_jumboFrameCapable = value; }
+
+    /**
+     * <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+     */
+    inline UpdateLagResult& WithJumboFrameCapable(bool value) { SetJumboFrameCapable(value); return *this;}
 
   private:
 
@@ -458,6 +544,8 @@ namespace Model
     Aws::Vector<Connection> m_connections;
 
     bool m_allowsHostedConnections;
+
+    bool m_jumboFrameCapable;
   };
 
 } // namespace Model

@@ -37,8 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>A structure containing information about a new public virtual
-   * interface.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a public virtual interface.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/NewPublicVirtualInterface">AWS
    * API Reference</a></p>
    */
@@ -51,149 +50,251 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The name of the virtual interface assigned by the customer network.</p>
+     */
     inline const Aws::String& GetVirtualInterfaceName() const{ return m_virtualInterfaceName; }
 
-    
+    /**
+     * <p>The name of the virtual interface assigned by the customer network.</p>
+     */
     inline void SetVirtualInterfaceName(const Aws::String& value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName = value; }
 
-    
+    /**
+     * <p>The name of the virtual interface assigned by the customer network.</p>
+     */
     inline void SetVirtualInterfaceName(Aws::String&& value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName = std::move(value); }
 
-    
+    /**
+     * <p>The name of the virtual interface assigned by the customer network.</p>
+     */
     inline void SetVirtualInterfaceName(const char* value) { m_virtualInterfaceNameHasBeenSet = true; m_virtualInterfaceName.assign(value); }
 
-    
+    /**
+     * <p>The name of the virtual interface assigned by the customer network.</p>
+     */
     inline NewPublicVirtualInterface& WithVirtualInterfaceName(const Aws::String& value) { SetVirtualInterfaceName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the virtual interface assigned by the customer network.</p>
+     */
     inline NewPublicVirtualInterface& WithVirtualInterfaceName(Aws::String&& value) { SetVirtualInterfaceName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the virtual interface assigned by the customer network.</p>
+     */
     inline NewPublicVirtualInterface& WithVirtualInterfaceName(const char* value) { SetVirtualInterfaceName(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the VLAN.</p>
+     */
     inline int GetVlan() const{ return m_vlan; }
 
-    
+    /**
+     * <p>The ID of the VLAN.</p>
+     */
     inline void SetVlan(int value) { m_vlanHasBeenSet = true; m_vlan = value; }
 
-    
+    /**
+     * <p>The ID of the VLAN.</p>
+     */
     inline NewPublicVirtualInterface& WithVlan(int value) { SetVlan(value); return *this;}
 
 
-    
+    /**
+     * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
+     * configuration.</p>
+     */
     inline int GetAsn() const{ return m_asn; }
 
-    
+    /**
+     * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
+     * configuration.</p>
+     */
     inline void SetAsn(int value) { m_asnHasBeenSet = true; m_asn = value; }
 
-    
+    /**
+     * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
+     * configuration.</p>
+     */
     inline NewPublicVirtualInterface& WithAsn(int value) { SetAsn(value); return *this;}
 
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline const Aws::String& GetAuthKey() const{ return m_authKey; }
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline void SetAuthKey(const Aws::String& value) { m_authKeyHasBeenSet = true; m_authKey = value; }
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline void SetAuthKey(Aws::String&& value) { m_authKeyHasBeenSet = true; m_authKey = std::move(value); }
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline void SetAuthKey(const char* value) { m_authKeyHasBeenSet = true; m_authKey.assign(value); }
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline NewPublicVirtualInterface& WithAuthKey(const Aws::String& value) { SetAuthKey(value); return *this;}
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline NewPublicVirtualInterface& WithAuthKey(Aws::String&& value) { SetAuthKey(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline NewPublicVirtualInterface& WithAuthKey(const char* value) { SetAuthKey(value); return *this;}
 
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline const Aws::String& GetAmazonAddress() const{ return m_amazonAddress; }
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline void SetAmazonAddress(const Aws::String& value) { m_amazonAddressHasBeenSet = true; m_amazonAddress = value; }
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline void SetAmazonAddress(Aws::String&& value) { m_amazonAddressHasBeenSet = true; m_amazonAddress = std::move(value); }
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline void SetAmazonAddress(const char* value) { m_amazonAddressHasBeenSet = true; m_amazonAddress.assign(value); }
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline NewPublicVirtualInterface& WithAmazonAddress(const Aws::String& value) { SetAmazonAddress(value); return *this;}
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline NewPublicVirtualInterface& WithAmazonAddress(Aws::String&& value) { SetAmazonAddress(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline NewPublicVirtualInterface& WithAmazonAddress(const char* value) { SetAmazonAddress(value); return *this;}
 
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline const Aws::String& GetCustomerAddress() const{ return m_customerAddress; }
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline void SetCustomerAddress(const Aws::String& value) { m_customerAddressHasBeenSet = true; m_customerAddress = value; }
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline void SetCustomerAddress(Aws::String&& value) { m_customerAddressHasBeenSet = true; m_customerAddress = std::move(value); }
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline void SetCustomerAddress(const char* value) { m_customerAddressHasBeenSet = true; m_customerAddress.assign(value); }
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline NewPublicVirtualInterface& WithCustomerAddress(const Aws::String& value) { SetCustomerAddress(value); return *this;}
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline NewPublicVirtualInterface& WithCustomerAddress(Aws::String&& value) { SetCustomerAddress(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline NewPublicVirtualInterface& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
 
 
-    
+    /**
+     * <p>The address family for the BGP peer.</p>
+     */
     inline const AddressFamily& GetAddressFamily() const{ return m_addressFamily; }
 
-    
+    /**
+     * <p>The address family for the BGP peer.</p>
+     */
     inline void SetAddressFamily(const AddressFamily& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
 
-    
+    /**
+     * <p>The address family for the BGP peer.</p>
+     */
     inline void SetAddressFamily(AddressFamily&& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = std::move(value); }
 
-    
+    /**
+     * <p>The address family for the BGP peer.</p>
+     */
     inline NewPublicVirtualInterface& WithAddressFamily(const AddressFamily& value) { SetAddressFamily(value); return *this;}
 
-    
+    /**
+     * <p>The address family for the BGP peer.</p>
+     */
     inline NewPublicVirtualInterface& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The routes to be advertised to the AWS network in this Region. Applies to
+     * public virtual interfaces.</p>
+     */
     inline const Aws::Vector<RouteFilterPrefix>& GetRouteFilterPrefixes() const{ return m_routeFilterPrefixes; }
 
-    
+    /**
+     * <p>The routes to be advertised to the AWS network in this Region. Applies to
+     * public virtual interfaces.</p>
+     */
     inline void SetRouteFilterPrefixes(const Aws::Vector<RouteFilterPrefix>& value) { m_routeFilterPrefixesHasBeenSet = true; m_routeFilterPrefixes = value; }
 
-    
+    /**
+     * <p>The routes to be advertised to the AWS network in this Region. Applies to
+     * public virtual interfaces.</p>
+     */
     inline void SetRouteFilterPrefixes(Aws::Vector<RouteFilterPrefix>&& value) { m_routeFilterPrefixesHasBeenSet = true; m_routeFilterPrefixes = std::move(value); }
 
-    
+    /**
+     * <p>The routes to be advertised to the AWS network in this Region. Applies to
+     * public virtual interfaces.</p>
+     */
     inline NewPublicVirtualInterface& WithRouteFilterPrefixes(const Aws::Vector<RouteFilterPrefix>& value) { SetRouteFilterPrefixes(value); return *this;}
 
-    
+    /**
+     * <p>The routes to be advertised to the AWS network in this Region. Applies to
+     * public virtual interfaces.</p>
+     */
     inline NewPublicVirtualInterface& WithRouteFilterPrefixes(Aws::Vector<RouteFilterPrefix>&& value) { SetRouteFilterPrefixes(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The routes to be advertised to the AWS network in this Region. Applies to
+     * public virtual interfaces.</p>
+     */
     inline NewPublicVirtualInterface& AddRouteFilterPrefixes(const RouteFilterPrefix& value) { m_routeFilterPrefixesHasBeenSet = true; m_routeFilterPrefixes.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The routes to be advertised to the AWS network in this Region. Applies to
+     * public virtual interfaces.</p>
+     */
     inline NewPublicVirtualInterface& AddRouteFilterPrefixes(RouteFilterPrefix&& value) { m_routeFilterPrefixesHasBeenSet = true; m_routeFilterPrefixes.push_back(std::move(value)); return *this; }
 
   private:

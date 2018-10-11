@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the ConfirmPrivateVirtualInterface
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmPrivateVirtualInterfaceRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API ConfirmPrivateVirtualInterfaceRequest : public DirectConnectRequest
   {
@@ -48,145 +44,110 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline const Aws::String& GetVirtualInterfaceId() const{ return m_virtualInterfaceId; }
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline void SetVirtualInterfaceId(const char* value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualInterfaceId(const Aws::String& value) { SetVirtualInterfaceId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
 
 
     /**
-     * <p>ID of the virtual private gateway that will be attached to the virtual
-     * interface.</p> <p> A virtual private gateway can be managed via the Amazon
-     * Virtual Private Cloud (VPC) console or the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-     * CreateVpnGateway</a> action.</p> <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline const Aws::String& GetVirtualGatewayId() const{ return m_virtualGatewayId; }
 
     /**
-     * <p>ID of the virtual private gateway that will be attached to the virtual
-     * interface.</p> <p> A virtual private gateway can be managed via the Amazon
-     * Virtual Private Cloud (VPC) console or the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-     * CreateVpnGateway</a> action.</p> <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline void SetVirtualGatewayId(const Aws::String& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = value; }
 
     /**
-     * <p>ID of the virtual private gateway that will be attached to the virtual
-     * interface.</p> <p> A virtual private gateway can be managed via the Amazon
-     * Virtual Private Cloud (VPC) console or the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-     * CreateVpnGateway</a> action.</p> <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline void SetVirtualGatewayId(Aws::String&& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = std::move(value); }
 
     /**
-     * <p>ID of the virtual private gateway that will be attached to the virtual
-     * interface.</p> <p> A virtual private gateway can be managed via the Amazon
-     * Virtual Private Cloud (VPC) console or the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-     * CreateVpnGateway</a> action.</p> <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline void SetVirtualGatewayId(const char* value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId.assign(value); }
 
     /**
-     * <p>ID of the virtual private gateway that will be attached to the virtual
-     * interface.</p> <p> A virtual private gateway can be managed via the Amazon
-     * Virtual Private Cloud (VPC) console or the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-     * CreateVpnGateway</a> action.</p> <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualGatewayId(const Aws::String& value) { SetVirtualGatewayId(value); return *this;}
 
     /**
-     * <p>ID of the virtual private gateway that will be attached to the virtual
-     * interface.</p> <p> A virtual private gateway can be managed via the Amazon
-     * Virtual Private Cloud (VPC) console or the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-     * CreateVpnGateway</a> action.</p> <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualGatewayId(Aws::String&& value) { SetVirtualGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the virtual private gateway that will be attached to the virtual
-     * interface.</p> <p> A virtual private gateway can be managed via the Amazon
-     * Virtual Private Cloud (VPC) console or the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">EC2
-     * CreateVpnGateway</a> action.</p> <p>Default: None</p>
+     * <p>The ID of the virtual private gateway.</p>
      */
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
 
 
     /**
-     * <p>ID of the direct connect gateway that will be attached to the virtual
-     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
-     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
-     * None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
 
     /**
-     * <p>ID of the direct connect gateway that will be attached to the virtual
-     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
-     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
-     * None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
 
     /**
-     * <p>ID of the direct connect gateway that will be attached to the virtual
-     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
-     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
-     * None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
 
     /**
-     * <p>ID of the direct connect gateway that will be attached to the virtual
-     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
-     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
-     * None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
 
     /**
-     * <p>ID of the direct connect gateway that will be attached to the virtual
-     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
-     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
-     * None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline ConfirmPrivateVirtualInterfaceRequest& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
 
     /**
-     * <p>ID of the direct connect gateway that will be attached to the virtual
-     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
-     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
-     * None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline ConfirmPrivateVirtualInterfaceRequest& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the direct connect gateway that will be attached to the virtual
-     * interface.</p> <p> A direct connect gateway can be managed via the AWS Direct
-     * Connect console or the <a>CreateDirectConnectGateway</a> action.</p> <p>Default:
-     * None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline ConfirmPrivateVirtualInterfaceRequest& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
 

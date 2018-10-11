@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the UpdateLag operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateLagRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API UpdateLagRequest : public DirectConnectRequest
   {
@@ -49,106 +45,92 @@ namespace Model
 
 
     /**
-     * <p>The ID of the LAG to update.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline const Aws::String& GetLagId() const{ return m_lagId; }
 
     /**
-     * <p>The ID of the LAG to update.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
 
     /**
-     * <p>The ID of the LAG to update.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
 
     /**
-     * <p>The ID of the LAG to update.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
 
     /**
-     * <p>The ID of the LAG to update.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline UpdateLagRequest& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
 
     /**
-     * <p>The ID of the LAG to update.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline UpdateLagRequest& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the LAG to update.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline UpdateLagRequest& WithLagId(const char* value) { SetLagId(value); return *this;}
 
 
     /**
-     * <p>The name for the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
-     * <p>Default: None</p>
+     * <p>The name of the LAG.</p>
      */
     inline const Aws::String& GetLagName() const{ return m_lagName; }
 
     /**
-     * <p>The name for the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
-     * <p>Default: None</p>
+     * <p>The name of the LAG.</p>
      */
     inline void SetLagName(const Aws::String& value) { m_lagNameHasBeenSet = true; m_lagName = value; }
 
     /**
-     * <p>The name for the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
-     * <p>Default: None</p>
+     * <p>The name of the LAG.</p>
      */
     inline void SetLagName(Aws::String&& value) { m_lagNameHasBeenSet = true; m_lagName = std::move(value); }
 
     /**
-     * <p>The name for the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
-     * <p>Default: None</p>
+     * <p>The name of the LAG.</p>
      */
     inline void SetLagName(const char* value) { m_lagNameHasBeenSet = true; m_lagName.assign(value); }
 
     /**
-     * <p>The name for the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
-     * <p>Default: None</p>
+     * <p>The name of the LAG.</p>
      */
     inline UpdateLagRequest& WithLagName(const Aws::String& value) { SetLagName(value); return *this;}
 
     /**
-     * <p>The name for the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
-     * <p>Default: None</p>
+     * <p>The name of the LAG.</p>
      */
     inline UpdateLagRequest& WithLagName(Aws::String&& value) { SetLagName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the LAG.</p> <p>Example: "<code>3x10G LAG to AWS</code>"</p>
-     * <p>Default: None</p>
+     * <p>The name of the LAG.</p>
      */
     inline UpdateLagRequest& WithLagName(const char* value) { SetLagName(value); return *this;}
 
 
     /**
      * <p>The minimum number of physical connections that must be operational for the
-     * LAG itself to be operational.</p> <p>Default: None</p>
+     * LAG itself to be operational.</p>
      */
     inline int GetMinimumLinks() const{ return m_minimumLinks; }
 
     /**
      * <p>The minimum number of physical connections that must be operational for the
-     * LAG itself to be operational.</p> <p>Default: None</p>
+     * LAG itself to be operational.</p>
      */
     inline void SetMinimumLinks(int value) { m_minimumLinksHasBeenSet = true; m_minimumLinks = value; }
 
     /**
      * <p>The minimum number of physical connections that must be operational for the
-     * LAG itself to be operational.</p> <p>Default: None</p>
+     * LAG itself to be operational.</p>
      */
     inline UpdateLagRequest& WithMinimumLinks(int value) { SetMinimumLinks(value); return *this;}
 

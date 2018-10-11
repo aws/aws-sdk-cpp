@@ -35,12 +35,6 @@ namespace DirectConnect
 {
 namespace Model
 {
-  /**
-   * <p>A structure containing a list of virtual interfaces.</p><p><h3>See Also:</h3>
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualInterfaces">AWS
-   * API Reference</a></p>
-   */
   class AWS_DIRECTCONNECT_API DescribeVirtualInterfacesResult
   {
   public:
@@ -50,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>A list of virtual interfaces.</p>
+     * <p>The virtual interfaces</p>
      */
     inline const Aws::Vector<VirtualInterface>& GetVirtualInterfaces() const{ return m_virtualInterfaces; }
 
     /**
-     * <p>A list of virtual interfaces.</p>
+     * <p>The virtual interfaces</p>
      */
     inline void SetVirtualInterfaces(const Aws::Vector<VirtualInterface>& value) { m_virtualInterfaces = value; }
 
     /**
-     * <p>A list of virtual interfaces.</p>
+     * <p>The virtual interfaces</p>
      */
     inline void SetVirtualInterfaces(Aws::Vector<VirtualInterface>&& value) { m_virtualInterfaces = std::move(value); }
 
     /**
-     * <p>A list of virtual interfaces.</p>
+     * <p>The virtual interfaces</p>
      */
     inline DescribeVirtualInterfacesResult& WithVirtualInterfaces(const Aws::Vector<VirtualInterface>& value) { SetVirtualInterfaces(value); return *this;}
 
     /**
-     * <p>A list of virtual interfaces.</p>
+     * <p>The virtual interfaces</p>
      */
     inline DescribeVirtualInterfacesResult& WithVirtualInterfaces(Aws::Vector<VirtualInterface>&& value) { SetVirtualInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>A list of virtual interfaces.</p>
+     * <p>The virtual interfaces</p>
      */
     inline DescribeVirtualInterfacesResult& AddVirtualInterfaces(const VirtualInterface& value) { m_virtualInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>A list of virtual interfaces.</p>
+     * <p>The virtual interfaces</p>
      */
     inline DescribeVirtualInterfacesResult& AddVirtualInterfaces(VirtualInterface&& value) { m_virtualInterfaces.push_back(std::move(value)); return *this; }
 

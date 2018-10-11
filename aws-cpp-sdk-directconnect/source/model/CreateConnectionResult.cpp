@@ -28,13 +28,15 @@ using namespace Aws;
 
 CreateConnectionResult::CreateConnectionResult() : 
     m_connectionState(ConnectionState::NOT_SET),
-    m_vlan(0)
+    m_vlan(0),
+    m_jumboFrameCapable(false)
 {
 }
 
 CreateConnectionResult::CreateConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_connectionState(ConnectionState::NOT_SET),
-    m_vlan(0)
+    m_vlan(0),
+    m_jumboFrameCapable(false)
 {
   *this = result;
 }
@@ -111,6 +113,12 @@ CreateConnectionResult& CreateConnectionResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("awsDevice"))
   {
     m_awsDevice = jsonValue.GetString("awsDevice");
+
+  }
+
+  if(jsonValue.ValueExists("jumboFrameCapable"))
+  {
+    m_jumboFrameCapable = jsonValue.GetBool("jumboFrameCapable");
 
   }
 

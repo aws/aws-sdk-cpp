@@ -34,12 +34,6 @@ namespace DirectConnect
 {
 namespace Model
 {
-  /**
-   * <p>The response received when DeleteBGPPeer is called.</p><p><h3>See Also:</h3> 
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeerResponse">AWS
-   * API Reference</a></p>
-   */
   class AWS_DIRECTCONNECT_API DeleteBGPPeerResult
   {
   public:
@@ -48,19 +42,29 @@ namespace Model
     DeleteBGPPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The virtual interface.</p>
+     */
     inline const VirtualInterface& GetVirtualInterface() const{ return m_virtualInterface; }
 
-    
+    /**
+     * <p>The virtual interface.</p>
+     */
     inline void SetVirtualInterface(const VirtualInterface& value) { m_virtualInterface = value; }
 
-    
+    /**
+     * <p>The virtual interface.</p>
+     */
     inline void SetVirtualInterface(VirtualInterface&& value) { m_virtualInterface = std::move(value); }
 
-    
+    /**
+     * <p>The virtual interface.</p>
+     */
     inline DeleteBGPPeerResult& WithVirtualInterface(const VirtualInterface& value) { SetVirtualInterface(value); return *this;}
 
-    
+    /**
+     * <p>The virtual interface.</p>
+     */
     inline DeleteBGPPeerResult& WithVirtualInterface(VirtualInterface&& value) { SetVirtualInterface(std::move(value)); return *this;}
 
   private:

@@ -34,12 +34,6 @@ namespace DirectConnect
 {
 namespace Model
 {
-  /**
-   * <p>The response received when ConfirmConnection is called.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ConfirmConnectionResponse">AWS
-   * API Reference</a></p>
-   */
   class AWS_DIRECTCONNECT_API ConfirmConnectionResult
   {
   public:
@@ -48,19 +42,99 @@ namespace Model
     ConfirmConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The state of the connection. The following are the possible values:</p> <ul>
+     * <li> <p> <code>ordering</code>: The initial state of a hosted connection
+     * provisioned on an interconnect. The connection stays in the ordering state until
+     * the owner of the hosted connection confirms or declines the connection
+     * order.</p> </li> <li> <p> <code>requested</code>: The initial state of a
+     * standard connection. The connection stays in the requested state until the
+     * Letter of Authorization (LOA) is sent to the customer.</p> </li> <li> <p>
+     * <code>pending</code>: The connection has been approved and is being
+     * initialized.</p> </li> <li> <p> <code>available</code>: The network link is up
+     * and the connection is ready for use.</p> </li> <li> <p> <code>down</code>: The
+     * network link is down.</p> </li> <li> <p> <code>deleting</code>: The connection
+     * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
+     * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
+     * the <code>ordering</code> state enters the <code>rejected</code> state if it is
+     * deleted by the customer.</p> </li> </ul>
+     */
     inline const ConnectionState& GetConnectionState() const{ return m_connectionState; }
 
-    
+    /**
+     * <p>The state of the connection. The following are the possible values:</p> <ul>
+     * <li> <p> <code>ordering</code>: The initial state of a hosted connection
+     * provisioned on an interconnect. The connection stays in the ordering state until
+     * the owner of the hosted connection confirms or declines the connection
+     * order.</p> </li> <li> <p> <code>requested</code>: The initial state of a
+     * standard connection. The connection stays in the requested state until the
+     * Letter of Authorization (LOA) is sent to the customer.</p> </li> <li> <p>
+     * <code>pending</code>: The connection has been approved and is being
+     * initialized.</p> </li> <li> <p> <code>available</code>: The network link is up
+     * and the connection is ready for use.</p> </li> <li> <p> <code>down</code>: The
+     * network link is down.</p> </li> <li> <p> <code>deleting</code>: The connection
+     * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
+     * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
+     * the <code>ordering</code> state enters the <code>rejected</code> state if it is
+     * deleted by the customer.</p> </li> </ul>
+     */
     inline void SetConnectionState(const ConnectionState& value) { m_connectionState = value; }
 
-    
+    /**
+     * <p>The state of the connection. The following are the possible values:</p> <ul>
+     * <li> <p> <code>ordering</code>: The initial state of a hosted connection
+     * provisioned on an interconnect. The connection stays in the ordering state until
+     * the owner of the hosted connection confirms or declines the connection
+     * order.</p> </li> <li> <p> <code>requested</code>: The initial state of a
+     * standard connection. The connection stays in the requested state until the
+     * Letter of Authorization (LOA) is sent to the customer.</p> </li> <li> <p>
+     * <code>pending</code>: The connection has been approved and is being
+     * initialized.</p> </li> <li> <p> <code>available</code>: The network link is up
+     * and the connection is ready for use.</p> </li> <li> <p> <code>down</code>: The
+     * network link is down.</p> </li> <li> <p> <code>deleting</code>: The connection
+     * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
+     * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
+     * the <code>ordering</code> state enters the <code>rejected</code> state if it is
+     * deleted by the customer.</p> </li> </ul>
+     */
     inline void SetConnectionState(ConnectionState&& value) { m_connectionState = std::move(value); }
 
-    
+    /**
+     * <p>The state of the connection. The following are the possible values:</p> <ul>
+     * <li> <p> <code>ordering</code>: The initial state of a hosted connection
+     * provisioned on an interconnect. The connection stays in the ordering state until
+     * the owner of the hosted connection confirms or declines the connection
+     * order.</p> </li> <li> <p> <code>requested</code>: The initial state of a
+     * standard connection. The connection stays in the requested state until the
+     * Letter of Authorization (LOA) is sent to the customer.</p> </li> <li> <p>
+     * <code>pending</code>: The connection has been approved and is being
+     * initialized.</p> </li> <li> <p> <code>available</code>: The network link is up
+     * and the connection is ready for use.</p> </li> <li> <p> <code>down</code>: The
+     * network link is down.</p> </li> <li> <p> <code>deleting</code>: The connection
+     * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
+     * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
+     * the <code>ordering</code> state enters the <code>rejected</code> state if it is
+     * deleted by the customer.</p> </li> </ul>
+     */
     inline ConfirmConnectionResult& WithConnectionState(const ConnectionState& value) { SetConnectionState(value); return *this;}
 
-    
+    /**
+     * <p>The state of the connection. The following are the possible values:</p> <ul>
+     * <li> <p> <code>ordering</code>: The initial state of a hosted connection
+     * provisioned on an interconnect. The connection stays in the ordering state until
+     * the owner of the hosted connection confirms or declines the connection
+     * order.</p> </li> <li> <p> <code>requested</code>: The initial state of a
+     * standard connection. The connection stays in the requested state until the
+     * Letter of Authorization (LOA) is sent to the customer.</p> </li> <li> <p>
+     * <code>pending</code>: The connection has been approved and is being
+     * initialized.</p> </li> <li> <p> <code>available</code>: The network link is up
+     * and the connection is ready for use.</p> </li> <li> <p> <code>down</code>: The
+     * network link is down.</p> </li> <li> <p> <code>deleting</code>: The connection
+     * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
+     * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
+     * the <code>ordering</code> state enters the <code>rejected</code> state if it is
+     * deleted by the customer.</p> </li> </ul>
+     */
     inline ConfirmConnectionResult& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
 
   private:

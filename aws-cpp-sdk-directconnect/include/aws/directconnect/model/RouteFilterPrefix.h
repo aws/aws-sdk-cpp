@@ -34,8 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>A route filter prefix that the customer can advertise through Border Gateway
-   * Protocol (BGP) over a public virtual interface.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a route filter prefix that a customer can advertise through
+   * Border Gateway Protocol (BGP) over a public virtual interface.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/RouteFilterPrefix">AWS
    * API Reference</a></p>
    */
@@ -49,51 +50,44 @@ namespace Model
 
 
     /**
-     * <p>CIDR notation for the advertised route. Multiple routes are separated by
-     * commas.</p> <p>IPv6 CIDRs must be at least a /64 or shorter</p> <p>Example:
-     * 10.10.10.0/24,10.10.11.0/24,2001:db8::/64</p>
+     * <p>The CIDR block for the advertised route. Separate multiple routes using
+     * commas. An IPv6 CIDR must use /64 or shorter.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
 
     /**
-     * <p>CIDR notation for the advertised route. Multiple routes are separated by
-     * commas.</p> <p>IPv6 CIDRs must be at least a /64 or shorter</p> <p>Example:
-     * 10.10.10.0/24,10.10.11.0/24,2001:db8::/64</p>
+     * <p>The CIDR block for the advertised route. Separate multiple routes using
+     * commas. An IPv6 CIDR must use /64 or shorter.</p>
      */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     /**
-     * <p>CIDR notation for the advertised route. Multiple routes are separated by
-     * commas.</p> <p>IPv6 CIDRs must be at least a /64 or shorter</p> <p>Example:
-     * 10.10.10.0/24,10.10.11.0/24,2001:db8::/64</p>
+     * <p>The CIDR block for the advertised route. Separate multiple routes using
+     * commas. An IPv6 CIDR must use /64 or shorter.</p>
      */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
 
     /**
-     * <p>CIDR notation for the advertised route. Multiple routes are separated by
-     * commas.</p> <p>IPv6 CIDRs must be at least a /64 or shorter</p> <p>Example:
-     * 10.10.10.0/24,10.10.11.0/24,2001:db8::/64</p>
+     * <p>The CIDR block for the advertised route. Separate multiple routes using
+     * commas. An IPv6 CIDR must use /64 or shorter.</p>
      */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
 
     /**
-     * <p>CIDR notation for the advertised route. Multiple routes are separated by
-     * commas.</p> <p>IPv6 CIDRs must be at least a /64 or shorter</p> <p>Example:
-     * 10.10.10.0/24,10.10.11.0/24,2001:db8::/64</p>
+     * <p>The CIDR block for the advertised route. Separate multiple routes using
+     * commas. An IPv6 CIDR must use /64 or shorter.</p>
      */
     inline RouteFilterPrefix& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
 
     /**
-     * <p>CIDR notation for the advertised route. Multiple routes are separated by
-     * commas.</p> <p>IPv6 CIDRs must be at least a /64 or shorter</p> <p>Example:
-     * 10.10.10.0/24,10.10.11.0/24,2001:db8::/64</p>
+     * <p>The CIDR block for the advertised route. Separate multiple routes using
+     * commas. An IPv6 CIDR must use /64 or shorter.</p>
      */
     inline RouteFilterPrefix& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
 
     /**
-     * <p>CIDR notation for the advertised route. Multiple routes are separated by
-     * commas.</p> <p>IPv6 CIDRs must be at least a /64 or shorter</p> <p>Example:
-     * 10.10.10.0/24,10.10.11.0/24,2001:db8::/64</p>
+     * <p>The CIDR block for the advertised route. Separate multiple routes using
+     * commas. An IPv6 CIDR must use /64 or shorter.</p>
      */
     inline RouteFilterPrefix& WithCidr(const char* value) { SetCidr(value); return *this;}
 

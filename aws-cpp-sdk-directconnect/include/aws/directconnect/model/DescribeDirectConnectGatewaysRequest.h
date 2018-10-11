@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the DescribeDirectConnectGateways
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeDirectConnectGatewaysRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API DescribeDirectConnectGatewaysRequest : public DirectConnectRequest
   {
@@ -49,106 +45,89 @@ namespace Model
 
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline DescribeDirectConnectGatewaysRequest& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline DescribeDirectConnectGatewaysRequest& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline DescribeDirectConnectGatewaysRequest& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
 
 
     /**
-     * <p>The maximum number of direct connect gateways to return per page.</p>
-     * <p>Example: 15</p> <p>Default: None</p>
+     * <p>The maximum number of Direct Connect gateways to return per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of direct connect gateways to return per page.</p>
-     * <p>Example: 15</p> <p>Default: None</p>
+     * <p>The maximum number of Direct Connect gateways to return per page.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of direct connect gateways to return per page.</p>
-     * <p>Example: 15</p> <p>Default: None</p>
+     * <p>The maximum number of Direct Connect gateways to return per page.</p>
      */
     inline DescribeDirectConnectGatewaysRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>The token provided in the previous describe result to retrieve the next page
-     * of the result.</p> <p>Default: None</p>
+     * <p>The token provided in the previous call to retrieve the next page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token provided in the previous describe result to retrieve the next page
-     * of the result.</p> <p>Default: None</p>
+     * <p>The token provided in the previous call to retrieve the next page.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token provided in the previous describe result to retrieve the next page
-     * of the result.</p> <p>Default: None</p>
+     * <p>The token provided in the previous call to retrieve the next page.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token provided in the previous describe result to retrieve the next page
-     * of the result.</p> <p>Default: None</p>
+     * <p>The token provided in the previous call to retrieve the next page.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token provided in the previous describe result to retrieve the next page
-     * of the result.</p> <p>Default: None</p>
+     * <p>The token provided in the previous call to retrieve the next page.</p>
      */
     inline DescribeDirectConnectGatewaysRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token provided in the previous describe result to retrieve the next page
-     * of the result.</p> <p>Default: None</p>
+     * <p>The token provided in the previous call to retrieve the next page.</p>
      */
     inline DescribeDirectConnectGatewaysRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token provided in the previous describe result to retrieve the next page
-     * of the result.</p> <p>Default: None</p>
+     * <p>The token provided in the previous call to retrieve the next page.</p>
      */
     inline DescribeDirectConnectGatewaysRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

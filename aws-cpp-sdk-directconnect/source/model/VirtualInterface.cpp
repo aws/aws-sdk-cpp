@@ -49,6 +49,10 @@ VirtualInterface::VirtualInterface() :
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET),
     m_virtualInterfaceStateHasBeenSet(false),
     m_customerRouterConfigHasBeenSet(false),
+    m_mtu(0),
+    m_mtuHasBeenSet(false),
+    m_jumboFrameCapable(false),
+    m_jumboFrameCapableHasBeenSet(false),
     m_virtualGatewayIdHasBeenSet(false),
     m_directConnectGatewayIdHasBeenSet(false),
     m_routeFilterPrefixesHasBeenSet(false),
@@ -79,6 +83,10 @@ VirtualInterface::VirtualInterface(JsonView jsonValue) :
     m_virtualInterfaceState(VirtualInterfaceState::NOT_SET),
     m_virtualInterfaceStateHasBeenSet(false),
     m_customerRouterConfigHasBeenSet(false),
+    m_mtu(0),
+    m_mtuHasBeenSet(false),
+    m_jumboFrameCapable(false),
+    m_jumboFrameCapableHasBeenSet(false),
     m_virtualGatewayIdHasBeenSet(false),
     m_directConnectGatewayIdHasBeenSet(false),
     m_routeFilterPrefixesHasBeenSet(false),
@@ -194,6 +202,20 @@ VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
     m_customerRouterConfig = jsonValue.GetString("customerRouterConfig");
 
     m_customerRouterConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mtu"))
+  {
+    m_mtu = jsonValue.GetInteger("mtu");
+
+    m_mtuHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("jumboFrameCapable"))
+  {
+    m_jumboFrameCapable = jsonValue.GetBool("jumboFrameCapable");
+
+    m_jumboFrameCapableHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("virtualGatewayId"))
@@ -336,6 +358,18 @@ JsonValue VirtualInterface::Jsonize() const
   if(m_customerRouterConfigHasBeenSet)
   {
    payload.WithString("customerRouterConfig", m_customerRouterConfig);
+
+  }
+
+  if(m_mtuHasBeenSet)
+  {
+   payload.WithInteger("mtu", m_mtu);
+
+  }
+
+  if(m_jumboFrameCapableHasBeenSet)
+  {
+   payload.WithBool("jumboFrameCapable", m_jumboFrameCapable);
 
   }
 

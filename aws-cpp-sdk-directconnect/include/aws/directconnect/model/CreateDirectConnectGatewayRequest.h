@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the CreateDirectConnectGateway
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateDirectConnectGatewayRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API CreateDirectConnectGatewayRequest : public DirectConnectRequest
   {
@@ -49,44 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the direct connect gateway.</p> <p>Example: "My direct connect
-     * gateway"</p> <p>Default: None</p>
+     * <p>The name of the Direct Connect gateway.</p>
      */
     inline const Aws::String& GetDirectConnectGatewayName() const{ return m_directConnectGatewayName; }
 
     /**
-     * <p>The name of the direct connect gateway.</p> <p>Example: "My direct connect
-     * gateway"</p> <p>Default: None</p>
+     * <p>The name of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayName(const Aws::String& value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName = value; }
 
     /**
-     * <p>The name of the direct connect gateway.</p> <p>Example: "My direct connect
-     * gateway"</p> <p>Default: None</p>
+     * <p>The name of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayName(Aws::String&& value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName = std::move(value); }
 
     /**
-     * <p>The name of the direct connect gateway.</p> <p>Example: "My direct connect
-     * gateway"</p> <p>Default: None</p>
+     * <p>The name of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayName(const char* value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName.assign(value); }
 
     /**
-     * <p>The name of the direct connect gateway.</p> <p>Example: "My direct connect
-     * gateway"</p> <p>Default: None</p>
+     * <p>The name of the Direct Connect gateway.</p>
      */
     inline CreateDirectConnectGatewayRequest& WithDirectConnectGatewayName(const Aws::String& value) { SetDirectConnectGatewayName(value); return *this;}
 
     /**
-     * <p>The name of the direct connect gateway.</p> <p>Example: "My direct connect
-     * gateway"</p> <p>Default: None</p>
+     * <p>The name of the Direct Connect gateway.</p>
      */
     inline CreateDirectConnectGatewayRequest& WithDirectConnectGatewayName(Aws::String&& value) { SetDirectConnectGatewayName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the direct connect gateway.</p> <p>Example: "My direct connect
-     * gateway"</p> <p>Default: None</p>
+     * <p>The name of the Direct Connect gateway.</p>
      */
     inline CreateDirectConnectGatewayRequest& WithDirectConnectGatewayName(const char* value) { SetDirectConnectGatewayName(value); return *this;}
 
@@ -94,24 +83,24 @@ namespace Model
     /**
      * <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be
      * configured on the Amazon side of the connection. The ASN must be in the private
-     * range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294 </p> <p>Example:
-     * 65200</p> <p>Default: 64512</p>
+     * range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is
+     * 64512.</p>
      */
     inline long long GetAmazonSideAsn() const{ return m_amazonSideAsn; }
 
     /**
      * <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be
      * configured on the Amazon side of the connection. The ASN must be in the private
-     * range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294 </p> <p>Example:
-     * 65200</p> <p>Default: 64512</p>
+     * range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is
+     * 64512.</p>
      */
     inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
 
     /**
      * <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be
      * configured on the Amazon side of the connection. The ASN must be in the private
-     * range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294 </p> <p>Example:
-     * 65200</p> <p>Default: 64512</p>
+     * range of 64,512 to 65,534 or 4,200,000,000 to 4,294,967,294. The default is
+     * 64512.</p>
      */
     inline CreateDirectConnectGatewayRequest& WithAmazonSideAsn(long long value) { SetAmazonSideAsn(value); return *this;}
 

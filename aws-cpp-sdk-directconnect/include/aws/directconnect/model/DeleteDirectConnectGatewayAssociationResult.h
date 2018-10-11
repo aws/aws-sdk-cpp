@@ -34,12 +34,6 @@ namespace DirectConnect
 {
 namespace Model
 {
-  /**
-   * <p>Container for the response from the DeleteDirectConnectGatewayAssociation API
-   * call</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayAssociationResult">AWS
-   * API Reference</a></p>
-   */
   class AWS_DIRECTCONNECT_API DeleteDirectConnectGatewayAssociationResult
   {
   public:
@@ -49,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The direct connect gateway association to be deleted.</p>
+     * <p>The association to be deleted.</p>
      */
     inline const DirectConnectGatewayAssociation& GetDirectConnectGatewayAssociation() const{ return m_directConnectGatewayAssociation; }
 
     /**
-     * <p>The direct connect gateway association to be deleted.</p>
+     * <p>The association to be deleted.</p>
      */
     inline void SetDirectConnectGatewayAssociation(const DirectConnectGatewayAssociation& value) { m_directConnectGatewayAssociation = value; }
 
     /**
-     * <p>The direct connect gateway association to be deleted.</p>
+     * <p>The association to be deleted.</p>
      */
     inline void SetDirectConnectGatewayAssociation(DirectConnectGatewayAssociation&& value) { m_directConnectGatewayAssociation = std::move(value); }
 
     /**
-     * <p>The direct connect gateway association to be deleted.</p>
+     * <p>The association to be deleted.</p>
      */
     inline DeleteDirectConnectGatewayAssociationResult& WithDirectConnectGatewayAssociation(const DirectConnectGatewayAssociation& value) { SetDirectConnectGatewayAssociation(value); return *this;}
 
     /**
-     * <p>The direct connect gateway association to be deleted.</p>
+     * <p>The association to be deleted.</p>
      */
     inline DeleteDirectConnectGatewayAssociationResult& WithDirectConnectGatewayAssociation(DirectConnectGatewayAssociation&& value) { SetDirectConnectGatewayAssociation(std::move(value)); return *this;}
 

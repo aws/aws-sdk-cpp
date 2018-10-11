@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>The tags associated with a Direct Connect resource.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Information about a tag associated with an AWS Direct Connect
+   * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ResourceTag">AWS
    * API Reference</a></p>
    */
@@ -51,37 +51,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline ResourceTag& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline ResourceTag& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Direct Connect resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline ResourceTag& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

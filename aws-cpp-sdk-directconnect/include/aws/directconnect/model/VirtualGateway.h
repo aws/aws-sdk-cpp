@@ -34,11 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>You can create one or more AWS Direct Connect private virtual interfaces
-   * linking to your virtual private gateway.</p> <p>Virtual private gateways can be
-   * managed using the Amazon Virtual Private Cloud (Amazon VPC) console or the <a
-   * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html">Amazon
-   * EC2 CreateVpnGateway action</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a virtual private gateway for a private virtual
+   * interface.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualGateway">AWS
    * API Reference</a></p>
    */
@@ -51,47 +48,117 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
     inline const Aws::String& GetVirtualGatewayId() const{ return m_virtualGatewayId; }
 
-    
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
     inline void SetVirtualGatewayId(const Aws::String& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = value; }
 
-    
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
     inline void SetVirtualGatewayId(Aws::String&& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
     inline void SetVirtualGatewayId(const char* value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
     inline VirtualGateway& WithVirtualGatewayId(const Aws::String& value) { SetVirtualGatewayId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
     inline VirtualGateway& WithVirtualGatewayId(Aws::String&& value) { SetVirtualGatewayId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the virtual private gateway.</p>
+     */
     inline VirtualGateway& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
 
 
-    
+    /**
+     * <p>The state of the virtual private gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: Initial state after creating the
+     * virtual private gateway.</p> </li> <li> <p> <code>available</code>: Ready for
+     * use by a private virtual interface.</p> </li> <li> <p> <code>deleting</code>:
+     * Initial state after deleting the virtual private gateway.</p> </li> <li> <p>
+     * <code>deleted</code>: The virtual private gateway is deleted. The private
+     * virtual interface is unable to send traffic over this gateway.</p> </li> </ul>
+     */
     inline const Aws::String& GetVirtualGatewayState() const{ return m_virtualGatewayState; }
 
-    
+    /**
+     * <p>The state of the virtual private gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: Initial state after creating the
+     * virtual private gateway.</p> </li> <li> <p> <code>available</code>: Ready for
+     * use by a private virtual interface.</p> </li> <li> <p> <code>deleting</code>:
+     * Initial state after deleting the virtual private gateway.</p> </li> <li> <p>
+     * <code>deleted</code>: The virtual private gateway is deleted. The private
+     * virtual interface is unable to send traffic over this gateway.</p> </li> </ul>
+     */
     inline void SetVirtualGatewayState(const Aws::String& value) { m_virtualGatewayStateHasBeenSet = true; m_virtualGatewayState = value; }
 
-    
+    /**
+     * <p>The state of the virtual private gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: Initial state after creating the
+     * virtual private gateway.</p> </li> <li> <p> <code>available</code>: Ready for
+     * use by a private virtual interface.</p> </li> <li> <p> <code>deleting</code>:
+     * Initial state after deleting the virtual private gateway.</p> </li> <li> <p>
+     * <code>deleted</code>: The virtual private gateway is deleted. The private
+     * virtual interface is unable to send traffic over this gateway.</p> </li> </ul>
+     */
     inline void SetVirtualGatewayState(Aws::String&& value) { m_virtualGatewayStateHasBeenSet = true; m_virtualGatewayState = std::move(value); }
 
-    
+    /**
+     * <p>The state of the virtual private gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: Initial state after creating the
+     * virtual private gateway.</p> </li> <li> <p> <code>available</code>: Ready for
+     * use by a private virtual interface.</p> </li> <li> <p> <code>deleting</code>:
+     * Initial state after deleting the virtual private gateway.</p> </li> <li> <p>
+     * <code>deleted</code>: The virtual private gateway is deleted. The private
+     * virtual interface is unable to send traffic over this gateway.</p> </li> </ul>
+     */
     inline void SetVirtualGatewayState(const char* value) { m_virtualGatewayStateHasBeenSet = true; m_virtualGatewayState.assign(value); }
 
-    
+    /**
+     * <p>The state of the virtual private gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: Initial state after creating the
+     * virtual private gateway.</p> </li> <li> <p> <code>available</code>: Ready for
+     * use by a private virtual interface.</p> </li> <li> <p> <code>deleting</code>:
+     * Initial state after deleting the virtual private gateway.</p> </li> <li> <p>
+     * <code>deleted</code>: The virtual private gateway is deleted. The private
+     * virtual interface is unable to send traffic over this gateway.</p> </li> </ul>
+     */
     inline VirtualGateway& WithVirtualGatewayState(const Aws::String& value) { SetVirtualGatewayState(value); return *this;}
 
-    
+    /**
+     * <p>The state of the virtual private gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: Initial state after creating the
+     * virtual private gateway.</p> </li> <li> <p> <code>available</code>: Ready for
+     * use by a private virtual interface.</p> </li> <li> <p> <code>deleting</code>:
+     * Initial state after deleting the virtual private gateway.</p> </li> <li> <p>
+     * <code>deleted</code>: The virtual private gateway is deleted. The private
+     * virtual interface is unable to send traffic over this gateway.</p> </li> </ul>
+     */
     inline VirtualGateway& WithVirtualGatewayState(Aws::String&& value) { SetVirtualGatewayState(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The state of the virtual private gateway. The following are the possible
+     * values:</p> <ul> <li> <p> <code>pending</code>: Initial state after creating the
+     * virtual private gateway.</p> </li> <li> <p> <code>available</code>: Ready for
+     * use by a private virtual interface.</p> </li> <li> <p> <code>deleting</code>:
+     * Initial state after deleting the virtual private gateway.</p> </li> <li> <p>
+     * <code>deleted</code>: The virtual private gateway is deleted. The private
+     * virtual interface is unable to send traffic over this gateway.</p> </li> </ul>
+     */
     inline VirtualGateway& WithVirtualGatewayState(const char* value) { SetVirtualGatewayState(value); return *this;}
 
   private:

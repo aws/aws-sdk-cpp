@@ -42,7 +42,9 @@ namespace Model
 
   /**
    * <p>Describes an asynchronous transcription job that was created with the
-   * <code>StartTranscriptionJob</code> operation.</p><p><h3>See Also:</h3>   <a
+   * <code>StartTranscriptionJob</code> operation. Note that en-AU, en-UK, and fr-CA
+   * languages are in preview and are only available to whitelisted
+   * customers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscriptionJob">AWS
    * API Reference</a></p>
    */

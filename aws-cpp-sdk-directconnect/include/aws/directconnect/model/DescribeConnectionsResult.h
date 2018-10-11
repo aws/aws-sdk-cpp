@@ -35,11 +35,6 @@ namespace DirectConnect
 {
 namespace Model
 {
-  /**
-   * <p>A structure containing a list of connections.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Connections">AWS
-   * API Reference</a></p>
-   */
   class AWS_DIRECTCONNECT_API DescribeConnectionsResult
   {
   public:
@@ -49,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>A list of connections.</p>
+     * <p>The connections.</p>
      */
     inline const Aws::Vector<Connection>& GetConnections() const{ return m_connections; }
 
     /**
-     * <p>A list of connections.</p>
+     * <p>The connections.</p>
      */
     inline void SetConnections(const Aws::Vector<Connection>& value) { m_connections = value; }
 
     /**
-     * <p>A list of connections.</p>
+     * <p>The connections.</p>
      */
     inline void SetConnections(Aws::Vector<Connection>&& value) { m_connections = std::move(value); }
 
     /**
-     * <p>A list of connections.</p>
+     * <p>The connections.</p>
      */
     inline DescribeConnectionsResult& WithConnections(const Aws::Vector<Connection>& value) { SetConnections(value); return *this;}
 
     /**
-     * <p>A list of connections.</p>
+     * <p>The connections.</p>
      */
     inline DescribeConnectionsResult& WithConnections(Aws::Vector<Connection>&& value) { SetConnections(std::move(value)); return *this;}
 
     /**
-     * <p>A list of connections.</p>
+     * <p>The connections.</p>
      */
     inline DescribeConnectionsResult& AddConnections(const Connection& value) { m_connections.push_back(value); return *this; }
 
     /**
-     * <p>A list of connections.</p>
+     * <p>The connections.</p>
      */
     inline DescribeConnectionsResult& AddConnections(Connection&& value) { m_connections.push_back(std::move(value)); return *this; }
 

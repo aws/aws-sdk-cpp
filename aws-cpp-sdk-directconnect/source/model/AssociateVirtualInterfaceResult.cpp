@@ -31,7 +31,9 @@ AssociateVirtualInterfaceResult::AssociateVirtualInterfaceResult() :
     m_asn(0),
     m_amazonSideAsn(0),
     m_addressFamily(AddressFamily::NOT_SET),
-    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
+    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET),
+    m_mtu(0),
+    m_jumboFrameCapable(false)
 {
 }
 
@@ -40,7 +42,9 @@ AssociateVirtualInterfaceResult::AssociateVirtualInterfaceResult(const Aws::Amaz
     m_asn(0),
     m_amazonSideAsn(0),
     m_addressFamily(AddressFamily::NOT_SET),
-    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET)
+    m_virtualInterfaceState(VirtualInterfaceState::NOT_SET),
+    m_mtu(0),
+    m_jumboFrameCapable(false)
 {
   *this = result;
 }
@@ -135,6 +139,18 @@ AssociateVirtualInterfaceResult& AssociateVirtualInterfaceResult::operator =(con
   if(jsonValue.ValueExists("customerRouterConfig"))
   {
     m_customerRouterConfig = jsonValue.GetString("customerRouterConfig");
+
+  }
+
+  if(jsonValue.ValueExists("mtu"))
+  {
+    m_mtu = jsonValue.GetInteger("mtu");
+
+  }
+
+  if(jsonValue.ValueExists("jumboFrameCapable"))
+  {
+    m_jumboFrameCapable = jsonValue.GetBool("jumboFrameCapable");
 
   }
 

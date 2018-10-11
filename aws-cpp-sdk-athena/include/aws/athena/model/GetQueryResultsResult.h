@@ -44,6 +44,22 @@ namespace Model
 
 
     /**
+     * <p>The number of rows inserted with a CREATE TABLE AS SELECT statement. </p>
+     */
+    inline long long GetUpdateCount() const{ return m_updateCount; }
+
+    /**
+     * <p>The number of rows inserted with a CREATE TABLE AS SELECT statement. </p>
+     */
+    inline void SetUpdateCount(long long value) { m_updateCount = value; }
+
+    /**
+     * <p>The number of rows inserted with a CREATE TABLE AS SELECT statement. </p>
+     */
+    inline GetQueryResultsResult& WithUpdateCount(long long value) { SetUpdateCount(value); return *this;}
+
+
+    /**
      * <p>The results of the query execution.</p>
      */
     inline const ResultSet& GetResultSet() const{ return m_resultSet; }
@@ -105,6 +121,8 @@ namespace Model
     inline GetQueryResultsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
+    long long m_updateCount;
 
     ResultSet m_resultSet;
 

@@ -27,7 +27,10 @@ namespace Model
   {
     NOT_SET,
     en_US,
-    es_US
+    es_US,
+    en_AU,
+    fr_CA,
+    en_UK
   };
 
 namespace LanguageCodeMapper

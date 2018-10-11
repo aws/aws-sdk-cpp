@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the CreateConnection operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateConnectionRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API CreateConnectionRequest : public DirectConnectRequest
   {
@@ -48,91 +44,147 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The location of the connection.</p>
+     */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
-    
+    /**
+     * <p>The location of the connection.</p>
+     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
-    
+    /**
+     * <p>The location of the connection.</p>
+     */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
-    
+    /**
+     * <p>The location of the connection.</p>
+     */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
-    
+    /**
+     * <p>The location of the connection.</p>
+     */
     inline CreateConnectionRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
-    
+    /**
+     * <p>The location of the connection.</p>
+     */
     inline CreateConnectionRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The location of the connection.</p>
+     */
     inline CreateConnectionRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 
 
-    
+    /**
+     * <p>The bandwidth of the connection.</p>
+     */
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
 
-    
+    /**
+     * <p>The bandwidth of the connection.</p>
+     */
     inline void SetBandwidth(const Aws::String& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
 
-    
+    /**
+     * <p>The bandwidth of the connection.</p>
+     */
     inline void SetBandwidth(Aws::String&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = std::move(value); }
 
-    
+    /**
+     * <p>The bandwidth of the connection.</p>
+     */
     inline void SetBandwidth(const char* value) { m_bandwidthHasBeenSet = true; m_bandwidth.assign(value); }
 
-    
+    /**
+     * <p>The bandwidth of the connection.</p>
+     */
     inline CreateConnectionRequest& WithBandwidth(const Aws::String& value) { SetBandwidth(value); return *this;}
 
-    
+    /**
+     * <p>The bandwidth of the connection.</p>
+     */
     inline CreateConnectionRequest& WithBandwidth(Aws::String&& value) { SetBandwidth(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The bandwidth of the connection.</p>
+     */
     inline CreateConnectionRequest& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
 
 
-    
+    /**
+     * <p>The name of the connection.</p>
+     */
     inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
 
-    
+    /**
+     * <p>The name of the connection.</p>
+     */
     inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
 
-    
+    /**
+     * <p>The name of the connection.</p>
+     */
     inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
 
-    
+    /**
+     * <p>The name of the connection.</p>
+     */
     inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
 
-    
+    /**
+     * <p>The name of the connection.</p>
+     */
     inline CreateConnectionRequest& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the connection.</p>
+     */
     inline CreateConnectionRequest& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the connection.</p>
+     */
     inline CreateConnectionRequest& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline const Aws::String& GetLagId() const{ return m_lagId; }
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline CreateConnectionRequest& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline CreateConnectionRequest& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the LAG.</p>
+     */
     inline CreateConnectionRequest& WithLagId(const char* value) { SetLagId(value); return *this;}
 
   private:

@@ -35,12 +35,6 @@ namespace DirectConnect
 {
 namespace Model
 {
-  /**
-   * <p>A structure containing a list of virtual private gateways.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/VirtualGateways">AWS
-   * API Reference</a></p>
-   */
   class AWS_DIRECTCONNECT_API DescribeVirtualGatewaysResult
   {
   public:
@@ -50,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>A list of virtual private gateways.</p>
+     * <p>The virtual private gateways.</p>
      */
     inline const Aws::Vector<VirtualGateway>& GetVirtualGateways() const{ return m_virtualGateways; }
 
     /**
-     * <p>A list of virtual private gateways.</p>
+     * <p>The virtual private gateways.</p>
      */
     inline void SetVirtualGateways(const Aws::Vector<VirtualGateway>& value) { m_virtualGateways = value; }
 
     /**
-     * <p>A list of virtual private gateways.</p>
+     * <p>The virtual private gateways.</p>
      */
     inline void SetVirtualGateways(Aws::Vector<VirtualGateway>&& value) { m_virtualGateways = std::move(value); }
 
     /**
-     * <p>A list of virtual private gateways.</p>
+     * <p>The virtual private gateways.</p>
      */
     inline DescribeVirtualGatewaysResult& WithVirtualGateways(const Aws::Vector<VirtualGateway>& value) { SetVirtualGateways(value); return *this;}
 
     /**
-     * <p>A list of virtual private gateways.</p>
+     * <p>The virtual private gateways.</p>
      */
     inline DescribeVirtualGatewaysResult& WithVirtualGateways(Aws::Vector<VirtualGateway>&& value) { SetVirtualGateways(std::move(value)); return *this;}
 
     /**
-     * <p>A list of virtual private gateways.</p>
+     * <p>The virtual private gateways.</p>
      */
     inline DescribeVirtualGatewaysResult& AddVirtualGateways(const VirtualGateway& value) { m_virtualGateways.push_back(value); return *this; }
 
     /**
-     * <p>A list of virtual private gateways.</p>
+     * <p>The virtual private gateways.</p>
      */
     inline DescribeVirtualGatewaysResult& AddVirtualGateways(VirtualGateway&& value) { m_virtualGateways.push_back(std::move(value)); return *this; }
 

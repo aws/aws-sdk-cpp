@@ -35,15 +35,6 @@ namespace DirectConnect
 {
 namespace Model
 {
-  /**
-   * <p>A location is a network facility where AWS Direct Connect routers are
-   * available to be connected. Generally, these are colocation hubs where many
-   * network providers have equipment, and where cross connects can be delivered.
-   * Locations include a name and facility code, and must be provided when creating a
-   * connection.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Locations">AWS
-   * API Reference</a></p>
-   */
   class AWS_DIRECTCONNECT_API DescribeLocationsResult
   {
   public:
@@ -53,44 +44,37 @@ namespace Model
 
 
     /**
-     * <p>A list of colocation hubs where network providers have equipment. Most
-     * regions have multiple locations available.</p>
+     * <p>The locations.</p>
      */
     inline const Aws::Vector<Location>& GetLocations() const{ return m_locations; }
 
     /**
-     * <p>A list of colocation hubs where network providers have equipment. Most
-     * regions have multiple locations available.</p>
+     * <p>The locations.</p>
      */
     inline void SetLocations(const Aws::Vector<Location>& value) { m_locations = value; }
 
     /**
-     * <p>A list of colocation hubs where network providers have equipment. Most
-     * regions have multiple locations available.</p>
+     * <p>The locations.</p>
      */
     inline void SetLocations(Aws::Vector<Location>&& value) { m_locations = std::move(value); }
 
     /**
-     * <p>A list of colocation hubs where network providers have equipment. Most
-     * regions have multiple locations available.</p>
+     * <p>The locations.</p>
      */
     inline DescribeLocationsResult& WithLocations(const Aws::Vector<Location>& value) { SetLocations(value); return *this;}
 
     /**
-     * <p>A list of colocation hubs where network providers have equipment. Most
-     * regions have multiple locations available.</p>
+     * <p>The locations.</p>
      */
     inline DescribeLocationsResult& WithLocations(Aws::Vector<Location>&& value) { SetLocations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of colocation hubs where network providers have equipment. Most
-     * regions have multiple locations available.</p>
+     * <p>The locations.</p>
      */
     inline DescribeLocationsResult& AddLocations(const Location& value) { m_locations.push_back(value); return *this; }
 
     /**
-     * <p>A list of colocation hubs where network providers have equipment. Most
-     * regions have multiple locations available.</p>
+     * <p>The locations.</p>
      */
     inline DescribeLocationsResult& AddLocations(Location&& value) { m_locations.push_back(std::move(value)); return *this; }
 

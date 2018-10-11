@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the AssociateHostedConnection
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateHostedConnectionRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API AssociateHostedConnectionRequest : public DirectConnectRequest
   {
@@ -49,87 +45,73 @@ namespace Model
 
 
     /**
-     * <p>The ID of the hosted connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the hosted connection.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
     /**
-     * <p>The ID of the hosted connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the hosted connection.</p>
      */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
-     * <p>The ID of the hosted connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the hosted connection.</p>
      */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
-     * <p>The ID of the hosted connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the hosted connection.</p>
      */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
 
     /**
-     * <p>The ID of the hosted connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the hosted connection.</p>
      */
     inline AssociateHostedConnectionRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the hosted connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the hosted connection.</p>
      */
     inline AssociateHostedConnectionRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the hosted connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the hosted connection.</p>
      */
     inline AssociateHostedConnectionRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
 
     /**
-     * <p>The ID of the interconnect or the LAG.</p> <p>Example: dxcon-abc123 or
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the interconnect or the LAG.</p>
      */
     inline const Aws::String& GetParentConnectionId() const{ return m_parentConnectionId; }
 
     /**
-     * <p>The ID of the interconnect or the LAG.</p> <p>Example: dxcon-abc123 or
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the interconnect or the LAG.</p>
      */
     inline void SetParentConnectionId(const Aws::String& value) { m_parentConnectionIdHasBeenSet = true; m_parentConnectionId = value; }
 
     /**
-     * <p>The ID of the interconnect or the LAG.</p> <p>Example: dxcon-abc123 or
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the interconnect or the LAG.</p>
      */
     inline void SetParentConnectionId(Aws::String&& value) { m_parentConnectionIdHasBeenSet = true; m_parentConnectionId = std::move(value); }
 
     /**
-     * <p>The ID of the interconnect or the LAG.</p> <p>Example: dxcon-abc123 or
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the interconnect or the LAG.</p>
      */
     inline void SetParentConnectionId(const char* value) { m_parentConnectionIdHasBeenSet = true; m_parentConnectionId.assign(value); }
 
     /**
-     * <p>The ID of the interconnect or the LAG.</p> <p>Example: dxcon-abc123 or
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the interconnect or the LAG.</p>
      */
     inline AssociateHostedConnectionRequest& WithParentConnectionId(const Aws::String& value) { SetParentConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the interconnect or the LAG.</p> <p>Example: dxcon-abc123 or
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the interconnect or the LAG.</p>
      */
     inline AssociateHostedConnectionRequest& WithParentConnectionId(Aws::String&& value) { SetParentConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the interconnect or the LAG.</p> <p>Example: dxcon-abc123 or
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the interconnect or the LAG.</p>
      */
     inline AssociateHostedConnectionRequest& WithParentConnectionId(const char* value) { SetParentConnectionId(value); return *this;}
 

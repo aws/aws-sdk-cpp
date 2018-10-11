@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQueryResultsResult::GetQueryResultsResult()
+GetQueryResultsResult::GetQueryResultsResult() : 
+    m_updateCount(0)
 {
 }
 
-GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_updateCount(0)
 {
   *this = result;
 }
@@ -38,6 +40,12 @@ GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<J
 GetQueryResultsResult& GetQueryResultsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("UpdateCount"))
+  {
+    m_updateCount = jsonValue.GetInt64("UpdateCount");
+
+  }
+
   if(jsonValue.ValueExists("ResultSet"))
   {
     m_resultSet = jsonValue.GetObject("ResultSet");

@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the DeleteBGPPeer operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteBGPPeerRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API DeleteBGPPeerRequest : public DirectConnectRequest
   {
@@ -49,77 +45,93 @@ namespace Model
 
 
     /**
-     * <p>The ID of the virtual interface from which the BGP peer will be deleted.</p>
-     * <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline const Aws::String& GetVirtualInterfaceId() const{ return m_virtualInterfaceId; }
 
     /**
-     * <p>The ID of the virtual interface from which the BGP peer will be deleted.</p>
-     * <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
 
     /**
-     * <p>The ID of the virtual interface from which the BGP peer will be deleted.</p>
-     * <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::move(value); }
 
     /**
-     * <p>The ID of the virtual interface from which the BGP peer will be deleted.</p>
-     * <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline void SetVirtualInterfaceId(const char* value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId.assign(value); }
 
     /**
-     * <p>The ID of the virtual interface from which the BGP peer will be deleted.</p>
-     * <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline DeleteBGPPeerRequest& WithVirtualInterfaceId(const Aws::String& value) { SetVirtualInterfaceId(value); return *this;}
 
     /**
-     * <p>The ID of the virtual interface from which the BGP peer will be deleted.</p>
-     * <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline DeleteBGPPeerRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the virtual interface from which the BGP peer will be deleted.</p>
-     * <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline DeleteBGPPeerRequest& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
 
 
-    
+    /**
+     * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
+     * configuration.</p>
+     */
     inline int GetAsn() const{ return m_asn; }
 
-    
+    /**
+     * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
+     * configuration.</p>
+     */
     inline void SetAsn(int value) { m_asnHasBeenSet = true; m_asn = value; }
 
-    
+    /**
+     * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
+     * configuration.</p>
+     */
     inline DeleteBGPPeerRequest& WithAsn(int value) { SetAsn(value); return *this;}
 
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline const Aws::String& GetCustomerAddress() const{ return m_customerAddress; }
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline void SetCustomerAddress(const Aws::String& value) { m_customerAddressHasBeenSet = true; m_customerAddress = value; }
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline void SetCustomerAddress(Aws::String&& value) { m_customerAddressHasBeenSet = true; m_customerAddress = std::move(value); }
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline void SetCustomerAddress(const char* value) { m_customerAddressHasBeenSet = true; m_customerAddress.assign(value); }
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline DeleteBGPPeerRequest& WithCustomerAddress(const Aws::String& value) { SetCustomerAddress(value); return *this;}
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline DeleteBGPPeerRequest& WithCustomerAddress(Aws::String&& value) { SetCustomerAddress(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline DeleteBGPPeerRequest& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
 
   private:

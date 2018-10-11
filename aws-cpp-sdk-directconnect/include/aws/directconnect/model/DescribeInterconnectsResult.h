@@ -35,11 +35,6 @@ namespace DirectConnect
 {
 namespace Model
 {
-  /**
-   * <p>A structure containing a list of interconnects.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/Interconnects">AWS
-   * API Reference</a></p>
-   */
   class AWS_DIRECTCONNECT_API DescribeInterconnectsResult
   {
   public:
@@ -49,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>A list of interconnects.</p>
+     * <p>The interconnects.</p>
      */
     inline const Aws::Vector<Interconnect>& GetInterconnects() const{ return m_interconnects; }
 
     /**
-     * <p>A list of interconnects.</p>
+     * <p>The interconnects.</p>
      */
     inline void SetInterconnects(const Aws::Vector<Interconnect>& value) { m_interconnects = value; }
 
     /**
-     * <p>A list of interconnects.</p>
+     * <p>The interconnects.</p>
      */
     inline void SetInterconnects(Aws::Vector<Interconnect>&& value) { m_interconnects = std::move(value); }
 
     /**
-     * <p>A list of interconnects.</p>
+     * <p>The interconnects.</p>
      */
     inline DescribeInterconnectsResult& WithInterconnects(const Aws::Vector<Interconnect>& value) { SetInterconnects(value); return *this;}
 
     /**
-     * <p>A list of interconnects.</p>
+     * <p>The interconnects.</p>
      */
     inline DescribeInterconnectsResult& WithInterconnects(Aws::Vector<Interconnect>&& value) { SetInterconnects(std::move(value)); return *this;}
 
     /**
-     * <p>A list of interconnects.</p>
+     * <p>The interconnects.</p>
      */
     inline DescribeInterconnectsResult& AddInterconnects(const Interconnect& value) { m_interconnects.push_back(value); return *this; }
 
     /**
-     * <p>A list of interconnects.</p>
+     * <p>The interconnects.</p>
      */
     inline DescribeInterconnectsResult& AddInterconnects(Interconnect&& value) { m_interconnects.push_back(std::move(value)); return *this; }
 

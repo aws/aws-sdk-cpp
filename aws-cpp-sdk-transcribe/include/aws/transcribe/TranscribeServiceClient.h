@@ -146,7 +146,10 @@ namespace Model
 
         /**
          * <p>Creates a new custom vocabulary that you can use to change the way Amazon
-         * Transcribe handles transcription of an audio file.</p><p><h3>See Also:</h3>   <a
+         * Transcribe handles transcription of an audio file. Note that vocabularies for
+         * en-AU, en-UK, and fr-CA languages that are in preview are not available. In the
+         * console, the vocabulary section will be greyed-out and SDK will return error
+         * message. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary">AWS
          * API Reference</a></p>
          */
@@ -154,7 +157,10 @@ namespace Model
 
         /**
          * <p>Creates a new custom vocabulary that you can use to change the way Amazon
-         * Transcribe handles transcription of an audio file.</p><p><h3>See Also:</h3>   <a
+         * Transcribe handles transcription of an audio file. Note that vocabularies for
+         * en-AU, en-UK, and fr-CA languages that are in preview are not available. In the
+         * console, the vocabulary section will be greyed-out and SDK will return error
+         * message. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary">AWS
          * API Reference</a></p>
          *
@@ -164,7 +170,10 @@ namespace Model
 
         /**
          * <p>Creates a new custom vocabulary that you can use to change the way Amazon
-         * Transcribe handles transcription of an audio file.</p><p><h3>See Also:</h3>   <a
+         * Transcribe handles transcription of an audio file. Note that vocabularies for
+         * en-AU, en-UK, and fr-CA languages that are in preview are not available. In the
+         * console, the vocabulary section will be greyed-out and SDK will return error
+         * message. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary">AWS
          * API Reference</a></p>
          *
@@ -173,7 +182,7 @@ namespace Model
         virtual void CreateVocabularyAsync(const Model::CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a previously submitted transcription job as wella s any other
+         * <p>Deletes a previously submitted transcription job as well as any other
          * generated results such as the transcription, models, and so on.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">AWS
@@ -182,7 +191,7 @@ namespace Model
         virtual Model::DeleteTranscriptionJobOutcome DeleteTranscriptionJob(const Model::DeleteTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Deletes a previously submitted transcription job as wella s any other
+         * <p>Deletes a previously submitted transcription job as well as any other
          * generated results such as the transcription, models, and so on.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">AWS
@@ -193,7 +202,7 @@ namespace Model
         virtual Model::DeleteTranscriptionJobOutcomeCallable DeleteTranscriptionJobCallable(const Model::DeleteTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Deletes a previously submitted transcription job as wella s any other
+         * <p>Deletes a previously submitted transcription job as well as any other
          * generated results such as the transcription, models, and so on.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">AWS
@@ -266,14 +275,20 @@ namespace Model
         virtual void GetTranscriptionJobAsync(const Model::GetTranscriptionJobRequest& request, const GetTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a vocabulary.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a vocabulary. Note that vocabularies for en-AU, en-UK,
+         * and fr-CA languages that are in preview are not available. In the console, the
+         * vocabulary section will be greyed-out and SDK will return error
+         * message.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary">AWS
          * API Reference</a></p>
          */
         virtual Model::GetVocabularyOutcome GetVocabulary(const Model::GetVocabularyRequest& request) const;
 
         /**
-         * <p>Gets information about a vocabulary.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a vocabulary. Note that vocabularies for en-AU, en-UK,
+         * and fr-CA languages that are in preview are not available. In the console, the
+         * vocabulary section will be greyed-out and SDK will return error
+         * message.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary">AWS
          * API Reference</a></p>
          *
@@ -282,7 +297,10 @@ namespace Model
         virtual Model::GetVocabularyOutcomeCallable GetVocabularyCallable(const Model::GetVocabularyRequest& request) const;
 
         /**
-         * <p>Gets information about a vocabulary.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a vocabulary. Note that vocabularies for en-AU, en-UK,
+         * and fr-CA languages that are in preview are not available. In the console, the
+         * vocabulary section will be greyed-out and SDK will return error
+         * message.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary">AWS
          * API Reference</a></p>
          *
@@ -350,16 +368,18 @@ namespace Model
         virtual void ListVocabulariesAsync(const Model::ListVocabulariesRequest& request, const ListVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts an asynchronous job to transcribe speech to text.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Starts an asynchronous job to transcribe speech to text. Note that en-AU,
+         * en-UK, and fr-CA languages are in preview and are only available to whitelisted
+         * customers. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">AWS
          * API Reference</a></p>
          */
         virtual Model::StartTranscriptionJobOutcome StartTranscriptionJob(const Model::StartTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Starts an asynchronous job to transcribe speech to text.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Starts an asynchronous job to transcribe speech to text. Note that en-AU,
+         * en-UK, and fr-CA languages are in preview and are only available to whitelisted
+         * customers. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">AWS
          * API Reference</a></p>
          *
@@ -368,8 +388,9 @@ namespace Model
         virtual Model::StartTranscriptionJobOutcomeCallable StartTranscriptionJobCallable(const Model::StartTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Starts an asynchronous job to transcribe speech to text.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Starts an asynchronous job to transcribe speech to text. Note that en-AU,
+         * en-UK, and fr-CA languages are in preview and are only available to whitelisted
+         * customers. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">AWS
          * API Reference</a></p>
          *
@@ -380,8 +401,10 @@ namespace Model
         /**
          * <p>Updates an existing vocabulary with new values. The
          * <code>UpdateVocabulary</code> operation overwrites all of the existing
-         * information with the values that you provide in the request.</p><p><h3>See
-         * Also:</h3>   <a
+         * information with the values that you provide in the request. Note that
+         * vocabularies for en-AU, en-UK, and fr-CA languages that are in preview are not
+         * available. In the console, the vocabulary section will be greyed-out and SDK
+         * will return error message.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary">AWS
          * API Reference</a></p>
          */
@@ -390,8 +413,10 @@ namespace Model
         /**
          * <p>Updates an existing vocabulary with new values. The
          * <code>UpdateVocabulary</code> operation overwrites all of the existing
-         * information with the values that you provide in the request.</p><p><h3>See
-         * Also:</h3>   <a
+         * information with the values that you provide in the request. Note that
+         * vocabularies for en-AU, en-UK, and fr-CA languages that are in preview are not
+         * available. In the console, the vocabulary section will be greyed-out and SDK
+         * will return error message.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary">AWS
          * API Reference</a></p>
          *
@@ -402,8 +427,10 @@ namespace Model
         /**
          * <p>Updates an existing vocabulary with new values. The
          * <code>UpdateVocabulary</code> operation overwrites all of the existing
-         * information with the values that you provide in the request.</p><p><h3>See
-         * Also:</h3>   <a
+         * information with the values that you provide in the request. Note that
+         * vocabularies for en-AU, en-UK, and fr-CA languages that are in preview are not
+         * available. In the console, the vocabulary section will be greyed-out and SDK
+         * will return error message.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary">AWS
          * API Reference</a></p>
          *

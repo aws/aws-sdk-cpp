@@ -132,9 +132,14 @@ namespace Model
    * parallel—so results are fast, even with large datasets and complex queries. For
    * more information, see <a
    * href="http://docs.aws.amazon.com/athena/latest/ug/what-is.html">What is Amazon
-   * Athena</a> in the <i>Amazon Athena User Guide</i>.</p> <p>For code samples using
-   * the AWS SDK for Java, see <a
-   * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
+   * Athena</a> in the <i>Amazon Athena User Guide</i>.</p> <p>If you connect to
+   * Athena using the JDBC driver, use version 1.1.0 of the driver or later with the
+   * Amazon Athena API. Earlier version drivers do not support the API. For more
+   * information and to download the driver, see <a
+   * href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing
+   * Amazon Athena with JDBC</a>.</p> <p>For code samples using the AWS SDK for Java,
+   * see <a
+   * href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
    * and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
    */
   class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient
@@ -163,7 +168,7 @@ namespace Model
 
         virtual ~AthenaClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "athena"; }
+        inline virtual const char* GetServiceClientName() const override { return "Athena"; }
 
 
         /**

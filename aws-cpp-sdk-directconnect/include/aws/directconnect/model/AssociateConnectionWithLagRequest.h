@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the AssociateConnectionWithLag
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLagRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API AssociateConnectionWithLagRequest : public DirectConnectRequest
   {
@@ -49,87 +45,80 @@ namespace Model
 
 
     /**
-     * <p>The ID of the connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the connection. For example, dxcon-abc123.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
     /**
-     * <p>The ID of the connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the connection. For example, dxcon-abc123.</p>
      */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
-     * <p>The ID of the connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the connection. For example, dxcon-abc123.</p>
      */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
-     * <p>The ID of the connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the connection. For example, dxcon-abc123.</p>
      */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
 
     /**
-     * <p>The ID of the connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the connection. For example, dxcon-abc123.</p>
      */
     inline AssociateConnectionWithLagRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the connection. For example, dxcon-abc123.</p>
      */
     inline AssociateConnectionWithLagRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the connection.</p> <p>Example: dxcon-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the connection. For example, dxcon-abc123.</p>
      */
     inline AssociateConnectionWithLagRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
 
     /**
-     * <p>The ID of the LAG with which to associate the connection.</p> <p>Example:
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the LAG with which to associate the connection. For example,
+     * dxlag-abc123.</p>
      */
     inline const Aws::String& GetLagId() const{ return m_lagId; }
 
     /**
-     * <p>The ID of the LAG with which to associate the connection.</p> <p>Example:
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the LAG with which to associate the connection. For example,
+     * dxlag-abc123.</p>
      */
     inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
 
     /**
-     * <p>The ID of the LAG with which to associate the connection.</p> <p>Example:
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the LAG with which to associate the connection. For example,
+     * dxlag-abc123.</p>
      */
     inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
 
     /**
-     * <p>The ID of the LAG with which to associate the connection.</p> <p>Example:
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the LAG with which to associate the connection. For example,
+     * dxlag-abc123.</p>
      */
     inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
 
     /**
-     * <p>The ID of the LAG with which to associate the connection.</p> <p>Example:
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the LAG with which to associate the connection. For example,
+     * dxlag-abc123.</p>
      */
     inline AssociateConnectionWithLagRequest& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
 
     /**
-     * <p>The ID of the LAG with which to associate the connection.</p> <p>Example:
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the LAG with which to associate the connection. For example,
+     * dxlag-abc123.</p>
      */
     inline AssociateConnectionWithLagRequest& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the LAG with which to associate the connection.</p> <p>Example:
-     * dxlag-abc123</p> <p>Default: None</p>
+     * <p>The ID of the LAG with which to associate the connection. For example,
+     * dxlag-abc123.</p>
      */
     inline AssociateConnectionWithLagRequest& WithLagId(const char* value) { SetLagId(value); return *this;}
 

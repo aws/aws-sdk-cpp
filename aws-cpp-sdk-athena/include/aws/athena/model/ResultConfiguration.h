@@ -50,72 +50,93 @@ namespace Model
 
 
     /**
-     * <p>The location in S3 where query results are stored.</p>
+     * <p>The location in Amazon S3 where your query results are stored, such as
+     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/athena/latest/ug/querying.html">Queries and
+     * Query Result Files. </a> </p>
      */
     inline const Aws::String& GetOutputLocation() const{ return m_outputLocation; }
 
     /**
-     * <p>The location in S3 where query results are stored.</p>
+     * <p>The location in Amazon S3 where your query results are stored, such as
+     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/athena/latest/ug/querying.html">Queries and
+     * Query Result Files. </a> </p>
      */
     inline void SetOutputLocation(const Aws::String& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
 
     /**
-     * <p>The location in S3 where query results are stored.</p>
+     * <p>The location in Amazon S3 where your query results are stored, such as
+     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/athena/latest/ug/querying.html">Queries and
+     * Query Result Files. </a> </p>
      */
     inline void SetOutputLocation(Aws::String&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
 
     /**
-     * <p>The location in S3 where query results are stored.</p>
+     * <p>The location in Amazon S3 where your query results are stored, such as
+     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/athena/latest/ug/querying.html">Queries and
+     * Query Result Files. </a> </p>
      */
     inline void SetOutputLocation(const char* value) { m_outputLocationHasBeenSet = true; m_outputLocation.assign(value); }
 
     /**
-     * <p>The location in S3 where query results are stored.</p>
+     * <p>The location in Amazon S3 where your query results are stored, such as
+     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/athena/latest/ug/querying.html">Queries and
+     * Query Result Files. </a> </p>
      */
     inline ResultConfiguration& WithOutputLocation(const Aws::String& value) { SetOutputLocation(value); return *this;}
 
     /**
-     * <p>The location in S3 where query results are stored.</p>
+     * <p>The location in Amazon S3 where your query results are stored, such as
+     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/athena/latest/ug/querying.html">Queries and
+     * Query Result Files. </a> </p>
      */
     inline ResultConfiguration& WithOutputLocation(Aws::String&& value) { SetOutputLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The location in S3 where query results are stored.</p>
+     * <p>The location in Amazon S3 where your query results are stored, such as
+     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/athena/latest/ug/querying.html">Queries and
+     * Query Result Files. </a> </p>
      */
     inline ResultConfiguration& WithOutputLocation(const char* value) { SetOutputLocation(value); return *this;}
 
 
     /**
-     * <p>If query results are encrypted in S3, indicates the S3 encryption option used
-     * (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code> and key
+     * <p>If query results are encrypted in Amazon S3, indicates the encryption option
+     * used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key
      * information.</p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
 
     /**
-     * <p>If query results are encrypted in S3, indicates the S3 encryption option used
-     * (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code> and key
+     * <p>If query results are encrypted in Amazon S3, indicates the encryption option
+     * used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key
      * information.</p>
      */
     inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
 
     /**
-     * <p>If query results are encrypted in S3, indicates the S3 encryption option used
-     * (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code> and key
+     * <p>If query results are encrypted in Amazon S3, indicates the encryption option
+     * used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key
      * information.</p>
      */
     inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
 
     /**
-     * <p>If query results are encrypted in S3, indicates the S3 encryption option used
-     * (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code> and key
+     * <p>If query results are encrypted in Amazon S3, indicates the encryption option
+     * used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key
      * information.</p>
      */
     inline ResultConfiguration& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>If query results are encrypted in S3, indicates the S3 encryption option used
-     * (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code> and key
+     * <p>If query results are encrypted in Amazon S3, indicates the encryption option
+     * used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key
      * information.</p>
      */
     inline ResultConfiguration& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}

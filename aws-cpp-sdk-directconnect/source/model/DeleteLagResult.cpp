@@ -30,7 +30,8 @@ DeleteLagResult::DeleteLagResult() :
     m_numberOfConnections(0),
     m_lagState(LagState::NOT_SET),
     m_minimumLinks(0),
-    m_allowsHostedConnections(false)
+    m_allowsHostedConnections(false),
+    m_jumboFrameCapable(false)
 {
 }
 
@@ -38,7 +39,8 @@ DeleteLagResult::DeleteLagResult(const Aws::AmazonWebServiceResult<JsonValue>& r
     m_numberOfConnections(0),
     m_lagState(LagState::NOT_SET),
     m_minimumLinks(0),
-    m_allowsHostedConnections(false)
+    m_allowsHostedConnections(false),
+    m_jumboFrameCapable(false)
 {
   *this = result;
 }
@@ -124,6 +126,12 @@ DeleteLagResult& DeleteLagResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("allowsHostedConnections"))
   {
     m_allowsHostedConnections = jsonValue.GetBool("allowsHostedConnections");
+
+  }
+
+  if(jsonValue.ValueExists("jumboFrameCapable"))
+  {
+    m_jumboFrameCapable = jsonValue.GetBool("jumboFrameCapable");
 
   }
 

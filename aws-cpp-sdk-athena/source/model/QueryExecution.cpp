@@ -31,6 +31,8 @@ namespace Model
 QueryExecution::QueryExecution() : 
     m_queryExecutionIdHasBeenSet(false),
     m_queryHasBeenSet(false),
+    m_statementType(StatementType::NOT_SET),
+    m_statementTypeHasBeenSet(false),
     m_resultConfigurationHasBeenSet(false),
     m_queryExecutionContextHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -41,6 +43,8 @@ QueryExecution::QueryExecution() :
 QueryExecution::QueryExecution(JsonView jsonValue) : 
     m_queryExecutionIdHasBeenSet(false),
     m_queryHasBeenSet(false),
+    m_statementType(StatementType::NOT_SET),
+    m_statementTypeHasBeenSet(false),
     m_resultConfigurationHasBeenSet(false),
     m_queryExecutionContextHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -63,6 +67,13 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
     m_query = jsonValue.GetString("Query");
 
     m_queryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatementType"))
+  {
+    m_statementType = StatementTypeMapper::GetStatementTypeForName(jsonValue.GetString("StatementType"));
+
+    m_statementTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResultConfiguration"))
@@ -110,6 +121,11 @@ JsonValue QueryExecution::Jsonize() const
   {
    payload.WithString("Query", m_query);
 
+  }
+
+  if(m_statementTypeHasBeenSet)
+  {
+   payload.WithString("StatementType", StatementTypeMapper::GetNameForStatementType(m_statementType));
   }
 
   if(m_resultConfigurationHasBeenSet)

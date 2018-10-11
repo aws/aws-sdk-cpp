@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the DeleteLag operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteLagRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API DeleteLagRequest : public DirectConnectRequest
   {
@@ -49,44 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the LAG to delete.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline const Aws::String& GetLagId() const{ return m_lagId; }
 
     /**
-     * <p>The ID of the LAG to delete.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
 
     /**
-     * <p>The ID of the LAG to delete.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
 
     /**
-     * <p>The ID of the LAG to delete.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
 
     /**
-     * <p>The ID of the LAG to delete.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline DeleteLagRequest& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
 
     /**
-     * <p>The ID of the LAG to delete.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline DeleteLagRequest& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the LAG to delete.</p> <p>Example: dxlag-abc123</p> <p>Default:
-     * None</p>
+     * <p>The ID of the LAG.</p>
      */
     inline DeleteLagRequest& WithLagId(const char* value) { SetLagId(value); return *this;}
 

@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the DeleteDirectConnectGateway
-   * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteDirectConnectGatewayRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API DeleteDirectConnectGatewayRequest : public DirectConnectRequest
   {
@@ -49,44 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline DeleteDirectConnectGatewayRequest& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline DeleteDirectConnectGatewayRequest& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the direct connect gateway.</p> <p>Example:
-     * "abcd1234-dcba-5678-be23-cdef9876ab45"</p> <p>Default: None</p>
+     * <p>The ID of the Direct Connect gateway.</p>
      */
     inline DeleteDirectConnectGatewayRequest& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
 

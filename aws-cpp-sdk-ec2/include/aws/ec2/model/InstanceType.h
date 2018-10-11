@@ -140,6 +140,7 @@ namespace Model
     g3_4xlarge,
     g3_8xlarge,
     g3_16xlarge,
+    g3s_xlarge,
     cg1_4xlarge,
     p2_xlarge,
     p2_8xlarge,

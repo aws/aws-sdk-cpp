@@ -28,10 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the CreateBGPPeer operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateBGPPeerRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API CreateBGPPeerRequest : public DirectConnectRequest
   {
@@ -50,70 +46,63 @@ namespace Model
 
 
     /**
-     * <p>The ID of the virtual interface on which the BGP peer will be
-     * provisioned.</p> <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline const Aws::String& GetVirtualInterfaceId() const{ return m_virtualInterfaceId; }
 
     /**
-     * <p>The ID of the virtual interface on which the BGP peer will be
-     * provisioned.</p> <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
 
     /**
-     * <p>The ID of the virtual interface on which the BGP peer will be
-     * provisioned.</p> <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::move(value); }
 
     /**
-     * <p>The ID of the virtual interface on which the BGP peer will be
-     * provisioned.</p> <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline void SetVirtualInterfaceId(const char* value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId.assign(value); }
 
     /**
-     * <p>The ID of the virtual interface on which the BGP peer will be
-     * provisioned.</p> <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline CreateBGPPeerRequest& WithVirtualInterfaceId(const Aws::String& value) { SetVirtualInterfaceId(value); return *this;}
 
     /**
-     * <p>The ID of the virtual interface on which the BGP peer will be
-     * provisioned.</p> <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline CreateBGPPeerRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the virtual interface on which the BGP peer will be
-     * provisioned.</p> <p>Example: dxvif-456abc78</p> <p>Default: None</p>
+     * <p>The ID of the virtual interface.</p>
      */
     inline CreateBGPPeerRequest& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
 
 
     /**
-     * <p>Detailed information for the BGP peer to be created.</p> <p>Default: None</p>
+     * <p>Information about the BGP peer.</p>
      */
     inline const NewBGPPeer& GetNewBGPPeer() const{ return m_newBGPPeer; }
 
     /**
-     * <p>Detailed information for the BGP peer to be created.</p> <p>Default: None</p>
+     * <p>Information about the BGP peer.</p>
      */
     inline void SetNewBGPPeer(const NewBGPPeer& value) { m_newBGPPeerHasBeenSet = true; m_newBGPPeer = value; }
 
     /**
-     * <p>Detailed information for the BGP peer to be created.</p> <p>Default: None</p>
+     * <p>Information about the BGP peer.</p>
      */
     inline void SetNewBGPPeer(NewBGPPeer&& value) { m_newBGPPeerHasBeenSet = true; m_newBGPPeer = std::move(value); }
 
     /**
-     * <p>Detailed information for the BGP peer to be created.</p> <p>Default: None</p>
+     * <p>Information about the BGP peer.</p>
      */
     inline CreateBGPPeerRequest& WithNewBGPPeer(const NewBGPPeer& value) { SetNewBGPPeer(value); return *this;}
 
     /**
-     * <p>Detailed information for the BGP peer to be created.</p> <p>Default: None</p>
+     * <p>Information about the BGP peer.</p>
      */
     inline CreateBGPPeerRequest& WithNewBGPPeer(NewBGPPeer&& value) { SetNewBGPPeer(std::move(value)); return *this;}
 

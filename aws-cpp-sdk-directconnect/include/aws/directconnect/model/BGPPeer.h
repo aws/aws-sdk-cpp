@@ -37,8 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>A structure containing information about a BGP peer.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Information about a BGP peer.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/BGPPeer">AWS
    * API Reference</a></p>
    */
@@ -51,162 +50,308 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
+     * configuration.</p>
+     */
     inline int GetAsn() const{ return m_asn; }
 
-    
+    /**
+     * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
+     * configuration.</p>
+     */
     inline void SetAsn(int value) { m_asnHasBeenSet = true; m_asn = value; }
 
-    
+    /**
+     * <p>The autonomous system (AS) number for Border Gateway Protocol (BGP)
+     * configuration.</p>
+     */
     inline BGPPeer& WithAsn(int value) { SetAsn(value); return *this;}
 
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline const Aws::String& GetAuthKey() const{ return m_authKey; }
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline void SetAuthKey(const Aws::String& value) { m_authKeyHasBeenSet = true; m_authKey = value; }
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline void SetAuthKey(Aws::String&& value) { m_authKeyHasBeenSet = true; m_authKey = std::move(value); }
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline void SetAuthKey(const char* value) { m_authKeyHasBeenSet = true; m_authKey.assign(value); }
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline BGPPeer& WithAuthKey(const Aws::String& value) { SetAuthKey(value); return *this;}
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline BGPPeer& WithAuthKey(Aws::String&& value) { SetAuthKey(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The authentication key for BGP configuration.</p>
+     */
     inline BGPPeer& WithAuthKey(const char* value) { SetAuthKey(value); return *this;}
 
 
-    
+    /**
+     * <p>The address family for the BGP peer.</p>
+     */
     inline const AddressFamily& GetAddressFamily() const{ return m_addressFamily; }
 
-    
+    /**
+     * <p>The address family for the BGP peer.</p>
+     */
     inline void SetAddressFamily(const AddressFamily& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = value; }
 
-    
+    /**
+     * <p>The address family for the BGP peer.</p>
+     */
     inline void SetAddressFamily(AddressFamily&& value) { m_addressFamilyHasBeenSet = true; m_addressFamily = std::move(value); }
 
-    
+    /**
+     * <p>The address family for the BGP peer.</p>
+     */
     inline BGPPeer& WithAddressFamily(const AddressFamily& value) { SetAddressFamily(value); return *this;}
 
-    
+    /**
+     * <p>The address family for the BGP peer.</p>
+     */
     inline BGPPeer& WithAddressFamily(AddressFamily&& value) { SetAddressFamily(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline const Aws::String& GetAmazonAddress() const{ return m_amazonAddress; }
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline void SetAmazonAddress(const Aws::String& value) { m_amazonAddressHasBeenSet = true; m_amazonAddress = value; }
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline void SetAmazonAddress(Aws::String&& value) { m_amazonAddressHasBeenSet = true; m_amazonAddress = std::move(value); }
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline void SetAmazonAddress(const char* value) { m_amazonAddressHasBeenSet = true; m_amazonAddress.assign(value); }
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline BGPPeer& WithAmazonAddress(const Aws::String& value) { SetAmazonAddress(value); return *this;}
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline BGPPeer& WithAmazonAddress(Aws::String&& value) { SetAmazonAddress(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The IP address assigned to the Amazon interface.</p>
+     */
     inline BGPPeer& WithAmazonAddress(const char* value) { SetAmazonAddress(value); return *this;}
 
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline const Aws::String& GetCustomerAddress() const{ return m_customerAddress; }
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline void SetCustomerAddress(const Aws::String& value) { m_customerAddressHasBeenSet = true; m_customerAddress = value; }
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline void SetCustomerAddress(Aws::String&& value) { m_customerAddressHasBeenSet = true; m_customerAddress = std::move(value); }
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline void SetCustomerAddress(const char* value) { m_customerAddressHasBeenSet = true; m_customerAddress.assign(value); }
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline BGPPeer& WithCustomerAddress(const Aws::String& value) { SetCustomerAddress(value); return *this;}
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline BGPPeer& WithCustomerAddress(Aws::String&& value) { SetCustomerAddress(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The IP address assigned to the customer interface.</p>
+     */
     inline BGPPeer& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
 
 
-    
+    /**
+     * <p>The state of the BGP peer. The following are the possible values:</p> <ul>
+     * <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require
+     * validation before the BGP peer can be created. This state applies only to public
+     * virtual interfaces.</p> </li> <li> <p> <code>pending</code>: The BGP peer is
+     * created, and remains in this state until it is ready to be established.</p>
+     * </li> <li> <p> <code>available</code>: The BGP peer is ready to be
+     * established.</p> </li> <li> <p> <code>deleting</code>: The BGP peer is being
+     * deleted.</p> </li> <li> <p> <code>deleted</code>: The BGP peer is deleted and
+     * cannot be established.</p> </li> </ul>
+     */
     inline const BGPPeerState& GetBgpPeerState() const{ return m_bgpPeerState; }
 
-    
+    /**
+     * <p>The state of the BGP peer. The following are the possible values:</p> <ul>
+     * <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require
+     * validation before the BGP peer can be created. This state applies only to public
+     * virtual interfaces.</p> </li> <li> <p> <code>pending</code>: The BGP peer is
+     * created, and remains in this state until it is ready to be established.</p>
+     * </li> <li> <p> <code>available</code>: The BGP peer is ready to be
+     * established.</p> </li> <li> <p> <code>deleting</code>: The BGP peer is being
+     * deleted.</p> </li> <li> <p> <code>deleted</code>: The BGP peer is deleted and
+     * cannot be established.</p> </li> </ul>
+     */
     inline void SetBgpPeerState(const BGPPeerState& value) { m_bgpPeerStateHasBeenSet = true; m_bgpPeerState = value; }
 
-    
+    /**
+     * <p>The state of the BGP peer. The following are the possible values:</p> <ul>
+     * <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require
+     * validation before the BGP peer can be created. This state applies only to public
+     * virtual interfaces.</p> </li> <li> <p> <code>pending</code>: The BGP peer is
+     * created, and remains in this state until it is ready to be established.</p>
+     * </li> <li> <p> <code>available</code>: The BGP peer is ready to be
+     * established.</p> </li> <li> <p> <code>deleting</code>: The BGP peer is being
+     * deleted.</p> </li> <li> <p> <code>deleted</code>: The BGP peer is deleted and
+     * cannot be established.</p> </li> </ul>
+     */
     inline void SetBgpPeerState(BGPPeerState&& value) { m_bgpPeerStateHasBeenSet = true; m_bgpPeerState = std::move(value); }
 
-    
+    /**
+     * <p>The state of the BGP peer. The following are the possible values:</p> <ul>
+     * <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require
+     * validation before the BGP peer can be created. This state applies only to public
+     * virtual interfaces.</p> </li> <li> <p> <code>pending</code>: The BGP peer is
+     * created, and remains in this state until it is ready to be established.</p>
+     * </li> <li> <p> <code>available</code>: The BGP peer is ready to be
+     * established.</p> </li> <li> <p> <code>deleting</code>: The BGP peer is being
+     * deleted.</p> </li> <li> <p> <code>deleted</code>: The BGP peer is deleted and
+     * cannot be established.</p> </li> </ul>
+     */
     inline BGPPeer& WithBgpPeerState(const BGPPeerState& value) { SetBgpPeerState(value); return *this;}
 
-    
+    /**
+     * <p>The state of the BGP peer. The following are the possible values:</p> <ul>
+     * <li> <p> <code>verifying</code>: The BGP peering addresses or ASN require
+     * validation before the BGP peer can be created. This state applies only to public
+     * virtual interfaces.</p> </li> <li> <p> <code>pending</code>: The BGP peer is
+     * created, and remains in this state until it is ready to be established.</p>
+     * </li> <li> <p> <code>available</code>: The BGP peer is ready to be
+     * established.</p> </li> <li> <p> <code>deleting</code>: The BGP peer is being
+     * deleted.</p> </li> <li> <p> <code>deleted</code>: The BGP peer is deleted and
+     * cannot be established.</p> </li> </ul>
+     */
     inline BGPPeer& WithBgpPeerState(BGPPeerState&& value) { SetBgpPeerState(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The status of the BGP peer. The following are the possible values:</p> <ul>
+     * <li> <p> <code>up</code>: The BGP peer is established. This state does not
+     * indicate the state of the routing function. Ensure that you are receiving routes
+     * over the BGP session.</p> </li> <li> <p> <code>down</code>: The BGP peer is
+     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is
+     * unknown.</p> </li> </ul>
+     */
     inline const BGPStatus& GetBgpStatus() const{ return m_bgpStatus; }
 
-    
+    /**
+     * <p>The status of the BGP peer. The following are the possible values:</p> <ul>
+     * <li> <p> <code>up</code>: The BGP peer is established. This state does not
+     * indicate the state of the routing function. Ensure that you are receiving routes
+     * over the BGP session.</p> </li> <li> <p> <code>down</code>: The BGP peer is
+     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is
+     * unknown.</p> </li> </ul>
+     */
     inline void SetBgpStatus(const BGPStatus& value) { m_bgpStatusHasBeenSet = true; m_bgpStatus = value; }
 
-    
+    /**
+     * <p>The status of the BGP peer. The following are the possible values:</p> <ul>
+     * <li> <p> <code>up</code>: The BGP peer is established. This state does not
+     * indicate the state of the routing function. Ensure that you are receiving routes
+     * over the BGP session.</p> </li> <li> <p> <code>down</code>: The BGP peer is
+     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is
+     * unknown.</p> </li> </ul>
+     */
     inline void SetBgpStatus(BGPStatus&& value) { m_bgpStatusHasBeenSet = true; m_bgpStatus = std::move(value); }
 
-    
+    /**
+     * <p>The status of the BGP peer. The following are the possible values:</p> <ul>
+     * <li> <p> <code>up</code>: The BGP peer is established. This state does not
+     * indicate the state of the routing function. Ensure that you are receiving routes
+     * over the BGP session.</p> </li> <li> <p> <code>down</code>: The BGP peer is
+     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is
+     * unknown.</p> </li> </ul>
+     */
     inline BGPPeer& WithBgpStatus(const BGPStatus& value) { SetBgpStatus(value); return *this;}
 
-    
+    /**
+     * <p>The status of the BGP peer. The following are the possible values:</p> <ul>
+     * <li> <p> <code>up</code>: The BGP peer is established. This state does not
+     * indicate the state of the routing function. Ensure that you are receiving routes
+     * over the BGP session.</p> </li> <li> <p> <code>down</code>: The BGP peer is
+     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is
+     * unknown.</p> </li> </ul>
+     */
     inline BGPPeer& WithBgpStatus(BGPStatus&& value) { SetBgpStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     * <p>The Direct Connect endpoint on which the BGP peer terminates.</p>
      */
     inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
 
     /**
-     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     * <p>The Direct Connect endpoint on which the BGP peer terminates.</p>
      */
     inline void SetAwsDeviceV2(const Aws::String& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = value; }
 
     /**
-     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     * <p>The Direct Connect endpoint on which the BGP peer terminates.</p>
      */
     inline void SetAwsDeviceV2(Aws::String&& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = std::move(value); }
 
     /**
-     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     * <p>The Direct Connect endpoint on which the BGP peer terminates.</p>
      */
     inline void SetAwsDeviceV2(const char* value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2.assign(value); }
 
     /**
-     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     * <p>The Direct Connect endpoint on which the BGP peer terminates.</p>
      */
     inline BGPPeer& WithAwsDeviceV2(const Aws::String& value) { SetAwsDeviceV2(value); return *this;}
 
     /**
-     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     * <p>The Direct Connect endpoint on which the BGP peer terminates.</p>
      */
     inline BGPPeer& WithAwsDeviceV2(Aws::String&& value) { SetAwsDeviceV2(std::move(value)); return *this;}
 
     /**
-     * <p>The Direct Connection endpoint which the BGP peer terminates on.</p>
+     * <p>The Direct Connect endpoint on which the BGP peer terminates.</p>
      */
     inline BGPPeer& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
 

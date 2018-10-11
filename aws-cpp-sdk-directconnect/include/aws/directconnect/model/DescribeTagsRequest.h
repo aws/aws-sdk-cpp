@@ -28,10 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Container for the parameters to the DescribeTags operation.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeTagsRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DIRECTCONNECT_API DescribeTagsRequest : public DirectConnectRequest
   {
@@ -50,42 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline DescribeTagsRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline DescribeTagsRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline DescribeTagsRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline DescribeTagsRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARNs) of the Direct Connect resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline DescribeTagsRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
