@@ -56,7 +56,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline const Aws::String& GetTrailName() const{ return m_trailName; }
 
@@ -70,7 +70,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailName(const Aws::String& value) { m_trailNameHasBeenSet = true; m_trailName = value; }
 
@@ -84,7 +84,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailName(Aws::String&& value) { m_trailNameHasBeenSet = true; m_trailName = std::move(value); }
 
@@ -98,7 +98,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailName(const char* value) { m_trailNameHasBeenSet = true; m_trailName.assign(value); }
 
@@ -112,7 +112,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline PutEventSelectorsRequest& WithTrailName(const Aws::String& value) { SetTrailName(value); return *this;}
 
@@ -126,7 +126,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline PutEventSelectorsRequest& WithTrailName(Aws::String&& value) { SetTrailName(std::move(value)); return *this;}
 
@@ -140,7 +140,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline PutEventSelectorsRequest& WithTrailName(const char* value) { SetTrailName(value); return *this;}
 

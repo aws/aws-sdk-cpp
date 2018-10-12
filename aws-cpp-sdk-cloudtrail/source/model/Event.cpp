@@ -31,6 +31,8 @@ namespace Model
 Event::Event() : 
     m_eventIdHasBeenSet(false),
     m_eventNameHasBeenSet(false),
+    m_readOnlyHasBeenSet(false),
+    m_accessKeyIdHasBeenSet(false),
     m_eventTimeHasBeenSet(false),
     m_eventSourceHasBeenSet(false),
     m_usernameHasBeenSet(false),
@@ -42,6 +44,8 @@ Event::Event() :
 Event::Event(JsonView jsonValue) : 
     m_eventIdHasBeenSet(false),
     m_eventNameHasBeenSet(false),
+    m_readOnlyHasBeenSet(false),
+    m_accessKeyIdHasBeenSet(false),
     m_eventTimeHasBeenSet(false),
     m_eventSourceHasBeenSet(false),
     m_usernameHasBeenSet(false),
@@ -65,6 +69,20 @@ Event& Event::operator =(JsonView jsonValue)
     m_eventName = jsonValue.GetString("EventName");
 
     m_eventNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReadOnly"))
+  {
+    m_readOnly = jsonValue.GetString("ReadOnly");
+
+    m_readOnlyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AccessKeyId"))
+  {
+    m_accessKeyId = jsonValue.GetString("AccessKeyId");
+
+    m_accessKeyIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EventTime"))
@@ -121,6 +139,18 @@ JsonValue Event::Jsonize() const
   if(m_eventNameHasBeenSet)
   {
    payload.WithString("EventName", m_eventName);
+
+  }
+
+  if(m_readOnlyHasBeenSet)
+  {
+   payload.WithString("ReadOnly", m_readOnly);
+
+  }
+
+  if(m_accessKeyIdHasBeenSet)
+  {
+   payload.WithString("AccessKeyId", m_accessKeyId);
 
   }
 

@@ -167,19 +167,19 @@ namespace Model
 
     /**
      * <p>The number of events to return. Possible values are 1 through 50. The default
-     * is 10.</p>
+     * is 50.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The number of events to return. Possible values are 1 through 50. The default
-     * is 10.</p>
+     * is 50.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The number of events to return. Possible values are 1 through 50. The default
-     * is 10.</p>
+     * is 50.</p>
      */
     inline LookupEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

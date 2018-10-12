@@ -32,10 +32,12 @@ namespace Aws
 
         static const int EventId_HASH = HashingUtils::HashString("EventId");
         static const int EventName_HASH = HashingUtils::HashString("EventName");
+        static const int ReadOnly_HASH = HashingUtils::HashString("ReadOnly");
         static const int Username_HASH = HashingUtils::HashString("Username");
         static const int ResourceType_HASH = HashingUtils::HashString("ResourceType");
         static const int ResourceName_HASH = HashingUtils::HashString("ResourceName");
         static const int EventSource_HASH = HashingUtils::HashString("EventSource");
+        static const int AccessKeyId_HASH = HashingUtils::HashString("AccessKeyId");
 
 
         LookupAttributeKey GetLookupAttributeKeyForName(const Aws::String& name)
@@ -48,6 +50,10 @@ namespace Aws
           else if (hashCode == EventName_HASH)
           {
             return LookupAttributeKey::EventName;
+          }
+          else if (hashCode == ReadOnly_HASH)
+          {
+            return LookupAttributeKey::ReadOnly;
           }
           else if (hashCode == Username_HASH)
           {
@@ -64,6 +70,10 @@ namespace Aws
           else if (hashCode == EventSource_HASH)
           {
             return LookupAttributeKey::EventSource;
+          }
+          else if (hashCode == AccessKeyId_HASH)
+          {
+            return LookupAttributeKey::AccessKeyId;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -83,6 +93,8 @@ namespace Aws
             return "EventId";
           case LookupAttributeKey::EventName:
             return "EventName";
+          case LookupAttributeKey::ReadOnly:
+            return "ReadOnly";
           case LookupAttributeKey::Username:
             return "Username";
           case LookupAttributeKey::ResourceType:
@@ -91,6 +103,8 @@ namespace Aws
             return "ResourceName";
           case LookupAttributeKey::EventSource:
             return "EventSource";
+          case LookupAttributeKey::AccessKeyId:
+            return "AccessKeyId";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

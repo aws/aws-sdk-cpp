@@ -187,49 +187,49 @@ namespace Model
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
      * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code> </p>
+     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline const Aws::String& GetSnsTopicARN() const{ return m_snsTopicARN; }
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
      * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code> </p>
+     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline void SetSnsTopicARN(const Aws::String& value) { m_snsTopicARN = value; }
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
      * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code> </p>
+     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARN = std::move(value); }
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
      * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code> </p>
+     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline void SetSnsTopicARN(const char* value) { m_snsTopicARN.assign(value); }
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
      * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code> </p>
+     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline CreateTrailResult& WithSnsTopicARN(const Aws::String& value) { SetSnsTopicARN(value); return *this;}
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
      * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code> </p>
+     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline CreateTrailResult& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send
      * notifications when log files are delivered. The format of a topic ARN is:</p>
-     * <p> <code>arn:aws:sns:us-east-1:123456789012:MyTopic</code> </p>
+     * <p> <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> </p>
      */
     inline CreateTrailResult& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
 
@@ -271,49 +271,49 @@ namespace Model
 
     /**
      * <p>Specifies the ARN of the trail that was created. The format of a trail ARN
-     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     inline const Aws::String& GetTrailARN() const{ return m_trailARN; }
 
     /**
      * <p>Specifies the ARN of the trail that was created. The format of a trail ARN
-     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     inline void SetTrailARN(const Aws::String& value) { m_trailARN = value; }
 
     /**
      * <p>Specifies the ARN of the trail that was created. The format of a trail ARN
-     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     inline void SetTrailARN(Aws::String&& value) { m_trailARN = std::move(value); }
 
     /**
      * <p>Specifies the ARN of the trail that was created. The format of a trail ARN
-     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     inline void SetTrailARN(const char* value) { m_trailARN.assign(value); }
 
     /**
      * <p>Specifies the ARN of the trail that was created. The format of a trail ARN
-     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     inline CreateTrailResult& WithTrailARN(const Aws::String& value) { SetTrailARN(value); return *this;}
 
     /**
      * <p>Specifies the ARN of the trail that was created. The format of a trail ARN
-     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     inline CreateTrailResult& WithTrailARN(Aws::String&& value) { SetTrailARN(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the ARN of the trail that was created. The format of a trail ARN
-     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code>
+     * is:</p> <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
      */
     inline CreateTrailResult& WithTrailARN(const char* value) { SetTrailARN(value); return *this;}
@@ -424,7 +424,7 @@ namespace Model
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
      * value is a fully specified ARN to a KMS key in the format:</p> <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
@@ -432,7 +432,7 @@ namespace Model
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
      * value is a fully specified ARN to a KMS key in the format:</p> <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
@@ -440,7 +440,7 @@ namespace Model
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
      * value is a fully specified ARN to a KMS key in the format:</p> <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
@@ -448,7 +448,7 @@ namespace Model
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
      * value is a fully specified ARN to a KMS key in the format:</p> <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
@@ -456,7 +456,7 @@ namespace Model
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
      * value is a fully specified ARN to a KMS key in the format:</p> <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline CreateTrailResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
@@ -464,7 +464,7 @@ namespace Model
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
      * value is a fully specified ARN to a KMS key in the format:</p> <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline CreateTrailResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
@@ -472,7 +472,7 @@ namespace Model
     /**
      * <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The
      * value is a fully specified ARN to a KMS key in the format:</p> <p>
-     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
     inline CreateTrailResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}

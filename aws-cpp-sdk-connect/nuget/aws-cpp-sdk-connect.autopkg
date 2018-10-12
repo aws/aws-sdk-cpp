@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Connect;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.6.20170808.29;
+        version : 1.6.20170808.30;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Connect Service);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.6.29
+            AWSSDKCPP-Core/1.6.30
        }
     }
 

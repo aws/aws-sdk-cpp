@@ -51,10 +51,10 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline const Aws::String& GetTrailName() const{ return m_trailName; }
 
@@ -65,10 +65,10 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailName(const Aws::String& value) { m_trailNameHasBeenSet = true; m_trailName = value; }
 
@@ -79,10 +79,10 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailName(Aws::String&& value) { m_trailNameHasBeenSet = true; m_trailName = std::move(value); }
 
@@ -93,10 +93,10 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetTrailName(const char* value) { m_trailNameHasBeenSet = true; m_trailName.assign(value); }
 
@@ -107,10 +107,10 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline GetEventSelectorsRequest& WithTrailName(const Aws::String& value) { SetTrailName(value); return *this;}
 
@@ -121,10 +121,10 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline GetEventSelectorsRequest& WithTrailName(Aws::String&& value) { SetTrailName(std::move(value)); return *this;}
 
@@ -135,10 +135,10 @@ namespace Model
      * (-)</p> </li> <li> <p>Start with a letter or number, and end with a letter or
      * number</p> </li> <li> <p>Be between 3 and 128 characters</p> </li> <li> <p>Have
      * no adjacent periods, underscores or dashes. Names like
-     * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
-     * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
-     * <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
+     * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+     * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline GetEventSelectorsRequest& WithTrailName(const char* value) { SetTrailName(value); return *this;}
 

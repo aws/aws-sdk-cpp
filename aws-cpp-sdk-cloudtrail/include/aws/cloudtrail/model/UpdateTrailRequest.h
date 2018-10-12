@@ -57,7 +57,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If <code>Name</code> is a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -71,7 +71,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If <code>Name</code> is a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -85,7 +85,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If <code>Name</code> is a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -99,7 +99,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If <code>Name</code> is a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -113,7 +113,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If <code>Name</code> is a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline UpdateTrailRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -127,7 +127,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If <code>Name</code> is a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline UpdateTrailRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -141,7 +141,7 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are invalid.</p> </li>
      * <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> </ul>
      * <p>If <code>Name</code> is a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline UpdateTrailRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -491,8 +491,8 @@ namespace Model
      * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
      * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
      * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
+     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
@@ -502,8 +502,8 @@ namespace Model
      * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
      * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
      * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
+     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
@@ -513,8 +513,8 @@ namespace Model
      * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
      * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
      * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
+     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
@@ -524,8 +524,8 @@ namespace Model
      * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
      * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
      * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
+     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
@@ -535,8 +535,8 @@ namespace Model
      * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
      * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
      * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
+     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline UpdateTrailRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
@@ -546,8 +546,8 @@ namespace Model
      * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
      * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
      * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
+     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline UpdateTrailRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
@@ -557,8 +557,8 @@ namespace Model
      * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
      * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
      * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</p>
+     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
+     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
      * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
      */
     inline UpdateTrailRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}

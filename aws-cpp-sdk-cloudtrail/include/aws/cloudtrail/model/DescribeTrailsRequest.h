@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
      * describe. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>If
      * an empty list is specified, information for the trail in the current region is
      * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
@@ -68,7 +68,7 @@ namespace Model
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
      * describe. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>If
      * an empty list is specified, information for the trail in the current region is
      * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
@@ -85,7 +85,7 @@ namespace Model
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
      * describe. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>If
      * an empty list is specified, information for the trail in the current region is
      * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
      * describe. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>If
      * an empty list is specified, information for the trail in the current region is
      * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
@@ -119,7 +119,7 @@ namespace Model
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
      * describe. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>If
      * an empty list is specified, information for the trail in the current region is
      * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
@@ -136,7 +136,7 @@ namespace Model
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
      * describe. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>If
      * an empty list is specified, information for the trail in the current region is
      * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
@@ -153,7 +153,7 @@ namespace Model
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
      * describe. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>If
      * an empty list is specified, information for the trail in the current region is
      * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in
@@ -170,7 +170,7 @@ namespace Model
     /**
      * <p>Specifies a list of trail names, trail ARNs, or both, of the trails to
      * describe. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p> <p>If
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>If
      * an empty list is specified, information for the trail in the current region is
      * returned.</p> <ul> <li> <p>If an empty list is specified and
      * <code>IncludeShadowTrails</code> is false, then information for all trails in

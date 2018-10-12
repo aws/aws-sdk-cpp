@@ -28,10 +28,12 @@ namespace Model
     NOT_SET,
     EventId,
     EventName,
+    ReadOnly,
     Username,
     ResourceType,
     ResourceName,
-    EventSource
+    EventSource,
+    AccessKeyId
   };
 
 namespace LookupAttributeKeyMapper

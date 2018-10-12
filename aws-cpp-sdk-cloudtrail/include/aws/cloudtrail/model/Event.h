@@ -125,6 +125,92 @@ namespace Model
 
 
     /**
+     * <p>Information about whether the event is a write event or a read event. </p>
+     */
+    inline const Aws::String& GetReadOnly() const{ return m_readOnly; }
+
+    /**
+     * <p>Information about whether the event is a write event or a read event. </p>
+     */
+    inline void SetReadOnly(const Aws::String& value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
+
+    /**
+     * <p>Information about whether the event is a write event or a read event. </p>
+     */
+    inline void SetReadOnly(Aws::String&& value) { m_readOnlyHasBeenSet = true; m_readOnly = std::move(value); }
+
+    /**
+     * <p>Information about whether the event is a write event or a read event. </p>
+     */
+    inline void SetReadOnly(const char* value) { m_readOnlyHasBeenSet = true; m_readOnly.assign(value); }
+
+    /**
+     * <p>Information about whether the event is a write event or a read event. </p>
+     */
+    inline Event& WithReadOnly(const Aws::String& value) { SetReadOnly(value); return *this;}
+
+    /**
+     * <p>Information about whether the event is a write event or a read event. </p>
+     */
+    inline Event& WithReadOnly(Aws::String&& value) { SetReadOnly(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about whether the event is a write event or a read event. </p>
+     */
+    inline Event& WithReadOnly(const char* value) { SetReadOnly(value); return *this;}
+
+
+    /**
+     * <p>The AWS access key ID that was used to sign the request. If the request was
+     * made with temporary security credentials, this is the access key ID of the
+     * temporary credentials.</p>
+     */
+    inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+
+    /**
+     * <p>The AWS access key ID that was used to sign the request. If the request was
+     * made with temporary security credentials, this is the access key ID of the
+     * temporary credentials.</p>
+     */
+    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
+
+    /**
+     * <p>The AWS access key ID that was used to sign the request. If the request was
+     * made with temporary security credentials, this is the access key ID of the
+     * temporary credentials.</p>
+     */
+    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
+
+    /**
+     * <p>The AWS access key ID that was used to sign the request. If the request was
+     * made with temporary security credentials, this is the access key ID of the
+     * temporary credentials.</p>
+     */
+    inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
+
+    /**
+     * <p>The AWS access key ID that was used to sign the request. If the request was
+     * made with temporary security credentials, this is the access key ID of the
+     * temporary credentials.</p>
+     */
+    inline Event& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
+
+    /**
+     * <p>The AWS access key ID that was used to sign the request. If the request was
+     * made with temporary security credentials, this is the access key ID of the
+     * temporary credentials.</p>
+     */
+    inline Event& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS access key ID that was used to sign the request. If the request was
+     * made with temporary security credentials, this is the access key ID of the
+     * temporary credentials.</p>
+     */
+    inline Event& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
+
+
+    /**
      * <p>The date and time of the event returned.</p>
      */
     inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
@@ -307,6 +393,12 @@ namespace Model
 
     Aws::String m_eventName;
     bool m_eventNameHasBeenSet;
+
+    Aws::String m_readOnly;
+    bool m_readOnlyHasBeenSet;
+
+    Aws::String m_accessKeyId;
+    bool m_accessKeyIdHasBeenSet;
 
     Aws::Utils::DateTime m_eventTime;
     bool m_eventTimeHasBeenSet;

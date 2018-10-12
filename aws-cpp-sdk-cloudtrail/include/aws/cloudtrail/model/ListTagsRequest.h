@@ -51,56 +51,56 @@ namespace Model
     /**
      * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
      * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIdList() const{ return m_resourceIdList; }
 
     /**
      * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
      * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetResourceIdList(const Aws::Vector<Aws::String>& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList = value; }
 
     /**
      * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
      * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline void SetResourceIdList(Aws::Vector<Aws::String>&& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList = std::move(value); }
 
     /**
      * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
      * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline ListTagsRequest& WithResourceIdList(const Aws::Vector<Aws::String>& value) { SetResourceIdList(value); return *this;}
 
     /**
      * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
      * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline ListTagsRequest& WithResourceIdList(Aws::Vector<Aws::String>&& value) { SetResourceIdList(std::move(value)); return *this;}
 
     /**
      * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
      * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline ListTagsRequest& AddResourceIdList(const Aws::String& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.push_back(value); return *this; }
 
     /**
      * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
      * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline ListTagsRequest& AddResourceIdList(Aws::String&& value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies a list of trail ARNs whose tags will be listed. The list has a
      * limit of 20 ARNs. The format of a trail ARN is:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-1:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
     inline ListTagsRequest& AddResourceIdList(const char* value) { m_resourceIdListHasBeenSet = true; m_resourceIdList.push_back(value); return *this; }
 

@@ -36,12 +36,14 @@ namespace Model
 {
 
   /**
-   * <p>Use event selectors to specify whether you want your trail to log management
-   * and/or data events. When an event occurs in your account, CloudTrail evaluates
-   * the event selector for all trails. For each trail, if the event matches any
-   * event selector, the trail processes and logs the event. If the event doesn't
-   * match any event selector, the trail doesn't log the event.</p> <p>You can
-   * configure up to five event selectors for a trail.</p><p><h3>See Also:</h3>   <a
+   * <p>Use event selectors to further specify the management and data event settings
+   * for your trail. By default, trails created without specific event selectors will
+   * be configured to log all read and write management events, and no data events.
+   * When an event occurs in your account, CloudTrail evaluates the event selector
+   * for all trails. For each trail, if the event matches any event selector, the
+   * trail processes and logs the event. If the event doesn't match any event
+   * selector, the trail doesn't log the event.</p> <p>You can configure up to five
+   * event selectors for a trail.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EventSelector">AWS
    * API Reference</a></p>
    */
@@ -124,65 +126,93 @@ namespace Model
 
 
     /**
-     * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
-     * information, see <a
+     * <p>CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda
+     * functions. You can specify up to 250 resources for an individual event selector,
+     * but the total number of data resources cannot exceed 250 across all event
+     * selectors in a trail. This limit does not apply if you configure resource
+     * logging for all data events. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
-     * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+     * Events</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
+     * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline const Aws::Vector<DataResource>& GetDataResources() const{ return m_dataResources; }
 
     /**
-     * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
-     * information, see <a
+     * <p>CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda
+     * functions. You can specify up to 250 resources for an individual event selector,
+     * but the total number of data resources cannot exceed 250 across all event
+     * selectors in a trail. This limit does not apply if you configure resource
+     * logging for all data events. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
-     * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+     * Events</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
+     * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline void SetDataResources(const Aws::Vector<DataResource>& value) { m_dataResourcesHasBeenSet = true; m_dataResources = value; }
 
     /**
-     * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
-     * information, see <a
+     * <p>CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda
+     * functions. You can specify up to 250 resources for an individual event selector,
+     * but the total number of data resources cannot exceed 250 across all event
+     * selectors in a trail. This limit does not apply if you configure resource
+     * logging for all data events. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
-     * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+     * Events</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
+     * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline void SetDataResources(Aws::Vector<DataResource>&& value) { m_dataResourcesHasBeenSet = true; m_dataResources = std::move(value); }
 
     /**
-     * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
-     * information, see <a
+     * <p>CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda
+     * functions. You can specify up to 250 resources for an individual event selector,
+     * but the total number of data resources cannot exceed 250 across all event
+     * selectors in a trail. This limit does not apply if you configure resource
+     * logging for all data events. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
-     * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+     * Events</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
+     * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline EventSelector& WithDataResources(const Aws::Vector<DataResource>& value) { SetDataResources(value); return *this;}
 
     /**
-     * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
-     * information, see <a
+     * <p>CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda
+     * functions. You can specify up to 250 resources for an individual event selector,
+     * but the total number of data resources cannot exceed 250 across all event
+     * selectors in a trail. This limit does not apply if you configure resource
+     * logging for all data events. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
-     * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+     * Events</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
+     * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline EventSelector& WithDataResources(Aws::Vector<DataResource>&& value) { SetDataResources(std::move(value)); return *this;}
 
     /**
-     * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
-     * information, see <a
+     * <p>CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda
+     * functions. You can specify up to 250 resources for an individual event selector,
+     * but the total number of data resources cannot exceed 250 across all event
+     * selectors in a trail. This limit does not apply if you configure resource
+     * logging for all data events. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
-     * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+     * Events</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
+     * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline EventSelector& AddDataResources(const DataResource& value) { m_dataResourcesHasBeenSet = true; m_dataResources.push_back(value); return *this; }
 
     /**
-     * <p>CloudTrail supports logging only data events for S3 objects. You can specify
-     * up to 250 S3 buckets and object prefixes for a trail.</p> <p>For more
-     * information, see <a
+     * <p>CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda
+     * functions. You can specify up to 250 resources for an individual event selector,
+     * but the total number of data resources cannot exceed 250 across all event
+     * selectors in a trail. This limit does not apply if you configure resource
+     * logging for all data events. </p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data
-     * Events</a> in the <i>AWS CloudTrail User Guide</i>.</p>
+     * Events</a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits
+     * in AWS CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.</p>
      */
     inline EventSelector& AddDataResources(DataResource&& value) { m_dataResourcesHasBeenSet = true; m_dataResources.push_back(std::move(value)); return *this; }
 
