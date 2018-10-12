@@ -48,7 +48,7 @@ elseif(ENABLE_OPENSSL_ENCRYPTION)
             message(STATUS "  Openssl include directory: ${OPENSSL_INCLUDE_DIR}")
             message(STATUS "  Openssl library: ${OPENSSL_LIBRARIES}")
         endif()
-        List(APPEND EXTERNAL_DEPS_INCLUDE_DIRS ${OPENSSL_INCLUDE_DIRS})
+        List(APPEND EXTERNAL_DEPS_INCLUDE_DIRS ${OPENSSL_INCLUDE_DIR})
     endif()
     set(CRYPTO_LIBS ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARIES})
     # ssl depends on libcrypto
