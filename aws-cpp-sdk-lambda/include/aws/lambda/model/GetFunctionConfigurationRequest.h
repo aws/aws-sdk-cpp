@@ -31,9 +31,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfigurationRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_LAMBDA_API GetFunctionConfigurationRequest : public LambdaRequest
   {
@@ -52,171 +49,129 @@ namespace Model
 
 
     /**
-     * <p>The name of the Lambda function for which you want to retrieve the
-     * configuration information.</p> <p> You can specify a function name (for example,
-     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the
-     * function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the Lambda function for which you want to retrieve the
-     * configuration information.</p> <p> You can specify a function name (for example,
-     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the
-     * function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the Lambda function for which you want to retrieve the
-     * configuration information.</p> <p> You can specify a function name (for example,
-     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the
-     * function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the Lambda function for which you want to retrieve the
-     * configuration information.</p> <p> You can specify a function name (for example,
-     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the
-     * function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the Lambda function for which you want to retrieve the
-     * configuration information.</p> <p> You can specify a function name (for example,
-     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the
-     * function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline GetFunctionConfigurationRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the Lambda function for which you want to retrieve the
-     * configuration information.</p> <p> You can specify a function name (for example,
-     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the
-     * function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline GetFunctionConfigurationRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Lambda function for which you want to retrieve the
-     * configuration information.</p> <p> You can specify a function name (for example,
-     * <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN) of the
-     * function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline GetFunctionConfigurationRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
 
     /**
-     * <p>Using this optional parameter you can specify a function version or an alias
-     * name. If you specify function version, the API uses qualified function ARN and
-     * returns information about the specific function version. If you specify an alias
-     * name, the API uses the alias ARN and returns information about the function
-     * version to which the alias points.</p> <p>If you don't specify this parameter,
-     * the API uses unqualified function ARN, and returns information about the
-     * <code>$LATEST</code> function version.</p>
+     * <p>Specify a version or alias to get details about a published version of the
+     * function.</p>
      */
     inline const Aws::String& GetQualifier() const{ return m_qualifier; }
 
     /**
-     * <p>Using this optional parameter you can specify a function version or an alias
-     * name. If you specify function version, the API uses qualified function ARN and
-     * returns information about the specific function version. If you specify an alias
-     * name, the API uses the alias ARN and returns information about the function
-     * version to which the alias points.</p> <p>If you don't specify this parameter,
-     * the API uses unqualified function ARN, and returns information about the
-     * <code>$LATEST</code> function version.</p>
+     * <p>Specify a version or alias to get details about a published version of the
+     * function.</p>
      */
     inline void SetQualifier(const Aws::String& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
 
     /**
-     * <p>Using this optional parameter you can specify a function version or an alias
-     * name. If you specify function version, the API uses qualified function ARN and
-     * returns information about the specific function version. If you specify an alias
-     * name, the API uses the alias ARN and returns information about the function
-     * version to which the alias points.</p> <p>If you don't specify this parameter,
-     * the API uses unqualified function ARN, and returns information about the
-     * <code>$LATEST</code> function version.</p>
+     * <p>Specify a version or alias to get details about a published version of the
+     * function.</p>
      */
     inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
-     * <p>Using this optional parameter you can specify a function version or an alias
-     * name. If you specify function version, the API uses qualified function ARN and
-     * returns information about the specific function version. If you specify an alias
-     * name, the API uses the alias ARN and returns information about the function
-     * version to which the alias points.</p> <p>If you don't specify this parameter,
-     * the API uses unqualified function ARN, and returns information about the
-     * <code>$LATEST</code> function version.</p>
+     * <p>Specify a version or alias to get details about a published version of the
+     * function.</p>
      */
     inline void SetQualifier(const char* value) { m_qualifierHasBeenSet = true; m_qualifier.assign(value); }
 
     /**
-     * <p>Using this optional parameter you can specify a function version or an alias
-     * name. If you specify function version, the API uses qualified function ARN and
-     * returns information about the specific function version. If you specify an alias
-     * name, the API uses the alias ARN and returns information about the function
-     * version to which the alias points.</p> <p>If you don't specify this parameter,
-     * the API uses unqualified function ARN, and returns information about the
-     * <code>$LATEST</code> function version.</p>
+     * <p>Specify a version or alias to get details about a published version of the
+     * function.</p>
      */
     inline GetFunctionConfigurationRequest& WithQualifier(const Aws::String& value) { SetQualifier(value); return *this;}
 
     /**
-     * <p>Using this optional parameter you can specify a function version or an alias
-     * name. If you specify function version, the API uses qualified function ARN and
-     * returns information about the specific function version. If you specify an alias
-     * name, the API uses the alias ARN and returns information about the function
-     * version to which the alias points.</p> <p>If you don't specify this parameter,
-     * the API uses unqualified function ARN, and returns information about the
-     * <code>$LATEST</code> function version.</p>
+     * <p>Specify a version or alias to get details about a published version of the
+     * function.</p>
      */
     inline GetFunctionConfigurationRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
-     * <p>Using this optional parameter you can specify a function version or an alias
-     * name. If you specify function version, the API uses qualified function ARN and
-     * returns information about the specific function version. If you specify an alias
-     * name, the API uses the alias ARN and returns information about the function
-     * version to which the alias points.</p> <p>If you don't specify this parameter,
-     * the API uses unqualified function ARN, and returns information about the
-     * <code>$LATEST</code> function version.</p>
+     * <p>Specify a version or alias to get details about a published version of the
+     * function.</p>
      */
     inline GetFunctionConfigurationRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 

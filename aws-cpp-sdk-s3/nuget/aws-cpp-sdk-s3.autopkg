@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-S3;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.6.20060301.30;
+        version : 1.6.20060301.31;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Simple Storage Service);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.6.30
+            AWSSDKCPP-Core/1.6.31
        }
     }
 

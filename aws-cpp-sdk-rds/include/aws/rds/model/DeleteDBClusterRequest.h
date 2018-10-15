@@ -140,7 +140,7 @@ namespace Model
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
      * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetFinalDBSnapshotIdentifier() const{ return m_finalDBSnapshotIdentifier; }
 
@@ -151,7 +151,7 @@ namespace Model
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
      * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetFinalDBSnapshotIdentifier(const Aws::String& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = value; }
 
@@ -162,7 +162,7 @@ namespace Model
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
      * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetFinalDBSnapshotIdentifier(Aws::String&& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = std::move(value); }
 
@@ -173,7 +173,7 @@ namespace Model
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
      * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetFinalDBSnapshotIdentifier(const char* value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier.assign(value); }
 
@@ -184,7 +184,7 @@ namespace Model
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
      * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DeleteDBClusterRequest& WithFinalDBSnapshotIdentifier(const Aws::String& value) { SetFinalDBSnapshotIdentifier(value); return *this;}
 
@@ -195,7 +195,7 @@ namespace Model
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
      * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DeleteDBClusterRequest& WithFinalDBSnapshotIdentifier(Aws::String&& value) { SetFinalDBSnapshotIdentifier(std::move(value)); return *this;}
 
@@ -206,7 +206,7 @@ namespace Model
      * <code>SkipFinalShapshot</code> parameter to true results in an error. </p>
      * </note> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers, or
      * hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline DeleteDBClusterRequest& WithFinalDBSnapshotIdentifier(const char* value) { SetFinalDBSnapshotIdentifier(value); return *this;}
 

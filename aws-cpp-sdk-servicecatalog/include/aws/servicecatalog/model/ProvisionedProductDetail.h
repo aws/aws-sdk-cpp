@@ -440,6 +440,85 @@ namespace Model
      */
     inline ProvisionedProductDetail& WithLastRecordId(const char* value) { SetLastRecordId(value); return *this;}
 
+
+    /**
+     * <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+     */
+    inline const Aws::String& GetProductId() const{ return m_productId; }
+
+    /**
+     * <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+     */
+    inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
+
+    /**
+     * <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+     */
+    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
+
+    /**
+     * <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+     */
+    inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
+
+    /**
+     * <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+     */
+    inline ProvisionedProductDetail& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
+
+    /**
+     * <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+     */
+    inline ProvisionedProductDetail& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
+
+    /**
+     * <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+     */
+    inline ProvisionedProductDetail& WithProductId(const char* value) { SetProductId(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the provisioning artifact. For example,
+     * <code>pa-4abcdjnxjj6ne</code>.</p>
+     */
+    inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
+
+    /**
+     * <p>The identifier of the provisioning artifact. For example,
+     * <code>pa-4abcdjnxjj6ne</code>.</p>
+     */
+    inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
+
+    /**
+     * <p>The identifier of the provisioning artifact. For example,
+     * <code>pa-4abcdjnxjj6ne</code>.</p>
+     */
+    inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
+
+    /**
+     * <p>The identifier of the provisioning artifact. For example,
+     * <code>pa-4abcdjnxjj6ne</code>.</p>
+     */
+    inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
+
+    /**
+     * <p>The identifier of the provisioning artifact. For example,
+     * <code>pa-4abcdjnxjj6ne</code>.</p>
+     */
+    inline ProvisionedProductDetail& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
+
+    /**
+     * <p>The identifier of the provisioning artifact. For example,
+     * <code>pa-4abcdjnxjj6ne</code>.</p>
+     */
+    inline ProvisionedProductDetail& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the provisioning artifact. For example,
+     * <code>pa-4abcdjnxjj6ne</code>.</p>
+     */
+    inline ProvisionedProductDetail& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -468,6 +547,12 @@ namespace Model
 
     Aws::String m_lastRecordId;
     bool m_lastRecordIdHasBeenSet;
+
+    Aws::String m_productId;
+    bool m_productIdHasBeenSet;
+
+    Aws::String m_provisioningArtifactId;
+    bool m_provisioningArtifactIdHasBeenSet;
   };
 
 } // namespace Model

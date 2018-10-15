@@ -55,56 +55,56 @@ namespace Model
     /**
      * <p>The name of the new DB cluster to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
      * <p>The name of the new DB cluster to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
      * <p>The name of the new DB cluster to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The name of the new DB cluster to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
      * <p>The name of the new DB cluster to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
      * <p>The name of the new DB cluster to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The name of the new DB cluster to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -250,8 +250,8 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
      * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
-     * <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true</p> </li> <li> <p>Cannot be specified if <code>RestoreType</code> parameter
+     * <p>Can't be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true</p> </li> <li> <p>Can't be specified if <code>RestoreType</code> parameter
      * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
      * <code>2015-03-07T23:45:00Z</code> </p>
      */
@@ -263,8 +263,8 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
      * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
-     * <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true</p> </li> <li> <p>Cannot be specified if <code>RestoreType</code> parameter
+     * <p>Can't be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true</p> </li> <li> <p>Can't be specified if <code>RestoreType</code> parameter
      * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
      * <code>2015-03-07T23:45:00Z</code> </p>
      */
@@ -276,8 +276,8 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
      * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
-     * <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true</p> </li> <li> <p>Cannot be specified if <code>RestoreType</code> parameter
+     * <p>Can't be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true</p> </li> <li> <p>Can't be specified if <code>RestoreType</code> parameter
      * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
      * <code>2015-03-07T23:45:00Z</code> </p>
      */
@@ -289,8 +289,8 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
      * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
-     * <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true</p> </li> <li> <p>Cannot be specified if <code>RestoreType</code> parameter
+     * <p>Can't be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true</p> </li> <li> <p>Can't be specified if <code>RestoreType</code> parameter
      * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
      * <code>2015-03-07T23:45:00Z</code> </p>
      */
@@ -302,8 +302,8 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be before the latest restorable time for
      * the DB instance</p> </li> <li> <p>Must be specified if
      * <code>UseLatestRestorableTime</code> parameter is not provided</p> </li> <li>
-     * <p>Cannot be specified if <code>UseLatestRestorableTime</code> parameter is
-     * true</p> </li> <li> <p>Cannot be specified if <code>RestoreType</code> parameter
+     * <p>Can't be specified if <code>UseLatestRestorableTime</code> parameter is
+     * true</p> </li> <li> <p>Can't be specified if <code>RestoreType</code> parameter
      * is <code>copy-on-write</code> </p> </li> </ul> <p>Example:
      * <code>2015-03-07T23:45:00Z</code> </p>
      */
@@ -313,7 +313,7 @@ namespace Model
     /**
      * <p>A value that is set to <code>true</code> to restore the DB cluster to the
      * latest restorable backup time, and <code>false</code> otherwise. </p>
-     * <p>Default: <code>false</code> </p> <p>Constraints: Cannot be specified if
+     * <p>Default: <code>false</code> </p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
     inline bool GetUseLatestRestorableTime() const{ return m_useLatestRestorableTime; }
@@ -321,7 +321,7 @@ namespace Model
     /**
      * <p>A value that is set to <code>true</code> to restore the DB cluster to the
      * latest restorable backup time, and <code>false</code> otherwise. </p>
-     * <p>Default: <code>false</code> </p> <p>Constraints: Cannot be specified if
+     * <p>Default: <code>false</code> </p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
     inline void SetUseLatestRestorableTime(bool value) { m_useLatestRestorableTimeHasBeenSet = true; m_useLatestRestorableTime = value; }
@@ -329,7 +329,7 @@ namespace Model
     /**
      * <p>A value that is set to <code>true</code> to restore the DB cluster to the
      * latest restorable backup time, and <code>false</code> otherwise. </p>
-     * <p>Default: <code>false</code> </p> <p>Constraints: Cannot be specified if
+     * <p>Default: <code>false</code> </p> <p>Constraints: Can't be specified if
      * <code>RestoreToTime</code> parameter is provided.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithUseLatestRestorableTime(bool value) { SetUseLatestRestorableTime(value); return *this;}
@@ -515,13 +515,13 @@ namespace Model
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
      * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul>
-     * <li> <p>If the DB cluster is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the source DB cluster.</p>
-     * </li> <li> <p>If the DB cluster is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers
-     * to a DB cluster that is not encrypted, then the restore request is rejected.</p>
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that is not encrypted, then the restore request is rejected.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -534,13 +534,13 @@ namespace Model
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
      * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul>
-     * <li> <p>If the DB cluster is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the source DB cluster.</p>
-     * </li> <li> <p>If the DB cluster is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers
-     * to a DB cluster that is not encrypted, then the restore request is rejected.</p>
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that is not encrypted, then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -553,13 +553,13 @@ namespace Model
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
      * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul>
-     * <li> <p>If the DB cluster is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the source DB cluster.</p>
-     * </li> <li> <p>If the DB cluster is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers
-     * to a DB cluster that is not encrypted, then the restore request is rejected.</p>
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that is not encrypted, then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -572,13 +572,13 @@ namespace Model
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
      * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul>
-     * <li> <p>If the DB cluster is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the source DB cluster.</p>
-     * </li> <li> <p>If the DB cluster is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers
-     * to a DB cluster that is not encrypted, then the restore request is rejected.</p>
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that is not encrypted, then the restore request is rejected.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -591,13 +591,13 @@ namespace Model
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
      * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul>
-     * <li> <p>If the DB cluster is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the source DB cluster.</p>
-     * </li> <li> <p>If the DB cluster is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers
-     * to a DB cluster that is not encrypted, then the restore request is rejected.</p>
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that is not encrypted, then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -610,13 +610,13 @@ namespace Model
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
      * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul>
-     * <li> <p>If the DB cluster is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the source DB cluster.</p>
-     * </li> <li> <p>If the DB cluster is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers
-     * to a DB cluster that is not encrypted, then the restore request is rejected.</p>
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that is not encrypted, then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -629,13 +629,13 @@ namespace Model
      * encryption key.</p> <p>You can restore to a new DB cluster and encrypt the new
      * DB cluster with a KMS key that is different than the KMS key used to encrypt the
      * source DB cluster. The new DB cluster is encrypted with the KMS key identified
-     * by the <code>KmsKeyId</code> parameter.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following will occur:</p> <ul>
-     * <li> <p>If the DB cluster is encrypted, then the restored DB cluster is
-     * encrypted using the KMS key that was used to encrypt the source DB cluster.</p>
-     * </li> <li> <p>If the DB cluster is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers
-     * to a DB cluster that is not encrypted, then the restore request is rejected.</p>
+     * by the <code>KmsKeyId</code> parameter.</p> <p>If you don't specify a value for
+     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
+     * <p>If the DB cluster is encrypted, then the restored DB cluster is encrypted
+     * using the KMS key that was used to encrypt the source DB cluster.</p> </li> <li>
+     * <p>If the DB cluster is not encrypted, then the restored DB cluster is not
+     * encrypted.</p> </li> </ul> <p>If <code>DBClusterIdentifier</code> refers to a DB
+     * cluster that is not encrypted, then the restore request is rejected.</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -766,6 +766,84 @@ namespace Model
 
 
     /**
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If this argument is omitted, the default DB cluster parameter group for the
+     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
+     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
+     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
+     */
+    inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If this argument is omitted, the default DB cluster parameter group for the
+     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
+     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
+     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
+     */
+    inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If this argument is omitted, the default DB cluster parameter group for the
+     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
+     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
+     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
+     */
+    inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If this argument is omitted, the default DB cluster parameter group for the
+     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
+     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
+     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
+     */
+    inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If this argument is omitted, the default DB cluster parameter group for the
+     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
+     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
+     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If this argument is omitted, the default DB cluster parameter group for the
+     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
+     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
+     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB cluster.
+     * If this argument is omitted, the default DB cluster parameter group for the
+     * specified engine is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must
+     * match the name of an existing DB cluster parameter group.</p> </li> <li> <p>Must
+     * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
+     * be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
+
+
+    /**
      * <p>Indicates if the DB cluster should have deletion protection enabled. The
      * database can't be deleted when this value is set to true. The default is false.
      * </p>
@@ -829,6 +907,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
     bool m_enableCloudwatchLogsExportsHasBeenSet;
+
+    Aws::String m_dBClusterParameterGroupName;
+    bool m_dBClusterParameterGroupNameHasBeenSet;
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;

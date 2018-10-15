@@ -96,7 +96,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase string.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
@@ -105,7 +105,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase string.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
@@ -114,7 +114,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase string.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
@@ -123,7 +123,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase string.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
@@ -132,7 +132,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase string.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
@@ -141,7 +141,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase string.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
@@ -150,7 +150,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase string.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
@@ -308,7 +308,7 @@ namespace Model
     /**
      * <p>The name for the master user. </p> <p>Constraints: </p> <ul> <li> <p>Must be
      * 1 to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
@@ -316,7 +316,7 @@ namespace Model
     /**
      * <p>The name for the master user. </p> <p>Constraints: </p> <ul> <li> <p>Must be
      * 1 to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
@@ -324,7 +324,7 @@ namespace Model
     /**
      * <p>The name for the master user. </p> <p>Constraints: </p> <ul> <li> <p>Must be
      * 1 to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
@@ -332,7 +332,7 @@ namespace Model
     /**
      * <p>The name for the master user. </p> <p>Constraints: </p> <ul> <li> <p>Must be
      * 1 to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
@@ -340,7 +340,7 @@ namespace Model
     /**
      * <p>The name for the master user. </p> <p>Constraints: </p> <ul> <li> <p>Must be
      * 1 to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromS3Request& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
@@ -348,7 +348,7 @@ namespace Model
     /**
      * <p>The name for the master user. </p> <p>Constraints: </p> <ul> <li> <p>Must be
      * 1 to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromS3Request& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
@@ -356,7 +356,7 @@ namespace Model
     /**
      * <p>The name for the master user. </p> <p>Constraints: </p> <ul> <li> <p>Must be
      * 1 to 16 letters or numbers.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul>
      */
     inline RestoreDBInstanceFromS3Request& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}

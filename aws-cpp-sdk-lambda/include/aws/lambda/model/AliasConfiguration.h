@@ -216,36 +216,31 @@ namespace Model
 
     /**
      * <p>Specifies an additional function versions the alias points to, allowing you
-     * to dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * to dictate what percentage of traffic will invoke each version.</p>
      */
     inline const AliasRoutingConfiguration& GetRoutingConfig() const{ return m_routingConfig; }
 
     /**
      * <p>Specifies an additional function versions the alias points to, allowing you
-     * to dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * to dictate what percentage of traffic will invoke each version.</p>
      */
     inline void SetRoutingConfig(const AliasRoutingConfiguration& value) { m_routingConfigHasBeenSet = true; m_routingConfig = value; }
 
     /**
      * <p>Specifies an additional function versions the alias points to, allowing you
-     * to dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * to dictate what percentage of traffic will invoke each version.</p>
      */
     inline void SetRoutingConfig(AliasRoutingConfiguration&& value) { m_routingConfigHasBeenSet = true; m_routingConfig = std::move(value); }
 
     /**
      * <p>Specifies an additional function versions the alias points to, allowing you
-     * to dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * to dictate what percentage of traffic will invoke each version.</p>
      */
     inline AliasConfiguration& WithRoutingConfig(const AliasRoutingConfiguration& value) { SetRoutingConfig(value); return *this;}
 
     /**
      * <p>Specifies an additional function versions the alias points to, allowing you
-     * to dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * to dictate what percentage of traffic will invoke each version.</p>
      */
     inline AliasConfiguration& WithRoutingConfig(AliasRoutingConfiguration&& value) { SetRoutingConfig(std::move(value)); return *this;}
 

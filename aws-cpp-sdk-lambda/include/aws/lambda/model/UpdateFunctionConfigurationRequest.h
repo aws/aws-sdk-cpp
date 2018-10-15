@@ -32,9 +32,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfigurationRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_LAMBDA_API UpdateFunctionConfigurationRequest : public LambdaRequest
   {
@@ -51,86 +48,86 @@ namespace Model
 
 
     /**
-     * <p>The name of the Lambda function.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the Lambda function.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the Lambda function.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the Lambda function.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Lambda function.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64 character
-     * in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
@@ -265,23 +262,20 @@ namespace Model
 
 
     /**
-     * <p>The function execution time at which AWS Lambda should terminate the
-     * function. Because the execution time has cost implications, we recommend you set
-     * this value based on your expected execution time. The default is 3 seconds.</p>
+     * <p>The amount of time that Lambda allows a function to run before terminating
+     * it. The default is 3 seconds. The maximum allowed value is 900 seconds.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The function execution time at which AWS Lambda should terminate the
-     * function. Because the execution time has cost implications, we recommend you set
-     * this value based on your expected execution time. The default is 3 seconds.</p>
+     * <p>The amount of time that Lambda allows a function to run before terminating
+     * it. The default is 3 seconds. The maximum allowed value is 900 seconds.</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * <p>The function execution time at which AWS Lambda should terminate the
-     * function. Because the execution time has cost implications, we recommend you set
-     * this value based on your expected execution time. The default is 3 seconds.</p>
+     * <p>The amount of time that Lambda allows a function to run before terminating
+     * it. The default is 3 seconds. The maximum allowed value is 900 seconds.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithTimeout(int value) { SetTimeout(value); return *this;}
 
@@ -317,19 +311,34 @@ namespace Model
     inline UpdateFunctionConfigurationRequest& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 
 
-    
+    /**
+     * <p>Specify security groups and subnets in a VPC to which your Lambda function
+     * needs access.</p>
+     */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
-    
+    /**
+     * <p>Specify security groups and subnets in a VPC to which your Lambda function
+     * needs access.</p>
+     */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
-    
+    /**
+     * <p>Specify security groups and subnets in a VPC to which your Lambda function
+     * needs access.</p>
+     */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
-    
+    /**
+     * <p>Specify security groups and subnets in a VPC to which your Lambda function
+     * needs access.</p>
+     */
     inline UpdateFunctionConfigurationRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
-    
+    /**
+     * <p>Specify security groups and subnets in a VPC to which your Lambda function
+     * needs access.</p>
+     */
     inline UpdateFunctionConfigurationRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
 
@@ -365,113 +374,73 @@ namespace Model
 
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Python
-     * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
-     * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
-     * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     * use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
-     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".</p> <note> <p>Node
-     * v0.10.42 is currently marked as deprecated. You must migrate existing functions
-     * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
-     * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
-     * parameter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42
-     * runtime.</p> </note>
+     * <p>The runtime version for the function.</p>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Python
-     * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
-     * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
-     * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     * use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
-     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".</p> <note> <p>Node
-     * v0.10.42 is currently marked as deprecated. You must migrate existing functions
-     * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
-     * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
-     * parameter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42
-     * runtime.</p> </note>
+     * <p>The runtime version for the function.</p>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Python
-     * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
-     * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
-     * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     * use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
-     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".</p> <note> <p>Node
-     * v0.10.42 is currently marked as deprecated. You must migrate existing functions
-     * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
-     * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
-     * parameter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42
-     * runtime.</p> </note>
+     * <p>The runtime version for the function.</p>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Python
-     * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
-     * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
-     * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     * use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
-     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".</p> <note> <p>Node
-     * v0.10.42 is currently marked as deprecated. You must migrate existing functions
-     * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
-     * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
-     * parameter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42
-     * runtime.</p> </note>
+     * <p>The runtime version for the function.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
-     * <p>The runtime environment for the Lambda function.</p> <p>To use the Python
-     * runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set
-     * the value to "python2.7". To use the Node.js runtime v6.10, set the value to
-     * "nodejs6.10". To use the Node.js runtime v4.3, set the value to "nodejs4.3". To
-     * use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
-     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".</p> <note> <p>Node
-     * v0.10.42 is currently marked as deprecated. You must migrate existing functions
-     * to the newer Node.js runtime versions available on AWS Lambda (nodejs4.3 or
-     * nodejs6.10) as soon as possible. Failure to do so will result in an invalid
-     * parameter error being returned. Note that you will have to follow this procedure
-     * for each region that contains functions written in the Node v0.10.42
-     * runtime.</p> </note>
+     * <p>The runtime version for the function.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
+     * <p>A dead letter queue configuration that specifies the queue or topic where
+     * Lambda sends asynchronous events when they fail processing. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
+     * Queues</a>.</p>
      */
     inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
+     * <p>A dead letter queue configuration that specifies the queue or topic where
+     * Lambda sends asynchronous events when they fail processing. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
+     * Queues</a>.</p>
      */
     inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
+     * <p>A dead letter queue configuration that specifies the queue or topic where
+     * Lambda sends asynchronous events when they fail processing. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
+     * Queues</a>.</p>
      */
     inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::move(value); }
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
+     * <p>A dead letter queue configuration that specifies the queue or topic where
+     * Lambda sends asynchronous events when they fail processing. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
+     * Queues</a>.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
 
     /**
-     * <p>The parent object that contains the target ARN (Amazon Resource Name) of an
-     * Amazon SQS queue or Amazon SNS topic. For more information, see <a>dlq</a>. </p>
+     * <p>A dead letter queue configuration that specifies the queue or topic where
+     * Lambda sends asynchronous events when they fail processing. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
+     * Queues</a>.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
 
@@ -527,27 +496,32 @@ namespace Model
 
 
     /**
-     * <p>The parent object that contains your function's tracing settings.</p>
+     * <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of
+     * incoming requests with AWS X-Ray.</p>
      */
     inline const TracingConfig& GetTracingConfig() const{ return m_tracingConfig; }
 
     /**
-     * <p>The parent object that contains your function's tracing settings.</p>
+     * <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of
+     * incoming requests with AWS X-Ray.</p>
      */
     inline void SetTracingConfig(const TracingConfig& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = value; }
 
     /**
-     * <p>The parent object that contains your function's tracing settings.</p>
+     * <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of
+     * incoming requests with AWS X-Ray.</p>
      */
     inline void SetTracingConfig(TracingConfig&& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = std::move(value); }
 
     /**
-     * <p>The parent object that contains your function's tracing settings.</p>
+     * <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of
+     * incoming requests with AWS X-Ray.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithTracingConfig(const TracingConfig& value) { SetTracingConfig(value); return *this;}
 
     /**
-     * <p>The parent object that contains your function's tracing settings.</p>
+     * <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of
+     * incoming requests with AWS X-Ray.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithTracingConfig(TracingConfig&& value) { SetTracingConfig(std::move(value)); return *this;}
 
@@ -557,7 +531,8 @@ namespace Model
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
      * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
 
@@ -566,7 +541,8 @@ namespace Model
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
      * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
 
@@ -575,7 +551,8 @@ namespace Model
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
      * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
 
@@ -584,7 +561,8 @@ namespace Model
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
      * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
 
@@ -593,7 +571,8 @@ namespace Model
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
      * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
 
@@ -602,7 +581,8 @@ namespace Model
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
      * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
 
@@ -611,7 +591,8 @@ namespace Model
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
      * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 

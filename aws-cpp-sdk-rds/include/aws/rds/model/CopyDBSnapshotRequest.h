@@ -187,63 +187,63 @@ namespace Model
 
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
+     * <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
      * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline const Aws::String& GetTargetDBSnapshotIdentifier() const{ return m_targetDBSnapshotIdentifier; }
 
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
+     * <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
      * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline void SetTargetDBSnapshotIdentifier(const Aws::String& value) { m_targetDBSnapshotIdentifierHasBeenSet = true; m_targetDBSnapshotIdentifier = value; }
 
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
+     * <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
      * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline void SetTargetDBSnapshotIdentifier(Aws::String&& value) { m_targetDBSnapshotIdentifierHasBeenSet = true; m_targetDBSnapshotIdentifier = std::move(value); }
 
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
+     * <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
      * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline void SetTargetDBSnapshotIdentifier(const char* value) { m_targetDBSnapshotIdentifierHasBeenSet = true; m_targetDBSnapshotIdentifier.assign(value); }
 
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
+     * <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
      * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline CopyDBSnapshotRequest& WithTargetDBSnapshotIdentifier(const Aws::String& value) { SetTargetDBSnapshotIdentifier(value); return *this;}
 
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
+     * <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
      * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline CopyDBSnapshotRequest& WithTargetDBSnapshotIdentifier(Aws::String&& value) { SetTargetDBSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the copy of the snapshot. </p> <p>Constraints:</p> <ul>
-     * <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
+     * <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to
      * 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-snapshot</code> </p>
      */
     inline CopyDBSnapshotRequest& WithTargetDBSnapshotIdentifier(const char* value) { SetTargetDBSnapshotIdentifier(value); return *this;}

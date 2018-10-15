@@ -27,9 +27,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMappingRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_LAMBDA_API GetEventSourceMappingRequest : public LambdaRequest
   {

@@ -55,7 +55,7 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot. This parameter is stored as a
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1-snapshot1</code> </p>
      */
     inline const Aws::String& GetDBClusterSnapshotIdentifier() const{ return m_dBClusterSnapshotIdentifier; }
@@ -64,7 +64,7 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot. This parameter is stored as a
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1-snapshot1</code> </p>
      */
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
@@ -73,7 +73,7 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot. This parameter is stored as a
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1-snapshot1</code> </p>
      */
     inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
@@ -82,7 +82,7 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot. This parameter is stored as a
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1-snapshot1</code> </p>
      */
     inline void SetDBClusterSnapshotIdentifier(const char* value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier.assign(value); }
@@ -91,7 +91,7 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot. This parameter is stored as a
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1-snapshot1</code> </p>
      */
     inline CreateDBClusterSnapshotRequest& WithDBClusterSnapshotIdentifier(const Aws::String& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
@@ -100,7 +100,7 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot. This parameter is stored as a
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1-snapshot1</code> </p>
      */
     inline CreateDBClusterSnapshotRequest& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
@@ -109,7 +109,7 @@ namespace Model
      * <p>The identifier of the DB cluster snapshot. This parameter is stored as a
      * lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1-snapshot1</code> </p>
      */
     inline CreateDBClusterSnapshotRequest& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}

@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes mapping between an Amazon Kinesis or DynamoDB stream or an Amazon
-   * SQS queue and a Lambda function.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda
+   * function.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EventSourceMappingConfiguration">AWS
    * API Reference</a></p>
    */
@@ -108,44 +108,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or
-     * the SQS queue that is the source of events.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that
+     * is the source of events.</p>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or
-     * the SQS queue that is the source of events.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that
+     * is the source of events.</p>
      */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or
-     * the SQS queue that is the source of events.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that
+     * is the source of events.</p>
      */
     inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or
-     * the SQS queue that is the source of events.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that
+     * is the source of events.</p>
      */
     inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or
-     * the SQS queue that is the source of events.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that
+     * is the source of events.</p>
      */
     inline EventSourceMappingConfiguration& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or
-     * the SQS queue that is the source of events.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that
+     * is the source of events.</p>
      */
     inline EventSourceMappingConfiguration& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or
-     * the SQS queue that is the source of events.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that
+     * is the source of events.</p>
      */
     inline EventSourceMappingConfiguration& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
 
@@ -225,37 +225,44 @@ namespace Model
 
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last AWS Lambda invocation of your Lambda function. This
+     * value will be null if an SQS queue is the event source.</p>
      */
     inline const Aws::String& GetLastProcessingResult() const{ return m_lastProcessingResult; }
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last AWS Lambda invocation of your Lambda function. This
+     * value will be null if an SQS queue is the event source.</p>
      */
     inline void SetLastProcessingResult(const Aws::String& value) { m_lastProcessingResultHasBeenSet = true; m_lastProcessingResult = value; }
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last AWS Lambda invocation of your Lambda function. This
+     * value will be null if an SQS queue is the event source.</p>
      */
     inline void SetLastProcessingResult(Aws::String&& value) { m_lastProcessingResultHasBeenSet = true; m_lastProcessingResult = std::move(value); }
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last AWS Lambda invocation of your Lambda function. This
+     * value will be null if an SQS queue is the event source.</p>
      */
     inline void SetLastProcessingResult(const char* value) { m_lastProcessingResultHasBeenSet = true; m_lastProcessingResult.assign(value); }
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last AWS Lambda invocation of your Lambda function. This
+     * value will be null if an SQS queue is the event source.</p>
      */
     inline EventSourceMappingConfiguration& WithLastProcessingResult(const Aws::String& value) { SetLastProcessingResult(value); return *this;}
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last AWS Lambda invocation of your Lambda function. This
+     * value will be null if an SQS queue is the event source.</p>
      */
     inline EventSourceMappingConfiguration& WithLastProcessingResult(Aws::String&& value) { SetLastProcessingResult(std::move(value)); return *this;}
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last AWS Lambda invocation of your Lambda function. This
+     * value will be null if an SQS queue is the event source.</p>
      */
     inline EventSourceMappingConfiguration& WithLastProcessingResult(const char* value) { SetLastProcessingResult(value); return *this;}
 

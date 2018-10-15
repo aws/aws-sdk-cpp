@@ -106,7 +106,7 @@ namespace Model
      * <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster.
      * This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
-     * first character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or
+     * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-cluster2</code> </p>
      */
@@ -116,7 +116,7 @@ namespace Model
      * <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster.
      * This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
-     * first character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or
+     * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-cluster2</code> </p>
      */
@@ -126,7 +126,7 @@ namespace Model
      * <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster.
      * This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
-     * first character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or
+     * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-cluster2</code> </p>
      */
@@ -136,7 +136,7 @@ namespace Model
      * <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster.
      * This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
-     * first character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or
+     * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-cluster2</code> </p>
      */
@@ -146,7 +146,7 @@ namespace Model
      * <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster.
      * This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
-     * first character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or
+     * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-cluster2</code> </p>
      */
@@ -156,7 +156,7 @@ namespace Model
      * <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster.
      * This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
-     * first character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or
+     * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-cluster2</code> </p>
      */
@@ -166,7 +166,7 @@ namespace Model
      * <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster.
      * This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li> <p>The
-     * first character must be a letter</p> </li> <li> <p>Cannot end with a hyphen or
+     * first character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
      * contain two consecutive hyphens</p> </li> </ul> <p>Example:
      * <code>my-cluster2</code> </p>
      */

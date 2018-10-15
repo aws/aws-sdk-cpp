@@ -44,51 +44,86 @@ namespace Model
 
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. Note that
-     * the length constraint applies only to the ARN. If you specify only the function
-     * name, it is limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. Note that
-     * the length constraint applies only to the ARN. If you specify only the function
-     * name, it is limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. Note that
-     * the length constraint applies only to the ARN. If you specify only the function
-     * name, it is limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. Note that
-     * the length constraint applies only to the ARN. If you specify only the function
-     * name, it is limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. Note that
-     * the length constraint applies only to the ARN. If you specify only the function
-     * name, it is limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline CreateAliasRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. Note that
-     * the length constraint applies only to the ARN. If you specify only the function
-     * name, it is limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline CreateAliasRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the Lambda function for which you want to create an alias. Note that
-     * the length constraint applies only to the ARN. If you specify only the function
-     * name, it is limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline CreateAliasRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
@@ -204,35 +239,45 @@ namespace Model
     /**
      * <p>Specifies an additional version your alias can point to, allowing you to
      * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline const AliasRoutingConfiguration& GetRoutingConfig() const{ return m_routingConfig; }
 
     /**
      * <p>Specifies an additional version your alias can point to, allowing you to
      * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline void SetRoutingConfig(const AliasRoutingConfiguration& value) { m_routingConfigHasBeenSet = true; m_routingConfig = value; }
 
     /**
      * <p>Specifies an additional version your alias can point to, allowing you to
      * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline void SetRoutingConfig(AliasRoutingConfiguration&& value) { m_routingConfigHasBeenSet = true; m_routingConfig = std::move(value); }
 
     /**
      * <p>Specifies an additional version your alias can point to, allowing you to
      * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline CreateAliasRequest& WithRoutingConfig(const AliasRoutingConfiguration& value) { SetRoutingConfig(value); return *this;}
 
     /**
      * <p>Specifies an additional version your alias can point to, allowing you to
      * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline CreateAliasRequest& WithRoutingConfig(AliasRoutingConfiguration&& value) { SetRoutingConfig(std::move(value)); return *this;}
 

@@ -161,7 +161,7 @@ namespace Model
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */
@@ -171,7 +171,7 @@ namespace Model
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */
@@ -181,7 +181,7 @@ namespace Model
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */
@@ -191,7 +191,7 @@ namespace Model
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */
@@ -201,7 +201,7 @@ namespace Model
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */
@@ -211,7 +211,7 @@ namespace Model
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */
@@ -221,7 +221,7 @@ namespace Model
      * <p>The identifier of the new DB cluster snapshot to create from the source DB
      * cluster snapshot. This parameter is not case-sensitive.</p> <p>Constraints:</p>
      * <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster-snapshot2</code> </p>
      */

@@ -249,15 +249,14 @@ namespace Model
         /**
          * <p>Adds a permission to the resource policy associated with the specified AWS
          * Lambda function. You use resource policies to grant permissions to event sources
-         * that use <i>push</i> model. In a <i>push</i> model, event sources (such as
+         * that use the <i>push</i> model. In a <i>push</i> model, event sources (such as
          * Amazon S3 and custom applications) invoke your Lambda function. Each permission
-         * you add to the resource policy allows an event source, permission to invoke the
-         * Lambda function. </p> <p>For information about the push model, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">Lambda
-         * Functions</a>. </p> <p>If you are using versioning, the permissions you add are
-         * specific to the Lambda function version or alias you specify in the
-         * <code>AddPermission</code> request via the <code>Qualifier</code> parameter. For
-         * more information about versioning, see <a
+         * you add to the resource policy allows an event source permission to invoke the
+         * Lambda function. </p> <p>Permissions apply to the Amazon Resource Name (ARN)
+         * used to invoke the function, which can be unqualified (the unpublished version
+         * of the function), or include a version or alias. If a client uses a version or
+         * alias to invoke a function, use the <code>Qualifier</code> parameter to apply
+         * permissions to that ARN. For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
          * permission for the <code>lambda:AddPermission</code> action.</p><p><h3>See
@@ -270,15 +269,14 @@ namespace Model
         /**
          * <p>Adds a permission to the resource policy associated with the specified AWS
          * Lambda function. You use resource policies to grant permissions to event sources
-         * that use <i>push</i> model. In a <i>push</i> model, event sources (such as
+         * that use the <i>push</i> model. In a <i>push</i> model, event sources (such as
          * Amazon S3 and custom applications) invoke your Lambda function. Each permission
-         * you add to the resource policy allows an event source, permission to invoke the
-         * Lambda function. </p> <p>For information about the push model, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">Lambda
-         * Functions</a>. </p> <p>If you are using versioning, the permissions you add are
-         * specific to the Lambda function version or alias you specify in the
-         * <code>AddPermission</code> request via the <code>Qualifier</code> parameter. For
-         * more information about versioning, see <a
+         * you add to the resource policy allows an event source permission to invoke the
+         * Lambda function. </p> <p>Permissions apply to the Amazon Resource Name (ARN)
+         * used to invoke the function, which can be unqualified (the unpublished version
+         * of the function), or include a version or alias. If a client uses a version or
+         * alias to invoke a function, use the <code>Qualifier</code> parameter to apply
+         * permissions to that ARN. For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
          * permission for the <code>lambda:AddPermission</code> action.</p><p><h3>See
@@ -293,15 +291,14 @@ namespace Model
         /**
          * <p>Adds a permission to the resource policy associated with the specified AWS
          * Lambda function. You use resource policies to grant permissions to event sources
-         * that use <i>push</i> model. In a <i>push</i> model, event sources (such as
+         * that use the <i>push</i> model. In a <i>push</i> model, event sources (such as
          * Amazon S3 and custom applications) invoke your Lambda function. Each permission
-         * you add to the resource policy allows an event source, permission to invoke the
-         * Lambda function. </p> <p>For information about the push model, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">Lambda
-         * Functions</a>. </p> <p>If you are using versioning, the permissions you add are
-         * specific to the Lambda function version or alias you specify in the
-         * <code>AddPermission</code> request via the <code>Qualifier</code> parameter. For
-         * more information about versioning, see <a
+         * you add to the resource policy allows an event source permission to invoke the
+         * Lambda function. </p> <p>Permissions apply to the Amazon Resource Name (ARN)
+         * used to invoke the function, which can be unqualified (the unpublished version
+         * of the function), or include a version or alias. If a client uses a version or
+         * alias to invoke a function, use the <code>Qualifier</code> parameter to apply
+         * permissions to that ARN. For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
          * permission for the <code>lambda:AddPermission</code> action.</p><p><h3>See
@@ -355,18 +352,20 @@ namespace Model
 
         /**
          * <p>Identifies a poll-based event source for a Lambda function. It can be either
-         * an Amazon Kinesis or DynamoDB stream, or an Amazon SQS queue. AWS Lambda invokes
-         * the specified function when records are posted to the event source.</p> <p>This
-         * association between a poll-based source and a Lambda function is called the
-         * event source mapping.</p> <p>You provide mapping information (for example, which
-         * stream or SQS queue to read from and which Lambda function to invoke) in the
-         * request body.</p> <p>Amazon Kinesis or DynamoDB stream event sources can be
-         * associated with multiple AWS Lambda functions and a given Lambda function can be
-         * associated with multiple AWS event sources. For Amazon SQS, you can configure
-         * multiple queues as event sources for a single Lambda function, but an SQS queue
-         * can be mapped only to a single Lambda function.</p> <p>If you are using
-         * versioning, you can specify a specific function version or an alias via the
-         * function name parameter. For more information about versioning, see <a
+         * an Amazon Kinesis or DynamoDB stream. AWS Lambda invokes the specified function
+         * when records are posted to the event source.</p> <p>This association between a
+         * poll-based source and a Lambda function is called the event source mapping.</p>
+         * <p>You provide mapping information (for example, which stream or SQS queue to
+         * read from and which Lambda function to invoke) in the request body.</p>
+         * <p>Amazon Kinesis or DynamoDB stream event sources can be associated with
+         * multiple AWS Lambda functions and a given Lambda function can be associated with
+         * multiple AWS event sources. For Amazon SQS, you can configure multiple queues as
+         * event sources for a single Lambda function, but an SQS queue can be mapped only
+         * to a single Lambda function.</p> <p>You can configure an SQS queue in an account
+         * separate from your Lambda function's account. Also the queue needs to reside in
+         * the same AWS region as your function. </p> <p>If you are using versioning, you
+         * can specify a specific function version or an alias via the function name
+         * parameter. For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
          * permission for the <code>lambda:CreateEventSourceMapping</code>
@@ -378,18 +377,20 @@ namespace Model
 
         /**
          * <p>Identifies a poll-based event source for a Lambda function. It can be either
-         * an Amazon Kinesis or DynamoDB stream, or an Amazon SQS queue. AWS Lambda invokes
-         * the specified function when records are posted to the event source.</p> <p>This
-         * association between a poll-based source and a Lambda function is called the
-         * event source mapping.</p> <p>You provide mapping information (for example, which
-         * stream or SQS queue to read from and which Lambda function to invoke) in the
-         * request body.</p> <p>Amazon Kinesis or DynamoDB stream event sources can be
-         * associated with multiple AWS Lambda functions and a given Lambda function can be
-         * associated with multiple AWS event sources. For Amazon SQS, you can configure
-         * multiple queues as event sources for a single Lambda function, but an SQS queue
-         * can be mapped only to a single Lambda function.</p> <p>If you are using
-         * versioning, you can specify a specific function version or an alias via the
-         * function name parameter. For more information about versioning, see <a
+         * an Amazon Kinesis or DynamoDB stream. AWS Lambda invokes the specified function
+         * when records are posted to the event source.</p> <p>This association between a
+         * poll-based source and a Lambda function is called the event source mapping.</p>
+         * <p>You provide mapping information (for example, which stream or SQS queue to
+         * read from and which Lambda function to invoke) in the request body.</p>
+         * <p>Amazon Kinesis or DynamoDB stream event sources can be associated with
+         * multiple AWS Lambda functions and a given Lambda function can be associated with
+         * multiple AWS event sources. For Amazon SQS, you can configure multiple queues as
+         * event sources for a single Lambda function, but an SQS queue can be mapped only
+         * to a single Lambda function.</p> <p>You can configure an SQS queue in an account
+         * separate from your Lambda function's account. Also the queue needs to reside in
+         * the same AWS region as your function. </p> <p>If you are using versioning, you
+         * can specify a specific function version or an alias via the function name
+         * parameter. For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
          * permission for the <code>lambda:CreateEventSourceMapping</code>
@@ -403,18 +404,20 @@ namespace Model
 
         /**
          * <p>Identifies a poll-based event source for a Lambda function. It can be either
-         * an Amazon Kinesis or DynamoDB stream, or an Amazon SQS queue. AWS Lambda invokes
-         * the specified function when records are posted to the event source.</p> <p>This
-         * association between a poll-based source and a Lambda function is called the
-         * event source mapping.</p> <p>You provide mapping information (for example, which
-         * stream or SQS queue to read from and which Lambda function to invoke) in the
-         * request body.</p> <p>Amazon Kinesis or DynamoDB stream event sources can be
-         * associated with multiple AWS Lambda functions and a given Lambda function can be
-         * associated with multiple AWS event sources. For Amazon SQS, you can configure
-         * multiple queues as event sources for a single Lambda function, but an SQS queue
-         * can be mapped only to a single Lambda function.</p> <p>If you are using
-         * versioning, you can specify a specific function version or an alias via the
-         * function name parameter. For more information about versioning, see <a
+         * an Amazon Kinesis or DynamoDB stream. AWS Lambda invokes the specified function
+         * when records are posted to the event source.</p> <p>This association between a
+         * poll-based source and a Lambda function is called the event source mapping.</p>
+         * <p>You provide mapping information (for example, which stream or SQS queue to
+         * read from and which Lambda function to invoke) in the request body.</p>
+         * <p>Amazon Kinesis or DynamoDB stream event sources can be associated with
+         * multiple AWS Lambda functions and a given Lambda function can be associated with
+         * multiple AWS event sources. For Amazon SQS, you can configure multiple queues as
+         * event sources for a single Lambda function, but an SQS queue can be mapped only
+         * to a single Lambda function.</p> <p>You can configure an SQS queue in an account
+         * separate from your Lambda function's account. Also the queue needs to reside in
+         * the same AWS region as your function. </p> <p>If you are using versioning, you
+         * can specify a specific function version or an alias via the function name
+         * parameter. For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
          * permission for the <code>lambda:CreateEventSourceMapping</code>
@@ -427,34 +430,20 @@ namespace Model
         virtual void CreateEventSourceMappingAsync(const Model::CreateEventSourceMappingRequest& request, const CreateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Lambda function. The function metadata is created from the
-         * request parameters, and the code for the function is provided by a .zip file in
-         * the request body. If the function name already exists, the operation will fail.
-         * Note that the function name is case-sensitive.</p> <p> If you are using
-         * versioning, you can also publish a version of the Lambda function you are
-         * creating using the <code>Publish</code> parameter. For more information about
-         * versioning, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:CreateFunction</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new Lambda function. The function configuration is created from the
+         * request parameters, and the code for the function is provided by a .zip file.
+         * The function name is case-sensitive.</p> <p>This operation requires permission
+         * for the <code>lambda:CreateFunction</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateFunctionOutcome CreateFunction(const Model::CreateFunctionRequest& request) const;
 
         /**
-         * <p>Creates a new Lambda function. The function metadata is created from the
-         * request parameters, and the code for the function is provided by a .zip file in
-         * the request body. If the function name already exists, the operation will fail.
-         * Note that the function name is case-sensitive.</p> <p> If you are using
-         * versioning, you can also publish a version of the Lambda function you are
-         * creating using the <code>Publish</code> parameter. For more information about
-         * versioning, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:CreateFunction</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new Lambda function. The function configuration is created from the
+         * request parameters, and the code for the function is provided by a .zip file.
+         * The function name is case-sensitive.</p> <p>This operation requires permission
+         * for the <code>lambda:CreateFunction</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
          * API Reference</a></p>
          *
@@ -463,17 +452,10 @@ namespace Model
         virtual Model::CreateFunctionOutcomeCallable CreateFunctionCallable(const Model::CreateFunctionRequest& request) const;
 
         /**
-         * <p>Creates a new Lambda function. The function metadata is created from the
-         * request parameters, and the code for the function is provided by a .zip file in
-         * the request body. If the function name already exists, the operation will fail.
-         * Note that the function name is case-sensitive.</p> <p> If you are using
-         * versioning, you can also publish a version of the Lambda function you are
-         * creating using the <code>Publish</code> parameter. For more information about
-         * versioning, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:CreateFunction</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new Lambda function. The function configuration is created from the
+         * request parameters, and the code for the function is provided by a .zip file.
+         * The function name is case-sensitive.</p> <p>This operation requires permission
+         * for the <code>lambda:CreateFunction</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
          * API Reference</a></p>
          *
@@ -550,36 +532,22 @@ namespace Model
         virtual void DeleteEventSourceMappingAsync(const Model::DeleteEventSourceMappingRequest& request, const DeleteEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified Lambda function code and configuration.</p> <p>If you
-         * are using the versioning feature and you don't specify a function version in
-         * your <code>DeleteFunction</code> request, AWS Lambda will delete the function,
-         * including all its versions, and any aliases pointing to the function versions.
-         * To delete a specific function version, you must provide the function version via
-         * the <code>Qualifier</code> parameter. For information about function versioning,
-         * see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>When you delete a function
-         * the associated resource policy is also deleted. You will need to delete the
-         * event source mappings explicitly.</p> <p>This operation requires permission for
-         * the <code>lambda:DeleteFunction</code> action.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Lambda function. To delete a specific function version, use the
+         * <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
+         * deleted. Event source mappings are not deleted.</p> <p>This operation requires
+         * permission for the <code>lambda:DeleteFunction</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteFunctionOutcome DeleteFunction(const Model::DeleteFunctionRequest& request) const;
 
         /**
-         * <p>Deletes the specified Lambda function code and configuration.</p> <p>If you
-         * are using the versioning feature and you don't specify a function version in
-         * your <code>DeleteFunction</code> request, AWS Lambda will delete the function,
-         * including all its versions, and any aliases pointing to the function versions.
-         * To delete a specific function version, you must provide the function version via
-         * the <code>Qualifier</code> parameter. For information about function versioning,
-         * see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>When you delete a function
-         * the associated resource policy is also deleted. You will need to delete the
-         * event source mappings explicitly.</p> <p>This operation requires permission for
-         * the <code>lambda:DeleteFunction</code> action.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Lambda function. To delete a specific function version, use the
+         * <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
+         * deleted. Event source mappings are not deleted.</p> <p>This operation requires
+         * permission for the <code>lambda:DeleteFunction</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
          * API Reference</a></p>
          *
@@ -588,18 +556,11 @@ namespace Model
         virtual Model::DeleteFunctionOutcomeCallable DeleteFunctionCallable(const Model::DeleteFunctionRequest& request) const;
 
         /**
-         * <p>Deletes the specified Lambda function code and configuration.</p> <p>If you
-         * are using the versioning feature and you don't specify a function version in
-         * your <code>DeleteFunction</code> request, AWS Lambda will delete the function,
-         * including all its versions, and any aliases pointing to the function versions.
-         * To delete a specific function version, you must provide the function version via
-         * the <code>Qualifier</code> parameter. For information about function versioning,
-         * see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>When you delete a function
-         * the associated resource policy is also deleted. You will need to delete the
-         * event source mappings explicitly.</p> <p>This operation requires permission for
-         * the <code>lambda:DeleteFunction</code> action.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Lambda function. To delete a specific function version, use the
+         * <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
+         * deleted. Event source mappings are not deleted.</p> <p>This operation requires
+         * permission for the <code>lambda:DeleteFunction</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
          * API Reference</a></p>
          *
@@ -609,7 +570,9 @@ namespace Model
 
         /**
          * <p>Removes concurrent execution limits from this function. For more information,
-         * see <a>concurrent-executions</a>.</p><p><h3>See Also:</h3>   <a
+         * see <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+         * Concurrency</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">AWS
          * API Reference</a></p>
          */
@@ -617,7 +580,9 @@ namespace Model
 
         /**
          * <p>Removes concurrent execution limits from this function. For more information,
-         * see <a>concurrent-executions</a>.</p><p><h3>See Also:</h3>   <a
+         * see <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+         * Concurrency</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">AWS
          * API Reference</a></p>
          *
@@ -627,7 +592,9 @@ namespace Model
 
         /**
          * <p>Removes concurrent execution limits from this function. For more information,
-         * see <a>concurrent-executions</a>.</p><p><h3>See Also:</h3>   <a
+         * see <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+         * Concurrency</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">AWS
          * API Reference</a></p>
          *
@@ -636,24 +603,18 @@ namespace Model
         virtual void DeleteFunctionConcurrencyAsync(const Model::DeleteFunctionConcurrencyRequest& request, const DeleteFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a customer's account settings.</p> <p>You can use this operation to
-         * retrieve Lambda limits information, such as code size and concurrency limits.
-         * For more information about limits, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
-         * Limits</a>. You can also retrieve resource usage statistics, such as code
-         * storage usage and function count.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves details about your account's <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and
+         * usage in a region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request) const;
 
         /**
-         * <p>Returns a customer's account settings.</p> <p>You can use this operation to
-         * retrieve Lambda limits information, such as code size and concurrency limits.
-         * For more information about limits, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
-         * Limits</a>. You can also retrieve resource usage statistics, such as code
-         * storage usage and function count.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves details about your account's <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and
+         * usage in a region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -662,12 +623,9 @@ namespace Model
         virtual Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const Model::GetAccountSettingsRequest& request) const;
 
         /**
-         * <p>Returns a customer's account settings.</p> <p>You can use this operation to
-         * retrieve Lambda limits information, such as code size and concurrency limits.
-         * For more information about limits, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">AWS Lambda
-         * Limits</a>. You can also retrieve resource usage statistics, such as code
-         * storage usage and function count.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves details about your account's <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and
+         * usage in a region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -751,11 +709,9 @@ namespace Model
          * URL link to the .zip file you uploaded with <a>CreateFunction</a> so you can
          * download the .zip file. Note that the URL is valid for up to 10 minutes. The
          * configuration information is the same information you provided as parameters
-         * when uploading the function.</p> <p>Using the optional <code>Qualifier</code>
-         * parameter, you can specify a specific function version for which you want this
-         * information. If you don't specify this parameter, the API uses unqualified
-         * function ARN which return information about the <code>$LATEST</code> version of
-         * the Lambda function. For more information, see <a
+         * when uploading the function.</p> <p>Use the <code>Qualifier</code> parameter to
+         * retrieve a published version of the function. Otherwise, returns the unpublished
+         * version (<code>$LATEST</code>). For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>.</p> <p>This operation requires
          * permission for the <code>lambda:GetFunction</code> action.</p><p><h3>See
@@ -770,11 +726,9 @@ namespace Model
          * URL link to the .zip file you uploaded with <a>CreateFunction</a> so you can
          * download the .zip file. Note that the URL is valid for up to 10 minutes. The
          * configuration information is the same information you provided as parameters
-         * when uploading the function.</p> <p>Using the optional <code>Qualifier</code>
-         * parameter, you can specify a specific function version for which you want this
-         * information. If you don't specify this parameter, the API uses unqualified
-         * function ARN which return information about the <code>$LATEST</code> version of
-         * the Lambda function. For more information, see <a
+         * when uploading the function.</p> <p>Use the <code>Qualifier</code> parameter to
+         * retrieve a published version of the function. Otherwise, returns the unpublished
+         * version (<code>$LATEST</code>). For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>.</p> <p>This operation requires
          * permission for the <code>lambda:GetFunction</code> action.</p><p><h3>See
@@ -791,11 +745,9 @@ namespace Model
          * URL link to the .zip file you uploaded with <a>CreateFunction</a> so you can
          * download the .zip file. Note that the URL is valid for up to 10 minutes. The
          * configuration information is the same information you provided as parameters
-         * when uploading the function.</p> <p>Using the optional <code>Qualifier</code>
-         * parameter, you can specify a specific function version for which you want this
-         * information. If you don't specify this parameter, the API uses unqualified
-         * function ARN which return information about the <code>$LATEST</code> version of
-         * the Lambda function. For more information, see <a
+         * when uploading the function.</p> <p>Use the <code>Qualifier</code> parameter to
+         * retrieve a published version of the function. Otherwise, returns the unpublished
+         * version (<code>$LATEST</code>). For more information, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>.</p> <p>This operation requires
          * permission for the <code>lambda:GetFunction</code> action.</p><p><h3>See
@@ -867,13 +819,8 @@ namespace Model
 
         /**
          * <p>Returns the resource policy associated with the specified Lambda
-         * function.</p> <p> If you are using the versioning feature, you can get the
-         * resource policy associated with the specific Lambda function version or alias by
-         * specifying the version or alias name using the <code>Qualifier</code> parameter.
-         * For more information about versioning, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>You need permission for the
-         * <code>lambda:GetPolicy action.</code> </p><p><h3>See Also:</h3>   <a
+         * function.</p> <p>This action requires permission for the <code>lambda:GetPolicy
+         * action.</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">AWS
          * API Reference</a></p>
          */
@@ -881,13 +828,8 @@ namespace Model
 
         /**
          * <p>Returns the resource policy associated with the specified Lambda
-         * function.</p> <p> If you are using the versioning feature, you can get the
-         * resource policy associated with the specific Lambda function version or alias by
-         * specifying the version or alias name using the <code>Qualifier</code> parameter.
-         * For more information about versioning, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>You need permission for the
-         * <code>lambda:GetPolicy action.</code> </p><p><h3>See Also:</h3>   <a
+         * function.</p> <p>This action requires permission for the <code>lambda:GetPolicy
+         * action.</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">AWS
          * API Reference</a></p>
          *
@@ -897,13 +839,8 @@ namespace Model
 
         /**
          * <p>Returns the resource policy associated with the specified Lambda
-         * function.</p> <p> If you are using the versioning feature, you can get the
-         * resource policy associated with the specific Lambda function version or alias by
-         * specifying the version or alias name using the <code>Qualifier</code> parameter.
-         * For more information about versioning, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>You need permission for the
-         * <code>lambda:GetPolicy action.</code> </p><p><h3>See Also:</h3>   <a
+         * function.</p> <p>This action requires permission for the <code>lambda:GetPolicy
+         * action.</code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy">AWS
          * API Reference</a></p>
          *
@@ -912,54 +849,58 @@ namespace Model
         virtual void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Invokes a specific Lambda function. For an example, see <a
+         * <p>Invokes a Lambda function. For an example, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create
-         * the Lambda Function and Test It Manually</a>. </p> <p>If you are using the
-         * versioning feature, you can invoke the specific function version by providing
-         * function version or alias name that is pointing to the function version using
-         * the <code>Qualifier</code> parameter in the request. If you don't provide the
-         * <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda
-         * function is invoked. Invocations occur at least once in response to an event and
-         * functions must be idempotent to handle this. For information about the
-         * versioning feature, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:InvokeFunction</code> action.</p> <note> <p>The
-         * <code>TooManyRequestsException</code> noted below will return the following:
-         * <code>ConcurrentInvocationLimitExceeded</code> will be returned if you have no
-         * functions with reserved concurrency and have exceeded your account concurrent
-         * limit or if a function without reserved concurrency exceeds the account's
-         * unreserved concurrency limit.
+         * the Lambda Function and Test It Manually</a>. </p> <p>Specify just a function
+         * name to invoke the latest version of the function. To invoke a published
+         * version, use the <code>Qualifier</code> parameter to specify a <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version
+         * or alias</a>.</p> <p>If you use the <code>RequestResponse</code> (synchronous)
+         * invocation option, the function will be invoked only once. If you use the
+         * <code>Event</code> (asynchronous) invocation option, the function will be
+         * invoked at least once in response to an event and the function must be
+         * idempotent to handle this.</p> <p>For functions with a long timeout, your client
+         * may be disconnected during synchronous invocation while it waits for a response.
+         * Configure your HTTP client, SDK, firewall, proxy, or operating system to allow
+         * for long connections with timeout or keep-alive settings.</p> <p>This operation
+         * requires permission for the <code>lambda:InvokeFunction</code> action.</p>
+         * <p>The <code>TooManyRequestsException</code> noted below will return the
+         * following: <code>ConcurrentInvocationLimitExceeded</code> will be returned if
+         * you have no functions with reserved concurrency and have exceeded your account
+         * concurrent limit or if a function without reserved concurrency exceeds the
+         * account's unreserved concurrency limit.
          * <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> will be returned
          * when a function with reserved concurrency exceeds its configured concurrency
-         * limit. </p> </note><p><h3>See Also:</h3>   <a
+         * limit. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">AWS API
          * Reference</a></p>
          */
         virtual Model::InvokeOutcome Invoke(const Model::InvokeRequest& request) const;
 
         /**
-         * <p>Invokes a specific Lambda function. For an example, see <a
+         * <p>Invokes a Lambda function. For an example, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create
-         * the Lambda Function and Test It Manually</a>. </p> <p>If you are using the
-         * versioning feature, you can invoke the specific function version by providing
-         * function version or alias name that is pointing to the function version using
-         * the <code>Qualifier</code> parameter in the request. If you don't provide the
-         * <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda
-         * function is invoked. Invocations occur at least once in response to an event and
-         * functions must be idempotent to handle this. For information about the
-         * versioning feature, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:InvokeFunction</code> action.</p> <note> <p>The
-         * <code>TooManyRequestsException</code> noted below will return the following:
-         * <code>ConcurrentInvocationLimitExceeded</code> will be returned if you have no
-         * functions with reserved concurrency and have exceeded your account concurrent
-         * limit or if a function without reserved concurrency exceeds the account's
-         * unreserved concurrency limit.
+         * the Lambda Function and Test It Manually</a>. </p> <p>Specify just a function
+         * name to invoke the latest version of the function. To invoke a published
+         * version, use the <code>Qualifier</code> parameter to specify a <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version
+         * or alias</a>.</p> <p>If you use the <code>RequestResponse</code> (synchronous)
+         * invocation option, the function will be invoked only once. If you use the
+         * <code>Event</code> (asynchronous) invocation option, the function will be
+         * invoked at least once in response to an event and the function must be
+         * idempotent to handle this.</p> <p>For functions with a long timeout, your client
+         * may be disconnected during synchronous invocation while it waits for a response.
+         * Configure your HTTP client, SDK, firewall, proxy, or operating system to allow
+         * for long connections with timeout or keep-alive settings.</p> <p>This operation
+         * requires permission for the <code>lambda:InvokeFunction</code> action.</p>
+         * <p>The <code>TooManyRequestsException</code> noted below will return the
+         * following: <code>ConcurrentInvocationLimitExceeded</code> will be returned if
+         * you have no functions with reserved concurrency and have exceeded your account
+         * concurrent limit or if a function without reserved concurrency exceeds the
+         * account's unreserved concurrency limit.
          * <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> will be returned
          * when a function with reserved concurrency exceeds its configured concurrency
-         * limit. </p> </note><p><h3>See Also:</h3>   <a
+         * limit. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">AWS API
          * Reference</a></p>
          *
@@ -968,27 +909,29 @@ namespace Model
         virtual Model::InvokeOutcomeCallable InvokeCallable(const Model::InvokeRequest& request) const;
 
         /**
-         * <p>Invokes a specific Lambda function. For an example, see <a
+         * <p>Invokes a Lambda function. For an example, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create
-         * the Lambda Function and Test It Manually</a>. </p> <p>If you are using the
-         * versioning feature, you can invoke the specific function version by providing
-         * function version or alias name that is pointing to the function version using
-         * the <code>Qualifier</code> parameter in the request. If you don't provide the
-         * <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda
-         * function is invoked. Invocations occur at least once in response to an event and
-         * functions must be idempotent to handle this. For information about the
-         * versioning feature, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:InvokeFunction</code> action.</p> <note> <p>The
-         * <code>TooManyRequestsException</code> noted below will return the following:
-         * <code>ConcurrentInvocationLimitExceeded</code> will be returned if you have no
-         * functions with reserved concurrency and have exceeded your account concurrent
-         * limit or if a function without reserved concurrency exceeds the account's
-         * unreserved concurrency limit.
+         * the Lambda Function and Test It Manually</a>. </p> <p>Specify just a function
+         * name to invoke the latest version of the function. To invoke a published
+         * version, use the <code>Qualifier</code> parameter to specify a <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version
+         * or alias</a>.</p> <p>If you use the <code>RequestResponse</code> (synchronous)
+         * invocation option, the function will be invoked only once. If you use the
+         * <code>Event</code> (asynchronous) invocation option, the function will be
+         * invoked at least once in response to an event and the function must be
+         * idempotent to handle this.</p> <p>For functions with a long timeout, your client
+         * may be disconnected during synchronous invocation while it waits for a response.
+         * Configure your HTTP client, SDK, firewall, proxy, or operating system to allow
+         * for long connections with timeout or keep-alive settings.</p> <p>This operation
+         * requires permission for the <code>lambda:InvokeFunction</code> action.</p>
+         * <p>The <code>TooManyRequestsException</code> noted below will return the
+         * following: <code>ConcurrentInvocationLimitExceeded</code> will be returned if
+         * you have no functions with reserved concurrency and have exceeded your account
+         * concurrent limit or if a function without reserved concurrency exceeds the
+         * account's unreserved concurrency limit.
          * <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> will be returned
          * when a function with reserved concurrency exceeds its configured concurrency
-         * limit. </p> </note><p><h3>See Also:</h3>   <a
+         * limit. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">AWS API
          * Reference</a></p>
          *
@@ -1040,15 +983,10 @@ namespace Model
          * <p>Returns a list of event source mappings you created using the
          * <code>CreateEventSourceMapping</code> (see <a>CreateEventSourceMapping</a>).
          * </p> <p>For each mapping, the API returns configuration information. You can
-         * optionally specify filters to retrieve specific event source mappings.</p> <p>If
-         * you are using the versioning feature, you can get list of event source mappings
-         * for a specific Lambda function version or an alias as described in the
-         * <code>FunctionName</code> parameter. For information about the versioning
-         * feature, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:ListEventSourceMappings</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * optionally specify filters to retrieve specific event source mappings.</p>
+         * <p>This operation requires permission for the
+         * <code>lambda:ListEventSourceMappings</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">AWS
          * API Reference</a></p>
          */
@@ -1058,15 +996,10 @@ namespace Model
          * <p>Returns a list of event source mappings you created using the
          * <code>CreateEventSourceMapping</code> (see <a>CreateEventSourceMapping</a>).
          * </p> <p>For each mapping, the API returns configuration information. You can
-         * optionally specify filters to retrieve specific event source mappings.</p> <p>If
-         * you are using the versioning feature, you can get list of event source mappings
-         * for a specific Lambda function version or an alias as described in the
-         * <code>FunctionName</code> parameter. For information about the versioning
-         * feature, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:ListEventSourceMappings</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * optionally specify filters to retrieve specific event source mappings.</p>
+         * <p>This operation requires permission for the
+         * <code>lambda:ListEventSourceMappings</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">AWS
          * API Reference</a></p>
          *
@@ -1078,15 +1011,10 @@ namespace Model
          * <p>Returns a list of event source mappings you created using the
          * <code>CreateEventSourceMapping</code> (see <a>CreateEventSourceMapping</a>).
          * </p> <p>For each mapping, the API returns configuration information. You can
-         * optionally specify filters to retrieve specific event source mappings.</p> <p>If
-         * you are using the versioning feature, you can get list of event source mappings
-         * for a specific Lambda function version or an alias as described in the
-         * <code>FunctionName</code> parameter. For information about the versioning
-         * feature, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires
-         * permission for the <code>lambda:ListEventSourceMappings</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * optionally specify filters to retrieve specific event source mappings.</p>
+         * <p>This operation requires permission for the
+         * <code>lambda:ListEventSourceMappings</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings">AWS
          * API Reference</a></p>
          *
@@ -1178,8 +1106,7 @@ namespace Model
         virtual void ListTagsAsync(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List all versions of a function. For information about the versioning
-         * feature, see <a
+         * <p>Lists all versions of a function. For information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">AWS
@@ -1188,8 +1115,7 @@ namespace Model
         virtual Model::ListVersionsByFunctionOutcome ListVersionsByFunction(const Model::ListVersionsByFunctionRequest& request) const;
 
         /**
-         * <p>List all versions of a function. For information about the versioning
-         * feature, see <a
+         * <p>Lists all versions of a function. For information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">AWS
@@ -1200,8 +1126,7 @@ namespace Model
         virtual Model::ListVersionsByFunctionOutcomeCallable ListVersionsByFunctionCallable(const Model::ListVersionsByFunctionRequest& request) const;
 
         /**
-         * <p>List all versions of a function. For information about the versioning
-         * feature, see <a
+         * <p>Lists all versions of a function. For information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
          * Lambda Function Versioning and Aliases</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">AWS
@@ -1260,8 +1185,9 @@ namespace Model
          * region. Note that Lambda automatically reserves a buffer of 100 concurrent
          * executions for functions without any reserved concurrency limit. This means if
          * your account limit is 1000, you have a total of 900 available to allocate to
-         * individual functions. For more information, see
-         * <a>concurrent-executions</a>.</p><p><h3>See Also:</h3>   <a
+         * individual functions. For more information, see <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+         * Concurrency</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">AWS
          * API Reference</a></p>
          */
@@ -1273,8 +1199,9 @@ namespace Model
          * region. Note that Lambda automatically reserves a buffer of 100 concurrent
          * executions for functions without any reserved concurrency limit. This means if
          * your account limit is 1000, you have a total of 900 available to allocate to
-         * individual functions. For more information, see
-         * <a>concurrent-executions</a>.</p><p><h3>See Also:</h3>   <a
+         * individual functions. For more information, see <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+         * Concurrency</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">AWS
          * API Reference</a></p>
          *
@@ -1288,8 +1215,9 @@ namespace Model
          * region. Note that Lambda automatically reserves a buffer of 100 concurrent
          * executions for functions without any reserved concurrency limit. This means if
          * your account limit is 1000, you have a total of 900 available to allocate to
-         * individual functions. For more information, see
-         * <a>concurrent-executions</a>.</p><p><h3>See Also:</h3>   <a
+         * individual functions. For more information, see <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+         * Concurrency</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">AWS
          * API Reference</a></p>
          *
@@ -1298,16 +1226,17 @@ namespace Model
         virtual void PutFunctionConcurrencyAsync(const Model::PutFunctionConcurrencyRequest& request, const PutFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>You can remove individual permissions from an resource policy associated with
-         * a Lambda function by providing a statement ID that you provided when you added
-         * the permission.</p> <p>If you are using versioning, the permissions you remove
-         * are specific to the Lambda function version or alias you specify in the
-         * <code>AddPermission</code> request via the <code>Qualifier</code> parameter. For
-         * more information about versioning, see <a
+         * <p>Removes permissions from a function. You can remove individual permissions
+         * from an resource policy associated with a Lambda function by providing a
+         * statement ID that you provided when you added the permission. When you remove
+         * permissions, disable the event source mapping or trigger configuration first to
+         * avoid errors.</p> <p>Permissions apply to the Amazon Resource Name (ARN) used to
+         * invoke the function, which can be unqualified (the unpublished version of the
+         * function), or include a version or alias. If a client uses a version or alias to
+         * invoke a function, use the <code>Qualifier</code> parameter to apply permissions
+         * to that ARN. For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>Note that removal of a
-         * permission will cause an active event source to lose permission to the
-         * function.</p> <p>You need permission for the
+         * Lambda Function Versioning and Aliases</a>. </p> <p>You need permission for the
          * <code>lambda:RemovePermission</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">AWS
          * API Reference</a></p>
@@ -1315,16 +1244,17 @@ namespace Model
         virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
 
         /**
-         * <p>You can remove individual permissions from an resource policy associated with
-         * a Lambda function by providing a statement ID that you provided when you added
-         * the permission.</p> <p>If you are using versioning, the permissions you remove
-         * are specific to the Lambda function version or alias you specify in the
-         * <code>AddPermission</code> request via the <code>Qualifier</code> parameter. For
-         * more information about versioning, see <a
+         * <p>Removes permissions from a function. You can remove individual permissions
+         * from an resource policy associated with a Lambda function by providing a
+         * statement ID that you provided when you added the permission. When you remove
+         * permissions, disable the event source mapping or trigger configuration first to
+         * avoid errors.</p> <p>Permissions apply to the Amazon Resource Name (ARN) used to
+         * invoke the function, which can be unqualified (the unpublished version of the
+         * function), or include a version or alias. If a client uses a version or alias to
+         * invoke a function, use the <code>Qualifier</code> parameter to apply permissions
+         * to that ARN. For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>Note that removal of a
-         * permission will cause an active event source to lose permission to the
-         * function.</p> <p>You need permission for the
+         * Lambda Function Versioning and Aliases</a>. </p> <p>You need permission for the
          * <code>lambda:RemovePermission</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">AWS
          * API Reference</a></p>
@@ -1334,16 +1264,17 @@ namespace Model
         virtual Model::RemovePermissionOutcomeCallable RemovePermissionCallable(const Model::RemovePermissionRequest& request) const;
 
         /**
-         * <p>You can remove individual permissions from an resource policy associated with
-         * a Lambda function by providing a statement ID that you provided when you added
-         * the permission.</p> <p>If you are using versioning, the permissions you remove
-         * are specific to the Lambda function version or alias you specify in the
-         * <code>AddPermission</code> request via the <code>Qualifier</code> parameter. For
-         * more information about versioning, see <a
+         * <p>Removes permissions from a function. You can remove individual permissions
+         * from an resource policy associated with a Lambda function by providing a
+         * statement ID that you provided when you added the permission. When you remove
+         * permissions, disable the event source mapping or trigger configuration first to
+         * avoid errors.</p> <p>Permissions apply to the Amazon Resource Name (ARN) used to
+         * invoke the function, which can be unqualified (the unpublished version of the
+         * function), or include a version or alias. If a client uses a version or alias to
+         * invoke a function, use the <code>Qualifier</code> parameter to apply permissions
+         * to that ARN. For more information about versioning, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>Note that removal of a
-         * permission will cause an active event source to lose permission to the
-         * function.</p> <p>You need permission for the
+         * Lambda Function Versioning and Aliases</a>. </p> <p>You need permission for the
          * <code>lambda:RemovePermission</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">AWS
          * API Reference</a></p>
@@ -1473,19 +1404,13 @@ namespace Model
          * <p>You can update an event source mapping. This is useful if you want to change
          * the parameters of the existing mapping without losing your position in the
          * stream. You can change which function will receive the stream records, but to
-         * change the stream itself, you must create a new mapping.</p> <p>If you are using
-         * the versioning feature, you can update the event source mapping to map to a
-         * specific Lambda function version or alias as described in the
-         * <code>FunctionName</code> parameter. For information about the versioning
-         * feature, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>If you disable the event
-         * source mapping, AWS Lambda stops polling. If you enable again, it will resume
-         * polling from the time it had stopped polling, so you don't lose processing of
-         * any records. However, if you delete event source mapping and create it again, it
-         * will reset.</p> <p>This operation requires permission for the
-         * <code>lambda:UpdateEventSourceMapping</code> action.</p><p><h3>See Also:</h3>  
-         * <a
+         * change the stream itself, you must create a new mapping.</p> <p>If you disable
+         * the event source mapping, AWS Lambda stops polling. If you enable again, it will
+         * resume polling from the time it had stopped polling, so you don't lose
+         * processing of any records. However, if you delete event source mapping and
+         * create it again, it will reset.</p> <p>This operation requires permission for
+         * the <code>lambda:UpdateEventSourceMapping</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
          * API Reference</a></p>
          */
@@ -1495,19 +1420,13 @@ namespace Model
          * <p>You can update an event source mapping. This is useful if you want to change
          * the parameters of the existing mapping without losing your position in the
          * stream. You can change which function will receive the stream records, but to
-         * change the stream itself, you must create a new mapping.</p> <p>If you are using
-         * the versioning feature, you can update the event source mapping to map to a
-         * specific Lambda function version or alias as described in the
-         * <code>FunctionName</code> parameter. For information about the versioning
-         * feature, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>If you disable the event
-         * source mapping, AWS Lambda stops polling. If you enable again, it will resume
-         * polling from the time it had stopped polling, so you don't lose processing of
-         * any records. However, if you delete event source mapping and create it again, it
-         * will reset.</p> <p>This operation requires permission for the
-         * <code>lambda:UpdateEventSourceMapping</code> action.</p><p><h3>See Also:</h3>  
-         * <a
+         * change the stream itself, you must create a new mapping.</p> <p>If you disable
+         * the event source mapping, AWS Lambda stops polling. If you enable again, it will
+         * resume polling from the time it had stopped polling, so you don't lose
+         * processing of any records. However, if you delete event source mapping and
+         * create it again, it will reset.</p> <p>This operation requires permission for
+         * the <code>lambda:UpdateEventSourceMapping</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
          * API Reference</a></p>
          *
@@ -1519,19 +1438,13 @@ namespace Model
          * <p>You can update an event source mapping. This is useful if you want to change
          * the parameters of the existing mapping without losing your position in the
          * stream. You can change which function will receive the stream records, but to
-         * change the stream itself, you must create a new mapping.</p> <p>If you are using
-         * the versioning feature, you can update the event source mapping to map to a
-         * specific Lambda function version or alias as described in the
-         * <code>FunctionName</code> parameter. For information about the versioning
-         * feature, see <a
-         * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-         * Lambda Function Versioning and Aliases</a>. </p> <p>If you disable the event
-         * source mapping, AWS Lambda stops polling. If you enable again, it will resume
-         * polling from the time it had stopped polling, so you don't lose processing of
-         * any records. However, if you delete event source mapping and create it again, it
-         * will reset.</p> <p>This operation requires permission for the
-         * <code>lambda:UpdateEventSourceMapping</code> action.</p><p><h3>See Also:</h3>  
-         * <a
+         * change the stream itself, you must create a new mapping.</p> <p>If you disable
+         * the event source mapping, AWS Lambda stops polling. If you enable again, it will
+         * resume polling from the time it had stopped polling, so you don't lose
+         * processing of any records. However, if you delete event source mapping and
+         * create it again, it will reset.</p> <p>This operation requires permission for
+         * the <code>lambda:UpdateEventSourceMapping</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
          * API Reference</a></p>
          *

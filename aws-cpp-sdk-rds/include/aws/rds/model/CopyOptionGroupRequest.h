@@ -166,63 +166,63 @@ namespace Model
 
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
+     * <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
      * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
     inline const Aws::String& GetTargetOptionGroupIdentifier() const{ return m_targetOptionGroupIdentifier; }
 
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
+     * <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
      * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
     inline void SetTargetOptionGroupIdentifier(const Aws::String& value) { m_targetOptionGroupIdentifierHasBeenSet = true; m_targetOptionGroupIdentifier = value; }
 
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
+     * <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
      * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
     inline void SetTargetOptionGroupIdentifier(Aws::String&& value) { m_targetOptionGroupIdentifierHasBeenSet = true; m_targetOptionGroupIdentifier = std::move(value); }
 
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
+     * <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
      * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
     inline void SetTargetOptionGroupIdentifier(const char* value) { m_targetOptionGroupIdentifierHasBeenSet = true; m_targetOptionGroupIdentifier.assign(value); }
 
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
+     * <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
      * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
     inline CopyOptionGroupRequest& WithTargetOptionGroupIdentifier(const Aws::String& value) { SetTargetOptionGroupIdentifier(value); return *this;}
 
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
+     * <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
      * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
     inline CopyOptionGroupRequest& WithTargetOptionGroupIdentifier(Aws::String&& value) { SetTargetOptionGroupIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the copied option group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
+     * <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from 1 to 255
      * letters, numbers, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-option-group</code> </p>
      */
     inline CopyOptionGroupRequest& WithTargetOptionGroupIdentifier(const char* value) { SetTargetOptionGroupIdentifier(value); return *this;}

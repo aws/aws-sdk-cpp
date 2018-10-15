@@ -54,9 +54,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
@@ -64,9 +64,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
@@ -74,9 +74,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
@@ -84,9 +84,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
@@ -94,9 +94,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline BacktrackDBClusterRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -104,9 +104,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline BacktrackDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
@@ -114,9 +114,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline BacktrackDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -128,7 +128,7 @@ namespace Model
      * <note> <p>If the specified time is not a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
      * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
-     * 8601 timestamp.</p> </li> <li> <p>Cannot contain a timestamp set in the
+     * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
      * future.</p> </li> </ul> <p>Example: <code>2017-07-08T18:00Z</code> </p>
      */
     inline const Aws::Utils::DateTime& GetBacktrackTo() const{ return m_backtrackTo; }
@@ -140,7 +140,7 @@ namespace Model
      * <note> <p>If the specified time is not a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
      * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
-     * 8601 timestamp.</p> </li> <li> <p>Cannot contain a timestamp set in the
+     * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
      * future.</p> </li> </ul> <p>Example: <code>2017-07-08T18:00Z</code> </p>
      */
     inline void SetBacktrackTo(const Aws::Utils::DateTime& value) { m_backtrackToHasBeenSet = true; m_backtrackTo = value; }
@@ -152,7 +152,7 @@ namespace Model
      * <note> <p>If the specified time is not a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
      * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
-     * 8601 timestamp.</p> </li> <li> <p>Cannot contain a timestamp set in the
+     * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
      * future.</p> </li> </ul> <p>Example: <code>2017-07-08T18:00Z</code> </p>
      */
     inline void SetBacktrackTo(Aws::Utils::DateTime&& value) { m_backtrackToHasBeenSet = true; m_backtrackTo = std::move(value); }
@@ -164,7 +164,7 @@ namespace Model
      * <note> <p>If the specified time is not a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
      * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
-     * 8601 timestamp.</p> </li> <li> <p>Cannot contain a timestamp set in the
+     * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
      * future.</p> </li> </ul> <p>Example: <code>2017-07-08T18:00Z</code> </p>
      */
     inline BacktrackDBClusterRequest& WithBacktrackTo(const Aws::Utils::DateTime& value) { SetBacktrackTo(value); return *this;}
@@ -176,7 +176,7 @@ namespace Model
      * <note> <p>If the specified time is not a consistent time for the DB cluster,
      * Aurora automatically chooses the nearest possible consistent time for the DB
      * cluster.</p> </note> <p>Constraints:</p> <ul> <li> <p>Must contain a valid ISO
-     * 8601 timestamp.</p> </li> <li> <p>Cannot contain a timestamp set in the
+     * 8601 timestamp.</p> </li> <li> <p>Can't contain a timestamp set in the
      * future.</p> </li> </ul> <p>Example: <code>2017-07-08T18:00Z</code> </p>
      */
     inline BacktrackDBClusterRequest& WithBacktrackTo(Aws::Utils::DateTime&& value) { SetBacktrackTo(std::move(value)); return *this;}

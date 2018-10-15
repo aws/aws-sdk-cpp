@@ -55,9 +55,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be described. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
@@ -65,9 +65,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be described. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
@@ -75,9 +75,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be described. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
@@ -85,9 +85,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be described. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
@@ -95,9 +95,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be described. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline DescribeDBClusterBacktracksRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -105,9 +105,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be described. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline DescribeDBClusterBacktracksRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
@@ -115,9 +115,9 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster to be described. This parameter
      * is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * contain from 1 to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First
-     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
-     * <code>my-cluster1</code> </p>
+     * character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens.</p> </li> </ul> <p>Example: <code>my-cluster1</code>
+     * </p>
      */
     inline DescribeDBClusterBacktracksRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 

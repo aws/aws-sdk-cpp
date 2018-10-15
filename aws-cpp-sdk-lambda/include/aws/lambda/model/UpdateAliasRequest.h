@@ -44,51 +44,86 @@ namespace Model
 
 
     /**
-     * <p>The function name for which the alias is created. Note that the length
-     * constraint applies only to the ARN. If you specify only the function name, it is
-     * limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The function name for which the alias is created. Note that the length
-     * constraint applies only to the ARN. If you specify only the function name, it is
-     * limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The function name for which the alias is created. Note that the length
-     * constraint applies only to the ARN. If you specify only the function name, it is
-     * limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The function name for which the alias is created. Note that the length
-     * constraint applies only to the ARN. If you specify only the function name, it is
-     * limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The function name for which the alias is created. Note that the length
-     * constraint applies only to the ARN. If you specify only the function name, it is
-     * limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline UpdateAliasRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The function name for which the alias is created. Note that the length
-     * constraint applies only to the ARN. If you specify only the function name, it is
-     * limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline UpdateAliasRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The function name for which the alias is created. Note that the length
-     * constraint applies only to the ARN. If you specify only the function name, it is
-     * limited to 64 characters in length.</p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline UpdateAliasRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
@@ -211,35 +246,45 @@ namespace Model
     /**
      * <p>Specifies an additional version your alias can point to, allowing you to
      * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline const AliasRoutingConfiguration& GetRoutingConfig() const{ return m_routingConfig; }
 
     /**
      * <p>Specifies an additional version your alias can point to, allowing you to
      * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline void SetRoutingConfig(const AliasRoutingConfiguration& value) { m_routingConfigHasBeenSet = true; m_routingConfig = value; }
 
     /**
      * <p>Specifies an additional version your alias can point to, allowing you to
      * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline void SetRoutingConfig(AliasRoutingConfiguration&& value) { m_routingConfigHasBeenSet = true; m_routingConfig = std::move(value); }
 
     /**
      * <p>Specifies an additional version your alias can point to, allowing you to
      * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline UpdateAliasRequest& WithRoutingConfig(const AliasRoutingConfiguration& value) { SetRoutingConfig(value); return *this;}
 
     /**
      * <p>Specifies an additional version your alias can point to, allowing you to
      * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline UpdateAliasRequest& WithRoutingConfig(AliasRoutingConfiguration&& value) { SetRoutingConfig(std::move(value)); return *this;}
 
@@ -248,8 +293,9 @@ namespace Model
      * <p>An optional value you can use to ensure you are updating the latest update of
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * with an error message, advising you retrieve the latest function version or
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
 
@@ -257,8 +303,9 @@ namespace Model
      * <p>An optional value you can use to ensure you are updating the latest update of
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * with an error message, advising you retrieve the latest function version or
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
 
@@ -266,8 +313,9 @@ namespace Model
      * <p>An optional value you can use to ensure you are updating the latest update of
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * with an error message, advising you retrieve the latest function version or
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
 
@@ -275,8 +323,9 @@ namespace Model
      * <p>An optional value you can use to ensure you are updating the latest update of
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * with an error message, advising you retrieve the latest function version or
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
 
@@ -284,8 +333,9 @@ namespace Model
      * <p>An optional value you can use to ensure you are updating the latest update of
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * with an error message, advising you retrieve the latest function version or
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline UpdateAliasRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
 
@@ -293,8 +343,9 @@ namespace Model
      * <p>An optional value you can use to ensure you are updating the latest update of
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * with an error message, advising you retrieve the latest function version or
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline UpdateAliasRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
 
@@ -302,8 +353,9 @@ namespace Model
      * <p>An optional value you can use to ensure you are updating the latest update of
      * the function version or alias. If the <code>RevisionID</code> you pass doesn't
      * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either or .</p>
+     * with an error message, advising you retrieve the latest function version or
+     * alias <code>RevisionID</code> using either <a>GetFunction</a> or
+     * <a>GetAlias</a>.</p>
      */
     inline UpdateAliasRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 

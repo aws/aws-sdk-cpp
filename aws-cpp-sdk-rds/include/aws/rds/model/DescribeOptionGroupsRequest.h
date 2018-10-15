@@ -52,43 +52,43 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the option group to describe. Cannot be supplied together with
+     * <p>The name of the option group to describe. Can't be supplied together with
      * EngineName or MajorEngineVersion.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p>The name of the option group to describe. Cannot be supplied together with
+     * <p>The name of the option group to describe. Can't be supplied together with
      * EngineName or MajorEngineVersion.</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p>The name of the option group to describe. Cannot be supplied together with
+     * <p>The name of the option group to describe. Can't be supplied together with
      * EngineName or MajorEngineVersion.</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
-     * <p>The name of the option group to describe. Cannot be supplied together with
+     * <p>The name of the option group to describe. Can't be supplied together with
      * EngineName or MajorEngineVersion.</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p>The name of the option group to describe. Cannot be supplied together with
+     * <p>The name of the option group to describe. Can't be supplied together with
      * EngineName or MajorEngineVersion.</p>
      */
     inline DescribeOptionGroupsRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p>The name of the option group to describe. Cannot be supplied together with
+     * <p>The name of the option group to describe. Can't be supplied together with
      * EngineName or MajorEngineVersion.</p>
      */
     inline DescribeOptionGroupsRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the option group to describe. Cannot be supplied together with
+     * <p>The name of the option group to describe. Can't be supplied together with
      * EngineName or MajorEngineVersion.</p>
      */
     inline DescribeOptionGroupsRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}

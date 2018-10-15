@@ -57,29 +57,29 @@ namespace Model
      * use.</p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p>The name of the database
      * to create when the DB instance is created. If this parameter is not specified,
      * no database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Cannot be a word
+     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>MariaDB</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>The name of the database to create
      * when the DB instance is created. If this parameter is not specified, the default
      * "postgres" database is created in the DB instance.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
      * <p>Must begin with a letter or an underscore. Subsequent characters can be
-     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Cannot be a word
+     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
      * <p>The Oracle System ID (SID) of the created DB instance. If you specify
      * <code>null</code>, the default value <code>ORCL</code> is used. You can't
      * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Cannot
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
      * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
      * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
      * database to create when the primary instance of the DB cluster is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
@@ -89,29 +89,29 @@ namespace Model
      * use.</p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p>The name of the database
      * to create when the DB instance is created. If this parameter is not specified,
      * no database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Cannot be a word
+     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>MariaDB</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>The name of the database to create
      * when the DB instance is created. If this parameter is not specified, the default
      * "postgres" database is created in the DB instance.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
      * <p>Must begin with a letter or an underscore. Subsequent characters can be
-     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Cannot be a word
+     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
      * <p>The Oracle System ID (SID) of the created DB instance. If you specify
      * <code>null</code>, the default value <code>ORCL</code> is used. You can't
      * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Cannot
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
      * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
      * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
      * database to create when the primary instance of the DB cluster is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
@@ -121,29 +121,29 @@ namespace Model
      * use.</p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p>The name of the database
      * to create when the DB instance is created. If this parameter is not specified,
      * no database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Cannot be a word
+     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>MariaDB</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>The name of the database to create
      * when the DB instance is created. If this parameter is not specified, the default
      * "postgres" database is created in the DB instance.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
      * <p>Must begin with a letter or an underscore. Subsequent characters can be
-     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Cannot be a word
+     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
      * <p>The Oracle System ID (SID) of the created DB instance. If you specify
      * <code>null</code>, the default value <code>ORCL</code> is used. You can't
      * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Cannot
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
      * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
      * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
      * database to create when the primary instance of the DB cluster is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
@@ -153,29 +153,29 @@ namespace Model
      * use.</p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p>The name of the database
      * to create when the DB instance is created. If this parameter is not specified,
      * no database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Cannot be a word
+     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>MariaDB</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>The name of the database to create
      * when the DB instance is created. If this parameter is not specified, the default
      * "postgres" database is created in the DB instance.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
      * <p>Must begin with a letter or an underscore. Subsequent characters can be
-     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Cannot be a word
+     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
      * <p>The Oracle System ID (SID) of the created DB instance. If you specify
      * <code>null</code>, the default value <code>ORCL</code> is used. You can't
      * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Cannot
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
      * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
      * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
      * database to create when the primary instance of the DB cluster is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
@@ -185,29 +185,29 @@ namespace Model
      * use.</p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p>The name of the database
      * to create when the DB instance is created. If this parameter is not specified,
      * no database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Cannot be a word
+     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>MariaDB</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>The name of the database to create
      * when the DB instance is created. If this parameter is not specified, the default
      * "postgres" database is created in the DB instance.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
      * <p>Must begin with a letter or an underscore. Subsequent characters can be
-     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Cannot be a word
+     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
      * <p>The Oracle System ID (SID) of the created DB instance. If you specify
      * <code>null</code>, the default value <code>ORCL</code> is used. You can't
      * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Cannot
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
      * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
      * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
      * database to create when the primary instance of the DB cluster is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
@@ -217,29 +217,29 @@ namespace Model
      * use.</p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p>The name of the database
      * to create when the DB instance is created. If this parameter is not specified,
      * no database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Cannot be a word
+     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>MariaDB</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>The name of the database to create
      * when the DB instance is created. If this parameter is not specified, the default
      * "postgres" database is created in the DB instance.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
      * <p>Must begin with a letter or an underscore. Subsequent characters can be
-     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Cannot be a word
+     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
      * <p>The Oracle System ID (SID) of the created DB instance. If you specify
      * <code>null</code>, the default value <code>ORCL</code> is used. You can't
      * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Cannot
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
      * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
      * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
      * database to create when the primary instance of the DB cluster is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
@@ -249,29 +249,29 @@ namespace Model
      * use.</p> <p>Type: String</p> <p> <b>MySQL</b> </p> <p>The name of the database
      * to create when the DB instance is created. If this parameter is not specified,
      * no database is created in the DB instance.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Cannot be a word
+     * <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>MariaDB</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul> <p> <b>PostgreSQL</b> </p> <p>The name of the database to create
      * when the DB instance is created. If this parameter is not specified, the default
      * "postgres" database is created in the DB instance.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain 1 to 63 letters, numbers, or underscores.</p> </li> <li>
      * <p>Must begin with a letter or an underscore. Subsequent characters can be
-     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Cannot be a word
+     * letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
      * <p>The Oracle System ID (SID) of the created DB instance. If you specify
      * <code>null</code>, the default value <code>ORCL</code> is used. You can't
      * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Cannot
+     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
      * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
      * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
      * database to create when the primary instance of the DB cluster is created. If
      * this parameter is not specified, no database is created in the DB instance.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
-     * </li> <li> <p>Cannot be a word reserved by the specified database engine</p>
+     * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
      * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
@@ -281,7 +281,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
@@ -290,7 +290,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
@@ -299,7 +299,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
@@ -308,7 +308,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
@@ -317,7 +317,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
@@ -326,7 +326,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
@@ -335,7 +335,7 @@ namespace Model
      * <p>The DB instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
@@ -648,22 +648,22 @@ namespace Model
      * applicable. The name for the master user is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>. </p> <p> <b>MariaDB</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p> </li> <li> <p>Must be
-     * 1 to 16 letters or numbers.</p> </li> <li> <p>Cannot be a reserved word for the
+     * 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a reserved word for the
      * chosen database engine.</p> </li> </ul> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for SQL Server.</p> </li> <li> <p>Must
      * be 1 to 128 letters or numbers.</p> </li> <li> <p>The first character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for MySQL.</p> </li> <li> <p>Must be 1 to 16 letters or numbers.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
+     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a
      * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Oracle</b>
      * </p> <p>Constraints:</p> <ul> <li> <p>Required for Oracle.</p> </li> <li>
      * <p>Must be 1 to 30 letters or numbers.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
@@ -672,22 +672,22 @@ namespace Model
      * applicable. The name for the master user is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>. </p> <p> <b>MariaDB</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p> </li> <li> <p>Must be
-     * 1 to 16 letters or numbers.</p> </li> <li> <p>Cannot be a reserved word for the
+     * 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a reserved word for the
      * chosen database engine.</p> </li> </ul> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for SQL Server.</p> </li> <li> <p>Must
      * be 1 to 128 letters or numbers.</p> </li> <li> <p>The first character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for MySQL.</p> </li> <li> <p>Must be 1 to 16 letters or numbers.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
+     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a
      * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Oracle</b>
      * </p> <p>Constraints:</p> <ul> <li> <p>Required for Oracle.</p> </li> <li>
      * <p>Must be 1 to 30 letters or numbers.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
@@ -696,22 +696,22 @@ namespace Model
      * applicable. The name for the master user is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>. </p> <p> <b>MariaDB</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p> </li> <li> <p>Must be
-     * 1 to 16 letters or numbers.</p> </li> <li> <p>Cannot be a reserved word for the
+     * 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a reserved word for the
      * chosen database engine.</p> </li> </ul> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for SQL Server.</p> </li> <li> <p>Must
      * be 1 to 128 letters or numbers.</p> </li> <li> <p>The first character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for MySQL.</p> </li> <li> <p>Must be 1 to 16 letters or numbers.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
+     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a
      * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Oracle</b>
      * </p> <p>Constraints:</p> <ul> <li> <p>Required for Oracle.</p> </li> <li>
      * <p>Must be 1 to 30 letters or numbers.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
@@ -720,22 +720,22 @@ namespace Model
      * applicable. The name for the master user is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>. </p> <p> <b>MariaDB</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p> </li> <li> <p>Must be
-     * 1 to 16 letters or numbers.</p> </li> <li> <p>Cannot be a reserved word for the
+     * 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a reserved word for the
      * chosen database engine.</p> </li> </ul> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for SQL Server.</p> </li> <li> <p>Must
      * be 1 to 128 letters or numbers.</p> </li> <li> <p>The first character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for MySQL.</p> </li> <li> <p>Must be 1 to 16 letters or numbers.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
+     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a
      * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Oracle</b>
      * </p> <p>Constraints:</p> <ul> <li> <p>Required for Oracle.</p> </li> <li>
      * <p>Must be 1 to 30 letters or numbers.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
@@ -744,22 +744,22 @@ namespace Model
      * applicable. The name for the master user is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>. </p> <p> <b>MariaDB</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p> </li> <li> <p>Must be
-     * 1 to 16 letters or numbers.</p> </li> <li> <p>Cannot be a reserved word for the
+     * 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a reserved word for the
      * chosen database engine.</p> </li> </ul> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for SQL Server.</p> </li> <li> <p>Must
      * be 1 to 128 letters or numbers.</p> </li> <li> <p>The first character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for MySQL.</p> </li> <li> <p>Must be 1 to 16 letters or numbers.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
+     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a
      * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Oracle</b>
      * </p> <p>Constraints:</p> <ul> <li> <p>Required for Oracle.</p> </li> <li>
      * <p>Must be 1 to 30 letters or numbers.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
@@ -768,22 +768,22 @@ namespace Model
      * applicable. The name for the master user is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>. </p> <p> <b>MariaDB</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p> </li> <li> <p>Must be
-     * 1 to 16 letters or numbers.</p> </li> <li> <p>Cannot be a reserved word for the
+     * 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a reserved word for the
      * chosen database engine.</p> </li> </ul> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for SQL Server.</p> </li> <li> <p>Must
      * be 1 to 128 letters or numbers.</p> </li> <li> <p>The first character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for MySQL.</p> </li> <li> <p>Must be 1 to 16 letters or numbers.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
+     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a
      * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Oracle</b>
      * </p> <p>Constraints:</p> <ul> <li> <p>Required for Oracle.</p> </li> <li>
      * <p>Must be 1 to 30 letters or numbers.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
@@ -792,22 +792,22 @@ namespace Model
      * applicable. The name for the master user is managed by the DB cluster. For more
      * information, see <a>CreateDBCluster</a>. </p> <p> <b>MariaDB</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for MariaDB.</p> </li> <li> <p>Must be
-     * 1 to 16 letters or numbers.</p> </li> <li> <p>Cannot be a reserved word for the
+     * 1 to 16 letters or numbers.</p> </li> <li> <p>Can't be a reserved word for the
      * chosen database engine.</p> </li> </ul> <p> <b>Microsoft SQL Server</b> </p>
      * <p>Constraints:</p> <ul> <li> <p>Required for SQL Server.</p> </li> <li> <p>Must
      * be 1 to 128 letters or numbers.</p> </li> <li> <p>The first character must be a
-     * letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>MySQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for MySQL.</p> </li> <li> <p>Must be 1 to 16 letters or numbers.</p>
-     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a
+     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a
      * reserved word for the chosen database engine.</p> </li> </ul> <p> <b>Oracle</b>
      * </p> <p>Constraints:</p> <ul> <li> <p>Required for Oracle.</p> </li> <li>
      * <p>Must be 1 to 30 letters or numbers.</p> </li> <li> <p>First character must be
-     * a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen database
+     * a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
      * engine.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints:</p> <ul> <li>
      * <p>Required for PostgreSQL.</p> </li> <li> <p>Must be 1 to 63 letters or
      * numbers.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
-     * <p>Cannot be a reserved word for the chosen database engine.</p> </li> </ul>
+     * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
 
@@ -1258,7 +1258,7 @@ namespace Model
      * this argument is omitted, the default DBParameterGroup for the specified engine
      * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
@@ -1267,7 +1267,7 @@ namespace Model
      * this argument is omitted, the default DBParameterGroup for the specified engine
      * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
@@ -1276,7 +1276,7 @@ namespace Model
      * this argument is omitted, the default DBParameterGroup for the specified engine
      * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
 
@@ -1285,7 +1285,7 @@ namespace Model
      * this argument is omitted, the default DBParameterGroup for the specified engine
      * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
@@ -1294,7 +1294,7 @@ namespace Model
      * this argument is omitted, the default DBParameterGroup for the specified engine
      * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
@@ -1303,7 +1303,7 @@ namespace Model
      * this argument is omitted, the default DBParameterGroup for the specified engine
      * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
 
@@ -1312,7 +1312,7 @@ namespace Model
      * this argument is omitted, the default DBParameterGroup for the specified engine
      * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
@@ -1324,7 +1324,7 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster. For
      * more information, see <a>CreateDBCluster</a>.</p> <p>Default: 1</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
-     * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
+     * <p>Can't be set to 0 if the DB instance is a source to Read Replicas</p> </li>
      * </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
@@ -1336,7 +1336,7 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster. For
      * more information, see <a>CreateDBCluster</a>.</p> <p>Default: 1</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
-     * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
+     * <p>Can't be set to 0 if the DB instance is a source to Read Replicas</p> </li>
      * </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
@@ -1348,7 +1348,7 @@ namespace Model
      * The retention period for automated backups is managed by the DB cluster. For
      * more information, see <a>CreateDBCluster</a>.</p> <p>Default: 1</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
-     * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
+     * <p>Can't be set to 0 if the DB instance is a source to Read Replicas</p> </li>
      * </ul>
      */
     inline CreateDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
@@ -1825,9 +1825,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
-     * storage amount for the DB instance. Must also be an integer multiple of 1000.
-     * For example, if the size of your DB instance is 500 GiB, then your
-     * <code>Iops</code> value can be 2000, 3000, 4000, or 5000. </p>
+     * storage amount for the DB instance. </p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -1838,9 +1836,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
-     * storage amount for the DB instance. Must also be an integer multiple of 1000.
-     * For example, if the size of your DB instance is 500 GiB, then your
-     * <code>Iops</code> value can be 2000, 3000, 4000, or 5000. </p>
+     * storage amount for the DB instance. </p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -1851,9 +1847,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
-     * storage amount for the DB instance. Must also be an integer multiple of 1000.
-     * For example, if the size of your DB instance is 500 GiB, then your
-     * <code>Iops</code> value can be 2000, 3000, 4000, or 5000. </p>
+     * storage amount for the DB instance. </p>
      */
     inline CreateDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 

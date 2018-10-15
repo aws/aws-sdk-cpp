@@ -131,63 +131,63 @@ namespace Model
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
+     * <ul> <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
      */
     inline const Aws::String& GetTargetDBParameterGroupIdentifier() const{ return m_targetDBParameterGroupIdentifier; }
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
+     * <ul> <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
      */
     inline void SetTargetDBParameterGroupIdentifier(const Aws::String& value) { m_targetDBParameterGroupIdentifierHasBeenSet = true; m_targetDBParameterGroupIdentifier = value; }
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
+     * <ul> <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
      */
     inline void SetTargetDBParameterGroupIdentifier(Aws::String&& value) { m_targetDBParameterGroupIdentifierHasBeenSet = true; m_targetDBParameterGroupIdentifier = std::move(value); }
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
+     * <ul> <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
      */
     inline void SetTargetDBParameterGroupIdentifier(const char* value) { m_targetDBParameterGroupIdentifierHasBeenSet = true; m_targetDBParameterGroupIdentifier.assign(value); }
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
+     * <ul> <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
      */
     inline CopyDBParameterGroupRequest& WithTargetDBParameterGroupIdentifier(const Aws::String& value) { SetTargetDBParameterGroupIdentifier(value); return *this;}
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
+     * <ul> <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
      */
     inline CopyDBParameterGroupRequest& WithTargetDBParameterGroupIdentifier(Aws::String&& value) { SetTargetDBParameterGroupIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the copied DB parameter group.</p> <p>Constraints:</p>
-     * <ul> <li> <p>Cannot be null, empty, or blank</p> </li> <li> <p>Must contain from
+     * <ul> <li> <p>Can't be null, empty, or blank</p> </li> <li> <p>Must contain from
      * 1 to 255 letters, numbers, or hyphens</p> </li> <li> <p>First character must be
-     * a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-db-parameter-group</code> </p>
      */
     inline CopyDBParameterGroupRequest& WithTargetDBParameterGroupIdentifier(const char* value) { SetTargetDBParameterGroupIdentifier(value); return *this;}

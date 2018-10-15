@@ -244,7 +244,7 @@ namespace Model
      * <p>The DB cluster identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
@@ -253,7 +253,7 @@ namespace Model
      * <p>The DB cluster identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
@@ -262,7 +262,7 @@ namespace Model
      * <p>The DB cluster identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
@@ -271,7 +271,7 @@ namespace Model
      * <p>The DB cluster identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
@@ -280,7 +280,7 @@ namespace Model
      * <p>The DB cluster identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
      */
     inline CreateDBClusterRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
@@ -289,7 +289,7 @@ namespace Model
      * <p>The DB cluster identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
      */
     inline CreateDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
@@ -298,7 +298,7 @@ namespace Model
      * <p>The DB cluster identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
      * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
      */
     inline CreateDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
@@ -308,7 +308,7 @@ namespace Model
      * <p> The name of the DB cluster parameter group to associate with this DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
      * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * existing DB cluster parameter group.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
@@ -316,7 +316,7 @@ namespace Model
      * <p> The name of the DB cluster parameter group to associate with this DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
      * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * existing DB cluster parameter group.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
@@ -324,7 +324,7 @@ namespace Model
      * <p> The name of the DB cluster parameter group to associate with this DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
      * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * existing DB cluster parameter group.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
@@ -332,7 +332,7 @@ namespace Model
      * <p> The name of the DB cluster parameter group to associate with this DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
      * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * existing DB cluster parameter group.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
@@ -340,7 +340,7 @@ namespace Model
      * <p> The name of the DB cluster parameter group to associate with this DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
      * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * existing DB cluster parameter group.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
@@ -348,7 +348,7 @@ namespace Model
      * <p> The name of the DB cluster parameter group to associate with this DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
      * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * existing DB cluster parameter group.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
@@ -356,7 +356,7 @@ namespace Model
      * <p> The name of the DB cluster parameter group to associate with this DB
      * cluster. If this argument is omitted, <code>default.aurora5.6</code> is used.
      * </p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of an
-     * existing DBClusterParameterGroup.</p> </li> </ul>
+     * existing DB cluster parameter group.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
@@ -584,7 +584,7 @@ namespace Model
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
+     * must be a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen
      * database engine.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
@@ -592,7 +592,7 @@ namespace Model
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
+     * must be a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen
      * database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
@@ -600,7 +600,7 @@ namespace Model
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
+     * must be a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen
      * database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
@@ -608,7 +608,7 @@ namespace Model
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
+     * must be a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen
      * database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
@@ -616,7 +616,7 @@ namespace Model
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
+     * must be a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen
      * database engine.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
@@ -624,7 +624,7 @@ namespace Model
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
+     * must be a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen
      * database engine.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
@@ -632,7 +632,7 @@ namespace Model
     /**
      * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be 1 to 16 letters or numbers.</p> </li> <li> <p>First character
-     * must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the chosen
+     * must be a letter.</p> </li> <li> <p>Can't be a reserved word for the chosen
      * database engine.</p> </li> </ul>
      */
     inline CreateDBClusterRequest& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}

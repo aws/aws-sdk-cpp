@@ -32,9 +32,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_LAMBDA_API ListFunctionsRequest : public LambdaRequest
   {
@@ -53,113 +50,89 @@ namespace Model
 
 
     /**
-     * <p>Optional string. If not specified, will return only regular function versions
-     * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
-     * which the functions are replicated. For example, if you specify
-     * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
-     * If specified, you also must specify a valid FunctionVersion parameter.</p>
+     * <p>Specify a region (e.g. <code>us-east-2</code>) to only list functions that
+     * were created in that region, or <code>ALL</code> to include functions replicated
+     * from any region. If specified, you also must specify the
+     * <code>FunctionVersion</code>.</p>
      */
     inline const Aws::String& GetMasterRegion() const{ return m_masterRegion; }
 
     /**
-     * <p>Optional string. If not specified, will return only regular function versions
-     * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
-     * which the functions are replicated. For example, if you specify
-     * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
-     * If specified, you also must specify a valid FunctionVersion parameter.</p>
+     * <p>Specify a region (e.g. <code>us-east-2</code>) to only list functions that
+     * were created in that region, or <code>ALL</code> to include functions replicated
+     * from any region. If specified, you also must specify the
+     * <code>FunctionVersion</code>.</p>
      */
     inline void SetMasterRegion(const Aws::String& value) { m_masterRegionHasBeenSet = true; m_masterRegion = value; }
 
     /**
-     * <p>Optional string. If not specified, will return only regular function versions
-     * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
-     * which the functions are replicated. For example, if you specify
-     * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
-     * If specified, you also must specify a valid FunctionVersion parameter.</p>
+     * <p>Specify a region (e.g. <code>us-east-2</code>) to only list functions that
+     * were created in that region, or <code>ALL</code> to include functions replicated
+     * from any region. If specified, you also must specify the
+     * <code>FunctionVersion</code>.</p>
      */
     inline void SetMasterRegion(Aws::String&& value) { m_masterRegionHasBeenSet = true; m_masterRegion = std::move(value); }
 
     /**
-     * <p>Optional string. If not specified, will return only regular function versions
-     * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
-     * which the functions are replicated. For example, if you specify
-     * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
-     * If specified, you also must specify a valid FunctionVersion parameter.</p>
+     * <p>Specify a region (e.g. <code>us-east-2</code>) to only list functions that
+     * were created in that region, or <code>ALL</code> to include functions replicated
+     * from any region. If specified, you also must specify the
+     * <code>FunctionVersion</code>.</p>
      */
     inline void SetMasterRegion(const char* value) { m_masterRegionHasBeenSet = true; m_masterRegion.assign(value); }
 
     /**
-     * <p>Optional string. If not specified, will return only regular function versions
-     * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
-     * which the functions are replicated. For example, if you specify
-     * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
-     * If specified, you also must specify a valid FunctionVersion parameter.</p>
+     * <p>Specify a region (e.g. <code>us-east-2</code>) to only list functions that
+     * were created in that region, or <code>ALL</code> to include functions replicated
+     * from any region. If specified, you also must specify the
+     * <code>FunctionVersion</code>.</p>
      */
     inline ListFunctionsRequest& WithMasterRegion(const Aws::String& value) { SetMasterRegion(value); return *this;}
 
     /**
-     * <p>Optional string. If not specified, will return only regular function versions
-     * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
-     * which the functions are replicated. For example, if you specify
-     * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
-     * If specified, you also must specify a valid FunctionVersion parameter.</p>
+     * <p>Specify a region (e.g. <code>us-east-2</code>) to only list functions that
+     * were created in that region, or <code>ALL</code> to include functions replicated
+     * from any region. If specified, you also must specify the
+     * <code>FunctionVersion</code>.</p>
      */
     inline ListFunctionsRequest& WithMasterRegion(Aws::String&& value) { SetMasterRegion(std::move(value)); return *this;}
 
     /**
-     * <p>Optional string. If not specified, will return only regular function versions
-     * (i.e., non-replicated versions).</p> <p>Valid values are:</p> <p>The region from
-     * which the functions are replicated. For example, if you specify
-     * <code>us-east-1</code>, only functions replicated from that region will be
-     * returned.</p> <p> <code>ALL</code>: Will return all functions from any region.
-     * If specified, you also must specify a valid FunctionVersion parameter.</p>
+     * <p>Specify a region (e.g. <code>us-east-2</code>) to only list functions that
+     * were created in that region, or <code>ALL</code> to include functions replicated
+     * from any region. If specified, you also must specify the
+     * <code>FunctionVersion</code>.</p>
      */
     inline ListFunctionsRequest& WithMasterRegion(const char* value) { SetMasterRegion(value); return *this;}
 
 
     /**
-     * <p>Optional string. If not specified, only the unqualified functions ARNs
-     * (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p>
-     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which
-     * will have fully qualified ARNs (Amazon Resource Names).</p>
+     * <p>Set to <code>ALL</code> to list all published versions. If not specified,
+     * only the latest unpublished version ARN is returned.</p>
      */
     inline const FunctionVersion& GetFunctionVersion() const{ return m_functionVersion; }
 
     /**
-     * <p>Optional string. If not specified, only the unqualified functions ARNs
-     * (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p>
-     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which
-     * will have fully qualified ARNs (Amazon Resource Names).</p>
+     * <p>Set to <code>ALL</code> to list all published versions. If not specified,
+     * only the latest unpublished version ARN is returned.</p>
      */
     inline void SetFunctionVersion(const FunctionVersion& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
 
     /**
-     * <p>Optional string. If not specified, only the unqualified functions ARNs
-     * (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p>
-     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which
-     * will have fully qualified ARNs (Amazon Resource Names).</p>
+     * <p>Set to <code>ALL</code> to list all published versions. If not specified,
+     * only the latest unpublished version ARN is returned.</p>
      */
     inline void SetFunctionVersion(FunctionVersion&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::move(value); }
 
     /**
-     * <p>Optional string. If not specified, only the unqualified functions ARNs
-     * (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p>
-     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which
-     * will have fully qualified ARNs (Amazon Resource Names).</p>
+     * <p>Set to <code>ALL</code> to list all published versions. If not specified,
+     * only the latest unpublished version ARN is returned.</p>
      */
     inline ListFunctionsRequest& WithFunctionVersion(const FunctionVersion& value) { SetFunctionVersion(value); return *this;}
 
     /**
-     * <p>Optional string. If not specified, only the unqualified functions ARNs
-     * (Amazon Resource Names) will be returned.</p> <p>Valid value:</p> <p>
-     * <code>ALL</code>: Will return all versions, including <code>$LATEST</code> which
-     * will have fully qualified ARNs (Amazon Resource Names).</p>
+     * <p>Set to <code>ALL</code> to list all published versions. If not specified,
+     * only the latest unpublished version ARN is returned.</p>
      */
     inline ListFunctionsRequest& WithFunctionVersion(FunctionVersion&& value) { SetFunctionVersion(std::move(value)); return *this;}
 
@@ -216,19 +189,22 @@ namespace Model
 
     /**
      * <p>Optional integer. Specifies the maximum number of AWS Lambda functions to
-     * return in response. This parameter value must be greater than 0.</p>
+     * return in response. This parameter value must be greater than 0. The absolute
+     * maximum of AWS Lambda functions that can be returned is 50.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>Optional integer. Specifies the maximum number of AWS Lambda functions to
-     * return in response. This parameter value must be greater than 0.</p>
+     * return in response. This parameter value must be greater than 0. The absolute
+     * maximum of AWS Lambda functions that can be returned is 50.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>Optional integer. Specifies the maximum number of AWS Lambda functions to
-     * return in response. This parameter value must be greater than 0.</p>
+     * return in response. This parameter value must be greater than 0. The absolute
+     * maximum of AWS Lambda functions that can be returned is 50.</p>
      */
     inline ListFunctionsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

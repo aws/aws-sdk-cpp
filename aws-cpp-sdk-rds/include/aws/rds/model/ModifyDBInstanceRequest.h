@@ -788,8 +788,8 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
      * <p>Can be specified for a MySQL Read Replica only if the source is running MySQL
      * 5.6</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica only if the
-     * source is running PostgreSQL 9.3.5</p> </li> <li> <p>Cannot be set to 0 if the
-     * DB instance is a source to Read Replicas</p> </li> </ul>
+     * source is running PostgreSQL 9.3.5</p> </li> <li> <p>Can't be set to 0 if the DB
+     * instance is a source to Read Replicas</p> </li> </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
@@ -808,8 +808,8 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
      * <p>Can be specified for a MySQL Read Replica only if the source is running MySQL
      * 5.6</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica only if the
-     * source is running PostgreSQL 9.3.5</p> </li> <li> <p>Cannot be set to 0 if the
-     * DB instance is a source to Read Replicas</p> </li> </ul>
+     * source is running PostgreSQL 9.3.5</p> </li> <li> <p>Can't be set to 0 if the DB
+     * instance is a source to Read Replicas</p> </li> </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
@@ -828,8 +828,8 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
      * <p>Can be specified for a MySQL Read Replica only if the source is running MySQL
      * 5.6</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica only if the
-     * source is running PostgreSQL 9.3.5</p> </li> <li> <p>Cannot be set to 0 if the
-     * DB instance is a source to Read Replicas</p> </li> </ul>
+     * source is running PostgreSQL 9.3.5</p> </li> <li> <p>Can't be set to 0 if the DB
+     * instance is a source to Read Replicas</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
@@ -1453,7 +1453,7 @@ namespace Model
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <p>The first character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>mydbinstance</code> </p>
      */
@@ -1466,7 +1466,7 @@ namespace Model
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <p>The first character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>mydbinstance</code> </p>
      */
@@ -1479,7 +1479,7 @@ namespace Model
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <p>The first character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>mydbinstance</code> </p>
      */
@@ -1492,7 +1492,7 @@ namespace Model
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <p>The first character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>mydbinstance</code> </p>
      */
@@ -1505,7 +1505,7 @@ namespace Model
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <p>The first character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>mydbinstance</code> </p>
      */
@@ -1518,7 +1518,7 @@ namespace Model
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <p>The first character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>mydbinstance</code> </p>
      */
@@ -1531,7 +1531,7 @@ namespace Model
      * occur during the next maintenance window if <code>Apply Immediately</code> to
      * false. This value is stored as a lowercase string. </p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>The first character must be a letter.</p> </li> <li> <p>Cannot end with a
+     * <p>The first character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>mydbinstance</code> </p>
      */

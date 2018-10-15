@@ -54,63 +54,63 @@ namespace Model
     /**
      * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <note> <p>This value is stored as a lowercase
+     * string.</p> </note>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
     /**
      * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <note> <p>This value is stored as a lowercase
+     * string.</p> </note>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
      * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <note> <p>This value is stored as a lowercase
+     * string.</p> </note>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <note> <p>This value is stored as a lowercase
+     * string.</p> </note>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
     /**
      * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <note> <p>This value is stored as a lowercase
+     * string.</p> </note>
      */
     inline CreateDBParameterGroupRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <note> <p>This value is stored as a lowercase
+     * string.</p> </note>
      */
     inline CreateDBParameterGroupRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB parameter group.</p> <p>Constraints:</p> <ul> <li> <p>Must
      * be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must
-     * be a letter</p> </li> <li> <p>Cannot end with a hyphen or contain two
-     * consecutive hyphens</p> </li> </ul> <note> <p>This value is stored as a
-     * lowercase string.</p> </note>
+     * be a letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
+     * hyphens</p> </li> </ul> <note> <p>This value is stored as a lowercase
+     * string.</p> </note>
      */
     inline CreateDBParameterGroupRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 

@@ -34,9 +34,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvocationRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_LAMBDA_API InvokeRequest : public StreamingLambdaRequest
   {
@@ -55,147 +52,147 @@ namespace Model
 
 
     /**
-     * <p>The Lambda function name.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The Lambda function name.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The Lambda function name.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The Lambda function name.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The Lambda function name.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline InvokeRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The Lambda function name.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline InvokeRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The Lambda function name.</p> <p> You can specify a function name (for
-     * example, <code>Thumbnail</code>) or you can specify Amazon Resource Name (ARN)
-     * of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). AWS Lambda
-     * also allows you to specify a partial ARN (for example,
-     * <code>account-id:Thumbnail</code>). Note that the length constraint applies only
-     * to the ARN. If you specify only the function name, it is limited to 64
-     * characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline InvokeRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
 
     /**
-     * <p>By default, the <code>Invoke</code> API assumes <code>RequestResponse</code>
-     * invocation type. You can optionally request asynchronous execution by specifying
-     * <code>Event</code> as the <code>InvocationType</code>. You can also use this
-     * parameter to request AWS Lambda to not execute the function but do some
-     * verification, such as if the caller is authorized to invoke the function and if
-     * the inputs are valid. You request this by specifying <code>DryRun</code> as the
-     * <code>InvocationType</code>. This is useful in a cross-account scenario when you
-     * want to verify access to a function without running it. </p>
+     * <p>Choose from the following options.</p> <ul> <li> <p>
+     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
+     * the connection open until the function returns a response or times out.</p>
+     * </li> <li> <p> <code>Event</code> - Invoke the function asynchronously. Send
+     * events that fail multiple times to the function's dead-letter queue (if
+     * configured).</p> </li> <li> <p> <code>DryRun</code> - Validate parameter values
+     * and verify that the user or role has permission to invoke the function.</p>
+     * </li> </ul>
      */
     inline const InvocationType& GetInvocationType() const{ return m_invocationType; }
 
     /**
-     * <p>By default, the <code>Invoke</code> API assumes <code>RequestResponse</code>
-     * invocation type. You can optionally request asynchronous execution by specifying
-     * <code>Event</code> as the <code>InvocationType</code>. You can also use this
-     * parameter to request AWS Lambda to not execute the function but do some
-     * verification, such as if the caller is authorized to invoke the function and if
-     * the inputs are valid. You request this by specifying <code>DryRun</code> as the
-     * <code>InvocationType</code>. This is useful in a cross-account scenario when you
-     * want to verify access to a function without running it. </p>
+     * <p>Choose from the following options.</p> <ul> <li> <p>
+     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
+     * the connection open until the function returns a response or times out.</p>
+     * </li> <li> <p> <code>Event</code> - Invoke the function asynchronously. Send
+     * events that fail multiple times to the function's dead-letter queue (if
+     * configured).</p> </li> <li> <p> <code>DryRun</code> - Validate parameter values
+     * and verify that the user or role has permission to invoke the function.</p>
+     * </li> </ul>
      */
     inline void SetInvocationType(const InvocationType& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
 
     /**
-     * <p>By default, the <code>Invoke</code> API assumes <code>RequestResponse</code>
-     * invocation type. You can optionally request asynchronous execution by specifying
-     * <code>Event</code> as the <code>InvocationType</code>. You can also use this
-     * parameter to request AWS Lambda to not execute the function but do some
-     * verification, such as if the caller is authorized to invoke the function and if
-     * the inputs are valid. You request this by specifying <code>DryRun</code> as the
-     * <code>InvocationType</code>. This is useful in a cross-account scenario when you
-     * want to verify access to a function without running it. </p>
+     * <p>Choose from the following options.</p> <ul> <li> <p>
+     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
+     * the connection open until the function returns a response or times out.</p>
+     * </li> <li> <p> <code>Event</code> - Invoke the function asynchronously. Send
+     * events that fail multiple times to the function's dead-letter queue (if
+     * configured).</p> </li> <li> <p> <code>DryRun</code> - Validate parameter values
+     * and verify that the user or role has permission to invoke the function.</p>
+     * </li> </ul>
      */
     inline void SetInvocationType(InvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = std::move(value); }
 
     /**
-     * <p>By default, the <code>Invoke</code> API assumes <code>RequestResponse</code>
-     * invocation type. You can optionally request asynchronous execution by specifying
-     * <code>Event</code> as the <code>InvocationType</code>. You can also use this
-     * parameter to request AWS Lambda to not execute the function but do some
-     * verification, such as if the caller is authorized to invoke the function and if
-     * the inputs are valid. You request this by specifying <code>DryRun</code> as the
-     * <code>InvocationType</code>. This is useful in a cross-account scenario when you
-     * want to verify access to a function without running it. </p>
+     * <p>Choose from the following options.</p> <ul> <li> <p>
+     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
+     * the connection open until the function returns a response or times out.</p>
+     * </li> <li> <p> <code>Event</code> - Invoke the function asynchronously. Send
+     * events that fail multiple times to the function's dead-letter queue (if
+     * configured).</p> </li> <li> <p> <code>DryRun</code> - Validate parameter values
+     * and verify that the user or role has permission to invoke the function.</p>
+     * </li> </ul>
      */
     inline InvokeRequest& WithInvocationType(const InvocationType& value) { SetInvocationType(value); return *this;}
 
     /**
-     * <p>By default, the <code>Invoke</code> API assumes <code>RequestResponse</code>
-     * invocation type. You can optionally request asynchronous execution by specifying
-     * <code>Event</code> as the <code>InvocationType</code>. You can also use this
-     * parameter to request AWS Lambda to not execute the function but do some
-     * verification, such as if the caller is authorized to invoke the function and if
-     * the inputs are valid. You request this by specifying <code>DryRun</code> as the
-     * <code>InvocationType</code>. This is useful in a cross-account scenario when you
-     * want to verify access to a function without running it. </p>
+     * <p>Choose from the following options.</p> <ul> <li> <p>
+     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
+     * the connection open until the function returns a response or times out.</p>
+     * </li> <li> <p> <code>Event</code> - Invoke the function asynchronously. Send
+     * events that fail multiple times to the function's dead-letter queue (if
+     * configured).</p> </li> <li> <p> <code>DryRun</code> - Validate parameter values
+     * and verify that the user or role has permission to invoke the function.</p>
+     * </li> </ul>
      */
     inline InvokeRequest& WithInvocationType(InvocationType&& value) { SetInvocationType(std::move(value)); return *this;}
 
@@ -254,7 +251,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
      * ClientContext JSON must be base64-encoded and has a maximum size of 3583
-     * bytes.</p>
+     * bytes.</p> <note> <p> <code>ClientContext</code> information is returned only if
+     * you use the synchronous (<code>RequestResponse</code>) invocation type.</p>
+     * </note>
      */
     inline const Aws::String& GetClientContext() const{ return m_clientContext; }
 
@@ -266,7 +265,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
      * ClientContext JSON must be base64-encoded and has a maximum size of 3583
-     * bytes.</p>
+     * bytes.</p> <note> <p> <code>ClientContext</code> information is returned only if
+     * you use the synchronous (<code>RequestResponse</code>) invocation type.</p>
+     * </note>
      */
     inline void SetClientContext(const Aws::String& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
 
@@ -278,7 +279,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
      * ClientContext JSON must be base64-encoded and has a maximum size of 3583
-     * bytes.</p>
+     * bytes.</p> <note> <p> <code>ClientContext</code> information is returned only if
+     * you use the synchronous (<code>RequestResponse</code>) invocation type.</p>
+     * </note>
      */
     inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = std::move(value); }
 
@@ -290,7 +293,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
      * ClientContext JSON must be base64-encoded and has a maximum size of 3583
-     * bytes.</p>
+     * bytes.</p> <note> <p> <code>ClientContext</code> information is returned only if
+     * you use the synchronous (<code>RequestResponse</code>) invocation type.</p>
+     * </note>
      */
     inline void SetClientContext(const char* value) { m_clientContextHasBeenSet = true; m_clientContext.assign(value); }
 
@@ -302,7 +307,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
      * ClientContext JSON must be base64-encoded and has a maximum size of 3583
-     * bytes.</p>
+     * bytes.</p> <note> <p> <code>ClientContext</code> information is returned only if
+     * you use the synchronous (<code>RequestResponse</code>) invocation type.</p>
+     * </note>
      */
     inline InvokeRequest& WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
 
@@ -314,7 +321,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
      * ClientContext JSON must be base64-encoded and has a maximum size of 3583
-     * bytes.</p>
+     * bytes.</p> <note> <p> <code>ClientContext</code> information is returned only if
+     * you use the synchronous (<code>RequestResponse</code>) invocation type.</p>
+     * </note>
      */
     inline InvokeRequest& WithClientContext(Aws::String&& value) { SetClientContext(std::move(value)); return *this;}
 
@@ -326,85 +335,45 @@ namespace Model
      * href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a>
      * in the <i>Amazon Mobile Analytics API Reference and User Guide</i>.</p> <p>The
      * ClientContext JSON must be base64-encoded and has a maximum size of 3583
-     * bytes.</p>
+     * bytes.</p> <note> <p> <code>ClientContext</code> information is returned only if
+     * you use the synchronous (<code>RequestResponse</code>) invocation type.</p>
+     * </note>
      */
     inline InvokeRequest& WithClientContext(const char* value) { SetClientContext(value); return *this;}
 
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p> <p>If you don't provide this parameter, then the API uses
-     * unqualified function ARN which results in invocation of the <code>$LATEST</code>
-     * version.</p>
+     * <p>Specify a version or alias to invoke a published version of the function.</p>
      */
     inline const Aws::String& GetQualifier() const{ return m_qualifier; }
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p> <p>If you don't provide this parameter, then the API uses
-     * unqualified function ARN which results in invocation of the <code>$LATEST</code>
-     * version.</p>
+     * <p>Specify a version or alias to invoke a published version of the function.</p>
      */
     inline void SetQualifier(const Aws::String& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p> <p>If you don't provide this parameter, then the API uses
-     * unqualified function ARN which results in invocation of the <code>$LATEST</code>
-     * version.</p>
+     * <p>Specify a version or alias to invoke a published version of the function.</p>
      */
     inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p> <p>If you don't provide this parameter, then the API uses
-     * unqualified function ARN which results in invocation of the <code>$LATEST</code>
-     * version.</p>
+     * <p>Specify a version or alias to invoke a published version of the function.</p>
      */
     inline void SetQualifier(const char* value) { m_qualifierHasBeenSet = true; m_qualifier.assign(value); }
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p> <p>If you don't provide this parameter, then the API uses
-     * unqualified function ARN which results in invocation of the <code>$LATEST</code>
-     * version.</p>
+     * <p>Specify a version or alias to invoke a published version of the function.</p>
      */
     inline InvokeRequest& WithQualifier(const Aws::String& value) { SetQualifier(value); return *this;}
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p> <p>If you don't provide this parameter, then the API uses
-     * unqualified function ARN which results in invocation of the <code>$LATEST</code>
-     * version.</p>
+     * <p>Specify a version or alias to invoke a published version of the function.</p>
      */
     inline InvokeRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
-     * <p>You can use this optional parameter to specify a Lambda function version or
-     * alias name. If you specify a function version, the API uses the qualified
-     * function ARN to invoke a specific Lambda function. If you specify an alias name,
-     * the API uses the alias ARN to invoke the Lambda function version to which the
-     * alias points.</p> <p>If you don't provide this parameter, then the API uses
-     * unqualified function ARN which results in invocation of the <code>$LATEST</code>
-     * version.</p>
+     * <p>Specify a version or alias to invoke a published version of the function.</p>
      */
     inline InvokeRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 

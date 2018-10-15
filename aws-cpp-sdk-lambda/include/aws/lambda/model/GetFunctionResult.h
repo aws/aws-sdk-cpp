@@ -52,35 +52,55 @@ namespace Model
     GetFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The function's configuration.</p>
+     */
     inline const FunctionConfiguration& GetConfiguration() const{ return m_configuration; }
 
-    
+    /**
+     * <p>The function's configuration.</p>
+     */
     inline void SetConfiguration(const FunctionConfiguration& value) { m_configuration = value; }
 
-    
+    /**
+     * <p>The function's configuration.</p>
+     */
     inline void SetConfiguration(FunctionConfiguration&& value) { m_configuration = std::move(value); }
 
-    
+    /**
+     * <p>The function's configuration.</p>
+     */
     inline GetFunctionResult& WithConfiguration(const FunctionConfiguration& value) { SetConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The function's configuration.</p>
+     */
     inline GetFunctionResult& WithConfiguration(FunctionConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The function's code.</p>
+     */
     inline const FunctionCodeLocation& GetCode() const{ return m_code; }
 
-    
+    /**
+     * <p>The function's code.</p>
+     */
     inline void SetCode(const FunctionCodeLocation& value) { m_code = value; }
 
-    
+    /**
+     * <p>The function's code.</p>
+     */
     inline void SetCode(FunctionCodeLocation&& value) { m_code = std::move(value); }
 
-    
+    /**
+     * <p>The function's code.</p>
+     */
     inline GetFunctionResult& WithCode(const FunctionCodeLocation& value) { SetCode(value); return *this;}
 
-    
+    /**
+     * <p>The function's code.</p>
+     */
     inline GetFunctionResult& WithCode(FunctionCodeLocation&& value) { SetCode(std::move(value)); return *this;}
 
 
@@ -171,31 +191,41 @@ namespace Model
 
     /**
      * <p>The concurrent execution limit set for this function. For more information,
-     * see <a>concurrent-executions</a>.</p>
+     * see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+     * Concurrency</a>.</p>
      */
     inline const Concurrency& GetConcurrency() const{ return m_concurrency; }
 
     /**
      * <p>The concurrent execution limit set for this function. For more information,
-     * see <a>concurrent-executions</a>.</p>
+     * see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+     * Concurrency</a>.</p>
      */
     inline void SetConcurrency(const Concurrency& value) { m_concurrency = value; }
 
     /**
      * <p>The concurrent execution limit set for this function. For more information,
-     * see <a>concurrent-executions</a>.</p>
+     * see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+     * Concurrency</a>.</p>
      */
     inline void SetConcurrency(Concurrency&& value) { m_concurrency = std::move(value); }
 
     /**
      * <p>The concurrent execution limit set for this function. For more information,
-     * see <a>concurrent-executions</a>.</p>
+     * see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+     * Concurrency</a>.</p>
      */
     inline GetFunctionResult& WithConcurrency(const Concurrency& value) { SetConcurrency(value); return *this;}
 
     /**
      * <p>The concurrent execution limit set for this function. For more information,
-     * see <a>concurrent-executions</a>.</p>
+     * see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
+     * Concurrency</a>.</p>
      */
     inline GetFunctionResult& WithConcurrency(Concurrency&& value) { SetConcurrency(std::move(value)); return *this;}
 

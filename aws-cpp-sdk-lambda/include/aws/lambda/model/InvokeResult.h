@@ -244,49 +244,63 @@ namespace Model
     /**
      * <p>The function version that has been executed. This value is returned only if
      * the invocation type is <code>RequestResponse</code>. For more information, see
-     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline const Aws::String& GetExecutedVersion() const{ return m_executedVersion; }
 
     /**
      * <p>The function version that has been executed. This value is returned only if
      * the invocation type is <code>RequestResponse</code>. For more information, see
-     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline void SetExecutedVersion(const Aws::String& value) { m_executedVersion = value; }
 
     /**
      * <p>The function version that has been executed. This value is returned only if
      * the invocation type is <code>RequestResponse</code>. For more information, see
-     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline void SetExecutedVersion(Aws::String&& value) { m_executedVersion = std::move(value); }
 
     /**
      * <p>The function version that has been executed. This value is returned only if
      * the invocation type is <code>RequestResponse</code>. For more information, see
-     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline void SetExecutedVersion(const char* value) { m_executedVersion.assign(value); }
 
     /**
      * <p>The function version that has been executed. This value is returned only if
      * the invocation type is <code>RequestResponse</code>. For more information, see
-     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline InvokeResult& WithExecutedVersion(const Aws::String& value) { SetExecutedVersion(value); return *this;}
 
     /**
      * <p>The function version that has been executed. This value is returned only if
      * the invocation type is <code>RequestResponse</code>. For more information, see
-     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline InvokeResult& WithExecutedVersion(Aws::String&& value) { SetExecutedVersion(std::move(value)); return *this;}
 
     /**
      * <p>The function version that has been executed. This value is returned only if
      * the invocation type is <code>RequestResponse</code>. For more information, see
-     * <a>lambda-traffic-shifting-using-aliases</a>.</p>
+     * <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
+     * Shifting Using Aliases</a>.</p>
      */
     inline InvokeResult& WithExecutedVersion(const char* value) { SetExecutedVersion(value); return *this;}
 

@@ -56,7 +56,7 @@ namespace Model
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
@@ -65,7 +65,7 @@ namespace Model
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
@@ -74,7 +74,7 @@ namespace Model
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
@@ -83,7 +83,7 @@ namespace Model
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
@@ -92,7 +92,7 @@ namespace Model
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
@@ -101,7 +101,7 @@ namespace Model
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
@@ -110,7 +110,7 @@ namespace Model
      * <p>Name of the DB instance to create from the DB snapshot. This parameter isn't
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * numbers, letters, or hyphens</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens</p> </li> </ul> <p>Example: <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
@@ -1197,6 +1197,84 @@ namespace Model
 
 
     /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline RestoreDBInstanceFromDBSnapshotRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
+
+
+    /**
      * <p>Indicates if the DB instance should have deletion protection enabled. The
      * database can't be deleted when this value is set to true. The default is false.
      * For more information, see <a
@@ -1299,6 +1377,9 @@ namespace Model
 
     bool m_useDefaultProcessorFeatures;
     bool m_useDefaultProcessorFeaturesHasBeenSet;
+
+    Aws::String m_dBParameterGroupName;
+    bool m_dBParameterGroupNameHasBeenSet;
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;

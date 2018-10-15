@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>The parent object that contains error information associated with your
-   * configuration settings.</p><p><h3>See Also:</h3>   <a
+   * <p>Error messages for environment variables that could not be
+   * applied.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EnvironmentError">AWS
    * API Reference</a></p>
    */
@@ -49,73 +49,73 @@ namespace Model
 
 
     /**
-     * <p>The error code returned by the environment error object.</p>
+     * <p>The error code.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p>The error code returned by the environment error object.</p>
+     * <p>The error code.</p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>The error code returned by the environment error object.</p>
+     * <p>The error code.</p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <p>The error code returned by the environment error object.</p>
+     * <p>The error code.</p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
-     * <p>The error code returned by the environment error object.</p>
+     * <p>The error code.</p>
      */
     inline EnvironmentError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>The error code returned by the environment error object.</p>
+     * <p>The error code.</p>
      */
     inline EnvironmentError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
-     * <p>The error code returned by the environment error object.</p>
+     * <p>The error code.</p>
      */
     inline EnvironmentError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
 
     /**
-     * <p>The message returned by the environment error object.</p>
+     * <p>The error message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>The message returned by the environment error object.</p>
+     * <p>The error message.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>The message returned by the environment error object.</p>
+     * <p>The error message.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>The message returned by the environment error object.</p>
+     * <p>The error message.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>The message returned by the environment error object.</p>
+     * <p>The error message.</p>
      */
     inline EnvironmentError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The message returned by the environment error object.</p>
+     * <p>The error message.</p>
      */
     inline EnvironmentError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The message returned by the environment error object.</p>
+     * <p>The error message.</p>
      */
     inline EnvironmentError& WithMessage(const char* value) { SetMessage(value); return *this;}
 

@@ -31,9 +31,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicyRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_LAMBDA_API GetPolicyRequest : public LambdaRequest
   {
@@ -52,100 +49,86 @@ namespace Model
 
 
     /**
-     * <p>Function name whose resource policy you want to retrieve.</p> <p> You can
-     * specify the function name (for example, <code>Thumbnail</code>) or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are
-     * using versioning, you can also provide a qualified function ARN (ARN that is
-     * qualified with function version or alias name as suffix). AWS Lambda also allows
-     * you to specify only the function name with the account ID qualifier (for
-     * example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>Function name whose resource policy you want to retrieve.</p> <p> You can
-     * specify the function name (for example, <code>Thumbnail</code>) or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are
-     * using versioning, you can also provide a qualified function ARN (ARN that is
-     * qualified with function version or alias name as suffix). AWS Lambda also allows
-     * you to specify only the function name with the account ID qualifier (for
-     * example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>Function name whose resource policy you want to retrieve.</p> <p> You can
-     * specify the function name (for example, <code>Thumbnail</code>) or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are
-     * using versioning, you can also provide a qualified function ARN (ARN that is
-     * qualified with function version or alias name as suffix). AWS Lambda also allows
-     * you to specify only the function name with the account ID qualifier (for
-     * example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>Function name whose resource policy you want to retrieve.</p> <p> You can
-     * specify the function name (for example, <code>Thumbnail</code>) or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are
-     * using versioning, you can also provide a qualified function ARN (ARN that is
-     * qualified with function version or alias name as suffix). AWS Lambda also allows
-     * you to specify only the function name with the account ID qualifier (for
-     * example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>Function name whose resource policy you want to retrieve.</p> <p> You can
-     * specify the function name (for example, <code>Thumbnail</code>) or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are
-     * using versioning, you can also provide a qualified function ARN (ARN that is
-     * qualified with function version or alias name as suffix). AWS Lambda also allows
-     * you to specify only the function name with the account ID qualifier (for
-     * example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline GetPolicyRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>Function name whose resource policy you want to retrieve.</p> <p> You can
-     * specify the function name (for example, <code>Thumbnail</code>) or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are
-     * using versioning, you can also provide a qualified function ARN (ARN that is
-     * qualified with function version or alias name as suffix). AWS Lambda also allows
-     * you to specify only the function name with the account ID qualifier (for
-     * example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline GetPolicyRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>Function name whose resource policy you want to retrieve.</p> <p> You can
-     * specify the function name (for example, <code>Thumbnail</code>) or you can
-     * specify Amazon Resource Name (ARN) of the function (for example,
-     * <code>arn:aws:lambda:us-west-2:account-id:function:ThumbNail</code>). If you are
-     * using versioning, you can also provide a qualified function ARN (ARN that is
-     * qualified with function version or alias name as suffix). AWS Lambda also allows
-     * you to specify only the function name with the account ID qualifier (for
-     * example, <code>account-id:Thumbnail</code>). Note that the length constraint
-     * applies only to the ARN. If you specify only the function name, it is limited to
-     * 64 characters in length. </p>
+     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
      */
     inline GetPolicyRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 

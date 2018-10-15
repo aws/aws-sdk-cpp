@@ -35,10 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>If your Lambda function accesses resources in a VPC, you provide this
-   * parameter identifying the list of security group IDs and subnet IDs. These must
-   * belong to the same VPC. You must provide at least one security group and one
-   * subnet ID.</p><p><h3>See Also:</h3>   <a
+   * <p>The VPC security groups and subnets attached to a Lambda
+   * function.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/VpcConfig">AWS
    * API Reference</a></p>
    */
@@ -52,83 +50,83 @@ namespace Model
 
 
     /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
+     * <p>A list of VPC subnet IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
+     * <p>A list of VPC subnet IDs.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
+     * <p>A list of VPC subnet IDs.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
+     * <p>A list of VPC subnet IDs.</p>
      */
     inline VpcConfig& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
+     * <p>A list of VPC subnet IDs.</p>
      */
     inline VpcConfig& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
+     * <p>A list of VPC subnet IDs.</p>
      */
     inline VpcConfig& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
+     * <p>A list of VPC subnet IDs.</p>
      */
     inline VpcConfig& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of one or more subnet IDs in your VPC.</p>
+     * <p>A list of VPC subnet IDs.</p>
      */
     inline VpcConfig& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
+     * <p>A list of VPC security groups IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
+     * <p>A list of VPC security groups IDs.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
+     * <p>A list of VPC security groups IDs.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
+     * <p>A list of VPC security groups IDs.</p>
      */
     inline VpcConfig& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
+     * <p>A list of VPC security groups IDs.</p>
      */
     inline VpcConfig& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
+     * <p>A list of VPC security groups IDs.</p>
      */
     inline VpcConfig& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
+     * <p>A list of VPC security groups IDs.</p>
      */
     inline VpcConfig& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of one or more security groups IDs in your VPC.</p>
+     * <p>A list of VPC security groups IDs.</p>
      */
     inline VpcConfig& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 

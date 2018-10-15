@@ -34,8 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Parent object of the tracing information associated with your Lambda
-   * function.</p><p><h3>See Also:</h3>   <a
+   * <p>The function's AWS X-Ray tracing configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/TracingConfigResponse">AWS
    * API Reference</a></p>
    */
@@ -49,27 +48,27 @@ namespace Model
 
 
     /**
-     * <p>The tracing mode associated with your Lambda function.</p>
+     * <p>The tracing mode.</p>
      */
     inline const TracingMode& GetMode() const{ return m_mode; }
 
     /**
-     * <p>The tracing mode associated with your Lambda function.</p>
+     * <p>The tracing mode.</p>
      */
     inline void SetMode(const TracingMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * <p>The tracing mode associated with your Lambda function.</p>
+     * <p>The tracing mode.</p>
      */
     inline void SetMode(TracingMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * <p>The tracing mode associated with your Lambda function.</p>
+     * <p>The tracing mode.</p>
      */
     inline TracingConfigResponse& WithMode(const TracingMode& value) { SetMode(value); return *this;}
 
     /**
-     * <p>The tracing mode associated with your Lambda function.</p>
+     * <p>The tracing mode.</p>
      */
     inline TracingConfigResponse& WithMode(TracingMode&& value) { SetMode(std::move(value)); return *this;}
 

@@ -106,56 +106,56 @@ namespace Model
     /**
      * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetTargetDBInstanceIdentifier() const{ return m_targetDBInstanceIdentifier; }
 
     /**
      * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(const Aws::String& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = value; }
 
     /**
      * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(Aws::String&& value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline void SetTargetDBInstanceIdentifier(const char* value) { m_targetDBInstanceIdentifierHasBeenSet = true; m_targetDBInstanceIdentifier.assign(value); }
 
     /**
      * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(const Aws::String& value) { SetTargetDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(Aws::String&& value) { SetTargetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The name of the new DB instance to be created.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> <li>
-     * <p>First character must be a letter</p> </li> <li> <p>Cannot end with a hyphen
-     * or contain two consecutive hyphens</p> </li> </ul>
+     * <p>First character must be a letter</p> </li> <li> <p>Can't end with a hyphen or
+     * contain two consecutive hyphens</p> </li> </ul>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithTargetDBInstanceIdentifier(const char* value) { SetTargetDBInstanceIdentifier(value); return *this;}
 
@@ -164,7 +164,7 @@ namespace Model
      * <p>The date and time to restore from.</p> <p>Valid Values: Value must be a time
      * in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be before the latest restorable time for the DB instance</p> </li> <li>
-     * <p>Cannot be specified if UseLatestRestorableTime parameter is true</p> </li>
+     * <p>Can't be specified if UseLatestRestorableTime parameter is true</p> </li>
      * </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
      */
     inline const Aws::Utils::DateTime& GetRestoreTime() const{ return m_restoreTime; }
@@ -173,7 +173,7 @@ namespace Model
      * <p>The date and time to restore from.</p> <p>Valid Values: Value must be a time
      * in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be before the latest restorable time for the DB instance</p> </li> <li>
-     * <p>Cannot be specified if UseLatestRestorableTime parameter is true</p> </li>
+     * <p>Can't be specified if UseLatestRestorableTime parameter is true</p> </li>
      * </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
      */
     inline void SetRestoreTime(const Aws::Utils::DateTime& value) { m_restoreTimeHasBeenSet = true; m_restoreTime = value; }
@@ -182,7 +182,7 @@ namespace Model
      * <p>The date and time to restore from.</p> <p>Valid Values: Value must be a time
      * in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be before the latest restorable time for the DB instance</p> </li> <li>
-     * <p>Cannot be specified if UseLatestRestorableTime parameter is true</p> </li>
+     * <p>Can't be specified if UseLatestRestorableTime parameter is true</p> </li>
      * </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
      */
     inline void SetRestoreTime(Aws::Utils::DateTime&& value) { m_restoreTimeHasBeenSet = true; m_restoreTime = std::move(value); }
@@ -191,7 +191,7 @@ namespace Model
      * <p>The date and time to restore from.</p> <p>Valid Values: Value must be a time
      * in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be before the latest restorable time for the DB instance</p> </li> <li>
-     * <p>Cannot be specified if UseLatestRestorableTime parameter is true</p> </li>
+     * <p>Can't be specified if UseLatestRestorableTime parameter is true</p> </li>
      * </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithRestoreTime(const Aws::Utils::DateTime& value) { SetRestoreTime(value); return *this;}
@@ -200,7 +200,7 @@ namespace Model
      * <p>The date and time to restore from.</p> <p>Valid Values: Value must be a time
      * in Universal Coordinated Time (UTC) format</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be before the latest restorable time for the DB instance</p> </li> <li>
-     * <p>Cannot be specified if UseLatestRestorableTime parameter is true</p> </li>
+     * <p>Can't be specified if UseLatestRestorableTime parameter is true</p> </li>
      * </ul> <p>Example: <code>2009-09-07T23:45:00Z</code> </p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithRestoreTime(Aws::Utils::DateTime&& value) { SetRestoreTime(std::move(value)); return *this;}
@@ -209,7 +209,7 @@ namespace Model
     /**
      * <p> Specifies whether (<code>true</code>) or not (<code>false</code>) the DB
      * instance is restored from the latest backup time. </p> <p>Default:
-     * <code>false</code> </p> <p>Constraints: Cannot be specified if RestoreTime
+     * <code>false</code> </p> <p>Constraints: Can't be specified if RestoreTime
      * parameter is provided.</p>
      */
     inline bool GetUseLatestRestorableTime() const{ return m_useLatestRestorableTime; }
@@ -217,7 +217,7 @@ namespace Model
     /**
      * <p> Specifies whether (<code>true</code>) or not (<code>false</code>) the DB
      * instance is restored from the latest backup time. </p> <p>Default:
-     * <code>false</code> </p> <p>Constraints: Cannot be specified if RestoreTime
+     * <code>false</code> </p> <p>Constraints: Can't be specified if RestoreTime
      * parameter is provided.</p>
      */
     inline void SetUseLatestRestorableTime(bool value) { m_useLatestRestorableTimeHasBeenSet = true; m_useLatestRestorableTime = value; }
@@ -225,7 +225,7 @@ namespace Model
     /**
      * <p> Specifies whether (<code>true</code>) or not (<code>false</code>) the DB
      * instance is restored from the latest backup time. </p> <p>Default:
-     * <code>false</code> </p> <p>Constraints: Cannot be specified if RestoreTime
+     * <code>false</code> </p> <p>Constraints: Can't be specified if RestoreTime
      * parameter is provided.</p>
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithUseLatestRestorableTime(bool value) { SetUseLatestRestorableTime(value); return *this;}
@@ -1216,6 +1216,84 @@ namespace Model
 
 
     /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name
+     * of an existing DBParameterGroup.</p> </li> <li> <p>Must be 1 to 255 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
+
+
+    /**
      * <p>Indicates if the DB instance should have deletion protection enabled. The
      * database can't be deleted when this value is set to true. The default is false.
      * For more information, see <a
@@ -1324,6 +1402,9 @@ namespace Model
 
     bool m_useDefaultProcessorFeatures;
     bool m_useDefaultProcessorFeaturesHasBeenSet;
+
+    Aws::String m_dBParameterGroupName;
+    bool m_dBParameterGroupNameHasBeenSet;
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;

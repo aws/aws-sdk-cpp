@@ -64,7 +64,7 @@ namespace Model
      * source type is <code>DBParameterGroup</code>, a
      * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
      * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
@@ -80,7 +80,7 @@ namespace Model
      * source type is <code>DBParameterGroup</code>, a
      * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
      * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
@@ -96,7 +96,7 @@ namespace Model
      * source type is <code>DBParameterGroup</code>, a
      * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
      * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
@@ -112,7 +112,7 @@ namespace Model
      * source type is <code>DBParameterGroup</code>, a
      * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
      * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
@@ -128,7 +128,7 @@ namespace Model
      * source type is <code>DBParameterGroup</code>, a
      * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
      * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
     inline DescribeEventsRequest& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
@@ -144,7 +144,7 @@ namespace Model
      * source type is <code>DBParameterGroup</code>, a
      * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
      * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
     inline DescribeEventsRequest& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
@@ -160,7 +160,7 @@ namespace Model
      * source type is <code>DBParameterGroup</code>, a
      * <code>DBParameterGroupName</code> must be supplied.</p> </li> <li> <p>If the
      * source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must
-     * be supplied.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * be supplied.</p> </li> <li> <p>Can't end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
     inline DescribeEventsRequest& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}

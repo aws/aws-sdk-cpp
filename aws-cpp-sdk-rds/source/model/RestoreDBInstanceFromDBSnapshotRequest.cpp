@@ -54,6 +54,7 @@ RestoreDBInstanceFromDBSnapshotRequest::RestoreDBInstanceFromDBSnapshotRequest()
     m_processorFeaturesHasBeenSet(false),
     m_useDefaultProcessorFeatures(false),
     m_useDefaultProcessorFeaturesHasBeenSet(false),
+    m_dBParameterGroupNameHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false)
 {
@@ -202,6 +203,11 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
   if(m_useDefaultProcessorFeaturesHasBeenSet)
   {
     ss << "UseDefaultProcessorFeatures=" << std::boolalpha << m_useDefaultProcessorFeatures << "&";
+  }
+
+  if(m_dBParameterGroupNameHasBeenSet)
+  {
+    ss << "DBParameterGroupName=" << StringUtils::URLEncode(m_dBParameterGroupName.c_str()) << "&";
   }
 
   if(m_deletionProtectionHasBeenSet)

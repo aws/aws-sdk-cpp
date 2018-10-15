@@ -55,7 +55,7 @@ namespace Model
      * <p>The name for the DB security group. This value is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Must not be "Default"</p> </li> </ul> <p>Example:
      * <code>mysecuritygroup</code> </p>
      */
@@ -65,7 +65,7 @@ namespace Model
      * <p>The name for the DB security group. This value is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Must not be "Default"</p> </li> </ul> <p>Example:
      * <code>mysecuritygroup</code> </p>
      */
@@ -75,7 +75,7 @@ namespace Model
      * <p>The name for the DB security group. This value is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Must not be "Default"</p> </li> </ul> <p>Example:
      * <code>mysecuritygroup</code> </p>
      */
@@ -85,7 +85,7 @@ namespace Model
      * <p>The name for the DB security group. This value is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Must not be "Default"</p> </li> </ul> <p>Example:
      * <code>mysecuritygroup</code> </p>
      */
@@ -95,7 +95,7 @@ namespace Model
      * <p>The name for the DB security group. This value is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Must not be "Default"</p> </li> </ul> <p>Example:
      * <code>mysecuritygroup</code> </p>
      */
@@ -105,7 +105,7 @@ namespace Model
      * <p>The name for the DB security group. This value is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Must not be "Default"</p> </li> </ul> <p>Example:
      * <code>mysecuritygroup</code> </p>
      */
@@ -115,7 +115,7 @@ namespace Model
      * <p>The name for the DB security group. This value is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
-     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> <li>
      * <p>Must not be "Default"</p> </li> </ul> <p>Example:
      * <code>mysecuritygroup</code> </p>
      */

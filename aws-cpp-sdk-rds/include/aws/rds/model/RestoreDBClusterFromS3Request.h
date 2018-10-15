@@ -202,7 +202,7 @@ namespace Model
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
      * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
      */
@@ -212,7 +212,7 @@ namespace Model
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
      * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
      */
@@ -222,7 +222,7 @@ namespace Model
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
      * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
      */
@@ -232,7 +232,7 @@ namespace Model
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
      * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
      */
@@ -242,7 +242,7 @@ namespace Model
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
      * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
      */
@@ -252,7 +252,7 @@ namespace Model
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
      * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
      */
@@ -262,7 +262,7 @@ namespace Model
      * <p>The name of the DB cluster to create from the source data in the Amazon S3
      * bucket. This parameter is isn't case-sensitive.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li>
-     * <p>First character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen
+     * <p>First character must be a letter.</p> </li> <li> <p>Can't end with a hyphen
      * or contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-cluster1</code> </p>
      */
@@ -540,7 +540,7 @@ namespace Model
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved
      * word for the chosen database engine.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
@@ -548,7 +548,7 @@ namespace Model
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved
      * word for the chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
@@ -556,7 +556,7 @@ namespace Model
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved
      * word for the chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
@@ -564,7 +564,7 @@ namespace Model
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved
      * word for the chosen database engine.</p> </li> </ul>
      */
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
@@ -572,7 +572,7 @@ namespace Model
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved
      * word for the chosen database engine.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
@@ -580,7 +580,7 @@ namespace Model
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved
      * word for the chosen database engine.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
@@ -588,7 +588,7 @@ namespace Model
     /**
      * <p>The name of the master user for the restored DB cluster.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 16 letters or numbers.</p> </li>
-     * <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't be a reserved
      * word for the chosen database engine.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
