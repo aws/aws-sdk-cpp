@@ -93,7 +93,7 @@ static Aws::String CanonicalizeRequestSigningString(HttpRequest& request, bool u
         signingStringStream << NEWLINE << uriCpy.GetPath() << NEWLINE;
     }
 
-    if (request.GetQueryString().size() > 1 && request.GetQueryString().find("=") != std::string::npos)
+    if (request.GetQueryString().find('=') != std::string::npos)
     {
         signingStringStream << request.GetQueryString().substr(1) << NEWLINE;
     }

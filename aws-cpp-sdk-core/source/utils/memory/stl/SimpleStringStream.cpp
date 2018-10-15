@@ -30,7 +30,7 @@ SimpleStringStream::SimpleStringStream(const Aws::String& value) :
 {
 }
 
-void SimpleStringStream::str(const Aws::String value)
+void SimpleStringStream::str(const Aws::String& value)
 {
     m_streamBuffer.str(value);
 }
@@ -49,7 +49,7 @@ SimpleIStringStream::SimpleIStringStream(const Aws::String& value) :
 {
 }
 
-void SimpleIStringStream::str(const Aws::String value)
+void SimpleIStringStream::str(const Aws::String& value)
 {
     m_streamBuffer.str(value);
 }
@@ -68,7 +68,7 @@ SimpleOStringStream::SimpleOStringStream(const Aws::String& value) :
 {
 }
 
-void SimpleOStringStream::str(const Aws::String value)
+void SimpleOStringStream::str(const Aws::String& value)
 {
     m_streamBuffer.str(value);
 }

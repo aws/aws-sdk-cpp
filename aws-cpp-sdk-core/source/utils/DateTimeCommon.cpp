@@ -1110,7 +1110,7 @@ std::chrono::milliseconds DateTime::Diff(const DateTime& a, const DateTime& b)
     return std::chrono::duration_cast<std::chrono::milliseconds>(diff);
 }
 
-std::chrono::milliseconds DateTime::operator-(const DateTime& other)
+std::chrono::milliseconds DateTime::operator-(const DateTime& other) const
 {
     auto diff = this->m_time - other.m_time;
     return std::chrono::duration_cast<std::chrono::milliseconds>(diff);

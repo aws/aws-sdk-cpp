@@ -27,7 +27,7 @@ using namespace Aws::Utils::Logging;
 static const char* AllocationTag = "DefaultLogSystem";
 static const int BUFFERED_MSG_COUNT = 100;
 
-static std::shared_ptr<Aws::OFStream> MakeDefaultLogFile(const Aws::String filenamePrefix)
+static std::shared_ptr<Aws::OFStream> MakeDefaultLogFile(const Aws::String& filenamePrefix)
 {
     Aws::String newFileName = filenamePrefix + DateTime::CalculateGmtTimestampAsString("%Y-%m-%d-%H") + ".log";
     return Aws::MakeShared<Aws::OFStream>(AllocationTag, newFileName.c_str(), Aws::OFStream::out | Aws::OFStream::app);

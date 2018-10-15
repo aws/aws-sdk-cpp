@@ -63,7 +63,7 @@ namespace Aws
                     static_assert(CLOCK::duration::period::num > 0, "RateLimiter clock duration must have positive numerator");
                     static_assert(CLOCK::duration::period::den > 0, "RateLimiter clock duration must have positive denominator");
 
-                    SetRate(maxRate, true);
+                    DefaultRateLimiter::SetRate(maxRate, true);
                 }
 
                 virtual ~DefaultRateLimiter() = default;

@@ -263,7 +263,7 @@ void URI::CanonicalizeQueryString()
         queryStringStream << "?";
     }
 
-    if(m_queryString.find("=") != std::string::npos)
+    if(m_queryString.find('=') != std::string::npos)
     {
         for (QueryStringParameterCollection::iterator iter = sortedParameters.begin();
              iter != sortedParameters.end(); ++iter)

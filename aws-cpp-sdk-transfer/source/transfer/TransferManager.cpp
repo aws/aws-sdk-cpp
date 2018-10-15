@@ -1043,13 +1043,12 @@ namespace Aws
 
         Aws::String TransferManager::DetermineFilePath(const Aws::String& directory, const Aws::String& prefix, const Aws::String& keyName)
         {
-            Aws::String prefixCpy = prefix;
             Aws::String shortenedFileName = keyName;
-            auto loc = shortenedFileName.find(prefixCpy);
+            auto loc = shortenedFileName.find(prefix);
 
             if (loc != std::string::npos)
             {
-                shortenedFileName = shortenedFileName.substr(loc + prefixCpy.length());
+                shortenedFileName = shortenedFileName.substr(loc + prefix.length());
             }
 
             char delimiter[] = { Aws::FileSystem::PATH_DELIM, 0 };

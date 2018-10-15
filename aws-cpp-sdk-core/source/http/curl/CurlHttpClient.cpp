@@ -601,7 +601,7 @@ size_t CurlHttpClient::ReadBody(char* ptr, size_t size, size_t nmemb, void* user
     }
 
     HttpRequest* request = context->m_request;
-    std::shared_ptr<Aws::IOStream> ioStream = request->GetContentBody();
+    const std::shared_ptr<Aws::IOStream>& ioStream = request->GetContentBody();
 
     const size_t amountToRead = size * nmemb;
     if (ioStream != nullptr && amountToRead > 0)
@@ -640,7 +640,7 @@ size_t CurlHttpClient::SeekBody(void* userdata, curl_off_t offset, int origin)
     }
 
     HttpRequest* request = context->m_request;
-    std::shared_ptr<Aws::IOStream> ioStream = request->GetContentBody();
+    const std::shared_ptr<Aws::IOStream>& ioStream = request->GetContentBody();
 
     std::ios_base::seekdir dir;
     switch(origin)

@@ -171,7 +171,7 @@ XmlDocument::XmlDocument()
     m_doc = Aws::New<Aws::External::tinyxml2::XMLDocument>(XML_SERIALIZER_ALLOCATION_TAG, true, Aws::External::tinyxml2::Whitespace::PRESERVE_WHITESPACE);
 }
 
-XmlDocument::XmlDocument(XmlDocument&& doc) : m_doc{ std::move(doc.m_doc) } // take the innards
+XmlDocument::XmlDocument(XmlDocument&& doc) : m_doc{ doc.m_doc } // take the innards
 {
     doc.m_doc = nullptr; // leave nothing behind
 }

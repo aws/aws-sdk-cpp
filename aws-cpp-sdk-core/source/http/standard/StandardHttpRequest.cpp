@@ -45,13 +45,13 @@ StandardHttpRequest::StandardHttpRequest(const URI& uri, HttpMethod method) :
 {
     if(IsDefaultPort(uri))
     {
-        SetHeaderValue(HOST_HEADER, uri.GetAuthority());
+        StandardHttpRequest::SetHeaderValue(HOST_HEADER, uri.GetAuthority());
     }
     else
     {
         Aws::StringStream host;
         host << uri.GetAuthority() << ":" << uri.GetPort();
-        SetHeaderValue(HOST_HEADER, host.str());
+        StandardHttpRequest::SetHeaderValue(HOST_HEADER, host.str());
     }
 }
 

@@ -29,7 +29,7 @@ static const char DefaultCredentialsProviderChainTag[] = "DefaultAWSCredentialsP
 
 AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
 {
-    for (auto credentialsProvider : m_providerChain)
+    for (auto&& credentialsProvider : m_providerChain)
     {
         AWSCredentials credentials = credentialsProvider->GetAWSCredentials();
         if (!credentials.GetAWSAccessKeyId().empty() && !credentials.GetAWSSecretKey().empty())

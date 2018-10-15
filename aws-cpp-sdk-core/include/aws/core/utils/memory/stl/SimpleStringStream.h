@@ -53,7 +53,7 @@ class AWS_CORE_API SimpleStringStream : public std::iostream
         Aws::Utils::Stream::SimpleStreamBuf* rdbuf() const { return const_cast<Aws::Utils::Stream::SimpleStreamBuf*>(&m_streamBuffer); }
 
         Aws::String str() { return m_streamBuffer.str(); }
-        void str(const Aws::String value);
+        void str(const Aws::String& value);
 
     private:
 
@@ -89,7 +89,7 @@ class AWS_CORE_API SimpleIStringStream : public std::istream
         Aws::Utils::Stream::SimpleStreamBuf* rdbuf() const { return const_cast<Aws::Utils::Stream::SimpleStreamBuf*>(&m_streamBuffer); }
 
         Aws::String str() { return m_streamBuffer.str(); }
-        void str(const Aws::String value);
+        void str(const Aws::String& value);
 
     private:
 
@@ -125,7 +125,7 @@ class AWS_CORE_API SimpleOStringStream : public std::ostream
         Aws::Utils::Stream::SimpleStreamBuf* rdbuf() const { return const_cast<Aws::Utils::Stream::SimpleStreamBuf*>(&m_streamBuffer); }
 
         Aws::String str() { return m_streamBuffer.str(); }
-        void str(const Aws::String value);
+        void str(const Aws::String& value);
 
     private:
 
