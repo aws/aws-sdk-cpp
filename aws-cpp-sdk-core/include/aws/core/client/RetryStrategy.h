@@ -32,7 +32,7 @@ namespace Aws
         class AWS_CORE_API RetryStrategy
         {
         public:
-            virtual ~RetryStrategy() {}
+            virtual ~RetryStrategy() = default;
             /**
              * Returns true if the error can be retried given the error and the number of times already tried.
              */

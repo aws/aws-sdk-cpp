@@ -13,6 +13,7 @@
 * permissions and limitations under the License.
 */
 
+#include <limits>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -53,9 +54,15 @@ private:
 class CountedRetryStrategy : public DefaultRetryStrategy
 {
 public:
-    CountedRetryStrategy() : m_attemptedRetries(0) {}
+    CountedRetryStrategy() : m_attemptedRetries(0), m_maxRetries(std::numeric_limits<int>::max()) {}
+    CountedRetryStrategy(int maxRetires) : m_attemptedRetries(0), m_maxRetries(maxRetires <= 0 ? std::numeric_limits<int>::max() : maxRetires) {}
+
     bool ShouldRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const override
     {
+        if (attemptedRetries >= m_maxRetries)
+        {
+            return false;
+        }
         if(DefaultRetryStrategy::ShouldRetry(error, attemptedRetries)) 
         {
             m_attemptedRetries = attemptedRetries + 1;
@@ -67,6 +74,7 @@ public:
     void ResetAttemptedRetriesCount() { m_attemptedRetries = 0; }
 private:
     mutable int m_attemptedRetries;
+    int m_maxRetries;
 };
 
 class MockAWSClient : AWSClient

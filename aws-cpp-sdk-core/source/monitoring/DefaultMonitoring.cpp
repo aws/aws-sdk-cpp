@@ -52,6 +52,8 @@ namespace Aws
             Aws::Utils::DateTime apiCallStartTime;
             Aws::Utils::DateTime attemptStartTime;
             int retryCount = 0;
+            bool lastAttemptSucceeded = false;
+            bool lastErrorRetriable = false; //dosen't apply if last attempt succeeded.
         };
 
         static inline void FillRequiredFieldsToJson(Json::JsonValue& json, 
@@ -72,10 +74,12 @@ namespace Aws
 
         static inline void FillRequiredApiCallFieldsToJson(Json::JsonValue& json,
             int attemptCount,
-            int64_t apiCallLatency)
+            int64_t apiCallLatency,
+            bool maxRetriesExceeded)
         {
             json.WithInteger("AttemptCount", attemptCount)
-                .WithInt64("Latency", apiCallLatency);
+                .WithInt64("Latency", apiCallLatency)
+                .WithInteger("MaxRetriesExceeded", maxRetriesExceeded ? 1 : 0);
         }
 
         static inline void FillRequiredApiAttemptFieldsToJson(Json::JsonValue& json,
@@ -223,7 +227,7 @@ namespace Aws
             DefaultContext* defaultContext = reinterpret_cast<DefaultContext*>(context);
             Aws::Utils::Json::JsonValue json;
             FillRequiredFieldsToJson(json, "ApiCall", serviceName, requestName, m_clientId, defaultContext->apiCallStartTime, DEFAULT_MONITORING_VERSION);
-            FillRequiredApiCallFieldsToJson(json, defaultContext->retryCount + 1, DateTime::Now().Millis() - defaultContext->apiCallStartTime.Millis());
+            FillRequiredApiCallFieldsToJson(json, defaultContext->retryCount + 1, DateTime::Now().Millis() - defaultContext->apiCallStartTime.Millis(), (!defaultContext->lastAttemptSucceeded && defaultContext->lastErrorRetriable));
             FillOptionalApiCallFieldsToJson(json, request.get());
             Aws::String compactData = json.View().WriteCompact();
             m_udp.SendDataToLocalHost(reinterpret_cast<const uint8_t*>(compactData.c_str()), static_cast<int>(compactData.size()), m_port);
@@ -236,6 +240,8 @@ namespace Aws
             const CoreMetricsCollection& metricsFromCore, void* context) const
         {
             DefaultContext* defaultContext = reinterpret_cast<DefaultContext*>(context);
+            defaultContext->lastAttemptSucceeded = outcome.IsSuccess() ? true : false;
+            defaultContext->lastErrorRetriable = (!outcome.IsSuccess() && outcome.GetError().ShouldRetry()) ? true : false;
             Aws::Utils::Json::JsonValue json;
             FillRequiredFieldsToJson(json, "ApiCallAttempt", serviceName, requestName, m_clientId, defaultContext->attemptStartTime, DEFAULT_MONITORING_VERSION);
             FillRequiredApiAttemptFieldsToJson(json, request->GetUri().GetAuthority(), request->GetUserAgent(),
