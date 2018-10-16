@@ -222,27 +222,27 @@ namespace Model
 
 
     /**
-     * <p>The region name and availability zone where the instance is located.</p>
+     * <p>The region name and Availability Zone where the instance is located.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The region name and availability zone where the instance is located.</p>
+     * <p>The region name and Availability Zone where the instance is located.</p>
      */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The region name and availability zone where the instance is located.</p>
+     * <p>The region name and Availability Zone where the instance is located.</p>
      */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The region name and availability zone where the instance is located.</p>
+     * <p>The region name and Availability Zone where the instance is located.</p>
      */
     inline Instance& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The region name and availability zone where the instance is located.</p>
+     * <p>The region name and Availability Zone where the instance is located.</p>
      */
     inline Instance& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 

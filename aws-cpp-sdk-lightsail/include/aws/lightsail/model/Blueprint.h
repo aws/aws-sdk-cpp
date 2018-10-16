@@ -228,23 +228,29 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value indicating whether the blueprint is active. When you update
-     * your blueprints, you will inactivate old blueprints and keep the most recent
-     * versions active.</p>
+     * <p>A Boolean value indicating whether the blueprint is active. Inactive
+     * blueprints are listed to support customers with existing instances but are not
+     * necessarily available for launch of new instances. Blueprints are marked
+     * inactive when they become outdated due to operating system updates or new
+     * application releases.</p>
      */
     inline bool GetIsActive() const{ return m_isActive; }
 
     /**
-     * <p>A Boolean value indicating whether the blueprint is active. When you update
-     * your blueprints, you will inactivate old blueprints and keep the most recent
-     * versions active.</p>
+     * <p>A Boolean value indicating whether the blueprint is active. Inactive
+     * blueprints are listed to support customers with existing instances but are not
+     * necessarily available for launch of new instances. Blueprints are marked
+     * inactive when they become outdated due to operating system updates or new
+     * application releases.</p>
      */
     inline void SetIsActive(bool value) { m_isActiveHasBeenSet = true; m_isActive = value; }
 
     /**
-     * <p>A Boolean value indicating whether the blueprint is active. When you update
-     * your blueprints, you will inactivate old blueprints and keep the most recent
-     * versions active.</p>
+     * <p>A Boolean value indicating whether the blueprint is active. Inactive
+     * blueprints are listed to support customers with existing instances but are not
+     * necessarily available for launch of new instances. Blueprints are marked
+     * inactive when they become outdated due to operating system updates or new
+     * application releases.</p>
      */
     inline Blueprint& WithIsActive(bool value) { SetIsActive(value); return *this;}
 

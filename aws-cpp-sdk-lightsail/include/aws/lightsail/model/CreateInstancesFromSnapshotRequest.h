@@ -147,70 +147,70 @@ namespace Model
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
      * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
-     * list of availability zones by using the <a
+     * list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
-     * regions</a> operation. Be sure to add the <code>include availability
-     * zones</code> parameter to your request.</p>
+     * regions</a> operation. Be sure to add the <code>include Availability
+     * Zones</code> parameter to your request.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
      * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
-     * list of availability zones by using the <a
+     * list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
-     * regions</a> operation. Be sure to add the <code>include availability
-     * zones</code> parameter to your request.</p>
+     * regions</a> operation. Be sure to add the <code>include Availability
+     * Zones</code> parameter to your request.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
      * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
-     * list of availability zones by using the <a
+     * list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
-     * regions</a> operation. Be sure to add the <code>include availability
-     * zones</code> parameter to your request.</p>
+     * regions</a> operation. Be sure to add the <code>include Availability
+     * Zones</code> parameter to your request.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
      * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
-     * list of availability zones by using the <a
+     * list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
-     * regions</a> operation. Be sure to add the <code>include availability
-     * zones</code> parameter to your request.</p>
+     * regions</a> operation. Be sure to add the <code>include Availability
+     * Zones</code> parameter to your request.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
      * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
-     * list of availability zones by using the <a
+     * list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
-     * regions</a> operation. Be sure to add the <code>include availability
-     * zones</code> parameter to your request.</p>
+     * regions</a> operation. Be sure to add the <code>include Availability
+     * Zones</code> parameter to your request.</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
      * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
-     * list of availability zones by using the <a
+     * list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
-     * regions</a> operation. Be sure to add the <code>include availability
-     * zones</code> parameter to your request.</p>
+     * regions</a> operation. Be sure to add the <code>include Availability
+     * Zones</code> parameter to your request.</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone where you want to create your instances. Use the
      * following formatting: <code>us-east-2a</code> (case sensitive). You can get a
-     * list of availability zones by using the <a
+     * list of Availability Zones by using the <a
      * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
-     * regions</a> operation. Be sure to add the <code>include availability
-     * zones</code> parameter to your request.</p>
+     * regions</a> operation. Be sure to add the <code>include Availability
+     * Zones</code> parameter to your request.</p>
      */
     inline CreateInstancesFromSnapshotRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -315,7 +315,7 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev
+     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
      * Guide</a>.</p> </note>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
@@ -327,7 +327,7 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev
+     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
      * Guide</a>.</p> </note>
      */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
@@ -339,7 +339,7 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev
+     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
      * Guide</a>.</p> </note>
      */
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
@@ -351,7 +351,7 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev
+     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
      * Guide</a>.</p> </note>
      */
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
@@ -363,7 +363,7 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev
+     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
      * Guide</a>.</p> </note>
      */
     inline CreateInstancesFromSnapshotRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
@@ -375,7 +375,7 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev
+     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
      * Guide</a>.</p> </note>
      */
     inline CreateInstancesFromSnapshotRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
@@ -387,7 +387,7 @@ namespace Model
      * varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
      * <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list,
      * see the <a
-     * href="http://lightsail.aws.amazon.com/ls/docs/getting-started/articles/pre-installed-apps">Dev
+     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
      * Guide</a>.</p> </note>
      */
     inline CreateInstancesFromSnapshotRequest& WithUserData(const char* value) { SetUserData(value); return *this;}

@@ -16,7 +16,9 @@
 #pragma once
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/resource-groups/ResourceGroupsRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resource-groups/model/GroupFilter.h>
 #include <utility>
 
 namespace Aws
@@ -46,6 +48,70 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+
+    /**
+     * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
+     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
+     * by resource type. Specify up to five group types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline const Aws::Vector<GroupFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
+     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
+     * by resource type. Specify up to five group types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline void SetFilters(const Aws::Vector<GroupFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
+     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
+     * by resource type. Specify up to five group types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline void SetFilters(Aws::Vector<GroupFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
+     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
+     * by resource type. Specify up to five group types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline ListGroupsRequest& WithFilters(const Aws::Vector<GroupFilter>& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
+     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
+     * by resource type. Specify up to five group types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline ListGroupsRequest& WithFilters(Aws::Vector<GroupFilter>&& value) { SetFilters(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
+     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
+     * by resource type. Specify up to five group types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline ListGroupsRequest& AddFilters(const GroupFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
+
+    /**
+     * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
+     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
+     * by resource type. Specify up to five group types in the format
+     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
+     * AWS::S3::Bucket.</p> </li> </ul>
+     */
+    inline ListGroupsRequest& AddFilters(GroupFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -117,6 +183,9 @@ namespace Model
     inline ListGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
+    Aws::Vector<GroupFilter> m_filters;
+    bool m_filtersHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

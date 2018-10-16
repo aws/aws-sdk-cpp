@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 GetRegionsRequest::GetRegionsRequest() : 
     m_includeAvailabilityZones(false),
-    m_includeAvailabilityZonesHasBeenSet(false)
+    m_includeAvailabilityZonesHasBeenSet(false),
+    m_includeRelationalDatabaseAvailabilityZones(false),
+    m_includeRelationalDatabaseAvailabilityZonesHasBeenSet(false)
 {
 }
 
@@ -35,6 +37,12 @@ Aws::String GetRegionsRequest::SerializePayload() const
   if(m_includeAvailabilityZonesHasBeenSet)
   {
    payload.WithBool("includeAvailabilityZones", m_includeAvailabilityZones);
+
+  }
+
+  if(m_includeRelationalDatabaseAvailabilityZonesHasBeenSet)
+  {
+   payload.WithBool("includeRelationalDatabaseAvailabilityZones", m_includeRelationalDatabaseAvailabilityZones);
 
   }
 

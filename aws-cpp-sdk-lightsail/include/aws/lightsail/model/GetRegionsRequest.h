@@ -63,10 +63,35 @@ namespace Model
      */
     inline GetRegionsRequest& WithIncludeAvailabilityZones(bool value) { SetIncludeAvailabilityZones(value); return *this;}
 
+
+    /**
+     * <p>&gt;A Boolean value indicating whether to also include Availability Zones for
+     * databases in your get regions request. Availability Zones are indicated with a
+     * letter (e.g., <code>us-east-2a</code>).</p>
+     */
+    inline bool GetIncludeRelationalDatabaseAvailabilityZones() const{ return m_includeRelationalDatabaseAvailabilityZones; }
+
+    /**
+     * <p>&gt;A Boolean value indicating whether to also include Availability Zones for
+     * databases in your get regions request. Availability Zones are indicated with a
+     * letter (e.g., <code>us-east-2a</code>).</p>
+     */
+    inline void SetIncludeRelationalDatabaseAvailabilityZones(bool value) { m_includeRelationalDatabaseAvailabilityZonesHasBeenSet = true; m_includeRelationalDatabaseAvailabilityZones = value; }
+
+    /**
+     * <p>&gt;A Boolean value indicating whether to also include Availability Zones for
+     * databases in your get regions request. Availability Zones are indicated with a
+     * letter (e.g., <code>us-east-2a</code>).</p>
+     */
+    inline GetRegionsRequest& WithIncludeRelationalDatabaseAvailabilityZones(bool value) { SetIncludeRelationalDatabaseAvailabilityZones(value); return *this;}
+
   private:
 
     bool m_includeAvailabilityZones;
     bool m_includeAvailabilityZonesHasBeenSet;
+
+    bool m_includeRelationalDatabaseAvailabilityZones;
+    bool m_includeRelationalDatabaseAvailabilityZonesHasBeenSet;
   };
 
 } // namespace Model

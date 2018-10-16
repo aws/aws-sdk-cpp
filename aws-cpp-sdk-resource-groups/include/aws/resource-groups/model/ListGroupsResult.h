@@ -17,7 +17,7 @@
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/resource-groups/model/Group.h>
+#include <aws/resource-groups/model/GroupIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -45,39 +45,46 @@ namespace Model
 
 
     /**
-     * <p>A list of resource groups.</p>
+     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
+     * both the GroupName and the GroupArn.</p>
      */
-    inline const Aws::Vector<Group>& GetGroups() const{ return m_groups; }
+    inline const Aws::Vector<GroupIdentifier>& GetGroupIdentifiers() const{ return m_groupIdentifiers; }
 
     /**
-     * <p>A list of resource groups.</p>
+     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
+     * both the GroupName and the GroupArn.</p>
      */
-    inline void SetGroups(const Aws::Vector<Group>& value) { m_groups = value; }
+    inline void SetGroupIdentifiers(const Aws::Vector<GroupIdentifier>& value) { m_groupIdentifiers = value; }
 
     /**
-     * <p>A list of resource groups.</p>
+     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
+     * both the GroupName and the GroupArn.</p>
      */
-    inline void SetGroups(Aws::Vector<Group>&& value) { m_groups = std::move(value); }
+    inline void SetGroupIdentifiers(Aws::Vector<GroupIdentifier>&& value) { m_groupIdentifiers = std::move(value); }
 
     /**
-     * <p>A list of resource groups.</p>
+     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
+     * both the GroupName and the GroupArn.</p>
      */
-    inline ListGroupsResult& WithGroups(const Aws::Vector<Group>& value) { SetGroups(value); return *this;}
+    inline ListGroupsResult& WithGroupIdentifiers(const Aws::Vector<GroupIdentifier>& value) { SetGroupIdentifiers(value); return *this;}
 
     /**
-     * <p>A list of resource groups.</p>
+     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
+     * both the GroupName and the GroupArn.</p>
      */
-    inline ListGroupsResult& WithGroups(Aws::Vector<Group>&& value) { SetGroups(std::move(value)); return *this;}
+    inline ListGroupsResult& WithGroupIdentifiers(Aws::Vector<GroupIdentifier>&& value) { SetGroupIdentifiers(std::move(value)); return *this;}
 
     /**
-     * <p>A list of resource groups.</p>
+     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
+     * both the GroupName and the GroupArn.</p>
      */
-    inline ListGroupsResult& AddGroups(const Group& value) { m_groups.push_back(value); return *this; }
+    inline ListGroupsResult& AddGroupIdentifiers(const GroupIdentifier& value) { m_groupIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>A list of resource groups.</p>
+     * <p>A list of GroupIdentifier objects. Each identifier is an object that contains
+     * both the GroupName and the GroupArn.</p>
      */
-    inline ListGroupsResult& AddGroups(Group&& value) { m_groups.push_back(std::move(value)); return *this; }
+    inline ListGroupsResult& AddGroupIdentifiers(GroupIdentifier&& value) { m_groupIdentifiers.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -124,7 +131,7 @@ namespace Model
 
   private:
 
-    Aws::Vector<Group> m_groups;
+    Aws::Vector<GroupIdentifier> m_groupIdentifiers;
 
     Aws::String m_nextToken;
   };

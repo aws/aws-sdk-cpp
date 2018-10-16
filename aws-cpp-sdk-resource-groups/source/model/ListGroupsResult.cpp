@@ -38,12 +38,12 @@ ListGroupsResult::ListGroupsResult(const Aws::AmazonWebServiceResult<JsonValue>&
 ListGroupsResult& ListGroupsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Groups"))
+  if(jsonValue.ValueExists("GroupIdentifiers"))
   {
-    Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
-    for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
+    Array<JsonView> groupIdentifiersJsonList = jsonValue.GetArray("GroupIdentifiers");
+    for(unsigned groupIdentifiersIndex = 0; groupIdentifiersIndex < groupIdentifiersJsonList.GetLength(); ++groupIdentifiersIndex)
     {
-      m_groups.push_back(groupsJsonList[groupsIndex].AsObject());
+      m_groupIdentifiers.push_back(groupIdentifiersJsonList[groupIdentifiersIndex].AsObject());
     }
   }
 

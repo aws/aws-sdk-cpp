@@ -236,44 +236,51 @@ namespace Model
 
 
     /**
-     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
-     * created within one.</p>
+     * <p>A private IP address to access the DevEndpoint within a VPC, if the
+     * DevEndpoint is created within one. The PrivateAddress field is present only when
+     * you create the DevEndpoint within your virtual private cloud (VPC).</p>
      */
     inline const Aws::String& GetPrivateAddress() const{ return m_privateAddress; }
 
     /**
-     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
-     * created within one.</p>
+     * <p>A private IP address to access the DevEndpoint within a VPC, if the
+     * DevEndpoint is created within one. The PrivateAddress field is present only when
+     * you create the DevEndpoint within your virtual private cloud (VPC).</p>
      */
     inline void SetPrivateAddress(const Aws::String& value) { m_privateAddressHasBeenSet = true; m_privateAddress = value; }
 
     /**
-     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
-     * created within one.</p>
+     * <p>A private IP address to access the DevEndpoint within a VPC, if the
+     * DevEndpoint is created within one. The PrivateAddress field is present only when
+     * you create the DevEndpoint within your virtual private cloud (VPC).</p>
      */
     inline void SetPrivateAddress(Aws::String&& value) { m_privateAddressHasBeenSet = true; m_privateAddress = std::move(value); }
 
     /**
-     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
-     * created within one.</p>
+     * <p>A private IP address to access the DevEndpoint within a VPC, if the
+     * DevEndpoint is created within one. The PrivateAddress field is present only when
+     * you create the DevEndpoint within your virtual private cloud (VPC).</p>
      */
     inline void SetPrivateAddress(const char* value) { m_privateAddressHasBeenSet = true; m_privateAddress.assign(value); }
 
     /**
-     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
-     * created within one.</p>
+     * <p>A private IP address to access the DevEndpoint within a VPC, if the
+     * DevEndpoint is created within one. The PrivateAddress field is present only when
+     * you create the DevEndpoint within your virtual private cloud (VPC).</p>
      */
     inline DevEndpoint& WithPrivateAddress(const Aws::String& value) { SetPrivateAddress(value); return *this;}
 
     /**
-     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
-     * created within one.</p>
+     * <p>A private IP address to access the DevEndpoint within a VPC, if the
+     * DevEndpoint is created within one. The PrivateAddress field is present only when
+     * you create the DevEndpoint within your virtual private cloud (VPC).</p>
      */
     inline DevEndpoint& WithPrivateAddress(Aws::String&& value) { SetPrivateAddress(std::move(value)); return *this;}
 
     /**
-     * <p>A private DNS to access the DevEndpoint within a VPC, if the DevEndpoint is
-     * created within one.</p>
+     * <p>A private IP address to access the DevEndpoint within a VPC, if the
+     * DevEndpoint is created within one. The PrivateAddress field is present only when
+     * you create the DevEndpoint within your virtual private cloud (VPC).</p>
      */
     inline DevEndpoint& WithPrivateAddress(const char* value) { SetPrivateAddress(value); return *this;}
 
@@ -295,37 +302,44 @@ namespace Model
 
 
     /**
-     * <p>The public VPC address used by this DevEndpoint.</p>
+     * <p>The public IP address used by this DevEndpoint. The PublicAddress field is
+     * present only when you create a non-VPC (virtual private cloud) DevEndpoint.</p>
      */
     inline const Aws::String& GetPublicAddress() const{ return m_publicAddress; }
 
     /**
-     * <p>The public VPC address used by this DevEndpoint.</p>
+     * <p>The public IP address used by this DevEndpoint. The PublicAddress field is
+     * present only when you create a non-VPC (virtual private cloud) DevEndpoint.</p>
      */
     inline void SetPublicAddress(const Aws::String& value) { m_publicAddressHasBeenSet = true; m_publicAddress = value; }
 
     /**
-     * <p>The public VPC address used by this DevEndpoint.</p>
+     * <p>The public IP address used by this DevEndpoint. The PublicAddress field is
+     * present only when you create a non-VPC (virtual private cloud) DevEndpoint.</p>
      */
     inline void SetPublicAddress(Aws::String&& value) { m_publicAddressHasBeenSet = true; m_publicAddress = std::move(value); }
 
     /**
-     * <p>The public VPC address used by this DevEndpoint.</p>
+     * <p>The public IP address used by this DevEndpoint. The PublicAddress field is
+     * present only when you create a non-VPC (virtual private cloud) DevEndpoint.</p>
      */
     inline void SetPublicAddress(const char* value) { m_publicAddressHasBeenSet = true; m_publicAddress.assign(value); }
 
     /**
-     * <p>The public VPC address used by this DevEndpoint.</p>
+     * <p>The public IP address used by this DevEndpoint. The PublicAddress field is
+     * present only when you create a non-VPC (virtual private cloud) DevEndpoint.</p>
      */
     inline DevEndpoint& WithPublicAddress(const Aws::String& value) { SetPublicAddress(value); return *this;}
 
     /**
-     * <p>The public VPC address used by this DevEndpoint.</p>
+     * <p>The public IP address used by this DevEndpoint. The PublicAddress field is
+     * present only when you create a non-VPC (virtual private cloud) DevEndpoint.</p>
      */
     inline DevEndpoint& WithPublicAddress(Aws::String&& value) { SetPublicAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The public VPC address used by this DevEndpoint.</p>
+     * <p>The public IP address used by this DevEndpoint. The PublicAddress field is
+     * present only when you create a non-VPC (virtual private cloud) DevEndpoint.</p>
      */
     inline DevEndpoint& WithPublicAddress(const char* value) { SetPublicAddress(value); return *this;}
 

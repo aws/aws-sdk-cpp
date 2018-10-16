@@ -174,37 +174,44 @@ namespace Model
 
 
     /**
-     * <p>The ID of the table version to be deleted.</p>
+     * <p>The ID of the table version to be deleted. A <code>VersionID</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>The ID of the table version to be deleted.</p>
+     * <p>The ID of the table version to be deleted. A <code>VersionID</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>The ID of the table version to be deleted.</p>
+     * <p>The ID of the table version to be deleted. A <code>VersionID</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
-     * <p>The ID of the table version to be deleted.</p>
+     * <p>The ID of the table version to be deleted. A <code>VersionID</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * <p>The ID of the table version to be deleted.</p>
+     * <p>The ID of the table version to be deleted. A <code>VersionID</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline DeleteTableVersionRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>The ID of the table version to be deleted.</p>
+     * <p>The ID of the table version to be deleted. A <code>VersionID</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline DeleteTableVersionRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the table version to be deleted.</p>
+     * <p>The ID of the table version to be deleted. A <code>VersionID</code> is a
+     * string representation of an integer. Each version is incremented by 1.</p>
      */
     inline DeleteTableVersionRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

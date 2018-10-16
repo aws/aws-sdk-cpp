@@ -44,6 +44,9 @@
 #include <aws/lightsail/model/CreateKeyPairRequest.h>
 #include <aws/lightsail/model/CreateLoadBalancerRequest.h>
 #include <aws/lightsail/model/CreateLoadBalancerTlsCertificateRequest.h>
+#include <aws/lightsail/model/CreateRelationalDatabaseRequest.h>
+#include <aws/lightsail/model/CreateRelationalDatabaseFromSnapshotRequest.h>
+#include <aws/lightsail/model/CreateRelationalDatabaseSnapshotRequest.h>
 #include <aws/lightsail/model/DeleteDiskRequest.h>
 #include <aws/lightsail/model/DeleteDiskSnapshotRequest.h>
 #include <aws/lightsail/model/DeleteDomainRequest.h>
@@ -53,6 +56,8 @@
 #include <aws/lightsail/model/DeleteKeyPairRequest.h>
 #include <aws/lightsail/model/DeleteLoadBalancerRequest.h>
 #include <aws/lightsail/model/DeleteLoadBalancerTlsCertificateRequest.h>
+#include <aws/lightsail/model/DeleteRelationalDatabaseRequest.h>
+#include <aws/lightsail/model/DeleteRelationalDatabaseSnapshotRequest.h>
 #include <aws/lightsail/model/DetachDiskRequest.h>
 #include <aws/lightsail/model/DetachInstancesFromLoadBalancerRequest.h>
 #include <aws/lightsail/model/DetachStaticIpRequest.h>
@@ -84,6 +89,18 @@
 #include <aws/lightsail/model/GetOperationsRequest.h>
 #include <aws/lightsail/model/GetOperationsForResourceRequest.h>
 #include <aws/lightsail/model/GetRegionsRequest.h>
+#include <aws/lightsail/model/GetRelationalDatabaseRequest.h>
+#include <aws/lightsail/model/GetRelationalDatabaseBlueprintsRequest.h>
+#include <aws/lightsail/model/GetRelationalDatabaseBundlesRequest.h>
+#include <aws/lightsail/model/GetRelationalDatabaseEventsRequest.h>
+#include <aws/lightsail/model/GetRelationalDatabaseLogEventsRequest.h>
+#include <aws/lightsail/model/GetRelationalDatabaseLogStreamsRequest.h>
+#include <aws/lightsail/model/GetRelationalDatabaseMasterUserPasswordRequest.h>
+#include <aws/lightsail/model/GetRelationalDatabaseMetricDataRequest.h>
+#include <aws/lightsail/model/GetRelationalDatabaseParametersRequest.h>
+#include <aws/lightsail/model/GetRelationalDatabaseSnapshotRequest.h>
+#include <aws/lightsail/model/GetRelationalDatabaseSnapshotsRequest.h>
+#include <aws/lightsail/model/GetRelationalDatabasesRequest.h>
 #include <aws/lightsail/model/GetStaticIpRequest.h>
 #include <aws/lightsail/model/GetStaticIpsRequest.h>
 #include <aws/lightsail/model/ImportKeyPairRequest.h>
@@ -92,12 +109,17 @@
 #include <aws/lightsail/model/PeerVpcRequest.h>
 #include <aws/lightsail/model/PutInstancePublicPortsRequest.h>
 #include <aws/lightsail/model/RebootInstanceRequest.h>
+#include <aws/lightsail/model/RebootRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/ReleaseStaticIpRequest.h>
 #include <aws/lightsail/model/StartInstanceRequest.h>
+#include <aws/lightsail/model/StartRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/StopInstanceRequest.h>
+#include <aws/lightsail/model/StopRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/UnpeerVpcRequest.h>
 #include <aws/lightsail/model/UpdateDomainEntryRequest.h>
 #include <aws/lightsail/model/UpdateLoadBalancerAttributeRequest.h>
+#include <aws/lightsail/model/UpdateRelationalDatabaseRequest.h>
+#include <aws/lightsail/model/UpdateRelationalDatabaseParametersRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -758,6 +780,111 @@ void LightsailClient::CreateLoadBalancerTlsCertificateAsyncHelper(const CreateLo
   handler(this, request, CreateLoadBalancerTlsCertificate(request), context);
 }
 
+CreateRelationalDatabaseOutcome LightsailClient::CreateRelationalDatabase(const CreateRelationalDatabaseRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateRelationalDatabaseOutcome(CreateRelationalDatabaseResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateRelationalDatabaseOutcome(outcome.GetError());
+  }
+}
+
+CreateRelationalDatabaseOutcomeCallable LightsailClient::CreateRelationalDatabaseCallable(const CreateRelationalDatabaseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRelationalDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRelationalDatabase(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::CreateRelationalDatabaseAsync(const CreateRelationalDatabaseRequest& request, const CreateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRelationalDatabaseAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::CreateRelationalDatabaseAsyncHelper(const CreateRelationalDatabaseRequest& request, const CreateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRelationalDatabase(request), context);
+}
+
+CreateRelationalDatabaseFromSnapshotOutcome LightsailClient::CreateRelationalDatabaseFromSnapshot(const CreateRelationalDatabaseFromSnapshotRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateRelationalDatabaseFromSnapshotOutcome(CreateRelationalDatabaseFromSnapshotResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateRelationalDatabaseFromSnapshotOutcome(outcome.GetError());
+  }
+}
+
+CreateRelationalDatabaseFromSnapshotOutcomeCallable LightsailClient::CreateRelationalDatabaseFromSnapshotCallable(const CreateRelationalDatabaseFromSnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRelationalDatabaseFromSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRelationalDatabaseFromSnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::CreateRelationalDatabaseFromSnapshotAsync(const CreateRelationalDatabaseFromSnapshotRequest& request, const CreateRelationalDatabaseFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRelationalDatabaseFromSnapshotAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::CreateRelationalDatabaseFromSnapshotAsyncHelper(const CreateRelationalDatabaseFromSnapshotRequest& request, const CreateRelationalDatabaseFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRelationalDatabaseFromSnapshot(request), context);
+}
+
+CreateRelationalDatabaseSnapshotOutcome LightsailClient::CreateRelationalDatabaseSnapshot(const CreateRelationalDatabaseSnapshotRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateRelationalDatabaseSnapshotOutcome(CreateRelationalDatabaseSnapshotResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateRelationalDatabaseSnapshotOutcome(outcome.GetError());
+  }
+}
+
+CreateRelationalDatabaseSnapshotOutcomeCallable LightsailClient::CreateRelationalDatabaseSnapshotCallable(const CreateRelationalDatabaseSnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRelationalDatabaseSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRelationalDatabaseSnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::CreateRelationalDatabaseSnapshotAsync(const CreateRelationalDatabaseSnapshotRequest& request, const CreateRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRelationalDatabaseSnapshotAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::CreateRelationalDatabaseSnapshotAsyncHelper(const CreateRelationalDatabaseSnapshotRequest& request, const CreateRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRelationalDatabaseSnapshot(request), context);
+}
+
 DeleteDiskOutcome LightsailClient::DeleteDisk(const DeleteDiskRequest& request) const
 {
   Aws::StringStream ss;
@@ -1071,6 +1198,76 @@ void LightsailClient::DeleteLoadBalancerTlsCertificateAsync(const DeleteLoadBala
 void LightsailClient::DeleteLoadBalancerTlsCertificateAsyncHelper(const DeleteLoadBalancerTlsCertificateRequest& request, const DeleteLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteLoadBalancerTlsCertificate(request), context);
+}
+
+DeleteRelationalDatabaseOutcome LightsailClient::DeleteRelationalDatabase(const DeleteRelationalDatabaseRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRelationalDatabaseOutcome(DeleteRelationalDatabaseResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteRelationalDatabaseOutcome(outcome.GetError());
+  }
+}
+
+DeleteRelationalDatabaseOutcomeCallable LightsailClient::DeleteRelationalDatabaseCallable(const DeleteRelationalDatabaseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRelationalDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRelationalDatabase(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::DeleteRelationalDatabaseAsync(const DeleteRelationalDatabaseRequest& request, const DeleteRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRelationalDatabaseAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::DeleteRelationalDatabaseAsyncHelper(const DeleteRelationalDatabaseRequest& request, const DeleteRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRelationalDatabase(request), context);
+}
+
+DeleteRelationalDatabaseSnapshotOutcome LightsailClient::DeleteRelationalDatabaseSnapshot(const DeleteRelationalDatabaseSnapshotRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRelationalDatabaseSnapshotOutcome(DeleteRelationalDatabaseSnapshotResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteRelationalDatabaseSnapshotOutcome(outcome.GetError());
+  }
+}
+
+DeleteRelationalDatabaseSnapshotOutcomeCallable LightsailClient::DeleteRelationalDatabaseSnapshotCallable(const DeleteRelationalDatabaseSnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRelationalDatabaseSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRelationalDatabaseSnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::DeleteRelationalDatabaseSnapshotAsync(const DeleteRelationalDatabaseSnapshotRequest& request, const DeleteRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRelationalDatabaseSnapshotAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::DeleteRelationalDatabaseSnapshotAsyncHelper(const DeleteRelationalDatabaseSnapshotRequest& request, const DeleteRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRelationalDatabaseSnapshot(request), context);
 }
 
 DetachDiskOutcome LightsailClient::DetachDisk(const DetachDiskRequest& request) const
@@ -2158,6 +2355,426 @@ void LightsailClient::GetRegionsAsyncHelper(const GetRegionsRequest& request, co
   handler(this, request, GetRegions(request), context);
 }
 
+GetRelationalDatabaseOutcome LightsailClient::GetRelationalDatabase(const GetRelationalDatabaseRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRelationalDatabaseOutcome(GetRelationalDatabaseResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRelationalDatabaseOutcome(outcome.GetError());
+  }
+}
+
+GetRelationalDatabaseOutcomeCallable LightsailClient::GetRelationalDatabaseCallable(const GetRelationalDatabaseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRelationalDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRelationalDatabase(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetRelationalDatabaseAsync(const GetRelationalDatabaseRequest& request, const GetRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetRelationalDatabaseAsyncHelper(const GetRelationalDatabaseRequest& request, const GetRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRelationalDatabase(request), context);
+}
+
+GetRelationalDatabaseBlueprintsOutcome LightsailClient::GetRelationalDatabaseBlueprints(const GetRelationalDatabaseBlueprintsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRelationalDatabaseBlueprintsOutcome(GetRelationalDatabaseBlueprintsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRelationalDatabaseBlueprintsOutcome(outcome.GetError());
+  }
+}
+
+GetRelationalDatabaseBlueprintsOutcomeCallable LightsailClient::GetRelationalDatabaseBlueprintsCallable(const GetRelationalDatabaseBlueprintsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRelationalDatabaseBlueprintsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRelationalDatabaseBlueprints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetRelationalDatabaseBlueprintsAsync(const GetRelationalDatabaseBlueprintsRequest& request, const GetRelationalDatabaseBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseBlueprintsAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetRelationalDatabaseBlueprintsAsyncHelper(const GetRelationalDatabaseBlueprintsRequest& request, const GetRelationalDatabaseBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRelationalDatabaseBlueprints(request), context);
+}
+
+GetRelationalDatabaseBundlesOutcome LightsailClient::GetRelationalDatabaseBundles(const GetRelationalDatabaseBundlesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRelationalDatabaseBundlesOutcome(GetRelationalDatabaseBundlesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRelationalDatabaseBundlesOutcome(outcome.GetError());
+  }
+}
+
+GetRelationalDatabaseBundlesOutcomeCallable LightsailClient::GetRelationalDatabaseBundlesCallable(const GetRelationalDatabaseBundlesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRelationalDatabaseBundlesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRelationalDatabaseBundles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetRelationalDatabaseBundlesAsync(const GetRelationalDatabaseBundlesRequest& request, const GetRelationalDatabaseBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseBundlesAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetRelationalDatabaseBundlesAsyncHelper(const GetRelationalDatabaseBundlesRequest& request, const GetRelationalDatabaseBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRelationalDatabaseBundles(request), context);
+}
+
+GetRelationalDatabaseEventsOutcome LightsailClient::GetRelationalDatabaseEvents(const GetRelationalDatabaseEventsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRelationalDatabaseEventsOutcome(GetRelationalDatabaseEventsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRelationalDatabaseEventsOutcome(outcome.GetError());
+  }
+}
+
+GetRelationalDatabaseEventsOutcomeCallable LightsailClient::GetRelationalDatabaseEventsCallable(const GetRelationalDatabaseEventsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRelationalDatabaseEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRelationalDatabaseEvents(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetRelationalDatabaseEventsAsync(const GetRelationalDatabaseEventsRequest& request, const GetRelationalDatabaseEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseEventsAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetRelationalDatabaseEventsAsyncHelper(const GetRelationalDatabaseEventsRequest& request, const GetRelationalDatabaseEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRelationalDatabaseEvents(request), context);
+}
+
+GetRelationalDatabaseLogEventsOutcome LightsailClient::GetRelationalDatabaseLogEvents(const GetRelationalDatabaseLogEventsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRelationalDatabaseLogEventsOutcome(GetRelationalDatabaseLogEventsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRelationalDatabaseLogEventsOutcome(outcome.GetError());
+  }
+}
+
+GetRelationalDatabaseLogEventsOutcomeCallable LightsailClient::GetRelationalDatabaseLogEventsCallable(const GetRelationalDatabaseLogEventsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRelationalDatabaseLogEventsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRelationalDatabaseLogEvents(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetRelationalDatabaseLogEventsAsync(const GetRelationalDatabaseLogEventsRequest& request, const GetRelationalDatabaseLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseLogEventsAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetRelationalDatabaseLogEventsAsyncHelper(const GetRelationalDatabaseLogEventsRequest& request, const GetRelationalDatabaseLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRelationalDatabaseLogEvents(request), context);
+}
+
+GetRelationalDatabaseLogStreamsOutcome LightsailClient::GetRelationalDatabaseLogStreams(const GetRelationalDatabaseLogStreamsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRelationalDatabaseLogStreamsOutcome(GetRelationalDatabaseLogStreamsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRelationalDatabaseLogStreamsOutcome(outcome.GetError());
+  }
+}
+
+GetRelationalDatabaseLogStreamsOutcomeCallable LightsailClient::GetRelationalDatabaseLogStreamsCallable(const GetRelationalDatabaseLogStreamsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRelationalDatabaseLogStreamsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRelationalDatabaseLogStreams(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetRelationalDatabaseLogStreamsAsync(const GetRelationalDatabaseLogStreamsRequest& request, const GetRelationalDatabaseLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseLogStreamsAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetRelationalDatabaseLogStreamsAsyncHelper(const GetRelationalDatabaseLogStreamsRequest& request, const GetRelationalDatabaseLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRelationalDatabaseLogStreams(request), context);
+}
+
+GetRelationalDatabaseMasterUserPasswordOutcome LightsailClient::GetRelationalDatabaseMasterUserPassword(const GetRelationalDatabaseMasterUserPasswordRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRelationalDatabaseMasterUserPasswordOutcome(GetRelationalDatabaseMasterUserPasswordResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRelationalDatabaseMasterUserPasswordOutcome(outcome.GetError());
+  }
+}
+
+GetRelationalDatabaseMasterUserPasswordOutcomeCallable LightsailClient::GetRelationalDatabaseMasterUserPasswordCallable(const GetRelationalDatabaseMasterUserPasswordRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRelationalDatabaseMasterUserPasswordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRelationalDatabaseMasterUserPassword(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetRelationalDatabaseMasterUserPasswordAsync(const GetRelationalDatabaseMasterUserPasswordRequest& request, const GetRelationalDatabaseMasterUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseMasterUserPasswordAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetRelationalDatabaseMasterUserPasswordAsyncHelper(const GetRelationalDatabaseMasterUserPasswordRequest& request, const GetRelationalDatabaseMasterUserPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRelationalDatabaseMasterUserPassword(request), context);
+}
+
+GetRelationalDatabaseMetricDataOutcome LightsailClient::GetRelationalDatabaseMetricData(const GetRelationalDatabaseMetricDataRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRelationalDatabaseMetricDataOutcome(GetRelationalDatabaseMetricDataResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRelationalDatabaseMetricDataOutcome(outcome.GetError());
+  }
+}
+
+GetRelationalDatabaseMetricDataOutcomeCallable LightsailClient::GetRelationalDatabaseMetricDataCallable(const GetRelationalDatabaseMetricDataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRelationalDatabaseMetricDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRelationalDatabaseMetricData(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetRelationalDatabaseMetricDataAsync(const GetRelationalDatabaseMetricDataRequest& request, const GetRelationalDatabaseMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseMetricDataAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetRelationalDatabaseMetricDataAsyncHelper(const GetRelationalDatabaseMetricDataRequest& request, const GetRelationalDatabaseMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRelationalDatabaseMetricData(request), context);
+}
+
+GetRelationalDatabaseParametersOutcome LightsailClient::GetRelationalDatabaseParameters(const GetRelationalDatabaseParametersRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRelationalDatabaseParametersOutcome(GetRelationalDatabaseParametersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRelationalDatabaseParametersOutcome(outcome.GetError());
+  }
+}
+
+GetRelationalDatabaseParametersOutcomeCallable LightsailClient::GetRelationalDatabaseParametersCallable(const GetRelationalDatabaseParametersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRelationalDatabaseParametersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRelationalDatabaseParameters(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetRelationalDatabaseParametersAsync(const GetRelationalDatabaseParametersRequest& request, const GetRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseParametersAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetRelationalDatabaseParametersAsyncHelper(const GetRelationalDatabaseParametersRequest& request, const GetRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRelationalDatabaseParameters(request), context);
+}
+
+GetRelationalDatabaseSnapshotOutcome LightsailClient::GetRelationalDatabaseSnapshot(const GetRelationalDatabaseSnapshotRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRelationalDatabaseSnapshotOutcome(GetRelationalDatabaseSnapshotResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRelationalDatabaseSnapshotOutcome(outcome.GetError());
+  }
+}
+
+GetRelationalDatabaseSnapshotOutcomeCallable LightsailClient::GetRelationalDatabaseSnapshotCallable(const GetRelationalDatabaseSnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRelationalDatabaseSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRelationalDatabaseSnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetRelationalDatabaseSnapshotAsync(const GetRelationalDatabaseSnapshotRequest& request, const GetRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseSnapshotAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetRelationalDatabaseSnapshotAsyncHelper(const GetRelationalDatabaseSnapshotRequest& request, const GetRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRelationalDatabaseSnapshot(request), context);
+}
+
+GetRelationalDatabaseSnapshotsOutcome LightsailClient::GetRelationalDatabaseSnapshots(const GetRelationalDatabaseSnapshotsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRelationalDatabaseSnapshotsOutcome(GetRelationalDatabaseSnapshotsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRelationalDatabaseSnapshotsOutcome(outcome.GetError());
+  }
+}
+
+GetRelationalDatabaseSnapshotsOutcomeCallable LightsailClient::GetRelationalDatabaseSnapshotsCallable(const GetRelationalDatabaseSnapshotsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRelationalDatabaseSnapshotsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRelationalDatabaseSnapshots(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetRelationalDatabaseSnapshotsAsync(const GetRelationalDatabaseSnapshotsRequest& request, const GetRelationalDatabaseSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabaseSnapshotsAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetRelationalDatabaseSnapshotsAsyncHelper(const GetRelationalDatabaseSnapshotsRequest& request, const GetRelationalDatabaseSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRelationalDatabaseSnapshots(request), context);
+}
+
+GetRelationalDatabasesOutcome LightsailClient::GetRelationalDatabases(const GetRelationalDatabasesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRelationalDatabasesOutcome(GetRelationalDatabasesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRelationalDatabasesOutcome(outcome.GetError());
+  }
+}
+
+GetRelationalDatabasesOutcomeCallable LightsailClient::GetRelationalDatabasesCallable(const GetRelationalDatabasesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRelationalDatabasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRelationalDatabases(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetRelationalDatabasesAsync(const GetRelationalDatabasesRequest& request, const GetRelationalDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRelationalDatabasesAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetRelationalDatabasesAsyncHelper(const GetRelationalDatabasesRequest& request, const GetRelationalDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRelationalDatabases(request), context);
+}
+
 GetStaticIpOutcome LightsailClient::GetStaticIp(const GetStaticIpRequest& request) const
 {
   Aws::StringStream ss;
@@ -2438,6 +3055,41 @@ void LightsailClient::RebootInstanceAsyncHelper(const RebootInstanceRequest& req
   handler(this, request, RebootInstance(request), context);
 }
 
+RebootRelationalDatabaseOutcome LightsailClient::RebootRelationalDatabase(const RebootRelationalDatabaseRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RebootRelationalDatabaseOutcome(RebootRelationalDatabaseResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RebootRelationalDatabaseOutcome(outcome.GetError());
+  }
+}
+
+RebootRelationalDatabaseOutcomeCallable LightsailClient::RebootRelationalDatabaseCallable(const RebootRelationalDatabaseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RebootRelationalDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RebootRelationalDatabase(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::RebootRelationalDatabaseAsync(const RebootRelationalDatabaseRequest& request, const RebootRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RebootRelationalDatabaseAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::RebootRelationalDatabaseAsyncHelper(const RebootRelationalDatabaseRequest& request, const RebootRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RebootRelationalDatabase(request), context);
+}
+
 ReleaseStaticIpOutcome LightsailClient::ReleaseStaticIp(const ReleaseStaticIpRequest& request) const
 {
   Aws::StringStream ss;
@@ -2508,6 +3160,41 @@ void LightsailClient::StartInstanceAsyncHelper(const StartInstanceRequest& reque
   handler(this, request, StartInstance(request), context);
 }
 
+StartRelationalDatabaseOutcome LightsailClient::StartRelationalDatabase(const StartRelationalDatabaseRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartRelationalDatabaseOutcome(StartRelationalDatabaseResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartRelationalDatabaseOutcome(outcome.GetError());
+  }
+}
+
+StartRelationalDatabaseOutcomeCallable LightsailClient::StartRelationalDatabaseCallable(const StartRelationalDatabaseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartRelationalDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartRelationalDatabase(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::StartRelationalDatabaseAsync(const StartRelationalDatabaseRequest& request, const StartRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartRelationalDatabaseAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::StartRelationalDatabaseAsyncHelper(const StartRelationalDatabaseRequest& request, const StartRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartRelationalDatabase(request), context);
+}
+
 StopInstanceOutcome LightsailClient::StopInstance(const StopInstanceRequest& request) const
 {
   Aws::StringStream ss;
@@ -2541,6 +3228,41 @@ void LightsailClient::StopInstanceAsync(const StopInstanceRequest& request, cons
 void LightsailClient::StopInstanceAsyncHelper(const StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopInstance(request), context);
+}
+
+StopRelationalDatabaseOutcome LightsailClient::StopRelationalDatabase(const StopRelationalDatabaseRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopRelationalDatabaseOutcome(StopRelationalDatabaseResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopRelationalDatabaseOutcome(outcome.GetError());
+  }
+}
+
+StopRelationalDatabaseOutcomeCallable LightsailClient::StopRelationalDatabaseCallable(const StopRelationalDatabaseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopRelationalDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopRelationalDatabase(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::StopRelationalDatabaseAsync(const StopRelationalDatabaseRequest& request, const StopRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopRelationalDatabaseAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::StopRelationalDatabaseAsyncHelper(const StopRelationalDatabaseRequest& request, const StopRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopRelationalDatabase(request), context);
 }
 
 UnpeerVpcOutcome LightsailClient::UnpeerVpc(const UnpeerVpcRequest& request) const
@@ -2646,5 +3368,75 @@ void LightsailClient::UpdateLoadBalancerAttributeAsync(const UpdateLoadBalancerA
 void LightsailClient::UpdateLoadBalancerAttributeAsyncHelper(const UpdateLoadBalancerAttributeRequest& request, const UpdateLoadBalancerAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateLoadBalancerAttribute(request), context);
+}
+
+UpdateRelationalDatabaseOutcome LightsailClient::UpdateRelationalDatabase(const UpdateRelationalDatabaseRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateRelationalDatabaseOutcome(UpdateRelationalDatabaseResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateRelationalDatabaseOutcome(outcome.GetError());
+  }
+}
+
+UpdateRelationalDatabaseOutcomeCallable LightsailClient::UpdateRelationalDatabaseCallable(const UpdateRelationalDatabaseRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRelationalDatabaseOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRelationalDatabase(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::UpdateRelationalDatabaseAsync(const UpdateRelationalDatabaseRequest& request, const UpdateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRelationalDatabaseAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::UpdateRelationalDatabaseAsyncHelper(const UpdateRelationalDatabaseRequest& request, const UpdateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRelationalDatabase(request), context);
+}
+
+UpdateRelationalDatabaseParametersOutcome LightsailClient::UpdateRelationalDatabaseParameters(const UpdateRelationalDatabaseParametersRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateRelationalDatabaseParametersOutcome(UpdateRelationalDatabaseParametersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateRelationalDatabaseParametersOutcome(outcome.GetError());
+  }
+}
+
+UpdateRelationalDatabaseParametersOutcomeCallable LightsailClient::UpdateRelationalDatabaseParametersCallable(const UpdateRelationalDatabaseParametersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRelationalDatabaseParametersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRelationalDatabaseParameters(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::UpdateRelationalDatabaseParametersAsync(const UpdateRelationalDatabaseParametersRequest& request, const UpdateRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRelationalDatabaseParametersAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::UpdateRelationalDatabaseParametersAsyncHelper(const UpdateRelationalDatabaseParametersRequest& request, const UpdateRelationalDatabaseParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRelationalDatabaseParameters(request), context);
 }
 

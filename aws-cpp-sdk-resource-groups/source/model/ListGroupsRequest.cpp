@@ -26,6 +26,7 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListGroupsRequest::ListGroupsRequest() : 
+    m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -34,7 +35,20 @@ ListGroupsRequest::ListGroupsRequest() :
 
 Aws::String ListGroupsRequest::SerializePayload() const
 {
-  return "";
+  JsonValue payload;
+
+  if(m_filtersHasBeenSet)
+  {
+   Array<JsonValue> filtersJsonList(m_filters.size());
+   for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
+   {
+     filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+   }
+   payload.WithArray("Filters", std::move(filtersJsonList));
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 void ListGroupsRequest::AddQueryStringParameters(URI& uri) const

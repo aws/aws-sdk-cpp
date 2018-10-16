@@ -53,6 +53,7 @@
 #include <aws/glue/model/DeleteDevEndpointRequest.h>
 #include <aws/glue/model/DeleteJobRequest.h>
 #include <aws/glue/model/DeletePartitionRequest.h>
+#include <aws/glue/model/DeleteResourcePolicyRequest.h>
 #include <aws/glue/model/DeleteSecurityConfigurationRequest.h>
 #include <aws/glue/model/DeleteTableRequest.h>
 #include <aws/glue/model/DeleteTableVersionRequest.h>
@@ -80,6 +81,7 @@
 #include <aws/glue/model/GetPartitionRequest.h>
 #include <aws/glue/model/GetPartitionsRequest.h>
 #include <aws/glue/model/GetPlanRequest.h>
+#include <aws/glue/model/GetResourcePolicyRequest.h>
 #include <aws/glue/model/GetSecurityConfigurationRequest.h>
 #include <aws/glue/model/GetSecurityConfigurationsRequest.h>
 #include <aws/glue/model/GetTableRequest.h>
@@ -92,6 +94,7 @@
 #include <aws/glue/model/GetUserDefinedFunctionsRequest.h>
 #include <aws/glue/model/ImportCatalogToGlueRequest.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsRequest.h>
+#include <aws/glue/model/PutResourcePolicyRequest.h>
 #include <aws/glue/model/ResetJobBookmarkRequest.h>
 #include <aws/glue/model/StartCrawlerRequest.h>
 #include <aws/glue/model/StartCrawlerScheduleRequest.h>
@@ -1086,6 +1089,41 @@ void GlueClient::DeletePartitionAsyncHelper(const DeletePartitionRequest& reques
   handler(this, request, DeletePartition(request), context);
 }
 
+DeleteResourcePolicyOutcome GlueClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteResourcePolicyOutcome(DeleteResourcePolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteResourcePolicyOutcome(outcome.GetError());
+  }
+}
+
+DeleteResourcePolicyOutcomeCallable GlueClient::DeleteResourcePolicyCallable(const DeleteResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteResourcePolicy(request), context);
+}
+
 DeleteSecurityConfigurationOutcome GlueClient::DeleteSecurityConfiguration(const DeleteSecurityConfigurationRequest& request) const
 {
   Aws::StringStream ss;
@@ -2031,6 +2069,41 @@ void GlueClient::GetPlanAsyncHelper(const GetPlanRequest& request, const GetPlan
   handler(this, request, GetPlan(request), context);
 }
 
+GetResourcePolicyOutcome GlueClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetResourcePolicyOutcome(GetResourcePolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetResourcePolicyOutcome(outcome.GetError());
+  }
+}
+
+GetResourcePolicyOutcomeCallable GlueClient::GetResourcePolicyCallable(const GetResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::GetResourcePolicyAsyncHelper(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResourcePolicy(request), context);
+}
+
 GetSecurityConfigurationOutcome GlueClient::GetSecurityConfiguration(const GetSecurityConfigurationRequest& request) const
 {
   Aws::StringStream ss;
@@ -2449,6 +2522,41 @@ void GlueClient::PutDataCatalogEncryptionSettingsAsync(const PutDataCatalogEncry
 void GlueClient::PutDataCatalogEncryptionSettingsAsyncHelper(const PutDataCatalogEncryptionSettingsRequest& request, const PutDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutDataCatalogEncryptionSettings(request), context);
+}
+
+PutResourcePolicyOutcome GlueClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutResourcePolicyOutcome(PutResourcePolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutResourcePolicyOutcome(outcome.GetError());
+  }
+}
+
+PutResourcePolicyOutcomeCallable GlueClient::PutResourcePolicyCallable(const PutResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutResourcePolicy(request), context);
 }
 
 ResetJobBookmarkOutcome GlueClient::ResetJobBookmark(const ResetJobBookmarkRequest& request) const

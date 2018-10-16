@@ -119,24 +119,27 @@ namespace Model
     /**
      * <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
      * <p>There can be two certificates associated with a Lightsail load balancer: the
-     * primary and the backup. The force parameter is required when the primary SSL/TLS
-     * certificate is in use by an instance attached to the load balancer.</p>
+     * primary and the backup. The <code>force</code> parameter is required when the
+     * primary SSL/TLS certificate is in use by an instance attached to the load
+     * balancer.</p>
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
      * <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
      * <p>There can be two certificates associated with a Lightsail load balancer: the
-     * primary and the backup. The force parameter is required when the primary SSL/TLS
-     * certificate is in use by an instance attached to the load balancer.</p>
+     * primary and the backup. The <code>force</code> parameter is required when the
+     * primary SSL/TLS certificate is in use by an instance attached to the load
+     * balancer.</p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
      * <p>When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
      * <p>There can be two certificates associated with a Lightsail load balancer: the
-     * primary and the backup. The force parameter is required when the primary SSL/TLS
-     * certificate is in use by an instance attached to the load balancer.</p>
+     * primary and the backup. The <code>force</code> parameter is required when the
+     * primary SSL/TLS certificate is in use by an instance attached to the load
+     * balancer.</p>
      */
     inline DeleteLoadBalancerTlsCertificateRequest& WithForce(bool value) { SetForce(value); return *this;}
 

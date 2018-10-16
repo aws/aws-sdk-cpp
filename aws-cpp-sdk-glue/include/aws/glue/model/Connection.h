@@ -203,7 +203,8 @@ namespace Model
      * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
      * The port number, between 1024 and 65535, of the port on which the database host
      * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
-     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
      * contains the JDBC driver to use.</p> </li> <li> <p>
@@ -225,7 +226,8 @@ namespace Model
      * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
      * The port number, between 1024 and 65535, of the port on which the database host
      * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
-     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
      * contains the JDBC driver to use.</p> </li> <li> <p>
@@ -247,7 +249,8 @@ namespace Model
      * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
      * The port number, between 1024 and 65535, of the port on which the database host
      * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
-     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
      * contains the JDBC driver to use.</p> </li> <li> <p>
@@ -269,7 +272,8 @@ namespace Model
      * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
      * The port number, between 1024 and 65535, of the port on which the database host
      * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
-     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
      * contains the JDBC driver to use.</p> </li> <li> <p>
@@ -291,7 +295,8 @@ namespace Model
      * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
      * The port number, between 1024 and 65535, of the port on which the database host
      * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
-     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
      * contains the JDBC driver to use.</p> </li> <li> <p>
@@ -313,7 +318,8 @@ namespace Model
      * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
      * The port number, between 1024 and 65535, of the port on which the database host
      * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
-     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
      * contains the JDBC driver to use.</p> </li> <li> <p>
@@ -335,7 +341,8 @@ namespace Model
      * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
      * The port number, between 1024 and 65535, of the port on which the database host
      * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
-     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
      * contains the JDBC driver to use.</p> </li> <li> <p>
@@ -357,7 +364,8 @@ namespace Model
      * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
      * The port number, between 1024 and 65535, of the port on which the database host
      * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
-     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
      * contains the JDBC driver to use.</p> </li> <li> <p>
@@ -379,7 +387,8 @@ namespace Model
      * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
      * The port number, between 1024 and 65535, of the port on which the database host
      * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
-     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
      * contains the JDBC driver to use.</p> </li> <li> <p>
@@ -401,7 +410,8 @@ namespace Model
      * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
      * The port number, between 1024 and 65535, of the port on which the database host
      * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
-     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
      * contains the JDBC driver to use.</p> </li> <li> <p>
@@ -423,7 +433,8 @@ namespace Model
      * or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> -
      * The port number, between 1024 and 65535, of the port on which the database host
      * is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code>
-     * - The name under which to log in to the database.</p> </li> <li> <p>
+     * - The name under which to log in to the database. The value string for
+     * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
      * contains the JDBC driver to use.</p> </li> <li> <p>

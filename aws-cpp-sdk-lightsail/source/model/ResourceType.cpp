@@ -40,6 +40,8 @@ namespace Aws
         static const int LoadBalancerTlsCertificate_HASH = HashingUtils::HashString("LoadBalancerTlsCertificate");
         static const int Disk_HASH = HashingUtils::HashString("Disk");
         static const int DiskSnapshot_HASH = HashingUtils::HashString("DiskSnapshot");
+        static const int RelationalDatabase_HASH = HashingUtils::HashString("RelationalDatabase");
+        static const int RelationalDatabaseSnapshot_HASH = HashingUtils::HashString("RelationalDatabaseSnapshot");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -85,6 +87,14 @@ namespace Aws
           {
             return ResourceType::DiskSnapshot;
           }
+          else if (hashCode == RelationalDatabase_HASH)
+          {
+            return ResourceType::RelationalDatabase;
+          }
+          else if (hashCode == RelationalDatabaseSnapshot_HASH)
+          {
+            return ResourceType::RelationalDatabaseSnapshot;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -119,6 +129,10 @@ namespace Aws
             return "Disk";
           case ResourceType::DiskSnapshot:
             return "DiskSnapshot";
+          case ResourceType::RelationalDatabase:
+            return "RelationalDatabase";
+          case ResourceType::RelationalDatabaseSnapshot:
+            return "RelationalDatabaseSnapshot";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

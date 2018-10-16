@@ -112,17 +112,17 @@ namespace Model
 
 
     /**
-     * <p>The time period for which you are requesting data.</p>
+     * <p>The granularity, in seconds, of the returned data points.</p>
      */
     inline int GetPeriod() const{ return m_period; }
 
     /**
-     * <p>The time period for which you are requesting data.</p>
+     * <p>The granularity, in seconds, of the returned data points.</p>
      */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
-     * <p>The time period for which you are requesting data.</p>
+     * <p>The granularity, in seconds, of the returned data points.</p>
      */
     inline GetInstanceMetricDataRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
 

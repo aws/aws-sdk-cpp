@@ -34,7 +34,8 @@ Region::Region() :
     m_displayNameHasBeenSet(false),
     m_name(RegionName::NOT_SET),
     m_nameHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
+    m_availabilityZonesHasBeenSet(false),
+    m_relationalDatabaseAvailabilityZonesHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Region::Region(JsonView jsonValue) :
     m_displayNameHasBeenSet(false),
     m_name(RegionName::NOT_SET),
     m_nameHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
+    m_availabilityZonesHasBeenSet(false),
+    m_relationalDatabaseAvailabilityZonesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +91,16 @@ Region& Region::operator =(JsonView jsonValue)
     m_availabilityZonesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("relationalDatabaseAvailabilityZones"))
+  {
+    Array<JsonView> relationalDatabaseAvailabilityZonesJsonList = jsonValue.GetArray("relationalDatabaseAvailabilityZones");
+    for(unsigned relationalDatabaseAvailabilityZonesIndex = 0; relationalDatabaseAvailabilityZonesIndex < relationalDatabaseAvailabilityZonesJsonList.GetLength(); ++relationalDatabaseAvailabilityZonesIndex)
+    {
+      m_relationalDatabaseAvailabilityZones.push_back(relationalDatabaseAvailabilityZonesJsonList[relationalDatabaseAvailabilityZonesIndex].AsObject());
+    }
+    m_relationalDatabaseAvailabilityZonesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -127,6 +139,17 @@ JsonValue Region::Jsonize() const
      availabilityZonesJsonList[availabilityZonesIndex].AsObject(m_availabilityZones[availabilityZonesIndex].Jsonize());
    }
    payload.WithArray("availabilityZones", std::move(availabilityZonesJsonList));
+
+  }
+
+  if(m_relationalDatabaseAvailabilityZonesHasBeenSet)
+  {
+   Array<JsonValue> relationalDatabaseAvailabilityZonesJsonList(m_relationalDatabaseAvailabilityZones.size());
+   for(unsigned relationalDatabaseAvailabilityZonesIndex = 0; relationalDatabaseAvailabilityZonesIndex < relationalDatabaseAvailabilityZonesJsonList.GetLength(); ++relationalDatabaseAvailabilityZonesIndex)
+   {
+     relationalDatabaseAvailabilityZonesJsonList[relationalDatabaseAvailabilityZonesIndex].AsObject(m_relationalDatabaseAvailabilityZones[relationalDatabaseAvailabilityZonesIndex].Jsonize());
+   }
+   payload.WithArray("relationalDatabaseAvailabilityZones", std::move(relationalDatabaseAvailabilityZonesJsonList));
 
   }
 
