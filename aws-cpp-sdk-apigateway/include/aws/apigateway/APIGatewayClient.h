@@ -682,7 +682,7 @@ namespace Model
 
         /**
          * <p>Create an <a>ApiKey</a> resource. </p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/create-api-key.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">AWS
          * API Reference</a></p>
@@ -691,7 +691,7 @@ namespace Model
 
         /**
          * <p>Create an <a>ApiKey</a> resource. </p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/create-api-key.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">AWS
          * API Reference</a></p>
@@ -702,7 +702,7 @@ namespace Model
 
         /**
          * <p>Create an <a>ApiKey</a> resource. </p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/create-api-key.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-api-key.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateApiKey">AWS
          * API Reference</a></p>
@@ -714,7 +714,7 @@ namespace Model
         /**
          * <p>Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
          * resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/create-authorizer.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">AWS
          * API Reference</a></p>
@@ -724,7 +724,7 @@ namespace Model
         /**
          * <p>Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
          * resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/create-authorizer.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">AWS
          * API Reference</a></p>
@@ -736,7 +736,7 @@ namespace Model
         /**
          * <p>Adds a new <a>Authorizer</a> resource to an existing <a>RestApi</a>
          * resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/create-authorizer.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/create-authorizer.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateAuthorizer">AWS
          * API Reference</a></p>
@@ -1112,7 +1112,7 @@ namespace Model
 
         /**
          * <p>Deletes an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/delete-authorizer.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">AWS
          * API Reference</a></p>
@@ -1121,7 +1121,7 @@ namespace Model
 
         /**
          * <p>Deletes an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/delete-authorizer.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">AWS
          * API Reference</a></p>
@@ -1132,7 +1132,7 @@ namespace Model
 
         /**
          * <p>Deletes an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/delete-authorizer.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/delete-authorizer.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteAuthorizer">AWS
          * API Reference</a></p>
@@ -1792,7 +1792,7 @@ namespace Model
 
         /**
          * <p>Describe an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-authorizer.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">AWS
          * API Reference</a></p>
@@ -1801,7 +1801,7 @@ namespace Model
 
         /**
          * <p>Describe an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-authorizer.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">AWS
          * API Reference</a></p>
@@ -1812,7 +1812,7 @@ namespace Model
 
         /**
          * <p>Describe an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-authorizer.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizer.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizer">AWS
          * API Reference</a></p>
@@ -1823,7 +1823,7 @@ namespace Model
 
         /**
          * <p>Describe an existing <a>Authorizers</a> resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-authorizers.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">AWS
          * API Reference</a></p>
@@ -1832,7 +1832,7 @@ namespace Model
 
         /**
          * <p>Describe an existing <a>Authorizers</a> resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-authorizers.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">AWS
          * API Reference</a></p>
@@ -1843,7 +1843,7 @@ namespace Model
 
         /**
          * <p>Describe an existing <a>Authorizers</a> resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-authorizers.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-authorizers.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetAuthorizers">AWS
          * API Reference</a></p>
@@ -3199,7 +3199,7 @@ namespace Model
         /**
          * <p>Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with
          * headers, parameters, and an incoming request body.</p> <div class="seeAlso"> <a
-         * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+         * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
          * custom authorizers</a> </div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">AWS
          * API Reference</a></p>
@@ -3209,7 +3209,7 @@ namespace Model
         /**
          * <p>Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with
          * headers, parameters, and an incoming request body.</p> <div class="seeAlso"> <a
-         * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+         * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
          * custom authorizers</a> </div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">AWS
          * API Reference</a></p>
@@ -3221,7 +3221,7 @@ namespace Model
         /**
          * <p>Simulate the execution of an <a>Authorizer</a> in your <a>RestApi</a> with
          * headers, parameters, and an incoming request body.</p> <div class="seeAlso"> <a
-         * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
+         * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html">Enable
          * custom authorizers</a> </div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/TestInvokeAuthorizer">AWS
          * API Reference</a></p>
@@ -3341,7 +3341,7 @@ namespace Model
 
         /**
          * <p>Updates an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/update-authorizer.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">AWS
          * API Reference</a></p>
@@ -3350,7 +3350,7 @@ namespace Model
 
         /**
          * <p>Updates an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/update-authorizer.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">AWS
          * API Reference</a></p>
@@ -3361,7 +3361,7 @@ namespace Model
 
         /**
          * <p>Updates an existing <a>Authorizer</a> resource.</p> <div class="seeAlso"><a
-         * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/update-authorizer.html">AWS
+         * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/update-authorizer.html">AWS
          * CLI</a></div><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateAuthorizer">AWS
          * API Reference</a></p>

@@ -231,12 +231,14 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986 specification</a>, for
-     * either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. </p> </li> <li><p> For <code>AWS</code> or <code>AWS_PROXY</code>
-     * integrations, the URI is of the form
+     * target="_blank"
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * specification</a>, for either standard integration, where
+     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
+     * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
+     * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
+     * form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, <code>{Region}</code> is the API Gateway region (e.g.,
      * <code>us-east-1</code>); <code>{service}</code> is the name of the integrated
@@ -250,7 +252,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -262,12 +264,14 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986 specification</a>, for
-     * either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. </p> </li> <li><p> For <code>AWS</code> or <code>AWS_PROXY</code>
-     * integrations, the URI is of the form
+     * target="_blank"
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * specification</a>, for either standard integration, where
+     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
+     * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
+     * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
+     * form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, <code>{Region}</code> is the API Gateway region (e.g.,
      * <code>us-east-1</code>); <code>{service}</code> is the name of the integrated
@@ -281,7 +285,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -293,12 +297,14 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986 specification</a>, for
-     * either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. </p> </li> <li><p> For <code>AWS</code> or <code>AWS_PROXY</code>
-     * integrations, the URI is of the form
+     * target="_blank"
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * specification</a>, for either standard integration, where
+     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
+     * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
+     * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
+     * form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, <code>{Region}</code> is the API Gateway region (e.g.,
      * <code>us-east-1</code>); <code>{service}</code> is the name of the integrated
@@ -312,7 +318,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -324,12 +330,14 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986 specification</a>, for
-     * either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. </p> </li> <li><p> For <code>AWS</code> or <code>AWS_PROXY</code>
-     * integrations, the URI is of the form
+     * target="_blank"
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * specification</a>, for either standard integration, where
+     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
+     * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
+     * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
+     * form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, <code>{Region}</code> is the API Gateway region (e.g.,
      * <code>us-east-1</code>); <code>{service}</code> is the name of the integrated
@@ -343,7 +351,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -355,12 +363,14 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986 specification</a>, for
-     * either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. </p> </li> <li><p> For <code>AWS</code> or <code>AWS_PROXY</code>
-     * integrations, the URI is of the form
+     * target="_blank"
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * specification</a>, for either standard integration, where
+     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
+     * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
+     * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
+     * form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, <code>{Region}</code> is the API Gateway region (e.g.,
      * <code>us-east-1</code>); <code>{service}</code> is the name of the integrated
@@ -374,7 +384,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -386,12 +396,14 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986 specification</a>, for
-     * either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. </p> </li> <li><p> For <code>AWS</code> or <code>AWS_PROXY</code>
-     * integrations, the URI is of the form
+     * target="_blank"
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * specification</a>, for either standard integration, where
+     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
+     * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
+     * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
+     * form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, <code>{Region}</code> is the API Gateway region (e.g.,
      * <code>us-east-1</code>); <code>{service}</code> is the name of the integrated
@@ -405,7 +417,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -417,12 +429,14 @@ namespace Model
      * <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
      * <ul> <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the
      * URI must be a fully formed, encoded HTTP(S) URL according to the <a
-     * target="_blank" href="[[UriEntryWikipediaUrl]]">RFC-3986 specification</a>, for
-     * either standard integration, where <code>connectionType</code> is not
-     * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code>
-     * is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
-     * for routing. </p> </li> <li><p> For <code>AWS</code> or <code>AWS_PROXY</code>
-     * integrations, the URI is of the form
+     * target="_blank"
+     * href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * specification</a>, for either standard integration, where
+     * <code>connectionType</code> is not <code>VPC_LINK</code>, or private
+     * integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
+     * private HTTP integration, the URI is not used for routing. </p> </li> <li><p>
+     * For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the
+     * form
      * <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
      * Here, <code>{Region}</code> is the API Gateway region (e.g.,
      * <code>us-east-1</code>); <code>{service}</code> is the name of the integrated
@@ -436,7 +450,7 @@ namespace Model
      * <code>service_api</code> refers to the path to an AWS service resource,
      * including the region of the integrated AWS service, if applicable. For example,
      * for integration with the S3 API of <code><a
-     * href="[[AwsDocsUrlPrefix]]/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>,
      * the <code>uri</code> can be either
      * <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
      * or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
@@ -493,7 +507,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -501,7 +515,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -509,7 +523,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -517,7 +531,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -525,7 +539,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -533,7 +547,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */
@@ -541,7 +555,7 @@ namespace Model
 
     /**
      * <p>The (<a
-     * href="[[AwsDocsUrlPrefix]]/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
+     * href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>)
      * of the <a>VpcLink</a> used for the integration when
      * <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
      */

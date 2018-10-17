@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 PutPermissionRequest::PutPermissionRequest() : 
     m_actionHasBeenSet(false),
     m_principalHasBeenSet(false),
-    m_statementIdHasBeenSet(false)
+    m_statementIdHasBeenSet(false),
+    m_conditionHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,12 @@ Aws::String PutPermissionRequest::SerializePayload() const
   if(m_statementIdHasBeenSet)
   {
    payload.WithString("StatementId", m_statementId);
+
+  }
+
+  if(m_conditionHasBeenSet)
+  {
+   payload.WithObject("Condition", m_condition.Jsonize());
 
   }
 

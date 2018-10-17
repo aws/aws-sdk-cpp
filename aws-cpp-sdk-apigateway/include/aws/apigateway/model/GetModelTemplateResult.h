@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Represents a mapping template used to transform a payload.</p> <div
    * class="seeAlso"> <a
-   * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/models-mappings.html#models-mappings-mappings">Mapping
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html#models-mappings-mappings">Mapping
    * Templates</a> </div><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Template">AWS
    * API Reference</a></p>
@@ -51,44 +51,58 @@ namespace Model
 
 
     /**
-     * <p>The Apache <a href="[[ApacheVtlUrl]]" target="_blank">Velocity Template
-     * Language (VTL)</a> template content used for the template resource.</p>
+     * <p>The Apache <a
+     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * target="_blank">Velocity Template Language (VTL)</a> template content used for
+     * the template resource.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The Apache <a href="[[ApacheVtlUrl]]" target="_blank">Velocity Template
-     * Language (VTL)</a> template content used for the template resource.</p>
+     * <p>The Apache <a
+     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * target="_blank">Velocity Template Language (VTL)</a> template content used for
+     * the template resource.</p>
      */
     inline void SetValue(const Aws::String& value) { m_value = value; }
 
     /**
-     * <p>The Apache <a href="[[ApacheVtlUrl]]" target="_blank">Velocity Template
-     * Language (VTL)</a> template content used for the template resource.</p>
+     * <p>The Apache <a
+     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * target="_blank">Velocity Template Language (VTL)</a> template content used for
+     * the template resource.</p>
      */
     inline void SetValue(Aws::String&& value) { m_value = std::move(value); }
 
     /**
-     * <p>The Apache <a href="[[ApacheVtlUrl]]" target="_blank">Velocity Template
-     * Language (VTL)</a> template content used for the template resource.</p>
+     * <p>The Apache <a
+     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * target="_blank">Velocity Template Language (VTL)</a> template content used for
+     * the template resource.</p>
      */
     inline void SetValue(const char* value) { m_value.assign(value); }
 
     /**
-     * <p>The Apache <a href="[[ApacheVtlUrl]]" target="_blank">Velocity Template
-     * Language (VTL)</a> template content used for the template resource.</p>
+     * <p>The Apache <a
+     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * target="_blank">Velocity Template Language (VTL)</a> template content used for
+     * the template resource.</p>
      */
     inline GetModelTemplateResult& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The Apache <a href="[[ApacheVtlUrl]]" target="_blank">Velocity Template
-     * Language (VTL)</a> template content used for the template resource.</p>
+     * <p>The Apache <a
+     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * target="_blank">Velocity Template Language (VTL)</a> template content used for
+     * the template resource.</p>
      */
     inline GetModelTemplateResult& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The Apache <a href="[[ApacheVtlUrl]]" target="_blank">Velocity Template
-     * Language (VTL)</a> template content used for the template resource.</p>
+     * <p>The Apache <a
+     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * target="_blank">Velocity Template Language (VTL)</a> template content used for
+     * the template resource.</p>
      */
     inline GetModelTemplateResult& WithValue(const char* value) { SetValue(value); return *this;}
 

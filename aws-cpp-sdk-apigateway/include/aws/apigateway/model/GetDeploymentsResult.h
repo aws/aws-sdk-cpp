@@ -45,10 +45,10 @@ namespace Model
    * update, or delete an existing deployment, make a <code>GET</code>,
    * <code>PATCH</code>, or <code>DELETE</code> request, respectively, on a specified
    * <a>Deployment</a> resource.</div> <div class="seeAlso"> <a
-   * href="[[AwsDocsUrlPrefix]]/apigateway/latest/developerguide/how-to-deploy-api.html">Deploying
+   * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-deploy-api.html">Deploying
    * an API</a>, <a
-   * href="[[AwsDocsUrlPrefix]]/cli/latest/reference/apigateway/get-deployment.html">AWS
-   * CLI</a>, <a href="[[AwsAmazonUrlPrefix]]/tools/">AWS SDKs</a> </div><p><h3>See
+   * href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-deployment.html">AWS
+   * CLI</a>, <a href="https://aws.amazon.com/tools/">AWS SDKs</a> </div><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/Deployments">AWS
    * API Reference</a></p>

@@ -116,49 +116,49 @@ namespace Model
 
     /**
      * <p>[Required] The new documentation content map of the targeted API entity.
-     * Enclosed key-value pairs are API-specific, but only Swagger-compliant key-value
+     * Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value
      * pairs can be exported and, hence, published.</p>
      */
     inline const Aws::String& GetProperties() const{ return m_properties; }
 
     /**
      * <p>[Required] The new documentation content map of the targeted API entity.
-     * Enclosed key-value pairs are API-specific, but only Swagger-compliant key-value
+     * Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value
      * pairs can be exported and, hence, published.</p>
      */
     inline void SetProperties(const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
     /**
      * <p>[Required] The new documentation content map of the targeted API entity.
-     * Enclosed key-value pairs are API-specific, but only Swagger-compliant key-value
+     * Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value
      * pairs can be exported and, hence, published.</p>
      */
     inline void SetProperties(Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
     /**
      * <p>[Required] The new documentation content map of the targeted API entity.
-     * Enclosed key-value pairs are API-specific, but only Swagger-compliant key-value
+     * Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value
      * pairs can be exported and, hence, published.</p>
      */
     inline void SetProperties(const char* value) { m_propertiesHasBeenSet = true; m_properties.assign(value); }
 
     /**
      * <p>[Required] The new documentation content map of the targeted API entity.
-     * Enclosed key-value pairs are API-specific, but only Swagger-compliant key-value
+     * Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value
      * pairs can be exported and, hence, published.</p>
      */
     inline CreateDocumentationPartRequest& WithProperties(const Aws::String& value) { SetProperties(value); return *this;}
 
     /**
      * <p>[Required] The new documentation content map of the targeted API entity.
-     * Enclosed key-value pairs are API-specific, but only Swagger-compliant key-value
+     * Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value
      * pairs can be exported and, hence, published.</p>
      */
     inline CreateDocumentationPartRequest& WithProperties(Aws::String&& value) { SetProperties(std::move(value)); return *this;}
 
     /**
      * <p>[Required] The new documentation content map of the targeted API entity.
-     * Enclosed key-value pairs are API-specific, but only Swagger-compliant key-value
+     * Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value
      * pairs can be exported and, hence, published.</p>
      */
     inline CreateDocumentationPartRequest& WithProperties(const char* value) { SetProperties(value); return *this;}

@@ -473,30 +473,38 @@ namespace Model
         virtual void PutEventsAsync(const Model::PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Running <code>PutPermission</code> permits the specified AWS account to put
-         * events to your account's default <i>event bus</i>. CloudWatch Events rules in
-         * your account are triggered by these events arriving to your default event bus.
-         * </p> <p>For another account to send events to your account, that external
-         * account must have a CloudWatch Events rule with your account's default event bus
-         * as a target.</p> <p>To enable multiple AWS accounts to put events to your
-         * default event bus, run <code>PutPermission</code> once for each of these
-         * accounts.</p> <p>The permission policy on the default event bus cannot exceed 10
-         * KB in size.</p><p><h3>See Also:</h3>   <a
+         * <p>Running <code>PutPermission</code> permits the specified AWS account or AWS
+         * organization to put events to your account's default <i>event bus</i>.
+         * CloudWatch Events rules in your account are triggered by these events arriving
+         * to your default event bus. </p> <p>For another account to send events to your
+         * account, that external account must have a CloudWatch Events rule with your
+         * account's default event bus as a target.</p> <p>To enable multiple AWS accounts
+         * to put events to your default event bus, run <code>PutPermission</code> once for
+         * each of these accounts. Or, if all the accounts are members of the same AWS
+         * organization, you can run <code>PutPermission</code> once specifying
+         * <code>Principal</code> as "*" and specifying the AWS organization ID in
+         * <code>Condition</code>, to grant permissions to all accounts in that
+         * organization.</p> <p>The permission policy on the default event bus cannot
+         * exceed 10 KB in size.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">AWS
          * API Reference</a></p>
          */
         virtual Model::PutPermissionOutcome PutPermission(const Model::PutPermissionRequest& request) const;
 
         /**
-         * <p>Running <code>PutPermission</code> permits the specified AWS account to put
-         * events to your account's default <i>event bus</i>. CloudWatch Events rules in
-         * your account are triggered by these events arriving to your default event bus.
-         * </p> <p>For another account to send events to your account, that external
-         * account must have a CloudWatch Events rule with your account's default event bus
-         * as a target.</p> <p>To enable multiple AWS accounts to put events to your
-         * default event bus, run <code>PutPermission</code> once for each of these
-         * accounts.</p> <p>The permission policy on the default event bus cannot exceed 10
-         * KB in size.</p><p><h3>See Also:</h3>   <a
+         * <p>Running <code>PutPermission</code> permits the specified AWS account or AWS
+         * organization to put events to your account's default <i>event bus</i>.
+         * CloudWatch Events rules in your account are triggered by these events arriving
+         * to your default event bus. </p> <p>For another account to send events to your
+         * account, that external account must have a CloudWatch Events rule with your
+         * account's default event bus as a target.</p> <p>To enable multiple AWS accounts
+         * to put events to your default event bus, run <code>PutPermission</code> once for
+         * each of these accounts. Or, if all the accounts are members of the same AWS
+         * organization, you can run <code>PutPermission</code> once specifying
+         * <code>Principal</code> as "*" and specifying the AWS organization ID in
+         * <code>Condition</code>, to grant permissions to all accounts in that
+         * organization.</p> <p>The permission policy on the default event bus cannot
+         * exceed 10 KB in size.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">AWS
          * API Reference</a></p>
          *
@@ -505,15 +513,19 @@ namespace Model
         virtual Model::PutPermissionOutcomeCallable PutPermissionCallable(const Model::PutPermissionRequest& request) const;
 
         /**
-         * <p>Running <code>PutPermission</code> permits the specified AWS account to put
-         * events to your account's default <i>event bus</i>. CloudWatch Events rules in
-         * your account are triggered by these events arriving to your default event bus.
-         * </p> <p>For another account to send events to your account, that external
-         * account must have a CloudWatch Events rule with your account's default event bus
-         * as a target.</p> <p>To enable multiple AWS accounts to put events to your
-         * default event bus, run <code>PutPermission</code> once for each of these
-         * accounts.</p> <p>The permission policy on the default event bus cannot exceed 10
-         * KB in size.</p><p><h3>See Also:</h3>   <a
+         * <p>Running <code>PutPermission</code> permits the specified AWS account or AWS
+         * organization to put events to your account's default <i>event bus</i>.
+         * CloudWatch Events rules in your account are triggered by these events arriving
+         * to your default event bus. </p> <p>For another account to send events to your
+         * account, that external account must have a CloudWatch Events rule with your
+         * account's default event bus as a target.</p> <p>To enable multiple AWS accounts
+         * to put events to your default event bus, run <code>PutPermission</code> once for
+         * each of these accounts. Or, if all the accounts are members of the same AWS
+         * organization, you can run <code>PutPermission</code> once specifying
+         * <code>Principal</code> as "*" and specifying the AWS organization ID in
+         * <code>Condition</code>, to grant permissions to all accounts in that
+         * organization.</p> <p>The permission policy on the default event bus cannot
+         * exceed 10 KB in size.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission">AWS
          * API Reference</a></p>
          *

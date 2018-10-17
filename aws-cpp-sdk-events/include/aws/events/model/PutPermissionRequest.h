@@ -17,6 +17,7 @@
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 #include <aws/events/CloudWatchEventsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/events/model/Condition.h>
 #include <utility>
 
 namespace Aws
@@ -90,77 +91,84 @@ namespace Model
     /**
      * <p>The 12-digit AWS account ID that you are permitting to put events to your
      * default event bus. Specify "*" to permit any account to put events to your
-     * default event bus.</p> <p>If you specify "*", avoid creating rules that may
-     * match undesirable events. To create more secure rules, make sure that the event
-     * pattern for each rule contains an <code>account</code> field with a specific
-     * account ID from which to receive events. Rules with an account field do not
-     * match any events sent from other accounts.</p>
+     * default event bus.</p> <p>If you specify "*" without specifying
+     * <code>Condition</code>, avoid creating rules that may match undesirable events.
+     * To create more secure rules, make sure that the event pattern for each rule
+     * contains an <code>account</code> field with a specific account ID from which to
+     * receive events. Rules with an account field do not match any events sent from
+     * other accounts.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
      * <p>The 12-digit AWS account ID that you are permitting to put events to your
      * default event bus. Specify "*" to permit any account to put events to your
-     * default event bus.</p> <p>If you specify "*", avoid creating rules that may
-     * match undesirable events. To create more secure rules, make sure that the event
-     * pattern for each rule contains an <code>account</code> field with a specific
-     * account ID from which to receive events. Rules with an account field do not
-     * match any events sent from other accounts.</p>
+     * default event bus.</p> <p>If you specify "*" without specifying
+     * <code>Condition</code>, avoid creating rules that may match undesirable events.
+     * To create more secure rules, make sure that the event pattern for each rule
+     * contains an <code>account</code> field with a specific account ID from which to
+     * receive events. Rules with an account field do not match any events sent from
+     * other accounts.</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
      * <p>The 12-digit AWS account ID that you are permitting to put events to your
      * default event bus. Specify "*" to permit any account to put events to your
-     * default event bus.</p> <p>If you specify "*", avoid creating rules that may
-     * match undesirable events. To create more secure rules, make sure that the event
-     * pattern for each rule contains an <code>account</code> field with a specific
-     * account ID from which to receive events. Rules with an account field do not
-     * match any events sent from other accounts.</p>
+     * default event bus.</p> <p>If you specify "*" without specifying
+     * <code>Condition</code>, avoid creating rules that may match undesirable events.
+     * To create more secure rules, make sure that the event pattern for each rule
+     * contains an <code>account</code> field with a specific account ID from which to
+     * receive events. Rules with an account field do not match any events sent from
+     * other accounts.</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
      * <p>The 12-digit AWS account ID that you are permitting to put events to your
      * default event bus. Specify "*" to permit any account to put events to your
-     * default event bus.</p> <p>If you specify "*", avoid creating rules that may
-     * match undesirable events. To create more secure rules, make sure that the event
-     * pattern for each rule contains an <code>account</code> field with a specific
-     * account ID from which to receive events. Rules with an account field do not
-     * match any events sent from other accounts.</p>
+     * default event bus.</p> <p>If you specify "*" without specifying
+     * <code>Condition</code>, avoid creating rules that may match undesirable events.
+     * To create more secure rules, make sure that the event pattern for each rule
+     * contains an <code>account</code> field with a specific account ID from which to
+     * receive events. Rules with an account field do not match any events sent from
+     * other accounts.</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
      * <p>The 12-digit AWS account ID that you are permitting to put events to your
      * default event bus. Specify "*" to permit any account to put events to your
-     * default event bus.</p> <p>If you specify "*", avoid creating rules that may
-     * match undesirable events. To create more secure rules, make sure that the event
-     * pattern for each rule contains an <code>account</code> field with a specific
-     * account ID from which to receive events. Rules with an account field do not
-     * match any events sent from other accounts.</p>
+     * default event bus.</p> <p>If you specify "*" without specifying
+     * <code>Condition</code>, avoid creating rules that may match undesirable events.
+     * To create more secure rules, make sure that the event pattern for each rule
+     * contains an <code>account</code> field with a specific account ID from which to
+     * receive events. Rules with an account field do not match any events sent from
+     * other accounts.</p>
      */
     inline PutPermissionRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
      * <p>The 12-digit AWS account ID that you are permitting to put events to your
      * default event bus. Specify "*" to permit any account to put events to your
-     * default event bus.</p> <p>If you specify "*", avoid creating rules that may
-     * match undesirable events. To create more secure rules, make sure that the event
-     * pattern for each rule contains an <code>account</code> field with a specific
-     * account ID from which to receive events. Rules with an account field do not
-     * match any events sent from other accounts.</p>
+     * default event bus.</p> <p>If you specify "*" without specifying
+     * <code>Condition</code>, avoid creating rules that may match undesirable events.
+     * To create more secure rules, make sure that the event pattern for each rule
+     * contains an <code>account</code> field with a specific account ID from which to
+     * receive events. Rules with an account field do not match any events sent from
+     * other accounts.</p>
      */
     inline PutPermissionRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
      * <p>The 12-digit AWS account ID that you are permitting to put events to your
      * default event bus. Specify "*" to permit any account to put events to your
-     * default event bus.</p> <p>If you specify "*", avoid creating rules that may
-     * match undesirable events. To create more secure rules, make sure that the event
-     * pattern for each rule contains an <code>account</code> field with a specific
-     * account ID from which to receive events. Rules with an account field do not
-     * match any events sent from other accounts.</p>
+     * default event bus.</p> <p>If you specify "*" without specifying
+     * <code>Condition</code>, avoid creating rules that may match undesirable events.
+     * To create more secure rules, make sure that the event pattern for each rule
+     * contains an <code>account</code> field with a specific account ID from which to
+     * receive events. Rules with an account field do not match any events sent from
+     * other accounts.</p>
      */
     inline PutPermissionRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
@@ -221,6 +229,77 @@ namespace Model
      */
     inline PutPermissionRequest& WithStatementId(const char* value) { SetStatementId(value); return *this;}
 
+
+    /**
+     * <p>This parameter enables you to limit the permission to accounts that fulfill a
+     * certain condition, such as being a member of a certain AWS organization. For
+     * more information about AWS Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If
+     * you specify <code>Condition</code> with an AWS organization ID, and specify "*"
+     * as the value for <code>Principal</code>, you grant permission to all the
+     * accounts in the named organization.</p> <p>The <code>Condition</code> is a JSON
+     * string which must contain <code>Type</code>, <code>Key</code>, and
+     * <code>Value</code> fields.</p>
+     */
+    inline const Condition& GetCondition() const{ return m_condition; }
+
+    /**
+     * <p>This parameter enables you to limit the permission to accounts that fulfill a
+     * certain condition, such as being a member of a certain AWS organization. For
+     * more information about AWS Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If
+     * you specify <code>Condition</code> with an AWS organization ID, and specify "*"
+     * as the value for <code>Principal</code>, you grant permission to all the
+     * accounts in the named organization.</p> <p>The <code>Condition</code> is a JSON
+     * string which must contain <code>Type</code>, <code>Key</code>, and
+     * <code>Value</code> fields.</p>
+     */
+    inline void SetCondition(const Condition& value) { m_conditionHasBeenSet = true; m_condition = value; }
+
+    /**
+     * <p>This parameter enables you to limit the permission to accounts that fulfill a
+     * certain condition, such as being a member of a certain AWS organization. For
+     * more information about AWS Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If
+     * you specify <code>Condition</code> with an AWS organization ID, and specify "*"
+     * as the value for <code>Principal</code>, you grant permission to all the
+     * accounts in the named organization.</p> <p>The <code>Condition</code> is a JSON
+     * string which must contain <code>Type</code>, <code>Key</code>, and
+     * <code>Value</code> fields.</p>
+     */
+    inline void SetCondition(Condition&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
+
+    /**
+     * <p>This parameter enables you to limit the permission to accounts that fulfill a
+     * certain condition, such as being a member of a certain AWS organization. For
+     * more information about AWS Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If
+     * you specify <code>Condition</code> with an AWS organization ID, and specify "*"
+     * as the value for <code>Principal</code>, you grant permission to all the
+     * accounts in the named organization.</p> <p>The <code>Condition</code> is a JSON
+     * string which must contain <code>Type</code>, <code>Key</code>, and
+     * <code>Value</code> fields.</p>
+     */
+    inline PutPermissionRequest& WithCondition(const Condition& value) { SetCondition(value); return *this;}
+
+    /**
+     * <p>This parameter enables you to limit the permission to accounts that fulfill a
+     * certain condition, such as being a member of a certain AWS organization. For
+     * more information about AWS Organizations, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What
+     * Is AWS Organizations</a> in the <i>AWS Organizations User Guide</i>.</p> <p>If
+     * you specify <code>Condition</code> with an AWS organization ID, and specify "*"
+     * as the value for <code>Principal</code>, you grant permission to all the
+     * accounts in the named organization.</p> <p>The <code>Condition</code> is a JSON
+     * string which must contain <code>Type</code>, <code>Key</code>, and
+     * <code>Value</code> fields.</p>
+     */
+    inline PutPermissionRequest& WithCondition(Condition&& value) { SetCondition(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_action;
@@ -231,6 +310,9 @@ namespace Model
 
     Aws::String m_statementId;
     bool m_statementIdHasBeenSet;
+
+    Condition m_condition;
+    bool m_conditionHasBeenSet;
   };
 
 } // namespace Model

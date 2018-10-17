@@ -163,50 +163,50 @@ namespace Model
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="[[JsonSchemaUrl]]" target="_blank">JSON schema draft 4</a>
-     * model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="[[JsonSchemaUrl]]" target="_blank">JSON schema draft 4</a>
-     * model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="[[JsonSchemaUrl]]" target="_blank">JSON schema draft 4</a>
-     * model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="[[JsonSchemaUrl]]" target="_blank">JSON schema draft 4</a>
-     * model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="[[JsonSchemaUrl]]" target="_blank">JSON schema draft 4</a>
-     * model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline CreateModelRequest& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="[[JsonSchemaUrl]]" target="_blank">JSON schema draft 4</a>
-     * model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline CreateModelRequest& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
 
     /**
      * <p>The schema for the model. For <code>application/json</code> models, this
-     * should be <a href="[[JsonSchemaUrl]]" target="_blank">JSON schema draft 4</a>
-     * model.</p>
+     * should be <a href="https://tools.ietf.org/html/draft-zyp-json-schema-04"
+     * target="_blank">JSON schema draft 4</a> model.</p>
      */
     inline CreateModelRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
 

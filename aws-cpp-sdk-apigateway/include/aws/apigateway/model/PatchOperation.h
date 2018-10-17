@@ -98,99 +98,106 @@ namespace Model
 
     /**
      * <p>The <code>op</code> operation's target, as identified by a <a
-     * href="[[JsonPointerRefUrl]]">JSON Pointer</a> value that references a location
-     * within the targeted resource. For example, if the target resource has an
-     * updateable property of <code>{"name":"value"}</code>, the path for this property
-     * is <code>/name</code>. If the <code>name</code> property value is a JSON object
-     * (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the path for the
-     * <code>child/name</code> property will be <code>/name/child~1name</code>. Any
-     * slash ("/") character appearing in path names must be escaped with "~1", as
-     * shown in the example above. Each <code>op</code> operation can have only one
-     * <code>path</code> associated with it.</p>
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
      * <p>The <code>op</code> operation's target, as identified by a <a
-     * href="[[JsonPointerRefUrl]]">JSON Pointer</a> value that references a location
-     * within the targeted resource. For example, if the target resource has an
-     * updateable property of <code>{"name":"value"}</code>, the path for this property
-     * is <code>/name</code>. If the <code>name</code> property value is a JSON object
-     * (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the path for the
-     * <code>child/name</code> property will be <code>/name/child~1name</code>. Any
-     * slash ("/") character appearing in path names must be escaped with "~1", as
-     * shown in the example above. Each <code>op</code> operation can have only one
-     * <code>path</code> associated with it.</p>
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p>The <code>op</code> operation's target, as identified by a <a
-     * href="[[JsonPointerRefUrl]]">JSON Pointer</a> value that references a location
-     * within the targeted resource. For example, if the target resource has an
-     * updateable property of <code>{"name":"value"}</code>, the path for this property
-     * is <code>/name</code>. If the <code>name</code> property value is a JSON object
-     * (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the path for the
-     * <code>child/name</code> property will be <code>/name/child~1name</code>. Any
-     * slash ("/") character appearing in path names must be escaped with "~1", as
-     * shown in the example above. Each <code>op</code> operation can have only one
-     * <code>path</code> associated with it.</p>
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The <code>op</code> operation's target, as identified by a <a
-     * href="[[JsonPointerRefUrl]]">JSON Pointer</a> value that references a location
-     * within the targeted resource. For example, if the target resource has an
-     * updateable property of <code>{"name":"value"}</code>, the path for this property
-     * is <code>/name</code>. If the <code>name</code> property value is a JSON object
-     * (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the path for the
-     * <code>child/name</code> property will be <code>/name/child~1name</code>. Any
-     * slash ("/") character appearing in path names must be escaped with "~1", as
-     * shown in the example above. Each <code>op</code> operation can have only one
-     * <code>path</code> associated with it.</p>
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
      * <p>The <code>op</code> operation's target, as identified by a <a
-     * href="[[JsonPointerRefUrl]]">JSON Pointer</a> value that references a location
-     * within the targeted resource. For example, if the target resource has an
-     * updateable property of <code>{"name":"value"}</code>, the path for this property
-     * is <code>/name</code>. If the <code>name</code> property value is a JSON object
-     * (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the path for the
-     * <code>child/name</code> property will be <code>/name/child~1name</code>. Any
-     * slash ("/") character appearing in path names must be escaped with "~1", as
-     * shown in the example above. Each <code>op</code> operation can have only one
-     * <code>path</code> associated with it.</p>
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline PatchOperation& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
      * <p>The <code>op</code> operation's target, as identified by a <a
-     * href="[[JsonPointerRefUrl]]">JSON Pointer</a> value that references a location
-     * within the targeted resource. For example, if the target resource has an
-     * updateable property of <code>{"name":"value"}</code>, the path for this property
-     * is <code>/name</code>. If the <code>name</code> property value is a JSON object
-     * (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the path for the
-     * <code>child/name</code> property will be <code>/name/child~1name</code>. Any
-     * slash ("/") character appearing in path names must be escaped with "~1", as
-     * shown in the example above. Each <code>op</code> operation can have only one
-     * <code>path</code> associated with it.</p>
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline PatchOperation& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The <code>op</code> operation's target, as identified by a <a
-     * href="[[JsonPointerRefUrl]]">JSON Pointer</a> value that references a location
-     * within the targeted resource. For example, if the target resource has an
-     * updateable property of <code>{"name":"value"}</code>, the path for this property
-     * is <code>/name</code>. If the <code>name</code> property value is a JSON object
-     * (e.g., <code>{"name": {"child/name": "child-value"}}</code>), the path for the
-     * <code>child/name</code> property will be <code>/name/child~1name</code>. Any
-     * slash ("/") character appearing in path names must be escaped with "~1", as
-     * shown in the example above. Each <code>op</code> operation can have only one
-     * <code>path</code> associated with it.</p>
+     * href="https://tools.ietf.org/html/draft-ietf-appsawg-json-pointer-08">JSON
+     * Pointer</a> value that references a location within the targeted resource. For
+     * example, if the target resource has an updateable property of
+     * <code>{"name":"value"}</code>, the path for this property is <code>/name</code>.
+     * If the <code>name</code> property value is a JSON object (e.g., <code>{"name":
+     * {"child/name": "child-value"}}</code>), the path for the <code>child/name</code>
+     * property will be <code>/name/child~1name</code>. Any slash ("/") character
+     * appearing in path names must be escaped with "~1", as shown in the example
+     * above. Each <code>op</code> operation can have only one <code>path</code>
+     * associated with it.</p>
      */
     inline PatchOperation& WithPath(const char* value) { SetPath(value); return *this;}
 
@@ -200,7 +207,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
@@ -210,7 +217,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
@@ -220,7 +227,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
@@ -230,7 +237,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
@@ -240,7 +247,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline PatchOperation& WithValue(const Aws::String& value) { SetValue(value); return *this;}
@@ -250,7 +257,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline PatchOperation& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
@@ -260,7 +267,7 @@ namespace Model
      * <code>add</code> or <code>replace</code> operation. When using AWS CLI to update
      * a property of a JSON value, enclose the JSON object with a pair of single quotes
      * in a Linux shell, e.g., '{"a": ...}'. In a Windows shell, see <a
-     * href="[[AwsDocsUrlPrefix]]/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>.</p>
      */
     inline PatchOperation& WithValue(const char* value) { SetValue(value); return *this;}
