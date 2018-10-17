@@ -88,7 +88,7 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
 
     AWS_LOGSTREAM_DEBUG(GetLogTag(), "API handle " << GetOpenHandle());
     SetConnectionPoolManager(Aws::New<WinINetConnectionPoolMgr>(GetLogTag(),
-        GetOpenHandle(), config.maxConnections, config.requestTimeoutMs, config.connectTimeoutMs));
+        GetOpenHandle(), config.maxConnections, config.requestTimeoutMs, config.connectTimeoutMs, config.enableTcpKeepAlive, config.tcpKeepAliveIntervalMs));
 }
 
 

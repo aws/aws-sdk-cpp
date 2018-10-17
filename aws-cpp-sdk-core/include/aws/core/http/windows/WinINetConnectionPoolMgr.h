@@ -35,6 +35,8 @@ namespace Aws
              * configures connect calls with the timeouts. MaxConnectionsPerHost sets the queue sizes for each endpoint.
              */
             WinINetConnectionPoolMgr(void* iOpenHandle, unsigned maxConnectionsPerHost, long requestTimeout, long connectTimeout);
+            WinINetConnectionPoolMgr(void* iOpenHandle, unsigned maxConnectionsPerHost, long requestTimeout, long connectTimeout,
+                                     bool enableTcpKeepAlive, unsigned long tcpKeepAliveIntervalMs);
 
             virtual ~WinINetConnectionPoolMgr();
 

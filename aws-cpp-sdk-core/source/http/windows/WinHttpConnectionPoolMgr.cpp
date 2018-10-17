@@ -29,6 +29,13 @@ WinConnectionPoolMgr(iOpenHandle, maxConnectionsPerHost, requestTimeout, connect
 
 }
 
+WinHttpConnectionPoolMgr::WinHttpConnectionPoolMgr(void* iOpenHandle, unsigned maxConnectionsPerHost, long requestTimeout, long connectTimeout,
+                                                   bool enableTcpKeepAlive, unsigned long tcpKeepAliveIntervalMs) :
+WinConnectionPoolMgr(iOpenHandle, maxConnectionsPerHost, requestTimeout, connectTimeout, enableTcpKeepAlive, tcpKeepAliveIntervalMs)
+{
+
+}
+
 WinHttpConnectionPoolMgr::~WinHttpConnectionPoolMgr()
 {
     DoCleanup();

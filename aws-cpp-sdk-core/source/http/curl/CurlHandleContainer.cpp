@@ -24,9 +24,9 @@ using namespace Aws::Http;
 static const char* CURL_HANDLE_CONTAINER_TAG = "CurlHandleContainer";
 
 
-CurlHandleContainer::CurlHandleContainer(unsigned maxSize, long requestTimeout, long connectTimeout) :
+CurlHandleContainer::CurlHandleContainer(unsigned maxSize, long requestTimeout, long connectTimeout, bool enableTcpKeepAlive, unsigned long tcpKeepAliveIntervalMs, unsigned long lowSpeedLimit) :
                 m_maxPoolSize(maxSize), m_requestTimeout(requestTimeout), m_connectTimeout(connectTimeout),
-                m_poolSize(0)
+                m_enableTcpKeepAlive(enableTcpKeepAlive), m_tcpKeepAliveIntervalMs(tcpKeepAliveIntervalMs), m_lowSpeedLimit(lowSpeedLimit), m_poolSize(0)
 {
     AWS_LOGSTREAM_INFO(CURL_HANDLE_CONTAINER_TAG, "Initializing CurlHandleContainer with size " << maxSize);
 }
@@ -112,9 +112,14 @@ void CurlHandleContainer::SetDefaultOptionsOnHandle(CURL* handle)
     //for timeouts to work in a multi-threaded context,
     //always turn signals off. This also forces dns queries to
     //not be included in the timeout calculations.
+    //the name m_requestTimeout seems to be misleading here, it should be associated with CURLOPT_TIMEOUT_MS,
+    //but we will not do that right now so as not to change the current behavior. The parameter is 0 here, which means never time out.
     curl_easy_setopt(handle, CURLOPT_NOSIGNAL, 1L);
     curl_easy_setopt(handle, CURLOPT_TIMEOUT_MS, 0L);
     curl_easy_setopt(handle, CURLOPT_CONNECTTIMEOUT_MS, m_connectTimeout);
-    curl_easy_setopt(handle, CURLOPT_LOW_SPEED_LIMIT, 1L);
+    curl_easy_setopt(handle, CURLOPT_LOW_SPEED_LIMIT, m_lowSpeedLimit);
     curl_easy_setopt(handle, CURLOPT_LOW_SPEED_TIME, m_requestTimeout / 1000);
+    curl_easy_setopt(handle, CURLOPT_TCP_KEEPALIVE, m_enableTcpKeepAlive ? 1L : 0L);
+    curl_easy_setopt(handle, CURLOPT_TCP_KEEPINTVL, m_tcpKeepAliveIntervalMs);
+    curl_easy_setopt(handle, CURLOPT_TCP_KEEPIDLE, m_tcpKeepAliveIntervalMs);
 }

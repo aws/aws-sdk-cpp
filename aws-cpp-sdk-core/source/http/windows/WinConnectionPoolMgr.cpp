@@ -25,16 +25,38 @@ using namespace Aws::Http;
 const char WIN_CONNECTION_CONTAINER_TAG[] = "WinConnectionContainer";
 
 WinConnectionPoolMgr::WinConnectionPoolMgr(void* iOpenHandle,
-                                                   unsigned maxConnectionsPerHost, 
-                                                   long requestTimeoutMs,
-                                                   long connectTimeoutMs) :
+                                           unsigned maxConnectionsPerHost, 
+                                           long requestTimeoutMs,
+                                           long connectTimeoutMs) :
     m_iOpenHandle(iOpenHandle),
     m_maxConnectionsPerHost(maxConnectionsPerHost),
     m_requestTimeoutMs(requestTimeoutMs),
-    m_connectTimeoutMs(connectTimeoutMs)
+    m_connectTimeoutMs(connectTimeoutMs),
+    m_enableTcpKeepAlive(true),
+    m_tcpKeepAliveIntervalMs(30000)
 {
     AWS_LOGSTREAM_INFO(GetLogTag(), "Creating connection pool mgr with handle " << iOpenHandle << ", and max connections per host "
          << maxConnectionsPerHost <<  ", request timeout " << requestTimeoutMs << " ms, and connect timeout in " << connectTimeoutMs << " ms.");
+
+}
+
+WinConnectionPoolMgr::WinConnectionPoolMgr(void* iOpenHandle,
+                                           unsigned maxConnectionsPerHost, 
+                                           long requestTimeoutMs,
+                                           long connectTimeoutMs,
+                                           bool enableTcpKeepAlive,
+                                           unsigned long tcpKeepAliveIntervalMs) :
+    m_iOpenHandle(iOpenHandle),
+    m_maxConnectionsPerHost(maxConnectionsPerHost),
+    m_requestTimeoutMs(requestTimeoutMs),
+    m_connectTimeoutMs(connectTimeoutMs),
+    m_enableTcpKeepAlive(enableTcpKeepAlive),
+    m_tcpKeepAliveIntervalMs(tcpKeepAliveIntervalMs)
+{
+    AWS_LOGSTREAM_INFO(GetLogTag(), "Creating connection pool mgr with handle " << iOpenHandle << ", and max connections per host "
+         << maxConnectionsPerHost <<  ", request timeout " << requestTimeoutMs << " ms, and connect timeout in " << connectTimeoutMs << " ms, "
+         << (enableTcpKeepAlive ? "enabling" : "disabling") << " TCP keep-alive.");
+
 }
 
 WinConnectionPoolMgr::~WinConnectionPoolMgr()

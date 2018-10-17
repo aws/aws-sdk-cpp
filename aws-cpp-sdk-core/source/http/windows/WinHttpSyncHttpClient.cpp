@@ -96,9 +96,16 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
         }
     }
 
+    // WinHTTP doesn't have option to turn off keep-alive, we will set a large interval to try our best.
+    DWORD keepAliveIntervalMs = config.enableTcpKeepAlive ? config.tcpKeepAliveIntervalMs : ULONG_MAX;
+    if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_WEB_SOCKET_KEEPALIVE_INTERVAL, &keepAliveIntervalMs, sizeof(keepAliveIntervalMs)))
+    {
+        AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting TCP keep-alive interval with error code: " << GetLastError());
+    }
+
     AWS_LOGSTREAM_DEBUG(GetLogTag(), "API handle " << GetOpenHandle());
     SetConnectionPoolManager(Aws::New<WinHttpConnectionPoolMgr>(GetLogTag(),
-        GetOpenHandle(), config.maxConnections, config.requestTimeoutMs, config.connectTimeoutMs));
+        GetOpenHandle(), config.maxConnections, config.requestTimeoutMs, config.connectTimeoutMs, config.enableTcpKeepAlive, config.tcpKeepAliveIntervalMs));
 }
 
 

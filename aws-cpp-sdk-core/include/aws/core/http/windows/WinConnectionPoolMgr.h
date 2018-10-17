@@ -39,6 +39,7 @@ namespace Aws
             * Constructs instance, using iOpenHandle from InternetOpen api call, and maxConnectionsPerHost.
             */
             WinConnectionPoolMgr(void* iOpenHandle, unsigned maxConnectionsPerHost, long requestTimeout, long connectTimeout);
+            WinConnectionPoolMgr(void* iOpenHandle, unsigned maxConnectionsPerHost, long requestTimeout, long connectTimeout, bool enableTcpKeepAlive, unsigned long tcpKeepAliveIntervalMs);
 
             /*
             * Cleans up all connections that have been allocated (might take a while).
@@ -88,9 +89,17 @@ namespace Aws
              */
             long GetRequestTimeout() const { return m_requestTimeoutMs; }
             /**
-             * Gets the configured connection timeout for thsi connection pool.
+             * Gets the configured connection timeout for this connection pool.
              */
             long GetConnectTimeout() const { return m_connectTimeoutMs; }
+            /**
+             * Whether sending TCP keep-alive packet for this connection pool.
+             */
+            bool GetEnableTcpKeepAlive() const { return m_enableTcpKeepAlive;  }
+            /**
+             * Gets the interval to send a keep-alive packet for this connection pool.
+             */
+            unsigned long GetTcpKeepAliveInterval() const { return m_tcpKeepAliveIntervalMs; }
             /**
              * Cleans up all open resources.
              */
@@ -113,6 +122,8 @@ namespace Aws
             unsigned m_maxConnectionsPerHost;
             long m_requestTimeoutMs;
             long m_connectTimeoutMs;
+            bool m_enableTcpKeepAlive;
+            unsigned long m_tcpKeepAliveIntervalMs;
             std::mutex m_containerLock;
         };
 
