@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * Returned list of created schedule actions.<p><h3>See Also:</h3>   <a
+   * List of actions that have been created in the schedule.<p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchScheduleActionCreateResult">AWS
    * API Reference</a></p>
    */
@@ -49,37 +50,37 @@ namespace Model
 
 
     /**
-     * Returned list of created schedule actions.
+     * List of actions that have been created in the schedule.
      */
     inline const Aws::Vector<ScheduleAction>& GetScheduleActions() const{ return m_scheduleActions; }
 
     /**
-     * Returned list of created schedule actions.
+     * List of actions that have been created in the schedule.
      */
     inline void SetScheduleActions(const Aws::Vector<ScheduleAction>& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions = value; }
 
     /**
-     * Returned list of created schedule actions.
+     * List of actions that have been created in the schedule.
      */
     inline void SetScheduleActions(Aws::Vector<ScheduleAction>&& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions = std::move(value); }
 
     /**
-     * Returned list of created schedule actions.
+     * List of actions that have been created in the schedule.
      */
     inline BatchScheduleActionCreateResult& WithScheduleActions(const Aws::Vector<ScheduleAction>& value) { SetScheduleActions(value); return *this;}
 
     /**
-     * Returned list of created schedule actions.
+     * List of actions that have been created in the schedule.
      */
     inline BatchScheduleActionCreateResult& WithScheduleActions(Aws::Vector<ScheduleAction>&& value) { SetScheduleActions(std::move(value)); return *this;}
 
     /**
-     * Returned list of created schedule actions.
+     * List of actions that have been created in the schedule.
      */
     inline BatchScheduleActionCreateResult& AddScheduleActions(const ScheduleAction& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions.push_back(value); return *this; }
 
     /**
-     * Returned list of created schedule actions.
+     * List of actions that have been created in the schedule.
      */
     inline BatchScheduleActionCreateResult& AddScheduleActions(ScheduleAction&& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions.push_back(std::move(value)); return *this; }
 

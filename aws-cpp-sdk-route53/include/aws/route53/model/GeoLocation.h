@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about a geo location.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A complex type that contains information about a geographic
+   * location.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GeoLocation">AWS
    * API Reference</a></p>
    */
@@ -149,44 +149,44 @@ namespace Model
 
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline const Aws::String& GetSubdivisionCode() const{ return m_subdivisionCode; }
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline void SetSubdivisionCode(const Aws::String& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = value; }
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline void SetSubdivisionCode(Aws::String&& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = std::move(value); }
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline void SetSubdivisionCode(const char* value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode.assign(value); }
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline GeoLocation& WithSubdivisionCode(const Aws::String& value) { SetSubdivisionCode(value); return *this;}
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline GeoLocation& WithSubdivisionCode(Aws::String&& value) { SetSubdivisionCode(std::move(value)); return *this;}
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline GeoLocation& WithSubdivisionCode(const char* value) { SetSubdivisionCode(value); return *this;}
 

@@ -37,7 +37,7 @@ namespace MediaLive
 namespace Model
 {
   /**
-   * Response for a describe schedule call.<p><h3>See Also:</h3>   <a
+   * Placeholder documentation for DescribeScheduleResponse<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeScheduleResponse">AWS
    * API Reference</a></p>
    */
@@ -86,37 +86,37 @@ namespace Model
 
 
     /**
-     * The list of schedule actions.
+     * The list of actions in the schedule.
      */
     inline const Aws::Vector<ScheduleAction>& GetScheduleActions() const{ return m_scheduleActions; }
 
     /**
-     * The list of schedule actions.
+     * The list of actions in the schedule.
      */
     inline void SetScheduleActions(const Aws::Vector<ScheduleAction>& value) { m_scheduleActions = value; }
 
     /**
-     * The list of schedule actions.
+     * The list of actions in the schedule.
      */
     inline void SetScheduleActions(Aws::Vector<ScheduleAction>&& value) { m_scheduleActions = std::move(value); }
 
     /**
-     * The list of schedule actions.
+     * The list of actions in the schedule.
      */
     inline DescribeScheduleResult& WithScheduleActions(const Aws::Vector<ScheduleAction>& value) { SetScheduleActions(value); return *this;}
 
     /**
-     * The list of schedule actions.
+     * The list of actions in the schedule.
      */
     inline DescribeScheduleResult& WithScheduleActions(Aws::Vector<ScheduleAction>&& value) { SetScheduleActions(std::move(value)); return *this;}
 
     /**
-     * The list of schedule actions.
+     * The list of actions in the schedule.
      */
     inline DescribeScheduleResult& AddScheduleActions(const ScheduleAction& value) { m_scheduleActions.push_back(value); return *this; }
 
     /**
-     * The list of schedule actions.
+     * The list of actions in the schedule.
      */
     inline DescribeScheduleResult& AddScheduleActions(ScheduleAction&& value) { m_scheduleActions.push_back(std::move(value)); return *this; }
 

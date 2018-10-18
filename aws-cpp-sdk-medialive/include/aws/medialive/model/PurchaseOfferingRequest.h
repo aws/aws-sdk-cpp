@@ -176,6 +176,56 @@ namespace Model
      */
     inline PurchaseOfferingRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
+
+    /**
+     * Requested reservation start time (UTC) in ISO-8601 format. The specified time
+     * must be between the first day of the current month and one year from now. If no
+     * value is given, the default is now.
+     */
+    inline const Aws::String& GetStart() const{ return m_start; }
+
+    /**
+     * Requested reservation start time (UTC) in ISO-8601 format. The specified time
+     * must be between the first day of the current month and one year from now. If no
+     * value is given, the default is now.
+     */
+    inline void SetStart(const Aws::String& value) { m_startHasBeenSet = true; m_start = value; }
+
+    /**
+     * Requested reservation start time (UTC) in ISO-8601 format. The specified time
+     * must be between the first day of the current month and one year from now. If no
+     * value is given, the default is now.
+     */
+    inline void SetStart(Aws::String&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
+
+    /**
+     * Requested reservation start time (UTC) in ISO-8601 format. The specified time
+     * must be between the first day of the current month and one year from now. If no
+     * value is given, the default is now.
+     */
+    inline void SetStart(const char* value) { m_startHasBeenSet = true; m_start.assign(value); }
+
+    /**
+     * Requested reservation start time (UTC) in ISO-8601 format. The specified time
+     * must be between the first day of the current month and one year from now. If no
+     * value is given, the default is now.
+     */
+    inline PurchaseOfferingRequest& WithStart(const Aws::String& value) { SetStart(value); return *this;}
+
+    /**
+     * Requested reservation start time (UTC) in ISO-8601 format. The specified time
+     * must be between the first day of the current month and one year from now. If no
+     * value is given, the default is now.
+     */
+    inline PurchaseOfferingRequest& WithStart(Aws::String&& value) { SetStart(std::move(value)); return *this;}
+
+    /**
+     * Requested reservation start time (UTC) in ISO-8601 format. The specified time
+     * must be between the first day of the current month and one year from now. If no
+     * value is given, the default is now.
+     */
+    inline PurchaseOfferingRequest& WithStart(const char* value) { SetStart(value); return *this;}
+
   private:
 
     int m_count;
@@ -189,6 +239,9 @@ namespace Model
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet;
+
+    Aws::String m_start;
+    bool m_startHasBeenSet;
   };
 
 } // namespace Model

@@ -36,7 +36,8 @@ namespace MediaLive
 namespace Model
 {
   /**
-   * Response to a batch update schedule call.<p><h3>See Also:</h3>   <a
+   * Placeholder documentation for BatchUpdateScheduleResponse<p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateScheduleResponse">AWS
    * API Reference</a></p>
    */

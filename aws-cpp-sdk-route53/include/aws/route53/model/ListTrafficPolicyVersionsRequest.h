@@ -186,7 +186,7 @@ namespace Model
      * policy has more than <code>MaxItems</code> versions, the value of
      * <code>IsTruncated</code> in the response is <code>true</code>, and the value of
      * the <code>TrafficPolicyVersionMarker</code> element is the ID of the first
-     * version that Amazon Route 53 will return if you submit another request.</p>
+     * version that Route 53 will return if you submit another request.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
@@ -196,7 +196,7 @@ namespace Model
      * policy has more than <code>MaxItems</code> versions, the value of
      * <code>IsTruncated</code> in the response is <code>true</code>, and the value of
      * the <code>TrafficPolicyVersionMarker</code> element is the ID of the first
-     * version that Amazon Route 53 will return if you submit another request.</p>
+     * version that Route 53 will return if you submit another request.</p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
@@ -206,7 +206,7 @@ namespace Model
      * policy has more than <code>MaxItems</code> versions, the value of
      * <code>IsTruncated</code> in the response is <code>true</code>, and the value of
      * the <code>TrafficPolicyVersionMarker</code> element is the ID of the first
-     * version that Amazon Route 53 will return if you submit another request.</p>
+     * version that Route 53 will return if you submit another request.</p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
@@ -216,7 +216,7 @@ namespace Model
      * policy has more than <code>MaxItems</code> versions, the value of
      * <code>IsTruncated</code> in the response is <code>true</code>, and the value of
      * the <code>TrafficPolicyVersionMarker</code> element is the ID of the first
-     * version that Amazon Route 53 will return if you submit another request.</p>
+     * version that Route 53 will return if you submit another request.</p>
      */
     inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
 
@@ -226,7 +226,7 @@ namespace Model
      * policy has more than <code>MaxItems</code> versions, the value of
      * <code>IsTruncated</code> in the response is <code>true</code>, and the value of
      * the <code>TrafficPolicyVersionMarker</code> element is the ID of the first
-     * version that Amazon Route 53 will return if you submit another request.</p>
+     * version that Route 53 will return if you submit another request.</p>
      */
     inline ListTrafficPolicyVersionsRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
@@ -236,7 +236,7 @@ namespace Model
      * policy has more than <code>MaxItems</code> versions, the value of
      * <code>IsTruncated</code> in the response is <code>true</code>, and the value of
      * the <code>TrafficPolicyVersionMarker</code> element is the ID of the first
-     * version that Amazon Route 53 will return if you submit another request.</p>
+     * version that Route 53 will return if you submit another request.</p>
      */
     inline ListTrafficPolicyVersionsRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
@@ -246,7 +246,7 @@ namespace Model
      * policy has more than <code>MaxItems</code> versions, the value of
      * <code>IsTruncated</code> in the response is <code>true</code>, and the value of
      * the <code>TrafficPolicyVersionMarker</code> element is the ID of the first
-     * version that Amazon Route 53 will return if you submit another request.</p>
+     * version that Route 53 will return if you submit another request.</p>
      */
     inline ListTrafficPolicyVersionsRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 

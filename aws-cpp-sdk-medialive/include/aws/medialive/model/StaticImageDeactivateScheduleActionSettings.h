@@ -32,7 +32,8 @@ namespace Model
 {
 
   /**
-   * Static image deactivate.<p><h3>See Also:</h3>   <a
+   * Settings for the action to deactivate the image in a specific layer.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StaticImageDeactivateScheduleActionSettings">AWS
    * API Reference</a></p>
    */
@@ -46,39 +47,33 @@ namespace Model
 
 
     /**
-     * The time in milliseconds for the image to fade out. Defaults to 0.
+     * The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
      */
     inline int GetFadeOut() const{ return m_fadeOut; }
 
     /**
-     * The time in milliseconds for the image to fade out. Defaults to 0.
+     * The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
      */
     inline void SetFadeOut(int value) { m_fadeOutHasBeenSet = true; m_fadeOut = value; }
 
     /**
-     * The time in milliseconds for the image to fade out. Defaults to 0.
+     * The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
      */
     inline StaticImageDeactivateScheduleActionSettings& WithFadeOut(int value) { SetFadeOut(value); return *this;}
 
 
     /**
-     * The Z order of the inserted image.  Images with higher layer values will be
-     * inserted on top of images with lower layer values. Permitted values are 0-7
-     * inclusive. Defaults to 0.
+     * The image overlay layer to deactivate, 0 to 7. Default is 0.
      */
     inline int GetLayer() const{ return m_layer; }
 
     /**
-     * The Z order of the inserted image.  Images with higher layer values will be
-     * inserted on top of images with lower layer values. Permitted values are 0-7
-     * inclusive. Defaults to 0.
+     * The image overlay layer to deactivate, 0 to 7. Default is 0.
      */
     inline void SetLayer(int value) { m_layerHasBeenSet = true; m_layer = value; }
 
     /**
-     * The Z order of the inserted image.  Images with higher layer values will be
-     * inserted on top of images with lower layer values. Permitted values are 0-7
-     * inclusive. Defaults to 0.
+     * The image overlay layer to deactivate, 0 to 7. Default is 0.
      */
     inline StaticImageDeactivateScheduleActionSettings& WithLayer(int value) { SetLayer(value); return *this;}
 

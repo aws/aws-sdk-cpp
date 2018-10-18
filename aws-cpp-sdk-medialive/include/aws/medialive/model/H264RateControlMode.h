@@ -27,6 +27,7 @@ namespace Model
   {
     NOT_SET,
     CBR,
+    QVBR,
     VBR
   };
 

@@ -196,7 +196,7 @@ namespace Model
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
      * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Amazon Route 53 returns up to 100 configurations.</p>
+     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
      */
     inline const Aws::String& GetMaxResults() const{ return m_maxResults; }
 
@@ -206,7 +206,7 @@ namespace Model
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
      * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Amazon Route 53 returns up to 100 configurations.</p>
+     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
      */
     inline void SetMaxResults(const Aws::String& value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -216,7 +216,7 @@ namespace Model
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
      * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Amazon Route 53 returns up to 100 configurations.</p>
+     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
      */
     inline void SetMaxResults(Aws::String&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::move(value); }
 
@@ -226,7 +226,7 @@ namespace Model
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
      * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Amazon Route 53 returns up to 100 configurations.</p>
+     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
      */
     inline void SetMaxResults(const char* value) { m_maxResultsHasBeenSet = true; m_maxResults.assign(value); }
 
@@ -236,7 +236,7 @@ namespace Model
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
      * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Amazon Route 53 returns up to 100 configurations.</p>
+     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
      */
     inline ListQueryLoggingConfigsRequest& WithMaxResults(const Aws::String& value) { SetMaxResults(value); return *this;}
 
@@ -246,7 +246,7 @@ namespace Model
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
      * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Amazon Route 53 returns up to 100 configurations.</p>
+     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
      */
     inline ListQueryLoggingConfigsRequest& WithMaxResults(Aws::String&& value) { SetMaxResults(std::move(value)); return *this;}
 
@@ -256,7 +256,7 @@ namespace Model
      * account has more than <code>MaxResults</code> configurations, use the value of
      * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
      * page of results.</p> <p>If you don't specify a value for
-     * <code>MaxResults</code>, Amazon Route 53 returns up to 100 configurations.</p>
+     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
      */
     inline ListQueryLoggingConfigsRequest& WithMaxResults(const char* value) { SetMaxResults(value); return *this;}
 

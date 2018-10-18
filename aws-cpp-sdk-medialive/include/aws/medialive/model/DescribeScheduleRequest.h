@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * Request for a describe schedule call.<p><h3>See Also:</h3>   <a
+   * Placeholder documentation for DescribeScheduleRequest<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeScheduleRequest">AWS
    * API Reference</a></p>
    */

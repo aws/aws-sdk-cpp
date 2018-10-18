@@ -50,32 +50,27 @@ namespace Model
 
 
     /**
-     * <p>(Private hosted zones only) The region in which you created an Amazon
-     * VPC.</p>
+     * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
      */
     inline const VPCRegion& GetVPCRegion() const{ return m_vPCRegion; }
 
     /**
-     * <p>(Private hosted zones only) The region in which you created an Amazon
-     * VPC.</p>
+     * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
      */
     inline void SetVPCRegion(const VPCRegion& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = value; }
 
     /**
-     * <p>(Private hosted zones only) The region in which you created an Amazon
-     * VPC.</p>
+     * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
      */
     inline void SetVPCRegion(VPCRegion&& value) { m_vPCRegionHasBeenSet = true; m_vPCRegion = std::move(value); }
 
     /**
-     * <p>(Private hosted zones only) The region in which you created an Amazon
-     * VPC.</p>
+     * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
      */
     inline VPC& WithVPCRegion(const VPCRegion& value) { SetVPCRegion(value); return *this;}
 
     /**
-     * <p>(Private hosted zones only) The region in which you created an Amazon
-     * VPC.</p>
+     * <p>(Private hosted zones only) The region that an Amazon VPC was created in.</p>
      */
     inline VPC& WithVPCRegion(VPCRegion&& value) { SetVPCRegion(std::move(value)); return *this;}
 

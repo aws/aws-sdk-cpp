@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information about the request to create a hosted
-   * zone.</p><p><h3>See Also:</h3>   <a
+   * <p>A complex type that contains information about the request to create a public
+   * or private hosted zone.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateHostedZoneRequest">AWS
    * API Reference</a></p>
    */
@@ -49,100 +49,93 @@ namespace Model
 
 
     /**
-     * <p>The name of the domain. For resource record types that include a domain name,
-     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
-     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
-     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
-     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
-     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
-     * have registered with your DNS registrar. If your domain name is registered with
-     * a registrar other than Amazon Route 53, change the name servers for your domain
-     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
-     * returns in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. Specify a fully qualified domain name, for example,
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
+     * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
+     * zone, this is the name you have registered with your DNS registrar. If your
+     * domain name is registered with a registrar other than Route 53, change the name
+     * servers for your domain to the set of <code>NameServers</code> that
+     * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the domain. For resource record types that include a domain name,
-     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
-     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
-     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
-     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
-     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
-     * have registered with your DNS registrar. If your domain name is registered with
-     * a registrar other than Amazon Route 53, change the name servers for your domain
-     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
-     * returns in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. Specify a fully qualified domain name, for example,
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
+     * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
+     * zone, this is the name you have registered with your DNS registrar. If your
+     * domain name is registered with a registrar other than Route 53, change the name
+     * servers for your domain to the set of <code>NameServers</code> that
+     * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the domain. For resource record types that include a domain name,
-     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
-     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
-     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
-     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
-     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
-     * have registered with your DNS registrar. If your domain name is registered with
-     * a registrar other than Amazon Route 53, change the name servers for your domain
-     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
-     * returns in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. Specify a fully qualified domain name, for example,
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
+     * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
+     * zone, this is the name you have registered with your DNS registrar. If your
+     * domain name is registered with a registrar other than Route 53, change the name
+     * servers for your domain to the set of <code>NameServers</code> that
+     * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the domain. For resource record types that include a domain name,
-     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
-     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
-     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
-     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
-     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
-     * have registered with your DNS registrar. If your domain name is registered with
-     * a registrar other than Amazon Route 53, change the name servers for your domain
-     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
-     * returns in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. Specify a fully qualified domain name, for example,
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
+     * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
+     * zone, this is the name you have registered with your DNS registrar. If your
+     * domain name is registered with a registrar other than Route 53, change the name
+     * servers for your domain to the set of <code>NameServers</code> that
+     * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the domain. For resource record types that include a domain name,
-     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
-     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
-     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
-     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
-     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
-     * have registered with your DNS registrar. If your domain name is registered with
-     * a registrar other than Amazon Route 53, change the name servers for your domain
-     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
-     * returns in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. Specify a fully qualified domain name, for example,
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
+     * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
+     * zone, this is the name you have registered with your DNS registrar. If your
+     * domain name is registered with a registrar other than Route 53, change the name
+     * servers for your domain to the set of <code>NameServers</code> that
+     * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
     inline CreateHostedZoneRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the domain. For resource record types that include a domain name,
-     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
-     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
-     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
-     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
-     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
-     * have registered with your DNS registrar. If your domain name is registered with
-     * a registrar other than Amazon Route 53, change the name servers for your domain
-     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
-     * returns in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. Specify a fully qualified domain name, for example,
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
+     * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
+     * zone, this is the name you have registered with your DNS registrar. If your
+     * domain name is registered with a registrar other than Route 53, change the name
+     * servers for your domain to the set of <code>NameServers</code> that
+     * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
     inline CreateHostedZoneRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the domain. For resource record types that include a domain name,
-     * specify a fully qualified domain name, for example, <i>www.example.com</i>. The
-     * trailing dot is optional; Amazon Route 53 assumes that the domain name is fully
-     * qualified. This means that Amazon Route 53 treats <i>www.example.com</i>
-     * (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as
-     * identical.</p> <p>If you're creating a public hosted zone, this is the name you
-     * have registered with your DNS registrar. If your domain name is registered with
-     * a registrar other than Amazon Route 53, change the name servers for your domain
-     * to the set of <code>NameServers</code> that <code>CreateHostedZone</code>
-     * returns in <code>DelegationSet</code>.</p>
+     * <p>The name of the domain. Specify a fully qualified domain name, for example,
+     * <i>www.example.com</i>. The trailing dot is optional; Amazon Route 53 assumes
+     * that the domain name is fully qualified. This means that Route 53 treats
+     * <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i>
+     * (with a trailing dot) as identical.</p> <p>If you're creating a public hosted
+     * zone, this is the name you have registered with your DNS registrar. If your
+     * domain name is registered with a registrar other than Route 53, change the name
+     * servers for your domain to the set of <code>NameServers</code> that
+     * <code>CreateHostedZone</code> returns in <code>DelegationSet</code>.</p>
      */
     inline CreateHostedZoneRequest& WithName(const char* value) { SetName(value); return *this;}
 

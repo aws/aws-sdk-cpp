@@ -67,52 +67,42 @@ namespace Model
 
 
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options
-     * include immediately switching to the next sequential input (via "switchInput"),
-     * switching to the next input and looping back to the first input when last input
-     * ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding
-     * black / color / slate images per the "Input Loss Behavior" configuration until
-     * an activateInput REST command is received (via "none").
+     * Indicates the action to take when the input completes (e.g. end-of-file).
+     * Options include looping on the input (via "switchAndLoopInputs") or transcoding
+     * black / color / slate images per the "Input Loss Behavior" configuration (via
+     * "none").
      */
     inline const GlobalConfigurationInputEndAction& GetInputEndAction() const{ return m_inputEndAction; }
 
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options
-     * include immediately switching to the next sequential input (via "switchInput"),
-     * switching to the next input and looping back to the first input when last input
-     * ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding
-     * black / color / slate images per the "Input Loss Behavior" configuration until
-     * an activateInput REST command is received (via "none").
+     * Indicates the action to take when the input completes (e.g. end-of-file).
+     * Options include looping on the input (via "switchAndLoopInputs") or transcoding
+     * black / color / slate images per the "Input Loss Behavior" configuration (via
+     * "none").
      */
     inline void SetInputEndAction(const GlobalConfigurationInputEndAction& value) { m_inputEndActionHasBeenSet = true; m_inputEndAction = value; }
 
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options
-     * include immediately switching to the next sequential input (via "switchInput"),
-     * switching to the next input and looping back to the first input when last input
-     * ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding
-     * black / color / slate images per the "Input Loss Behavior" configuration until
-     * an activateInput REST command is received (via "none").
+     * Indicates the action to take when the input completes (e.g. end-of-file).
+     * Options include looping on the input (via "switchAndLoopInputs") or transcoding
+     * black / color / slate images per the "Input Loss Behavior" configuration (via
+     * "none").
      */
     inline void SetInputEndAction(GlobalConfigurationInputEndAction&& value) { m_inputEndActionHasBeenSet = true; m_inputEndAction = std::move(value); }
 
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options
-     * include immediately switching to the next sequential input (via "switchInput"),
-     * switching to the next input and looping back to the first input when last input
-     * ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding
-     * black / color / slate images per the "Input Loss Behavior" configuration until
-     * an activateInput REST command is received (via "none").
+     * Indicates the action to take when the input completes (e.g. end-of-file).
+     * Options include looping on the input (via "switchAndLoopInputs") or transcoding
+     * black / color / slate images per the "Input Loss Behavior" configuration (via
+     * "none").
      */
     inline GlobalConfiguration& WithInputEndAction(const GlobalConfigurationInputEndAction& value) { SetInputEndAction(value); return *this;}
 
     /**
-     * Indicates the action to take when an input completes (e.g. end-of-file.) Options
-     * include immediately switching to the next sequential input (via "switchInput"),
-     * switching to the next input and looping back to the first input when last input
-     * ends (via "switchAndLoopInputs") or not switching inputs and instead transcoding
-     * black / color / slate images per the "Input Loss Behavior" configuration until
-     * an activateInput REST command is received (via "none").
+     * Indicates the action to take when the input completes (e.g. end-of-file).
+     * Options include looping on the input (via "switchAndLoopInputs") or transcoding
+     * black / color / slate images per the "Input Loss Behavior" configuration (via
+     * "none").
      */
     inline GlobalConfiguration& WithInputEndAction(GlobalConfigurationInputEndAction&& value) { SetInputEndAction(std::move(value)); return *this;}
 

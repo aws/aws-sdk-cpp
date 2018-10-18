@@ -265,35 +265,35 @@ namespace Model
     /**
      * <p>If the hosted zone was created by another service, the service that created
      * the hosted zone. When a hosted zone is created by another service, you can't
-     * edit or delete it using Amazon Route 53. </p>
+     * edit or delete it using Route 53. </p>
      */
     inline const LinkedService& GetLinkedService() const{ return m_linkedService; }
 
     /**
      * <p>If the hosted zone was created by another service, the service that created
      * the hosted zone. When a hosted zone is created by another service, you can't
-     * edit or delete it using Amazon Route 53. </p>
+     * edit or delete it using Route 53. </p>
      */
     inline void SetLinkedService(const LinkedService& value) { m_linkedServiceHasBeenSet = true; m_linkedService = value; }
 
     /**
      * <p>If the hosted zone was created by another service, the service that created
      * the hosted zone. When a hosted zone is created by another service, you can't
-     * edit or delete it using Amazon Route 53. </p>
+     * edit or delete it using Route 53. </p>
      */
     inline void SetLinkedService(LinkedService&& value) { m_linkedServiceHasBeenSet = true; m_linkedService = std::move(value); }
 
     /**
      * <p>If the hosted zone was created by another service, the service that created
      * the hosted zone. When a hosted zone is created by another service, you can't
-     * edit or delete it using Amazon Route 53. </p>
+     * edit or delete it using Route 53. </p>
      */
     inline HostedZone& WithLinkedService(const LinkedService& value) { SetLinkedService(value); return *this;}
 
     /**
      * <p>If the hosted zone was created by another service, the service that created
      * the hosted zone. When a hosted zone is created by another service, you can't
-     * edit or delete it using Amazon Route 53. </p>
+     * edit or delete it using Route 53. </p>
      */
     inline HostedZone& WithLinkedService(LinkedService&& value) { SetLinkedService(std::move(value)); return *this;}
 

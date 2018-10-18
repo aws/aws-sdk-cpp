@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int CBR_HASH = HashingUtils::HashString("CBR");
+        static const int QVBR_HASH = HashingUtils::HashString("QVBR");
         static const int VBR_HASH = HashingUtils::HashString("VBR");
 
 
@@ -40,6 +41,10 @@ namespace Aws
           if (hashCode == CBR_HASH)
           {
             return H264RateControlMode::CBR;
+          }
+          else if (hashCode == QVBR_HASH)
+          {
+            return H264RateControlMode::QVBR;
           }
           else if (hashCode == VBR_HASH)
           {
@@ -61,6 +66,8 @@ namespace Aws
           {
           case H264RateControlMode::CBR:
             return "CBR";
+          case H264RateControlMode::QVBR:
+            return "QVBR";
           case H264RateControlMode::VBR:
             return "VBR";
           default:

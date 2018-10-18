@@ -556,17 +556,26 @@ namespace Model
 
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only).
+     * Maximum bitrate in bits/second (for VBR and QVBR modes only).
+
+Required when
+     * rateControlMode is "qvbr".
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only).
+     * Maximum bitrate in bits/second (for VBR and QVBR modes only).
+
+Required when
+     * rateControlMode is "qvbr".
      */
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only).
+     * Maximum bitrate in bits/second (for VBR and QVBR modes only).
+
+Required when
+     * rateControlMode is "qvbr".
      */
     inline H264Settings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
 
@@ -729,27 +738,107 @@ namespace Model
 
 
     /**
-     * Rate control mode.
+     * Target quality value. Applicable only to QVBR mode. 1 is the lowest quality and
+     * 10 is the
+highest and approaches lossless. Typical levels for content
+     * distribution are between 6 and 8.
+     */
+    inline int GetQvbrQualityLevel() const{ return m_qvbrQualityLevel; }
+
+    /**
+     * Target quality value. Applicable only to QVBR mode. 1 is the lowest quality and
+     * 10 is the
+highest and approaches lossless. Typical levels for content
+     * distribution are between 6 and 8.
+     */
+    inline void SetQvbrQualityLevel(int value) { m_qvbrQualityLevelHasBeenSet = true; m_qvbrQualityLevel = value; }
+
+    /**
+     * Target quality value. Applicable only to QVBR mode. 1 is the lowest quality and
+     * 10 is the
+highest and approaches lossless. Typical levels for content
+     * distribution are between 6 and 8.
+     */
+    inline H264Settings& WithQvbrQualityLevel(int value) { SetQvbrQualityLevel(value); return *this;}
+
+
+    /**
+     * Rate control mode. 
+
+- CBR: Constant Bit Rate
+- VBR: Variable Bit Rate
+- QVBR:
+     * Encoder dynamically controls the bitrate to meet the desired quality
+     * (specified
+through the qvbrQualityLevel field). The bitrate will not exceed the
+     * bitrate specified in
+the maxBitrate field and will not fall below the bitrate
+     * required to meet the desired
+quality level.
      */
     inline const H264RateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
 
     /**
-     * Rate control mode.
+     * Rate control mode. 
+
+- CBR: Constant Bit Rate
+- VBR: Variable Bit Rate
+- QVBR:
+     * Encoder dynamically controls the bitrate to meet the desired quality
+     * (specified
+through the qvbrQualityLevel field). The bitrate will not exceed the
+     * bitrate specified in
+the maxBitrate field and will not fall below the bitrate
+     * required to meet the desired
+quality level.
      */
     inline void SetRateControlMode(const H264RateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
 
     /**
-     * Rate control mode.
+     * Rate control mode. 
+
+- CBR: Constant Bit Rate
+- VBR: Variable Bit Rate
+- QVBR:
+     * Encoder dynamically controls the bitrate to meet the desired quality
+     * (specified
+through the qvbrQualityLevel field). The bitrate will not exceed the
+     * bitrate specified in
+the maxBitrate field and will not fall below the bitrate
+     * required to meet the desired
+quality level.
      */
     inline void SetRateControlMode(H264RateControlMode&& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = std::move(value); }
 
     /**
-     * Rate control mode.
+     * Rate control mode. 
+
+- CBR: Constant Bit Rate
+- VBR: Variable Bit Rate
+- QVBR:
+     * Encoder dynamically controls the bitrate to meet the desired quality
+     * (specified
+through the qvbrQualityLevel field). The bitrate will not exceed the
+     * bitrate specified in
+the maxBitrate field and will not fall below the bitrate
+     * required to meet the desired
+quality level.
      */
     inline H264Settings& WithRateControlMode(const H264RateControlMode& value) { SetRateControlMode(value); return *this;}
 
     /**
-     * Rate control mode.
+     * Rate control mode. 
+
+- CBR: Constant Bit Rate
+- VBR: Variable Bit Rate
+- QVBR:
+     * Encoder dynamically controls the bitrate to meet the desired quality
+     * (specified
+through the qvbrQualityLevel field). The bitrate will not exceed the
+     * bitrate specified in
+the maxBitrate field and will not fall below the bitrate
+     * required to meet the desired
+quality level.
      */
     inline H264Settings& WithRateControlMode(H264RateControlMode&& value) { SetRateControlMode(std::move(value)); return *this;}
 
@@ -781,27 +870,47 @@ namespace Model
 
 
     /**
-     * Scene change detection.  Inserts I-frames on scene changes when enabled.
+     * Scene change detection.
+
+- On: inserts I-frames when scene change is detected.
+-
+     * Off: does not force an I-frame when scene change is detected.
      */
     inline const H264SceneChangeDetect& GetSceneChangeDetect() const{ return m_sceneChangeDetect; }
 
     /**
-     * Scene change detection.  Inserts I-frames on scene changes when enabled.
+     * Scene change detection.
+
+- On: inserts I-frames when scene change is detected.
+-
+     * Off: does not force an I-frame when scene change is detected.
      */
     inline void SetSceneChangeDetect(const H264SceneChangeDetect& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = value; }
 
     /**
-     * Scene change detection.  Inserts I-frames on scene changes when enabled.
+     * Scene change detection.
+
+- On: inserts I-frames when scene change is detected.
+-
+     * Off: does not force an I-frame when scene change is detected.
      */
     inline void SetSceneChangeDetect(H264SceneChangeDetect&& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = std::move(value); }
 
     /**
-     * Scene change detection.  Inserts I-frames on scene changes when enabled.
+     * Scene change detection.
+
+- On: inserts I-frames when scene change is detected.
+-
+     * Off: does not force an I-frame when scene change is detected.
      */
     inline H264Settings& WithSceneChangeDetect(const H264SceneChangeDetect& value) { SetSceneChangeDetect(value); return *this;}
 
     /**
-     * Scene change detection.  Inserts I-frames on scene changes when enabled.
+     * Scene change detection.
+
+- On: inserts I-frames when scene change is detected.
+-
+     * Off: does not force an I-frame when scene change is detected.
      */
     inline H264Settings& WithSceneChangeDetect(H264SceneChangeDetect&& value) { SetSceneChangeDetect(std::move(value)); return *this;}
 
@@ -1068,6 +1177,9 @@ This field is optional; when
 
     H264Profile m_profile;
     bool m_profileHasBeenSet;
+
+    int m_qvbrQualityLevel;
+    bool m_qvbrQualityLevelHasBeenSet;
 
     H264RateControlMode m_rateControlMode;
     bool m_rateControlModeHasBeenSet;

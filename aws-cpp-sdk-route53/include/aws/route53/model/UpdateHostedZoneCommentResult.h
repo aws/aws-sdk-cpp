@@ -48,19 +48,34 @@ namespace Model
     UpdateHostedZoneCommentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>A complex type that contains the response to the
+     * <code>UpdateHostedZoneComment</code> request.</p>
+     */
     inline const HostedZone& GetHostedZone() const{ return m_hostedZone; }
 
-    
+    /**
+     * <p>A complex type that contains the response to the
+     * <code>UpdateHostedZoneComment</code> request.</p>
+     */
     inline void SetHostedZone(const HostedZone& value) { m_hostedZone = value; }
 
-    
+    /**
+     * <p>A complex type that contains the response to the
+     * <code>UpdateHostedZoneComment</code> request.</p>
+     */
     inline void SetHostedZone(HostedZone&& value) { m_hostedZone = std::move(value); }
 
-    
+    /**
+     * <p>A complex type that contains the response to the
+     * <code>UpdateHostedZoneComment</code> request.</p>
+     */
     inline UpdateHostedZoneCommentResult& WithHostedZone(const HostedZone& value) { SetHostedZone(value); return *this;}
 
-    
+    /**
+     * <p>A complex type that contains the response to the
+     * <code>UpdateHostedZoneComment</code> request.</p>
+     */
     inline UpdateHostedZoneCommentResult& WithHostedZone(HostedZone&& value) { SetHostedZone(std::move(value)); return *this;}
 
   private:

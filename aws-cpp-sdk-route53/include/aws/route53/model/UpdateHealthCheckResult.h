@@ -42,19 +42,34 @@ namespace Model
     UpdateHealthCheckResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>A complex type that contains the response to an
+     * <code>UpdateHealthCheck</code> request.</p>
+     */
     inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
 
-    
+    /**
+     * <p>A complex type that contains the response to an
+     * <code>UpdateHealthCheck</code> request.</p>
+     */
     inline void SetHealthCheck(const HealthCheck& value) { m_healthCheck = value; }
 
-    
+    /**
+     * <p>A complex type that contains the response to an
+     * <code>UpdateHealthCheck</code> request.</p>
+     */
     inline void SetHealthCheck(HealthCheck&& value) { m_healthCheck = std::move(value); }
 
-    
+    /**
+     * <p>A complex type that contains the response to an
+     * <code>UpdateHealthCheck</code> request.</p>
+     */
     inline UpdateHealthCheckResult& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
 
-    
+    /**
+     * <p>A complex type that contains the response to an
+     * <code>UpdateHealthCheck</code> request.</p>
+     */
     inline UpdateHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
 
   private:

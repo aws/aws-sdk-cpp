@@ -194,87 +194,87 @@ namespace Model
 
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline const Aws::String& GetSubdivisionCode() const{ return m_subdivisionCode; }
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline void SetSubdivisionCode(const Aws::String& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = value; }
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline void SetSubdivisionCode(Aws::String&& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = std::move(value); }
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline void SetSubdivisionCode(const char* value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode.assign(value); }
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline GeoLocationDetails& WithSubdivisionCode(const Aws::String& value) { SetSubdivisionCode(value); return *this;}
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline GeoLocationDetails& WithSubdivisionCode(Aws::String&& value) { SetSubdivisionCode(std::move(value)); return *this;}
 
     /**
-     * <p>The code for the subdivision, for example, a state in the United States or a
-     * province in Canada.</p>
+     * <p>The code for the subdivision. Route 53 currently supports only states in the
+     * United States.</p>
      */
     inline GeoLocationDetails& WithSubdivisionCode(const char* value) { SetSubdivisionCode(value); return *this;}
 
 
     /**
-     * <p>The full name of the subdivision, for example, a state in the United States
-     * or a province in Canada.</p>
+     * <p>The full name of the subdivision. Route 53 currently supports only states in
+     * the United States.</p>
      */
     inline const Aws::String& GetSubdivisionName() const{ return m_subdivisionName; }
 
     /**
-     * <p>The full name of the subdivision, for example, a state in the United States
-     * or a province in Canada.</p>
+     * <p>The full name of the subdivision. Route 53 currently supports only states in
+     * the United States.</p>
      */
     inline void SetSubdivisionName(const Aws::String& value) { m_subdivisionNameHasBeenSet = true; m_subdivisionName = value; }
 
     /**
-     * <p>The full name of the subdivision, for example, a state in the United States
-     * or a province in Canada.</p>
+     * <p>The full name of the subdivision. Route 53 currently supports only states in
+     * the United States.</p>
      */
     inline void SetSubdivisionName(Aws::String&& value) { m_subdivisionNameHasBeenSet = true; m_subdivisionName = std::move(value); }
 
     /**
-     * <p>The full name of the subdivision, for example, a state in the United States
-     * or a province in Canada.</p>
+     * <p>The full name of the subdivision. Route 53 currently supports only states in
+     * the United States.</p>
      */
     inline void SetSubdivisionName(const char* value) { m_subdivisionNameHasBeenSet = true; m_subdivisionName.assign(value); }
 
     /**
-     * <p>The full name of the subdivision, for example, a state in the United States
-     * or a province in Canada.</p>
+     * <p>The full name of the subdivision. Route 53 currently supports only states in
+     * the United States.</p>
      */
     inline GeoLocationDetails& WithSubdivisionName(const Aws::String& value) { SetSubdivisionName(value); return *this;}
 
     /**
-     * <p>The full name of the subdivision, for example, a state in the United States
-     * or a province in Canada.</p>
+     * <p>The full name of the subdivision. Route 53 currently supports only states in
+     * the United States.</p>
      */
     inline GeoLocationDetails& WithSubdivisionName(Aws::String&& value) { SetSubdivisionName(std::move(value)); return *this;}
 
     /**
-     * <p>The full name of the subdivision, for example, a state in the United States
-     * or a province in Canada.</p>
+     * <p>The full name of the subdivision. Route 53 currently supports only states in
+     * the United States.</p>
      */
     inline GeoLocationDetails& WithSubdivisionName(const char* value) { SetSubdivisionName(value); return *this;}
 

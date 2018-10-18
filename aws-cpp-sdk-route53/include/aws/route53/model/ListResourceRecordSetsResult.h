@@ -184,58 +184,72 @@ namespace Model
 
 
     /**
-     * <p> <i>Weighted, latency, geolocation, and failover resource record sets
-     * only</i>: If results were truncated for a given DNS name and type, the value of
+     * <p> <i>Resource record sets that have a routing policy other than simple:</i> If
+     * results were truncated for a given DNS name and type, the value of
      * <code>SetIdentifier</code> for the next resource record set that has the current
-     * DNS name and type.</p>
+     * DNS name and type.</p> <p>For information about routing policies, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline const Aws::String& GetNextRecordIdentifier() const{ return m_nextRecordIdentifier; }
 
     /**
-     * <p> <i>Weighted, latency, geolocation, and failover resource record sets
-     * only</i>: If results were truncated for a given DNS name and type, the value of
+     * <p> <i>Resource record sets that have a routing policy other than simple:</i> If
+     * results were truncated for a given DNS name and type, the value of
      * <code>SetIdentifier</code> for the next resource record set that has the current
-     * DNS name and type.</p>
+     * DNS name and type.</p> <p>For information about routing policies, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline void SetNextRecordIdentifier(const Aws::String& value) { m_nextRecordIdentifier = value; }
 
     /**
-     * <p> <i>Weighted, latency, geolocation, and failover resource record sets
-     * only</i>: If results were truncated for a given DNS name and type, the value of
+     * <p> <i>Resource record sets that have a routing policy other than simple:</i> If
+     * results were truncated for a given DNS name and type, the value of
      * <code>SetIdentifier</code> for the next resource record set that has the current
-     * DNS name and type.</p>
+     * DNS name and type.</p> <p>For information about routing policies, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline void SetNextRecordIdentifier(Aws::String&& value) { m_nextRecordIdentifier = std::move(value); }
 
     /**
-     * <p> <i>Weighted, latency, geolocation, and failover resource record sets
-     * only</i>: If results were truncated for a given DNS name and type, the value of
+     * <p> <i>Resource record sets that have a routing policy other than simple:</i> If
+     * results were truncated for a given DNS name and type, the value of
      * <code>SetIdentifier</code> for the next resource record set that has the current
-     * DNS name and type.</p>
+     * DNS name and type.</p> <p>For information about routing policies, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline void SetNextRecordIdentifier(const char* value) { m_nextRecordIdentifier.assign(value); }
 
     /**
-     * <p> <i>Weighted, latency, geolocation, and failover resource record sets
-     * only</i>: If results were truncated for a given DNS name and type, the value of
+     * <p> <i>Resource record sets that have a routing policy other than simple:</i> If
+     * results were truncated for a given DNS name and type, the value of
      * <code>SetIdentifier</code> for the next resource record set that has the current
-     * DNS name and type.</p>
+     * DNS name and type.</p> <p>For information about routing policies, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline ListResourceRecordSetsResult& WithNextRecordIdentifier(const Aws::String& value) { SetNextRecordIdentifier(value); return *this;}
 
     /**
-     * <p> <i>Weighted, latency, geolocation, and failover resource record sets
-     * only</i>: If results were truncated for a given DNS name and type, the value of
+     * <p> <i>Resource record sets that have a routing policy other than simple:</i> If
+     * results were truncated for a given DNS name and type, the value of
      * <code>SetIdentifier</code> for the next resource record set that has the current
-     * DNS name and type.</p>
+     * DNS name and type.</p> <p>For information about routing policies, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline ListResourceRecordSetsResult& WithNextRecordIdentifier(Aws::String&& value) { SetNextRecordIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p> <i>Weighted, latency, geolocation, and failover resource record sets
-     * only</i>: If results were truncated for a given DNS name and type, the value of
+     * <p> <i>Resource record sets that have a routing policy other than simple:</i> If
+     * results were truncated for a given DNS name and type, the value of
      * <code>SetIdentifier</code> for the next resource record set that has the current
-     * DNS name and type.</p>
+     * DNS name and type.</p> <p>For information about routing policies, see <a
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing
+     * a Routing Policy</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline ListResourceRecordSetsResult& WithNextRecordIdentifier(const char* value) { SetNextRecordIdentifier(value); return *this;}
 

@@ -151,7 +151,7 @@ namespace Model
      * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
      * the response is <code>true</code>, and the value of
      * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
@@ -161,7 +161,7 @@ namespace Model
      * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
      * the response is <code>true</code>, and the value of
      * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
@@ -171,7 +171,7 @@ namespace Model
      * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
      * the response is <code>true</code>, and the value of
      * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
@@ -181,7 +181,7 @@ namespace Model
      * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
      * the response is <code>true</code>, and the value of
      * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
 
@@ -191,7 +191,7 @@ namespace Model
      * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
      * the response is <code>true</code>, and the value of
      * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline ListTrafficPoliciesRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
@@ -201,7 +201,7 @@ namespace Model
      * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
      * the response is <code>true</code>, and the value of
      * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline ListTrafficPoliciesRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
@@ -211,7 +211,7 @@ namespace Model
      * <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in
      * the response is <code>true</code>, and the value of
      * <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline ListTrafficPoliciesRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 

@@ -141,8 +141,8 @@ namespace Model
      * <p>The maximum number of health checks that you want
      * <code>ListHealthChecks</code> to return in response to the current request.
      * Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code>
-     * to a value greater than 100, Amazon Route 53 returns only the first 100 health
-     * checks. </p>
+     * to a value greater than 100, Route 53 returns only the first 100 health checks.
+     * </p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
@@ -150,8 +150,8 @@ namespace Model
      * <p>The maximum number of health checks that you want
      * <code>ListHealthChecks</code> to return in response to the current request.
      * Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code>
-     * to a value greater than 100, Amazon Route 53 returns only the first 100 health
-     * checks. </p>
+     * to a value greater than 100, Route 53 returns only the first 100 health checks.
+     * </p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
@@ -159,8 +159,8 @@ namespace Model
      * <p>The maximum number of health checks that you want
      * <code>ListHealthChecks</code> to return in response to the current request.
      * Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code>
-     * to a value greater than 100, Amazon Route 53 returns only the first 100 health
-     * checks. </p>
+     * to a value greater than 100, Route 53 returns only the first 100 health checks.
+     * </p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
@@ -168,8 +168,8 @@ namespace Model
      * <p>The maximum number of health checks that you want
      * <code>ListHealthChecks</code> to return in response to the current request.
      * Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code>
-     * to a value greater than 100, Amazon Route 53 returns only the first 100 health
-     * checks. </p>
+     * to a value greater than 100, Route 53 returns only the first 100 health checks.
+     * </p>
      */
     inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
 
@@ -177,8 +177,8 @@ namespace Model
      * <p>The maximum number of health checks that you want
      * <code>ListHealthChecks</code> to return in response to the current request.
      * Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code>
-     * to a value greater than 100, Amazon Route 53 returns only the first 100 health
-     * checks. </p>
+     * to a value greater than 100, Route 53 returns only the first 100 health checks.
+     * </p>
      */
     inline ListHealthChecksRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
@@ -186,8 +186,8 @@ namespace Model
      * <p>The maximum number of health checks that you want
      * <code>ListHealthChecks</code> to return in response to the current request.
      * Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code>
-     * to a value greater than 100, Amazon Route 53 returns only the first 100 health
-     * checks. </p>
+     * to a value greater than 100, Route 53 returns only the first 100 health checks.
+     * </p>
      */
     inline ListHealthChecksRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
@@ -195,8 +195,8 @@ namespace Model
      * <p>The maximum number of health checks that you want
      * <code>ListHealthChecks</code> to return in response to the current request.
      * Amazon Route 53 returns a maximum of 100 items. If you set <code>MaxItems</code>
-     * to a value greater than 100, Amazon Route 53 returns only the first 100 health
-     * checks. </p>
+     * to a value greater than 100, Route 53 returns only the first 100 health checks.
+     * </p>
      */
     inline ListHealthChecksRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 

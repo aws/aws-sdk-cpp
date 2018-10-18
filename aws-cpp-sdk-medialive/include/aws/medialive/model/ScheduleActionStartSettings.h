@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * When the schedule action starts.<p><h3>See Also:</h3>   <a
+   * Settings to specify the start time for an action.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ScheduleActionStartSettings">AWS
    * API Reference</a></p>
    */
@@ -48,27 +48,27 @@ namespace Model
 
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Holds the start time for the action.
      */
     inline const FixedModeScheduleActionStartSettings& GetFixedModeScheduleActionStartSettings() const{ return m_fixedModeScheduleActionStartSettings; }
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Holds the start time for the action.
      */
     inline void SetFixedModeScheduleActionStartSettings(const FixedModeScheduleActionStartSettings& value) { m_fixedModeScheduleActionStartSettingsHasBeenSet = true; m_fixedModeScheduleActionStartSettings = value; }
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Holds the start time for the action.
      */
     inline void SetFixedModeScheduleActionStartSettings(FixedModeScheduleActionStartSettings&& value) { m_fixedModeScheduleActionStartSettingsHasBeenSet = true; m_fixedModeScheduleActionStartSettings = std::move(value); }
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Holds the start time for the action.
      */
     inline ScheduleActionStartSettings& WithFixedModeScheduleActionStartSettings(const FixedModeScheduleActionStartSettings& value) { SetFixedModeScheduleActionStartSettings(value); return *this;}
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Holds the start time for the action.
      */
     inline ScheduleActionStartSettings& WithFixedModeScheduleActionStartSettings(FixedModeScheduleActionStartSettings&& value) { SetFixedModeScheduleActionStartSettings(std::move(value)); return *this;}
 

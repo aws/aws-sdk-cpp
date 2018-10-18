@@ -170,63 +170,63 @@ namespace Model
     /**
      * <p>Amazon Route 53 uses the one- to three-letter subdivision codes that are
      * specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
-     * standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't support subdivision codes
-     * for all countries. If you specify <code>SubdivisionCode</code>, you must also
-     * specify <code>CountryCode</code>. </p>
+     * standard 3166-1 alpha-2</a>. Route 53 doesn't support subdivision codes for all
+     * countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>. </p>
      */
     inline const Aws::String& GetSubdivisionCode() const{ return m_subdivisionCode; }
 
     /**
      * <p>Amazon Route 53 uses the one- to three-letter subdivision codes that are
      * specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
-     * standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't support subdivision codes
-     * for all countries. If you specify <code>SubdivisionCode</code>, you must also
-     * specify <code>CountryCode</code>. </p>
+     * standard 3166-1 alpha-2</a>. Route 53 doesn't support subdivision codes for all
+     * countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>. </p>
      */
     inline void SetSubdivisionCode(const Aws::String& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = value; }
 
     /**
      * <p>Amazon Route 53 uses the one- to three-letter subdivision codes that are
      * specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
-     * standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't support subdivision codes
-     * for all countries. If you specify <code>SubdivisionCode</code>, you must also
-     * specify <code>CountryCode</code>. </p>
+     * standard 3166-1 alpha-2</a>. Route 53 doesn't support subdivision codes for all
+     * countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>. </p>
      */
     inline void SetSubdivisionCode(Aws::String&& value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode = std::move(value); }
 
     /**
      * <p>Amazon Route 53 uses the one- to three-letter subdivision codes that are
      * specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
-     * standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't support subdivision codes
-     * for all countries. If you specify <code>SubdivisionCode</code>, you must also
-     * specify <code>CountryCode</code>. </p>
+     * standard 3166-1 alpha-2</a>. Route 53 doesn't support subdivision codes for all
+     * countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>. </p>
      */
     inline void SetSubdivisionCode(const char* value) { m_subdivisionCodeHasBeenSet = true; m_subdivisionCode.assign(value); }
 
     /**
      * <p>Amazon Route 53 uses the one- to three-letter subdivision codes that are
      * specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
-     * standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't support subdivision codes
-     * for all countries. If you specify <code>SubdivisionCode</code>, you must also
-     * specify <code>CountryCode</code>. </p>
+     * standard 3166-1 alpha-2</a>. Route 53 doesn't support subdivision codes for all
+     * countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>. </p>
      */
     inline GetGeoLocationRequest& WithSubdivisionCode(const Aws::String& value) { SetSubdivisionCode(value); return *this;}
 
     /**
      * <p>Amazon Route 53 uses the one- to three-letter subdivision codes that are
      * specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
-     * standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't support subdivision codes
-     * for all countries. If you specify <code>SubdivisionCode</code>, you must also
-     * specify <code>CountryCode</code>. </p>
+     * standard 3166-1 alpha-2</a>. Route 53 doesn't support subdivision codes for all
+     * countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>. </p>
      */
     inline GetGeoLocationRequest& WithSubdivisionCode(Aws::String&& value) { SetSubdivisionCode(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Route 53 uses the one- to three-letter subdivision codes that are
      * specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO
-     * standard 3166-1 alpha-2</a>. Amazon Route 53 doesn't support subdivision codes
-     * for all countries. If you specify <code>SubdivisionCode</code>, you must also
-     * specify <code>CountryCode</code>. </p>
+     * standard 3166-1 alpha-2</a>. Route 53 doesn't support subdivision codes for all
+     * countries. If you specify <code>subdivisioncode</code>, you must also specify
+     * <code>countrycode</code>. </p>
      */
     inline GetGeoLocationRequest& WithSubdivisionCode(const char* value) { SetSubdivisionCode(value); return *this;}
 

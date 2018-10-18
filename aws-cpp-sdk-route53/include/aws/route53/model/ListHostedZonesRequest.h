@@ -142,7 +142,7 @@ namespace Model
      * to return. If you have more than <code>maxitems</code> hosted zones, the value
      * of <code>IsTruncated</code> in the response is <code>true</code>, and the value
      * of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
 
@@ -151,7 +151,7 @@ namespace Model
      * to return. If you have more than <code>maxitems</code> hosted zones, the value
      * of <code>IsTruncated</code> in the response is <code>true</code>, and the value
      * of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
@@ -160,7 +160,7 @@ namespace Model
      * to return. If you have more than <code>maxitems</code> hosted zones, the value
      * of <code>IsTruncated</code> in the response is <code>true</code>, and the value
      * of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
 
@@ -169,7 +169,7 @@ namespace Model
      * to return. If you have more than <code>maxitems</code> hosted zones, the value
      * of <code>IsTruncated</code> in the response is <code>true</code>, and the value
      * of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
 
@@ -178,7 +178,7 @@ namespace Model
      * to return. If you have more than <code>maxitems</code> hosted zones, the value
      * of <code>IsTruncated</code> in the response is <code>true</code>, and the value
      * of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline ListHostedZonesRequest& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
 
@@ -187,7 +187,7 @@ namespace Model
      * to return. If you have more than <code>maxitems</code> hosted zones, the value
      * of <code>IsTruncated</code> in the response is <code>true</code>, and the value
      * of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline ListHostedZonesRequest& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
 
@@ -196,7 +196,7 @@ namespace Model
      * to return. If you have more than <code>maxitems</code> hosted zones, the value
      * of <code>IsTruncated</code> in the response is <code>true</code>, and the value
      * of <code>NextMarker</code> is the hosted zone ID of the first hosted zone that
-     * Amazon Route 53 will return if you submit another request.</p>
+     * Route 53 will return if you submit another request.</p>
      */
     inline ListHostedZonesRequest& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
 

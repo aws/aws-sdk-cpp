@@ -37,6 +37,8 @@ UpdateHealthCheckRequest::UpdateHealthCheckRequest() :
     m_failureThresholdHasBeenSet(false),
     m_inverted(false),
     m_invertedHasBeenSet(false),
+    m_disabled(false),
+    m_disabledHasBeenSet(false),
     m_healthThreshold(0),
     m_healthThresholdHasBeenSet(false),
     m_childHealthChecksHasBeenSet(false),
@@ -111,6 +113,14 @@ Aws::String UpdateHealthCheckRequest::SerializePayload() const
    XmlNode invertedNode = parentNode.CreateChildElement("Inverted");
    ss << std::boolalpha << m_inverted;
    invertedNode.SetText(ss.str());
+   ss.str("");
+  }
+
+  if(m_disabledHasBeenSet)
+  {
+   XmlNode disabledNode = parentNode.CreateChildElement("Disabled");
+   ss << std::boolalpha << m_disabled;
+   disabledNode.SetText(ss.str());
    ss.str("");
   }
 

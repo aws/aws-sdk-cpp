@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * SCTE-35 Splice Insert Settings.<p><h3>See Also:</h3>   <a
+   * Settings for a SCTE-35 splice_insert message.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35SpliceInsertScheduleActionSettings">AWS
    * API Reference</a></p>
    */
@@ -46,23 +46,32 @@ namespace Model
 
 
     /**
-     * The duration for the SCTE-35 splice_insert specified in 90KHz clock ticks. When
-     * duration is not specified the expectation is that a Scte35ReturnToNetwork action
-     * will be scheduled.
+     * Optional, the duration for the splice_insert, in 90 KHz ticks. To convert
+     * seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there
+     * is an expectation that the downstream system can read the duration and cue in at
+     * that time. If you do not enter a duration, the splice_insert will continue
+     * indefinitely and there is an expectation that you will enter a return_to_network
+     * to end the splice_insert at the appropriate time.
      */
     inline long long GetDuration() const{ return m_duration; }
 
     /**
-     * The duration for the SCTE-35 splice_insert specified in 90KHz clock ticks. When
-     * duration is not specified the expectation is that a Scte35ReturnToNetwork action
-     * will be scheduled.
+     * Optional, the duration for the splice_insert, in 90 KHz ticks. To convert
+     * seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there
+     * is an expectation that the downstream system can read the duration and cue in at
+     * that time. If you do not enter a duration, the splice_insert will continue
+     * indefinitely and there is an expectation that you will enter a return_to_network
+     * to end the splice_insert at the appropriate time.
      */
     inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
-     * The duration for the SCTE-35 splice_insert specified in 90KHz clock ticks. When
-     * duration is not specified the expectation is that a Scte35ReturnToNetwork action
-     * will be scheduled.
+     * Optional, the duration for the splice_insert, in 90 KHz ticks. To convert
+     * seconds to ticks, multiple the seconds by 90,000. If you enter a duration, there
+     * is an expectation that the downstream system can read the duration and cue in at
+     * that time. If you do not enter a duration, the splice_insert will continue
+     * indefinitely and there is an expectation that you will enter a return_to_network
+     * to end the splice_insert at the appropriate time.
      */
     inline Scte35SpliceInsertScheduleActionSettings& WithDuration(long long value) { SetDuration(value); return *this;}
 

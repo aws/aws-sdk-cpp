@@ -28,7 +28,8 @@ PurchaseOfferingRequest::PurchaseOfferingRequest() :
     m_nameHasBeenSet(false),
     m_offeringIdHasBeenSet(false),
     m_requestId(Aws::Utils::UUID::RandomUUID()),
-    m_requestIdHasBeenSet(true)
+    m_requestIdHasBeenSet(true),
+    m_startHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,12 @@ Aws::String PurchaseOfferingRequest::SerializePayload() const
   if(m_requestIdHasBeenSet)
   {
    payload.WithString("requestId", m_requestId);
+
+  }
+
+  if(m_startHasBeenSet)
+  {
+   payload.WithString("start", m_start);
 
   }
 

@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * Returned list of deleted schedule actions.<p><h3>See Also:</h3>   <a
+   * List of actions that have been deleted from the schedule.<p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchScheduleActionDeleteResult">AWS
    * API Reference</a></p>
    */
@@ -49,37 +50,37 @@ namespace Model
 
 
     /**
-     * Returned list of deleted schedule actions.
+     * List of actions that have been deleted from the schedule.
      */
     inline const Aws::Vector<ScheduleAction>& GetScheduleActions() const{ return m_scheduleActions; }
 
     /**
-     * Returned list of deleted schedule actions.
+     * List of actions that have been deleted from the schedule.
      */
     inline void SetScheduleActions(const Aws::Vector<ScheduleAction>& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions = value; }
 
     /**
-     * Returned list of deleted schedule actions.
+     * List of actions that have been deleted from the schedule.
      */
     inline void SetScheduleActions(Aws::Vector<ScheduleAction>&& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions = std::move(value); }
 
     /**
-     * Returned list of deleted schedule actions.
+     * List of actions that have been deleted from the schedule.
      */
     inline BatchScheduleActionDeleteResult& WithScheduleActions(const Aws::Vector<ScheduleAction>& value) { SetScheduleActions(value); return *this;}
 
     /**
-     * Returned list of deleted schedule actions.
+     * List of actions that have been deleted from the schedule.
      */
     inline BatchScheduleActionDeleteResult& WithScheduleActions(Aws::Vector<ScheduleAction>&& value) { SetScheduleActions(std::move(value)); return *this;}
 
     /**
-     * Returned list of deleted schedule actions.
+     * List of actions that have been deleted from the schedule.
      */
     inline BatchScheduleActionDeleteResult& AddScheduleActions(const ScheduleAction& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions.push_back(value); return *this; }
 
     /**
-     * Returned list of deleted schedule actions.
+     * List of actions that have been deleted from the schedule.
      */
     inline BatchScheduleActionDeleteResult& AddScheduleActions(ScheduleAction&& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions.push_back(std::move(value)); return *this; }
 

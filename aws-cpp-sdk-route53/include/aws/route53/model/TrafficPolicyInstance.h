@@ -200,12 +200,12 @@ namespace Model
     /**
      * <p>The value of <code>State</code> is one of the following values:</p> <dl>
      * <dt>Applied</dt> <dd> <p>Amazon Route 53 has finished creating resource record
-     * sets, and changes have propagated to all Amazon Route 53 edge locations.</p>
-     * </dd> <dt>Creating</dt> <dd> <p>Amazon Route 53 is creating the resource record
-     * sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the
+     * sets, and changes have propagated to all Route 53 edge locations.</p> </dd>
+     * <dt>Creating</dt> <dd> <p>Route 53 is creating the resource record sets. Use
+     * <code>GetTrafficPolicyInstance</code> to confirm that the
      * <code>CreateTrafficPolicyInstance</code> request completed successfully.</p>
-     * </dd> <dt>Failed</dt> <dd> <p>Amazon Route 53 wasn't able to create or update
-     * the resource record sets. When the value of <code>State</code> is
+     * </dd> <dt>Failed</dt> <dd> <p>Route 53 wasn't able to create or update the
+     * resource record sets. When the value of <code>State</code> is
      * <code>Failed</code>, see <code>Message</code> for an explanation of what caused
      * the request to fail.</p> </dd> </dl>
      */
@@ -214,12 +214,12 @@ namespace Model
     /**
      * <p>The value of <code>State</code> is one of the following values:</p> <dl>
      * <dt>Applied</dt> <dd> <p>Amazon Route 53 has finished creating resource record
-     * sets, and changes have propagated to all Amazon Route 53 edge locations.</p>
-     * </dd> <dt>Creating</dt> <dd> <p>Amazon Route 53 is creating the resource record
-     * sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the
+     * sets, and changes have propagated to all Route 53 edge locations.</p> </dd>
+     * <dt>Creating</dt> <dd> <p>Route 53 is creating the resource record sets. Use
+     * <code>GetTrafficPolicyInstance</code> to confirm that the
      * <code>CreateTrafficPolicyInstance</code> request completed successfully.</p>
-     * </dd> <dt>Failed</dt> <dd> <p>Amazon Route 53 wasn't able to create or update
-     * the resource record sets. When the value of <code>State</code> is
+     * </dd> <dt>Failed</dt> <dd> <p>Route 53 wasn't able to create or update the
+     * resource record sets. When the value of <code>State</code> is
      * <code>Failed</code>, see <code>Message</code> for an explanation of what caused
      * the request to fail.</p> </dd> </dl>
      */
@@ -228,12 +228,12 @@ namespace Model
     /**
      * <p>The value of <code>State</code> is one of the following values:</p> <dl>
      * <dt>Applied</dt> <dd> <p>Amazon Route 53 has finished creating resource record
-     * sets, and changes have propagated to all Amazon Route 53 edge locations.</p>
-     * </dd> <dt>Creating</dt> <dd> <p>Amazon Route 53 is creating the resource record
-     * sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the
+     * sets, and changes have propagated to all Route 53 edge locations.</p> </dd>
+     * <dt>Creating</dt> <dd> <p>Route 53 is creating the resource record sets. Use
+     * <code>GetTrafficPolicyInstance</code> to confirm that the
      * <code>CreateTrafficPolicyInstance</code> request completed successfully.</p>
-     * </dd> <dt>Failed</dt> <dd> <p>Amazon Route 53 wasn't able to create or update
-     * the resource record sets. When the value of <code>State</code> is
+     * </dd> <dt>Failed</dt> <dd> <p>Route 53 wasn't able to create or update the
+     * resource record sets. When the value of <code>State</code> is
      * <code>Failed</code>, see <code>Message</code> for an explanation of what caused
      * the request to fail.</p> </dd> </dl>
      */
@@ -242,12 +242,12 @@ namespace Model
     /**
      * <p>The value of <code>State</code> is one of the following values:</p> <dl>
      * <dt>Applied</dt> <dd> <p>Amazon Route 53 has finished creating resource record
-     * sets, and changes have propagated to all Amazon Route 53 edge locations.</p>
-     * </dd> <dt>Creating</dt> <dd> <p>Amazon Route 53 is creating the resource record
-     * sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the
+     * sets, and changes have propagated to all Route 53 edge locations.</p> </dd>
+     * <dt>Creating</dt> <dd> <p>Route 53 is creating the resource record sets. Use
+     * <code>GetTrafficPolicyInstance</code> to confirm that the
      * <code>CreateTrafficPolicyInstance</code> request completed successfully.</p>
-     * </dd> <dt>Failed</dt> <dd> <p>Amazon Route 53 wasn't able to create or update
-     * the resource record sets. When the value of <code>State</code> is
+     * </dd> <dt>Failed</dt> <dd> <p>Route 53 wasn't able to create or update the
+     * resource record sets. When the value of <code>State</code> is
      * <code>Failed</code>, see <code>Message</code> for an explanation of what caused
      * the request to fail.</p> </dd> </dl>
      */
@@ -256,12 +256,12 @@ namespace Model
     /**
      * <p>The value of <code>State</code> is one of the following values:</p> <dl>
      * <dt>Applied</dt> <dd> <p>Amazon Route 53 has finished creating resource record
-     * sets, and changes have propagated to all Amazon Route 53 edge locations.</p>
-     * </dd> <dt>Creating</dt> <dd> <p>Amazon Route 53 is creating the resource record
-     * sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the
+     * sets, and changes have propagated to all Route 53 edge locations.</p> </dd>
+     * <dt>Creating</dt> <dd> <p>Route 53 is creating the resource record sets. Use
+     * <code>GetTrafficPolicyInstance</code> to confirm that the
      * <code>CreateTrafficPolicyInstance</code> request completed successfully.</p>
-     * </dd> <dt>Failed</dt> <dd> <p>Amazon Route 53 wasn't able to create or update
-     * the resource record sets. When the value of <code>State</code> is
+     * </dd> <dt>Failed</dt> <dd> <p>Route 53 wasn't able to create or update the
+     * resource record sets. When the value of <code>State</code> is
      * <code>Failed</code>, see <code>Message</code> for an explanation of what caused
      * the request to fail.</p> </dd> </dl>
      */
@@ -270,12 +270,12 @@ namespace Model
     /**
      * <p>The value of <code>State</code> is one of the following values:</p> <dl>
      * <dt>Applied</dt> <dd> <p>Amazon Route 53 has finished creating resource record
-     * sets, and changes have propagated to all Amazon Route 53 edge locations.</p>
-     * </dd> <dt>Creating</dt> <dd> <p>Amazon Route 53 is creating the resource record
-     * sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the
+     * sets, and changes have propagated to all Route 53 edge locations.</p> </dd>
+     * <dt>Creating</dt> <dd> <p>Route 53 is creating the resource record sets. Use
+     * <code>GetTrafficPolicyInstance</code> to confirm that the
      * <code>CreateTrafficPolicyInstance</code> request completed successfully.</p>
-     * </dd> <dt>Failed</dt> <dd> <p>Amazon Route 53 wasn't able to create or update
-     * the resource record sets. When the value of <code>State</code> is
+     * </dd> <dt>Failed</dt> <dd> <p>Route 53 wasn't able to create or update the
+     * resource record sets. When the value of <code>State</code> is
      * <code>Failed</code>, see <code>Message</code> for an explanation of what caused
      * the request to fail.</p> </dd> </dl>
      */
@@ -284,12 +284,12 @@ namespace Model
     /**
      * <p>The value of <code>State</code> is one of the following values:</p> <dl>
      * <dt>Applied</dt> <dd> <p>Amazon Route 53 has finished creating resource record
-     * sets, and changes have propagated to all Amazon Route 53 edge locations.</p>
-     * </dd> <dt>Creating</dt> <dd> <p>Amazon Route 53 is creating the resource record
-     * sets. Use <code>GetTrafficPolicyInstance</code> to confirm that the
+     * sets, and changes have propagated to all Route 53 edge locations.</p> </dd>
+     * <dt>Creating</dt> <dd> <p>Route 53 is creating the resource record sets. Use
+     * <code>GetTrafficPolicyInstance</code> to confirm that the
      * <code>CreateTrafficPolicyInstance</code> request completed successfully.</p>
-     * </dd> <dt>Failed</dt> <dd> <p>Amazon Route 53 wasn't able to create or update
-     * the resource record sets. When the value of <code>State</code> is
+     * </dd> <dt>Failed</dt> <dd> <p>Route 53 wasn't able to create or update the
+     * resource record sets. When the value of <code>State</code> is
      * <code>Failed</code>, see <code>Message</code> for an explanation of what caused
      * the request to fail.</p> </dd> </dl>
      */

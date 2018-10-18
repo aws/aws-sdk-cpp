@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * SCTE-35 Descriptor.<p><h3>See Also:</h3>   <a
+   * Holds one set of SCTE-35 Descriptor Settings.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35Descriptor">AWS
    * API Reference</a></p>
    */

@@ -37,7 +37,10 @@ namespace Model
 {
 
   /**
-   * SCTE-35 Delivery Restrictions.<p><h3>See Also:</h3>   <a
+   * Corresponds to SCTE-35 delivery_not_restricted_flag parameter. To declare
+   * delivery restrictions, include this element and its four "restriction" flags. To
+   * declare that there are no restrictions, omit this element.<p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35DeliveryRestrictions">AWS
    * API Reference</a></p>
    */
@@ -51,105 +54,105 @@ namespace Model
 
 
     /**
-     * SCTE-35 segmentation_descriptor archive_allowed_flag.
+     * Corresponds to SCTE-35 archive_allowed_flag.
      */
     inline const Scte35ArchiveAllowedFlag& GetArchiveAllowedFlag() const{ return m_archiveAllowedFlag; }
 
     /**
-     * SCTE-35 segmentation_descriptor archive_allowed_flag.
+     * Corresponds to SCTE-35 archive_allowed_flag.
      */
     inline void SetArchiveAllowedFlag(const Scte35ArchiveAllowedFlag& value) { m_archiveAllowedFlagHasBeenSet = true; m_archiveAllowedFlag = value; }
 
     /**
-     * SCTE-35 segmentation_descriptor archive_allowed_flag.
+     * Corresponds to SCTE-35 archive_allowed_flag.
      */
     inline void SetArchiveAllowedFlag(Scte35ArchiveAllowedFlag&& value) { m_archiveAllowedFlagHasBeenSet = true; m_archiveAllowedFlag = std::move(value); }
 
     /**
-     * SCTE-35 segmentation_descriptor archive_allowed_flag.
+     * Corresponds to SCTE-35 archive_allowed_flag.
      */
     inline Scte35DeliveryRestrictions& WithArchiveAllowedFlag(const Scte35ArchiveAllowedFlag& value) { SetArchiveAllowedFlag(value); return *this;}
 
     /**
-     * SCTE-35 segmentation_descriptor archive_allowed_flag.
+     * Corresponds to SCTE-35 archive_allowed_flag.
      */
     inline Scte35DeliveryRestrictions& WithArchiveAllowedFlag(Scte35ArchiveAllowedFlag&& value) { SetArchiveAllowedFlag(std::move(value)); return *this;}
 
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 device_restrictions parameter.
      */
     inline const Scte35DeviceRestrictions& GetDeviceRestrictions() const{ return m_deviceRestrictions; }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 device_restrictions parameter.
      */
     inline void SetDeviceRestrictions(const Scte35DeviceRestrictions& value) { m_deviceRestrictionsHasBeenSet = true; m_deviceRestrictions = value; }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 device_restrictions parameter.
      */
     inline void SetDeviceRestrictions(Scte35DeviceRestrictions&& value) { m_deviceRestrictionsHasBeenSet = true; m_deviceRestrictions = std::move(value); }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 device_restrictions parameter.
      */
     inline Scte35DeliveryRestrictions& WithDeviceRestrictions(const Scte35DeviceRestrictions& value) { SetDeviceRestrictions(value); return *this;}
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 device_restrictions parameter.
      */
     inline Scte35DeliveryRestrictions& WithDeviceRestrictions(Scte35DeviceRestrictions&& value) { SetDeviceRestrictions(std::move(value)); return *this;}
 
 
     /**
-     * SCTE-35 segmentation_descriptor no_regional_blackout_flag.
+     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      */
     inline const Scte35NoRegionalBlackoutFlag& GetNoRegionalBlackoutFlag() const{ return m_noRegionalBlackoutFlag; }
 
     /**
-     * SCTE-35 segmentation_descriptor no_regional_blackout_flag.
+     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      */
     inline void SetNoRegionalBlackoutFlag(const Scte35NoRegionalBlackoutFlag& value) { m_noRegionalBlackoutFlagHasBeenSet = true; m_noRegionalBlackoutFlag = value; }
 
     /**
-     * SCTE-35 segmentation_descriptor no_regional_blackout_flag.
+     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      */
     inline void SetNoRegionalBlackoutFlag(Scte35NoRegionalBlackoutFlag&& value) { m_noRegionalBlackoutFlagHasBeenSet = true; m_noRegionalBlackoutFlag = std::move(value); }
 
     /**
-     * SCTE-35 segmentation_descriptor no_regional_blackout_flag.
+     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      */
     inline Scte35DeliveryRestrictions& WithNoRegionalBlackoutFlag(const Scte35NoRegionalBlackoutFlag& value) { SetNoRegionalBlackoutFlag(value); return *this;}
 
     /**
-     * SCTE-35 segmentation_descriptor no_regional_blackout_flag.
+     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      */
     inline Scte35DeliveryRestrictions& WithNoRegionalBlackoutFlag(Scte35NoRegionalBlackoutFlag&& value) { SetNoRegionalBlackoutFlag(std::move(value)); return *this;}
 
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      */
     inline const Scte35WebDeliveryAllowedFlag& GetWebDeliveryAllowedFlag() const{ return m_webDeliveryAllowedFlag; }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      */
     inline void SetWebDeliveryAllowedFlag(const Scte35WebDeliveryAllowedFlag& value) { m_webDeliveryAllowedFlagHasBeenSet = true; m_webDeliveryAllowedFlag = value; }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      */
     inline void SetWebDeliveryAllowedFlag(Scte35WebDeliveryAllowedFlag&& value) { m_webDeliveryAllowedFlagHasBeenSet = true; m_webDeliveryAllowedFlag = std::move(value); }
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      */
     inline Scte35DeliveryRestrictions& WithWebDeliveryAllowedFlag(const Scte35WebDeliveryAllowedFlag& value) { SetWebDeliveryAllowedFlag(value); return *this;}
 
     /**
-     * SCTE-35 segmentation_descriptor web_delivery_allowed_flag.
+     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      */
     inline Scte35DeliveryRestrictions& WithWebDeliveryAllowedFlag(Scte35WebDeliveryAllowedFlag&& value) { SetWebDeliveryAllowedFlag(std::move(value)); return *this;}
 

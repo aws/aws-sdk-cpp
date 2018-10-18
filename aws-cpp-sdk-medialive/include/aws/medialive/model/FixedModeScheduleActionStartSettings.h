@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Fixed mode schedule action start settings<p><h3>See Also:</h3>   <a
+   * Start time for the action.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/FixedModeScheduleActionStartSettings">AWS
    * API Reference</a></p>
    */
@@ -48,37 +48,65 @@ namespace Model
 
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Start time for the action to start in the channel. (Not the time for the action
+     * to be added to the schedule: actions are always added to the schedule
+     * immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits
+     * (for example, mm might be 01) except for the two constants "T" for time and "Z"
+     * for "UTC format".
      */
     inline const Aws::String& GetTime() const{ return m_time; }
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Start time for the action to start in the channel. (Not the time for the action
+     * to be added to the schedule: actions are always added to the schedule
+     * immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits
+     * (for example, mm might be 01) except for the two constants "T" for time and "Z"
+     * for "UTC format".
      */
     inline void SetTime(const Aws::String& value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Start time for the action to start in the channel. (Not the time for the action
+     * to be added to the schedule: actions are always added to the schedule
+     * immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits
+     * (for example, mm might be 01) except for the two constants "T" for time and "Z"
+     * for "UTC format".
      */
     inline void SetTime(Aws::String&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Start time for the action to start in the channel. (Not the time for the action
+     * to be added to the schedule: actions are always added to the schedule
+     * immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits
+     * (for example, mm might be 01) except for the two constants "T" for time and "Z"
+     * for "UTC format".
      */
     inline void SetTime(const char* value) { m_timeHasBeenSet = true; m_time.assign(value); }
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Start time for the action to start in the channel. (Not the time for the action
+     * to be added to the schedule: actions are always added to the schedule
+     * immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits
+     * (for example, mm might be 01) except for the two constants "T" for time and "Z"
+     * for "UTC format".
      */
     inline FixedModeScheduleActionStartSettings& WithTime(const Aws::String& value) { SetTime(value); return *this;}
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Start time for the action to start in the channel. (Not the time for the action
+     * to be added to the schedule: actions are always added to the schedule
+     * immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits
+     * (for example, mm might be 01) except for the two constants "T" for time and "Z"
+     * for "UTC format".
      */
     inline FixedModeScheduleActionStartSettings& WithTime(Aws::String&& value) { SetTime(std::move(value)); return *this;}
 
     /**
-     * Fixed timestamp action start. Conforms to ISO-8601.
+     * Start time for the action to start in the channel. (Not the time for the action
+     * to be added to the schedule: actions are always added to the schedule
+     * immediately.) UTC format: yyyy-mm-ddThh:mm:ss.nnnZ. All the letters are digits
+     * (for example, mm might be 01) except for the two constants "T" for time and "Z"
+     * for "UTC format".
      */
     inline FixedModeScheduleActionStartSettings& WithTime(const char* value) { SetTime(value); return *this;}
 

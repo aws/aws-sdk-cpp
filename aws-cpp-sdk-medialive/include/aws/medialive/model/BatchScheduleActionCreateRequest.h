@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * A list of schedule actions to create.<p><h3>See Also:</h3>   <a
+   * A list of schedule actions to create (in a request) or that have been created
+   * (in a response).<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchScheduleActionCreateRequest">AWS
    * API Reference</a></p>
    */

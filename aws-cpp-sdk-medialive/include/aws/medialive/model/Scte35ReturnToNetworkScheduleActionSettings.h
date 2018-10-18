@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * SCTE-35 Return to Network Settings.<p><h3>See Also:</h3>   <a
+   * Settings for a SCTE-35 return_to_network message.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35ReturnToNetworkScheduleActionSettings">AWS
    * API Reference</a></p>
    */

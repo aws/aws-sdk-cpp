@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * SCTE-35 Time Signal Settings.<p><h3>See Also:</h3>   <a
+   * Settings for a SCTE-35 time_signal.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte35TimeSignalScheduleActionSettings">AWS
    * API Reference</a></p>
    */

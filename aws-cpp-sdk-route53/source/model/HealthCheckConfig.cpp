@@ -47,6 +47,8 @@ HealthCheckConfig::HealthCheckConfig() :
     m_measureLatencyHasBeenSet(false),
     m_inverted(false),
     m_invertedHasBeenSet(false),
+    m_disabled(false),
+    m_disabledHasBeenSet(false),
     m_healthThreshold(0),
     m_healthThresholdHasBeenSet(false),
     m_childHealthChecksHasBeenSet(false),
@@ -76,6 +78,8 @@ HealthCheckConfig::HealthCheckConfig(const XmlNode& xmlNode) :
     m_measureLatencyHasBeenSet(false),
     m_inverted(false),
     m_invertedHasBeenSet(false),
+    m_disabled(false),
+    m_disabledHasBeenSet(false),
     m_healthThreshold(0),
     m_healthThresholdHasBeenSet(false),
     m_childHealthChecksHasBeenSet(false),
@@ -154,6 +158,12 @@ HealthCheckConfig& HealthCheckConfig::operator =(const XmlNode& xmlNode)
     {
       m_inverted = StringUtils::ConvertToBool(StringUtils::Trim(invertedNode.GetText().c_str()).c_str());
       m_invertedHasBeenSet = true;
+    }
+    XmlNode disabledNode = resultNode.FirstChild("Disabled");
+    if(!disabledNode.IsNull())
+    {
+      m_disabled = StringUtils::ConvertToBool(StringUtils::Trim(disabledNode.GetText().c_str()).c_str());
+      m_disabledHasBeenSet = true;
     }
     XmlNode healthThresholdNode = resultNode.FirstChild("HealthThreshold");
     if(!healthThresholdNode.IsNull())
@@ -278,6 +288,14 @@ void HealthCheckConfig::AddToNode(XmlNode& parentNode) const
    XmlNode invertedNode = parentNode.CreateChildElement("Inverted");
    ss << std::boolalpha << m_inverted;
    invertedNode.SetText(ss.str());
+   ss.str("");
+  }
+
+  if(m_disabledHasBeenSet)
+  {
+   XmlNode disabledNode = parentNode.CreateChildElement("Disabled");
+   ss << std::boolalpha << m_disabled;
+   disabledNode.SetText(ss.str());
    ss.str("");
   }
 

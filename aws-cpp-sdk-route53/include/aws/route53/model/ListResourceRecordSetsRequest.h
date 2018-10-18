@@ -145,17 +145,17 @@ namespace Model
      * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
      * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for
-     * weighted, latency, geo, and failover resource record sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
-     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
-     * <code>TXT</code> </p> <p>Values for alias resource record sets: </p> <ul> <li>
-     * <p> <b>CloudFront distribution</b>: A or AAAA</p> </li> <li> <p> <b>Elastic
-     * Beanstalk environment that has a regionalized subdomain</b>: A</p> </li> <li>
-     * <p> <b>ELB load balancer</b>: A | AAAA</p> </li> <li> <p> <b>Amazon S3
-     * bucket</b>: A</p> </li> <li> <p> <b>Another resource record set in this hosted
-     * zone:</b> The type of the resource record set that the alias references.</p>
-     * </li> </ul> <p>Constraint: Specifying <code>type</code> without specifying
-     * <code>name</code> returns an <code>InvalidInput</code> error.</p>
+     * weighted, latency, geolocation, and failover resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> |
+     * <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
+     * <code>SRV</code> | <code>TXT</code> </p> <p>Values for alias resource record
+     * sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A or AAAA</p> </li>
+     * <li> <p> <b>Elastic Beanstalk environment that has a regionalized subdomain</b>:
+     * A</p> </li> <li> <p> <b>ELB load balancer</b>: A | AAAA</p> </li> <li> <p>
+     * <b>Amazon S3 bucket</b>: A</p> </li> <li> <p> <b>Another resource record set in
+     * this hosted zone:</b> The type of the resource record set that the alias
+     * references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline const RRType& GetStartRecordType() const{ return m_startRecordType; }
 
@@ -165,17 +165,17 @@ namespace Model
      * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
      * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for
-     * weighted, latency, geo, and failover resource record sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
-     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
-     * <code>TXT</code> </p> <p>Values for alias resource record sets: </p> <ul> <li>
-     * <p> <b>CloudFront distribution</b>: A or AAAA</p> </li> <li> <p> <b>Elastic
-     * Beanstalk environment that has a regionalized subdomain</b>: A</p> </li> <li>
-     * <p> <b>ELB load balancer</b>: A | AAAA</p> </li> <li> <p> <b>Amazon S3
-     * bucket</b>: A</p> </li> <li> <p> <b>Another resource record set in this hosted
-     * zone:</b> The type of the resource record set that the alias references.</p>
-     * </li> </ul> <p>Constraint: Specifying <code>type</code> without specifying
-     * <code>name</code> returns an <code>InvalidInput</code> error.</p>
+     * weighted, latency, geolocation, and failover resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> |
+     * <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
+     * <code>SRV</code> | <code>TXT</code> </p> <p>Values for alias resource record
+     * sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A or AAAA</p> </li>
+     * <li> <p> <b>Elastic Beanstalk environment that has a regionalized subdomain</b>:
+     * A</p> </li> <li> <p> <b>ELB load balancer</b>: A | AAAA</p> </li> <li> <p>
+     * <b>Amazon S3 bucket</b>: A</p> </li> <li> <p> <b>Another resource record set in
+     * this hosted zone:</b> The type of the resource record set that the alias
+     * references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetStartRecordType(const RRType& value) { m_startRecordTypeHasBeenSet = true; m_startRecordType = value; }
 
@@ -185,17 +185,17 @@ namespace Model
      * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
      * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for
-     * weighted, latency, geo, and failover resource record sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
-     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
-     * <code>TXT</code> </p> <p>Values for alias resource record sets: </p> <ul> <li>
-     * <p> <b>CloudFront distribution</b>: A or AAAA</p> </li> <li> <p> <b>Elastic
-     * Beanstalk environment that has a regionalized subdomain</b>: A</p> </li> <li>
-     * <p> <b>ELB load balancer</b>: A | AAAA</p> </li> <li> <p> <b>Amazon S3
-     * bucket</b>: A</p> </li> <li> <p> <b>Another resource record set in this hosted
-     * zone:</b> The type of the resource record set that the alias references.</p>
-     * </li> </ul> <p>Constraint: Specifying <code>type</code> without specifying
-     * <code>name</code> returns an <code>InvalidInput</code> error.</p>
+     * weighted, latency, geolocation, and failover resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> |
+     * <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
+     * <code>SRV</code> | <code>TXT</code> </p> <p>Values for alias resource record
+     * sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A or AAAA</p> </li>
+     * <li> <p> <b>Elastic Beanstalk environment that has a regionalized subdomain</b>:
+     * A</p> </li> <li> <p> <b>ELB load balancer</b>: A | AAAA</p> </li> <li> <p>
+     * <b>Amazon S3 bucket</b>: A</p> </li> <li> <p> <b>Another resource record set in
+     * this hosted zone:</b> The type of the resource record set that the alias
+     * references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetStartRecordType(RRType&& value) { m_startRecordTypeHasBeenSet = true; m_startRecordType = std::move(value); }
 
@@ -205,17 +205,17 @@ namespace Model
      * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
      * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for
-     * weighted, latency, geo, and failover resource record sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
-     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
-     * <code>TXT</code> </p> <p>Values for alias resource record sets: </p> <ul> <li>
-     * <p> <b>CloudFront distribution</b>: A or AAAA</p> </li> <li> <p> <b>Elastic
-     * Beanstalk environment that has a regionalized subdomain</b>: A</p> </li> <li>
-     * <p> <b>ELB load balancer</b>: A | AAAA</p> </li> <li> <p> <b>Amazon S3
-     * bucket</b>: A</p> </li> <li> <p> <b>Another resource record set in this hosted
-     * zone:</b> The type of the resource record set that the alias references.</p>
-     * </li> </ul> <p>Constraint: Specifying <code>type</code> without specifying
-     * <code>name</code> returns an <code>InvalidInput</code> error.</p>
+     * weighted, latency, geolocation, and failover resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> |
+     * <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
+     * <code>SRV</code> | <code>TXT</code> </p> <p>Values for alias resource record
+     * sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A or AAAA</p> </li>
+     * <li> <p> <b>Elastic Beanstalk environment that has a regionalized subdomain</b>:
+     * A</p> </li> <li> <p> <b>ELB load balancer</b>: A | AAAA</p> </li> <li> <p>
+     * <b>Amazon S3 bucket</b>: A</p> </li> <li> <p> <b>Another resource record set in
+     * this hosted zone:</b> The type of the resource record set that the alias
+     * references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordType(const RRType& value) { SetStartRecordType(value); return *this;}
 
@@ -225,17 +225,17 @@ namespace Model
      * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
      * <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> |
      * <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for
-     * weighted, latency, geo, and failover resource record sets: <code>A</code> |
-     * <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> |
-     * <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> |
-     * <code>TXT</code> </p> <p>Values for alias resource record sets: </p> <ul> <li>
-     * <p> <b>CloudFront distribution</b>: A or AAAA</p> </li> <li> <p> <b>Elastic
-     * Beanstalk environment that has a regionalized subdomain</b>: A</p> </li> <li>
-     * <p> <b>ELB load balancer</b>: A | AAAA</p> </li> <li> <p> <b>Amazon S3
-     * bucket</b>: A</p> </li> <li> <p> <b>Another resource record set in this hosted
-     * zone:</b> The type of the resource record set that the alias references.</p>
-     * </li> </ul> <p>Constraint: Specifying <code>type</code> without specifying
-     * <code>name</code> returns an <code>InvalidInput</code> error.</p>
+     * weighted, latency, geolocation, and failover resource record sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> |
+     * <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> |
+     * <code>SRV</code> | <code>TXT</code> </p> <p>Values for alias resource record
+     * sets: </p> <ul> <li> <p> <b>CloudFront distribution</b>: A or AAAA</p> </li>
+     * <li> <p> <b>Elastic Beanstalk environment that has a regionalized subdomain</b>:
+     * A</p> </li> <li> <p> <b>ELB load balancer</b>: A | AAAA</p> </li> <li> <p>
+     * <b>Amazon S3 bucket</b>: A</p> </li> <li> <p> <b>Another resource record set in
+     * this hosted zone:</b> The type of the resource record set that the alias
+     * references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordType(RRType&& value) { SetStartRecordType(std::move(value)); return *this;}
 

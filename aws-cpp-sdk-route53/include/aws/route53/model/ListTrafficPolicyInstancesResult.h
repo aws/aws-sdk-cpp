@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance that Amazon Route 53 will return if you submit another
+     * traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline const Aws::String& GetHostedZoneIdMarker() const{ return m_hostedZoneIdMarker; }
@@ -105,7 +105,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance that Amazon Route 53 will return if you submit another
+     * traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline void SetHostedZoneIdMarker(const Aws::String& value) { m_hostedZoneIdMarker = value; }
@@ -113,7 +113,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance that Amazon Route 53 will return if you submit another
+     * traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline void SetHostedZoneIdMarker(Aws::String&& value) { m_hostedZoneIdMarker = std::move(value); }
@@ -121,7 +121,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance that Amazon Route 53 will return if you submit another
+     * traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline void SetHostedZoneIdMarker(const char* value) { m_hostedZoneIdMarker.assign(value); }
@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance that Amazon Route 53 will return if you submit another
+     * traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline ListTrafficPolicyInstancesResult& WithHostedZoneIdMarker(const Aws::String& value) { SetHostedZoneIdMarker(value); return *this;}
@@ -137,7 +137,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance that Amazon Route 53 will return if you submit another
+     * traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline ListTrafficPolicyInstancesResult& WithHostedZoneIdMarker(Aws::String&& value) { SetHostedZoneIdMarker(std::move(value)); return *this;}
@@ -145,7 +145,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
-     * traffic policy instance that Amazon Route 53 will return if you submit another
+     * traffic policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline ListTrafficPolicyInstancesResult& WithHostedZoneIdMarker(const char* value) { SetHostedZoneIdMarker(value); return *this;}
@@ -154,7 +154,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance that Amazon Route 53 will return if you submit another
+     * policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline const Aws::String& GetTrafficPolicyInstanceNameMarker() const{ return m_trafficPolicyInstanceNameMarker; }
@@ -162,7 +162,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance that Amazon Route 53 will return if you submit another
+     * policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline void SetTrafficPolicyInstanceNameMarker(const Aws::String& value) { m_trafficPolicyInstanceNameMarker = value; }
@@ -170,7 +170,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance that Amazon Route 53 will return if you submit another
+     * policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline void SetTrafficPolicyInstanceNameMarker(Aws::String&& value) { m_trafficPolicyInstanceNameMarker = std::move(value); }
@@ -178,7 +178,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance that Amazon Route 53 will return if you submit another
+     * policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline void SetTrafficPolicyInstanceNameMarker(const char* value) { m_trafficPolicyInstanceNameMarker.assign(value); }
@@ -186,7 +186,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance that Amazon Route 53 will return if you submit another
+     * policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline ListTrafficPolicyInstancesResult& WithTrafficPolicyInstanceNameMarker(const Aws::String& value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}
@@ -194,7 +194,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance that Amazon Route 53 will return if you submit another
+     * policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline ListTrafficPolicyInstancesResult& WithTrafficPolicyInstanceNameMarker(Aws::String&& value) { SetTrafficPolicyInstanceNameMarker(std::move(value)); return *this;}
@@ -202,7 +202,7 @@ namespace Model
     /**
      * <p>If <code>IsTruncated</code> is <code>true</code>,
      * <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic
-     * policy instance that Amazon Route 53 will return if you submit another
+     * policy instance that Route 53 will return if you submit another
      * <code>ListTrafficPolicyInstances</code> request. </p>
      */
     inline ListTrafficPolicyInstancesResult& WithTrafficPolicyInstanceNameMarker(const char* value) { SetTrafficPolicyInstanceNameMarker(value); return *this;}

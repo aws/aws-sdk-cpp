@@ -155,44 +155,44 @@ namespace Model
 
 
     /**
-     * <p>The pagination token to use to retrieve the next page of results. If this
-     * value is empty, only the first page is retrieved.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If this value is null, it retrieves the first page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The pagination token to use to retrieve the next page of results. If this
-     * value is empty, only the first page is retrieved.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If this value is null, it retrieves the first page.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The pagination token to use to retrieve the next page of results. If this
-     * value is empty, only the first page is retrieved.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If this value is null, it retrieves the first page.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The pagination token to use to retrieve the next page of results. If this
-     * value is empty, only the first page is retrieved.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If this value is null, it retrieves the first page.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The pagination token to use to retrieve the next page of results. If this
-     * value is empty, only the first page is retrieved.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If this value is null, it retrieves the first page.</p>
      */
     inline DescribeImagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The pagination token to use to retrieve the next page of results. If this
-     * value is empty, only the first page is retrieved.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If this value is null, it retrieves the first page.</p>
      */
     inline DescribeImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The pagination token to use to retrieve the next page of results. If this
-     * value is empty, only the first page is retrieved.</p>
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If this value is null, it retrieves the first page.</p>
      */
     inline DescribeImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
