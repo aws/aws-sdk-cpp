@@ -584,6 +584,204 @@ namespace Model
      */
     inline AssociationDescription& WithAssociationName(const char* value) { SetAssociationName(value); return *this;}
 
+
+    /**
+     * <p>The number of errors that are allowed before the system stops sending
+     * requests to run the association on additional targets. You can specify either an
+     * absolute number of errors, for example 10, or a percentage of the target set,
+     * for example 10%. If you specify 3, for example, the system stops sending
+     * requests when the fourth error is received. If you specify 0, then the system
+     * stops sending requests after the first error is returned. If you run an
+     * association on 50 instances and set MaxError to 10%, then the system stops
+     * sending the request when the sixth error is received.</p> <p>Executions that are
+     * already running an association when MaxErrors is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure
+     * that there won't be more than max-errors failed executions, set MaxConcurrency
+     * to 1 so that executions proceed one at a time.</p>
+     */
+    inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
+
+    /**
+     * <p>The number of errors that are allowed before the system stops sending
+     * requests to run the association on additional targets. You can specify either an
+     * absolute number of errors, for example 10, or a percentage of the target set,
+     * for example 10%. If you specify 3, for example, the system stops sending
+     * requests when the fourth error is received. If you specify 0, then the system
+     * stops sending requests after the first error is returned. If you run an
+     * association on 50 instances and set MaxError to 10%, then the system stops
+     * sending the request when the sixth error is received.</p> <p>Executions that are
+     * already running an association when MaxErrors is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure
+     * that there won't be more than max-errors failed executions, set MaxConcurrency
+     * to 1 so that executions proceed one at a time.</p>
+     */
+    inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
+
+    /**
+     * <p>The number of errors that are allowed before the system stops sending
+     * requests to run the association on additional targets. You can specify either an
+     * absolute number of errors, for example 10, or a percentage of the target set,
+     * for example 10%. If you specify 3, for example, the system stops sending
+     * requests when the fourth error is received. If you specify 0, then the system
+     * stops sending requests after the first error is returned. If you run an
+     * association on 50 instances and set MaxError to 10%, then the system stops
+     * sending the request when the sixth error is received.</p> <p>Executions that are
+     * already running an association when MaxErrors is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure
+     * that there won't be more than max-errors failed executions, set MaxConcurrency
+     * to 1 so that executions proceed one at a time.</p>
+     */
+    inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
+
+    /**
+     * <p>The number of errors that are allowed before the system stops sending
+     * requests to run the association on additional targets. You can specify either an
+     * absolute number of errors, for example 10, or a percentage of the target set,
+     * for example 10%. If you specify 3, for example, the system stops sending
+     * requests when the fourth error is received. If you specify 0, then the system
+     * stops sending requests after the first error is returned. If you run an
+     * association on 50 instances and set MaxError to 10%, then the system stops
+     * sending the request when the sixth error is received.</p> <p>Executions that are
+     * already running an association when MaxErrors is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure
+     * that there won't be more than max-errors failed executions, set MaxConcurrency
+     * to 1 so that executions proceed one at a time.</p>
+     */
+    inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
+
+    /**
+     * <p>The number of errors that are allowed before the system stops sending
+     * requests to run the association on additional targets. You can specify either an
+     * absolute number of errors, for example 10, or a percentage of the target set,
+     * for example 10%. If you specify 3, for example, the system stops sending
+     * requests when the fourth error is received. If you specify 0, then the system
+     * stops sending requests after the first error is returned. If you run an
+     * association on 50 instances and set MaxError to 10%, then the system stops
+     * sending the request when the sixth error is received.</p> <p>Executions that are
+     * already running an association when MaxErrors is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure
+     * that there won't be more than max-errors failed executions, set MaxConcurrency
+     * to 1 so that executions proceed one at a time.</p>
+     */
+    inline AssociationDescription& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
+
+    /**
+     * <p>The number of errors that are allowed before the system stops sending
+     * requests to run the association on additional targets. You can specify either an
+     * absolute number of errors, for example 10, or a percentage of the target set,
+     * for example 10%. If you specify 3, for example, the system stops sending
+     * requests when the fourth error is received. If you specify 0, then the system
+     * stops sending requests after the first error is returned. If you run an
+     * association on 50 instances and set MaxError to 10%, then the system stops
+     * sending the request when the sixth error is received.</p> <p>Executions that are
+     * already running an association when MaxErrors is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure
+     * that there won't be more than max-errors failed executions, set MaxConcurrency
+     * to 1 so that executions proceed one at a time.</p>
+     */
+    inline AssociationDescription& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>The number of errors that are allowed before the system stops sending
+     * requests to run the association on additional targets. You can specify either an
+     * absolute number of errors, for example 10, or a percentage of the target set,
+     * for example 10%. If you specify 3, for example, the system stops sending
+     * requests when the fourth error is received. If you specify 0, then the system
+     * stops sending requests after the first error is returned. If you run an
+     * association on 50 instances and set MaxError to 10%, then the system stops
+     * sending the request when the sixth error is received.</p> <p>Executions that are
+     * already running an association when MaxErrors is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure
+     * that there won't be more than max-errors failed executions, set MaxConcurrency
+     * to 1 so that executions proceed one at a time.</p>
+     */
+    inline AssociationDescription& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of targets allowed to run the association at the same
+     * time. You can specify a number, for example 10, or a percentage of the target
+     * set, for example 10%. The default value is 100%, which means all targets run the
+     * association at the same time.</p> <p>If a new instance starts and attempts to
+     * execute an association while Systems Manager is executing MaxConcurrency
+     * associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit
+     * specified for MaxConcurrency.</p>
+     */
+    inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
+
+    /**
+     * <p>The maximum number of targets allowed to run the association at the same
+     * time. You can specify a number, for example 10, or a percentage of the target
+     * set, for example 10%. The default value is 100%, which means all targets run the
+     * association at the same time.</p> <p>If a new instance starts and attempts to
+     * execute an association while Systems Manager is executing MaxConcurrency
+     * associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit
+     * specified for MaxConcurrency.</p>
+     */
+    inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
+
+    /**
+     * <p>The maximum number of targets allowed to run the association at the same
+     * time. You can specify a number, for example 10, or a percentage of the target
+     * set, for example 10%. The default value is 100%, which means all targets run the
+     * association at the same time.</p> <p>If a new instance starts and attempts to
+     * execute an association while Systems Manager is executing MaxConcurrency
+     * associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit
+     * specified for MaxConcurrency.</p>
+     */
+    inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
+
+    /**
+     * <p>The maximum number of targets allowed to run the association at the same
+     * time. You can specify a number, for example 10, or a percentage of the target
+     * set, for example 10%. The default value is 100%, which means all targets run the
+     * association at the same time.</p> <p>If a new instance starts and attempts to
+     * execute an association while Systems Manager is executing MaxConcurrency
+     * associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit
+     * specified for MaxConcurrency.</p>
+     */
+    inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
+
+    /**
+     * <p>The maximum number of targets allowed to run the association at the same
+     * time. You can specify a number, for example 10, or a percentage of the target
+     * set, for example 10%. The default value is 100%, which means all targets run the
+     * association at the same time.</p> <p>If a new instance starts and attempts to
+     * execute an association while Systems Manager is executing MaxConcurrency
+     * associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit
+     * specified for MaxConcurrency.</p>
+     */
+    inline AssociationDescription& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
+
+    /**
+     * <p>The maximum number of targets allowed to run the association at the same
+     * time. You can specify a number, for example 10, or a percentage of the target
+     * set, for example 10%. The default value is 100%, which means all targets run the
+     * association at the same time.</p> <p>If a new instance starts and attempts to
+     * execute an association while Systems Manager is executing MaxConcurrency
+     * associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit
+     * specified for MaxConcurrency.</p>
+     */
+    inline AssociationDescription& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
+
+    /**
+     * <p>The maximum number of targets allowed to run the association at the same
+     * time. You can specify a number, for example 10, or a percentage of the target
+     * set, for example 10%. The default value is 100%, which means all targets run the
+     * association at the same time.</p> <p>If a new instance starts and attempts to
+     * execute an association while Systems Manager is executing MaxConcurrency
+     * associations, the association is allowed to run. During the next association
+     * interval, the new instance will process its association within the limit
+     * specified for MaxConcurrency.</p>
+     */
+    inline AssociationDescription& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -633,6 +831,12 @@ namespace Model
 
     Aws::String m_associationName;
     bool m_associationNameHasBeenSet;
+
+    Aws::String m_maxErrors;
+    bool m_maxErrorsHasBeenSet;
+
+    Aws::String m_maxConcurrency;
+    bool m_maxConcurrencyHasBeenSet;
   };
 
 } // namespace Model

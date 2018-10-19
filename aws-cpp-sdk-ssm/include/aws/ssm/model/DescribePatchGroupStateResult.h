@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The number of instances with patches installed that are specified in a
-     * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
+     * RejectedPatches list. Patches with a status of <i>INSTALLED_REJECTED</i> were
      * typically installed before they were added to a RejectedPatches list.</p> <note>
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
      * value of InstancesWithInstalledRejectedPatches will always be 0 (zero).</p>
@@ -103,7 +103,7 @@ namespace Model
 
     /**
      * <p>The number of instances with patches installed that are specified in a
-     * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
+     * RejectedPatches list. Patches with a status of <i>INSTALLED_REJECTED</i> were
      * typically installed before they were added to a RejectedPatches list.</p> <note>
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
      * value of InstancesWithInstalledRejectedPatches will always be 0 (zero).</p>
@@ -113,7 +113,7 @@ namespace Model
 
     /**
      * <p>The number of instances with patches installed that are specified in a
-     * RejectedPatches list. Patches with a status of <i>InstalledRejected</i> were
+     * RejectedPatches list. Patches with a status of <i>INSTALLED_REJECTED</i> were
      * typically installed before they were added to a RejectedPatches list.</p> <note>
      * <p>If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the
      * value of InstancesWithInstalledRejectedPatches will always be 0 (zero).</p>

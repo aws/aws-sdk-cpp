@@ -44,7 +44,9 @@ AssociationDescription::AssociationDescription() :
     m_outputLocationHasBeenSet(false),
     m_lastExecutionDateHasBeenSet(false),
     m_lastSuccessfulExecutionDateHasBeenSet(false),
-    m_associationNameHasBeenSet(false)
+    m_associationNameHasBeenSet(false),
+    m_maxErrorsHasBeenSet(false),
+    m_maxConcurrencyHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ AssociationDescription::AssociationDescription(JsonView jsonValue) :
     m_outputLocationHasBeenSet(false),
     m_lastExecutionDateHasBeenSet(false),
     m_lastSuccessfulExecutionDateHasBeenSet(false),
-    m_associationNameHasBeenSet(false)
+    m_associationNameHasBeenSet(false),
+    m_maxErrorsHasBeenSet(false),
+    m_maxConcurrencyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -196,6 +200,20 @@ AssociationDescription& AssociationDescription::operator =(JsonView jsonValue)
     m_associationNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaxErrors"))
+  {
+    m_maxErrors = jsonValue.GetString("MaxErrors");
+
+    m_maxErrorsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxConcurrency"))
+  {
+    m_maxConcurrency = jsonValue.GetString("MaxConcurrency");
+
+    m_maxConcurrencyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -307,6 +325,18 @@ JsonValue AssociationDescription::Jsonize() const
   if(m_associationNameHasBeenSet)
   {
    payload.WithString("AssociationName", m_associationName);
+
+  }
+
+  if(m_maxErrorsHasBeenSet)
+  {
+   payload.WithString("MaxErrors", m_maxErrors);
+
+  }
+
+  if(m_maxConcurrencyHasBeenSet)
+  {
+   payload.WithString("MaxConcurrency", m_maxConcurrency);
 
   }
 

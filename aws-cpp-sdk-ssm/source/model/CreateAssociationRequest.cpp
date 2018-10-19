@@ -30,7 +30,9 @@ CreateAssociationRequest::CreateAssociationRequest() :
     m_targetsHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
-    m_associationNameHasBeenSet(false)
+    m_associationNameHasBeenSet(false),
+    m_maxErrorsHasBeenSet(false),
+    m_maxConcurrencyHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,18 @@ Aws::String CreateAssociationRequest::SerializePayload() const
   if(m_associationNameHasBeenSet)
   {
    payload.WithString("AssociationName", m_associationName);
+
+  }
+
+  if(m_maxErrorsHasBeenSet)
+  {
+   payload.WithString("MaxErrors", m_maxErrors);
+
+  }
+
+  if(m_maxConcurrencyHasBeenSet)
+  {
+   payload.WithString("MaxConcurrency", m_maxConcurrency);
 
   }
 

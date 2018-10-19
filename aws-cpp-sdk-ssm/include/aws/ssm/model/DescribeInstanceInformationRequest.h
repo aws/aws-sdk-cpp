@@ -127,43 +127,50 @@ namespace Model
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
+     * mapping.</p>
      */
     inline const Aws::Vector<InstanceInformationStringFilter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
+     * mapping.</p>
      */
     inline void SetFilters(const Aws::Vector<InstanceInformationStringFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
+     * mapping.</p>
      */
     inline void SetFilters(Aws::Vector<InstanceInformationStringFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
+     * mapping.</p>
      */
     inline DescribeInstanceInformationRequest& WithFilters(const Aws::Vector<InstanceInformationStringFilter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
+     * mapping.</p>
      */
     inline DescribeInstanceInformationRequest& WithFilters(Aws::Vector<InstanceInformationStringFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
+     * mapping.</p>
      */
     inline DescribeInstanceInformationRequest& AddFilters(const InstanceInformationStringFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>One or more filters. Use a filter to return a more specific list of
-     * instances.</p>
+     * instances. You can filter on Amazon EC2 tag. Specify tags by using a key-value
+     * mapping.</p>
      */
     inline DescribeInstanceInformationRequest& AddFilters(InstanceInformationStringFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

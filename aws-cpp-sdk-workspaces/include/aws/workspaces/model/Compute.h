@@ -30,7 +30,9 @@ namespace Model
     STANDARD,
     PERFORMANCE,
     POWER,
-    GRAPHICS
+    GRAPHICS,
+    POWERPRO,
+    GRAPHICSPRO
   };
 
 namespace ComputeMapper
