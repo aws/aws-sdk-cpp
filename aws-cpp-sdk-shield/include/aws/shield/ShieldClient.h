@@ -188,7 +188,7 @@ namespace Model
 
         virtual ~ShieldClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "shield"; }
+        inline virtual const char* GetServiceClientName() const override { return "Shield"; }
 
 
         /**

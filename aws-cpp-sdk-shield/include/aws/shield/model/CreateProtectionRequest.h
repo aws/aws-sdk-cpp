@@ -90,8 +90,8 @@ namespace Model
      * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
-     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
-     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
+     * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
      * </code> </p> </li> </ul>
      */
@@ -107,8 +107,8 @@ namespace Model
      * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
-     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
-     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
+     * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
      * </code> </p> </li> </ul>
      */
@@ -124,8 +124,8 @@ namespace Model
      * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
-     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
-     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
+     * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
      * </code> </p> </li> </ul>
      */
@@ -141,8 +141,8 @@ namespace Model
      * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
-     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
-     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
+     * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
      * </code> </p> </li> </ul>
      */
@@ -158,8 +158,8 @@ namespace Model
      * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
-     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
-     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
+     * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
      * </code> </p> </li> </ul>
      */
@@ -175,8 +175,8 @@ namespace Model
      * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
-     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
-     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
+     * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
      * </code> </p> </li> </ul>
      */
@@ -192,8 +192,8 @@ namespace Model
      * </code> </p> </li> <li> <p>For AWS CloudFront distribution:
      * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
      * </code> </p> </li> <li> <p>For Amazon Route 53:
-     * <code>arn:aws:route53::<i>account-id</i>:hostedzone/<i>hosted-zone-id</i>
-     * </code> </p> </li> <li> <p>For an Elastic IP address:
+     * <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code> </p> </li> <li>
+     * <p>For an Elastic IP address:
      * <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
      * </code> </p> </li> </ul>
      */

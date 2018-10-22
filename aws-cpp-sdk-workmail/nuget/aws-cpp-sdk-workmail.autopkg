@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-WorkMail;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.6.20171001.35;
+        version : 1.6.20171001.36;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon WorkMail);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.6.35
+            AWSSDKCPP-Core/1.6.36
        }
     }
 

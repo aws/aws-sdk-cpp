@@ -17,6 +17,8 @@
 #include <aws/inspector/Inspector_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/inspector/model/Tag.h>
+#include <aws/inspector/model/NetworkInterface.h>
 #include <utility>
 
 namespace Aws
@@ -278,6 +280,85 @@ namespace Model
      */
     inline AssetAttributes& AddIpv4Addresses(const char* value) { m_ipv4AddressesHasBeenSet = true; m_ipv4Addresses.push_back(value); return *this; }
 
+
+    /**
+     * <p>The tags related to the EC2 instance where the finding is generated.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags related to the EC2 instance where the finding is generated.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags related to the EC2 instance where the finding is generated.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags related to the EC2 instance where the finding is generated.</p>
+     */
+    inline AssetAttributes& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags related to the EC2 instance where the finding is generated.</p>
+     */
+    inline AssetAttributes& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags related to the EC2 instance where the finding is generated.</p>
+     */
+    inline AssetAttributes& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags related to the EC2 instance where the finding is generated.</p>
+     */
+    inline AssetAttributes& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>An array of the network interfaces interacting with the EC2 instance where
+     * the finding is generated.</p>
+     */
+    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>An array of the network interfaces interacting with the EC2 instance where
+     * the finding is generated.</p>
+     */
+    inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
+
+    /**
+     * <p>An array of the network interfaces interacting with the EC2 instance where
+     * the finding is generated.</p>
+     */
+    inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
+
+    /**
+     * <p>An array of the network interfaces interacting with the EC2 instance where
+     * the finding is generated.</p>
+     */
+    inline AssetAttributes& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
+
+    /**
+     * <p>An array of the network interfaces interacting with the EC2 instance where
+     * the finding is generated.</p>
+     */
+    inline AssetAttributes& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of the network interfaces interacting with the EC2 instance where
+     * the finding is generated.</p>
+     */
+    inline AssetAttributes& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
+
+    /**
+     * <p>An array of the network interfaces interacting with the EC2 instance where
+     * the finding is generated.</p>
+     */
+    inline AssetAttributes& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_schemaVersion;
@@ -297,6 +378,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_ipv4Addresses;
     bool m_ipv4AddressesHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+
+    Aws::Vector<NetworkInterface> m_networkInterfaces;
+    bool m_networkInterfacesHasBeenSet;
   };
 
 } // namespace Model

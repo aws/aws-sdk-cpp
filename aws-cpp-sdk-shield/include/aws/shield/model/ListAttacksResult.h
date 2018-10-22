@@ -84,7 +84,10 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available. If not null, more results are available. Pass this value for the
      * <code>NextMarker</code> parameter in a subsequent call to
-     * <code>ListAttacks</code> to retrieve the next set of items.</p>
+     * <code>ListAttacks</code> to retrieve the next set of items.</p> <p>AWS WAF might
+     * return the list of <a>AttackSummary</a> objects in batches smaller than the
+     * number specified by MaxResults. If there are more <a>AttackSummary</a> objects
+     * to return, AWS WAF will always also return a <code>NextToken</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -92,7 +95,10 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available. If not null, more results are available. Pass this value for the
      * <code>NextMarker</code> parameter in a subsequent call to
-     * <code>ListAttacks</code> to retrieve the next set of items.</p>
+     * <code>ListAttacks</code> to retrieve the next set of items.</p> <p>AWS WAF might
+     * return the list of <a>AttackSummary</a> objects in batches smaller than the
+     * number specified by MaxResults. If there are more <a>AttackSummary</a> objects
+     * to return, AWS WAF will always also return a <code>NextToken</code>.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
@@ -100,7 +106,10 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available. If not null, more results are available. Pass this value for the
      * <code>NextMarker</code> parameter in a subsequent call to
-     * <code>ListAttacks</code> to retrieve the next set of items.</p>
+     * <code>ListAttacks</code> to retrieve the next set of items.</p> <p>AWS WAF might
+     * return the list of <a>AttackSummary</a> objects in batches smaller than the
+     * number specified by MaxResults. If there are more <a>AttackSummary</a> objects
+     * to return, AWS WAF will always also return a <code>NextToken</code>.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
@@ -108,7 +117,10 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available. If not null, more results are available. Pass this value for the
      * <code>NextMarker</code> parameter in a subsequent call to
-     * <code>ListAttacks</code> to retrieve the next set of items.</p>
+     * <code>ListAttacks</code> to retrieve the next set of items.</p> <p>AWS WAF might
+     * return the list of <a>AttackSummary</a> objects in batches smaller than the
+     * number specified by MaxResults. If there are more <a>AttackSummary</a> objects
+     * to return, AWS WAF will always also return a <code>NextToken</code>.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
@@ -116,7 +128,10 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available. If not null, more results are available. Pass this value for the
      * <code>NextMarker</code> parameter in a subsequent call to
-     * <code>ListAttacks</code> to retrieve the next set of items.</p>
+     * <code>ListAttacks</code> to retrieve the next set of items.</p> <p>AWS WAF might
+     * return the list of <a>AttackSummary</a> objects in batches smaller than the
+     * number specified by MaxResults. If there are more <a>AttackSummary</a> objects
+     * to return, AWS WAF will always also return a <code>NextToken</code>.</p>
      */
     inline ListAttacksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -124,7 +139,10 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available. If not null, more results are available. Pass this value for the
      * <code>NextMarker</code> parameter in a subsequent call to
-     * <code>ListAttacks</code> to retrieve the next set of items.</p>
+     * <code>ListAttacks</code> to retrieve the next set of items.</p> <p>AWS WAF might
+     * return the list of <a>AttackSummary</a> objects in batches smaller than the
+     * number specified by MaxResults. If there are more <a>AttackSummary</a> objects
+     * to return, AWS WAF will always also return a <code>NextToken</code>.</p>
      */
     inline ListAttacksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -132,7 +150,10 @@ namespace Model
      * <p>The token returned by a previous call to indicate that there is more data
      * available. If not null, more results are available. Pass this value for the
      * <code>NextMarker</code> parameter in a subsequent call to
-     * <code>ListAttacks</code> to retrieve the next set of items.</p>
+     * <code>ListAttacks</code> to retrieve the next set of items.</p> <p>AWS WAF might
+     * return the list of <a>AttackSummary</a> objects in batches smaller than the
+     * number specified by MaxResults. If there are more <a>AttackSummary</a> objects
+     * to return, AWS WAF will always also return a <code>NextToken</code>.</p>
      */
     inline ListAttacksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
