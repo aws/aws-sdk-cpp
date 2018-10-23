@@ -25,6 +25,7 @@
 #include <aws/ec2/model/AcceptReservedInstancesExchangeQuoteResponse.h>
 #include <aws/ec2/model/AcceptVpcEndpointConnectionsResponse.h>
 #include <aws/ec2/model/AcceptVpcPeeringConnectionResponse.h>
+#include <aws/ec2/model/AdvertiseByoipCidrResponse.h>
 #include <aws/ec2/model/AllocateAddressResponse.h>
 #include <aws/ec2/model/AllocateHostsResponse.h>
 #include <aws/ec2/model/AssignIpv6AddressesResponse.h>
@@ -92,11 +93,13 @@
 #include <aws/ec2/model/DeleteVpcEndpointServiceConfigurationsResponse.h>
 #include <aws/ec2/model/DeleteVpcEndpointsResponse.h>
 #include <aws/ec2/model/DeleteVpcPeeringConnectionResponse.h>
+#include <aws/ec2/model/DeprovisionByoipCidrResponse.h>
 #include <aws/ec2/model/DescribeAccountAttributesResponse.h>
 #include <aws/ec2/model/DescribeAddressesResponse.h>
 #include <aws/ec2/model/DescribeAggregateIdFormatResponse.h>
 #include <aws/ec2/model/DescribeAvailabilityZonesResponse.h>
 #include <aws/ec2/model/DescribeBundleTasksResponse.h>
+#include <aws/ec2/model/DescribeByoipCidrsResponse.h>
 #include <aws/ec2/model/DescribeClassicLinkInstancesResponse.h>
 #include <aws/ec2/model/DescribeConversionTasksResponse.h>
 #include <aws/ec2/model/DescribeCustomerGatewaysResponse.h>
@@ -137,6 +140,7 @@
 #include <aws/ec2/model/DescribePlacementGroupsResponse.h>
 #include <aws/ec2/model/DescribePrefixListsResponse.h>
 #include <aws/ec2/model/DescribePrincipalIdFormatResponse.h>
+#include <aws/ec2/model/DescribePublicIpv4PoolsResponse.h>
 #include <aws/ec2/model/DescribeRegionsResponse.h>
 #include <aws/ec2/model/DescribeReservedInstancesResponse.h>
 #include <aws/ec2/model/DescribeReservedInstancesListingsResponse.h>
@@ -212,6 +216,7 @@
 #include <aws/ec2/model/ModifyVpcTenancyResponse.h>
 #include <aws/ec2/model/MonitorInstancesResponse.h>
 #include <aws/ec2/model/MoveAddressToVpcResponse.h>
+#include <aws/ec2/model/ProvisionByoipCidrResponse.h>
 #include <aws/ec2/model/PurchaseHostReservationResponse.h>
 #include <aws/ec2/model/PurchaseReservedInstancesOfferingResponse.h>
 #include <aws/ec2/model/PurchaseScheduledInstancesResponse.h>
@@ -235,6 +240,7 @@
 #include <aws/ec2/model/UnmonitorInstancesResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsEgressResponse.h>
 #include <aws/ec2/model/UpdateSecurityGroupRuleDescriptionsIngressResponse.h>
+#include <aws/ec2/model/WithdrawByoipCidrResponse.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -284,6 +290,7 @@ namespace Model
         class AcceptReservedInstancesExchangeQuoteRequest;
         class AcceptVpcEndpointConnectionsRequest;
         class AcceptVpcPeeringConnectionRequest;
+        class AdvertiseByoipCidrRequest;
         class AllocateAddressRequest;
         class AllocateHostsRequest;
         class AssignIpv6AddressesRequest;
@@ -382,12 +389,14 @@ namespace Model
         class DeleteVpnConnectionRequest;
         class DeleteVpnConnectionRouteRequest;
         class DeleteVpnGatewayRequest;
+        class DeprovisionByoipCidrRequest;
         class DeregisterImageRequest;
         class DescribeAccountAttributesRequest;
         class DescribeAddressesRequest;
         class DescribeAggregateIdFormatRequest;
         class DescribeAvailabilityZonesRequest;
         class DescribeBundleTasksRequest;
+        class DescribeByoipCidrsRequest;
         class DescribeClassicLinkInstancesRequest;
         class DescribeConversionTasksRequest;
         class DescribeCustomerGatewaysRequest;
@@ -428,6 +437,7 @@ namespace Model
         class DescribePlacementGroupsRequest;
         class DescribePrefixListsRequest;
         class DescribePrincipalIdFormatRequest;
+        class DescribePublicIpv4PoolsRequest;
         class DescribeRegionsRequest;
         class DescribeReservedInstancesRequest;
         class DescribeReservedInstancesListingsRequest;
@@ -520,6 +530,7 @@ namespace Model
         class ModifyVpcTenancyRequest;
         class MonitorInstancesRequest;
         class MoveAddressToVpcRequest;
+        class ProvisionByoipCidrRequest;
         class PurchaseHostReservationRequest;
         class PurchaseReservedInstancesOfferingRequest;
         class PurchaseScheduledInstancesRequest;
@@ -555,10 +566,12 @@ namespace Model
         class UnmonitorInstancesRequest;
         class UpdateSecurityGroupRuleDescriptionsEgressRequest;
         class UpdateSecurityGroupRuleDescriptionsIngressRequest;
+        class WithdrawByoipCidrRequest;
 
         typedef Aws::Utils::Outcome<AcceptReservedInstancesExchangeQuoteResponse, Aws::Client::AWSError<EC2Errors>> AcceptReservedInstancesExchangeQuoteOutcome;
         typedef Aws::Utils::Outcome<AcceptVpcEndpointConnectionsResponse, Aws::Client::AWSError<EC2Errors>> AcceptVpcEndpointConnectionsOutcome;
         typedef Aws::Utils::Outcome<AcceptVpcPeeringConnectionResponse, Aws::Client::AWSError<EC2Errors>> AcceptVpcPeeringConnectionOutcome;
+        typedef Aws::Utils::Outcome<AdvertiseByoipCidrResponse, Aws::Client::AWSError<EC2Errors>> AdvertiseByoipCidrOutcome;
         typedef Aws::Utils::Outcome<AllocateAddressResponse, Aws::Client::AWSError<EC2Errors>> AllocateAddressOutcome;
         typedef Aws::Utils::Outcome<AllocateHostsResponse, Aws::Client::AWSError<EC2Errors>> AllocateHostsOutcome;
         typedef Aws::Utils::Outcome<AssignIpv6AddressesResponse, Aws::Client::AWSError<EC2Errors>> AssignIpv6AddressesOutcome;
@@ -657,12 +670,14 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVpnConnectionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVpnConnectionRouteOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVpnGatewayOutcome;
+        typedef Aws::Utils::Outcome<DeprovisionByoipCidrResponse, Aws::Client::AWSError<EC2Errors>> DeprovisionByoipCidrOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeregisterImageOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountAttributesResponse, Aws::Client::AWSError<EC2Errors>> DescribeAccountAttributesOutcome;
         typedef Aws::Utils::Outcome<DescribeAddressesResponse, Aws::Client::AWSError<EC2Errors>> DescribeAddressesOutcome;
         typedef Aws::Utils::Outcome<DescribeAggregateIdFormatResponse, Aws::Client::AWSError<EC2Errors>> DescribeAggregateIdFormatOutcome;
         typedef Aws::Utils::Outcome<DescribeAvailabilityZonesResponse, Aws::Client::AWSError<EC2Errors>> DescribeAvailabilityZonesOutcome;
         typedef Aws::Utils::Outcome<DescribeBundleTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeBundleTasksOutcome;
+        typedef Aws::Utils::Outcome<DescribeByoipCidrsResponse, Aws::Client::AWSError<EC2Errors>> DescribeByoipCidrsOutcome;
         typedef Aws::Utils::Outcome<DescribeClassicLinkInstancesResponse, Aws::Client::AWSError<EC2Errors>> DescribeClassicLinkInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeConversionTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeConversionTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeCustomerGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeCustomerGatewaysOutcome;
@@ -703,6 +718,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribePlacementGroupsResponse, Aws::Client::AWSError<EC2Errors>> DescribePlacementGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribePrefixListsResponse, Aws::Client::AWSError<EC2Errors>> DescribePrefixListsOutcome;
         typedef Aws::Utils::Outcome<DescribePrincipalIdFormatResponse, Aws::Client::AWSError<EC2Errors>> DescribePrincipalIdFormatOutcome;
+        typedef Aws::Utils::Outcome<DescribePublicIpv4PoolsResponse, Aws::Client::AWSError<EC2Errors>> DescribePublicIpv4PoolsOutcome;
         typedef Aws::Utils::Outcome<DescribeRegionsResponse, Aws::Client::AWSError<EC2Errors>> DescribeRegionsOutcome;
         typedef Aws::Utils::Outcome<DescribeReservedInstancesResponse, Aws::Client::AWSError<EC2Errors>> DescribeReservedInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeReservedInstancesListingsResponse, Aws::Client::AWSError<EC2Errors>> DescribeReservedInstancesListingsOutcome;
@@ -795,6 +811,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyVpcTenancyResponse, Aws::Client::AWSError<EC2Errors>> ModifyVpcTenancyOutcome;
         typedef Aws::Utils::Outcome<MonitorInstancesResponse, Aws::Client::AWSError<EC2Errors>> MonitorInstancesOutcome;
         typedef Aws::Utils::Outcome<MoveAddressToVpcResponse, Aws::Client::AWSError<EC2Errors>> MoveAddressToVpcOutcome;
+        typedef Aws::Utils::Outcome<ProvisionByoipCidrResponse, Aws::Client::AWSError<EC2Errors>> ProvisionByoipCidrOutcome;
         typedef Aws::Utils::Outcome<PurchaseHostReservationResponse, Aws::Client::AWSError<EC2Errors>> PurchaseHostReservationOutcome;
         typedef Aws::Utils::Outcome<PurchaseReservedInstancesOfferingResponse, Aws::Client::AWSError<EC2Errors>> PurchaseReservedInstancesOfferingOutcome;
         typedef Aws::Utils::Outcome<PurchaseScheduledInstancesResponse, Aws::Client::AWSError<EC2Errors>> PurchaseScheduledInstancesOutcome;
@@ -830,10 +847,12 @@ namespace Model
         typedef Aws::Utils::Outcome<UnmonitorInstancesResponse, Aws::Client::AWSError<EC2Errors>> UnmonitorInstancesOutcome;
         typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsEgressResponse, Aws::Client::AWSError<EC2Errors>> UpdateSecurityGroupRuleDescriptionsEgressOutcome;
         typedef Aws::Utils::Outcome<UpdateSecurityGroupRuleDescriptionsIngressResponse, Aws::Client::AWSError<EC2Errors>> UpdateSecurityGroupRuleDescriptionsIngressOutcome;
+        typedef Aws::Utils::Outcome<WithdrawByoipCidrResponse, Aws::Client::AWSError<EC2Errors>> WithdrawByoipCidrOutcome;
 
         typedef std::future<AcceptReservedInstancesExchangeQuoteOutcome> AcceptReservedInstancesExchangeQuoteOutcomeCallable;
         typedef std::future<AcceptVpcEndpointConnectionsOutcome> AcceptVpcEndpointConnectionsOutcomeCallable;
         typedef std::future<AcceptVpcPeeringConnectionOutcome> AcceptVpcPeeringConnectionOutcomeCallable;
+        typedef std::future<AdvertiseByoipCidrOutcome> AdvertiseByoipCidrOutcomeCallable;
         typedef std::future<AllocateAddressOutcome> AllocateAddressOutcomeCallable;
         typedef std::future<AllocateHostsOutcome> AllocateHostsOutcomeCallable;
         typedef std::future<AssignIpv6AddressesOutcome> AssignIpv6AddressesOutcomeCallable;
@@ -932,12 +951,14 @@ namespace Model
         typedef std::future<DeleteVpnConnectionOutcome> DeleteVpnConnectionOutcomeCallable;
         typedef std::future<DeleteVpnConnectionRouteOutcome> DeleteVpnConnectionRouteOutcomeCallable;
         typedef std::future<DeleteVpnGatewayOutcome> DeleteVpnGatewayOutcomeCallable;
+        typedef std::future<DeprovisionByoipCidrOutcome> DeprovisionByoipCidrOutcomeCallable;
         typedef std::future<DeregisterImageOutcome> DeregisterImageOutcomeCallable;
         typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
         typedef std::future<DescribeAddressesOutcome> DescribeAddressesOutcomeCallable;
         typedef std::future<DescribeAggregateIdFormatOutcome> DescribeAggregateIdFormatOutcomeCallable;
         typedef std::future<DescribeAvailabilityZonesOutcome> DescribeAvailabilityZonesOutcomeCallable;
         typedef std::future<DescribeBundleTasksOutcome> DescribeBundleTasksOutcomeCallable;
+        typedef std::future<DescribeByoipCidrsOutcome> DescribeByoipCidrsOutcomeCallable;
         typedef std::future<DescribeClassicLinkInstancesOutcome> DescribeClassicLinkInstancesOutcomeCallable;
         typedef std::future<DescribeConversionTasksOutcome> DescribeConversionTasksOutcomeCallable;
         typedef std::future<DescribeCustomerGatewaysOutcome> DescribeCustomerGatewaysOutcomeCallable;
@@ -978,6 +999,7 @@ namespace Model
         typedef std::future<DescribePlacementGroupsOutcome> DescribePlacementGroupsOutcomeCallable;
         typedef std::future<DescribePrefixListsOutcome> DescribePrefixListsOutcomeCallable;
         typedef std::future<DescribePrincipalIdFormatOutcome> DescribePrincipalIdFormatOutcomeCallable;
+        typedef std::future<DescribePublicIpv4PoolsOutcome> DescribePublicIpv4PoolsOutcomeCallable;
         typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
         typedef std::future<DescribeReservedInstancesOutcome> DescribeReservedInstancesOutcomeCallable;
         typedef std::future<DescribeReservedInstancesListingsOutcome> DescribeReservedInstancesListingsOutcomeCallable;
@@ -1070,6 +1092,7 @@ namespace Model
         typedef std::future<ModifyVpcTenancyOutcome> ModifyVpcTenancyOutcomeCallable;
         typedef std::future<MonitorInstancesOutcome> MonitorInstancesOutcomeCallable;
         typedef std::future<MoveAddressToVpcOutcome> MoveAddressToVpcOutcomeCallable;
+        typedef std::future<ProvisionByoipCidrOutcome> ProvisionByoipCidrOutcomeCallable;
         typedef std::future<PurchaseHostReservationOutcome> PurchaseHostReservationOutcomeCallable;
         typedef std::future<PurchaseReservedInstancesOfferingOutcome> PurchaseReservedInstancesOfferingOutcomeCallable;
         typedef std::future<PurchaseScheduledInstancesOutcome> PurchaseScheduledInstancesOutcomeCallable;
@@ -1105,6 +1128,7 @@ namespace Model
         typedef std::future<UnmonitorInstancesOutcome> UnmonitorInstancesOutcomeCallable;
         typedef std::future<UpdateSecurityGroupRuleDescriptionsEgressOutcome> UpdateSecurityGroupRuleDescriptionsEgressOutcomeCallable;
         typedef std::future<UpdateSecurityGroupRuleDescriptionsIngressOutcome> UpdateSecurityGroupRuleDescriptionsIngressOutcomeCallable;
+        typedef std::future<WithdrawByoipCidrOutcome> WithdrawByoipCidrOutcomeCallable;
 } // namespace Model
 
   class EC2Client;
@@ -1112,6 +1136,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::AcceptReservedInstancesExchangeQuoteRequest&, const Model::AcceptReservedInstancesExchangeQuoteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptReservedInstancesExchangeQuoteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AcceptVpcEndpointConnectionsRequest&, const Model::AcceptVpcEndpointConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptVpcEndpointConnectionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AcceptVpcPeeringConnectionRequest&, const Model::AcceptVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptVpcPeeringConnectionResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AdvertiseByoipCidrRequest&, const Model::AdvertiseByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdvertiseByoipCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AllocateAddressRequest&, const Model::AllocateAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllocateAddressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AllocateHostsRequest&, const Model::AllocateHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllocateHostsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssignIpv6AddressesRequest&, const Model::AssignIpv6AddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssignIpv6AddressesResponseReceivedHandler;
@@ -1210,12 +1235,14 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteVpnConnectionRequest&, const Model::DeleteVpnConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpnConnectionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteVpnConnectionRouteRequest&, const Model::DeleteVpnConnectionRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpnConnectionRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteVpnGatewayRequest&, const Model::DeleteVpnGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpnGatewayResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeprovisionByoipCidrRequest&, const Model::DeprovisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprovisionByoipCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeregisterImageRequest&, const Model::DeregisterImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAddressesRequest&, const Model::DescribeAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAggregateIdFormatRequest&, const Model::DescribeAggregateIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateIdFormatResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAvailabilityZonesRequest&, const Model::DescribeAvailabilityZonesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAvailabilityZonesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeBundleTasksRequest&, const Model::DescribeBundleTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBundleTasksResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeByoipCidrsRequest&, const Model::DescribeByoipCidrsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeByoipCidrsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeClassicLinkInstancesRequest&, const Model::DescribeClassicLinkInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClassicLinkInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeConversionTasksRequest&, const Model::DescribeConversionTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConversionTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCustomerGatewaysRequest&, const Model::DescribeCustomerGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomerGatewaysResponseReceivedHandler;
@@ -1256,6 +1283,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribePlacementGroupsRequest&, const Model::DescribePlacementGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePlacementGroupsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribePrefixListsRequest&, const Model::DescribePrefixListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePrefixListsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribePrincipalIdFormatRequest&, const Model::DescribePrincipalIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePrincipalIdFormatResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribePublicIpv4PoolsRequest&, const Model::DescribePublicIpv4PoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePublicIpv4PoolsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeRegionsRequest&, const Model::DescribeRegionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRegionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeReservedInstancesRequest&, const Model::DescribeReservedInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeReservedInstancesListingsRequest&, const Model::DescribeReservedInstancesListingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedInstancesListingsResponseReceivedHandler;
@@ -1348,6 +1376,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyVpcTenancyRequest&, const Model::ModifyVpcTenancyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyVpcTenancyResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MonitorInstancesRequest&, const Model::MonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MonitorInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::MoveAddressToVpcRequest&, const Model::MoveAddressToVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MoveAddressToVpcResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ProvisionByoipCidrRequest&, const Model::ProvisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionByoipCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseHostReservationRequest&, const Model::PurchaseHostReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseHostReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseReservedInstancesOfferingRequest&, const Model::PurchaseReservedInstancesOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedInstancesOfferingResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::PurchaseScheduledInstancesRequest&, const Model::PurchaseScheduledInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseScheduledInstancesResponseReceivedHandler;
@@ -1383,6 +1412,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::UnmonitorInstancesRequest&, const Model::UnmonitorInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnmonitorInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest&, const Model::UpdateSecurityGroupRuleDescriptionsEgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest&, const Model::UpdateSecurityGroupRuleDescriptionsIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::WithdrawByoipCidrRequest&, const Model::WithdrawByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > WithdrawByoipCidrResponseReceivedHandler;
 
   /**
    * <fullname>Amazon Elastic Compute Cloud</fullname> <p>Amazon Elastic Compute
@@ -1524,18 +1554,79 @@ namespace Model
         virtual void AcceptVpcPeeringConnectionAsync(const Model::AcceptVpcPeeringConnectionRequest& request, const AcceptVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Advertises an IPv4 address range that is provisioned for use with your AWS
+         * resources through bring your own IP addresses (BYOIP).</p> <p>You can perform
+         * this operation at most once every 10 seconds, even if you specify different
+         * address ranges each time.</p> <p>We recommend that you stop advertising the
+         * BYOIP CIDR from other locations when you advertise it from AWS. To minimize down
+         * time, you can configure your AWS resources to use an address from a BYOIP CIDR
+         * before it is advertised, and then simultaneously stop advertising it from the
+         * current location and start advertising it through AWS.</p> <p>It can take a few
+         * minutes before traffic to the specified addresses starts routing to AWS because
+         * of BGP propagation delays.</p> <p>To stop advertising the BYOIP CIDR, use
+         * <a>WithdrawByoipCidr</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AdvertiseByoipCidrOutcome AdvertiseByoipCidr(const Model::AdvertiseByoipCidrRequest& request) const;
+
+        /**
+         * <p>Advertises an IPv4 address range that is provisioned for use with your AWS
+         * resources through bring your own IP addresses (BYOIP).</p> <p>You can perform
+         * this operation at most once every 10 seconds, even if you specify different
+         * address ranges each time.</p> <p>We recommend that you stop advertising the
+         * BYOIP CIDR from other locations when you advertise it from AWS. To minimize down
+         * time, you can configure your AWS resources to use an address from a BYOIP CIDR
+         * before it is advertised, and then simultaneously stop advertising it from the
+         * current location and start advertising it through AWS.</p> <p>It can take a few
+         * minutes before traffic to the specified addresses starts routing to AWS because
+         * of BGP propagation delays.</p> <p>To stop advertising the BYOIP CIDR, use
+         * <a>WithdrawByoipCidr</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AdvertiseByoipCidrOutcomeCallable AdvertiseByoipCidrCallable(const Model::AdvertiseByoipCidrRequest& request) const;
+
+        /**
+         * <p>Advertises an IPv4 address range that is provisioned for use with your AWS
+         * resources through bring your own IP addresses (BYOIP).</p> <p>You can perform
+         * this operation at most once every 10 seconds, even if you specify different
+         * address ranges each time.</p> <p>We recommend that you stop advertising the
+         * BYOIP CIDR from other locations when you advertise it from AWS. To minimize down
+         * time, you can configure your AWS resources to use an address from a BYOIP CIDR
+         * before it is advertised, and then simultaneously stop advertising it from the
+         * current location and start advertising it through AWS.</p> <p>It can take a few
+         * minutes before traffic to the specified addresses starts routing to AWS because
+         * of BGP propagation delays.</p> <p>To stop advertising the BYOIP CIDR, use
+         * <a>WithdrawByoipCidr</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AdvertiseByoipCidrAsync(const Model::AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Allocates an Elastic IP address to your AWS account. After you allocate the
          * Elastic IP address you can associate it with an instance or network interface.
          * After you release an Elastic IP address, it is released to the IP address pool
-         * and can be allocated to a different AWS account.</p> <p>[EC2-VPC] If you release
-         * an Elastic IP address, you might be able to recover it. You cannot recover an
-         * Elastic IP address that you released after it is allocated to another AWS
-         * account. You cannot recover an Elastic IP address for EC2-Classic. To attempt to
-         * recover an Elastic IP address that you released, specify it in this
-         * operation.</p> <p>An Elastic IP address is for use either in the EC2-Classic
-         * platform or in a VPC. By default, you can allocate 5 Elastic IP addresses for
-         * EC2-Classic per region and 5 Elastic IP addresses for EC2-VPC per region.</p>
-         * <p>For more information, see <a
+         * and can be allocated to a different AWS account.</p> <p>You can allocate an
+         * Elastic IP address from an address pool owned by AWS or from an address pool
+         * created from a public IPv4 address range that you have brought to AWS for use
+         * with your AWS resources using bring your own IP addresses (BYOIP). For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+         * Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>[EC2-VPC] If you release an Elastic IP address, you might be
+         * able to recover it. You cannot recover an Elastic IP address that you released
+         * after it is allocated to another AWS account. You cannot recover an Elastic IP
+         * address for EC2-Classic. To attempt to recover an Elastic IP address that you
+         * released, specify it in this operation.</p> <p>An Elastic IP address is for use
+         * either in the EC2-Classic platform or in a VPC. By default, you can allocate 5
+         * Elastic IP addresses for EC2-Classic per region and 5 Elastic IP addresses for
+         * EC2-VPC per region.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1548,15 +1639,21 @@ namespace Model
          * <p>Allocates an Elastic IP address to your AWS account. After you allocate the
          * Elastic IP address you can associate it with an instance or network interface.
          * After you release an Elastic IP address, it is released to the IP address pool
-         * and can be allocated to a different AWS account.</p> <p>[EC2-VPC] If you release
-         * an Elastic IP address, you might be able to recover it. You cannot recover an
-         * Elastic IP address that you released after it is allocated to another AWS
-         * account. You cannot recover an Elastic IP address for EC2-Classic. To attempt to
-         * recover an Elastic IP address that you released, specify it in this
-         * operation.</p> <p>An Elastic IP address is for use either in the EC2-Classic
-         * platform or in a VPC. By default, you can allocate 5 Elastic IP addresses for
-         * EC2-Classic per region and 5 Elastic IP addresses for EC2-VPC per region.</p>
-         * <p>For more information, see <a
+         * and can be allocated to a different AWS account.</p> <p>You can allocate an
+         * Elastic IP address from an address pool owned by AWS or from an address pool
+         * created from a public IPv4 address range that you have brought to AWS for use
+         * with your AWS resources using bring your own IP addresses (BYOIP). For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+         * Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>[EC2-VPC] If you release an Elastic IP address, you might be
+         * able to recover it. You cannot recover an Elastic IP address that you released
+         * after it is allocated to another AWS account. You cannot recover an Elastic IP
+         * address for EC2-Classic. To attempt to recover an Elastic IP address that you
+         * released, specify it in this operation.</p> <p>An Elastic IP address is for use
+         * either in the EC2-Classic platform or in a VPC. By default, you can allocate 5
+         * Elastic IP addresses for EC2-Classic per region and 5 Elastic IP addresses for
+         * EC2-VPC per region.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1571,15 +1668,21 @@ namespace Model
          * <p>Allocates an Elastic IP address to your AWS account. After you allocate the
          * Elastic IP address you can associate it with an instance or network interface.
          * After you release an Elastic IP address, it is released to the IP address pool
-         * and can be allocated to a different AWS account.</p> <p>[EC2-VPC] If you release
-         * an Elastic IP address, you might be able to recover it. You cannot recover an
-         * Elastic IP address that you released after it is allocated to another AWS
-         * account. You cannot recover an Elastic IP address for EC2-Classic. To attempt to
-         * recover an Elastic IP address that you released, specify it in this
-         * operation.</p> <p>An Elastic IP address is for use either in the EC2-Classic
-         * platform or in a VPC. By default, you can allocate 5 Elastic IP addresses for
-         * EC2-Classic per region and 5 Elastic IP addresses for EC2-VPC per region.</p>
-         * <p>For more information, see <a
+         * and can be allocated to a different AWS account.</p> <p>You can allocate an
+         * Elastic IP address from an address pool owned by AWS or from an address pool
+         * created from a public IPv4 address range that you have brought to AWS for use
+         * with your AWS resources using bring your own IP addresses (BYOIP). For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+         * Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>[EC2-VPC] If you release an Elastic IP address, you might be
+         * able to recover it. You cannot recover an Elastic IP address that you released
+         * after it is allocated to another AWS account. You cannot recover an Elastic IP
+         * address for EC2-Classic. To attempt to recover an Elastic IP address that you
+         * released, specify it in this operation.</p> <p>An Elastic IP address is for use
+         * either in the EC2-Classic platform or in a VPC. By default, you can allocate 5
+         * Elastic IP addresses for EC2-Classic per region and 5 Elastic IP addresses for
+         * EC2-VPC per region.</p> <p>For more information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1672,18 +1775,22 @@ namespace Model
 
         /**
          * <p>Assigns one or more secondary private IP addresses to the specified network
-         * interface. You can specify one or more specific secondary IP addresses, or you
-         * can specify the number of secondary IP addresses to be automatically assigned
-         * within the subnet's CIDR block range. The number of secondary IP addresses that
-         * you can assign to an instance varies by instance type. For information about
-         * instance types, see <a
+         * interface.</p> <p>You can specify one or more specific secondary IP addresses,
+         * or you can specify the number of secondary IP addresses to be automatically
+         * assigned within the subnet's CIDR block range. The number of secondary IP
+         * addresses that you can assign to an instance varies by instance type. For
+         * information about instance types, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
          * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more
          * information about Elastic IP addresses, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>AssignPrivateIpAddresses is available only in EC2-VPC.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>When you move a secondary private IP address to another network interface,
+         * any Elastic IP address that is associated with the IP address is also moved.</p>
+         * <p>Remapping an IP address is an asynchronous operation. When you move an IP
+         * address from one network interface to another, check
+         * <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to
+         * confirm that the remapping is complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          */
@@ -1691,18 +1798,22 @@ namespace Model
 
         /**
          * <p>Assigns one or more secondary private IP addresses to the specified network
-         * interface. You can specify one or more specific secondary IP addresses, or you
-         * can specify the number of secondary IP addresses to be automatically assigned
-         * within the subnet's CIDR block range. The number of secondary IP addresses that
-         * you can assign to an instance varies by instance type. For information about
-         * instance types, see <a
+         * interface.</p> <p>You can specify one or more specific secondary IP addresses,
+         * or you can specify the number of secondary IP addresses to be automatically
+         * assigned within the subnet's CIDR block range. The number of secondary IP
+         * addresses that you can assign to an instance varies by instance type. For
+         * information about instance types, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
          * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more
          * information about Elastic IP addresses, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>AssignPrivateIpAddresses is available only in EC2-VPC.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>When you move a secondary private IP address to another network interface,
+         * any Elastic IP address that is associated with the IP address is also moved.</p>
+         * <p>Remapping an IP address is an asynchronous operation. When you move an IP
+         * address from one network interface to another, check
+         * <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to
+         * confirm that the remapping is complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *
@@ -1712,18 +1823,22 @@ namespace Model
 
         /**
          * <p>Assigns one or more secondary private IP addresses to the specified network
-         * interface. You can specify one or more specific secondary IP addresses, or you
-         * can specify the number of secondary IP addresses to be automatically assigned
-         * within the subnet's CIDR block range. The number of secondary IP addresses that
-         * you can assign to an instance varies by instance type. For information about
-         * instance types, see <a
+         * interface.</p> <p>You can specify one or more specific secondary IP addresses,
+         * or you can specify the number of secondary IP addresses to be automatically
+         * assigned within the subnet's CIDR block range. The number of secondary IP
+         * addresses that you can assign to an instance varies by instance type. For
+         * information about instance types, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
          * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more
          * information about Elastic IP addresses, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>AssignPrivateIpAddresses is available only in EC2-VPC.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>When you move a secondary private IP address to another network interface,
+         * any Elastic IP address that is associated with the IP address is also moved.</p>
+         * <p>Remapping an IP address is an asynchronous operation. When you move an IP
+         * address from one network interface to another, check
+         * <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to
+         * confirm that the remapping is complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *
@@ -6104,6 +6219,43 @@ namespace Model
         virtual void DeleteVpnGatewayAsync(const Model::DeleteVpnGatewayRequest& request, const DeleteVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Releases the specified address range that you provisioned for use with your
+         * AWS resources through bring your own IP addresses (BYOIP) and deletes the
+         * corresponding address pool.</p> <p>Before you can release an address range, you
+         * must stop advertising it using <a>WithdrawByoipCidr</a> and you must not have
+         * any IP addresses allocated from its address range.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionByoipCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeprovisionByoipCidrOutcome DeprovisionByoipCidr(const Model::DeprovisionByoipCidrRequest& request) const;
+
+        /**
+         * <p>Releases the specified address range that you provisioned for use with your
+         * AWS resources through bring your own IP addresses (BYOIP) and deletes the
+         * corresponding address pool.</p> <p>Before you can release an address range, you
+         * must stop advertising it using <a>WithdrawByoipCidr</a> and you must not have
+         * any IP addresses allocated from its address range.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionByoipCidr">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeprovisionByoipCidrOutcomeCallable DeprovisionByoipCidrCallable(const Model::DeprovisionByoipCidrRequest& request) const;
+
+        /**
+         * <p>Releases the specified address range that you provisioned for use with your
+         * AWS resources through bring your own IP addresses (BYOIP) and deletes the
+         * corresponding address pool.</p> <p>Before you can release an address range, you
+         * must stop advertising it using <a>WithdrawByoipCidr</a> and you must not have
+         * any IP addresses allocated from its address range.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionByoipCidr">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeprovisionByoipCidrAsync(const Model::DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deregisters the specified AMI. After you deregister an AMI, it can't be used
          * to launch new instances; however, it doesn't affect any instances that you've
          * already launched from the AMI. You'll continue to incur usage costs for those
@@ -6414,6 +6566,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBundleTasksAsync(const Model::DescribeBundleTasksRequest& request, const DescribeBundleTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the IP address ranges that were specified in calls to
+         * <a>ProvisionByoipCidr</a>.</p> <p>To describe the address pools that were
+         * created when you provisioned the address ranges, use
+         * <a>DescribePublicIpv4Pools</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeByoipCidrsOutcome DescribeByoipCidrs(const Model::DescribeByoipCidrsRequest& request) const;
+
+        /**
+         * <p>Describes the IP address ranges that were specified in calls to
+         * <a>ProvisionByoipCidr</a>.</p> <p>To describe the address pools that were
+         * created when you provisioned the address ranges, use
+         * <a>DescribePublicIpv4Pools</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeByoipCidrsOutcomeCallable DescribeByoipCidrsCallable(const Model::DescribeByoipCidrsRequest& request) const;
+
+        /**
+         * <p>Describes the IP address ranges that were specified in calls to
+         * <a>ProvisionByoipCidr</a>.</p> <p>To describe the address pools that were
+         * created when you provisioned the address ranges, use
+         * <a>DescribePublicIpv4Pools</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeByoipCidrsAsync(const Model::DescribeByoipCidrsRequest& request, const DescribeByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes one or more of your linked EC2-Classic instances. This request only
@@ -8013,6 +8199,31 @@ namespace Model
         virtual void DescribePrincipalIdFormatAsync(const Model::DescribePrincipalIdFormatRequest& request, const DescribePrincipalIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the specified IPv4 address pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePublicIpv4Pools">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePublicIpv4PoolsOutcome DescribePublicIpv4Pools(const Model::DescribePublicIpv4PoolsRequest& request) const;
+
+        /**
+         * <p>Describes the specified IPv4 address pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePublicIpv4Pools">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribePublicIpv4PoolsOutcomeCallable DescribePublicIpv4PoolsCallable(const Model::DescribePublicIpv4PoolsRequest& request) const;
+
+        /**
+         * <p>Describes the specified IPv4 address pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePublicIpv4Pools">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribePublicIpv4PoolsAsync(const Model::DescribePublicIpv4PoolsRequest& request, const DescribePublicIpv4PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes one or more regions that are currently available to you.</p> <p>For
          * a list of the regions supported by Amazon EC2, see <a
          * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
@@ -8687,7 +8898,8 @@ namespace Model
          * <p>Describes the events for the specified Spot Fleet request during the
          * specified time.</p> <p>Spot Fleet events are delayed by up to 30 seconds before
          * they can be described. This ensures that you can query by the last evaluated
-         * time and not miss a recorded event.</p><p><h3>See Also:</h3>   <a
+         * time and not miss a recorded event. Spot Fleet events are available for 48
+         * hours.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory">AWS
          * API Reference</a></p>
          */
@@ -8697,7 +8909,8 @@ namespace Model
          * <p>Describes the events for the specified Spot Fleet request during the
          * specified time.</p> <p>Spot Fleet events are delayed by up to 30 seconds before
          * they can be described. This ensures that you can query by the last evaluated
-         * time and not miss a recorded event.</p><p><h3>See Also:</h3>   <a
+         * time and not miss a recorded event. Spot Fleet events are available for 48
+         * hours.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory">AWS
          * API Reference</a></p>
          *
@@ -8709,7 +8922,8 @@ namespace Model
          * <p>Describes the events for the specified Spot Fleet request during the
          * specified time.</p> <p>Spot Fleet events are delayed by up to 30 seconds before
          * they can be described. This ensures that you can query by the last evaluated
-         * time and not miss a recorded event.</p><p><h3>See Also:</h3>   <a
+         * time and not miss a recorded event. Spot Fleet events are available for 48
+         * hours.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotFleetRequestHistory">AWS
          * API Reference</a></p>
          *
@@ -12089,6 +12303,76 @@ namespace Model
         virtual void MoveAddressToVpcAsync(const Model::MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provisions an address range for use with your AWS resources through bring
+         * your own IP addresses (BYOIP) and creates a corresponding address pool. After
+         * the address range is provisioned, it is ready to be advertised using
+         * <a>AdvertiseByoipCidr</a>.</p> <p>AWS verifies that you own the address range
+         * and are authorized to advertise it. You must ensure that the address range is
+         * registered to you and that you created an RPKI ROA to authorize Amazon ASNs
+         * 16509 and 14618 to advertise the address range. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+         * Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>Provisioning an address range is an asynchronous operation, so
+         * the call returns immediately, but the address range is not ready to use until
+         * its status changes from <code>pending-provision</code> to
+         * <code>provisioned</code>. To monitor the status of an address range, use
+         * <a>DescribeByoipCidrs</a>. To allocate an Elastic IP address from your address
+         * pool, use <a>AllocateAddress</a> with either the specific address from the
+         * address pool or the ID of the address pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ProvisionByoipCidrOutcome ProvisionByoipCidr(const Model::ProvisionByoipCidrRequest& request) const;
+
+        /**
+         * <p>Provisions an address range for use with your AWS resources through bring
+         * your own IP addresses (BYOIP) and creates a corresponding address pool. After
+         * the address range is provisioned, it is ready to be advertised using
+         * <a>AdvertiseByoipCidr</a>.</p> <p>AWS verifies that you own the address range
+         * and are authorized to advertise it. You must ensure that the address range is
+         * registered to you and that you created an RPKI ROA to authorize Amazon ASNs
+         * 16509 and 14618 to advertise the address range. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+         * Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>Provisioning an address range is an asynchronous operation, so
+         * the call returns immediately, but the address range is not ready to use until
+         * its status changes from <code>pending-provision</code> to
+         * <code>provisioned</code>. To monitor the status of an address range, use
+         * <a>DescribeByoipCidrs</a>. To allocate an Elastic IP address from your address
+         * pool, use <a>AllocateAddress</a> with either the specific address from the
+         * address pool or the ID of the address pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ProvisionByoipCidrOutcomeCallable ProvisionByoipCidrCallable(const Model::ProvisionByoipCidrRequest& request) const;
+
+        /**
+         * <p>Provisions an address range for use with your AWS resources through bring
+         * your own IP addresses (BYOIP) and creates a corresponding address pool. After
+         * the address range is provisioned, it is ready to be advertised using
+         * <a>AdvertiseByoipCidr</a>.</p> <p>AWS verifies that you own the address range
+         * and are authorized to advertise it. You must ensure that the address range is
+         * registered to you and that you created an RPKI ROA to authorize Amazon ASNs
+         * 16509 and 14618 to advertise the address range. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+         * Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>Provisioning an address range is an asynchronous operation, so
+         * the call returns immediately, but the address range is not ready to use until
+         * its status changes from <code>pending-provision</code> to
+         * <code>provisioned</code>. To monitor the status of an address range, use
+         * <a>DescribeByoipCidrs</a>. To allocate an Elastic IP address from your address
+         * pool, use <a>AllocateAddress</a> with either the specific address from the
+         * address pool or the ID of the address pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ProvisionByoipCidrAsync(const Model::ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Purchase a reservation with configurations that match those of your Dedicated
          * Host. You must have active Dedicated Hosts in your account before you purchase a
          * reservation. This action results in the specified reservation being purchased
@@ -13899,6 +14183,43 @@ namespace Model
          */
         virtual void UpdateSecurityGroupRuleDescriptionsIngressAsync(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request, const UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Stops advertising an IPv4 address range that is provisioned as an address
+         * pool.</p> <p>You can perform this operation at most once every 10 seconds, even
+         * if you specify different address ranges each time.</p> <p>It can take a few
+         * minutes before traffic to the specified addresses stops routing to AWS because
+         * of BGP propagation delays.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/WithdrawByoipCidr">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::WithdrawByoipCidrOutcome WithdrawByoipCidr(const Model::WithdrawByoipCidrRequest& request) const;
+
+        /**
+         * <p>Stops advertising an IPv4 address range that is provisioned as an address
+         * pool.</p> <p>You can perform this operation at most once every 10 seconds, even
+         * if you specify different address ranges each time.</p> <p>It can take a few
+         * minutes before traffic to the specified addresses stops routing to AWS because
+         * of BGP propagation delays.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/WithdrawByoipCidr">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::WithdrawByoipCidrOutcomeCallable WithdrawByoipCidrCallable(const Model::WithdrawByoipCidrRequest& request) const;
+
+        /**
+         * <p>Stops advertising an IPv4 address range that is provisioned as an address
+         * pool.</p> <p>You can perform this operation at most once every 10 seconds, even
+         * if you specify different address ranges each time.</p> <p>It can take a few
+         * minutes before traffic to the specified addresses stops routing to AWS because
+         * of BGP propagation delays.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/WithdrawByoipCidr">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void WithdrawByoipCidrAsync(const Model::WithdrawByoipCidrRequest& request, const WithdrawByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
   private:
     void init(const Aws::Client::ClientConfiguration& clientConfiguration);
@@ -13907,6 +14228,7 @@ namespace Model
         void AcceptReservedInstancesExchangeQuoteAsyncHelper(const Model::AcceptReservedInstancesExchangeQuoteRequest& request, const AcceptReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AcceptVpcEndpointConnectionsAsyncHelper(const Model::AcceptVpcEndpointConnectionsRequest& request, const AcceptVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AcceptVpcPeeringConnectionAsyncHelper(const Model::AcceptVpcPeeringConnectionRequest& request, const AcceptVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AdvertiseByoipCidrAsyncHelper(const Model::AdvertiseByoipCidrRequest& request, const AdvertiseByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AllocateAddressAsyncHelper(const Model::AllocateAddressRequest& request, const AllocateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AllocateHostsAsyncHelper(const Model::AllocateHostsRequest& request, const AllocateHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssignIpv6AddressesAsyncHelper(const Model::AssignIpv6AddressesRequest& request, const AssignIpv6AddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -14005,12 +14327,14 @@ namespace Model
         void DeleteVpnConnectionAsyncHelper(const Model::DeleteVpnConnectionRequest& request, const DeleteVpnConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVpnConnectionRouteAsyncHelper(const Model::DeleteVpnConnectionRouteRequest& request, const DeleteVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVpnGatewayAsyncHelper(const Model::DeleteVpnGatewayRequest& request, const DeleteVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeprovisionByoipCidrAsyncHelper(const Model::DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterImageAsyncHelper(const Model::DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAttributesAsyncHelper(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAddressesAsyncHelper(const Model::DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAggregateIdFormatAsyncHelper(const Model::DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAvailabilityZonesAsyncHelper(const Model::DescribeAvailabilityZonesRequest& request, const DescribeAvailabilityZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBundleTasksAsyncHelper(const Model::DescribeBundleTasksRequest& request, const DescribeBundleTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeByoipCidrsAsyncHelper(const Model::DescribeByoipCidrsRequest& request, const DescribeByoipCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClassicLinkInstancesAsyncHelper(const Model::DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConversionTasksAsyncHelper(const Model::DescribeConversionTasksRequest& request, const DescribeConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCustomerGatewaysAsyncHelper(const Model::DescribeCustomerGatewaysRequest& request, const DescribeCustomerGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -14051,6 +14375,7 @@ namespace Model
         void DescribePlacementGroupsAsyncHelper(const Model::DescribePlacementGroupsRequest& request, const DescribePlacementGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePrefixListsAsyncHelper(const Model::DescribePrefixListsRequest& request, const DescribePrefixListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePrincipalIdFormatAsyncHelper(const Model::DescribePrincipalIdFormatRequest& request, const DescribePrincipalIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribePublicIpv4PoolsAsyncHelper(const Model::DescribePublicIpv4PoolsRequest& request, const DescribePublicIpv4PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRegionsAsyncHelper(const Model::DescribeRegionsRequest& request, const DescribeRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservedInstancesAsyncHelper(const Model::DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservedInstancesListingsAsyncHelper(const Model::DescribeReservedInstancesListingsRequest& request, const DescribeReservedInstancesListingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -14143,6 +14468,7 @@ namespace Model
         void ModifyVpcTenancyAsyncHelper(const Model::ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MonitorInstancesAsyncHelper(const Model::MonitorInstancesRequest& request, const MonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void MoveAddressToVpcAsyncHelper(const Model::MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ProvisionByoipCidrAsyncHelper(const Model::ProvisionByoipCidrRequest& request, const ProvisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseHostReservationAsyncHelper(const Model::PurchaseHostReservationRequest& request, const PurchaseHostReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseReservedInstancesOfferingAsyncHelper(const Model::PurchaseReservedInstancesOfferingRequest& request, const PurchaseReservedInstancesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseScheduledInstancesAsyncHelper(const Model::PurchaseScheduledInstancesRequest& request, const PurchaseScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -14178,6 +14504,7 @@ namespace Model
         void UnmonitorInstancesAsyncHelper(const Model::UnmonitorInstancesRequest& request, const UnmonitorInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSecurityGroupRuleDescriptionsEgressAsyncHelper(const Model::UpdateSecurityGroupRuleDescriptionsEgressRequest& request, const UpdateSecurityGroupRuleDescriptionsEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSecurityGroupRuleDescriptionsIngressAsyncHelper(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request, const UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void WithdrawByoipCidrAsyncHelper(const Model::WithdrawByoipCidrRequest& request, const WithdrawByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
     Aws::String m_uri;
     std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

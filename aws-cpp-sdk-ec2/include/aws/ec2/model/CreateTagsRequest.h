@@ -74,42 +74,42 @@ namespace Model
 
 
     /**
-     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     * <p>The IDs of one or more resources, separated by spaces.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
 
     /**
-     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     * <p>The IDs of one or more resources, separated by spaces.</p>
      */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
-     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     * <p>The IDs of one or more resources, separated by spaces.</p>
      */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
-     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     * <p>The IDs of one or more resources, separated by spaces.</p>
      */
     inline CreateTagsRequest& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
 
     /**
-     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     * <p>The IDs of one or more resources, separated by spaces.</p>
      */
     inline CreateTagsRequest& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     * <p>The IDs of one or more resources, separated by spaces.</p>
      */
     inline CreateTagsRequest& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     * <p>The IDs of one or more resources, separated by spaces.</p>
      */
     inline CreateTagsRequest& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of one or more resources to tag. For example, ami-1a2b3c4d.</p>
+     * <p>The IDs of one or more resources, separated by spaces.</p>
      */
     inline CreateTagsRequest& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 

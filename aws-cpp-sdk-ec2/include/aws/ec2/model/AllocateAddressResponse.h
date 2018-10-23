@@ -36,11 +36,6 @@ namespace EC2
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of AllocateAddress.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddressResult">AWS
-   * API Reference</a></p>
-   */
   class AWS_EC2_API AllocateAddressResponse
   {
   public:
@@ -129,6 +124,42 @@ namespace Model
 
 
     /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline const Aws::String& GetPublicIpv4Pool() const{ return m_publicIpv4Pool; }
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline void SetPublicIpv4Pool(const Aws::String& value) { m_publicIpv4Pool = value; }
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline void SetPublicIpv4Pool(Aws::String&& value) { m_publicIpv4Pool = std::move(value); }
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline void SetPublicIpv4Pool(const char* value) { m_publicIpv4Pool.assign(value); }
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline AllocateAddressResponse& WithPublicIpv4Pool(const Aws::String& value) { SetPublicIpv4Pool(value); return *this;}
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline AllocateAddressResponse& WithPublicIpv4Pool(Aws::String&& value) { SetPublicIpv4Pool(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline AllocateAddressResponse& WithPublicIpv4Pool(const char* value) { SetPublicIpv4Pool(value); return *this;}
+
+
+    /**
      * <p>Indicates whether this Elastic IP address is for use with instances in
      * EC2-Classic (<code>standard</code>) or instances in a VPC
      * (<code>vpc</code>).</p>
@@ -184,6 +215,8 @@ namespace Model
     Aws::String m_publicIp;
 
     Aws::String m_allocationId;
+
+    Aws::String m_publicIpv4Pool;
 
     DomainType m_domain;
 

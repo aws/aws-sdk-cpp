@@ -382,6 +382,42 @@ namespace Model
      */
     inline Address& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline const Aws::String& GetPublicIpv4Pool() const{ return m_publicIpv4Pool; }
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline void SetPublicIpv4Pool(const Aws::String& value) { m_publicIpv4PoolHasBeenSet = true; m_publicIpv4Pool = value; }
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline void SetPublicIpv4Pool(Aws::String&& value) { m_publicIpv4PoolHasBeenSet = true; m_publicIpv4Pool = std::move(value); }
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline void SetPublicIpv4Pool(const char* value) { m_publicIpv4PoolHasBeenSet = true; m_publicIpv4Pool.assign(value); }
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline Address& WithPublicIpv4Pool(const Aws::String& value) { SetPublicIpv4Pool(value); return *this;}
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline Address& WithPublicIpv4Pool(Aws::String&& value) { SetPublicIpv4Pool(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline Address& WithPublicIpv4Pool(const char* value) { SetPublicIpv4Pool(value); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -410,6 +446,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_publicIpv4Pool;
+    bool m_publicIpv4PoolHasBeenSet;
   };
 
 } // namespace Model

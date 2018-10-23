@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for AllocateAddress.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddressRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API AllocateAddressRequest : public EC2Request
   {
@@ -82,39 +79,96 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     * <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an
+     * address pool.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
     /**
-     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     * <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an
+     * address pool.</p>
      */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
-     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     * <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an
+     * address pool.</p>
      */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     * <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an
+     * address pool.</p>
      */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     * <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an
+     * address pool.</p>
      */
     inline AllocateAddressRequest& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     * <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an
+     * address pool.</p>
      */
     inline AllocateAddressRequest& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The Elastic IP address to recover.</p>
+     * <p>[EC2-VPC] The Elastic IP address to recover or an IPv4 address from an
+     * address pool.</p>
      */
     inline AllocateAddressRequest& WithAddress(const char* value) { SetAddress(value); return *this;}
+
+
+    /**
+     * <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2
+     * select an address from the address pool. To specify a specific address from the
+     * address pool, use the <code>Address</code> parameter instead.</p>
+     */
+    inline const Aws::String& GetPublicIpv4Pool() const{ return m_publicIpv4Pool; }
+
+    /**
+     * <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2
+     * select an address from the address pool. To specify a specific address from the
+     * address pool, use the <code>Address</code> parameter instead.</p>
+     */
+    inline void SetPublicIpv4Pool(const Aws::String& value) { m_publicIpv4PoolHasBeenSet = true; m_publicIpv4Pool = value; }
+
+    /**
+     * <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2
+     * select an address from the address pool. To specify a specific address from the
+     * address pool, use the <code>Address</code> parameter instead.</p>
+     */
+    inline void SetPublicIpv4Pool(Aws::String&& value) { m_publicIpv4PoolHasBeenSet = true; m_publicIpv4Pool = std::move(value); }
+
+    /**
+     * <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2
+     * select an address from the address pool. To specify a specific address from the
+     * address pool, use the <code>Address</code> parameter instead.</p>
+     */
+    inline void SetPublicIpv4Pool(const char* value) { m_publicIpv4PoolHasBeenSet = true; m_publicIpv4Pool.assign(value); }
+
+    /**
+     * <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2
+     * select an address from the address pool. To specify a specific address from the
+     * address pool, use the <code>Address</code> parameter instead.</p>
+     */
+    inline AllocateAddressRequest& WithPublicIpv4Pool(const Aws::String& value) { SetPublicIpv4Pool(value); return *this;}
+
+    /**
+     * <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2
+     * select an address from the address pool. To specify a specific address from the
+     * address pool, use the <code>Address</code> parameter instead.</p>
+     */
+    inline AllocateAddressRequest& WithPublicIpv4Pool(Aws::String&& value) { SetPublicIpv4Pool(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of an address pool that you own. Use this parameter to let Amazon EC2
+     * select an address from the address pool. To specify a specific address from the
+     * address pool, use the <code>Address</code> parameter instead.</p>
+     */
+    inline AllocateAddressRequest& WithPublicIpv4Pool(const char* value) { SetPublicIpv4Pool(value); return *this;}
 
 
     /**
@@ -148,6 +202,9 @@ namespace Model
 
     Aws::String m_address;
     bool m_addressHasBeenSet;
+
+    Aws::String m_publicIpv4Pool;
+    bool m_publicIpv4PoolHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

@@ -244,19 +244,19 @@ namespace Model
 
     /**
      * <p>The number of units fulfilled by this request compared to the set target
-     * capacity.</p>
+     * capacity. You cannot set this value.</p>
      */
     inline double GetFulfilledCapacity() const{ return m_fulfilledCapacity; }
 
     /**
      * <p>The number of units fulfilled by this request compared to the set target
-     * capacity.</p>
+     * capacity. You cannot set this value.</p>
      */
     inline void SetFulfilledCapacity(double value) { m_fulfilledCapacityHasBeenSet = true; m_fulfilledCapacity = value; }
 
     /**
      * <p>The number of units fulfilled by this request compared to the set target
-     * capacity.</p>
+     * capacity. You cannot set this value.</p>
      */
     inline SpotFleetRequestConfigData& WithFulfilledCapacity(double value) { SetFulfilledCapacity(value); return *this;}
 

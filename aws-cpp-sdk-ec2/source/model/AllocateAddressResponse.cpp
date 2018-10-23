@@ -60,6 +60,11 @@ AllocateAddressResponse& AllocateAddressResponse::operator =(const Aws::AmazonWe
     {
       m_allocationId = StringUtils::Trim(allocationIdNode.GetText().c_str());
     }
+    XmlNode publicIpv4PoolNode = resultNode.FirstChild("publicIpv4Pool");
+    if(!publicIpv4PoolNode.IsNull())
+    {
+      m_publicIpv4Pool = StringUtils::Trim(publicIpv4PoolNode.GetText().c_str());
+    }
     XmlNode domainNode = resultNode.FirstChild("domain");
     if(!domainNode.IsNull())
     {

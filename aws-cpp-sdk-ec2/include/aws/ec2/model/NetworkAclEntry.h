@@ -196,37 +196,37 @@ namespace Model
 
 
     /**
-     * <p>The protocol. A value of <code>-1</code> means all protocols.</p>
+     * <p>The protocol number. A value of "-1" means all protocols.</p>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The protocol. A value of <code>-1</code> means all protocols.</p>
+     * <p>The protocol number. A value of "-1" means all protocols.</p>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol. A value of <code>-1</code> means all protocols.</p>
+     * <p>The protocol number. A value of "-1" means all protocols.</p>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p>The protocol. A value of <code>-1</code> means all protocols.</p>
+     * <p>The protocol number. A value of "-1" means all protocols.</p>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /**
-     * <p>The protocol. A value of <code>-1</code> means all protocols.</p>
+     * <p>The protocol number. A value of "-1" means all protocols.</p>
      */
     inline NetworkAclEntry& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol. A value of <code>-1</code> means all protocols.</p>
+     * <p>The protocol number. A value of "-1" means all protocols.</p>
      */
     inline NetworkAclEntry& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
-     * <p>The protocol. A value of <code>-1</code> means all protocols.</p>
+     * <p>The protocol number. A value of "-1" means all protocols.</p>
      */
     inline NetworkAclEntry& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
