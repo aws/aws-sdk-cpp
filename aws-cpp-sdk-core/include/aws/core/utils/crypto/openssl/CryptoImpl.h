@@ -213,6 +213,8 @@ namespace Aws
 
                 AES_CBC_Cipher_OpenSSL(AES_CBC_Cipher_OpenSSL&& toMove) = default;
 
+                void Reset() override;
+
             protected:
                 size_t GetBlockSizeBytes() const override;
 
@@ -252,6 +254,8 @@ namespace Aws
                 AES_CTR_Cipher_OpenSSL& operator=(const AES_CTR_Cipher_OpenSSL& other) = delete;
 
                 AES_CTR_Cipher_OpenSSL(AES_CTR_Cipher_OpenSSL&& toMove) = default;
+
+                void Reset() override;
 
             protected:
                 size_t GetBlockSizeBytes() const override;
@@ -303,6 +307,8 @@ namespace Aws
                  */
                 CryptoBuffer FinalizeEncryption() override;
 
+                void Reset() override;
+
             protected:
                 size_t GetBlockSizeBytes() const override;
 
@@ -343,6 +349,8 @@ namespace Aws
 
                 CryptoBuffer DecryptBuffer(const CryptoBuffer&) override;
                 CryptoBuffer FinalizeDecryption() override;
+
+                void Reset() override;
 
             protected:
                 inline size_t GetBlockSizeBytes() const override { return BlockSizeBytes; }

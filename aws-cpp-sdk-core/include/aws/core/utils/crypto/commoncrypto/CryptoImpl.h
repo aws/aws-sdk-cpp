@@ -202,6 +202,8 @@ namespace Aws
 
                 AES_CBC_Cipher_CommonCrypto(AES_CBC_Cipher_CommonCrypto&& toMove) = default;
 
+                void Reset() override;
+
             protected:
                 size_t GetBlockSizeBytes() const override;
 
@@ -241,6 +243,8 @@ namespace Aws
                 AES_CTR_Cipher_CommonCrypto& operator=(const AES_CTR_Cipher_CommonCrypto& other) = delete;
 
                 AES_CTR_Cipher_CommonCrypto(AES_CTR_Cipher_CommonCrypto&& toMove) = default;
+
+                void Reset() override;
 
             protected:
                 size_t GetBlockSizeBytes() const override;

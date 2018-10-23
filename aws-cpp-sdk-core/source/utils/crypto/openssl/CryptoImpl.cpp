@@ -534,6 +534,12 @@ namespace Aws
                 return KeyLengthBits;
             }
 
+            void AES_CBC_Cipher_OpenSSL::Reset()
+            {
+                OpenSSLCipher::Reset();
+                InitCipher();
+            }
+
             size_t AES_CTR_Cipher_OpenSSL::BlockSizeBytes = 16;
             size_t AES_CTR_Cipher_OpenSSL::KeyLengthBits = 256;
             static const char* CTR_LOG_TAG = "AES_CTR_Cipher_OpenSSL";
@@ -579,6 +585,12 @@ namespace Aws
             size_t AES_CTR_Cipher_OpenSSL::GetKeyLengthBits() const
             {
                 return KeyLengthBits;
+            }
+
+            void AES_CTR_Cipher_OpenSSL::Reset()
+            {
+                OpenSSLCipher::Reset();
+                InitCipher();
             }
 
             size_t AES_GCM_Cipher_OpenSSL::BlockSizeBytes = 16;
@@ -673,6 +685,12 @@ namespace Aws
             size_t AES_GCM_Cipher_OpenSSL::GetTagLengthBytes() const
             {
                 return TagLengthBytes;
+            }
+
+            void AES_GCM_Cipher_OpenSSL::Reset()
+            {
+                OpenSSLCipher::Reset();
+                InitCipher();
             }
 
             size_t AES_KeyWrap_Cipher_OpenSSL::KeyLengthBits = 256;
@@ -869,6 +887,13 @@ namespace Aws
                     m_failure = true;
                     LogErrors(KEY_WRAP_TAG);
                 }
+            }
+
+            void AES_KeyWrap_Cipher_OpenSSL::Reset()
+            {
+                m_workingKeyBuffer = CryptoBuffer();
+                OpenSSLCipher::Reset();
+                InitCipher();
             }
         }
     }

@@ -379,6 +379,12 @@ namespace Aws
                 return KeyLengthBits;
             }
 
+            void AES_CBC_Cipher_CommonCrypto::Reset()
+            {
+                CommonCryptoCipher::Reset();
+                InitCipher();
+            }
+
             size_t AES_CTR_Cipher_CommonCrypto::BlockSizeBytes = 16;
             size_t AES_CTR_Cipher_CommonCrypto::KeyLengthBits = 256;
             static const char* CTR_CC_LOG_TAG = "AES_CTR_Cipher_CommonCrypto";
@@ -431,6 +437,12 @@ namespace Aws
             size_t AES_CTR_Cipher_CommonCrypto::GetKeyLengthBits() const
             {
                 return KeyLengthBits;
+            }
+
+            void AES_CTR_Cipher_CommonCrypto::Reset()
+            {
+                CommonCryptoCipher::Reset();
+                InitCipher();
             }
 
             static const char* const AES_KEY_WRAP_LOG_TAG = "AES_KeyWrap_Cipher_CommonCrypto";

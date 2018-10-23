@@ -690,6 +690,8 @@ namespace Aws
             {
                 BCryptSymmetricCipher::Reset();
                 m_blockOverflow = CryptoBuffer();
+                InitCipher();
+                InitKey();
             }
 
             size_t AES_CBC_Cipher_BCrypt::GetBlockSizeBytes() const
@@ -877,6 +879,8 @@ namespace Aws
             {
                 BCryptSymmetricCipher::Reset();
                 m_blockOverflow = CryptoBuffer();
+                InitCipher();
+                InitKey();
             }
 
             size_t AES_CTR_Cipher_BCrypt::GetBlockSizeBytes() const
@@ -1087,10 +1091,11 @@ namespace Aws
 
             void AES_GCM_Cipher_BCrypt::Reset()
             {
-                m_tag = CryptoBuffer(TagLengthBytes);
                 m_macBuffer.Zero();
                 m_finalBuffer = CryptoBuffer();
                 BCryptSymmetricCipher::Reset();
+                InitCipher();
+                InitKey();
             }
 
             size_t AES_GCM_Cipher_BCrypt::GetBlockSizeBytes() const
@@ -1239,6 +1244,8 @@ namespace Aws
             {
                 BCryptSymmetricCipher::Reset();
                 m_operatingKeyBuffer = CryptoBuffer();
+                InitCipher();
+                InitKey();
             }
 
             size_t AES_KeyWrap_Cipher_BCrypt::GetBlockSizeBytes() const

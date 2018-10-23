@@ -32,18 +32,18 @@ static const char* TEST_ENCRYPTION_STRING = "Hello World! Hello World! This is s
 static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                       const Aws::String& data_raw, const Aws::String& expected_raw);
 static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
-                                      const Aws::String& data_raw, const Aws::String& expected_raw);
+                                        const Aws::String& data_raw, const Aws::String& expected_raw);
 static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
                                       const Aws::String& data_raw, const Aws::String& expected_raw);
 static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
-                                      const Aws::String& data_raw, const Aws::String& expected_raw);
+                                        const Aws::String& data_raw, const Aws::String& expected_raw);
 
 #ifndef ENABLE_COMMONCRYPTO_ENCRYPTION
 static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
-                                      const Aws::String& data_raw, const Aws::String& expected_raw, const Aws::String& tag_raw);
+                           const Aws::String& data_raw, const Aws::String& expected_raw, const Aws::String& tag_raw);
 
 static void TestGCMMultipleBuffers(const Aws::String& iv_raw, const Aws::String& key_raw,
-                                        const Aws::String& data_raw, const Aws::String& expected_raw, const Aws::String& tag_raw);
+                                   const Aws::String& data_raw, const Aws::String& expected_raw, const Aws::String& tag_raw);
 #endif
 
 TEST(AES_CBC_TEST, LessThanOneBlockTest)
@@ -69,7 +69,7 @@ TEST(AES_CBC_TEST, LessThanOneBlockTest)
 
     ASSERT_EQ(expected, encryptedResult);
 
-    cipher = CreateAES_CBCImplementation(key, iv);
+    cipher->Reset();
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
 
@@ -152,7 +152,7 @@ TEST(AES_CBC_TEST, Test_Generated_IV)
     ASSERT_TRUE(*cipher);
     CryptoBuffer finalEncryptionResult({ &part1, &part2 });
 
-    cipher = CreateAES_CBCImplementation(key, cipher->GetIV());
+    cipher->Reset();
     part1 = cipher->DecryptBuffer(finalEncryptionResult);
     part2 = cipher->FinalizeDecryption();
     CryptoBuffer finalDecryptionResult({ &part1, &part2 });
@@ -237,7 +237,7 @@ TEST(AES_CTR_TEST, Test_Generated_KEY_AND_IV)
     ASSERT_TRUE(*cipher);
     CryptoBuffer finalEncryptionResult({&part1, &part2});
 
-    cipher = CreateAES_CTRImplementation(key, cipher->GetIV());
+    cipher->Reset();
     part1 = cipher->DecryptBuffer(finalEncryptionResult);
     part2 = cipher->FinalizeDecryption();
     CryptoBuffer finalDecryptionResult({&part1, &part2});
@@ -274,7 +274,7 @@ TEST(AES_GCM_TEST, TestBadTagCausesFailure)
 
     const_cast<CryptoBuffer&>(cipher->GetTag())[8] = 0;
 
-    cipher = CreateAES_GCMImplementation(key, iv, cipher->GetTag());
+    cipher->Reset();
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
     ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
@@ -334,7 +334,7 @@ TEST(AES_GCM_TEST, Test_Generated_IV)
     ASSERT_TRUE(*cipher);
     CryptoBuffer finalEncryptionResult({&part1, &part2});
 
-    cipher = CreateAES_GCMImplementation(key, cipher->GetIV(), cipher->GetTag());
+    cipher->Reset();
     part1 = cipher->DecryptBuffer(finalEncryptionResult);
     part2 = cipher->FinalizeDecryption();
     CryptoBuffer finalDecryptionResult({&part1, &part2});
@@ -369,7 +369,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey256CekTestVector)
     //do this as a string to enhance test output readability.
     ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
 
-    cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    cipher->Reset();
     auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
     auto decryptFinalizeResult = cipher->FinalizeDecryption();
 
@@ -402,7 +402,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKeyTestIntegrityCheckFailed)
     //do this as a string to enhance test output readability.
     ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
 
-    cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    cipher->Reset();
     //alter the cipher text integrity check (any of the first 8 bytes) and make sure the decryption fails.
     expected_cipher_text_raw[1] = expected_cipher_text_raw[1] + expected_cipher_text_raw[2];
     auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
@@ -435,7 +435,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKeyTestBadPayload)
     //do this as a string to enhance test output readability.
     ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
 
-    cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    cipher->Reset();
     //alter data after the integrity register and make sure the decryption fails.
     expected_cipher_text_raw[14] = expected_cipher_text_raw[12] + expected_cipher_text_raw[13];
     auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
@@ -468,7 +468,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekTestVector)
     //do this as a string to enhance test output readability.
     ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
 
-    cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    cipher->Reset();
     auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
     auto decryptFinalizeResult = cipher->FinalizeDecryption();
 
@@ -501,7 +501,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekIntegrityCheckFailedTestVector)
     //do this as a string to enhance test output readability.
     ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
 
-    cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    cipher->Reset();
     expected_cipher_text_raw[1] = expected_cipher_text_raw[1] + expected_cipher_text_raw[2];
     auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
     auto decryptFinalizeResult = cipher->FinalizeDecryption();
@@ -533,7 +533,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekPayloadCheckFailedTestVector)
     //do this as a string to enhance test output readability.
     ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
 
-    cipher = CreateAES_KeyWrapImplementation(kek_raw);
+    cipher->Reset();
     expected_cipher_text_raw[14] = expected_cipher_text_raw[13] + expected_cipher_text_raw[14];
     auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
     auto decryptFinalizeResult = cipher->FinalizeDecryption();
@@ -565,7 +565,7 @@ static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     CryptoBuffer encryptionMinusPadding(encryptedResult.GetUnderlyingData(), encryptedResult.GetLength() - paddingLengthForTest);
     ASSERT_EQ(expected, encryptionMinusPadding);
 
-    cipher = CreateAES_CBCImplementation(key, iv);
+    cipher->Reset();
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
 
@@ -596,7 +596,7 @@ static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     CryptoBuffer encryptedResult({&encryptResult, &finalEncryptedBuffer});
     ASSERT_EQ(expected, encryptedResult);
 
-    cipher = CreateAES_CTRImplementation(key, iv);
+    cipher->Reset();
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
     ASSERT_TRUE(*cipher);
@@ -631,7 +631,7 @@ static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw
     ASSERT_EQ(tag, cipher->GetTag());
     ASSERT_TRUE(*cipher);    
 
-    cipher = CreateAES_GCMImplementation(key, iv, cipher->GetTag());
+    cipher->Reset();
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();   
     ASSERT_TRUE(*cipher);
@@ -681,7 +681,7 @@ static void TestGCMMultipleBuffers(const Aws::String& iv_raw, const Aws::String&
 
     ASSERT_EQ(tag, cipher->GetTag());
 
-    cipher = CreateAES_GCMImplementation(key, iv, cipher->GetTag());
+    cipher->Reset();
 
     auto slicesToDecrypt = encryptedResult.Slice(24);
     Aws::Vector<ByteBuffer*> decryptedStreams;
@@ -756,7 +756,7 @@ static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
         Aws::Delete(toDelete);
     }
 
-    cipher = CreateAES_CBCImplementation(key, iv);
+    cipher->Reset();
 
     auto slicesToDecrypt = encryptedResultWithPadding.Slice(24);
     Aws::Vector<ByteBuffer*> decryptedStreams;
@@ -824,7 +824,7 @@ static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
         Aws::Delete(toDelete);
     }
 
-    cipher = CreateAES_CTRImplementation(key, iv);
+    cipher->Reset();
 
     auto slicesToDecrypt = encryptedResult.Slice(24);
     Aws::Vector<ByteBuffer*> decryptedStreams;
