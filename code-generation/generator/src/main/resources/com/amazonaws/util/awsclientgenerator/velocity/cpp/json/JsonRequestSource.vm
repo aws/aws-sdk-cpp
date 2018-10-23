@@ -38,6 +38,10 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/ModelClassMembersJsonizeSource.vm")
   return payload.View().WriteReadable();
+## for json protocol
+#elseif($metadata.protocol.equals("json"))
+  return "{}";
+## for rest-json protocol
 #else
   return "";
 #end
