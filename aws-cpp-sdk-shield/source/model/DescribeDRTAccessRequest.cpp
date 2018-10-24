@@ -28,7 +28,7 @@ DescribeDRTAccessRequest::DescribeDRTAccessRequest()
 
 Aws::String DescribeDRTAccessRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection DescribeDRTAccessRequest::GetRequestSpecificHeaders() const

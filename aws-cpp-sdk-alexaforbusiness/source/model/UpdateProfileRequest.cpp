@@ -25,6 +25,8 @@ using namespace Aws::Utils;
 UpdateProfileRequest::UpdateProfileRequest() : 
     m_profileArnHasBeenSet(false),
     m_profileNameHasBeenSet(false),
+    m_isDefault(false),
+    m_isDefaultHasBeenSet(false),
     m_timezoneHasBeenSet(false),
     m_addressHasBeenSet(false),
     m_distanceUnit(DistanceUnit::NOT_SET),
@@ -55,6 +57,12 @@ Aws::String UpdateProfileRequest::SerializePayload() const
   if(m_profileNameHasBeenSet)
   {
    payload.WithString("ProfileName", m_profileName);
+
+  }
+
+  if(m_isDefaultHasBeenSet)
+  {
+   payload.WithBool("IsDefault", m_isDefault);
 
   }
 

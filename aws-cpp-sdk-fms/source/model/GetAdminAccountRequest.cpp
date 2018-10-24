@@ -28,7 +28,7 @@ GetAdminAccountRequest::GetAdminAccountRequest()
 
 Aws::String GetAdminAccountRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection GetAdminAccountRequest::GetRequestSpecificHeaders() const

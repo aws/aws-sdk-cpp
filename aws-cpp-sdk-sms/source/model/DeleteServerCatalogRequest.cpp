@@ -28,7 +28,7 @@ DeleteServerCatalogRequest::DeleteServerCatalogRequest()
 
 Aws::String DeleteServerCatalogRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection DeleteServerCatalogRequest::GetRequestSpecificHeaders() const

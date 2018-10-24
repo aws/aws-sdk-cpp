@@ -28,7 +28,7 @@ UnpeerVpcRequest::UnpeerVpcRequest()
 
 Aws::String UnpeerVpcRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection UnpeerVpcRequest::GetRequestSpecificHeaders() const

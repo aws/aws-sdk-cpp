@@ -43,109 +43,116 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project.</p>
      */
     inline CreateProjectResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project.</p>
      */
     inline CreateProjectResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project.</p>
      */
     inline CreateProjectResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The Amazon Resource Name (ARN) of the created project.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The Amazon Resource Name (ARN) of the created project.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The Amazon Resource Name (ARN) of the created project.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The Amazon Resource Name (ARN) of the created project.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The Amazon Resource Name (ARN) of the created project.</p>
      */
     inline CreateProjectResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The Amazon Resource Name (ARN) of the created project.</p>
      */
     inline CreateProjectResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The Amazon Resource Name (ARN) of the created project.</p>
      */
     inline CreateProjectResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestToken = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestToken.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation.</p>
      */
     inline CreateProjectResult& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation.</p>
      */
     inline CreateProjectResult& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation.</p>
      */
     inline CreateProjectResult& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

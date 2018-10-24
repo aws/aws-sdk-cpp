@@ -28,7 +28,7 @@ GetDiscoverySummaryRequest::GetDiscoverySummaryRequest()
 
 Aws::String GetDiscoverySummaryRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection GetDiscoverySummaryRequest::GetRequestSpecificHeaders() const

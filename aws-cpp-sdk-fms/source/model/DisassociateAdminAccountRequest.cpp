@@ -28,7 +28,7 @@ DisassociateAdminAccountRequest::DisassociateAdminAccountRequest()
 
 Aws::String DisassociateAdminAccountRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection DisassociateAdminAccountRequest::GetRequestSpecificHeaders() const

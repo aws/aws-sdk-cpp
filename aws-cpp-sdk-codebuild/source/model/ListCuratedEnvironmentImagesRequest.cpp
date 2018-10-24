@@ -28,7 +28,7 @@ ListCuratedEnvironmentImagesRequest::ListCuratedEnvironmentImagesRequest()
 
 Aws::String ListCuratedEnvironmentImagesRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection ListCuratedEnvironmentImagesRequest::GetRequestSpecificHeaders() const

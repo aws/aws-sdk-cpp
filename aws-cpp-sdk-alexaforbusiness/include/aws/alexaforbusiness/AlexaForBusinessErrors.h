@@ -56,12 +56,16 @@ enum class AlexaForBusinessErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION,
   DEVICE_NOT_REGISTERED,
+  INVALID_CERTIFICATE_AUTHORITY,
+  INVALID_DEVICE,
   INVALID_USER_STATUS,
   LIMIT_EXCEEDED,
   NAME_IN_USE,
   NOT_FOUND,
-  RESOURCE_IN_USE
+  RESOURCE_IN_USE,
+  UNAUTHORIZED
 };
 namespace AlexaForBusinessErrorMapper
 {

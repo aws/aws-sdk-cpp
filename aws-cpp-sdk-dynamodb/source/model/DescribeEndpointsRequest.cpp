@@ -28,7 +28,7 @@ DescribeEndpointsRequest::DescribeEndpointsRequest()
 
 Aws::String DescribeEndpointsRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection DescribeEndpointsRequest::GetRequestSpecificHeaders() const

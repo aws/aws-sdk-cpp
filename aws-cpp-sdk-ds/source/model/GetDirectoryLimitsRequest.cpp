@@ -28,7 +28,7 @@ GetDirectoryLimitsRequest::GetDirectoryLimitsRequest()
 
 Aws::String GetDirectoryLimitsRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection GetDirectoryLimitsRequest::GetRequestSpecificHeaders() const

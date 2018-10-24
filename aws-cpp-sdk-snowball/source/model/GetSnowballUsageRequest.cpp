@@ -28,7 +28,7 @@ GetSnowballUsageRequest::GetSnowballUsageRequest()
 
 Aws::String GetSnowballUsageRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection GetSnowballUsageRequest::GetRequestSpecificHeaders() const

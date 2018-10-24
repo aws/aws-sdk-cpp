@@ -28,7 +28,7 @@ StartContinuousExportRequest::StartContinuousExportRequest()
 
 Aws::String StartContinuousExportRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection StartContinuousExportRequest::GetRequestSpecificHeaders() const

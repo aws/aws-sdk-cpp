@@ -28,7 +28,7 @@ DescribeEmergencyContactSettingsRequest::DescribeEmergencyContactSettingsRequest
 
 Aws::String DescribeEmergencyContactSettingsRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection DescribeEmergencyContactSettingsRequest::GetRequestSpecificHeaders() const

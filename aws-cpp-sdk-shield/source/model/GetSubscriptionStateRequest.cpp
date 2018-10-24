@@ -28,7 +28,7 @@ GetSubscriptionStateRequest::GetSubscriptionStateRequest()
 
 Aws::String GetSubscriptionStateRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection GetSubscriptionStateRequest::GetRequestSpecificHeaders() const

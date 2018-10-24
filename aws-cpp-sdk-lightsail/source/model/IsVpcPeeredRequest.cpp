@@ -28,7 +28,7 @@ IsVpcPeeredRequest::IsVpcPeeredRequest()
 
 Aws::String IsVpcPeeredRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection IsVpcPeeredRequest::GetRequestSpecificHeaders() const

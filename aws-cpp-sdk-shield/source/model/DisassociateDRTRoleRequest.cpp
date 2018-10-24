@@ -28,7 +28,7 @@ DisassociateDRTRoleRequest::DisassociateDRTRoleRequest()
 
 Aws::String DisassociateDRTRoleRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection DisassociateDRTRoleRequest::GetRequestSpecificHeaders() const

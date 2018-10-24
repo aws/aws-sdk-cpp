@@ -248,16 +248,20 @@ namespace Model
         virtual void AssociateTeamMemberAsync(const Model::AssociateTeamMemberRequest& request, const AssociateTeamMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Reserved for future use. To create a project, use the AWS CodeStar
-         * console.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a project, including project resources. This action creates a project
+         * based on a submitted project request. A set of source code files and a toolchain
+         * template file can be included with the project request. If these are not
+         * provided, an empty project is created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Reserved for future use. To create a project, use the AWS CodeStar
-         * console.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a project, including project resources. This action creates a project
+         * based on a submitted project request. A set of source code files and a toolchain
+         * template file can be included with the project request. If these are not
+         * provided, an empty project is created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">AWS
          * API Reference</a></p>
          *
@@ -266,8 +270,10 @@ namespace Model
         virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Reserved for future use. To create a project, use the AWS CodeStar
-         * console.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a project, including project resources. This action creates a project
+         * based on a submitted project request. A set of source code files and a toolchain
+         * template file can be included with the project request. If these are not
+         * provided, an empty project is created.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-2017-04-19/CreateProject">AWS
          * API Reference</a></p>
          *

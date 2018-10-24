@@ -28,7 +28,7 @@ DescribeVpcPeeringAuthorizationsRequest::DescribeVpcPeeringAuthorizationsRequest
 
 Aws::String DescribeVpcPeeringAuthorizationsRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection DescribeVpcPeeringAuthorizationsRequest::GetRequestSpecificHeaders() const

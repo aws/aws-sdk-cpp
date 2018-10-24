@@ -17,6 +17,8 @@
 #include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
 #include <aws/alexaforbusiness/AlexaForBusinessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/alexaforbusiness/model/EnablementTypeFilter.h>
+#include <aws/alexaforbusiness/model/SkillTypeFilter.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +80,63 @@ namespace Model
      * <p>The ARN of the skill group for which to list enabled skills. Required.</p>
      */
     inline ListSkillsRequest& WithSkillGroupArn(const char* value) { SetSkillGroupArn(value); return *this;}
+
+
+    /**
+     * <p>Whether the skill is enabled under the user's account, or if it requires
+     * linking to be used.</p>
+     */
+    inline const EnablementTypeFilter& GetEnablementType() const{ return m_enablementType; }
+
+    /**
+     * <p>Whether the skill is enabled under the user's account, or if it requires
+     * linking to be used.</p>
+     */
+    inline void SetEnablementType(const EnablementTypeFilter& value) { m_enablementTypeHasBeenSet = true; m_enablementType = value; }
+
+    /**
+     * <p>Whether the skill is enabled under the user's account, or if it requires
+     * linking to be used.</p>
+     */
+    inline void SetEnablementType(EnablementTypeFilter&& value) { m_enablementTypeHasBeenSet = true; m_enablementType = std::move(value); }
+
+    /**
+     * <p>Whether the skill is enabled under the user's account, or if it requires
+     * linking to be used.</p>
+     */
+    inline ListSkillsRequest& WithEnablementType(const EnablementTypeFilter& value) { SetEnablementType(value); return *this;}
+
+    /**
+     * <p>Whether the skill is enabled under the user's account, or if it requires
+     * linking to be used.</p>
+     */
+    inline ListSkillsRequest& WithEnablementType(EnablementTypeFilter&& value) { SetEnablementType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Whether the skill is publicly available or is a private skill.</p>
+     */
+    inline const SkillTypeFilter& GetSkillType() const{ return m_skillType; }
+
+    /**
+     * <p>Whether the skill is publicly available or is a private skill.</p>
+     */
+    inline void SetSkillType(const SkillTypeFilter& value) { m_skillTypeHasBeenSet = true; m_skillType = value; }
+
+    /**
+     * <p>Whether the skill is publicly available or is a private skill.</p>
+     */
+    inline void SetSkillType(SkillTypeFilter&& value) { m_skillTypeHasBeenSet = true; m_skillType = std::move(value); }
+
+    /**
+     * <p>Whether the skill is publicly available or is a private skill.</p>
+     */
+    inline ListSkillsRequest& WithSkillType(const SkillTypeFilter& value) { SetSkillType(value); return *this;}
+
+    /**
+     * <p>Whether the skill is publicly available or is a private skill.</p>
+     */
+    inline ListSkillsRequest& WithSkillType(SkillTypeFilter&& value) { SetSkillType(std::move(value)); return *this;}
 
 
     /**
@@ -162,6 +221,12 @@ namespace Model
 
     Aws::String m_skillGroupArn;
     bool m_skillGroupArnHasBeenSet;
+
+    EnablementTypeFilter m_enablementType;
+    bool m_enablementTypeHasBeenSet;
+
+    SkillTypeFilter m_skillType;
+    bool m_skillTypeHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

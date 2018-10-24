@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/alexaforbusiness/model/EnablementType.h>
+#include <aws/alexaforbusiness/model/SkillType.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +136,63 @@ namespace Model
      */
     inline SkillSummary& WithSupportsLinking(bool value) { SetSupportsLinking(value); return *this;}
 
+
+    /**
+     * <p>Whether the skill is enabled under the user's account, or if it requires
+     * linking to be used.</p>
+     */
+    inline const EnablementType& GetEnablementType() const{ return m_enablementType; }
+
+    /**
+     * <p>Whether the skill is enabled under the user's account, or if it requires
+     * linking to be used.</p>
+     */
+    inline void SetEnablementType(const EnablementType& value) { m_enablementTypeHasBeenSet = true; m_enablementType = value; }
+
+    /**
+     * <p>Whether the skill is enabled under the user's account, or if it requires
+     * linking to be used.</p>
+     */
+    inline void SetEnablementType(EnablementType&& value) { m_enablementTypeHasBeenSet = true; m_enablementType = std::move(value); }
+
+    /**
+     * <p>Whether the skill is enabled under the user's account, or if it requires
+     * linking to be used.</p>
+     */
+    inline SkillSummary& WithEnablementType(const EnablementType& value) { SetEnablementType(value); return *this;}
+
+    /**
+     * <p>Whether the skill is enabled under the user's account, or if it requires
+     * linking to be used.</p>
+     */
+    inline SkillSummary& WithEnablementType(EnablementType&& value) { SetEnablementType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Whether the skill is publicly available or is a private skill.</p>
+     */
+    inline const SkillType& GetSkillType() const{ return m_skillType; }
+
+    /**
+     * <p>Whether the skill is publicly available or is a private skill.</p>
+     */
+    inline void SetSkillType(const SkillType& value) { m_skillTypeHasBeenSet = true; m_skillType = value; }
+
+    /**
+     * <p>Whether the skill is publicly available or is a private skill.</p>
+     */
+    inline void SetSkillType(SkillType&& value) { m_skillTypeHasBeenSet = true; m_skillType = std::move(value); }
+
+    /**
+     * <p>Whether the skill is publicly available or is a private skill.</p>
+     */
+    inline SkillSummary& WithSkillType(const SkillType& value) { SetSkillType(value); return *this;}
+
+    /**
+     * <p>Whether the skill is publicly available or is a private skill.</p>
+     */
+    inline SkillSummary& WithSkillType(SkillType&& value) { SetSkillType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_skillId;
@@ -144,6 +203,12 @@ namespace Model
 
     bool m_supportsLinking;
     bool m_supportsLinkingHasBeenSet;
+
+    EnablementType m_enablementType;
+    bool m_enablementTypeHasBeenSet;
+
+    SkillType m_skillType;
+    bool m_skillTypeHasBeenSet;
   };
 
 } // namespace Model

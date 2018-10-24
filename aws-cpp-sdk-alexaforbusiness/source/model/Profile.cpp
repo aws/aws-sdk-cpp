@@ -31,6 +31,8 @@ namespace Model
 Profile::Profile() : 
     m_profileArnHasBeenSet(false),
     m_profileNameHasBeenSet(false),
+    m_isDefault(false),
+    m_isDefaultHasBeenSet(false),
     m_addressHasBeenSet(false),
     m_timezoneHasBeenSet(false),
     m_distanceUnit(DistanceUnit::NOT_SET),
@@ -44,13 +46,16 @@ Profile::Profile() :
     m_maxVolumeLimit(0),
     m_maxVolumeLimitHasBeenSet(false),
     m_pSTNEnabled(false),
-    m_pSTNEnabledHasBeenSet(false)
+    m_pSTNEnabledHasBeenSet(false),
+    m_addressBookArnHasBeenSet(false)
 {
 }
 
 Profile::Profile(JsonView jsonValue) : 
     m_profileArnHasBeenSet(false),
     m_profileNameHasBeenSet(false),
+    m_isDefault(false),
+    m_isDefaultHasBeenSet(false),
     m_addressHasBeenSet(false),
     m_timezoneHasBeenSet(false),
     m_distanceUnit(DistanceUnit::NOT_SET),
@@ -64,7 +69,8 @@ Profile::Profile(JsonView jsonValue) :
     m_maxVolumeLimit(0),
     m_maxVolumeLimitHasBeenSet(false),
     m_pSTNEnabled(false),
-    m_pSTNEnabledHasBeenSet(false)
+    m_pSTNEnabledHasBeenSet(false),
+    m_addressBookArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +89,13 @@ Profile& Profile::operator =(JsonView jsonValue)
     m_profileName = jsonValue.GetString("ProfileName");
 
     m_profileNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IsDefault"))
+  {
+    m_isDefault = jsonValue.GetBool("IsDefault");
+
+    m_isDefaultHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Address"))
@@ -141,6 +154,13 @@ Profile& Profile::operator =(JsonView jsonValue)
     m_pSTNEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AddressBookArn"))
+  {
+    m_addressBookArn = jsonValue.GetString("AddressBookArn");
+
+    m_addressBookArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -157,6 +177,12 @@ JsonValue Profile::Jsonize() const
   if(m_profileNameHasBeenSet)
   {
    payload.WithString("ProfileName", m_profileName);
+
+  }
+
+  if(m_isDefaultHasBeenSet)
+  {
+   payload.WithBool("IsDefault", m_isDefault);
 
   }
 
@@ -202,6 +228,12 @@ JsonValue Profile::Jsonize() const
   if(m_pSTNEnabledHasBeenSet)
   {
    payload.WithBool("PSTNEnabled", m_pSTNEnabled);
+
+  }
+
+  if(m_addressBookArnHasBeenSet)
+  {
+   payload.WithString("AddressBookArn", m_addressBookArn);
 
   }
 

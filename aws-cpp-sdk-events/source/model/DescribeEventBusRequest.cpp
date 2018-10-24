@@ -28,7 +28,7 @@ DescribeEventBusRequest::DescribeEventBusRequest()
 
 Aws::String DescribeEventBusRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection DescribeEventBusRequest::GetRequestSpecificHeaders() const

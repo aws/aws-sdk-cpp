@@ -28,7 +28,7 @@ PeerVpcRequest::PeerVpcRequest()
 
 Aws::String PeerVpcRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection PeerVpcRequest::GetRequestSpecificHeaders() const

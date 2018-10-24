@@ -28,7 +28,7 @@ GetResourcePolicyRequest::GetResourcePolicyRequest()
 
 Aws::String GetResourcePolicyRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection GetResourcePolicyRequest::GetRequestSpecificHeaders() const

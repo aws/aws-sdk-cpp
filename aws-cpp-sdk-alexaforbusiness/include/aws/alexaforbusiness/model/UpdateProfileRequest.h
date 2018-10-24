@@ -120,6 +120,25 @@ namespace Model
 
 
     /**
+     * <p>Sets the profile as default if selected. If this is missing, no update is
+     * done to the default status.</p>
+     */
+    inline bool GetIsDefault() const{ return m_isDefault; }
+
+    /**
+     * <p>Sets the profile as default if selected. If this is missing, no update is
+     * done to the default status.</p>
+     */
+    inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
+
+    /**
+     * <p>Sets the profile as default if selected. If this is missing, no update is
+     * done to the default status.</p>
+     */
+    inline UpdateProfileRequest& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
+
+
+    /**
      * <p>The updated timezone for the room profile.</p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
@@ -323,6 +342,9 @@ namespace Model
 
     Aws::String m_profileName;
     bool m_profileNameHasBeenSet;
+
+    bool m_isDefault;
+    bool m_isDefaultHasBeenSet;
 
     Aws::String m_timezone;
     bool m_timezoneHasBeenSet;

@@ -28,7 +28,7 @@ DeleteNotificationChannelRequest::DeleteNotificationChannelRequest()
 
 Aws::String DeleteNotificationChannelRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection DeleteNotificationChannelRequest::GetRequestSpecificHeaders() const

@@ -28,7 +28,7 @@ DownloadDefaultKeyPairRequest::DownloadDefaultKeyPairRequest()
 
 Aws::String DownloadDefaultKeyPairRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection DownloadDefaultKeyPairRequest::GetRequestSpecificHeaders() const

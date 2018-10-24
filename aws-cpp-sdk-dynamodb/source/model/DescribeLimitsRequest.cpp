@@ -28,7 +28,7 @@ DescribeLimitsRequest::DescribeLimitsRequest()
 
 Aws::String DescribeLimitsRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection DescribeLimitsRequest::GetRequestSpecificHeaders() const

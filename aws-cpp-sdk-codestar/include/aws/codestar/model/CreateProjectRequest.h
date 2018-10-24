@@ -17,7 +17,10 @@
 #include <aws/codestar/CodeStar_EXPORTS.h>
 #include <aws/codestar/CodeStarRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codestar/model/Toolchain.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/codestar/model/Code.h>
 #include <utility>
 
 namespace Aws
@@ -46,147 +49,240 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The display name for the project to be created in AWS CodeStar.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The display name for the project to be created in AWS CodeStar.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The display name for the project to be created in AWS CodeStar.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The display name for the project to be created in AWS CodeStar.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The display name for the project to be created in AWS CodeStar.</p>
      */
     inline CreateProjectRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The display name for the project to be created in AWS CodeStar.</p>
      */
     inline CreateProjectRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The display name for the project to be created in AWS CodeStar.</p>
      */
     inline CreateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project to be created in AWS CodeStar.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project to be created in AWS CodeStar.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project to be created in AWS CodeStar.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project to be created in AWS CodeStar.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project to be created in AWS CodeStar.</p>
      */
     inline CreateProjectRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project to be created in AWS CodeStar.</p>
      */
     inline CreateProjectRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The ID of the project to be created in AWS CodeStar.</p>
      */
     inline CreateProjectRequest& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The description of the project, if any.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The description of the project, if any.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The description of the project, if any.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The description of the project, if any.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The description of the project, if any.</p>
      */
     inline CreateProjectRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The description of the project, if any.</p>
      */
     inline CreateProjectRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>The description of the project, if any.</p>
      */
     inline CreateProjectRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation. This token can be used to repeat the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation. This token can be used to repeat the request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation. This token can be used to repeat the request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation. This token can be used to repeat the request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation. This token can be used to repeat the request.</p>
      */
     inline CreateProjectRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation. This token can be used to repeat the request.</p>
      */
     inline CreateProjectRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A user- or system-generated token that identifies the entity that requested
+     * project creation. This token can be used to repeat the request.</p>
      */
     inline CreateProjectRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+
+
+    /**
+     * <p>A list of the Code objects submitted with the project request. If this
+     * parameter is specified, the request must also include the toolchain
+     * parameter.</p>
+     */
+    inline const Aws::Vector<Code>& GetSourceCode() const{ return m_sourceCode; }
+
+    /**
+     * <p>A list of the Code objects submitted with the project request. If this
+     * parameter is specified, the request must also include the toolchain
+     * parameter.</p>
+     */
+    inline void SetSourceCode(const Aws::Vector<Code>& value) { m_sourceCodeHasBeenSet = true; m_sourceCode = value; }
+
+    /**
+     * <p>A list of the Code objects submitted with the project request. If this
+     * parameter is specified, the request must also include the toolchain
+     * parameter.</p>
+     */
+    inline void SetSourceCode(Aws::Vector<Code>&& value) { m_sourceCodeHasBeenSet = true; m_sourceCode = std::move(value); }
+
+    /**
+     * <p>A list of the Code objects submitted with the project request. If this
+     * parameter is specified, the request must also include the toolchain
+     * parameter.</p>
+     */
+    inline CreateProjectRequest& WithSourceCode(const Aws::Vector<Code>& value) { SetSourceCode(value); return *this;}
+
+    /**
+     * <p>A list of the Code objects submitted with the project request. If this
+     * parameter is specified, the request must also include the toolchain
+     * parameter.</p>
+     */
+    inline CreateProjectRequest& WithSourceCode(Aws::Vector<Code>&& value) { SetSourceCode(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the Code objects submitted with the project request. If this
+     * parameter is specified, the request must also include the toolchain
+     * parameter.</p>
+     */
+    inline CreateProjectRequest& AddSourceCode(const Code& value) { m_sourceCodeHasBeenSet = true; m_sourceCode.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the Code objects submitted with the project request. If this
+     * parameter is specified, the request must also include the toolchain
+     * parameter.</p>
+     */
+    inline CreateProjectRequest& AddSourceCode(Code&& value) { m_sourceCodeHasBeenSet = true; m_sourceCode.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The name of the toolchain template file submitted with the project request.
+     * If this parameter is specified, the request must also include the sourceCode
+     * parameter.</p>
+     */
+    inline const Toolchain& GetToolchain() const{ return m_toolchain; }
+
+    /**
+     * <p>The name of the toolchain template file submitted with the project request.
+     * If this parameter is specified, the request must also include the sourceCode
+     * parameter.</p>
+     */
+    inline void SetToolchain(const Toolchain& value) { m_toolchainHasBeenSet = true; m_toolchain = value; }
+
+    /**
+     * <p>The name of the toolchain template file submitted with the project request.
+     * If this parameter is specified, the request must also include the sourceCode
+     * parameter.</p>
+     */
+    inline void SetToolchain(Toolchain&& value) { m_toolchainHasBeenSet = true; m_toolchain = std::move(value); }
+
+    /**
+     * <p>The name of the toolchain template file submitted with the project request.
+     * If this parameter is specified, the request must also include the sourceCode
+     * parameter.</p>
+     */
+    inline CreateProjectRequest& WithToolchain(const Toolchain& value) { SetToolchain(value); return *this;}
+
+    /**
+     * <p>The name of the toolchain template file submitted with the project request.
+     * If this parameter is specified, the request must also include the sourceCode
+     * parameter.</p>
+     */
+    inline CreateProjectRequest& WithToolchain(Toolchain&& value) { SetToolchain(std::move(value)); return *this;}
 
 
     /**
@@ -262,6 +358,12 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    Aws::Vector<Code> m_sourceCode;
+    bool m_sourceCodeHasBeenSet;
+
+    Toolchain m_toolchain;
+    bool m_toolchainHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

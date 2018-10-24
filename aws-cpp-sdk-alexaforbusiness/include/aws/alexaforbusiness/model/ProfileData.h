@@ -123,6 +123,22 @@ namespace Model
 
 
     /**
+     * <p>Retrieves if the profile data is default or not.</p>
+     */
+    inline bool GetIsDefault() const{ return m_isDefault; }
+
+    /**
+     * <p>Retrieves if the profile data is default or not.</p>
+     */
+    inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
+
+    /**
+     * <p>Retrieves if the profile data is default or not.</p>
+     */
+    inline ProfileData& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
+
+
+    /**
      * <p>The address of a room profile.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
@@ -278,6 +294,9 @@ namespace Model
 
     Aws::String m_profileName;
     bool m_profileNameHasBeenSet;
+
+    bool m_isDefault;
+    bool m_isDefaultHasBeenSet;
 
     Aws::String m_address;
     bool m_addressHasBeenSet;

@@ -28,7 +28,7 @@ ImportServerCatalogRequest::ImportServerCatalogRequest()
 
 Aws::String ImportServerCatalogRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection ImportServerCatalogRequest::GetRequestSpecificHeaders() const

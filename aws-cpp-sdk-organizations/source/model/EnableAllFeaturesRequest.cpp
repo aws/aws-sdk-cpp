@@ -28,7 +28,7 @@ EnableAllFeaturesRequest::EnableAllFeaturesRequest()
 
 Aws::String EnableAllFeaturesRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection EnableAllFeaturesRequest::GetRequestSpecificHeaders() const

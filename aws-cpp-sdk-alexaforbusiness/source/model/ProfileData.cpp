@@ -31,6 +31,8 @@ namespace Model
 ProfileData::ProfileData() : 
     m_profileArnHasBeenSet(false),
     m_profileNameHasBeenSet(false),
+    m_isDefault(false),
+    m_isDefaultHasBeenSet(false),
     m_addressHasBeenSet(false),
     m_timezoneHasBeenSet(false),
     m_distanceUnit(DistanceUnit::NOT_SET),
@@ -45,6 +47,8 @@ ProfileData::ProfileData() :
 ProfileData::ProfileData(JsonView jsonValue) : 
     m_profileArnHasBeenSet(false),
     m_profileNameHasBeenSet(false),
+    m_isDefault(false),
+    m_isDefaultHasBeenSet(false),
     m_addressHasBeenSet(false),
     m_timezoneHasBeenSet(false),
     m_distanceUnit(DistanceUnit::NOT_SET),
@@ -71,6 +75,13 @@ ProfileData& ProfileData::operator =(JsonView jsonValue)
     m_profileName = jsonValue.GetString("ProfileName");
 
     m_profileNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IsDefault"))
+  {
+    m_isDefault = jsonValue.GetBool("IsDefault");
+
+    m_isDefaultHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Address"))
@@ -124,6 +135,12 @@ JsonValue ProfileData::Jsonize() const
   if(m_profileNameHasBeenSet)
   {
    payload.WithString("ProfileName", m_profileName);
+
+  }
+
+  if(m_isDefaultHasBeenSet)
+  {
+   payload.WithBool("IsDefault", m_isDefault);
 
   }
 

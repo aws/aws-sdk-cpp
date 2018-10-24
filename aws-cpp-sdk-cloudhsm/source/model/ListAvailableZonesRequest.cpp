@@ -28,7 +28,7 @@ ListAvailableZonesRequest::ListAvailableZonesRequest()
 
 Aws::String ListAvailableZonesRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection ListAvailableZonesRequest::GetRequestSpecificHeaders() const

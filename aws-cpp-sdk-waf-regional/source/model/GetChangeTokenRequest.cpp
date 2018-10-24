@@ -28,7 +28,7 @@ GetChangeTokenRequest::GetChangeTokenRequest()
 
 Aws::String GetChangeTokenRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection GetChangeTokenRequest::GetRequestSpecificHeaders() const

@@ -28,7 +28,7 @@ GetAccountBalanceRequest::GetAccountBalanceRequest()
 
 Aws::String GetAccountBalanceRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection GetAccountBalanceRequest::GetRequestSpecificHeaders() const

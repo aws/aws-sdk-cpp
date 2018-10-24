@@ -28,7 +28,7 @@ GetNotificationChannelRequest::GetNotificationChannelRequest()
 
 Aws::String GetNotificationChannelRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection GetNotificationChannelRequest::GetRequestSpecificHeaders() const

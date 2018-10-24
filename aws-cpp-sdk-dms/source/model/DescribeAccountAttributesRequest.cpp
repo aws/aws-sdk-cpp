@@ -28,7 +28,7 @@ DescribeAccountAttributesRequest::DescribeAccountAttributesRequest()
 
 Aws::String DescribeAccountAttributesRequest::SerializePayload() const
 {
-  return "";
+  return "{}";
 }
 
 Aws::Http::HeaderValueCollection DescribeAccountAttributesRequest::GetRequestSpecificHeaders() const
