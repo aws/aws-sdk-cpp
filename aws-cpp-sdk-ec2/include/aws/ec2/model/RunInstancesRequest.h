@@ -27,6 +27,7 @@
 #include <aws/ec2/model/InstanceMarketOptionsRequest.h>
 #include <aws/ec2/model/CreditSpecificationRequest.h>
 #include <aws/ec2/model/CpuOptionsRequest.h>
+#include <aws/ec2/model/CapacityReservationSpecification.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
@@ -1463,6 +1464,32 @@ namespace Model
      */
     inline RunInstancesRequest& WithCpuOptions(CpuOptionsRequest&& value) { SetCpuOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the Capacity Reservation targeting option.</p>
+     */
+    inline const CapacityReservationSpecification& GetCapacityReservationSpecification() const{ return m_capacityReservationSpecification; }
+
+    /**
+     * <p>Information about the Capacity Reservation targeting option.</p>
+     */
+    inline void SetCapacityReservationSpecification(const CapacityReservationSpecification& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = value; }
+
+    /**
+     * <p>Information about the Capacity Reservation targeting option.</p>
+     */
+    inline void SetCapacityReservationSpecification(CapacityReservationSpecification&& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = std::move(value); }
+
+    /**
+     * <p>Information about the Capacity Reservation targeting option.</p>
+     */
+    inline RunInstancesRequest& WithCapacityReservationSpecification(const CapacityReservationSpecification& value) { SetCapacityReservationSpecification(value); return *this;}
+
+    /**
+     * <p>Information about the Capacity Reservation targeting option.</p>
+     */
+    inline RunInstancesRequest& WithCapacityReservationSpecification(CapacityReservationSpecification&& value) { SetCapacityReservationSpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
@@ -1557,6 +1584,9 @@ namespace Model
 
     CpuOptionsRequest m_cpuOptions;
     bool m_cpuOptionsHasBeenSet;
+
+    CapacityReservationSpecification m_capacityReservationSpecification;
+    bool m_capacityReservationSpecificationHasBeenSet;
   };
 
 } // namespace Model

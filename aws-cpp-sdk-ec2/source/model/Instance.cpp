@@ -81,7 +81,9 @@ Instance::Instance() :
     m_tagsHasBeenSet(false),
     m_virtualizationType(VirtualizationType::NOT_SET),
     m_virtualizationTypeHasBeenSet(false),
-    m_cpuOptionsHasBeenSet(false)
+    m_cpuOptionsHasBeenSet(false),
+    m_capacityReservationIdHasBeenSet(false),
+    m_capacityReservationSpecificationHasBeenSet(false)
 {
 }
 
@@ -136,7 +138,9 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_tagsHasBeenSet(false),
     m_virtualizationType(VirtualizationType::NOT_SET),
     m_virtualizationTypeHasBeenSet(false),
-    m_cpuOptionsHasBeenSet(false)
+    m_cpuOptionsHasBeenSet(false),
+    m_capacityReservationIdHasBeenSet(false),
+    m_capacityReservationSpecificationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -423,6 +427,18 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       m_cpuOptions = cpuOptionsNode;
       m_cpuOptionsHasBeenSet = true;
     }
+    XmlNode capacityReservationIdNode = resultNode.FirstChild("capacityReservationId");
+    if(!capacityReservationIdNode.IsNull())
+    {
+      m_capacityReservationId = StringUtils::Trim(capacityReservationIdNode.GetText().c_str());
+      m_capacityReservationIdHasBeenSet = true;
+    }
+    XmlNode capacityReservationSpecificationNode = resultNode.FirstChild("capacityReservationSpecification");
+    if(!capacityReservationSpecificationNode.IsNull())
+    {
+      m_capacityReservationSpecification = capacityReservationSpecificationNode;
+      m_capacityReservationSpecificationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -678,6 +694,18 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       m_cpuOptions.OutputToStream(oStream, cpuOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_capacityReservationIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CapacityReservationId=" << StringUtils::URLEncode(m_capacityReservationId.c_str()) << "&";
+  }
+
+  if(m_capacityReservationSpecificationHasBeenSet)
+  {
+      Aws::StringStream capacityReservationSpecificationLocationAndMemberSs;
+      capacityReservationSpecificationLocationAndMemberSs << location << index << locationValue << ".CapacityReservationSpecification";
+      m_capacityReservationSpecification.OutputToStream(oStream, capacityReservationSpecificationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -889,6 +917,16 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String cpuOptionsLocationAndMember(location);
       cpuOptionsLocationAndMember += ".CpuOptions";
       m_cpuOptions.OutputToStream(oStream, cpuOptionsLocationAndMember.c_str());
+  }
+  if(m_capacityReservationIdHasBeenSet)
+  {
+      oStream << location << ".CapacityReservationId=" << StringUtils::URLEncode(m_capacityReservationId.c_str()) << "&";
+  }
+  if(m_capacityReservationSpecificationHasBeenSet)
+  {
+      Aws::String capacityReservationSpecificationLocationAndMember(location);
+      capacityReservationSpecificationLocationAndMember += ".CapacityReservationSpecification";
+      m_capacityReservationSpecification.OutputToStream(oStream, capacityReservationSpecificationLocationAndMember.c_str());
   }
 }
 

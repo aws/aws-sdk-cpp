@@ -26,6 +26,7 @@
 #include <aws/ec2/model/LaunchTemplateInstanceMarketOptionsRequest.h>
 #include <aws/ec2/model/CreditSpecificationRequest.h>
 #include <aws/ec2/model/LaunchTemplateCpuOptionsRequest.h>
+#include <aws/ec2/model/LaunchTemplateCapacityReservationSpecificationRequest.h>
 #include <aws/ec2/model/LaunchTemplateBlockDeviceMappingRequest.h>
 #include <aws/ec2/model/LaunchTemplateInstanceNetworkInterfaceSpecificationRequest.h>
 #include <aws/ec2/model/LaunchTemplateTagSpecificationRequest.h>
@@ -961,6 +962,32 @@ namespace Model
      */
     inline RequestLaunchTemplateData& WithCpuOptions(LaunchTemplateCpuOptionsRequest&& value) { SetCpuOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the Capacity Reservation targeting option.</p>
+     */
+    inline const LaunchTemplateCapacityReservationSpecificationRequest& GetCapacityReservationSpecification() const{ return m_capacityReservationSpecification; }
+
+    /**
+     * <p>Information about the Capacity Reservation targeting option.</p>
+     */
+    inline void SetCapacityReservationSpecification(const LaunchTemplateCapacityReservationSpecificationRequest& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = value; }
+
+    /**
+     * <p>Information about the Capacity Reservation targeting option.</p>
+     */
+    inline void SetCapacityReservationSpecification(LaunchTemplateCapacityReservationSpecificationRequest&& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = std::move(value); }
+
+    /**
+     * <p>Information about the Capacity Reservation targeting option.</p>
+     */
+    inline RequestLaunchTemplateData& WithCapacityReservationSpecification(const LaunchTemplateCapacityReservationSpecificationRequest& value) { SetCapacityReservationSpecification(value); return *this;}
+
+    /**
+     * <p>Information about the Capacity Reservation targeting option.</p>
+     */
+    inline RequestLaunchTemplateData& WithCapacityReservationSpecification(LaunchTemplateCapacityReservationSpecificationRequest&& value) { SetCapacityReservationSpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_kernelId;
@@ -1025,6 +1052,9 @@ namespace Model
 
     LaunchTemplateCpuOptionsRequest m_cpuOptions;
     bool m_cpuOptionsHasBeenSet;
+
+    LaunchTemplateCapacityReservationSpecificationRequest m_capacityReservationSpecification;
+    bool m_capacityReservationSpecificationHasBeenSet;
   };
 
 } // namespace Model
