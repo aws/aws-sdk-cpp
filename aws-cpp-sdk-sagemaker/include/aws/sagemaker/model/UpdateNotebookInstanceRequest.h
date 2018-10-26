@@ -180,50 +180,57 @@ namespace Model
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline const Aws::String& GetLifecycleConfigName() const{ return m_lifecycleConfigName; }
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline void SetLifecycleConfigName(const Aws::String& value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName = value; }
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline void SetLifecycleConfigName(Aws::String&& value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName = std::move(value); }
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline void SetLifecycleConfigName(const char* value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName.assign(value); }
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline UpdateNotebookInstanceRequest& WithLifecycleConfigName(const Aws::String& value) { SetLifecycleConfigName(value); return *this;}
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline UpdateNotebookInstanceRequest& WithLifecycleConfigName(Aws::String&& value) { SetLifecycleConfigName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline UpdateNotebookInstanceRequest& WithLifecycleConfigName(const char* value) { SetLifecycleConfigName(value); return *this;}
 
@@ -246,6 +253,25 @@ namespace Model
      */
     inline UpdateNotebookInstanceRequest& WithDisassociateLifecycleConfig(bool value) { SetDisassociateLifecycleConfig(value); return *this;}
 
+
+    /**
+     * <p>The size, in GB, of the ML storage volume to attach to the notebook
+     * instance.</p>
+     */
+    inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
+
+    /**
+     * <p>The size, in GB, of the ML storage volume to attach to the notebook
+     * instance.</p>
+     */
+    inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
+
+    /**
+     * <p>The size, in GB, of the ML storage volume to attach to the notebook
+     * instance.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceName;
@@ -262,6 +288,9 @@ namespace Model
 
     bool m_disassociateLifecycleConfig;
     bool m_disassociateLifecycleConfigHasBeenSet;
+
+    int m_volumeSizeInGB;
+    bool m_volumeSizeInGBHasBeenSet;
   };
 
 } // namespace Model

@@ -81,17 +81,17 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of categories returned per paginated calls.</p>
+     * <p>The maximum number of categories returned, per paginated calls.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of categories returned per paginated calls.</p>
+     * <p>The maximum number of categories returned, per paginated calls.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of categories returned per paginated calls.</p>
+     * <p>The maximum number of categories returned, per paginated calls.</p>
      */
     inline ListSkillsStoreCategoriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

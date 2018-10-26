@@ -19,6 +19,7 @@
 #include <aws/sagemaker/model/DataSource.h>
 #include <aws/sagemaker/model/CompressionType.h>
 #include <aws/sagemaker/model/RecordWrapper.h>
+#include <aws/sagemaker/model/TrainingInputMode.h>
 #include <utility>
 
 namespace Aws
@@ -245,6 +246,22 @@ namespace Model
      */
     inline Channel& WithRecordWrapperType(RecordWrapper&& value) { SetRecordWrapperType(std::move(value)); return *this;}
 
+
+    
+    inline const TrainingInputMode& GetInputMode() const{ return m_inputMode; }
+
+    
+    inline void SetInputMode(const TrainingInputMode& value) { m_inputModeHasBeenSet = true; m_inputMode = value; }
+
+    
+    inline void SetInputMode(TrainingInputMode&& value) { m_inputModeHasBeenSet = true; m_inputMode = std::move(value); }
+
+    
+    inline Channel& WithInputMode(const TrainingInputMode& value) { SetInputMode(value); return *this;}
+
+    
+    inline Channel& WithInputMode(TrainingInputMode&& value) { SetInputMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_channelName;
@@ -261,6 +278,9 @@ namespace Model
 
     RecordWrapper m_recordWrapperType;
     bool m_recordWrapperTypeHasBeenSet;
+
+    TrainingInputMode m_inputMode;
+    bool m_inputModeHasBeenSet;
   };
 
 } // namespace Model

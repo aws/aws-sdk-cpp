@@ -44,8 +44,9 @@ namespace Model
    * configuration scripts cannot run for longer than 5 minutes. If a script runs for
    * longer than 5 minutes, it fails and the notebook instance is not created or
    * started.</p> <p>For information about notebook instance lifestyle
-   * configurations, see <a>notebook-lifecycle-config</a>.</p><p><h3>See Also:</h3>  
-   * <a
+   * configurations, see <a
+   * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+   * 2.1: (Optional) Customize a Notebook Instance</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/NotebookInstanceLifecycleHook">AWS
    * API Reference</a></p>
    */

@@ -35,7 +35,9 @@ Channel::Channel() :
     m_compressionType(CompressionType::NOT_SET),
     m_compressionTypeHasBeenSet(false),
     m_recordWrapperType(RecordWrapper::NOT_SET),
-    m_recordWrapperTypeHasBeenSet(false)
+    m_recordWrapperTypeHasBeenSet(false),
+    m_inputMode(TrainingInputMode::NOT_SET),
+    m_inputModeHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ Channel::Channel(JsonView jsonValue) :
     m_compressionType(CompressionType::NOT_SET),
     m_compressionTypeHasBeenSet(false),
     m_recordWrapperType(RecordWrapper::NOT_SET),
-    m_recordWrapperTypeHasBeenSet(false)
+    m_recordWrapperTypeHasBeenSet(false),
+    m_inputMode(TrainingInputMode::NOT_SET),
+    m_inputModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +92,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_recordWrapperTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InputMode"))
+  {
+    m_inputMode = TrainingInputModeMapper::GetTrainingInputModeForName(jsonValue.GetString("InputMode"));
+
+    m_inputModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -121,6 +132,11 @@ JsonValue Channel::Jsonize() const
   if(m_recordWrapperTypeHasBeenSet)
   {
    payload.WithString("RecordWrapperType", RecordWrapperMapper::GetNameForRecordWrapper(m_recordWrapperType));
+  }
+
+  if(m_inputModeHasBeenSet)
+  {
+   payload.WithString("InputMode", TrainingInputModeMapper::GetNameForTrainingInputMode(m_inputMode));
   }
 
   return payload;

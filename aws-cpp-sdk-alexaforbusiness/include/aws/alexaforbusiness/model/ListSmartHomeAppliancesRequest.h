@@ -81,17 +81,17 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of appliances to be return per paginated calls.</p>
+     * <p>The maximum number of appliances to be returned, per paginated calls.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of appliances to be return per paginated calls.</p>
+     * <p>The maximum number of appliances to be returned, per paginated calls.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of appliances to be return per paginated calls.</p>
+     * <p>The maximum number of appliances to be returned, per paginated calls.</p>
      */
     inline ListSmartHomeAppliancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

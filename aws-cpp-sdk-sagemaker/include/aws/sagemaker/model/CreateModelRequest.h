@@ -265,40 +265,60 @@ namespace Model
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model to
      * connect to. Control access to and from your model container by configuring the
-     * VPC. <code>VpcConfig</code> is currently used in hosting services but not in
-     * batch transform. For more information, see <a>host-vpc</a>.</p>
+     * VPC. <code>VpcConfig</code> is used in hosting services and in batch transform.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * Endpoints by Using an Amazon Virtual Private Cloud</a> and <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
+     * Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model to
      * connect to. Control access to and from your model container by configuring the
-     * VPC. <code>VpcConfig</code> is currently used in hosting services but not in
-     * batch transform. For more information, see <a>host-vpc</a>.</p>
+     * VPC. <code>VpcConfig</code> is used in hosting services and in batch transform.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * Endpoints by Using an Amazon Virtual Private Cloud</a> and <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
+     * Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model to
      * connect to. Control access to and from your model container by configuring the
-     * VPC. <code>VpcConfig</code> is currently used in hosting services but not in
-     * batch transform. For more information, see <a>host-vpc</a>.</p>
+     * VPC. <code>VpcConfig</code> is used in hosting services and in batch transform.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * Endpoints by Using an Amazon Virtual Private Cloud</a> and <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
+     * Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model to
      * connect to. Control access to and from your model container by configuring the
-     * VPC. <code>VpcConfig</code> is currently used in hosting services but not in
-     * batch transform. For more information, see <a>host-vpc</a>.</p>
+     * VPC. <code>VpcConfig</code> is used in hosting services and in batch transform.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * Endpoints by Using an Amazon Virtual Private Cloud</a> and <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
+     * Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline CreateModelRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model to
      * connect to. Control access to and from your model container by configuring the
-     * VPC. <code>VpcConfig</code> is currently used in hosting services but not in
-     * batch transform. For more information, see <a>host-vpc</a>.</p>
+     * VPC. <code>VpcConfig</code> is used in hosting services and in batch transform.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * Endpoints by Using an Amazon Virtual Private Cloud</a> and <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
+     * Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline CreateModelRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 

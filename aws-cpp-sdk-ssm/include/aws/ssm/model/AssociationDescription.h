@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/InstanceAssociationOutputLocation.h>
+#include <aws/ssm/model/AssociationComplianceSeverity.h>
 #include <aws/ssm/model/Target.h>
 #include <utility>
 
@@ -782,6 +783,32 @@ namespace Model
      */
     inline AssociationDescription& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
+
+    /**
+     * <p>The severity level that is assigned to the association.</p>
+     */
+    inline const AssociationComplianceSeverity& GetComplianceSeverity() const{ return m_complianceSeverity; }
+
+    /**
+     * <p>The severity level that is assigned to the association.</p>
+     */
+    inline void SetComplianceSeverity(const AssociationComplianceSeverity& value) { m_complianceSeverityHasBeenSet = true; m_complianceSeverity = value; }
+
+    /**
+     * <p>The severity level that is assigned to the association.</p>
+     */
+    inline void SetComplianceSeverity(AssociationComplianceSeverity&& value) { m_complianceSeverityHasBeenSet = true; m_complianceSeverity = std::move(value); }
+
+    /**
+     * <p>The severity level that is assigned to the association.</p>
+     */
+    inline AssociationDescription& WithComplianceSeverity(const AssociationComplianceSeverity& value) { SetComplianceSeverity(value); return *this;}
+
+    /**
+     * <p>The severity level that is assigned to the association.</p>
+     */
+    inline AssociationDescription& WithComplianceSeverity(AssociationComplianceSeverity&& value) { SetComplianceSeverity(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -837,6 +864,9 @@ namespace Model
 
     Aws::String m_maxConcurrency;
     bool m_maxConcurrencyHasBeenSet;
+
+    AssociationComplianceSeverity m_complianceSeverity;
+    bool m_complianceSeverityHasBeenSet;
   };
 
 } // namespace Model

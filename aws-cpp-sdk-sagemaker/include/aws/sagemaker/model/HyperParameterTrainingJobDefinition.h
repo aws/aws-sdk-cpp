@@ -250,7 +250,9 @@ namespace Model
      * <p>The <a>VpcConfig</a> object that specifies the VPC that you want the training
      * jobs that this hyperparameter tuning job launches to connect to. Control access
      * to and from your training container by configuring the VPC. For more
-     * information, see <a>train-vpc</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
@@ -258,7 +260,9 @@ namespace Model
      * <p>The <a>VpcConfig</a> object that specifies the VPC that you want the training
      * jobs that this hyperparameter tuning job launches to connect to. Control access
      * to and from your training container by configuring the VPC. For more
-     * information, see <a>train-vpc</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
@@ -266,7 +270,9 @@ namespace Model
      * <p>The <a>VpcConfig</a> object that specifies the VPC that you want the training
      * jobs that this hyperparameter tuning job launches to connect to. Control access
      * to and from your training container by configuring the VPC. For more
-     * information, see <a>train-vpc</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
@@ -274,7 +280,9 @@ namespace Model
      * <p>The <a>VpcConfig</a> object that specifies the VPC that you want the training
      * jobs that this hyperparameter tuning job launches to connect to. Control access
      * to and from your training container by configuring the VPC. For more
-     * information, see <a>train-vpc</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
@@ -282,7 +290,9 @@ namespace Model
      * <p>The <a>VpcConfig</a> object that specifies the VPC that you want the training
      * jobs that this hyperparameter tuning job launches to connect to. Control access
      * to and from your training container by configuring the VPC. For more
-     * information, see <a>train-vpc</a>.</p>
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 

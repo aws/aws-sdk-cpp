@@ -81,19 +81,19 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of conference providers to be return per paginated
+     * <p>The maximum number of conference providers to be returned, per paginated
      * calls.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of conference providers to be return per paginated
+     * <p>The maximum number of conference providers to be returned, per paginated
      * calls.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of conference providers to be return per paginated
+     * <p>The maximum number of conference providers to be returned, per paginated
      * calls.</p>
      */
     inline ListConferenceProvidersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

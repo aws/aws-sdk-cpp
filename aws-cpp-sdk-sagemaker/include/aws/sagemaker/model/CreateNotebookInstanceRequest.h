@@ -389,50 +389,57 @@ namespace Model
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline const Aws::String& GetLifecycleConfigName() const{ return m_lifecycleConfigName; }
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline void SetLifecycleConfigName(const Aws::String& value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName = value; }
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline void SetLifecycleConfigName(Aws::String&& value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName = std::move(value); }
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline void SetLifecycleConfigName(const char* value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName.assign(value); }
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline CreateNotebookInstanceRequest& WithLifecycleConfigName(const Aws::String& value) { SetLifecycleConfigName(value); return *this;}
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline CreateNotebookInstanceRequest& WithLifecycleConfigName(Aws::String&& value) { SetLifecycleConfigName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
-     * instance. For information about lifestyle configurations, see
-     * <a>notebook-lifecycle-config</a>.</p>
+     * instance. For information about lifestyle configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline CreateNotebookInstanceRequest& WithLifecycleConfigName(const char* value) { SetLifecycleConfigName(value); return *this;}
 
@@ -442,8 +449,9 @@ namespace Model
      * instance. If you set this to <code>Disabled</code> this notebook instance will
      * be able to access resources only in your VPC, and will not be able to connect to
      * Amazon SageMaker training and endpoint services unless your configure a NAT
-     * Gateway in your VPC.</p> <p>For more information, see
-     * <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     * Gateway in your VPC.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
      * <code>SubnetId</code> parameter.</p>
      */
@@ -454,8 +462,9 @@ namespace Model
      * instance. If you set this to <code>Disabled</code> this notebook instance will
      * be able to access resources only in your VPC, and will not be able to connect to
      * Amazon SageMaker training and endpoint services unless your configure a NAT
-     * Gateway in your VPC.</p> <p>For more information, see
-     * <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     * Gateway in your VPC.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
      * <code>SubnetId</code> parameter.</p>
      */
@@ -466,8 +475,9 @@ namespace Model
      * instance. If you set this to <code>Disabled</code> this notebook instance will
      * be able to access resources only in your VPC, and will not be able to connect to
      * Amazon SageMaker training and endpoint services unless your configure a NAT
-     * Gateway in your VPC.</p> <p>For more information, see
-     * <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     * Gateway in your VPC.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
      * <code>SubnetId</code> parameter.</p>
      */
@@ -478,8 +488,9 @@ namespace Model
      * instance. If you set this to <code>Disabled</code> this notebook instance will
      * be able to access resources only in your VPC, and will not be able to connect to
      * Amazon SageMaker training and endpoint services unless your configure a NAT
-     * Gateway in your VPC.</p> <p>For more information, see
-     * <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     * Gateway in your VPC.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
      * <code>SubnetId</code> parameter.</p>
      */
@@ -490,12 +501,32 @@ namespace Model
      * instance. If you set this to <code>Disabled</code> this notebook instance will
      * be able to access resources only in your VPC, and will not be able to connect to
      * Amazon SageMaker training and endpoint services unless your configure a NAT
-     * Gateway in your VPC.</p> <p>For more information, see
-     * <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     * Gateway in your VPC.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
      * <code>SubnetId</code> parameter.</p>
      */
     inline CreateNotebookInstanceRequest& WithDirectInternetAccess(DirectInternetAccess&& value) { SetDirectInternetAccess(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The size, in GB, of the ML storage volume to attach to the notebook
+     * instance.</p>
+     */
+    inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
+
+    /**
+     * <p>The size, in GB, of the ML storage volume to attach to the notebook
+     * instance.</p>
+     */
+    inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
+
+    /**
+     * <p>The size, in GB, of the ML storage volume to attach to the notebook
+     * instance.</p>
+     */
+    inline CreateNotebookInstanceRequest& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
 
   private:
 
@@ -525,6 +556,9 @@ namespace Model
 
     DirectInternetAccess m_directInternetAccess;
     bool m_directInternetAccessHasBeenSet;
+
+    int m_volumeSizeInGB;
+    bool m_volumeSizeInGBHasBeenSet;
   };
 
 } // namespace Model

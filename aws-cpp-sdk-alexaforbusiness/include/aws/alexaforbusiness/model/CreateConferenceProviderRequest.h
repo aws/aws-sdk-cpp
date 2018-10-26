@@ -86,27 +86,27 @@ namespace Model
 
 
     /**
-     * <p>A string that represents a type within a list of predefined types.</p>
+     * <p>Represents a type within a list of predefined types.</p>
      */
     inline const ConferenceProviderType& GetConferenceProviderType() const{ return m_conferenceProviderType; }
 
     /**
-     * <p>A string that represents a type within a list of predefined types.</p>
+     * <p>Represents a type within a list of predefined types.</p>
      */
     inline void SetConferenceProviderType(const ConferenceProviderType& value) { m_conferenceProviderTypeHasBeenSet = true; m_conferenceProviderType = value; }
 
     /**
-     * <p>A string that represents a type within a list of predefined types.</p>
+     * <p>Represents a type within a list of predefined types.</p>
      */
     inline void SetConferenceProviderType(ConferenceProviderType&& value) { m_conferenceProviderTypeHasBeenSet = true; m_conferenceProviderType = std::move(value); }
 
     /**
-     * <p>A string that represents a type within a list of predefined types.</p>
+     * <p>Represents a type within a list of predefined types.</p>
      */
     inline CreateConferenceProviderRequest& WithConferenceProviderType(const ConferenceProviderType& value) { SetConferenceProviderType(value); return *this;}
 
     /**
-     * <p>A string that represents a type within a list of predefined types.</p>
+     * <p>Represents a type within a list of predefined types.</p>
      */
     inline CreateConferenceProviderRequest& WithConferenceProviderType(ConferenceProviderType&& value) { SetConferenceProviderType(std::move(value)); return *this;}
 

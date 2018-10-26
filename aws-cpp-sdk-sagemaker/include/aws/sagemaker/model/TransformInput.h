@@ -134,40 +134,40 @@ namespace Model
 
     /**
      * <p>Compressing data helps save on storage space. If your transform data is
-     * compressed, specify the compression type.and Amazon SageMaker will automatically
-     * decompress the data for the transform job accordingly. The default value is
+     * compressed, specify the compression type. Amazon SageMaker automatically
+     * decompresses the data for the transform job accordingly. The default value is
      * <code>None</code>.</p>
      */
     inline const CompressionType& GetCompressionType() const{ return m_compressionType; }
 
     /**
      * <p>Compressing data helps save on storage space. If your transform data is
-     * compressed, specify the compression type.and Amazon SageMaker will automatically
-     * decompress the data for the transform job accordingly. The default value is
+     * compressed, specify the compression type. Amazon SageMaker automatically
+     * decompresses the data for the transform job accordingly. The default value is
      * <code>None</code>.</p>
      */
     inline void SetCompressionType(const CompressionType& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
 
     /**
      * <p>Compressing data helps save on storage space. If your transform data is
-     * compressed, specify the compression type.and Amazon SageMaker will automatically
-     * decompress the data for the transform job accordingly. The default value is
+     * compressed, specify the compression type. Amazon SageMaker automatically
+     * decompresses the data for the transform job accordingly. The default value is
      * <code>None</code>.</p>
      */
     inline void SetCompressionType(CompressionType&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
 
     /**
      * <p>Compressing data helps save on storage space. If your transform data is
-     * compressed, specify the compression type.and Amazon SageMaker will automatically
-     * decompress the data for the transform job accordingly. The default value is
+     * compressed, specify the compression type. Amazon SageMaker automatically
+     * decompresses the data for the transform job accordingly. The default value is
      * <code>None</code>.</p>
      */
     inline TransformInput& WithCompressionType(const CompressionType& value) { SetCompressionType(value); return *this;}
 
     /**
      * <p>Compressing data helps save on storage space. If your transform data is
-     * compressed, specify the compression type.and Amazon SageMaker will automatically
-     * decompress the data for the transform job accordingly. The default value is
+     * compressed, specify the compression type. Amazon SageMaker automatically
+     * decompresses the data for the transform job accordingly. The default value is
      * <code>None</code>.</p>
      */
     inline TransformInput& WithCompressionType(CompressionType&& value) { SetCompressionType(std::move(value)); return *this;}

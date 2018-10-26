@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the skill group to associate the skill to.</p>
+     * <p>The ARN of the skill group to associate the skill to. Required.</p>
      */
     inline const Aws::String& GetSkillGroupArn() const{ return m_skillGroupArn; }
 
     /**
-     * <p>The ARN of the skill group to associate the skill to.</p>
+     * <p>The ARN of the skill group to associate the skill to. Required.</p>
      */
     inline void SetSkillGroupArn(const Aws::String& value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn = value; }
 
     /**
-     * <p>The ARN of the skill group to associate the skill to.</p>
+     * <p>The ARN of the skill group to associate the skill to. Required.</p>
      */
     inline void SetSkillGroupArn(Aws::String&& value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn = std::move(value); }
 
     /**
-     * <p>The ARN of the skill group to associate the skill to.</p>
+     * <p>The ARN of the skill group to associate the skill to. Required.</p>
      */
     inline void SetSkillGroupArn(const char* value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn.assign(value); }
 
     /**
-     * <p>The ARN of the skill group to associate the skill to.</p>
+     * <p>The ARN of the skill group to associate the skill to. Required.</p>
      */
     inline AssociateSkillWithSkillGroupRequest& WithSkillGroupArn(const Aws::String& value) { SetSkillGroupArn(value); return *this;}
 
     /**
-     * <p>The ARN of the skill group to associate the skill to.</p>
+     * <p>The ARN of the skill group to associate the skill to. Required.</p>
      */
     inline AssociateSkillWithSkillGroupRequest& WithSkillGroupArn(Aws::String&& value) { SetSkillGroupArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the skill group to associate the skill to.</p>
+     * <p>The ARN of the skill group to associate the skill to. Required.</p>
      */
     inline AssociateSkillWithSkillGroupRequest& WithSkillGroupArn(const char* value) { SetSkillGroupArn(value); return *this;}
 

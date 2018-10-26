@@ -273,49 +273,63 @@ namespace Model
     /**
      * <p>The name of a notebook instance lifecycle configuration associated with this
      * notebook instance.</p> <p>For information about notebook instance lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     * configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline const Aws::String& GetNotebookInstanceLifecycleConfigName() const{ return m_notebookInstanceLifecycleConfigName; }
 
     /**
      * <p>The name of a notebook instance lifecycle configuration associated with this
      * notebook instance.</p> <p>For information about notebook instance lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     * configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline void SetNotebookInstanceLifecycleConfigName(const Aws::String& value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName = value; }
 
     /**
      * <p>The name of a notebook instance lifecycle configuration associated with this
      * notebook instance.</p> <p>For information about notebook instance lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     * configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline void SetNotebookInstanceLifecycleConfigName(Aws::String&& value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName = std::move(value); }
 
     /**
      * <p>The name of a notebook instance lifecycle configuration associated with this
      * notebook instance.</p> <p>For information about notebook instance lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     * configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline void SetNotebookInstanceLifecycleConfigName(const char* value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName.assign(value); }
 
     /**
      * <p>The name of a notebook instance lifecycle configuration associated with this
      * notebook instance.</p> <p>For information about notebook instance lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     * configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline NotebookInstanceSummary& WithNotebookInstanceLifecycleConfigName(const Aws::String& value) { SetNotebookInstanceLifecycleConfigName(value); return *this;}
 
     /**
      * <p>The name of a notebook instance lifecycle configuration associated with this
      * notebook instance.</p> <p>For information about notebook instance lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     * configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline NotebookInstanceSummary& WithNotebookInstanceLifecycleConfigName(Aws::String&& value) { SetNotebookInstanceLifecycleConfigName(std::move(value)); return *this;}
 
     /**
      * <p>The name of a notebook instance lifecycle configuration associated with this
      * notebook instance.</p> <p>For information about notebook instance lifestyle
-     * configurations, see <a>notebook-lifecycle-config</a>.</p>
+     * configurations, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline NotebookInstanceSummary& WithNotebookInstanceLifecycleConfigName(const char* value) { SetNotebookInstanceLifecycleConfigName(value); return *this;}
 

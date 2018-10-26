@@ -202,173 +202,218 @@ namespace Model
 
 
     /**
-     * <p>The status of the training job. </p> <p>For the <code>InProgress</code>
-     * status, Amazon SageMaker can return these secondary statuses:</p> <ul> <li>
-     * <p>Starting - Preparing for training.</p> </li> <li> <p>Downloading - Optional
-     * stage for algorithms that support File training input mode. It indicates data is
-     * being downloaded to ML storage volumes.</p> </li> <li> <p>Training - Training is
-     * in progress.</p> </li> <li> <p>Uploading - Training is complete and model upload
-     * is in progress.</p> </li> </ul> <p>For the <code>Stopped</code> training status,
-     * Amazon SageMaker can return these secondary statuses:</p> <ul> <li>
-     * <p>MaxRuntimeExceeded - Job stopped as a result of maximum allowed runtime
-     * exceeded.</p> </li> </ul>
+     * <p>The status of the training job.</p> <p>Amazon SageMaker provides the
+     * following training job statuses:</p> <ul> <li> <p> <code>InProgress</code> - The
+     * training is in progress.</p> </li> <li> <p> <code>Completed</code> - The
+     * training job has completed.</p> </li> <li> <p> <code>Failed</code> - The
+     * training job has failed. To see the reason for the failure, see the
+     * <code>FailureReason</code> field in the response to a
+     * <code>DescribeTrainingJobResponse</code> call.</p> </li> <li> <p>
+     * <code>Stopping</code> - The training job is stopping.</p> </li> <li> <p>
+     * <code>Stopped</code> - The training job has stopped.</p> </li> </ul> <p>For more
+     * detailed information, see <code>SecondaryStatus</code>. </p>
      */
     inline const TrainingJobStatus& GetTrainingJobStatus() const{ return m_trainingJobStatus; }
 
     /**
-     * <p>The status of the training job. </p> <p>For the <code>InProgress</code>
-     * status, Amazon SageMaker can return these secondary statuses:</p> <ul> <li>
-     * <p>Starting - Preparing for training.</p> </li> <li> <p>Downloading - Optional
-     * stage for algorithms that support File training input mode. It indicates data is
-     * being downloaded to ML storage volumes.</p> </li> <li> <p>Training - Training is
-     * in progress.</p> </li> <li> <p>Uploading - Training is complete and model upload
-     * is in progress.</p> </li> </ul> <p>For the <code>Stopped</code> training status,
-     * Amazon SageMaker can return these secondary statuses:</p> <ul> <li>
-     * <p>MaxRuntimeExceeded - Job stopped as a result of maximum allowed runtime
-     * exceeded.</p> </li> </ul>
+     * <p>The status of the training job.</p> <p>Amazon SageMaker provides the
+     * following training job statuses:</p> <ul> <li> <p> <code>InProgress</code> - The
+     * training is in progress.</p> </li> <li> <p> <code>Completed</code> - The
+     * training job has completed.</p> </li> <li> <p> <code>Failed</code> - The
+     * training job has failed. To see the reason for the failure, see the
+     * <code>FailureReason</code> field in the response to a
+     * <code>DescribeTrainingJobResponse</code> call.</p> </li> <li> <p>
+     * <code>Stopping</code> - The training job is stopping.</p> </li> <li> <p>
+     * <code>Stopped</code> - The training job has stopped.</p> </li> </ul> <p>For more
+     * detailed information, see <code>SecondaryStatus</code>. </p>
      */
     inline void SetTrainingJobStatus(const TrainingJobStatus& value) { m_trainingJobStatus = value; }
 
     /**
-     * <p>The status of the training job. </p> <p>For the <code>InProgress</code>
-     * status, Amazon SageMaker can return these secondary statuses:</p> <ul> <li>
-     * <p>Starting - Preparing for training.</p> </li> <li> <p>Downloading - Optional
-     * stage for algorithms that support File training input mode. It indicates data is
-     * being downloaded to ML storage volumes.</p> </li> <li> <p>Training - Training is
-     * in progress.</p> </li> <li> <p>Uploading - Training is complete and model upload
-     * is in progress.</p> </li> </ul> <p>For the <code>Stopped</code> training status,
-     * Amazon SageMaker can return these secondary statuses:</p> <ul> <li>
-     * <p>MaxRuntimeExceeded - Job stopped as a result of maximum allowed runtime
-     * exceeded.</p> </li> </ul>
+     * <p>The status of the training job.</p> <p>Amazon SageMaker provides the
+     * following training job statuses:</p> <ul> <li> <p> <code>InProgress</code> - The
+     * training is in progress.</p> </li> <li> <p> <code>Completed</code> - The
+     * training job has completed.</p> </li> <li> <p> <code>Failed</code> - The
+     * training job has failed. To see the reason for the failure, see the
+     * <code>FailureReason</code> field in the response to a
+     * <code>DescribeTrainingJobResponse</code> call.</p> </li> <li> <p>
+     * <code>Stopping</code> - The training job is stopping.</p> </li> <li> <p>
+     * <code>Stopped</code> - The training job has stopped.</p> </li> </ul> <p>For more
+     * detailed information, see <code>SecondaryStatus</code>. </p>
      */
     inline void SetTrainingJobStatus(TrainingJobStatus&& value) { m_trainingJobStatus = std::move(value); }
 
     /**
-     * <p>The status of the training job. </p> <p>For the <code>InProgress</code>
-     * status, Amazon SageMaker can return these secondary statuses:</p> <ul> <li>
-     * <p>Starting - Preparing for training.</p> </li> <li> <p>Downloading - Optional
-     * stage for algorithms that support File training input mode. It indicates data is
-     * being downloaded to ML storage volumes.</p> </li> <li> <p>Training - Training is
-     * in progress.</p> </li> <li> <p>Uploading - Training is complete and model upload
-     * is in progress.</p> </li> </ul> <p>For the <code>Stopped</code> training status,
-     * Amazon SageMaker can return these secondary statuses:</p> <ul> <li>
-     * <p>MaxRuntimeExceeded - Job stopped as a result of maximum allowed runtime
-     * exceeded.</p> </li> </ul>
+     * <p>The status of the training job.</p> <p>Amazon SageMaker provides the
+     * following training job statuses:</p> <ul> <li> <p> <code>InProgress</code> - The
+     * training is in progress.</p> </li> <li> <p> <code>Completed</code> - The
+     * training job has completed.</p> </li> <li> <p> <code>Failed</code> - The
+     * training job has failed. To see the reason for the failure, see the
+     * <code>FailureReason</code> field in the response to a
+     * <code>DescribeTrainingJobResponse</code> call.</p> </li> <li> <p>
+     * <code>Stopping</code> - The training job is stopping.</p> </li> <li> <p>
+     * <code>Stopped</code> - The training job has stopped.</p> </li> </ul> <p>For more
+     * detailed information, see <code>SecondaryStatus</code>. </p>
      */
     inline DescribeTrainingJobResult& WithTrainingJobStatus(const TrainingJobStatus& value) { SetTrainingJobStatus(value); return *this;}
 
     /**
-     * <p>The status of the training job. </p> <p>For the <code>InProgress</code>
-     * status, Amazon SageMaker can return these secondary statuses:</p> <ul> <li>
-     * <p>Starting - Preparing for training.</p> </li> <li> <p>Downloading - Optional
-     * stage for algorithms that support File training input mode. It indicates data is
-     * being downloaded to ML storage volumes.</p> </li> <li> <p>Training - Training is
-     * in progress.</p> </li> <li> <p>Uploading - Training is complete and model upload
-     * is in progress.</p> </li> </ul> <p>For the <code>Stopped</code> training status,
-     * Amazon SageMaker can return these secondary statuses:</p> <ul> <li>
-     * <p>MaxRuntimeExceeded - Job stopped as a result of maximum allowed runtime
-     * exceeded.</p> </li> </ul>
+     * <p>The status of the training job.</p> <p>Amazon SageMaker provides the
+     * following training job statuses:</p> <ul> <li> <p> <code>InProgress</code> - The
+     * training is in progress.</p> </li> <li> <p> <code>Completed</code> - The
+     * training job has completed.</p> </li> <li> <p> <code>Failed</code> - The
+     * training job has failed. To see the reason for the failure, see the
+     * <code>FailureReason</code> field in the response to a
+     * <code>DescribeTrainingJobResponse</code> call.</p> </li> <li> <p>
+     * <code>Stopping</code> - The training job is stopping.</p> </li> <li> <p>
+     * <code>Stopped</code> - The training job has stopped.</p> </li> </ul> <p>For more
+     * detailed information, see <code>SecondaryStatus</code>. </p>
      */
     inline DescribeTrainingJobResult& WithTrainingJobStatus(TrainingJobStatus&& value) { SetTrainingJobStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p> Provides granular information about the system state. For more information,
-     * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
-     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
-     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
-     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
-     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
-     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
-     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
-     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
-     * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is stored
-     * in the <code>FailureReason</code> field of
-     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
-     * valid values for <code>SecondaryStatus</code> are subject to change. They
-     * primarily provide information on the progress of the training job.</p>
-     * </important>
+     * <p> Provides detailed information about the state of the training job. For
+     * detailed information on the secondary status of the training job, see
+     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p> <p>Amazon
+     * SageMaker provides primary statuses and secondary statuses that apply to each of
+     * them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
+     * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
+     * optional stage for algorithms that support <code>File</code> training input
+     * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
+     * </li> <li> <p> <code>Training</code> - Training is in progress.</p> </li> <li>
+     * <p> <code>Uploading</code> - Training is complete and the model artifacts are
+     * being uploaded to the S3 location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd>
+     * <ul> <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
+     * </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The
+     * training job has failed. The reason for the failure is returned in the
+     * <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
+     * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
+     * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
+     * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
+     * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
+     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
+     * subject to change. </p> </important> <p>We no longer support the following
+     * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
+     * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline const SecondaryStatus& GetSecondaryStatus() const{ return m_secondaryStatus; }
 
     /**
-     * <p> Provides granular information about the system state. For more information,
-     * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
-     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
-     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
-     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
-     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
-     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
-     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
-     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
-     * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is stored
-     * in the <code>FailureReason</code> field of
-     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
-     * valid values for <code>SecondaryStatus</code> are subject to change. They
-     * primarily provide information on the progress of the training job.</p>
-     * </important>
+     * <p> Provides detailed information about the state of the training job. For
+     * detailed information on the secondary status of the training job, see
+     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p> <p>Amazon
+     * SageMaker provides primary statuses and secondary statuses that apply to each of
+     * them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
+     * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
+     * optional stage for algorithms that support <code>File</code> training input
+     * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
+     * </li> <li> <p> <code>Training</code> - Training is in progress.</p> </li> <li>
+     * <p> <code>Uploading</code> - Training is complete and the model artifacts are
+     * being uploaded to the S3 location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd>
+     * <ul> <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
+     * </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The
+     * training job has failed. The reason for the failure is returned in the
+     * <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
+     * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
+     * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
+     * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
+     * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
+     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
+     * subject to change. </p> </important> <p>We no longer support the following
+     * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
+     * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline void SetSecondaryStatus(const SecondaryStatus& value) { m_secondaryStatus = value; }
 
     /**
-     * <p> Provides granular information about the system state. For more information,
-     * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
-     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
-     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
-     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
-     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
-     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
-     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
-     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
-     * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is stored
-     * in the <code>FailureReason</code> field of
-     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
-     * valid values for <code>SecondaryStatus</code> are subject to change. They
-     * primarily provide information on the progress of the training job.</p>
-     * </important>
+     * <p> Provides detailed information about the state of the training job. For
+     * detailed information on the secondary status of the training job, see
+     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p> <p>Amazon
+     * SageMaker provides primary statuses and secondary statuses that apply to each of
+     * them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
+     * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
+     * optional stage for algorithms that support <code>File</code> training input
+     * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
+     * </li> <li> <p> <code>Training</code> - Training is in progress.</p> </li> <li>
+     * <p> <code>Uploading</code> - Training is complete and the model artifacts are
+     * being uploaded to the S3 location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd>
+     * <ul> <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
+     * </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The
+     * training job has failed. The reason for the failure is returned in the
+     * <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
+     * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
+     * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
+     * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
+     * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
+     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
+     * subject to change. </p> </important> <p>We no longer support the following
+     * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
+     * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline void SetSecondaryStatus(SecondaryStatus&& value) { m_secondaryStatus = std::move(value); }
 
     /**
-     * <p> Provides granular information about the system state. For more information,
-     * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
-     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
-     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
-     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
-     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
-     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
-     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
-     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
-     * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is stored
-     * in the <code>FailureReason</code> field of
-     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
-     * valid values for <code>SecondaryStatus</code> are subject to change. They
-     * primarily provide information on the progress of the training job.</p>
-     * </important>
+     * <p> Provides detailed information about the state of the training job. For
+     * detailed information on the secondary status of the training job, see
+     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p> <p>Amazon
+     * SageMaker provides primary statuses and secondary statuses that apply to each of
+     * them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
+     * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
+     * optional stage for algorithms that support <code>File</code> training input
+     * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
+     * </li> <li> <p> <code>Training</code> - Training is in progress.</p> </li> <li>
+     * <p> <code>Uploading</code> - Training is complete and the model artifacts are
+     * being uploaded to the S3 location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd>
+     * <ul> <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
+     * </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The
+     * training job has failed. The reason for the failure is returned in the
+     * <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
+     * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
+     * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
+     * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
+     * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
+     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
+     * subject to change. </p> </important> <p>We no longer support the following
+     * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
+     * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(const SecondaryStatus& value) { SetSecondaryStatus(value); return *this;}
 
     /**
-     * <p> Provides granular information about the system state. For more information,
-     * see <code>TrainingJobStatus</code>. </p> <ul> <li> <p> <code>Starting</code> -
-     * starting the training job.</p> </li> <li> <p> <code>Downloading</code> -
-     * downloading the input data.</p> </li> <li> <p> <code>Training</code> - model
-     * training is in progress.</p> </li> <li> <p> <code>Uploading</code> - uploading
-     * the trained model.</p> </li> <li> <p> <code>Stopping</code> - stopping the
-     * training job.</p> </li> <li> <p> <code>Stopped</code> - the training job has
-     * stopped.</p> </li> <li> <p> <code>MaxRuntimeExceeded</code> - the training job
-     * exceeded the specified max run time and has been stopped.</p> </li> <li> <p>
-     * <code>Completed</code> - the training job has completed.</p> </li> <li> <p>
-     * <code>Failed</code> - the training job has failed. The failure reason is stored
-     * in the <code>FailureReason</code> field of
-     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> <important> <p>The
-     * valid values for <code>SecondaryStatus</code> are subject to change. They
-     * primarily provide information on the progress of the training job.</p>
-     * </important>
+     * <p> Provides detailed information about the state of the training job. For
+     * detailed information on the secondary status of the training job, see
+     * <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.</p> <p>Amazon
+     * SageMaker provides primary statuses and secondary statuses that apply to each of
+     * them:</p> <dl> <dt>InProgress</dt> <dd> <ul> <li> <p> <code>Starting</code> -
+     * Starting the training job.</p> </li> <li> <p> <code>Downloading</code> - An
+     * optional stage for algorithms that support <code>File</code> training input
+     * mode. It indicates that data is being downloaded to the ML storage volumes.</p>
+     * </li> <li> <p> <code>Training</code> - Training is in progress.</p> </li> <li>
+     * <p> <code>Uploading</code> - Training is complete and the model artifacts are
+     * being uploaded to the S3 location.</p> </li> </ul> </dd> <dt>Completed</dt> <dd>
+     * <ul> <li> <p> <code>Completed</code> - The training job has completed.</p> </li>
+     * </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> <p> <code>Failed</code> - The
+     * training job has failed. The reason for the failure is returned in the
+     * <code>FailureReason</code> field of
+     * <code>DescribeTrainingJobResponse</code>.</p> </li> </ul> </dd> <dt>Stopped</dt>
+     * <dd> <ul> <li> <p> <code>MaxRuntimeExceeded</code> - The job stopped because it
+     * exceeded the maximum allowed runtime.</p> </li> <li> <p> <code>Stopped</code> -
+     * The training job has stopped.</p> </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul>
+     * <li> <p> <code>Stopping</code> - Stopping the training job.</p> </li> </ul>
+     * </dd> </dl> <important> <p>Valid values for <code>SecondaryStatus</code> are
+     * subject to change. </p> </important> <p>We no longer support the following
+     * secondary statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p>
+     * </li> <li> <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(SecondaryStatus&& value) { SetSecondaryStatus(std::move(value)); return *this;}
 
@@ -651,31 +696,41 @@ namespace Model
 
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a>train-vpc</a>.</p>
+     * access to. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a>train-vpc</a>.</p>
+     * access to. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
 
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a>train-vpc</a>.</p>
+     * access to. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
 
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a>train-vpc</a>.</p>
+     * access to. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline DescribeTrainingJobResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
-     * access to. For more information, see <a>train-vpc</a>.</p>
+     * access to. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline DescribeTrainingJobResult& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
@@ -856,51 +911,44 @@ namespace Model
 
 
     /**
-     * <p>To give an overview of the training job lifecycle,
-     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
-     * statuses that a training job has transitioned.</p>
+     * <p>A history of all of the secondary statuses that the training job has
+     * transitioned through.</p>
      */
     inline const Aws::Vector<SecondaryStatusTransition>& GetSecondaryStatusTransitions() const{ return m_secondaryStatusTransitions; }
 
     /**
-     * <p>To give an overview of the training job lifecycle,
-     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
-     * statuses that a training job has transitioned.</p>
+     * <p>A history of all of the secondary statuses that the training job has
+     * transitioned through.</p>
      */
     inline void SetSecondaryStatusTransitions(const Aws::Vector<SecondaryStatusTransition>& value) { m_secondaryStatusTransitions = value; }
 
     /**
-     * <p>To give an overview of the training job lifecycle,
-     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
-     * statuses that a training job has transitioned.</p>
+     * <p>A history of all of the secondary statuses that the training job has
+     * transitioned through.</p>
      */
     inline void SetSecondaryStatusTransitions(Aws::Vector<SecondaryStatusTransition>&& value) { m_secondaryStatusTransitions = std::move(value); }
 
     /**
-     * <p>To give an overview of the training job lifecycle,
-     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
-     * statuses that a training job has transitioned.</p>
+     * <p>A history of all of the secondary statuses that the training job has
+     * transitioned through.</p>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatusTransitions(const Aws::Vector<SecondaryStatusTransition>& value) { SetSecondaryStatusTransitions(value); return *this;}
 
     /**
-     * <p>To give an overview of the training job lifecycle,
-     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
-     * statuses that a training job has transitioned.</p>
+     * <p>A history of all of the secondary statuses that the training job has
+     * transitioned through.</p>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatusTransitions(Aws::Vector<SecondaryStatusTransition>&& value) { SetSecondaryStatusTransitions(std::move(value)); return *this;}
 
     /**
-     * <p>To give an overview of the training job lifecycle,
-     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
-     * statuses that a training job has transitioned.</p>
+     * <p>A history of all of the secondary statuses that the training job has
+     * transitioned through.</p>
      */
     inline DescribeTrainingJobResult& AddSecondaryStatusTransitions(const SecondaryStatusTransition& value) { m_secondaryStatusTransitions.push_back(value); return *this; }
 
     /**
-     * <p>To give an overview of the training job lifecycle,
-     * <code>SecondaryStatusTransitions</code> is a log of time-ordered secondary
-     * statuses that a training job has transitioned.</p>
+     * <p>A history of all of the secondary statuses that the training job has
+     * transitioned through.</p>
      */
     inline DescribeTrainingJobResult& AddSecondaryStatusTransitions(SecondaryStatusTransition&& value) { m_secondaryStatusTransitions.push_back(std::move(value)); return *this; }
 

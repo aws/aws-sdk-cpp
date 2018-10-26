@@ -29,7 +29,9 @@ UpdateNotebookInstanceRequest::UpdateNotebookInstanceRequest() :
     m_roleArnHasBeenSet(false),
     m_lifecycleConfigNameHasBeenSet(false),
     m_disassociateLifecycleConfig(false),
-    m_disassociateLifecycleConfigHasBeenSet(false)
+    m_disassociateLifecycleConfigHasBeenSet(false),
+    m_volumeSizeInGB(0),
+    m_volumeSizeInGBHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,12 @@ Aws::String UpdateNotebookInstanceRequest::SerializePayload() const
   if(m_disassociateLifecycleConfigHasBeenSet)
   {
    payload.WithBool("DisassociateLifecycleConfig", m_disassociateLifecycleConfig);
+
+  }
+
+  if(m_volumeSizeInGBHasBeenSet)
+  {
+   payload.WithInteger("VolumeSizeInGB", m_volumeSizeInGB);
 
   }
 

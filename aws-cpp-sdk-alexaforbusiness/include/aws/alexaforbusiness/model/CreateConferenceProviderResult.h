@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the newly created conference provider.</p>
+     * <p>The ARN of the newly-created conference provider.</p>
      */
     inline const Aws::String& GetConferenceProviderArn() const{ return m_conferenceProviderArn; }
 
     /**
-     * <p>The ARN of the newly created conference provider.</p>
+     * <p>The ARN of the newly-created conference provider.</p>
      */
     inline void SetConferenceProviderArn(const Aws::String& value) { m_conferenceProviderArn = value; }
 
     /**
-     * <p>The ARN of the newly created conference provider.</p>
+     * <p>The ARN of the newly-created conference provider.</p>
      */
     inline void SetConferenceProviderArn(Aws::String&& value) { m_conferenceProviderArn = std::move(value); }
 
     /**
-     * <p>The ARN of the newly created conference provider.</p>
+     * <p>The ARN of the newly-created conference provider.</p>
      */
     inline void SetConferenceProviderArn(const char* value) { m_conferenceProviderArn.assign(value); }
 
     /**
-     * <p>The ARN of the newly created conference provider.</p>
+     * <p>The ARN of the newly-created conference provider.</p>
      */
     inline CreateConferenceProviderResult& WithConferenceProviderArn(const Aws::String& value) { SetConferenceProviderArn(value); return *this;}
 
     /**
-     * <p>The ARN of the newly created conference provider.</p>
+     * <p>The ARN of the newly-created conference provider.</p>
      */
     inline CreateConferenceProviderResult& WithConferenceProviderArn(Aws::String&& value) { SetConferenceProviderArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the newly created conference provider.</p>
+     * <p>The ARN of the newly-created conference provider.</p>
      */
     inline CreateConferenceProviderResult& WithConferenceProviderArn(const char* value) { SetConferenceProviderArn(value); return *this;}
 

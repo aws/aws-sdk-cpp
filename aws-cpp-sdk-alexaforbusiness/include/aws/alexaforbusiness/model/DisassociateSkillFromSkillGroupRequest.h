@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of a skill.</p>
+     * <p>The unique identifier of a skill. Required.</p>
      */
     inline const Aws::String& GetSkillGroupArn() const{ return m_skillGroupArn; }
 
     /**
-     * <p>The unique identifier of a skill.</p>
+     * <p>The unique identifier of a skill. Required.</p>
      */
     inline void SetSkillGroupArn(const Aws::String& value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn = value; }
 
     /**
-     * <p>The unique identifier of a skill.</p>
+     * <p>The unique identifier of a skill. Required.</p>
      */
     inline void SetSkillGroupArn(Aws::String&& value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn = std::move(value); }
 
     /**
-     * <p>The unique identifier of a skill.</p>
+     * <p>The unique identifier of a skill. Required.</p>
      */
     inline void SetSkillGroupArn(const char* value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn.assign(value); }
 
     /**
-     * <p>The unique identifier of a skill.</p>
+     * <p>The unique identifier of a skill. Required.</p>
      */
     inline DisassociateSkillFromSkillGroupRequest& WithSkillGroupArn(const Aws::String& value) { SetSkillGroupArn(value); return *this;}
 
     /**
-     * <p>The unique identifier of a skill.</p>
+     * <p>The unique identifier of a skill. Required.</p>
      */
     inline DisassociateSkillFromSkillGroupRequest& WithSkillGroupArn(Aws::String&& value) { SetSkillGroupArn(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of a skill.</p>
+     * <p>The unique identifier of a skill. Required.</p>
      */
     inline DisassociateSkillFromSkillGroupRequest& WithSkillGroupArn(const char* value) { SetSkillGroupArn(value); return *this;}
 

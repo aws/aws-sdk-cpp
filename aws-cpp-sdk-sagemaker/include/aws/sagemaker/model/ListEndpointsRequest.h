@@ -334,27 +334,27 @@ namespace Model
 
 
     /**
-     * <p> A filter that returns only endpoints with the specified status. </p>
+     * <p> A filter that returns only endpoints with the specified status.</p>
      */
     inline const EndpointStatus& GetStatusEquals() const{ return m_statusEquals; }
 
     /**
-     * <p> A filter that returns only endpoints with the specified status. </p>
+     * <p> A filter that returns only endpoints with the specified status.</p>
      */
     inline void SetStatusEquals(const EndpointStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
 
     /**
-     * <p> A filter that returns only endpoints with the specified status. </p>
+     * <p> A filter that returns only endpoints with the specified status.</p>
      */
     inline void SetStatusEquals(EndpointStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
 
     /**
-     * <p> A filter that returns only endpoints with the specified status. </p>
+     * <p> A filter that returns only endpoints with the specified status.</p>
      */
     inline ListEndpointsRequest& WithStatusEquals(const EndpointStatus& value) { SetStatusEquals(value); return *this;}
 
     /**
-     * <p> A filter that returns only endpoints with the specified status. </p>
+     * <p> A filter that returns only endpoints with the specified status.</p>
      */
     inline ListEndpointsRequest& WithStatusEquals(EndpointStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
 

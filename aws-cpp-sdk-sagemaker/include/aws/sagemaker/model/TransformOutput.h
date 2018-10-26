@@ -196,11 +196,7 @@ namespace Model
      * object. You should select a format that is most convenient to you. To
      * concatenate the results in binary format, specify <code>None</code>. To add a
      * newline character at the end of every transformed record, specify
-     * <code>Line</code>. To assemble the output in RecordIO format, specify
-     * <code>RecordIO</code>. The default value is <code>None</code>.</p> <p>For
-     * information about the <code>RecordIO</code> format, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data
-     * Format</a>.</p>
+     * <code>Line</code>.</p>
      */
     inline const AssemblyType& GetAssembleWith() const{ return m_assembleWith; }
 
@@ -209,11 +205,7 @@ namespace Model
      * object. You should select a format that is most convenient to you. To
      * concatenate the results in binary format, specify <code>None</code>. To add a
      * newline character at the end of every transformed record, specify
-     * <code>Line</code>. To assemble the output in RecordIO format, specify
-     * <code>RecordIO</code>. The default value is <code>None</code>.</p> <p>For
-     * information about the <code>RecordIO</code> format, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data
-     * Format</a>.</p>
+     * <code>Line</code>.</p>
      */
     inline void SetAssembleWith(const AssemblyType& value) { m_assembleWithHasBeenSet = true; m_assembleWith = value; }
 
@@ -222,11 +214,7 @@ namespace Model
      * object. You should select a format that is most convenient to you. To
      * concatenate the results in binary format, specify <code>None</code>. To add a
      * newline character at the end of every transformed record, specify
-     * <code>Line</code>. To assemble the output in RecordIO format, specify
-     * <code>RecordIO</code>. The default value is <code>None</code>.</p> <p>For
-     * information about the <code>RecordIO</code> format, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data
-     * Format</a>.</p>
+     * <code>Line</code>.</p>
      */
     inline void SetAssembleWith(AssemblyType&& value) { m_assembleWithHasBeenSet = true; m_assembleWith = std::move(value); }
 
@@ -235,11 +223,7 @@ namespace Model
      * object. You should select a format that is most convenient to you. To
      * concatenate the results in binary format, specify <code>None</code>. To add a
      * newline character at the end of every transformed record, specify
-     * <code>Line</code>. To assemble the output in RecordIO format, specify
-     * <code>RecordIO</code>. The default value is <code>None</code>.</p> <p>For
-     * information about the <code>RecordIO</code> format, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data
-     * Format</a>.</p>
+     * <code>Line</code>.</p>
      */
     inline TransformOutput& WithAssembleWith(const AssemblyType& value) { SetAssembleWith(value); return *this;}
 
@@ -248,20 +232,23 @@ namespace Model
      * object. You should select a format that is most convenient to you. To
      * concatenate the results in binary format, specify <code>None</code>. To add a
      * newline character at the end of every transformed record, specify
-     * <code>Line</code>. To assemble the output in RecordIO format, specify
-     * <code>RecordIO</code>. The default value is <code>None</code>.</p> <p>For
-     * information about the <code>RecordIO</code> format, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data
-     * Format</a>.</p>
+     * <code>Line</code>.</p>
      */
     inline TransformOutput& WithAssembleWith(AssemblyType&& value) { SetAssembleWith(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side
-     * encryption that Amazon SageMaker uses to encrypt the transformed data.</p> <p>If
-     * you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for
-     * Amazon S3 for your role's account. For more information, see <a
+     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
+     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
@@ -274,10 +261,17 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side
-     * encryption that Amazon SageMaker uses to encrypt the transformed data.</p> <p>If
-     * you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for
-     * Amazon S3 for your role's account. For more information, see <a
+     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
+     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
@@ -290,10 +284,17 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side
-     * encryption that Amazon SageMaker uses to encrypt the transformed data.</p> <p>If
-     * you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for
-     * Amazon S3 for your role's account. For more information, see <a
+     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
+     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
@@ -306,10 +307,17 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side
-     * encryption that Amazon SageMaker uses to encrypt the transformed data.</p> <p>If
-     * you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for
-     * Amazon S3 for your role's account. For more information, see <a
+     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
+     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
@@ -322,10 +330,17 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side
-     * encryption that Amazon SageMaker uses to encrypt the transformed data.</p> <p>If
-     * you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for
-     * Amazon S3 for your role's account. For more information, see <a
+     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
+     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
@@ -338,10 +353,17 @@ namespace Model
     inline TransformOutput& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side
-     * encryption that Amazon SageMaker uses to encrypt the transformed data.</p> <p>If
-     * you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for
-     * Amazon S3 for your role's account. For more information, see <a
+     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
+     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
@@ -354,10 +376,17 @@ namespace Model
     inline TransformOutput& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side
-     * encryption that Amazon SageMaker uses to encrypt the transformed data.</p> <p>If
-     * you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for
-     * Amazon S3 for your role's account. For more information, see <a
+     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
+     * encrypt the model artifacts at rest using Amazon S3 server-side encryption. The
+     * <code>KmsKeyId</code> can be any of the following formats: </p> <ul> <li> <p>//
+     * KMS Key ID</p> <p> <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p>
+     * </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
+     * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
+     * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you

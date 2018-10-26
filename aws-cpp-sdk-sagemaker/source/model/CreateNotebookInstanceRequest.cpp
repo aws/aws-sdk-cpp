@@ -33,7 +33,9 @@ CreateNotebookInstanceRequest::CreateNotebookInstanceRequest() :
     m_tagsHasBeenSet(false),
     m_lifecycleConfigNameHasBeenSet(false),
     m_directInternetAccess(DirectInternetAccess::NOT_SET),
-    m_directInternetAccessHasBeenSet(false)
+    m_directInternetAccessHasBeenSet(false),
+    m_volumeSizeInGB(0),
+    m_volumeSizeInGBHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,12 @@ Aws::String CreateNotebookInstanceRequest::SerializePayload() const
   if(m_directInternetAccessHasBeenSet)
   {
    payload.WithString("DirectInternetAccess", DirectInternetAccessMapper::GetNameForDirectInternetAccess(m_directInternetAccess));
+  }
+
+  if(m_volumeSizeInGBHasBeenSet)
+  {
+   payload.WithInteger("VolumeSizeInGB", m_volumeSizeInGB);
+
   }
 
   return payload.View().WriteReadable();
