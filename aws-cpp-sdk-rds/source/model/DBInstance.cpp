@@ -100,7 +100,8 @@ DBInstance::DBInstance() :
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
     m_processorFeaturesHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_listenerEndpointHasBeenSet(false)
 {
 }
 
@@ -174,7 +175,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_enabledCloudwatchLogsExportsHasBeenSet(false),
     m_processorFeaturesHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_listenerEndpointHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -575,6 +577,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_deletionProtection = StringUtils::ConvertToBool(StringUtils::Trim(deletionProtectionNode.GetText().c_str()).c_str());
       m_deletionProtectionHasBeenSet = true;
     }
+    XmlNode listenerEndpointNode = resultNode.FirstChild("ListenerEndpoint");
+    if(!listenerEndpointNode.IsNull())
+    {
+      m_listenerEndpoint = listenerEndpointNode;
+      m_listenerEndpointHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -917,6 +925,13 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 
+  if(m_listenerEndpointHasBeenSet)
+  {
+      Aws::StringStream listenerEndpointLocationAndMemberSs;
+      listenerEndpointLocationAndMemberSs << location << index << locationValue << ".ListenerEndpoint";
+      m_listenerEndpoint.OutputToStream(oStream, listenerEndpointLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1200,6 +1215,12 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_deletionProtectionHasBeenSet)
   {
       oStream << location << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+  if(m_listenerEndpointHasBeenSet)
+  {
+      Aws::String listenerEndpointLocationAndMember(location);
+      listenerEndpointLocationAndMember += ".ListenerEndpoint";
+      m_listenerEndpoint.OutputToStream(oStream, listenerEndpointLocationAndMember.c_str());
   }
 }
 

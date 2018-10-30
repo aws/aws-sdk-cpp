@@ -2113,6 +2113,32 @@ namespace Model
      */
     inline DBInstance& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
+
+    /**
+     * <p>Specifies the listener connection endpoint for SQL Server Always On.</p>
+     */
+    inline const Endpoint& GetListenerEndpoint() const{ return m_listenerEndpoint; }
+
+    /**
+     * <p>Specifies the listener connection endpoint for SQL Server Always On.</p>
+     */
+    inline void SetListenerEndpoint(const Endpoint& value) { m_listenerEndpointHasBeenSet = true; m_listenerEndpoint = value; }
+
+    /**
+     * <p>Specifies the listener connection endpoint for SQL Server Always On.</p>
+     */
+    inline void SetListenerEndpoint(Endpoint&& value) { m_listenerEndpointHasBeenSet = true; m_listenerEndpoint = std::move(value); }
+
+    /**
+     * <p>Specifies the listener connection endpoint for SQL Server Always On.</p>
+     */
+    inline DBInstance& WithListenerEndpoint(const Endpoint& value) { SetListenerEndpoint(value); return *this;}
+
+    /**
+     * <p>Specifies the listener connection endpoint for SQL Server Always On.</p>
+     */
+    inline DBInstance& WithListenerEndpoint(Endpoint&& value) { SetListenerEndpoint(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -2279,6 +2305,9 @@ namespace Model
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;
+
+    Endpoint m_listenerEndpoint;
+    bool m_listenerEndpointHasBeenSet;
   };
 
 } // namespace Model
