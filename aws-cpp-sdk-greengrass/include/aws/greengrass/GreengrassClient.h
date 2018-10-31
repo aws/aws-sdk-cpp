@@ -50,6 +50,7 @@
 #include <aws/greengrass/model/DisassociateRoleFromGroupResult.h>
 #include <aws/greengrass/model/DisassociateServiceRoleFromAccountResult.h>
 #include <aws/greengrass/model/GetAssociatedRoleResult.h>
+#include <aws/greengrass/model/GetBulkDeploymentStatusResult.h>
 #include <aws/greengrass/model/GetConnectivityInfoResult.h>
 #include <aws/greengrass/model/GetCoreDefinitionResult.h>
 #include <aws/greengrass/model/GetCoreDefinitionVersionResult.h>
@@ -69,6 +70,8 @@
 #include <aws/greengrass/model/GetServiceRoleForAccountResult.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionResult.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionVersionResult.h>
+#include <aws/greengrass/model/ListBulkDeploymentDetailedReportsResult.h>
+#include <aws/greengrass/model/ListBulkDeploymentsResult.h>
 #include <aws/greengrass/model/ListCoreDefinitionVersionsResult.h>
 #include <aws/greengrass/model/ListCoreDefinitionsResult.h>
 #include <aws/greengrass/model/ListDeploymentsResult.h>
@@ -86,6 +89,8 @@
 #include <aws/greengrass/model/ListSubscriptionDefinitionVersionsResult.h>
 #include <aws/greengrass/model/ListSubscriptionDefinitionsResult.h>
 #include <aws/greengrass/model/ResetDeploymentsResult.h>
+#include <aws/greengrass/model/StartBulkDeploymentResult.h>
+#include <aws/greengrass/model/StopBulkDeploymentResult.h>
 #include <aws/greengrass/model/UpdateConnectivityInfoResult.h>
 #include <aws/greengrass/model/UpdateCoreDefinitionResult.h>
 #include <aws/greengrass/model/UpdateDeviceDefinitionResult.h>
@@ -164,6 +169,7 @@ namespace Model
         class DisassociateRoleFromGroupRequest;
         class DisassociateServiceRoleFromAccountRequest;
         class GetAssociatedRoleRequest;
+        class GetBulkDeploymentStatusRequest;
         class GetConnectivityInfoRequest;
         class GetCoreDefinitionRequest;
         class GetCoreDefinitionVersionRequest;
@@ -183,6 +189,8 @@ namespace Model
         class GetServiceRoleForAccountRequest;
         class GetSubscriptionDefinitionRequest;
         class GetSubscriptionDefinitionVersionRequest;
+        class ListBulkDeploymentDetailedReportsRequest;
+        class ListBulkDeploymentsRequest;
         class ListCoreDefinitionVersionsRequest;
         class ListCoreDefinitionsRequest;
         class ListDeploymentsRequest;
@@ -200,6 +208,8 @@ namespace Model
         class ListSubscriptionDefinitionVersionsRequest;
         class ListSubscriptionDefinitionsRequest;
         class ResetDeploymentsRequest;
+        class StartBulkDeploymentRequest;
+        class StopBulkDeploymentRequest;
         class UpdateConnectivityInfoRequest;
         class UpdateCoreDefinitionRequest;
         class UpdateDeviceDefinitionRequest;
@@ -239,6 +249,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateRoleFromGroupResult, Aws::Client::AWSError<GreengrassErrors>> DisassociateRoleFromGroupOutcome;
         typedef Aws::Utils::Outcome<DisassociateServiceRoleFromAccountResult, Aws::Client::AWSError<GreengrassErrors>> DisassociateServiceRoleFromAccountOutcome;
         typedef Aws::Utils::Outcome<GetAssociatedRoleResult, Aws::Client::AWSError<GreengrassErrors>> GetAssociatedRoleOutcome;
+        typedef Aws::Utils::Outcome<GetBulkDeploymentStatusResult, Aws::Client::AWSError<GreengrassErrors>> GetBulkDeploymentStatusOutcome;
         typedef Aws::Utils::Outcome<GetConnectivityInfoResult, Aws::Client::AWSError<GreengrassErrors>> GetConnectivityInfoOutcome;
         typedef Aws::Utils::Outcome<GetCoreDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> GetCoreDefinitionOutcome;
         typedef Aws::Utils::Outcome<GetCoreDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetCoreDefinitionVersionOutcome;
@@ -258,6 +269,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetServiceRoleForAccountResult, Aws::Client::AWSError<GreengrassErrors>> GetServiceRoleForAccountOutcome;
         typedef Aws::Utils::Outcome<GetSubscriptionDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> GetSubscriptionDefinitionOutcome;
         typedef Aws::Utils::Outcome<GetSubscriptionDefinitionVersionResult, Aws::Client::AWSError<GreengrassErrors>> GetSubscriptionDefinitionVersionOutcome;
+        typedef Aws::Utils::Outcome<ListBulkDeploymentDetailedReportsResult, Aws::Client::AWSError<GreengrassErrors>> ListBulkDeploymentDetailedReportsOutcome;
+        typedef Aws::Utils::Outcome<ListBulkDeploymentsResult, Aws::Client::AWSError<GreengrassErrors>> ListBulkDeploymentsOutcome;
         typedef Aws::Utils::Outcome<ListCoreDefinitionVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListCoreDefinitionVersionsOutcome;
         typedef Aws::Utils::Outcome<ListCoreDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListCoreDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ListDeploymentsResult, Aws::Client::AWSError<GreengrassErrors>> ListDeploymentsOutcome;
@@ -275,6 +288,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSubscriptionDefinitionVersionsResult, Aws::Client::AWSError<GreengrassErrors>> ListSubscriptionDefinitionVersionsOutcome;
         typedef Aws::Utils::Outcome<ListSubscriptionDefinitionsResult, Aws::Client::AWSError<GreengrassErrors>> ListSubscriptionDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ResetDeploymentsResult, Aws::Client::AWSError<GreengrassErrors>> ResetDeploymentsOutcome;
+        typedef Aws::Utils::Outcome<StartBulkDeploymentResult, Aws::Client::AWSError<GreengrassErrors>> StartBulkDeploymentOutcome;
+        typedef Aws::Utils::Outcome<StopBulkDeploymentResult, Aws::Client::AWSError<GreengrassErrors>> StopBulkDeploymentOutcome;
         typedef Aws::Utils::Outcome<UpdateConnectivityInfoResult, Aws::Client::AWSError<GreengrassErrors>> UpdateConnectivityInfoOutcome;
         typedef Aws::Utils::Outcome<UpdateCoreDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateCoreDefinitionOutcome;
         typedef Aws::Utils::Outcome<UpdateDeviceDefinitionResult, Aws::Client::AWSError<GreengrassErrors>> UpdateDeviceDefinitionOutcome;
@@ -314,6 +329,7 @@ namespace Model
         typedef std::future<DisassociateRoleFromGroupOutcome> DisassociateRoleFromGroupOutcomeCallable;
         typedef std::future<DisassociateServiceRoleFromAccountOutcome> DisassociateServiceRoleFromAccountOutcomeCallable;
         typedef std::future<GetAssociatedRoleOutcome> GetAssociatedRoleOutcomeCallable;
+        typedef std::future<GetBulkDeploymentStatusOutcome> GetBulkDeploymentStatusOutcomeCallable;
         typedef std::future<GetConnectivityInfoOutcome> GetConnectivityInfoOutcomeCallable;
         typedef std::future<GetCoreDefinitionOutcome> GetCoreDefinitionOutcomeCallable;
         typedef std::future<GetCoreDefinitionVersionOutcome> GetCoreDefinitionVersionOutcomeCallable;
@@ -333,6 +349,8 @@ namespace Model
         typedef std::future<GetServiceRoleForAccountOutcome> GetServiceRoleForAccountOutcomeCallable;
         typedef std::future<GetSubscriptionDefinitionOutcome> GetSubscriptionDefinitionOutcomeCallable;
         typedef std::future<GetSubscriptionDefinitionVersionOutcome> GetSubscriptionDefinitionVersionOutcomeCallable;
+        typedef std::future<ListBulkDeploymentDetailedReportsOutcome> ListBulkDeploymentDetailedReportsOutcomeCallable;
+        typedef std::future<ListBulkDeploymentsOutcome> ListBulkDeploymentsOutcomeCallable;
         typedef std::future<ListCoreDefinitionVersionsOutcome> ListCoreDefinitionVersionsOutcomeCallable;
         typedef std::future<ListCoreDefinitionsOutcome> ListCoreDefinitionsOutcomeCallable;
         typedef std::future<ListDeploymentsOutcome> ListDeploymentsOutcomeCallable;
@@ -350,6 +368,8 @@ namespace Model
         typedef std::future<ListSubscriptionDefinitionVersionsOutcome> ListSubscriptionDefinitionVersionsOutcomeCallable;
         typedef std::future<ListSubscriptionDefinitionsOutcome> ListSubscriptionDefinitionsOutcomeCallable;
         typedef std::future<ResetDeploymentsOutcome> ResetDeploymentsOutcomeCallable;
+        typedef std::future<StartBulkDeploymentOutcome> StartBulkDeploymentOutcomeCallable;
+        typedef std::future<StopBulkDeploymentOutcome> StopBulkDeploymentOutcomeCallable;
         typedef std::future<UpdateConnectivityInfoOutcome> UpdateConnectivityInfoOutcomeCallable;
         typedef std::future<UpdateCoreDefinitionOutcome> UpdateCoreDefinitionOutcomeCallable;
         typedef std::future<UpdateDeviceDefinitionOutcome> UpdateDeviceDefinitionOutcomeCallable;
@@ -392,6 +412,7 @@ namespace Model
     typedef std::function<void(const GreengrassClient*, const Model::DisassociateRoleFromGroupRequest&, const Model::DisassociateRoleFromGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRoleFromGroupResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::DisassociateServiceRoleFromAccountRequest&, const Model::DisassociateServiceRoleFromAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateServiceRoleFromAccountResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetAssociatedRoleRequest&, const Model::GetAssociatedRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssociatedRoleResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::GetBulkDeploymentStatusRequest&, const Model::GetBulkDeploymentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBulkDeploymentStatusResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetConnectivityInfoRequest&, const Model::GetConnectivityInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectivityInfoResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetCoreDefinitionRequest&, const Model::GetCoreDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCoreDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetCoreDefinitionVersionRequest&, const Model::GetCoreDefinitionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCoreDefinitionVersionResponseReceivedHandler;
@@ -411,6 +432,8 @@ namespace Model
     typedef std::function<void(const GreengrassClient*, const Model::GetServiceRoleForAccountRequest&, const Model::GetServiceRoleForAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceRoleForAccountResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetSubscriptionDefinitionRequest&, const Model::GetSubscriptionDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::GetSubscriptionDefinitionVersionRequest&, const Model::GetSubscriptionDefinitionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionDefinitionVersionResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::ListBulkDeploymentDetailedReportsRequest&, const Model::ListBulkDeploymentDetailedReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBulkDeploymentDetailedReportsResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::ListBulkDeploymentsRequest&, const Model::ListBulkDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBulkDeploymentsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListCoreDefinitionVersionsRequest&, const Model::ListCoreDefinitionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCoreDefinitionVersionsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListCoreDefinitionsRequest&, const Model::ListCoreDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCoreDefinitionsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListDeploymentsRequest&, const Model::ListDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeploymentsResponseReceivedHandler;
@@ -428,6 +451,8 @@ namespace Model
     typedef std::function<void(const GreengrassClient*, const Model::ListSubscriptionDefinitionVersionsRequest&, const Model::ListSubscriptionDefinitionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionDefinitionVersionsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ListSubscriptionDefinitionsRequest&, const Model::ListSubscriptionDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscriptionDefinitionsResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::ResetDeploymentsRequest&, const Model::ResetDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetDeploymentsResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::StartBulkDeploymentRequest&, const Model::StartBulkDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBulkDeploymentResponseReceivedHandler;
+    typedef std::function<void(const GreengrassClient*, const Model::StopBulkDeploymentRequest&, const Model::StopBulkDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBulkDeploymentResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::UpdateConnectivityInfoRequest&, const Model::UpdateConnectivityInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConnectivityInfoResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::UpdateCoreDefinitionRequest&, const Model::UpdateCoreDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCoreDefinitionResponseReceivedHandler;
     typedef std::function<void(const GreengrassClient*, const Model::UpdateDeviceDefinitionRequest&, const Model::UpdateDeviceDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceDefinitionResponseReceivedHandler;
@@ -472,7 +497,7 @@ namespace Model
 
         virtual ~GreengrassClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "greengrass"; }
+        inline virtual const char* GetServiceClientName() const override { return "Greengrass"; }
 
 
         /**
@@ -606,14 +631,18 @@ namespace Model
         virtual void CreateCoreDefinitionVersionAsync(const Model::CreateCoreDefinitionVersionRequest& request, const CreateCoreDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Creates a deployment.<p><h3>See Also:</h3>   <a
+         * Creates a deployment. ''CreateDeployment'' requests are idempotent with respect
+         * to the ''X-Amzn-Client-Token'' token and the request parameters.<p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeployment">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDeploymentOutcome CreateDeployment(const Model::CreateDeploymentRequest& request) const;
 
         /**
-         * Creates a deployment.<p><h3>See Also:</h3>   <a
+         * Creates a deployment. ''CreateDeployment'' requests are idempotent with respect
+         * to the ''X-Amzn-Client-Token'' token and the request parameters.<p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeployment">AWS
          * API Reference</a></p>
          *
@@ -622,7 +651,9 @@ namespace Model
         virtual Model::CreateDeploymentOutcomeCallable CreateDeploymentCallable(const Model::CreateDeploymentRequest& request) const;
 
         /**
-         * Creates a deployment.<p><h3>See Also:</h3>   <a
+         * Creates a deployment. ''CreateDeployment'' requests are idempotent with respect
+         * to the ''X-Amzn-Client-Token'' token and the request parameters.<p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeployment">AWS
          * API Reference</a></p>
          *
@@ -1309,6 +1340,31 @@ namespace Model
         virtual void GetAssociatedRoleAsync(const Model::GetAssociatedRoleRequest& request, const GetAssociatedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Returns the status of a bulk deployment.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetBulkDeploymentStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBulkDeploymentStatusOutcome GetBulkDeploymentStatus(const Model::GetBulkDeploymentStatusRequest& request) const;
+
+        /**
+         * Returns the status of a bulk deployment.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetBulkDeploymentStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetBulkDeploymentStatusOutcomeCallable GetBulkDeploymentStatusCallable(const Model::GetBulkDeploymentStatusRequest& request) const;
+
+        /**
+         * Returns the status of a bulk deployment.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetBulkDeploymentStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetBulkDeploymentStatusAsync(const Model::GetBulkDeploymentStatusRequest& request, const GetBulkDeploymentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Retrieves the connectivity information for a core.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectivityInfo">AWS
          * API Reference</a></p>
@@ -1817,6 +1873,62 @@ namespace Model
         virtual void GetSubscriptionDefinitionVersionAsync(const Model::GetSubscriptionDefinitionVersionRequest& request, const GetSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Gets a paginated list of the deployments that have been started in a bulk
+         * deployment operation, and their current deployment status.<p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeploymentDetailedReports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBulkDeploymentDetailedReportsOutcome ListBulkDeploymentDetailedReports(const Model::ListBulkDeploymentDetailedReportsRequest& request) const;
+
+        /**
+         * Gets a paginated list of the deployments that have been started in a bulk
+         * deployment operation, and their current deployment status.<p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeploymentDetailedReports">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBulkDeploymentDetailedReportsOutcomeCallable ListBulkDeploymentDetailedReportsCallable(const Model::ListBulkDeploymentDetailedReportsRequest& request) const;
+
+        /**
+         * Gets a paginated list of the deployments that have been started in a bulk
+         * deployment operation, and their current deployment status.<p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeploymentDetailedReports">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBulkDeploymentDetailedReportsAsync(const Model::ListBulkDeploymentDetailedReportsRequest& request, const ListBulkDeploymentDetailedReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Returns a list of bulk deployments.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeployments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBulkDeploymentsOutcome ListBulkDeployments(const Model::ListBulkDeploymentsRequest& request) const;
+
+        /**
+         * Returns a list of bulk deployments.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeployments">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBulkDeploymentsOutcomeCallable ListBulkDeploymentsCallable(const Model::ListBulkDeploymentsRequest& request) const;
+
+        /**
+         * Returns a list of bulk deployments.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListBulkDeployments">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBulkDeploymentsAsync(const Model::ListBulkDeploymentsRequest& request, const ListBulkDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Lists the versions of a core definition.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitionVersions">AWS
          * API Reference</a></p>
@@ -2242,6 +2354,83 @@ namespace Model
         virtual void ResetDeploymentsAsync(const Model::ResetDeploymentsRequest& request, const ResetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Deploys multiple groups in one operation. This action starts the bulk deployment
+         * of a specified set of group versions. Each group version deployment will be
+         * triggered with an adaptive rate that has a fixed upper limit. We recommend that
+         * you include an ''X-Amzn-Client-Token'' token in every ''StartBulkDeployment''
+         * request. These requests are idempotent with respect to the token and the request
+         * parameters.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StartBulkDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartBulkDeploymentOutcome StartBulkDeployment(const Model::StartBulkDeploymentRequest& request) const;
+
+        /**
+         * Deploys multiple groups in one operation. This action starts the bulk deployment
+         * of a specified set of group versions. Each group version deployment will be
+         * triggered with an adaptive rate that has a fixed upper limit. We recommend that
+         * you include an ''X-Amzn-Client-Token'' token in every ''StartBulkDeployment''
+         * request. These requests are idempotent with respect to the token and the request
+         * parameters.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StartBulkDeployment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartBulkDeploymentOutcomeCallable StartBulkDeploymentCallable(const Model::StartBulkDeploymentRequest& request) const;
+
+        /**
+         * Deploys multiple groups in one operation. This action starts the bulk deployment
+         * of a specified set of group versions. Each group version deployment will be
+         * triggered with an adaptive rate that has a fixed upper limit. We recommend that
+         * you include an ''X-Amzn-Client-Token'' token in every ''StartBulkDeployment''
+         * request. These requests are idempotent with respect to the token and the request
+         * parameters.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StartBulkDeployment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartBulkDeploymentAsync(const Model::StartBulkDeploymentRequest& request, const StartBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Stops the execution of a bulk deployment. This action returns a status of
+         * ''Stopping'' until the deployment is stopped. You cannot start a new bulk
+         * deployment while a previous deployment is in the ''Stopping'' state. This action
+         * doesn't rollback completed deployments or cancel pending deployments.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StopBulkDeployment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopBulkDeploymentOutcome StopBulkDeployment(const Model::StopBulkDeploymentRequest& request) const;
+
+        /**
+         * Stops the execution of a bulk deployment. This action returns a status of
+         * ''Stopping'' until the deployment is stopped. You cannot start a new bulk
+         * deployment while a previous deployment is in the ''Stopping'' state. This action
+         * doesn't rollback completed deployments or cancel pending deployments.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StopBulkDeployment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopBulkDeploymentOutcomeCallable StopBulkDeploymentCallable(const Model::StopBulkDeploymentRequest& request) const;
+
+        /**
+         * Stops the execution of a bulk deployment. This action returns a status of
+         * ''Stopping'' until the deployment is stopped. You cannot start a new bulk
+         * deployment while a previous deployment is in the ''Stopping'' state. This action
+         * doesn't rollback completed deployments or cancel pending deployments.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/StopBulkDeployment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopBulkDeploymentAsync(const Model::StopBulkDeploymentRequest& request, const StopBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Updates the connectivity information for the core. Any devices that belong to
          * the group which has this core will receive this information in order to find the
          * location of the core and connect to it.<p><h3>See Also:</h3>   <a
@@ -2506,6 +2695,7 @@ namespace Model
         void DisassociateRoleFromGroupAsyncHelper(const Model::DisassociateRoleFromGroupRequest& request, const DisassociateRoleFromGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateServiceRoleFromAccountAsyncHelper(const Model::DisassociateServiceRoleFromAccountRequest& request, const DisassociateServiceRoleFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAssociatedRoleAsyncHelper(const Model::GetAssociatedRoleRequest& request, const GetAssociatedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetBulkDeploymentStatusAsyncHelper(const Model::GetBulkDeploymentStatusRequest& request, const GetBulkDeploymentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConnectivityInfoAsyncHelper(const Model::GetConnectivityInfoRequest& request, const GetConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCoreDefinitionAsyncHelper(const Model::GetCoreDefinitionRequest& request, const GetCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCoreDefinitionVersionAsyncHelper(const Model::GetCoreDefinitionVersionRequest& request, const GetCoreDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2525,6 +2715,8 @@ namespace Model
         void GetServiceRoleForAccountAsyncHelper(const Model::GetServiceRoleForAccountRequest& request, const GetServiceRoleForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSubscriptionDefinitionAsyncHelper(const Model::GetSubscriptionDefinitionRequest& request, const GetSubscriptionDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSubscriptionDefinitionVersionAsyncHelper(const Model::GetSubscriptionDefinitionVersionRequest& request, const GetSubscriptionDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBulkDeploymentDetailedReportsAsyncHelper(const Model::ListBulkDeploymentDetailedReportsRequest& request, const ListBulkDeploymentDetailedReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBulkDeploymentsAsyncHelper(const Model::ListBulkDeploymentsRequest& request, const ListBulkDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCoreDefinitionVersionsAsyncHelper(const Model::ListCoreDefinitionVersionsRequest& request, const ListCoreDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCoreDefinitionsAsyncHelper(const Model::ListCoreDefinitionsRequest& request, const ListCoreDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDeploymentsAsyncHelper(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2542,6 +2734,8 @@ namespace Model
         void ListSubscriptionDefinitionVersionsAsyncHelper(const Model::ListSubscriptionDefinitionVersionsRequest& request, const ListSubscriptionDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSubscriptionDefinitionsAsyncHelper(const Model::ListSubscriptionDefinitionsRequest& request, const ListSubscriptionDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetDeploymentsAsyncHelper(const Model::ResetDeploymentsRequest& request, const ResetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartBulkDeploymentAsyncHelper(const Model::StartBulkDeploymentRequest& request, const StartBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopBulkDeploymentAsyncHelper(const Model::StopBulkDeploymentRequest& request, const StopBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConnectivityInfoAsyncHelper(const Model::UpdateConnectivityInfoRequest& request, const UpdateConnectivityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCoreDefinitionAsyncHelper(const Model::UpdateCoreDefinitionRequest& request, const UpdateCoreDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDeviceDefinitionAsyncHelper(const Model::UpdateDeviceDefinitionRequest& request, const UpdateDeviceDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

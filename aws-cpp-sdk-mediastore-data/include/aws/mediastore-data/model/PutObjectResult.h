@@ -116,27 +116,32 @@ namespace Model
 
 
     /**
-     * <p>The storage class where the object was persisted. Should be “Temporal”.</p>
+     * <p>The storage class where the object was persisted. The class should be
+     * “Temporal”.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p>The storage class where the object was persisted. Should be “Temporal”.</p>
+     * <p>The storage class where the object was persisted. The class should be
+     * “Temporal”.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClass = value; }
 
     /**
-     * <p>The storage class where the object was persisted. Should be “Temporal”.</p>
+     * <p>The storage class where the object was persisted. The class should be
+     * “Temporal”.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClass = std::move(value); }
 
     /**
-     * <p>The storage class where the object was persisted. Should be “Temporal”.</p>
+     * <p>The storage class where the object was persisted. The class should be
+     * “Temporal”.</p>
      */
     inline PutObjectResult& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p>The storage class where the object was persisted. Should be “Temporal”.</p>
+     * <p>The storage class where the object was persisted. The class should be
+     * “Temporal”.</p>
      */
     inline PutObjectResult& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 

@@ -88,6 +88,12 @@ namespace Aws
         static const int AWS_ElasticBeanstalk_Environment_HASH = HashingUtils::HashString("AWS::ElasticBeanstalk::Environment");
         static const int AWS_ElasticLoadBalancing_LoadBalancer_HASH = HashingUtils::HashString("AWS::ElasticLoadBalancing::LoadBalancer");
         static const int AWS_XRay_EncryptionConfig_HASH = HashingUtils::HashString("AWS::XRay::EncryptionConfig");
+        static const int AWS_SSM_AssociationCompliance_HASH = HashingUtils::HashString("AWS::SSM::AssociationCompliance");
+        static const int AWS_SSM_PatchCompliance_HASH = HashingUtils::HashString("AWS::SSM::PatchCompliance");
+        static const int AWS_Shield_Protection_HASH = HashingUtils::HashString("AWS::Shield::Protection");
+        static const int AWS_ShieldRegional_Protection_HASH = HashingUtils::HashString("AWS::ShieldRegional::Protection");
+        static const int AWS_Config_ResourceCompliance_HASH = HashingUtils::HashString("AWS::Config::ResourceCompliance");
+        static const int AWS_CodePipeline_Pipeline_HASH = HashingUtils::HashString("AWS::CodePipeline::Pipeline");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -325,6 +331,30 @@ namespace Aws
           {
             return ResourceType::AWS_XRay_EncryptionConfig;
           }
+          else if (hashCode == AWS_SSM_AssociationCompliance_HASH)
+          {
+            return ResourceType::AWS_SSM_AssociationCompliance;
+          }
+          else if (hashCode == AWS_SSM_PatchCompliance_HASH)
+          {
+            return ResourceType::AWS_SSM_PatchCompliance;
+          }
+          else if (hashCode == AWS_Shield_Protection_HASH)
+          {
+            return ResourceType::AWS_Shield_Protection;
+          }
+          else if (hashCode == AWS_ShieldRegional_Protection_HASH)
+          {
+            return ResourceType::AWS_ShieldRegional_Protection;
+          }
+          else if (hashCode == AWS_Config_ResourceCompliance_HASH)
+          {
+            return ResourceType::AWS_Config_ResourceCompliance;
+          }
+          else if (hashCode == AWS_CodePipeline_Pipeline_HASH)
+          {
+            return ResourceType::AWS_CodePipeline_Pipeline;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -455,6 +485,18 @@ namespace Aws
             return "AWS::ElasticLoadBalancing::LoadBalancer";
           case ResourceType::AWS_XRay_EncryptionConfig:
             return "AWS::XRay::EncryptionConfig";
+          case ResourceType::AWS_SSM_AssociationCompliance:
+            return "AWS::SSM::AssociationCompliance";
+          case ResourceType::AWS_SSM_PatchCompliance:
+            return "AWS::SSM::PatchCompliance";
+          case ResourceType::AWS_Shield_Protection:
+            return "AWS::Shield::Protection";
+          case ResourceType::AWS_ShieldRegional_Protection:
+            return "AWS::ShieldRegional::Protection";
+          case ResourceType::AWS_Config_ResourceCompliance:
+            return "AWS::Config::ResourceCompliance";
+          case ResourceType::AWS_CodePipeline_Pipeline:
+            return "AWS::CodePipeline::Pipeline";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

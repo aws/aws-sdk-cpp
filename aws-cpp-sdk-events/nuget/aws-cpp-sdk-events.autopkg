@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CloudWatchEvents;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.6.20151007.41;
+        version : 1.6.20151007.42;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon CloudWatch Events);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.6.41
+            AWSSDKCPP-Core/1.6.42
        }
     }
 

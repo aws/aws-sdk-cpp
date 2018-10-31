@@ -92,60 +92,116 @@ namespace Model
 
 
     /**
-     * <p>The maximum results to return. The service might return fewer results.</p>
+     * <p>The maximum number of results to return per API request. For example, you
+     * submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500.
+     * Although 2,000 items match your request, the service returns no more than the
+     * first 500 items. (The service also returns a <code>NextToken</code> value that
+     * you can use to fetch the next batch of results.) The service might return fewer
+     * results than the <code>MaxResults</code> value.</p> <p>If
+     * <code>MaxResults</code> is not included in the request, the service defaults to
+     * pagination with a maximum of 1,000 results per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum results to return. The service might return fewer results.</p>
+     * <p>The maximum number of results to return per API request. For example, you
+     * submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500.
+     * Although 2,000 items match your request, the service returns no more than the
+     * first 500 items. (The service also returns a <code>NextToken</code> value that
+     * you can use to fetch the next batch of results.) The service might return fewer
+     * results than the <code>MaxResults</code> value.</p> <p>If
+     * <code>MaxResults</code> is not included in the request, the service defaults to
+     * pagination with a maximum of 1,000 results per page.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum results to return. The service might return fewer results.</p>
+     * <p>The maximum number of results to return per API request. For example, you
+     * submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500.
+     * Although 2,000 items match your request, the service returns no more than the
+     * first 500 items. (The service also returns a <code>NextToken</code> value that
+     * you can use to fetch the next batch of results.) The service might return fewer
+     * results than the <code>MaxResults</code> value.</p> <p>If
+     * <code>MaxResults</code> is not included in the request, the service defaults to
+     * pagination with a maximum of 1,000 results per page.</p>
      */
     inline ListItemsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>The <code>NextToken</code> received in the <code>ListItemsResponse</code> for
-     * the same container and path. Tokens expire after 15 minutes.</p>
+     * <p>The token that identifies which batch of results that you want to see. For
+     * example, you submit a <code>ListItems</code> request with
+     * <code>MaxResults</code> set at 500. The service returns the first batch of
+     * results (up to 500) and a <code>NextToken</code> value. To see the next batch of
+     * results, you can submit the <code>ListItems</code> request a second time and
+     * specify the <code>NextToken</code> value.</p> <p>Tokens expire after 15
+     * minutes.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>NextToken</code> received in the <code>ListItemsResponse</code> for
-     * the same container and path. Tokens expire after 15 minutes.</p>
+     * <p>The token that identifies which batch of results that you want to see. For
+     * example, you submit a <code>ListItems</code> request with
+     * <code>MaxResults</code> set at 500. The service returns the first batch of
+     * results (up to 500) and a <code>NextToken</code> value. To see the next batch of
+     * results, you can submit the <code>ListItems</code> request a second time and
+     * specify the <code>NextToken</code> value.</p> <p>Tokens expire after 15
+     * minutes.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <code>NextToken</code> received in the <code>ListItemsResponse</code> for
-     * the same container and path. Tokens expire after 15 minutes.</p>
+     * <p>The token that identifies which batch of results that you want to see. For
+     * example, you submit a <code>ListItems</code> request with
+     * <code>MaxResults</code> set at 500. The service returns the first batch of
+     * results (up to 500) and a <code>NextToken</code> value. To see the next batch of
+     * results, you can submit the <code>ListItems</code> request a second time and
+     * specify the <code>NextToken</code> value.</p> <p>Tokens expire after 15
+     * minutes.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>NextToken</code> received in the <code>ListItemsResponse</code> for
-     * the same container and path. Tokens expire after 15 minutes.</p>
+     * <p>The token that identifies which batch of results that you want to see. For
+     * example, you submit a <code>ListItems</code> request with
+     * <code>MaxResults</code> set at 500. The service returns the first batch of
+     * results (up to 500) and a <code>NextToken</code> value. To see the next batch of
+     * results, you can submit the <code>ListItems</code> request a second time and
+     * specify the <code>NextToken</code> value.</p> <p>Tokens expire after 15
+     * minutes.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>NextToken</code> received in the <code>ListItemsResponse</code> for
-     * the same container and path. Tokens expire after 15 minutes.</p>
+     * <p>The token that identifies which batch of results that you want to see. For
+     * example, you submit a <code>ListItems</code> request with
+     * <code>MaxResults</code> set at 500. The service returns the first batch of
+     * results (up to 500) and a <code>NextToken</code> value. To see the next batch of
+     * results, you can submit the <code>ListItems</code> request a second time and
+     * specify the <code>NextToken</code> value.</p> <p>Tokens expire after 15
+     * minutes.</p>
      */
     inline ListItemsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> received in the <code>ListItemsResponse</code> for
-     * the same container and path. Tokens expire after 15 minutes.</p>
+     * <p>The token that identifies which batch of results that you want to see. For
+     * example, you submit a <code>ListItems</code> request with
+     * <code>MaxResults</code> set at 500. The service returns the first batch of
+     * results (up to 500) and a <code>NextToken</code> value. To see the next batch of
+     * results, you can submit the <code>ListItems</code> request a second time and
+     * specify the <code>NextToken</code> value.</p> <p>Tokens expire after 15
+     * minutes.</p>
      */
     inline ListItemsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>NextToken</code> received in the <code>ListItemsResponse</code> for
-     * the same container and path. Tokens expire after 15 minutes.</p>
+     * <p>The token that identifies which batch of results that you want to see. For
+     * example, you submit a <code>ListItems</code> request with
+     * <code>MaxResults</code> set at 500. The service returns the first batch of
+     * results (up to 500) and a <code>NextToken</code> value. To see the next batch of
+     * results, you can submit the <code>ListItems</code> request a second time and
+     * specify the <code>NextToken</code> value.</p> <p>Tokens expire after 15
+     * minutes.</p>
      */
     inline ListItemsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

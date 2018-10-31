@@ -77,37 +77,51 @@ namespace Model
 
 
     /**
-     * The id of the logger.
+     * A descriptive or arbitrary ID for the logger. This value must be unique within
+     * the logger definition version. Max length is 128 characters with pattern
+     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * The id of the logger.
+     * A descriptive or arbitrary ID for the logger. This value must be unique within
+     * the logger definition version. Max length is 128 characters with pattern
+     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * The id of the logger.
+     * A descriptive or arbitrary ID for the logger. This value must be unique within
+     * the logger definition version. Max length is 128 characters with pattern
+     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * The id of the logger.
+     * A descriptive or arbitrary ID for the logger. This value must be unique within
+     * the logger definition version. Max length is 128 characters with pattern
+     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * The id of the logger.
+     * A descriptive or arbitrary ID for the logger. This value must be unique within
+     * the logger definition version. Max length is 128 characters with pattern
+     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
     inline Logger& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * The id of the logger.
+     * A descriptive or arbitrary ID for the logger. This value must be unique within
+     * the logger definition version. Max length is 128 characters with pattern
+     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
     inline Logger& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * The id of the logger.
+     * A descriptive or arbitrary ID for the logger. This value must be unique within
+     * the logger definition version. Max length is 128 characters with pattern
+     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
      */
     inline Logger& WithId(const char* value) { SetId(value); return *this;}
 

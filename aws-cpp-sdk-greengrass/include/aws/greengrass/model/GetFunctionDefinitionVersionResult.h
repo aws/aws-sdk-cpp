@@ -185,6 +185,49 @@ namespace Model
 
 
     /**
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
+     */
+    inline GetFunctionDefinitionVersionResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
+     */
+    inline GetFunctionDefinitionVersionResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
+     */
+    inline GetFunctionDefinitionVersionResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
      * The version of the function definition version.
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
@@ -228,6 +271,8 @@ namespace Model
     FunctionDefinitionVersion m_definition;
 
     Aws::String m_id;
+
+    Aws::String m_nextToken;
 
     Aws::String m_version;
   };

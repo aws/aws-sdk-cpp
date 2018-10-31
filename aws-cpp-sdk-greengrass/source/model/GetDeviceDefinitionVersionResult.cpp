@@ -62,6 +62,12 @@ GetDeviceDefinitionVersionResult& GetDeviceDefinitionVersionResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
+  }
+
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");

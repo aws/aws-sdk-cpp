@@ -56,6 +56,7 @@
 #include <aws/greengrass/model/DisassociateRoleFromGroupRequest.h>
 #include <aws/greengrass/model/DisassociateServiceRoleFromAccountRequest.h>
 #include <aws/greengrass/model/GetAssociatedRoleRequest.h>
+#include <aws/greengrass/model/GetBulkDeploymentStatusRequest.h>
 #include <aws/greengrass/model/GetConnectivityInfoRequest.h>
 #include <aws/greengrass/model/GetCoreDefinitionRequest.h>
 #include <aws/greengrass/model/GetCoreDefinitionVersionRequest.h>
@@ -75,6 +76,8 @@
 #include <aws/greengrass/model/GetServiceRoleForAccountRequest.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionRequest.h>
 #include <aws/greengrass/model/GetSubscriptionDefinitionVersionRequest.h>
+#include <aws/greengrass/model/ListBulkDeploymentDetailedReportsRequest.h>
+#include <aws/greengrass/model/ListBulkDeploymentsRequest.h>
 #include <aws/greengrass/model/ListCoreDefinitionVersionsRequest.h>
 #include <aws/greengrass/model/ListCoreDefinitionsRequest.h>
 #include <aws/greengrass/model/ListDeploymentsRequest.h>
@@ -92,6 +95,8 @@
 #include <aws/greengrass/model/ListSubscriptionDefinitionVersionsRequest.h>
 #include <aws/greengrass/model/ListSubscriptionDefinitionsRequest.h>
 #include <aws/greengrass/model/ResetDeploymentsRequest.h>
+#include <aws/greengrass/model/StartBulkDeploymentRequest.h>
+#include <aws/greengrass/model/StopBulkDeploymentRequest.h>
 #include <aws/greengrass/model/UpdateConnectivityInfoRequest.h>
 #include <aws/greengrass/model/UpdateCoreDefinitionRequest.h>
 #include <aws/greengrass/model/UpdateDeviceDefinitionRequest.h>
@@ -1212,6 +1217,43 @@ void GreengrassClient::GetAssociatedRoleAsyncHelper(const GetAssociatedRoleReque
   handler(this, request, GetAssociatedRole(request), context);
 }
 
+GetBulkDeploymentStatusOutcome GreengrassClient::GetBulkDeploymentStatus(const GetBulkDeploymentStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/bulk/deployments/";
+  ss << request.GetBulkDeploymentId();
+  ss << "/status";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetBulkDeploymentStatusOutcome(GetBulkDeploymentStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBulkDeploymentStatusOutcome(outcome.GetError());
+  }
+}
+
+GetBulkDeploymentStatusOutcomeCallable GreengrassClient::GetBulkDeploymentStatusCallable(const GetBulkDeploymentStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBulkDeploymentStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBulkDeploymentStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::GetBulkDeploymentStatusAsync(const GetBulkDeploymentStatusRequest& request, const GetBulkDeploymentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBulkDeploymentStatusAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::GetBulkDeploymentStatusAsyncHelper(const GetBulkDeploymentStatusRequest& request, const GetBulkDeploymentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBulkDeploymentStatus(request), context);
+}
+
 GetConnectivityInfoOutcome GreengrassClient::GetConnectivityInfo(const GetConnectivityInfoRequest& request) const
 {
   Aws::StringStream ss;
@@ -1916,6 +1958,78 @@ void GreengrassClient::GetSubscriptionDefinitionVersionAsyncHelper(const GetSubs
   handler(this, request, GetSubscriptionDefinitionVersion(request), context);
 }
 
+ListBulkDeploymentDetailedReportsOutcome GreengrassClient::ListBulkDeploymentDetailedReports(const ListBulkDeploymentDetailedReportsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/bulk/deployments/";
+  ss << request.GetBulkDeploymentId();
+  ss << "/detailed-reports";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListBulkDeploymentDetailedReportsOutcome(ListBulkDeploymentDetailedReportsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListBulkDeploymentDetailedReportsOutcome(outcome.GetError());
+  }
+}
+
+ListBulkDeploymentDetailedReportsOutcomeCallable GreengrassClient::ListBulkDeploymentDetailedReportsCallable(const ListBulkDeploymentDetailedReportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBulkDeploymentDetailedReportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBulkDeploymentDetailedReports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::ListBulkDeploymentDetailedReportsAsync(const ListBulkDeploymentDetailedReportsRequest& request, const ListBulkDeploymentDetailedReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBulkDeploymentDetailedReportsAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::ListBulkDeploymentDetailedReportsAsyncHelper(const ListBulkDeploymentDetailedReportsRequest& request, const ListBulkDeploymentDetailedReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBulkDeploymentDetailedReports(request), context);
+}
+
+ListBulkDeploymentsOutcome GreengrassClient::ListBulkDeployments(const ListBulkDeploymentsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/bulk/deployments";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListBulkDeploymentsOutcome(ListBulkDeploymentsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListBulkDeploymentsOutcome(outcome.GetError());
+  }
+}
+
+ListBulkDeploymentsOutcomeCallable GreengrassClient::ListBulkDeploymentsCallable(const ListBulkDeploymentsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBulkDeploymentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBulkDeployments(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::ListBulkDeploymentsAsync(const ListBulkDeploymentsRequest& request, const ListBulkDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBulkDeploymentsAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::ListBulkDeploymentsAsyncHelper(const ListBulkDeploymentsRequest& request, const ListBulkDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBulkDeployments(request), context);
+}
+
 ListCoreDefinitionVersionsOutcome GreengrassClient::ListCoreDefinitionVersions(const ListCoreDefinitionVersionsRequest& request) const
 {
   Aws::StringStream ss;
@@ -2529,6 +2643,78 @@ void GreengrassClient::ResetDeploymentsAsync(const ResetDeploymentsRequest& requ
 void GreengrassClient::ResetDeploymentsAsyncHelper(const ResetDeploymentsRequest& request, const ResetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ResetDeployments(request), context);
+}
+
+StartBulkDeploymentOutcome GreengrassClient::StartBulkDeployment(const StartBulkDeploymentRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/bulk/deployments";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartBulkDeploymentOutcome(StartBulkDeploymentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartBulkDeploymentOutcome(outcome.GetError());
+  }
+}
+
+StartBulkDeploymentOutcomeCallable GreengrassClient::StartBulkDeploymentCallable(const StartBulkDeploymentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartBulkDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartBulkDeployment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::StartBulkDeploymentAsync(const StartBulkDeploymentRequest& request, const StartBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartBulkDeploymentAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::StartBulkDeploymentAsyncHelper(const StartBulkDeploymentRequest& request, const StartBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartBulkDeployment(request), context);
+}
+
+StopBulkDeploymentOutcome GreengrassClient::StopBulkDeployment(const StopBulkDeploymentRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/greengrass/bulk/deployments/";
+  ss << request.GetBulkDeploymentId();
+  ss << "/$stop";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopBulkDeploymentOutcome(StopBulkDeploymentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopBulkDeploymentOutcome(outcome.GetError());
+  }
+}
+
+StopBulkDeploymentOutcomeCallable GreengrassClient::StopBulkDeploymentCallable(const StopBulkDeploymentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopBulkDeploymentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopBulkDeployment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::StopBulkDeploymentAsync(const StopBulkDeploymentRequest& request, const StopBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopBulkDeploymentAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::StopBulkDeploymentAsyncHelper(const StopBulkDeploymentRequest& request, const StopBulkDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopBulkDeployment(request), context);
 }
 
 UpdateConnectivityInfoOutcome GreengrassClient::UpdateConnectivityInfo(const UpdateConnectivityInfoRequest& request) const
